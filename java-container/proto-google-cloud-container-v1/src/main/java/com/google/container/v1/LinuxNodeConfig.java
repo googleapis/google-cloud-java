@@ -10005,6 +10005,628 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface NodeVfioConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.LinuxNodeConfig.NodeVfioConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of DMA entries (pages) that can be
+     * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+     * affects the total amount of host memory that can be pinned for direct
+     * device access, which is often critical for high-performance devices like
+     * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+     * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+     * The default value in the kernel is `65535`. Higher values may be
+     * needed for workloads mapping large memory regions.
+     * Supported values are integers between `65535` and `4194304`.
+     * </pre>
+     *
+     * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the dmaEntryLimit field is set.
+     */
+    boolean hasDmaEntryLimit();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of DMA entries (pages) that can be
+     * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+     * affects the total amount of host memory that can be pinned for direct
+     * device access, which is often critical for high-performance devices like
+     * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+     * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+     * The default value in the kernel is `65535`. Higher values may be
+     * needed for workloads mapping large memory regions.
+     * Supported values are integers between `65535` and `4194304`.
+     * </pre>
+     *
+     * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dmaEntryLimit.
+     */
+    int getDmaEntryLimit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration settings for VFIO (Virtual Function I/O) on a node.
+   * VFIO allows safe, unprivileged, userspace drivers to access I/O devices.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.LinuxNodeConfig.NodeVfioConfig}
+   */
+  public static final class NodeVfioConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.LinuxNodeConfig.NodeVfioConfig)
+      NodeVfioConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "NodeVfioConfig");
+    }
+
+    // Use NodeVfioConfig.newBuilder() to construct.
+    private NodeVfioConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NodeVfioConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_NodeVfioConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_LinuxNodeConfig_NodeVfioConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.class,
+              com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DMA_ENTRY_LIMIT_FIELD_NUMBER = 1;
+    private int dmaEntryLimit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of DMA entries (pages) that can be
+     * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+     * affects the total amount of host memory that can be pinned for direct
+     * device access, which is often critical for high-performance devices like
+     * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+     * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+     * The default value in the kernel is `65535`. Higher values may be
+     * needed for workloads mapping large memory regions.
+     * Supported values are integers between `65535` and `4194304`.
+     * </pre>
+     *
+     * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the dmaEntryLimit field is set.
+     */
+    @java.lang.Override
+    public boolean hasDmaEntryLimit() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maximum number of DMA entries (pages) that can be
+     * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+     * affects the total amount of host memory that can be pinned for direct
+     * device access, which is often critical for high-performance devices like
+     * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+     * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+     * The default value in the kernel is `65535`. Higher values may be
+     * needed for workloads mapping large memory regions.
+     * Supported values are integers between `65535` and `4194304`.
+     * </pre>
+     *
+     * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dmaEntryLimit.
+     */
+    @java.lang.Override
+    public int getDmaEntryLimit() {
+      return dmaEntryLimit_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt32(1, dmaEntryLimit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, dmaEntryLimit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.LinuxNodeConfig.NodeVfioConfig)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.LinuxNodeConfig.NodeVfioConfig other =
+          (com.google.container.v1.LinuxNodeConfig.NodeVfioConfig) obj;
+
+      if (hasDmaEntryLimit() != other.hasDmaEntryLimit()) return false;
+      if (hasDmaEntryLimit()) {
+        if (getDmaEntryLimit() != other.getDmaEntryLimit()) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDmaEntryLimit()) {
+        hash = (37 * hash) + DMA_ENTRY_LIMIT_FIELD_NUMBER;
+        hash = (53 * hash) + getDmaEntryLimit();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration settings for VFIO (Virtual Function I/O) on a node.
+     * VFIO allows safe, unprivileged, userspace drivers to access I/O devices.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.LinuxNodeConfig.NodeVfioConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.LinuxNodeConfig.NodeVfioConfig)
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeVfioConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeVfioConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.class,
+                com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dmaEntryLimit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_LinuxNodeConfig_NodeVfioConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getDefaultInstanceForType() {
+        return com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig build() {
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig buildPartial() {
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfig result =
+            new com.google.container.v1.LinuxNodeConfig.NodeVfioConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.LinuxNodeConfig.NodeVfioConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dmaEntryLimit_ = dmaEntryLimit_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.LinuxNodeConfig.NodeVfioConfig) {
+          return mergeFrom((com.google.container.v1.LinuxNodeConfig.NodeVfioConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.LinuxNodeConfig.NodeVfioConfig other) {
+        if (other == com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance())
+          return this;
+        if (other.hasDmaEntryLimit()) {
+          setDmaEntryLimit(other.getDmaEntryLimit());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dmaEntryLimit_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dmaEntryLimit_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the maximum number of DMA entries (pages) that can be
+       * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+       * affects the total amount of host memory that can be pinned for direct
+       * device access, which is often critical for high-performance devices like
+       * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+       * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+       * The default value in the kernel is `65535`. Higher values may be
+       * needed for workloads mapping large memory regions.
+       * Supported values are integers between `65535` and `4194304`.
+       * </pre>
+       *
+       * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the dmaEntryLimit field is set.
+       */
+      @java.lang.Override
+      public boolean hasDmaEntryLimit() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the maximum number of DMA entries (pages) that can be
+       * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+       * affects the total amount of host memory that can be pinned for direct
+       * device access, which is often critical for high-performance devices like
+       * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+       * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+       * The default value in the kernel is `65535`. Higher values may be
+       * needed for workloads mapping large memory regions.
+       * Supported values are integers between `65535` and `4194304`.
+       * </pre>
+       *
+       * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dmaEntryLimit.
+       */
+      @java.lang.Override
+      public int getDmaEntryLimit() {
+        return dmaEntryLimit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the maximum number of DMA entries (pages) that can be
+       * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+       * affects the total amount of host memory that can be pinned for direct
+       * device access, which is often critical for high-performance devices like
+       * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+       * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+       * The default value in the kernel is `65535`. Higher values may be
+       * needed for workloads mapping large memory regions.
+       * Supported values are integers between `65535` and `4194304`.
+       * </pre>
+       *
+       * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The dmaEntryLimit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDmaEntryLimit(int value) {
+
+        dmaEntryLimit_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the maximum number of DMA entries (pages) that can be
+       * mapped by the VFIO IOMMU type 1 driver for a container. This limit
+       * affects the total amount of host memory that can be pinned for direct
+       * device access, which is often critical for high-performance devices like
+       * TPUs and GPUs. This setting corresponds to the kernel parameter at:
+       * `/sys/module/vfio_iommu_type1/parameters/dma_entry_limit`.
+       * The default value in the kernel is `65535`. Higher values may be
+       * needed for workloads mapping large memory regions.
+       * Supported values are integers between `65535` and `4194304`.
+       * </pre>
+       *
+       * <code>optional int32 dma_entry_limit = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDmaEntryLimit() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dmaEntryLimit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig.NodeVfioConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.LinuxNodeConfig.NodeVfioConfig)
+    private static final com.google.container.v1.LinuxNodeConfig.NodeVfioConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.LinuxNodeConfig.NodeVfioConfig();
+    }
+
+    public static com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NodeVfioConfig> PARSER =
+        new com.google.protobuf.AbstractParser<NodeVfioConfig>() {
+          @java.lang.Override
+          public NodeVfioConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NodeVfioConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NodeVfioConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int SYSCTLS_FIELD_NUMBER = 1;
 
@@ -10074,6 +10696,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -10159,6 +10782,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -10234,6 +10858,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -10316,6 +10941,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -10821,6 +11447,125 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         : accurateTimeConfig_;
   }
 
+  public static final int NODE_VFIO_CONFIG_FIELD_NUMBER = 15;
+  private com.google.container.v1.LinuxNodeConfig.NodeVfioConfig nodeVfioConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeVfioConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNodeVfioConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeVfioConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getNodeVfioConfig() {
+    return nodeVfioConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance()
+        : nodeVfioConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder
+      getNodeVfioConfigOrBuilder() {
+    return nodeVfioConfig_ == null
+        ? com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance()
+        : nodeVfioConfig_;
+  }
+
+  public static final int DISK_IO_SCHEDULER_FIELD_NUMBER = 16;
+  private com.google.container.v1.DiskIoScheduler diskIoScheduler_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the diskIoScheduler field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskIoScheduler() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The diskIoScheduler.
+   */
+  @java.lang.Override
+  public com.google.container.v1.DiskIoScheduler getDiskIoScheduler() {
+    return diskIoScheduler_ == null
+        ? com.google.container.v1.DiskIoScheduler.getDefaultInstance()
+        : diskIoScheduler_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.DiskIoSchedulerOrBuilder getDiskIoSchedulerOrBuilder() {
+    return diskIoScheduler_ == null
+        ? com.google.container.v1.DiskIoScheduler.getDefaultInstance()
+        : diskIoScheduler_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10867,6 +11612,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(14, getAccurateTimeConfig());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(15, getNodeVfioConfig());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(16, getDiskIoScheduler());
     }
     getUnknownFields().writeTo(output);
   }
@@ -10920,6 +11671,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAccurateTimeConfig());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getNodeVfioConfig());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDiskIoScheduler());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10958,6 +11715,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasAccurateTimeConfig() != other.hasAccurateTimeConfig()) return false;
     if (hasAccurateTimeConfig()) {
       if (!getAccurateTimeConfig().equals(other.getAccurateTimeConfig())) return false;
+    }
+    if (hasNodeVfioConfig() != other.hasNodeVfioConfig()) return false;
+    if (hasNodeVfioConfig()) {
+      if (!getNodeVfioConfig().equals(other.getNodeVfioConfig())) return false;
+    }
+    if (hasDiskIoScheduler() != other.hasDiskIoScheduler()) return false;
+    if (hasDiskIoScheduler()) {
+      if (!getDiskIoScheduler().equals(other.getDiskIoScheduler())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -10999,6 +11764,14 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
     if (hasAccurateTimeConfig()) {
       hash = (37 * hash) + ACCURATE_TIME_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAccurateTimeConfig().hashCode();
+    }
+    if (hasNodeVfioConfig()) {
+      hash = (37 * hash) + NODE_VFIO_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNodeVfioConfig().hashCode();
+    }
+    if (hasDiskIoScheduler()) {
+      hash = (37 * hash) + DISK_IO_SCHEDULER_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskIoScheduler().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -11168,6 +11941,8 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         internalGetSwapConfigFieldBuilder();
         internalGetNodeKernelModuleLoadingFieldBuilder();
         internalGetAccurateTimeConfigFieldBuilder();
+        internalGetNodeVfioConfigFieldBuilder();
+        internalGetDiskIoSchedulerFieldBuilder();
       }
     }
 
@@ -11203,6 +11978,16 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       if (accurateTimeConfigBuilder_ != null) {
         accurateTimeConfigBuilder_.dispose();
         accurateTimeConfigBuilder_ = null;
+      }
+      nodeVfioConfig_ = null;
+      if (nodeVfioConfigBuilder_ != null) {
+        nodeVfioConfigBuilder_.dispose();
+        nodeVfioConfigBuilder_ = null;
+      }
+      diskIoScheduler_ = null;
+      if (diskIoSchedulerBuilder_ != null) {
+        diskIoSchedulerBuilder_.dispose();
+        diskIoSchedulerBuilder_ = null;
       }
       return this;
     }
@@ -11281,6 +12066,16 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
                 : accurateTimeConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.nodeVfioConfig_ =
+            nodeVfioConfigBuilder_ == null ? nodeVfioConfig_ : nodeVfioConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.diskIoScheduler_ =
+            diskIoSchedulerBuilder_ == null ? diskIoScheduler_ : diskIoSchedulerBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -11321,6 +12116,12 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAccurateTimeConfig()) {
         mergeAccurateTimeConfig(other.getAccurateTimeConfig());
+      }
+      if (other.hasNodeVfioConfig()) {
+        mergeNodeVfioConfig(other.getNodeVfioConfig());
+      }
+      if (other.hasDiskIoScheduler()) {
+        mergeDiskIoScheduler(other.getDiskIoScheduler());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -11414,6 +12215,20 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    internalGetNodeVfioConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    internalGetDiskIoSchedulerFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11500,6 +12315,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11585,6 +12401,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11660,6 +12477,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11742,6 +12560,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11830,6 +12649,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11915,6 +12735,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -11997,6 +12818,7 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
      * kernel.shmmni
      * kernel.shmmax
      * kernel.shmall
+     * kernel.core_pattern
      * kernel.perf_event_paranoid
      * kernel.sched_rt_runtime_us
      * kernel.softlockup_panic
@@ -13529,6 +14351,436 @@ public final class LinuxNodeConfig extends com.google.protobuf.GeneratedMessage
         accurateTimeConfig_ = null;
       }
       return accurateTimeConfigBuilder_;
+    }
+
+    private com.google.container.v1.LinuxNodeConfig.NodeVfioConfig nodeVfioConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfig,
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder>
+        nodeVfioConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nodeVfioConfig field is set.
+     */
+    public boolean hasNodeVfioConfig() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nodeVfioConfig.
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getNodeVfioConfig() {
+      if (nodeVfioConfigBuilder_ == null) {
+        return nodeVfioConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance()
+            : nodeVfioConfig_;
+      } else {
+        return nodeVfioConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeVfioConfig(com.google.container.v1.LinuxNodeConfig.NodeVfioConfig value) {
+      if (nodeVfioConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nodeVfioConfig_ = value;
+      } else {
+        nodeVfioConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setNodeVfioConfig(
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder builderForValue) {
+      if (nodeVfioConfigBuilder_ == null) {
+        nodeVfioConfig_ = builderForValue.build();
+      } else {
+        nodeVfioConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeNodeVfioConfig(
+        com.google.container.v1.LinuxNodeConfig.NodeVfioConfig value) {
+      if (nodeVfioConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && nodeVfioConfig_ != null
+            && nodeVfioConfig_
+                != com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance()) {
+          getNodeVfioConfigBuilder().mergeFrom(value);
+        } else {
+          nodeVfioConfig_ = value;
+        }
+      } else {
+        nodeVfioConfigBuilder_.mergeFrom(value);
+      }
+      if (nodeVfioConfig_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearNodeVfioConfig() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      nodeVfioConfig_ = null;
+      if (nodeVfioConfigBuilder_ != null) {
+        nodeVfioConfigBuilder_.dispose();
+        nodeVfioConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder
+        getNodeVfioConfigBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetNodeVfioConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder
+        getNodeVfioConfigOrBuilder() {
+      if (nodeVfioConfigBuilder_ != null) {
+        return nodeVfioConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return nodeVfioConfig_ == null
+            ? com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.getDefaultInstance()
+            : nodeVfioConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains VFIO-related configurations for this node.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfig,
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder,
+            com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder>
+        internalGetNodeVfioConfigFieldBuilder() {
+      if (nodeVfioConfigBuilder_ == null) {
+        nodeVfioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.LinuxNodeConfig.NodeVfioConfig,
+                com.google.container.v1.LinuxNodeConfig.NodeVfioConfig.Builder,
+                com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder>(
+                getNodeVfioConfig(), getParentForChildren(), isClean());
+        nodeVfioConfig_ = null;
+      }
+      return nodeVfioConfigBuilder_;
+    }
+
+    private com.google.container.v1.DiskIoScheduler diskIoScheduler_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.DiskIoScheduler,
+            com.google.container.v1.DiskIoScheduler.Builder,
+            com.google.container.v1.DiskIoSchedulerOrBuilder>
+        diskIoSchedulerBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the diskIoScheduler field is set.
+     */
+    public boolean hasDiskIoScheduler() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The diskIoScheduler.
+     */
+    public com.google.container.v1.DiskIoScheduler getDiskIoScheduler() {
+      if (diskIoSchedulerBuilder_ == null) {
+        return diskIoScheduler_ == null
+            ? com.google.container.v1.DiskIoScheduler.getDefaultInstance()
+            : diskIoScheduler_;
+      } else {
+        return diskIoSchedulerBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiskIoScheduler(com.google.container.v1.DiskIoScheduler value) {
+      if (diskIoSchedulerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        diskIoScheduler_ = value;
+      } else {
+        diskIoSchedulerBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiskIoScheduler(
+        com.google.container.v1.DiskIoScheduler.Builder builderForValue) {
+      if (diskIoSchedulerBuilder_ == null) {
+        diskIoScheduler_ = builderForValue.build();
+      } else {
+        diskIoSchedulerBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDiskIoScheduler(com.google.container.v1.DiskIoScheduler value) {
+      if (diskIoSchedulerBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && diskIoScheduler_ != null
+            && diskIoScheduler_ != com.google.container.v1.DiskIoScheduler.getDefaultInstance()) {
+          getDiskIoSchedulerBuilder().mergeFrom(value);
+        } else {
+          diskIoScheduler_ = value;
+        }
+      } else {
+        diskIoSchedulerBuilder_.mergeFrom(value);
+      }
+      if (diskIoScheduler_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDiskIoScheduler() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      diskIoScheduler_ = null;
+      if (diskIoSchedulerBuilder_ != null) {
+        diskIoSchedulerBuilder_.dispose();
+        diskIoSchedulerBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.DiskIoScheduler.Builder getDiskIoSchedulerBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetDiskIoSchedulerFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.DiskIoSchedulerOrBuilder getDiskIoSchedulerOrBuilder() {
+      if (diskIoSchedulerBuilder_ != null) {
+        return diskIoSchedulerBuilder_.getMessageOrBuilder();
+      } else {
+        return diskIoScheduler_ == null
+            ? com.google.container.v1.DiskIoScheduler.getDefaultInstance()
+            : diskIoScheduler_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the configuration for the disk IO scheduler.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.DiskIoScheduler,
+            com.google.container.v1.DiskIoScheduler.Builder,
+            com.google.container.v1.DiskIoSchedulerOrBuilder>
+        internalGetDiskIoSchedulerFieldBuilder() {
+      if (diskIoSchedulerBuilder_ == null) {
+        diskIoSchedulerBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.DiskIoScheduler,
+                com.google.container.v1.DiskIoScheduler.Builder,
+                com.google.container.v1.DiskIoSchedulerOrBuilder>(
+                getDiskIoScheduler(), getParentForChildren(), isClean());
+        diskIoScheduler_ = null;
+      }
+      return diskIoSchedulerBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.LinuxNodeConfig)

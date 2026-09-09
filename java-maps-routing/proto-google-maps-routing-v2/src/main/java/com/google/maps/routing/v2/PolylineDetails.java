@@ -54,8 +54,11 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
   }
 
   private PolylineDetails() {
+    tunnelInfo_ = java.util.Collections.emptyList();
     flyoverInfo_ = java.util.Collections.emptyList();
     narrowRoadInfo_ = java.util.Collections.emptyList();
+    bridgeInfo_ = java.util.Collections.emptyList();
+    skywayInfo_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -968,6 +971,2832 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex
         getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface TunnelInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.PolylineDetails.TunnelInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a tunnel exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for tunnelPresence.
+     */
+    int getTunnelPresenceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a tunnel exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+     *
+     * @return The tunnelPresence.
+     */
+    com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getTunnelPresence();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    boolean hasPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Encapsulates information about tunnels along the polyline.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.PolylineDetails.TunnelInfo}
+   */
+  public static final class TunnelInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.TunnelInfo)
+      TunnelInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "TunnelInfo");
+    }
+
+    // Use TunnelInfo.newBuilder() to construct.
+    private TunnelInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TunnelInfo() {
+      tunnelPresence_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_TunnelInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_TunnelInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.PolylineDetails.TunnelInfo.class,
+              com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TUNNEL_PRESENCE_FIELD_NUMBER = 1;
+    private int tunnelPresence_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a tunnel exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for tunnelPresence.
+     */
+    @java.lang.Override
+    public int getTunnelPresenceValue() {
+      return tunnelPresence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a tunnel exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+     *
+     * @return The tunnelPresence.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getTunnelPresence() {
+      com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(tunnelPresence_);
+      return result == null
+          ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
+    private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolylinePointIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of tunnel related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (tunnelPresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, tunnelPresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getPolylinePointIndex());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (tunnelPresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, tunnelPresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPolylinePointIndex());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.PolylineDetails.TunnelInfo)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.PolylineDetails.TunnelInfo other =
+          (com.google.maps.routing.v2.PolylineDetails.TunnelInfo) obj;
+
+      if (tunnelPresence_ != other.tunnelPresence_) return false;
+      if (hasPolylinePointIndex() != other.hasPolylinePointIndex()) return false;
+      if (hasPolylinePointIndex()) {
+        if (!getPolylinePointIndex().equals(other.getPolylinePointIndex())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TUNNEL_PRESENCE_FIELD_NUMBER;
+      hash = (53 * hash) + tunnelPresence_;
+      if (hasPolylinePointIndex()) {
+        hash = (37 * hash) + POLYLINE_POINT_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getPolylinePointIndex().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.PolylineDetails.TunnelInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encapsulates information about tunnels along the polyline.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.PolylineDetails.TunnelInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.PolylineDetails.TunnelInfo)
+        com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_TunnelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_TunnelInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfo.class,
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.PolylineDetails.TunnelInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetPolylinePointIndexFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tunnelPresence_ = 0;
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_TunnelInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.TunnelInfo getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.PolylineDetails.TunnelInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.TunnelInfo build() {
+        com.google.maps.routing.v2.PolylineDetails.TunnelInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.TunnelInfo buildPartial() {
+        com.google.maps.routing.v2.PolylineDetails.TunnelInfo result =
+            new com.google.maps.routing.v2.PolylineDetails.TunnelInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.routing.v2.PolylineDetails.TunnelInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tunnelPresence_ = tunnelPresence_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.polylinePointIndex_ =
+              polylinePointIndexBuilder_ == null
+                  ? polylinePointIndex_
+                  : polylinePointIndexBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.PolylineDetails.TunnelInfo) {
+          return mergeFrom((com.google.maps.routing.v2.PolylineDetails.TunnelInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.PolylineDetails.TunnelInfo other) {
+        if (other == com.google.maps.routing.v2.PolylineDetails.TunnelInfo.getDefaultInstance())
+          return this;
+        if (other.tunnelPresence_ != 0) {
+          setTunnelPresenceValue(other.getTunnelPresenceValue());
+        }
+        if (other.hasPolylinePointIndex()) {
+          mergePolylinePointIndex(other.getPolylinePointIndex());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  tunnelPresence_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetPolylinePointIndexFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int tunnelPresence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a tunnel exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+       *
+       * @return The enum numeric value on the wire for tunnelPresence.
+       */
+      @java.lang.Override
+      public int getTunnelPresenceValue() {
+        return tunnelPresence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a tunnel exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for tunnelPresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTunnelPresenceValue(int value) {
+        tunnelPresence_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a tunnel exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+       *
+       * @return The tunnelPresence.
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getTunnelPresence() {
+        com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+            com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(tunnelPresence_);
+        return result == null
+            ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a tunnel exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+       *
+       * @param value The tunnelPresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTunnelPresence(
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        tunnelPresence_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a tunnel exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState tunnel_presence = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTunnelPresence() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tunnelPresence_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          polylinePointIndexBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return Whether the polylinePointIndex field is set.
+       */
+      public boolean hasPolylinePointIndex() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return The polylinePointIndex.
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+        if (polylinePointIndexBuilder_ == null) {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        } else {
+          return polylinePointIndexBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          polylinePointIndex_ = value;
+        } else {
+          polylinePointIndexBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder builderForValue) {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndex_ = builderForValue.build();
+        } else {
+          polylinePointIndexBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder mergePolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && polylinePointIndex_ != null
+              && polylinePointIndex_
+                  != com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex
+                      .getDefaultInstance()) {
+            getPolylinePointIndexBuilder().mergeFrom(value);
+          } else {
+            polylinePointIndex_ = value;
+          }
+        } else {
+          polylinePointIndexBuilder_.mergeFrom(value);
+        }
+        if (polylinePointIndex_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder clearPolylinePointIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder
+          getPolylinePointIndexBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetPolylinePointIndexFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+          getPolylinePointIndexOrBuilder() {
+        if (polylinePointIndexBuilder_ != null) {
+          return polylinePointIndexBuilder_.getMessageOrBuilder();
+        } else {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of tunnel related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          internalGetPolylinePointIndexFieldBuilder() {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndexBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>(
+                  getPolylinePointIndex(), getParentForChildren(), isClean());
+          polylinePointIndex_ = null;
+        }
+        return polylinePointIndexBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.PolylineDetails.TunnelInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.PolylineDetails.TunnelInfo)
+    private static final com.google.maps.routing.v2.PolylineDetails.TunnelInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.PolylineDetails.TunnelInfo();
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.TunnelInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TunnelInfo> PARSER =
+        new com.google.protobuf.AbstractParser<TunnelInfo>() {
+          @java.lang.Override
+          public TunnelInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TunnelInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TunnelInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BridgeInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.PolylineDetails.BridgeInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a bridge exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for bridgePresence.
+     */
+    int getBridgePresenceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a bridge exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+     *
+     * @return The bridgePresence.
+     */
+    com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getBridgePresence();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    boolean hasPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Encapsulates information about bridges along the polyline.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.PolylineDetails.BridgeInfo}
+   */
+  public static final class BridgeInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.BridgeInfo)
+      BridgeInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "BridgeInfo");
+    }
+
+    // Use BridgeInfo.newBuilder() to construct.
+    private BridgeInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BridgeInfo() {
+      bridgePresence_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_BridgeInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_BridgeInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.PolylineDetails.BridgeInfo.class,
+              com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int BRIDGE_PRESENCE_FIELD_NUMBER = 1;
+    private int bridgePresence_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a bridge exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for bridgePresence.
+     */
+    @java.lang.Override
+    public int getBridgePresenceValue() {
+      return bridgePresence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a bridge exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+     *
+     * @return The bridgePresence.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getBridgePresence() {
+      com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(bridgePresence_);
+      return result == null
+          ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
+    private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolylinePointIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of bridge related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (bridgePresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, bridgePresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getPolylinePointIndex());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (bridgePresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, bridgePresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPolylinePointIndex());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.PolylineDetails.BridgeInfo)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.PolylineDetails.BridgeInfo other =
+          (com.google.maps.routing.v2.PolylineDetails.BridgeInfo) obj;
+
+      if (bridgePresence_ != other.bridgePresence_) return false;
+      if (hasPolylinePointIndex() != other.hasPolylinePointIndex()) return false;
+      if (hasPolylinePointIndex()) {
+        if (!getPolylinePointIndex().equals(other.getPolylinePointIndex())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BRIDGE_PRESENCE_FIELD_NUMBER;
+      hash = (53 * hash) + bridgePresence_;
+      if (hasPolylinePointIndex()) {
+        hash = (37 * hash) + POLYLINE_POINT_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getPolylinePointIndex().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.PolylineDetails.BridgeInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encapsulates information about bridges along the polyline.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.PolylineDetails.BridgeInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.PolylineDetails.BridgeInfo)
+        com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_BridgeInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_BridgeInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfo.class,
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.PolylineDetails.BridgeInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetPolylinePointIndexFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        bridgePresence_ = 0;
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_BridgeInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.BridgeInfo getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.PolylineDetails.BridgeInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.BridgeInfo build() {
+        com.google.maps.routing.v2.PolylineDetails.BridgeInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.BridgeInfo buildPartial() {
+        com.google.maps.routing.v2.PolylineDetails.BridgeInfo result =
+            new com.google.maps.routing.v2.PolylineDetails.BridgeInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.routing.v2.PolylineDetails.BridgeInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bridgePresence_ = bridgePresence_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.polylinePointIndex_ =
+              polylinePointIndexBuilder_ == null
+                  ? polylinePointIndex_
+                  : polylinePointIndexBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.PolylineDetails.BridgeInfo) {
+          return mergeFrom((com.google.maps.routing.v2.PolylineDetails.BridgeInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.PolylineDetails.BridgeInfo other) {
+        if (other == com.google.maps.routing.v2.PolylineDetails.BridgeInfo.getDefaultInstance())
+          return this;
+        if (other.bridgePresence_ != 0) {
+          setBridgePresenceValue(other.getBridgePresenceValue());
+        }
+        if (other.hasPolylinePointIndex()) {
+          mergePolylinePointIndex(other.getPolylinePointIndex());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  bridgePresence_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetPolylinePointIndexFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int bridgePresence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a bridge exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+       *
+       * @return The enum numeric value on the wire for bridgePresence.
+       */
+      @java.lang.Override
+      public int getBridgePresenceValue() {
+        return bridgePresence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a bridge exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for bridgePresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBridgePresenceValue(int value) {
+        bridgePresence_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a bridge exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+       *
+       * @return The bridgePresence.
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getBridgePresence() {
+        com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+            com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(bridgePresence_);
+        return result == null
+            ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a bridge exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+       *
+       * @param value The bridgePresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBridgePresence(
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        bridgePresence_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a bridge exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState bridge_presence = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBridgePresence() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bridgePresence_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          polylinePointIndexBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return Whether the polylinePointIndex field is set.
+       */
+      public boolean hasPolylinePointIndex() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return The polylinePointIndex.
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+        if (polylinePointIndexBuilder_ == null) {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        } else {
+          return polylinePointIndexBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          polylinePointIndex_ = value;
+        } else {
+          polylinePointIndexBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder builderForValue) {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndex_ = builderForValue.build();
+        } else {
+          polylinePointIndexBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder mergePolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && polylinePointIndex_ != null
+              && polylinePointIndex_
+                  != com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex
+                      .getDefaultInstance()) {
+            getPolylinePointIndexBuilder().mergeFrom(value);
+          } else {
+            polylinePointIndex_ = value;
+          }
+        } else {
+          polylinePointIndexBuilder_.mergeFrom(value);
+        }
+        if (polylinePointIndex_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder clearPolylinePointIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder
+          getPolylinePointIndexBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetPolylinePointIndexFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+          getPolylinePointIndexOrBuilder() {
+        if (polylinePointIndexBuilder_ != null) {
+          return polylinePointIndexBuilder_.getMessageOrBuilder();
+        } else {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of bridge related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          internalGetPolylinePointIndexFieldBuilder() {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndexBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>(
+                  getPolylinePointIndex(), getParentForChildren(), isClean());
+          polylinePointIndex_ = null;
+        }
+        return polylinePointIndexBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.PolylineDetails.BridgeInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.PolylineDetails.BridgeInfo)
+    private static final com.google.maps.routing.v2.PolylineDetails.BridgeInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.PolylineDetails.BridgeInfo();
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.BridgeInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BridgeInfo> PARSER =
+        new com.google.protobuf.AbstractParser<BridgeInfo>() {
+          @java.lang.Override
+          public BridgeInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BridgeInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BridgeInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SkywayInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.routing.v2.PolylineDetails.SkywayInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a skyway exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for skywayPresence.
+     */
+    int getSkywayPresenceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a skyway exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+     *
+     * @return The skywayPresence.
+     */
+    com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getSkywayPresence();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    boolean hasPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Encapsulates information about skyways along the polyline.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.routing.v2.PolylineDetails.SkywayInfo}
+   */
+  public static final class SkywayInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.routing.v2.PolylineDetails.SkywayInfo)
+      SkywayInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SkywayInfo");
+    }
+
+    // Use SkywayInfo.newBuilder() to construct.
+    private SkywayInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SkywayInfo() {
+      skywayPresence_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_SkywayInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.routing.v2.PolylineDetailsProto
+          .internal_static_google_maps_routing_v2_PolylineDetails_SkywayInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.routing.v2.PolylineDetails.SkywayInfo.class,
+              com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SKYWAY_PRESENCE_FIELD_NUMBER = 1;
+    private int skywayPresence_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a skyway exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+     *
+     * @return The enum numeric value on the wire for skywayPresence.
+     */
+    @java.lang.Override
+    public int getSkywayPresenceValue() {
+      return skywayPresence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes whether a skyway exists for a given stretch of the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+     *
+     * @return The skywayPresence.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getSkywayPresence() {
+      com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(skywayPresence_);
+      return result == null
+          ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int POLYLINE_POINT_INDEX_FIELD_NUMBER = 2;
+    private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return Whether the polylinePointIndex field is set.
+     */
+    @java.lang.Override
+    public boolean hasPolylinePointIndex() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     *
+     * @return The polylinePointIndex.
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The location of skyway related information along the polyline.
+     * </pre>
+     *
+     * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+        getPolylinePointIndexOrBuilder() {
+      return polylinePointIndex_ == null
+          ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+          : polylinePointIndex_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (skywayPresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, skywayPresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getPolylinePointIndex());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (skywayPresence_
+          != com.google.maps.routing.v2.PolylineDetails.RoadFeatureState
+              .ROAD_FEATURE_STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, skywayPresence_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPolylinePointIndex());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.routing.v2.PolylineDetails.SkywayInfo)) {
+        return super.equals(obj);
+      }
+      com.google.maps.routing.v2.PolylineDetails.SkywayInfo other =
+          (com.google.maps.routing.v2.PolylineDetails.SkywayInfo) obj;
+
+      if (skywayPresence_ != other.skywayPresence_) return false;
+      if (hasPolylinePointIndex() != other.hasPolylinePointIndex()) return false;
+      if (hasPolylinePointIndex()) {
+        if (!getPolylinePointIndex().equals(other.getPolylinePointIndex())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SKYWAY_PRESENCE_FIELD_NUMBER;
+      hash = (53 * hash) + skywayPresence_;
+      if (hasPolylinePointIndex()) {
+        hash = (37 * hash) + POLYLINE_POINT_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getPolylinePointIndex().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.routing.v2.PolylineDetails.SkywayInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Encapsulates information about skyways along the polyline.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routing.v2.PolylineDetails.SkywayInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.routing.v2.PolylineDetails.SkywayInfo)
+        com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_SkywayInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_SkywayInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfo.class,
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder.class);
+      }
+
+      // Construct using com.google.maps.routing.v2.PolylineDetails.SkywayInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetPolylinePointIndexFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        skywayPresence_ = 0;
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.routing.v2.PolylineDetailsProto
+            .internal_static_google_maps_routing_v2_PolylineDetails_SkywayInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.SkywayInfo getDefaultInstanceForType() {
+        return com.google.maps.routing.v2.PolylineDetails.SkywayInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.SkywayInfo build() {
+        com.google.maps.routing.v2.PolylineDetails.SkywayInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.SkywayInfo buildPartial() {
+        com.google.maps.routing.v2.PolylineDetails.SkywayInfo result =
+            new com.google.maps.routing.v2.PolylineDetails.SkywayInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.routing.v2.PolylineDetails.SkywayInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.skywayPresence_ = skywayPresence_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.polylinePointIndex_ =
+              polylinePointIndexBuilder_ == null
+                  ? polylinePointIndex_
+                  : polylinePointIndexBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.routing.v2.PolylineDetails.SkywayInfo) {
+          return mergeFrom((com.google.maps.routing.v2.PolylineDetails.SkywayInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.routing.v2.PolylineDetails.SkywayInfo other) {
+        if (other == com.google.maps.routing.v2.PolylineDetails.SkywayInfo.getDefaultInstance())
+          return this;
+        if (other.skywayPresence_ != 0) {
+          setSkywayPresenceValue(other.getSkywayPresenceValue());
+        }
+        if (other.hasPolylinePointIndex()) {
+          mergePolylinePointIndex(other.getPolylinePointIndex());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  skywayPresence_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetPolylinePointIndexFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int skywayPresence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a skyway exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+       *
+       * @return The enum numeric value on the wire for skywayPresence.
+       */
+      @java.lang.Override
+      public int getSkywayPresenceValue() {
+        return skywayPresence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a skyway exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for skywayPresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkywayPresenceValue(int value) {
+        skywayPresence_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a skyway exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+       *
+       * @return The skywayPresence.
+       */
+      @java.lang.Override
+      public com.google.maps.routing.v2.PolylineDetails.RoadFeatureState getSkywayPresence() {
+        com.google.maps.routing.v2.PolylineDetails.RoadFeatureState result =
+            com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.forNumber(skywayPresence_);
+        return result == null
+            ? com.google.maps.routing.v2.PolylineDetails.RoadFeatureState.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a skyway exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+       *
+       * @param value The skywayPresence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSkywayPresence(
+          com.google.maps.routing.v2.PolylineDetails.RoadFeatureState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        skywayPresence_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Denotes whether a skyway exists for a given stretch of the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.RoadFeatureState skyway_presence = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSkywayPresence() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        skywayPresence_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polylinePointIndex_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          polylinePointIndexBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return Whether the polylinePointIndex field is set.
+       */
+      public boolean hasPolylinePointIndex() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       *
+       * @return The polylinePointIndex.
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex getPolylinePointIndex() {
+        if (polylinePointIndexBuilder_ == null) {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        } else {
+          return polylinePointIndexBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          polylinePointIndex_ = value;
+        } else {
+          polylinePointIndexBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder setPolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder builderForValue) {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndex_ = builderForValue.build();
+        } else {
+          polylinePointIndexBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder mergePolylinePointIndex(
+          com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex value) {
+        if (polylinePointIndexBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && polylinePointIndex_ != null
+              && polylinePointIndex_
+                  != com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex
+                      .getDefaultInstance()) {
+            getPolylinePointIndexBuilder().mergeFrom(value);
+          } else {
+            polylinePointIndex_ = value;
+          }
+        } else {
+          polylinePointIndexBuilder_.mergeFrom(value);
+        }
+        if (polylinePointIndex_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public Builder clearPolylinePointIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        polylinePointIndex_ = null;
+        if (polylinePointIndexBuilder_ != null) {
+          polylinePointIndexBuilder_.dispose();
+          polylinePointIndexBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder
+          getPolylinePointIndexBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetPolylinePointIndexFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      public com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder
+          getPolylinePointIndexOrBuilder() {
+        if (polylinePointIndexBuilder_ != null) {
+          return polylinePointIndexBuilder_.getMessageOrBuilder();
+        } else {
+          return polylinePointIndex_ == null
+              ? com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.getDefaultInstance()
+              : polylinePointIndex_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The location of skyway related information along the polyline.
+       * </pre>
+       *
+       * <code>.google.maps.routing.v2.PolylineDetails.PolylinePointIndex polyline_point_index = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+              com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>
+          internalGetPolylinePointIndexFieldBuilder() {
+        if (polylinePointIndexBuilder_ == null) {
+          polylinePointIndexBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndex.Builder,
+                  com.google.maps.routing.v2.PolylineDetails.PolylinePointIndexOrBuilder>(
+                  getPolylinePointIndex(), getParentForChildren(), isClean());
+          polylinePointIndex_ = null;
+        }
+        return polylinePointIndexBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.PolylineDetails.SkywayInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.routing.v2.PolylineDetails.SkywayInfo)
+    private static final com.google.maps.routing.v2.PolylineDetails.SkywayInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.routing.v2.PolylineDetails.SkywayInfo();
+    }
+
+    public static com.google.maps.routing.v2.PolylineDetails.SkywayInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SkywayInfo> PARSER =
+        new com.google.protobuf.AbstractParser<SkywayInfo>() {
+          @java.lang.Override
+          public SkywayInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SkywayInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SkywayInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -2912,6 +5741,98 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TUNNEL_INFO_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo> tunnelInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo> getTunnelInfoList() {
+    return tunnelInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>
+      getTunnelInfoOrBuilderList() {
+    return tunnelInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  @java.lang.Override
+  public int getTunnelInfoCount() {
+    return tunnelInfo_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.TunnelInfo getTunnelInfo(int index) {
+    return tunnelInfo_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder getTunnelInfoOrBuilder(
+      int index) {
+    return tunnelInfo_.get(index);
+  }
+
   public static final int FLYOVER_INFO_FIELD_NUMBER = 12;
 
   @SuppressWarnings("serial")
@@ -3074,6 +5995,160 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     return narrowRoadInfo_.get(index);
   }
 
+  public static final int BRIDGE_INFO_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo> bridgeInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo> getBridgeInfoList() {
+    return bridgeInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>
+      getBridgeInfoOrBuilderList() {
+    return bridgeInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  @java.lang.Override
+  public int getBridgeInfoCount() {
+    return bridgeInfo_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.BridgeInfo getBridgeInfo(int index) {
+    return bridgeInfo_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder getBridgeInfoOrBuilder(
+      int index) {
+    return bridgeInfo_.get(index);
+  }
+
+  public static final int SKYWAY_INFO_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo> skywayInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo> getSkywayInfoList() {
+    return skywayInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>
+      getSkywayInfoOrBuilderList() {
+    return skywayInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  @java.lang.Override
+  public int getSkywayInfoCount() {
+    return skywayInfo_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.SkywayInfo getSkywayInfo(int index) {
+    return skywayInfo_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder getSkywayInfoOrBuilder(
+      int index) {
+    return skywayInfo_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3088,11 +6163,20 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < tunnelInfo_.size(); i++) {
+      output.writeMessage(8, tunnelInfo_.get(i));
+    }
     for (int i = 0; i < flyoverInfo_.size(); i++) {
       output.writeMessage(12, flyoverInfo_.get(i));
     }
     for (int i = 0; i < narrowRoadInfo_.size(); i++) {
       output.writeMessage(13, narrowRoadInfo_.get(i));
+    }
+    for (int i = 0; i < bridgeInfo_.size(); i++) {
+      output.writeMessage(14, bridgeInfo_.get(i));
+    }
+    for (int i = 0; i < skywayInfo_.size(); i++) {
+      output.writeMessage(15, skywayInfo_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3103,11 +6187,20 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < tunnelInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, tunnelInfo_.get(i));
+    }
     for (int i = 0; i < flyoverInfo_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, flyoverInfo_.get(i));
     }
     for (int i = 0; i < narrowRoadInfo_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, narrowRoadInfo_.get(i));
+    }
+    for (int i = 0; i < bridgeInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, bridgeInfo_.get(i));
+    }
+    for (int i = 0; i < skywayInfo_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, skywayInfo_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3125,8 +6218,11 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     com.google.maps.routing.v2.PolylineDetails other =
         (com.google.maps.routing.v2.PolylineDetails) obj;
 
+    if (!getTunnelInfoList().equals(other.getTunnelInfoList())) return false;
     if (!getFlyoverInfoList().equals(other.getFlyoverInfoList())) return false;
     if (!getNarrowRoadInfoList().equals(other.getNarrowRoadInfoList())) return false;
+    if (!getBridgeInfoList().equals(other.getBridgeInfoList())) return false;
+    if (!getSkywayInfoList().equals(other.getSkywayInfoList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3138,6 +6234,10 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getTunnelInfoCount() > 0) {
+      hash = (37 * hash) + TUNNEL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getTunnelInfoList().hashCode();
+    }
     if (getFlyoverInfoCount() > 0) {
       hash = (37 * hash) + FLYOVER_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getFlyoverInfoList().hashCode();
@@ -3145,6 +6245,14 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     if (getNarrowRoadInfoCount() > 0) {
       hash = (37 * hash) + NARROW_ROAD_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getNarrowRoadInfoList().hashCode();
+    }
+    if (getBridgeInfoCount() > 0) {
+      hash = (37 * hash) + BRIDGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getBridgeInfoList().hashCode();
+    }
+    if (getSkywayInfoCount() > 0) {
+      hash = (37 * hash) + SKYWAY_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getSkywayInfoList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3288,20 +6396,41 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (tunnelInfoBuilder_ == null) {
+        tunnelInfo_ = java.util.Collections.emptyList();
+      } else {
+        tunnelInfo_ = null;
+        tunnelInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       if (flyoverInfoBuilder_ == null) {
         flyoverInfo_ = java.util.Collections.emptyList();
       } else {
         flyoverInfo_ = null;
         flyoverInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       if (narrowRoadInfoBuilder_ == null) {
         narrowRoadInfo_ = java.util.Collections.emptyList();
       } else {
         narrowRoadInfo_ = null;
         narrowRoadInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
+      if (bridgeInfoBuilder_ == null) {
+        bridgeInfo_ = java.util.Collections.emptyList();
+      } else {
+        bridgeInfo_ = null;
+        bridgeInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
+      if (skywayInfoBuilder_ == null) {
+        skywayInfo_ = java.util.Collections.emptyList();
+      } else {
+        skywayInfo_ = null;
+        skywayInfoBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -3338,23 +6467,50 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     }
 
     private void buildPartialRepeatedFields(com.google.maps.routing.v2.PolylineDetails result) {
-      if (flyoverInfoBuilder_ == null) {
+      if (tunnelInfoBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
-          flyoverInfo_ = java.util.Collections.unmodifiableList(flyoverInfo_);
+          tunnelInfo_ = java.util.Collections.unmodifiableList(tunnelInfo_);
           bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tunnelInfo_ = tunnelInfo_;
+      } else {
+        result.tunnelInfo_ = tunnelInfoBuilder_.build();
+      }
+      if (flyoverInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          flyoverInfo_ = java.util.Collections.unmodifiableList(flyoverInfo_);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.flyoverInfo_ = flyoverInfo_;
       } else {
         result.flyoverInfo_ = flyoverInfoBuilder_.build();
       }
       if (narrowRoadInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           narrowRoadInfo_ = java.util.Collections.unmodifiableList(narrowRoadInfo_);
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.narrowRoadInfo_ = narrowRoadInfo_;
       } else {
         result.narrowRoadInfo_ = narrowRoadInfoBuilder_.build();
+      }
+      if (bridgeInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          bridgeInfo_ = java.util.Collections.unmodifiableList(bridgeInfo_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.bridgeInfo_ = bridgeInfo_;
+      } else {
+        result.bridgeInfo_ = bridgeInfoBuilder_.build();
+      }
+      if (skywayInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          skywayInfo_ = java.util.Collections.unmodifiableList(skywayInfo_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.skywayInfo_ = skywayInfo_;
+      } else {
+        result.skywayInfo_ = skywayInfoBuilder_.build();
       }
     }
 
@@ -3374,11 +6530,38 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.maps.routing.v2.PolylineDetails other) {
       if (other == com.google.maps.routing.v2.PolylineDetails.getDefaultInstance()) return this;
+      if (tunnelInfoBuilder_ == null) {
+        if (!other.tunnelInfo_.isEmpty()) {
+          if (tunnelInfo_.isEmpty()) {
+            tunnelInfo_ = other.tunnelInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTunnelInfoIsMutable();
+            tunnelInfo_.addAll(other.tunnelInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.tunnelInfo_.isEmpty()) {
+          if (tunnelInfoBuilder_.isEmpty()) {
+            tunnelInfoBuilder_.dispose();
+            tunnelInfoBuilder_ = null;
+            tunnelInfo_ = other.tunnelInfo_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            tunnelInfoBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetTunnelInfoFieldBuilder()
+                    : null;
+          } else {
+            tunnelInfoBuilder_.addAllMessages(other.tunnelInfo_);
+          }
+        }
+      }
       if (flyoverInfoBuilder_ == null) {
         if (!other.flyoverInfo_.isEmpty()) {
           if (flyoverInfo_.isEmpty()) {
             flyoverInfo_ = other.flyoverInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFlyoverInfoIsMutable();
             flyoverInfo_.addAll(other.flyoverInfo_);
@@ -3391,7 +6574,7 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
             flyoverInfoBuilder_.dispose();
             flyoverInfoBuilder_ = null;
             flyoverInfo_ = other.flyoverInfo_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             flyoverInfoBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetFlyoverInfoFieldBuilder()
@@ -3405,7 +6588,7 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
         if (!other.narrowRoadInfo_.isEmpty()) {
           if (narrowRoadInfo_.isEmpty()) {
             narrowRoadInfo_ = other.narrowRoadInfo_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureNarrowRoadInfoIsMutable();
             narrowRoadInfo_.addAll(other.narrowRoadInfo_);
@@ -3418,13 +6601,67 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
             narrowRoadInfoBuilder_.dispose();
             narrowRoadInfoBuilder_ = null;
             narrowRoadInfo_ = other.narrowRoadInfo_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             narrowRoadInfoBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetNarrowRoadInfoFieldBuilder()
                     : null;
           } else {
             narrowRoadInfoBuilder_.addAllMessages(other.narrowRoadInfo_);
+          }
+        }
+      }
+      if (bridgeInfoBuilder_ == null) {
+        if (!other.bridgeInfo_.isEmpty()) {
+          if (bridgeInfo_.isEmpty()) {
+            bridgeInfo_ = other.bridgeInfo_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureBridgeInfoIsMutable();
+            bridgeInfo_.addAll(other.bridgeInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.bridgeInfo_.isEmpty()) {
+          if (bridgeInfoBuilder_.isEmpty()) {
+            bridgeInfoBuilder_.dispose();
+            bridgeInfoBuilder_ = null;
+            bridgeInfo_ = other.bridgeInfo_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            bridgeInfoBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetBridgeInfoFieldBuilder()
+                    : null;
+          } else {
+            bridgeInfoBuilder_.addAllMessages(other.bridgeInfo_);
+          }
+        }
+      }
+      if (skywayInfoBuilder_ == null) {
+        if (!other.skywayInfo_.isEmpty()) {
+          if (skywayInfo_.isEmpty()) {
+            skywayInfo_ = other.skywayInfo_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureSkywayInfoIsMutable();
+            skywayInfo_.addAll(other.skywayInfo_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.skywayInfo_.isEmpty()) {
+          if (skywayInfoBuilder_.isEmpty()) {
+            skywayInfoBuilder_.dispose();
+            skywayInfoBuilder_ = null;
+            skywayInfo_ = other.skywayInfo_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            skywayInfoBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetSkywayInfoFieldBuilder()
+                    : null;
+          } else {
+            skywayInfoBuilder_.addAllMessages(other.skywayInfo_);
           }
         }
       }
@@ -3454,6 +6691,20 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
+            case 66:
+              {
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfo m =
+                    input.readMessage(
+                        com.google.maps.routing.v2.PolylineDetails.TunnelInfo.parser(),
+                        extensionRegistry);
+                if (tunnelInfoBuilder_ == null) {
+                  ensureTunnelInfoIsMutable();
+                  tunnelInfo_.add(m);
+                } else {
+                  tunnelInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
             case 98:
               {
                 com.google.maps.routing.v2.PolylineDetails.FlyoverInfo m =
@@ -3482,6 +6733,34 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 106
+            case 114:
+              {
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfo m =
+                    input.readMessage(
+                        com.google.maps.routing.v2.PolylineDetails.BridgeInfo.parser(),
+                        extensionRegistry);
+                if (bridgeInfoBuilder_ == null) {
+                  ensureBridgeInfoIsMutable();
+                  bridgeInfo_.add(m);
+                } else {
+                  bridgeInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+            case 122:
+              {
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfo m =
+                    input.readMessage(
+                        com.google.maps.routing.v2.PolylineDetails.SkywayInfo.parser(),
+                        extensionRegistry);
+                if (skywayInfoBuilder_ == null) {
+                  ensureSkywayInfoIsMutable();
+                  skywayInfo_.add(m);
+                } else {
+                  skywayInfoBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3501,15 +6780,446 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
+    private java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo> tunnelInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTunnelInfoIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        tunnelInfo_ =
+            new java.util.ArrayList<com.google.maps.routing.v2.PolylineDetails.TunnelInfo>(
+                tunnelInfo_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfo,
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>
+        tunnelInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo>
+        getTunnelInfoList() {
+      if (tunnelInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(tunnelInfo_);
+      } else {
+        return tunnelInfoBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public int getTunnelInfoCount() {
+      if (tunnelInfoBuilder_ == null) {
+        return tunnelInfo_.size();
+      } else {
+        return tunnelInfoBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfo getTunnelInfo(int index) {
+      if (tunnelInfoBuilder_ == null) {
+        return tunnelInfo_.get(index);
+      } else {
+        return tunnelInfoBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder setTunnelInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.TunnelInfo value) {
+      if (tunnelInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.set(index, value);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder setTunnelInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder builderForValue) {
+      if (tunnelInfoBuilder_ == null) {
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder addTunnelInfo(com.google.maps.routing.v2.PolylineDetails.TunnelInfo value) {
+      if (tunnelInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.add(value);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder addTunnelInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.TunnelInfo value) {
+      if (tunnelInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.add(index, value);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder addTunnelInfo(
+        com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder builderForValue) {
+      if (tunnelInfoBuilder_ == null) {
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder addTunnelInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder builderForValue) {
+      if (tunnelInfoBuilder_ == null) {
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder addAllTunnelInfo(
+        java.lang.Iterable<? extends com.google.maps.routing.v2.PolylineDetails.TunnelInfo>
+            values) {
+      if (tunnelInfoBuilder_ == null) {
+        ensureTunnelInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tunnelInfo_);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder clearTunnelInfo() {
+      if (tunnelInfoBuilder_ == null) {
+        tunnelInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public Builder removeTunnelInfo(int index) {
+      if (tunnelInfoBuilder_ == null) {
+        ensureTunnelInfoIsMutable();
+        tunnelInfo_.remove(index);
+        onChanged();
+      } else {
+        tunnelInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder getTunnelInfoBuilder(
+        int index) {
+      return internalGetTunnelInfoFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder getTunnelInfoOrBuilder(
+        int index) {
+      if (tunnelInfoBuilder_ == null) {
+        return tunnelInfo_.get(index);
+      } else {
+        return tunnelInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>
+        getTunnelInfoOrBuilderList() {
+      if (tunnelInfoBuilder_ != null) {
+        return tunnelInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(tunnelInfo_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder addTunnelInfoBuilder() {
+      return internalGetTunnelInfoFieldBuilder()
+          .addBuilder(com.google.maps.routing.v2.PolylineDetails.TunnelInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder addTunnelInfoBuilder(
+        int index) {
+      return internalGetTunnelInfoFieldBuilder()
+          .addBuilder(
+              index, com.google.maps.routing.v2.PolylineDetails.TunnelInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel details along the polyline. This field is populated if the request
+     * specifies the `avoid_tunnels` route modifier and the resultant route fails
+     * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+     * `extra_computations` and the route contains tunnels.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder>
+        getTunnelInfoBuilderList() {
+      return internalGetTunnelInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfo,
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>
+        internalGetTunnelInfoFieldBuilder() {
+      if (tunnelInfoBuilder_ == null) {
+        tunnelInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfo,
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfo.Builder,
+                com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>(
+                tunnelInfo_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        tunnelInfo_ = null;
+      }
+      return tunnelInfoBuilder_;
+    }
+
     private java.util.List<com.google.maps.routing.v2.PolylineDetails.FlyoverInfo> flyoverInfo_ =
         java.util.Collections.emptyList();
 
     private void ensureFlyoverInfoIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         flyoverInfo_ =
             new java.util.ArrayList<com.google.maps.routing.v2.PolylineDetails.FlyoverInfo>(
                 flyoverInfo_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
       }
     }
 
@@ -3739,7 +7449,7 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     public Builder clearFlyoverInfo() {
       if (flyoverInfoBuilder_ == null) {
         flyoverInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
       } else {
         flyoverInfoBuilder_.clear();
@@ -3872,7 +7582,7 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
                 com.google.maps.routing.v2.PolylineDetails.FlyoverInfo,
                 com.google.maps.routing.v2.PolylineDetails.FlyoverInfo.Builder,
                 com.google.maps.routing.v2.PolylineDetails.FlyoverInfoOrBuilder>(
-                flyoverInfo_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+                flyoverInfo_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
         flyoverInfo_ = null;
       }
       return flyoverInfoBuilder_;
@@ -3882,11 +7592,11 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
         narrowRoadInfo_ = java.util.Collections.emptyList();
 
     private void ensureNarrowRoadInfoIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         narrowRoadInfo_ =
             new java.util.ArrayList<com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo>(
                 narrowRoadInfo_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
       }
     }
 
@@ -4130,7 +7840,7 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
     public Builder clearNarrowRoadInfo() {
       if (narrowRoadInfoBuilder_ == null) {
         narrowRoadInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         narrowRoadInfoBuilder_.clear();
@@ -4275,12 +7985,766 @@ public final class PolylineDetails extends com.google.protobuf.GeneratedMessage
                 com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfo.Builder,
                 com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfoOrBuilder>(
                 narrowRoadInfo_,
-                ((bitField0_ & 0x00000002) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         narrowRoadInfo_ = null;
       }
       return narrowRoadInfoBuilder_;
+    }
+
+    private java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo> bridgeInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureBridgeInfoIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        bridgeInfo_ =
+            new java.util.ArrayList<com.google.maps.routing.v2.PolylineDetails.BridgeInfo>(
+                bridgeInfo_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfo,
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>
+        bridgeInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo>
+        getBridgeInfoList() {
+      if (bridgeInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(bridgeInfo_);
+      } else {
+        return bridgeInfoBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public int getBridgeInfoCount() {
+      if (bridgeInfoBuilder_ == null) {
+        return bridgeInfo_.size();
+      } else {
+        return bridgeInfoBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfo getBridgeInfo(int index) {
+      if (bridgeInfoBuilder_ == null) {
+        return bridgeInfo_.get(index);
+      } else {
+        return bridgeInfoBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder setBridgeInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.BridgeInfo value) {
+      if (bridgeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.set(index, value);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder setBridgeInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder builderForValue) {
+      if (bridgeInfoBuilder_ == null) {
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder addBridgeInfo(com.google.maps.routing.v2.PolylineDetails.BridgeInfo value) {
+      if (bridgeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.add(value);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder addBridgeInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.BridgeInfo value) {
+      if (bridgeInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.add(index, value);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder addBridgeInfo(
+        com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder builderForValue) {
+      if (bridgeInfoBuilder_ == null) {
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder addBridgeInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder builderForValue) {
+      if (bridgeInfoBuilder_ == null) {
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder addAllBridgeInfo(
+        java.lang.Iterable<? extends com.google.maps.routing.v2.PolylineDetails.BridgeInfo>
+            values) {
+      if (bridgeInfoBuilder_ == null) {
+        ensureBridgeInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bridgeInfo_);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder clearBridgeInfo() {
+      if (bridgeInfoBuilder_ == null) {
+        bridgeInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public Builder removeBridgeInfo(int index) {
+      if (bridgeInfoBuilder_ == null) {
+        ensureBridgeInfoIsMutable();
+        bridgeInfo_.remove(index);
+        onChanged();
+      } else {
+        bridgeInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder getBridgeInfoBuilder(
+        int index) {
+      return internalGetBridgeInfoFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder getBridgeInfoOrBuilder(
+        int index) {
+      if (bridgeInfoBuilder_ == null) {
+        return bridgeInfo_.get(index);
+      } else {
+        return bridgeInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>
+        getBridgeInfoOrBuilderList() {
+      if (bridgeInfoBuilder_ != null) {
+        return bridgeInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(bridgeInfo_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder addBridgeInfoBuilder() {
+      return internalGetBridgeInfoFieldBuilder()
+          .addBuilder(com.google.maps.routing.v2.PolylineDetails.BridgeInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder addBridgeInfoBuilder(
+        int index) {
+      return internalGetBridgeInfoFieldBuilder()
+          .addBuilder(
+              index, com.google.maps.routing.v2.PolylineDetails.BridgeInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder>
+        getBridgeInfoBuilderList() {
+      return internalGetBridgeInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfo,
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>
+        internalGetBridgeInfoFieldBuilder() {
+      if (bridgeInfoBuilder_ == null) {
+        bridgeInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfo,
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfo.Builder,
+                com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>(
+                bridgeInfo_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        bridgeInfo_ = null;
+      }
+      return bridgeInfoBuilder_;
+    }
+
+    private java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo> skywayInfo_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSkywayInfoIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        skywayInfo_ =
+            new java.util.ArrayList<com.google.maps.routing.v2.PolylineDetails.SkywayInfo>(
+                skywayInfo_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfo,
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>
+        skywayInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo>
+        getSkywayInfoList() {
+      if (skywayInfoBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(skywayInfo_);
+      } else {
+        return skywayInfoBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public int getSkywayInfoCount() {
+      if (skywayInfoBuilder_ == null) {
+        return skywayInfo_.size();
+      } else {
+        return skywayInfoBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfo getSkywayInfo(int index) {
+      if (skywayInfoBuilder_ == null) {
+        return skywayInfo_.get(index);
+      } else {
+        return skywayInfoBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder setSkywayInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.SkywayInfo value) {
+      if (skywayInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.set(index, value);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder setSkywayInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder builderForValue) {
+      if (skywayInfoBuilder_ == null) {
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        skywayInfoBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder addSkywayInfo(com.google.maps.routing.v2.PolylineDetails.SkywayInfo value) {
+      if (skywayInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.add(value);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder addSkywayInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.SkywayInfo value) {
+      if (skywayInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.add(index, value);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder addSkywayInfo(
+        com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder builderForValue) {
+      if (skywayInfoBuilder_ == null) {
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.add(builderForValue.build());
+        onChanged();
+      } else {
+        skywayInfoBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder addSkywayInfo(
+        int index, com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder builderForValue) {
+      if (skywayInfoBuilder_ == null) {
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        skywayInfoBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder addAllSkywayInfo(
+        java.lang.Iterable<? extends com.google.maps.routing.v2.PolylineDetails.SkywayInfo>
+            values) {
+      if (skywayInfoBuilder_ == null) {
+        ensureSkywayInfoIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, skywayInfo_);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder clearSkywayInfo() {
+      if (skywayInfoBuilder_ == null) {
+        skywayInfo_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public Builder removeSkywayInfo(int index) {
+      if (skywayInfoBuilder_ == null) {
+        ensureSkywayInfoIsMutable();
+        skywayInfo_.remove(index);
+        onChanged();
+      } else {
+        skywayInfoBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder getSkywayInfoBuilder(
+        int index) {
+      return internalGetSkywayInfoFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder getSkywayInfoOrBuilder(
+        int index) {
+      if (skywayInfoBuilder_ == null) {
+        return skywayInfo_.get(index);
+      } else {
+        return skywayInfoBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>
+        getSkywayInfoOrBuilderList() {
+      if (skywayInfoBuilder_ != null) {
+        return skywayInfoBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(skywayInfo_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder addSkywayInfoBuilder() {
+      return internalGetSkywayInfoFieldBuilder()
+          .addBuilder(com.google.maps.routing.v2.PolylineDetails.SkywayInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder addSkywayInfoBuilder(
+        int index) {
+      return internalGetSkywayInfoFieldBuilder()
+          .addBuilder(
+              index, com.google.maps.routing.v2.PolylineDetails.SkywayInfo.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway details along the polyline.
+     * </pre>
+     *
+     * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+     */
+    public java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder>
+        getSkywayInfoBuilderList() {
+      return internalGetSkywayInfoFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfo,
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder,
+            com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>
+        internalGetSkywayInfoFieldBuilder() {
+      if (skywayInfoBuilder_ == null) {
+        skywayInfoBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfo,
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfo.Builder,
+                com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>(
+                skywayInfo_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        skywayInfo_ = null;
+      }
+      return skywayInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.routing.v2.PolylineDetails)

@@ -645,7 +645,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3704
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -667,7 +667,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3704
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -912,7 +912,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3742
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -939,7 +939,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3742
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1422,7 +1422,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3731
+   *     See google/container/v1/cluster_service.proto;l=3787
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1443,7 +1443,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3731
+   *     See google/container/v1/cluster_service.proto;l=3787
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -2409,7 +2409,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3836
+   *     See google/container/v1/cluster_service.proto;l=3892
    * @return Whether the desiredCompliancePostureConfig field is set.
    */
   @java.lang.Deprecated
@@ -2431,7 +2431,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3836
+   *     See google/container/v1/cluster_service.proto;l=3892
    * @return The desiredCompliancePostureConfig.
    */
   @java.lang.Deprecated
@@ -2557,7 +2557,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3852
+   *     google/container/v1/cluster_service.proto;l=3908
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Deprecated
@@ -2580,7 +2580,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3852
+   *     google/container/v1/cluster_service.proto;l=3908
    * @return The userManagedKeysConfig.
    */
   @java.lang.Deprecated
@@ -2704,7 +2704,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3865
+   *     google/container/v1/cluster_service.proto;l=3921
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Deprecated
@@ -2725,7 +2725,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3865
+   *     google/container/v1/cluster_service.proto;l=3921
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Deprecated
@@ -3141,6 +3141,49 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredRollbackSafeUpgrade field is set.
+   */
+  boolean hasDesiredRollbackSafeUpgrade();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredRollbackSafeUpgrade.
+   */
+  com.google.container.v1.RollbackSafeUpgrade getDesiredRollbackSafeUpgrade();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.RollbackSafeUpgradeOrBuilder getDesiredRollbackSafeUpgradeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired managed open telemetry configuration.
    * </pre>
    *
@@ -3309,4 +3352,46 @@ public interface ClusterUpdateOrBuilder
    * </code>
    */
   com.google.container.v1.NodeCreationConfigOrBuilder getDesiredNodeCreationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredEmulatedVersion field is set.
+   */
+  boolean hasDesiredEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredEmulatedVersion.
+   */
+  java.lang.String getDesiredEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for desiredEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getDesiredEmulatedVersionBytes();
 }

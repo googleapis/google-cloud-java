@@ -76,6 +76,46 @@ public interface MessageTransformOrBuilder
    *
    *
    * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the compression field is set.
+   */
+  boolean hasCompression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The compression.
+   */
+  com.google.pubsub.v1.Compression getCompression();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.CompressionOrBuilder getCompressionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. AI Inference. Specifies the Vertex AI endpoint that inference
    * requests built from the Pub/Sub message data and provided parameters will
    * be sent to.
@@ -129,7 +169,7 @@ public interface MessageTransformOrBuilder
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=857
+   *     google/pubsub/v1/pubsub.proto;l=922
    * @return The enabled.
    */
   @java.lang.Deprecated

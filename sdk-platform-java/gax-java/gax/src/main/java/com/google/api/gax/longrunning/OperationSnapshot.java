@@ -29,7 +29,9 @@
  */
 package com.google.api.gax.longrunning;
 
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
+import java.util.Collections;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -67,4 +69,14 @@ public interface OperationSnapshot {
    * or if it succeeded, returns null.
    */
   String getErrorMessage();
+
+  /**
+   * If the operation is done and it failed, returns the ErrorDetails; if the operation is not done
+   * or if it succeeded, returns an empty ErrorDetails object.
+   *
+   * @return the error details if the operation failed, or an empty ErrorDetails object
+   */
+  default ErrorDetails getErrorDetails() {
+    return ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
+  }
 }

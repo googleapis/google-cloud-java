@@ -1000,6 +1000,50 @@ public final class StorageControlGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.DisableRapidCacheRequest, com.google.longrunning.Operation>
+      getDisableRapidCacheMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableRapidCache",
+      requestType = com.google.storage.control.v2.DisableRapidCacheRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.DisableRapidCacheRequest, com.google.longrunning.Operation>
+      getDisableRapidCacheMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.DisableRapidCacheRequest,
+            com.google.longrunning.Operation>
+        getDisableRapidCacheMethod;
+    if ((getDisableRapidCacheMethod = StorageControlGrpc.getDisableRapidCacheMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getDisableRapidCacheMethod = StorageControlGrpc.getDisableRapidCacheMethod) == null) {
+          StorageControlGrpc.getDisableRapidCacheMethod =
+              getDisableRapidCacheMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.DisableRapidCacheRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableRapidCache"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.DisableRapidCacheRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("DisableRapidCache"))
+                      .build();
+        }
+      }
+    }
+    return getDisableRapidCacheMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.storage.control.v2.GetRapidCacheRequest,
           com.google.storage.control.v2.RapidCache>
       getGetRapidCacheMethod;
@@ -2218,6 +2262,20 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    default void disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableRapidCacheMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Rapid Cache instance.
      * </pre>
      */
@@ -2878,6 +2936,22 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public void disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableRapidCacheMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Rapid Cache instance.
      * </pre>
      */
@@ -3509,6 +3583,20 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Rapid Cache instance.
      * </pre>
      */
@@ -4066,6 +4154,19 @@ public final class StorageControlGrpc {
         com.google.storage.control.v2.UpdateRapidCacheRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableRapidCacheMethod(), getCallOptions(), request);
     }
 
     /**
@@ -4631,6 +4732,19 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        disableRapidCache(com.google.storage.control.v2.DisableRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableRapidCacheMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets a Rapid Cache instance.
      * </pre>
      */
@@ -4924,23 +5038,24 @@ public final class StorageControlGrpc {
   private static final int METHODID_LIST_ANYWHERE_CACHES = 18;
   private static final int METHODID_CREATE_RAPID_CACHE = 19;
   private static final int METHODID_UPDATE_RAPID_CACHE = 20;
-  private static final int METHODID_GET_RAPID_CACHE = 21;
-  private static final int METHODID_LIST_RAPID_CACHES = 22;
-  private static final int METHODID_GET_PROJECT_INTELLIGENCE_CONFIG = 23;
-  private static final int METHODID_UPDATE_PROJECT_INTELLIGENCE_CONFIG = 24;
-  private static final int METHODID_GET_FOLDER_INTELLIGENCE_CONFIG = 25;
-  private static final int METHODID_UPDATE_FOLDER_INTELLIGENCE_CONFIG = 26;
-  private static final int METHODID_GET_ORGANIZATION_INTELLIGENCE_CONFIG = 27;
-  private static final int METHODID_UPDATE_ORGANIZATION_INTELLIGENCE_CONFIG = 28;
-  private static final int METHODID_GET_IAM_POLICY = 29;
-  private static final int METHODID_SET_IAM_POLICY = 30;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
-  private static final int METHODID_GET_INTELLIGENCE_FINDING = 32;
-  private static final int METHODID_LIST_INTELLIGENCE_FINDINGS = 33;
-  private static final int METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS = 34;
-  private static final int METHODID_GET_INTELLIGENCE_FINDING_REVISION = 35;
-  private static final int METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS = 36;
-  private static final int METHODID_VIEW_OBJECT_FULL_CONTEXT = 37;
+  private static final int METHODID_DISABLE_RAPID_CACHE = 21;
+  private static final int METHODID_GET_RAPID_CACHE = 22;
+  private static final int METHODID_LIST_RAPID_CACHES = 23;
+  private static final int METHODID_GET_PROJECT_INTELLIGENCE_CONFIG = 24;
+  private static final int METHODID_UPDATE_PROJECT_INTELLIGENCE_CONFIG = 25;
+  private static final int METHODID_GET_FOLDER_INTELLIGENCE_CONFIG = 26;
+  private static final int METHODID_UPDATE_FOLDER_INTELLIGENCE_CONFIG = 27;
+  private static final int METHODID_GET_ORGANIZATION_INTELLIGENCE_CONFIG = 28;
+  private static final int METHODID_UPDATE_ORGANIZATION_INTELLIGENCE_CONFIG = 29;
+  private static final int METHODID_GET_IAM_POLICY = 30;
+  private static final int METHODID_SET_IAM_POLICY = 31;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 32;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING = 33;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDINGS = 34;
+  private static final int METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS = 35;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING_REVISION = 36;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS = 37;
+  private static final int METHODID_VIEW_OBJECT_FULL_CONTEXT = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5075,6 +5190,11 @@ public final class StorageControlGrpc {
         case METHODID_UPDATE_RAPID_CACHE:
           serviceImpl.updateRapidCache(
               (com.google.storage.control.v2.UpdateRapidCacheRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DISABLE_RAPID_CACHE:
+          serviceImpl.disableRapidCache(
+              (com.google.storage.control.v2.DisableRapidCacheRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_RAPID_CACHE:
@@ -5337,6 +5457,12 @@ public final class StorageControlGrpc {
                     com.google.storage.control.v2.UpdateRapidCacheRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_RAPID_CACHE)))
         .addMethod(
+            getDisableRapidCacheMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.DisableRapidCacheRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DISABLE_RAPID_CACHE)))
+        .addMethod(
             getGetRapidCacheMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5522,6 +5648,7 @@ public final class StorageControlGrpc {
                       .addMethod(getListAnywhereCachesMethod())
                       .addMethod(getCreateRapidCacheMethod())
                       .addMethod(getUpdateRapidCacheMethod())
+                      .addMethod(getDisableRapidCacheMethod())
                       .addMethod(getGetRapidCacheMethod())
                       .addMethod(getListRapidCachesMethod())
                       .addMethod(getGetProjectIntelligenceConfigMethod())

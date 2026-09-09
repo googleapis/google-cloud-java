@@ -225,7 +225,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, Integer.class);
     }
 
     if (this.isNested && columnIndex == 2) {
@@ -234,10 +234,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return new BigQueryJsonStruct(
             arrayField.getSubFields(), value, this.LOG.getJsonStructLogger());
       }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
     }
 
     int extraIndex = this.isNested ? 2 : 1;
@@ -248,10 +245,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       return new BigQueryJsonStruct(
           fieldSchema.getSubFields(), value, this.LOG.getJsonStructLogger());
     } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
     }
   }
 

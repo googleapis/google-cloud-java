@@ -15,7 +15,6 @@
  */
 package com.google.cloud.sql.v1;
 
-
 /**
  *
  *

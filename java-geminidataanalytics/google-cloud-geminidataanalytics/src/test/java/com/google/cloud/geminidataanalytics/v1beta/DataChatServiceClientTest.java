@@ -38,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -590,6 +591,7 @@ public class DataChatServiceClientTest {
             .setQueryResult(ExecutedQueryResult.newBuilder().build())
             .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
             .addAllDisambiguationQuestion(new ArrayList<String>())
+            .setPipelineDebugInfo(Struct.newBuilder().build())
             .build();
     mockDataChatService.addResponse(expectedResponse);
 

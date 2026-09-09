@@ -208,6 +208,58 @@ public interface UpgradeInfoEventOrBuilder
    *
    *
    * <pre>
+   * Output only. The current emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string current_emulated_version = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The currentEmulatedVersion.
+   */
+  java.lang.String getCurrentEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string current_emulated_version = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for currentEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getCurrentEmulatedVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The target emulated version for the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The targetEmulatedVersion.
+   */
+  java.lang.String getTargetEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The target emulated version for the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for targetEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getTargetEmulatedVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional relative path to the resource. For example in node pool upgrades,
    * the relative path of the node pool.
    * </pre>

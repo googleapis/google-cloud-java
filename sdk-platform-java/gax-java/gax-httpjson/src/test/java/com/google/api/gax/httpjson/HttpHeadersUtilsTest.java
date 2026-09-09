@@ -29,12 +29,16 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
@@ -129,5 +133,57 @@ class HttpHeadersUtilsTest {
 
     headersMap = ImmutableMap.of("Custom-Header", "CustomHeader", "accept", "Accept");
     assertNull(HttpHeadersUtils.getUserAgentValue(headersMap));
+  }
+
+  @Test
+  void getSingleHeader_success() {
+    Map<String, Object> headers =
+        ImmutableMap.of(
+            "X-Goog-Upload-URL",
+            "https://test.googleapis.com/upload",
+            "Location",
+            ImmutableList.of("https://redirect.url"),
+            "Content-Length",
+            1024L);
+
+    // Case-insensitive & exact lookup
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "X-Goog-Upload-URL"))
+        .isEqualTo("https://test.googleapis.com/upload");
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "x-goog-upload-url"))
+        .isEqualTo("https://test.googleapis.com/upload");
+
+    // Single-element iterable
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "location"))
+        .isEqualTo("https://redirect.url");
+
+    // Non-string object conversion
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "content-length")).isEqualTo("1024");
+  }
+
+  @Test
+  void getSingleHeader_multipleElements_throwsIllegalArgumentException() {
+    Map<String, Object> headers =
+        ImmutableMap.of(
+            "Location", ImmutableList.of("https://redirect.url", "https://secondary.url"));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> HttpHeadersUtils.getSingleHeader(headers, "location"));
+  }
+
+  @Test
+  void getSingleHeader_missingOrEmpty_returnsNull() {
+    Map<String, Object> headers = new HashMap<>();
+    headers.put("Existing-Header", "value");
+    headers.put("Null-Value-Header", null);
+    headers.put("Empty-List-Header", Collections.emptyList());
+    headers.put("Null-First-Header", Collections.singletonList(null));
+    headers.put(null, "some-value");
+
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "non-existent-header")).isNull();
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "null-value-header")).isNull();
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "empty-list-header")).isNull();
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "null-first-header")).isNull();
+    assertThat(HttpHeadersUtils.getSingleHeader(headers, "any-header")).isNull();
   }
 }

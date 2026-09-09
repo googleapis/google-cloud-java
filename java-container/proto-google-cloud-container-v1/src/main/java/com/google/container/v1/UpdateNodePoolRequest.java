@@ -102,7 +102,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4335
+   *     google/container/v1/cluster_service.proto;l=4399
    * @return The projectId.
    */
   @java.lang.Override
@@ -131,7 +131,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4335
+   *     google/container/v1/cluster_service.proto;l=4399
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -166,7 +166,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4341
+   *     google/container/v1/cluster_service.proto;l=4405
    * @return The zone.
    */
   @java.lang.Override
@@ -196,7 +196,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4341
+   *     google/container/v1/cluster_service.proto;l=4405
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -229,7 +229,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4345
+   *     google/container/v1/cluster_service.proto;l=4409
    * @return The clusterId.
    */
   @java.lang.Override
@@ -257,7 +257,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4345
+   *     google/container/v1/cluster_service.proto;l=4409
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -290,7 +290,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4349
+   *     google/container/v1/cluster_service.proto;l=4413
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -318,7 +318,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=4349
+   *     google/container/v1/cluster_service.proto;l=4413
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -2395,6 +2395,69 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : taintConfig_;
   }
 
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 52;
+  private com.google.container.v1.NodePool.NodePoolMaintenancePolicy maintenancePolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool, including
+   * maintenance exclusion options.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool, including
+   * maintenance exclusion options.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodePoolMaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the maintenance policy for the node pool, including
+   * maintenance exclusion options.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
+      getMaintenancePolicyOrBuilder() {
+    return maintenancePolicy_ == null
+        ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2528,6 +2591,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(51, getTaintConfig());
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(52, getMaintenancePolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2670,6 +2736,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(51, getTaintConfig());
     }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getMaintenancePolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2797,6 +2866,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasTaintConfig() != other.hasTaintConfig()) return false;
     if (hasTaintConfig()) {
       if (!getTaintConfig().equals(other.getTaintConfig())) return false;
+    }
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2942,6 +3015,10 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasTaintConfig()) {
       hash = (37 * hash) + TAINT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTaintConfig().hashCode();
+    }
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3108,6 +3185,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         internalGetNodeDrainConfigFieldBuilder();
         internalGetConsolidationDelayFieldBuilder();
         internalGetTaintConfigFieldBuilder();
+        internalGetMaintenancePolicyFieldBuilder();
       }
     }
 
@@ -3253,6 +3331,11 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       if (taintConfigBuilder_ != null) {
         taintConfigBuilder_.dispose();
         taintConfigBuilder_ = null;
+      }
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
       }
       return this;
     }
@@ -3486,6 +3569,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             taintConfigBuilder_ == null ? taintConfig_ : taintConfigBuilder_.build();
         to_bitField0_ |= 0x00800000;
       }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+        to_bitField0_ |= 0x01000000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3682,6 +3772,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasTaintConfig()) {
         mergeTaintConfig(other.getTaintConfig());
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3978,6 +4071,13 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField1_ |= 0x00000080;
                 break;
               } // case 410
+            case 418:
+              {
+                input.readMessage(
+                    internalGetMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 418
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4012,7 +4112,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4335
+     *     google/container/v1/cluster_service.proto;l=4399
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -4040,7 +4140,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4335
+     *     google/container/v1/cluster_service.proto;l=4399
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -4068,7 +4168,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4335
+     *     google/container/v1/cluster_service.proto;l=4399
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -4095,7 +4195,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4335
+     *     google/container/v1/cluster_service.proto;l=4399
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4118,7 +4218,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4335
+     *     google/container/v1/cluster_service.proto;l=4399
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -4149,7 +4249,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4341
+     *     google/container/v1/cluster_service.proto;l=4405
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -4178,7 +4278,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4341
+     *     google/container/v1/cluster_service.proto;l=4405
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -4207,7 +4307,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4341
+     *     google/container/v1/cluster_service.proto;l=4405
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -4235,7 +4335,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4341
+     *     google/container/v1/cluster_service.proto;l=4405
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4259,7 +4359,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4341
+     *     google/container/v1/cluster_service.proto;l=4405
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -4288,7 +4388,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4345
+     *     google/container/v1/cluster_service.proto;l=4409
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -4315,7 +4415,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4345
+     *     google/container/v1/cluster_service.proto;l=4409
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -4342,7 +4442,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4345
+     *     google/container/v1/cluster_service.proto;l=4409
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -4368,7 +4468,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4345
+     *     google/container/v1/cluster_service.proto;l=4409
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4390,7 +4490,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4345
+     *     google/container/v1/cluster_service.proto;l=4409
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -4419,7 +4519,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4349
+     *     google/container/v1/cluster_service.proto;l=4413
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -4446,7 +4546,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4349
+     *     google/container/v1/cluster_service.proto;l=4413
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -4473,7 +4573,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4349
+     *     google/container/v1/cluster_service.proto;l=4413
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -4499,7 +4599,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4349
+     *     google/container/v1/cluster_service.proto;l=4413
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4521,7 +4621,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=4349
+     *     google/container/v1/cluster_service.proto;l=4413
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -11213,6 +11313,234 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         taintConfig_ = null;
       }
       return taintConfigBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.NodePoolMaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(
+        com.google.container.v1.NodePool.NodePoolMaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (((bitField1_ & 0x00000100) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.container.v1.NodePool.NodePoolMaintenancePolicy
+                    .getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenancePolicy_ = value;
+        }
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenancePolicy_ != null) {
+        bitField1_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder
+        getMaintenancePolicyBuilder() {
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return internalGetMaintenancePolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
+        getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.container.v1.NodePool.NodePoolMaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the maintenance policy for the node pool, including
+     * maintenance exclusion options.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.NodePoolMaintenancePolicy maintenance_policy = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+            com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>
+        internalGetMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy,
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicy.Builder,
+                com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.UpdateNodePoolRequest)

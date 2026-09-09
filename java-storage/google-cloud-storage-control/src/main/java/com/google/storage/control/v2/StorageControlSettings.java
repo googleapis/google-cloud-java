@@ -285,6 +285,17 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
     return ((StorageControlStubSettings) getStubSettings()).updateRapidCacheOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to disableRapidCache. */
+  public UnaryCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).disableRapidCacheSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableRapidCache. */
+  public OperationCallSettings<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).disableRapidCacheOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getRapidCache. */
   public UnaryCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheSettings() {
     return ((StorageControlStubSettings) getStubSettings()).getRapidCacheSettings();
@@ -678,6 +689,19 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
             UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
         updateRapidCacheOperationSettings() {
       return getStubSettingsBuilder().updateRapidCacheOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableRapidCache. */
+    public UnaryCallSettings.Builder<DisableRapidCacheRequest, Operation>
+        disableRapidCacheSettings() {
+      return getStubSettingsBuilder().disableRapidCacheSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableRapidCache. */
+    public OperationCallSettings.Builder<
+            DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+        disableRapidCacheOperationSettings() {
+      return getStubSettingsBuilder().disableRapidCacheOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getRapidCache. */

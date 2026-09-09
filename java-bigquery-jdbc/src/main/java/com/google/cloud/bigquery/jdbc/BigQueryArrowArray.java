@@ -28,8 +28,7 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseArray} used to represent Array values from Arrow data.
  */
 class BigQueryArrowArray extends BigQueryBaseArray {
-  private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
-      BigQueryTypeCoercionUtility.INSTANCE;
+
   private JsonStringArrayList<?> values;
 
   public BigQueryArrowArray(Field schema, JsonStringArrayList<?> values) {
@@ -43,7 +42,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   }
 
   @Override
-  public Object getArray() {
+  public Object getArray() throws SQLException {
     LOG.finestTrace("getArray");
     ensureValid();
     if (values == null) {
@@ -53,7 +52,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   }
 
   @Override
-  public Object getArray(long index, int count) {
+  public Object getArray(long index, int count) throws SQLException {
     LOG.finestTrace("getArray");
     ensureValid();
     if (values == null) {
@@ -98,12 +97,12 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   }
 
   @Override
-  Object getCoercedValue(int index) {
+  Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
     Object value = this.values.get(index);
     return this.arrayOfStruct
         ? new BigQueryArrowStruct(
             schema.getSubFields(), (JsonStringHashMap<?, ?>) value, this.LOG.getArrowStructLogger())
-        : BIGQUERY_TYPE_COERCER.coerceTo(getTargetClass(), value, this.LOG);
+        : BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);
   }
 }

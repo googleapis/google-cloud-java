@@ -35,6 +35,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterUpgradeInfo;
+import com.google.container.v1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
@@ -1723,6 +1724,45 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeMethodDescriptor =
+          ApiMethodDescriptor.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+              .setFullMethodName("google.container.v1.ClusterManager/CompleteControlPlaneUpgrade")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CompleteControlPlaneUpgradeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/clusters/*}:completeControlPlaneUpgrade",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CompleteControlPlaneUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/zones/*/clusters/*}:completeControlPlaneUpgrade")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CompleteControlPlaneUpgradeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
@@ -1770,6 +1810,8 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
       fetchClusterUpgradeInfoCallable;
   private final UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable;
+  private final UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -2318,6 +2360,18 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeTransportSettings =
+            HttpJsonCallSettings.<CompleteControlPlaneUpgradeRequest, Operation>newBuilder()
+                .setMethodDescriptor(completeControlPlaneUpgradeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listClustersCallable =
         callableFactory.createUnaryCallable(
@@ -2456,6 +2510,11 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
             fetchNodePoolUpgradeInfoTransportSettings,
             settings.fetchNodePoolUpgradeInfoSettings(),
             clientContext);
+    this.completeControlPlaneUpgradeCallable =
+        callableFactory.createUnaryCallable(
+            completeControlPlaneUpgradeTransportSettings,
+            settings.completeControlPlaneUpgradeSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2500,6 +2559,7 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
     methodDescriptors.add(checkAutopilotCompatibilityMethodDescriptor);
     methodDescriptors.add(fetchClusterUpgradeInfoMethodDescriptor);
     methodDescriptors.add(fetchNodePoolUpgradeInfoMethodDescriptor);
+    methodDescriptors.add(completeControlPlaneUpgradeMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2692,6 +2752,12 @@ public class HttpJsonClusterManagerStub extends ClusterManagerStub {
   public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable() {
     return fetchNodePoolUpgradeInfoCallable;
+  }
+
+  @Override
+  public UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    return completeControlPlaneUpgradeCallable;
   }
 
   @Override

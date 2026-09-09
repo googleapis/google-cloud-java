@@ -20,13 +20,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiException;
+import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Code;
+import com.google.rpc.ErrorInfo;
+import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.threeten.bp.Duration;
@@ -190,6 +196,35 @@ class ITLongRunningOperation {
     } finally {
       httpjsonClient.close();
       httpjsonClient.awaitTermination(
+          TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    }
+  }
+
+  @Test
+  void testGRPC_LROErrorResponse_propagatesErrorDetails() throws Exception {
+    EchoClient grpcClient = TestClientInitializer.createGrpcEchoClient();
+    try {
+      ErrorInfo errorInfo =
+          ErrorInfo.newBuilder().setReason("TEST_REASON").setDomain("googleapis.com").build();
+      Status status =
+          Status.newBuilder()
+              .setCode(Code.ALREADY_EXISTS_VALUE)
+              .setMessage("The resource already exists")
+              .addDetails(Any.pack(errorInfo))
+              .build();
+      WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
+      OperationFuture<WaitResponse, WaitMetadata> operationFuture =
+          grpcClient.waitOperationCallable().futureCall(waitRequest);
+      ExecutionException exception = assertThrows(ExecutionException.class, operationFuture::get);
+      assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+      ApiException apiException = (ApiException) exception.getCause();
+
+      // Verify that error details are successfully propagated
+      assertThat(apiException.getErrorDetails()).isNotNull();
+      assertThat(apiException.getErrorDetails().getErrorInfo()).isEqualTo(errorInfo);
+    } finally {
+      grpcClient.close();
+      grpcClient.awaitTermination(
           TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }

@@ -214,4 +214,23 @@ public interface RouteModifiersOrBuilder
    * @return The enum numeric value on the wire of tollPasses at the given index.
    */
   int getTollPassesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, avoids tunnels where reasonable, giving
+   * preference to routes not containing tunnels. Applies only to the `DRIVE`
+   * and `TWO_WHEELER`
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
+   * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference]
+   * must be set to `TRAFFIC_AWARE_OPTIMAL`.
+   * This field is not supported in ComputeRouteMatrix.
+   * </pre>
+   *
+   * <code>bool avoid_tunnels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The avoidTunnels.
+   */
+  boolean getAvoidTunnels();
 }

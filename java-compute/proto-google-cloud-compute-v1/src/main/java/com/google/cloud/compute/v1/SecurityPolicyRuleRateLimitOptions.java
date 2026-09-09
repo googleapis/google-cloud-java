@@ -114,10 +114,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    * which is resolved based on "userIpRequestHeaders" configured with the
    * security policy. If there is no "userIpRequestHeaders" configuration or
    * an IP address cannot be resolved from it, the key type defaults toIP.
-   *
+   * - ASN: The autonomous system number of the originating
+   * client. If not available, the key type defaults toALL.
    * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
    * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
    * key type defaults to ALL.
+   *
+   *
    * For "fairshare" action, this value is limited to ALL i.e. a single rate
    * limit threshold is enforced for all the requests matching the rule.
    * </pre>
@@ -137,6 +140,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
     UNDEFINED_ENFORCE_ON_KEY(0),
     /** <code>ALL = 64897;</code> */
     ALL(64897),
+    /** <code>ASN = 65116;</code> */
+    ASN(65116),
     /** <code>HTTP_COOKIE = 494981627;</code> */
     HTTP_COOKIE(494981627),
     /** <code>HTTP_HEADER = 91597348;</code> */
@@ -183,6 +188,9 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
 
     /** <code>ALL = 64897;</code> */
     public static final int ALL_VALUE = 64897;
+
+    /** <code>ASN = 65116;</code> */
+    public static final int ASN_VALUE = 65116;
 
     /** <code>HTTP_COOKIE = 494981627;</code> */
     public static final int HTTP_COOKIE_VALUE = 494981627;
@@ -242,6 +250,8 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
           return UNDEFINED_ENFORCE_ON_KEY;
         case 64897:
           return ALL;
+        case 65116:
+          return ASN;
         case 494981627:
           return HTTP_COOKIE;
         case 91597348:
@@ -547,10 +557,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    * which is resolved based on "userIpRequestHeaders" configured with the
    * security policy. If there is no "userIpRequestHeaders" configuration or
    * an IP address cannot be resolved from it, the key type defaults toIP.
-   *
+   * - ASN: The autonomous system number of the originating
+   * client. If not available, the key type defaults toALL.
    * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
    * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
    * key type defaults to ALL.
+   *
+   *
    * For "fairshare" action, this value is limited to ALL i.e. a single rate
    * limit threshold is enforced for all the requests matching the rule.
    * Check the EnforceOnKey enum for the list of possible values.
@@ -605,10 +618,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    * which is resolved based on "userIpRequestHeaders" configured with the
    * security policy. If there is no "userIpRequestHeaders" configuration or
    * an IP address cannot be resolved from it, the key type defaults toIP.
-   *
+   * - ASN: The autonomous system number of the originating
+   * client. If not available, the key type defaults toALL.
    * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
    * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
    * key type defaults to ALL.
+   *
+   *
    * For "fairshare" action, this value is limited to ALL i.e. a single rate
    * limit threshold is enforced for all the requests matching the rule.
    * Check the EnforceOnKey enum for the list of possible values.
@@ -671,10 +687,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
    * which is resolved based on "userIpRequestHeaders" configured with the
    * security policy. If there is no "userIpRequestHeaders" configuration or
    * an IP address cannot be resolved from it, the key type defaults toIP.
-   *
+   * - ASN: The autonomous system number of the originating
+   * client. If not available, the key type defaults toALL.
    * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
    * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
    * key type defaults to ALL.
+   *
+   *
    * For "fairshare" action, this value is limited to ALL i.e. a single rate
    * limit threshold is enforced for all the requests matching the rule.
    * Check the EnforceOnKey enum for the list of possible values.
@@ -2265,10 +2284,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.
@@ -2322,10 +2344,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.
@@ -2387,10 +2412,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.
@@ -2452,10 +2480,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.
@@ -2516,10 +2547,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.
@@ -2576,10 +2610,13 @@ public final class SecurityPolicyRuleRateLimitOptions extends com.google.protobu
      * which is resolved based on "userIpRequestHeaders" configured with the
      * security policy. If there is no "userIpRequestHeaders" configuration or
      * an IP address cannot be resolved from it, the key type defaults toIP.
-     *
+     * - ASN: The autonomous system number of the originating
+     * client. If not available, the key type defaults toALL.
      * - TLS_JA4_FINGERPRINT: JA4 TLS/SSL fingerprint if the
      * client connects using HTTPS, HTTP/2 or HTTP/3. If not available, the
      * key type defaults to ALL.
+     *
+     *
      * For "fairshare" action, this value is limited to ALL i.e. a single rate
      * limit threshold is enforced for all the requests matching the rule.
      * Check the EnforceOnKey enum for the list of possible values.

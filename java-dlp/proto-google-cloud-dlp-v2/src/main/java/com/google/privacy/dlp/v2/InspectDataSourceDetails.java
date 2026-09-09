@@ -77,11 +77,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the snapshotInspectTemplate field is set.
      */
@@ -91,11 +93,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The snapshotInspectTemplate.
      */
@@ -105,11 +109,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     com.google.privacy.dlp.v2.InspectTemplateOrBuilder getSnapshotInspectTemplateOrBuilder();
 
@@ -206,11 +212,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the snapshotInspectTemplate field is set.
      */
@@ -223,11 +231,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The snapshotInspectTemplate.
      */
@@ -242,11 +252,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * If run with an InspectTemplate, a snapshot of its state at the time of
-     * this run.
+     * Output only. If run with an InspectTemplate, a snapshot of its state at
+     * the time of this run.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.privacy.dlp.v2.InspectTemplateOrBuilder
@@ -699,11 +711,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return Whether the snapshotInspectTemplate field is set.
        */
@@ -715,11 +729,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        *
        * @return The snapshotInspectTemplate.
        */
@@ -737,11 +753,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setSnapshotInspectTemplate(com.google.privacy.dlp.v2.InspectTemplate value) {
         if (snapshotInspectTemplateBuilder_ == null) {
@@ -761,11 +779,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setSnapshotInspectTemplate(
           com.google.privacy.dlp.v2.InspectTemplate.Builder builderForValue) {
@@ -783,11 +803,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder mergeSnapshotInspectTemplate(com.google.privacy.dlp.v2.InspectTemplate value) {
         if (snapshotInspectTemplateBuilder_ == null) {
@@ -813,11 +835,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder clearSnapshotInspectTemplate() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -834,11 +858,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.privacy.dlp.v2.InspectTemplate.Builder getSnapshotInspectTemplateBuilder() {
         bitField0_ |= 0x00000001;
@@ -850,11 +876,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.privacy.dlp.v2.InspectTemplateOrBuilder
           getSnapshotInspectTemplateOrBuilder() {
@@ -871,11 +899,13 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * If run with an InspectTemplate, a snapshot of its state at the time of
-       * this run.
+       * Output only. If run with an InspectTemplate, a snapshot of its state at
+       * the time of this run.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1;</code>
+       * <code>
+       * .google.privacy.dlp.v2.InspectTemplate snapshot_inspect_template = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilder<
               com.google.privacy.dlp.v2.InspectTemplate,
@@ -2874,10 +2904,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the result field is set.
    */
@@ -2890,10 +2922,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The result.
    */
@@ -2908,10 +2942,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder getResultOrBuilder() {
@@ -3509,10 +3545,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the result field is set.
      */
@@ -3524,10 +3562,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The result.
      */
@@ -3545,10 +3585,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setResult(com.google.privacy.dlp.v2.InspectDataSourceDetails.Result value) {
       if (resultBuilder_ == null) {
@@ -3568,10 +3610,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setResult(
         com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder builderForValue) {
@@ -3589,10 +3633,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeResult(com.google.privacy.dlp.v2.InspectDataSourceDetails.Result value) {
       if (resultBuilder_ == null) {
@@ -3618,10 +3664,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearResult() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -3638,10 +3686,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder getResultBuilder() {
       bitField0_ |= 0x00000002;
@@ -3653,10 +3703,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder getResultOrBuilder() {
       if (resultBuilder_ != null) {
@@ -3672,10 +3724,12 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * A summary of the outcome of this inspection job.
+     * Output only. A summary of the outcome of this inspection job.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.privacy.dlp.v2.InspectDataSourceDetails.Result,

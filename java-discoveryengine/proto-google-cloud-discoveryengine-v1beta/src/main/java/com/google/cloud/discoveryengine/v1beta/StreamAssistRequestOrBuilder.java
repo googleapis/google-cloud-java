@@ -205,6 +205,50 @@ public interface StreamAssistRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentsSpec field is set.
+   */
+  boolean hasAgentsSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentsSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec getAgentsSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder
+      getAgentsSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Specification of tools that are used to serve the request.
    * </pre>
    *

@@ -53,6 +53,7 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
 
   private ReservationGroup() {
     name_ = "";
+    parentGroup_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,7 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.reservation.v1.ReservationGroup.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -131,6 +133,189 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PARENT_GROUP_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object parentGroup_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent reservation group of the reservation group.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+   * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+   * groups.
+   * </pre>
+   *
+   * <code>
+   * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The parentGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getParentGroup() {
+    java.lang.Object ref = parentGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parentGroup_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent reservation group of the reservation group.
+   * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+   * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+   * groups.
+   * </pre>
+   *
+   * <code>
+   * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for parentGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getParentGroupBytes() {
+    java.lang.Object ref = parentGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      parentGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CREATION_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp creationTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation group.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the creationTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreationTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation group.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The creationTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreationTime() {
+    return creationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : creationTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Creation time of the reservation group.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
+    return creationTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : creationTime_;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation group via a user
+   * operation. This timestamp is updated only when an update operation
+   * explicitly targets this reservation group directly. It is not updated when
+   * parent or child groups are created, updated, or deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation group via a user
+   * operation. This timestamp is updated only when an update operation
+   * explicitly targets this reservation group directly. It is not updated when
+   * parent or child groups are created, updated, or deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Last update time of the reservation group via a user
+   * operation. This timestamp is updated only when an update operation
+   * explicitly targets this reservation group directly. It is not updated when
+   * parent or child groups are created, updated, or deleted.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -148,6 +333,15 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentGroup_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, parentGroup_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getCreationTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getUpdateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +353,15 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentGroup_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, parentGroup_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreationTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -177,6 +380,15 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.bigquery.reservation.v1.ReservationGroup) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getParentGroup().equals(other.getParentGroup())) return false;
+    if (hasCreationTime() != other.hasCreationTime()) return false;
+    if (hasCreationTime()) {
+      if (!getCreationTime().equals(other.getCreationTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -190,6 +402,16 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PARENT_GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getParentGroup().hashCode();
+    if (hasCreationTime()) {
+      hash = (37 * hash) + CREATION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreationTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -321,10 +543,20 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.bigquery.reservation.v1.ReservationGroup.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCreationTimeFieldBuilder();
+        internalGetUpdateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -332,6 +564,17 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      parentGroup_ = "";
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
+        creationTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -371,6 +614,20 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parentGroup_ = parentGroup_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.creationTime_ =
+            creationTimeBuilder_ == null ? creationTime_ : creationTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -390,6 +647,17 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (!other.getParentGroup().isEmpty()) {
+        parentGroup_ = other.parentGroup_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasCreationTime()) {
+        mergeCreationTime(other.getCreationTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -423,6 +691,26 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                parentGroup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetCreationTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -571,6 +859,593 @@ public final class ReservationGroup extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object parentGroup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parent reservation group of the reservation group.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+     * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+     * groups.
+     * </pre>
+     *
+     * <code>
+     * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The parentGroup.
+     */
+    public java.lang.String getParentGroup() {
+      java.lang.Object ref = parentGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parentGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parent reservation group of the reservation group.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+     * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+     * groups.
+     * </pre>
+     *
+     * <code>
+     * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for parentGroup.
+     */
+    public com.google.protobuf.ByteString getParentGroupBytes() {
+      java.lang.Object ref = parentGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        parentGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parent reservation group of the reservation group.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+     * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+     * groups.
+     * </pre>
+     *
+     * <code>
+     * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The parentGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      parentGroup_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parent reservation group of the reservation group.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+     * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+     * groups.
+     * </pre>
+     *
+     * <code>
+     * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearParentGroup() {
+      parentGroup_ = getDefaultInstance().getParentGroup();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The parent reservation group of the reservation group.
+     * Format: `projects/&#42;&#47;locations/&#42;&#47;reservationGroups/team1-prod` for non-root
+     * reservation groups, or `projects/&#42;&#47;locations/&#42;` for root reservation
+     * groups.
+     * </pre>
+     *
+     * <code>
+     * string parent_group = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for parentGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setParentGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      parentGroup_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp creationTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        creationTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the creationTime field is set.
+     */
+    public boolean hasCreationTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The creationTime.
+     */
+    public com.google.protobuf.Timestamp getCreationTime() {
+      if (creationTimeBuilder_ == null) {
+        return creationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : creationTime_;
+      } else {
+        return creationTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreationTime(com.google.protobuf.Timestamp value) {
+      if (creationTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        creationTime_ = value;
+      } else {
+        creationTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreationTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (creationTimeBuilder_ == null) {
+        creationTime_ = builderForValue.build();
+      } else {
+        creationTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreationTime(com.google.protobuf.Timestamp value) {
+      if (creationTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && creationTime_ != null
+            && creationTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreationTimeBuilder().mergeFrom(value);
+        } else {
+          creationTime_ = value;
+        }
+      } else {
+        creationTimeBuilder_.mergeFrom(value);
+      }
+      if (creationTime_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreationTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      creationTime_ = null;
+      if (creationTimeBuilder_ != null) {
+        creationTimeBuilder_.dispose();
+        creationTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreationTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetCreationTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreationTimeOrBuilder() {
+      if (creationTimeBuilder_ != null) {
+        return creationTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return creationTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : creationTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Creation time of the reservation group.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp creation_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetCreationTimeFieldBuilder() {
+      if (creationTimeBuilder_ == null) {
+        creationTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreationTime(), getParentForChildren(), isClean());
+        creationTime_ = null;
+      }
+      return creationTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Last update time of the reservation group via a user
+     * operation. This timestamp is updated only when an update operation
+     * explicitly targets this reservation group directly. It is not updated when
+     * parent or child groups are created, updated, or deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.ReservationGroup)

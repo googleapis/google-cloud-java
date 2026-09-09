@@ -434,7 +434,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessage
    * TimespanConfig.
    *
    * Caution: A [known
-   * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+   * issue](https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
    * is causing the `rowsLimitPercent` field to behave unexpectedly. We
    * recommend using `rowsLimit` instead.
    * </pre>
@@ -1998,7 +1998,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessage
      * TimespanConfig.
      *
      * Caution: A [known
-     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * issue](https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
      * is causing the `rowsLimitPercent` field to behave unexpectedly. We
      * recommend using `rowsLimit` instead.
      * </pre>
@@ -2023,7 +2023,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessage
      * TimespanConfig.
      *
      * Caution: A [known
-     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * issue](https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
      * is causing the `rowsLimitPercent` field to behave unexpectedly. We
      * recommend using `rowsLimit` instead.
      * </pre>
@@ -2052,7 +2052,7 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessage
      * TimespanConfig.
      *
      * Caution: A [known
-     * issue](https://cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
+     * issue](https://docs.cloud.google.com/sensitive-data-protection/docs/known-issues#bq-sampling)
      * is causing the `rowsLimitPercent` field to behave unexpectedly. We
      * recommend using `rowsLimit` instead.
      * </pre>

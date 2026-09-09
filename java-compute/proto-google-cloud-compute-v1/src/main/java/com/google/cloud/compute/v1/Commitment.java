@@ -736,6 +736,36 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      * <code>NETWORK_OPTIMIZED_C4N = 147027572;</code>
      */
     NETWORK_OPTIMIZED_C4N(147027572),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4C machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4C = 147044859;</code>
+     */
+    NETWORK_OPTIMIZED_U4C(147044859),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4P machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4P = 147044872;</code>
+     */
+    NETWORK_OPTIMIZED_U4P(147044872),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4S machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4S = 147044875;</code>
+     */
+    NETWORK_OPTIMIZED_U4S(147044875),
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     STORAGE_OPTIMIZED_Z3(316796085),
     /**
@@ -947,6 +977,39 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      */
     public static final int NETWORK_OPTIMIZED_C4N_VALUE = 147027572;
 
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4C machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4C = 147044859;</code>
+     */
+    public static final int NETWORK_OPTIMIZED_U4C_VALUE = 147044859;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4P machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4P = 147044872;</code>
+     */
+    public static final int NETWORK_OPTIMIZED_U4P_VALUE = 147044872;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for NETWORK_OPTIMIZED_U4S machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_U4S = 147044875;</code>
+     */
+    public static final int NETWORK_OPTIMIZED_U4S_VALUE = 147044875;
+
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     public static final int STORAGE_OPTIMIZED_Z3_VALUE = 316796085;
 
@@ -1067,6 +1130,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return MEMORY_OPTIMIZED_X4_960_16T;
         case 147027572:
           return NETWORK_OPTIMIZED_C4N;
+        case 147044859:
+          return NETWORK_OPTIMIZED_U4C;
+        case 147044872:
+          return NETWORK_OPTIMIZED_U4P;
+        case 147044875:
+          return NETWORK_OPTIMIZED_U4S;
         case 316796085:
           return STORAGE_OPTIMIZED_Z3;
         case 437714322:

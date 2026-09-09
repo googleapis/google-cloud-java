@@ -56,11 +56,20 @@ then
   pushd "${BUILD_SUBDIR}"
 fi
 
-# this should run maven enforcer
-mvn install -B -V -ntp \
-  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false
+# We use the 'test-compile' lifecycle phase (with -DskipTests=true) for the following reasons:
+# 1. Why test-compile over compile? 'compile' only builds src/main/java. 'dependency:analyze'
+#    inspects bytecode in both target/classes and target/test-classes. If test classes are not
+#    compiled, test-scoped dependencies (such as test mocks and stubs) will be falsely flagged
+#    as "Unused declared dependencies" by maven-dependency-plugin.
+# 2. Why test-compile over package/install? 'package' and 'install' build and bundle JAR archives
+#    and install them into ~/.m2/repository. Packaging JARs adds significant build time (5-15 mins)
+#    and is unnecessary for static dependency analysis and enforcer verification. 'test-compile'
+#    produces the required bytecode in target/classes and target/test-classes in seconds.
+# 3. Why -DskipTests=true? Ensures test classes are compiled without executing tests during analysis.
+mvn test-compile -B -V -ntp \
+  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false -T 1C
 
-mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false
+mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false -T 1C
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then

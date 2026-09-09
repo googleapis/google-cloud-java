@@ -93,4 +93,94 @@ public interface BigQueryTableReferencesOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1.BigQueryTableReferenceOrBuilder
       getTableReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to BigQuery graphs.
+   *
+   * Note: "property graph" is the former name for BigQuery Graph. The field and
+   * message names retain the original term for backward compatibility; both
+   * refer to the same resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference>
+      getPropertyGraphReferencesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to BigQuery graphs.
+   *
+   * Note: "property graph" is the former name for BigQuery Graph. The field and
+   * message names retain the original term for backward compatibility; both
+   * refer to the same resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference getPropertyGraphReferences(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to BigQuery graphs.
+   *
+   * Note: "property graph" is the former name for BigQuery Graph. The field and
+   * message names retain the original term for backward compatibility; both
+   * refer to the same resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPropertyGraphReferencesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to BigQuery graphs.
+   *
+   * Note: "property graph" is the former name for BigQuery Graph. The field and
+   * message names retain the original term for backward compatibility; both
+   * refer to the same resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceOrBuilder>
+      getPropertyGraphReferencesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. References to BigQuery graphs.
+   *
+   * Note: "property graph" is the former name for BigQuery Graph. The field and
+   * message names retain the original term for backward compatibility; both
+   * refer to the same resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReference property_graph_references = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1.BigQueryPropertyGraphReferenceOrBuilder
+      getPropertyGraphReferencesOrBuilder(int index);
 }

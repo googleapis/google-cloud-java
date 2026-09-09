@@ -1829,8 +1829,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-defined location of Cloud Build logs and artifacts in Google
-   * Cloud Storage. Format: `gs://{bucket}/{folder}`
+   * User-defined location of Cloud Build logs and artifacts in Google Cloud
+   * Storage. Format: `gs://{bucket}/{folder}`
    *
    * A default bucket will be bootstrapped if the field is not set or empty.
    * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -1840,8 +1840,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    * - The field cannot be updated, including changing its presence
    * </pre>
    *
-   * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string artifacts_gcs_bucket = 15;</code>
    *
    * @return Whether the artifactsGcsBucket field is set.
    */
@@ -1854,8 +1853,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-defined location of Cloud Build logs and artifacts in Google
-   * Cloud Storage. Format: `gs://{bucket}/{folder}`
+   * User-defined location of Cloud Build logs and artifacts in Google Cloud
+   * Storage. Format: `gs://{bucket}/{folder}`
    *
    * A default bucket will be bootstrapped if the field is not set or empty.
    * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -1865,8 +1864,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    * - The field cannot be updated, including changing its presence
    * </pre>
    *
-   * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string artifacts_gcs_bucket = 15;</code>
    *
    * @return The artifactsGcsBucket.
    */
@@ -1887,8 +1885,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. User-defined location of Cloud Build logs and artifacts in Google
-   * Cloud Storage. Format: `gs://{bucket}/{folder}`
+   * User-defined location of Cloud Build logs and artifacts in Google Cloud
+   * Storage. Format: `gs://{bucket}/{folder}`
    *
    * A default bucket will be bootstrapped if the field is not set or empty.
    * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -1898,8 +1896,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    * - The field cannot be updated, including changing its presence
    * </pre>
    *
-   * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string artifacts_gcs_bucket = 15;</code>
    *
    * @return The bytes for artifactsGcsBucket.
    */
@@ -2053,16 +2050,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Cloud Build worker pool resource in which the
-   * Cloud Build job will execute. Format:
+   * The user-specified Cloud Build worker pool resource in which the Cloud
+   * Build job will execute. Format:
    * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
    * If this field is unspecified, the default Cloud Build worker pool will be
    * used.
    * </pre>
    *
-   * <code>
-   * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the workerPool field is set.
    */
@@ -2075,16 +2070,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Cloud Build worker pool resource in which the
-   * Cloud Build job will execute. Format:
+   * The user-specified Cloud Build worker pool resource in which the Cloud
+   * Build job will execute. Format:
    * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
    * If this field is unspecified, the default Cloud Build worker pool will be
    * used.
    * </pre>
    *
-   * <code>
-   * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The workerPool.
    */
@@ -2105,16 +2098,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Cloud Build worker pool resource in which the
-   * Cloud Build job will execute. Format:
+   * The user-specified Cloud Build worker pool resource in which the Cloud
+   * Build job will execute. Format:
    * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
    * If this field is unspecified, the default Cloud Build worker pool will be
    * used.
    * </pre>
    *
-   * <code>
-   * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for workerPool.
    */
@@ -2181,12 +2172,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Terraform version constraint.
+   * The user-specified Terraform version constraint.
    * Example: "=1.3.10".
    * </pre>
    *
-   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string tf_version_constraint = 21;</code>
    *
    * @return Whether the tfVersionConstraint field is set.
    */
@@ -2199,12 +2189,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Terraform version constraint.
+   * The user-specified Terraform version constraint.
    * Example: "=1.3.10".
    * </pre>
    *
-   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string tf_version_constraint = 21;</code>
    *
    * @return The tfVersionConstraint.
    */
@@ -2225,12 +2214,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user-specified Terraform version constraint.
+   * The user-specified Terraform version constraint.
    * Example: "=1.3.10".
    * </pre>
    *
-   * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
+   * <code>optional string tf_version_constraint = 21;</code>
    *
    * @return The bytes for tfVersionConstraint.
    */
@@ -5998,8 +5986,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6009,8 +5997,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @return Whether the artifactsGcsBucket field is set.
      */
@@ -6022,8 +6009,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6033,8 +6020,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @return The artifactsGcsBucket.
      */
@@ -6054,8 +6040,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6065,8 +6051,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @return The bytes for artifactsGcsBucket.
      */
@@ -6086,8 +6071,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6097,8 +6082,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @param value The artifactsGcsBucket to set.
      * @return This builder for chaining.
@@ -6117,8 +6101,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6128,8 +6112,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @return This builder for chaining.
      */
@@ -6144,8 +6127,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. User-defined location of Cloud Build logs and artifacts in Google
-     * Cloud Storage. Format: `gs://{bucket}/{folder}`
+     * User-defined location of Cloud Build logs and artifacts in Google Cloud
+     * Storage. Format: `gs://{bucket}/{folder}`
      *
      * A default bucket will be bootstrapped if the field is not set or empty.
      * Default bucket format: `gs://&lt;project number&gt;-&lt;region&gt;-blueprint-config`
@@ -6155,8 +6138,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      * - The field cannot be updated, including changing its presence
      * </pre>
      *
-     * <code>optional string artifacts_gcs_bucket = 15 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string artifacts_gcs_bucket = 15;</code>
      *
      * @param value The bytes for artifactsGcsBucket to set.
      * @return This builder for chaining.
@@ -6424,16 +6406,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return Whether the workerPool field is set.
      */
@@ -6445,16 +6425,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The workerPool.
      */
@@ -6474,16 +6452,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for workerPool.
      */
@@ -6503,16 +6479,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The workerPool to set.
      * @return This builder for chaining.
@@ -6531,16 +6505,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -6555,16 +6527,14 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Cloud Build worker pool resource in which the
-     * Cloud Build job will execute. Format:
+     * The user-specified Cloud Build worker pool resource in which the Cloud
+     * Build job will execute. Format:
      * `projects/{project}/locations/{location}/workerPools/{workerPoolId}`.
      * If this field is unspecified, the default Cloud Build worker pool will be
      * used.
      * </pre>
      *
-     * <code>
-     * optional string worker_pool = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>optional string worker_pool = 19 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
@@ -6691,12 +6661,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @return Whether the tfVersionConstraint field is set.
      */
@@ -6708,12 +6677,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @return The tfVersionConstraint.
      */
@@ -6733,12 +6701,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @return The bytes for tfVersionConstraint.
      */
@@ -6758,12 +6725,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @param value The tfVersionConstraint to set.
      * @return This builder for chaining.
@@ -6782,12 +6748,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @return This builder for chaining.
      */
@@ -6802,12 +6767,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user-specified Terraform version constraint.
+     * The user-specified Terraform version constraint.
      * Example: "=1.3.10".
      * </pre>
      *
-     * <code>optional string tf_version_constraint = 21 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
+     * <code>optional string tf_version_constraint = 21;</code>
      *
      * @param value The bytes for tfVersionConstraint to set.
      * @return This builder for chaining.

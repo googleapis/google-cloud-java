@@ -96,6 +96,9 @@
             },
             "UpdateReservation": {
               "methods": ["updateReservation", "updateReservation", "updateReservationCallable"]
+            },
+            "UpdateReservationGroup": {
+              "methods": ["updateReservationGroup", "updateReservationGroup", "updateReservationGroupCallable"]
             }
           }
         }

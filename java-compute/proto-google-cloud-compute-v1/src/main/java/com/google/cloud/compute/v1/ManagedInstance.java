@@ -518,9 +518,6 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. [Output Only] The status of the instance. This field is empty when
    * the instance does not exist.
-   * Additional supported values which may be not listed in the enum directly due to technical reasons:
-   * STOPPING
-   * SUSPENDING
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ManagedInstance.InstanceStatus}
@@ -619,7 +616,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>STOPPED = 444276141;</code>
      */
     STOPPED(444276141),
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     STOPPING(350791796),
     /**
      *
@@ -631,7 +636,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>SUSPENDED = 51223995;</code>
      */
     SUSPENDED(51223995),
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     SUSPENDING(514206246),
     /**
      *
@@ -759,7 +772,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      */
     public static final int STOPPED_VALUE = 444276141;
 
-    /** <code>STOPPING = 350791796;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is currently stopping (either being deleted or killed).
+     * </pre>
+     *
+     * <code>STOPPING = 350791796;</code>
+     */
     public static final int STOPPING_VALUE = 350791796;
 
     /**
@@ -773,7 +794,15 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      */
     public static final int SUSPENDED_VALUE = 51223995;
 
-    /** <code>SUSPENDING = 514206246;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspending.
+     * </pre>
+     *
+     * <code>SUSPENDING = 514206246;</code>
+     */
     public static final int SUSPENDING_VALUE = 514206246;
 
     /**

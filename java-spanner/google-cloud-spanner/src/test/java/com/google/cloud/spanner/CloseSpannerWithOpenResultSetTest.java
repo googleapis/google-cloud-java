@@ -61,7 +61,7 @@ public class CloseSpannerWithOpenResultSetTest extends AbstractMockServerTest {
 
   @BeforeClass
   public static void setWatchdogTimeout() {
-    System.setProperty("com.google.cloud.spanner.watchdogTimeoutSeconds", "1");
+    System.setProperty("com.google.cloud.spanner.watchdogTimeoutSeconds", "5");
   }
 
   @AfterClass

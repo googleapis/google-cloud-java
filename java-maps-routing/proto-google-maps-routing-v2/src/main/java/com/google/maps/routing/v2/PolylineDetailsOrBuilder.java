@@ -30,6 +30,77 @@ public interface PolylineDetailsOrBuilder
    *
    *
    * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  java.util.List<com.google.maps.routing.v2.PolylineDetails.TunnelInfo> getTunnelInfoList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.TunnelInfo getTunnelInfo(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  int getTunnelInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder>
+      getTunnelInfoOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tunnel details along the polyline. This field is populated if the request
+   * specifies the `avoid_tunnels` route modifier and the resultant route fails
+   * to avoid them, OR if `TUNNEL_INFO_ON_POLYLINE` is specified in
+   * `extra_computations` and the route contains tunnels.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.TunnelInfo tunnel_info = 8;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.TunnelInfoOrBuilder getTunnelInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Flyover details along the polyline.
    * </pre>
    *
@@ -144,4 +215,116 @@ public interface PolylineDetailsOrBuilder
    */
   com.google.maps.routing.v2.PolylineDetails.NarrowRoadInfoOrBuilder getNarrowRoadInfoOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  java.util.List<com.google.maps.routing.v2.PolylineDetails.BridgeInfo> getBridgeInfoList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.BridgeInfo getBridgeInfo(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  int getBridgeInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder>
+      getBridgeInfoOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Bridge details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.BridgeInfo bridge_info = 14;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.BridgeInfoOrBuilder getBridgeInfoOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  java.util.List<com.google.maps.routing.v2.PolylineDetails.SkywayInfo> getSkywayInfoList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.SkywayInfo getSkywayInfo(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  int getSkywayInfoCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  java.util.List<? extends com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder>
+      getSkywayInfoOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Skyway details along the polyline.
+   * </pre>
+   *
+   * <code>repeated .google.maps.routing.v2.PolylineDetails.SkywayInfo skyway_info = 15;</code>
+   */
+  com.google.maps.routing.v2.PolylineDetails.SkywayInfoOrBuilder getSkywayInfoOrBuilder(int index);
 }

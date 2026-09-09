@@ -197,4 +197,34 @@ public interface DocumentChunkOrBuilder
    * </code>
    */
   com.google.developers.knowledge.v1.DocumentOrBuilder getDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the relevance score of the chunk to the search
+   * query. Higher score indicates higher chunk relevance. The score is in range
+   * [0.0, 1.0].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the relevanceScore field is set.
+   */
+  boolean hasRelevanceScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the relevance score of the chunk to the search
+   * query. Higher score indicates higher chunk relevance. The score is in range
+   * [0.0, 1.0].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The relevanceScore.
+   */
+  double getRelevanceScore();
 }

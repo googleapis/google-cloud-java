@@ -86,9 +86,6 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
    * by recreating it. For more information, see About
    * repairing VMs in a MIG.
    * - DO_NOTHING: MIG does not repair a failed VM.
-   * Additional supported values which may be not listed in the enum directly due to technical reasons:
-   * DO_NOTHING
-   * REPAIR
    * </pre>
    *
    * Protobuf enum {@code
@@ -105,9 +102,27 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      * <code>UNDEFINED_DEFAULT_ACTION_ON_FAILURE = 0;</code>
      */
     UNDEFINED_DEFAULT_ACTION_ON_FAILURE(0),
-    /** <code>DO_NOTHING = 451307513;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * MIG does not repair a failed VM.
+     * </pre>
+     *
+     * <code>DO_NOTHING = 451307513;</code>
+     */
     DO_NOTHING(451307513),
-    /** <code>REPAIR = 266277773;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * (default): MIG automatically repairs a failed VM by recreating it.
+     * For more information, see About
+     * repairing VMs in a MIG.
+     * </pre>
+     *
+     * <code>REPAIR = 266277773;</code>
+     */
     REPAIR(266277773),
     UNRECOGNIZED(-1),
     ;
@@ -133,10 +148,28 @@ public final class InstanceGroupManagerInstanceLifecyclePolicy
      */
     public static final int UNDEFINED_DEFAULT_ACTION_ON_FAILURE_VALUE = 0;
 
-    /** <code>DO_NOTHING = 451307513;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * MIG does not repair a failed VM.
+     * </pre>
+     *
+     * <code>DO_NOTHING = 451307513;</code>
+     */
     public static final int DO_NOTHING_VALUE = 451307513;
 
-    /** <code>REPAIR = 266277773;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * (default): MIG automatically repairs a failed VM by recreating it.
+     * For more information, see About
+     * repairing VMs in a MIG.
+     * </pre>
+     *
+     * <code>REPAIR = 266277773;</code>
+     */
     public static final int REPAIR_VALUE = 266277773;
 
     public final int getNumber() {

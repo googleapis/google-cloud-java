@@ -19,6 +19,16 @@ package com.google.ads.admanager.v1.stub;
 import static com.google.ads.admanager.v1.AudienceSegmentServiceClient.ListAudienceSegmentsPagedResponse;
 
 import com.google.ads.admanager.v1.AudienceSegment;
+import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
@@ -125,6 +135,21 @@ public class AudienceSegmentServiceStubSettings
           ListAudienceSegmentsResponse,
           ListAudienceSegmentsPagedResponse>
       listAudienceSegmentsSettings;
+  private final UnaryCallSettings<
+          BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+      batchActivateAudienceSegmentsSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+      batchDeactivateAudienceSegmentsSettings;
+  private final UnaryCallSettings<
+          BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+      batchApproveAudienceSegmentsSettings;
+  private final UnaryCallSettings<
+          BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+      batchRejectAudienceSegmentsSettings;
+  private final UnaryCallSettings<
+          BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+      batchPopulateAudienceSegmentsSettings;
 
   private static final PagedListDescriptor<
           ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
@@ -202,6 +227,40 @@ public class AudienceSegmentServiceStubSettings
           ListAudienceSegmentsPagedResponse>
       listAudienceSegmentsSettings() {
     return listAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+      batchActivateAudienceSegmentsSettings() {
+    return batchActivateAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+      batchDeactivateAudienceSegmentsSettings() {
+    return batchDeactivateAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveAudienceSegments. */
+  public UnaryCallSettings<
+          BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+      batchApproveAudienceSegmentsSettings() {
+    return batchApproveAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchRejectAudienceSegments. */
+  public UnaryCallSettings<BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+      batchRejectAudienceSegmentsSettings() {
+    return batchRejectAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchPopulateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+      batchPopulateAudienceSegmentsSettings() {
+    return batchPopulateAudienceSegmentsSettings;
   }
 
   public AudienceSegmentServiceStub createStub() throws IOException {
@@ -288,6 +347,16 @@ public class AudienceSegmentServiceStubSettings
 
     getAudienceSegmentSettings = settingsBuilder.getAudienceSegmentSettings().build();
     listAudienceSegmentsSettings = settingsBuilder.listAudienceSegmentsSettings().build();
+    batchActivateAudienceSegmentsSettings =
+        settingsBuilder.batchActivateAudienceSegmentsSettings().build();
+    batchDeactivateAudienceSegmentsSettings =
+        settingsBuilder.batchDeactivateAudienceSegmentsSettings().build();
+    batchApproveAudienceSegmentsSettings =
+        settingsBuilder.batchApproveAudienceSegmentsSettings().build();
+    batchRejectAudienceSegmentsSettings =
+        settingsBuilder.batchRejectAudienceSegmentsSettings().build();
+    batchPopulateAudienceSegmentsSettings =
+        settingsBuilder.batchPopulateAudienceSegmentsSettings().build();
   }
 
   @Override
@@ -310,6 +379,21 @@ public class AudienceSegmentServiceStubSettings
             ListAudienceSegmentsResponse,
             ListAudienceSegmentsPagedResponse>
         listAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+        batchActivateAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+        batchDeactivateAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+        batchApproveAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+        batchRejectAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+        batchPopulateAudienceSegmentsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -340,10 +424,21 @@ public class AudienceSegmentServiceStubSettings
       getAudienceSegmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAudienceSegmentsSettings =
           PagedCallSettings.newBuilder(LIST_AUDIENCE_SEGMENTS_PAGE_STR_FACT);
+      batchActivateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchApproveAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRejectAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchPopulateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAudienceSegmentSettings, listAudienceSegmentsSettings);
+              getAudienceSegmentSettings,
+              listAudienceSegmentsSettings,
+              batchActivateAudienceSegmentsSettings,
+              batchDeactivateAudienceSegmentsSettings,
+              batchApproveAudienceSegmentsSettings,
+              batchRejectAudienceSegmentsSettings,
+              batchPopulateAudienceSegmentsSettings);
       initDefaults(this);
     }
 
@@ -352,10 +447,26 @@ public class AudienceSegmentServiceStubSettings
 
       getAudienceSegmentSettings = settings.getAudienceSegmentSettings.toBuilder();
       listAudienceSegmentsSettings = settings.listAudienceSegmentsSettings.toBuilder();
+      batchActivateAudienceSegmentsSettings =
+          settings.batchActivateAudienceSegmentsSettings.toBuilder();
+      batchDeactivateAudienceSegmentsSettings =
+          settings.batchDeactivateAudienceSegmentsSettings.toBuilder();
+      batchApproveAudienceSegmentsSettings =
+          settings.batchApproveAudienceSegmentsSettings.toBuilder();
+      batchRejectAudienceSegmentsSettings =
+          settings.batchRejectAudienceSegmentsSettings.toBuilder();
+      batchPopulateAudienceSegmentsSettings =
+          settings.batchPopulateAudienceSegmentsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getAudienceSegmentSettings, listAudienceSegmentsSettings);
+              getAudienceSegmentSettings,
+              listAudienceSegmentsSettings,
+              batchActivateAudienceSegmentsSettings,
+              batchDeactivateAudienceSegmentsSettings,
+              batchApproveAudienceSegmentsSettings,
+              batchRejectAudienceSegmentsSettings,
+              batchPopulateAudienceSegmentsSettings);
     }
 
     private static Builder createDefault() {
@@ -378,6 +489,31 @@ public class AudienceSegmentServiceStubSettings
 
       builder
           .listAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchApproveAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchRejectAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchPopulateAudienceSegmentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -412,6 +548,41 @@ public class AudienceSegmentServiceStubSettings
             ListAudienceSegmentsPagedResponse>
         listAudienceSegmentsSettings() {
       return listAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+        batchActivateAudienceSegmentsSettings() {
+      return batchActivateAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+        batchDeactivateAudienceSegmentsSettings() {
+      return batchDeactivateAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+        batchApproveAudienceSegmentsSettings() {
+      return batchApproveAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchRejectAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+        batchRejectAudienceSegmentsSettings() {
+      return batchRejectAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchPopulateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+        batchPopulateAudienceSegmentsSettings() {
+      return batchPopulateAudienceSegmentsSettings;
     }
 
     @Override

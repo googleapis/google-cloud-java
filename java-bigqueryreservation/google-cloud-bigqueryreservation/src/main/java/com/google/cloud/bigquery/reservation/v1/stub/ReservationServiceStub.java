@@ -62,6 +62,7 @@ import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
 import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -242,6 +243,11 @@ public abstract class ReservationServiceStub implements BackgroundResource {
   public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
       listReservationGroupsCallable() {
     throw new UnsupportedOperationException("Not implemented: listReservationGroupsCallable()");
+  }
+
+  public UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateReservationGroupCallable()");
   }
 
   @Override

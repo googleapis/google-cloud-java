@@ -75,7 +75,7 @@ public interface DeleteSchemaRevisionRequestOrBuilder
    * </code>
    *
    * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-   *     google/pubsub/v1/schema.proto;l=330
+   *     google/pubsub/v1/schema.proto;l=342
    * @return The revisionId.
    */
   @java.lang.Deprecated
@@ -94,7 +94,7 @@ public interface DeleteSchemaRevisionRequestOrBuilder
    * </code>
    *
    * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-   *     google/pubsub/v1/schema.proto;l=330
+   *     google/pubsub/v1/schema.proto;l=342
    * @return The bytes for revisionId.
    */
   @java.lang.Deprecated

@@ -36,6 +36,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterUpgradeInfo;
+import com.google.container.v1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
@@ -334,6 +335,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   public UnaryCallSettings<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoSettings() {
     return ((ClusterManagerStubSettings) getStubSettings()).fetchNodePoolUpgradeInfoSettings();
+  }
+
+  /** Returns the object with the settings used for calls to completeControlPlaneUpgrade. */
+  public UnaryCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).completeControlPlaneUpgradeSettings();
   }
 
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
@@ -653,6 +660,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
         fetchNodePoolUpgradeInfoSettings() {
       return getStubSettingsBuilder().fetchNodePoolUpgradeInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to completeControlPlaneUpgrade. */
+    public UnaryCallSettings.Builder<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeSettings() {
+      return getStubSettingsBuilder().completeControlPlaneUpgradeSettings();
     }
 
     @Override

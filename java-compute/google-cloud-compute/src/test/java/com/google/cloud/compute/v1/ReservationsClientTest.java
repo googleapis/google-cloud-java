@@ -231,6 +231,7 @@ public class ReservationsClientTest {
             .setParams(ReservationParams.newBuilder().build())
             .setProtectionTier("protectionTier344968283")
             .setReservationSharingPolicy(AllocationReservationSharingPolicy.newBuilder().build())
+            .setResourceMetadata(ResourceMetadata.newBuilder().build())
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)

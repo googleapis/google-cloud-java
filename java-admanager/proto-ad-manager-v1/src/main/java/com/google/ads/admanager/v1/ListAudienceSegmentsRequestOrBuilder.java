@@ -118,7 +118,21 @@ public interface ListAudienceSegmentsRequestOrBuilder
    *
    * **Filterable fields:**
    *
+   * * `adIdSize`
+   * * `categoryIds`
+   * * `dataProviderDisplayName`
    * * `displayName`
+   * * `idfaSize`
+   * * `mobileWebSize`
+   * * `ppidSize`
+   * * `segmentType`
+   * * `sharedId`
+   * * `size`
+   * * `status`
+   * * `thirdPartyAudienceSegment.approvalStatus`
+   * * `thirdPartyAudienceSegment.cost`
+   * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -137,7 +151,21 @@ public interface ListAudienceSegmentsRequestOrBuilder
    *
    * **Filterable fields:**
    *
+   * * `adIdSize`
+   * * `categoryIds`
+   * * `dataProviderDisplayName`
    * * `displayName`
+   * * `idfaSize`
+   * * `mobileWebSize`
+   * * `ppidSize`
+   * * `segmentType`
+   * * `sharedId`
+   * * `size`
+   * * `status`
+   * * `thirdPartyAudienceSegment.approvalStatus`
+   * * `thirdPartyAudienceSegment.cost`
+   * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

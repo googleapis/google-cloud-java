@@ -94,9 +94,6 @@ public final class HealthStatus extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Health state of the IPv4 address of the instance.
-   * Additional supported values which may be not listed in the enum directly due to technical reasons:
-   * HEALTHY
-   * UNHEALTHY
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthStatus.HealthState}

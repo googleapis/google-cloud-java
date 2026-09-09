@@ -77,6 +77,22 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_CustomInfoType_MetadataKeyValueExpression_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable;
@@ -218,7 +234,7 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "\020SENSITIVITY_HIGH\020\036\"K\n\n"
           + "StoredType\022\014\n"
           + "\004name\030\001 \001(\t\022/\n"
-          + "\013create_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\275\r\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\351\021\n"
           + "\016CustomInfoType\0222\n"
           + "\tinfo_type\030\001 \001(\0132\037.google.privacy.dlp.v2.InfoType\0225\n\n"
           + "likelihood\030\006 \001(\0162!.google.privacy.dlp.v2.Likelihood\022F\n\n"
@@ -230,7 +246,9 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "\013stored_type\030\005 \001(\0132!.google.privacy.dlp.v2.StoredTypeH\000\022i\n"
           + "\035metadata_key_value_expression\030\n"
           + " \001(\0132@"
-          + ".google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionH\000\022L\n"
+          + ".google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpressionH\000\022W\n"
+          + "\024file_label_info_type\030\014"
+          + " \001(\01327.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeH\000\022L\n"
           + "\017detection_rules\030\007"
           + " \003(\01323.google.privacy.dlp.v2.CustomInfoType.DetectionRule\022K\n"
           + "\016exclusion_type\030\010"
@@ -238,8 +256,8 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "\021sensitivity_score\030\t"
           + " \001(\0132\'.google.privacy.dlp.v2.SensitivityScore\032\310\001\n\n"
           + "Dictionary\022N\n"
-          + "\tword_list\030\001 "
-          + "\001(\01329.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListH\000\022E\n"
+          + "\tword_list\030\001"
+          + " \001(\01329.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListH\000\022E\n"
           + "\022cloud_storage_path\030\003"
           + " \001(\0132\'.google.privacy.dlp.v2.CloudStoragePathH\000\032\031\n"
           + "\010WordList\022\r\n"
@@ -251,10 +269,25 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "SurrogateType\032D\n"
           + "\032MetadataKeyValueExpression\022\021\n"
           + "\tkey_regex\030\001 \001(\t\022\023\n"
-          + "\013value_regex\030\002 \001(\t\032\276\004\n\r"
+          + "\013value_regex\030\002 \001(\t\032\320\003\n"
+          + "\021FileLabelInfoType\022e\n"
+          + "\021sensitivity_label\030\001 \001(\0132H.google.privacy.dlp.v2.CustomInf"
+          + "oType.FileLabelInfoType.SensitivityLabelH\000\022f\n"
+          + "\022google_drive_label\030\002 \001(\0132H.google."
+          + "privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelH\000\032 \n"
+          + "\020SensitivityLabel\022\014\n"
+          + "\004guid\030\001 \001(\t\032\301\001\n"
+          + "\020GoogleDriveLabel\022\020\n"
+          + "\010label_id\030\001 \001(\t\022r\n"
+          + "\025label_fields_to_match\030\002 \003(\0132S.google.privacy.dlp.v2.Custo"
+          + "mInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField\032\'\n\n"
+          + "LabelField\022\n\n"
+          + "\002id\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\tB\006\n"
+          + "\004type\032\276\004\n\r"
           + "DetectionRule\022W\n"
-          + "\014hotword_rule\030\001 \001(\0132?.google.pr"
-          + "ivacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleH\000\0328\n"
+          + "\014hotword_rule\030\001 \001(\0132?.google.privac"
+          + "y.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleH\000\0328\n"
           + "\tProximity\022\025\n\r"
           + "window_before\030\001 \001(\005\022\024\n"
           + "\014window_after\030\002 \001(\005\032\202\001\n"
@@ -265,10 +298,10 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "adjustment\032\214\002\n"
           + "\013HotwordRule\022B\n\r"
           + "hotword_regex\030\001 \001(\0132+.google.privacy.dlp.v2.CustomInfoType.Regex\022P\n"
-          + "\tproximity\030\002 \001(\0132=.google.p"
-          + "rivacy.dlp.v2.CustomInfoType.DetectionRule.Proximity\022g\n"
-          + "\025likelihood_adjustment\030\003 "
-          + "\001(\0132H.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentB\006\n"
+          + "\tproximity\030\002 \001(\0132=.google.priva"
+          + "cy.dlp.v2.CustomInfoType.DetectionRule.Proximity\022g\n"
+          + "\025likelihood_adjustment\030\003 \001(\0132"
+          + "H.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentB\006\n"
           + "\004type\"K\n\r"
           + "ExclusionType\022\036\n"
           + "\032EXCLUSION_TYPE_UNSPECIFIED\020\000\022\032\n"
@@ -289,18 +322,18 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "include_regex\030\002 \003(\t\022\025\n\r"
           + "exclude_regex\030\003 \003(\t\"\354\003\n"
           + "\023CloudStorageOptions\022D\n"
-          + "\010file_set\030\001 \001(\01322.goog"
-          + "le.privacy.dlp.v2.CloudStorageOptions.FileSet\022\034\n"
+          + "\010file_set\030\001 \001(\01322.google.p"
+          + "rivacy.dlp.v2.CloudStorageOptions.FileSet\022\034\n"
           + "\024bytes_limit_per_file\030\004 \001(\003\022$\n"
           + "\034bytes_limit_per_file_percent\030\010 \001(\005\0223\n\n"
           + "file_types\030\005 \003(\0162\037.google.privacy.dlp.v2.FileType\022N\n\r"
-          + "sample_method\030\006 \001(\01627.google.p"
-          + "rivacy.dlp.v2.CloudStorageOptions.SampleMethod\022\033\n"
+          + "sample_method\030\006 \001(\01627.google.priva"
+          + "cy.dlp.v2.CloudStorageOptions.SampleMethod\022\033\n"
           + "\023files_limit_percent\030\007 \001(\005\032_\n"
           + "\007FileSet\022\013\n"
           + "\003url\030\001 \001(\t\022G\n"
-          + "\016regex_file_set\030\002 "
-          + "\001(\0132/.google.privacy.dlp.v2.CloudStorageRegexFileSet\"H\n"
+          + "\016regex_file_set\030\002 \001(\0132"
+          + "/.google.privacy.dlp.v2.CloudStorageRegexFileSet\"H\n"
           + "\014SampleMethod\022\035\n"
           + "\031SAMPLE_METHOD_UNSPECIFIED\020\000\022\007\n"
           + "\003TOP\020\001\022\020\n"
@@ -328,8 +361,8 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\'.google.privacy.dlp.v2.DatastoreOptionsH\000\022K\n"
           + "\025cloud_storage_options\030\003"
           + " \001(\0132*.google.privacy.dlp.v2.CloudStorageOptionsH\000\022C\n"
-          + "\021big_query_options\030\004 "
-          + "\001(\0132&.google.privacy.dlp.v2.BigQueryOptionsH\000\022>\n"
+          + "\021big_query_options\030\004 \001(\0132"
+          + "&.google.privacy.dlp.v2.BigQueryOptionsH\000\022>\n"
           + "\016hybrid_options\030\t \001(\0132$.google.privacy.dlp.v2.HybridOptionsH\000\022L\n"
           + "\017timespan_config\030\006"
           + " \001(\01323.google.privacy.dlp.v2.StorageConfig.TimespanConfig\032\332\001\n"
@@ -342,8 +375,8 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "HybridOptions\022\023\n"
           + "\013description\030\001 \001(\t\022#\n"
           + "\033required_finding_label_keys\030\002 \003(\t\022@\n"
-          + "\006labels\030\003 \003(\01320.google.pr"
-          + "ivacy.dlp.v2.HybridOptions.LabelsEntry\022:\n\r"
+          + "\006labels\030\003"
+          + " \003(\01320.google.privacy.dlp.v2.HybridOptions.LabelsEntry\022:\n\r"
           + "table_options\030\004 \001(\0132#.google.privacy.dlp.v2.TableOptions\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -402,9 +435,8 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
           + "POWERPOINT\020\013\022\t\n"
           + "\005EXCEL\020\014B\231\001\n"
           + "\031com.google.privacy.dlp.v2B\n"
-          + "DlpStorageP\001Z)cloud.google.com/go/dlp/apiv2/dlppb;dlppb\252\002\023Google.Clou"
-          + "d.Dlp.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google:"
-          + ":Cloud::Dlp::V2b\006proto3"
+          + "DlpStorageP\001Z)cloud.google.com/go/dlp/apiv2/dlppb;dlppb\252\002\023Google.Cloud.Dl"
+          + "p.V2\312\002\023Google\\Cloud\\Dlp\\V2\352\002\026Google::Cloud::Dlp::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -448,6 +480,7 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
               "SurrogateType",
               "StoredType",
               "MetadataKeyValueExpression",
+              "FileLabelInfoType",
               "DetectionRules",
               "ExclusionType",
               "SensitivityScore",
@@ -491,8 +524,43 @@ public final class DlpStorage extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "KeyRegex", "ValueRegex",
             });
-    internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor =
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor =
         internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor.getNestedType(4);
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor,
+            new java.lang.String[] {
+              "SensitivityLabel", "GoogleDriveLabel", "Type",
+            });
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor =
+        internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor
+            .getNestedType(0);
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor,
+            new java.lang.String[] {
+              "Guid",
+            });
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor =
+        internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor
+            .getNestedType(1);
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor,
+            new java.lang.String[] {
+              "LabelId", "LabelFieldsToMatch",
+            });
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor =
+        internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor
+            .getNestedType(0);
+    internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor,
+            new java.lang.String[] {
+              "Id", "Value",
+            });
+    internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor =
+        internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor.getNestedType(5);
     internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor,

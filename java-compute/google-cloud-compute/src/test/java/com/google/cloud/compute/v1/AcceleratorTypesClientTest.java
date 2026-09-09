@@ -141,6 +141,7 @@ public class AcceleratorTypesClientTest {
             .setKind("kind3292052")
             .setMaximumCardsPerInstance(-1883669166)
             .setName("name3373707")
+            .setResourceMetadata(ResourceMetadata.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")
             .build();

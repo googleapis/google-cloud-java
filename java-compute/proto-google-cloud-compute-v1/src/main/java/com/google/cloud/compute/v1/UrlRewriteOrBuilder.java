@@ -232,4 +232,41 @@ public interface UrlRewriteOrBuilder
    * @return The bytes for pathTemplateRewrite.
    */
   com.google.protobuf.ByteString getPathTemplateRewriteBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   *
+   * @return Whether the regexRewrite field is set.
+   */
+  boolean hasRegexRewrite();
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   *
+   * @return The regexRewrite.
+   */
+  com.google.cloud.compute.v1.RegexRewrite getRegexRewrite();
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   */
+  com.google.cloud.compute.v1.RegexRewriteOrBuilder getRegexRewriteOrBuilder();
 }

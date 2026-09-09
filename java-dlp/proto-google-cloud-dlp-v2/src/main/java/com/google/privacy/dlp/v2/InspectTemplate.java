@@ -27,8 +27,8 @@ package com.google.privacy.dlp.v2;
  * The inspectTemplate contains a configuration (set of types of sensitive data
  * to be detected) to be used anywhere you otherwise would normally specify
  * InspectConfig. See
- * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
- * learn more.
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}
@@ -401,6 +401,29 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
         : inspectConfig_;
   }
 
+  public static final int ALLOW_LIMITED_AVAILABILITY_INFO_TYPES_FIELD_NUMBER = 8;
+  private boolean allowLimitedAvailabilityInfoTypes_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the use of [limited-availability built-in
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes)
+   * in inspect_config. These infoTypes are supported only in specific regions
+   * and can cause scanning errors if used elsewhere.
+   * </pre>
+   *
+   * <code>bool allow_limited_availability_info_types = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The allowLimitedAvailabilityInfoTypes.
+   */
+  @java.lang.Override
+  public boolean getAllowLimitedAvailabilityInfoTypes() {
+    return allowLimitedAvailabilityInfoTypes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -433,6 +456,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getInspectConfig());
     }
+    if (allowLimitedAvailabilityInfoTypes_ != false) {
+      output.writeBool(8, allowLimitedAvailabilityInfoTypes_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -459,6 +485,11 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getInspectConfig());
+    }
+    if (allowLimitedAvailabilityInfoTypes_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              8, allowLimitedAvailabilityInfoTypes_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -491,6 +522,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
     if (hasInspectConfig()) {
       if (!getInspectConfig().equals(other.getInspectConfig())) return false;
     }
+    if (getAllowLimitedAvailabilityInfoTypes() != other.getAllowLimitedAvailabilityInfoTypes())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -520,6 +553,10 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + INSPECT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInspectConfig().hashCode();
     }
+    hash = (37 * hash) + ALLOW_LIMITED_AVAILABILITY_INFO_TYPES_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getAllowLimitedAvailabilityInfoTypes());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -628,8 +665,8 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
    * The inspectTemplate contains a configuration (set of types of sensitive data
    * to be detected) to be used anywhere you otherwise would normally specify
    * InspectConfig. See
-   * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
-   * learn more.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectTemplate}
@@ -693,6 +730,7 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
         inspectConfigBuilder_.dispose();
         inspectConfigBuilder_ = null;
       }
+      allowLimitedAvailabilityInfoTypes_ = false;
       return this;
     }
 
@@ -752,6 +790,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
             inspectConfigBuilder_ == null ? inspectConfig_ : inspectConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.allowLimitedAvailabilityInfoTypes_ = allowLimitedAvailabilityInfoTypes_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -790,6 +831,9 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasInspectConfig()) {
         mergeInspectConfig(other.getInspectConfig());
+      }
+      if (other.getAllowLimitedAvailabilityInfoTypes() != false) {
+        setAllowLimitedAvailabilityInfoTypes(other.getAllowLimitedAvailabilityInfoTypes());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -856,6 +900,12 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 64:
+              {
+                allowLimitedAvailabilityInfoTypes_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1845,6 +1895,77 @@ public final class InspectTemplate extends com.google.protobuf.GeneratedMessage
         inspectConfig_ = null;
       }
       return inspectConfigBuilder_;
+    }
+
+    private boolean allowLimitedAvailabilityInfoTypes_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the use of [limited-availability built-in
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes)
+     * in inspect_config. These infoTypes are supported only in specific regions
+     * and can cause scanning errors if used elsewhere.
+     * </pre>
+     *
+     * <code>
+     * bool allow_limited_availability_info_types = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allowLimitedAvailabilityInfoTypes.
+     */
+    @java.lang.Override
+    public boolean getAllowLimitedAvailabilityInfoTypes() {
+      return allowLimitedAvailabilityInfoTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the use of [limited-availability built-in
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes)
+     * in inspect_config. These infoTypes are supported only in specific regions
+     * and can cause scanning errors if used elsewhere.
+     * </pre>
+     *
+     * <code>
+     * bool allow_limited_availability_info_types = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The allowLimitedAvailabilityInfoTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowLimitedAvailabilityInfoTypes(boolean value) {
+
+      allowLimitedAvailabilityInfoTypes_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enables the use of [limited-availability built-in
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes)
+     * in inspect_config. These infoTypes are supported only in specific regions
+     * and can cause scanning errors if used elsewhere.
+     * </pre>
+     *
+     * <code>
+     * bool allow_limited_availability_info_types = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowLimitedAvailabilityInfoTypes() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      allowLimitedAvailabilityInfoTypes_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InspectTemplate)

@@ -230,7 +230,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    *
    * **Filterable fields:**
    *
+   * * `adIdSize`
+   * * `categoryIds`
+   * * `dataProviderDisplayName`
    * * `displayName`
+   * * `idfaSize`
+   * * `mobileWebSize`
+   * * `ppidSize`
+   * * `segmentType`
+   * * `sharedId`
+   * * `size`
+   * * `status`
+   * * `thirdPartyAudienceSegment.approvalStatus`
+   * * `thirdPartyAudienceSegment.cost`
+   * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -260,7 +274,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    *
    * **Filterable fields:**
    *
+   * * `adIdSize`
+   * * `categoryIds`
+   * * `dataProviderDisplayName`
    * * `displayName`
+   * * `idfaSize`
+   * * `mobileWebSize`
+   * * `ppidSize`
+   * * `segmentType`
+   * * `sharedId`
+   * * `size`
+   * * `status`
+   * * `thirdPartyAudienceSegment.approvalStatus`
+   * * `thirdPartyAudienceSegment.cost`
+   * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1117,7 +1145,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      *
      * **Filterable fields:**
      *
+     * * `adIdSize`
+     * * `categoryIds`
+     * * `dataProviderDisplayName`
      * * `displayName`
+     * * `idfaSize`
+     * * `mobileWebSize`
+     * * `ppidSize`
+     * * `segmentType`
+     * * `sharedId`
+     * * `size`
+     * * `status`
+     * * `thirdPartyAudienceSegment.approvalStatus`
+     * * `thirdPartyAudienceSegment.cost`
+     * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1146,7 +1188,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      *
      * **Filterable fields:**
      *
+     * * `adIdSize`
+     * * `categoryIds`
+     * * `dataProviderDisplayName`
      * * `displayName`
+     * * `idfaSize`
+     * * `mobileWebSize`
+     * * `ppidSize`
+     * * `segmentType`
+     * * `sharedId`
+     * * `size`
+     * * `status`
+     * * `thirdPartyAudienceSegment.approvalStatus`
+     * * `thirdPartyAudienceSegment.cost`
+     * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1175,7 +1231,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      *
      * **Filterable fields:**
      *
+     * * `adIdSize`
+     * * `categoryIds`
+     * * `dataProviderDisplayName`
      * * `displayName`
+     * * `idfaSize`
+     * * `mobileWebSize`
+     * * `ppidSize`
+     * * `segmentType`
+     * * `sharedId`
+     * * `size`
+     * * `status`
+     * * `thirdPartyAudienceSegment.approvalStatus`
+     * * `thirdPartyAudienceSegment.cost`
+     * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1203,7 +1273,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      *
      * **Filterable fields:**
      *
+     * * `adIdSize`
+     * * `categoryIds`
+     * * `dataProviderDisplayName`
      * * `displayName`
+     * * `idfaSize`
+     * * `mobileWebSize`
+     * * `ppidSize`
+     * * `segmentType`
+     * * `sharedId`
+     * * `size`
+     * * `status`
+     * * `thirdPartyAudienceSegment.approvalStatus`
+     * * `thirdPartyAudienceSegment.cost`
+     * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1227,7 +1311,21 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      *
      * **Filterable fields:**
      *
+     * * `adIdSize`
+     * * `categoryIds`
+     * * `dataProviderDisplayName`
      * * `displayName`
+     * * `idfaSize`
+     * * `mobileWebSize`
+     * * `ppidSize`
+     * * `segmentType`
+     * * `sharedId`
+     * * `size`
+     * * `status`
+     * * `thirdPartyAudienceSegment.approvalStatus`
+     * * `thirdPartyAudienceSegment.cost`
+     * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

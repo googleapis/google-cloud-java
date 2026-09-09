@@ -371,6 +371,59 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int REGEX_REWRITE_FIELD_NUMBER = 380801428;
+  private com.google.cloud.compute.v1.RegexRewrite regexRewrite_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   *
+   * @return Whether the regexRewrite field is set.
+   */
+  @java.lang.Override
+  public boolean hasRegexRewrite() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   *
+   * @return The regexRewrite.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RegexRewrite getRegexRewrite() {
+    return regexRewrite_ == null
+        ? com.google.cloud.compute.v1.RegexRewrite.getDefaultInstance()
+        : regexRewrite_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.RegexRewriteOrBuilder getRegexRewriteOrBuilder() {
+    return regexRewrite_ == null
+        ? com.google.cloud.compute.v1.RegexRewrite.getDefaultInstance()
+        : regexRewrite_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -391,6 +444,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 159819253, hostRewrite_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(380801428, getRegexRewrite());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 423409569, pathTemplateRewrite_);
     }
@@ -408,6 +464,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(159819253, hostRewrite_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(380801428, getRegexRewrite());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
@@ -440,6 +500,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     if (hasPathTemplateRewrite()) {
       if (!getPathTemplateRewrite().equals(other.getPathTemplateRewrite())) return false;
     }
+    if (hasRegexRewrite() != other.hasRegexRewrite()) return false;
+    if (hasRegexRewrite()) {
+      if (!getRegexRewrite().equals(other.getRegexRewrite())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -462,6 +526,10 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     if (hasPathTemplateRewrite()) {
       hash = (37 * hash) + PATH_TEMPLATE_REWRITE_FIELD_NUMBER;
       hash = (53 * hash) + getPathTemplateRewrite().hashCode();
+    }
+    if (hasRegexRewrite()) {
+      hash = (37 * hash) + REGEX_REWRITE_FIELD_NUMBER;
+      hash = (53 * hash) + getRegexRewrite().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -594,10 +662,19 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.compute.v1.UrlRewrite.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRegexRewriteFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -607,6 +684,11 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
       hostRewrite_ = "";
       pathPrefixRewrite_ = "";
       pathTemplateRewrite_ = "";
+      regexRewrite_ = null;
+      if (regexRewriteBuilder_ != null) {
+        regexRewriteBuilder_.dispose();
+        regexRewriteBuilder_ = null;
+      }
       return this;
     }
 
@@ -656,6 +738,11 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
         result.pathTemplateRewrite_ = pathTemplateRewrite_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.regexRewrite_ =
+            regexRewriteBuilder_ == null ? regexRewrite_ : regexRewriteBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -685,6 +772,9 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
         pathTemplateRewrite_ = other.pathTemplateRewrite_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasRegexRewrite()) {
+        mergeRegexRewrite(other.getRegexRewrite());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -724,6 +814,13 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1278554026
+            case -1248555870:
+              {
+                input.readMessage(
+                    internalGetRegexRewriteFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -1248555870
             case -907690742:
               {
                 pathTemplateRewrite_ = input.readStringRequireUtf8();
@@ -1305,6 +1402,201 @@ public final class UrlRewrite extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.RegexRewrite regexRewrite_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.RegexRewrite,
+            com.google.cloud.compute.v1.RegexRewrite.Builder,
+            com.google.cloud.compute.v1.RegexRewriteOrBuilder>
+        regexRewriteBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     *
+     * @return Whether the regexRewrite field is set.
+     */
+    public boolean hasRegexRewrite() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     *
+     * @return The regexRewrite.
+     */
+    public com.google.cloud.compute.v1.RegexRewrite getRegexRewrite() {
+      if (regexRewriteBuilder_ == null) {
+        return regexRewrite_ == null
+            ? com.google.cloud.compute.v1.RegexRewrite.getDefaultInstance()
+            : regexRewrite_;
+      } else {
+        return regexRewriteBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public Builder setRegexRewrite(com.google.cloud.compute.v1.RegexRewrite value) {
+      if (regexRewriteBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regexRewrite_ = value;
+      } else {
+        regexRewriteBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public Builder setRegexRewrite(
+        com.google.cloud.compute.v1.RegexRewrite.Builder builderForValue) {
+      if (regexRewriteBuilder_ == null) {
+        regexRewrite_ = builderForValue.build();
+      } else {
+        regexRewriteBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public Builder mergeRegexRewrite(com.google.cloud.compute.v1.RegexRewrite value) {
+      if (regexRewriteBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && regexRewrite_ != null
+            && regexRewrite_ != com.google.cloud.compute.v1.RegexRewrite.getDefaultInstance()) {
+          getRegexRewriteBuilder().mergeFrom(value);
+        } else {
+          regexRewrite_ = value;
+        }
+      } else {
+        regexRewriteBuilder_.mergeFrom(value);
+      }
+      if (regexRewrite_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public Builder clearRegexRewrite() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      regexRewrite_ = null;
+      if (regexRewriteBuilder_ != null) {
+        regexRewriteBuilder_.dispose();
+        regexRewriteBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public com.google.cloud.compute.v1.RegexRewrite.Builder getRegexRewriteBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetRegexRewriteFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    public com.google.cloud.compute.v1.RegexRewriteOrBuilder getRegexRewriteOrBuilder() {
+      if (regexRewriteBuilder_ != null) {
+        return regexRewriteBuilder_.getMessageOrBuilder();
+      } else {
+        return regexRewrite_ == null
+            ? com.google.cloud.compute.v1.RegexRewrite.getDefaultInstance()
+            : regexRewrite_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The regex rewrite to be applied to the URL. Only one ofpathPrefixRewrite, pathTemplateRewrite, orregexRewrite may be specified.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.RegexRewrite regex_rewrite = 380801428;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.RegexRewrite,
+            com.google.cloud.compute.v1.RegexRewrite.Builder,
+            com.google.cloud.compute.v1.RegexRewriteOrBuilder>
+        internalGetRegexRewriteFieldBuilder() {
+      if (regexRewriteBuilder_ == null) {
+        regexRewriteBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.RegexRewrite,
+                com.google.cloud.compute.v1.RegexRewrite.Builder,
+                com.google.cloud.compute.v1.RegexRewriteOrBuilder>(
+                getRegexRewrite(), getParentForChildren(), isClean());
+        regexRewrite_ = null;
+      }
+      return regexRewriteBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.UrlRewrite)

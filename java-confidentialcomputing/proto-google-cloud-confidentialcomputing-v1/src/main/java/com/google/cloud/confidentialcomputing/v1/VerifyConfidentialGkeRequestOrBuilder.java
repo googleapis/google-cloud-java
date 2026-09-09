@@ -146,6 +146,39 @@ public interface VerifyConfidentialGkeRequestOrBuilder
           .ConfidentialGkeOptionsOrBuilder
       getOptionsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional platform security architecture hint for the verifier
+   * engine. Defaults to `VIRTUALIZED_CVM` behavior if unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.PlatformType platform_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for platformType.
+   */
+  int getPlatformTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional platform security architecture hint for the verifier
+   * engine. Defaults to `VIRTUALIZED_CVM` behavior if unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.PlatformType platform_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The platformType.
+   */
+  com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.PlatformType
+      getPlatformType();
+
   com.google.cloud.confidentialcomputing.v1.VerifyConfidentialGkeRequest.TeeAttestationCase
       getTeeAttestationCase();
 }

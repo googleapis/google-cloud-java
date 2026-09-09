@@ -26,8 +26,8 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Use IAM authentication to connect. This requires the Cloud SQL IAM feature
  * to be enabled on the instance, which is not the default for Cloud SQL.
- * See https://cloud.google.com/sql/docs/postgres/authentication and
- * https://cloud.google.com/sql/docs/mysql/authentication.
+ * See https://docs.cloud.google.com/sql/docs/postgres/authentication and
+ * https://docs.cloud.google.com/sql/docs/mysql/authentication.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CloudSqlIamCredential}
@@ -228,8 +228,8 @@ public final class CloudSqlIamCredential extends com.google.protobuf.GeneratedMe
    * <pre>
    * Use IAM authentication to connect. This requires the Cloud SQL IAM feature
    * to be enabled on the instance, which is not the default for Cloud SQL.
-   * See https://cloud.google.com/sql/docs/postgres/authentication and
-   * https://cloud.google.com/sql/docs/mysql/authentication.
+   * See https://docs.cloud.google.com/sql/docs/postgres/authentication and
+   * https://docs.cloud.google.com/sql/docs/mysql/authentication.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CloudSqlIamCredential}

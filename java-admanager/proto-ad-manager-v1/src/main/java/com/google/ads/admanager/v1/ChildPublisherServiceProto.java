@@ -76,6 +76,42 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
       internal_static_google_ads_admanager_v1_BatchUpdateChildPublishersResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchUpdateChildPublishersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_RenegotiateChildPublisherAgreementRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_RenegotiateChildPublisherAgreementRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRejectChildPublishersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRejectChildPublishersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRejectChildPublishersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRejectChildPublishersResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -88,9 +124,10 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
       "\n"
           + "5google/ads/admanager/v1/child_publisher_service.proto\022\027google.ads.admanager.v1"
           + "\0326google/ads/admanager/v1/child_publishe"
-          + "r_messages.proto\032\034google/api/annotations"
-          + ".proto\032\027google/api/client.proto\032\037google/"
-          + "api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + "r_messages.proto\032\'google/ads/admanager/v"
+          + "1/mcm_enums.proto\032\034google/api/annotation"
+          + "s.proto\032\027google/api/client.proto\032\037google"
+          + "/api/field_behavior.proto\032\031google/api/resource.proto\032"
           + " google/protobuf/field_mask.proto\"Y\n"
           + "\030GetChildPublisherRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
@@ -111,16 +148,16 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
           + "\033CreateChildPublisherRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022E\n"
-          + "\017child_publisher\030\002 \001(\0132\'.g"
-          + "oogle.ads.admanager.v1.ChildPublisherB\003\340A\002\"\252\001\n"
+          + "\017child_publisher\030\002 \001(\0132\'."
+          + "google.ads.admanager.v1.ChildPublisherB\003\340A\002\"\252\001\n"
           + "!BatchCreateChildPublishersRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022K\n"
-          + "\010requests\030\002 \003(\01324.g"
-          + "oogle.ads.admanager.v1.CreateChildPublisherRequestB\003\340A\002\"g\n"
+          + "\010requests\030\002 \003(\01324."
+          + "google.ads.admanager.v1.CreateChildPublisherRequestB\003\340A\002\"g\n"
           + "\"BatchCreateChildPublishersResponse\022A\n"
-          + "\020child_publishers\030\001 \003(\0132"
-          + "\'.google.ads.admanager.v1.ChildPublisher\"\232\001\n"
+          + "\020child_publishers\030\001 \003(\013"
+          + "2\'.google.ads.admanager.v1.ChildPublisher\"\232\001\n"
           + "\033UpdateChildPublisherRequest\022E\n"
           + "\017child_publisher\030\001"
           + " \001(\0132\'.google.ads.admanager.v1.ChildPublisherB\003\340A\002\0224\n"
@@ -129,36 +166,91 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
           + "!BatchUpdateChildPublishersRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022K\n"
-          + "\010requests\030\002 \003(\01324.google"
-          + ".ads.admanager.v1.UpdateChildPublisherRequestB\003\340A\002\"g\n"
+          + "\010requests\030\002 \003(\01324.googl"
+          + "e.ads.admanager.v1.UpdateChildPublisherRequestB\003\340A\002\"g\n"
           + "\"BatchUpdateChildPublishersResponse\022A\n"
           + "\020child_publishers\030\001"
-          + " \003(\0132\'.google.ads.admanager.v1.ChildPublisher2\211\013\n"
+          + " \003(\0132\'.google.ads.admanager.v1.ChildPublisher\"\376\002\n"
+          + ")RenegotiateChildPublisherAgreementRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/ChildPublisher\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\032\n\r"
+          + "email_address\030\003 \001(\tB\003\340A\001\0229\n"
+          + "\007network\030\004 \001(\tB(\340A\001\372A\"\n"
+          + " admanager.googleapis.com/Network\022X\n"
+          + "\017delegation_type\030\005"
+          + " \001(\0162:.google.ads.admanager.v1.DelegationTypeEnum.DelegationTypeB\003\340A\001\022.\n"
+          + "!parent_revenue_share_millipercent\030\006 \001(\003B\003\340A\001\022\026\n"
+          + "\tseller_id\030\007 \001(\tB\003\340A\001\"\306\001\n"
+          + "/BatchRenegotiateChildPublisherAgreementsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022Y\n"
+          + "\010requests\030\002 \003(\0132B.google.a"
+          + "ds.admanager.v1.RenegotiateChildPublisherAgreementRequestB\003\340A\002\"2\n"
+          + "0BatchRenegotiateChildPublisherAgreementsResponse\"\254\001\n"
+          + "0BatchResendChildPublisherInvitationEmailsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\005names\030\002 \003(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/ChildPublisher\"3\n"
+          + "1BatchResendChildPublisherInvitationEmailsResponse\"\237\001\n"
+          + "#BatchWithdrawChildPublishersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\005names\030\002 \003(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/ChildPublisher\"&\n"
+          + "$BatchWithdrawChildPublishersResponse\"\235\001\n"
+          + "!BatchRejectChildPublishersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022>\n"
+          + "\005names\030\002 \003(\tB/\340A\002\372A)\n"
+          + "\'admanager.googleapis.com/ChildPublisher\"$\n"
+          + "\"BatchRejectChildPublishersResponse2\246\023\n"
           + "\025ChildPublisherService\022\247\001\n"
-          + "\021GetChildPublisher\0221.google.ads.admanager.v1.GetChildPu"
-          + "blisherRequest\032\'.google.ads.admanager.v1"
-          + ".ChildPublisher\"6\332A\004name\202\323\344\223\002)\022\'/v1/{name=networks/*/childPublishers/*}\022\272\001\n"
-          + "\023ListChildPublishers\0223.google.ads.admanager.v"
-          + "1.ListChildPublishersRequest\0324.google.ads.admanager.v1.ListChildPublishersRespon"
-          + "se\"8\332A\006parent\202\323\344\223\002)\022\'/v1/{parent=networks/*}/childPublishers\022\320\001\n"
-          + "\024CreateChildPublisher\0224.google.ads.admanager.v1.CreateCh"
-          + "ildPublisherRequest\032\'.google.ads.admanag"
-          + "er.v1.ChildPublisher\"Y\332A\026parent,child_pu"
-          + "blisher\202\323\344\223\002:\"\'/v1/{parent=networks/*}/childPublishers:\017child_publisher\022\347\001\n"
-          + "\032BatchCreateChildPublishers\022:.google.ads.adma"
-          + "nager.v1.BatchCreateChildPublishersRequest\032;.google.ads.admanager.v1.BatchCreate"
-          + "ChildPublishersResponse\"P\332A\017parent,reque"
-          + "sts\202\323\344\223\0028\"3/v1/{parent=networks/*}/childPublishers:batchCreate:\001*\022\345\001\n"
-          + "\024UpdateChildPublisher\0224.google.ads.admanager.v1.Upd"
-          + "ateChildPublisherRequest\032\'.google.ads.ad"
-          + "manager.v1.ChildPublisher\"n\332A\033child_publ"
-          + "isher,update_mask\202\323\344\223\002J27/v1/{child_publ"
-          + "isher.name=networks/*/childPublishers/*}:\017child_publisher\022\347\001\n"
-          + "\032BatchUpdateChildPublishers\022:.google.ads.admanager.v1.Batch"
-          + "UpdateChildPublishersRequest\032;.google.ads.admanager.v1.BatchUpdateChildPublisher"
-          + "sResponse\"P\332A\017parent,requests\202\323\344\223\0028\"3/v1"
-          + "/{parent=networks/*}/childPublishers:bat"
-          + "chUpdate:\001*\032z\312A\030admanager.googleapis.com"
+          + "\021GetChildPublisher\0221.google.ads.admanager.v1.GetChildPublisherReques"
+          + "t\032\'.google.ads.admanager.v1.ChildPublish"
+          + "er\"6\332A\004name\202\323\344\223\002)\022\'/v1/{name=networks/*/childPublishers/*}\022\272\001\n"
+          + "\023ListChildPublishers\0223.google.ads.admanager.v1.ListChildPu"
+          + "blishersRequest\0324.google.ads.admanager.v"
+          + "1.ListChildPublishersResponse\"8\332A\006parent"
+          + "\202\323\344\223\002)\022\'/v1/{parent=networks/*}/childPublishers\022\320\001\n"
+          + "\024CreateChildPublisher\0224.google.ads.admanager.v1.CreateChildPublisherR"
+          + "equest\032\'.google.ads.admanager.v1.ChildPu"
+          + "blisher\"Y\332A\026parent,child_publisher\202\323\344\223\002:"
+          + "\"\'/v1/{parent=networks/*}/childPublishers:\017child_publisher\022\347\001\n"
+          + "\032BatchCreateChildPublishers\022:.google.ads.admanager.v1.Batc"
+          + "hCreateChildPublishersRequest\032;.google.ads.admanager.v1.BatchCreateChildPublishe"
+          + "rsResponse\"P\332A\017parent,requests\202\323\344\223\0028\"3/v"
+          + "1/{parent=networks/*}/childPublishers:batchCreate:\001*\022\345\001\n"
+          + "\024UpdateChildPublisher\0224.google.ads.admanager.v1.UpdateChildPubli"
+          + "sherRequest\032\'.google.ads.admanager.v1.Ch"
+          + "ildPublisher\"n\332A\033child_publisher,update_"
+          + "mask\202\323\344\223\002J27/v1/{child_publisher.name=ne"
+          + "tworks/*/childPublishers/*}:\017child_publisher\022\347\001\n"
+          + "\032BatchUpdateChildPublishers\022:.google.ads.admanager.v1.BatchUpdateChildPu"
+          + "blishersRequest\032;.google.ads.admanager.v"
+          + "1.BatchUpdateChildPublishersResponse\"P\332A"
+          + "\017parent,requests\202\323\344\223\0028\"3/v1/{parent=netw"
+          + "orks/*}/childPublishers:batchUpdate:\001*\022\241\002\n"
+          + ")BatchResendChildPublisherInvitationEmails\022I.google.ads.admanager.v1.BatchRese"
+          + "ndChildPublisherInvitationEmailsRequest\032J.google.ads.admanager.v1.BatchResendChi"
+          + "ldPublisherInvitationEmailsResponse\"]\332A\014"
+          + "parent,names\202\323\344\223\002H\"C/v1/{parent=networks"
+          + "/*}/childPublishers:batchResendInvitationEmails:\001*\022\240\002\n"
+          + "(BatchRenegotiateChildPublisherAgreements\022H.google.ads.admanager.v"
+          + "1.BatchRenegotiateChildPublisherAgreementsRequest\032I.google.ads.admanager.v1.Batc"
+          + "hRenegotiateChildPublisherAgreementsResp"
+          + "onse\"_\332A\017parent,requests\202\323\344\223\002G\"B/v1/{par"
+          + "ent=networks/*}/childPublishers:batchRenegotiateAgreements:\001*\022\344\001\n"
+          + "\032BatchRejectChildPublishers\022:.google.ads.admanager.v1.B"
+          + "atchRejectChildPublishersRequest\032;.google.ads.admanager.v1.BatchRejectChildPubli"
+          + "shersResponse\"M\332A\014parent,names\202\323\344\223\0028\"3/v"
+          + "1/{parent=networks/*}/childPublishers:batchReject:\001*\022\354\001\n"
+          + "\034BatchWithdrawChildPublishers\022<.google.ads.admanager.v1.BatchWit"
+          + "hdrawChildPublishersRequest\032=.google.ads.admanager.v1.BatchWithdrawChildPublishe"
+          + "rsResponse\"O\332A\014parent,names\202\323\344\223\002:\"5/v1/{"
+          + "parent=networks/*}/childPublishers:batch"
+          + "Withdraw:\001*\032z\312A\030admanager.googleapis.com"
           + "\322A\\https://www.googleapis.com/auth/adman"
           + "ager,https://www.googleapis.com/auth/admanager.readonlyB\316\001\n"
           + "\033com.google.ads.admanager.v1B\032ChildPublisherServiceProtoP\001Z@g"
@@ -172,6 +264,7 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.ads.admanager.v1.ChildPublisherMessagesProto.getDescriptor(),
+              com.google.ads.admanager.v1.McmEnumsProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
@@ -250,8 +343,79 @@ public final class ChildPublisherServiceProto extends com.google.protobuf.Genera
             new java.lang.String[] {
               "ChildPublishers",
             });
+    internal_static_google_ads_admanager_v1_RenegotiateChildPublisherAgreementRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_RenegotiateChildPublisherAgreementRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_RenegotiateChildPublisherAgreementRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "EmailAddress",
+              "Network",
+              "DelegationType",
+              "ParentRevenueShareMillipercent",
+              "SellerId",
+            });
+    internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRenegotiateChildPublisherAgreementsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResendChildPublisherInvitationEmailsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersResponse_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchWithdrawChildPublishersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchRejectChildPublishersRequest_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_ads_admanager_v1_BatchRejectChildPublishersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRejectChildPublishersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchRejectChildPublishersResponse_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_ads_admanager_v1_BatchRejectChildPublishersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRejectChildPublishersResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.ChildPublisherMessagesProto.getDescriptor();
+    com.google.ads.admanager.v1.McmEnumsProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
