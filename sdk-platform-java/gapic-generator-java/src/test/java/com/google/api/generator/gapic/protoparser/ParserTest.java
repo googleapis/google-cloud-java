@@ -228,7 +228,7 @@ class ParserTest {
     assertEquals(1, methods.size());
     Method uploadMethod = methods.get(0);
     assertEquals("UploadMedia", uploadMethod.name());
-    assertFalse(uploadMethod.isResumableUpload());
+    assertTrue(uploadMethod.isResumableUpload());
   }
 
   @Test

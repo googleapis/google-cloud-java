@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -63,41 +64,6 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
-
-  private static final ApiMethodDescriptor<UploadMediaRequest, UploadMediaResponse>
-      uploadMediaMethodDescriptor =
-          ApiMethodDescriptor.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-              .setFullMethodName("google.showcase.v1beta1.ResumableUploadService/UploadMedia")
-              .setHttpMethod("POST")
-              .setType(ApiMethodDescriptor.MethodType.UNARY)
-              .setRequestFormatter(
-                  ProtoMessageRequestFormatter.<UploadMediaRequest>newBuilder()
-                      .setPath(
-                          "/v1beta1/files:upload",
-                          request -> {
-                            Map<String, String> fields = new HashMap<>();
-                            ProtoRestSerializer<UploadMediaRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setQueryParamsExtractor(
-                          request -> {
-                            Map<String, List<String>> fields = new HashMap<>();
-                            ProtoRestSerializer<UploadMediaRequest> serializer =
-                                ProtoRestSerializer.create();
-                            return fields;
-                          })
-                      .setRequestBodyExtractor(
-                          request ->
-                              ProtoRestSerializer.create()
-                                  .toBody("*", request.toBuilder().build(), false))
-                      .build())
-              .setResponseParser(
-                  ProtoMessageResponseParser.<UploadMediaResponse>newBuilder()
-                      .setDefaultInstance(UploadMediaResponse.getDefaultInstance())
-                      .setDefaultTypeRegistry(typeRegistry)
-                      .build())
-              .build();
 
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -282,7 +248,6 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
                       .build())
               .build();
 
-  private final UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -293,6 +258,7 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
       testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonResumableUploadServiceResumableUploadStub resumableUploadStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonResumableUploadServiceStub create(
@@ -336,11 +302,6 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
       throws IOException {
     this.callableFactory = callableFactory;
 
-    HttpJsonCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
-        HttpJsonCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-            .setMethodDescriptor(uploadMediaMethodDescriptor)
-            .setTypeRegistry(typeRegistry)
-            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -402,9 +363,6 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
-    this.uploadMediaCallable =
-        callableFactory.createUnaryCallable(
-            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -426,6 +384,9 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
             settings.testIamPermissionsSettings(),
             clientContext);
 
+    this.resumableUploadStub =
+        HttpJsonResumableUploadServiceResumableUploadStub.create(clientContext, settings);
+
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -433,18 +394,12 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
-    methodDescriptors.add(uploadMediaMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
-  }
-
-  @Override
-  public UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
-    return uploadMediaCallable;
   }
 
   @Override
@@ -480,9 +435,15 @@ public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceSt
   }
 
   @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    return resumableUploadStub.uploadMediaCallable();
+  }
+
+  @Override
   public final void close() {
     try {
       backgroundResources.close();
+      resumableUploadStub.close();
     } catch (RuntimeException e) {
       throw e;
     } catch (Exception e) {

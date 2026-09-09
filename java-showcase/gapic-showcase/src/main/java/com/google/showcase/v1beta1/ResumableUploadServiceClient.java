@@ -23,7 +23,9 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -38,6 +40,7 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.showcase.v1beta1.stub.ResumableUploadServiceStub;
 import com.google.showcase.v1beta1.stub.ResumableUploadServiceStubSettings;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -81,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> uploadMedia(UploadMediaRequest request)
+ *           <li><p> uploadMedia(UploadMediaRequest request, InputStream payload)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -277,51 +280,29 @@ public class ResumableUploadServiceClient implements BackgroundResource {
   /**
    * A method with media_upload annotation enabled.
    *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (ResumableUploadServiceClient resumableUploadServiceClient =
-   *     ResumableUploadServiceClient.create()) {
-   *   UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("name3373707").build();
-   *   UploadMediaResponse response = resumableUploadServiceClient.uploadMedia(request);
-   * }
-   * }</pre>
+   * <p>Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply
+   * strictly to the start request (session initiation). Per-chunk PUT calls rely on the configured
+   * timeout and retry settings from ResumableUploadCallSettings.
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @param payload The payload data stream to upload.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UploadMediaResponse uploadMedia(UploadMediaRequest request) {
-    return uploadMediaCallable().call(request);
+  public final UploadMediaResponse uploadMedia(UploadMediaRequest request, InputStream payload) {
+    return ApiExceptions.callAndTranslateApiException(
+        uploadMediaCallable().futureCall(request, payload));
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * A method with media_upload annotation enabled.
    *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (ResumableUploadServiceClient resumableUploadServiceClient =
-   *     ResumableUploadServiceClient.create()) {
-   *   UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("name3373707").build();
-   *   ApiFuture<UploadMediaResponse> future =
-   *       resumableUploadServiceClient.uploadMediaCallable().futureCall(request);
-   *   // Do something.
-   *   UploadMediaResponse response = future.get();
-   * }
-   * }</pre>
+   * <p>Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply
+   * strictly to the start request (session initiation). Per-chunk PUT calls rely on the configured
+   * timeout and retry settings from ResumableUploadCallSettings.
    */
-  public final UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+  public final ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse>
+      uploadMediaCallable() {
     return stub.uploadMediaCallable();
   }
 

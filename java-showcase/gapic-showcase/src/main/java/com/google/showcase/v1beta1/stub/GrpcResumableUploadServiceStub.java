@@ -22,9 +22,13 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -39,11 +43,13 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -55,17 +61,6 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
-  private static final MethodDescriptor<UploadMediaRequest, UploadMediaResponse>
-      uploadMediaMethodDescriptor =
-          MethodDescriptor.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.showcase.v1beta1.ResumableUploadService/UploadMedia")
-              .setRequestMarshaller(ProtoUtils.marshaller(UploadMediaRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(UploadMediaResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -117,7 +112,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
-  private final UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -129,6 +123,7 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
+  private final @Nullable HttpJsonResumableUploadServiceResumableUploadStub resumableUploadStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcResumableUploadServiceStub create(
@@ -171,10 +166,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
-        GrpcCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-            .setMethodDescriptor(uploadMediaMethodDescriptor)
-            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -230,9 +221,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
-    this.uploadMediaCallable =
-        callableFactory.createUnaryCallable(
-            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -254,17 +242,26 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
+    if (clientContext.getCredentials() != null) {
+      ClientContext httpJsonClientContext =
+          ClientContext.newBuilder()
+              .setCredentials(clientContext.getCredentials())
+              .setEndpoint(settings.getEndpoint())
+              .setExecutor(clientContext.getExecutor())
+              .setDefaultCallContext(HttpJsonCallContext.createDefault())
+              .build();
+      this.resumableUploadStub =
+          HttpJsonResumableUploadServiceResumableUploadStub.create(httpJsonClientContext, settings);
+    } else {
+      this.resumableUploadStub = null;
+    }
+
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @Override
-  public UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
-    return uploadMediaCallable;
   }
 
   @Override
@@ -300,9 +297,26 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
   }
 
   @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    if (resumableUploadStub == null) {
+      throw new FailedPreconditionException(
+          "Resumable uploads execute over HTTP/REST and require credentials. The client was"
+              + " initialized with a pre-constructed gRPC Channel, from which credentials cannot be"
+              + " extracted. Please configure a CredentialsProvider instead.",
+          null,
+          GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
+          false);
+    }
+    return resumableUploadStub.uploadMediaCallable();
+  }
+
+  @Override
   public final void close() {
     try {
       backgroundResources.close();
+      if (resumableUploadStub != null) {
+        resumableUploadStub.close();
+      }
     } catch (RuntimeException e) {
       throw e;
     } catch (Exception e) {
