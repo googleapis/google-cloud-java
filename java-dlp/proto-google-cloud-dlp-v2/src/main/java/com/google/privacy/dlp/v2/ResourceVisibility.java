@@ -195,7 +195,7 @@ public enum ResourceVisibility implements com.google.protobuf.ProtocolMessageEnu
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(16);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(17);
   }
 
   private static final ResourceVisibility[] VALUES = values();

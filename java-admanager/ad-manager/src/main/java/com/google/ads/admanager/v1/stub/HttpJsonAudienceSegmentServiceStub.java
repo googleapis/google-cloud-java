@@ -23,12 +23,15 @@ import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchCreateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchCreateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.CreateAudienceSegmentRequest;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
@@ -138,6 +141,84 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
               .setResponseParser(
                   ProtoMessageResponseParser.<ListAudienceSegmentsResponse>newBuilder()
                       .setDefaultInstance(ListAudienceSegmentsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAudienceSegmentRequest, AudienceSegment>
+      createAudienceSegmentMethodDescriptor =
+          ApiMethodDescriptor.<CreateAudienceSegmentRequest, AudienceSegment>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.AudienceSegmentService/CreateAudienceSegment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAudienceSegmentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/audienceSegments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceSegmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAudienceSegmentRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("audienceSegment", request.getAudienceSegment(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AudienceSegment>newBuilder()
+                      .setDefaultInstance(AudienceSegment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+      batchCreateAudienceSegmentsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.AudienceSegmentService/BatchCreateAudienceSegments")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateAudienceSegmentsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/audienceSegments:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAudienceSegmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAudienceSegmentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateAudienceSegmentsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateAudienceSegmentsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -355,6 +436,11 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
       listAudienceSegmentsCallable;
   private final UnaryCallable<ListAudienceSegmentsRequest, ListAudienceSegmentsPagedResponse>
       listAudienceSegmentsPagedCallable;
+  private final UnaryCallable<CreateAudienceSegmentRequest, AudienceSegment>
+      createAudienceSegmentCallable;
+  private final UnaryCallable<
+          BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+      batchCreateAudienceSegmentsCallable;
   private final UnaryCallable<
           BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
       batchActivateAudienceSegmentsCallable;
@@ -431,6 +517,34 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
             HttpJsonCallSettings
                 .<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse>newBuilder()
                 .setMethodDescriptor(listAudienceSegmentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CreateAudienceSegmentRequest, AudienceSegment>
+        createAudienceSegmentTransportSettings =
+            HttpJsonCallSettings.<CreateAudienceSegmentRequest, AudienceSegment>newBuilder()
+                .setMethodDescriptor(createAudienceSegmentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+        batchCreateAudienceSegmentsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateAudienceSegmentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -534,6 +648,16 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
             listAudienceSegmentsTransportSettings,
             settings.listAudienceSegmentsSettings(),
             clientContext);
+    this.createAudienceSegmentCallable =
+        callableFactory.createUnaryCallable(
+            createAudienceSegmentTransportSettings,
+            settings.createAudienceSegmentSettings(),
+            clientContext);
+    this.batchCreateAudienceSegmentsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateAudienceSegmentsTransportSettings,
+            settings.batchCreateAudienceSegmentsSettings(),
+            clientContext);
     this.batchActivateAudienceSegmentsCallable =
         callableFactory.createUnaryCallable(
             batchActivateAudienceSegmentsTransportSettings,
@@ -569,6 +693,8 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getAudienceSegmentMethodDescriptor);
     methodDescriptors.add(listAudienceSegmentsMethodDescriptor);
+    methodDescriptors.add(createAudienceSegmentMethodDescriptor);
+    methodDescriptors.add(batchCreateAudienceSegmentsMethodDescriptor);
     methodDescriptors.add(batchActivateAudienceSegmentsMethodDescriptor);
     methodDescriptors.add(batchDeactivateAudienceSegmentsMethodDescriptor);
     methodDescriptors.add(batchApproveAudienceSegmentsMethodDescriptor);
@@ -592,6 +718,18 @@ public class HttpJsonAudienceSegmentServiceStub extends AudienceSegmentServiceSt
   public UnaryCallable<ListAudienceSegmentsRequest, ListAudienceSegmentsPagedResponse>
       listAudienceSegmentsPagedCallable() {
     return listAudienceSegmentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAudienceSegmentRequest, AudienceSegment>
+      createAudienceSegmentCallable() {
+    return createAudienceSegmentCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+      batchCreateAudienceSegmentsCallable() {
+    return batchCreateAudienceSegmentsCallable;
   }
 
   @Override

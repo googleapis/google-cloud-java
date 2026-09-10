@@ -103,6 +103,6 @@ class BigQueryJsonArray extends BigQueryBaseArray {
     return this.arrayOfStruct
         ? new BigQueryJsonStruct(
             this.schema.getSubFields(), fieldValue, this.LOG.getJsonStructLogger())
-        : BigQueryTypeRegistry.convert(fieldValue, getTargetClass());
+        : BigQueryTypeRegistry.convert(fieldValue, this.schema.getType().getStandardType(), null);
   }
 }

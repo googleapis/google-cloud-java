@@ -90,53 +90,56 @@ function retry_with_backoff {
 # and naturally survives single-module components without throwing exit signals.
 function extract_pom_modules() {
   local pom_file="$1"
-  local modules_list=""
+  if [[ ! -f "${pom_file}" ]]; then
+    return 1
+  fi
+  local line module
   local in_profiles=false
   local in_modules=false
-  
-  while IFS= read -r line || [ -n "$line" ]; do
-    if [[ "$line" == *"<profiles>"* ]]; then
+  local -a modules=()
+
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    if [[ "${line}" == *"<profiles>"* ]]; then
       in_profiles=true
-    elif [[ "$line" == *"</profiles>"* ]]; then
+    elif [[ "${line}" == *"</profiles>"* ]]; then
       in_profiles=false
-    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+    elif [[ "${line}" == *"<modules>"* && "${in_profiles}" == "false" ]]; then
       in_modules=true
-    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+    elif [[ "${line}" == *"</modules>"* && "${in_profiles}" == "false" ]]; then
       in_modules=false
       break
-    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+    elif [[ "${in_modules}" == "true" && "${line}" == *"<module>"* ]]; then
       # Extract text between tags
-      local module="${line#*<module>}"
+      module="${line#*<module>}"
       module="${module%</module>*}"
-      
-      # Trim whitespace natively
+
+      # Trim leading/trailing whitespace without spawning external processes
       module="${module#"${module%%[![:space:]]*}"}"
       module="${module%"${module##*[![:space:]]}"}"
-      
-      if [ -z "$modules_list" ]; then
-        modules_list="$module"
-      else
-        modules_list="${modules_list} ${module}"
+
+      if [[ -n "${module}" ]]; then
+        modules+=("${module}")
       fi
     fi
-  done < "$pom_file"
-  
-  echo "$modules_list"
+  done < "${pom_file}"
+
+  echo "${modules[*]}"
 }
 
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
   submodules_array=()
-  if [ -f "$1/pom.xml" ]; then
+  if [[ -f "$1/pom.xml" ]]; then
     local modules
+    local submodule
 
     # Use pure Bash extraction to find the modules in the aggregator pom file.
     # Faster than invoking mvn help:evaluate to list all the project modules,
     # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
     modules=$(extract_pom_modules "$1/pom.xml")
-    if [ -n "$modules" ]; then
-      for submodule in $modules; do
+    if [[ -n "${modules}" ]]; then
+      for submodule in ${modules}; do
         # Each entry = <folder>/<submodule>
         submodules_array+=("$1/${submodule}")
       done
@@ -149,11 +152,13 @@ function parse_submodules() {
     exit 1
   fi
 
-  # Convert from array to comma-delimited string
-  submodules=$(
-    IFS=,
-    echo "${submodules_array[*]}"
-  )
+  # Convert array to a comma-delimited string:
+  # Declaring 'local IFS=,' restricts delimiter changes to this function's scope,
+  # preventing global IFS pollution (which breaks word splitting in subsequent code).
+  # Expanding "${submodules_array[*]}" joins elements using IFS entirely in-memory
+  # without spawning a subshell process.
+  local IFS=,
+  submodules="${submodules_array[*]}"
   export submodules
 }
 
@@ -172,11 +177,9 @@ function parse_all_submodules() {
     all_submodules_array+=("$submodules")
   done
 
-  # Convert from array to comma-delimited string
-  all_submodules=$(
-    IFS=,
-    echo "${all_submodules_array[*]}"
-  )
+  # 'local IFS=,' safely joins array elements within function scope without subshells:
+  local IFS=,
+  all_submodules="${all_submodules_array[*]}"
   export all_submodules
 }
 
@@ -250,12 +253,14 @@ function get_modified_files() {
 
 # Determines if the entire monorepo must be tested.
 #
-# Monorepo-wide testing is triggered under three conditions:
+# Monorepo-wide testing is triggered under four conditions:
 # 1. TEST_ALL_MODULES is set to "true" (used by nightly and scheduled CI builds).
 # 2. Root parent POMs (google-cloud-jar-parent or google-cloud-pom-parent) are modified,
 #    as changes to parent POMs affect shared dependency versions and compiler/build plugins.
-# 3. Core shared dependencies (sdk-platform-java/java-shared-dependencies) are modified,
-#    as gax, auth, and transport changes can break downstream client library integration tests.
+# 3. Core SDK platform libraries (sdk-platform-java) are modified, as gax, generators,
+#    and core transport changes can break downstream client library integration tests.
+# 4. Core authentication libraries (google-auth-library-java) are modified, as auth/credential
+#    changes affect all client libraries.
 function should_test_all_modules() {
   local files
   files=$(get_modified_files)
@@ -264,7 +269,8 @@ function should_test_all_modules() {
   # stdin of grep, avoiding an external subshell pipeline (like 'echo "$var" | grep').
   if [[ "${TEST_ALL_MODULES}" == "true" ]] || \
      grep -q -E '^google-cloud-(pom|jar)-parent/pom.xml$' <<< "${files}" || \
-     grep -q -E '^sdk-platform-java/java-shared-dependencies/' <<< "${files}"; then
+     grep -q -E '^sdk-platform-java/' <<< "${files}" || \
+     grep -q -E '^google-auth-library-java/' <<< "${files}"; then
     return 0
   fi
   return 1
@@ -282,41 +288,66 @@ function generate_modified_modules_list() {
   files=$(get_modified_files)
   printf "Modified files:\n%s\n" "${files}"
 
-  # Generate the list of valid maven modules
-  maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+  # Extract valid maven modules directly from pom.xml in pure Bash (~0.02s).
+  # This replaces 'mvn help:evaluate -Dexpression=project.modules' which previously
+  # spent 20-30+ seconds booting a JVM and evaluating the monorepo POMs on every run.
+  local root_pom="${commonScriptDir}/../pom.xml"
+  if [[ ! -f "${root_pom}" ]]; then
+    root_pom="pom.xml"
+  fi
+  local maven_modules_list
+  maven_modules_list=$(extract_pom_modules "${root_pom}")
   maven_modules=()
 
-  # If the first argument is "true" (default), then use the module exclusion list
-  use_exclusion_list=${1:-true}
+  # Positional parameter $1 specifies whether to apply the exclusion list (defaults to true).
+  local use_exclusion_list="${1:-true}"
+  local -a all_modules=()
+  read -r -a all_modules <<< "${maven_modules_list}"
+
+  local module
   if [[ "${use_exclusion_list}" == "true" ]]; then
     echo "Excluding modules from the global exclusion list"
-    for module in $maven_modules_list; do
-      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+    for module in "${all_modules[@]}"; do
+      if [[ ! " ${excluded_modules[*]} " == *" ${module} "* ]]; then
         maven_modules+=("${module}")
       fi
     done
   else
-    maven_modules=(${maven_modules_list[*]})
+    maven_modules=("${all_modules[@]}")
   fi
 
   modified_module_list=()
   # If either parent pom.xml or core shared dependency is touched, run ITs on all the modules
   if should_test_all_modules; then
-    modified_module_list=(${maven_modules[*]})
+    # '("${maven_modules[@]}")' copies the array elements safely.
+    modified_module_list=("${maven_modules[@]}")
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${files}" | grep -E '(google-auth|java)-.*' || true)
+    # Extract the top-level directory from each modified file path:
+    # 'cut -d '/' -f1' takes the first path segment (e.g. 'java-bigquery/src/...' -> 'java-bigquery').
+    # 'sort -u' sorts and deduplicates the candidate directory names.
+    local modules
+    modules=$(cut -d '/' -f1 <<< "${files}" | sort -u)
     printf "Files in java modules:\n%s\n" "${modules}"
-    if [[ -n $modules ]]; then
-      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
-      for module in $modules; do
-        if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
-          modified_module_list+=("${module}")
-        fi
-      done
-    else
+    for module in ${modules}; do
+      # If this top-level directory is a recognized Maven module, add it to our list.
+      if [[ " ${maven_modules[*]} " == *" ${module} "* ]]; then
+        modified_module_list+=("${module}")
+      fi
+    done
+    if [[ ${#modified_module_list[@]} -eq 0 ]]; then
       echo "Found no changes in the java modules"
     fi
+
+    # Also include downstream modules if any of their upstream dependencies were modified,
+    # ensuring batch integration tests cover dependent client libraries.
+    for module in "${maven_modules[@]}"; do
+      if is_upstream_module_modified "${module}"; then
+        if [[ ! " ${modified_module_list[*]} " =~ " ${module} " ]]; then
+          modified_module_list+=("${module}")
+        fi
+      fi
+    done
   fi
 }
 
@@ -335,6 +366,61 @@ function is_module_modified() {
   files=$(get_modified_files)
   # '<<< "${files}"' feeds the diff string directly to grep via stdin.
   grep -q -E "^${module}/" <<< "${files}"
+}
+
+# Maps a module to its intra-monorepo upstream dependencies.
+#
+# Certain libraries in this repository directly depend on sibling modules (for example,
+# java-bigquery depends on java-bigquerystorage, JDBC drivers wrap client SDKs, and
+# java-spanner depends on grpc-gcp-java). Without this mapping, changes to an upstream
+# dependency would not trigger integration tests for downstream consumers in PR CI.
+#
+# Returns space-separated module names that the given module depends on, or empty if none.
+function get_upstream_modules() {
+  local module="$1"
+  case "${module}" in
+    java-bigquery)
+      echo "java-bigquerystorage"
+      ;;
+    java-bigquery-jdbc)
+      echo "java-bigquery java-bigquerystorage"
+      ;;
+    java-spanner)
+      echo "grpc-gcp-java"
+      ;;
+    java-spanner-jdbc)
+      echo "java-spanner grpc-gcp-java"
+      ;;
+    java-storage-nio)
+      echo "java-storage"
+      ;;
+    java-logging-logback)
+      echo "java-logging"
+      ;;
+    *)
+      ;;
+  esac
+}
+
+# Checks if any upstream dependency of the given module was modified in the PR diff.
+#
+# Takes a module name (e.g. BUILD_SUBDIR), retrieves its upstream dependencies using
+# get_upstream_modules, and checks if any of those upstream directories were touched.
+# Returns 0 (true) if an upstream module was modified, triggering downstream tests;
+# otherwise returns 1 (false).
+function is_upstream_module_modified() {
+  local module="$1"
+  if [[ -z "${module}" ]]; then
+    return 1
+  fi
+
+  local upstream
+  for upstream in $(get_upstream_modules "${module}"); do
+    if is_module_modified "${upstream}"; then
+      return 0
+    fi
+  done
+  return 1
 }
 
 # Filters the modified_module_list to only include modules that contain
@@ -398,10 +484,9 @@ function generate_graalvm_presubmit_modules_list() {
   generate_modified_modules_list
   if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
-    module_list=$(
-      IFS=,
-      echo "${modified_module_list[*]}"
-    )
+    # Join array into comma-delimited string without subshell:
+    local IFS=,
+    module_list="${modified_module_list[*]}"
   else
     # If no modules have been modified or if too many have been modified, just test the modules
     # specified in the MAVEN_MODULES env var.
@@ -442,10 +527,9 @@ function generate_graalvm_modules_list() {
       fi
     done
   fi
-  module_list=$(
-    IFS=,
-    echo "${modules_assigned_list[*]}"
-  )
+  # Join array into comma-delimited string without subshell:
+  local IFS=,
+  module_list="${modules_assigned_list[*]}"
 }
 
 function install_modules() {
@@ -506,10 +590,9 @@ function install_modules() {
       'sdk-platform-java/gax-java/gax-grpc'
       'sdk-platform-java/gax-java/gax-httpjson'
     )
-    always_install_deps=$(
-      IFS=,
-      echo "${always_install_deps_list[*]}"
-    )
+    # Join dependencies into comma-delimited string without subshell:
+    local IFS=,
+    always_install_deps="${always_install_deps_list[*]}"
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,

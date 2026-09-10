@@ -27,9 +27,14 @@ function listAllModules() {
   popd >/dev/null
 }
 
-# Replaces '-' with '_' to get a Terraform output-friendly label
+# Replaces '-' with '_' to get a Terraform output-friendly label.
+# Uses Bash parameter expansion '${parameter//pattern/replacement}':
+# - '$1': The input module name string.
+# - '//': Global pattern replacement operator (matches all occurrences).
+# - '-': Search pattern to match (hyphen).
+# - '_': Replacement character (underscore).
 function getFriendlyOutputName() {
-  echo "$1" | tr '-' _
+  echo "${1//-/_}"
 }
 
 # Get the output object in JSON format for the given module.
@@ -48,9 +53,13 @@ function getModuleOutput() {
   getOutput "$1" | parseJson "$2"
 }
 
+# Checks if whitespace-delimited or newline-delimited list $1 contains entry $2.
 # @returns exit code 0 if list $1 contains entry $2.
 function contains() {
-  echo "$1" | grep -w -q "$2"
+  # Normalize newlines and carriage returns into spaces with boundary padding:
+  local list=" ${1//[$'\r\n']/ } "
+  # Use native glob pattern matching '*" $2 "*' with boundary spaces to ensure exact token match:
+  [[ -n "$2" && "${list}" == *" $2 "* ]]
 }
 
 # @returns a "new line"-delimited list of active terraform modules

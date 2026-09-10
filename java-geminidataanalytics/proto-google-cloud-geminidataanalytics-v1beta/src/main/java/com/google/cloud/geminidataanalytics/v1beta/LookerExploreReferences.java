@@ -183,7 +183,7 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.LookerExploreReferences.credentials is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=312
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=382
    * @return Whether the credentials field is set.
    */
   @java.lang.Override
@@ -210,7 +210,7 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.LookerExploreReferences.credentials is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=312
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=382
    * @return The credentials.
    */
   @java.lang.Override
@@ -1119,7 +1119,7 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.LookerExploreReferences.credentials is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=312
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=382
      * @return Whether the credentials field is set.
      */
     @java.lang.Deprecated
@@ -1145,7 +1145,7 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.LookerExploreReferences.credentials is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=312
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/datasource.proto;l=382
      * @return The credentials.
      */
     @java.lang.Deprecated

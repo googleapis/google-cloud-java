@@ -40,8 +40,8 @@ package com.google.privacy.dlp.v2;
  * be transformed to match the type of the bound before comparing.
  *
  * See
- * https://cloud.google.com/sensitive-data-protection/docs/concepts-bucketing to
- * learn more.
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-bucketing
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.FixedSizeBucketingConfig}
@@ -436,8 +436,8 @@ public final class FixedSizeBucketingConfig extends com.google.protobuf.Generate
    * be transformed to match the type of the bound before comparing.
    *
    * See
-   * https://cloud.google.com/sensitive-data-protection/docs/concepts-bucketing to
-   * learn more.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-bucketing
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.FixedSizeBucketingConfig}

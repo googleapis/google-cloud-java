@@ -218,4 +218,59 @@ public interface TextSearchOrBuilder
    * <code>.google.protobuf.Struct filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.protobuf.StructOrBuilder getFilterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the structuredQuery field is set.
+   */
+  boolean hasStructuredQuery();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The structuredQuery.
+   */
+  com.google.cloud.vectorsearch.v1beta.StructuredQuery getStructuredQuery();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder getStructuredQueryOrBuilder();
 }

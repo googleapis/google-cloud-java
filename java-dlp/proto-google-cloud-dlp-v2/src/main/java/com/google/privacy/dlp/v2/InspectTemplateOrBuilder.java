@@ -228,4 +228,21 @@ public interface InspectTemplateOrBuilder
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 6;</code>
    */
   com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enables the use of [limited-availability built-in
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes)
+   * in inspect_config. These infoTypes are supported only in specific regions
+   * and can cause scanning errors if used elsewhere.
+   * </pre>
+   *
+   * <code>bool allow_limited_availability_info_types = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The allowLimitedAvailabilityInfoTypes.
+   */
+  boolean getAllowLimitedAvailabilityInfoTypes();
 }

@@ -25,7 +25,7 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * Structured content to inspect. Up to 50,000 `Value`s per request allowed. See
- * https://cloud.google.com/sensitive-data-protection/docs/inspecting-structured-text#inspecting_a_table
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-structured-text#inspecting_a_table
  * to learn more.
  * </pre>
  *
@@ -1354,7 +1354,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Structured content to inspect. Up to 50,000 `Value`s per request allowed. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-structured-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-structured-text#inspecting_a_table
    * to learn more.
    * </pre>
    *

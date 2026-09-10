@@ -32,6 +32,9 @@ import java.util.regex.Pattern;
 
 /** For internal use only. */
 class SpannerMetadataProvider {
+  static final Metadata.Key<String> REQUEST_PARAMS_HEADER_KEY =
+      Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+
   private final Cache<String, Map<String, List<String>>> extraHeadersCache =
       CacheBuilder.newBuilder().maximumSize(100).build();
   private final Map<Metadata.Key<String>, String> headers;

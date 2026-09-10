@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.Credentials;
+import com.google.cloud.bigtable.data.v2.internal.channels.MillisTimestampInterceptor;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.stub.BigtableBatchingCallSettings;
@@ -33,7 +34,6 @@ import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
-import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
@@ -138,7 +138,13 @@ public final class BigtableDataSettings {
                 InstantiatingGrpcChannelProvider.newBuilder()
                     .setMaxInboundMessageSize(256 * 1024 * 1024)
                     .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    // The emulator only supports millisecond timestamp granularity, so round
+                    // client generated timestamps down the way the service would.
+                    .setChannelConfigurator(
+                        channelBuilder ->
+                            channelBuilder
+                                .usePlaintext()
+                                .intercept(new MillisTimestampInterceptor()))
                     .setKeepAliveTimeDuration(
                         java.time.Duration.ofSeconds(61)) // sends ping in this interval
                     .setKeepAliveTimeoutDuration(
