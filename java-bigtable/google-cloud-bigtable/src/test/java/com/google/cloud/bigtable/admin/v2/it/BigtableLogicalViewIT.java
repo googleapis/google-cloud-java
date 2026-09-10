@@ -49,7 +49,11 @@ public class BigtableLogicalViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableLogicalViewIT.class.getName());
-  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  // Poll for the delete to propagate. A fixed short interval rather than a doubling backoff:
+  // the resource normally disappears within seconds, and a doubling backoff would keep
+  // sleeping for minutes past that point.
+  private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
+  private static final int DELETE_POLL_ATTEMPTS = 60;
 
   private static BigtableInstanceAdminClient client;
   private static Table testTable;
@@ -168,15 +172,11 @@ public class BigtableLogicalViewIT {
     // Now we should be able to successfully delete the LogicalView.
     client.deleteLogicalView(instanceId, logicalViewId);
     try {
-      for (int i = 0; i < BACKOFF_DURATION.length; i++) {
+      for (int i = 0; i < DELETE_POLL_ATTEMPTS; i++) {
         client.getLogicalView(instanceId, logicalViewId);
 
-        LOGGER.info(
-            "Wait for "
-                + BACKOFF_DURATION[i]
-                + " seconds for deleting logical view "
-                + logicalViewId);
-        Thread.sleep(BACKOFF_DURATION[i] * 1000);
+        LOGGER.info("Waiting for logical view " + logicalViewId + " to be deleted");
+        Thread.sleep(DELETE_POLL_INTERVAL_SECONDS * 1000);
       }
       fail("LogicalView was not deleted.");
     } catch (NotFoundException e) {

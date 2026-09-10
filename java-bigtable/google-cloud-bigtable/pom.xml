@@ -44,6 +44,11 @@
      Also, this property will be augmented by `internal-bigtable-prod-batch-it-prop-helper` profile -->
     <bigtable.cfe-data-batch-endpoint>batch-bigtable.googleapis.com:443</bigtable.cfe-data-batch-endpoint>
 
+    <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
+     RPC bound, so this can be raised well above the core count. Override on the commandline via
+     `-Dbigtable.it.fork-count=8`. -->
+    <bigtable.it.fork-count>4</bigtable.it.fork-count>
+
     <!-- These are needed to compile the protobuf used by Changestream merging acceptance test. -->
     <test-protoc-grpc.version>1.76.3</test-protoc-grpc.version>
     <test-protoc.version>4.33.2</test-protoc.version>
@@ -491,7 +496,10 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <forkCount>1</forkCount>
+              <!-- Keep in-JVM parallelism off so that the verbose logs of a single fork stay
+               attributable to one test class. Forking across processes is still fine: each fork
+               gets its own JUL config and its own `-output.txt`, so it must not be disabled here
+               (doing so serializes the entire IT suite). -->
               <parallel>none</parallel>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
             </configuration>
@@ -823,7 +831,7 @@
            enabling metrics collection. It only works with cloud environment and will fail with permission
            denied when running against emulators. Running in different processes make sure the state is
            only set on the process for BuiltinMetricsIT test. -->
-          <forkCount>4</forkCount>
+          <forkCount>${bigtable.it.fork-count}</forkCount>
           <reuseForks>false</reuseForks>
 
           <!-- print full stacktraces by default -->
