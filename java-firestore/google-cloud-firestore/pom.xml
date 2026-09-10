@@ -14,6 +14,7 @@
     <version>3.47.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
   </parent>
   <properties>
+    <skipUnitTests>false</skipUnitTests>
     <site.installationModule>google-cloud-firestore</site.installationModule>
   </properties>
   <dependencies>

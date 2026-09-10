@@ -15,9 +15,6 @@
     <artifactId>google-cloud-firestore-parent</artifactId>
     <version>3.47.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
   </parent>
-  <properties>
-    <skipUnitTests>true</skipUnitTests>
-  </properties>
   <dependencies>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -149,12 +146,6 @@
   </build>
 
   <profiles>
-    <profile>
-      <id>native</id>
-      <properties>
-        <skipUnitTests>false</skipUnitTests>
-      </properties>
-    </profile>
     <profile>
       <id>java9</id>
       <activation>
