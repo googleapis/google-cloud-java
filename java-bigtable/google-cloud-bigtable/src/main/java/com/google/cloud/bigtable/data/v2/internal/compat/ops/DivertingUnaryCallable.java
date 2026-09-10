@@ -33,13 +33,26 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.time.Duration;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /** A callable to fork traffic between classic and session based operations. */
 public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, RespT> {
+  private static final Logger LOGGER = Logger.getLogger(DivertingUnaryCallable.class.getName());
+
+  /** Bounds the cause walk so a self-referential or pathologically deep chain can't spin. */
+  private static final int MAX_CAUSE_DEPTH = 32;
+
+  /** Gates the WARNING-level log for unrecognized throwables to the first occurrence. */
+  private final AtomicBoolean loggedUnrecognized = new AtomicBoolean();
+
   private final ClientConfigurationManager configurationManager;
 
   private final UnaryCallable<ReqT, RespT> classic;
@@ -121,16 +134,84 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
     }
 
-    Status.Code code = Status.Code.UNKNOWN;
-
-    if (cause instanceof StatusRuntimeException) {
-      code = ((StatusRuntimeException) cause).getStatus().getCode();
-    }
-    if (cause instanceof StatusException) {
-      code = ((StatusException) cause).getStatus().getCode();
+    Status.Code code = findStatusCode(cause);
+    if (code != null) {
+      return ApiExceptionFactory.createException(
+          cause.getMessage(), e, GrpcStatusCode.of(code), false);
     }
 
+    // Nothing in the chain carries a gRPC status, so the only honest answer is UNKNOWN. Name the
+    // throwable in the message rather than letting a bare "UNKNOWN" reach the caller: this is the
+    // client's last chance to say what actually failed, and everything downstream (CSM, the
+    // application's own error counters, the support case) sees only the code.
+    reportUnrecognized(cause);
     return ApiExceptionFactory.createException(
-        cause.getMessage(), e, GrpcStatusCode.of(code), false);
+        describeUnrecognized(cause), e, GrpcStatusCode.of(Status.Code.UNKNOWN), false);
+  }
+
+  /**
+   * Returns the gRPC code for {@code t}, or null if nothing in its cause chain carries one.
+   *
+   * <p>Unlike a plain {@code instanceof} on the top-level throwable, this walks the whole chain: a
+   * perfectly good {@link StatusRuntimeException} wrapped in any type other than Completion/
+   * ExecutionException would otherwise lose its code and be reported as UNKNOWN. Mirrors {@code
+   * csm.attributes.Util#extractStatus}, including its {@link CancellationException} case, so the
+   * status the application sees agrees with the one CSM records for the same failure.
+   */
+  @Nullable
+  private static Status.Code findStatusCode(Throwable t) {
+    if (t instanceof CancellationException) {
+      return Status.Code.CANCELLED;
+    }
+    Throwable current = t;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (current instanceof StatusRuntimeException) {
+        return ((StatusRuntimeException) current).getStatus().getCode();
+      }
+      if (current instanceof StatusException) {
+        return ((StatusException) current).getStatus().getCode();
+      }
+      Throwable next = current.getCause();
+      if (next == current) {
+        break; // self-referential chain
+      }
+      current = next;
+    }
+    return null;
+  }
+
+  /** Renders the cause chain as class names, so the message identifies the failure by itself. */
+  private static String describeUnrecognized(Throwable cause) {
+    StringBuilder chain = new StringBuilder();
+    Throwable current = cause;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (chain.length() > 0) {
+        chain.append(" <- ");
+      }
+      chain.append(current.getClass().getName());
+      Throwable next = current.getCause();
+      if (next == current) {
+        break;
+      }
+      current = next;
+    }
+    String message = cause.getMessage();
+    return "Session operation failed with an error that carries no gRPC status; reporting UNKNOWN."
+        + " Cause chain: "
+        + chain
+        + (message != null ? ". Message: " + message : "");
+  }
+
+  /**
+   * Logs the first unrecognized throwable per callable at WARNING with a full stack, and the rest
+   * at FINE. A storm is exactly when this fires most, so an unconditional WARNING would flood the
+   * log at the moment the operator can least afford it.
+   */
+  private void reportUnrecognized(Throwable cause) {
+    if (loggedUnrecognized.compareAndSet(false, true)) {
+      LOGGER.log(Level.WARNING, describeUnrecognized(cause), cause);
+    } else if (LOGGER.isLoggable(Level.FINE)) {
+      LOGGER.log(Level.FINE, describeUnrecognized(cause), cause);
+    }
   }
 }
