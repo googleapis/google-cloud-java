@@ -97,11 +97,16 @@ final class ArrowDeserializer {
    * Serializes an Apache Arrow Schema object to its JSON string representation.
    *
    * @param arrowSchema the Apache Arrow schema object
-   * @return the JSON string representation, or null if arrowSchema is null
+   * @return the JSON string representation
+   * @throws IllegalArgumentException if arrowSchema is null or of an unsupported type
    */
   static String arrowSchemaToJson(Object arrowSchema) {
     if (arrowSchema == null) {
-      return null;
+      throw new IllegalArgumentException("arrowSchema must not be null.");
+    }
+    if (!(arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema)) {
+      throw new IllegalArgumentException(
+          "Unsupported Arrow schema type: " + arrowSchema.getClass().getName());
     }
     return ((org.apache.arrow.vector.types.pojo.Schema) arrowSchema).toJson();
   }
@@ -110,12 +115,12 @@ final class ArrowDeserializer {
    * Deserializes an Apache Arrow Schema object from its JSON string representation.
    *
    * @param json the JSON string representation of the Arrow schema
-   * @return the deserialized Apache Arrow Schema object, or null if json is null
-   * @throws IllegalArgumentException if the JSON string cannot be parsed as an Arrow schema
+   * @return the deserialized Apache Arrow Schema object
+   * @throws IllegalArgumentException if json is null or cannot be parsed as an Arrow schema
    */
   static Object jsonToArrowSchema(String json) {
     if (json == null) {
-      return null;
+      throw new IllegalArgumentException("json must not be null.");
     }
     try {
       return org.apache.arrow.vector.types.pojo.Schema.fromJSON(json);
@@ -129,8 +134,9 @@ final class ArrowDeserializer {
    * string.
    *
    * @param arrowSchema the Arrow schema POJO or JSON string representation
-   * @return the resolved Apache Arrow Schema, or null if schema cannot be resolved
+   * @return the resolved Apache Arrow Schema
    * @throws IOException if parsing JSON fails
+   * @throws IllegalArgumentException if arrowSchema is null or of an unsupported type
    */
   private static org.apache.arrow.vector.types.pojo.Schema resolveArrowSchema(Object arrowSchema)
       throws IOException {
@@ -140,7 +146,11 @@ final class ArrowDeserializer {
     if (arrowSchema instanceof String) {
       return org.apache.arrow.vector.types.pojo.Schema.fromJSON((String) arrowSchema);
     }
-    return null;
+    if (arrowSchema == null) {
+      throw new IllegalArgumentException("Arrow schema must not be null.");
+    }
+    throw new IllegalArgumentException(
+        "Unsupported Arrow schema type: " + arrowSchema.getClass().getName());
   }
 
   /**
@@ -165,13 +175,7 @@ final class ArrowDeserializer {
       long totalRowsReturned,
       long maxResults)
       throws IOException {
-    org.apache.arrow.vector.types.pojo.Schema resolvedSchema = resolveArrowSchema(arrowSchema);
-
-    if (resolvedSchema == null) {
-      return false;
-    }
-
-    org.apache.arrow.vector.types.pojo.Schema arrowSchemaFinal = resolvedSchema;
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaFinal = resolveArrowSchema(arrowSchema);
 
     try (BufferAllocator childAllocator =
             AllocatorHolder.ALLOCATOR.newChildAllocator("loadArrowRows", 0, Long.MAX_VALUE);

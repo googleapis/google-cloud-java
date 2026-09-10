@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -297,18 +298,58 @@ public class ArrowDeserializerTest {
   }
 
   @Test
-  public void testLoadArrowRows_nullSchemaReturnsFalse() throws IOException {
+  public void testLoadArrowRows_nullSchemaThrowsException() {
     List<FieldValueList> rowBatch = new ArrayList<>();
-    boolean hasMore =
-        ArrowDeserializer.loadArrowRows(
-            Arrays.<ReadRowsResponse>asList().iterator(),
-            null,
-            Schema.of(),
-            rowBatch,
-            10L,
-            0L,
-            10L);
-    assertFalse(hasMore);
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ArrowDeserializer.loadArrowRows(
+                Arrays.<ReadRowsResponse>asList().iterator(),
+                null,
+                Schema.of(),
+                rowBatch,
+                10L,
+                0L,
+                10L));
+  }
+
+  @Test
+  public void testLoadArrowRows_unsupportedSchemaTypeThrowsException() {
+    List<FieldValueList> rowBatch = new ArrayList<>();
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ArrowDeserializer.loadArrowRows(
+                Arrays.<ReadRowsResponse>asList().iterator(),
+                12345,
+                Schema.of(),
+                rowBatch,
+                10L,
+                0L,
+                10L));
+  }
+
+  @Test
+  public void testArrowSchemaToJson_nullThrowsException() {
+    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.arrowSchemaToJson(null));
+  }
+
+  @Test
+  public void testArrowSchemaToJson_unsupportedTypeThrowsException() {
+    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.arrowSchemaToJson(12345));
+  }
+
+  @Test
+  public void testJsonToArrowSchema_nullThrowsException() {
+    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.jsonToArrowSchema(null));
+  }
+
+  @Test
+  public void testArrowSchemaToJsonAndBack() {
+    org.apache.arrow.vector.types.pojo.Schema originalSchema = createSimpleArrowSchema();
+    String json = ArrowDeserializer.arrowSchemaToJson(originalSchema);
+    Object deserialized = ArrowDeserializer.jsonToArrowSchema(json);
+    assertEquals(originalSchema, deserialized);
   }
 
   private static org.apache.arrow.vector.types.pojo.Schema createSimpleArrowSchema() {
