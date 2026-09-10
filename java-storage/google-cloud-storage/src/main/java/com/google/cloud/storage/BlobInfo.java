@@ -814,13 +814,16 @@ public class BlobInfo implements Serializable {
     private OffsetDateTime softDeleteTime;
     private OffsetDateTime hardDeleteTime;
     private ObjectContexts contexts;
+    private final boolean hasOriginalState;
     private final ImmutableSet.Builder<NamedField> modifiedFields = ImmutableSet.builder();
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
+      this.hasOriginalState = false;
     }
 
     BuilderImpl(BlobInfo blobInfo) {
+      this.hasOriginalState = true;
       blobId = blobInfo.blobId;
       generatedId = blobInfo.generatedId;
       cacheControl = blobInfo.cacheControl;
@@ -1080,8 +1083,13 @@ public class BlobInfo implements Serializable {
     public Builder setMetadata(@Nullable Map<@NonNull String, @Nullable String> metadata) {
       Map<String, String> left = this.metadata;
       Map<String, String> right = metadata;
-      if (!Objects.equals(left, right)) {
-        diffMaps(BlobField.METADATA, left, right, modifiedFields::add);
+      boolean clearWithoutBase = !hasOriginalState && (right == null || right.isEmpty());
+      if (!Objects.equals(left, right) || clearWithoutBase) {
+        if (clearWithoutBase) {
+          modifiedFields.add(BlobField.METADATA);
+        } else {
+          diffMaps(BlobField.METADATA, left, right, modifiedFields::add);
+        }
         if (right != null) {
           this.metadata = new HashMap<>(right);
         } else {
@@ -1275,18 +1283,18 @@ public class BlobInfo implements Serializable {
           this.contexts == null ? null : this.contexts.getCustom();
       Map<String, ObjectCustomContextPayload> right =
           contexts == null ? null : contexts.getCustom();
-      if (!Objects.equals(left, right)) {
-        if (right != null) {
+      boolean clearWithoutBase = !hasOriginalState && (right == null || right.isEmpty());
+      if (!Objects.equals(left, right) || clearWithoutBase) {
+        if (clearWithoutBase || right == null) {
+          modifiedFields.add(BlobField.OBJECT_CONTEXTS);
+        } else {
           diffMaps(
               NamedField.nested(BlobField.OBJECT_CONTEXTS, NamedField.literal("custom")),
               left,
               right,
               modifiedFields::add);
-          this.contexts = contexts;
-        } else {
-          modifiedFields.add(BlobField.OBJECT_CONTEXTS);
-          this.contexts = null;
         }
+        this.contexts = contexts;
       }
       return this;
     }
