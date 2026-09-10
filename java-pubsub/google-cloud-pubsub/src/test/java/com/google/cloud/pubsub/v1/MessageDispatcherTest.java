@@ -29,10 +29,16 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.sdk.testing.junit4.OpenTelemetryRule;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -75,6 +81,8 @@ public class MessageDispatcherTest {
   private static final Duration MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
   private static final Duration ACK_EXPIRATION_PADDING_DEFAULT =
       Subscriber.ACK_EXPIRATION_PADDING_DEFAULT;
+
+  @Rule public final OpenTelemetryRule openTelemetryTesting = OpenTelemetryRule.create();
 
   private Distribution mockAckLatencyDistribution;
 
@@ -951,5 +959,64 @@ public class MessageDispatcherTest {
     verify(mockAckProcessor, times(2))
         .sendAckOperations(
             argThat(new CustomArgumentMatchers.AckRequestDataListMatcher(Collections.emptyList())));
+  }
+
+  @Test
+  public void testProcessSpanIsCurrentDuringReceiveMessage() {
+    Tracer openTelemetryTracer = openTelemetryTesting.getOpenTelemetry().getTracer("test");
+    OpenTelemetryPubsubTracer pubsubTracer =
+        new OpenTelemetryPubsubTracer(openTelemetryTracer, true);
+
+    // Capture the current span inside the receiveMessage callback.
+    AtomicReference<Span> capturedSpan = new AtomicReference<>();
+    MessageReceiver capturingReceiver =
+        (message, ackReplyConsumer) -> {
+          capturedSpan.set(Span.current());
+          ackReplyConsumer.ack();
+        };
+
+    MessageDispatcher messageDispatcher =
+        getMessageDispatcherWithTracer(capturingReceiver, pubsubTracer);
+
+    messageDispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
+
+    // The captured span should be valid and should be the process span created by the dispatcher.
+    Span span = capturedSpan.get();
+    assertThat(span).isNotNull();
+    assertThat(span.getSpanContext().isValid()).isTrue();
+
+    List<SpanData> allSpans = openTelemetryTesting.getSpans();
+    boolean foundProcessSpan =
+        allSpans.stream()
+            .anyMatch(
+                s ->
+                    s.getName().contains("process")
+                        && s.getSpanContext().equals(span.getSpanContext()));
+    assertThat(foundProcessSpan).isTrue();
+  }
+
+  private MessageDispatcher getMessageDispatcherWithTracer(
+      MessageReceiver messageReceiver, OpenTelemetryPubsubTracer tracer) {
+    MessageDispatcher messageDispatcher =
+        MessageDispatcher.newBuilder(messageReceiver)
+            .setAckProcessor(mockAckProcessor)
+            .setAckExpirationPadding(ACK_EXPIRATION_PADDING_DEFAULT)
+            .setMaxAckExtensionPeriod(MAX_ACK_EXTENSION_PERIOD)
+            .setMinDurationPerAckExtension(Subscriber.DEFAULT_MIN_ACK_DEADLINE_EXTENSION)
+            .setMinDurationPerAckExtensionDefaultUsed(true)
+            .setMaxDurationPerAckExtension(Subscriber.DEFAULT_MAX_ACK_DEADLINE_EXTENSION)
+            .setMaxDurationPerAckExtensionDefaultUsed(true)
+            .setAckLatencyDistribution(mock(Distribution.class))
+            .setFlowController(mock(FlowController.class))
+            .setExecutor(MoreExecutors.directExecutor())
+            .setSubscriptionName(MOCK_SUBSCRIPTION_NAME)
+            .setSystemExecutor(systemExecutor)
+            .setApiClock(clock)
+            .setTracer(tracer)
+            .setSubscriberShutdownSettings(SubscriberShutdownSettings.newBuilder().build())
+            .build();
+
+    messageDispatcher.setMessageDeadlineSeconds(MIN_ACK_DEADLINE_SECONDS);
+    return messageDispatcher;
   }
 }
