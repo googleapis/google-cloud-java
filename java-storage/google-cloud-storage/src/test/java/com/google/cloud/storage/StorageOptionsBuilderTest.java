@@ -95,11 +95,12 @@ public final class StorageOptionsBuilderTest {
     com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
         configurator = provider.toBuilder().getChannelConfigurator();
     if (configurator != null) {
-      io.grpc.ManagedChannelBuilder<?> fakeBuilder =
-          io.grpc.ManagedChannelBuilder.forAddress("foo", 80);
-      io.grpc.ManagedChannelBuilder<?> appliedBuilder = configurator.apply(fakeBuilder);
-      String authority = extractAuthorityFromChannelBuilder(appliedBuilder);
-      assertThat(authority).isNull();
+      io.grpc.ManagedChannelBuilder<?> mockBuilder =
+          org.mockito.Mockito.mock(
+              io.grpc.ManagedChannelBuilder.class, org.mockito.Mockito.RETURNS_SELF);
+      configurator.apply(mockBuilder);
+      org.mockito.Mockito.verify(mockBuilder, org.mockito.Mockito.never())
+          .overrideAuthority(org.mockito.Mockito.anyString());
     }
   }
 
@@ -118,12 +119,80 @@ public final class StorageOptionsBuilderTest {
     com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
         configurator = provider.toBuilder().getChannelConfigurator();
     if (configurator != null) {
-      io.grpc.ManagedChannelBuilder<?> fakeBuilder =
-          io.grpc.ManagedChannelBuilder.forAddress("foo", 80);
-      io.grpc.ManagedChannelBuilder<?> appliedBuilder = configurator.apply(fakeBuilder);
-      String authority = extractAuthorityFromChannelBuilder(appliedBuilder);
-      assertThat(authority).isNull();
+      io.grpc.ManagedChannelBuilder<?> mockBuilder =
+          org.mockito.Mockito.mock(
+              io.grpc.ManagedChannelBuilder.class, org.mockito.Mockito.RETURNS_SELF);
+      configurator.apply(mockBuilder);
+      org.mockito.Mockito.verify(mockBuilder, org.mockito.Mockito.never())
+          .overrideAuthority(org.mockito.Mockito.anyString());
     }
+  }
+
+  @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect_hostWithQueryOrFragment() throws Exception {
+    GrpcStorageOptions optionsWithQuery =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.googleapis.com?query=val")
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    assertThat(optionsWithQuery.getStorageSettings().getEndpoint())
+        .isEqualTo("storage-direct.googleapis.com:443");
+
+    GrpcStorageOptions optionsWithFragment =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.googleapis.com#section")
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    assertThat(optionsWithFragment.getStorageSettings().getEndpoint())
+        .isEqualTo("storage-direct.googleapis.com:443");
+  }
+
+  @Test
+  public void grpc_rewriteHost_delimiters() {
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "https://storage.googleapis.com?query=val",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("https://storage-direct.googleapis.com?query=val");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "https://storage.googleapis.com#section",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("https://storage-direct.googleapis.com#section");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com?query=val",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com?query=val");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com#section",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com#section");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com:443",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com:443");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com/path",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com/path");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com.evil.com",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage.googleapis.com.evil.com");
   }
 
   @Test
@@ -145,44 +214,6 @@ public final class StorageOptionsBuilderTest {
     @Override
     public ResultRetryAlgorithm<?> getNonidempotentHandler() {
       return null;
-    }
-  }
-
-  private static String extractAuthorityFromChannelBuilder(
-      io.grpc.ManagedChannelBuilder<?> channelBuilder) {
-    try {
-      Object current = channelBuilder;
-      while (current != null) {
-        Class<?> clazz = current.getClass();
-        java.lang.reflect.Field field = null;
-        while (clazz != null) {
-          try {
-            field = clazz.getDeclaredField("authority");
-            break;
-          } catch (NoSuchFieldException e) {
-            try {
-              field = clazz.getDeclaredField("overrideAuthority");
-              break;
-            } catch (Exception ignored) {
-            }
-            clazz = clazz.getSuperclass();
-          }
-        }
-        if (field != null) {
-          field.setAccessible(true);
-          return (String) field.get(current);
-        }
-        try {
-          java.lang.reflect.Field delegate = current.getClass().getDeclaredField("delegate");
-          delegate.setAccessible(true);
-          current = delegate.get(current);
-        } catch (Exception e) {
-          break;
-        }
-      }
-      return null;
-    } catch (Exception e) {
-      throw new RuntimeException(e);
     }
   }
 }

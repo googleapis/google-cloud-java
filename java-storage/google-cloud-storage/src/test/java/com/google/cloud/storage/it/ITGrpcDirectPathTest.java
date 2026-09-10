@@ -42,6 +42,8 @@ public final class ITGrpcDirectPathTest {
       "Bypassed because DirectPath over Interconnect (GCI) requires a specialized hybrid network environment (Interconnect and Traffic Director configured for storage-direct) and cannot be validated in standard CI or local workstations.")
   @Test
   public void clientShouldWork_directPathXdsOverInterconnect() throws Exception {
+    // Added assumeTrue to ensure the test skips gracefully if storage-direct.googleapis.com
+    // cannot be resolved rather than failing CI.
     assumeTrue(
         "Environment cannot resolve storage-direct.googleapis.com", canResolveDirectPathAddress());
     StorageOptions options =

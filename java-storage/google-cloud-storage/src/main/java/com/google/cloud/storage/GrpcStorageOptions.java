@@ -201,7 +201,7 @@ public final class GrpcStorageOptions extends StorageOptions
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
   }
 
-  private static String rewriteHost(String endpoint, String oldHost, String newHost) {
+  static String rewriteHost(String endpoint, String oldHost, String newHost) {
     String prefix = "";
     String rest = endpoint;
     int schemeIndex = endpoint.indexOf("://");
@@ -211,7 +211,11 @@ public final class GrpcStorageOptions extends StorageOptions
     }
     if (rest.startsWith(oldHost)) {
       int len = oldHost.length();
-      if (rest.length() == len || rest.charAt(len) == ':' || rest.charAt(len) == '/') {
+      if (rest.length() == len
+          || rest.charAt(len) == ':'
+          || rest.charAt(len) == '/'
+          || rest.charAt(len) == '?'
+          || rest.charAt(len) == '#') {
         return prefix + newHost + rest.substring(len);
       }
     }
