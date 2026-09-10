@@ -76,6 +76,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -291,15 +292,23 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private void fetchAndValidateTrace(String traceId, boolean expectError) throws Exception {
-    Trace trace =
-        await("Polling Cloud Trace for trace " + traceId)
-            .atMost(Duration.ofMinutes(2))
-            .pollDelay(Duration.ofSeconds(10))
-            .pollInterval(Duration.ofSeconds(3))
-            .ignoreExceptions()
-            .until(
-                () -> traceClient.getTrace(DEFAULT_PROJECT, traceId),
-                t -> t != null && t.getSpansCount() > 0);
+    AtomicReference<Trace> traceRef = new AtomicReference<>();
+    await("Polling Cloud Trace for trace " + traceId)
+        .atMost(Duration.ofMinutes(2))
+        .pollDelay(Duration.ofSeconds(10))
+        .pollInterval(Duration.ofSeconds(3))
+        .ignoreExceptions()
+        .until(
+            () -> {
+              Trace trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
+              if (trace != null && trace.getSpansCount() > 0) {
+                traceRef.set(trace);
+                return true;
+              }
+              return false;
+            });
+
+    Trace trace = traceRef.get();
 
     for (TraceSpan span : trace.getSpansList()) {
       logger.info("Verifying attributes for span: " + span.getName());
