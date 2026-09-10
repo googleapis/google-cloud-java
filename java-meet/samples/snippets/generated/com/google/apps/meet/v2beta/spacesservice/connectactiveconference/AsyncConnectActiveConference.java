@@ -40,6 +40,7 @@ public class AsyncConnectActiveConference {
           ConnectActiveConferenceRequest.newBuilder()
               .setName(SpaceName.of("[SPACE]").toString())
               .setOffer("offer105650780")
+              .setConfig(ConnectActiveConferenceRequest.ConnectionConfig.newBuilder().build())
               .build();
       ApiFuture<ConnectActiveConferenceResponse> future =
           spacesServiceClient.connectActiveConferenceCallable().futureCall(request);

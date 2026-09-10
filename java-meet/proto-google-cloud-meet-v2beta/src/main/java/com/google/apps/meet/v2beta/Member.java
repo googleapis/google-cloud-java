@@ -90,9 +90,9 @@ public final class Member extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This is used to indicate the user hasn't specified any value and the
      * user’s role will be determined upon joining the meetings between
-     * 'contributor' and 'viewer' role depending on meeting configuration. More
-     * details about viewer role
-     * https://support.google.com/meet/answer/13658394?hl=en.
+     * 'contributor' and 'viewer' role depending on meeting configuration. For
+     * more information about the viewer role, see [Assign View only roles in
+     * Google Meet](https://support.google.com/meet/answer/13658394).
      * </pre>
      *
      * <code>ROLE_UNSPECIFIED = 0;</code>
@@ -127,9 +127,9 @@ public final class Member extends com.google.protobuf.GeneratedMessage
      * <pre>
      * This is used to indicate the user hasn't specified any value and the
      * user’s role will be determined upon joining the meetings between
-     * 'contributor' and 'viewer' role depending on meeting configuration. More
-     * details about viewer role
-     * https://support.google.com/meet/answer/13658394?hl=en.
+     * 'contributor' and 'viewer' role depending on meeting configuration. For
+     * more information about the viewer role, see [Assign View only roles in
+     * Google Meet](https://support.google.com/meet/answer/13658394).
      * </pre>
      *
      * <code>ROLE_UNSPECIFIED = 0;</code>

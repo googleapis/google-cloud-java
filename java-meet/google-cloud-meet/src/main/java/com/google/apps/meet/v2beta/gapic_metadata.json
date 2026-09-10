@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "SpacesServiceClient",
           "rpcs": {
+            "BatchUpdateMembers": {
+              "methods": ["batchUpdateMembers", "batchUpdateMembersCallable"]
+            },
             "ConnectActiveConference": {
               "methods": ["connectActiveConference", "connectActiveConference", "connectActiveConference", "connectActiveConferenceCallable"]
             },
@@ -33,6 +36,9 @@
             },
             "ListMembers": {
               "methods": ["listMembers", "listMembers", "listMembers", "listMembersPagedCallable", "listMembersCallable"]
+            },
+            "UpdateMember": {
+              "methods": ["updateMember", "updateMember", "updateMemberCallable"]
             },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
@@ -58,6 +64,9 @@
             "GetRecording": {
               "methods": ["getRecording", "getRecording", "getRecording", "getRecordingCallable"]
             },
+            "GetSmartNote": {
+              "methods": ["getSmartNote", "getSmartNote", "getSmartNote", "getSmartNoteCallable"]
+            },
             "GetTranscript": {
               "methods": ["getTranscript", "getTranscript", "getTranscript", "getTranscriptCallable"]
             },
@@ -75,6 +84,9 @@
             },
             "ListRecordings": {
               "methods": ["listRecordings", "listRecordings", "listRecordings", "listRecordingsPagedCallable", "listRecordingsCallable"]
+            },
+            "ListSmartNotes": {
+              "methods": ["listSmartNotes", "listSmartNotes", "listSmartNotes", "listSmartNotesPagedCallable", "listSmartNotesCallable"]
             },
             "ListTranscriptEntries": {
               "methods": ["listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntriesPagedCallable", "listTranscriptEntriesCallable"]

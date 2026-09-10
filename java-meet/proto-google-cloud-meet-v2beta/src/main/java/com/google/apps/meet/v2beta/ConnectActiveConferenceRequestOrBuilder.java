@@ -95,4 +95,51 @@ public interface ConnectActiveConferenceRequestOrBuilder
    * @return The bytes for offer.
    */
   com.google.protobuf.ByteString getOfferBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the config field is set.
+   */
+  boolean hasConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The config.
+   */
+  com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig getConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder
+      getConfigOrBuilder();
 }

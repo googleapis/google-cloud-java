@@ -140,8 +140,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Identifier to assign to the Gateway. Must be unique within scope of
-   * the parent resource.
+   * Required. Identifier to assign to the Gateway. Must be unique within scope
+   * of the parent resource.
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -165,8 +165,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Identifier to assign to the Gateway. Must be unique within scope of
-   * the parent resource.
+   * Required. Identifier to assign to the Gateway. Must be unique within scope
+   * of the parent resource.
    * </pre>
    *
    * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,8 +754,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Identifier to assign to the Gateway. Must be unique within scope of
-     * the parent resource.
+     * Required. Identifier to assign to the Gateway. Must be unique within scope
+     * of the parent resource.
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -778,8 +778,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Identifier to assign to the Gateway. Must be unique within scope of
-     * the parent resource.
+     * Required. Identifier to assign to the Gateway. Must be unique within scope
+     * of the parent resource.
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -802,8 +802,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Identifier to assign to the Gateway. Must be unique within scope of
-     * the parent resource.
+     * Required. Identifier to assign to the Gateway. Must be unique within scope
+     * of the parent resource.
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -825,8 +825,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Identifier to assign to the Gateway. Must be unique within scope of
-     * the parent resource.
+     * Required. Identifier to assign to the Gateway. Must be unique within scope
+     * of the parent resource.
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -844,8 +844,8 @@ public final class CreateGatewayRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Identifier to assign to the Gateway. Must be unique within scope of
-     * the parent resource.
+     * Required. Identifier to assign to the Gateway. Must be unique within scope
+     * of the parent resource.
      * </pre>
      *
      * <code>string gateway_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListConfere
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -40,6 +41,7 @@ import com.google.apps.meet.v2.GetConferenceRecordRequest;
 import com.google.apps.meet.v2.GetParticipantRequest;
 import com.google.apps.meet.v2.GetParticipantSessionRequest;
 import com.google.apps.meet.v2.GetRecordingRequest;
+import com.google.apps.meet.v2.GetSmartNoteRequest;
 import com.google.apps.meet.v2.GetTranscriptEntryRequest;
 import com.google.apps.meet.v2.GetTranscriptRequest;
 import com.google.apps.meet.v2.ListConferenceRecordsRequest;
@@ -50,6 +52,8 @@ import com.google.apps.meet.v2.ListParticipantsRequest;
 import com.google.apps.meet.v2.ListParticipantsResponse;
 import com.google.apps.meet.v2.ListRecordingsRequest;
 import com.google.apps.meet.v2.ListRecordingsResponse;
+import com.google.apps.meet.v2.ListSmartNotesRequest;
+import com.google.apps.meet.v2.ListSmartNotesResponse;
 import com.google.apps.meet.v2.ListTranscriptEntriesRequest;
 import com.google.apps.meet.v2.ListTranscriptEntriesResponse;
 import com.google.apps.meet.v2.ListTranscriptsRequest;
@@ -57,6 +61,7 @@ import com.google.apps.meet.v2.ListTranscriptsResponse;
 import com.google.apps.meet.v2.Participant;
 import com.google.apps.meet.v2.ParticipantSession;
 import com.google.apps.meet.v2.Recording;
+import com.google.apps.meet.v2.SmartNote;
 import com.google.apps.meet.v2.Transcript;
 import com.google.apps.meet.v2.TranscriptEntry;
 import com.google.protobuf.TypeRegistry;
@@ -512,6 +517,76 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetSmartNoteRequest, SmartNote>
+      getSmartNoteMethodDescriptor =
+          ApiMethodDescriptor.<GetSmartNoteRequest, SmartNote>newBuilder()
+              .setFullMethodName("google.apps.meet.v2.ConferenceRecordsService/GetSmartNote")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSmartNoteRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=conferenceRecords/*/smartNotes/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSmartNoteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSmartNoteRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SmartNote>newBuilder()
+                      .setDefaultInstance(SmartNote.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSmartNotesRequest, ListSmartNotesResponse>
+      listSmartNotesMethodDescriptor =
+          ApiMethodDescriptor.<ListSmartNotesRequest, ListSmartNotesResponse>newBuilder()
+              .setFullMethodName("google.apps.meet.v2.ConferenceRecordsService/ListSmartNotes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSmartNotesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=conferenceRecords/*}/smartNotes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSmartNotesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSmartNotesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSmartNotesResponse>newBuilder()
+                      .setDefaultInstance(ListSmartNotesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetConferenceRecordRequest, ConferenceRecord>
       getConferenceRecordCallable;
   private final UnaryCallable<ListConferenceRecordsRequest, ListConferenceRecordsResponse>
@@ -544,6 +619,10 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
       listTranscriptEntriesCallable;
   private final UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesPagedCallable;
+  private final UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable;
+  private final UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> listSmartNotesCallable;
+  private final UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -739,6 +818,31 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<GetSmartNoteRequest, SmartNote> getSmartNoteTransportSettings =
+        HttpJsonCallSettings.<GetSmartNoteRequest, SmartNote>newBuilder()
+            .setMethodDescriptor(getSmartNoteMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListSmartNotesRequest, ListSmartNotesResponse>
+        listSmartNotesTransportSettings =
+            HttpJsonCallSettings.<ListSmartNotesRequest, ListSmartNotesResponse>newBuilder()
+                .setMethodDescriptor(listSmartNotesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getConferenceRecordCallable =
         callableFactory.createUnaryCallable(
@@ -812,6 +916,15 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
             listTranscriptEntriesTransportSettings,
             settings.listTranscriptEntriesSettings(),
             clientContext);
+    this.getSmartNoteCallable =
+        callableFactory.createUnaryCallable(
+            getSmartNoteTransportSettings, settings.getSmartNoteSettings(), clientContext);
+    this.listSmartNotesCallable =
+        callableFactory.createUnaryCallable(
+            listSmartNotesTransportSettings, settings.listSmartNotesSettings(), clientContext);
+    this.listSmartNotesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSmartNotesTransportSettings, settings.listSmartNotesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -832,6 +945,8 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
     methodDescriptors.add(listTranscriptsMethodDescriptor);
     methodDescriptors.add(getTranscriptEntryMethodDescriptor);
     methodDescriptors.add(listTranscriptEntriesMethodDescriptor);
+    methodDescriptors.add(getSmartNoteMethodDescriptor);
+    methodDescriptors.add(listSmartNotesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -934,6 +1049,22 @@ public class HttpJsonConferenceRecordsServiceStub extends ConferenceRecordsServi
   public UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesPagedCallable() {
     return listTranscriptEntriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable() {
+    return getSmartNoteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> listSmartNotesCallable() {
+    return listSmartNotesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable() {
+    return listSmartNotesPagedCallable;
   }
 
   @Override
