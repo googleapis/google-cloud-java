@@ -29,12 +29,9 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.auto.value.AutoValue;
-import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.Column;
 import com.google.bigtable.v2.Family;
-import com.google.bigtable.v2.PartialRowResponse;
 import com.google.bigtable.v2.Row;
-import com.google.bigtable.v2.TypedRows;
 import com.google.bigtable.v2.Value;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -46,48 +43,40 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TypedCell;
+import com.google.cloud.bigtable.data.v2.models.TypedQualifier;
+import com.google.cloud.bigtable.data.v2.models.TypedQuery;
+import com.google.cloud.bigtable.data.v2.models.TypedRow;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.testproxy.CloudBigtableV2TestProxyGrpc.CloudBigtableV2TestProxyImplBase;
 import com.google.common.base.Preconditions;
-import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.util.Durations;
+import com.google.protobuf.util.Timestamps;
 import com.google.rpc.Code;
-import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
-import io.grpc.auth.MoreCallCredentials;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import io.grpc.protobuf.StatusProto;
-import io.grpc.stub.ClientCallStreamObserver;
-import io.grpc.stub.ClientResponseObserver;
-import io.grpc.stub.MetadataUtils;
 import io.grpc.stub.StreamObserver;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.IOException;
-import java.net.URLEncoder;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -103,18 +92,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
    */
   @AutoValue
   abstract static class CbtClient {
-    static CbtClient create(
-        BigtableDataSettings settings,
-        BigtableDataClient dataClient,
-        @Nullable ManagedChannel channel,
-        @Nullable BigtableGrpc.BigtableStub stub,
-        @Nullable Duration perOperationTimeout) {
-      return new AutoValue_CbtTestProxy_CbtClient(
-          settings, dataClient, channel, stub, perOperationTimeout);
-    }
-
     static CbtClient create(BigtableDataSettings settings, BigtableDataClient dataClient) {
-      return create(settings, dataClient, null, null, null);
+      return new AutoValue_CbtTestProxy_CbtClient(settings, dataClient);
     }
 
     @Nullable
@@ -122,15 +101,6 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
 
     @Nullable
     abstract BigtableDataClient dataClient();
-
-    @Nullable
-    abstract ManagedChannel channel();
-
-    @Nullable
-    abstract BigtableGrpc.BigtableStub stub();
-
-    @Nullable
-    abstract Duration perOperationTimeout();
   }
 
   void registerClientForTest(String clientId, CbtClient client) {
@@ -273,33 +243,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       BigtableDataSettings settings = settingsBuilder.build();
       BigtableDataClient client = BigtableDataClient.create(settings);
 
-      ManagedChannel channel = null;
-      BigtableGrpc.BigtableStub stub = null;
-      String target = request.getDataTarget();
-      if (target.equals("emulator")) {
-        String emulatorHost = System.getenv("BIGTABLE_EMULATOR_HOST");
-        if (emulatorHost != null && !emulatorHost.isEmpty()) {
-          target = emulatorHost;
-        }
-      }
-      if (!target.equals("emulator")) {
-        channel =
-            createManagedChannel(
-                target,
-                request.getSecurityOptions().getUseSsl(),
-                request.getSecurityOptions().getSslRootCertsPem(),
-                request.getSecurityOptions().getSslEndpointOverride());
-        stub = BigtableGrpc.newStub(channel);
-        if (!request.getSecurityOptions().getAccessToken().isEmpty()) {
-          stub =
-              stub.withCallCredentials(
-                  MoreCallCredentials.from(
-                      OAuth2Credentials.create(
-                          new AccessToken(request.getSecurityOptions().getAccessToken(), null))));
-        }
-      }
-
-      CbtClient cbtClient = CbtClient.create(settings, client, channel, stub, newTimeout);
+      CbtClient cbtClient = CbtClient.create(settings, client);
       idClientMap.put(request.getClientId(), cbtClient);
     } catch (IOException e) {
       responseObserver.onError(Status.INTERNAL.withDescription(e.getMessage()).asException());
@@ -324,9 +268,6 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     if (client.dataClient() != null) {
       client.dataClient().close();
     }
-    if (client.channel() != null) {
-      client.channel().shutdown();
-    }
 
     responseObserver.onNext(CloseClientResponse.getDefaultInstance());
     responseObserver.onCompleted();
@@ -344,8 +285,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     }
 
-    if (client.channel() != null) {
-      client.channel().shutdown();
+    if (client.dataClient() != null) {
+      client.dataClient().close();
     }
 
     responseObserver.onNext(RemoveClientResponse.getDefaultInstance());
@@ -552,286 +493,51 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       return;
     }
 
-    com.google.bigtable.v2.TypedReadRowsRequest protoRequest = request.getRequest();
-    if (protoRequest.getTableName().isEmpty()
-        && protoRequest.getAuthorizedViewName().isEmpty()
-        && protoRequest.getMaterializedViewName().isEmpty()) {
+    TypedQuery query;
+    try {
+      query = TypedQuery.fromProto(request.getRequest());
+    } catch (RuntimeException e) {
       responseObserver.onNext(
           TypedRowsResult.newBuilder()
               .setStatus(
                   com.google.rpc.Status.newBuilder()
                       .setCode(Code.INVALID_ARGUMENT.getNumber())
-                      .setMessage(
-                          "Target table_name, authorized_view_name, or materialized_view_name must be"
-                              + " specified in TypedReadRowsRequest")
+                      .setMessage(e.getMessage())
                       .build())
               .build());
       responseObserver.onCompleted();
       return;
     }
 
-    BigtableGrpc.BigtableStub stub = client.stub();
-    if (stub == null) {
+    TypedRowsResult.Builder resultBuilder = TypedRowsResult.newBuilder();
+    try {
+      ServerStream<TypedRow> rows = client.dataClient().typedReadRows(query);
+      readTypedRowsInto(rows, request.getCancelAfterRows(), resultBuilder);
       responseObserver.onNext(
-          TypedRowsResult.newBuilder()
+          resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
+    } catch (ApiException e) {
+      responseObserver.onNext(resultBuilder.setStatus(convertStatus(e)).build());
+      responseObserver.onCompleted();
+      return;
+    } catch (StatusRuntimeException e) {
+      responseObserver.onNext(
+          resultBuilder.setStatus(StatusProto.fromThrowable(e)).build());
+      responseObserver.onCompleted();
+      return;
+    } catch (RuntimeException e) {
+      responseObserver.onNext(
+          resultBuilder
               .setStatus(
                   com.google.rpc.Status.newBuilder()
-                      .setCode(Code.FAILED_PRECONDITION.getNumber())
-                      .setMessage("Client gRPC stub is not initialized")
+                      .setCode(Code.INTERNAL.getNumber())
+                      .setMessage(e.getMessage())
                       .build())
               .build());
       responseObserver.onCompleted();
       return;
     }
 
-    if (protoRequest.getAppProfileId().isEmpty()
-        && client.settings() != null
-        && !client.settings().getAppProfileId().isEmpty()) {
-      protoRequest =
-          protoRequest.toBuilder().setAppProfileId(client.settings().getAppProfileId()).build();
-    }
-
-    Metadata metadata = new Metadata();
-    String routingParam = getRoutingParam(protoRequest);
-    if (!routingParam.isEmpty()) {
-      metadata.put(
-          Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER),
-          routingParam);
-    }
-    metadata.put(
-        Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER),
-        "gl-java/ cbt-test-proxy/");
-    metadata.put(
-        Metadata.Key.of("user-agent", Metadata.ASCII_STRING_MARSHALLER), "cbt-test-proxy/1.0");
-
-    BigtableGrpc.BigtableStub callStub =
-        stub.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(metadata));
-    if (client.perOperationTimeout() != null) {
-      callStub =
-          callStub.withDeadlineAfter(
-              client.perOperationTimeout().toMillis(), TimeUnit.MILLISECONDS);
-    }
-    final BigtableGrpc.BigtableStub finalCallStub = callStub;
-
-    int cancelAfterRows = request.getCancelAfterRows();
-    List<com.google.bigtable.v2.TypedRow> collectedRows = new ArrayList<>();
-    CompletableFuture<TypedRowsResult> future = new CompletableFuture<>();
-    AtomicBoolean isCancelled = new AtomicBoolean(false);
-
-    final com.google.bigtable.v2.TypedReadRowsRequest baseRequest = protoRequest;
-    ClientResponseObserver<
-            com.google.bigtable.v2.TypedReadRowsRequest,
-            com.google.bigtable.v2.TypedReadRowsResponse>
-        streamObserver =
-            new ClientResponseObserver<
-                com.google.bigtable.v2.TypedReadRowsRequest,
-                com.google.bigtable.v2.TypedReadRowsResponse>() {
-
-              private ClientCallStreamObserver<com.google.bigtable.v2.TypedReadRowsRequest>
-                  requestStream;
-              private ByteString batchBuffer = ByteString.EMPTY;
-              private ByteString runningBatchBytes = ByteString.EMPTY;
-              private ByteString committedBatchBytes = ByteString.EMPTY;
-              private int committedRowCount = 0;
-              private ByteString lastResumeToken = ByteString.EMPTY;
-              private int retryCount = 0;
-              private static final int MAX_RETRIES = 3;
-
-              @Override
-              public void beforeStart(
-                  ClientCallStreamObserver<com.google.bigtable.v2.TypedReadRowsRequest>
-                      requestStream) {
-                this.requestStream = requestStream;
-              }
-
-              @Override
-              public void onNext(com.google.bigtable.v2.TypedReadRowsResponse response) {
-                if (isCancelled.get() || future.isDone()) {
-                  return;
-                }
-                if (response.hasResponse()) {
-                  PartialRowResponse partial = response.getResponse();
-                  if (partial.getReset()) {
-                    batchBuffer = ByteString.EMPTY;
-                    while (collectedRows.size() > committedRowCount) {
-                      collectedRows.remove(collectedRows.size() - 1);
-                    }
-                    runningBatchBytes = committedBatchBytes;
-                  }
-                  if (partial.hasTypedRowsBatch()) {
-                    batchBuffer = batchBuffer.concat(partial.getTypedRowsBatch().getBatchData());
-                  }
-                  if (partial.hasFlush()) {
-                    PartialRowResponse.Flush flush = partial.getFlush();
-                    ByteString currentRunning = runningBatchBytes.concat(batchBuffer);
-                    if (flush.hasChecksum()) {
-                      long expectedChecksum = Integer.toUnsignedLong(flush.getChecksum());
-                      long actualRunningChecksum =
-                          Hashing.crc32c().hashBytes(currentRunning.toByteArray()).padToLong();
-                      long actualBatchChecksum =
-                          Hashing.crc32c().hashBytes(batchBuffer.toByteArray()).padToLong();
-                      if (expectedChecksum != actualRunningChecksum
-                          && expectedChecksum != actualBatchChecksum) {
-                        isCancelled.set(true);
-                        requestStream.cancel("Checksum mismatch", null);
-                        future.complete(
-                            TypedRowsResult.newBuilder()
-                                .setStatus(
-                                    com.google.rpc.Status.newBuilder()
-                                        .setCode(Code.DATA_LOSS.getNumber())
-                                        .setMessage(
-                                            String.format(
-                                                "Checksum mismatch: expected %d, got %d",
-                                                expectedChecksum, actualRunningChecksum))
-                                        .build())
-                                .addAllRows(collectedRows)
-                                .build());
-                        return;
-                      }
-                    }
-                    runningBatchBytes = currentRunning;
-                    if (!batchBuffer.isEmpty()) {
-                      try {
-                        TypedRows typedRows = TypedRows.parseFrom(batchBuffer);
-                        batchBuffer = ByteString.EMPTY;
-                        for (com.google.bigtable.v2.TypedRow row : typedRows.getRowsList()) {
-                          collectedRows.add(row);
-                          if (cancelAfterRows > 0 && collectedRows.size() >= cancelAfterRows) {
-                            logger.info(
-                                String.format(
-                                    "Canceling TypedReadRows() stream to respect"
-                                        + " cancel_after_rows=%d",
-                                    cancelAfterRows));
-                            isCancelled.set(true);
-                            requestStream.cancel(
-                                "Canceling to respect cancel_after_rows", null);
-                            future.complete(
-                                TypedRowsResult.newBuilder()
-                                    .setStatus(com.google.rpc.Status.getDefaultInstance())
-                                    .addAllRows(collectedRows)
-                                    .build());
-                            return;
-                          }
-                        }
-                      } catch (InvalidProtocolBufferException e) {
-                        isCancelled.set(true);
-                        requestStream.cancel("Protobuf deserialization failed", e);
-                        future.complete(
-                            TypedRowsResult.newBuilder()
-                                .setStatus(
-                                    com.google.rpc.Status.newBuilder()
-                                        .setCode(Code.INTERNAL.getNumber())
-                                        .setMessage("Failed to parse TypedRows: " + e.getMessage())
-                                        .build())
-                                .addAllRows(collectedRows)
-                                .build());
-                        return;
-                      }
-                    }
-                    if (!flush.getResumeToken().isEmpty()) {
-                      committedRowCount = collectedRows.size();
-                      committedBatchBytes = runningBatchBytes;
-                      lastResumeToken = flush.getResumeToken();
-                    }
-                  }
-                }
-              }
-
-              @Override
-              public void onError(Throwable t) {
-                if (isCancelled.get() || future.isDone()) {
-                  return;
-                }
-                io.grpc.Status grpcStatus = io.grpc.Status.fromThrowable(t);
-                boolean isRetryable =
-                    grpcStatus.getCode() == io.grpc.Status.Code.UNAVAILABLE
-                        || grpcStatus.getCode() == io.grpc.Status.Code.ABORTED;
-                boolean canRetry =
-                    isRetryable
-                        && retryCount < MAX_RETRIES
-                        && (!lastResumeToken.isEmpty() || collectedRows.isEmpty());
-                if (canRetry) {
-                  retryCount++;
-                  batchBuffer = ByteString.EMPTY;
-                  while (collectedRows.size() > committedRowCount) {
-                    collectedRows.remove(collectedRows.size() - 1);
-                  }
-                  runningBatchBytes = committedBatchBytes;
-                  com.google.bigtable.v2.TypedReadRowsRequest resumeRequest =
-                      lastResumeToken.isEmpty()
-                          ? baseRequest
-                          : baseRequest.toBuilder().setResumeToken(lastResumeToken).build();
-                  finalCallStub.typedReadRows(resumeRequest, this);
-                  return;
-                }
-                com.google.rpc.Status status = StatusProto.fromThrowable(t);
-                if (status == null) {
-                  status =
-                      com.google.rpc.Status.newBuilder()
-                          .setCode(grpcStatus.getCode().value())
-                          .setMessage(
-                              grpcStatus.getDescription() != null
-                                  ? grpcStatus.getDescription()
-                                  : (t.getMessage() != null ? t.getMessage() : ""))
-                          .build();
-                }
-                future.complete(
-                    TypedRowsResult.newBuilder()
-                        .setStatus(status)
-                        .addAllRows(collectedRows)
-                        .build());
-              }
-
-              @Override
-              public void onCompleted() {
-                if (!future.isDone()) {
-                  if (!batchBuffer.isEmpty()) {
-                    try {
-                      TypedRows typedRows = TypedRows.parseFrom(batchBuffer);
-                      batchBuffer = ByteString.EMPTY;
-                      for (com.google.bigtable.v2.TypedRow row : typedRows.getRowsList()) {
-                        collectedRows.add(row);
-                        if (cancelAfterRows > 0 && collectedRows.size() >= cancelAfterRows) {
-                          break;
-                        }
-                      }
-                    } catch (InvalidProtocolBufferException e) {
-                      future.complete(
-                          TypedRowsResult.newBuilder()
-                              .setStatus(
-                                  com.google.rpc.Status.newBuilder()
-                                      .setCode(Code.INTERNAL.getNumber())
-                                      .setMessage(
-                                          "Failed to parse TypedRows on completion: "
-                                              + e.getMessage())
-                                      .build())
-                              .addAllRows(collectedRows)
-                              .build());
-                      return;
-                    }
-                  }
-                  future.complete(
-                      TypedRowsResult.newBuilder()
-                          .setStatus(com.google.rpc.Status.getDefaultInstance())
-                          .addAllRows(collectedRows)
-                          .build());
-                }
-              }
-            };
-
-    callStub.typedReadRows(protoRequest, streamObserver);
-
-    try {
-      TypedRowsResult result = future.get();
-      responseObserver.onNext(result);
-      responseObserver.onCompleted();
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
-      responseObserver.onError(Status.INTERNAL.withDescription(e.getMessage()).asException());
-    } catch (ExecutionException e) {
-      responseObserver.onError(
-          Status.INTERNAL.withDescription(e.getCause().getMessage()).asException());
-    }
+    responseObserver.onCompleted();
   }
 
   /**
@@ -900,6 +606,107 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       }
     }
     return resultBuilder;
+  }
+
+  private static com.google.bigtable.v2.Value extractQualifierProtoValue(TypedQualifier qualifier) {
+    try {
+      java.lang.reflect.Field field = TypedQualifier.class.getDeclaredField("protoValue");
+      field.setAccessible(true);
+      return (com.google.bigtable.v2.Value) field.get(qualifier);
+    } catch (Exception e) {
+      if (qualifier.isNull()) {
+        return Value.getDefaultInstance();
+      }
+      return Value.newBuilder().setRawValue(qualifier.getBytes()).build();
+    }
+  }
+
+  private static com.google.bigtable.v2.TypedCell extractCellProto(TypedCell cell) {
+    try {
+      java.lang.reflect.Field field = cell.getClass().getDeclaredField("cellProto");
+      field.setAccessible(true);
+      return (com.google.bigtable.v2.TypedCell) field.get(cell);
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  private static com.google.bigtable.v2.TypedRow convertTypedRow(TypedRow row) {
+    com.google.bigtable.v2.TypedRow.Builder rowBuilder =
+        com.google.bigtable.v2.TypedRow.newBuilder();
+
+    if (row.getRowKey().isRaw()) {
+      rowBuilder.setRowKey(
+          Value.newBuilder().setRawValue(row.getRowKey().getRaw()).build());
+    } else {
+      rowBuilder.setRowKey(row.getRowKey().toProtoValue());
+    }
+
+    Map<String, Map<TypedQualifier, List<TypedCell>>> grouped =
+        row.getCells().stream()
+            .collect(
+                Collectors.groupingBy(
+                    TypedCell::getFamily,
+                    LinkedHashMap::new,
+                    Collectors.groupingBy(
+                        TypedCell::getTypedQualifier,
+                        LinkedHashMap::new,
+                        Collectors.toList())));
+
+    for (Map.Entry<String, Map<TypedQualifier, List<TypedCell>>> famEntry : grouped.entrySet()) {
+      com.google.bigtable.v2.TypedFamily.Builder familyBuilder =
+          rowBuilder.addFamiliesBuilder().setFamilyName(famEntry.getKey());
+
+      for (Map.Entry<TypedQualifier, List<TypedCell>> colEntry : famEntry.getValue().entrySet()) {
+        com.google.bigtable.v2.TypedColumn.Builder colBuilder =
+            familyBuilder.addColumnsBuilder();
+
+        TypedQualifier qualifier = colEntry.getKey();
+        colBuilder.setQualifier(extractQualifierProtoValue(qualifier));
+
+        for (TypedCell cell : colEntry.getValue()) {
+          com.google.bigtable.v2.TypedCell cellProto = extractCellProto(cell);
+          if (cellProto != null) {
+            colBuilder.addCells(cellProto);
+          } else {
+            com.google.bigtable.v2.TypedCell.Builder cellBuilder = colBuilder.addCellsBuilder();
+            cellBuilder.setTimestamp(Timestamps.fromMicros(cell.getTimestamp()));
+            if (!cell.isNull()) {
+              cellBuilder.setValue(Value.newBuilder().setRawValue(cell.getBytesValue()).build());
+            }
+            if (cell.getLabels() != null && !cell.getLabels().isEmpty()) {
+              cellBuilder.addAllLabels(cell.getLabels());
+            }
+          }
+        }
+      }
+    }
+
+    return rowBuilder.build();
+  }
+
+  /**
+   * Helper method to convert rows from type com.google.cloud.bigtable.data.v2.models.TypedRow to
+   * proto type com.google.bigtable.v2.TypedRow.
+   *
+   * @param rows Logical rows in ServerStream<TypedRow>
+   * @param cancelAfterRows Ignore the results after this row if set positive
+   * @return the converted rows in TypedRowsResult Builder
+   */
+  private static void readTypedRowsInto(
+      ServerStream<TypedRow> rows, int cancelAfterRows, TypedRowsResult.Builder resultBuilder) {
+    int rowCounter = 0;
+    for (TypedRow row : rows) {
+      rowCounter++;
+      resultBuilder.addRows(convertTypedRow(row));
+
+      if (cancelAfterRows > 0 && rowCounter >= cancelAfterRows) {
+        logger.info(
+            String.format(
+                "Canceling TypedReadRows() to respect cancel_after_rows=%d", cancelAfterRows));
+        break;
+      }
+    }
   }
 
   @Override
@@ -1102,64 +909,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
       if (entry.getValue().dataClient() != null) {
         entry.getValue().dataClient().close();
       }
-      if (entry.getValue().channel() != null) {
-        entry.getValue().channel().shutdown();
-      }
       it.remove();
     }
-  }
-
-  private static ManagedChannel createManagedChannel(
-      String target, boolean encrypted, String rootCertsPem, String sslTarget) {
-    NettyChannelBuilder channelBuilder = NettyChannelBuilder.forTarget(target);
-    channelBuilder.maxInboundMessageSize(Integer.MAX_VALUE);
-    channelBuilder.maxInboundMetadataSize(Integer.MAX_VALUE);
-
-    if (!encrypted) {
-      channelBuilder.usePlaintext();
-    } else {
-      if (!rootCertsPem.isEmpty()) {
-        try {
-          SslContext sslContext =
-              GrpcSslContexts.forClient()
-                  .trustManager(new ByteArrayInputStream(rootCertsPem.getBytes(UTF_8)))
-                  .build();
-          channelBuilder.sslContext(sslContext);
-        } catch (IOException e) {
-          throw new IllegalArgumentException(e);
-        }
-      }
-      if (!sslTarget.isEmpty()) {
-        channelBuilder.overrideAuthority(sslTarget);
-      }
-    }
-
-    return channelBuilder.build();
-  }
-
-  private static String getRoutingParam(com.google.bigtable.v2.TypedReadRowsRequest request) {
-    StringBuilder sb = new StringBuilder();
-    try {
-      if (!request.getTableName().isEmpty()) {
-        sb.append("table_name=").append(URLEncoder.encode(request.getTableName(), UTF_8.name()));
-      } else if (!request.getAuthorizedViewName().isEmpty()) {
-        sb.append("authorized_view_name=")
-            .append(URLEncoder.encode(request.getAuthorizedViewName(), UTF_8.name()));
-      } else if (!request.getMaterializedViewName().isEmpty()) {
-        sb.append("materialized_view_name=")
-            .append(URLEncoder.encode(request.getMaterializedViewName(), UTF_8.name()));
-      }
-      if (!request.getAppProfileId().isEmpty()) {
-        if (sb.length() > 0) {
-          sb.append("&");
-        }
-        sb.append("app_profile_id=")
-            .append(URLEncoder.encode(request.getAppProfileId(), UTF_8.name()));
-      }
-    } catch (java.io.UnsupportedEncodingException e) {
-      // Should never happen with UTF-8
-    }
-    return sb.toString();
   }
 
   private static String extractTableIdFromTableName(String fullTableName)

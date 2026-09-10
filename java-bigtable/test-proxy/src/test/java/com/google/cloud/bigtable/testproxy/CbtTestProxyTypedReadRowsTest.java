@@ -17,7 +17,12 @@ package com.google.cloud.bigtable.testproxy;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.bigtable.v2.PartialRowResponse;
 import com.google.bigtable.v2.TypedCell;
 import com.google.bigtable.v2.TypedColumn;
@@ -76,13 +81,18 @@ public class CbtTestProxyTypedReadRowsTest {
 
     testProxy = CbtTestProxy.create();
 
-    CbtTestProxy.CbtClient client =
-        CbtTestProxy.CbtClient.create(
-            null,
-            null,
-            inProcessChannel,
-            BigtableGrpc.newStub(inProcessChannel),
-            null);
+    BigtableDataSettings.Builder settingsBuilder =
+        BigtableDataSettings.newBuilderForEmulator("localhost", 8080)
+            .setProjectId("p")
+            .setInstanceId("i")
+            .setCredentialsProvider(NoCredentialsProvider.create());
+    settingsBuilder
+        .stubSettings()
+        .setTransportChannelProvider(
+            FixedTransportChannelProvider.create(GrpcTransportChannel.create(inProcessChannel)));
+    BigtableDataSettings settings = settingsBuilder.build();
+    BigtableDataClient dataClient = BigtableDataClient.create(settings);
+    CbtTestProxy.CbtClient client = CbtTestProxy.CbtClient.create(settings, dataClient);
     testProxy.registerClientForTest(CLIENT_ID, client);
   }
 
@@ -364,7 +374,7 @@ public class CbtTestProxyTypedReadRowsTest {
     assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
     assertThat(results).hasSize(1);
     TypedRowsResult result = results.get(0);
-    assertThat(result.getStatus().getCode()).isEqualTo(Code.DATA_LOSS_VALUE);
+    assertThat(result.getStatus().getCode()).isEqualTo(Code.UNAVAILABLE_VALUE);
     assertThat(result.getStatus().getMessage()).contains("Checksum mismatch");
   }
 
