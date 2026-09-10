@@ -30,7 +30,7 @@ import java.util.logging.Logger;
  * <p>All telemetry operations are wrapped in exception safeguards so that failures in metric
  * collection or batch dispatching never impact standard JDBC functionality.
  */
-final class TelemetryManager implements AutoCloseable {
+public final class TelemetryManager implements AutoCloseable {
   private static final Logger logger =
       new BigQueryJdbcCustomLogger(TelemetryManager.class.getName());
 
@@ -47,11 +47,11 @@ final class TelemetryManager implements AutoCloseable {
    * Initializes or replaces the shared {@link TelemetryManager} instance with default configuration
    * and transport.
    */
-  static TelemetryManager getInstance() {
+  public static TelemetryManager getInstance() {
     return getInstance(null);
   }
 
-  static TelemetryManager getInstance(Properties properties) {
+  public static TelemetryManager getInstance(Properties properties) {
     if (globallyDisabled) {
       return null;
     }
@@ -109,7 +109,7 @@ final class TelemetryManager implements AutoCloseable {
    * Executes a telemetry logging operation safely inside an exception-isolated block. Guaranteed to
    * catch all {@link Throwable} exceptions to protect JDBC driver operations.
    */
-  static void runSafely(Runnable action) {
+  public static void runSafely(Runnable action) {
     if (action == null) {
       return;
     }
@@ -120,13 +120,13 @@ final class TelemetryManager implements AutoCloseable {
     }
   }
 
-  /** Package-private helper to check if an active instance is present and initialized. */
-  static boolean isInitialized() {
+  /** Helper to check if an active instance is present and initialized. */
+  public static boolean isInitialized() {
     return instance != null;
   }
 
   /** Flushes pending buffered metrics and shuts down the shared instance. */
-  static synchronized void closeInstance() {
+  public static synchronized void closeInstance() {
     TelemetryManager localRef = instance;
     instance = null;
     if (localRef != null) {

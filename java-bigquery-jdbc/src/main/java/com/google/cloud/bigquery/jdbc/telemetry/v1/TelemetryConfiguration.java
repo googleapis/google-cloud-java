@@ -160,9 +160,6 @@ final class TelemetryConfiguration {
       // 1. Connection Properties (lowest precedence)
       if (connectionProperties != null) {
         String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
-        if (propValue == null) {
-          propValue = connectionProperties.getProperty("enableDiagnosticTelemetry");
-        }
         if (propValue != null) {
           if ("0".equals(propValue) || "false".equalsIgnoreCase(propValue)) {
             this.enabled = false;

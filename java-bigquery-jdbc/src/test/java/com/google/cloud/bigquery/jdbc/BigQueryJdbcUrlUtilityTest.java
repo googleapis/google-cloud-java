@@ -367,4 +367,41 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     String result2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EnableTimestampPicos");
     assertThat(result2).isEqualTo("0");
   }
+
+  @Test
+  public void testParseDiagnosticTelemetryProperties() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableDiagnosticTelemetry=0;"
+            + "TelemetryUploadInterval=60000;"
+            + "TelemetryBatchSize=1000";
+
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableDiagnosticTelemetry"))
+        .isEqualTo("0");
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "TelemetryUploadInterval"))
+        .isEqualTo("60000");
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "TelemetryBatchSize"))
+        .isEqualTo("1000");
+
+    DataSource ds = DataSource.fromUrl(url);
+    assertThat(ds.getEnableDiagnosticTelemetry()).isFalse();
+    assertThat(ds.getTelemetryUploadInterval()).isEqualTo(60000L);
+    assertThat(ds.getTelemetryBatchSize()).isEqualTo(1000);
+
+    Properties props = ds.createProperties();
+    assertThat(props.getProperty("EnableDiagnosticTelemetry")).isEqualTo("false");
+    assertThat(props.getProperty("TelemetryUploadInterval")).isEqualTo("60000");
+    assertThat(props.getProperty("TelemetryBatchSize")).isEqualTo("1000");
+
+    String urlWithoutTelemetry =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
+    DataSource defaultDs = DataSource.fromUrl(urlWithoutTelemetry);
+    assertThat(defaultDs.getEnableDiagnosticTelemetry())
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE);
+    assertThat(defaultDs.getTelemetryUploadInterval())
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE);
+    assertThat(defaultDs.getTelemetryBatchSize())
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE);
+  }
 }

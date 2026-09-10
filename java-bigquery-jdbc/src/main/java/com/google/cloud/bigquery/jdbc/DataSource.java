@@ -128,6 +128,9 @@ public class DataSource implements javax.sql.DataSource {
       BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
   private OpenTelemetry customOpenTelemetry;
   private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
+  private Boolean enableDiagnosticTelemetry;
+  private Long telemetryUploadInterval;
+  private Integer telemetryBatchSize;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -387,6 +390,18 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setUseGlobalOpenTelemetry(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableDiagnosticTelemetry(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME,
+              (ds, val) -> ds.setTelemetryUploadInterval(Long.parseLong(val)))
+          .put(
+              BigQueryJdbcUrlUtility.TELEMETRY_BATCH_SIZE_PROPERTY_NAME,
+              (ds, val) -> ds.setTelemetryBatchSize(Integer.parseInt(val)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -729,6 +744,15 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
           String.valueOf(this.useGlobalOpenTelemetry));
     }
+    connectionProperties.setProperty(
+        BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+        String.valueOf(getEnableDiagnosticTelemetry()));
+    connectionProperties.setProperty(
+        BigQueryJdbcUrlUtility.TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME,
+        String.valueOf(getTelemetryUploadInterval()));
+    connectionProperties.setProperty(
+        BigQueryJdbcUrlUtility.TELEMETRY_BATCH_SIZE_PROPERTY_NAME,
+        String.valueOf(getTelemetryBatchSize()));
     return connectionProperties;
   }
 
@@ -1574,5 +1598,47 @@ public class DataSource implements javax.sql.DataSource {
           String.format(
               "Invalid value for %s. It must be greater than or equal to %d.", propertyName, min));
     }
+  }
+
+  public Boolean getEnableDiagnosticTelemetry() {
+    if (this.enableDiagnosticTelemetry != null) {
+      return this.enableDiagnosticTelemetry;
+    }
+    return BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
+  }
+
+  public void setEnableDiagnosticTelemetry(Boolean enableDiagnosticTelemetry) {
+    this.enableDiagnosticTelemetry = enableDiagnosticTelemetry;
+  }
+
+  public Long getTelemetryUploadInterval() {
+    if (this.telemetryUploadInterval != null) {
+      return this.telemetryUploadInterval;
+    }
+    return BigQueryJdbcUrlUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE;
+  }
+
+  public void setTelemetryUploadInterval(Long telemetryUploadInterval) {
+    if (telemetryUploadInterval != null) {
+      validateMin(
+          telemetryUploadInterval,
+          1,
+          BigQueryJdbcUrlUtility.TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME);
+    }
+    this.telemetryUploadInterval = telemetryUploadInterval;
+  }
+
+  public Integer getTelemetryBatchSize() {
+    if (this.telemetryBatchSize != null) {
+      return this.telemetryBatchSize;
+    }
+    return BigQueryJdbcUrlUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
+  }
+
+  public void setTelemetryBatchSize(Integer telemetryBatchSize) {
+    if (telemetryBatchSize != null) {
+      validateMin(telemetryBatchSize, 1, BigQueryJdbcUrlUtility.TELEMETRY_BATCH_SIZE_PROPERTY_NAME);
+    }
+    this.telemetryBatchSize = telemetryBatchSize;
   }
 }

@@ -253,6 +253,10 @@ final class TelemetryBatcher implements AutoCloseable {
     return eventQueue.size();
   }
 
+  TelemetryConfiguration getConfig() {
+    return config;
+  }
+
   private boolean isConfigured() {
     return config != null && config.isEnabled() && transport != null;
   }
