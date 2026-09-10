@@ -164,7 +164,7 @@ public class Publisher implements PublisherInterface {
 
   private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
   private final AtomicBoolean isQueueProcessingScheduled;
-  private ScheduledFuture<?> queueProcessingFuture;
+  private volatile ScheduledFuture<?> queueProcessingFuture;
   private final Lock queueLock;
 
   /** The maximum number of messages in one request. Defined by the API. */
@@ -732,10 +732,13 @@ public class Publisher implements PublisherInterface {
   }
 
   private void scheduleQueueProcessing() {
-    if (isQueueProcessingScheduled.compareAndSet(false, true)) {
+    while (isQueueProcessingScheduled.compareAndSet(false, true)) {
       HedgedRequest nextItem = hedgingQueue.peek();
       if (nextItem == null) {
         isQueueProcessingScheduled.set(false);
+        if (!hedgingQueue.isEmpty()) {
+          continue;
+        }
         return;
       }
 
@@ -751,6 +754,7 @@ public class Publisher implements PublisherInterface {
               },
               delay,
               TimeUnit.MILLISECONDS);
+      return;
     }
   }
 
@@ -1218,6 +1222,15 @@ public class Publisher implements PublisherInterface {
                   + hedgeDelay.toMillis()
                   + "ms) must be strictly less than the initial RPC timeout duration ("
                   + initialRpcTimeout.toMillis()
+                  + "ms)");
+        }
+        Duration totalTimeout = retrySettings.getTotalTimeoutDuration();
+        if (hedgeDelay.compareTo(totalTimeout) >= 0) {
+          throw new IllegalArgumentException(
+              "hedgeDelay ("
+                  + hedgeDelay.toMillis()
+                  + "ms) must be strictly less than the total timeout duration ("
+                  + totalTimeout.toMillis()
                   + "ms)");
         }
       }
