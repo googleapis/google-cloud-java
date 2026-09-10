@@ -40,8 +40,11 @@ import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
 /**
- * Internal helper utility for converting Apache Arrow schemas and record batches into BigQuery
- * Veneer objects.
+ * Internal helper utility for managing Arrow vector memory and deserializing IPC record batches
+ * into BigQuery Veneer objects.
+ *
+ * <p>This class handles Arrow vectors, {@link BufferAllocator} memory lifecycles, and byte stream
+ * deserialization. For pure POJO schema and metadata conversions, use {@link ArrowPojoUtils}.
  */
 final class ArrowDeserializer {
 
@@ -94,57 +97,15 @@ final class ArrowDeserializer {
   }
 
   /**
-   * Serializes an Apache Arrow Schema object to its JSON string representation.
+   * Resolves an Apache Arrow Schema from the provided Object argument.
    *
-   * @param arrowSchema the Apache Arrow schema object
-   * @return the JSON string representation
-   * @throws IllegalArgumentException if arrowSchema is null or of an unsupported type
-   */
-  static String arrowSchemaToJson(Object arrowSchema) {
-    if (arrowSchema == null) {
-      throw new IllegalArgumentException("arrowSchema must not be null.");
-    }
-    if (!(arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema)) {
-      throw new IllegalArgumentException(
-          "Unsupported Arrow schema type: " + arrowSchema.getClass().getName());
-    }
-    return ((org.apache.arrow.vector.types.pojo.Schema) arrowSchema).toJson();
-  }
-
-  /**
-   * Deserializes an Apache Arrow Schema object from its JSON string representation.
-   *
-   * @param json the JSON string representation of the Arrow schema
-   * @return the deserialized Apache Arrow Schema object
-   * @throws IllegalArgumentException if json is null or cannot be parsed as an Arrow schema
-   */
-  static Object jsonToArrowSchema(String json) {
-    if (json == null) {
-      throw new IllegalArgumentException("json must not be null.");
-    }
-    try {
-      return org.apache.arrow.vector.types.pojo.Schema.fromJSON(json);
-    } catch (IOException e) {
-      throw new IllegalArgumentException("Invalid Arrow schema JSON", e);
-    }
-  }
-
-  /**
-   * Resolves an Apache Arrow Schema from either an in-memory Schema POJO or a serialized JSON
-   * string.
-   *
-   * @param arrowSchema the Arrow schema POJO or JSON string representation
+   * @param arrowSchema the Arrow schema definition
    * @return the resolved Apache Arrow Schema
-   * @throws IOException if parsing JSON fails
    * @throws IllegalArgumentException if arrowSchema is null or of an unsupported type
    */
-  private static org.apache.arrow.vector.types.pojo.Schema resolveArrowSchema(Object arrowSchema)
-      throws IOException {
+  private static org.apache.arrow.vector.types.pojo.Schema resolveArrowSchema(Object arrowSchema) {
     if (arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema) {
       return (org.apache.arrow.vector.types.pojo.Schema) arrowSchema;
-    }
-    if (arrowSchema instanceof String) {
-      return org.apache.arrow.vector.types.pojo.Schema.fromJSON((String) arrowSchema);
     }
     if (arrowSchema == null) {
       throw new IllegalArgumentException("Arrow schema must not be null.");
@@ -157,7 +118,7 @@ final class ArrowDeserializer {
    * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch.
    *
    * @param iterator the stream iterator providing ReadRowsResponse messages
-   * @param arrowSchema the Arrow schema POJO or serialized JSON representation
+   * @param arrowSchema the Arrow schema POJO
    * @param schema the BigQuery target Schema
    * @param rowBatch the destination list for decoded rows
    * @param pageSize the maximum number of rows to decode in this batch
@@ -244,16 +205,7 @@ final class ArrowDeserializer {
    */
   static List<FieldValueList> deserializeRecordBatch(
       byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
-    org.apache.arrow.vector.types.pojo.Schema schemaPojo =
-        arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema
-            ? (org.apache.arrow.vector.types.pojo.Schema) arrowSchema
-            : (arrowSchema instanceof String
-                ? (org.apache.arrow.vector.types.pojo.Schema)
-                    jsonToArrowSchema((String) arrowSchema)
-                : null);
-    if (schemaPojo == null) {
-      throw new IllegalArgumentException("Arrow schema must not be null");
-    }
+    org.apache.arrow.vector.types.pojo.Schema schemaPojo = resolveArrowSchema(arrowSchema);
     try (BufferAllocator childAllocator =
             AllocatorHolder.ALLOCATOR.newChildAllocator(
                 "deserializeRecordBatch", 0, Long.MAX_VALUE);

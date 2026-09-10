@@ -329,29 +329,6 @@ public class ArrowDeserializerTest {
                 10L));
   }
 
-  @Test
-  public void testArrowSchemaToJson_nullThrowsException() {
-    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.arrowSchemaToJson(null));
-  }
-
-  @Test
-  public void testArrowSchemaToJson_unsupportedTypeThrowsException() {
-    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.arrowSchemaToJson(12345));
-  }
-
-  @Test
-  public void testJsonToArrowSchema_nullThrowsException() {
-    assertThrows(IllegalArgumentException.class, () -> ArrowDeserializer.jsonToArrowSchema(null));
-  }
-
-  @Test
-  public void testArrowSchemaToJsonAndBack() {
-    org.apache.arrow.vector.types.pojo.Schema originalSchema = createSimpleArrowSchema();
-    String json = ArrowDeserializer.arrowSchemaToJson(originalSchema);
-    Object deserialized = ArrowDeserializer.jsonToArrowSchema(json);
-    assertEquals(originalSchema, deserialized);
-  }
-
   private static org.apache.arrow.vector.types.pojo.Schema createSimpleArrowSchema() {
     org.apache.arrow.vector.types.pojo.Field intField =
         new org.apache.arrow.vector.types.pojo.Field(

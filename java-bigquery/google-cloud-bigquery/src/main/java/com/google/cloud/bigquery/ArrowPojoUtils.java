@@ -26,8 +26,11 @@ import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.Schema;
 
 /**
- * Internal helper utility for converting Apache Arrow POJO Schema and Field definitions into
- * BigQuery Veneer {@link Schema} and {@link com.google.cloud.bigquery.Field} models.
+ * Internal helper utility for converting Apache Arrow POJO definitions (such as {@link Schema},
+ * {@link Field}, and {@link ArrowType}) into BigQuery Veneer objects.
+ *
+ * <p>This class handles standard Java objects and metadata conversions. For operations involving
+ * Arrow vectors, off-heap memory, or deserializing byte streams, use {@link ArrowDeserializer}.
  */
 final class ArrowPojoUtils {
 
