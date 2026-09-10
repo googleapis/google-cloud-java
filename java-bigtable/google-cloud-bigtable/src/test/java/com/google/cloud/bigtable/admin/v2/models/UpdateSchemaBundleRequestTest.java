@@ -18,8 +18,10 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -41,6 +43,9 @@ public class UpdateSchemaBundleRequestTest {
   private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
   // Location: `google-cloud-bigtable/src/test/resources/updated_proto_schema_bundle.pb`
   private static final String TEST_UPDATED_PROTO_SCHEMA_BUNDLE = "updated_proto_schema_bundle.pb";
+  private static final String TEST_AVRO_SCHEMA = "{\"type\": \"record\", \"name\": \"User\"}";
+  private static final String TEST_UPDATED_AVRO_SCHEMA =
+      "{\"type\": \"record\", \"name\": \"UpdatedUser\"}";
 
   @Test
   public void testToProto() throws IOException, URISyntaxException {
@@ -134,6 +139,114 @@ public class UpdateSchemaBundleRequestTest {
         .isNotEqualTo(
             UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
                 .setProtoSchemaFile(getResourceFilePath(TEST_UPDATED_PROTO_SCHEMA_BUNDLE))
+                .hashCode());
+  }
+
+  @Test
+  public void testToProtoWithAvroSchema() {
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setAvroSchema(TEST_AVRO_SCHEMA)
+            .setIgnoreWarnings(true);
+
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setName(
+                        NameUtil.formatSchemaBundleName(
+                            PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+                    .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA).build())
+                    .build())
+            .setUpdateMask(FieldMask.newBuilder().addPaths("avro_schema"))
+            .setIgnoreWarnings(true)
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testUpdateAvroSchema() {
+    com.google.bigtable.admin.v2.SchemaBundle existingSchemaBundle =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA).build())
+            .build();
+
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(SchemaBundle.fromProto(existingSchemaBundle))
+            .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA);
+
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(
+                existingSchemaBundle.toBuilder()
+                    .setAvroSchema(
+                        AvroSchema.newBuilder().addJsonSchemas(TEST_UPDATED_AVRO_SCHEMA)))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("avro_schema"))
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testUpdateAvroSchemaList() {
+    com.google.bigtable.admin.v2.SchemaBundle existingSchemaBundle =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(
+                NameUtil.formatSchemaBundleName(
+                    PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID))
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas(TEST_AVRO_SCHEMA).build())
+            .build();
+
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(SchemaBundle.fromProto(existingSchemaBundle))
+            .setAvroSchema(ImmutableList.of(TEST_AVRO_SCHEMA, TEST_UPDATED_AVRO_SCHEMA));
+
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest requestProto =
+        com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.newBuilder()
+            .setSchemaBundle(
+                existingSchemaBundle.toBuilder()
+                    .setAvroSchema(
+                        AvroSchema.newBuilder()
+                            .addAllJsonSchemas(
+                                ImmutableList.of(TEST_AVRO_SCHEMA, TEST_UPDATED_AVRO_SCHEMA))))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("avro_schema"))
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testEqualityWithAvroSchema() {
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    assertThat(request)
+        .isEqualTo(
+            UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_AVRO_SCHEMA));
+
+    assertThat(request)
+        .isNotEqualTo(
+            UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA));
+  }
+
+  @Test
+  public void testHashCodeWithAvroSchema() {
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    assertThat(request.hashCode())
+        .isEqualTo(
+            UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_AVRO_SCHEMA)
+                .hashCode());
+
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA)
                 .hashCode());
   }
 

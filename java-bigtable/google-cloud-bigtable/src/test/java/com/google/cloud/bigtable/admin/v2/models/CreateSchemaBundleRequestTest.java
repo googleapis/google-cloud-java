@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -39,6 +40,9 @@ public class CreateSchemaBundleRequestTest {
   private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
   // Location: `google-cloud-bigtable/src/test/resources/updated_proto_schema_bundle.pb`
   private static final String TEST_UPDATED_PROTO_SCHEMA_BUNDLE = "updated_proto_schema_bundle.pb";
+  private static final String TEST_AVRO_SCHEMA = "{\"type\": \"record\", \"name\": \"User\"}";
+  private static final String TEST_UPDATED_AVRO_SCHEMA =
+      "{\"type\": \"record\", \"name\": \"UpdatedUser\"}";
 
   @Test
   public void testToProto() throws IOException, URISyntaxException {
@@ -96,6 +100,82 @@ public class CreateSchemaBundleRequestTest {
         .isNotEqualTo(
             CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
                 .setProtoSchemaFile(getResourceFilePath(TEST_UPDATED_PROTO_SCHEMA_BUNDLE))
+                .hashCode());
+  }
+
+  @Test
+  public void testToProtoWithAvroSchema() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    com.google.bigtable.admin.v2.CreateSchemaBundleRequest requestProto =
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setSchemaBundleId(SCHEMA_BUNDLE_ID)
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setAvroSchema(
+                        com.google.bigtable.admin.v2.AvroSchema.newBuilder()
+                            .addJsonSchemas(TEST_AVRO_SCHEMA)
+                            .build())
+                    .build())
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testToProtoWithAvroSchemaList() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setAvroSchema(ImmutableList.of(TEST_AVRO_SCHEMA, TEST_UPDATED_AVRO_SCHEMA));
+
+    com.google.bigtable.admin.v2.CreateSchemaBundleRequest requestProto =
+        com.google.bigtable.admin.v2.CreateSchemaBundleRequest.newBuilder()
+            .setParent(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setSchemaBundleId(SCHEMA_BUNDLE_ID)
+            .setSchemaBundle(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setAvroSchema(
+                        com.google.bigtable.admin.v2.AvroSchema.newBuilder()
+                            .addJsonSchemas(TEST_AVRO_SCHEMA)
+                            .addJsonSchemas(TEST_UPDATED_AVRO_SCHEMA)
+                            .build())
+                    .build())
+            .build();
+    assertThat(request.toProto(PROJECT_ID, INSTANCE_ID)).isEqualTo(requestProto);
+  }
+
+  @Test
+  public void testEqualityWithAvroSchema() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    assertThat(request)
+        .isEqualTo(
+            CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_AVRO_SCHEMA));
+
+    assertThat(request)
+        .isNotEqualTo(
+            CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA));
+  }
+
+  @Test
+  public void testHashCodeWithAvroSchema() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+
+    assertThat(request.hashCode())
+        .isEqualTo(
+            CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_AVRO_SCHEMA)
+                .hashCode());
+
+    assertThat(request.hashCode())
+        .isNotEqualTo(
+            CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+                .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA)
                 .hashCode());
   }
 
