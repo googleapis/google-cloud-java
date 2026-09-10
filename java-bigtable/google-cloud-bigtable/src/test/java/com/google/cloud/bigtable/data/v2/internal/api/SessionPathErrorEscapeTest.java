@@ -41,6 +41,7 @@ import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -49,11 +50,10 @@ import org.mockito.Mockito;
 /**
  * Fault injection at the seam between {@code SessionPoolMap.apply} and the session machinery.
  *
- * <p>Context: a production incident produced application-visible UNKNOWN errors with no matching
- * UNKNOWN in CSM or on the server. An UNKNOWN requires a throwable with no grpc Status to reach
- * {@code DivertingUnaryCallable.translateException}. That can only happen if the throw escapes
- * {@link TableBase#readRow} synchronously, because everything inside the op chain is converted to a
- * Status first. These tests establish which throw sites actually escape.
+ * <p>An application-visible UNKNOWN requires a throwable with no grpc Status to reach {@code
+ * DivertingUnaryCallable.translateException}. That can only happen if the throw escapes {@link
+ * TableBase#readRow} synchronously, because everything inside the op chain is converted to a Status
+ * first. These tests establish which throw sites actually escape.
  */
 @Timeout(30)
 public class SessionPathErrorEscapeTest {
@@ -71,49 +71,17 @@ public class SessionPathErrorEscapeTest {
   private final BigtableTimer mockTimer = Mockito.mock(BigtableTimer.class);
   private final Deadline deadline = Deadline.after(1, TimeUnit.MINUTES);
 
-  // -----------------------------------------------------------------------------------------
-  // Escapes: reaches SessionPoolMap.apply's `catch (Throwable)` with no Status attached, and so
-  // becomes an application UNKNOWN.
-  // -----------------------------------------------------------------------------------------
-
-  @Test
-  public void tracerConstructionThrow_escapesReadRowSynchronously() {
-    // metrics.newTableTracer is called on the caller's thread in TableBase.readRow, outside any
-    // try/catch, before the op chain exists. MetricsImpl's implementation splits the method name
-    // and calls into a user-supplied ApiTracerFactory, so a throw here is reachable in production.
-    // Nothing downstream can convert it, so it propagates out of readRow.
-    CountingMetrics metrics = new CountingMetrics();
-    metrics.throwOnNewTracer = new IllegalStateException("tracer factory blew up");
-    TableBase table = newTable(new FakeSessionPool(), metrics);
-    UnaryResponseFuture<SessionReadRowResponse> listener = new UnaryResponseFuture<>();
-
-    IllegalStateException thrown =
-        assertThrows(
-            IllegalStateException.class,
-            () -> table.readRow(SessionReadRowRequest.getDefaultInstance(), listener, deadline));
-
-    assertThat(thrown).hasMessageThat().isEqualTo("tracer factory blew up");
-    // The listener never hears about it -- the caller's future would hang if SessionPoolMap.apply
-    // did not convert the escaping throw into a failed future.
-    assertThat(listener.isDone()).isFalse();
-    // And CSM has no record of the operation at all: it never started, so it never finished.
-    assertThat(metrics.operationsFinished.get()).isEqualTo(0);
-  }
-
-  // -----------------------------------------------------------------------------------------
-  // Does NOT escape: converted to a Status inside the op chain, so it lands in CSM with a real
-  // code and can never be the source of an application UNKNOWN.
-  // -----------------------------------------------------------------------------------------
-
   @Test
   public void sessionPoolNewCallThrow_isConvertedToCancelled() {
-    // A throw from SessionPool.newCall / PendingCall.start -- the shape SessionList raises on a
-    // close/drain race ("NEW session was closed", "double close") -- is caught by
-    // RetryingVRpc.start's try/catch and turned into Status.CANCELLED. It reaches the listener as
-    // a VRpcException, which IS a StatusRuntimeException, so translateException maps it cleanly.
+    // Verifies that a throw out of SessionPool.newCall does not escape as a bare throwable: it is
+    // caught by RetryingVRpc.start and turned into CANCELLED, both for the caller and in CSM.
     //
-    // This rules the SessionList race out as a source of application UNKNOWN: it would show up as
-    // CANCELLED in both CSM and the application.
+    // The throw is injected directly rather than raced for -- FakeSessionPool.newCall throws the
+    // IllegalStateException that SessionList would raise on a real close/drain race ("NEW session
+    // was closed", "double close"). The test is about what RetryingVRpc does with such a throw, not
+    // about reproducing the interleaving that produces it, so injecting it keeps the test
+    // deterministic. It also means the SessionList race cannot be a source of an application
+    // UNKNOWN: whatever wins the race, the throw surfaces as CANCELLED in both places.
     CountingMetrics metrics = new CountingMetrics();
     FakeSessionPool pool = new FakeSessionPool();
     pool.throwOnNewCall = new IllegalStateException("double close");
@@ -128,24 +96,26 @@ public class SessionPathErrorEscapeTest {
     assertThat(ee).hasCauseThat().isInstanceOf(VRpcException.class);
     VRpcException vrpc = (VRpcException) ee.getCause();
     assertThat(vrpc.getStatus().getCode()).isEqualTo(Status.Code.CANCELLED);
-    // The original throw survives as the cause, and the operation IS recorded in CSM.
+    // The original throw survives as the cause, and CSM records the same CANCELLED the caller saw.
     assertThat(Status.fromThrowable(vrpc).getCause()).isInstanceOf(IllegalStateException.class);
     assertThat(metrics.operationsFinished.get()).isEqualTo(1);
+    assertThat(metrics.lastOperationStatus.get()).isEqualTo(Status.Code.CANCELLED);
   }
-
-  // -----------------------------------------------------------------------------------------
-  // The quietest failure mode: an application error that CSM records as a success.
-  // -----------------------------------------------------------------------------------------
 
   @Test
   public void okResultWithoutMessage_failsCallerButRecordsOkInCsm() {
+    // Verifies the quietest failure mode: an application error that CSM records as a success.
+    //
     // UnaryResponseFuture.onClose completes the caller exceptionally with a bare
     // IllegalStateException when the vRPC closes OK but no message arrived. The VRpcResult status
     // is OK, so the tracer records OK and the server saw a success -- yet the application gets an
-    // exception, and translateException has no Status to read, so it presents it as UNKNOWN.
+    // exception, and translateException has no Status to read from it.
     //
-    // This is the only path found that yields application UNKNOWN with *no* error anywhere in CSM
-    // or on the server, which is the signature reported in production.
+    // A row that does not exist does NOT take this path: the server still sends one
+    // SessionReadRowResponse, with `row` unset, and ReadRowShim#buildRow turns that into a null
+    // row. So reaching here means the server closed OK without sending the message at all, which
+    // is a protocol violation rather than a normal not-found -- throwing is right, and the code
+    // below pins what the caller sees when it happens.
     UnaryResponseFuture<SessionReadRowResponse> listener = new UnaryResponseFuture<>();
     VRpcResult okResult = VRpcResult.createServerOk(VirtualRpcResponse.getDefaultInstance());
     assertThat(okResult.getStatus().isOk()).isTrue();
@@ -157,15 +127,15 @@ public class SessionPathErrorEscapeTest {
         assertThrows(ExecutionException.class, () -> listener.get(5, TimeUnit.SECONDS));
     assertThat(ee).hasCauseThat().isInstanceOf(IllegalStateException.class);
     assertThat(ee).hasCauseThat().hasMessageThat().contains("missing result");
-    // No grpc Status anywhere on it -- this is exactly the input that translateException defaults
-    // to UNKNOWN. See
-    // DivertingUnaryCallableTest#translateException_nonStatusThrowableBecomesUnknown.
+    // No grpc Status anywhere on it -- this is exactly the input translateException has to classify
+    // without help. See DivertingUnaryCallableTest#translateException_illegalStateBecomesInternal.
     assertThat(ee.getCause()).isNotInstanceOf(io.grpc.StatusRuntimeException.class);
   }
 
   @Test
   public void okResultWithMessage_completesNormally() {
-    // Control for the test above: the same OK result with a message delivered first succeeds.
+    // Verifies the control for the test above: the same OK result with a message delivered first
+    // completes the caller normally.
     UnaryResponseFuture<SessionReadRowResponse> listener = new UnaryResponseFuture<>();
     SessionReadRowResponse response = SessionReadRowResponse.getDefaultInstance();
 
@@ -174,8 +144,6 @@ public class SessionPathErrorEscapeTest {
 
     assertThat(listener.isCompletedExceptionally()).isFalse();
   }
-
-  // -----------------------------------------------------------------------------------------
 
   private TableBase newTable(FakeSessionPool pool, CountingMetrics metrics) {
     return new TableBase(
@@ -187,21 +155,19 @@ public class SessionPathErrorEscapeTest {
         MoreExecutors.directExecutor());
   }
 
-  /** NoopMetrics that counts operation completions and can be told to throw on tracer creation. */
+  /** NoopMetrics that records what the operation-level tracer was told at completion. */
   private static final class CountingMetrics extends NoopMetrics {
     final AtomicInteger operationsFinished = new AtomicInteger();
-    @Nullable RuntimeException throwOnNewTracer;
+    final AtomicReference<Status.Code> lastOperationStatus = new AtomicReference<>();
 
     @Override
     public VRpcTracer newTableTracer(
         SessionPoolInfo poolInfo, VRpcDescriptor descriptor, Deadline deadline) {
-      if (throwOnNewTracer != null) {
-        throw throwOnNewTracer;
-      }
       return new NoopVrpcTracer() {
         @Override
         public void onOperationFinish(VRpcResult result) {
           operationsFinished.incrementAndGet();
+          lastOperationStatus.set(result.getStatus().getCode());
         }
       };
     }

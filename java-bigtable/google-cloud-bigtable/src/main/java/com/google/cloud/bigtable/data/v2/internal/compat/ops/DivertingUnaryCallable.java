@@ -37,6 +37,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
@@ -48,10 +49,10 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   private static final Logger LOGGER = Logger.getLogger(DivertingUnaryCallable.class.getName());
 
   /** Bounds the cause walk so a self-referential or pathologically deep chain can't spin. */
-  private static final int MAX_CAUSE_DEPTH = 32;
+  private static final int MAX_CAUSE_DEPTH = 8;
 
-  /** Gates the WARNING-level log for unrecognized throwables to the first occurrence. */
-  private final AtomicBoolean loggedUnrecognized = new AtomicBoolean();
+  /** Gates the WARNING-level log for statusless throwables to the first occurrence. */
+  private final AtomicBoolean loggedStatusless = new AtomicBoolean();
 
   private final ClientConfigurationManager configurationManager;
 
@@ -134,19 +135,22 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
     }
 
-    Status.Code code = findStatusCode(cause);
-    if (code != null) {
+    Status.Code carried = findStatusCode(cause);
+    if (carried != null) {
       return ApiExceptionFactory.createException(
-          cause.getMessage(), e, GrpcStatusCode.of(code), false);
+          cause.getMessage(), e, GrpcStatusCode.of(carried), false);
     }
 
-    // Nothing in the chain carries a gRPC status, so the only honest answer is UNKNOWN. Name the
-    // throwable in the message rather than letting a bare "UNKNOWN" reach the caller: this is the
-    // client's last chance to say what actually failed, and everything downstream (CSM, the
-    // application's own error counters, the support case) sees only the code.
-    reportUnrecognized(cause);
+    // Nothing in the chain carries a gRPC status, so the code has to be inferred from the throwable
+    // itself. Whatever it comes out as, name the throwable in the message too. This really is the
+    // last chance to say what failed: CSM takes its status from VRpcResult, so a throwable that got
+    // here either escaped before any VRpcResult existed (no CSM record of the operation at all) or
+    // came from an OK one (CSM records a success). Either way it is invisible in the metrics, and
+    // the code and message below are the only evidence the failure happened.
+    Status.Code inferred = classifyStatuslessCause(cause);
+    reportStatusless(cause, inferred);
     return ApiExceptionFactory.createException(
-        describeUnrecognized(cause), e, GrpcStatusCode.of(Status.Code.UNKNOWN), false);
+        describeStatusless(cause, inferred), e, GrpcStatusCode.of(inferred), false);
   }
 
   /**
@@ -154,13 +158,15 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
    *
    * <p>Unlike a plain {@code instanceof} on the top-level throwable, this walks the whole chain: a
    * perfectly good {@link StatusRuntimeException} wrapped in any type other than Completion/
-   * ExecutionException would otherwise lose its code and be reported as UNKNOWN. {@link
-   * CancellationException} is treated as CANCELLED, matching {@code
-   * csm.attributes.Util#extractStatus}, so the status the application sees agrees with the one CSM
-   * records for the same failure. It is checked at every level rather than only the top, since a
-   * wrapped cancellation reported as UNKNOWN is the same defect this method exists to fix; CSM only
-   * looks at the top level, so a nested cancellation is the one case where the two can still
-   * disagree, and it disagrees in the direction of the more specific code.
+   * ExecutionException would otherwise lose its code and fall through to {@link
+   * #classifyStatuslessCause}, which cannot recover it.
+   *
+   * <p>{@link CancellationException} is treated as CANCELLED so that the two paths a caller can be
+   * routed down agree: the classic path reports it that way via {@code
+   * csm.attributes.Util#extractStatus}, and the same failure should not change code just because
+   * sessionLoad diverted the request. It is checked at every level rather than only the top, unlike
+   * {@code extractStatus}, because a wrapped cancellation losing its code is the same defect the
+   * chain walk exists to fix.
    */
   @Nullable
   private static Status.Code findStatusCode(@Nullable Throwable t) {
@@ -184,12 +190,48 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
     return null;
   }
 
+  /**
+   * Infers a code for a throwable whose chain carries no gRPC status, falling back to UNKNOWN.
+   *
+   * <p>UNKNOWN is the honest answer only when the type says nothing. For the two types this path
+   * actually sees it says plenty, so reporting UNKNOWN throws away a classification the caller can
+   * act on:
+   *
+   * <ul>
+   *   <li>{@link IllegalStateException} means a client-side invariant was violated -- {@code
+   *       SessionList}'s close/drain checks, and {@code UnaryResponseFuture}'s OK-without-message
+   *       branch. That is a bug in the client, which is what INTERNAL means.
+   *   <li>{@link RejectedExecutionException} means an executor refused the work, so the client is
+   *       out of a resource it needs: RESOURCE_EXHAUSTED.
+   * </ul>
+   *
+   * <p>Walks the chain outermost-first, like {@link #findStatusCode}, but with lower precedence: a
+   * real status anywhere in the chain still wins over a type inferred here.
+   */
+  private static Status.Code classifyStatuslessCause(@Nullable Throwable cause) {
+    Throwable current = cause;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (current instanceof RejectedExecutionException) {
+        return Status.Code.RESOURCE_EXHAUSTED;
+      }
+      if (current instanceof IllegalStateException) {
+        return Status.Code.INTERNAL;
+      }
+      Throwable next = current.getCause();
+      if (next == current) {
+        break; // self-referential chain
+      }
+      current = next;
+    }
+    return Status.Code.UNKNOWN;
+  }
+
   /** Renders the cause chain as class names, so the message identifies the failure by itself. */
-  private static String describeUnrecognized(@Nullable Throwable cause) {
+  private static String describeStatusless(@Nullable Throwable cause, Status.Code reported) {
     // No caller reaches here with null today, but this is the diagnostic path: an NPE thrown while
     // building the error message would destroy exactly the information the message exists to carry.
     if (cause == null) {
-      return "Session operation failed with a null error; reporting UNKNOWN.";
+      return "Session operation failed with a null error; reporting " + reported + ".";
     }
     StringBuilder chain = new StringBuilder();
     Throwable current = cause;
@@ -205,22 +247,23 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       current = next;
     }
     String message = cause.getMessage();
-    return "Session operation failed with an error that carries no gRPC status; reporting UNKNOWN."
-        + " Cause chain: "
+    return "Session operation failed with an error that carries no gRPC status; reporting "
+        + reported
+        + ". Cause chain: "
         + chain
         + (message != null ? ". Message: " + message : "");
   }
 
   /**
-   * Logs the first unrecognized throwable per callable at WARNING with a full stack, and the rest
-   * at FINE. A storm is exactly when this fires most, so an unconditional WARNING would flood the
-   * log at the moment the operator can least afford it.
+   * Logs the first statusless throwable per callable at WARNING with a full stack, and the rest at
+   * FINE. A storm is exactly when this fires most, so an unconditional WARNING would flood the log
+   * at the moment the operator can least afford it.
    */
-  private void reportUnrecognized(@Nullable Throwable cause) {
-    if (loggedUnrecognized.compareAndSet(false, true)) {
-      LOGGER.log(Level.WARNING, describeUnrecognized(cause), cause);
+  private void reportStatusless(@Nullable Throwable cause, Status.Code reported) {
+    if (loggedStatusless.compareAndSet(false, true)) {
+      LOGGER.log(Level.WARNING, describeStatusless(cause, reported), cause);
     } else if (LOGGER.isLoggable(Level.FINE)) {
-      LOGGER.log(Level.FINE, describeUnrecognized(cause), cause);
+      LOGGER.log(Level.FINE, describeStatusless(cause, reported), cause);
     }
   }
 }

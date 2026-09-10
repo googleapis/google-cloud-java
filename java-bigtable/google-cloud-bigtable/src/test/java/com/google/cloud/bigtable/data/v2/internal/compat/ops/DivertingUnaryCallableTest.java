@@ -44,11 +44,10 @@ import org.mockito.Mockito;
 /**
  * Pins the status mapping the session path presents to the application.
  *
- * <p>Context: a production incident showed application-visible UNKNOWN errors with no matching
- * UNKNOWN anywhere in CSM or on the server. {@link DivertingUnaryCallable#translateException} is
- * the only place the session path converts a failure into the caller's exception, and it defaults
- * to UNKNOWN for anything that is not a {@link StatusException}/{@link StatusRuntimeException}.
- * These tests establish which throwables take that default.
+ * <p>{@link DivertingUnaryCallable#translateException} is the only place the session path converts
+ * a failure into the caller's exception. A throwable that carries a {@link StatusException}/{@link
+ * StatusRuntimeException} keeps its code; anything else has to be classified from its type, and
+ * only what cannot be classified is reported as UNKNOWN. These tests pin that mapping.
  */
 class DivertingUnaryCallableTest {
 
@@ -65,36 +64,58 @@ class DivertingUnaryCallableTest {
     return ((GrpcStatusCode) e.getStatusCode()).getTransportCode();
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // (1) The mechanism: which throwables become UNKNOWN.
-  // ---------------------------------------------------------------------------------------------
-
   @Test
-  void translateException_nonStatusThrowableBecomesUnknown() {
+  void translateException_illegalStateBecomesInternal() {
+    // Verifies that a violated client-side invariant is reported as INTERNAL rather than UNKNOWN.
     // IllegalStateException is the shape thrown by SessionList ("NEW session was closed", "double
     // close"), DebugTagTracer, and UnaryResponseFuture's OK-without-message branch. None of them
-    // carry a grpc Status, so all of them arrive at the caller as UNKNOWN.
+    // carry a grpc Status, but all of them mean the same thing: a bug on the client side.
     ApiException translated = bare.translateException(new IllegalStateException("double close"));
 
-    assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
+    assertThat(codeOf(translated)).isEqualTo(Status.Code.INTERNAL);
     assertThat(translated).hasMessageThat().contains("double close");
   }
 
   @Test
-  void translateException_rejectedExecutionBecomesUnknown() {
-    // A saturated or shutting-down executor is the other realistic non-Status throwable on this
-    // path; SessionPoolMap's javadoc calls it out explicitly.
+  void translateException_rejectedExecutionBecomesResourceExhausted() {
+    // Verifies that an executor refusing work is reported as RESOURCE_EXHAUSTED. A saturated or
+    // shutting-down executor is the other realistic non-Status throwable on this path;
+    // SessionPoolMap's javadoc calls it out explicitly.
     ApiException translated =
         bare.translateException(new RejectedExecutionException("executor saturated"));
+
+    assertThat(codeOf(translated)).isEqualTo(Status.Code.RESOURCE_EXHAUSTED);
+  }
+
+  @Test
+  void translateException_unclassifiableThrowableBecomesUnknown() {
+    // Verifies that UNKNOWN is now reserved for types that genuinely say nothing about the failure.
+    ApiException translated = bare.translateException(new RuntimeException("something else"));
 
     assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
   }
 
   @Test
+  void translateException_classifiesOutermostRecognizedTypeFirst() {
+    // Verifies the precedence between two classifiable types in one chain: outermost wins, matching
+    // how a carried Status is found.
+    ApiException rejectedOutside =
+        bare.translateException(
+            new RejectedExecutionException(
+                "executor saturated", new IllegalStateException("double close")));
+    ApiException illegalStateOutside =
+        bare.translateException(
+            new IllegalStateException(
+                "double close", new RejectedExecutionException("executor saturated")));
+
+    assertThat(codeOf(rejectedOutside)).isEqualTo(Status.Code.RESOURCE_EXHAUSTED);
+    assertThat(codeOf(illegalStateOutside)).isEqualTo(Status.Code.INTERNAL);
+  }
+
+  @Test
   void translateException_retainsOriginalThrowableAsCause() {
-    // The original is preserved in the exception chain -- what the default loses is the *status*
-    // and any counter, not the throwable itself. Worth pinning so a future "just log the cause"
-    // fix isn't mistaken for a complete one.
+    // Verifies the original throwable is preserved in the exception chain, not just described in
+    // the message.
     IllegalStateException original = new IllegalStateException("double close");
 
     ApiException translated = bare.translateException(original);
@@ -102,13 +123,9 @@ class DivertingUnaryCallableTest {
     assertThat(translated).hasCauseThat().isSameInstanceAs(original);
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // Controls: the normal error path must keep its status, or every session failure would be
-  // UNKNOWN and the mapping above would be uninteresting.
-  // ---------------------------------------------------------------------------------------------
-
   @Test
   void translateException_statusRuntimeExceptionKeepsItsCode() {
+    // Verifies the normal error path is untouched: a carried Status keeps its code.
     ApiException translated =
         bare.translateException(
             Status.DEADLINE_EXCEEDED.withDescription("too slow").asRuntimeException());
@@ -118,6 +135,7 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_statusExceptionKeepsItsCode() {
+    // Verifies the checked variant of the same, which arrives from a different grpc entry point.
     ApiException translated =
         bare.translateException(Status.UNAVAILABLE.withDescription("no session").asException());
 
@@ -126,7 +144,7 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_unwrapsCompletionAndExecutionException() {
-    // The async plumbing wraps failures in these two; both must be seen through.
+    // Verifies the two wrappers the async plumbing adds are both seen through, including nested.
     ApiException viaCompletion =
         bare.translateException(new CompletionException(Status.NOT_FOUND.asRuntimeException()));
     ApiException viaExecution =
@@ -142,9 +160,8 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_findsStatusDeepInCauseChain() {
-    // Regression guard for the original defect: unwrapping used to stop at Completion/
-    // ExecutionException, so a perfectly good StatusRuntimeException wrapped in anything else was
-    // reported as UNKNOWN. The whole chain is walked now.
+    // Verifies a Status is found at any depth. Unwrapping used to stop at Completion/
+    // ExecutionException, so a StatusRuntimeException wrapped in anything else lost its code.
     ApiException oneDeep =
         bare.translateException(
             new RuntimeException("wrapper", Status.DEADLINE_EXCEEDED.asRuntimeException()));
@@ -162,8 +179,9 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_cancellationExceptionBecomesCancelled() {
-    // csm.attributes.Util#extractStatus special-cases CancellationException. Before this fix the
-    // two mappings disagreed, so one failure could be CANCELLED in CSM and UNKNOWN to the caller.
+    // Verifies CancellationException maps to CANCELLED, the same code the classic path reports for
+    // it via csm.attributes.Util#extractStatus. The two used to disagree, so the same failure got a
+    // different code depending on whether sessionLoad happened to divert the request.
     ApiException translated = bare.translateException(new CancellationException("caller gave up"));
 
     assertThat(codeOf(translated)).isEqualTo(Status.Code.CANCELLED);
@@ -171,10 +189,9 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_findsCancellationDeepInCauseChain() {
-    // A cancellation wrapped in anything other than Completion/ExecutionException would otherwise
-    // fall through to UNKNOWN -- the same defect as a wrapped StatusRuntimeException. Note this is
-    // strictly more specific than csm.attributes.Util#extractStatus, which only checks the top
-    // level, so a nested cancellation is CANCELLED here and UNKNOWN in CSM.
+    // Verifies a wrapped cancellation is still CANCELLED. This is stricter than
+    // csm.attributes.Util#extractStatus, which only checks the top level, so a nested cancellation
+    // is CANCELLED here and UNKNOWN on the classic path.
     ApiException translated =
         bare.translateException(
             new IllegalStateException("wrapper", new CancellationException("caller gave up")));
@@ -184,8 +201,7 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_statusOutranksCancellationAtTheSameDepth() {
-    // A CancellationException wrapping a Status keeps CANCELLED -- outermost wins -- but a Status
-    // wrapping a cancellation keeps the Status. Pins the walk order, which is what decides this.
+    // Verifies the walk order between the two: outermost wins, whichever it is.
     CancellationException outer = new CancellationException("caller gave up");
     outer.initCause(Status.DEADLINE_EXCEEDED.asRuntimeException());
 
@@ -202,7 +218,7 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_toleratesSelfReferentialCauseChain() {
-    // A throwable that is its own cause must not spin the walk.
+    // Verifies a throwable that is its own cause does not spin the walk.
     SelfCausedException looping = new SelfCausedException();
 
     ApiException translated = bare.translateException(looping);
@@ -210,21 +226,18 @@ class DivertingUnaryCallableTest {
     assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // The point of the fix: an UNKNOWN must say what it actually was.
-  // ---------------------------------------------------------------------------------------------
-
   @Test
-  void translateException_unknownMessageNamesTheCauseChain() {
-    // This message is the whole diagnostic value of the change. Without it, an operator sees a
-    // bare UNKNOWN with no counterpart in CSM or on the server and has nothing to work from.
+  void translateException_messageNamesTheCauseChain() {
+    // Verifies the message identifies the failure by itself. Without it the caller gets a code and
+    // nothing else, which is all that reaches CSM, their error counters, or a support case.
     ApiException translated =
         bare.translateException(
             new IllegalStateException(
                 "Unary rpc completed OK but missing result",
                 new RejectedExecutionException("executor saturated")));
 
-    assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
+    assertThat(codeOf(translated)).isEqualTo(Status.Code.INTERNAL);
+    assertThat(translated).hasMessageThat().contains("INTERNAL");
     assertThat(translated).hasMessageThat().contains("java.lang.IllegalStateException");
     assertThat(translated)
         .hasMessageThat()
@@ -233,8 +246,9 @@ class DivertingUnaryCallableTest {
   }
 
   @Test
-  void translateException_unknownMessageSurvivesNullCauseMessage() {
-    // NullPointerException usually has no message; the chain must still identify it.
+  void translateException_messageSurvivesNullCauseMessage() {
+    // Verifies the chain still identifies the throwable when it has no message of its own, as a
+    // NullPointerException usually does not.
     ApiException translated = bare.translateException(new NullPointerException());
 
     assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
@@ -243,21 +257,19 @@ class DivertingUnaryCallableTest {
 
   @Test
   void translateException_nullThrowableStillProducesUnknown() {
-    // CompletableFuture#handle never hands us a null, so this is unreachable in production. It is
-    // pinned anyway because this is the diagnostic path: an NPE raised while *building* the error
-    // message would replace the failure the message exists to report.
+    // Verifies the diagnostic path itself cannot throw. CompletableFuture#handle never hands us a
+    // null, but an NPE raised while *building* the error message would replace the very failure
+    // the message exists to report.
     ApiException translated = bare.translateException(null);
 
     assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
     assertThat(translated).hasMessageThat().contains("null error");
   }
 
-  // ---------------------------------------------------------------------------------------------
-  // (2) End to end: a synchronous throw below the shim reaches the application as UNKNOWN.
-  // ---------------------------------------------------------------------------------------------
-
   @Test
-  void futureCall_shimFailureWithNonStatusThrowableSurfacesAsUnknown() {
+  void futureCall_shimFailureWithNonStatusThrowableSurfacesAsInternal() {
+    // Verifies the mapping end to end: a shim future that fails with a statusless throwable reaches
+    // the application through the real futureCall plumbing, not just translateException.
     DivertingUnaryCallable<String, String> callable =
         newCallable(
             (request, deadline) -> {
@@ -268,15 +280,16 @@ class DivertingUnaryCallableTest {
 
     ApiException surfaced = failureOf(callable.futureCall("req", GrpcCallContext.createDefault()));
 
-    assertThat(codeOf(surfaced)).isEqualTo(Status.Code.UNKNOWN);
+    assertThat(codeOf(surfaced)).isEqualTo(Status.Code.INTERNAL);
   }
 
   @Test
-  void futureCall_sessionPoolMapSyncThrowSurfacesAsUnknown() {
-    // The full seam, wired as production wires it: TableBase.readRow throws synchronously on the
-    // caller thread -> SessionPoolMap.apply's `catch (Throwable)` converts it to a failed future
-    // -> translateException defaults it to UNKNOWN. No grpc Status is involved at any point, which
-    // is why this failure mode can produce an application UNKNOWN with no server-side counterpart.
+  void futureCall_sessionPoolMapSyncThrowSurfacesAsInternal() {
+    // Verifies the full seam: TableBase.readRow throws synchronously on the caller thread ->
+    // SessionPoolMap.apply's `catch (Throwable)` converts it to a failed future ->
+    // translateException
+    // classifies it. No grpc Status is involved at any point, so the code comes entirely from the
+    // throwable's type.
     SessionPoolMap<String, NoopHandle> poolMap = new SessionPoolMap<>(key -> new NoopHandle());
     DivertingUnaryCallable<String, String> callable =
         newCallable(
@@ -289,14 +302,13 @@ class DivertingUnaryCallableTest {
 
     ApiException surfaced = failureOf(callable.futureCall("req", GrpcCallContext.createDefault()));
 
-    assertThat(codeOf(surfaced)).isEqualTo(Status.Code.UNKNOWN);
+    assertThat(codeOf(surfaced)).isEqualTo(Status.Code.INTERNAL);
     assertThat(surfaced).hasCauseThat().isNotNull();
   }
 
   @Test
   void futureCall_sessionPoolMapStatusThrowKeepsItsCode() {
-    // Same seam, but the throw already carries a Status. Contrast with the test above: the seam
-    // itself is not lossy -- the loss happens only when the throwable has no Status to begin with.
+    // Verifies the same seam is not itself lossy: a throw that already carries a Status keeps it.
     SessionPoolMap<String, NoopHandle> poolMap = new SessionPoolMap<>(key -> new NoopHandle());
     DivertingUnaryCallable<String, String> callable =
         newCallable(
@@ -311,8 +323,6 @@ class DivertingUnaryCallableTest {
 
     assertThat(codeOf(surfaced)).isEqualTo(Status.Code.UNAVAILABLE);
   }
-
-  // ---------------------------------------------------------------------------------------------
 
   private static DivertingUnaryCallable<String, String> newCallable(ShimFn shim) {
     ClientConfiguration.Builder config = ClientConfiguration.newBuilder();
