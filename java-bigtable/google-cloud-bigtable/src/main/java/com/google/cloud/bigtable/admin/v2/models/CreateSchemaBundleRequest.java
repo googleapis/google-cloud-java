@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
@@ -25,6 +26,8 @@ import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -70,9 +73,24 @@ public final class CreateSchemaBundleRequest {
   /** Sets the proto schema for this schema bundle. */
   public CreateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema) {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
-    requestBuilder.setSchemaBundle(
-        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
-            .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema)));
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema));
+    return this;
+  }
+
+  /** Sets the avro schema for this schema bundle. */
+  public CreateSchemaBundleRequest setAvroSchema(@Nonnull String avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    return setAvroSchema(Collections.singletonList(avroSchema));
+  }
+
+  /** Sets the avro schema for this schema bundle. */
+  public CreateSchemaBundleRequest setAvroSchema(@Nonnull List<String> avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setAvroSchema(AvroSchema.newBuilder().addAllJsonSchemas(avroSchema));
     return this;
   }
 

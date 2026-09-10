@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
@@ -27,6 +28,8 @@ import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -90,10 +93,26 @@ public final class UpdateSchemaBundleRequest {
   public UpdateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema)
       throws IOException {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
-    requestBuilder.setSchemaBundle(
-        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
-            .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema)));
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema));
     updateFieldMask(com.google.bigtable.admin.v2.SchemaBundle.PROTO_SCHEMA_FIELD_NUMBER);
+    return this;
+  }
+
+  /** Sets the avro schema for this schema bundle. */
+  public UpdateSchemaBundleRequest setAvroSchema(@Nonnull String avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    return setAvroSchema(Collections.singletonList(avroSchema));
+  }
+
+  /** Sets the avro schema for this schema bundle. */
+  public UpdateSchemaBundleRequest setAvroSchema(@Nonnull List<String> avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setAvroSchema(AvroSchema.newBuilder().addAllJsonSchemas(avroSchema));
+    updateFieldMask(com.google.bigtable.admin.v2.SchemaBundle.AVRO_SCHEMA_FIELD_NUMBER);
     return this;
   }
 
