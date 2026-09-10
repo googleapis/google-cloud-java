@@ -32,7 +32,10 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.AwsCredentialsTest.buildAwsImdsv2CredentialSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.MockExternalAccountCredentialsTransportFactory;
@@ -41,7 +44,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link InternalAwsSecurityCredentialsSupplier}. */
-class InternalAwsSecurityCredentialsSupplierTest {
+class InternalAwsSecurityCredentialsSupplierTest extends BaseSerializationTest {
   @Test
   void shouldUseMetadataServer_withRequiredEnvironmentVariables() {
     MockExternalAccountCredentialsTransportFactory transportFactory =
@@ -158,5 +161,80 @@ class InternalAwsSecurityCredentialsSupplierTest {
             environmentProvider,
             transportFactory);
     assertTrue(supplier.shouldUseMetadataServer());
+  }
+
+  /**
+   * Verifies that {@link InternalAwsSecurityCredentialsSupplier} restores its {@code
+   * transportFactory} upon deserialization, enabling successful retrieval of AWS security
+   * credentials and region from the AWS EC2 metadata server.
+   */
+  @Test
+  void serializeAndDeserialize_retrievesCredentialsAndRegionSuccessfully() throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    InternalAwsSecurityCredentialsSupplier supplier =
+        new InternalAwsSecurityCredentialsSupplier(
+            buildAwsImdsv2CredentialSource(transportFactory),
+            // Pass null to use the default SystemEnvironmentProvider, which implements Serializable
+            // (unlike TestEnvironmentProvider).
+            /* environmentProvider= */ null,
+            transportFactory);
+
+    InternalAwsSecurityCredentialsSupplier deserialized = serializeAndDeserialize(supplier);
+    assertEquals(
+        MockExternalAccountCredentialsTransportFactory.class,
+        deserialized.getTransportFactory().getClass());
+
+    // Credentials and region are not serialized fields; they are retrieved on demand via HTTP.
+    // Calling getCredentials() and getRegion() verifies that the restored transportFactory
+    // successfully constructs and executes HTTP requests against the mock metadata server
+    // (rather than failing with a NullPointerException).
+    AwsSecurityCredentials credentials = deserialized.getCredentials(null);
+    assertNotNull(credentials);
+    assertEquals("accessKeyId", credentials.getAccessKeyId());
+    assertEquals("secretAccessKey", credentials.getSecretAccessKey());
+    assertEquals("token", credentials.getSessionToken());
+
+    String region = deserialized.getRegion(null);
+    assertEquals("us-east-1", region);
+  }
+
+  /**
+   * Verifies that {@link InternalAwsSecurityCredentialsSupplier} deserializes cleanly and falls
+   * back to the default {@link OAuth2Utils#HTTP_TRANSPORT_FACTORY} when no custom transport factory
+   * was provided.
+   */
+  @Test
+  void serializeAndDeserialize_defaultTransportFactory_success() throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    InternalAwsSecurityCredentialsSupplier supplier =
+        new InternalAwsSecurityCredentialsSupplier(
+            buildAwsImdsv2CredentialSource(transportFactory),
+            /* environmentProvider= */ null,
+            /* transportFactory= */ null);
+
+    InternalAwsSecurityCredentialsSupplier deserialized = serializeAndDeserialize(supplier);
+    assertNotNull(deserialized);
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, deserialized.getTransportFactory());
+  }
+
+  /**
+   * Verifies that {@link InternalAwsSecurityCredentialsSupplier} can be serialized and deserialized
+   * when an explicit {@link EnvironmentProvider} is provided.
+   */
+  @Test
+  void serializeAndDeserialize_withEnvironmentVariables_success() throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    SystemEnvironmentProvider environmentProvider = SystemEnvironmentProvider.getInstance();
+    InternalAwsSecurityCredentialsSupplier supplier =
+        new InternalAwsSecurityCredentialsSupplier(
+            buildAwsImdsv2CredentialSource(transportFactory),
+            environmentProvider,
+            transportFactory);
+
+    InternalAwsSecurityCredentialsSupplier deserialized = serializeAndDeserialize(supplier);
+    assertNotNull(deserialized);
   }
 }

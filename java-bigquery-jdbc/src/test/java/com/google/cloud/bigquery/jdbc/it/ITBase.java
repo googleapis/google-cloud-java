@@ -49,6 +49,10 @@ public class ITBase extends BigQueryJdbcBaseTest {
       "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
           + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
 
+  public static final String PCNT_SCHEMA =
+      System.getenv()
+          .getOrDefault("PCNT_SCHEMA", "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace");
+
   private static String sharedDataset;
   private static String sharedDataset2;
 
@@ -370,6 +374,27 @@ public class ITBase extends BigQueryJdbcBaseTest {
         QueryJobConfiguration.of(String.format(insertQuery1, DEFAULT_CATALOG, dataset, table)));
     bigQuery.query(
         QueryJobConfiguration.of(String.format(insertQuery2, DEFAULT_CATALOG, dataset, table)));
+  }
+
+  public static final String createPcntTableQuery =
+      "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64, name STRING);";
+  public static final String insertPcntTableQuery =
+      "INSERT INTO `%s.%s.%s` (id, name) VALUES (1, 'Alice'), (2, 'Bob');";
+  public static final String dropPcntTableQuery = "DROP TABLE IF EXISTS `%s.%s.%s`;";
+
+  public static void setUpPcntTable(String schema, String table) throws InterruptedException {
+    bigQuery.query(
+        QueryJobConfiguration.of(
+            String.format(createPcntTableQuery, DEFAULT_CATALOG, schema, table)));
+    bigQuery.query(
+        QueryJobConfiguration.of(
+            String.format(insertPcntTableQuery, DEFAULT_CATALOG, schema, table)));
+  }
+
+  public static void cleanUpPcntTable(String schema, String table) throws InterruptedException {
+    bigQuery.query(
+        QueryJobConfiguration.of(
+            String.format(dropPcntTableQuery, DEFAULT_CATALOG, schema, table)));
   }
 
   public static void cleanUp(String dataset) throws InterruptedException {

@@ -73,7 +73,7 @@ public interface VertexRankerOrBuilder
    * <pre>
    * Required. The model used for ranking documents. The list of available
    * models is described in
-   * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+   * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
    * Currently, only `semantic-ranker-fast&#64;latest` is supported.
    * </pre>
    *
@@ -89,7 +89,7 @@ public interface VertexRankerOrBuilder
    * <pre>
    * Required. The model used for ranking documents. The list of available
    * models is described in
-   * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+   * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
    * Currently, only `semantic-ranker-fast&#64;latest` is supported.
    * </pre>
    *
