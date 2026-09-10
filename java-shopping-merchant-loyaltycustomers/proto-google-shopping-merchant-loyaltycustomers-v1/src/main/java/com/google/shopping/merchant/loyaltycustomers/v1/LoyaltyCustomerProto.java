@@ -118,10 +118,12 @@ public final class LoyaltyCustomerProto extends com.google.protobuf.GeneratedFil
           + "eLoyaltyCustomerMatchResponse\"K\202\323\344\223\002E\"@/"
           + "loyaltyCustomers/v1/{parent=accounts/*}/"
           + "loyaltyCustomers:manage:\001*\032G\312A\032merchanta"
-          + "pi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\351\001\n"
+          + "pi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\372\002\n"
           + "0com.google.shopping.merchant.loyaltycustomers.v1B\024Loyalt"
-          + "yCustomerProtoP\001Zbcloud.google.com/go/sh"
-          + "opping/merchant/loyaltycustomers/apiv1/loyaltycustomerspb;loyaltycustomerspb\352A8\n"
+          + "yCustomerProtoP\001Zbcloud.google.com/go/shopping/merchant/loyaltycustomers/apiv1/l"
+          + "oyaltycustomerspb;loyaltycustomerspb\252\002,Google.Shopping.Merchant.LoyaltyCustomers"
+          + ".V1\312\002,Google\\Shopping\\Merchant\\LoyaltyCu"
+          + "stomers\\V1\352\0020Google::Shopping::Merchant::LoyaltyCustomers::V1\352A8\n"
           + "\"merchantapi.googleapis.com/Account\022\022accounts/{account}b\006proto3"
     };
     descriptor =

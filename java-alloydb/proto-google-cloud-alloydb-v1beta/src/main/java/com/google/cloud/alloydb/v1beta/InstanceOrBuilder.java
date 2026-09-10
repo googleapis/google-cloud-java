@@ -1291,7 +1291,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1390
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1393
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1310,7 +1310,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1390
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1393
    * @return The geminiConfig.
    */
   @java.lang.Deprecated

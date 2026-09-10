@@ -50,6 +50,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryTypeRegistry.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import com.google.common.base.Splitter;
 import io.opentelemetry.context.Context;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -3922,8 +3923,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
    *     for querying BigQuery's metadata.
    * @see BigQueryConnection#isFilterTablesOnDefaultDataset()
    */
-  private Tuple<String, String> determineEffectiveCatalogAndSchema(
-      String catalog, String schemaPattern) {
+  Tuple<String, String> determineEffectiveCatalogAndSchema(String catalog, String schemaPattern) {
     String effectiveCatalog = catalog;
     String effectiveSchemaPattern = schemaPattern;
 
@@ -3932,7 +3932,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         && this.connection.getDefaultDataset().getDataset() != null
         && !this.connection.getDefaultDataset().getDataset().isEmpty()) {
 
-      String defaultProjectFromConnection = this.connection.getCatalog();
+      String defaultProjectFromConnection =
+          (this.connection.getDefaultDataset().getProject() != null)
+              ? this.connection.getDefaultDataset().getProject()
+              : this.connection.getCatalog();
       // We only use the dataset part of the DefaultDataset for schema filtering
       String defaultSchemaFromConnection = this.connection.getDefaultDataset().getDataset();
 
@@ -4403,20 +4406,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return allDatasets;
   }
 
-  private List<String> getAccessibleCatalogNames() throws SQLException {
+  List<String> getAccessibleCatalogNames() throws SQLException {
     Set<String> accessibleCatalogs = new HashSet<>();
     String primaryCatalog = this.connection.getCatalog();
     if (primaryCatalog != null && !primaryCatalog.isEmpty()) {
       accessibleCatalogs.add(primaryCatalog);
     }
 
+    if (this.connection.getDefaultDataset() != null
+        && this.connection.getDefaultDataset().getProject() != null
+        && !this.connection.getDefaultDataset().getProject().isEmpty()) {
+      accessibleCatalogs.add(this.connection.getDefaultDataset().getProject());
+    }
+
     String additionalProjectsStr = this.connection.getAdditionalProjects();
     if (additionalProjectsStr != null && !additionalProjectsStr.trim().isEmpty()) {
       List<String> additionalProjects =
-          com.google.common.base.Splitter.on(',')
-              .trimResults()
-              .omitEmptyStrings()
-              .splitToList(additionalProjectsStr);
+          Splitter.on(',').trimResults().omitEmptyStrings().splitToList(additionalProjectsStr);
       for (String project : additionalProjects) {
         if (project != null && !project.isEmpty()) {
           accessibleCatalogs.add(project);

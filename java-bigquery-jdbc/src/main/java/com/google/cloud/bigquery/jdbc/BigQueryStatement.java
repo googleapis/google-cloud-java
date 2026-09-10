@@ -216,6 +216,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
     querySettings.setWriteAPIAppendRowCount(this.connection.getWriteAPIAppendRowCount());
+    querySettings.setEnableTimestampPicos(this.connection.isEnableTimestampPicos());
 
     return querySettings.build();
   }
@@ -1532,6 +1533,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private boolean getUseLegacySql() {
     return QueryDialectType.BIG_QUERY.equals(
         QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.querySettings.isEnableTimestampPicos();
   }
 
   private void checkIfDatasetExistElseCreate(String datasetName) {
