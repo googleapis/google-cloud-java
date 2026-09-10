@@ -22,10 +22,7 @@ cd ${scriptDir}/..
 
 # include common functions
 source ${scriptDir}/common.sh
-
-# Use GCP Maven Mirror
-mkdir -p ${HOME}/.m2
-cp settings.xml ${HOME}/.m2
+setup_maven_mirror
 
 setup_application_credentials
 
