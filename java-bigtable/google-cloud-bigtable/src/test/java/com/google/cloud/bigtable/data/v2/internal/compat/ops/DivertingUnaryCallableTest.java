@@ -170,6 +170,37 @@ class DivertingUnaryCallableTest {
   }
 
   @Test
+  void translateException_findsCancellationDeepInCauseChain() {
+    // A cancellation wrapped in anything other than Completion/ExecutionException would otherwise
+    // fall through to UNKNOWN -- the same defect as a wrapped StatusRuntimeException. Note this is
+    // strictly more specific than csm.attributes.Util#extractStatus, which only checks the top
+    // level, so a nested cancellation is CANCELLED here and UNKNOWN in CSM.
+    ApiException translated =
+        bare.translateException(
+            new IllegalStateException("wrapper", new CancellationException("caller gave up")));
+
+    assertThat(codeOf(translated)).isEqualTo(Status.Code.CANCELLED);
+  }
+
+  @Test
+  void translateException_statusOutranksCancellationAtTheSameDepth() {
+    // A CancellationException wrapping a Status keeps CANCELLED -- outermost wins -- but a Status
+    // wrapping a cancellation keeps the Status. Pins the walk order, which is what decides this.
+    CancellationException outer = new CancellationException("caller gave up");
+    outer.initCause(Status.DEADLINE_EXCEEDED.asRuntimeException());
+
+    ApiException cancellationOutside = bare.translateException(outer);
+    ApiException statusOutside =
+        bare.translateException(
+            Status.DEADLINE_EXCEEDED
+                .withCause(new CancellationException("caller gave up"))
+                .asRuntimeException());
+
+    assertThat(codeOf(cancellationOutside)).isEqualTo(Status.Code.CANCELLED);
+    assertThat(codeOf(statusOutside)).isEqualTo(Status.Code.DEADLINE_EXCEEDED);
+  }
+
+  @Test
   void translateException_toleratesSelfReferentialCauseChain() {
     // A throwable that is its own cause must not spin the walk.
     SelfCausedException looping = new SelfCausedException();
@@ -208,6 +239,17 @@ class DivertingUnaryCallableTest {
 
     assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
     assertThat(translated).hasMessageThat().contains("java.lang.NullPointerException");
+  }
+
+  @Test
+  void translateException_nullThrowableStillProducesUnknown() {
+    // CompletableFuture#handle never hands us a null, so this is unreachable in production. It is
+    // pinned anyway because this is the diagnostic path: an NPE raised while *building* the error
+    // message would replace the failure the message exists to report.
+    ApiException translated = bare.translateException(null);
+
+    assertThat(codeOf(translated)).isEqualTo(Status.Code.UNKNOWN);
+    assertThat(translated).hasMessageThat().contains("null error");
   }
 
   // ---------------------------------------------------------------------------------------------

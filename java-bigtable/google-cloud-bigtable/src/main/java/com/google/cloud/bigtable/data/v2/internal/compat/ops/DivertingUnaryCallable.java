@@ -154,15 +154,16 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
    *
    * <p>Unlike a plain {@code instanceof} on the top-level throwable, this walks the whole chain: a
    * perfectly good {@link StatusRuntimeException} wrapped in any type other than Completion/
-   * ExecutionException would otherwise lose its code and be reported as UNKNOWN. Mirrors {@code
-   * csm.attributes.Util#extractStatus}, including its {@link CancellationException} case, so the
-   * status the application sees agrees with the one CSM records for the same failure.
+   * ExecutionException would otherwise lose its code and be reported as UNKNOWN. {@link
+   * CancellationException} is treated as CANCELLED, matching {@code
+   * csm.attributes.Util#extractStatus}, so the status the application sees agrees with the one CSM
+   * records for the same failure. It is checked at every level rather than only the top, since a
+   * wrapped cancellation reported as UNKNOWN is the same defect this method exists to fix; CSM only
+   * looks at the top level, so a nested cancellation is the one case where the two can still
+   * disagree, and it disagrees in the direction of the more specific code.
    */
   @Nullable
-  private static Status.Code findStatusCode(Throwable t) {
-    if (t instanceof CancellationException) {
-      return Status.Code.CANCELLED;
-    }
+  private static Status.Code findStatusCode(@Nullable Throwable t) {
     Throwable current = t;
     for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
       if (current instanceof StatusRuntimeException) {
@@ -170,6 +171,9 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
       if (current instanceof StatusException) {
         return ((StatusException) current).getStatus().getCode();
+      }
+      if (current instanceof CancellationException) {
+        return Status.Code.CANCELLED;
       }
       Throwable next = current.getCause();
       if (next == current) {
@@ -181,7 +185,12 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   /** Renders the cause chain as class names, so the message identifies the failure by itself. */
-  private static String describeUnrecognized(Throwable cause) {
+  private static String describeUnrecognized(@Nullable Throwable cause) {
+    // No caller reaches here with null today, but this is the diagnostic path: an NPE thrown while
+    // building the error message would destroy exactly the information the message exists to carry.
+    if (cause == null) {
+      return "Session operation failed with a null error; reporting UNKNOWN.";
+    }
     StringBuilder chain = new StringBuilder();
     Throwable current = cause;
     for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
@@ -207,7 +216,7 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
    * at FINE. A storm is exactly when this fires most, so an unconditional WARNING would flood the
    * log at the moment the operator can least afford it.
    */
-  private void reportUnrecognized(Throwable cause) {
+  private void reportUnrecognized(@Nullable Throwable cause) {
     if (loggedUnrecognized.compareAndSet(false, true)) {
       LOGGER.log(Level.WARNING, describeUnrecognized(cause), cause);
     } else if (LOGGER.isLoggable(Level.FINE)) {
