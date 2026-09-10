@@ -59,7 +59,11 @@ public class BigtableSchemaBundleIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableSchemaBundleIT.class.getName());
-  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  // Poll for the delete to propagate. A fixed short interval rather than a doubling backoff:
+  // the resource normally disappears within seconds, and a doubling backoff would keep
+  // sleeping for minutes past that point.
+  private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
+  private static final int DELETE_POLL_ATTEMPTS = 60;
   // Location: `google-cloud-bigtable/src/test/resources/proto_schema_bundle.pb`
   private static final String TEST_PROTO_SCHEMA_BUNDLE = "proto_schema_bundle.pb";
   // Location:
@@ -170,15 +174,11 @@ public class BigtableSchemaBundleIT {
     // Now we should be able to successfully delete the SchemaBundle.
     tableAdmin.deleteSchemaBundle(testTable.getId(), SchemaBundleId);
     try {
-      for (int i = 0; i < BACKOFF_DURATION.length; i++) {
+      for (int i = 0; i < DELETE_POLL_ATTEMPTS; i++) {
         tableAdmin.getSchemaBundle(testTable.getId(), SchemaBundleId);
 
-        LOGGER.info(
-            "Wait for "
-                + BACKOFF_DURATION[i]
-                + " seconds for deleting schema bundle "
-                + SchemaBundleId);
-        Thread.sleep(BACKOFF_DURATION[i] * 1000);
+        LOGGER.info("Waiting for schema bundle " + SchemaBundleId + " to be deleted");
+        Thread.sleep(DELETE_POLL_INTERVAL_SECONDS * 1000);
       }
       fail("SchemaBundle was not deleted.");
     } catch (NotFoundException e) {
