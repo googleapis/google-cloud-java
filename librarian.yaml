@@ -5712,7 +5712,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open
       released_version: 6.122.0
       library_type_override: GAPIC_COMBO
-      min_java_version: 8
       name_pretty_override: Cloud Spanner
       product_documentation_override: https://cloud.google.com/spanner/docs/
       recommended_package: com.google.cloud.spanner
