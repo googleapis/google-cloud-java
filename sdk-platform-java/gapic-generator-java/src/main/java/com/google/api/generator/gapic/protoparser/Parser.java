@@ -135,8 +135,12 @@ public class Parser {
           "google.cloud.bigquery.v2.ModelService.ListModels",
           "google.cloud.bigquery.v2.TableService.ListTables");
 
-  private static final ImmutableList<Pattern> RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS =
-      ImmutableList.of();
+  @VisibleForTesting
+  static final ImmutableList<Pattern> RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS =
+      ImmutableList.of(
+          Pattern.compile("^google\\.showcase\\.v1beta1\\.ResumableUploadService\\.UploadMedia$"),
+          Pattern.compile(
+              "^google\\.ads\\.googleads\\.v\\d+\\.services\\.YouTubeVideoUploadService\\.CreateYouTubeVideoUpload$"));
 
   // Allow other parsers to access this.
   protected static final SourceCodeInfoParser SOURCE_CODE_INFO_PARSER = new SourceCodeInfoParser();

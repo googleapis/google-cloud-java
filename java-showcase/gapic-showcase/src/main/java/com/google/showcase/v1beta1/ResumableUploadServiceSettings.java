@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.location.GetLocationRequest;
@@ -63,7 +64,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of uploadMedia:
+ * of getLocation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -74,10 +75,10 @@ import org.jspecify.annotations.Nullable;
  * ResumableUploadServiceSettings.Builder resumableUploadServiceSettingsBuilder =
  *     ResumableUploadServiceSettings.newBuilder();
  * resumableUploadServiceSettingsBuilder
- *     .uploadMediaSettings()
+ *     .getLocationSettings()
  *     .setRetrySettings(
  *         resumableUploadServiceSettingsBuilder
- *             .uploadMediaSettings()
+ *             .getLocationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -102,8 +103,13 @@ import org.jspecify.annotations.Nullable;
 @Generated("by gapic-generator-java")
 public class ResumableUploadServiceSettings extends ClientSettings<ResumableUploadServiceSettings> {
 
-  /** Returns the object with the settings used for calls to uploadMedia. */
-  public UnaryCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaSettings() {
+  /**
+   * Returns the object with the settings used for calls to uploadMedia.
+   *
+   * <p>Note that custom retry settings and headers configured via ApiCallContext apply strictly to
+   * the initial session initiation request.
+   */
+  public ResumableUploadCallSettings uploadMediaSettings() {
     return ((ResumableUploadServiceStubSettings) getStubSettings()).uploadMediaSettings();
   }
 
@@ -247,9 +253,13 @@ public class ResumableUploadServiceSettings extends ClientSettings<ResumableUplo
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to uploadMedia. */
-    public UnaryCallSettings.Builder<UploadMediaRequest, UploadMediaResponse>
-        uploadMediaSettings() {
+    /**
+     * Returns the builder for the settings used for calls to uploadMedia.
+     *
+     * <p>Note that custom retry settings and headers configured via ApiCallContext apply strictly
+     * to the initial session initiation request.
+     */
+    public ResumableUploadCallSettings.Builder uploadMediaSettings() {
       return getStubSettingsBuilder().uploadMediaSettings();
     }
 
