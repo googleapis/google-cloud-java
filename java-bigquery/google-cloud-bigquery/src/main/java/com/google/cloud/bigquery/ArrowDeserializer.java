@@ -174,16 +174,6 @@ final class ArrowDeserializer {
   }
 
   /**
-   * Converts an Apache Arrow Schema to a BigQuery Veneer {@link Schema}.
-   *
-   * @param arrowSchema the Apache Arrow schema to convert
-   * @return the corresponding BigQuery Veneer Schema
-   */
-  static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
-    return ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
-  }
-
-  /**
    * Deserializes a raw binary Arrow record batch payload into a list of BigQuery {@link
    * FieldValueList} row objects.
    *

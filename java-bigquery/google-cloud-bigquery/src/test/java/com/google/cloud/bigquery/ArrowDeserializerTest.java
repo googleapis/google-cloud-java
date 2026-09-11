@@ -76,7 +76,7 @@ public class ArrowDeserializerTest {
         new org.apache.arrow.vector.types.pojo.Schema(
             ImmutableList.of(intField, strField, boolField, tsField));
 
-    Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+    Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
     assertEquals(4, bqSchema.getFields().size());
     assertEquals("int_col", bqSchema.getFields().get(0).getName());
@@ -139,7 +139,7 @@ public class ArrowDeserializerTest {
 
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
         org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
-        Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+        Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
         byte[] recordBatchBytes = serializeVectorSchemaRoot(root, allocator);
 
@@ -210,7 +210,7 @@ public class ArrowDeserializerTest {
           createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
 
       org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
-      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
@@ -235,7 +235,7 @@ public class ArrowDeserializerTest {
           createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
 
       org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
-      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
@@ -258,7 +258,7 @@ public class ArrowDeserializerTest {
           createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
 
       org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
-      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
@@ -283,7 +283,7 @@ public class ArrowDeserializerTest {
               allocator);
 
       org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
-      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
 
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
