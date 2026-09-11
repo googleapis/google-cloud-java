@@ -414,6 +414,66 @@ public abstract class Range<T, R extends Range<T, R>> implements Serializable {
       return ByteStringRange.create(rowRange.getStartKeyClosed(), rowRange.getEndKeyOpen());
     }
 
+    @InternalApi
+    public RowRange toProto() {
+      RowRange.Builder rangeBuilder = RowRange.newBuilder();
+      switch (getStartBound()) {
+        case OPEN:
+          rangeBuilder.setStartKeyOpen(getStart());
+          break;
+        case CLOSED:
+          rangeBuilder.setStartKeyClosed(getStart());
+          break;
+        case UNBOUNDED:
+          rangeBuilder.clearStartKey();
+          break;
+        default:
+          throw new IllegalStateException("Unknown start bound: " + getStartBound());
+      }
+      switch (getEndBound()) {
+        case OPEN:
+          rangeBuilder.setEndKeyOpen(getEnd());
+          break;
+        case CLOSED:
+          rangeBuilder.setEndKeyClosed(getEnd());
+          break;
+        case UNBOUNDED:
+          rangeBuilder.clearEndKey();
+          break;
+        default:
+          throw new IllegalStateException("Unknown end bound: " + getEndBound());
+      }
+      return rangeBuilder.build();
+    }
+
+    @InternalApi
+    public static ByteStringRange fromProto(RowRange rowRange) {
+      ByteStringRange range = ByteStringRange.unbounded();
+      switch (rowRange.getStartKeyCase()) {
+        case START_KEY_CLOSED:
+          range.startClosed(rowRange.getStartKeyClosed());
+          break;
+        case START_KEY_OPEN:
+          range.startOpen(rowRange.getStartKeyOpen());
+          break;
+        case STARTKEY_NOT_SET:
+          range.startUnbounded();
+          break;
+      }
+      switch (rowRange.getEndKeyCase()) {
+        case END_KEY_CLOSED:
+          range.endClosed(rowRange.getEndKeyClosed());
+          break;
+        case END_KEY_OPEN:
+          range.endOpen(rowRange.getEndKeyOpen());
+          break;
+        case ENDKEY_NOT_SET:
+          range.endUnbounded();
+          break;
+      }
+      return range;
+    }
+
     @Override
     public boolean equals(Object o) {
       if (this == o) {

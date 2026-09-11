@@ -187,5 +187,67 @@ public class SampleRowKeysRequestTest {
 
     assertThat(SampleRowKeysRequest.create(AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID)))
         .isNotEqualTo(SampleRowKeysRequest.create(TableId.of(TABLE_ID)));
+
+    // Test with row range
+    Range.ByteStringRange range1 = Range.ByteStringRange.create("a", "b");
+    Range.ByteStringRange range2 = Range.ByteStringRange.create("a", "c");
+
+    assertThat(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of(TABLE_ID))
+                .setRowRange(range1)
+                .build())
+        .isEqualTo(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of(TABLE_ID))
+                .setRowRange(range1)
+                .build());
+
+    assertThat(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of(TABLE_ID))
+                .setRowRange(range1)
+                .build())
+        .isNotEqualTo(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of(TABLE_ID))
+                .setRowRange(range2)
+                .build());
+  }
+
+  @Test
+  public void toProtoWithRowRangeTest() {
+    Range.ByteStringRange range = Range.ByteStringRange.create("start", "end");
+    SampleRowKeysRequest sampleRowKeysRequest =
+        SampleRowKeysRequest.newBuilder()
+            .setTargetId(TableId.of(TABLE_ID))
+            .setRowRange(range)
+            .build();
+
+    com.google.bigtable.v2.SampleRowKeysRequest actualRequest =
+        sampleRowKeysRequest.toProto(REQUEST_CONTEXT);
+
+    assertThat(actualRequest.getTableName())
+        .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+    assertThat(actualRequest.hasRowRange()).isTrue();
+    assertThat(actualRequest.getRowRange().getStartKeyClosed()).isEqualTo(range.getStart());
+    assertThat(actualRequest.getRowRange().getEndKeyOpen()).isEqualTo(range.getEnd());
+  }
+
+  @Test
+  public void fromProtoWithRowRangeTest() {
+    Range.ByteStringRange range = Range.ByteStringRange.create("start", "end");
+    SampleRowKeysRequest sampleRowKeysRequest =
+        SampleRowKeysRequest.newBuilder()
+            .setTargetId(TableId.of(TABLE_ID))
+            .setRowRange(range)
+            .build();
+
+    com.google.bigtable.v2.SampleRowKeysRequest protoRequest =
+        sampleRowKeysRequest.toProto(REQUEST_CONTEXT);
+    SampleRowKeysRequest actualRequest = SampleRowKeysRequest.fromProto(protoRequest);
+
+    assertThat(actualRequest.toProto(REQUEST_CONTEXT)).isEqualTo(protoRequest);
+    assertThat(actualRequest.getRowRange()).isEqualTo(range);
   }
 }
