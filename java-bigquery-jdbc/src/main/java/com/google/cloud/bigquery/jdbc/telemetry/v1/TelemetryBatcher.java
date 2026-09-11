@@ -126,7 +126,7 @@ final class TelemetryBatcher implements AutoCloseable {
       int maxTotalBatchSize =
           config != null
               ? config.getBatchSizeThreshold()
-              : TelemetryConfiguration.DEFAULT_BATCH_SIZE_THRESHOLD;
+              : TelemetryPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
 
       List<Message> events = new ArrayList<>(maxTotalBatchSize);
       eventQueue.drainTo(events, maxTotalBatchSize);
@@ -251,6 +251,10 @@ final class TelemetryBatcher implements AutoCloseable {
 
   int getPendingEventCount() {
     return eventQueue.size();
+  }
+
+  TelemetryConfiguration getConfig() {
+    return config;
   }
 
   private boolean isConfigured() {

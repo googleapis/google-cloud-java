@@ -31,7 +31,7 @@ public class TelemetryConfigurationTest {
     TelemetryConfiguration config = TelemetryConfiguration.newBuilder().build();
 
     assertTrue(config.isEnabled());
-    assertEquals(-1, config.getLogSource());
+    assertEquals(3071, config.getLogSource());
     assertEquals("https://play.googleapis.com/log", config.getEndpointUrl());
     assertEquals(300_000L, config.getUploadIntervalMs());
     assertEquals(5000, config.getBatchSizeThreshold());

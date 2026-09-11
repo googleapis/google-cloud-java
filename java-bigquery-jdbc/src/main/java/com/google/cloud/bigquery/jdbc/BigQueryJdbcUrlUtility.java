@@ -20,6 +20,7 @@ import com.google.api.client.util.escape.CharEscapers;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPropertyUtility;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.UrlEscapers;
@@ -175,6 +176,8 @@ final class BigQueryJdbcUrlUtility {
   static final boolean DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE = false;
   static final String USE_GLOBAL_OTEL_PROPERTY_NAME = "useGlobalOpenTelemetry";
   static final boolean DEFAULT_USE_GLOBAL_OTEL_VALUE = false;
+  static final String ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME = "EnableDiagnosticTelemetry";
+  static final boolean DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE = true;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -681,6 +684,14 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Enables usage of the Global OpenTelemetry instance when true. Default is false.")
                       .setDefaultValue(String.valueOf(DEFAULT_USE_GLOBAL_OTEL_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables client-side diagnostic telemetry. Enabled by default.")
+                      .setDefaultValue(
+                          String.valueOf(
+                              TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
