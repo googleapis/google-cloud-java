@@ -22,6 +22,16 @@ validate_protobuf_compatibility_script_inputs
 
 monorepoRoot=$(realpath "${scriptDir}/../../..")
 
+# Pre-cache versions.txt into an associative array to avoid cat/grep/cut on each artifact
+declare -A versions_map
+if [[ -f "${monorepoRoot}/versions.txt" ]]; then
+  while IFS=':' read -r mod rel cur || [[ -n "${mod}" ]]; do
+    [[ -z "${mod}" || "${mod}" =~ ^[[:space:]]*# ]] && continue
+    cur="${cur%$'\r'}"
+    versions_map["${mod}"]="${cur}"
+  done < "${monorepoRoot}/versions.txt"
+fi
+
 # Declare a map of downstream handwritten libraries and the relevant artifacts to test. The map stores a
 # K/V pairing of (Key: module name, Value: comma separate list of Group ID:Artifact ID pairings). Note: The
 # value list doesn't hold the version and this needs to be parsed from the monorepo's versions.txt file
@@ -47,33 +57,34 @@ module_linkage_checker_arguments["java-storage-nio"]="com.google.cloud:google-cl
 # It will try to match the artifact_id in the versions.txt file and attach it to form the GAV
 # The GAV list is required by Linkage Checker as program arguments
 function build_program_arguments() {
-  artifact_list="${module_linkage_checker_arguments[$1]}"
+  local artifact_list="${module_linkage_checker_arguments[$1]}"
+  local -a artifacts=() coords=()
+  local artifact artifact_id version
 
-  for artifact in ${artifact_list//,/ }; do # Split on comma
-    artifact_id=$(echo "${artifact}" | cut -d ':' -f2)
+  IFS=',' read -ra artifacts <<< "${artifact_list}"
+  for artifact in "${artifacts[@]}"; do
+    # Extract artifactId from "groupId:artifactId[:version]" without spawning subprocesses:
+    # 1. ${artifact#*:} strips the shortest prefix matching "*:" (removes "groupId:")
+    # 2. ${artifact_id%%:*} strips the longest suffix matching ":*" (removes trailing ":version", if present)
+    artifact_id="${artifact#*:}"
+    artifact_id="${artifact_id%%:*}"
 
-    # The grep query tries to match `{artifact_id}:{released_version}:{current_version}`.
-    # The artifact_id must be exact otherwise multiple entries may match
-    version=$(cat "${monorepoRoot}/versions.txt" | grep -E "^${artifact_id}:.*:.*$" | cut -d ':' -f3 || true)
+    version="${versions_map["${artifact_id}"]}"
     # Unreleased internal test modules like java-showcase are not tracked in versions.txt,
     # so fallback to 0.0.1-SNAPSHOT for linkage checking.
     if [ -z "${version}" ]; then
       version="0.0.1-SNAPSHOT"
     fi
-    module_gav_coordinate="${artifact}:${version}"
-
-    # The first entry added is not separated with a comma. Avoids generating `,{ARTIFACT_LIST}`
-    if [ -z "${linkage_checker_arguments}" ]; then
-      linkage_checker_arguments="${module_gav_coordinate}"
-    else
-      linkage_checker_arguments="${linkage_checker_arguments},${module_gav_coordinate}"
-    fi
+    coords+=("${artifact}:${version}")
   done
+
+  local IFS=','
+  linkage_checker_arguments="${coords[*]}"
 }
 
 # TODO(https://github.com/GoogleCloudPlatform/cloud-opensource-java/issues/2395): Java 17+ support for Linkage Checker
 # cloud-opensource-java contains the Linkage Checker tool
-git clone https://github.com/GoogleCloudPlatform/cloud-opensource-java.git
+git clone --depth 1 https://github.com/GoogleCloudPlatform/cloud-opensource-java.git
 pushd cloud-opensource-java
 mvn -B -ntp clean compile -T 1C
 # Linkage Checker tool resides in the /dependencies subfolder
@@ -82,7 +93,8 @@ pushd dependencies
 # MODULES_UNDER_TEST Env Var accepts a comma separated list of monorepo submodules to test. For Github CI,
 # this will be a single module as Github will build a matrix of modules with each being tested in parallel.
 # For local invocation, you can pass a list of modules to test multiple modules together.
-for module in ${MODULES_UNDER_TEST//,/ }; do # Split on comma
+IFS=',' read -ra modules_under_test <<< "${MODULES_UNDER_TEST}"
+for module in "${modules_under_test[@]}"; do
   module_dir="${monorepoRoot}/${module}"
   if [ ! -d "${module_dir}" ]; then
     echo "Directory ${module_dir} does not exist. Skipping or failed." >&2
