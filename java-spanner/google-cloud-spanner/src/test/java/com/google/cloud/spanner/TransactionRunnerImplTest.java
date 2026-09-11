@@ -127,6 +127,8 @@ public class TransactionRunnerImplTest {
     when(rpc.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
     SpannerImpl spanner = mock(SpannerImpl.class);
     SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spannerOptions.getDefaultTransactionOptions())
+        .thenReturn(TransactionOptions.getDefaultInstance());
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(session.getSpanner()).thenReturn(spanner);
     when(rpc.executeQuery(Mockito.any(ExecuteSqlRequest.class), Mockito.anyMap(), eq(true)))

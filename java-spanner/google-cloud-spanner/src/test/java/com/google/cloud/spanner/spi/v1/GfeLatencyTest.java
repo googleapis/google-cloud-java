@@ -86,6 +86,7 @@ public class GfeLatencyTest {
   private static DatabaseClient databaseClientNoHeader;
 
   private static final String INSTANCE_ID = "fake-instance";
+  private static final String INSTANCE_ID_NO_HEADER = "fake-instance-noheader";
   private static final String DATABASE_ID = "fake-database";
   private static final String PROJECT_ID = "fake-project";
 
@@ -181,7 +182,10 @@ public class GfeLatencyTest {
             .start();
     spannerNoHeader = createSpannerOptions(addressNoHeader, serverNoHeader).getService();
     databaseClientNoHeader =
-        spannerNoHeader.getDatabaseClient(DatabaseId.of(PROJECT_ID, INSTANCE_ID, DATABASE_ID));
+        spannerNoHeader.getDatabaseClient(
+            DatabaseId.of(PROJECT_ID, INSTANCE_ID_NO_HEADER, DATABASE_ID));
+    databaseClient.getDialect();
+    databaseClientNoHeader.getDialect();
   }
 
   @AfterClass
@@ -347,7 +351,7 @@ public class GfeLatencyTest {
     List<TagValue> tagValues = new java.util.ArrayList<>();
     for (TagKey column : view.getColumns()) {
       if (column == SpannerRpcViews.INSTANCE_ID) {
-        tagValues.add(TagValue.create(INSTANCE_ID));
+        tagValues.add(TagValue.create(withOverride ? INSTANCE_ID_NO_HEADER : INSTANCE_ID));
       } else if (column == SpannerRpcViews.DATABASE_ID) {
         tagValues.add(TagValue.create(DATABASE_ID));
       } else if (column == SpannerRpcViews.METHOD) {

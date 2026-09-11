@@ -37,6 +37,7 @@ import com.google.rpc.Status;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.ExecuteBatchDmlRequest;
 import com.google.spanner.v1.ExecuteBatchDmlResponse;
+import com.google.spanner.v1.TransactionOptions;
 import io.opentelemetry.api.common.Attributes;
 import java.util.Collections;
 import org.junit.Before;
@@ -72,6 +73,8 @@ public class TransactionContextImplTest {
     when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
     SpannerImpl spanner = mock(SpannerImpl.class);
     SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spannerOptions.getDefaultTransactionOptions())
+        .thenReturn(TransactionOptions.getDefaultInstance());
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(session.getSpanner()).thenReturn(spanner);
     doNothing().when(span).setStatus(any(Throwable.class));
@@ -220,6 +223,8 @@ public class TransactionContextImplTest {
     when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
     SpannerImpl spanner = mock(SpannerImpl.class);
     SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spannerOptions.getDefaultTransactionOptions())
+        .thenReturn(TransactionOptions.getDefaultInstance());
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(session.getSpanner()).thenReturn(spanner);
     SpannerRpc rpc = mock(SpannerRpc.class);
