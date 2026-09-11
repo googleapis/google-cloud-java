@@ -148,7 +148,15 @@ public class ArrowQueryResultTest {
     JobId jobId = JobId.of("test-project", "job_123");
 
     try (ArrowQueryResult result =
-        new ArrowQueryResultImpl(arrowSchema, jobId, 2L, batchBytes, null, null)) {
+        new ArrowQueryResultImpl(
+            arrowSchema,
+            jobId,
+            /* queryId= */ null,
+            /* jobCreationReason= */ null,
+            2L,
+            batchBytes,
+            null,
+            null)) {
       assertEquals(arrowSchema, result.getArrowSchema());
       assertEquals(jobId, result.getJobId());
       assertEquals(2L, result.getTotalRows());
@@ -172,7 +180,15 @@ public class ArrowQueryResultTest {
     byte[] batchBytes = createTestBatchBytes(ImmutableList.of(1L), ImmutableList.of("Alice"));
 
     try (ArrowQueryResult result =
-        new ArrowQueryResultImpl(arrowSchema, JobId.of("j1"), 1L, batchBytes, null, null)) {
+        new ArrowQueryResultImpl(
+            arrowSchema,
+            JobId.of("j1"),
+            /* queryId= */ null,
+            /* jobCreationReason= */ null,
+            1L,
+            batchBytes,
+            null,
+            null)) {
       Iterator<VectorSchemaRoot> it1 = result.iterator();
       assertNotNull(it1);
       assertThrows(IllegalStateException.class, result::iterator);
@@ -185,7 +201,15 @@ public class ArrowQueryResultTest {
     byte[] batchBytes = createTestBatchBytes(ImmutableList.of(1L), ImmutableList.of("Alice"));
 
     ArrowQueryResult result =
-        new ArrowQueryResultImpl(arrowSchema, JobId.of("j1"), 1L, batchBytes, null, null);
+        new ArrowQueryResultImpl(
+            arrowSchema,
+            JobId.of("j1"),
+            /* queryId= */ null,
+            /* jobCreationReason= */ null,
+            1L,
+            batchBytes,
+            null,
+            null);
     result.close();
     result.close();
     assertThrows(IllegalStateException.class, result::iterator);
@@ -221,7 +245,14 @@ public class ArrowQueryResultTest {
     String streamName = "projects/p/locations/l/jobs/j/streams/_default";
     try (ArrowQueryResult result =
         new ArrowQueryResultImpl(
-            arrowSchema, JobId.of("j"), 5L, initialBatchBytes, streamName, mockClient)) {
+            arrowSchema,
+            JobId.of("j"),
+            /* queryId= */ null,
+            /* jobCreationReason= */ null,
+            5L,
+            initialBatchBytes,
+            streamName,
+            mockClient)) {
       Iterator<VectorSchemaRoot> it = result.iterator();
 
       // Batch 1 (initial REST response)
