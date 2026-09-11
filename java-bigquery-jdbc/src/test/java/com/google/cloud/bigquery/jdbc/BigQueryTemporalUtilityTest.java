@@ -392,4 +392,29 @@ public class BigQueryTemporalUtilityTest {
     String negOne = BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(-1L, false);
     assertThat(negOne).isEqualTo("1969-12-31 23:59:59.999999");
   }
+
+  @Test
+  public void testFormatTimestampValue() throws BigQueryJdbcException {
+    // Null handling
+    assertThat(BigQueryTemporalUtility.formatTimestampValue(null, true)).isNull();
+
+    // Long (epoch microseconds)
+    assertThat(BigQueryTemporalUtility.formatTimestampValue(1680174859820226L, false))
+        .isEqualTo("2023-03-30 11:14:19.820226");
+    assertThat(BigQueryTemporalUtility.formatTimestampValue(1680174859820226L, true))
+        .isEqualTo("2023-03-30 11:14:19.820226000000");
+
+    // ISO string with picoseconds
+    assertThat(
+            BigQueryTemporalUtility.formatTimestampValue(
+                "2026-04-08T10:00:00.123456789123Z", false))
+        .isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(
+            BigQueryTemporalUtility.formatTimestampValue("2026-04-08T10:00:00.123456789123Z", true))
+        .isEqualTo("2026-04-08 10:00:00.123456789123");
+
+    // Epoch decimal string
+    assertThat(BigQueryTemporalUtility.formatTimestampValue("1680174859.123456789123", true))
+        .isEqualTo("2023-03-30 11:14:19.123456789123");
+  }
 }

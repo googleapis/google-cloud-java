@@ -2183,10 +2183,10 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.91.1
+    version: 1.92.0-SNAPSHOT
     skip_generate: true
     java:
-      released_version: 1.91.0
+      released_version: 1.91.1
   - name: google-cloud-pom-parent
     version: 1.92.0-SNAPSHOT
     skip_generate: true
@@ -5209,7 +5209,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/resource-manager
       billing_not_required: true
   - name: retail
-    version: 2.99.1
+    version: 2.100.0-SNAPSHOT
     apis:
       - path: google/cloud/retail/v2
         java:
@@ -5225,7 +5225,7 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Retail solutions API.
-      released_version: 2.99.0
+      released_version: 2.99.1
       name_pretty_override: Cloud Retail
       product_documentation_override: https://cloud.google.com/solutions/retail
   - name: run
