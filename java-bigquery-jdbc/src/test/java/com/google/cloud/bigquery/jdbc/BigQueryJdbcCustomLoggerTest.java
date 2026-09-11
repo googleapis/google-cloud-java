@@ -486,7 +486,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
             Attribute.REPEATED,
             FieldValueList.of(
                 Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "123"))));
-    BigQueryJsonArray array = new BigQueryJsonArray(arraySchema, arrayValue, logger);
+    BigQueryJsonArray array = new BigQueryJsonArray(arraySchema, arrayValue, false, logger);
 
     assertConnectionIdPropagated(
         logger, connectionId, "Log from JSON Array", () -> array.LOG.fine("Log from JSON Array"));
@@ -504,7 +504,8 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
             Attribute.RECORD,
             FieldValueList.of(
                 Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "456"))));
-    BigQueryJsonStruct struct = new BigQueryJsonStruct(structSchema, structValue, structLogger);
+    BigQueryJsonStruct struct =
+        new BigQueryJsonStruct(structSchema, structValue, false, structLogger);
 
     assertConnectionIdPropagated(
         structLogger,
@@ -531,7 +532,8 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
                 Collections.singletonList(FieldValue.of(Attribute.PRIMITIVE, "789"))));
     FieldValue listVal =
         FieldValue.of(Attribute.REPEATED, FieldValueList.of(Collections.singletonList(recordVal)));
-    BigQueryJsonArray arrayWithNested = new BigQueryJsonArray(arrayNestedSchema, listVal, logger);
+    BigQueryJsonArray arrayWithNested =
+        new BigQueryJsonArray(arrayNestedSchema, listVal, false, logger);
 
     Object[] result = (Object[]) arrayWithNested.getArray();
     BigQueryJsonStruct nestedStruct = (BigQueryJsonStruct) result[0];
@@ -565,7 +567,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
         FieldValue.of(Attribute.RECORD, FieldValueList.of(Collections.singletonList(arrayVal)));
 
     BigQueryJsonStruct structWithNestedArray =
-        new BigQueryJsonStruct(nestedSchema, rootVal, structLogger);
+        new BigQueryJsonStruct(nestedSchema, rootVal, false, structLogger);
     Object[] attributes = structWithNestedArray.getAttributes();
     BigQueryJsonArray nestedArray = (BigQueryJsonArray) attributes[0];
 

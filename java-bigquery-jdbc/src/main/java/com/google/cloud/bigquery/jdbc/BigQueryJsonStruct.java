@@ -36,11 +36,15 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   private final List<FieldValue> values;
 
   public BigQueryJsonStruct(FieldList schema, FieldValue values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
+    this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
   }
 
-  public BigQueryJsonStruct(FieldList schema, FieldValue values, BigQueryJdbcResultSetLogger log) {
-    super(log);
+  public BigQueryJsonStruct(
+      FieldList schema,
+      FieldValue values,
+      boolean enableTimestampPicos,
+      BigQueryJdbcResultSetLogger log) {
+    super(enableTimestampPicos, log);
     this.schema = schema;
     this.values = (values == null || values.isNull()) ? null : values.getRecordValue();
   }
@@ -67,14 +71,27 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
 
   private Object getValue(Field currentSchema, FieldValue currentValue) throws SQLException {
     LOG.finestTrace("getValue");
-    if (isArray(currentSchema)) {
-      return new BigQueryJsonArray(currentSchema, currentValue, this.LOG.getJsonArrayLogger());
-    } else if (isStruct(currentSchema)) {
-      return new BigQueryJsonStruct(
-          currentSchema.getSubFields(), currentValue, this.LOG.getJsonStructLogger());
-    } else {
-      return BigQueryTypeRegistry.convert(
-          currentValue, currentSchema.getType().getStandardType(), null);
+    if (currentValue == null || currentValue.isNull()) {
+      return null;
     }
+    if (isArray(currentSchema)) {
+      return new BigQueryJsonArray(
+          currentSchema, currentValue, this.enableTimestampPicos, this.LOG.getJsonArrayLogger());
+    }
+    if (isStruct(currentSchema)) {
+      return new BigQueryJsonStruct(
+          currentSchema.getSubFields(),
+          currentValue,
+          this.enableTimestampPicos,
+          this.LOG.getJsonStructLogger());
+    }
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(currentSchema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(currentValue.getStringValue(), true);
+    }
+    if (this.enableTimestampPicos && BigQueryJsonResultSet.isRangeTimestamp(currentSchema)) {
+      return BigQueryJsonResultSet.formatRangeTimestamp(currentValue);
+    }
+    return BigQueryTypeRegistry.convert(
+        currentValue, currentSchema.getType().getStandardType(), null);
   }
 }
