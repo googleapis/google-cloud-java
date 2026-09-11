@@ -2390,15 +2390,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     boolean hasMorePages = results.getPageToken() != null;
-    if (hasMorePages && isArrow && content.getMaxResults() != null) {
-      long initialRowOffset;
+    long initialRowOffset = 0L;
+    if (hasMorePages && isArrow) {
       try {
         initialRowOffset = Long.parseLong(results.getPageToken());
       } catch (NumberFormatException e) {
         initialRowOffset = firstPageRows.size();
       }
-      if (initialRowOffset >= content.getMaxResults()
-          || firstPageRows.size() >= content.getMaxResults()) {
+      if (content.getMaxResults() != null
+          && (initialRowOffset >= content.getMaxResults()
+              || firstPageRows.size() >= content.getMaxResults())) {
         hasMorePages = false;
       }
     }
@@ -2409,12 +2410,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
       NextPageFetcher<FieldValueList> pageFetcher;
       if (isArrow) {
-        long initialRowOffset;
-        try {
-          initialRowOffset = Long.parseLong(results.getPageToken());
-        } catch (NumberFormatException e) {
-          initialRowOffset = firstPageRows.size();
-        }
         pageFetcher =
             new ArrowQueryPageFetcher(
                 jobId,
