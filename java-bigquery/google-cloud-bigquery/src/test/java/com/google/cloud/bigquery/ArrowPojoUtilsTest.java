@@ -22,10 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.Field.Mode;
 import com.google.common.collect.ImmutableList;
-import java.util.List;
-import org.apache.arrow.memory.BufferAllocator;
-import org.apache.arrow.memory.RootAllocator;
-import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.types.DateUnit;
 import org.apache.arrow.vector.types.FloatingPointPrecision;
 import org.apache.arrow.vector.types.TimeUnit;
@@ -186,23 +182,5 @@ public class ArrowPojoUtilsTest {
             IllegalArgumentException.class,
             () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
     assertTrue(thrown.getMessage().contains("Unsupported Arrow type"));
-  }
-
-  @Test
-  public void testCreateVectors_Success() {
-    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
-      Field intField = new Field("int_col", FieldType.nullable(new ArrowType.Int(32, true)), null);
-      Field strField = new Field("str_col", FieldType.nullable(new ArrowType.Utf8()), null);
-      Schema arrowSchema = new Schema(ImmutableList.of(intField, strField));
-
-      List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchema, allocator);
-      assertEquals(2, vectors.size());
-      assertEquals("int_col", vectors.get(0).getName());
-      assertEquals("str_col", vectors.get(1).getName());
-
-      for (FieldVector v : vectors) {
-        v.close();
-      }
-    }
   }
 }

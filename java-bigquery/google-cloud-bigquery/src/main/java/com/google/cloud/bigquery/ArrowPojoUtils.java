@@ -19,8 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.cloud.bigquery.Field.Mode;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.arrow.memory.BufferAllocator;
-import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.Schema;
@@ -106,36 +104,6 @@ final class ArrowPojoUtils {
       }
     }
     return builder.build();
-  }
-
-  /**
-   * Instantiates a list of {@link FieldVector} instances corresponding to the fields in the
-   * provided Arrow schema using the specified allocator.
-   *
-   * <p>Guarantees exception-safe LIFO cleanup of already-allocated vectors if an allocation fails
-   * halfway through.
-   *
-   * @param arrowSchema the Apache Arrow schema definition
-   * @param allocator the buffer allocator to allocate vector memory from
-   * @return the list of allocated FieldVector instances
-   */
-  static List<FieldVector> createVectors(Schema arrowSchema, BufferAllocator allocator) {
-    List<FieldVector> vectors = new ArrayList<>();
-    try {
-      for (Field field : arrowSchema.getFields()) {
-        vectors.add(field.createVector(allocator));
-      }
-      return vectors;
-    } catch (Throwable t) {
-      for (int i = vectors.size() - 1; i >= 0; i--) {
-        try {
-          vectors.get(i).close();
-        } catch (Exception e) {
-          t.addSuppressed(e);
-        }
-      }
-      throw t;
-    }
   }
 
   /**

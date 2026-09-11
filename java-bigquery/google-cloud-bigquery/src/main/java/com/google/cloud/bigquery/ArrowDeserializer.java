@@ -68,32 +68,6 @@ final class ArrowDeserializer {
     return AllocatorHolder.ALLOCATOR.newChildAllocator(name, 0, Long.MAX_VALUE);
   }
 
-  /**
-   * Instantiates a new {@link VectorSchemaRoot} for the given Arrow schema using vectors allocated
-   * from the provided child allocator, ensuring LIFO cleanup if an error occurs during
-   * construction.
-   *
-   * @param arrowSchema the Apache Arrow schema definition
-   * @param allocator the buffer allocator to bind the vectors to
-   * @return a new VectorSchemaRoot containing allocated field vectors
-   */
-  private static VectorSchemaRoot createVectorSchemaRoot(
-      org.apache.arrow.vector.types.pojo.Schema arrowSchema, BufferAllocator allocator) {
-    List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchema, allocator);
-    try {
-      return new VectorSchemaRoot(vectors);
-    } catch (Throwable t) {
-      for (int i = vectors.size() - 1; i >= 0; i--) {
-        try {
-          vectors.get(i).close();
-        } catch (Exception e) {
-          t.addSuppressed(e);
-        }
-      }
-      throw t;
-    }
-  }
-
   private ArrowDeserializer() {}
 
   /**
@@ -188,7 +162,7 @@ final class ArrowDeserializer {
     }
 
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator)) {
+        VectorSchemaRoot closedRoot = VectorSchemaRoot.create(arrowSchema, childAllocator)) {
       VectorLoader loader = new VectorLoader(closedRoot);
       boolean hasMore = false;
       while (rowBatch.size() < pageSize
@@ -257,7 +231,7 @@ final class ArrowDeserializer {
       throw new IllegalArgumentException("Arrow schema must not be null.");
     }
     try (BufferAllocator childAllocator = createChildAllocator("deserializeRecordBatch");
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator);
+        VectorSchemaRoot closedRoot = VectorSchemaRoot.create(arrowSchema, childAllocator);
         ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
         ReadChannel readChannel = new ReadChannel(byteChannel);
