@@ -142,6 +142,10 @@ final class ArrowDeserializer {
               && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults));
     }
 
+    if (!iterator.hasNext()) {
+      return false;
+    }
+
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
         VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, childAllocator)) {
       VectorLoader loader = new VectorLoader(root);
@@ -370,21 +374,26 @@ final class ArrowDeserializer {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }
     } else if (bqField.getType() == LegacySQLTypeName.TIME) {
-      long nanosOfDay;
-      if (vector instanceof TimeSecVector) {
-        nanosOfDay = ((TimeSecVector) vector).get(rowIndex) * 1_000_000_000L;
-      } else if (vector instanceof TimeMilliVector) {
-        nanosOfDay = ((TimeMilliVector) vector).get(rowIndex) * 1_000_000L;
-      } else if (vector instanceof TimeMicroVector) {
-        nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
-      } else if (vector instanceof TimeNanoVector) {
-        nanosOfDay = ((TimeNanoVector) vector).get(rowIndex);
+      if (vector instanceof TimeSecVector
+          || vector instanceof TimeMilliVector
+          || vector instanceof TimeMicroVector
+          || vector instanceof TimeNanoVector) {
+        long nanosOfDay;
+        if (vector instanceof TimeSecVector) {
+          nanosOfDay = ((TimeSecVector) vector).get(rowIndex) * 1_000_000_000L;
+        } else if (vector instanceof TimeMilliVector) {
+          nanosOfDay = ((TimeMilliVector) vector).get(rowIndex) * 1_000_000L;
+        } else if (vector instanceof TimeMicroVector) {
+          nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
+        } else {
+          nanosOfDay = ((TimeNanoVector) vector).get(rowIndex);
+        }
+        stringVal =
+            DateTimeFormatter.ISO_LOCAL_TIME.format(
+                LocalTime.ofNanoOfDay((nanosOfDay / 1_000L) * 1_000L));
       } else {
-        nanosOfDay = 0L;
+        stringVal = String.valueOf(vector.getObject(rowIndex));
       }
-      stringVal =
-          DateTimeFormatter.ISO_LOCAL_TIME.format(
-              LocalTime.ofNanoOfDay((nanosOfDay / 1_000L) * 1_000L));
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
