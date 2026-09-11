@@ -1769,7 +1769,6 @@ public class PublisherImplTest {
     PubsubClientTelemetry telemetry = extractTelemetryHeader(capturedHeaders.get(0));
     assertThat(telemetry.hasPublishOperation()).isTrue();
     assertThat(telemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
-    assertThat(telemetry.getPublishOperation().getPublishStartTime().getSeconds()).isGreaterThan(0);
 
     shutdownTestPublisher(publisher);
   }
@@ -1806,10 +1805,6 @@ public class PublisherImplTest {
     // Verify Attempt 1 (Hedge)
     PubsubClientTelemetry hedgedTelemetry = extractTelemetryHeader(capturedHeaders.get(1));
     assertThat(hedgedTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(1);
-
-    // Both must share the identical start time
-    assertThat(hedgedTelemetry.getPublishOperation().getPublishStartTime())
-        .isEqualTo(initialTelemetry.getPublishOperation().getPublishStartTime());
 
     shutdownTestPublisher(publisher);
   }

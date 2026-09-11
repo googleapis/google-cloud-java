@@ -53,7 +53,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
-import com.google.protobuf.util.Timestamps;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubClientTelemetry;
@@ -547,16 +546,16 @@ public class Publisher implements PublisherInterface {
     }
   }
 
-  private String createTelemetryHeader(OutstandingBatch outstandingBatch, int attemptNumber) {
+  private Map<String, List<String>> createTelemetryHeader(int attemptNumber) {
     PubsubClientTelemetry telemetry =
         PubsubClientTelemetry.newBuilder()
             .setPublishOperation(
                 PubsubClientTelemetry.PublishOperation.newBuilder()
                     .setHedgedAttemptCount(attemptNumber)
-                    .setPublishStartTime(Timestamps.fromMillis(outstandingBatch.creationTime))
                     .build())
             .build();
-    return Base64.getEncoder().encodeToString(telemetry.toByteArray());
+    String encodedHeader = Base64.getEncoder().encodeToString(telemetry.toByteArray());
+    return ImmutableMap.of(TELEMETRY_HEADER_KEY, ImmutableList.of(encodedHeader));
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
@@ -580,10 +579,7 @@ public class Publisher implements PublisherInterface {
           outstandingBatch.getMessageWrappers().get(0));
       context = context.withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
-    String telemetryHeader = createTelemetryHeader(outstandingBatch, attemptNumber);
-    Map<String, List<String>> extraHeaders =
-        ImmutableMap.of("x-goog-pubsub-client-telemetry", ImmutableList.of(telemetryHeader));
-    context = context.withExtraHeaders(extraHeaders);
+    context = context.withExtraHeaders(createTelemetryHeader(attemptNumber));
     int numMessagesInBatch = outstandingBatch.size();
     List<PubsubMessage> pubsubMessagesList = new ArrayList<PubsubMessage>(numMessagesInBatch);
     List<PubsubMessageWrapper> messageWrappers = outstandingBatch.getMessageWrappers();
