@@ -136,6 +136,9 @@ final class ArrowPojoUtils {
       case LargeBinary:
         return LegacySQLTypeName.BYTES;
       case Decimal:
+        if (type instanceof ArrowType.Decimal && ((ArrowType.Decimal) type).getPrecision() > 38) {
+          return LegacySQLTypeName.BIGNUMERIC;
+        }
         return LegacySQLTypeName.NUMERIC;
       case Timestamp:
         return LegacySQLTypeName.TIMESTAMP;

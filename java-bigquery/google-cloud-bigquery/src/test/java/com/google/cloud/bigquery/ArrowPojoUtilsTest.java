@@ -90,6 +90,18 @@ public class ArrowPojoUtilsTest {
   }
 
   @Test
+  public void testArrowSchemaToBigQuerySchema_BigNumeric() {
+    Field bignumField =
+        new Field("bignum_col", FieldType.nullable(new ArrowType.Decimal(76, 38, 256)), null);
+    Schema arrowSchema = new Schema(ImmutableList.of(bignumField));
+    com.google.cloud.bigquery.Schema bqSchema =
+        ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+    assertEquals(1, bqSchema.getFields().size());
+    assertEquals(LegacySQLTypeName.BIGNUMERIC, bqSchema.getFields().get(0).getType());
+  }
+
+  @Test
   public void testArrowSchemaToBigQuerySchema_NestedStruct() {
     Field innerInt = new Field("id", FieldType.nullable(new ArrowType.Int(32, true)), null);
     Field innerStr = new Field("name", FieldType.nullable(new ArrowType.Utf8()), null);
