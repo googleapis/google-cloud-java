@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.42.0
+version: v0.42.1-0.20260910200322-b1deabc79631
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -1653,7 +1653,7 @@ libraries:
           replacement: ofProjectAgentName
       method_operations:
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          action: duplicate
+          action: copy_and_rename
           func_name: public static AgentName ofProjectName(String project)
           new_name: ofProjectAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
@@ -1661,7 +1661,7 @@ libraries:
           func_name: public static AgentName ofProjectAgentName(String project)
           deprecation_message: 'Please use {@link #ofProjectName()} instead'
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          action: duplicate
+          action: copy_and_rename
           func_name: public static AgentName ofProjectLocationName(String project, String location)
           new_name: ofProjectLocationAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
