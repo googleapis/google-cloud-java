@@ -75,13 +75,19 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.io.BaseEncoding;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.ConnectException;
 import java.net.UnknownHostException;
+import java.nio.channels.Channels;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -2888,15 +2894,62 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testQueryThrowsWhenArrowResultsFormat() {
+  void testQueryArrowResultsFormatUnsupportedConfiguration() {
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder("SELECT 1")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setDestinationTable(TableId.of("dataset", "table"))
             .build();
     bigquery = options.getService();
     IllegalArgumentException exception =
         assertThrows(IllegalArgumentException.class, () -> bigquery.query(config));
-    assertTrue(exception.getMessage().contains("Use queryArrow() instead"));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains("Arrow results format is only supported for fast query path execution"));
+  }
+
+  @Test
+  void testQueryWithArrowFormatFastPath() throws IOException, InterruptedException {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-arrow-1")
+            .setJobComplete(true)
+            .setTotalRows(java.math.BigInteger.ONE)
+            .setArrowSchema(
+                new com.google.api.services.bigquery.model.ArrowSchema()
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+
+    ArgumentCaptor<QueryRequest> requestPbCapture = ArgumentCaptor.forClass(QueryRequest.class);
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT 1 as id")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    bigquery = options.getService();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals("q-arrow-1", result.getQueryId());
+    assertNotNull(result.getSchema());
+    assertEquals(1, result.getSchema().getFields().size());
+    assertEquals("id", result.getSchema().getFields().get(0).getName());
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals("ARROW", requestPb.getQueryResultsFormat());
   }
 
   @Test
