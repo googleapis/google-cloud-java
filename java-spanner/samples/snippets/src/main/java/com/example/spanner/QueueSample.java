@@ -103,7 +103,7 @@ public class QueueSample {
     dbClient.readWriteTransaction().run(
         transaction -> {
           transaction.executeUpdate(
-              Statement.newBuilder("INSERT INTO MyQueue (Id, Payload, enqueued_time) VALUES (4, B'message4', @deliveryTime)")
+              Statement.newBuilder("INSERT INTO MyQueue (Id, Payload, DeliverTime) VALUES (4, B'message4', @deliveryTime)")
                   .bind("deliveryTime").to(Value.timestamp(Timestamp.ofTimeSecondsAndNanos(futureTime.getEpochSecond(), futureTime.getNano())))
                   .build());
           return null;
@@ -162,7 +162,7 @@ public class QueueSample {
     
     System.out.println("Receiving message from queue (max_duration 1min)...");
     try (ResultSet resultSet = dbClient.singleUse().executeQuery(
-        Statement.of("SELECT * FROM READ_MyQueue(max_duration => '1m')"))) {
+        Statement.of("SELECT * FROM RECEIVE_MyQueue(max_duration => '1m')"))) {
       if (resultSet.next()) {
         System.out.println("Received message ID: " + resultSet.getLong("Id"));
       } else {
