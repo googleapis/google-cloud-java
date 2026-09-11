@@ -31,20 +31,18 @@ import org.apache.arrow.vector.util.Text;
 class BigQueryArrowArray extends BigQueryBaseArray {
 
   private JsonStringArrayList<?> values;
-  private final boolean enableTimestampPicos;
 
   BigQueryArrowArray(Field schema, JsonStringArrayList<?> values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class), false);
+    this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class));
   }
 
   BigQueryArrowArray(
       Field schema,
       JsonStringArrayList<?> values,
-      BigQueryJdbcResultSetLogger log,
-      boolean enableTimestampPicos) {
-    super(schema, log);
+      boolean enableTimestampPicos,
+      BigQueryJdbcResultSetLogger log) {
+    super(schema, enableTimestampPicos, log);
     this.values = values;
-    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -111,15 +109,6 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   }
 
   @Override
-  protected Class<?> getTargetClass() {
-    LOG.finestTrace("getTargetClass");
-    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(this.schema)) {
-      return String.class;
-    }
-    return super.getTargetClass();
-  }
-
-  @Override
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
     Object value = this.values.get(index);
@@ -130,10 +119,10 @@ class BigQueryArrowArray extends BigQueryBaseArray {
       return new BigQueryArrowStruct(
           schema.getSubFields(),
           (JsonStringHashMap<?, ?>) value,
-          this.LOG.getArrowStructLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getArrowStructLogger());
     }
-    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(this.schema)) {
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
     return BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);

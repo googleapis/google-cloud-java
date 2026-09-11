@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -324,6 +326,14 @@ final class BigQueryTemporalUtility {
       return formatTimestampStringFromIso(str, enableTimestampPicos);
     }
     return formatTimestampStringFromEpochDecimal(str, enableTimestampPicos);
+  }
+
+  static boolean isPicosecondTimestamp(Field field) {
+    return field != null
+        && field.getType() != null
+        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP
+        && field.getTimestampPrecision() != null
+        && field.getTimestampPrecision() > 6;
   }
 
   private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {

@@ -39,21 +39,18 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   private final JsonStringHashMap<?, ?> values;
 
-  private final boolean enableTimestampPicos;
-
   BigQueryArrowStruct(FieldList schema, JsonStringHashMap<?, ?> values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class), false);
+    this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
   }
 
   BigQueryArrowStruct(
       FieldList schema,
       JsonStringHashMap<?, ?> values,
-      BigQueryJdbcResultSetLogger log,
-      boolean enableTimestampPicos) {
-    super(log);
+      boolean enableTimestampPicos,
+      BigQueryJdbcResultSetLogger log) {
+    super(enableTimestampPicos, log);
     this.schema = schema;
     this.values = values;
-    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -90,21 +87,21 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
       return new BigQueryArrowArray(
           currentSchema,
           (JsonStringArrayList<?>) currentValue,
-          this.LOG.getArrowArrayLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getArrowArrayLogger());
     }
     if (isStruct(currentSchema)) {
       return new BigQueryArrowStruct(
           currentSchema.getSubFields(),
           (JsonStringHashMap<?, ?>) currentValue,
-          this.LOG.getArrowStructLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getArrowStructLogger());
     }
     if (currentValue instanceof Integer
         && currentSchema.getType().getStandardType() == StandardSQLTypeName.DATE) {
       currentValue = LocalDate.ofEpochDay(((Integer) currentValue).longValue());
     }
-    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(currentSchema)) {
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(currentSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(currentValue, true);
     }
     return BigQueryTypeRegistry.convert(

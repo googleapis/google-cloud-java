@@ -112,8 +112,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
     this.ownedTask = ownedTask;
-    this.enableTimestampPicos =
-        statement != null ? statement.isEnableTimestampPicos() : enableTimestampPicos;
+    this.enableTimestampPicos = enableTimestampPicos;
     if (!isNested && arrowSchema != null) {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
@@ -164,7 +163,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         ownedTask,
         bigQuery,
         job,
-        false);
+        statement != null && statement.isEnableTimestampPicos());
   }
 
   BigQueryArrowResultSet() throws SQLException {
@@ -364,13 +363,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     return value;
   }
 
-  static boolean isPicosecondTimestamp(Field field) {
-    return field != null
-        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP
-        && field.getTimestampPrecision() != null
-        && field.getTimestampPrecision() > 6;
-  }
-
   @Override
   public Object getObject(int columnIndex) throws SQLException {
 
@@ -392,14 +384,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         return new BigQueryArrowStruct(
             arrayField.getSubFields(),
             (JsonStringHashMap<?, ?>) value,
-            this.LOG.getArrowStructLogger(),
-            this.enableTimestampPicos);
+            this.enableTimestampPicos,
+            this.LOG.getArrowStructLogger());
       }
       if (value instanceof Integer
           && arrayField.getType().getStandardType() == StandardSQLTypeName.DATE) {
         value = LocalDate.ofEpochDay(((Integer) value).longValue());
       }
-      if (this.enableTimestampPicos && isPicosecondTimestamp(arrayField)) {
+      if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value, true);
       }
       return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
@@ -421,7 +413,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           newList.add(((BigDecimal) item).stripTrailingZeros());
         }
         return new BigQueryArrowArray(
-            fieldSchema, newList, this.LOG.getArrowArrayLogger(), this.enableTimestampPicos);
+            fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
       }
       if (elementTypeName == StandardSQLTypeName.RANGE) {
         JsonStringArrayList<String> newList = new JsonStringArrayList<>();
@@ -444,18 +436,18 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           newList.add(String.format("[%s, %s)", formattedStart, formattedEnd));
         }
         return new BigQueryArrowArray(
-            fieldSchema, newList, this.LOG.getArrowArrayLogger(), this.enableTimestampPicos);
+            fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
       }
       return new BigQueryArrowArray(
-          fieldSchema, originalList, this.LOG.getArrowArrayLogger(), this.enableTimestampPicos);
+          fieldSchema, originalList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
     }
 
     if (isStruct(fieldSchema)) {
       return new BigQueryArrowStruct(
           fieldSchema.getSubFields(),
           (JsonStringHashMap<?, ?>) value,
-          this.LOG.getArrowStructLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getArrowStructLogger());
     }
 
     if (fieldSchema.getType().getStandardType() == StandardSQLTypeName.RANGE) {
@@ -479,7 +471,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       // Strip trailing zeros to match JSON API and CLI output
       return ((BigDecimal) value).stripTrailingZeros();
     }
-    if (this.enableTimestampPicos && isPicosecondTimestamp(fieldSchema)) {
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
     return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);

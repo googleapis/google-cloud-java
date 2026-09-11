@@ -254,7 +254,7 @@ public class BigQueryArrowStructTest {
 
     BigQueryArrowStruct struct =
         new BigQueryArrowStruct(
-            schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class), true);
+            schema, values, true, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
 
     Object[] attributes = struct.getAttributes();
     assertThat(attributes).isEqualTo(new Object[] {"2026-04-08 10:00:00.123456789123"});
@@ -271,8 +271,8 @@ public class BigQueryArrowStructTest {
         new BigQueryArrowStruct(
             schema,
             values,
-            BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class),
-            false);
+            false,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
 
     Object[] attributes = struct.getAttributes();
     Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
