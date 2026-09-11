@@ -32,7 +32,7 @@
     <httpcomponents.httpcore.version>4.4.16</httpcomponents.httpcore.version>
     <httpcomponents.httpclient.version>4.5.14</httpcomponents.httpclient.version>
     <apache-httpclient-5.version>5.3.1</apache-httpclient-5.version>
-    <apache-httpcore-5.version>5.2.5</apache-httpcore-5.version>
+    <apache-httpcore-5.version>5.4.3</apache-httpcore-5.version>
     <!-- ensure checker-qual version matches what Guava uses -->
     <checker-qual.version>3.49.0</checker-qual.version>
     <perfmark-api.version>0.27.0</perfmark-api.version>
