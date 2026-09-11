@@ -62,24 +62,6 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   ArrowQueryResultImpl(
       Object arrowSchema,
       JobId jobId,
-      long totalRows,
-      byte[] initialRecordBatchBytes,
-      String streamName,
-      BigQueryReadClient readClient) {
-    this(
-        arrowSchema,
-        jobId,
-        /* queryId= */ null,
-        /* jobCreationReason= */ null,
-        totalRows,
-        initialRecordBatchBytes,
-        streamName,
-        readClient);
-  }
-
-  ArrowQueryResultImpl(
-      Object arrowSchema,
-      JobId jobId,
       String queryId,
       JobCreationReason jobCreationReason,
       long totalRows,
