@@ -284,12 +284,14 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private static class ArrowQueryPageFetcher implements NextPageFetcher<FieldValueList> {
     private static final long serialVersionUID = 1L;
+    private static final long DEFAULT_PAGE_SIZE = 10000L;
 
     private final JobId jobId;
     private final Schema schema;
     private final byte[] arrowSchemaBytes;
     private final BigQueryOptions serviceOptions;
     private final long maxResults;
+    private final Map<BigQueryRpc.Option, ?> optionsMap;
 
     private transient org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
     private transient BigQueryReadClient bqReadClient;
@@ -306,7 +308,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
         BigQueryOptions serviceOptions,
         long initialRowOffset,
-        Long maxResults) {
+        Long maxResults,
+        Map<BigQueryRpc.Option, ?> optionsMap) {
       this.jobId = jobId;
       this.schema = schema;
       this.arrowSchemaBytes = arrowSchemaBytes;
@@ -314,6 +317,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.serviceOptions = serviceOptions;
       this.totalRowsReturned = initialRowOffset;
       this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
+      this.optionsMap = optionsMap;
     }
 
     @Override
@@ -323,7 +327,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         return null;
       }
 
-      long pageSize = 100000L;
+      Long optionPageSize =
+          optionsMap != null ? (Long) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
+      long pageSize =
+          optionPageSize != null && optionPageSize > 0 ? optionPageSize : DEFAULT_PAGE_SIZE;
       List<FieldValueList> rowBatch = new ArrayList<>();
 
       try {
@@ -366,9 +373,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         }
 
         if (arrowSchemaPojo == null && arrowSchemaBytes != null) {
-          arrowSchemaPojo =
-              (org.apache.arrow.vector.types.pojo.Schema)
-                  ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+          arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
         }
 
         boolean hasMore =
@@ -2378,7 +2383,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 arrowSchemaPojo,
                 getOptions(),
                 initialRowOffset,
-                null);
+                null,
+                optionMap(options));
       } else {
         pageFetcher = new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options));
       }

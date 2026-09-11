@@ -2927,7 +2927,7 @@ public class BigQueryImplTest {
         new com.google.api.services.bigquery.model.QueryResponse()
             .setQueryId("q-arrow-1")
             .setJobComplete(true)
-            .setTotalRows(java.math.BigInteger.ONE)
+            .setTotalRows(BigInteger.ONE)
             .setArrowSchema(
                 new com.google.api.services.bigquery.model.ArrowSchema()
                     .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
