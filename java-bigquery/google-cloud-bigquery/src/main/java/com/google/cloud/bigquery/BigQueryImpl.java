@@ -282,6 +282,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
+  /**
+   * NextPageFetcher implementation for queries returning results in Arrow format. Reads subsequent
+   * pages from the job's default gRPC storage read stream.
+   *
+   * <p>Note: Neither {@link Page} nor {@link TableResult} implements {@link AutoCloseable}. The
+   * underlying gRPC stream is automatically canceled and resources released when iteration reaches
+   * the end (or maximum results requested) or when an error occurs. Callers that do not iterate to
+   * completion rely on server-side stream timeouts and garbage collection to release stream
+   * resources.
+   */
   private static class ArrowQueryPageFetcher implements NextPageFetcher<FieldValueList> {
     private static final long serialVersionUID = 1L;
     private static final long DEFAULT_PAGE_SIZE = 10000L;
@@ -393,7 +403,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         totalRowsReturned += rowBatch.size();
 
         String nextPageToken = null;
-        if (hasMore) {
+        if (hasMore && totalRowsReturned < maxResults) {
           nextPageToken = String.valueOf(totalRowsReturned);
         } else {
           streamClosed = true;
@@ -425,6 +435,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private final ReentrantLock readClientLock = new ReentrantLock();
   private transient BigQueryReadClient bqReadClient;
+
+  @VisibleForTesting
+  void setBigQueryReadClient(BigQueryReadClient client) {
+    readClientLock.lock();
+    try {
+      this.bqReadClient = client;
+    } finally {
+      readClientLock.unlock();
+    }
+  }
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming

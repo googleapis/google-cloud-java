@@ -37,6 +37,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -45,6 +46,8 @@ import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
@@ -68,6 +71,11 @@ import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
+import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
+import com.google.cloud.bigquery.storage.v1.stub.EnhancedBigQueryReadStub;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
@@ -76,6 +84,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
+import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -85,7 +94,13 @@ import java.nio.channels.Channels;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import org.apache.arrow.memory.BufferAllocator;
+import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.BigIntVector;
+import org.apache.arrow.vector.VectorSchemaRoot;
+import org.apache.arrow.vector.VectorUnloader;
 import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.junit.jupiter.api.Assertions;
@@ -2950,6 +2965,113 @@ public class BigQueryImplTest {
 
     QueryRequest requestPb = requestPbCapture.getValue();
     assertEquals("ARROW", requestPb.getQueryResultsFormat());
+  }
+
+  @Test
+  void testQueryWithArrowFormatMultiplePages() throws IOException, InterruptedException {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    // Prepare page 2 Arrow batch for streaming
+    byte[] page2BatchBytes;
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      BigIntVector idVector = new BigIntVector("id", allocator);
+      idVector.allocateNew(1);
+      idVector.set(0, 2L);
+      idVector.setValueCount(1);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(idVector))) {
+        VectorUnloader unloader = new VectorUnloader(root);
+        try (ArrowRecordBatch recordBatch = unloader.getRecordBatch();
+            ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+          WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+          MessageSerializer.serialize(channel, recordBatch);
+          page2BatchBytes = out.toByteArray();
+        }
+      } finally {
+        idVector.close();
+      }
+    }
+
+    JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-arrow-multipage")
+            .setJobComplete(true)
+            .setJobReference(queryJob.toPb())
+            .setTotalRows(BigInteger.valueOf(2L))
+            .setPageToken("1")
+            .setArrowSchema(
+                new com.google.api.services.bigquery.model.ArrowSchema()
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
+        .thenReturn(queryResponsePb);
+
+    // Mock BigQueryReadClient for page 2
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
+    when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
+
+    com.google.cloud.bigquery.storage.v1.ArrowRecordBatch protoBatch =
+        com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(ByteString.copyFrom(page2BatchBytes))
+            .build();
+    ReadRowsResponse streamResponse =
+        ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
+    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    EnhancedBigQueryReadStub mockStub =
+        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
+    BigQueryReadSettings mockSettings =
+        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
+    try {
+      java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
+      settingsField.setAccessible(true);
+      settingsField.set(mockReadClient, mockSettings);
+
+      java.lang.reflect.Field stubField = BigQueryReadClient.class.getDeclaredField("stub");
+      stubField.setAccessible(true);
+      stubField.set(mockReadClient, mockStub);
+    } catch (ReflectiveOperationException e) {
+      throw new RuntimeException(e);
+    }
+    when(mockStub.readRowsCallable()).thenReturn(mockCallable);
+
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals("q-arrow-multipage", result.getQueryId());
+    assertTrue(result.hasNextPage());
+    assertEquals("1", result.getNextPageToken());
+
+    Page<FieldValueList> page2 = result.getNextPage();
+    assertNotNull(page2);
+    List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
+    assertEquals(1, page2Rows.size());
+    assertEquals("2", page2Rows.get(0).get(0).getStringValue());
+
+    verify(mockCallable).call(any(ReadRowsRequest.class));
   }
 
   @Test
