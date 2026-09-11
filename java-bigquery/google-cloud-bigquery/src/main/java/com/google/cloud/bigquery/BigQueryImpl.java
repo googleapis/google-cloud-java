@@ -412,6 +412,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         return new PageImpl<>(this, nextPageToken, rowBatch);
 
+      } catch (BigQueryException e) {
+        streamClosed = true;
+        closeClient();
+        throw e;
       } catch (Exception e) {
         streamClosed = true;
         closeClient();
@@ -2377,8 +2381,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
     } else {
       firstPageRows =
-          transformTableData(
-              results.getRows(), schema, getOptions().getDataFormatOptions().useInt64Timestamp());
+          results.getRows() != null
+              ? transformTableData(
+                  results.getRows(),
+                  schema,
+                  getOptions().getDataFormatOptions().useInt64Timestamp())
+              : ImmutableList.of();
     }
 
     if (results.getPageToken() != null) {
