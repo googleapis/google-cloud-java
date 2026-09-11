@@ -2398,7 +2398,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         JobId actualJobId =
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : jobId;
 
-        Object arrowSchema = null;
+        org.apache.arrow.vector.types.pojo.Schema arrowSchema = null;
         if (results.getArrowSchema() != null) {
           try {
             arrowSchema =

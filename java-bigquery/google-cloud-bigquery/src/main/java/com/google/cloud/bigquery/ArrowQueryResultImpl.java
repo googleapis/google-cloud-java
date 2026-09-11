@@ -23,10 +23,8 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.List;
 import java.util.NoSuchElementException;
 import org.apache.arrow.memory.BufferAllocator;
-import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.ipc.ReadChannel;
@@ -60,7 +58,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private ServerStream<ReadRowsResponse> serverStream;
 
   ArrowQueryResultImpl(
-      Object arrowSchema,
+      Schema arrowSchema,
       JobId jobId,
       String queryId,
       JobCreationReason jobCreationReason,
@@ -68,11 +66,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       byte[] initialRecordBatchBytes,
       String streamName,
       BigQueryReadClient readClient) {
-    if (arrowSchema instanceof Schema) {
-      this.arrowSchema = (Schema) arrowSchema;
-    } else {
-      this.arrowSchema = null;
-    }
+    this.arrowSchema = arrowSchema;
     this.jobId = jobId;
     this.queryId = queryId;
     this.jobCreationReason = jobCreationReason;
@@ -83,8 +77,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
     if (this.arrowSchema != null) {
       this.allocator = ArrowDeserializer.createChildAllocator("ArrowQueryResult");
-      List<FieldVector> vectors = ArrowPojoUtils.createVectors(this.arrowSchema, this.allocator);
-      this.root = new VectorSchemaRoot(vectors);
+      this.root = VectorSchemaRoot.create(this.arrowSchema, this.allocator);
       this.loader = new VectorLoader(this.root);
     } else {
       this.allocator = null;
@@ -99,9 +92,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     if (readSession.hasArrowSchema()) {
       try {
         pojoSchema =
-            (Schema)
-                ArrowDeserializer.deserializeSchema(
-                    readSession.getArrowSchema().getSerializedSchema().toByteArray());
+            ArrowDeserializer.deserializeSchema(
+                readSession.getArrowSchema().getSerializedSchema().toByteArray());
       } catch (IOException e) {
         throw new BigQueryException(0, "Failed to deserialize Arrow schema from ReadSession", e);
       }
