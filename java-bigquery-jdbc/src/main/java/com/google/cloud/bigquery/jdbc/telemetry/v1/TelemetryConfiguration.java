@@ -21,11 +21,9 @@ import java.util.Properties;
 
 /** Configuration settings for the BigQuery JDBC driver telemetry client. */
 final class TelemetryConfiguration {
-  static final boolean DEFAULT_ENABLED = true;
+
   static final int DEFAULT_LOG_SOURCE = 3071;
   static final String DEFAULT_ENDPOINT_URL = "https://play.googleapis.com/log";
-  static final long DEFAULT_UPLOAD_INTERVAL_MS = 300_000L;
-  static final int DEFAULT_BATCH_SIZE_THRESHOLD = 5000;
 
   private final boolean enabled;
   private final int logSource;
@@ -119,11 +117,12 @@ final class TelemetryConfiguration {
 
   /** Builder for {@link TelemetryConfiguration}. */
   static class Builder {
-    private boolean enabled = DEFAULT_ENABLED;
+    private boolean enabled = BigQueryJdbcPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
     private int logSource = DEFAULT_LOG_SOURCE;
     private String endpointUrl = DEFAULT_ENDPOINT_URL;
-    private long uploadIntervalMs = DEFAULT_UPLOAD_INTERVAL_MS;
-    private int batchSizeThreshold = DEFAULT_BATCH_SIZE_THRESHOLD;
+    private long uploadIntervalMs =
+        BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE;
+    private int batchSizeThreshold = BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
     private DriverEnvironment driverEnvironment;
 
     Builder setEnabled(boolean enabled) {
@@ -159,83 +158,42 @@ final class TelemetryConfiguration {
     Builder resolveProperties(Properties connectionProperties) {
       // 1. Connection Properties (lowest precedence)
       if (connectionProperties != null) {
-        String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
-        if (propValue != null) {
-          if ("0".equals(propValue) || "false".equalsIgnoreCase(propValue)) {
-            this.enabled = false;
-          } else if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
-            this.enabled = true;
-          }
-        }
+        String enableStr = connectionProperties.getProperty("EnableDiagnosticTelemetry");
+        this.enabled = BigQueryJdbcPropertyUtility.convertStringToBoolean(enableStr, this.enabled);
 
         String uploadIntervalStr = connectionProperties.getProperty("TelemetryUploadInterval");
-        if (uploadIntervalStr != null) {
-          try {
-            this.uploadIntervalMs = Long.parseLong(uploadIntervalStr);
-          } catch (NumberFormatException ignored) {
-          }
-        }
+        this.uploadIntervalMs =
+            BigQueryJdbcPropertyUtility.convertStringToLong(
+                uploadIntervalStr, this.uploadIntervalMs);
 
         String batchSizeStr = connectionProperties.getProperty("TelemetryBatchSize");
-        if (batchSizeStr != null) {
-          try {
-            this.batchSizeThreshold = Integer.parseInt(batchSizeStr);
-          } catch (NumberFormatException ignored) {
-          }
-        }
+        this.batchSizeThreshold =
+            BigQueryJdbcPropertyUtility.convertStringToInt(batchSizeStr, this.batchSizeThreshold);
       }
 
       // 2. Environment Variables (overrides connection properties)
       String envEnabled = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
-      if (envEnabled != null) {
-        if ("0".equals(envEnabled) || "false".equalsIgnoreCase(envEnabled)) {
-          this.enabled = false;
-        } else if ("1".equals(envEnabled) || "true".equalsIgnoreCase(envEnabled)) {
-          this.enabled = true;
-        }
-      }
+      this.enabled = BigQueryJdbcPropertyUtility.convertStringToBoolean(envEnabled, enabled);
 
       String envInterval = System.getenv("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
-      if (envInterval != null) {
-        try {
-          this.uploadIntervalMs = Long.parseLong(envInterval);
-        } catch (NumberFormatException ignored) {
-        }
-      }
+      this.uploadIntervalMs =
+          BigQueryJdbcPropertyUtility.convertStringToLong(envInterval, this.uploadIntervalMs);
 
       String envBatch = System.getenv("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
-      if (envBatch != null) {
-        try {
-          this.batchSizeThreshold = Integer.parseInt(envBatch);
-        } catch (NumberFormatException ignored) {
-        }
-      }
+      this.batchSizeThreshold =
+          BigQueryJdbcPropertyUtility.convertStringToInt(envBatch, this.batchSizeThreshold);
 
       // 3. JVM System Properties (highest precedence)
       String sysEnabled = System.getProperty("GOOGLE_CLOUD_TELEMETRY_ENABLED");
-      if (sysEnabled != null) {
-        if ("0".equals(sysEnabled) || "false".equalsIgnoreCase(sysEnabled)) {
-          this.enabled = false;
-        } else if ("1".equals(sysEnabled) || "true".equalsIgnoreCase(sysEnabled)) {
-          this.enabled = true;
-        }
-      }
+      this.enabled = BigQueryJdbcPropertyUtility.convertStringToBoolean(sysEnabled, enabled);
 
       String sysInterval = System.getProperty("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
-      if (sysInterval != null) {
-        try {
-          this.uploadIntervalMs = Long.parseLong(sysInterval);
-        } catch (NumberFormatException ignored) {
-        }
-      }
+      this.uploadIntervalMs =
+          BigQueryJdbcPropertyUtility.convertStringToLong(sysInterval, this.uploadIntervalMs);
 
       String sysBatch = System.getProperty("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
-      if (sysBatch != null) {
-        try {
-          this.batchSizeThreshold = Integer.parseInt(sysBatch);
-        } catch (NumberFormatException ignored) {
-        }
-      }
+      this.batchSizeThreshold =
+          BigQueryJdbcPropertyUtility.convertStringToInt(sysBatch, this.batchSizeThreshold);
 
       return this;
     }

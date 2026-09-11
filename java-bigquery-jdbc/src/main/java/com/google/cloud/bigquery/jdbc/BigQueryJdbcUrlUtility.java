@@ -20,6 +20,7 @@ import com.google.api.client.util.escape.CharEscapers;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.BigQueryJdbcPropertyUtility;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.UrlEscapers;
@@ -692,18 +693,25 @@ final class BigQueryJdbcUrlUtility {
                       .setName(ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)
                       .setDescription(
                           "Enables or disables client-side diagnostic telemetry. Enabled by default.")
-                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
+                      .setDefaultValue(
+                          String.valueOf(
+                              BigQueryJdbcPropertyUtility
+                                  .DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME)
                       .setDescription(
                           "Interval in milliseconds for flushing diagnostic telemetry batches.")
-                      .setDefaultValue(String.valueOf(DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE))
+                      .setDefaultValue(
+                          String.valueOf(
+                              BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(TELEMETRY_BATCH_SIZE_PROPERTY_NAME)
                       .setDescription("Maximum batch size threshold for diagnostic telemetry.")
-                      .setDefaultValue(String.valueOf(DEFAULT_TELEMETRY_BATCH_SIZE_VALUE))
+                      .setDefaultValue(
+                          String.valueOf(
+                              BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =

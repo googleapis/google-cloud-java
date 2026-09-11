@@ -197,7 +197,7 @@ public class TelemetryManagerTest {
     assertTrue(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
 
     // Disabled via lowercase
-    props.setProperty("enableDiagnosticTelemetry", "false");
+    props.setProperty("EnableDiagnosticTelemetry", "false");
     assertFalse(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
 
     // Disabled via uppercase and "0"
@@ -214,13 +214,13 @@ public class TelemetryManagerTest {
   @Test
   public void testGlobalKillSwitch() {
     // Turn it on
-    java.util.Properties props1 = new java.util.Properties();
+    Properties props1 = new Properties();
     props1.setProperty("EnableDiagnosticTelemetry", "1");
     TelemetryManager mgr1 = TelemetryManager.getInstance(props1);
     assertNotNull(mgr1);
 
     // Any connection passes '0', it gets permanently killed
-    java.util.Properties props2 = new java.util.Properties();
+    Properties props2 = new Properties();
     props2.setProperty("EnableDiagnosticTelemetry", "0");
     TelemetryManager mgr2 = TelemetryManager.getInstance(props2);
 
