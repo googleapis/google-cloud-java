@@ -3973,6 +3973,9 @@ libraries:
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckReplyConsumerWithResponseImpl.java
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckRequestData.java
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/AckResponse.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/CancellationSharer.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/HedgedRequest.java
+      - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/HedgingSettings.java
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/LoggingUtil.java
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageDispatcher.java
       - google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/MessageReceiver.java
@@ -3997,6 +4000,7 @@ libraries:
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakePublisherServiceImpl.java
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeScheduledExecutorService.java
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/FakeSubscriberServiceImpl.java
+      - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/HedgingSettingsTest.java
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDataMatcher.java
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/MessageDispatcherTest.java
       - google-cloud-pubsub/src/test/java/com/google/cloud/pubsub/v1/OpenCensusUtilTest.java
