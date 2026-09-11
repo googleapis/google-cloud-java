@@ -703,6 +703,21 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FetchRefs</td>
+ *      <td><p> Fetches git references from a repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchRefs(FetchRefsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchRefsPagedCallable()
+ *           <li><p> fetchRefsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateIssue</td>
  *      <td><p> Creates an issue.</td>
  *      <td>
@@ -5805,6 +5820,111 @@ public class SecureSourceManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Fetches git references from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchRefsRequest request =
+   *       FetchRefsRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Ref element : secureSourceManagerClient.fetchRefs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchRefsPagedResponse fetchRefs(FetchRefsRequest request) {
+    return fetchRefsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches git references from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchRefsRequest request =
+   *       FetchRefsRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Ref> future =
+   *       secureSourceManagerClient.fetchRefsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Ref element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchRefsRequest, FetchRefsPagedResponse> fetchRefsPagedCallable() {
+    return stub.fetchRefsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches git references from a repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SecureSourceManagerClient secureSourceManagerClient = SecureSourceManagerClient.create()) {
+   *   FetchRefsRequest request =
+   *       FetchRefsRequest.newBuilder()
+   *           .setRepository(
+   *               RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchRefsResponse response = secureSourceManagerClient.fetchRefsCallable().call(request);
+   *     for (Ref element : response.getRefsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchRefsRequest, FetchRefsResponse> fetchRefsCallable() {
+    return stub.fetchRefsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates an issue.
    *
    * <p>Sample code:
@@ -9846,6 +9966,71 @@ public class SecureSourceManagerClient implements BackgroundResource {
     protected FetchTreeFixedSizeCollection createCollection(
         @Nullable List<FetchTreePage> pages, int collectionSize) {
       return new FetchTreeFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchRefsPagedResponse
+      extends AbstractPagedListResponse<
+          FetchRefsRequest, FetchRefsResponse, Ref, FetchRefsPage, FetchRefsFixedSizeCollection> {
+
+    public static ApiFuture<FetchRefsPagedResponse> createAsync(
+        PageContext<FetchRefsRequest, FetchRefsResponse, Ref> context,
+        ApiFuture<FetchRefsResponse> futureResponse) {
+      ApiFuture<FetchRefsPage> futurePage =
+          FetchRefsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new FetchRefsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private FetchRefsPagedResponse(FetchRefsPage page) {
+      super(page, FetchRefsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchRefsPage
+      extends AbstractPage<FetchRefsRequest, FetchRefsResponse, Ref, FetchRefsPage> {
+
+    private FetchRefsPage(
+        @Nullable PageContext<FetchRefsRequest, FetchRefsResponse, Ref> context,
+        @Nullable FetchRefsResponse response) {
+      super(context, response);
+    }
+
+    private static FetchRefsPage createEmptyPage() {
+      return new FetchRefsPage(null, null);
+    }
+
+    @Override
+    protected FetchRefsPage createPage(
+        @Nullable PageContext<FetchRefsRequest, FetchRefsResponse, Ref> context,
+        @Nullable FetchRefsResponse response) {
+      return new FetchRefsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchRefsPage> createPageAsync(
+        @Nullable PageContext<FetchRefsRequest, FetchRefsResponse, Ref> context,
+        ApiFuture<FetchRefsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchRefsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchRefsRequest, FetchRefsResponse, Ref, FetchRefsPage, FetchRefsFixedSizeCollection> {
+
+    private FetchRefsFixedSizeCollection(@Nullable List<FetchRefsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchRefsFixedSizeCollection createEmptyCollection() {
+      return new FetchRefsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchRefsFixedSizeCollection createCollection(
+        @Nullable List<FetchRefsPage> pages, int collectionSize) {
+      return new FetchRefsFixedSizeCollection(pages, collectionSize);
     }
   }
 

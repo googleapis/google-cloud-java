@@ -2702,6 +2702,53 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * @return The priority.
      */
     com.google.bigtable.admin.v2.AppProfile.Priority getPriority();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the memoryConfig field is set.
+     */
+    boolean hasMemoryConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The memoryConfig.
+     */
+    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig getMemoryConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder
+        getMemoryConfigOrBuilder();
   }
 
   /**
@@ -2754,6 +2801,422 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
               com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder.class);
     }
 
+    public interface MemoryConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)
+        com.google.protobuf.MessageOrBuilder {}
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, eligible single-row requests (currently limited to ReadRows)
+     * using this app profile will be routed to the memory layer. All eligible
+     * writes populate the memory layer. MemoryConfig can only be set if the
+     * AppProfile uses single cluster routing and the configured cluster has a
+     * memory layer enabled.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig}
+     */
+    public static final class MemoryConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)
+        MemoryConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "MemoryConfig");
+      }
+
+      // Use MemoryConfig.newBuilder() to construct.
+      private MemoryConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private MemoryConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.class,
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder
+                    .class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)) {
+          return super.equals(obj);
+        }
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig other =
+            (com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * If set, eligible single-row requests (currently limited to ReadRows)
+       * using this app profile will be routed to the memory layer. All eligible
+       * writes populate the memory layer. MemoryConfig can only be set if the
+       * AppProfile uses single cluster routing and the configured cluster has a
+       * memory layer enabled.
+       * </pre>
+       *
+       * Protobuf type {@code google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.bigtable.admin.v2.InstanceProto
+              .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.bigtable.admin.v2.InstanceProto
+              .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.class,
+                  com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.bigtable.admin.v2.InstanceProto
+              .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+            getDefaultInstanceForType() {
+          return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig build() {
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+            buildPartial() {
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig result =
+              new com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig) {
+            return mergeFrom(
+                (com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig other) {
+          if (other
+              == com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig)
+      private static final com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig();
+      }
+
+      public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MemoryConfig> PARSER =
+          new com.google.protobuf.AbstractParser<MemoryConfig>() {
+            @java.lang.Override
+            public MemoryConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<MemoryConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MemoryConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     public static final int PRIORITY_FIELD_NUMBER = 1;
     private int priority_ = 0;
 
@@ -2793,6 +3256,72 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int MEMORY_CONFIG_FIELD_NUMBER = 2;
+    private com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memoryConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the memoryConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasMemoryConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The memoryConfig.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+        getMemoryConfig() {
+      return memoryConfig_ == null
+          ? com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+              .getDefaultInstance()
+          : memoryConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The memory config to use for requests sent using this app
+     * profile.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder
+        getMemoryConfigOrBuilder() {
+      return memoryConfig_ == null
+          ? com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+              .getDefaultInstance()
+          : memoryConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2811,6 +3340,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
           != com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, priority_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getMemoryConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2823,6 +3355,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
       if (priority_
           != com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, priority_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMemoryConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2841,6 +3376,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
           (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) obj;
 
       if (priority_ != other.priority_) return false;
+      if (hasMemoryConfig() != other.hasMemoryConfig()) return false;
+      if (hasMemoryConfig()) {
+        if (!getMemoryConfig().equals(other.getMemoryConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2854,6 +3393,10 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + priority_;
+      if (hasMemoryConfig()) {
+        hash = (37 * hash) + MEMORY_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getMemoryConfig().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2986,10 +3529,19 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetMemoryConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2997,6 +3549,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         priority_ = 0;
+        memoryConfig_ = null;
+        if (memoryConfigBuilder_ != null) {
+          memoryConfigBuilder_.dispose();
+          memoryConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -3036,6 +3593,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.priority_ = priority_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.memoryConfig_ =
+              memoryConfigBuilder_ == null ? memoryConfig_ : memoryConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3053,6 +3617,9 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
           return this;
         if (other.priority_ != 0) {
           setPriorityValue(other.getPriorityValue());
+        }
+        if (other.hasMemoryConfig()) {
+          mergeMemoryConfig(other.getMemoryConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3086,6 +3653,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetMemoryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3200,6 +3774,238 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
         priority_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memoryConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig,
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder,
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder>
+          memoryConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the memoryConfig field is set.
+       */
+      public boolean hasMemoryConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The memoryConfig.
+       */
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+          getMemoryConfig() {
+        if (memoryConfigBuilder_ == null) {
+          return memoryConfig_ == null
+              ? com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+                  .getDefaultInstance()
+              : memoryConfig_;
+        } else {
+          return memoryConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMemoryConfig(
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig value) {
+        if (memoryConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          memoryConfig_ = value;
+        } else {
+          memoryConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMemoryConfig(
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder
+              builderForValue) {
+        if (memoryConfigBuilder_ == null) {
+          memoryConfig_ = builderForValue.build();
+        } else {
+          memoryConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMemoryConfig(
+          com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig value) {
+        if (memoryConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && memoryConfig_ != null
+              && memoryConfig_
+                  != com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+                      .getDefaultInstance()) {
+            getMemoryConfigBuilder().mergeFrom(value);
+          } else {
+            memoryConfig_ = value;
+          }
+        } else {
+          memoryConfigBuilder_.mergeFrom(value);
+        }
+        if (memoryConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMemoryConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        memoryConfig_ = null;
+        if (memoryConfigBuilder_ != null) {
+          memoryConfigBuilder_.dispose();
+          memoryConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder
+          getMemoryConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetMemoryConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder
+          getMemoryConfigOrBuilder() {
+        if (memoryConfigBuilder_ != null) {
+          return memoryConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return memoryConfig_ == null
+              ? com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig
+                  .getDefaultInstance()
+              : memoryConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The memory config to use for requests sent using this app
+       * profile.
+       * </pre>
+       *
+       * <code>
+       * .google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig memory_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig,
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder,
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder>
+          internalGetMemoryConfigFieldBuilder() {
+        if (memoryConfigBuilder_ == null) {
+          memoryConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig,
+                  com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfig.Builder,
+                  com.google.bigtable.admin.v2.AppProfile.StandardIsolation.MemoryConfigOrBuilder>(
+                  getMemoryConfig(), getParentForChildren(), isClean());
+          memoryConfig_ = null;
+        }
+        return memoryConfigBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.AppProfile.StandardIsolation)
@@ -4510,7 +5316,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=448
+   *     google/bigtable/admin/v2/instance.proto;l=519
    * @return Whether the priority field is set.
    */
   @java.lang.Deprecated
@@ -4531,7 +5337,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=448
+   *     google/bigtable/admin/v2/instance.proto;l=519
    * @return The enum numeric value on the wire for priority.
    */
   @java.lang.Deprecated
@@ -4555,7 +5361,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
    * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-   *     google/bigtable/admin/v2/instance.proto;l=448
+   *     google/bigtable/admin/v2/instance.proto;l=519
    * @return The priority.
    */
   @java.lang.Deprecated
@@ -6158,7 +6964,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @return Whether the priority field is set.
      */
     @java.lang.Override
@@ -6180,7 +6986,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @return The enum numeric value on the wire for priority.
      */
     @java.lang.Override
@@ -6205,7 +7011,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @param value The enum numeric value on the wire for priority to set.
      * @return This builder for chaining.
      */
@@ -6230,7 +7036,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @return The priority.
      */
     @java.lang.Override
@@ -6260,7 +7066,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @param value The priority to set.
      * @return This builder for chaining.
      */
@@ -6288,7 +7094,7 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
      *
      * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
-     *     google/bigtable/admin/v2/instance.proto;l=448
+     *     google/bigtable/admin/v2/instance.proto;l=519
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -39,6 +39,7 @@ public class SyncConnectActiveConference {
           ConnectActiveConferenceRequest.newBuilder()
               .setName(SpaceName.of("[SPACE]").toString())
               .setOffer("offer105650780")
+              .setConfig(ConnectActiveConferenceRequest.ConnectionConfig.newBuilder().build())
               .build();
       ConnectActiveConferenceResponse response =
           spacesServiceClient.connectActiveConference(request);

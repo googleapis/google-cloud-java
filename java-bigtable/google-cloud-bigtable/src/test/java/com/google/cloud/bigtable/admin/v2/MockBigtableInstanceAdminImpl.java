@@ -35,6 +35,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -48,13 +49,17 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MemoryLayer;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -347,6 +352,69 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
                   "Unrecognized response type %s for method DeleteCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateMemoryLayer(
+      UpdateMemoryLayerRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMemoryLayer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listMemoryLayers(
+      ListMemoryLayersRequest request, StreamObserver<ListMemoryLayersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMemoryLayersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMemoryLayersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMemoryLayers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMemoryLayersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getMemoryLayer(
+      GetMemoryLayerRequest request, StreamObserver<MemoryLayer> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MemoryLayer) {
+      requests.add(request);
+      responseObserver.onNext(((MemoryLayer) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetMemoryLayer, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MemoryLayer.class.getName(),
                   Exception.class.getName())));
     }
   }

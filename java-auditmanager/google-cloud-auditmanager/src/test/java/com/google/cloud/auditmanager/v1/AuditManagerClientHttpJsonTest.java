@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -38,6 +39,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -86,6 +88,556 @@ public class AuditManagerClientHttpJsonTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
+  }
+
+  @Test
+  public void createAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnrollmentStatusScopeName parent =
+        EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnrollmentStatusScopeName parent =
+          EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuditScheduleTest2() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuditScheduleTest3() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AuditSchedule auditSchedule =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AuditSchedule actualResponse = client.updateAuditSchedule(auditSchedule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAuditScheduleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuditSchedule auditSchedule =
+          AuditSchedule.newBuilder()
+              .setName(
+                  AuditScheduleName.ofProjectLocationAuditScheduleName(
+                          "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setGcsUri("gcsUri-1251224875")
+              .setComplianceFramework("complianceFramework-1808314333")
+              .setScheduleConfig(ScheduleConfig.newBuilder().build())
+              .setState(ScheduleState.forNumber(0))
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setNextRunTime(Timestamp.newBuilder().build())
+              .setLastTriggerTime(Timestamp.newBuilder().build())
+              .setErrorMessage("errorMessage1203236063")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAuditSchedule(auditSchedule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AuditScheduleName name =
+        AuditScheduleName.ofProjectLocationAuditScheduleName(
+            "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]");
+
+    AuditSchedule actualResponse = client.getAuditSchedule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuditScheduleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuditScheduleName name =
+          AuditScheduleName.ofProjectLocationAuditScheduleName(
+              "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]");
+      client.getAuditSchedule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuditScheduleTest2() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-8209/locations/location-8209/auditSchedules/auditSchedule-8209";
+
+    AuditSchedule actualResponse = client.getAuditSchedule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuditScheduleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8209/locations/location-8209/auditSchedules/auditSchedule-8209";
+      client.getAuditSchedule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    EnrollmentStatusScopeName parent =
+        EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      EnrollmentStatusScopeName parent =
+          EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest2() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest3() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test

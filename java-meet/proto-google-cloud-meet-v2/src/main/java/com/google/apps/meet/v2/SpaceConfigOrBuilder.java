@@ -85,4 +85,147 @@ public interface SpaceConfigOrBuilder
    * @return The entryPointAccess.
    */
   com.google.apps.meet.v2.SpaceConfig.EntryPointAccess getEntryPointAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-configured moderation mode for the Meeting.
+   * Default: Controlled by the user's policies.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.Moderation moderation = 3;</code>
+   *
+   * @return The enum numeric value on the wire for moderation.
+   */
+  int getModerationValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-configured moderation mode for the Meeting.
+   * Default: Controlled by the user's policies.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.Moderation moderation = 3;</code>
+   *
+   * @return The moderation.
+   */
+  com.google.apps.meet.v2.SpaceConfig.Moderation getModeration();
+
+  /**
+   *
+   *
+   * <pre>
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   *
+   * @return Whether the moderationRestrictions field is set.
+   */
+  boolean hasModerationRestrictions();
+
+  /**
+   *
+   *
+   * <pre>
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   *
+   * @return The moderationRestrictions.
+   */
+  com.google.apps.meet.v2.SpaceConfig.ModerationRestrictions getModerationRestrictions();
+
+  /**
+   *
+   *
+   * <pre>
+   * When moderation.ON, these restrictions go into effect for the meeting.
+   * When moderation.OFF, will be reset to default ModerationRestrictions.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ModerationRestrictions moderation_restrictions = 4;
+   * </code>
+   */
+  com.google.apps.meet.v2.SpaceConfig.ModerationRestrictionsOrBuilder
+      getModerationRestrictionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether attendance report is enabled for the meeting space.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for attendanceReportGenerationType.
+   */
+  int getAttendanceReportGenerationTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether attendance report is enabled for the meeting space.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2.SpaceConfig.AttendanceReportGenerationType attendance_report_generation_type = 6;
+   * </code>
+   *
+   * @return The attendanceReportGenerationType.
+   */
+  com.google.apps.meet.v2.SpaceConfig.AttendanceReportGenerationType
+      getAttendanceReportGenerationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   *
+   * @return Whether the artifactConfig field is set.
+   */
+  boolean hasArtifactConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   *
+   * @return The artifactConfig.
+   */
+  com.google.apps.meet.v2.SpaceConfig.ArtifactConfig getArtifactConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration pertaining to the auto-generated artifacts that the meeting
+   * supports.
+   * </pre>
+   *
+   * <code>.google.apps.meet.v2.SpaceConfig.ArtifactConfig artifact_config = 7;</code>
+   */
+  com.google.apps.meet.v2.SpaceConfig.ArtifactConfigOrBuilder getArtifactConfigOrBuilder();
 }

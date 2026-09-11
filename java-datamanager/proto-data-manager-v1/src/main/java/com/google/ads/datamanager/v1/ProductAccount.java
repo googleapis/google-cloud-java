@@ -163,6 +163,16 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>FLOODLIGHT_CONFIG = 7;</code>
      */
     FLOODLIGHT_CONFIG(7),
+    /**
+     *
+     *
+     * <pre>
+     * Google Ad Manager.
+     * </pre>
+     *
+     * <code>GOOGLE_AD_MANAGER = 8;</code>
+     */
+    GOOGLE_AD_MANAGER(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -264,6 +274,17 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      */
     public static final int FLOODLIGHT_CONFIG_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * Google Ad Manager.
+     * </pre>
+     *
+     * <code>GOOGLE_AD_MANAGER = 8;</code>
+     */
+    public static final int GOOGLE_AD_MANAGER_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -304,6 +325,8 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
           return GOOGLE_AD_MANAGER_AUDIENCE_LINK;
         case 7:
           return FLOODLIGHT_CONFIG;
+        case 8:
+          return GOOGLE_AD_MANAGER;
         default:
           return null;
       }
@@ -372,7 +395,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
    * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
    *
    * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-   *     google/ads/datamanager/v1/destination.proto;l=101
+   *     google/ads/datamanager/v1/destination.proto;l=107
    * @return The enum numeric value on the wire for product.
    */
   @java.lang.Override
@@ -393,7 +416,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
    * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
    *
    * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-   *     google/ads/datamanager/v1/destination.proto;l=101
+   *     google/ads/datamanager/v1/destination.proto;l=107
    * @return The product.
    */
   @java.lang.Override
@@ -875,7 +898,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
      *
      * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-     *     google/ads/datamanager/v1/destination.proto;l=101
+     *     google/ads/datamanager/v1/destination.proto;l=107
      * @return The enum numeric value on the wire for product.
      */
     @java.lang.Override
@@ -896,7 +919,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
      *
      * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-     *     google/ads/datamanager/v1/destination.proto;l=101
+     *     google/ads/datamanager/v1/destination.proto;l=107
      * @param value The enum numeric value on the wire for product to set.
      * @return This builder for chaining.
      */
@@ -920,7 +943,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
      *
      * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-     *     google/ads/datamanager/v1/destination.proto;l=101
+     *     google/ads/datamanager/v1/destination.proto;l=107
      * @return The product.
      */
     @java.lang.Override
@@ -943,7 +966,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
      *
      * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-     *     google/ads/datamanager/v1/destination.proto;l=101
+     *     google/ads/datamanager/v1/destination.proto;l=107
      * @param value The product to set.
      * @return This builder for chaining.
      */
@@ -970,7 +993,7 @@ public final class ProductAccount extends com.google.protobuf.GeneratedMessage
      * <code>.google.ads.datamanager.v1.Product product = 1 [deprecated = true];</code>
      *
      * @deprecated google.ads.datamanager.v1.ProductAccount.product is deprecated. See
-     *     google/ads/datamanager/v1/destination.proto;l=101
+     *     google/ads/datamanager/v1/destination.proto;l=107
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

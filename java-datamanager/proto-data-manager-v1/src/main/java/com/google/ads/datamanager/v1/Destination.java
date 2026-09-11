@@ -351,12 +351,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The object within the product account to ingest into. For
+   * Optional. The object within the product account to ingest into. For
    * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
    * Google Ads conversion action ID.
+   *
+   * This field is optional for Google Ad Manager event ingestion and User
+   * ingestion. Required for all other use cases.
    * </pre>
    *
-   * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The productDestinationId.
    */
@@ -377,12 +380,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The object within the product account to ingest into. For
+   * Optional. The object within the product account to ingest into. For
    * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
    * Google Ads conversion action ID.
+   *
+   * This field is optional for Google Ad Manager event ingestion and User
+   * ingestion. Required for all other use cases.
    * </pre>
    *
-   * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for productDestinationId.
    */
@@ -1720,12 +1726,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The object within the product account to ingest into. For
+     * Optional. The object within the product account to ingest into. For
      * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
      * Google Ads conversion action ID.
+     *
+     * This field is optional for Google Ad Manager event ingestion and User
+     * ingestion. Required for all other use cases.
      * </pre>
      *
-     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The productDestinationId.
      */
@@ -1745,12 +1754,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The object within the product account to ingest into. For
+     * Optional. The object within the product account to ingest into. For
      * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
      * Google Ads conversion action ID.
+     *
+     * This field is optional for Google Ad Manager event ingestion and User
+     * ingestion. Required for all other use cases.
      * </pre>
      *
-     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for productDestinationId.
      */
@@ -1770,12 +1782,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The object within the product account to ingest into. For
+     * Optional. The object within the product account to ingest into. For
      * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
      * Google Ads conversion action ID.
+     *
+     * This field is optional for Google Ad Manager event ingestion and User
+     * ingestion. Required for all other use cases.
      * </pre>
      *
-     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The productDestinationId to set.
      * @return This builder for chaining.
@@ -1794,12 +1809,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The object within the product account to ingest into. For
+     * Optional. The object within the product account to ingest into. For
      * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
      * Google Ads conversion action ID.
+     *
+     * This field is optional for Google Ad Manager event ingestion and User
+     * ingestion. Required for all other use cases.
      * </pre>
      *
-     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1814,12 +1832,15 @@ public final class Destination extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The object within the product account to ingest into. For
+     * Optional. The object within the product account to ingest into. For
      * example, a Google Ads audience ID, a Display &amp; Video 360 audience ID or a
      * Google Ads conversion action ID.
+     *
+     * This field is optional for Google Ad Manager event ingestion and User
+     * ingestion. Required for all other use cases.
      * </pre>
      *
-     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string product_destination_id = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for productDestinationId to set.
      * @return This builder for chaining.

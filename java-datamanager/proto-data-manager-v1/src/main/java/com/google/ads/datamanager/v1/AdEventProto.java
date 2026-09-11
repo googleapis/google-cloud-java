@@ -57,21 +57,22 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
           + "(google/ads/datamanager/v1/ad_event.pro"
           + "to\022\031google.ads.datamanager.v1\032+google/ad"
           + "s/datamanager/v1/device_info.proto\032)google/ads/datamanager/v1/user_data.proto\0320g"
-          + "oogle/ads/datamanager/v1/viewability_inf"
-          + "o.proto\032\037google/api/field_behavior.proto\032\037google/protobuf/timestamp.proto\"\240\016\n"
+          + "oogle/ads/datamanager/v1/viewability_info.proto\032\037google/api/field_behavior.proto"
+          + "\032\033google/api/field_info.proto\032\037google/protobuf/timestamp.proto\"\301\016\n"
           + "\007AdEvent\022\032\n\r"
           + "advertiser_id\030\001 \001(\tB\003\340A\002\022E\n\n"
-          + "event_type\030\002"
-          + " \001(\0162,.google.ads.datamanager.v1.AdEvent.EventTypeB\003\340A\002\022H\n\r"
-          + "event_subtype\030\003"
-          + " \001(\0162/.google.ads.datamanager.v1.AdEvent.EventSubtypeH\000\022\036\n"
+          + "event_type\030\002 \001"
+          + "(\0162,.google.ads.datamanager.v1.AdEvent.EventTypeB\003\340A\002\022H\n\r"
+          + "event_subtype\030\003 \001(\0162/.g"
+          + "oogle.ads.datamanager.v1.AdEvent.EventSubtypeH\000\022\036\n"
           + "\024event_subtype_string\030\004 \001(\tH\000\0222\n"
           + "\ttimestamp\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022\025\n"
           + "\010event_id\030\006 \001(\tB\003\340A\001\022;\n"
           + "\tuser_data\030\007"
           + " \001(\0132#.google.ads.datamanager.v1.UserDataB\003\340A\001\022?\n"
-          + "\013device_info\030\010"
-          + " \001(\0132%.google.ads.datamanager.v1.DeviceInfoB\003\340A\002\022\035\n"
+          + "\013device_info\030\010 \001(\0132%.g"
+          + "oogle.ads.datamanager.v1.DeviceInfoB\003\340A\002\022\037\n\n"
+          + "ip_address\030\" \001(\tB\013\340A\001\342\214\317\327\010\002\010\004\022\035\n"
           + "\020mobile_device_id\030\t \001(\tB\003\340A\001\022\030\n"
           + "\013campaign_id\030\n"
           + " \001(\tB\003\340A\002\022\032\n\r"
@@ -94,8 +95,8 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
           + "\016targeting_type\030\031"
           + " \001(\0162(.google.ads.datamanager.v1.TargetingTypeH\004\022\037\n"
           + "\025targeting_type_string\030\032 \001(\tH\004\022@\n\r"
-          + "platform_type\030\033 \001"
-          + "(\0162\'.google.ads.datamanager.v1.PlatformTypeH\005\022\036\n"
+          + "platform_type\030\033"
+          + " \001(\0162\'.google.ads.datamanager.v1.PlatformTypeH\005\022\036\n"
           + "\024platform_type_string\030\034 \001(\tH\005\0227\n"
           + "\010platform\030\035 \001(\0162#.google.ads.datamanager.v1.PlatformH\006\022\031\n"
           + "\017platform_string\030\036 \001(\tH\006\022I\n"
@@ -125,11 +126,13 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
           + "\006AdType\022\027\n"
           + "\023AD_TYPE_UNSPECIFIED\020\000\022\023\n"
           + "\017AD_TYPE_DISPLAY\020\001\022\020\n"
-          + "\014AD_TYPE_TEXT\020\002\022\021\n\r"
+          + "\014AD_TYPE_TEXT\020\002\022\021\n"
+          + "\r"
           + "AD_TYPE_IMAGE\020\003\022\026\n"
           + "\022AD_TYPE_RICH_MEDIA\020\004\022\020\n"
           + "\014AD_TYPE_HTML\020\005\022\021\n\r"
-          + "AD_TYPE_AUDIO\020\006\022\021\n\r"
+          + "AD_TYPE_AUDIO\020\006\022\021\n"
+          + "\r"
           + "AD_TYPE_VIDEO\020\007*\337\003\n"
           + "\010AdFormat\022\031\n"
           + "\025AD_FORMAT_UNSPECIFIED\020\000\022\020\n"
@@ -190,11 +193,11 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
           + "\034ATTRIBUTION_HINT_UNSPECIFIED\020\000\022\036\n"
           + "\032ATTRIBUTION_HINT_CONVERTED\020\001\022\"\n"
           + "\036ATTRIBUTION_HINT_NOT_CONVERTED\020\002B\311\001\n"
-          + "\035com.google.ads.datamanager.v1B\014AdEventProto"
-          + "P\001ZAcloud.google.com/go/datamanager/apiv"
-          + "1/datamanagerpb;datamanagerpb\252\002\031Google.A"
-          + "ds.DataManager.V1\312\002\031Google\\Ads\\DataManag"
-          + "er\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "\035com.google.ads.datamanager.v1B\014AdEventProtoP\001ZAcloud.google.c"
+          + "om/go/datamanager/apiv1/datamanagerpb;da"
+          + "tamanagerpb\252\002\031Google.Ads.DataManager.V1\312"
+          + "\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::Ad"
+          + "s::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -204,6 +207,7 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
               com.google.ads.datamanager.v1.UserDataProto.getDescriptor(),
               com.google.ads.datamanager.v1.ViewabilityInfoProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_datamanager_v1_AdEvent_descriptor =
@@ -220,6 +224,7 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
               "EventId",
               "UserData",
               "DeviceInfo",
+              "IpAddress",
               "MobileDeviceId",
               "CampaignId",
               "CampaignName",
@@ -258,10 +263,12 @@ public final class AdEventProto extends com.google.protobuf.GeneratedFile {
     com.google.ads.datamanager.v1.UserDataProto.getDescriptor();
     com.google.ads.datamanager.v1.ViewabilityInfoProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }
