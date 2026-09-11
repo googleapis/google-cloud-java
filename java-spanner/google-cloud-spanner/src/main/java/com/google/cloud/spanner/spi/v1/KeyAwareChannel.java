@@ -913,15 +913,12 @@ final class KeyAwareChannel extends ManagedChannel {
         selectedPreferLeader = preferLeader;
         this.channelFinder = finder;
         selectedEndpoint.incrementActiveRequests();
-        XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
-        if (requestId != null) {
-          RequestIdTargetTracker.record(
-              requestId.getHeaderValue(),
-              selectedDatabaseScope,
-              selectedTargetEndpoint,
-              operationUid,
-              selectedPreferLeader);
-        }
+        RequestIdTargetTracker.record(
+            logicalRequestKey,
+            selectedDatabaseScope,
+            selectedTargetEndpoint,
+            operationUid,
+            selectedPreferLeader);
 
         // Record real traffic for idle eviction tracking.
         parentChannel.onRequestRouted(endpoint);
@@ -1105,11 +1102,7 @@ final class KeyAwareChannel extends ManagedChannel {
         selectedPreferLeader = false;
         channelFinder = null;
         selectedEndpoint.incrementActiveRequests();
-        XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
-        if (requestId != null) {
-          RequestIdTargetTracker.record(
-              requestId.getHeaderValue(), null, selectedTargetEndpoint, 0L, false);
-        }
+        RequestIdTargetTracker.record(logicalRequestKey, null, selectedTargetEndpoint, 0L, false);
         parentChannel.onRequestRouted(defaultEndpoint);
         recordRouteSelectionTrace(methodDescriptor, defaultEndpoint.getAddress(), true, false);
 
@@ -1326,7 +1319,7 @@ final class KeyAwareChannel extends ManagedChannel {
       if (call.selectedEndpoint != null) {
         call.selectedEndpoint.decrementActiveRequests();
       }
-      RequestIdTargetTracker.remove(call.logicalRequestKey);
+      RequestIdTargetTracker.removeLogicalKey(call.logicalRequestKey);
       call.maybeClearAffinity();
       super.onClose(status, trailers);
     }
