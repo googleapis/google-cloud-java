@@ -58,6 +58,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
 import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
@@ -117,6 +118,7 @@ import com.google.cloud.bigtable.gaxx.retrying.RetryInfoRetryAlgorithm;
 import com.google.common.base.Functions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import io.grpc.MethodDescriptor;
@@ -147,6 +149,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
   private static final String CLIENT_NAME = "Bigtable";
   private static final long FLOW_CONTROL_ADJUSTING_INTERVAL_MS = TimeUnit.SECONDS.toMillis(20);
+  private static final String BATCHER_API_CLIENT_TOKEN = "java-bigtable-batcher/" + Version.VERSION;
   private final ClientOperationSettings perOpSettings;
   private final BigtableClientContext bigtableClientContext;
 
@@ -843,8 +846,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         perOpSettings.bulkMutateRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
-        MoreObjects.firstNonNull(
-            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
+        batcherCallContext(ctx));
   }
 
   /**
@@ -875,8 +877,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         perOpSettings.bulkMutateRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         bulkMutationFlowController,
-        MoreObjects.firstNonNull(
-            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
+        batcherCallContext(ctx));
   }
 
   /**
@@ -904,8 +905,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         perOpSettings.bulkReadRowsSettings.getBatchingSettings(),
         bigtableClientContext.getClientContext().getExecutor(),
         null,
-        MoreObjects.firstNonNull(
-            ctx, bigtableClientContext.getClientContext().getDefaultCallContext()));
+        batcherCallContext(ctx));
   }
 
   /**
@@ -1225,6 +1225,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return traced.withDefaultCallContext(
         bigtableClientContext.getClientContext().getDefaultCallContext());
+  }
+
+  private ApiCallContext batcherCallContext(@Nullable GrpcCallContext userCtx) {
+    return MoreObjects.firstNonNull(
+            userCtx, bigtableClientContext.getClientContext().getDefaultCallContext())
+        .withExtraHeaders(
+            ImmutableMap.of("x-goog-api-client", ImmutableList.of(BATCHER_API_CLIENT_TOKEN)));
   }
 
   private Map<String, String> composeRequestParams(

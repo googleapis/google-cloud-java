@@ -54,6 +54,7 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.sql.PreparedStatement;
+import com.google.protobuf.ByteString;
 import com.google.rpc.Status;
 import io.grpc.Metadata;
 import io.grpc.Server;
@@ -111,13 +112,20 @@ public class HeadersTest {
     HeaderProvider headerProvider =
         FixedHeaderProvider.create(TEST_FIXED_HEADER_STRING, "test_header_value");
 
-    // Force immediate flush
+    // Force immediate flush for both batcher types
     settings
         .stubSettings()
         .setHeaderProvider(headerProvider)
         .bulkMutateRowsSettings()
         .setBatchingSettings(
             settings.stubSettings().bulkMutateRowsSettings().getBatchingSettings().toBuilder()
+                .setElementCountThreshold(1L)
+                .build());
+    settings
+        .stubSettings()
+        .bulkReadRowsSettings()
+        .setBatchingSettings(
+            settings.stubSettings().bulkReadRowsSettings().getBatchingSettings().toBuilder()
                 .setElementCountThreshold(1L)
                 .build());
 
@@ -205,6 +213,40 @@ public class HeadersTest {
   public void prepareQueryTest() {
     client.prepareStatement("SELECT * FROM table", new HashMap<>());
     verifyHeaderSent(true);
+  }
+
+  @Test
+  public void bulkMutationBatcherHasBatcherToken() throws Exception {
+    try (Batcher<RowMutationEntry, Void> batcher = client.newBulkMutationBatcher(TABLE_ID)) {
+      batcher.add(RowMutationEntry.create("fake-key").deleteRow());
+    }
+    Metadata metadata = sentMetadata.take();
+    assertThat(hasApiClientToken(metadata, "java-bigtable-batcher")).isTrue();
+  }
+
+  @Test
+  public void bulkReadRowsBatcherHasBatcherToken() throws Exception {
+    try (Batcher<ByteString, Row> batcher = client.newBulkReadRowsBatcher(TABLE_ID)) {
+      batcher.add(ByteString.copyFromUtf8("fake-key"));
+    }
+    Metadata metadata = sentMetadata.take();
+    assertThat(hasApiClientToken(metadata, "java-bigtable-batcher")).isTrue();
+  }
+
+  @Test
+  public void regularRpcDoesNotHaveBatcherToken() throws Exception {
+    client.mutateRowAsync(RowMutation.create(TABLE_ID, "fake-key").deleteRow()).get();
+    Metadata metadata = sentMetadata.take();
+    assertThat(hasApiClientToken(metadata, "java-bigtable-batcher")).isFalse();
+  }
+
+  private static boolean hasApiClientToken(Metadata metadata, String token) {
+    Iterable<String> values = metadata.getAll(API_CLIENT_HEADER_KEY);
+    if (values == null) return false;
+    for (String value : values) {
+      if (value.contains(token)) return true;
+    }
+    return false;
   }
 
   private void verifyHeaderSent() {
