@@ -25,6 +25,7 @@ import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.engine.ast.VaporReference;
 import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
+import com.google.api.generator.gapic.model.Method;
 import com.google.api.generator.gapic.model.RegionTag;
 import com.google.api.generator.gapic.model.Sample;
 import com.google.api.generator.gapic.utils.JavaStyle;
@@ -37,6 +38,14 @@ import org.jspecify.annotations.NullMarked;
 
 @NullMarked
 public final class SettingsSampleComposer {
+
+  public static Optional<Sample> composeSettingsSample(
+      Method method, String settingsClassName, TypeNode classType) {
+    if (method.isResumableUpload()) {
+      return Optional.empty();
+    }
+    return composeSettingsSample(Optional.of(method.name()), settingsClassName, classType);
+  }
 
   public static Optional<Sample> composeSettingsSample(
       Optional<String> methodNameOpt, String settingsClassName, TypeNode classType) {
