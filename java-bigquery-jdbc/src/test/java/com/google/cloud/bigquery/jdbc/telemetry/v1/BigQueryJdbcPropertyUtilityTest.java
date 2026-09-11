@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -26,40 +25,26 @@ public class BigQueryJdbcPropertyUtilityTest {
 
   @Test
   public void testConvertStringToBoolean_validValues() {
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("1", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("true", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("True", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("TRUE", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("1", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("true", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("True", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("TRUE", false));
 
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("0", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("false", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("False", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("FALSE", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("0", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("false", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("False", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("FALSE", true));
   }
 
   @Test
   public void testConvertStringToBoolean_invalidAndNullValues() {
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("2", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("2", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("-1", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("-1", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean("invalid", true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean("invalid", false));
-    assertTrue(BigQueryJdbcPropertyUtility.convertStringToBoolean(null, true));
-    assertFalse(BigQueryJdbcPropertyUtility.convertStringToBoolean(null, false));
-  }
-
-  @Test
-  public void testConvertStringToLong_validAndInvalidValues() {
-    assertEquals(12345L, BigQueryJdbcPropertyUtility.convertStringToLong("12345", 100L));
-    assertEquals(100L, BigQueryJdbcPropertyUtility.convertStringToLong(null, 100L));
-    assertEquals(100L, BigQueryJdbcPropertyUtility.convertStringToLong("not-a-number", 100L));
-  }
-
-  @Test
-  public void testConvertStringToInt_validAndInvalidValues() {
-    assertEquals(500, BigQueryJdbcPropertyUtility.convertStringToInt("500", 10));
-    assertEquals(10, BigQueryJdbcPropertyUtility.convertStringToInt(null, 10));
-    assertEquals(10, BigQueryJdbcPropertyUtility.convertStringToInt("not-a-number", 10));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("2", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("2", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("-1", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("-1", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean("invalid", true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean("invalid", false));
+    assertTrue(TelemetryPropertyUtility.convertStringToBoolean(null, true));
+    assertFalse(TelemetryPropertyUtility.convertStringToBoolean(null, false));
   }
 }

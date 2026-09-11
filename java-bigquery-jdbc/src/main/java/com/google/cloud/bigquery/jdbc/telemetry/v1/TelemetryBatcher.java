@@ -126,7 +126,7 @@ final class TelemetryBatcher implements AutoCloseable {
       int maxTotalBatchSize =
           config != null
               ? config.getBatchSizeThreshold()
-              : BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
+              : TelemetryPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
 
       List<Message> events = new ArrayList<>(maxTotalBatchSize);
       eventQueue.drainTo(events, maxTotalBatchSize);

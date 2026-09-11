@@ -26,15 +26,15 @@ import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
  * the essential methods.
  */
 @InternalApi
-public final class BigQueryJdbcPropertyUtility {
+public final class TelemetryPropertyUtility {
   public static final boolean DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE = true;
   public static final long DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE = 300_000L;
   public static final int DEFAULT_TELEMETRY_BATCH_SIZE_VALUE = 5000;
 
   private static final BigQueryJdbcCustomLogger LOG =
-      new BigQueryJdbcCustomLogger(BigQueryJdbcPropertyUtility.class.getName());
+      new BigQueryJdbcCustomLogger(TelemetryPropertyUtility.class.getName());
 
-  private BigQueryJdbcPropertyUtility() {
+  private TelemetryPropertyUtility() {
     // Utility class, static methods only.
   }
 
@@ -42,7 +42,7 @@ public final class BigQueryJdbcPropertyUtility {
    * Converts a String representation of an integer or boolean to a boolean value.
    *
    * @param value the string value to parse ("0", "1", "true", or "false")
-   * @param propertyName the name of the property (for error messages)
+   * @param defaultValue default value of teh property
    * @return true if 1/true, false if 0/false
    */
   static boolean convertStringToBoolean(String value, boolean defaultValue) {
@@ -70,30 +70,6 @@ public final class BigQueryJdbcPropertyUtility {
     } else if (integerValue == 0) {
       return false;
     } else {
-      return defaultValue;
-    }
-  }
-
-  static long convertStringToLong(String value, long defaultValue) {
-    if (value == null) {
-      return defaultValue;
-    }
-    try {
-      return Long.parseLong(value);
-    } catch (NumberFormatException ignored) {
-      // Fail-safe: ignore invalid telemetry values to avoid disrupting JDBC operations.
-      return defaultValue;
-    }
-  }
-
-  static int convertStringToInt(String value, int defaultValue) {
-    if (value == null) {
-      return defaultValue;
-    }
-    try {
-      return Integer.parseInt(value);
-    } catch (NumberFormatException ignored) {
-      // Fail-safe: ignore invalid telemetry values to avoid disrupting JDBC operations.
       return defaultValue;
     }
   }
