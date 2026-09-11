@@ -462,6 +462,15 @@ public class ArrowDeserializerTest {
   }
 
   @Test
+  public void testDeserializeRecordBatch_emptyBytesThrowsIOException() {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+    Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+    assertThrows(
+        IOException.class,
+        () -> ArrowDeserializer.deserializeRecordBatch(new byte[0], bqSchema, arrowSchema));
+  }
+
+  @Test
   public void testFormatTimestampMicros() {
     // Standard positive timestamps
     assertEquals("1408452095.220000", ArrowDeserializer.formatTimestampMicros(1408452095220000L));

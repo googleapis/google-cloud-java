@@ -44,6 +44,8 @@ import org.apache.arrow.vector.TimeSecVector;
 import org.apache.arrow.vector.TimeStampVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.apache.arrow.vector.complex.FixedSizeListVector;
+import org.apache.arrow.vector.complex.LargeListVector;
 import org.apache.arrow.vector.complex.ListVector;
 import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.ipc.ReadChannel;
@@ -158,6 +160,10 @@ final class ArrowDeserializer {
                       Channels.newChannel(batch.getSerializedRecordBatch().newInput()));
               ArrowRecordBatch deserializedBatch =
                   MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
+            if (deserializedBatch == null) {
+              throw new IOException(
+                  "Failed to deserialize Arrow record batch: end of stream or empty batch.");
+            }
             loader.load(deserializedBatch);
             int batchRowCount = root.getRowCount();
             // Step 2: Populate rowBatch up to pageSize. If the batch contains more rows than the
@@ -216,6 +222,10 @@ final class ArrowDeserializer {
         ReadChannel readChannel = new ReadChannel(byteChannel);
         ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
+      if (deserializedBatch == null) {
+        throw new IOException(
+            "Failed to deserialize Arrow record batch: end of stream or empty batch.");
+      }
       VectorLoader loader = new VectorLoader(root);
       loader.load(deserializedBatch);
       int rowCount = root.getRowCount();
@@ -273,10 +283,28 @@ final class ArrowDeserializer {
 
     // Handle repeated fields
     if (bqField.getMode() == Field.Mode.REPEATED) {
-      ListVector listVector = (ListVector) vector;
-      FieldVector dataVector = (FieldVector) listVector.getDataVector();
-      int start = listVector.getElementStartIndex(rowIndex);
-      int end = listVector.getElementEndIndex(rowIndex);
+      FieldVector dataVector;
+      int start;
+      int end;
+      if (vector instanceof ListVector) {
+        ListVector listVector = (ListVector) vector;
+        dataVector = (FieldVector) listVector.getDataVector();
+        start = listVector.getElementStartIndex(rowIndex);
+        end = listVector.getElementEndIndex(rowIndex);
+      } else if (vector instanceof LargeListVector) {
+        LargeListVector largeListVector = (LargeListVector) vector;
+        dataVector = (FieldVector) largeListVector.getDataVector();
+        start = (int) largeListVector.getElementStartIndex(rowIndex);
+        end = (int) largeListVector.getElementEndIndex(rowIndex);
+      } else if (vector instanceof FixedSizeListVector) {
+        FixedSizeListVector fixedListVector = (FixedSizeListVector) vector;
+        dataVector = (FieldVector) fixedListVector.getDataVector();
+        start = fixedListVector.getElementStartIndex(rowIndex);
+        end = fixedListVector.getElementEndIndex(rowIndex);
+      } else {
+        throw new IllegalArgumentException(
+            "Unsupported repeated vector type: " + vector.getClass().getName());
+      }
       List<FieldValue> elements = new ArrayList<>(end - start);
       Field.Builder elementBuilder = Field.newBuilder(bqField.getName(), bqField.getType());
       if (bqField.getType() == LegacySQLTypeName.RECORD && bqField.getSubFields() != null) {
