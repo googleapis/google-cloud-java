@@ -3168,7 +3168,7 @@ public class BigQueryImplTest {
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
-            .setMaxResults(1L)
+            .setMaxResults(2L)
             .build();
     TableResult result = bigquery.query(config);
     assertNotNull(result);
@@ -3177,12 +3177,25 @@ public class BigQueryImplTest {
     Page<FieldValueList> page2 = result.getNextPage();
     assertNotNull(page2);
     List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
-    // Since maxResults is 1, page2 should only contain 1 row even though stream returned 2 rows
+    // Since maxResults is 2 and initialRowOffset is 1, page2 should only contain 1 row even though
+    // stream returned 2 rows
     assertEquals(1, page2Rows.size());
     assertEquals("2", page2Rows.get(0).get(0).getStringValue());
     // Since totalRowsReturned == maxResults, hasNextPage must be false
     assertFalse(page2.hasNextPage());
     assertNull(page2.getNextPage());
+
+    // When maxResults is 1, initialRowOffset (1) already reaches maxResults, so hasNextPage is
+    // false immediately
+    QueryJobConfiguration configMax1 =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(1L)
+            .build();
+    TableResult resultMax1 = bigquery.query(configMax1);
+    assertNotNull(resultMax1);
+    assertFalse(resultMax1.hasNextPage());
+    assertNull(resultMax1.getNextPage());
   }
 
   @Test

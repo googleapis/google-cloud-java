@@ -2389,13 +2389,32 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               : ImmutableList.of();
     }
 
-    if (results.getPageToken() != null) {
+    boolean hasMorePages = results.getPageToken() != null;
+    if (hasMorePages && isArrow && content.getMaxResults() != null) {
+      long initialRowOffset;
+      try {
+        initialRowOffset = Long.parseLong(results.getPageToken());
+      } catch (NumberFormatException e) {
+        initialRowOffset = firstPageRows.size();
+      }
+      if (initialRowOffset >= content.getMaxResults()
+          || firstPageRows.size() >= content.getMaxResults()) {
+        hasMorePages = false;
+      }
+    }
+
+    if (hasMorePages) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
 
       NextPageFetcher<FieldValueList> pageFetcher;
       if (isArrow) {
-        long initialRowOffset = firstPageRows.size();
+        long initialRowOffset;
+        try {
+          initialRowOffset = Long.parseLong(results.getPageToken());
+        } catch (NumberFormatException e) {
+          initialRowOffset = firstPageRows.size();
+        }
         pageFetcher =
             new ArrowQueryPageFetcher(
                 jobId,
