@@ -70,8 +70,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
     this.ownedTasks = ownedTasks;
-    this.enableTimestampPicos =
-        statement != null ? statement.isEnableTimestampPicos() : enableTimestampPicos;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   /**
@@ -112,7 +111,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         ownedTasks,
         bigQuery,
         job,
-        false);
+        statement != null && statement.isEnableTimestampPicos());
   }
 
   static BigQueryJsonResultSet of(
@@ -123,7 +122,18 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       Future<?>[] ownedTasks) {
 
     return new BigQueryJsonResultSet(
-        schema, totalRows, buffer, statement, false, null, -1, -1, ownedTasks, null, null, false);
+        schema,
+        totalRows,
+        buffer,
+        statement,
+        false,
+        null,
+        -1,
+        -1,
+        ownedTasks,
+        null,
+        null,
+        statement != null && statement.isEnableTimestampPicos());
   }
 
   static BigQueryJsonResultSet of(
@@ -258,8 +268,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return new BigQueryJsonStruct(
             arrayField.getSubFields(),
             value,
-            this.LOG.getJsonStructLogger(),
-            this.enableTimestampPicos);
+            this.enableTimestampPicos,
+            this.LOG.getJsonStructLogger());
       }
       if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value.getStringValue(), true);
@@ -273,14 +283,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     Field fieldSchema = this.schemaFieldList.get(columnIndex - 1);
     if (isArray(fieldSchema)) {
       return new BigQueryJsonArray(
-          fieldSchema, value, this.LOG.getJsonArrayLogger(), this.enableTimestampPicos);
+          fieldSchema, value, this.enableTimestampPicos, this.LOG.getJsonArrayLogger());
     }
     if (isStruct(fieldSchema)) {
       return new BigQueryJsonStruct(
           fieldSchema.getSubFields(),
           value,
-          this.LOG.getJsonStructLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getJsonStructLogger());
     }
     if (this.enableTimestampPicos && isRangeTimestamp(fieldSchema)) {
       return formatRangeTimestamp(value);
@@ -307,9 +317,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   static boolean isRangeTimestamp(Field field) {
     return field != null
         && field.getRangeElementType() != null
-        && StandardSQLTypeName.TIMESTAMP
-            .name()
-            .equalsIgnoreCase(field.getRangeElementType().getType());
+        && field.getRangeElementType().getType() != null
+        && field
+            .getRangeElementType()
+            .getType()
+            .equalsIgnoreCase(StandardSQLTypeName.TIMESTAMP.name());
   }
 
   /**

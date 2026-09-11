@@ -404,8 +404,8 @@ public class BigQueryJsonArrayOfPrimitivesTest {
         new BigQueryJsonArray(
             field,
             arrayValue,
-            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class),
-            true);
+            true,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class));
 
     assertThat(array.getBaseTypeName()).isEqualTo("TIMESTAMP");
     assertThat(array.getBaseType()).isEqualTo(Types.TIMESTAMP);
@@ -445,8 +445,8 @@ public class BigQueryJsonArrayOfPrimitivesTest {
         new BigQueryJsonArray(
             field,
             arrayValue,
-            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class),
-            false);
+            false,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class));
 
     Object result = array.getArray();
     assertThat(result).isInstanceOf(Timestamp[].class);

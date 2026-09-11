@@ -33,20 +33,18 @@ import java.util.List;
 class BigQueryJsonArray extends BigQueryBaseArray {
 
   private List<FieldValue> values;
-  private final boolean enableTimestampPicos;
 
   BigQueryJsonArray(Field schema, FieldValue values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class), false);
+    this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class));
   }
 
   BigQueryJsonArray(
       Field schema,
       FieldValue values,
-      BigQueryJdbcResultSetLogger log,
-      boolean enableTimestampPicos) {
-    super(schema, log);
+      boolean enableTimestampPicos,
+      BigQueryJdbcResultSetLogger log) {
+    super(schema, enableTimestampPicos, log);
     this.values = (values == null || values.isNull()) ? null : values.getRepeatedValue();
-    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -112,15 +110,6 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   }
 
   @Override
-  protected Class<?> getTargetClass() {
-    LOG.finestTrace("getTargetClass");
-    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
-      return String.class;
-    }
-    return super.getTargetClass();
-  }
-
-  @Override
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
     FieldValue fieldValue = this.values.get(index);
@@ -131,8 +120,8 @@ class BigQueryJsonArray extends BigQueryBaseArray {
       return new BigQueryJsonStruct(
           this.schema.getSubFields(),
           fieldValue,
-          this.LOG.getJsonStructLogger(),
-          this.enableTimestampPicos);
+          this.enableTimestampPicos,
+          this.LOG.getJsonStructLogger());
     }
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
       return BigQueryTemporalUtility.formatTimestampValue(fieldValue.getStringValue(), true);

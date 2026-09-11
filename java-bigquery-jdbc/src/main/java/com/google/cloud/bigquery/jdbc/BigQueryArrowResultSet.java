@@ -363,7 +363,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     return value;
   }
 
-
   @Override
   public Object getObject(int columnIndex) throws SQLException {
 

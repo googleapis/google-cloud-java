@@ -270,8 +270,8 @@ public class BigQueryJsonStructTest {
         new BigQueryJsonStruct(
             schema,
             structValue,
-            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class),
-            true);
+            true,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
 
     Object[] attributes = struct.getAttributes();
     assertThat(attributes).isEqualTo(new Object[] {"2023-03-30 11:14:19.123456789123"});
@@ -288,8 +288,8 @@ public class BigQueryJsonStructTest {
         new BigQueryJsonStruct(
             schema,
             structValue,
-            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class),
-            false);
+            false,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
 
     Object[] attributes = struct.getAttributes();
     Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
