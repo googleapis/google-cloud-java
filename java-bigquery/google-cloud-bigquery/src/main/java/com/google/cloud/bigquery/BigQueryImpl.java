@@ -2392,11 +2392,15 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = 0L;
     if (hasMorePages && isArrow) {
-      try {
-        initialRowOffset = Long.parseLong(results.getPageToken());
-      } catch (NumberFormatException e) {
-        initialRowOffset = firstPageRows.size();
+      String pageToken = results.getPageToken();
+      boolean isNumeric = !pageToken.isEmpty();
+      for (int i = 0; i < pageToken.length(); i++) {
+        if (!Character.isDigit(pageToken.charAt(i))) {
+          isNumeric = false;
+          break;
+        }
       }
+      initialRowOffset = isNumeric ? Long.parseLong(pageToken) : firstPageRows.size();
       if (content.getMaxResults() != null
           && (initialRowOffset >= content.getMaxResults()
               || firstPageRows.size() >= content.getMaxResults())) {
