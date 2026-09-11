@@ -24,6 +24,7 @@ import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.Schema;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Internal helper utility for converting Apache Arrow POJO definitions (such as {@link Schema},
@@ -32,6 +33,7 @@ import org.apache.arrow.vector.types.pojo.Schema;
  * <p>This class handles standard Java objects and metadata conversions. For operations involving
  * Arrow vectors, off-heap memory, or deserializing byte streams, use {@link ArrowDeserializer}.
  */
+@NullMarked
 final class ArrowPojoUtils {
 
   private ArrowPojoUtils() {}

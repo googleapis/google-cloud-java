@@ -39,6 +39,8 @@ import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal helper utility for managing Arrow vector memory and deserializing IPC record batches
@@ -47,6 +49,7 @@ import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
  * <p>This class handles Arrow vectors, {@link BufferAllocator} memory lifecycles, and byte stream
  * deserialization. For pure POJO schema and metadata conversions, use {@link ArrowPojoUtils}.
  */
+@NullMarked
 final class ArrowDeserializer {
 
   /** Lazy initialization holder for the root {@link BufferAllocator}. */
@@ -156,7 +159,7 @@ final class ArrowDeserializer {
       org.apache.arrow.vector.types.pojo.Schema arrowSchema,
       Schema schema,
       List<FieldValueList> rowBatch,
-      Queue<FieldValueList> buffer,
+      @Nullable Queue<FieldValueList> buffer,
       long pageSize,
       long totalRowsReturned,
       long maxResults)
