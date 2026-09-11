@@ -36,19 +36,23 @@ public class AsyncSearchBlurbsLRO {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (MessagingClient messagingClient = MessagingClient.create()) {
-      SearchBlurbsRequest request =
-          SearchBlurbsRequest.newBuilder()
-              .setQuery("query107944136")
-              .setParent(ProfileName.of("[USER]").toString())
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> future =
-          messagingClient.searchBlurbsOperationCallable().futureCall(request);
-      // Do something.
-      SearchBlurbsResponse response = future.get();
-    }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    MessagingClient messagingClient = MessagingClient.create();
+    SearchBlurbsRequest request =
+        SearchBlurbsRequest.newBuilder()
+            .setQuery("query107944136")
+            .setParent(ProfileName.of("[USER]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+    OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> future =
+        messagingClient.searchBlurbsOperationCallable().futureCall(request);
+    // Do something.
+    SearchBlurbsResponse response = future.get();
   }
 }
 // [END goldensample_generated_Messaging_SearchBlurbs_LRO_async]

@@ -36,20 +36,24 @@ public class AsyncEchoShouldGenerateAsInternal {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-        EchoServiceShouldGeneratePartialUsualClient.create()) {
-      BidiStream<EchoRequest, EchoResponse> bidiStream =
-          echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsInternalCallable().call();
-      EchoRequest request =
-          EchoRequest.newBuilder()
-              .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-              .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-              .setFoobar(Foobar.newBuilder().build())
-              .build();
-      bidiStream.send(request);
-      for (EchoResponse response : bidiStream) {
-        // Do something when a response is received.
-      }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+        EchoServiceShouldGeneratePartialUsualClient.create();
+    BidiStream<EchoRequest, EchoResponse> bidiStream =
+        echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsInternalCallable().call();
+    EchoRequest request =
+        EchoRequest.newBuilder()
+            .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+            .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+            .setFoobar(Foobar.newBuilder().build())
+            .build();
+    bidiStream.send(request);
+    for (EchoResponse response : bidiStream) {
+      // Do something when a response is received.
     }
   }
 }

@@ -235,9 +235,9 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     return ServiceClientCommentComposer.createClassHeaderComments(
         methodVariantsForClientHeader,
         service,
-        SampleCodeWriter.writeInlineSample(classMethodSampleCode.body()),
-        SampleCodeWriter.writeInlineSample(credentialsSampleCode.body()),
-        SampleCodeWriter.writeInlineSample(endpointSampleCode.body()),
+        SampleCodeWriter.writeInlineSample(classMethodSampleCode),
+        SampleCodeWriter.writeInlineSample(credentialsSampleCode),
+        SampleCodeWriter.writeInlineSample(endpointSampleCode),
         null,
         null,
         null);
@@ -813,7 +813,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
       if (methodSample.isPresent()) {
         samples.add(methodSample.get());
         methodDocSample =
-            Optional.of(SampleCodeWriter.writeInlineSample(methodSample.get().body()));
+            Optional.of(SampleCodeWriter.writeInlineSample(methodSample.get()));
       }
 
       MethodDefinition.Builder methodVariantBuilder =
@@ -892,7 +892,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     if (defaultMethodSample.isPresent()) {
       samples.add(defaultMethodSample.get());
       defaultMethodDocSample =
-          Optional.of(SampleCodeWriter.writeInlineSample(defaultMethodSample.get().body()));
+          Optional.of(SampleCodeWriter.writeInlineSample(defaultMethodSample.get()));
     }
 
     MethodInvocationExpr callableMethodExpr =
@@ -1059,7 +1059,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     Optional<String> sampleDocCode = Optional.empty();
     if (sampleCode.isPresent()) {
       samples.add(sampleCode.get());
-      sampleDocCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get().body()));
+      sampleDocCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get()));
     }
 
     MethodDefinition.Builder methodDefBuilder = MethodDefinition.builder();

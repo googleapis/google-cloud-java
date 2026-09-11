@@ -81,9 +81,8 @@ class ServiceClientHeaderSampleComposerTest {
     String results = writeStatements(sample);
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  EchoResponse response = echoClient.echo();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "EchoResponse response = echoClient.echo();");
     Assert.assertEquals(expected, results);
   }
 
@@ -164,10 +163,9 @@ class ServiceClientHeaderSampleComposerTest {
                 service, clientType, resourceNames, messageTypes));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  Duration ttl = Duration.newBuilder().build();\n",
-            "  WaitResponse response = echoClient.waitAsync(ttl).get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "Duration ttl = Duration.newBuilder().build();\n",
+            "WaitResponse response = echoClient.waitAsync(ttl).get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -219,18 +217,17 @@ class ServiceClientHeaderSampleComposerTest {
     System.out.println("results:  " + results);
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "EchoClient echoClient = EchoClient.create();\n",
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  EchoResponse response = echoClient.echo(request);\n",
-            "}");
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "EchoResponse response = echoClient.echo(request);");
     System.out.println("results:  " + expected);
     Assert.assertEquals(results, expected);
   }
@@ -282,13 +279,12 @@ class ServiceClientHeaderSampleComposerTest {
                 service, clientType, resourceNames, messageTypes));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  ExpandRequest request =\n",
-            "      ExpandRequest.newBuilder().setContent(\"content951530617\").setInfo(\"info3237038\").build();\n",
-            "  ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);\n",
-            "  for (EchoResponse response : stream) {\n",
-            "    // Do something when a response is received.\n",
-            "  }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "ExpandRequest request =\n",
+            "    ExpandRequest.newBuilder().setContent(\"content951530617\").setInfo(\"info3237038\").build();\n",
+            "ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);\n",
+            "for (EchoResponse response : stream) {\n",
+            "  // Do something when a response is received.\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -349,17 +345,15 @@ class ServiceClientHeaderSampleComposerTest {
                 service, clientType, resourceNames, messageTypes));
     String expected =
         LineFormatter.lines(
-            "try (EchoServiceSelectiveApiClient echoServiceSelectiveApiClient =\n"
-                + "    EchoServiceSelectiveApiClient.create()) {\n"
-                + "  EchoRequest request =\n"
-                + "      EchoRequest.newBuilder()\n"
-                + "          .setName(FoobarName.of(\"[PROJECT]\", \"[FOOBAR]\").toString())\n"
-                + "          .setParent(\n"
-                + "              FoobarbazName.ofProjectFoobarbazName(\"[PROJECT]\", \"[FOOBARBAZ]\").toString())\n"
-                + "          .setFoobar(Foobar.newBuilder().build())\n"
-                + "          .build();\n"
-                + "  EchoResponse response = echoServiceSelectiveApiClient.chatShouldGenerateAsUsual(request);\n"
-                + "}");
+            "EchoServiceSelectiveApiClient echoServiceSelectiveApiClient =\n"
+                + "    EchoServiceSelectiveApiClient.create();\n"
+                + "EchoRequest request =\n"
+                + "    EchoRequest.newBuilder()\n"
+                + "        .setName(FoobarName.of(\"[PROJECT]\", \"[FOOBAR]\").toString())\n"
+                + "        .setParent(FoobarbazName.ofProjectFoobarbazName(\"[PROJECT]\", \"[FOOBARBAZ]\").toString())\n"
+                + "        .setFoobar(Foobar.newBuilder().build())\n"
+                + "        .build();\n"
+                + "EchoResponse response = echoServiceSelectiveApiClient.chatShouldGenerateAsUsual(request);");
     Assert.assertEquals(results, expected);
   }
 
@@ -419,8 +413,8 @@ class ServiceClientHeaderSampleComposerTest {
                 service, clientType, resourceNames, messageTypes));
     String expected =
         LineFormatter.lines(
-            "try (EchoServiceSelectiveApiClient echoServiceSelectiveApiClient =\n"
-                + "    EchoServiceSelectiveApiClient.create()) {}");
+            "EchoServiceSelectiveApiClient echoServiceSelectiveApiClient =\n"
+                + "    EchoServiceSelectiveApiClient.create();");
     Assert.assertEquals(expected, results);
   }
 
@@ -578,13 +572,11 @@ class ServiceClientHeaderSampleComposerTest {
                 method, clientType, arguments, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  List<String> resourceName = new ArrayList<>();\n",
-            "  String filter = \"filter-1274492040\";\n",
-            "  for (Content element : echoClient.listContent(resourceName, filter).iterateAll())"
-                + " {\n",
-            "    // doThingsWith(element);\n",
-            "  }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "List<String> resourceName = new ArrayList<>();\n",
+            "String filter = \"filter-1274492040\";\n",
+            "for (Content element : echoClient.listContent(resourceName, filter).iterateAll()) {\n",
+            "  // doThingsWith(element);\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -663,10 +655,9 @@ class ServiceClientHeaderSampleComposerTest {
                 method, clientType, arguments, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  for (Content element : echoClient.listContent().iterateAll()) {\n",
-            "    // doThingsWith(element);\n",
-            "  }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "for (Content element : echoClient.listContent().iterateAll()) {\n",
+            "  // doThingsWith(element);\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -855,9 +846,8 @@ class ServiceClientHeaderSampleComposerTest {
                 method, clientType, Collections.emptyList(), resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitResponse response = echoClient.waitAsync().get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitResponse response = echoClient.waitAsync().get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -940,10 +930,9 @@ class ServiceClientHeaderSampleComposerTest {
                 method, clientType, arguments, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  Duration ttl = Duration.newBuilder().build();\n",
-            "  WaitResponse response = echoClient.waitAsync(ttl).get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "Duration ttl = Duration.newBuilder().build();\n",
+            "WaitResponse response = echoClient.waitAsync(ttl).get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -1022,10 +1011,9 @@ class ServiceClientHeaderSampleComposerTest {
                 method, clientType, arguments, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  Duration ttl = Duration.newBuilder().build();\n",
-            "  echoClient.waitAsync(ttl).get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "Duration ttl = Duration.newBuilder().build();\n",
+            "echoClient.waitAsync(ttl).get();");
     Assert.assertEquals(results, expected);
   }
 

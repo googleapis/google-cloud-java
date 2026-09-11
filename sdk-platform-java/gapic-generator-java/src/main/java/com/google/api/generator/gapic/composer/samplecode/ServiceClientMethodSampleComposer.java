@@ -61,14 +61,11 @@ public class ServiceClientMethodSampleComposer {
     RegionTag regionTag =
         RegionTag.builder().setServiceName(service.name()).setRpcName("emtpy").build();
 
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
     return Sample.builder().setBody(body).setRegionTag(regionTag).setIsCanonical(true).build();
   }
 
@@ -129,14 +126,11 @@ public class ServiceClientMethodSampleComposer {
       regionTag = unaryRpc.regionTag();
     }
 
-    List<Statement> body =
-        Arrays.asList(
-            TryCatchStatement.builder()
-                .setTryResourceExpr(
-                    SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr))
-                .setTryBody(bodyStatements)
-                .setIsSampleCode(true)
-                .build());
+    List<Statement> body = new ArrayList<>();
+    body.add(
+        ExprStatement.withExpr(
+            SampleComposerUtil.assignClientVariableWithCreateMethodExpr(clientVarExpr)));
+    body.addAll(bodyStatements);
     return Sample.builder().setBody(body).setRegionTag(regionTag).setIsCanonical(true).build();
   }
 

@@ -35,24 +35,28 @@ public class AsyncPagedExpandPaged {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EchoClient echoClient = EchoClient.create()) {
-      PagedExpandRequest request =
-          PagedExpandRequest.newBuilder()
-              .setContent("content951530617")
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      while (true) {
-        PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);
-        for (EchoResponse element : response.getResponsesList()) {
-          // doThingsWith(element);
-        }
-        String nextPageToken = response.getNextPageToken();
-        if (!Strings.isNullOrEmpty(nextPageToken)) {
-          request = request.toBuilder().setPageToken(nextPageToken).build();
-        } else {
-          break;
-        }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    EchoClient echoClient = EchoClient.create();
+    PagedExpandRequest request =
+        PagedExpandRequest.newBuilder()
+            .setContent("content951530617")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+    while (true) {
+      PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);
+      for (EchoResponse element : response.getResponsesList()) {
+        // doThingsWith(element);
+      }
+      String nextPageToken = response.getNextPageToken();
+      if (!Strings.isNullOrEmpty(nextPageToken)) {
+        request = request.toBuilder().setPageToken(nextPageToken).build();
+      } else {
+        break;
       }
     }
   }

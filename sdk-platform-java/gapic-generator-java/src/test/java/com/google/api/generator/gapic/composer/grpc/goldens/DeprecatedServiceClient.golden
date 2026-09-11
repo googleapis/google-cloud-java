@@ -22,10 +22,14 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
- *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
- *   deprecatedServiceClient.fastFibonacci(request);
- * }
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+ * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+ * deprecatedServiceClient.fastFibonacci(request);
  * }</pre>
  *
  * <p>Note: close() needs to be called on the DeprecatedServiceClient object to clean up resources
@@ -86,6 +90,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * DeprecatedServiceSettings deprecatedServiceSettings =
  *     DeprecatedServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -102,6 +111,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * DeprecatedServiceSettings deprecatedServiceSettings =
  *     DeprecatedServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * DeprecatedServiceClient deprecatedServiceClient =
@@ -174,10 +188,14 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
-   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
-   *   deprecatedServiceClient.fastFibonacci(request);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+   * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   * deprecatedServiceClient.fastFibonacci(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -197,12 +215,16 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
-   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
-   *   ApiFuture<Empty> future = deprecatedServiceClient.fastFibonacciCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+   * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   * ApiFuture<Empty> future = deprecatedServiceClient.fastFibonacciCallable().futureCall(request);
+   * // Do something.
+   * future.get();
    * }</pre>
    */
   public final UnaryCallable<FibonacciRequest, Empty> fastFibonacciCallable() {
@@ -219,10 +241,14 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
-   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
-   *   deprecatedServiceClient.slowFibonacci(request);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+   * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   * deprecatedServiceClient.slowFibonacci(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -244,12 +270,16 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
-   *   FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
-   *   ApiFuture<Empty> future = deprecatedServiceClient.slowFibonacciCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+   * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+   * ApiFuture<Empty> future = deprecatedServiceClient.slowFibonacciCallable().futureCall(request);
+   * // Do something.
+   * future.get();
    * }</pre>
    *
    * @deprecated This method is deprecated and will be removed in the next major version update.
