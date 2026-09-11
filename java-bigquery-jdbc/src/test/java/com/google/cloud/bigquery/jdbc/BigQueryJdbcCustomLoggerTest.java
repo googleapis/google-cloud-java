@@ -389,7 +389,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     Field arraySchema = Field.of("name", LegacySQLTypeName.INTEGER);
     JsonStringArrayList<Object> arrayValues = new JsonStringArrayList<>();
     arrayValues.add(123L);
-    BigQueryArrowArray array = new BigQueryArrowArray(arraySchema, arrayValues, logger);
+    BigQueryArrowArray array = new BigQueryArrowArray(arraySchema, arrayValues, false, logger);
 
     assertConnectionIdPropagated(
         logger, connectionId, "Log from Arrow Array", () -> array.LOG.fine("Log from Arrow Array"));
@@ -404,7 +404,8 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     FieldList structSchema = FieldList.of(Field.of("col", LegacySQLTypeName.INTEGER));
     JsonStringHashMap<String, Object> structValues = new JsonStringHashMap<>();
     structValues.put("col", 456L);
-    BigQueryArrowStruct struct = new BigQueryArrowStruct(structSchema, structValues, structLogger);
+    BigQueryArrowStruct struct =
+        new BigQueryArrowStruct(structSchema, structValues, false, structLogger);
 
     assertConnectionIdPropagated(
         structLogger,
@@ -429,7 +430,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     JsonStringArrayList<Object> nestedValues = new JsonStringArrayList<>();
     nestedValues.add(map);
     BigQueryArrowArray arrayWithNested =
-        new BigQueryArrowArray(arrayNestedSchema, nestedValues, logger);
+        new BigQueryArrowArray(arrayNestedSchema, nestedValues, false, logger);
 
     Object[] result = (Object[]) arrayWithNested.getArray();
     BigQueryArrowStruct nestedStruct = (BigQueryArrowStruct) result[0];
@@ -460,7 +461,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     values.put("array_col", arrayVal);
 
     BigQueryArrowStruct structWithNestedArray =
-        new BigQueryArrowStruct(nestedSchema, values, structLogger);
+        new BigQueryArrowStruct(nestedSchema, values, false, structLogger);
     Object[] attributes = structWithNestedArray.getAttributes();
     BigQueryArrowArray nestedArray = (BigQueryArrowArray) attributes[0];
 
