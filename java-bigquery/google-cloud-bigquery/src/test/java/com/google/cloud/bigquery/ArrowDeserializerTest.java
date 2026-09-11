@@ -40,9 +40,11 @@ import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
+import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.Float8Vector;
 import org.apache.arrow.vector.IntVector;
+import org.apache.arrow.vector.TimeMicroVector;
 import org.apache.arrow.vector.TimeStampMicroVector;
 import org.apache.arrow.vector.VarBinaryVector;
 import org.apache.arrow.vector.VarCharVector;
@@ -137,8 +139,30 @@ public class ArrowDeserializerTest {
       tsVector.setNull(1);
       tsVector.setValueCount(2);
 
+      DateDayVector dateVector = new DateDayVector("date_col", allocator);
+      dateVector.allocateNew(2);
+      // 18993 days -> "2022-01-01"
+      dateVector.set(0, 18993);
+      dateVector.setNull(1);
+      dateVector.setValueCount(2);
+
+      TimeMicroVector timeVector = new TimeMicroVector("time_col", allocator);
+      timeVector.allocateNew(2);
+      // 43800000000 microseconds = 12:10:00
+      timeVector.set(0, 43800000000L);
+      timeVector.setNull(1);
+      timeVector.setValueCount(2);
+
       List<FieldVector> vectors =
-          ImmutableList.of(intVector, nameVector, scoreVector, activeVector, bytesVector, tsVector);
+          ImmutableList.of(
+              intVector,
+              nameVector,
+              scoreVector,
+              activeVector,
+              bytesVector,
+              tsVector,
+              dateVector,
+              timeVector);
 
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
         org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
@@ -161,6 +185,8 @@ public class ArrowDeserializerTest {
             BaseEncoding.base64().encode("test_bytes".getBytes(StandardCharsets.UTF_8)),
             row0.get("data").getStringValue());
         assertEquals("1408452095.220000", row0.get("ts").getStringValue());
+        assertEquals("2022-01-01", row0.get("date_col").getStringValue());
+        assertEquals("12:10", row0.get("time_col").getStringValue());
 
         // Row 1
         FieldValueList row1 = rows.get(1);
@@ -170,6 +196,8 @@ public class ArrowDeserializerTest {
         assertEquals("false", row1.get("active").getStringValue());
         assertNull(row1.get("data").getValue());
         assertNull(row1.get("ts").getValue());
+        assertNull(row1.get("date_col").getValue());
+        assertNull(row1.get("time_col").getValue());
       } finally {
         for (FieldVector vector : vectors) {
           vector.close();

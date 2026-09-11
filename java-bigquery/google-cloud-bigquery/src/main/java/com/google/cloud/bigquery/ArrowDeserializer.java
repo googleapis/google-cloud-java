@@ -23,13 +23,23 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.channels.Channels;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.DateDayVector;
+import org.apache.arrow.vector.DateMilliVector;
 import org.apache.arrow.vector.FieldVector;
+import org.apache.arrow.vector.TimeMicroVector;
+import org.apache.arrow.vector.TimeMilliVector;
+import org.apache.arrow.vector.TimeNanoVector;
+import org.apache.arrow.vector.TimeSecVector;
 import org.apache.arrow.vector.TimeStampVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
@@ -354,6 +364,30 @@ final class ArrowDeserializer {
           micros = rawVal;
       }
       stringVal = formatTimestampMicros(micros);
+    } else if (bqField.getType() == LegacySQLTypeName.DATE) {
+      if (vector instanceof DateDayVector) {
+        int days = ((DateDayVector) vector).get(rowIndex);
+        stringVal = LocalDate.ofEpochDay(days).toString();
+      } else if (vector instanceof DateMilliVector) {
+        long millis = ((DateMilliVector) vector).get(rowIndex);
+        stringVal = Instant.ofEpochMilli(millis).atZone(ZoneOffset.UTC).toLocalDate().toString();
+      } else {
+        stringVal = String.valueOf(vector.getObject(rowIndex));
+      }
+    } else if (bqField.getType() == LegacySQLTypeName.TIME) {
+      long nanosOfDay;
+      if (vector instanceof TimeSecVector) {
+        nanosOfDay = ((TimeSecVector) vector).get(rowIndex) * 1_000_000_000L;
+      } else if (vector instanceof TimeMilliVector) {
+        nanosOfDay = ((TimeMilliVector) vector).get(rowIndex) * 1_000_000L;
+      } else if (vector instanceof TimeMicroVector) {
+        nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
+      } else if (vector instanceof TimeNanoVector) {
+        nanosOfDay = ((TimeNanoVector) vector).get(rowIndex);
+      } else {
+        nanosOfDay = 0L;
+      }
+      stringVal = LocalTime.ofNanoOfDay(nanosOfDay).toString();
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {

@@ -217,6 +217,24 @@ public class ArrowPojoUtilsTest {
   }
 
   @Test
+  public void testArrowSchemaToBigQuerySchema_FixedSizeList() {
+    Field fixedListField =
+        new Field(
+            "fixed_list",
+            FieldType.nullable(new ArrowType.FixedSizeList(3)),
+            ImmutableList.of(
+                new Field("item", FieldType.nullable(new ArrowType.Int(32, true)), null)));
+    Schema arrowSchema = new Schema(ImmutableList.of(fixedListField));
+
+    com.google.cloud.bigquery.Schema bqSchema =
+        ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+    assertEquals(1, bqSchema.getFields().size());
+    assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(0).getType());
+    assertEquals(Mode.REPEATED, bqSchema.getFields().get(0).getMode());
+  }
+
+  @Test
   public void testArrowSchemaToBigQuerySchema_UnsupportedTypeThrowsException() {
     Field unsupportedField =
         new Field("unsupported", FieldType.nullable(new ArrowType.Null()), null);
