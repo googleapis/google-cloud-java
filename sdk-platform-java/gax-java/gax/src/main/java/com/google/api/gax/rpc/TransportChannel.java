@@ -49,4 +49,12 @@ public interface TransportChannel extends BackgroundResource {
    * Returns an empty {@link ApiCallContext} that is compatible with this {@code TransportChannel}.
    */
   ApiCallContext getEmptyCallContext();
+
+  /**
+   * Refreshes or recreates the underlying network connections of this transport channel.
+   *
+   * <p>By default, this is a no-op for transports that do not require stateful connection lifecycle
+   * management.
+   */
+  default void refresh() {}
 }

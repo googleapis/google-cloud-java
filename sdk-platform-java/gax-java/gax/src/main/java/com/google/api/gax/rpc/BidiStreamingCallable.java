@@ -241,11 +241,45 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
     return new BidiStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ClientStream<RequestT> internalCall(
-          ResponseObserver<ResponseT> responseObserver,
+          final ResponseObserver<ResponseT> responseObserver,
           ClientStreamReadyObserver<RequestT> onReady,
           ApiCallContext thisCallContext) {
+        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
+        ResponseObserver<ResponseT> refreshingObserver = responseObserver;
+
+        if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
+          refreshingObserver =
+              new ResponseObserver<ResponseT>() {
+                @Override
+                public void onStart(StreamController controller) {
+                  responseObserver.onStart(controller);
+                }
+
+                @Override
+                public void onResponse(ResponseT response) {
+                  responseObserver.onResponse(response);
+                }
+
+                @Override
+                public void onError(Throwable t) {
+                  if (t instanceof UnauthenticatedException) {
+                    TransportChannel transportChannel = mergedContext.getTransportChannel();
+                    if (transportChannel != null) {
+                      transportChannel.refresh();
+                    }
+                  }
+                  responseObserver.onError(t);
+                }
+
+                @Override
+                public void onComplete() {
+                  responseObserver.onComplete();
+                }
+              };
+        }
+
         return BidiStreamingCallable.this.internalCall(
-            responseObserver, onReady, defaultCallContext.merge(thisCallContext));
+            refreshingObserver, onReady, mergedContext);
       }
     };
   }
