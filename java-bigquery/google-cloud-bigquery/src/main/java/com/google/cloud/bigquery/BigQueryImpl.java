@@ -332,7 +332,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           optionPageSize != null && optionPageSize.longValue() > 0
               ? optionPageSize.longValue()
               : DEFAULT_PAGE_SIZE;
-      List<FieldValueList> rowBatch = new ArrayList<>();
+      List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, Integer.MAX_VALUE));
 
       try {
         if (bqReadClient == null) {
@@ -2069,7 +2069,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static Collection<FieldValueList> transformTableData(
+  private static List<FieldValueList> transformTableData(
       Iterable<TableRow> tableDataPb, final Schema schema, boolean useInt64Timestamps) {
     return ImmutableList.copyOf(
         Iterables.transform(
