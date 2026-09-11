@@ -186,7 +186,7 @@ public class ArrowDeserializerTest {
             row0.get("data").getStringValue());
         assertEquals("1408452095.220000", row0.get("ts").getStringValue());
         assertEquals("2022-01-01", row0.get("date_col").getStringValue());
-        assertEquals("12:10", row0.get("time_col").getStringValue());
+        assertEquals("12:10:00", row0.get("time_col").getStringValue());
 
         // Row 1
         FieldValueList row1 = rows.get(1);

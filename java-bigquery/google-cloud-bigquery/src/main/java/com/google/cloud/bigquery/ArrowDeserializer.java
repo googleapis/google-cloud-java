@@ -27,6 +27,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -142,8 +143,8 @@ final class ArrowDeserializer {
     }
 
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
-        VectorSchemaRoot closedRoot = VectorSchemaRoot.create(arrowSchema, childAllocator)) {
-      VectorLoader loader = new VectorLoader(closedRoot);
+        VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, childAllocator)) {
+      VectorLoader loader = new VectorLoader(root);
       boolean hasMore = false;
       while (rowBatch.size() < pageSize
           && iterator.hasNext()
@@ -158,7 +159,7 @@ final class ArrowDeserializer {
               ArrowRecordBatch deserializedBatch =
                   MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
             loader.load(deserializedBatch);
-            int batchRowCount = closedRoot.getRowCount();
+            int batchRowCount = root.getRowCount();
             // Step 2: Populate rowBatch up to pageSize. If the batch contains more rows than the
             // remaining page capacity, buffer the unconsumed rows for subsequent pages to prevent
             // data loss when the stream response crosses a page boundary.
@@ -166,9 +167,9 @@ final class ArrowDeserializer {
             for (; i < batchRowCount; i++) {
               if (rowBatch.size() < pageSize
                   && (totalRowsReturned + rowBatch.size() < maxResults)) {
-                rowBatch.add(arrowRootToFieldValueList(closedRoot, i, schema));
+                rowBatch.add(arrowRootToFieldValueList(root, i, schema));
               } else if (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults) {
-                buffer.add(arrowRootToFieldValueList(closedRoot, i, schema));
+                buffer.add(arrowRootToFieldValueList(root, i, schema));
               } else {
                 break;
               }
@@ -176,7 +177,7 @@ final class ArrowDeserializer {
             if (i < batchRowCount && (totalRowsReturned + rowBatch.size() < maxResults)) {
               hasMore = true;
             }
-            closedRoot.clear();
+            root.clear();
           }
         }
       }
@@ -209,18 +210,18 @@ final class ArrowDeserializer {
       throw new IllegalArgumentException("Arrow schema must not be null.");
     }
     try (BufferAllocator childAllocator = createChildAllocator("deserializeRecordBatch");
-        VectorSchemaRoot closedRoot = VectorSchemaRoot.create(arrowSchema, childAllocator);
+        VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, childAllocator);
         ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
         ReadChannel readChannel = new ReadChannel(byteChannel);
         ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
-      VectorLoader loader = new VectorLoader(closedRoot);
+      VectorLoader loader = new VectorLoader(root);
       loader.load(deserializedBatch);
-      int rowCount = closedRoot.getRowCount();
+      int rowCount = root.getRowCount();
       List<FieldValueList> rows = new ArrayList<>(rowCount);
       for (int i = 0; i < rowCount; i++) {
-        rows.add(arrowRootToFieldValueList(closedRoot, i, schema));
+        rows.add(arrowRootToFieldValueList(root, i, schema));
       }
       return ImmutableList.copyOf(rows);
     }
@@ -355,7 +356,9 @@ final class ArrowDeserializer {
       } else {
         nanosOfDay = 0L;
       }
-      stringVal = LocalTime.ofNanoOfDay(nanosOfDay).toString();
+      stringVal =
+          DateTimeFormatter.ISO_LOCAL_TIME.format(
+              LocalTime.ofNanoOfDay((nanosOfDay / 1_000L) * 1_000L));
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
