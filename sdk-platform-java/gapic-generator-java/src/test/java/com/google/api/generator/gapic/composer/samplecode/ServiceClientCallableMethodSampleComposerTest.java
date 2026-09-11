@@ -27,9 +27,12 @@ import com.google.api.generator.gapic.protoparser.Parser;
 import com.google.api.generator.test.utils.LineFormatter;
 import com.google.protobuf.Descriptors;
 import com.google.showcase.v1beta1.EchoOuterClass;
+import static com.google.common.truth.Truth.assertThat;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Optional;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -1182,6 +1185,58 @@ class ServiceClientCallableMethodSampleComposerTest {
         () ->
             ServiceClientCallableMethodSampleComposer.composeRegularCallableMethod(
                 method, clientType, resourceNames, messageTypes, service));
+  }
+
+  @Test
+  void resumableUploadMethod_returnsEmpty() {
+    Descriptors.FileDescriptor echoFileDescriptor = EchoOuterClass.getDescriptor();
+    Map<String, ResourceName> resourceNames = Parser.parseResourceNames(echoFileDescriptor);
+    Map<String, Message> messageTypes = Parser.parseMessages(echoFileDescriptor);
+    TypeNode clientType =
+        TypeNode.withReference(
+            VaporReference.builder()
+                .setName("EchoClient")
+                .setPakkage(SHOWCASE_PACKAGE_NAME)
+                .build());
+    TypeNode inputType =
+        TypeNode.withReference(
+            VaporReference.builder()
+                .setName("EchoRequest")
+                .setPakkage(SHOWCASE_PACKAGE_NAME)
+                .build());
+    TypeNode outputType =
+        TypeNode.withReference(
+            VaporReference.builder()
+                .setName("EchoResponse")
+                .setPakkage(SHOWCASE_PACKAGE_NAME)
+                .build());
+    Method method =
+        Method.builder()
+            .setName("Echo")
+            .setInputType(inputType)
+            .setOutputType(outputType)
+            .setIsResumableUpload(true)
+            .setMethodSignatures(Collections.emptyList())
+            .build();
+    Service service =
+        Service.builder()
+            .setName("Echo")
+            .setDefaultHost("localhost:7469")
+            .setOauthScopes(Arrays.asList("https://www.googleapis.com/auth/cloud-platform"))
+            .setPakkage(SHOWCASE_PACKAGE_NAME)
+            .setProtoPakkage(SHOWCASE_PACKAGE_NAME)
+            .setOriginalJavaPackage(SHOWCASE_PACKAGE_NAME)
+            .setMethods(Arrays.asList(method))
+            .setOverriddenName("Echo")
+            .build();
+    Optional<Sample> sampleOpt =
+        ServiceClientCallableMethodSampleComposer.composeRegularCallableMethod(
+            method, clientType, resourceNames, messageTypes, service);
+    assertThat(sampleOpt).isEmpty();
+  }
+
+  private String writeStatements(Optional<Sample> sampleOpt) {
+    return writeStatements(sampleOpt.get());
   }
 
   private String writeStatements(Sample sample) {
