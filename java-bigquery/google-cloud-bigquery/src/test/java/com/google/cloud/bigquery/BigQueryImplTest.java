@@ -3075,6 +3075,116 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testQueryWithArrowFormatMultiplePagesWithMaxResults()
+      throws IOException, InterruptedException {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    // Prepare page 2 Arrow batch for streaming with 2 rows
+    byte[] page2BatchBytes;
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      BigIntVector idVector = new BigIntVector("id", allocator);
+      idVector.allocateNew(2);
+      idVector.set(0, 2L);
+      idVector.set(1, 3L);
+      idVector.setValueCount(2);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(idVector))) {
+        VectorUnloader unloader = new VectorUnloader(root);
+        try (ArrowRecordBatch recordBatch = unloader.getRecordBatch();
+            ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+          WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+          MessageSerializer.serialize(channel, recordBatch);
+          page2BatchBytes = out.toByteArray();
+        }
+      } finally {
+        idVector.close();
+      }
+    }
+
+    JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-arrow-multipage-maxresults")
+            .setJobComplete(true)
+            .setJobReference(queryJob.toPb())
+            .setTotalRows(BigInteger.valueOf(3L))
+            .setPageToken("1")
+            .setArrowSchema(
+                new com.google.api.services.bigquery.model.ArrowSchema()
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
+        .thenReturn(queryResponsePb);
+
+    // Mock BigQueryReadClient for page 2
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
+    when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
+
+    com.google.cloud.bigquery.storage.v1.ArrowRecordBatch protoBatch =
+        com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(ByteString.copyFrom(page2BatchBytes))
+            .build();
+    ReadRowsResponse streamResponse =
+        ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
+    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    EnhancedBigQueryReadStub mockStub =
+        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
+    BigQueryReadSettings mockSettings =
+        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
+    try {
+      java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
+      settingsField.setAccessible(true);
+      settingsField.set(mockReadClient, mockSettings);
+
+      java.lang.reflect.Field stubField = BigQueryReadClient.class.getDeclaredField("stub");
+      stubField.setAccessible(true);
+      stubField.set(mockReadClient, mockStub);
+    } catch (ReflectiveOperationException e) {
+      throw new RuntimeException(e);
+    }
+    when(mockStub.readRowsCallable()).thenReturn(mockCallable);
+
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(1L)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertTrue(result.hasNextPage());
+
+    Page<FieldValueList> page2 = result.getNextPage();
+    assertNotNull(page2);
+    List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
+    // Since maxResults is 1, page2 should only contain 1 row even though stream returned 2 rows
+    assertEquals(1, page2Rows.size());
+    assertEquals("2", page2Rows.get(0).get(0).getStringValue());
+    // Since totalRowsReturned == maxResults, hasNextPage must be false
+    assertFalse(page2.hasNextPage());
+    assertNull(page2.getNextPage());
+  }
+
+  @Test
   void testQueryArrowDefaultsToJobCreationOptional() throws IOException, InterruptedException {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder("SELECT 1").build();
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =

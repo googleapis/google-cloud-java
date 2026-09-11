@@ -2396,7 +2396,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 arrowSchemaPojo,
                 getOptions(),
                 initialRowOffset,
-                null,
+                content.getMaxResults(),
                 optionMap(options));
       } else {
         pageFetcher = new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options));
