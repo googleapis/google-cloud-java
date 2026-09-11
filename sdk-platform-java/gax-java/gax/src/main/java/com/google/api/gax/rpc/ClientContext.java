@@ -35,6 +35,7 @@ import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import com.google.api.client.util.Strings;
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.core.NanoClock;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -96,7 +97,8 @@ public abstract class ClientContext {
 
   public abstract Map<String, String> getHeaders();
 
-  protected abstract Map<String, String> getInternalHeaders();
+  @InternalApi("For use by generated service stubs only")
+  public abstract Map<String, String> getInternalHeaders();
 
   public abstract ApiClock getClock();
 
@@ -416,7 +418,8 @@ public abstract class ClientContext {
 
     public abstract Builder setHeaders(Map<String, String> headers);
 
-    protected abstract Builder setInternalHeaders(Map<String, String> headers);
+    @InternalApi("For use by generated service stubs only")
+    public abstract Builder setInternalHeaders(Map<String, String> headers);
 
     public abstract Builder setClock(ApiClock clock);
 
