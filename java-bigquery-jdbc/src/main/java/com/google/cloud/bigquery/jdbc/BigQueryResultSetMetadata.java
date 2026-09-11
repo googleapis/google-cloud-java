@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,6 +34,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   private final FieldList schemaFieldList;
   private final Statement statement;
   private final int columnCount;
+  private final boolean enableTimestampPicos;
 
   private static final int DEFAULT_DISPLAY_SIZE = 50;
 
@@ -41,6 +43,9 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
+    this.enableTimestampPicos =
+        statement instanceof BigQueryStatement
+            && ((BigQueryStatement) statement).isEnableTimestampPicos();
   }
 
   static BigQueryResultSetMetadata of(FieldList schemaFieldList, Statement statement) {
@@ -53,6 +58,14 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   private Field getField(int sqlColumn) {
     return this.schemaFieldList.get(sqlColumn - 1);
+  }
+
+  private boolean isPicosecondTimestampColumn(int sqlColumn) {
+    if (!this.enableTimestampPicos) {
+      return false;
+    }
+    Field field = getField(sqlColumn);
+    return field.getMode() != Mode.REPEATED && BigQueryTemporalUtility.isPicosecondTimestamp(field);
   }
 
   @Override
@@ -104,6 +117,9 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int getColumnDisplaySize(int column) {
+    if (isPicosecondTimestampColumn(column)) {
+      return 32;
+    }
     int colType = getColumnType(column);
     switch (colType) {
       case Types.BOOLEAN:
@@ -116,7 +132,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       case Types.NUMERIC:
         return 14;
       case Types.TIMESTAMP:
-        return 16;
+        return 26;
       default:
         return DEFAULT_DISPLAY_SIZE;
     }
@@ -138,6 +154,9 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     if (precision != null) {
       return precision.intValue();
     }
+    if (isPicosecondTimestampColumn(column)) {
+      return 32;
+    }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
     BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(type);
     if (typeInfo != null && typeInfo.columnSize != null) {
@@ -151,6 +170,9 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     Long scale = getField(column).getScale();
     if (scale != null) {
       return scale.intValue();
+    }
+    if (isPicosecondTimestampColumn(column)) {
+      return 12;
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
     BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(type);
@@ -187,11 +209,17 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int getColumnType(int column) {
+    if (isPicosecondTimestampColumn(column)) {
+      return Types.VARCHAR;
+    }
     return BigQueryTypeRegistry.toJdbcType(getStandardSQLTypeName(column));
   }
 
   @Override
   public String getColumnTypeName(int column) {
+    if (isPicosecondTimestampColumn(column)) {
+      return BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME;
+    }
     return getStandardSQLTypeName(column).name();
   }
 
@@ -212,9 +240,12 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public String getColumnClassName(int column) throws SQLException {
+    if (isPicosecondTimestampColumn(column)) {
+      return String.class.getName();
+    }
     Field field = getField(column);
     if (field.getMode() == Mode.REPEATED) {
-      return java.sql.Array.class.getName();
+      return Array.class.getName();
     }
     return BigQueryTypeRegistry.toJavaClass(getStandardSQLTypeName(column)).getName();
   }

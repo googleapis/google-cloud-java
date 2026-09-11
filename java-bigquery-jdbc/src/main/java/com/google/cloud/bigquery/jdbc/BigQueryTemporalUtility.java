@@ -49,6 +49,7 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
+  static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
 

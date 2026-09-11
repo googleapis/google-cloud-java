@@ -461,6 +461,67 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
+  public void testMapBigQueryTypeToJdbc_timestampPicos_whenEnabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldTimestampPicos =
+        Field.newBuilder("picos_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldTimestampPicos);
+    assertEquals(Types.VARCHAR, info.jdbcType);
+    assertEquals(BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME, info.typeName);
+    assertEquals(Integer.valueOf(32), info.columnSize);
+    assertEquals(Integer.valueOf(12), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_timestampPicos_whenDisabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(false);
+    Field fieldTimestampPicos =
+        Field.newBuilder("picos_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldTimestampPicos);
+    assertEquals(Types.TIMESTAMP, info.jdbcType);
+    assertEquals("TIMESTAMP", info.typeName);
+    assertEquals(Integer.valueOf(26), info.columnSize);
+    assertEquals(Integer.valueOf(6), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_repeatedTimestampPicos_remainsArray() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldRepeatedTimestampPicos =
+        Field.newBuilder("picos_array", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldRepeatedTimestampPicos);
+    assertEquals(Types.ARRAY, info.jdbcType);
+    assertEquals("ARRAY", info.typeName);
+    assertNull(info.columnSize);
+    assertNull(info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_standardTimestamp_whenPicosEnabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldStandardTimestamp =
+        Field.newBuilder("standard_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(6L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldStandardTimestamp);
+    assertEquals(Types.TIMESTAMP, info.jdbcType);
+    assertEquals("TIMESTAMP", info.typeName);
+    assertEquals(Integer.valueOf(26), info.columnSize);
+    assertEquals(Integer.valueOf(6), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
   public void testCreateColumnRow() {
     Field realField =
         Field.newBuilder("user_name", StandardSQLTypeName.STRING)
