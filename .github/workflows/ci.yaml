@@ -76,7 +76,7 @@ jobs:
         cache: maven
     - run: java -version
     - run: .kokoro/build.sh
-      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' }}
+      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
@@ -103,7 +103,7 @@ jobs:
         distribution: temurin
         cache: maven
     - run: .kokoro/build.sh
-      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' }}
+      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
