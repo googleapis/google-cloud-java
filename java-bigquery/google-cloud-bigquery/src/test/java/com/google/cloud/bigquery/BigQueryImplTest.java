@@ -60,6 +60,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.cloud.PageImpl;
 import com.google.cloud.Policy;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
@@ -85,6 +86,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -3182,6 +3184,114 @@ public class BigQueryImplTest {
     // Since totalRowsReturned == maxResults, hasNextPage must be false
     assertFalse(page2.hasNextPage());
     assertNull(page2.getNextPage());
+  }
+
+  @Test
+  void testArrowQueryPageFetcherSerializationOwnsClient() throws Exception {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-arrow-multipage-ser")
+            .setJobComplete(true)
+            .setJobReference(queryJob.toPb())
+            .setTotalRows(BigInteger.valueOf(2L))
+            .setPageToken("1")
+            .setArrowSchema(
+                new com.google.api.services.bigquery.model.ArrowSchema()
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+
+    // Verify ownsClient is false prior to serialization
+    Page<FieldValueList> pageNoSchema = result.getPageNoSchema();
+    Object origFetcher = null;
+    for (java.lang.reflect.Field f : PageImpl.class.getDeclaredFields()) {
+      f.setAccessible(true);
+      Object val = f.get(pageNoSchema);
+      if (val != null && val.getClass().getSimpleName().equals("ArrowQueryPageFetcher")) {
+        origFetcher = val;
+        break;
+      }
+    }
+    assertNotNull(origFetcher);
+    java.lang.reflect.Method isOwnsClientMethod =
+        origFetcher.getClass().getDeclaredMethod("isOwnsClient");
+    isOwnsClientMethod.setAccessible(true);
+    assertFalse((Boolean) isOwnsClientMethod.invoke(origFetcher));
+
+    // Serialize and deserialize TableResult
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (java.io.ObjectOutputStream oos = new java.io.ObjectOutputStream(baos)) {
+      oos.writeObject(result);
+    }
+
+    TableResult deserializedResult;
+    try (java.io.ObjectInputStream ois =
+        new java.io.ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserializedResult = (TableResult) ois.readObject();
+    }
+
+    assertNotNull(deserializedResult);
+    Page<FieldValueList> deserPage = deserializedResult.getPageNoSchema();
+    Object deserFetcher = null;
+    for (java.lang.reflect.Field f : PageImpl.class.getDeclaredFields()) {
+      f.setAccessible(true);
+      Object val = f.get(deserPage);
+      if (val != null && val.getClass().getSimpleName().equals("ArrowQueryPageFetcher")) {
+        deserFetcher = val;
+        break;
+      }
+    }
+    assertNotNull(deserFetcher);
+    assertTrue((Boolean) isOwnsClientMethod.invoke(deserFetcher));
+
+    // Verify that closeClient() closes bqReadClient when ownsClient is true
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    EnhancedBigQueryReadStub mockStub =
+        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
+    BigQueryReadSettings mockSettings =
+        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
+    java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
+    settingsField.setAccessible(true);
+    settingsField.set(mockReadClient, mockSettings);
+    java.lang.reflect.Field stubField = BigQueryReadClient.class.getDeclaredField("stub");
+    stubField.setAccessible(true);
+    stubField.set(mockReadClient, mockStub);
+
+    java.lang.reflect.Field bqReadClientField =
+        deserFetcher.getClass().getDeclaredField("bqReadClient");
+    bqReadClientField.setAccessible(true);
+    bqReadClientField.set(deserFetcher, mockReadClient);
+
+    java.lang.reflect.Method closeClientMethod =
+        deserFetcher.getClass().getDeclaredMethod("closeClient");
+    closeClientMethod.setAccessible(true);
+    closeClientMethod.invoke(deserFetcher);
+
+    verify(mockStub).close();
   }
 
   @Test
