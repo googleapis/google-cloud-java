@@ -54,6 +54,16 @@ final class ArrowDeserializer {
   }
 
   /**
+   * Creates a new child buffer allocator with the given name.
+   *
+   * @param name the child allocator name
+   * @return a new child buffer allocator
+   */
+  static BufferAllocator createChildAllocator(String name) {
+    return AllocatorHolder.ALLOCATOR.newChildAllocator(name, 0, Long.MAX_VALUE);
+  }
+
+  /**
    * Instantiates a new {@link VectorSchemaRoot} for the given Arrow schema using vectors allocated
    * from the provided child allocator, ensuring LIFO cleanup if an error occurs during
    * construction.
@@ -138,8 +148,7 @@ final class ArrowDeserializer {
       throws IOException {
     org.apache.arrow.vector.types.pojo.Schema arrowSchemaFinal = resolveArrowSchema(arrowSchema);
 
-    try (BufferAllocator childAllocator =
-            AllocatorHolder.ALLOCATOR.newChildAllocator("loadArrowRows", 0, Long.MAX_VALUE);
+    try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
         VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchemaFinal, childAllocator)) {
       VectorLoader loader = new VectorLoader(closedRoot);
       boolean hasMore = false;
@@ -206,9 +215,7 @@ final class ArrowDeserializer {
   static List<FieldValueList> deserializeRecordBatch(
       byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
     org.apache.arrow.vector.types.pojo.Schema schemaPojo = resolveArrowSchema(arrowSchema);
-    try (BufferAllocator childAllocator =
-            AllocatorHolder.ALLOCATOR.newChildAllocator(
-                "deserializeRecordBatch", 0, Long.MAX_VALUE);
+    try (BufferAllocator childAllocator = createChildAllocator("deserializeRecordBatch");
         VectorSchemaRoot closedRoot = createVectorSchemaRoot(schemaPojo, childAllocator);
         ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
