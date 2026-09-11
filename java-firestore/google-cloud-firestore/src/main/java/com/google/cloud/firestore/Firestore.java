@@ -57,6 +57,18 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
   Iterable<CollectionReference> listCollections();
 
   /**
+   * Fetches the root collections that are associated with this Firestore database.
+   *
+   * @param executionOptions Options for executing the request.
+   * @throws FirestoreException if the Iterable could not be initialized.
+   * @return An Iterable that can be used to fetch all collections.
+   */
+  @BetaApi
+  @Nonnull
+  Iterable<CollectionReference> listCollections(
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
    * Creates and returns a new {@link CollectionGroup} that includes all documents in the database
    * that are contained in a collection or subcollection with the given @code{collectionId}.
    *
@@ -160,6 +172,66 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
       @Nonnull TransactionOptions transactionOptions);
 
   /**
+   * Executes the given updateFunction with execution options and then attempts to commit the
+   * changes applied within the transaction.
+   *
+   * @param updateFunction The function to execute within the transaction context.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the result from updateFunction.
+   */
+  @BetaApi
+  @Nonnull
+  <T> ApiFuture<T> runTransaction(
+      @Nonnull final Transaction.Function<T> updateFunction,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
+   * Executes the given updateFunction with execution options and transaction options and then
+   * attempts to commit the changes applied within the transaction.
+   *
+   * @param updateFunction The function to execute within the transaction context.
+   * @param transactionOptions Options for the transaction.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the result from updateFunction.
+   */
+  @BetaApi
+  @Nonnull
+  <T> ApiFuture<T> runTransaction(
+      @Nonnull final Transaction.Function<T> updateFunction,
+      @Nonnull TransactionOptions transactionOptions,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
+   * Executes the given async updateFunction with execution options and then attempts to commit the
+   * changes applied within the transaction.
+   *
+   * @param updateFunction The function to execute within the transaction context.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the result from updateFunction.
+   */
+  @BetaApi
+  @Nonnull
+  <T> ApiFuture<T> runAsyncTransaction(
+      @Nonnull final Transaction.AsyncFunction<T> updateFunction,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
+   * Executes the given async updateFunction with execution options and transaction options and then
+   * attempts to commit the changes applied within the transaction.
+   *
+   * @param updateFunction The function to execute within the transaction context.
+   * @param transactionOptions Options for the transaction.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the result from updateFunction.
+   */
+  @BetaApi
+  @Nonnull
+  <T> ApiFuture<T> runAsyncTransaction(
+      @Nonnull final Transaction.AsyncFunction<T> updateFunction,
+      @Nonnull TransactionOptions transactionOptions,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
    * Retrieves multiple documents from Firestore.
    *
    * @param documentReferences List of Document References to fetch.
@@ -191,6 +263,51 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
       @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
       final ApiStreamObserver<DocumentSnapshot> responseObserver);
+
+  /**
+   * Retrieves multiple documents from Firestore with execution options.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  @Nonnull
+  ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
+   * Retrieves multiple documents from Firestore, while optionally applying a field mask to reduce
+   * the amount of data transmitted, with execution options.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If set, specifies the subset of fields to return.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  @Nonnull
+  ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
+   * Retrieves multiple documents from Firestore while optionally applying a field mask to reduce
+   * the amount of data transmitted, with execution options. Returned documents will be out of
+   * order.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If not null, specifies the subset of fields to return.
+   * @param responseObserver The observer to be notified when {@link DocumentSnapshot} details
+   *     arrive.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  void getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      final ApiStreamObserver<DocumentSnapshot> responseObserver,
+      @Nonnull FirestoreExecutionOptions executionOptions);
 
   /**
    * Gets a Firestore {@link WriteBatch} instance that can be used to combine multiple writes.

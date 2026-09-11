@@ -57,6 +57,14 @@ final class ReadTimeTransaction extends Transaction {
   @Nonnull
   @Override
   public ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef) {
+    return get(documentRef, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<DocumentSnapshot> get(
+      @Nonnull DocumentReference documentRef,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil()
             .startSpan(
@@ -65,7 +73,10 @@ final class ReadTimeTransaction extends Transaction {
       ApiFuture<DocumentSnapshot> result =
           ApiFutures.transform(
               firestore.getAll(
-                  new DocumentReference[] {documentRef}, /* fieldMask= */ null, readTime),
+                  new DocumentReference[] {documentRef},
+                  /* fieldMask= */ null,
+                  readTime,
+                  executionOptions),
               snapshots -> snapshots.isEmpty() ? null : snapshots.get(0),
               MoreExecutors.directExecutor());
       span.endAtFuture(result);
@@ -80,13 +91,21 @@ final class ReadTimeTransaction extends Transaction {
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
+    return getAll(documentReferences, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil()
             .startSpan(
                 TelemetryConstants.METHOD_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       ApiFuture<List<DocumentSnapshot>> result =
-          firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+          firestore.getAll(documentReferences, /* fieldMask= */ null, readTime, executionOptions);
       span.endAtFuture(result);
       return result;
     } catch (Exception error) {
@@ -99,13 +118,22 @@ final class ReadTimeTransaction extends Transaction {
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
+    return getAll(documentReferences, fieldMask, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil()
             .startSpan(
                 TelemetryConstants.METHOD_NAME_TRANSACTION_GET_DOCUMENTS, transactionTraceContext);
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       ApiFuture<List<DocumentSnapshot>> result =
-          firestore.getAll(documentReferences, /* fieldMask= */ null, readTime);
+          firestore.getAll(documentReferences, fieldMask, readTime, executionOptions);
       span.endAtFuture(result);
       return result;
     } catch (Exception error) {
@@ -117,31 +145,62 @@ final class ReadTimeTransaction extends Transaction {
   @Nonnull
   @Override
   public ApiFuture<QuerySnapshot> get(@Nonnull Query query) {
+    return get(query, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<QuerySnapshot> get(
+      @Nonnull Query query, @Nullable FirestoreExecutionOptions executionOptions) {
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
-      return query.get(null, com.google.cloud.Timestamp.fromProto(readTime));
+      return query.get(
+          null, com.google.cloud.Timestamp.fromProto(readTime), null, executionOptions);
     }
   }
 
   @Nonnull
   @Override
   public ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query) {
+    return get(query, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<AggregateQuerySnapshot> get(
+      @Nonnull AggregateQuery query, @Nullable FirestoreExecutionOptions executionOptions) {
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
-      return query.get(null, readTime);
+      return query.get(null, readTime, null, executionOptions);
     }
   }
 
   @Nonnull
   @Override
   public ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline) {
-    return execute(pipeline, new PipelineExecuteOptions());
+    return execute(pipeline, new PipelineExecuteOptions(), null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline, @Nullable FirestoreExecutionOptions executionOptions) {
+    return execute(pipeline, new PipelineExecuteOptions(), executionOptions);
   }
 
   @Nonnull
   @Override
   public ApiFuture<Pipeline.Snapshot> execute(
       @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options) {
+    return execute(pipeline, options, null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline,
+      @Nonnull PipelineExecuteOptions options,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
-      return pipeline.execute(options, null, readTime);
+      return pipeline.execute(options, null, readTime, executionOptions);
     }
   }
 
@@ -201,7 +260,7 @@ final class ReadTimeTransaction extends Transaction {
   public Transaction update(
       @Nonnull DocumentReference documentReference,
       @Nonnull Map<String, Object> fields,
-      Precondition precondition) {
+      Precondition options) {
     throw new IllegalStateException(WRITE_EXCEPTION_MSG);
   }
 

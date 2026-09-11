@@ -71,6 +71,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.LocalFirestoreHelper.InvalidPOJO;
+import com.google.cloud.firestore.models.RequestOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -1221,5 +1222,91 @@ public class DocumentReferenceTest {
 
     assertEquals(FOO_MAP, customMap.fooMap);
     assertEquals(SINGLE_FIELD_OBJECT, customMap.fooMap.get("customMap"));
+  }
+
+  @Test
+  public void getWithExecutionOptions() throws Exception {
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            ArgumentMatchers.<ServerStreamingCallable>any());
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("test-tag").build())
+            .build();
+    documentReference.get(executionOptions).get();
+    assertEquals(
+        Arrays.asList("test-tag"),
+        getAllCapture.getValue().getRequestOptions().getRequestTagsList());
+  }
+
+  @Test
+  public void setWithExecutionOptions() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("set-tag").build())
+            .build();
+    documentReference.set(SINGLE_FIELD_MAP, executionOptions).get();
+    assertEquals(
+        Arrays.asList("set-tag"),
+        commitCapture.getValue().getRequestOptions().getRequestTagsList());
+  }
+
+  @Test
+  public void createWithExecutionOptions() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("create-tag").build())
+            .build();
+    documentReference.create(SINGLE_FIELD_MAP, executionOptions).get();
+    assertEquals(
+        Arrays.asList("create-tag"),
+        commitCapture.getValue().getRequestOptions().getRequestTagsList());
+  }
+
+  @Test
+  public void updateWithExecutionOptions() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("update-tag").build())
+            .build();
+    documentReference.update(SINGLE_FIELD_MAP, executionOptions).get();
+    assertEquals(
+        Arrays.asList("update-tag"),
+        commitCapture.getValue().getRequestOptions().getRequestTagsList());
+  }
+
+  @Test
+  public void deleteWithExecutionOptions() throws Exception {
+    doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
+        .when(firestoreMock)
+        .sendRequest(
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("delete-tag").build())
+            .build();
+    documentReference.delete(executionOptions).get();
+    assertEquals(
+        Arrays.asList("delete-tag"),
+        commitCapture.getValue().getRequestOptions().getRequestTagsList());
   }
 }

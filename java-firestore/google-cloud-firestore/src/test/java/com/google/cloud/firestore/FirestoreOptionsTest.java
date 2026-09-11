@@ -48,4 +48,16 @@ public class FirestoreOptionsTest {
     assertThat(document.getName())
         .isEqualTo("projects/test-project/databases/test-database/documents/coll/doc1");
   }
+
+  @Test
+  public void instantiateWithRequestTags() {
+    java.util.List<String> tags = java.util.Arrays.asList("tag1", "tag2");
+    FirestoreOptions firestoreOptions =
+        FirestoreOptions.newBuilder().setProjectId("test-project").setRequestTags(tags).build();
+    assertThat(firestoreOptions.getRequestTags()).containsExactly("tag1", "tag2").inOrder();
+
+    FirestoreOptions copiedOptions = firestoreOptions.toBuilder().build();
+    assertThat(copiedOptions.getRequestTags()).containsExactly("tag1", "tag2").inOrder();
+    assertThat(firestoreOptions).isEqualTo(copiedOptions);
+  }
 }

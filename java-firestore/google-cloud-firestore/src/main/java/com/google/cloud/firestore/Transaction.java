@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.telemetry.MetricsUtil;
@@ -104,6 +105,17 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   public abstract ApiFuture<DocumentSnapshot> get(@Nonnull DocumentReference documentRef);
 
   /**
+   * Reads the document referred to by the provided DocumentReference with execution options. Holds
+   * a pessimistic lock on the returned document.
+   *
+   * @return The contents of the Document at this DocumentReference.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<DocumentSnapshot> get(
+      @Nonnull DocumentReference documentRef, @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
    * Retrieves multiple documents from Firestore. Holds a pessimistic lock on all returned
    * documents.
    *
@@ -112,6 +124,19 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   @Nonnull
   public abstract ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences);
+
+  /**
+   * Retrieves multiple documents from Firestore with execution options. Holds a pessimistic lock on
+   * all returned documents.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nonnull FirestoreExecutionOptions executionOptions);
 
   /**
    * Retrieves multiple documents from Firestore, while optionally applying a field mask to reduce
@@ -126,6 +151,22 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask);
 
   /**
+   * Retrieves multiple documents from Firestore with execution options, while optionally applying a
+   * field mask to reduce the amount of data transmitted from the backend. Holds a pessimistic lock
+   * on all returned documents.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If set, specifies the subset of fields to return.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
    * Returns the result set from the provided query. Holds a pessimistic lock on all returned
    * documents.
    *
@@ -133,6 +174,17 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
    */
   @Nonnull
   public abstract ApiFuture<QuerySnapshot> get(@Nonnull Query query);
+
+  /**
+   * Returns the result set from the provided query with execution options. Holds a pessimistic lock
+   * on all returned documents.
+   *
+   * @return The contents of the Document at this DocumentReference.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<QuerySnapshot> get(
+      @Nonnull Query query, @Nonnull FirestoreExecutionOptions executionOptions);
 
   /**
    * Returns the result from the provided aggregate query. Holds a pessimistic lock on all accessed
@@ -144,12 +196,33 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   public abstract ApiFuture<AggregateQuerySnapshot> get(@Nonnull AggregateQuery query);
 
   /**
+   * Returns the result from the provided aggregate query with execution options. Holds a
+   * pessimistic lock on all accessed documents.
+   *
+   * @return The result of the aggregation.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<AggregateQuerySnapshot> get(
+      @Nonnull AggregateQuery query, @Nonnull FirestoreExecutionOptions executionOptions);
+
+  /**
    * Executes the provided pipeline within the transaction context.
    *
    * @return The result of the execution.
    */
   @Nonnull
   public abstract ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline);
+
+  /**
+   * Executes the provided pipeline with execution options within the transaction context.
+   *
+   * @return The result of the execution.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline, @Nonnull FirestoreExecutionOptions executionOptions);
 
   /**
    * Executes the provided pipeline with specified options, within the transaction context.
@@ -159,4 +232,17 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   @Nonnull
   public abstract ApiFuture<Pipeline.Snapshot> execute(
       @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options);
+
+  /**
+   * Executes the provided pipeline with specified options and execution options, within the
+   * transaction context.
+   *
+   * @return The result of the execution.
+   */
+  @BetaApi
+  @Nonnull
+  public abstract ApiFuture<Pipeline.Snapshot> execute(
+      @Nonnull Pipeline pipeline,
+      @Nonnull PipelineExecuteOptions options,
+      @Nonnull FirestoreExecutionOptions executionOptions);
 }

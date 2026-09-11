@@ -27,8 +27,11 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.firestore.models.RequestOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.AggregationResult;
 import com.google.firestore.v1.RunAggregationQueryRequest;
+import com.google.firestore.v1.RunAggregationQueryResponse;
 import com.google.firestore.v1.StructuredQuery;
 import java.util.List;
 import java.util.Objects;
@@ -193,5 +196,40 @@ public class AggregateQueryTest {
     assertThat(query.getOrderByCount()).isEqualTo(2);
     assertThat(query.getOrderBy(0).getField().getFieldPath()).isEqualTo("a");
     assertThat(query.getOrderBy(1).getField().getFieldPath()).isEqualTo("__name__");
+  }
+
+  @Test
+  public void getWithExecutionOptions() throws Exception {
+    doAnswer(
+            (org.mockito.stubbing.Answer<Void>)
+                invocation -> {
+                  com.google.api.gax.rpc.ResponseObserver<RunAggregationQueryResponse> observer =
+                      (com.google.api.gax.rpc.ResponseObserver<RunAggregationQueryResponse>)
+                          invocation.getArguments()[1];
+                  observer.onResponse(
+                      RunAggregationQueryResponse.newBuilder()
+                          .setResult(
+                              AggregationResult.newBuilder()
+                                  .putAggregateFields(
+                                      "aggregate_0",
+                                      com.google.firestore.v1.Value.newBuilder()
+                                          .setIntegerValue(1)
+                                          .build()))
+                          .build());
+                  observer.onComplete();
+                  return null;
+                })
+        .when(firestoreMock)
+        .streamRequest(runQuery.capture(), any(), any());
+
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("agg-tag").build())
+            .build();
+
+    mockQuery.count().get(executionOptions).get();
+
+    RunAggregationQueryRequest queryRequest = runQuery.getValue();
+    assertThat(queryRequest.getRequestOptions().getRequestTagsList()).containsExactly("agg-tag");
   }
 }

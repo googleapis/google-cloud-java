@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -39,6 +40,18 @@ public class WriteBatch extends UpdateBuilder<WriteBatch> {
   @Nonnull
   public ApiFuture<List<WriteResult>> commit() {
     return super.commit(null);
+  }
+
+  /**
+   * Applies the current WriteBatch with execution options and returns an array with WriteResults.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return ApiFuture with a List of WriteResults
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<List<WriteResult>> commit(@Nonnull FirestoreExecutionOptions executionOptions) {
+    return super.commit(null, executionOptions);
   }
 
   WriteBatch wrapResult(int writeIndex) {
