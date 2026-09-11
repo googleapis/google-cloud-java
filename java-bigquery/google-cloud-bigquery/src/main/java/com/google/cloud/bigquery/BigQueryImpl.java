@@ -2047,7 +2047,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private static Iterable<FieldValueList> transformTableData(
+  private static Collection<FieldValueList> transformTableData(
       Iterable<TableRow> tableDataPb, final Schema schema, boolean useInt64Timestamps) {
     return ImmutableList.copyOf(
         Iterables.transform(
@@ -2317,7 +2317,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return job;
     }
 
-    Iterable<FieldValueList> firstPageRows;
+    Collection<FieldValueList> firstPageRows;
     if (isArrow) {
       if (results.getArrowRecordBatch() != null
           && results.getArrowRecordBatch().getSerializedRecordBatch() != null) {
@@ -2345,8 +2345,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
       NextPageFetcher<FieldValueList> pageFetcher;
       if (isArrow) {
-        long initialRowOffset =
-            firstPageRows instanceof Collection ? ((Collection<?>) firstPageRows).size() : 0L;
+        long initialRowOffset = firstPageRows.size();
         pageFetcher =
             new ArrowQueryPageFetcher(
                 jobId,
@@ -2370,10 +2369,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
-          .setRowsInPage(
-              firstPageRows instanceof Collection
-                  ? (long) ((Collection<?>) firstPageRows).size()
-                  : 0L)
+          .setRowsInPage((long) firstPageRows.size())
           .build();
     }
     // only 1 page of result
@@ -2390,10 +2386,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
         .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
-        .setRowsInPage(
-            firstPageRows instanceof Collection
-                ? (long) ((Collection<?>) firstPageRows).size()
-                : 0L)
+        .setRowsInPage((long) firstPageRows.size())
         .build();
   }
 
