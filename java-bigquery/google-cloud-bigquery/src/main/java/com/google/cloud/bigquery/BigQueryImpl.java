@@ -2290,9 +2290,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       if (isArrow) {
         arrowSchemaBytes = results.getArrowSchema().decodeSerializedSchema();
         try {
-          arrowSchemaPojo =
-              (org.apache.arrow.vector.types.pojo.Schema)
-                  ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+          arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
         } catch (IOException e) {
           throw new BigQueryException(0, "Failed to deserialize Arrow schema from response", e);
         }
