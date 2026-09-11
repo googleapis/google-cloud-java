@@ -261,7 +261,14 @@ final class ArrowDeserializer {
     for (int colIndex = 0; colIndex < root.getFieldVectors().size(); colIndex++) {
       FieldVector vector = root.getVector(colIndex);
       Field bqField = schema.getFields().get(colIndex);
-      fieldValues.add(arrowVectorToFieldValue(vector, rowIndex, bqField));
+      fieldValues.add(
+          arrowVectorToFieldValue(
+              vector,
+              rowIndex,
+              bqField.getType(),
+              bqField.getMode(),
+              bqField.getSubFields(),
+              bqField.getName()));
     }
     return FieldValueList.of(fieldValues, schema.getFields());
   }
@@ -274,26 +281,33 @@ final class ArrowDeserializer {
    *
    * @param vector the Arrow column vector
    * @param rowIndex the 0-based row index
-   * @param bqField the corresponding BigQuery Field definition
+   * @param type the BigQuery field type
+   * @param mode the BigQuery field mode
+   * @param subFields the BigQuery subfields for RECORD types
+   * @param name the BigQuery field name
    * @return the converted FieldValue object
    */
   private static FieldValue arrowVectorToFieldValue(
-      FieldVector vector, int rowIndex, Field bqField) {
-    if (bqField.getMode() == Field.Mode.REPEATED) {
+      FieldVector vector,
+      int rowIndex,
+      LegacySQLTypeName type,
+      Field.Mode mode,
+      @org.jspecify.annotations.Nullable FieldList subFields,
+      String name) {
+    if (mode == Field.Mode.REPEATED) {
       if (vector.isNull(rowIndex)) {
         return FieldValue.of(
-            FieldValue.Attribute.REPEATED,
-            FieldValueList.of(ImmutableList.of(), bqField.getSubFields()));
+            FieldValue.Attribute.REPEATED, FieldValueList.of(ImmutableList.of(), subFields));
       }
     } else if (vector.isNull(rowIndex)) {
-      if (bqField.getType() == LegacySQLTypeName.RECORD) {
+      if (type == LegacySQLTypeName.RECORD) {
         return FieldValue.of(FieldValue.Attribute.RECORD, null);
       }
       return FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
     }
 
     // Handle repeated fields
-    if (bqField.getMode() == Field.Mode.REPEATED) {
+    if (mode == Field.Mode.REPEATED) {
       FieldVector dataVector;
       int start;
       int end;
@@ -317,40 +331,41 @@ final class ArrowDeserializer {
             "Unsupported repeated vector type: " + vector.getClass().getName());
       }
       List<FieldValue> elements = new ArrayList<>(end - start);
-      Field.Builder elementBuilder = Field.newBuilder(bqField.getName(), bqField.getType());
-      if (bqField.getType() == LegacySQLTypeName.RECORD && bqField.getSubFields() != null) {
-        elementBuilder.setType(LegacySQLTypeName.RECORD, bqField.getSubFields());
-      }
-      Field elementBqField = elementBuilder.setMode(Field.Mode.NULLABLE).build();
       for (int k = start; k < end; k++) {
-        elements.add(arrowVectorToFieldValue(dataVector, k, elementBqField));
+        elements.add(
+            arrowVectorToFieldValue(dataVector, k, type, Field.Mode.NULLABLE, subFields, name));
       }
-      return FieldValue.of(
-          FieldValue.Attribute.REPEATED, FieldValueList.of(elements, bqField.getSubFields()));
+      return FieldValue.of(FieldValue.Attribute.REPEATED, FieldValueList.of(elements, subFields));
     }
 
     // Handle RECORD/STRUCT fields
-    if (bqField.getType() == LegacySQLTypeName.RECORD) {
+    if (type == LegacySQLTypeName.RECORD) {
       StructVector structVector = (StructVector) vector;
-      if (structVector.size() != bqField.getSubFields().size()) {
+      if (subFields == null || structVector.size() != subFields.size()) {
         throw new IllegalArgumentException(
             String.format(
                 "Schema mismatch for field '%s': Arrow struct size (%d) does not match BigQuery subfields size (%d)",
-                bqField.getName(), structVector.size(), bqField.getSubFields().size()));
+                name, structVector.size(), subFields != null ? subFields.size() : 0));
       }
       List<FieldValue> elements = new ArrayList<>(structVector.size());
       for (int colIndex = 0; colIndex < structVector.size(); colIndex++) {
         FieldVector childVector = (FieldVector) structVector.getChildByOrdinal(colIndex);
-        Field childBqField = bqField.getSubFields().get(colIndex);
-        elements.add(arrowVectorToFieldValue(childVector, rowIndex, childBqField));
+        Field childBqField = subFields.get(colIndex);
+        elements.add(
+            arrowVectorToFieldValue(
+                childVector,
+                rowIndex,
+                childBqField.getType(),
+                childBqField.getMode(),
+                childBqField.getSubFields(),
+                childBqField.getName()));
       }
-      return FieldValue.of(
-          FieldValue.Attribute.RECORD, FieldValueList.of(elements, bqField.getSubFields()));
+      return FieldValue.of(FieldValue.Attribute.RECORD, FieldValueList.of(elements, subFields));
     }
 
     // Handle primitive types
     String stringVal;
-    if (bqField.getType() == LegacySQLTypeName.TIMESTAMP) {
+    if (type == LegacySQLTypeName.TIMESTAMP) {
       TimeStampVector tsVector = (TimeStampVector) vector;
       long rawVal = tsVector.get(rowIndex);
       ArrowType.Timestamp tsType = (ArrowType.Timestamp) vector.getField().getType();
@@ -372,7 +387,7 @@ final class ArrowDeserializer {
           micros = rawVal;
       }
       stringVal = formatTimestampMicros(micros);
-    } else if (bqField.getType() == LegacySQLTypeName.DATE) {
+    } else if (type == LegacySQLTypeName.DATE) {
       if (vector instanceof DateDayVector) {
         int days = ((DateDayVector) vector).get(rowIndex);
         stringVal = LocalDate.ofEpochDay(days).toString();
@@ -382,7 +397,7 @@ final class ArrowDeserializer {
       } else {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }
-    } else if (bqField.getType() == LegacySQLTypeName.TIME) {
+    } else if (type == LegacySQLTypeName.TIME) {
       if (vector instanceof TimeSecVector
           || vector instanceof TimeMilliVector
           || vector instanceof TimeMicroVector
