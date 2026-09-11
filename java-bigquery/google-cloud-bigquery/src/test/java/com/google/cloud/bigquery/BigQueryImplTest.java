@@ -60,7 +60,6 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
-import com.google.cloud.PageImpl;
 import com.google.cloud.Policy;
 import com.google.cloud.RetryOption;
 import com.google.cloud.ServiceOptions;
@@ -3187,7 +3186,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testArrowQueryPageFetcherSerializationOwnsClient() throws Exception {
+  void testArrowQueryPageFetcherSerialization() throws Exception {
     org.apache.arrow.vector.types.pojo.Schema arrowSchema =
         new org.apache.arrow.vector.types.pojo.Schema(
             ImmutableList.of(
@@ -3223,23 +3222,8 @@ public class BigQueryImplTest {
             .build();
     TableResult result = bigquery.query(config);
     assertNotNull(result);
-
-    // Verify ownsClient is false prior to serialization
-    Page<FieldValueList> pageNoSchema = result.getPageNoSchema();
-    Object origFetcher = null;
-    for (java.lang.reflect.Field f : PageImpl.class.getDeclaredFields()) {
-      f.setAccessible(true);
-      Object val = f.get(pageNoSchema);
-      if (val != null && val.getClass().getSimpleName().equals("ArrowQueryPageFetcher")) {
-        origFetcher = val;
-        break;
-      }
-    }
-    assertNotNull(origFetcher);
-    java.lang.reflect.Method isOwnsClientMethod =
-        origFetcher.getClass().getDeclaredMethod("isOwnsClient");
-    isOwnsClientMethod.setAccessible(true);
-    assertFalse((Boolean) isOwnsClientMethod.invoke(origFetcher));
+    assertTrue(result.hasNextPage());
+    assertEquals("1", result.getNextPageToken());
 
     // Serialize and deserialize TableResult
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -3254,44 +3238,11 @@ public class BigQueryImplTest {
     }
 
     assertNotNull(deserializedResult);
-    Page<FieldValueList> deserPage = deserializedResult.getPageNoSchema();
-    Object deserFetcher = null;
-    for (java.lang.reflect.Field f : PageImpl.class.getDeclaredFields()) {
-      f.setAccessible(true);
-      Object val = f.get(deserPage);
-      if (val != null && val.getClass().getSimpleName().equals("ArrowQueryPageFetcher")) {
-        deserFetcher = val;
-        break;
-      }
-    }
-    assertNotNull(deserFetcher);
-    assertTrue((Boolean) isOwnsClientMethod.invoke(deserFetcher));
-
-    // Verify that closeClient() closes bqReadClient when ownsClient is true
-    BigQueryReadClient mockReadClient =
-        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
-    EnhancedBigQueryReadStub mockStub =
-        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
-    BigQueryReadSettings mockSettings =
-        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
-    java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
-    settingsField.setAccessible(true);
-    settingsField.set(mockReadClient, mockSettings);
-    java.lang.reflect.Field stubField = BigQueryReadClient.class.getDeclaredField("stub");
-    stubField.setAccessible(true);
-    stubField.set(mockReadClient, mockStub);
-
-    java.lang.reflect.Field bqReadClientField =
-        deserFetcher.getClass().getDeclaredField("bqReadClient");
-    bqReadClientField.setAccessible(true);
-    bqReadClientField.set(deserFetcher, mockReadClient);
-
-    java.lang.reflect.Method closeClientMethod =
-        deserFetcher.getClass().getDeclaredMethod("closeClient");
-    closeClientMethod.setAccessible(true);
-    closeClientMethod.invoke(deserFetcher);
-
-    verify(mockStub).close();
+    assertEquals(result.getSchema(), deserializedResult.getSchema());
+    assertEquals(result.getTotalRows(), deserializedResult.getTotalRows());
+    assertEquals(result.getQueryId(), deserializedResult.getQueryId());
+    assertEquals("1", deserializedResult.getNextPageToken());
+    assertTrue(deserializedResult.hasNextPage());
   }
 
   @Test

@@ -69,7 +69,6 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -308,7 +307,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private transient BigQueryReadClient bqReadClient;
     private transient ServerStream<ReadRowsResponse> stream;
     private transient Iterator<ReadRowsResponse> streamIterator;
-    private transient boolean ownsClient = false;
     private long totalRowsReturned = 0L;
     private boolean streamClosed = false;
 
@@ -329,11 +327,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.totalRowsReturned = initialRowOffset;
       this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
       this.optionsMap = optionsMap;
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-      in.defaultReadObject();
-      this.ownsClient = true;
     }
 
     @Override
@@ -434,26 +427,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           // Ignore cancellation exceptions
         }
       }
-      if (ownsClient && bqReadClient != null) {
-        try {
-          bqReadClient.close();
-        } catch (Exception e) {
-          // Ignore closing exceptions
-        }
-      }
       bqReadClient = null;
       streamIterator = null;
       stream = null;
-    }
-
-    @VisibleForTesting
-    boolean isOwnsClient() {
-      return ownsClient;
-    }
-
-    @VisibleForTesting
-    void setOwnsClient(boolean ownsClient) {
-      this.ownsClient = ownsClient;
     }
   }
 
