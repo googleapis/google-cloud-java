@@ -20,7 +20,7 @@ import com.google.api.client.util.escape.CharEscapers;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
-import com.google.cloud.bigquery.jdbc.telemetry.v1.BigQueryJdbcPropertyUtility;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPropertyUtility;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.net.UrlEscapers;
@@ -178,10 +178,6 @@ final class BigQueryJdbcUrlUtility {
   static final boolean DEFAULT_USE_GLOBAL_OTEL_VALUE = false;
   static final String ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME = "EnableDiagnosticTelemetry";
   static final boolean DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE = true;
-  static final String TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME = "TelemetryUploadInterval";
-  static final long DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE = 300_000L;
-  static final String TELEMETRY_BATCH_SIZE_PROPERTY_NAME = "TelemetryBatchSize";
-  static final int DEFAULT_TELEMETRY_BATCH_SIZE_VALUE = 5000;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -695,23 +691,7 @@ final class BigQueryJdbcUrlUtility {
                           "Enables or disables client-side diagnostic telemetry. Enabled by default.")
                       .setDefaultValue(
                           String.valueOf(
-                              BigQueryJdbcPropertyUtility
-                                  .DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
-                      .build(),
-                  BigQueryConnectionProperty.newBuilder()
-                      .setName(TELEMETRY_UPLOAD_INTERVAL_PROPERTY_NAME)
-                      .setDescription(
-                          "Interval in milliseconds for flushing diagnostic telemetry batches.")
-                      .setDefaultValue(
-                          String.valueOf(
-                              BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE))
-                      .build(),
-                  BigQueryConnectionProperty.newBuilder()
-                      .setName(TELEMETRY_BATCH_SIZE_PROPERTY_NAME)
-                      .setDescription("Maximum batch size threshold for diagnostic telemetry.")
-                      .setDefaultValue(
-                          String.valueOf(
-                              BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE))
+                              TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
