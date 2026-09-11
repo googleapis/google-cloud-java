@@ -70,15 +70,18 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
 
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
+      RequestT request,
+      InputStream payload,
+      @Nullable ApiCallContext context,
+      @Nullable ResumableUploadCallSettings settings) {
     checkNotNull(request, "request must not be null");
     checkNotNull(payload, "payload must not be null");
     ResumableUploadCallSettings effectiveSettings = defaultCallSettings.merge(settings);
+    ApiCallContext effectiveCallContext = clientContext.getDefaultCallContext().merge(context);
 
     ApiFuture<ResumableUploadSession> startFuture;
     try {
-      startFuture =
-          client.startUploadCallable().futureCall(request, clientContext.getDefaultCallContext());
+      startFuture = client.startUploadCallable().futureCall(request, effectiveCallContext);
     } catch (Throwable t) {
       startFuture = ApiFutures.immediateFailedFuture(t);
     }
