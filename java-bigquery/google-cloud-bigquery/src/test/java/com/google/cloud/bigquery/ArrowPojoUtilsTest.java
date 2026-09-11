@@ -172,6 +172,51 @@ public class ArrowPojoUtilsTest {
   }
 
   @Test
+  public void testArrowSchemaToBigQuerySchema_LargeTypes() {
+    Field largeStrField =
+        new Field("large_str", FieldType.nullable(new ArrowType.LargeUtf8()), null);
+    Field largeBytesField =
+        new Field("large_bytes", FieldType.nullable(new ArrowType.LargeBinary()), null);
+    Field largeListField =
+        new Field(
+            "large_list",
+            FieldType.nullable(new ArrowType.LargeList()),
+            ImmutableList.of(
+                new Field("item", FieldType.nullable(new ArrowType.Int(64, true)), null)));
+    Schema arrowSchema =
+        new Schema(ImmutableList.of(largeStrField, largeBytesField, largeListField));
+
+    com.google.cloud.bigquery.Schema bqSchema =
+        ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+    assertEquals(3, bqSchema.getFields().size());
+    assertEquals(LegacySQLTypeName.STRING, bqSchema.getFields().get(0).getType());
+    assertEquals(LegacySQLTypeName.BYTES, bqSchema.getFields().get(1).getType());
+    assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(2).getType());
+    assertEquals(Mode.REPEATED, bqSchema.getFields().get(2).getMode());
+  }
+
+  @Test
+  public void testArrowSchemaToBigQuerySchema_NestedListThrowsException() {
+    Field innerList =
+        new Field(
+            "inner_list",
+            FieldType.nullable(new ArrowType.List()),
+            ImmutableList.of(
+                new Field("item", FieldType.nullable(new ArrowType.Int(32, true)), null)));
+    Field outerList =
+        new Field(
+            "outer_list", FieldType.nullable(new ArrowType.List()), ImmutableList.of(innerList));
+    Schema arrowSchema = new Schema(ImmutableList.of(outerList));
+
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
+    assertTrue(thrown.getMessage().contains("Nested arrays (List of List) are not supported"));
+  }
+
+  @Test
   public void testArrowSchemaToBigQuerySchema_UnsupportedTypeThrowsException() {
     Field unsupportedField =
         new Field("unsupported", FieldType.nullable(new ArrowType.Null()), null);
