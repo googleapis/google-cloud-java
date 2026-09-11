@@ -406,6 +406,26 @@ public class ArrowDeserializerTest {
                 10L));
   }
 
+  @Test
+  public void testFormatTimestampMicros() {
+    // Standard positive timestamps
+    assertEquals("1408452095.220000", ArrowDeserializer.formatTimestampMicros(1408452095220000L));
+    assertEquals("1715000000.123456", ArrowDeserializer.formatTimestampMicros(1715000000123456L));
+
+    // Zero timestamp
+    assertEquals("0.000000", ArrowDeserializer.formatTimestampMicros(0L));
+
+    // Sub-second positive timestamp
+    assertEquals("0.000123", ArrowDeserializer.formatTimestampMicros(123L));
+
+    // Negative timestamp close to zero
+    assertEquals("-0.000123", ArrowDeserializer.formatTimestampMicros(-123L));
+
+    // Negative timestamp across multiple seconds
+    assertEquals("-1.500000", ArrowDeserializer.formatTimestampMicros(-1500000L));
+    assertEquals("-10.000001", ArrowDeserializer.formatTimestampMicros(-10000001L));
+  }
+
   private static org.apache.arrow.vector.types.pojo.Schema createSimpleArrowSchema() {
     org.apache.arrow.vector.types.pojo.Field intField =
         new org.apache.arrow.vector.types.pojo.Field(

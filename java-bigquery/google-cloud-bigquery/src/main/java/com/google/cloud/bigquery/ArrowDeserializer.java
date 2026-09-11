@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery;
 
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
@@ -24,7 +26,6 @@ import java.nio.channels.Channels;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
@@ -378,13 +379,7 @@ final class ArrowDeserializer {
         default:
           micros = rawVal;
       }
-      long seconds = micros / 1_000_000L;
-      long remainingMicros = Math.abs(micros % 1_000_000L);
-      if (micros < 0 && seconds == 0) {
-        stringVal = String.format(Locale.US, "-0.%06d", remainingMicros);
-      } else {
-        stringVal = String.format(Locale.US, "%d.%06d", seconds, remainingMicros);
-      }
+      stringVal = formatTimestampMicros(micros);
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
@@ -395,5 +390,29 @@ final class ArrowDeserializer {
     }
 
     return FieldValue.of(FieldValue.Attribute.PRIMITIVE, stringVal);
+  }
+
+  /**
+   * Formats an epoch timestamp in microseconds into BigQuery's decimal timestamp format: {@code
+   * "<seconds>.<microseconds>"} with exactly 6 fractional digits (for example, {@code
+   * "1408452095.220000"} or {@code "-0.000123"}).
+   *
+   * <p>This matches the decimal timestamp format returned by the BigQuery REST API and expected by
+   * {@link FieldValue#getTimestampValue()}, which parses the string into a {@link
+   * java.math.BigDecimal}. Uses {@link Strings#padStart} to avoid the performance overhead of
+   * {@link String#format} during row deserialization.
+   *
+   * @param micros the timestamp value in microseconds since Unix epoch
+   * @return the formatted timestamp string
+   */
+  @VisibleForTesting
+  static String formatTimestampMicros(long micros) {
+    long seconds = micros / 1_000_000L;
+    long remainingMicros = Math.abs(micros % 1_000_000L);
+    String fraction = Strings.padStart(Long.toString(remainingMicros), 6, '0');
+    if (micros < 0 && seconds == 0) {
+      return "-0." + fraction;
+    }
+    return seconds + "." + fraction;
   }
 }
