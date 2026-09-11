@@ -1,0 +1,174 @@
+package com.google.showcase.v1beta1.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonCallContext;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.ManagedHttpJsonChannel;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.FailedPreconditionException;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.common.collect.ImmutableList;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.showcase.v1beta1.UploadMediaRequest;
+import com.google.showcase.v1beta1.UploadMediaResponse;
+import io.grpc.Status;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the ResumableUploadService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@BetaApi
+@Generated("by gapic-generator-java")
+public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final @Nullable HttpJsonResumableUploadServiceResumableUploadStub resumableUploadStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcResumableUploadServiceStub create(
+      ResumableUploadServiceStubSettings settings) throws IOException {
+    return new GrpcResumableUploadServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcResumableUploadServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new GrpcResumableUploadServiceStub(
+        ResumableUploadServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcResumableUploadServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcResumableUploadServiceStub(
+        ResumableUploadServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcResumableUploadServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcResumableUploadServiceStub(
+      ResumableUploadServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new GrpcResumableUploadServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcResumableUploadServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected GrpcResumableUploadServiceStub(
+      ResumableUploadServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    if (clientContext.getCredentials() != null) {
+      ManagedHttpJsonChannel httpJsonManagedChannel =
+          ManagedHttpJsonChannel.newBuilder()
+              .setEndpoint(settings.getEndpoint())
+              .setExecutor(clientContext.getExecutor())
+              .build();
+      HttpJsonTransportChannel httpJsonTransportChannel =
+          HttpJsonTransportChannel.create(httpJsonManagedChannel);
+      ClientContext httpJsonClientContext =
+          ClientContext.newBuilder()
+              .setCredentials(clientContext.getCredentials())
+              .setEndpoint(settings.getEndpoint())
+              .setExecutor(clientContext.getExecutor())
+              .setHeaders(clientContext.getHeaders())
+              .setInternalHeaders(clientContext.getInternalHeaders())
+              .setClock(clientContext.getClock())
+              .setTransportChannel(httpJsonTransportChannel)
+              .setDefaultCallContext(
+                  HttpJsonCallContext.createDefault()
+                      .withTransportChannel(httpJsonTransportChannel))
+              .setBackgroundResources(Arrays.asList(httpJsonTransportChannel))
+              .build();
+      this.resumableUploadStub =
+          HttpJsonResumableUploadServiceResumableUploadStub.create(httpJsonClientContext, settings);
+    } else {
+      this.resumableUploadStub = null;
+    }
+
+    if (resumableUploadStub != null) {
+      this.backgroundResources =
+          new BackgroundResourceAggregation(
+              ImmutableList.<BackgroundResource>builder()
+                  .addAll(clientContext.getBackgroundResources())
+                  .add(resumableUploadStub)
+                  .build());
+    } else {
+      this.backgroundResources =
+          new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    }
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    if (resumableUploadStub == null) {
+      throw new FailedPreconditionException(
+          "Resumable uploads execute over HTTP/REST and require credentials. The client was initialized with a pre-constructed gRPC Channel, from which credentials cannot be extracted. Please configure a CredentialsProvider instead.",
+          null,
+          GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
+          false);
+    }
+    return resumableUploadStub.uploadMediaCallable();
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}
