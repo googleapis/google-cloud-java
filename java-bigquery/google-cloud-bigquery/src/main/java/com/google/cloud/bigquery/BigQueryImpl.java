@@ -297,7 +297,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private transient BigQueryReadClient bqReadClient;
     private transient ServerStream<ReadRowsResponse> stream;
     private transient Iterator<ReadRowsResponse> streamIterator;
-    private transient boolean isSharedClient = false;
     private long totalRowsReturned = 0L;
     private boolean streamClosed = false;
 
@@ -327,10 +326,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         return null;
       }
 
-      Long optionPageSize =
-          optionsMap != null ? (Long) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
+      Number optionPageSize =
+          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
       long pageSize =
-          optionPageSize != null && optionPageSize > 0 ? optionPageSize : DEFAULT_PAGE_SIZE;
+          optionPageSize != null && optionPageSize.longValue() > 0
+              ? optionPageSize.longValue()
+              : DEFAULT_PAGE_SIZE;
       List<FieldValueList> rowBatch = new ArrayList<>();
 
       try {
@@ -339,7 +340,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           if (service instanceof BigQueryImpl) {
             BigQueryImpl impl = (BigQueryImpl) service;
             bqReadClient = impl.getBigQueryReadClient();
-            isSharedClient = true;
           } else {
             throw new IllegalStateException(
                 "Arrow query result pagination requires an instance of BigQueryImpl to manage BigQueryReadClient lifecycle");
@@ -417,12 +417,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           // Ignore cancellation exceptions
         }
       }
-      if (bqReadClient != null) {
-        if (!isSharedClient) {
-          bqReadClient.close();
-        }
-        bqReadClient = null;
-      }
+      bqReadClient = null;
       streamIterator = null;
       stream = null;
     }
