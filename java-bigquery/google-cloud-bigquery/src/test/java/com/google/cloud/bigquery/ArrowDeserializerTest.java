@@ -313,22 +313,6 @@ public class ArrowDeserializerTest {
                 10L));
   }
 
-  @Test
-  public void testLoadArrowRows_unsupportedSchemaTypeThrowsException() {
-    List<FieldValueList> rowBatch = new ArrayList<>();
-    assertThrows(
-        IllegalArgumentException.class,
-        () ->
-            ArrowDeserializer.loadArrowRows(
-                Arrays.<ReadRowsResponse>asList().iterator(),
-                12345,
-                Schema.of(),
-                rowBatch,
-                10L,
-                0L,
-                10L));
-  }
-
   private static org.apache.arrow.vector.types.pojo.Schema createSimpleArrowSchema() {
     org.apache.arrow.vector.types.pojo.Field intField =
         new org.apache.arrow.vector.types.pojo.Field(

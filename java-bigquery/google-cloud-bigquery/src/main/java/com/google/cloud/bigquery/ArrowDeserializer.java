@@ -98,30 +98,13 @@ final class ArrowDeserializer {
    * @return the deserialized Apache Arrow Schema object
    * @throws IOException if deserialization of the Arrow schema fails
    */
-  static Object deserializeSchema(byte[] schemaBytes) throws IOException {
+  static org.apache.arrow.vector.types.pojo.Schema deserializeSchema(byte[] schemaBytes)
+      throws IOException {
     try (ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(schemaBytes);
         ReadChannel readChannel = new ReadChannel(byteChannel)) {
       return MessageSerializer.deserializeSchema(readChannel);
     }
-  }
-
-  /**
-   * Resolves an Apache Arrow Schema from the provided Object argument.
-   *
-   * @param arrowSchema the Arrow schema definition
-   * @return the resolved Apache Arrow Schema
-   * @throws IllegalArgumentException if arrowSchema is null or of an unsupported type
-   */
-  private static org.apache.arrow.vector.types.pojo.Schema resolveArrowSchema(Object arrowSchema) {
-    if (arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema) {
-      return (org.apache.arrow.vector.types.pojo.Schema) arrowSchema;
-    }
-    if (arrowSchema == null) {
-      throw new IllegalArgumentException("Arrow schema must not be null.");
-    }
-    throw new IllegalArgumentException(
-        "Unsupported Arrow schema type: " + arrowSchema.getClass().getName());
   }
 
   /**
@@ -139,17 +122,19 @@ final class ArrowDeserializer {
    */
   static boolean loadArrowRows(
       Iterator<ReadRowsResponse> iterator,
-      Object arrowSchema,
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema,
       Schema schema,
       List<FieldValueList> rowBatch,
       long pageSize,
       long totalRowsReturned,
       long maxResults)
       throws IOException {
-    org.apache.arrow.vector.types.pojo.Schema arrowSchemaFinal = resolveArrowSchema(arrowSchema);
+    if (arrowSchema == null) {
+      throw new IllegalArgumentException("Arrow schema must not be null.");
+    }
 
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchemaFinal, childAllocator)) {
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator)) {
       VectorLoader loader = new VectorLoader(closedRoot);
       boolean hasMore = false;
       while (rowBatch.size() < pageSize
@@ -194,9 +179,8 @@ final class ArrowDeserializer {
    * @param arrowSchema the Apache Arrow schema to convert
    * @return the corresponding BigQuery Veneer Schema
    */
-  static Schema arrowSchemaToBigQuerySchema(Object arrowSchema) {
-    return ArrowPojoUtils.arrowSchemaToBigQuerySchema(
-        (org.apache.arrow.vector.types.pojo.Schema) arrowSchema);
+  static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
+    return ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
   }
 
   /**
@@ -213,10 +197,13 @@ final class ArrowDeserializer {
    * @throws IOException if deserialization of the Arrow record batch fails
    */
   static List<FieldValueList> deserializeRecordBatch(
-      byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
-    org.apache.arrow.vector.types.pojo.Schema schemaPojo = resolveArrowSchema(arrowSchema);
+      byte[] recordBatchBytes, Schema schema, org.apache.arrow.vector.types.pojo.Schema arrowSchema)
+      throws IOException {
+    if (arrowSchema == null) {
+      throw new IllegalArgumentException("Arrow schema must not be null.");
+    }
     try (BufferAllocator childAllocator = createChildAllocator("deserializeRecordBatch");
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(schemaPojo, childAllocator);
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator);
         ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
         ReadChannel readChannel = new ReadChannel(byteChannel);
