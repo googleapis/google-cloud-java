@@ -64,6 +64,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.net.HostAndPort;
+import com.google.common.primitives.Longs;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -2392,15 +2393,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = 0L;
     if (hasMorePages && isArrow) {
-      String pageToken = results.getPageToken();
-      boolean isNumeric = !pageToken.isEmpty();
-      for (int i = 0; i < pageToken.length(); i++) {
-        if (!Character.isDigit(pageToken.charAt(i))) {
-          isNumeric = false;
-          break;
-        }
-      }
-      initialRowOffset = isNumeric ? Long.parseLong(pageToken) : firstPageRows.size();
+      Long parsedOffset = Longs.tryParse(results.getPageToken());
+      initialRowOffset = parsedOffset != null ? parsedOffset : firstPageRows.size();
       if (content.getMaxResults() != null
           && (initialRowOffset >= content.getMaxResults()
               || firstPageRows.size() >= content.getMaxResults())) {
