@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>1.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -227,7 +227,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.91.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -235,17 +235,17 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>2.71.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+      <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.33.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging</artifactId>
-      <version>3.38.0</version><!-- {x-version-update:google-cloud-logging:current} -->
+      <version>3.39.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -278,7 +278,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.33.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.34.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>
@@ -454,7 +454,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
-      <version>2.97.0</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <version>2.98.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
       <scope>test</scope>
     </dependency>
   </dependencies>
