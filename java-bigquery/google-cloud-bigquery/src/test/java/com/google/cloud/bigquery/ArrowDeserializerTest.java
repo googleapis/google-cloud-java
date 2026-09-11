@@ -622,4 +622,47 @@ public class ArrowDeserializerTest {
     }
     return out.toByteArray();
   }
+
+  @Test
+  public void testDeserializeRecordBatch_nullStructAndRepeated() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      StructVector structVector = StructVector.empty("person", allocator);
+      structVector.addOrGet("id", FieldType.nullable(new ArrowType.Int(32, true)), IntVector.class);
+      structVector.allocateNew();
+      structVector.setNull(0);
+      structVector.setValueCount(1);
+
+      ListVector listVector = ListVector.empty("numbers", allocator);
+      listVector.addOrGetVector(FieldType.nullable(new ArrowType.Int(32, true)));
+      listVector.allocateNew();
+      listVector.setNull(0);
+      listVector.setValueCount(1);
+
+      List<FieldVector> vectors = ImmutableList.of(structVector, listVector);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
+        org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
+        Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+        byte[] recordBatchBytes = serializeVectorSchemaRoot(root, allocator);
+        List<FieldValueList> rows =
+            ArrowDeserializer.deserializeRecordBatch(recordBatchBytes, bqSchema, arrowSchema);
+
+        assertEquals(1, rows.size());
+        FieldValueList row0 = rows.get(0);
+
+        // Verify null struct returns Attribute.RECORD with null value
+        FieldValue personVal = row0.get("person");
+        assertEquals(FieldValue.Attribute.RECORD, personVal.getAttribute());
+        assertTrue(personVal.isNull());
+
+        // Verify null repeated returns Attribute.REPEATED with empty list
+        FieldValue numbersVal = row0.get("numbers");
+        assertEquals(FieldValue.Attribute.REPEATED, numbersVal.getAttribute());
+        assertTrue(numbersVal.getRepeatedValue().isEmpty());
+      } finally {
+        structVector.close();
+        listVector.close();
+      }
+    }
+  }
 }

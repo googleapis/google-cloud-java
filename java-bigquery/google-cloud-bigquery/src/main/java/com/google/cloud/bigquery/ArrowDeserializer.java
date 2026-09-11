@@ -279,7 +279,16 @@ final class ArrowDeserializer {
    */
   private static FieldValue arrowVectorToFieldValue(
       FieldVector vector, int rowIndex, Field bqField) {
-    if (vector.isNull(rowIndex)) {
+    if (bqField.getMode() == Field.Mode.REPEATED) {
+      if (vector.isNull(rowIndex)) {
+        return FieldValue.of(
+            FieldValue.Attribute.REPEATED,
+            FieldValueList.of(ImmutableList.of(), bqField.getSubFields()));
+      }
+    } else if (vector.isNull(rowIndex)) {
+      if (bqField.getType() == LegacySQLTypeName.RECORD) {
+        return FieldValue.of(FieldValue.Attribute.RECORD, null);
+      }
       return FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
     }
 
