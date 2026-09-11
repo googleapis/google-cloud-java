@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -122,9 +123,12 @@ public class ArrowQueryResultTest {
 
   private BigQueryReadClient createMockReadClient(
       ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable) {
-    BigQueryReadClient mockClient = mock(BigQueryReadClient.class);
-    EnhancedBigQueryReadStub mockStub = mock(EnhancedBigQueryReadStub.class);
-    BigQueryReadSettings mockSettings = mock(BigQueryReadSettings.class);
+    BigQueryReadClient mockClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    EnhancedBigQueryReadStub mockStub =
+        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
+    BigQueryReadSettings mockSettings =
+        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
     try {
       java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
       settingsField.setAccessible(true);
@@ -225,10 +229,11 @@ public class ArrowQueryResultTest {
 
     @SuppressWarnings("unchecked")
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
-        mock(ServerStreamingCallable.class);
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
 
     @SuppressWarnings("unchecked")
-    ServerStream<ReadRowsResponse> mockServerStream = mock(ServerStream.class);
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
 
     com.google.cloud.bigquery.storage.v1.ArrowRecordBatch protoBatch =
@@ -354,12 +359,13 @@ public class ArrowQueryResultTest {
             .build();
 
     @SuppressWarnings("unchecked")
-    ServerStream<ReadRowsResponse> mockServerStream = mock(ServerStream.class);
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
     when(mockServerStream.iterator()).thenReturn(ImmutableList.of(response).iterator());
 
     @SuppressWarnings("unchecked")
     ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
-        mock(ServerStreamingCallable.class);
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
     when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
 
     BigQueryReadClient mockReadClient = createMockReadClient(mockCallable);

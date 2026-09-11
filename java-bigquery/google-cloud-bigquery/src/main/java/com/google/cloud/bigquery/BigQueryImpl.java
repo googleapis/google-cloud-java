@@ -24,6 +24,7 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -313,6 +314,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (options.getCredentials() != null) {
       settingsBuilder.setCredentialsProvider(
           FixedCredentialsProvider.create(options.getCredentials()));
+    } else {
+      settingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     }
     if (options.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(options.getUniverseDomain());
@@ -2439,11 +2442,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           }
         }
 
-        BigQueryReadClient client;
-        try {
-          client = getBigQueryReadClient();
-        } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
+        BigQueryReadClient client = null;
+        if (streamName != null) {
+          try {
+            client = getBigQueryReadClient();
+          } catch (IOException e) {
+            throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
+          }
         }
 
         JobCreationReason jobCreationReason =
