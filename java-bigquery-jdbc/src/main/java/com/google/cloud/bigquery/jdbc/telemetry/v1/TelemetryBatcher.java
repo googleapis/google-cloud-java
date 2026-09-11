@@ -17,10 +17,9 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
+import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -49,19 +48,14 @@ final class TelemetryBatcher implements AutoCloseable {
   private final ReentrantLock flushLock = new ReentrantLock();
 
   // Live telemetry accumulators. Lock-free to eliminate object allocation and GC overhead.
-  private volatile ConcurrentHashMap<StatementKey, StatementAccumulator> statementsMap =
-      new ConcurrentHashMap<>();
-  private volatile ConcurrentHashMap<ConnectionKey, ConnectionAccumulator> connectionsMap =
-      new ConcurrentHashMap<>();
-  private volatile ConcurrentHashMap<ErrorKey, ErrorAccumulator> errorsMap =
-      new ConcurrentHashMap<>();
-  private volatile ConcurrentHashMap<FeatureKey, FeatureAccumulator> featuresMap =
+  private ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
       new ConcurrentHashMap<>();
 
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
   private ScheduledFuture<?> scheduledTask;
 
+  // Constructors & Lifecycle
   TelemetryBatcher(TelemetryConfiguration config, ClearcutTransport transport) {
     this(
         config,
@@ -95,231 +89,12 @@ final class TelemetryBatcher implements AutoCloseable {
         });
   }
 
-  void offerConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
-    if (isClosed.get() || !isConfigured()) return;
-    ConnectionKey key = new ConnectionKey(authType, status, errorCode);
-    if (connectionsMap.size() >= MAX_UNIQUE_PROFILES && !connectionsMap.containsKey(key)) return;
-    connectionsMap.computeIfAbsent(key, k -> new ConnectionAccumulator(key)).accumulate();
-  }
-
-  void offerStatementExecution(
-      StatementType type,
-      QueryApiType api,
-      Status status,
-      int errorCode,
-      long durationMs,
-      int bucketIndex) {
-    if (isClosed.get() || !isConfigured()) return;
-    StatementKey key = new StatementKey(type, api, status, errorCode);
-    if (statementsMap.size() >= MAX_UNIQUE_PROFILES && !statementsMap.containsKey(key)) return;
-    statementsMap
-        .computeIfAbsent(key, k -> new StatementAccumulator(key))
-        .accumulate(durationMs, bucketIndex);
-  }
-
-  void offerErrorMetric(int errorCode, int errorXdbcCode, String methodName) {
-    if (isClosed.get() || !isConfigured()) return;
-    ErrorKey key = new ErrorKey(errorCode, errorXdbcCode, methodName);
-    if (errorsMap.size() >= MAX_UNIQUE_PROFILES && !errorsMap.containsKey(key)) return;
-    errorsMap.computeIfAbsent(key, k -> new ErrorAccumulator(key)).accumulate();
-  }
-
-  void offerFeatureUsage(DriverFeature feature, String customFeatureName) {
-    if (isClosed.get() || !isConfigured()) return;
-    FeatureKey key = new FeatureKey(feature, customFeatureName);
-    if (featuresMap.size() >= MAX_UNIQUE_PROFILES && !featuresMap.containsKey(key)) return;
-    featuresMap.computeIfAbsent(key, k -> new FeatureAccumulator(key)).accumulate();
-  }
-
-  TransportResult flush() {
-    flushLock.lock();
-    try {
-      if (!isConfigured()) {
-        return TransportResult.disabled();
-      }
-
-      int maxTotalBatchSize =
-          config != null
-              ? config.getBatchSizeThreshold()
-              : BigQueryJdbcPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
-      // Atomic Map Swap: Freeze current counts for flushing and start fresh lock-free maps.
-      ConcurrentHashMap<StatementKey, StatementAccumulator> snapStatements = this.statementsMap;
-      this.statementsMap = new ConcurrentHashMap<>();
-      ConcurrentHashMap<ConnectionKey, ConnectionAccumulator> snapConnections = this.connectionsMap;
-      this.connectionsMap = new ConcurrentHashMap<>();
-      ConcurrentHashMap<ErrorKey, ErrorAccumulator> snapErrors = this.errorsMap;
-      this.errorsMap = new ConcurrentHashMap<>();
-      ConcurrentHashMap<FeatureKey, FeatureAccumulator> snapFeatures = this.featuresMap;
-      this.featuresMap = new ConcurrentHashMap<>();
-
-      if (snapStatements.isEmpty()
-          && snapConnections.isEmpty()
-          && snapErrors.isEmpty()
-          && snapFeatures.isEmpty()) {
-        return TransportResult.disabled();
-      }
-
-      Instant now = Instant.now();
-      Timestamp timestamp =
-          Timestamp.newBuilder().setSeconds(now.getEpochSecond()).setNanos(now.getNano()).build();
-      TelemetryPayload.Builder payloadBuilder =
-          TelemetryPayload.newBuilder().setEventTime(timestamp);
-
-      if (driverEnvironment != null) {
-        payloadBuilder.setDriverEnvironment(driverEnvironment);
-      }
-
-      for (StatementAccumulator acc : snapStatements.values()) {
-        long totalCount = acc.count.sum();
-        long totalSum = acc.durationSum.sum();
-        DurationHistogram.Builder durBuilder =
-            DurationHistogram.newBuilder().setCount(totalCount).setSum(totalSum);
-
-        for (int i = 0; i < TelemetryManager.HISTOGRAM_BOUNDS.length; i++) {
-          durBuilder.addExplicitBounds(TelemetryManager.HISTOGRAM_BOUNDS[i]);
-        }
-        for (LongAdder bucket : acc.bucketCounts) {
-          durBuilder.addBucketCounts(bucket.sum());
-        }
-
-        payloadBuilder.addStatementExecutions(
-            StatementExecution.newBuilder()
-                .setStatementType(acc.key.type)
-                .setQueryApiType(acc.key.api)
-                .setStatus(acc.key.status)
-                .setErrorCode(acc.key.errorCode)
-                .setCount(totalCount)
-                .setDuration(durBuilder.build())
-                .build());
-      }
-
-      for (ConnectionAccumulator acc : snapConnections.values()) {
-        payloadBuilder.addConnectionAttempts(
-            ConnectionAttempt.newBuilder()
-                .setAuthType(acc.key.authType)
-                .setStatus(acc.key.status)
-                .setErrorCode(acc.key.errorCode)
-                .setCount(acc.count.sum())
-                .build());
-      }
-
-      for (ErrorAccumulator acc : snapErrors.values()) {
-        payloadBuilder.addErrors(
-            ErrorMetric.newBuilder()
-                .setErrorCode(acc.key.errorCode)
-                .setErrorXdbcCode(String.valueOf(acc.key.errorXdbcCode))
-                .setMethodName(acc.key.methodName)
-                .setCount(acc.count.sum())
-                .build());
-      }
-
-      for (FeatureAccumulator acc : snapFeatures.values()) {
-        payloadBuilder.addFeatureUsages(
-            FeatureUsage.newBuilder()
-                .setDriverFeature(acc.key.driverFeature)
-                .setCustomFeatureName(
-                    acc.key.customFeatureName == null ? "" : acc.key.customFeatureName)
-                .setCount(acc.count.sum())
-                .build());
-      }
-
-      TransportResult result;
-      try {
-        result = transport.send(payloadBuilder.build());
-      } catch (Throwable t) {
-        logger.log(Level.WARNING, "Unexpected exception during telemetry flush", t);
-        result = new TransportResult(false, -1);
-      }
-
-      if (!result.isSuccess()) {
-        // Simple requeue logic for failed requests
-        remergeFailedStatements(snapStatements);
-        remergeFailedConnections(snapConnections);
-        remergeFailedErrors(snapErrors);
-        remergeFailedFeatures(snapFeatures);
-      }
-
-      long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
-      long newDelayMs =
-          result.getNextRequestWaitMillis() > 0
-              ? Math.max(uploadIntervalMs, result.getNextRequestWaitMillis())
-              : uploadIntervalMs;
-      reschedule(newDelayMs);
-
-      return result;
-    } finally {
-      flushLock.unlock();
-    }
-  }
-
-  private void remergeFailedStatements(
-      ConcurrentHashMap<StatementKey, StatementAccumulator> failed) {
-    for (Map.Entry<StatementKey, StatementAccumulator> entry : failed.entrySet()) {
-      StatementAccumulator oldAcc = entry.getValue();
-      StatementAccumulator newAcc =
-          statementsMap.computeIfAbsent(entry.getKey(), k -> new StatementAccumulator(oldAcc.key));
-      newAcc.count.add(oldAcc.count.sum());
-      newAcc.durationSum.add(oldAcc.durationSum.sum());
-      for (int i = 0; i < oldAcc.bucketCounts.length; i++) {
-        newAcc.bucketCounts[i].add(oldAcc.bucketCounts[i].sum());
-      }
-    }
-  }
-
-  private void remergeFailedConnections(
-      ConcurrentHashMap<ConnectionKey, ConnectionAccumulator> failed) {
-    for (Map.Entry<ConnectionKey, ConnectionAccumulator> entry : failed.entrySet()) {
-      ConnectionAccumulator oldAcc = entry.getValue();
-      connectionsMap
-          .computeIfAbsent(entry.getKey(), k -> new ConnectionAccumulator(oldAcc.key))
-          .count
-          .add(oldAcc.count.sum());
-    }
-  }
-
-  private void remergeFailedErrors(ConcurrentHashMap<ErrorKey, ErrorAccumulator> failed) {
-    for (Map.Entry<ErrorKey, ErrorAccumulator> entry : failed.entrySet()) {
-      ErrorAccumulator oldAcc = entry.getValue();
-      errorsMap
-          .computeIfAbsent(entry.getKey(), k -> new ErrorAccumulator(oldAcc.key))
-          .count
-          .add(oldAcc.count.sum());
-    }
-  }
-
-  private void remergeFailedFeatures(ConcurrentHashMap<FeatureKey, FeatureAccumulator> failed) {
-    for (Map.Entry<FeatureKey, FeatureAccumulator> entry : failed.entrySet()) {
-      FeatureAccumulator oldAcc = entry.getValue();
-      featuresMap
-          .computeIfAbsent(entry.getKey(), k -> new FeatureAccumulator(oldAcc.key))
-          .count
-          .add(oldAcc.count.sum());
-    }
-  }
-
   TelemetryConfiguration getConfig() {
     return config;
   }
 
   private boolean isConfigured() {
     return config != null && config.isEnabled() && transport != null;
-  }
-
-  private void reschedule(long delayMs) {
-    if (isClosed.get()) {
-      return;
-    }
-    long current = currentScheduleDelayMs.get();
-    if (current == delayMs && scheduledTask != null && !scheduledTask.isDone()) {
-      return;
-    }
-    if (scheduledTask != null) {
-      scheduledTask.cancel(false);
-    }
-    if (executorService != null && !executorService.isShutdown()) {
-      currentScheduleDelayMs.set(delayMs);
-      scheduledTask = executorService.schedule(this::flush, delayMs, TimeUnit.MILLISECONDS);
-    }
   }
 
   @Override
@@ -343,24 +118,167 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
-  // POJO Keys
-  private static final class StatementKey {
+  // Ingestion Methods
+  void offer(Message metric) {
+    offer(metric, 0);
+  }
+
+  void offer(Message metric, long durationMs) {
+    if (isClosed.get() || !isConfigured()) {
+      return;
+    }
+    TelemetryKey key = TelemetryKey.from(metric);
+    TelemetryAccumulator acc = getOrAddAccumulator(key);
+    if (acc != null) {
+      acc.accumulate(durationMs);
+    }
+  }
+
+  private <A extends TelemetryAccumulator> A getOrAddAccumulator(TelemetryKey key) {
+    if (isClosed.get() || !isConfigured()) {
+      return null;
+    }
+    if (metricsMap.size() >= MAX_UNIQUE_PROFILES && !metricsMap.containsKey(key)) {
+      return null;
+    }
+    return (A) metricsMap.computeIfAbsent(key, TelemetryKey::createAccumulator);
+  }
+
+  // Dispatch & Flushing Methods
+  TransportResult flush() {
+    flushLock.lock();
+    try {
+      if (!isConfigured()) {
+        return TransportResult.disabled();
+      }
+
+      // Atomic Map Swap: Freeze current counts for flushing and start fresh lock-free maps.
+      ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> snapMetrics = this.metricsMap;
+      this.metricsMap = new ConcurrentHashMap<>();
+
+      if (snapMetrics.isEmpty()) {
+        return TransportResult.disabled();
+      }
+
+      Instant now = Instant.now();
+      Timestamp timestamp =
+          Timestamp.newBuilder().setSeconds(now.getEpochSecond()).setNanos(now.getNano()).build();
+      TelemetryPayload.Builder payloadBuilder =
+          TelemetryPayload.newBuilder().setEventTime(timestamp);
+
+      if (driverEnvironment != null) {
+        payloadBuilder.setDriverEnvironment(driverEnvironment);
+      }
+
+      for (TelemetryAccumulator accumulator : snapMetrics.values()) {
+        accumulator.addToPayload(payloadBuilder);
+      }
+
+      TransportResult result;
+      try {
+        result = transport.send(payloadBuilder.build());
+      } catch (Throwable t) {
+        logger.log(Level.WARNING, "Unexpected exception during telemetry flush", t);
+        result = new TransportResult(false, -1);
+      }
+
+      if (!result.isSuccess()) {
+        // Simple requeue logic for failed requests
+        remergeFailedMetrics(snapMetrics);
+      }
+
+      long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
+      long newDelayMs =
+          result.getNextRequestWaitMillis() > 0
+              ? Math.max(uploadIntervalMs, result.getNextRequestWaitMillis())
+              : uploadIntervalMs;
+      reschedule(newDelayMs);
+
+      return result;
+    } finally {
+      flushLock.unlock();
+    }
+  }
+
+  private void remergeFailedMetrics(Map<TelemetryKey, TelemetryAccumulator> snapshot) {
+    for (Map.Entry<TelemetryKey, TelemetryAccumulator> entry : snapshot.entrySet()) {
+      metricsMap.compute(
+          entry.getKey(),
+          (k, v) -> {
+            if (v == null) {
+              return entry.getValue();
+            }
+            v.merge(entry.getValue());
+            return v;
+          });
+    }
+  }
+
+  private void reschedule(long delayMs) {
+    if (isClosed.get()) {
+      return;
+    }
+    long current = currentScheduleDelayMs.get();
+    if (current == delayMs && scheduledTask != null && !scheduledTask.isDone()) {
+      return;
+    }
+    if (scheduledTask != null) {
+      scheduledTask.cancel(false);
+    }
+    if (executorService != null && !executorService.isShutdown()) {
+      currentScheduleDelayMs.set(delayMs);
+      scheduledTask = executorService.schedule(this::flush, delayMs, TimeUnit.MILLISECONDS);
+    }
+  }
+
+  // Telemetry Interfaces
+  interface TelemetryKey {
+    TelemetryAccumulator createAccumulator();
+
+    static TelemetryKey from(Message message) {
+      if (message instanceof StatementExecution) {
+        return new StatementKey((StatementExecution) message);
+      } else if (message instanceof ConnectionAttempt) {
+        return new ConnectionKey((ConnectionAttempt) message);
+      } else if (message instanceof ErrorMetric) {
+        return new ErrorKey((ErrorMetric) message);
+      } else if (message instanceof FeatureUsage) {
+        return new FeatureKey((FeatureUsage) message);
+      }
+      throw new IllegalArgumentException("Unsupported metric type: " + message.getClass());
+    }
+  }
+
+  interface TelemetryAccumulator {
+    void accumulate(long value);
+
+    void merge(TelemetryAccumulator other);
+
+    void addToPayload(TelemetryPayload.Builder payloadBuilder);
+  }
+
+  // Telemetry Keys
+  static final class StatementKey implements TelemetryKey {
     final StatementType type;
     final QueryApiType api;
     final Status status;
     final int errorCode;
 
-    StatementKey(StatementType type, QueryApiType api, Status status, int errorCode) {
-      this.type = type;
-      this.api = api;
-      this.status = status;
-      this.errorCode = errorCode;
+    StatementKey(StatementExecution statementExecution) {
+      this.type = statementExecution.getStatementType();
+      this.api = statementExecution.getQueryApiType();
+      this.status = statementExecution.getStatus();
+      this.errorCode = statementExecution.getErrorCode();
     }
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (!(o instanceof StatementKey)) return false;
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof StatementKey)) {
+        return false;
+      }
       StatementKey that = (StatementKey) o;
       return errorCode == that.errorCode
           && type == that.type
@@ -372,23 +290,40 @@ final class TelemetryBatcher implements AutoCloseable {
     public int hashCode() {
       return Objects.hash(type, api, status, errorCode);
     }
+
+    @Override
+    public TelemetryAccumulator createAccumulator() {
+      return new StatementAccumulator(this);
+    }
+
+    StatementExecution.Builder toBuilder() {
+      return StatementExecution.newBuilder()
+          .setStatementType(type)
+          .setQueryApiType(api)
+          .setStatus(status)
+          .setErrorCode(errorCode);
+    }
   }
 
-  private static final class ConnectionKey {
+  static final class ConnectionKey implements TelemetryKey {
     final AuthenticationType authType;
     final Status status;
     final int errorCode;
 
-    ConnectionKey(AuthenticationType authType, Status status, int errorCode) {
-      this.authType = authType;
-      this.status = status;
-      this.errorCode = errorCode;
+    ConnectionKey(ConnectionAttempt connectionAttempt) {
+      this.authType = connectionAttempt.getAuthType();
+      this.status = connectionAttempt.getStatus();
+      this.errorCode = connectionAttempt.getErrorCode();
     }
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (!(o instanceof ConnectionKey)) return false;
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof ConnectionKey)) {
+        return false;
+      }
       ConnectionKey that = (ConnectionKey) o;
       return errorCode == that.errorCode && authType == that.authType && status == that.status;
     }
@@ -397,23 +332,39 @@ final class TelemetryBatcher implements AutoCloseable {
     public int hashCode() {
       return Objects.hash(authType, status, errorCode);
     }
+
+    @Override
+    public TelemetryAccumulator createAccumulator() {
+      return new ConnectionAccumulator(this);
+    }
+
+    ConnectionAttempt.Builder toBuilder() {
+      return ConnectionAttempt.newBuilder()
+          .setAuthType(authType)
+          .setStatus(status)
+          .setErrorCode(errorCode);
+    }
   }
 
-  private static final class ErrorKey {
+  static final class ErrorKey implements TelemetryKey {
     final int errorCode;
     final int errorXdbcCode;
     final String methodName;
 
-    ErrorKey(int errorCode, int errorXdbcCode, String methodName) {
-      this.errorCode = errorCode;
-      this.errorXdbcCode = errorXdbcCode;
-      this.methodName = methodName;
+    ErrorKey(ErrorMetric errorMetric) {
+      this.errorCode = errorMetric.getErrorCode();
+      this.errorXdbcCode = errorMetric.getErrorXdbcCode();
+      this.methodName = errorMetric.getMethodName();
     }
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (!(o instanceof ErrorKey)) return false;
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof ErrorKey)) {
+        return false;
+      }
       ErrorKey errorKey = (ErrorKey) o;
       return errorCode == errorKey.errorCode
           && errorXdbcCode == errorKey.errorXdbcCode
@@ -424,21 +375,37 @@ final class TelemetryBatcher implements AutoCloseable {
     public int hashCode() {
       return Objects.hash(errorCode, errorXdbcCode, methodName);
     }
+
+    @Override
+    public TelemetryAccumulator createAccumulator() {
+      return new ErrorAccumulator(this);
+    }
+
+    ErrorMetric.Builder toBuilder() {
+      return ErrorMetric.newBuilder()
+          .setErrorCode(errorCode)
+          .setErrorXdbcCode(errorXdbcCode)
+          .setMethodName(methodName);
+    }
   }
 
-  private static final class FeatureKey {
+  static final class FeatureKey implements TelemetryKey {
     final DriverFeature driverFeature;
     final String customFeatureName;
 
-    FeatureKey(DriverFeature driverFeature, String customFeatureName) {
-      this.driverFeature = driverFeature;
-      this.customFeatureName = customFeatureName;
+    FeatureKey(FeatureUsage featureUsage) {
+      this.driverFeature = featureUsage.getDriverFeature();
+      this.customFeatureName = featureUsage.getCustomFeatureName();
     }
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (!(o instanceof FeatureKey)) return false;
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof FeatureKey)) {
+        return false;
+      }
       FeatureKey that = (FeatureKey) o;
       return driverFeature == that.driverFeature
           && Objects.equals(customFeatureName, that.customFeatureName);
@@ -448,14 +415,43 @@ final class TelemetryBatcher implements AutoCloseable {
     public int hashCode() {
       return Objects.hash(driverFeature, customFeatureName);
     }
+
+    @Override
+    public TelemetryAccumulator createAccumulator() {
+      return new FeatureAccumulator(this);
+    }
+
+    FeatureUsage.Builder toBuilder() {
+      return FeatureUsage.newBuilder()
+          .setDriverFeature(driverFeature)
+          .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName);
+    }
   }
 
-  // Accumulators
-  private static final class StatementAccumulator {
-    final StatementKey key;
-    final LongAdder count = new LongAdder();
-    final LongAdder durationSum = new LongAdder();
-    final LongAdder[] bucketCounts = new LongAdder[TelemetryManager.HISTOGRAM_BOUNDS.length + 1];
+  // Telemetry Accumulators
+  abstract static class CountAccumulator implements TelemetryAccumulator {
+    protected final LongAdder count = new LongAdder();
+
+    @Override
+    public void accumulate(long unused) {
+      count.increment();
+    }
+
+    @Override
+    public void merge(TelemetryAccumulator other) {
+      this.count.add(((CountAccumulator) other).count.sum());
+    }
+  }
+
+  static final class StatementAccumulator implements TelemetryAccumulator {
+    private static final double[] HISTOGRAM_BOUNDS = {
+      10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0
+    };
+
+    private final StatementKey key;
+    private final LongAdder count = new LongAdder();
+    private final LongAdder durationSum = new LongAdder();
+    private final LongAdder[] bucketCounts = new LongAdder[HISTOGRAM_BOUNDS.length + 1];
 
     StatementAccumulator(StatementKey key) {
       this.key = key;
@@ -464,51 +460,87 @@ final class TelemetryBatcher implements AutoCloseable {
       }
     }
 
-    void accumulate(long durationMs, int bucketIndex) {
+    @Override
+    public void accumulate(long durationMs) {
       count.increment();
       durationSum.add(durationMs);
-      if (bucketIndex >= 0 && bucketIndex < bucketCounts.length) {
-        bucketCounts[bucketIndex].increment();
+      int bucket = calculateBucket(durationMs);
+      bucketCounts[bucket].increment();
+    }
+
+    private static int calculateBucket(long durationMs) {
+      for (int i = 0; i < HISTOGRAM_BOUNDS.length; i++) {
+        if (durationMs < HISTOGRAM_BOUNDS[i]) {
+          return i;
+        }
       }
+      return HISTOGRAM_BOUNDS.length;
+    }
+
+    @Override
+    public void merge(TelemetryAccumulator other) {
+      StatementAccumulator o = (StatementAccumulator) other;
+      count.add(o.count.sum());
+      durationSum.add(o.durationSum.sum());
+      for (int i = 0; i < bucketCounts.length; i++) {
+        bucketCounts[i].add(o.bucketCounts[i].sum());
+      }
+    }
+
+    @Override
+    public void addToPayload(TelemetryPayload.Builder payloadBuilder) {
+      long totalCount = count.sum();
+      DurationHistogram.Builder durBuilder =
+          DurationHistogram.newBuilder().setCount(totalCount).setSum(durationSum.sum());
+
+      for (double bound : HISTOGRAM_BOUNDS) {
+        durBuilder.addExplicitBounds(bound);
+      }
+      for (LongAdder bucket : bucketCounts) {
+        durBuilder.addBucketCounts(bucket.sum());
+      }
+
+      payloadBuilder.addStatementExecutions(
+          key.toBuilder().setCount(totalCount).setDuration(durBuilder).build());
     }
   }
 
-  private static final class ConnectionAccumulator {
+  static final class ConnectionAccumulator extends CountAccumulator {
     final ConnectionKey key;
-    final LongAdder count = new LongAdder();
 
     ConnectionAccumulator(ConnectionKey key) {
       this.key = key;
     }
 
-    void accumulate() {
-      count.increment();
+    @Override
+    public void addToPayload(TelemetryPayload.Builder payloadBuilder) {
+      payloadBuilder.addConnectionAttempts(key.toBuilder().setCount(count.sum()).build());
     }
   }
 
-  private static final class ErrorAccumulator {
+  static final class ErrorAccumulator extends CountAccumulator {
     final ErrorKey key;
-    final LongAdder count = new LongAdder();
 
     ErrorAccumulator(ErrorKey key) {
       this.key = key;
     }
 
-    void accumulate() {
-      count.increment();
+    @Override
+    public void addToPayload(TelemetryPayload.Builder payloadBuilder) {
+      payloadBuilder.addErrors(key.toBuilder().setCount(count.sum()).build());
     }
   }
 
-  private static final class FeatureAccumulator {
+  static final class FeatureAccumulator extends CountAccumulator {
     final FeatureKey key;
-    final LongAdder count = new LongAdder();
 
     FeatureAccumulator(FeatureKey key) {
       this.key = key;
     }
 
-    void accumulate() {
-      count.increment();
+    @Override
+    public void addToPayload(TelemetryPayload.Builder payloadBuilder) {
+      payloadBuilder.addFeatureUsages(key.toBuilder().setCount(count.sum()).build());
     }
   }
 }

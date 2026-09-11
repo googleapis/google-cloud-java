@@ -197,12 +197,16 @@ public final class TelemetryManager implements AutoCloseable {
         () -> {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
-            mgr.getBatcher().offerConnectionAttempt(status, errorCode, authType);
+            mgr.getBatcher()
+                .offer(
+                    ConnectionAttempt.newBuilder()
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .setAuthType(authType)
+                        .build());
           }
         });
   }
-
-  // Avoids Protobuf allocations during execution by passing raw fields directly to the Batcher.
 
   static void recordStatementExecution(
       StatementType statementType,
@@ -214,10 +218,15 @@ public final class TelemetryManager implements AutoCloseable {
         () -> {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
-            int bucketIndex = calculateBucketIndex(durationMs);
             mgr.getBatcher()
-                .offerStatementExecution(
-                    statementType, apiType, status, errorCode, durationMs, bucketIndex);
+                .offer(
+                    StatementExecution.newBuilder()
+                        .setStatementType(statementType)
+                        .setQueryApiType(apiType)
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .build(),
+                    durationMs);
           }
         });
   }
@@ -228,7 +237,11 @@ public final class TelemetryManager implements AutoCloseable {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
             mgr.getBatcher()
-                .offerFeatureUsage(feature, customFeatureName == null ? "" : customFeatureName);
+                .offer(
+                    FeatureUsage.newBuilder()
+                        .setDriverFeature(feature)
+                        .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
+                        .build());
           }
         });
   }
