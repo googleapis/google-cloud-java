@@ -23,10 +23,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.channels.Channels;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -367,7 +365,7 @@ final class ArrowDeserializer {
         stringVal = LocalDate.ofEpochDay(days).toString();
       } else if (vector instanceof DateMilliVector) {
         long millis = ((DateMilliVector) vector).get(rowIndex);
-        stringVal = Instant.ofEpochMilli(millis).atZone(ZoneOffset.UTC).toLocalDate().toString();
+        stringVal = LocalDate.ofEpochDay(Math.floorDiv(millis, 86400000L)).toString();
       } else {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }

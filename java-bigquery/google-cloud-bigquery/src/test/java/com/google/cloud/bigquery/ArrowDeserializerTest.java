@@ -50,6 +50,9 @@ import org.apache.arrow.vector.VarBinaryVector;
 import org.apache.arrow.vector.VarCharVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.VectorUnloader;
+import org.apache.arrow.vector.complex.ListVector;
+import org.apache.arrow.vector.complex.StructVector;
+import org.apache.arrow.vector.complex.impl.UnionListWriter;
 import org.apache.arrow.vector.ipc.WriteChannel;
 import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
@@ -202,6 +205,83 @@ public class ArrowDeserializerTest {
         for (FieldVector vector : vectors) {
           vector.close();
         }
+      }
+    }
+  }
+
+  @Test
+  public void testDeserializeRecordBatch_structField() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      StructVector structVector = StructVector.empty("person", allocator);
+      IntVector idVector =
+          structVector.addOrGet(
+              "id", FieldType.nullable(new ArrowType.Int(32, true)), IntVector.class);
+      VarCharVector nameVector =
+          structVector.addOrGet(
+              "name", FieldType.nullable(new ArrowType.Utf8()), VarCharVector.class);
+      structVector.allocateNew();
+
+      idVector.set(0, 42);
+      nameVector.set(0, "Alice".getBytes(StandardCharsets.UTF_8));
+      structVector.setIndexDefined(0);
+      structVector.setValueCount(1);
+
+      List<FieldVector> vectors = ImmutableList.of(structVector);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
+        org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
+        Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+        byte[] recordBatchBytes = serializeVectorSchemaRoot(root, allocator);
+        List<FieldValueList> rows =
+            ArrowDeserializer.deserializeRecordBatch(recordBatchBytes, bqSchema, arrowSchema);
+
+        assertEquals(1, rows.size());
+        FieldValueList row0 = rows.get(0);
+        FieldValue personVal = row0.get("person");
+        assertEquals(FieldValue.Attribute.RECORD, personVal.getAttribute());
+        FieldValueList personRecord = personVal.getRecordValue();
+        assertEquals("42", personRecord.get("id").getStringValue());
+        assertEquals("Alice", personRecord.get("name").getStringValue());
+      } finally {
+        structVector.close();
+      }
+    }
+  }
+
+  @Test
+  public void testDeserializeRecordBatch_repeatedField() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      ListVector listVector = ListVector.empty("numbers", allocator);
+      UnionListWriter writer = listVector.getWriter();
+      writer.allocate();
+      writer.setPosition(0);
+      writer.startList();
+      writer.integer().writeInt(10);
+      writer.integer().writeInt(20);
+      writer.integer().writeInt(30);
+      writer.endList();
+      writer.setValueCount(1);
+
+      List<FieldVector> vectors = ImmutableList.of(listVector);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
+        org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
+        Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+        byte[] recordBatchBytes = serializeVectorSchemaRoot(root, allocator);
+        List<FieldValueList> rows =
+            ArrowDeserializer.deserializeRecordBatch(recordBatchBytes, bqSchema, arrowSchema);
+
+        assertEquals(1, rows.size());
+        FieldValueList row0 = rows.get(0);
+        FieldValue numbersVal = row0.get("numbers");
+        assertEquals(FieldValue.Attribute.REPEATED, numbersVal.getAttribute());
+        List<FieldValue> repeatedValues = numbersVal.getRepeatedValue();
+        assertEquals(3, repeatedValues.size());
+        assertEquals("10", repeatedValues.get(0).getStringValue());
+        assertEquals("20", repeatedValues.get(1).getStringValue());
+        assertEquals("30", repeatedValues.get(2).getStringValue());
+      } finally {
+        listVector.close();
       }
     }
   }

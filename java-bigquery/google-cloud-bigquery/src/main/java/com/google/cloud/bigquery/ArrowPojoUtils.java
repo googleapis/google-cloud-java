@@ -80,13 +80,9 @@ final class ArrowPojoUtils {
             "Nested arrays (List of List) are not supported by BigQuery: " + name);
       }
       if (innerField.getType() instanceof ArrowType.Struct) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : innerField.getChildren()) {
-          subFields.add(arrowFieldToBigQueryField(childField));
-        }
         builder =
             com.google.cloud.bigquery.Field.newBuilder(
-                name, LegacySQLTypeName.RECORD, FieldList.of(subFields));
+                name, LegacySQLTypeName.RECORD, getSubFields(innerField));
       } else {
         LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
         builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
@@ -94,13 +90,9 @@ final class ArrowPojoUtils {
       builder.setMode(Mode.REPEATED);
     } else {
       if (type instanceof ArrowType.Struct) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : arrowField.getChildren()) {
-          subFields.add(arrowFieldToBigQueryField(childField));
-        }
         builder =
             com.google.cloud.bigquery.Field.newBuilder(
-                name, LegacySQLTypeName.RECORD, FieldList.of(subFields));
+                name, LegacySQLTypeName.RECORD, getSubFields(arrowField));
       } else {
         LegacySQLTypeName bqType = arrowTypeToLegacySQLTypeName(type);
         builder = com.google.cloud.bigquery.Field.newBuilder(name, bqType);
@@ -112,6 +104,14 @@ final class ArrowPojoUtils {
       }
     }
     return builder.build();
+  }
+
+  private static FieldList getSubFields(Field structField) {
+    List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
+    for (Field childField : structField.getChildren()) {
+      subFields.add(arrowFieldToBigQueryField(childField));
+    }
+    return FieldList.of(subFields);
   }
 
   /**
@@ -136,7 +136,7 @@ final class ArrowPojoUtils {
       case LargeBinary:
         return LegacySQLTypeName.BYTES;
       case Decimal:
-        if (type instanceof ArrowType.Decimal && ((ArrowType.Decimal) type).getPrecision() > 38) {
+        if (((ArrowType.Decimal) type).getPrecision() > 38) {
           return LegacySQLTypeName.BIGNUMERIC;
         }
         return LegacySQLTypeName.NUMERIC;
