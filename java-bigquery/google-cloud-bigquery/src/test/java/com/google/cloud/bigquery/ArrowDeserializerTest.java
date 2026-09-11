@@ -31,9 +31,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
@@ -294,6 +297,96 @@ public class ArrowDeserializerTest {
       assertEquals(2, rowBatch.size());
       assertEquals("1", rowBatch.get(0).get("id").getStringValue());
       assertEquals("2", rowBatch.get(1).get("id").getStringValue());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_withBuffer_spansPageBoundaryWithoutDroppingRows()
+      throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      // 5 elements in a single response, requested with pageSize = 2
+      ReadRowsResponse r1 =
+          createReadRowsResponse(
+              Arrays.asList(1, 2, 3, 4, 5),
+              Arrays.asList("item1", "item2", "item3", "item4", "item5"),
+              allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      Queue<FieldValueList> buffer = new ArrayDeque<>();
+      Iterator<ReadRowsResponse> iterator = Arrays.asList(r1).iterator();
+
+      // Page 1: reads 2 rows, buffers remaining 3 rows
+      List<FieldValueList> page1 = new ArrayList<>();
+      boolean hasMore1 =
+          ArrowDeserializer.loadArrowRows(
+              iterator, arrowSchema, bqSchema, page1, buffer, 2L, 0L, 10L);
+      assertTrue(hasMore1);
+      assertEquals(2, page1.size());
+      assertEquals("1", page1.get(0).get("id").getStringValue());
+      assertEquals("2", page1.get(1).get("id").getStringValue());
+      assertEquals(3, buffer.size());
+
+      // Page 2: drains 2 rows from buffer, 1 row remains in buffer
+      List<FieldValueList> page2 = new ArrayList<>();
+      boolean hasMore2 =
+          ArrowDeserializer.loadArrowRows(
+              iterator, arrowSchema, bqSchema, page2, buffer, 2L, 2L, 10L);
+      assertTrue(hasMore2);
+      assertEquals(2, page2.size());
+      assertEquals("3", page2.get(0).get("id").getStringValue());
+      assertEquals("4", page2.get(1).get("id").getStringValue());
+      assertEquals(1, buffer.size());
+
+      // Page 3: drains final 1 row from buffer, buffer is now empty and stream has no more rows
+      List<FieldValueList> page3 = new ArrayList<>();
+      boolean hasMore3 =
+          ArrowDeserializer.loadArrowRows(
+              iterator, arrowSchema, bqSchema, page3, buffer, 2L, 4L, 10L);
+      assertFalse(hasMore3);
+      assertEquals(1, page3.size());
+      assertEquals("5", page3.get(0).get("id").getStringValue());
+      assertTrue(buffer.isEmpty());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_withBuffer_respectsMaxResults() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      // 5 elements in a single response, pageSize = 2, maxResults = 3
+      ReadRowsResponse r1 =
+          createReadRowsResponse(
+              Arrays.asList(1, 2, 3, 4, 5),
+              Arrays.asList("item1", "item2", "item3", "item4", "item5"),
+              allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      Queue<FieldValueList> buffer = new ArrayDeque<>();
+      Iterator<ReadRowsResponse> iterator = Arrays.asList(r1).iterator();
+
+      // Page 1: reads 2 rows, buffers 1 row (capped by maxResults = 3)
+      List<FieldValueList> page1 = new ArrayList<>();
+      boolean hasMore1 =
+          ArrowDeserializer.loadArrowRows(
+              iterator, arrowSchema, bqSchema, page1, buffer, 2L, 0L, 3L);
+      assertTrue(hasMore1);
+      assertEquals(2, page1.size());
+      assertEquals("1", page1.get(0).get("id").getStringValue());
+      assertEquals("2", page1.get(1).get("id").getStringValue());
+      assertEquals(1, buffer.size());
+
+      // Page 2: drains 1 row, reaches maxResults (3 rows total)
+      List<FieldValueList> page2 = new ArrayList<>();
+      boolean hasMore2 =
+          ArrowDeserializer.loadArrowRows(
+              iterator, arrowSchema, bqSchema, page2, buffer, 2L, 2L, 3L);
+      assertFalse(hasMore2);
+      assertEquals(1, page2.size());
+      assertEquals("3", page2.get(0).get("id").getStringValue());
+      assertTrue(buffer.isEmpty());
     }
   }
 

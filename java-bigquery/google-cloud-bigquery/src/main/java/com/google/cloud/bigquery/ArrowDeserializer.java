@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.FieldVector;
@@ -129,8 +130,57 @@ final class ArrowDeserializer {
       long totalRowsReturned,
       long maxResults)
       throws IOException {
+    return loadArrowRows(
+        iterator, arrowSchema, schema, rowBatch, null, pageSize, totalRowsReturned, maxResults);
+  }
+
+  /**
+   * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch,
+   * buffering any unconsumed rows that exceed the requested page size to prevent data loss across
+   * page boundaries.
+   *
+   * @param iterator the stream iterator providing ReadRowsResponse messages
+   * @param arrowSchema the Arrow schema POJO
+   * @param schema the BigQuery target Schema
+   * @param rowBatch the destination list for decoded rows
+   * @param buffer queue holding unconsumed rows from preceding batches that crossed page
+   *     boundaries, or null if buffering is not used
+   * @param pageSize the maximum number of rows to decode in this batch
+   * @param totalRowsReturned the running count of rows returned so far
+   * @param maxResults the maximum total rows allowed across all pages
+   * @return true if more rows are available in the stream and maxResults has not been reached
+   * @throws IOException if deserialization fails
+   */
+  static boolean loadArrowRows(
+      Iterator<ReadRowsResponse> iterator,
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema,
+      Schema schema,
+      List<FieldValueList> rowBatch,
+      Queue<FieldValueList> buffer,
+      long pageSize,
+      long totalRowsReturned,
+      long maxResults)
+      throws IOException {
     if (arrowSchema == null) {
       throw new IllegalArgumentException("Arrow schema must not be null.");
+    }
+
+    // Step 1: Drain any leftover rows from previous batches before pulling new responses from the
+    // stream.
+    while (buffer != null
+        && !buffer.isEmpty()
+        && rowBatch.size() < pageSize
+        && (totalRowsReturned + rowBatch.size() < maxResults)) {
+      rowBatch.add(buffer.poll());
+    }
+
+    // If the page was completely filled from buffered rows or maxResults was reached, check if more
+    // rows exist without pulling a new response from the stream.
+    if (rowBatch.size() >= pageSize || (totalRowsReturned + rowBatch.size() >= maxResults)) {
+      return (buffer != null && !buffer.isEmpty())
+          || (iterator.hasNext()
+              && (totalRowsReturned + rowBatch.size() + (buffer != null ? buffer.size() : 0)
+                  < maxResults));
     }
 
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
@@ -151,13 +201,20 @@ final class ArrowDeserializer {
                   MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
             loader.load(deserializedBatch);
             int batchRowCount = closedRoot.getRowCount();
+            // Step 2: Populate rowBatch up to pageSize. If the batch contains more rows than the
+            // remaining page capacity, buffer the unconsumed rows for subsequent pages to prevent
+            // data loss when the stream response crosses a page boundary.
             int i = 0;
             for (; i < batchRowCount; i++) {
-              if (rowBatch.size() >= pageSize
-                  || totalRowsReturned + rowBatch.size() >= maxResults) {
+              if (rowBatch.size() < pageSize
+                  && (totalRowsReturned + rowBatch.size() < maxResults)) {
+                rowBatch.add(arrowRootToFieldValueList(closedRoot, i, schema));
+              } else if (buffer != null
+                  && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults)) {
+                buffer.add(arrowRootToFieldValueList(closedRoot, i, schema));
+              } else {
                 break;
               }
-              rowBatch.add(arrowRootToFieldValueList(closedRoot, i, schema));
             }
             if (i < batchRowCount && (totalRowsReturned + rowBatch.size() < maxResults)) {
               hasMore = true;
@@ -166,10 +223,13 @@ final class ArrowDeserializer {
           }
         }
       }
-      if (!hasMore) {
-        hasMore = iterator.hasNext() && (totalRowsReturned + rowBatch.size() < maxResults);
-      }
-      return hasMore;
+      // Step 3: Determine if more rows are available either in the buffer, remaining unconsumed in
+      // a batch, or remaining in the stream iterator.
+      return hasMore
+          || (buffer != null && !buffer.isEmpty())
+          || (iterator.hasNext()
+              && (totalRowsReturned + rowBatch.size() + (buffer != null ? buffer.size() : 0)
+                  < maxResults));
     }
   }
 
