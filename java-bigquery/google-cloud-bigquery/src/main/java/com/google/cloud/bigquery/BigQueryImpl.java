@@ -341,10 +341,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             bqReadClient = impl.getBigQueryReadClient();
             isSharedClient = true;
           } else {
-            BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
-            configureReadSettings(settingsBuilder, serviceOptions);
-            bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
-            isSharedClient = false;
+            throw new IllegalStateException(
+                "Arrow query result pagination requires an instance of BigQueryImpl to manage BigQueryReadClient lifecycle");
           }
         }
 
