@@ -295,6 +295,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private transient BigQueryReadClient bqReadClient;
     private transient ServerStream<ReadRowsResponse> stream;
     private transient Iterator<ReadRowsResponse> streamIterator;
+    private transient boolean isSharedClient = false;
     private long totalRowsReturned = 0L;
     private boolean streamClosed = false;
 
@@ -327,17 +328,31 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
       try {
         if (bqReadClient == null) {
-          BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
-          configureReadSettings(settingsBuilder, serviceOptions);
-          bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
+          BigQuery service = serviceOptions.getService();
+          if (service instanceof BigQueryImpl) {
+            BigQueryImpl impl = (BigQueryImpl) service;
+            bqReadClient = impl.getBigQueryReadClient();
+            isSharedClient = true;
+          } else {
+            BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
+            configureReadSettings(settingsBuilder, serviceOptions);
+            bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
+            isSharedClient = false;
+          }
         }
 
         if (streamIterator == null) {
+          String location =
+              jobId.getLocation() != null ? jobId.getLocation() : serviceOptions.getLocation();
+          if (location == null) {
+            throw new BigQueryException(
+                0, "Location must be specified to read Arrow rows from storage stream");
+          }
           String streamName =
               String.format(
                   "projects/%s/locations/%s/jobs/%s/streams/_default",
                   jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
-                  jobId.getLocation() != null ? jobId.getLocation() : serviceOptions.getLocation(),
+                  location,
                   jobId.getJob());
 
           ReadRowsRequest readRowsRequest =
@@ -392,8 +407,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     private void closeClient() {
+      if (stream != null) {
+        try {
+          stream.cancel();
+        } catch (Exception e) {
+          // Ignore cancellation exceptions
+        }
+      }
       if (bqReadClient != null) {
-        bqReadClient.close();
+        if (!isSharedClient) {
+          bqReadClient.close();
+        }
         bqReadClient = null;
       }
       streamIterator = null;
