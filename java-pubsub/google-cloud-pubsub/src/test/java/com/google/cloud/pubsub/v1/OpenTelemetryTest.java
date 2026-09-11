@@ -57,6 +57,8 @@ public class OpenTelemetryTest {
   private static final String PUBLISH_BATCHING_SPAN_NAME = "publisher batching";
   private static final String PUBLISH_RPC_SPAN_NAME = FULL_TOPIC_NAME.getTopic() + " publish";
   private static final String PUBLISH_START_EVENT = "publish start";
+  private static final String HEDGED_PUBLISH_START_EVENT = "publish start (hedged)";
+  private static final String HEDGED_PUBLISH_END_EVENT = "publish end (hedged)";
   private static final String PUBLISH_END_EVENT = "publish end";
 
   private static final String SUBSCRIBER_SPAN_NAME =
@@ -654,6 +656,54 @@ public class OpenTelemetryTest {
         .hasStatus(expectedNackStatus)
         .hasException(e)
         .hasEnded();
+  }
+
+  @Test
+  public void testHedgedPublishSpanEvents() {
+    PubsubMessage message = getPubsubMessage();
+    PubsubMessageWrapper messageWrapper =
+        PubsubMessageWrapper.newBuilder(message, FULL_TOPIC_NAME).build();
+    List<PubsubMessageWrapper> messageWrappers =
+        java.util.Collections.singletonList(messageWrapper);
+
+    Tracer openTelemetryTracer = openTelemetryTesting.getOpenTelemetry().getTracer("test");
+    OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(openTelemetryTracer, true);
+
+    // Start Publisher span
+    tracer.startPublisherSpan(messageWrapper);
+
+    // Original Attempt 0 (creates RPC span and emits initial publish start event)
+    Span publishRpcSpan1 = tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers);
+    tracer.endPublishRpcSpan(publishRpcSpan1);
+
+    // Hedged Attempt 1 (does not create RPC span; emits hedged publish start event)
+    tracer.addHedgedPublishStartEvent(messageWrapper);
+
+    // End Publisher span
+    tracer.endPublisherSpan(messageWrapper, true);
+
+    List<SpanData> allSpans = openTelemetryTesting.getSpans();
+    // 2 Spans: publishRpcSpan1, publisherSpan
+    assertEquals(2, allSpans.size());
+    SpanData publisherSpanData = allSpans.get(1);
+
+    // The publisher parent span should have 3 events:
+    // 1. "publish start" (from initial attempt 0)
+    // 2. "publish start (hedged)" (from hedged attempt 1)
+    // 3. "publish end (hedged)" (when publisher span ends for hedged attempt)
+    assertEquals(3, publisherSpanData.getEvents().size());
+
+    EventDataAssert startEvent1Assert =
+        OpenTelemetryAssertions.assertThat(publisherSpanData.getEvents().get(0));
+    startEvent1Assert.hasName(PUBLISH_START_EVENT);
+
+    EventDataAssert startEvent2Assert =
+        OpenTelemetryAssertions.assertThat(publisherSpanData.getEvents().get(1));
+    startEvent2Assert.hasName(HEDGED_PUBLISH_START_EVENT);
+
+    EventDataAssert endEventAssert =
+        OpenTelemetryAssertions.assertThat(publisherSpanData.getEvents().get(2));
+    endEventAssert.hasName(HEDGED_PUBLISH_END_EVENT);
   }
 
   private PubsubMessage getPubsubMessage() {
