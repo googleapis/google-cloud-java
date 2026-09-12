@@ -2920,7 +2920,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public void close() throws Exception {
+  public void close() {
     readClientLock.lock();
     try {
       if (bqReadClient != null) {
