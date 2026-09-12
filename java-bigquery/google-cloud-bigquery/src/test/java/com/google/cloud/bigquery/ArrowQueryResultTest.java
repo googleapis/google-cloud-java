@@ -31,12 +31,10 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
-import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.ReadStream;
-import com.google.cloud.bigquery.storage.v1.stub.EnhancedBigQueryReadStub;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
@@ -125,22 +123,7 @@ public class ArrowQueryResultTest {
       ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable) {
     BigQueryReadClient mockClient =
         mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
-    EnhancedBigQueryReadStub mockStub =
-        mock(EnhancedBigQueryReadStub.class, withSettings().withoutAnnotations());
-    BigQueryReadSettings mockSettings =
-        mock(BigQueryReadSettings.class, withSettings().withoutAnnotations());
-    try {
-      java.lang.reflect.Field settingsField = BigQueryReadClient.class.getDeclaredField("settings");
-      settingsField.setAccessible(true);
-      settingsField.set(mockClient, mockSettings);
-
-      java.lang.reflect.Field stubField = BigQueryReadClient.class.getDeclaredField("stub");
-      stubField.setAccessible(true);
-      stubField.set(mockClient, mockStub);
-    } catch (ReflectiveOperationException e) {
-      throw new RuntimeException(e);
-    }
-    when(mockStub.readRowsCallable()).thenReturn(mockCallable);
+    when(mockClient.readRowsCallable()).thenReturn(mockCallable);
     return mockClient;
   }
 
