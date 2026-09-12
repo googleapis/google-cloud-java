@@ -75,8 +75,8 @@ public final class StsRequestHandler {
   private final StsTokenExchangeRequest request;
   private final HttpRequestFactory httpRequestFactory;
 
-  @Nullable private final HttpHeaders headers;
-  @Nullable private final String internalOptions;
+  private final @Nullable HttpHeaders headers;
+  private final @Nullable String internalOptions;
 
   private StsRequestHandler(Builder builder) {
     this.tokenExchangeEndpoint = builder.tokenExchangeEndpoint;
@@ -211,8 +211,8 @@ public final class StsRequestHandler {
     private final StsTokenExchangeRequest request;
     private final HttpRequestFactory httpRequestFactory;
 
-    @Nullable private HttpHeaders headers;
-    @Nullable private String internalOptions;
+    private @Nullable HttpHeaders headers;
+    private @Nullable String internalOptions;
 
     private Builder(
         String tokenExchangeEndpoint,
@@ -224,13 +224,13 @@ public final class StsRequestHandler {
     }
 
     @CanIgnoreReturnValue
-    public StsRequestHandler.Builder setHeaders(HttpHeaders headers) {
+    public StsRequestHandler.Builder setHeaders(@Nullable HttpHeaders headers) {
       this.headers = headers;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsRequestHandler.Builder setInternalOptions(String internalOptions) {
+    public StsRequestHandler.Builder setInternalOptions(@Nullable String internalOptions) {
       this.internalOptions = internalOptions;
       return this;
     }

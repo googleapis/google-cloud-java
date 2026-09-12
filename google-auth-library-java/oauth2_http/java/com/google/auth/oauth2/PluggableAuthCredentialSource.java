@@ -80,7 +80,7 @@ public class PluggableAuthCredentialSource extends ExternalAccountCredentials.Cr
 
   // Optional. Provided when the 3rd party executable caches the response at the specified
   // location.
-  @Nullable final String outputFilePath;
+  final @Nullable String outputFilePath;
 
   @SuppressWarnings("unchecked")
   public PluggableAuthCredentialSource(Map<String, Object> credentialSourceMap) {

@@ -50,11 +50,11 @@ class ExecutableResponse {
   private final int version;
   private final boolean success;
 
-  @Nullable private Long expirationTime;
-  @Nullable private String tokenType;
-  @Nullable private String subjectToken;
-  @Nullable private String errorCode;
-  @Nullable private String errorMessage;
+  private @Nullable Long expirationTime;
+  private @Nullable String tokenType;
+  private @Nullable String subjectToken;
+  private @Nullable String errorCode;
+  private @Nullable String errorMessage;
 
   ExecutableResponse(GenericJson json) throws IOException {
     if (!json.containsKey("version")) {

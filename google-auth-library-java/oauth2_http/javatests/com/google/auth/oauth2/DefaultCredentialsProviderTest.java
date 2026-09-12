@@ -911,9 +911,9 @@ class DefaultCredentialsProviderTest {
     }
 
     @Override
-    @Nullable String getProperty(String property, @Nullable String def) {
+    String getProperty(String property, String defaultValue) {
       String value = properties.get(property);
-      return value == null ? def : value;
+      return value == null ? defaultValue : value;
     }
 
     void setProperty(String property, @Nullable String value) {
