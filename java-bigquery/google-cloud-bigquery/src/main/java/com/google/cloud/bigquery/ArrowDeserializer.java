@@ -23,6 +23,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.channels.Channels;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -32,14 +33,23 @@ import java.util.List;
 import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.BigIntVector;
+import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.DateMilliVector;
 import org.apache.arrow.vector.FieldVector;
+import org.apache.arrow.vector.Float4Vector;
+import org.apache.arrow.vector.Float8Vector;
+import org.apache.arrow.vector.IntVector;
+import org.apache.arrow.vector.LargeVarCharVector;
+import org.apache.arrow.vector.SmallIntVector;
 import org.apache.arrow.vector.TimeMicroVector;
 import org.apache.arrow.vector.TimeMilliVector;
 import org.apache.arrow.vector.TimeNanoVector;
 import org.apache.arrow.vector.TimeSecVector;
 import org.apache.arrow.vector.TimeStampVector;
+import org.apache.arrow.vector.TinyIntVector;
+import org.apache.arrow.vector.VarCharVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.complex.FixedSizeListVector;
@@ -341,14 +351,17 @@ final class ArrowDeserializer {
     // Handle RECORD/STRUCT fields
     if (type == LegacySQLTypeName.RECORD) {
       StructVector structVector = (StructVector) vector;
-      if (subFields == null || structVector.size() != subFields.size()) {
+      // In Arrow StructVector (an AbstractContainerVector), size() returns the number of child
+      // vectors (fields), while getValueCount() returns the row count.
+      int childCount = structVector.size();
+      if (subFields == null || childCount != subFields.size()) {
         throw new IllegalArgumentException(
             String.format(
                 "Schema mismatch for field '%s': Arrow struct size (%d) does not match BigQuery subfields size (%d)",
-                name, structVector.size(), subFields != null ? subFields.size() : 0));
+                name, childCount, subFields != null ? subFields.size() : 0));
       }
-      List<FieldValue> elements = new ArrayList<>(structVector.size());
-      for (int colIndex = 0; colIndex < structVector.size(); colIndex++) {
+      List<FieldValue> elements = new ArrayList<>(childCount);
+      for (int colIndex = 0; colIndex < childCount; colIndex++) {
         FieldVector childVector = (FieldVector) structVector.getChildByOrdinal(colIndex);
         Field childBqField = subFields.get(colIndex);
         elements.add(
@@ -418,6 +431,24 @@ final class ArrowDeserializer {
       } else {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }
+    } else if (vector instanceof VarCharVector) {
+      stringVal = new String(((VarCharVector) vector).get(rowIndex), StandardCharsets.UTF_8);
+    } else if (vector instanceof LargeVarCharVector) {
+      stringVal = new String(((LargeVarCharVector) vector).get(rowIndex), StandardCharsets.UTF_8);
+    } else if (vector instanceof IntVector) {
+      stringVal = Integer.toString(((IntVector) vector).get(rowIndex));
+    } else if (vector instanceof BigIntVector) {
+      stringVal = Long.toString(((BigIntVector) vector).get(rowIndex));
+    } else if (vector instanceof SmallIntVector) {
+      stringVal = Short.toString(((SmallIntVector) vector).get(rowIndex));
+    } else if (vector instanceof TinyIntVector) {
+      stringVal = Byte.toString(((TinyIntVector) vector).get(rowIndex));
+    } else if (vector instanceof BitVector) {
+      stringVal = ((BitVector) vector).get(rowIndex) == 1 ? "true" : "false";
+    } else if (vector instanceof Float8Vector) {
+      stringVal = Double.toString(((Float8Vector) vector).get(rowIndex));
+    } else if (vector instanceof Float4Vector) {
+      stringVal = Float.toString(((Float4Vector) vector).get(rowIndex));
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
