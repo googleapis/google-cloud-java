@@ -61,10 +61,32 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       InputStream payload,
       ResumableUploadCallSettings settings,
       ApiCallContext callContext) {
+    return create(
+        startFuture,
+        uploadChunkCallable,
+        payload,
+        settings,
+        callContext,
+        ClientContext.newBuilder().setDefaultCallContext(callContext).build());
+  }
+
+  static <ResponseT> ResumableUploadFutureImpl<ResponseT> create(
+      ApiFuture<ResumableUploadSession> startFuture,
+      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      InputStream payload,
+      ResumableUploadCallSettings settings,
+      ApiCallContext callContext,
+      ClientContext clientContext) {
     SettableApiFuture<ResponseT> result = SettableApiFuture.create();
     ResumableUploadChunkCoordinator<ResponseT> coordinator =
         new ResumableUploadChunkCoordinator<>(
-            result, startFuture, uploadChunkCallable, payload, settings, callContext);
+            result,
+            startFuture,
+            uploadChunkCallable,
+            payload,
+            settings,
+            callContext,
+            clientContext);
     ResumableUploadFutureImpl<ResponseT> handle =
         new ResumableUploadFutureImpl<>(result, coordinator);
     coordinator.start();

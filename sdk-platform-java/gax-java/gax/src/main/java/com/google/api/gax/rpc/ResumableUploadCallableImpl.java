@@ -99,9 +99,9 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
   /**
    * {@inheritDoc}
    *
-   * <p>Call context overrides configured via {@link ApiCallContext#withRetrySettings(RetrySettings)}
-   * govern timing and backoff for the session initiation request, while error classification is
-   * fixed by the upload protocol.
+   * <p>Call context overrides configured via
+   * {@link ApiCallContext#withRetrySettings(RetrySettings)} govern timing and backoff for the
+   * session initiation request, while error classification is fixed by the upload protocol.
    */
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
@@ -126,7 +126,8 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
         client.uploadChunkCallable(),
         payload,
         effectiveSettings,
-        clientContext.getDefaultCallContext());
+        clientContext.getDefaultCallContext(),
+        clientContext);
   }
 
   @Override
