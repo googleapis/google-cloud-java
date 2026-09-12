@@ -22,6 +22,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
@@ -144,9 +145,14 @@ final class ArrowDeserializer {
       rowBatch.add(buffer.poll());
     }
 
-    // If the page was completely filled from buffered rows or maxResults was reached, check if more
-    // rows exist without pulling a new response from the stream.
-    if (rowBatch.size() >= pageSize || (totalRowsReturned + rowBatch.size() >= maxResults)) {
+    // If maxResults has been reached, no more rows can be returned.
+    if (totalRowsReturned + rowBatch.size() >= maxResults) {
+      return false;
+    }
+
+    // If the page was completely filled from buffered rows, check if more rows exist without
+    // pulling a new response from the stream.
+    if (rowBatch.size() >= pageSize) {
       return !buffer.isEmpty()
           || (iterator.hasNext()
               && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults));
@@ -200,11 +206,12 @@ final class ArrowDeserializer {
         }
       }
       // Step 3: Determine if more rows are available either in the buffer, remaining unconsumed in
-      // a batch, or remaining in the stream iterator.
-      return hasMore
-          || !buffer.isEmpty()
-          || (iterator.hasNext()
-              && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults));
+      // a batch, or remaining in the stream iterator, guarded by maxResults.
+      return (totalRowsReturned + rowBatch.size() < maxResults)
+          && (hasMore
+              || !buffer.isEmpty()
+              || (iterator.hasNext()
+                  && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults)));
     }
   }
 
@@ -453,6 +460,8 @@ final class ArrowDeserializer {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
         stringVal = BaseEncoding.base64().encode((byte[]) value);
+      } else if (value instanceof BigDecimal) {
+        stringVal = ((BigDecimal) value).toPlainString();
       } else {
         stringVal = String.valueOf(value);
       }
