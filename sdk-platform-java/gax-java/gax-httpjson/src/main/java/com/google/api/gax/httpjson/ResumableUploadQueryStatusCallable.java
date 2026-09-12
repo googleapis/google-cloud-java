@@ -64,6 +64,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
   private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
   private static final String UPLOAD_SIZE_RECEIVED_HEADER = "X-Goog-Upload-Size-Received";
   private static final String STATUS_FINAL = "final";
+  private static final String STATUS_CANCELLED = "cancelled";
   private static final String COMMAND_QUERY = "query";
 
   private static final Map<String, List<String>> QUERY_STATUS_HEADERS =
@@ -215,7 +216,19 @@ class ResumableUploadQueryStatusCallable<ResponseT>
     @Override
     public void onClose(int statusCode, HttpJsonMetadata trailers) {
       try {
-        if (statusCode >= 200 && statusCode < 300) {
+        if (STATUS_CANCELLED.equalsIgnoreCase(uploadStatus)) {
+          Throwable cause = trailers.getException();
+          String message =
+              cause != null && cause.getMessage() != null
+                  ? cause.getMessage()
+                  : "Upload cancelled by server with status code: " + statusCode;
+          future.setException(
+              ApiExceptionFactory.createException(
+                  message,
+                  cause,
+                  HttpJsonStatusCode.of(statusCode, StatusCode.Code.FAILED_PRECONDITION),
+                  false));
+        } else if (statusCode >= 200 && statusCode < 300) {
           if (headerParsingException != null) {
             future.setException(headerParsingException);
             return;
@@ -223,7 +236,9 @@ class ResumableUploadQueryStatusCallable<ResponseT>
           boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
           if (isComplete) {
             QueryStatusResponse.Builder<ResponseT> queryResponseBuilder =
-                QueryStatusResponse.<ResponseT>newBuilder().setComplete(true);
+                QueryStatusResponse.<ResponseT>newBuilder()
+                    .setComplete(true)
+                    .setUploadStatus(uploadStatus);
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
             queryResponseBuilder.setResponse(responseParser.parse(stream));
@@ -233,6 +248,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
                 QueryStatusResponse.<ResponseT>newBuilder()
                     .setComplete(false)
                     .setCommittedOffset(committedOffset)
+                    .setUploadStatus(uploadStatus)
                     .build());
           } else {
             future.setException(
@@ -244,6 +260,18 @@ class ResumableUploadQueryStatusCallable<ResponseT>
                     HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
                     /* retryable= */ false));
           }
+        } else if (STATUS_FINAL.equalsIgnoreCase(uploadStatus)) {
+          Throwable cause = trailers.getException();
+          String message =
+              cause != null && cause.getMessage() != null
+                  ? cause.getMessage()
+                  : "Upload rejected by server with status code: " + statusCode;
+          future.setException(
+              ApiExceptionFactory.createException(
+                  message,
+                  cause,
+                  HttpJsonStatusCode.of(statusCode, StatusCode.Code.FAILED_PRECONDITION),
+                  false));
         } else {
           Throwable cause = trailers.getException();
           future.setException(

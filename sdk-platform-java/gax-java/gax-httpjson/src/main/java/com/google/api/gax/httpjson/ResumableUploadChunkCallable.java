@@ -60,6 +60,7 @@ class ResumableUploadChunkCallable<ResponseT>
   private static final String UPLOAD_OFFSET_HEADER = "X-Goog-Upload-Offset";
   private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
   private static final String STATUS_FINAL = "final";
+  private static final String STATUS_CANCELLED = "cancelled";
 
   private static final String COMMAND_UPLOAD = "upload";
   private static final String COMMAND_FINALIZE = "finalize";
@@ -191,27 +192,42 @@ class ResumableUploadChunkCallable<ResponseT>
     @Override
     public void onClose(int statusCode, HttpJsonMetadata trailers) {
       try {
-        if (statusCode >= 200 && statusCode < 300) {
-          if (uploadStatus == null) {
-            future.setException(
-                ApiExceptionFactory.createException(
-                    "Upload chunk response did not contain valid "
-                        + UPLOAD_STATUS_HEADER
-                        + " header",
-                    /* cause= */ null,
-                    HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
-                    /* retryable= */ false));
-            return;
-          }
+        if (STATUS_CANCELLED.equalsIgnoreCase(uploadStatus)) {
+          Throwable cause = trailers.getException();
+          String message =
+              cause != null && cause.getMessage() != null
+                  ? cause.getMessage()
+                  : "Upload cancelled by server with status code: " + statusCode;
+          future.setException(
+              ApiExceptionFactory.createException(
+                  message,
+                  cause,
+                  HttpJsonStatusCode.of(statusCode, StatusCode.Code.FAILED_PRECONDITION),
+                  false));
+        } else if (statusCode >= 200 && statusCode < 300) {
           boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
           ChunkUploadResponse.Builder<ResponseT> chunkResponseBuilder =
-              ChunkUploadResponse.<ResponseT>newBuilder().setComplete(isComplete);
+              ChunkUploadResponse.<ResponseT>newBuilder()
+                  .setComplete(isComplete)
+                  .setUploadStatus(uploadStatus);
           if (isComplete) {
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
             chunkResponseBuilder.setResponse(responseParser.parse(stream));
           }
           future.set(chunkResponseBuilder.build());
+        } else if (STATUS_FINAL.equalsIgnoreCase(uploadStatus)) {
+          Throwable cause = trailers.getException();
+          String message =
+              cause != null && cause.getMessage() != null
+                  ? cause.getMessage()
+                  : "Upload rejected by server with status code: " + statusCode;
+          future.setException(
+              ApiExceptionFactory.createException(
+                  message,
+                  cause,
+                  HttpJsonStatusCode.of(statusCode, StatusCode.Code.FAILED_PRECONDITION),
+                  false));
         } else {
           Throwable cause = trailers.getException();
           future.setException(
