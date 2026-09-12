@@ -52,6 +52,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.NullMarked;
@@ -65,16 +68,13 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 final class ResumableUploadChunkCoordinator<ResponseT> {
 
+  // Per GAX-R7: local and per-attempt deadlines are derived from the global timeout at chunk
+  // dispatch time; only backoff delay parameters are static.
   static final RetrySettings DEFAULT_CHUNK_RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setInitialRetryDelayDuration(Duration.ofMillis(100))
           .setRetryDelayMultiplier(1.3)
           .setMaxRetryDelayDuration(Duration.ofMinutes(1))
-          .setInitialRpcTimeoutDuration(Duration.ofSeconds(30))
-          .setRpcTimeoutMultiplier(1.0)
-          .setMaxRpcTimeoutDuration(Duration.ofSeconds(30))
-          .setTotalTimeoutDuration(Duration.ofMinutes(5))
-          .setMaxAttempts(5)
           .build();
 
   private final Object lock = new Object();
@@ -87,15 +87,17 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       uploadChunkCallable;
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       queryStatusCallable;
+  private final ScheduledExecutorService executor;
   private final ScheduledRetryingExecutor<ChunkUploadResponse<ResponseT>> retryingExecutor;
   private final InputStream payload;
+  private final ResumableUploadCallSettings settings;
   private final int chunkSize;
   private final ApiCallContext callContext;
   private final ClientContext clientContext;
-  private final RetrySettings chunkRetrySettings;
 
   private volatile @Nullable String uploadSessionUrl;
   private volatile @Nullable RewindableStreamBuffer buffer;
+  private volatile long deadlineNanos;
 
   @GuardedBy("lock")
   private boolean done;
@@ -105,6 +107,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
   @GuardedBy("lock")
   private @Nullable ApiFuture<?> inFlightFuture;
+
+  @GuardedBy("lock")
+  private @Nullable ScheduledFuture<?> timeoutFuture;
 
   ResumableUploadChunkCoordinator(
       SettableApiFuture<ResponseT> result,
@@ -122,19 +127,18 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.queryStatusCallable =
         checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
-    checkNotNull(settings, "settings must not be null");
+    this.settings = checkNotNull(settings, "settings must not be null");
     checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
     this.chunkSize = settings.getChunkSize();
     this.callContext = checkNotNull(callContext, "callContext must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
-    this.chunkRetrySettings = DEFAULT_CHUNK_RETRY_SETTINGS;
+    this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
 
     RetryAlgorithm<ChunkUploadResponse<ResponseT>> retryAlgorithm =
         new RetryAlgorithm<>(
             new ResumableUploadResultRetryAlgorithm<>(ResumableUploadCommand.UPLOAD),
-            new ExponentialRetryAlgorithm(chunkRetrySettings, clientContext.getClock()));
-    this.retryingExecutor =
-        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
+            new ExponentialRetryAlgorithm(DEFAULT_CHUNK_RETRY_SETTINGS, clientContext.getClock()));
+    this.retryingExecutor = new ScheduledRetryingExecutor<>(retryAlgorithm, this.executor);
 
     synchronized (lock) {
       this.inFlightFuture = startFuture;
@@ -142,6 +146,15 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void start() {
+    Duration timeout = settings.getGlobalTimeout();
+    this.deadlineNanos = clientContext.getClock().nanoTime() + timeout.toNanos();
+    synchronized (lock) {
+      if (!done) {
+        this.timeoutFuture =
+            executor.schedule(this::onTimeout, timeout.toMillis(), TimeUnit.MILLISECONDS);
+      }
+    }
+
     ApiFutures.addCallback(
         startFuture,
         new ApiFutureCallback<ResumableUploadSession>() {
@@ -168,6 +181,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         MoreExecutors.directExecutor());
   }
 
+  private void onTimeout() {
+    synchronized (lock) {
+      if (done) {
+        return;
+      }
+    }
+    String message =
+        uploadSessionUrl != null
+            ? "Resumable upload timed out for session: " + uploadSessionUrl
+            : "Resumable upload timed out before session initiation completed";
+    finish(
+        null,
+        new DeadlineExceededException(message, null, UploadErrors.TIMEOUT_STATUS_CODE, false));
+  }
+
   @Nullable String getUploadSessionUrl() {
     return uploadSessionUrl;
   }
@@ -176,7 +204,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     boolean shouldCancel = false;
     synchronized (lock) {
       if (done) {
-        shouldCancel = result.isCancelled();
+        shouldCancel = true;
       } else {
         this.inFlightFuture = future;
       }
@@ -187,6 +215,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void cancel(boolean mayInterruptIfRunning) {
+    ScheduledFuture<?> timeout;
     ApiFuture<?> inFlight;
     synchronized (lock) {
       if (done) {
@@ -195,6 +224,11 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       done = true;
       inFlight = this.inFlightFuture;
       this.inFlightFuture = null;
+      timeout = this.timeoutFuture;
+      this.timeoutFuture = null;
+    }
+    if (timeout != null) {
+      timeout.cancel(false);
     }
     if (inFlight != null) {
       inFlight.cancel(mayInterruptIfRunning);
@@ -203,12 +237,23 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   private void finish(@Nullable ResponseT response, @Nullable Throwable error) {
+    ScheduledFuture<?> timeout;
+    ApiFuture<?> inFlight;
     synchronized (lock) {
       if (done) {
         return;
       }
       done = true;
-      inFlightFuture = null;
+      inFlight = this.inFlightFuture;
+      this.inFlightFuture = null;
+      timeout = this.timeoutFuture;
+      this.timeoutFuture = null;
+    }
+    if (timeout != null) {
+      timeout.cancel(false);
+    }
+    if (inFlight != null && error != null) {
+      inFlight.cancel(true);
     }
     IOException closeError = closePayload();
     if (error == null) {
@@ -298,6 +343,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
             .setFinal(streamBuffer.isFinal())
             .build();
 
+    // Per GAX-R7: data-plane chunk commands use half of the original global timeout as both
+    // the local and per-attempt deadline, trimmed to the remaining global deadline.
+    long remainingNanos = Math.max(1L, deadlineNanos - clientContext.getClock().nanoTime());
+    long halfGlobalNanos = settings.getGlobalTimeout().dividedBy(2).toNanos();
+    Duration chunkDeadline = Duration.ofNanos(Math.min(halfGlobalNanos, remainingNanos));
+
+    RetrySettings derivedChunkRetrySettings =
+        DEFAULT_CHUNK_RETRY_SETTINGS.toBuilder()
+            .setTotalTimeoutDuration(chunkDeadline)
+            .setInitialRpcTimeoutDuration(chunkDeadline)
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeoutDuration(chunkDeadline)
+            .build();
+    ApiCallContext chunkCallContext = callContext.withRetrySettings(derivedChunkRetrySettings);
+
     ChunkAttemptCallable<ResponseT> attemptCallable =
         new ChunkAttemptCallable<>(
             uploadChunkCallable,
@@ -305,11 +365,13 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
             streamBuffer,
             url,
             chunkRequest,
-            callContext,
-            command);
+            chunkCallContext,
+            command,
+            deadlineNanos,
+            clientContext.getClock());
 
     RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture =
-        retryingExecutor.createFuture(attemptCallable, callContext);
+        retryingExecutor.createFuture(attemptCallable, chunkCallContext);
     attemptCallable.setRetryingFuture(retryingFuture);
     setInFlightFuture(retryingFuture);
 

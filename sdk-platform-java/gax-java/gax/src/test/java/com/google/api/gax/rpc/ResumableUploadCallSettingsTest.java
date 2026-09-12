@@ -39,15 +39,23 @@ import org.junit.jupiter.api.Test;
 public class ResumableUploadCallSettingsTest {
 
   @Test
+  public void testDefaultSettings() {
+    ResumableUploadCallSettings settings = ResumableUploadCallSettings.newBuilder().build();
+
+    assertEquals(8 * 1024 * 1024, settings.getChunkSize());
+    assertEquals(Duration.ofMinutes(15), settings.getGlobalTimeout());
+  }
+
+  @Test
   public void testCustomSettingsAndToBuilder() {
     ResumableUploadCallSettings settings =
         ResumableUploadCallSettings.newBuilder()
             .setChunkSize(16 * 1024 * 1024)
-            .setGlobalTimeout(Duration.ofMinutes(15))
+            .setGlobalTimeout(Duration.ofMinutes(20))
             .build();
 
     assertEquals(16 * 1024 * 1024, settings.getChunkSize());
-    assertEquals(Duration.ofMinutes(15), settings.getGlobalTimeout());
+    assertEquals(Duration.ofMinutes(20), settings.getGlobalTimeout());
     assertEquals(settings, settings.toBuilder().build());
   }
 
@@ -103,7 +111,7 @@ public class ResumableUploadCallSettingsTest {
   }
 
   @Test
-  public void testMerge_nullGlobalTimeoutDoesNotOverride() {
+  public void testMerge_chunkSizeOnlyOverlayDoesNotOverrideGlobalTimeout() {
     ResumableUploadCallSettings stubSettings =
         ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ofMinutes(10)).build();
 
@@ -114,5 +122,19 @@ public class ResumableUploadCallSettingsTest {
 
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
     assertEquals(Duration.ofMinutes(10), merged.getGlobalTimeout());
+  }
+
+  @Test
+  public void testMerge_timeoutOnlyOverlayDoesNotOverrideChunkSize() {
+    ResumableUploadCallSettings stubSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
+
+    ResumableUploadCallSettings perRequestSettings =
+        ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ofMinutes(30)).build();
+
+    ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
+
+    assertEquals(32 * 1024 * 1024, merged.getChunkSize());
+    assertEquals(Duration.ofMinutes(30), merged.getGlobalTimeout());
   }
 }

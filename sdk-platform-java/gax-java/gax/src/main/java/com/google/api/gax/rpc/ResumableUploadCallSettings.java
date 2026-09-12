@@ -45,19 +45,31 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public abstract class ResumableUploadCallSettings {
   private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
+  // Matches Ruby google-apis-core RequestOptions.default.max_elapsed_time = 900s (CL-R9).
+  private static final Duration DEFAULT_GLOBAL_TIMEOUT = Duration.ofMinutes(15);
+
+  abstract @Nullable Integer chunkSizeOption();
+
+  abstract @Nullable Duration globalTimeoutOption();
 
   /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
-  public abstract int getChunkSize();
+  public int getChunkSize() {
+    Integer size = chunkSizeOption();
+    return size != null ? size : DEFAULT_CHUNK_SIZE;
+  }
 
   /**
-   * Returns the global upload timeout governing the entire upload duration, or {@code null} if
-   * disabled.
+   * Returns the global upload timeout governing the entire upload duration (defaults to 15
+   * minutes).
    */
-  public abstract @Nullable Duration getGlobalTimeout();
+  public Duration getGlobalTimeout() {
+    Duration timeout = globalTimeoutOption();
+    return timeout != null ? timeout : DEFAULT_GLOBAL_TIMEOUT;
+  }
 
   /**
-   * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields set in {@code
-   * other} override fields in this instance.
+   * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields explicitly
+   * set in {@code other} override fields in this instance.
    *
    * @param other settings to overlay; may be {@code null}
    * @return a new, resolved {@code ResumableUploadCallSettings} instance
@@ -67,11 +79,11 @@ public abstract class ResumableUploadCallSettings {
       return this;
     }
     Builder builder = toBuilder();
-    if (other.getChunkSize() > 0) {
-      builder.setChunkSize(other.getChunkSize());
+    if (other.chunkSizeOption() != null) {
+      builder.setChunkSize(other.chunkSizeOption());
     }
-    if (other.getGlobalTimeout() != null) {
-      builder.setGlobalTimeout(other.getGlobalTimeout());
+    if (other.globalTimeoutOption() != null) {
+      builder.setGlobalTimeout(other.globalTimeoutOption());
     }
     return builder.build();
   }
@@ -79,28 +91,48 @@ public abstract class ResumableUploadCallSettings {
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadCallSettings.Builder().setChunkSize(DEFAULT_CHUNK_SIZE);
+    return new AutoValue_ResumableUploadCallSettings.Builder();
   }
 
   /** Builder for {@link ResumableUploadCallSettings}. */
   @AutoValue.Builder
   public abstract static class Builder {
-    public abstract Builder setChunkSize(int chunkSize);
+    abstract Builder setChunkSizeOption(@Nullable Integer chunkSize);
 
-    public abstract int getChunkSize();
+    abstract @Nullable Integer chunkSizeOption();
 
-    public abstract Builder setGlobalTimeout(@Nullable Duration globalTimeout);
+    public Builder setChunkSize(int chunkSize) {
+      return setChunkSizeOption(chunkSize);
+    }
 
-    public abstract @Nullable Duration getGlobalTimeout();
+    public int getChunkSize() {
+      Integer size = chunkSizeOption();
+      return size != null ? size : DEFAULT_CHUNK_SIZE;
+    }
+
+    abstract Builder setGlobalTimeoutOption(@Nullable Duration globalTimeout);
+
+    abstract @Nullable Duration globalTimeoutOption();
+
+    public Builder setGlobalTimeout(@Nullable Duration globalTimeout) {
+      return setGlobalTimeoutOption(globalTimeout);
+    }
+
+    public @Nullable Duration getGlobalTimeout() {
+      return globalTimeoutOption();
+    }
 
     abstract ResumableUploadCallSettings autoBuild();
 
     public ResumableUploadCallSettings build() {
-      Preconditions.checkArgument(getChunkSize() > 0, "chunkSize must be > 0");
-      if (getGlobalTimeout() != null) {
+      Integer size = chunkSizeOption();
+      if (size != null) {
+        Preconditions.checkArgument(size > 0, "chunkSize must be > 0");
+      }
+      Duration timeout = globalTimeoutOption();
+      if (timeout != null) {
         Preconditions.checkArgument(
-            !getGlobalTimeout().isNegative() && !getGlobalTimeout().isZero(),
-            "globalTimeout must be positive");
+            !timeout.isNegative() && !timeout.isZero(), "globalTimeout must be positive");
       }
       return autoBuild();
     }
