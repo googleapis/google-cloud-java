@@ -78,6 +78,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
   private final ResumableUploadClient<RequestT, ResponseT> client;
   private final ResumableUploadCallSettings defaultCallSettings;
   private final ClientContext clientContext;
+  private final UnaryCallable<RequestT, ResumableUploadSession> retryingStartCallable;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       retryingUploadChunkCallable;
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
@@ -92,6 +93,9 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     this.defaultCallSettings =
         checkNotNull(defaultCallSettings, "defaultCallSettings must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
+    this.retryingStartCallable =
+        createRetryingCallable(
+            client.startUploadCallable(), ResumableUploadCommand.START, clientContext);
     this.retryingUploadChunkCallable =
         createRetryingCallable(
             client.uploadChunkCallable(), ResumableUploadCommand.UPLOAD, clientContext);
@@ -102,6 +106,13 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
         new ExponentialRetryAlgorithm(RETRY_SETTINGS, clientContext.getClock());
   }
 
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Call context overrides configured via {@link
+   * ApiCallContext#withRetrySettings(RetrySettings)} govern timing and backoff for the session
+   * initiation request, while error classification is fixed by the upload protocol.
+   */
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
@@ -115,7 +126,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
 
     ApiFuture<ResumableUploadSession> startFuture;
     try {
-      startFuture = client.startUploadCallable().futureCall(request, effectiveCallContext);
+      startFuture = retryingStartCallable.futureCall(request, effectiveCallContext);
     } catch (Throwable t) {
       startFuture = ApiFutures.immediateFailedFuture(t);
     }

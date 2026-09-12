@@ -214,6 +214,8 @@ class CallableTest {
   void testResumableUploadCallable() {
     ResumableUploadClient<String, String> uploadClient =
         mock(ResumableUploadClient.class, Mockito.withSettings().withoutAnnotations());
+    when(uploadClient.startUploadCallable())
+        .thenReturn(mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()));
     when(uploadClient.uploadChunkCallable())
         .thenReturn(mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()));
     when(uploadClient.queryStatusCallable())

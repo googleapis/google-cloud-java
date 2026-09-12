@@ -72,6 +72,10 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
    * cancellation.
    *
+   * <p>Call context overrides configured via {@link
+   * ApiCallContext#withRetrySettings(RetrySettings)} govern timing and backoff for the session
+   * initiation request, while error classification is fixed by the upload protocol.
+   *
    * @param request the request message
    * @param payload the data payload input stream to upload and close
    * @param context call context overrides; may be {@code null}
