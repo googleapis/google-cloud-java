@@ -39,10 +39,8 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadStatus;
-import com.google.common.io.ByteStreams;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.InputStream;
-import java.util.Arrays;
 import java.util.concurrent.CancellationException;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -56,14 +54,10 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 final class ResumableUploadChunkCoordinator<ResponseT> {
 
-  private static final byte[] EMPTY_PAYLOAD = new byte[0];
-
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
   private final String uploadUrl;
-  private final InputStream payload;
-  private final byte[] buffer;
-  private final int chunkSize;
+  private final RewindableStreamBuffer buffer;
   private final ApiCallContext callContext;
   private final SettableApiFuture<ResponseT> uploadResultFuture = SettableApiFuture.create();
   private volatile @Nullable ApiFuture<?> inFlightFuture;
@@ -77,10 +71,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
-    this.payload = checkNotNull(payload, "payload must not be null");
-    this.chunkSize = chunkSize;
+    checkNotNull(payload, "payload must not be null");
     this.callContext = checkNotNull(callContext, "callContext must not be null");
-    this.buffer = new byte[chunkSize];
+    this.buffer = new RewindableStreamBuffer(payload, chunkSize, uploadUrl);
   }
 
   ApiFuture<ResponseT> getFuture() {
@@ -96,10 +89,10 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
-    transmitChunk(0L);
+    transmitChunk();
   }
 
-  private void transmitChunk(long currentOffset) {
+  private void transmitChunk() {
     try {
       // Abort if the session was already completed or canceled.
       if (uploadResultFuture.isDone()) {
@@ -107,29 +100,19 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       }
 
       // Read the next chunk slice from the payload stream.
-      int bytesRead = ByteStreams.read(payload, buffer, 0, chunkSize);
+      buffer.fill();
 
       // Determine if this is the final chunk and build the chunk request.
-      boolean isFinal = bytesRead < chunkSize;
-      byte[] chunkPayload;
-      if (bytesRead == chunkSize) {
-        chunkPayload = buffer;
-      } else if (bytesRead == 0) {
-        chunkPayload = EMPTY_PAYLOAD;
-      } else {
-        chunkPayload = Arrays.copyOf(buffer, bytesRead);
-      }
-
       ChunkUploadRequest chunkRequest =
           ChunkUploadRequest.newBuilder()
               .setUploadUrl(uploadUrl)
-              .setPayload(chunkPayload)
-              .setOffset(currentOffset)
-              .setFinal(isFinal)
+              .setPayload(buffer.getPayload())
+              .setOffset(buffer.getBufferBaseOffset())
+              .setFinal(buffer.isFinal())
               .build();
 
       // Dispatch the chunk upload call and register the in-flight future for cancellation.
-      long chunkLength = chunkPayload.length;
+      boolean isFinal = chunkRequest.isFinal();
       ApiFuture<ChunkUploadResponse<ResponseT>> chunkFuture =
           uploadChunkCallable.futureCall(chunkRequest, callContext);
       if (!tryRegisterInFlightFuture(chunkFuture)) {
@@ -144,7 +127,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               if (uploadResultFuture.isDone()) {
                 return;
               }
-              long nextOffset = currentOffset + chunkLength;
               if (response.getUploadStatus() == ResumableUploadStatus.FINAL) {
                 uploadResultFuture.set(response.getResponse());
               } else if (isFinal) {
@@ -153,7 +135,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
                         "Upload stream ended and final chunk was transmitted, but server returned"
                             + " incomplete status"));
               } else {
-                transmitChunk(nextOffset);
+                transmitChunk();
               }
             }
 
