@@ -72,6 +72,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final ApiCallContext callContext;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
   private final ScheduledExecutorService executor;
+  private final ResumableUploadProgressTracker progressTracker;
   private final SettableApiFuture<ResponseT> uploadResultFuture = SettableApiFuture.create();
   private volatile @Nullable Future<?> inFlightFuture;
   private TimedAttemptSettings recoverySettings;
@@ -85,7 +86,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       int chunkSize,
       ApiCallContext callContext,
       ExponentialRetryAlgorithm recoveryAlgorithm,
-      ScheduledExecutorService executor) {
+      ScheduledExecutorService executor,
+      ResumableUploadProgressTracker progressTracker) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -96,6 +98,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
     this.executor = checkNotNull(executor, "executor must not be null");
     this.recoverySettings = recoveryAlgorithm.createFirstAttempt();
+    this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
     this.buffer = new RewindableStreamBuffer(payload, chunkSize, uploadUrl);
   }
 
@@ -180,6 +183,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   private void recover(Throwable cause) {
+    progressTracker.onRecovering();
     try {
       if (madeProgressSinceRecovery) {
         recoverySettings =
@@ -262,6 +266,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           "Query status response missing X-Goog-Upload-Status header for upload URL: " + uploadUrl);
     }
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.FINAL) {
+      progressTracker.onFinalized(buffer.getBufferBaseOffset() + buffer.getPayload().length);
       uploadResultFuture.set(queryResponse.getResponse());
       return;
     }
@@ -271,12 +276,14 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           "Incomplete query status response did not include a committed offset for upload URL: "
               + uploadUrl);
     }
+    progressTracker.onOffsetReceived(committedOffset);
     buffer.realignTo(committedOffset);
     transmitChunk();
   }
 
   private void handleChunkResponse(ChunkUploadResponse<ResponseT> response) throws IOException {
     if (response.getUploadStatus() == ResumableUploadStatus.FINAL) {
+      progressTracker.onFinalized(buffer.getBufferBaseOffset() + buffer.getPayload().length);
       uploadResultFuture.set(response.getResponse());
     } else if (buffer.isFinal()) {
       uploadResultFuture.setException(
@@ -287,6 +294,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     } else {
       madeProgressSinceRecovery = true;
       buffer.fill();
+      progressTracker.onChunkUploaded(buffer.getBufferBaseOffset());
       transmitChunk();
     }
   }

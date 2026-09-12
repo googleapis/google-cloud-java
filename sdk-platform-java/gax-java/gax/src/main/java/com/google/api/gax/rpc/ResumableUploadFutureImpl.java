@@ -81,6 +81,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final ApiCallContext callContext;
   private final ScheduledExecutorService executor;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
+  private final ResumableUploadProgressTracker progressTracker =
+      new ResumableUploadProgressTracker();
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable String uploadSessionUrl;
@@ -165,7 +167,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
                     settings.getChunkSize(),
                     callContext,
                     recoveryAlgorithm,
-                    executor);
+                    executor,
+                    progressTracker);
             ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
             synchronized (lock) {
               if (inFlightFuture == null) {
@@ -174,6 +177,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
               uploadSessionUrl = sessionUrl;
               inFlightFuture = uploadFuture;
             }
+            progressTracker.onStarted(sessionUrl);
             ApiFutures.addCallback(
                 uploadFuture,
                 new ApiFutureCallback<ResponseT>() {
@@ -239,6 +243,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     if (inFlight != null) {
       inFlight.cancel(true);
     }
+    progressTracker.onFailed();
     closePayload();
     resultFuture.setException(t);
   }
@@ -254,6 +259,16 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   @Override
   public @Nullable String getUploadSessionUrl() {
     return uploadSessionUrl;
+  }
+
+  @Override
+  public void addProgressListener(ResumableUploadProgressListener listener, Executor executor) {
+    progressTracker.addListener(listener, executor);
+  }
+
+  @Override
+  public ResumableUploadProgress getProgress() {
+    return progressTracker.getProgress();
   }
 
   @Override
@@ -276,6 +291,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     if (inFlight != null) {
       inFlight.cancel(mayInterruptIfRunning);
     }
+    progressTracker.onFailed();
     closePayload();
     return cancelled;
   }
