@@ -2412,6 +2412,46 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             if (job.getStatus().getError() != null) {
               throw new BigQueryException(Collections.singletonList(job.getStatus().getError()));
             }
+            TableId destinationTable = null;
+            if (job.getConfiguration() instanceof QueryJobConfiguration) {
+              destinationTable =
+                  ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
+            }
+            if (destinationTable == null) {
+              throw new BigQueryException(
+                  0, "Unable to resolve destination table for completed query");
+            }
+            String destProject =
+                destinationTable.getProject() != null
+                    ? destinationTable.getProject()
+                    : (jobId != null && jobId.getProject() != null
+                        ? jobId.getProject()
+                        : getOptions().getProjectId());
+            String parent = String.format("projects/%s", destProject);
+            String srcTable =
+                String.format(
+                    "projects/%s/datasets/%s/tables/%s",
+                    destProject, destinationTable.getDataset(), destinationTable.getTable());
+            BigQueryReadClient client;
+            try {
+              client = getBigQueryReadClient();
+            } catch (IOException e) {
+              throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
+            }
+            CreateReadSessionRequest request =
+                CreateReadSessionRequest.newBuilder()
+                    .setParent(parent)
+                    .setReadSession(
+                        ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW))
+                    .setMaxStreamCount(1)
+                    .build();
+            ReadSession readSession;
+            try {
+              readSession = client.createReadSession(request);
+            } catch (Exception e) {
+              throw new BigQueryException(0, "Failed to create ReadSession for completed query", e);
+            }
+            return ArrowQueryResultImpl.fromReadSession(readSession, job.getJobId(), client);
           }
         }
 
