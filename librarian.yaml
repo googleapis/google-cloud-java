@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.42.0
+version: v0.42.1-0.20260910200322-b1deabc79631
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 02fc2b28bc702c8bb45735631ea0ad66893067fb
-    sha256: a9d046e9177c69bc0fb4874926fdd96164210d7fb3c557a951924bf34614b658
+    commit: 5cbe99334de40143f64b32e805dd8cfe38ef11d5
+    sha256: d7703651093e08c99568de99792c2372cb595ab739d01dd6d75254563ab4d7bf
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -140,7 +140,6 @@ libraries:
             - path: google/iam/v1/iam_policy.proto
           excluded_protos:
             - google/cloud/aiplatform/v1beta1/schema/io_format.proto
-          skip_proto_class_generation:
             - google/cloud/aiplatform/v1beta1/schema/annotation_payload.proto
             - google/cloud/aiplatform/v1beta1/schema/annotation_spec_color.proto
             - google/cloud/aiplatform/v1beta1/schema/data_item_payload.proto
@@ -1653,7 +1652,7 @@ libraries:
           replacement: ofProjectAgentName
       method_operations:
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          action: duplicate
+          action: copy_and_rename
           func_name: public static AgentName ofProjectName(String project)
           new_name: ofProjectAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
@@ -1661,7 +1660,7 @@ libraries:
           func_name: public static AgentName ofProjectAgentName(String project)
           deprecation_message: 'Please use {@link #ofProjectName()} instead'
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
-          action: duplicate
+          action: copy_and_rename
           func_name: public static AgentName ofProjectLocationName(String project, String location)
           new_name: ofProjectLocationAgentName
         - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
@@ -2186,7 +2185,7 @@ libraries:
     version: 1.92.0-SNAPSHOT
     skip_generate: true
     java:
-      released_version: 1.91.0
+      released_version: 1.91.1
   - name: google-cloud-pom-parent
     version: 1.92.0-SNAPSHOT
     skip_generate: true
@@ -5225,7 +5224,7 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       api_description_override: Retail solutions API.
-      released_version: 2.99.0
+      released_version: 2.99.1
       name_pretty_override: Cloud Retail
       product_documentation_override: https://cloud.google.com/solutions/retail
   - name: run

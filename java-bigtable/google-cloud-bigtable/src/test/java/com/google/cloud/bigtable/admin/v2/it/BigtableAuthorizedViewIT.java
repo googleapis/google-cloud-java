@@ -58,7 +58,11 @@ public class BigtableAuthorizedViewIT {
   @ClassRule public static final TestEnvRule testEnvRule = new TestEnvRule();
   @Rule public final PrefixGenerator prefixGenerator = new PrefixGenerator();
   private static final Logger LOGGER = Logger.getLogger(BigtableAuthorizedViewIT.class.getName());
-  private static final long[] BACKOFF_DURATION = {2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
+  // Poll for the delete to propagate. A fixed short interval rather than a doubling backoff:
+  // the resource normally disappears within seconds, and a doubling backoff would keep
+  // sleeping for minutes past that point.
+  private static final long DELETE_POLL_INTERVAL_SECONDS = 2;
+  private static final int DELETE_POLL_ATTEMPTS = 60;
 
   private static BigtableTableAdminClient tableAdmin;
   private static BigtableDataClient dataClient;
@@ -198,15 +202,11 @@ public class BigtableAuthorizedViewIT {
     // Now we should be able to successfully delete the AuthorizedView.
     tableAdmin.deleteAuthorizedView(testTable.getId(), authorizedViewId);
     try {
-      for (int i = 0; i < BACKOFF_DURATION.length; i++) {
+      for (int i = 0; i < DELETE_POLL_ATTEMPTS; i++) {
         tableAdmin.getAuthorizedView(testTable.getId(), authorizedViewId);
 
-        LOGGER.info(
-            "Wait for "
-                + BACKOFF_DURATION[i]
-                + " seconds for deleting authorized view "
-                + authorizedViewId);
-        Thread.sleep(BACKOFF_DURATION[i] * 1000);
+        LOGGER.info("Waiting for authorized view " + authorizedViewId + " to be deleted");
+        Thread.sleep(DELETE_POLL_INTERVAL_SECONDS * 1000);
       }
       fail("AuthorizedView was not deleted.");
     } catch (NotFoundException e) {

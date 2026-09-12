@@ -50,12 +50,14 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
@@ -883,6 +885,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // format
       ReadSession.Builder sessionBuilder =
           ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW);
+      TableReadOptions readOptions = buildTableReadOptions();
+      if (readOptions != null) {
+        sessionBuilder.setReadOptions(readOptions);
+      }
 
       CreateReadSessionRequest.Builder builder =
           CreateReadSessionRequest.newBuilder()
@@ -935,6 +941,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
+  }
+
+  private TableReadOptions buildTableReadOptions() {
+    if (!isEnableTimestampPicos()) {
+      return null;
+    }
+    return TableReadOptions.newBuilder()
+        .setArrowSerializationOptions(
+            ArrowSerializationOptions.newBuilder()
+                .setPicosTimestampPrecision(
+                    ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS)
+                .build())
+        .build();
   }
 
   /** Asynchronously reads results and populates an arrow record queue */

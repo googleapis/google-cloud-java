@@ -100,7 +100,7 @@ public class BigQueryResultSetMetadataTest {
         BigQueryFieldValueListWrapper.getNestedFieldValueListWrapper(nestedFieldList, null);
     BigQueryJsonResultSet bigQueryJsonResultSetNested =
         BigQueryJsonResultSet.getNestedResultSet(
-            Schema.of(nestedFieldList), bigQueryFieldValueListWrapperNested, -1, -1);
+            Schema.of(nestedFieldList), bigQueryFieldValueListWrapperNested, -1, -1, false);
     resultSetMetaDataNested = bigQueryJsonResultSetNested.getMetaData();
   }
 

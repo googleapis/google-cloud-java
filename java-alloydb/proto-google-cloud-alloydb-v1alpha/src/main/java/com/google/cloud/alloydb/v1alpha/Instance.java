@@ -20873,7 +20873,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -20895,7 +20895,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -27950,7 +27950,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -27971,7 +27971,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
      * @return The geminiConfig.
      */
     @java.lang.Deprecated

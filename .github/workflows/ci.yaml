@@ -61,7 +61,6 @@ jobs:
   units:
     runs-on: ubuntu-latest
     needs: generated-libraries-filter
-    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -84,7 +83,6 @@ jobs:
   units-8-runtime:
     runs-on: ubuntu-latest
     needs: generated-libraries-filter
-    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     name: "units (8)"
     steps:
     - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0

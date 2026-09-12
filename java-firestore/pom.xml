@@ -139,7 +139,7 @@
   </licenses>
 
   <properties>
-    <skipUnitTests>false</skipUnitTests>
+    <!-- skipUnitTests is intentionally not set here so generated submodules (like admin) inherit true by default. Core handwritten unit tests are enabled in google-cloud-firestore/pom.xml. -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>

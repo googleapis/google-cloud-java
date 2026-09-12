@@ -432,8 +432,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -450,8 +450,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -476,8 +476,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1763,8 +1763,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1780,8 +1780,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1805,8 +1805,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1830,8 +1830,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1854,8 +1854,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1874,8 +1874,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -102,6 +102,16 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    * <code>POSTGRES_18 = 6;</code>
    */
   POSTGRES_18(6),
+  /**
+   *
+   *
+   * <pre>
+   * The database version is Postgres 19.
+   * </pre>
+   *
+   * <code>POSTGRES_19 = 7;</code>
+   */
+  POSTGRES_19(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -192,6 +202,17 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int POSTGRES_18_VALUE = 6;
 
+  /**
+   *
+   *
+   * <pre>
+   * The database version is Postgres 19.
+   * </pre>
+   *
+   * <code>POSTGRES_19 = 7;</code>
+   */
+  public static final int POSTGRES_19_VALUE = 7;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -230,6 +251,8 @@ public enum DatabaseVersion implements com.google.protobuf.ProtocolMessageEnum {
         return POSTGRES_17;
       case 6:
         return POSTGRES_18;
+      case 7:
+        return POSTGRES_19;
       default:
         return null;
     }

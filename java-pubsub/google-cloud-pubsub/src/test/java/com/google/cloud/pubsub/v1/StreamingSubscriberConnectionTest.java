@@ -16,12 +16,14 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.*;
 
 import com.google.api.core.ApiFutures;
+import com.google.api.core.ApiService;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -55,7 +57,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -164,7 +165,6 @@ public class StreamingSubscriberConnectionTest {
     streamingSubscriberConnection.awaitTerminated(1, TimeUnit.SECONDS);
   }
 
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13706")
   @Test
   public void testRunShutdown_TimeoutExceeded() throws Exception {
     final SettableApiFuture<com.google.protobuf.Empty> ackFuture = SettableApiFuture.create();
@@ -172,7 +172,7 @@ public class StreamingSubscriberConnectionTest {
         .thenReturn(ackFuture);
 
     SubscriberShutdownSettings shutdownSettings =
-        SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofSeconds(2)).build();
+        SubscriberShutdownSettings.newBuilder().setTimeout(Duration.ofMillis(500)).build();
     StreamingSubscriberConnection.Builder builder =
         StreamingSubscriberConnection.newBuilder(
             mock(MessageReceiverWithAckResponse.class, withSettings().withoutAnnotations()));
@@ -195,25 +195,30 @@ public class StreamingSubscriberConnectionTest {
             });
     t.start();
 
-    Thread t2 =
-        new Thread(
-            () -> {
-              try {
-                streamingSubscriberConnection.awaitTerminated(1, TimeUnit.SECONDS);
-                fail("Should have timed out");
-              } catch (TimeoutException e) {
-                // expected
-              }
-            });
-    t2.start();
-    t2.join();
+    // Wait until the stop thread is blocked in tryWait (waiting for pending operations).
+    await()
+        .atMost(Duration.ofSeconds(5))
+        .pollInterval(Duration.ofMillis(10))
+        .until(() -> t.getState() == Thread.State.TIMED_WAITING);
+
+    // Connection should be in STOPPING state, not TERMINATED yet.
+    assertEquals(ApiService.State.STOPPING, streamingSubscriberConnection.state());
+
+    // Verify awaitTerminated times out since the shutdown timeout has not elapsed yet.
+    try {
+      streamingSubscriberConnection.awaitTerminated(10, TimeUnit.MILLISECONDS);
+      fail("Should have timed out");
+    } catch (TimeoutException e) {
+      // expected
+    }
 
     // Advance the clock past the shutdown timeout.
-    clock.advance(3, TimeUnit.SECONDS);
-    t.join();
+    clock.advance(1, TimeUnit.SECONDS);
+    t.join(5000);
+    assertFalse("Stop thread should have finished", t.isAlive());
 
     // Now it should terminate.
-    streamingSubscriberConnection.awaitTerminated();
+    streamingSubscriberConnection.awaitTerminated(5, TimeUnit.SECONDS);
     assertFalse(streamingSubscriberConnection.isRunning());
     assertFalse(messageFuture.isDone());
   }
@@ -748,7 +753,7 @@ public class StreamingSubscriberConnectionTest {
   }
 
   @Test
-  public void testClientPinger_pingsNotSentWhenDisabled() {
+  public void testClientPinger_pingsNotSentWhenDisabled() throws TimeoutException {
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
     when(mockStreamingCallable.splitCall(any(ResponseObserver.class), any()))
@@ -768,10 +773,13 @@ public class StreamingSubscriberConnectionTest {
     systemExecutor.advanceTime(CLIENT_PING_INTERVAL);
 
     verify(mockClientStream, times(1)).send(any(StreamingPullRequest.class));
+
+    streamingSubscriberConnection.stopAsync();
+    streamingSubscriberConnection.awaitTerminated(5, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testServerMonitor_timesOut() {
+  public void testServerMonitor_timesOut() throws TimeoutException {
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
@@ -815,10 +823,13 @@ public class StreamingSubscriberConnectionTest {
     StatusException exception = (StatusException) exceptionCaptor.getValue();
     assertEquals(Code.UNAVAILABLE, exception.getStatus().getCode());
     assertEquals("Keepalive timeout with server", exception.getStatus().getDescription());
+
+    streamingSubscriberConnection.stopAsync();
+    streamingSubscriberConnection.awaitTerminated(5, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testServerMonitor_doesNotTimeOutIfResponseReceived() {
+  public void testServerMonitor_doesNotTimeOutIfResponseReceived() throws TimeoutException {
     ClientStream<StreamingPullRequest> mockClientStream =
         mock(ClientStream.class, withSettings().withoutAnnotations());
     ArgumentCaptor<ResponseObserver<StreamingPullResponse>> observerCaptor =
@@ -847,6 +858,9 @@ public class StreamingSubscriberConnectionTest {
     observer.onResponse(StreamingPullResponse.getDefaultInstance());
 
     verify(mockClientStream, never()).closeSendWithError(any(Exception.class));
+
+    streamingSubscriberConnection.stopAsync();
+    streamingSubscriberConnection.awaitTerminated(5, TimeUnit.SECONDS);
   }
 
   private StreamingSubscriberConnection getStreamingSubscriberConnection(
