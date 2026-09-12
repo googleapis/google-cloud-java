@@ -427,6 +427,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
 
     private void ensureStreamInitialized() {
+      long offset;
       lock.lock();
       try {
         if (streamInitialized) {
@@ -453,15 +454,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           streamInitialized = true;
           return;
         }
+        offset = totalRowsYielded;
       } finally {
         lock.unlock();
       }
 
       ReadRowsRequest request =
-          ReadRowsRequest.newBuilder()
-              .setReadStream(streamName)
-              .setOffset(totalRowsYielded)
-              .build();
+          ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
 
       ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
 
@@ -480,44 +479,56 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
 
     private void loadBatch(byte[] bytes) throws IOException {
-      try (ByteArrayReadableSeekableByteChannel byteChannel =
-              new ByteArrayReadableSeekableByteChannel(bytes);
-          ReadChannel readChannel = new ReadChannel(byteChannel)) {
-        ArrowRecordBatch deserializedBatch =
-            MessageSerializer.deserializeRecordBatch(readChannel, allocator);
-        if (deserializedBatch == null) {
-          throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
-        }
-        boolean loaded = false;
-        try {
-          ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
-          loaded = true;
-        } finally {
-          if (!loaded) {
-            deserializedBatch.close();
+      lock.lock();
+      try {
+        checkNotClosed();
+        try (ByteArrayReadableSeekableByteChannel byteChannel =
+                new ByteArrayReadableSeekableByteChannel(bytes);
+            ReadChannel readChannel = new ReadChannel(byteChannel)) {
+          ArrowRecordBatch deserializedBatch =
+              MessageSerializer.deserializeRecordBatch(readChannel, allocator);
+          if (deserializedBatch == null) {
+            throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
+          }
+          boolean loaded = false;
+          try {
+            ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+            loaded = true;
+          } finally {
+            if (!loaded) {
+              deserializedBatch.close();
+            }
           }
         }
+      } finally {
+        lock.unlock();
       }
     }
 
     private void loadBatch(com.google.protobuf.ByteString byteString) throws IOException {
-      try (java.nio.channels.ReadableByteChannel channel =
-              java.nio.channels.Channels.newChannel(byteString.newInput());
-          ReadChannel readChannel = new ReadChannel(channel)) {
-        ArrowRecordBatch deserializedBatch =
-            MessageSerializer.deserializeRecordBatch(readChannel, allocator);
-        if (deserializedBatch == null) {
-          throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
-        }
-        boolean loaded = false;
-        try {
-          ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
-          loaded = true;
-        } finally {
-          if (!loaded) {
-            deserializedBatch.close();
+      lock.lock();
+      try {
+        checkNotClosed();
+        try (java.nio.channels.ReadableByteChannel channel =
+                java.nio.channels.Channels.newChannel(byteString.newInput());
+            ReadChannel readChannel = new ReadChannel(channel)) {
+          ArrowRecordBatch deserializedBatch =
+              MessageSerializer.deserializeRecordBatch(readChannel, allocator);
+          if (deserializedBatch == null) {
+            throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
+          }
+          boolean loaded = false;
+          try {
+            ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+            loaded = true;
+          } finally {
+            if (!loaded) {
+              deserializedBatch.close();
+            }
           }
         }
+      } finally {
+        lock.unlock();
       }
     }
   }
