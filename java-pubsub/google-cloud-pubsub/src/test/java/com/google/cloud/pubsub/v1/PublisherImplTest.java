@@ -643,6 +643,51 @@ public class PublisherImplTest {
     }
   }
 
+  @Test(timeout = 60_000)
+  public void testShutdownAfterOrderingKeyFailureWithMoreOfThatKeyStillBatched() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
+                    .setElementCountThreshold(2L)
+                    .setDelayThresholdDuration(Duration.ofSeconds(100))
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+
+    // Queued before publishing, so the fake never blocks in publishResponses.take() (see #13394).
+    testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+
+    // m1 and m2 meet the threshold, but the request only leaves once the fake executor runs, so
+    // m3 lands in the un-flushed batch for the same key and is still there when the failure does.
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
+    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "orderA");
+    assertFalse(publishFuture3.isDone());
+
+    fakeExecutor.advanceTime(Duration.ZERO);
+
+    try {
+      publishFuture1.get();
+      fail("This should fail.");
+    } catch (ExecutionException e) {
+    }
+    try {
+      publishFuture2.get();
+      fail("This should fail.");
+    } catch (ExecutionException e) {
+    }
+    try {
+      publishFuture3.get();
+      fail("This should fail.");
+    } catch (ExecutionException e) {
+      assertEquals(SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION, e.getCause());
+    }
+
+    // Hangs here without the accounting fix: m3's increment was never returned.
+    shutdownTestPublisher(publisher);
+  }
+
   private ApiFuture<String> sendTestMessageWithOrderingKey(
       Publisher publisher, String data, String orderingKey) {
     return publisher.publish(
