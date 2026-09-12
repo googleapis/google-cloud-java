@@ -39,7 +39,13 @@ class ServiceStubClassComposerTest {
             TestProtoLoader.instance().parseSelectiveGenerationTesting(),
             "",
             "",
-            1));
+            1),
+        Arguments.of(
+            "ResumableUploadServiceStub",
+            TestProtoLoader.instance().parseShowcaseResumableUpload(),
+            "",
+            "",
+            0));
   }
 
   @ParameterizedTest
