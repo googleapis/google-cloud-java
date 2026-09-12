@@ -457,6 +457,102 @@ class ResumableUploadCallableImplTest {
         () -> callable.resumeCall("https://upload.url/session", streamOf("data"), null));
   }
 
+  @Test
+  void testChunkRetry_transientFailureThenSuccess_retriesAndSucceeds() throws Exception {
+    stubStartSession("https://upload.url/chunk-retry-ok");
+    TrackableStream stream = new TrackableStream("01234567"); // exactly 1 chunk of 8 bytes
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "chunk-done")));
+
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
+
+    assertThat(future.get()).isEqualTo("chunk-done");
+    assertThat(future.isDone()).isTrue();
+    assertThat(stream.totalBytesRead).isEqualTo(8);
+    assertThat(stream.closed).isTrue();
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> requests = captor.getAllValues();
+    assertThat(requests.get(0).getOffset()).isEqualTo(0);
+    assertThat(requests.get(0).getPayload()).isEqualTo("01234567".getBytes(StandardCharsets.UTF_8));
+    assertThat(requests.get(1).getOffset()).isEqualTo(0);
+    assertThat(requests.get(1).getPayload()).isEqualTo("01234567".getBytes(StandardCharsets.UTF_8));
+  }
+
+  @Test
+  void testChunkRetry_transientFailureExhaustion_surfacesLastError() {
+    stubStartSession("https://upload.url/chunk-exhaustion");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) exception.getCause()).getStatusCode().getTransportCode())
+        .isEqualTo(503);
+
+    // Default chunk retry settings has maxAttempts = 5
+    verify(mockChunkCallable, times(5)).futureCall(any(), any());
+  }
+
+  @Test
+  void testChunkRetry_cancellationDuringBackoff_deschedulesPendingAttempt() {
+    stubStartSession("https://upload.url/cancel-backoff");
+    SettableApiFuture<ChunkUploadResponse<String>> chunkAttempt0Future = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(chunkAttempt0Future)
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "should-not-reach")));
+
+    ResumableUploadFuture<String> sessionFuture =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    // Fail attempt 0 with 503 to schedule backoff
+    chunkAttempt0Future.setException(createApiException(503, StatusCode.Code.UNAVAILABLE));
+
+    // Cancel while backoff is pending
+    assertThat(sessionFuture.cancel(true)).isTrue();
+    assertThat(sessionFuture.isCancelled()).isTrue();
+    assertThrows(CancellationException.class, sessionFuture::get);
+
+    // Only attempt 0 occurred; attempt 1 was de-scheduled
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+  }
+
+  private static class HttpStatusStatusCode implements StatusCode {
+    private final int httpStatus;
+    private final StatusCode.Code code;
+
+    HttpStatusStatusCode(int httpStatus, StatusCode.Code code) {
+      this.httpStatus = httpStatus;
+      this.code = code;
+    }
+
+    @Override
+    public StatusCode.Code getCode() {
+      return code;
+    }
+
+    @Override
+    public Integer getTransportCode() {
+      return httpStatus;
+    }
+  }
+
+  private static ApiException createApiException(int httpStatus, StatusCode.Code code) {
+    return ApiExceptionFactory.createException(
+        "HTTP " + httpStatus, null, new HttpStatusStatusCode(httpStatus, code), false);
+  }
+
   private void stubStartSession(String uploadUrl) {
     when(mockStartCallable.futureCall(any(), any()))
         .thenReturn(
@@ -477,9 +573,19 @@ class ResumableUploadCallableImplTest {
 
   private static class TrackableStream extends ByteArrayInputStream {
     boolean closed = false;
+    int totalBytesRead = 0;
 
     TrackableStream(String content) {
       super(content.getBytes(StandardCharsets.UTF_8));
+    }
+
+    @Override
+    public int read(byte[] b, int off, int len) {
+      int read = super.read(b, off, len);
+      if (read > 0) {
+        totalBytesRead += read;
+      }
+      return read;
     }
 
     @Override
