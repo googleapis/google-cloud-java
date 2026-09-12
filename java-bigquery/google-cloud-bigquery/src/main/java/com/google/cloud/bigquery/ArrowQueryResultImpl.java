@@ -21,7 +21,10 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.protobuf.ByteString;
 import java.io.IOException;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.locks.ReentrantLock;
@@ -505,12 +508,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
-    private void loadBatch(com.google.protobuf.ByteString byteString) throws IOException {
+    private void loadBatch(ByteString byteString) throws IOException {
       lock.lock();
       try {
         checkNotClosed();
-        try (java.nio.channels.ReadableByteChannel channel =
-                java.nio.channels.Channels.newChannel(byteString.newInput());
+        try (ReadableByteChannel channel = Channels.newChannel(byteString.newInput());
             ReadChannel readChannel = new ReadChannel(channel)) {
           ArrowRecordBatch deserializedBatch =
               MessageSerializer.deserializeRecordBatch(readChannel, allocator);
