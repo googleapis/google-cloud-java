@@ -139,6 +139,17 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     return ((SpacesServiceStubSettings) getStubSettings()).deleteMemberSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateMember. */
+  public UnaryCallSettings<UpdateMemberRequest, Member> updateMemberSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).updateMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateMembers. */
+  public UnaryCallSettings<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersSettings() {
+    return ((SpacesServiceStubSettings) getStubSettings()).batchUpdateMembersSettings();
+  }
+
   public static final SpacesServiceSettings create(SpacesServiceStubSettings stub)
       throws IOException {
     return new SpacesServiceSettings.Builder(stub.toBuilder()).build();
@@ -299,6 +310,17 @@ public class SpacesServiceSettings extends ClientSettings<SpacesServiceSettings>
     /** Returns the builder for the settings used for calls to deleteMember. */
     public UnaryCallSettings.Builder<DeleteMemberRequest, Empty> deleteMemberSettings() {
       return getStubSettingsBuilder().deleteMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMember. */
+    public UnaryCallSettings.Builder<UpdateMemberRequest, Member> updateMemberSettings() {
+      return getStubSettingsBuilder().updateMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateMembers. */
+    public UnaryCallSettings.Builder<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+        batchUpdateMembersSettings() {
+      return getStubSettingsBuilder().batchUpdateMembersSettings();
     }
 
     @Override

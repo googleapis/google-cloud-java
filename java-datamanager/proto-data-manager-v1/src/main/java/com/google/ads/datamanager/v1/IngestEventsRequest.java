@@ -341,13 +341,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-   * uploads. The encoding type of the user identifiers. For hashed user
-   * identifiers, this is the encoding type of the hashed string. For encrypted
-   * hashed user identifiers, this is the encoding type of the outer encrypted
-   * string, but not necessarily the inner hashed string, meaning the inner
-   * hashed string could be encoded in a different way than the outer encrypted
-   * string. For non `UserData` uploads, this field is ignored.
+   * Optional. Must be provided for
+   * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+   * of the user identifiers. For hashed user identifiers, this is the encoding
+   * type of the hashed string. For encrypted hashed user identifiers, this is
+   * the encoding type of the outer encrypted string, but not necessarily the
+   * inner hashed string, meaning the inner hashed string could be encoded in a
+   * different way than the outer encrypted string. For non `UserData` uploads,
+   * this field is ignored.
    * </pre>
    *
    * <code>
@@ -365,13 +366,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-   * uploads. The encoding type of the user identifiers. For hashed user
-   * identifiers, this is the encoding type of the hashed string. For encrypted
-   * hashed user identifiers, this is the encoding type of the outer encrypted
-   * string, but not necessarily the inner hashed string, meaning the inner
-   * hashed string could be encoded in a different way than the outer encrypted
-   * string. For non `UserData` uploads, this field is ignored.
+   * Optional. Must be provided for
+   * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+   * of the user identifiers. For hashed user identifiers, this is the encoding
+   * type of the hashed string. For encrypted hashed user identifiers, this is
+   * the encoding type of the outer encrypted string, but not necessarily the
+   * inner hashed string, meaning the inner hashed string could be encoded in a
+   * different way than the outer encrypted string. For non `UserData` uploads,
+   * this field is ignored.
    * </pre>
    *
    * <code>
@@ -2141,13 +2143,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-     * uploads. The encoding type of the user identifiers. For hashed user
-     * identifiers, this is the encoding type of the hashed string. For encrypted
-     * hashed user identifiers, this is the encoding type of the outer encrypted
-     * string, but not necessarily the inner hashed string, meaning the inner
-     * hashed string could be encoded in a different way than the outer encrypted
-     * string. For non `UserData` uploads, this field is ignored.
+     * Optional. Must be provided for
+     * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+     * of the user identifiers. For hashed user identifiers, this is the encoding
+     * type of the hashed string. For encrypted hashed user identifiers, this is
+     * the encoding type of the outer encrypted string, but not necessarily the
+     * inner hashed string, meaning the inner hashed string could be encoded in a
+     * different way than the outer encrypted string. For non `UserData` uploads,
+     * this field is ignored.
      * </pre>
      *
      * <code>
@@ -2165,13 +2168,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-     * uploads. The encoding type of the user identifiers. For hashed user
-     * identifiers, this is the encoding type of the hashed string. For encrypted
-     * hashed user identifiers, this is the encoding type of the outer encrypted
-     * string, but not necessarily the inner hashed string, meaning the inner
-     * hashed string could be encoded in a different way than the outer encrypted
-     * string. For non `UserData` uploads, this field is ignored.
+     * Optional. Must be provided for
+     * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+     * of the user identifiers. For hashed user identifiers, this is the encoding
+     * type of the hashed string. For encrypted hashed user identifiers, this is
+     * the encoding type of the outer encrypted string, but not necessarily the
+     * inner hashed string, meaning the inner hashed string could be encoded in a
+     * different way than the outer encrypted string. For non `UserData` uploads,
+     * this field is ignored.
      * </pre>
      *
      * <code>
@@ -2192,13 +2196,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-     * uploads. The encoding type of the user identifiers. For hashed user
-     * identifiers, this is the encoding type of the hashed string. For encrypted
-     * hashed user identifiers, this is the encoding type of the outer encrypted
-     * string, but not necessarily the inner hashed string, meaning the inner
-     * hashed string could be encoded in a different way than the outer encrypted
-     * string. For non `UserData` uploads, this field is ignored.
+     * Optional. Must be provided for
+     * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+     * of the user identifiers. For hashed user identifiers, this is the encoding
+     * type of the hashed string. For encrypted hashed user identifiers, this is
+     * the encoding type of the outer encrypted string, but not necessarily the
+     * inner hashed string, meaning the inner hashed string could be encoded in a
+     * different way than the outer encrypted string. For non `UserData` uploads,
+     * this field is ignored.
      * </pre>
      *
      * <code>
@@ -2218,13 +2223,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-     * uploads. The encoding type of the user identifiers. For hashed user
-     * identifiers, this is the encoding type of the hashed string. For encrypted
-     * hashed user identifiers, this is the encoding type of the outer encrypted
-     * string, but not necessarily the inner hashed string, meaning the inner
-     * hashed string could be encoded in a different way than the outer encrypted
-     * string. For non `UserData` uploads, this field is ignored.
+     * Optional. Must be provided for
+     * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+     * of the user identifiers. For hashed user identifiers, this is the encoding
+     * type of the hashed string. For encrypted hashed user identifiers, this is
+     * the encoding type of the outer encrypted string, but not necessarily the
+     * inner hashed string, meaning the inner hashed string could be encoded in a
+     * different way than the outer encrypted string. For non `UserData` uploads,
+     * this field is ignored.
      * </pre>
      *
      * <code>
@@ -2248,13 +2254,14 @@ public final class IngestEventsRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-     * uploads. The encoding type of the user identifiers. For hashed user
-     * identifiers, this is the encoding type of the hashed string. For encrypted
-     * hashed user identifiers, this is the encoding type of the outer encrypted
-     * string, but not necessarily the inner hashed string, meaning the inner
-     * hashed string could be encoded in a different way than the outer encrypted
-     * string. For non `UserData` uploads, this field is ignored.
+     * Optional. Must be provided for
+     * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+     * of the user identifiers. For hashed user identifiers, this is the encoding
+     * type of the hashed string. For encrypted hashed user identifiers, this is
+     * the encoding type of the outer encrypted string, but not necessarily the
+     * inner hashed string, meaning the inner hashed string could be encoded in a
+     * different way than the outer encrypted string. For non `UserData` uploads,
+     * this field is ignored.
      * </pre>
      *
      * <code>

@@ -62,6 +62,8 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     impressionId_ = "";
     matchId_ = "";
     encryptedUserIds_ = java.util.Collections.emptyList();
+    ppid_ = "";
+    visitorPpid_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -659,6 +661,116 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     return encryptedUserIds_.get(index);
   }
 
+  public static final int PPID_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ppid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an authenticated user (signed-in), as
+   * defined by the publisher.
+   * </pre>
+   *
+   * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ppid.
+   */
+  @java.lang.Override
+  public java.lang.String getPpid() {
+    java.lang.Object ref = ppid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ppid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an authenticated user (signed-in), as
+   * defined by the publisher.
+   * </pre>
+   *
+   * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ppid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPpidBytes() {
+    java.lang.Object ref = ppid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ppid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VISITOR_PPID_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object visitorPpid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an unauthenticated user (user who is not
+   * signed-in), as defined by the publisher.
+   * </pre>
+   *
+   * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The visitorPpid.
+   */
+  @java.lang.Override
+  public java.lang.String getVisitorPpid() {
+    java.lang.Object ref = visitorPpid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      visitorPpid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an unauthenticated user (user who is not
+   * signed-in), as defined by the publisher.
+   * </pre>
+   *
+   * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for visitorPpid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVisitorPpidBytes() {
+    java.lang.Object ref = visitorPpid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      visitorPpid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -703,6 +815,12 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < encryptedUserIds_.size(); i++) {
       output.writeMessage(10, encryptedUserIds_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ppid_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, ppid_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(visitorPpid_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, visitorPpid_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -744,6 +862,12 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(10, encryptedUserIds_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ppid_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, ppid_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(visitorPpid_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, visitorPpid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -773,6 +897,8 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
     if (!getImpressionId().equals(other.getImpressionId())) return false;
     if (!getMatchId().equals(other.getMatchId())) return false;
     if (!getEncryptedUserIdsList().equals(other.getEncryptedUserIdsList())) return false;
+    if (!getPpid().equals(other.getPpid())) return false;
+    if (!getVisitorPpid().equals(other.getVisitorPpid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -808,6 +934,10 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ENCRYPTED_USER_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptedUserIdsList().hashCode();
     }
+    hash = (37 * hash) + PPID_FIELD_NUMBER;
+    hash = (53 * hash) + getPpid().hashCode();
+    hash = (37 * hash) + VISITOR_PPID_FIELD_NUMBER;
+    hash = (53 * hash) + getVisitorPpid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -979,6 +1109,8 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         encryptedUserIdsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      ppid_ = "";
+      visitorPpid_ = "";
       return this;
     }
 
@@ -1059,6 +1191,12 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.matchId_ = matchId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.ppid_ = ppid_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.visitorPpid_ = visitorPpid_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1144,6 +1282,16 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
             encryptedUserIdsBuilder_.addAllMessages(other.encryptedUserIds_);
           }
         }
+      }
+      if (!other.getPpid().isEmpty()) {
+        ppid_ = other.ppid_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getVisitorPpid().isEmpty()) {
+        visitorPpid_ = other.visitorPpid_;
+        bitField0_ |= 0x00000800;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1239,6 +1387,18 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 82
+            case 90:
+              {
+                ppid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                visitorPpid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2795,6 +2955,238 @@ public final class AdIdentifiers extends com.google.protobuf.GeneratedMessage
         encryptedUserIds_ = null;
       }
       return encryptedUserIdsBuilder_;
+    }
+
+    private java.lang.Object ppid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an authenticated user (signed-in), as
+     * defined by the publisher.
+     * </pre>
+     *
+     * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ppid.
+     */
+    public java.lang.String getPpid() {
+      java.lang.Object ref = ppid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ppid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an authenticated user (signed-in), as
+     * defined by the publisher.
+     * </pre>
+     *
+     * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for ppid.
+     */
+    public com.google.protobuf.ByteString getPpidBytes() {
+      java.lang.Object ref = ppid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ppid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an authenticated user (signed-in), as
+     * defined by the publisher.
+     * </pre>
+     *
+     * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ppid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPpid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ppid_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an authenticated user (signed-in), as
+     * defined by the publisher.
+     * </pre>
+     *
+     * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPpid() {
+      ppid_ = getDefaultInstance().getPpid();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an authenticated user (signed-in), as
+     * defined by the publisher.
+     * </pre>
+     *
+     * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for ppid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPpidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ppid_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object visitorPpid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an unauthenticated user (user who is not
+     * signed-in), as defined by the publisher.
+     * </pre>
+     *
+     * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The visitorPpid.
+     */
+    public java.lang.String getVisitorPpid() {
+      java.lang.Object ref = visitorPpid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        visitorPpid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an unauthenticated user (user who is not
+     * signed-in), as defined by the publisher.
+     * </pre>
+     *
+     * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for visitorPpid.
+     */
+    public com.google.protobuf.ByteString getVisitorPpidBytes() {
+      java.lang.Object ref = visitorPpid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        visitorPpid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an unauthenticated user (user who is not
+     * signed-in), as defined by the publisher.
+     * </pre>
+     *
+     * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The visitorPpid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisitorPpid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      visitorPpid_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an unauthenticated user (user who is not
+     * signed-in), as defined by the publisher.
+     * </pre>
+     *
+     * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVisitorPpid() {
+      visitorPpid_ = getDefaultInstance().getVisitorPpid();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A unique identifier for an unauthenticated user (user who is not
+     * signed-in), as defined by the publisher.
+     * </pre>
+     *
+     * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for visitorPpid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVisitorPpidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      visitorPpid_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.AdIdentifiers)

@@ -45,6 +45,14 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2beta_Space_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_Space_PhoneAccess_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_apps_meet_v2beta_ActiveConference_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2beta_ActiveConference_fieldAccessorTable;
@@ -120,6 +128,10 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_apps_meet_v2beta_TranscriptEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2beta_TranscriptEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2beta_SmartNote_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2beta_SmartNote_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -132,40 +144,53 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "&google/apps/meet/v2beta/resource.proto"
           + "\022\027google.apps.meet.v2beta\032\037google/api/fi"
-          + "eld_behavior.proto\032\031google/api/resource."
-          + "proto\032\037google/protobuf/timestamp.proto\"\373\001\n"
+          + "eld_behavior.proto\032\033google/api/field_inf"
+          + "o.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\254\004\n"
           + "\005Space\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\005\022\030\n"
           + "\013meeting_uri\030\002 \001(\tB\003\340A\003\022\031\n"
           + "\014meeting_code\030\003 \001(\tB\003\340A\003\0224\n"
           + "\006config\030\005 \001(\0132$.google.apps.meet.v2beta.SpaceConfig\022D\n"
-          + "\021active_conference\030\006 \001("
-          + "\0132).google.apps.meet.v2beta.ActiveConference:.\352A+\n"
-          + "\031meet.googleapis.com/Space\022\016spaces/{space}\"[\n"
+          + "\021active_conference\030\006"
+          + " \001(\0132).google.apps.meet.v2beta.ActiveConference\022E\n"
+          + "\014phone_access\030\007"
+          + " \003(\0132*.google.apps.meet.v2beta.Space.PhoneAccessB\003\340A\003\022P\n"
+          + "\022gateway_sip_access\030\010"
+          + " \003(\0132/.google.apps.meet.v2beta.Space.GatewaySipAccessB\003\340A\003\032\\\n"
+          + "\013PhoneAccess\022\024\n"
+          + "\014phone_number\030\001 \001(\t\022\013\n"
+          + "\003pin\030\002 \001(\t\022\023\n"
+          + "\013region_code\030\003 \001(\t\022\025\n\r"
+          + "language_code\030\004 \001(\t\0328\n"
+          + "\020GatewaySipAccess\022\013\n"
+          + "\003uri\030\001 \001(\t\022\027\n"
+          + "\017sip_access_code\030\002 \001(\t:.\352A+\n"
+          + "\031meet.googleapis.com/Space\022\016spaces/{space}\"\205\001\n"
           + "\020ActiveConference\022G\n"
           + "\021conference_record\030\001 \001(\tB,\340A\003\372A&\n"
-          + "$meet.googleapis.com/ConferenceRecord\"\373\021\n"
+          + "$meet.googleapis.com/ConferenceRecord\022(\n"
+          + "\033media_api_consenter_present\030\002 \001(\010B\003\340A\003\"\373\021\n"
           + "\013SpaceConfig\022D\n"
-          + "\013access_type\030\001"
-          + " \001(\0162/.google.apps.meet.v2beta.SpaceConfig.AccessType\022Q\n"
-          + "\022entry_point_access\030\002"
-          + " \001(\01625.google.apps.meet.v2beta.SpaceConfig.EntryPointAccess\022C\n\n"
+          + "\013access_type\030\001 \001(\0162"
+          + "/.google.apps.meet.v2beta.SpaceConfig.AccessType\022Q\n"
+          + "\022entry_point_access\030\002 \001(\01625.g"
+          + "oogle.apps.meet.v2beta.SpaceConfig.EntryPointAccess\022C\n\n"
           + "moderation\030\003 \001(\0162/.google.apps.meet.v2beta.SpaceConfig.Moderation\022\\\n"
-          + "\027moderation_restrictions\030\004"
-          + " \001(\0132;.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions\022n\n"
-          + "!attendance_report_generation_type\030\006 \001(\016"
-          + "2C.google.apps.meet.v2beta.SpaceConfig.AttendanceReportGenerationType\022L\n"
-          + "\017artifact_config\030\007"
-          + " \001(\01323.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig\032\200\005\n"
+          + "\027moderation_restrictions\030\004 \001(\0132;.goog"
+          + "le.apps.meet.v2beta.SpaceConfig.ModerationRestrictions\022n\n"
+          + "!attendance_report_generation_type\030\006 \001(\0162C.google.apps.meet.v2b"
+          + "eta.SpaceConfig.AttendanceReportGenerationType\022L\n"
+          + "\017artifact_config\030\007 \001(\01323.google"
+          + ".apps.meet.v2beta.SpaceConfig.ArtifactConfig\032\200\005\n"
           + "\026ModerationRestrictions\022e\n"
-          + "\020chat_restriction\030\001 \001(\016"
-          + "2K.google.apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType\022i\n"
-          + "\024reaction_restriction\030\002 \001(\0162K.google.app"
-          + "s.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType\022h\n"
-          + "\023present_restriction\030\003 \001(\0162K.google.apps.meet.v2beta."
-          + "SpaceConfig.ModerationRestrictions.RestrictionType\022x\n"
-          + "\033default_join_as_viewer_type\030\004 \001(\0162S.google.apps.meet.v2beta.SpaceC"
-          + "onfig.ModerationRestrictions.DefaultJoinAsViewerType\"W\n"
+          + "\020chat_restriction\030\001 \001(\0162K.google.apps.meet.v2b"
+          + "eta.SpaceConfig.ModerationRestrictions.RestrictionType\022i\n"
+          + "\024reaction_restriction\030\002 \001(\0162K.google.apps.meet.v2beta.SpaceConf"
+          + "ig.ModerationRestrictions.RestrictionType\022h\n"
+          + "\023present_restriction\030\003 \001(\0162K.google."
+          + "apps.meet.v2beta.SpaceConfig.ModerationRestrictions.RestrictionType\022x\n"
+          + "\033default_join_as_viewer_type\030\004 \001(\0162S.google.apps.m"
+          + "eet.v2beta.SpaceConfig.ModerationRestrictions.DefaultJoinAsViewerType\"W\n"
           + "\017RestrictionType\022 \n"
           + "\034RESTRICTION_TYPE_UNSPECIFIED\020\000\022\016\n\n"
           + "HOSTS_ONLY\020\001\022\022\n"
@@ -175,21 +200,21 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\002ON\020\001\022\007\n"
           + "\003OFF\020\002\032\213\006\n"
           + "\016ArtifactConfig\022]\n"
-          + "\020recording_config\030\001 \001(\0132C.go"
-          + "ogle.apps.meet.v2beta.SpaceConfig.ArtifactConfig.RecordingConfig\022e\n"
-          + "\024transcription_config\030\002 \001(\0132G.google.apps.meet.v2beta"
-          + ".SpaceConfig.ArtifactConfig.TranscriptionConfig\022`\n"
-          + "\022smart_notes_config\030\003 \001(\0132D.go"
-          + "ogle.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig\032|\n"
+          + "\020recording_config\030\001 \001(\0132C.google.apps.meet.v2beta.S"
+          + "paceConfig.ArtifactConfig.RecordingConfig\022e\n"
+          + "\024transcription_config\030\002 \001(\0132G.google"
+          + ".apps.meet.v2beta.SpaceConfig.ArtifactConfig.TranscriptionConfig\022`\n"
+          + "\022smart_notes_config\030\003 \001(\0132D.google.apps.meet.v2beta.S"
+          + "paceConfig.ArtifactConfig.SmartNotesConfig\032|\n"
           + "\017RecordingConfig\022i\n"
-          + "\031auto_recording_generation\030\002 \001(\0162"
-          + "F.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType\032\204\001\n"
+          + "\031auto_recording_generation\030\002 \001(\0162F.google.apps.meet.v2be"
+          + "ta.SpaceConfig.ArtifactConfig.AutoGenerationType\032\204\001\n"
           + "\023TranscriptionConfig\022m\n"
-          + "\035auto_transcription_generation\030\002 \001(\0162F.google.apps.meet.v2beta"
-          + ".SpaceConfig.ArtifactConfig.AutoGenerationType\032\177\n"
+          + "\035auto_transcription_generation\030\002 \001(\0162F.google"
+          + ".apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType\032\177\n"
           + "\020SmartNotesConfig\022k\n"
-          + "\033auto_smart_notes_generation\030\002 \001(\0162F.google.apps.me"
-          + "et.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType\"K\n"
+          + "\033auto_smart_notes_generation\030\002 \001(\016"
+          + "2F.google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.AutoGenerationType\"K\n"
           + "\022AutoGenerationType\022$\n"
           + " AUTO_GENERATION_TYPE_UNSPECIFIED\020\000\022\006\n"
           + "\002ON\020\001\022\007\n"
@@ -219,8 +244,8 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\004Role\022\024\n"
           + "\020ROLE_UNSPECIFIED\020\000\022\n\n"
           + "\006COHOST\020\001:Q\352AN\n"
-          + "\032meet.googleapis.com/Member\022\037space"
-          + "s/{space}/members/{member}*\007members2\006member\"\354\002\n"
+          + "\032meet.googleapis."
+          + "com/Member\022\037spaces/{space}/members/{member}*\007members2\006member\"\354\002\n"
           + "\020ConferenceRecord\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -228,8 +253,8 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\013expire_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0220\n"
           + "\005space\030\005 \001(\tB!\340A\003\372A\033\n"
           + "\031meet.googleapis.com/Space:u\352Ar\n"
-          + "$meet.googleapis.com/ConferenceRecord\022%conferenceRecords/{confe"
-          + "rence_record}*\021conferenceRecords2\020conferenceRecord\"\340\003\n"
+          + "$meet.googleapis.com/ConferenceRecord\022%confere"
+          + "nceRecords/{conference_record}*\021conferenceRecords2\020conferenceRecord\"\340\003\n"
           + "\013Participant\022>\n\r"
           + "signedin_user\030\004 \001(\0132%.google.apps.meet.v2beta.SignedinUserH\000\022@\n"
           + "\016anonymous_user\030\005"
@@ -240,17 +265,17 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0228\n"
           + "\017latest_end_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\201\001\352A~\n"
-          + "\037meet.googleapis.com/Participant\022@conferenceRecords/{conference_record}/particip"
-          + "ants/{participant}*\014participants2\013participantB\006\n"
+          + "\037meet.googleapis.com/Participant\022@conferenceRecords/{conference"
+          + "_record}/participants/{participant}*\014participants2\013participantB\006\n"
           + "\004user\"\323\002\n"
           + "\022ParticipantSession\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\301\001\352A\275\001\n"
-          + "&meet.googleapis.com/ParticipantSession\022jconferenceRecords/{conference_re"
-          + "cord}/participants/{participant}/partici"
-          + "pantSessions/{participant_session}*\023participantSessions2\022participantSession\"<\n"
+          + "&meet.googleapis.com/ParticipantSession\022jconferenceRecor"
+          + "ds/{conference_record}/participants/{participant}/participantSessions/{participa"
+          + "nt_session}*\023participantSessions2\022participantSession\"<\n"
           + "\014SignedinUser\022\021\n"
           + "\004user\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003\"*\n\r"
@@ -259,11 +284,11 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\tPhoneUser\022\031\n"
           + "\014display_name\030\001 \001(\tB\003\340A\003\"\345\003\n"
           + "\tRecording\022K\n"
-          + "\021drive_destination\030\006"
-          + " \001(\0132).google.apps.meet.v2beta.DriveDestinationB\003\340A\003H\000\022\021\n"
+          + "\021drive_destination\030\006 \001(\0132"
+          + ").google.apps.meet.v2beta.DriveDestinationB\003\340A\003H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022<\n"
-          + "\005state\030\003"
-          + " \001(\0162(.google.apps.meet.v2beta.Recording.StateB\003\340A\003\0223\n\n"
+          + "\005state\030\003 "
+          + "\001(\0162(.google.apps.meet.v2beta.Recording.StateB\003\340A\003\0223\n\n"
           + "start_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"J\n"
           + "\005State\022\025\n"
@@ -271,19 +296,19 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\007STARTED\020\001\022\t\n"
           + "\005ENDED\020\002\022\022\n"
           + "\016FILE_GENERATED\020\003:w\352At\n"
-          + "\035meet.googleapis.com/"
-          + "Recording\022<conferenceRecords/{conference_record}/recordings/{recording}*\n"
+          + "\035meet.googleapis.com/Recording\022<conferenceRe"
+          + "cords/{conference_record}/recordings/{recording}*\n"
           + "recordings2\trecordingB\r\n"
           + "\013destination\">\n"
           + "\020DriveDestination\022\021\n"
           + "\004file\030\001 \001(\tB\003\340A\003\022\027\n\n"
           + "export_uri\030\002 \001(\tB\003\340A\003\"\352\003\n\n"
           + "Transcript\022I\n"
-          + "\020docs_destination\030\006"
-          + " \001(\0132(.google.apps.meet.v2beta.DocsDestinationB\003\340A\003H\000\022\021\n"
+          + "\020docs_destination\030\006 \001(\0132(.google"
+          + ".apps.meet.v2beta.DocsDestinationB\003\340A\003H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022=\n"
-          + "\005state\030\003"
-          + " \001(\0162).google.apps.meet.v2beta.Transcript.StateB\003\340A\003\0223\n\n"
+          + "\005state\030\003 \001(\0162).goo"
+          + "gle.apps.meet.v2beta.Transcript.StateB\003\340A\003\0223\n\n"
           + "start_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"J\n"
           + "\005State\022\025\n"
@@ -291,8 +316,8 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "\007STARTED\020\001\022\t\n"
           + "\005ENDED\020\002\022\022\n"
           + "\016FILE_GENERATED\020\003:|\352Ay\n"
-          + "\036meet.googleapis.com/Transcript\022>conferenceRecords/{conference_record"
-          + "}/transcripts/{transcript}*\013transcripts2\n"
+          + "\036meet.googleapis.com/Transcript\022>conferenceRecords/{"
+          + "conference_record}/transcripts/{transcript}*\013transcripts2\n"
           + "transcriptB\r\n"
           + "\013destination\"A\n"
           + "\017DocsDestination\022\025\n"
@@ -307,19 +332,37 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
           + "start_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\235\001\352A\231\001\n"
-          + "#meet.googleapis.com/TranscriptEntry\022Nconferenc"
-          + "eRecords/{conference_record}/transcripts"
-          + "/{transcript}/entries/{entry}*\021transcriptEntries2\017transcriptEntryB\266\001\n"
+          + "#meet.googleapis.com/TranscriptEntry\022NconferenceRecords/{conference_re"
+          + "cord}/transcripts/{transcript}/entries/{"
+          + "entry}*\021transcriptEntries2\017transcriptEntry\"\347\003\n"
+          + "\tSmartNote\022I\n"
+          + "\020docs_destination\030\005 \001"
+          + "(\0132(.google.apps.meet.v2beta.DocsDestinationB\003\340A\003H\000\022\024\n"
+          + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022<\n"
+          + "\005state\030\002"
+          + " \001(\0162(.google.apps.meet.v2beta.SmartNote.StateB\003\340A\003\0223\n\n"
+          + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"J\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007STARTED\020\001\022\t\n"
+          + "\005ENDED\020\002\022\022\n"
+          + "\016FILE_GENERATED\020\003:x\352Au\n"
+          + "\035meet.googleapis.com/SmartNote\022=confere"
+          + "nceRecords/{conference_record}/smartNotes/{smart_note}*\n"
+          + "smartNotes2\tsmartNoteB\r\n"
+          + "\013destinationB\266\001\n"
           + "\033com.google.apps.meet.v2betaB\r"
-          + "ResourceProtoP\001Z5cloud.google.com/go/apps/meet/apiv2beta/meet"
-          + "pb;meetpb\252\002\027Google.Apps.Meet.V2Beta\312\002\027Go"
-          + "ogle\\Apps\\Meet\\V2beta\352\002\032Google::Apps::Meet::V2betab\006proto3"
+          + "ResourceProtoP\001Z5cloud.google.com/go/apps/meet/apiv2beta/meetpb;meetpb\252\002\027G"
+          + "oogle.Apps.Meet.V2Beta\312\002\027Google\\Apps\\Mee"
+          + "t\\V2beta\352\002\032Google::Apps::Meet::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -328,7 +371,29 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_Space_descriptor,
             new java.lang.String[] {
-              "Name", "MeetingUri", "MeetingCode", "Config", "ActiveConference",
+              "Name",
+              "MeetingUri",
+              "MeetingCode",
+              "Config",
+              "ActiveConference",
+              "PhoneAccess",
+              "GatewaySipAccess",
+            });
+    internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor =
+        internal_static_google_apps_meet_v2beta_Space_descriptor.getNestedType(0);
+    internal_static_google_apps_meet_v2beta_Space_PhoneAccess_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor,
+            new java.lang.String[] {
+              "PhoneNumber", "Pin", "RegionCode", "LanguageCode",
+            });
+    internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor =
+        internal_static_google_apps_meet_v2beta_Space_descriptor.getNestedType(1);
+    internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor,
+            new java.lang.String[] {
+              "Uri", "SipAccessCode",
             });
     internal_static_google_apps_meet_v2beta_ActiveConference_descriptor =
         getDescriptor().getMessageType(1);
@@ -336,7 +401,7 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2beta_ActiveConference_descriptor,
             new java.lang.String[] {
-              "ConferenceRecord",
+              "ConferenceRecord", "MediaApiConsenterPresent",
             });
     internal_static_google_apps_meet_v2beta_SpaceConfig_descriptor =
         getDescriptor().getMessageType(2);
@@ -498,8 +563,17 @@ public final class ResourceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name", "Participant", "Text", "LanguageCode", "StartTime", "EndTime",
             });
+    internal_static_google_apps_meet_v2beta_SmartNote_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_apps_meet_v2beta_SmartNote_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2beta_SmartNote_descriptor,
+            new java.lang.String[] {
+              "DocsDestination", "Name", "State", "StartTime", "EndTime", "Destination",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

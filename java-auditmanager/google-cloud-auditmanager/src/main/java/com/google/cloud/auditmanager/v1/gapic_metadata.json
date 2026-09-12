@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "AuditManagerClient",
           "rpcs": {
+            "CreateAuditSchedule": {
+              "methods": ["createAuditSchedule", "createAuditSchedule", "createAuditSchedule", "createAuditSchedule", "createAuditScheduleCallable"]
+            },
             "EnrollResource": {
               "methods": ["enrollResource", "enrollResource", "enrollResourceCallable"]
             },
@@ -22,6 +25,9 @@
             "GetAuditReport": {
               "methods": ["getAuditReport", "getAuditReport", "getAuditReport", "getAuditReportCallable"]
             },
+            "GetAuditSchedule": {
+              "methods": ["getAuditSchedule", "getAuditSchedule", "getAuditSchedule", "getAuditScheduleCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
@@ -31,6 +37,9 @@
             "ListAuditReports": {
               "methods": ["listAuditReports", "listAuditReports", "listAuditReports", "listAuditReports", "listAuditReportsPagedCallable", "listAuditReportsCallable"]
             },
+            "ListAuditSchedules": {
+              "methods": ["listAuditSchedules", "listAuditSchedules", "listAuditSchedules", "listAuditSchedules", "listAuditSchedulesPagedCallable", "listAuditSchedulesCallable"]
+            },
             "ListControls": {
               "methods": ["listControls", "listControls", "listControls", "listControlsPagedCallable", "listControlsCallable"]
             },
@@ -39,6 +48,9 @@
             },
             "ListResourceEnrollmentStatuses": {
               "methods": ["listResourceEnrollmentStatuses", "listResourceEnrollmentStatuses", "listResourceEnrollmentStatuses", "listResourceEnrollmentStatusesPagedCallable", "listResourceEnrollmentStatusesCallable"]
+            },
+            "UpdateAuditSchedule": {
+              "methods": ["updateAuditSchedule", "updateAuditSchedule", "updateAuditScheduleCallable"]
             }
           }
         }

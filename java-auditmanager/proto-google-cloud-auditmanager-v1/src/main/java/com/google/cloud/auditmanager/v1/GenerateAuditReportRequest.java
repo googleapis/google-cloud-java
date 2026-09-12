@@ -433,7 +433,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
    * @return The complianceStandard.
    */
   @java.lang.Override
@@ -464,7 +464,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
@@ -1390,7 +1390,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
      * @return The complianceStandard.
      */
     @java.lang.Deprecated
@@ -1420,7 +1420,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
      * @return The bytes for complianceStandard.
      */
     @java.lang.Deprecated
@@ -1450,7 +1450,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -1479,7 +1479,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1504,7 +1504,7 @@ public final class GenerateAuditReportRequest extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
-     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
+     *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=478
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */

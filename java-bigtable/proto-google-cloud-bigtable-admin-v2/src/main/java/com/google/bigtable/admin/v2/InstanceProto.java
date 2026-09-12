@@ -77,6 +77,14 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_Cluster_EncryptionConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_MemoryLayer_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_MemoryLayer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_MemoryLayer_MemoryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_MemoryLayer_MemoryConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_AppProfile_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_fieldAccessorTable;
@@ -96,6 +104,10 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -208,13 +220,31 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\026NODE_SCALING_FACTOR_2X\020\002:x\352Au\n"
           + "$bigtableadmin.googleapis.com/Cluster\022:projects/{project}/instances/{ins"
           + "tance}/clusters/{cluster}*\010clusters2\007clusterB\010\n"
-          + "\006config\"\355\n\n\n"
+          + "\006config\"\325\003\n"
+          + "\013MemoryLayer\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022I\n\r"
+          + "memory_config\030\002 \001(\01322.googl"
+          + "e.bigtable.admin.v2.MemoryLayer.MemoryConfig\022\021\n"
+          + "\004etag\030\003 \001(\tB\003\340A\001\022?\n"
+          + "\005state\030\004 \001(\0162+"
+          + ".google.bigtable.admin.v2.MemoryLayer.StateB\003\340A\003\032-\n"
+          + "\014MemoryConfig\022\035\n"
+          + "\020storage_size_gib\030\002 \001(\005B\003\340A\003\"Q\n"
+          + "\005State\022\023\n"
+          + "\017STATE_NOT_KNOWN\020\000\022\t\n"
+          + "\005READY\020\001\022\014\n"
+          + "\010ENABLING\020\002\022\014\n"
+          + "\010RESIZING\020\003\022\014\n"
+          + "\010DISABLED\020\004:\221\001\352A\215\001\n"
+          + "(bigtableadmin.googleapis.com/MemoryLayer\022Fprojects/{p"
+          + "roject}/instances/{instance}/clusters/{c"
+          + "luster}/memoryLayer*\014memoryLayers2\013memoryLayer\"\337\013\n\n"
           + "AppProfile\022\014\n"
           + "\004name\030\001 \001(\t\022\014\n"
           + "\004etag\030\002 \001(\t\022\023\n"
           + "\013description\030\003 \001(\t\022g\n"
-          + "\035multi_cluster_routing_use_any\030\005 \001(\0132>."
-          + "google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyH\000\022[\n"
+          + "\035multi_cluster_routing_use_any\030\005 \001(\0132>.google.b"
+          + "igtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyH\000\022[\n"
           + "\026single_cluster_routing\030\006"
           + " \001(\01329.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingH\000\022E\n"
           + "\010priority\030\007"
@@ -222,23 +252,26 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\022standard_isolation\030\013"
           + " \001(\01326.google.bigtable.admin.v2.AppProfile.StandardIsolationH\001\022i\n"
           + "\036data_boost_isolation_read_only\030\n"
-          + " \001(\0132?.goog"
-          + "le.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnlyH\001\032\257\001\n"
+          + " \001(\0132?.google.bigta"
+          + "ble.admin.v2.AppProfile.DataBoostIsolationReadOnlyH\001\032\257\001\n"
           + "\031MultiClusterRoutingUseAny\022\023\n"
           + "\013cluster_ids\030\001 \003(\t\022b\n"
-          + "\014row_affinity\030\003 \001(\0132J.google.bigtable.admin.v2"
-          + ".AppProfile.MultiClusterRoutingUseAny.RowAffinityH\000\032\r\n"
+          + "\014row_affinity\030\003 \001(\0132J.google.bigtable.admin.v2.AppProf"
+          + "ile.MultiClusterRoutingUseAny.RowAffinityH\000\032\r\n"
           + "\013RowAffinityB\n\n"
           + "\010affinity\032N\n"
           + "\024SingleClusterRouting\022\022\n\n"
           + "cluster_id\030\001 \001(\t\022\"\n"
-          + "\032allow_transactional_writes\030\002 \001(\010\032T\n"
+          + "\032allow_transactional_writes\030\002 \001(\010\032\305\001\n"
           + "\021StandardIsolation\022?\n"
-          + "\010priority\030\001 \001(\0162-."
-          + "google.bigtable.admin.v2.AppProfile.Priority\032\374\001\n"
+          + "\010priority\030\001 \001(\0162-.google.bigtable.admin.v2.AppProfile.Priority\022_\n"
+          + "\r"
+          + "memory_config\030\002 \001(\0132C.google.bigtable.a"
+          + "dmin.v2.AppProfile.StandardIsolation.MemoryConfigB\003\340A\001\032\016\n"
+          + "\014MemoryConfig\032\374\001\n"
           + "\032DataBoostIsolationReadOnly\022w\n"
-          + "\025compute_billing_owner\030\001 \001(\0162S.google.bigt"
-          + "able.admin.v2.AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwnerH\000\210\001\001\"K\n"
+          + "\025compute_billing_owner\030\001 \001(\0162S.google.bigtable.admin.v2."
+          + "AppProfile.DataBoostIsolationReadOnly.ComputeBillingOwnerH\000\210\001\001\"K\n"
           + "\023ComputeBillingOwner\022%\n"
           + "!COMPUTE_BILLING_OWNER_UNSPECIFIED\020\000\022\r\n"
           + "\tHOST_PAYS\020\001B\030\n"
@@ -248,8 +281,8 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\014PRIORITY_LOW\020\001\022\023\n"
           + "\017PRIORITY_MEDIUM\020\002\022\021\n\r"
           + "PRIORITY_HIGH\020\003:\211\001\352A\205\001\n"
-          + "\'bigtableadmin.googleapis.com/AppProfile\022Aprojects/{project}/instances/{insta"
-          + "nce}/appProfiles/{app_profile}*\013appProfiles2\n"
+          + "\'bigtableadmin.googleapis.com/AppProfile\022Aprojects/"
+          + "{project}/instances/{instance}/appProfiles/{app_profile}*\013appProfiles2\n"
           + "appProfileB\020\n"
           + "\016routing_policyB\013\n"
           + "\tisolation\"\241\003\n"
@@ -262,32 +295,31 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\tstart_key\030\005 \001(\t\022\017\n"
           + "\007end_key\030\006 \001(\t\022#\n"
           + "\026node_cpu_usage_percent\030\007 \001(\002B\003\340A\003:\227\001\352A\223\001\n"
-          + "&bigtableadmin.googleapis.com/HotTablet\022Rprojects/{project}/instances/{instance}"
-          + "/clusters/{cluster}/hotTablets/{hot_tablet}*\n"
+          + "&bigtableadmin.googleapis.com/HotTablet\022Rprojects/{pro"
+          + "ject}/instances/{instance}/clusters/{cluster}/hotTablets/{hot_tablet}*\n"
           + "hotTablets2\thotTablet\"\372\001\n"
           + "\013LogicalView\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\022\n"
           + "\005query\030\002 \001(\tB\003\340A\002\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001\022 \n"
           + "\023deletion_protection\030\006 \001(\010B\003\340A\001:\216\001\352A\212\001\n"
-          + "(bigtableadmin.googleapis.com/LogicalView\022Cprojects/{proje"
-          + "ct}/instances/{instance}/logicalViews/{l"
-          + "ogical_view}*\014logicalViews2\013logicalView\"\226\002\n"
+          + "(bigtableadmin.googleapis.com/LogicalView\022Cprojects/{project}/instances/"
+          + "{instance}/logicalViews/{logical_view}*\014logicalViews2\013logicalView\"\226\002\n"
           + "\020MaterializedView\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\025\n"
           + "\005query\030\002 \001(\tB\006\340A\002\340A\005\022\021\n"
           + "\004etag\030\003 \001(\tB\003\340A\001\022\033\n"
           + "\023deletion_protection\030\006 \001(\010:\247\001\352A\243\001\n"
-          + "-bigtableadmin.googleapis.com/MaterializedView\022Mprojects/{project}/instances/{inst"
-          + "ance}/materializedViews/{materialized_vi"
-          + "ew}*\021materializedViews2\020materializedViewB\313\002\n"
+          + "-bigtableadmin.googleapis.com/MaterializedView\022Mprojects"
+          + "/{project}/instances/{instance}/material"
+          + "izedViews/{materialized_view}*\021materializedViews2\020materializedViewB\313\002\n"
           + "\034com.google.bigtable.admin.v2B\r"
-          + "InstanceProtoP\001Z8cloud.google.com/go/bigtable"
-          + "/admin/apiv2/adminpb;adminpb\252\002\036Google.Cl"
-          + "oud.Bigtable.Admin.V2\312\002\036Google\\Cloud\\Big"
-          + "table\\Admin\\V2\352\002\"Google::Cloud::Bigtable::Admin::V2\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/"
-          + "{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "InstanceProtoP\001Z8cloud.google.com/go/bigtable/admin/apiv2/a"
+          + "dminpb;adminpb\252\002\036Google.Cloud.Bigtable.A"
+          + "dmin.V2\312\002\036Google\\Cloud\\Bigtable\\Admin\\V2"
+          + "\352\002\"Google::Cloud::Bigtable::Admin::V2\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}/key"
+          + "Rings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -386,8 +418,24 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "KmsKeyName",
             });
-    internal_static_google_bigtable_admin_v2_AppProfile_descriptor =
+    internal_static_google_bigtable_admin_v2_MemoryLayer_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_bigtable_admin_v2_MemoryLayer_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_MemoryLayer_descriptor,
+            new java.lang.String[] {
+              "Name", "MemoryConfig", "Etag", "State",
+            });
+    internal_static_google_bigtable_admin_v2_MemoryLayer_MemoryConfig_descriptor =
+        internal_static_google_bigtable_admin_v2_MemoryLayer_descriptor.getNestedType(0);
+    internal_static_google_bigtable_admin_v2_MemoryLayer_MemoryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_MemoryLayer_MemoryConfig_descriptor,
+            new java.lang.String[] {
+              "StorageSizeGib",
+            });
+    internal_static_google_bigtable_admin_v2_AppProfile_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_bigtable_admin_v2_AppProfile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_AppProfile_descriptor,
@@ -432,8 +480,15 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor,
             new java.lang.String[] {
-              "Priority",
+              "Priority", "MemoryConfig",
             });
+    internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor =
+        internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor
+            .getNestedType(0);
+    internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_MemoryConfig_descriptor,
+            new java.lang.String[] {});
     internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_descriptor =
         internal_static_google_bigtable_admin_v2_AppProfile_descriptor.getNestedType(3);
     internal_static_google_bigtable_admin_v2_AppProfile_DataBoostIsolationReadOnly_fieldAccessorTable =
@@ -443,7 +498,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "ComputeBillingOwner",
             });
     internal_static_google_bigtable_admin_v2_HotTablet_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_HotTablet_descriptor,
@@ -457,7 +512,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "NodeCpuUsagePercent",
             });
     internal_static_google_bigtable_admin_v2_LogicalView_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_bigtable_admin_v2_LogicalView_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_LogicalView_descriptor,
@@ -465,7 +520,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Name", "Query", "Etag", "DeletionProtection",
             });
     internal_static_google_bigtable_admin_v2_MaterializedView_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_bigtable_admin_v2_MaterializedView_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_MaterializedView_descriptor,

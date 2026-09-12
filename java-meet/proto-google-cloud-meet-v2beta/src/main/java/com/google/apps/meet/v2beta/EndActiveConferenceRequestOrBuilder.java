@@ -38,7 +38,7 @@ public interface EndActiveConferenceRequestOrBuilder
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>
@@ -61,7 +61,7 @@ public interface EndActiveConferenceRequestOrBuilder
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>

@@ -189,7 +189,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -209,7 +209,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
