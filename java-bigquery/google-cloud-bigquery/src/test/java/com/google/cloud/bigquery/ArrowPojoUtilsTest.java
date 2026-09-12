@@ -258,4 +258,20 @@ public class ArrowPojoUtilsTest {
             () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
     assertTrue(thrown.getMessage().contains("Unsupported Arrow type"));
   }
+
+  @Test
+  public void testArrowSchemaToBigQuerySchema_EmptyStructThrowsException() {
+    Field emptyStructField =
+        new Field("empty_struct", FieldType.nullable(new ArrowType.Struct()), ImmutableList.of());
+    Schema arrowSchema = new Schema(ImmutableList.of(emptyStructField));
+
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
+    assertTrue(
+        thrown
+            .getMessage()
+            .contains("Arrow Struct field must have at least one child field: empty_struct"));
+  }
 }

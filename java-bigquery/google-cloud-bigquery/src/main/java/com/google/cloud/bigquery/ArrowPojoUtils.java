@@ -107,6 +107,10 @@ final class ArrowPojoUtils {
   }
 
   private static FieldList getSubFields(Field structField) {
+    if (structField.getChildren().isEmpty()) {
+      throw new IllegalArgumentException(
+          "Arrow Struct field must have at least one child field: " + structField.getName());
+    }
     List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
     for (Field childField : structField.getChildren()) {
       subFields.add(arrowFieldToBigQueryField(childField));
