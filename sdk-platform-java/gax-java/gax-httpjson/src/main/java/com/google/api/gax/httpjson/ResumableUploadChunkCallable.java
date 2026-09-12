@@ -45,6 +45,7 @@ import com.google.common.collect.ImmutableMap;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -82,7 +83,12 @@ class ResumableUploadChunkCallable<ResponseT>
 
                 @Override
                 public byte[] getBinaryRequestBody(ChunkUploadRequest request) {
-                  return request.getPayload();
+                  int length = request.getPayloadLength();
+                  byte[] payload = request.getPayload();
+                  if (length == payload.length) {
+                    return payload;
+                  }
+                  return Arrays.copyOf(payload, length);
                 }
 
                 @Override
@@ -111,7 +117,7 @@ class ResumableUploadChunkCallable<ResponseT>
   public ApiFuture<ChunkUploadResponse<ResponseT>> futureCall(
       ChunkUploadRequest request, @Nullable ApiCallContext inputContext) {
     Preconditions.checkNotNull(request);
-    boolean isPayloadEmpty = request.getPayload().length == 0;
+    boolean isPayloadEmpty = request.getPayloadLength() == 0;
     String command;
     if (request.isFinal()) {
       command = !isPayloadEmpty ? COMMAND_UPLOAD_FINALIZE : COMMAND_FINALIZE;
