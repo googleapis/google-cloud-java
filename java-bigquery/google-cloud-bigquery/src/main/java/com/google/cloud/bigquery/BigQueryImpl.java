@@ -2431,8 +2431,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           String destProject =
               destinationTable.getProject() != null
                   ? destinationTable.getProject()
-                  : (jobId != null && jobId.getProject() != null
-                      ? jobId.getProject()
+                  : (actualJobId.getProject() != null
+                      ? actualJobId.getProject()
                       : getOptions().getProjectId());
           String parent = String.format("projects/%s", destProject);
           String srcTable =
@@ -2561,8 +2561,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         String destProject =
             destinationTable.getProject() != null
                 ? destinationTable.getProject()
-                : (jobId != null && jobId.getProject() != null
-                    ? jobId.getProject()
+                : (completedJob.getJobId().getProject() != null
+                    ? completedJob.getJobId().getProject()
                     : getOptions().getProjectId());
         String parent = String.format("projects/%s", destProject);
         String srcTable =
