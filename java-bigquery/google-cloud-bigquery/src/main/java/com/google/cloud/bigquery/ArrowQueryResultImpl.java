@@ -261,10 +261,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     try {
       checkNotClosed();
       loader.load(newBatch);
-      if (currentRecordBatch != null) {
-        currentRecordBatch.close();
-      }
+      ArrowRecordBatch oldBatch = currentRecordBatch;
       currentRecordBatch = newBatch;
+      if (oldBatch != null) {
+        oldBatch.close();
+      }
     } finally {
       lock.unlock();
     }
