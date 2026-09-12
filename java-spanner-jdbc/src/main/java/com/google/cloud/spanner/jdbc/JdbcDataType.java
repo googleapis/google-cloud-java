@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.jdbc;
 
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
@@ -25,6 +26,8 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Duration;
+import java.time.Period;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -433,6 +436,46 @@ enum JdbcDataType {
     @Override
     public Type getSpannerType() {
       return Type.uuid();
+    }
+  },
+  INTERVAL {
+    private final Set<Class<?>> classes =
+        new HashSet<>(Arrays.asList(Interval.class, Duration.class, Period.class));
+    private final Set<String> aliases = new HashSet<>(Collections.singletonList("interval"));
+
+    @Override
+    public int getSqlType() {
+      return IntervalType.VENDOR_TYPE_NUMBER;
+    }
+
+    @Override
+    public Class<Interval> getJavaClass() {
+      return Interval.class;
+    }
+
+    @Override
+    public Set<Class<?>> getSupportedJavaClasses() {
+      return classes;
+    }
+
+    @Override
+    public Code getCode() {
+      return Code.INTERVAL;
+    }
+
+    @Override
+    public List<Interval> getArrayElements(ResultSet resultSet, int columnIndex) {
+      return resultSet.getIntervalList(columnIndex);
+    }
+
+    @Override
+    public Type getSpannerType() {
+      return Type.interval();
+    }
+
+    @Override
+    public Set<String> getPostgreSQLAliases() {
+      return aliases;
     }
   },
   STRUCT {
