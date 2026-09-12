@@ -45,6 +45,9 @@ import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -114,6 +117,16 @@ class ResumableUploadChunkCoordinatorTest {
             callContext,
             clientContext);
 
+    List<ResumableUploadStatus> terminalStatuses = Collections.synchronizedList(new ArrayList<>());
+    coordinator.addProgressListener(
+        status -> {
+          if (status.getState() == ResumableUploadStatus.State.FINALIZED
+              || status.getState() == ResumableUploadStatus.State.FAILED) {
+            terminalStatuses.add(status);
+          }
+        },
+        MoreExecutors.directExecutor());
+
     AtomicInteger completionListenerCount = new AtomicInteger(0);
     result.addListener(completionListenerCount::incrementAndGet, MoreExecutors.directExecutor());
 
@@ -153,5 +166,6 @@ class ResumableUploadChunkCoordinatorTest {
     assertThat(result.isDone()).isTrue();
     assertThat(closeCount.get()).isEqualTo(1);
     assertThat(completionListenerCount.get()).isEqualTo(1);
+    assertThat(terminalStatuses).hasSize(1);
   }
 }
