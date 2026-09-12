@@ -192,20 +192,11 @@ class ResumableUploadChunkCallable<ResponseT>
     public void onClose(int statusCode, HttpJsonMetadata trailers) {
       try {
         if (statusCode >= 200 && statusCode < 300) {
-          if (uploadStatus == null) {
-            future.setException(
-                ApiExceptionFactory.createException(
-                    "Upload chunk response did not contain valid "
-                        + UPLOAD_STATUS_HEADER
-                        + " header",
-                    /* cause= */ null,
-                    HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
-                    /* retryable= */ false));
-            return;
-          }
           boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
           ChunkUploadResponse.Builder<ResponseT> chunkResponseBuilder =
-              ChunkUploadResponse.<ResponseT>newBuilder().setComplete(isComplete);
+              ChunkUploadResponse.<ResponseT>newBuilder()
+                  .setComplete(isComplete)
+                  .setUploadStatus(uploadStatus);
           if (isComplete) {
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));

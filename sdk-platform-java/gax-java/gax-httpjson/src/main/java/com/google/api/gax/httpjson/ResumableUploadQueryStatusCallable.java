@@ -223,7 +223,9 @@ class ResumableUploadQueryStatusCallable<ResponseT>
           boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
           if (isComplete) {
             QueryStatusResponse.Builder<ResponseT> queryResponseBuilder =
-                QueryStatusResponse.<ResponseT>newBuilder().setComplete(true);
+                QueryStatusResponse.<ResponseT>newBuilder()
+                    .setComplete(true)
+                    .setUploadStatus(uploadStatus);
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
             queryResponseBuilder.setResponse(responseParser.parse(stream));
@@ -233,6 +235,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
                 QueryStatusResponse.<ResponseT>newBuilder()
                     .setComplete(false)
                     .setCommittedOffset(committedOffset)
+                    .setUploadStatus(uploadStatus)
                     .build());
           } else {
             future.setException(

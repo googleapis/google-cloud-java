@@ -59,4 +59,79 @@ class ResumableUploadSessionTest {
     assertThat(session.getUploadUrl()).isEqualTo(UPLOAD_URL);
     assertThat(session.getChunkGranularity()).isEqualTo(customChunkGranularity);
   }
+
+  @Test
+  void build_withUploadStatus_preservesUploadStatus() {
+    ResumableUploadSession session =
+        ResumableUploadSession.newBuilder()
+            .setUploadUrl(UPLOAD_URL)
+            .setUploadStatus("active")
+            .build();
+
+    assertThat(session.getUploadUrl()).isEqualTo(UPLOAD_URL);
+    assertThat(session.getUploadStatus()).isEqualTo("active");
+  }
+
+  @Test
+  void build_withoutUploadStatus_defaultsToNull() {
+    ResumableUploadSession session =
+        ResumableUploadSession.newBuilder().setUploadUrl(UPLOAD_URL).build();
+
+    assertThat(session.getUploadStatus()).isNull();
+  }
+
+  @Test
+  void chunkUploadResponse_withUploadStatus_preservesStatus() {
+    ChunkUploadResponse<String> response =
+        ChunkUploadResponse.<String>newBuilder()
+            .setComplete(false)
+            .setUploadStatus("active")
+            .build();
+
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getUploadStatus()).isEqualTo("active");
+  }
+
+  @Test
+  void chunkUploadResponse_withoutUploadStatus_defaultsToNull() {
+    ChunkUploadResponse<String> response =
+        ChunkUploadResponse.<String>newBuilder().setComplete(true).build();
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getUploadStatus()).isNull();
+  }
+
+  @Test
+  void chunkUploadResponse_createWithUploadStatus_preservesStatus() {
+    ChunkUploadResponse<String> response = ChunkUploadResponse.create(true, "result", "final");
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getResponse()).isEqualTo("result");
+    assertThat(response.getUploadStatus()).isEqualTo("final");
+  }
+
+  @Test
+  void queryStatusResponse_withUploadStatus_preservesStatus() {
+    QueryStatusResponse<String> response =
+        QueryStatusResponse.<String>newBuilder()
+            .setComplete(false)
+            .setCommittedOffset(1024L)
+            .setUploadStatus("active")
+            .build();
+
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getCommittedOffset()).isEqualTo(1024L);
+    assertThat(response.getUploadStatus()).isEqualTo("active");
+  }
+
+  @Test
+  void queryStatusResponse_withoutUploadStatus_defaultsToNull() {
+    QueryStatusResponse<String> response =
+        QueryStatusResponse.<String>newBuilder()
+            .setComplete(false)
+            .setCommittedOffset(1024L)
+            .build();
+
+    assertThat(response.getUploadStatus()).isNull();
+  }
 }
