@@ -33,6 +33,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents the session metadata returned after starting a resumable upload. */
 @NullMarked
@@ -58,6 +59,12 @@ public abstract class ResumableUploadSession {
    */
   public abstract long getChunkGranularity();
 
+  /**
+   * Returns the upload status returned by the server (e.g. {@code "active"}), or {@code null} if
+   * the server omitted the upload status header.
+   */
+  public abstract @Nullable String getUploadStatus();
+
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {
@@ -70,6 +77,8 @@ public abstract class ResumableUploadSession {
     public abstract Builder setUploadUrl(String uploadUrl);
 
     public abstract Builder setChunkGranularity(long chunkGranularity);
+
+    public abstract Builder setUploadStatus(@Nullable String uploadStatus);
 
     public abstract ResumableUploadSession build();
   }

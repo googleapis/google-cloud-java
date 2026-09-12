@@ -51,6 +51,10 @@ public class HttpJsonStatusCode implements StatusCode {
     return new HttpJsonStatusCode(statusCode.getHttpStatusCode(), statusCode);
   }
 
+  static HttpJsonStatusCode of(int httpStatus, Code statusCode) {
+    return new HttpJsonStatusCode(httpStatus, statusCode);
+  }
+
   public static HttpJsonStatusCode of(com.google.rpc.Code rpcCode) {
     return HttpJsonStatusCode.of(rpcCodeToStatusCode(rpcCode));
   }

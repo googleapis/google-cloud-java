@@ -55,6 +55,7 @@ class ResumableUploadStartCallable<RequestT>
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
   private static final String UPLOAD_URL_HEADER = "X-Goog-Upload-URL";
   private static final String UPLOAD_GRANULARITY_HEADER = "X-Goog-Upload-Chunk-Granularity";
+  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
 
   private static final Map<String, List<String>> START_UPLOAD_HEADERS =
       ImmutableMap.of(
@@ -109,6 +110,7 @@ class ResumableUploadStartCallable<RequestT>
     private final ResumableUploadHttpJsonFuture<ResumableUploadSession> future;
     private long chunkGranularity = 1L;
     @Nullable private String uploadUrl;
+    @Nullable private String uploadStatus;
     @Nullable private Throwable headerParsingException;
 
     private StartUploadResponseListener(
@@ -119,6 +121,8 @@ class ResumableUploadStartCallable<RequestT>
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
       Map<String, Object> headers = responseHeaders.getHeaders();
+
+      this.uploadStatus = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER);
 
       String url = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_URL_HEADER);
       if (!Strings.isNullOrEmpty(url)) {
@@ -172,6 +176,7 @@ class ResumableUploadStartCallable<RequestT>
                 ResumableUploadSession.newBuilder()
                     .setUploadUrl(uploadUrl)
                     .setChunkGranularity(chunkGranularity)
+                    .setUploadStatus(uploadStatus)
                     .build());
           } else {
             future.setException(

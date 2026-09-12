@@ -55,6 +55,12 @@ public abstract class ChunkUploadResponse<ResponseT> {
    */
   public abstract @Nullable ResponseT getResponse();
 
+  /**
+   * Returns the status of the upload session returned by the server (e.g. {@code "active"} or
+   * {@code "final"}), or {@code null} if the server omitted the upload status header.
+   */
+  public abstract @Nullable String getUploadStatus();
+
   public abstract Builder<ResponseT> toBuilder();
 
   public static <ResponseT> Builder<ResponseT> newBuilder() {
@@ -63,9 +69,15 @@ public abstract class ChunkUploadResponse<ResponseT> {
 
   public static <ResponseT> ChunkUploadResponse<ResponseT> create(
       boolean isComplete, @Nullable ResponseT response) {
+    return create(isComplete, response, null);
+  }
+
+  public static <ResponseT> ChunkUploadResponse<ResponseT> create(
+      boolean isComplete, @Nullable ResponseT response, @Nullable String uploadStatus) {
     return new AutoValue_ChunkUploadResponse.Builder<ResponseT>()
         .setComplete(isComplete)
         .setResponse(response)
+        .setUploadStatus(uploadStatus)
         .build();
   }
 
@@ -74,6 +86,8 @@ public abstract class ChunkUploadResponse<ResponseT> {
     public abstract Builder<ResponseT> setComplete(boolean isComplete);
 
     public abstract Builder<ResponseT> setResponse(@Nullable ResponseT response);
+
+    public abstract Builder<ResponseT> setUploadStatus(@Nullable String uploadStatus);
 
     public abstract ChunkUploadResponse<ResponseT> build();
   }
