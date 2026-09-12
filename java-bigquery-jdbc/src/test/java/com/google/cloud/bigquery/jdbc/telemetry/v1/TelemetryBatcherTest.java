@@ -388,12 +388,12 @@ public class TelemetryBatcherTest {
     int index2 = TelemetryBatcher.StatementAccumulator.calculateBucket(150); // < 250, index 2
     assertEquals(2, index2);
 
-    int index3 = TelemetryBatcher.StatementAccumulator.calculateBucket(20000); // < 30000, index 8
-    assertEquals(8, index3);
+    int index3 = TelemetryBatcher.StatementAccumulator.calculateBucket(20000); // < 30000, index 9
+    assertEquals(9, index3);
 
     int index4 =
         TelemetryBatcher.StatementAccumulator.calculateBucket(
-            4000000); // Overflow > 3600000 (1 hr), index 16
-    assertEquals(16, index4);
+            4000000); // Overflow > 3600000 (1 hr), index 17
+    assertEquals(17, index4);
   }
 }
