@@ -2900,6 +2900,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     try {
       if (bqReadClient != null) {
         bqReadClient.close();
+        bqReadClient = null;
       }
     } finally {
       readClientLock.unlock();
