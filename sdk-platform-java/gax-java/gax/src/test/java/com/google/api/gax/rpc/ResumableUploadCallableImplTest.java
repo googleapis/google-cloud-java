@@ -52,6 +52,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
@@ -609,9 +610,11 @@ class ResumableUploadCallableImplTest {
     verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
     List<ChunkUploadRequest> requests = captor.getAllValues();
     assertThat(requests.get(0).getOffset()).isEqualTo(0);
-    assertThat(requests.get(0).getPayload()).isEqualTo("hello".getBytes(StandardCharsets.UTF_8));
+    assertThat(Arrays.copyOf(requests.get(0).getPayload(), requests.get(0).getPayloadLength()))
+        .isEqualTo("hello".getBytes(StandardCharsets.UTF_8));
     assertThat(requests.get(1).getOffset()).isEqualTo(0);
-    assertThat(requests.get(1).getPayload()).isEqualTo("hello".getBytes(StandardCharsets.UTF_8));
+    assertThat(Arrays.copyOf(requests.get(1).getPayload(), requests.get(1).getPayloadLength()))
+        .isEqualTo("hello".getBytes(StandardCharsets.UTF_8));
   }
 
   @Test
@@ -793,6 +796,49 @@ class ResumableUploadCallableImplTest {
     assertThat(thrown).hasMessageThat().contains("Category 2 (recoverable) error recovery");
   }
 
+  @Test
+  void testBufferWindow_noArrayCopyForPartialChunk_backingArrayIdentityPreserved()
+      throws Exception {
+    stubStartSession("https://upload.url/partial-no-copy");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "ok")));
+
+    // 5 bytes with default chunkSize = 8 -> partial chunk
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("12345"), null);
+
+    assertThat(future.get()).isEqualTo("ok");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable).futureCall(captor.capture(), any());
+    ChunkUploadRequest chunk = captor.getValue();
+    assertThat(chunk.getPayloadLength()).isEqualTo(5);
+    // Backing array capacity is 8 (chunkSize), not 5 (no copy performed)
+    assertThat(chunk.getPayload().length).isEqualTo(8);
+  }
+
+  @Test
+  void testBufferWindow_reusesSingleArrayAcrossChunks() throws Exception {
+    stubStartSession("https://upload.url/reuse-array");
+    // 20 bytes with chunkSize = 8 -> 3 chunks: [0..8), [8..16), [16..20)
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("01234567890123456789"), null);
+
+    assertThat(future.get()).isEqualTo("done");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+
+    // All chunks must reference the exact same backing byte[] instance
+    byte[] backingArray = chunks.get(0).getPayload();
+    assertThat(chunks.get(1).getPayload()).isSameInstanceAs(backingArray);
+    assertThat(chunks.get(2).getPayload()).isSameInstanceAs(backingArray);
+  }
+
   private static class HttpStatusStatusCode implements StatusCode {
     private final int httpStatus;
     private final StatusCode.Code code;
@@ -832,7 +878,7 @@ class ResumableUploadCallableImplTest {
   private static void assertChunk(
       ChunkUploadRequest chunk, long expectedOffset, int expectedSize, boolean expectedFinal) {
     assertThat(chunk.getOffset()).isEqualTo(expectedOffset);
-    assertThat(chunk.getPayload().length).isEqualTo(expectedSize);
+    assertThat(chunk.getPayloadLength()).isEqualTo(expectedSize);
     assertThat(chunk.isFinal()).isEqualTo(expectedFinal);
   }
 

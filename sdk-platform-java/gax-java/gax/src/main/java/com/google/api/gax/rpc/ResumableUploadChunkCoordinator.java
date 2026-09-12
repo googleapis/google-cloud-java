@@ -44,13 +44,11 @@ import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
-import com.google.common.io.ByteStreams;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
-import java.util.Arrays;
 import java.util.concurrent.CancellationException;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -75,8 +73,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           .setMaxAttempts(5)
           .build();
 
-  private static final byte[] EMPTY_PAYLOAD = new byte[0];
-
   private final Object lock = new Object();
 
   private final SettableApiFuture<ResponseT> result;
@@ -84,13 +80,13 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
   private final InputStream payload;
-  private final byte[] buffer;
   private final int chunkSize;
   private final ApiCallContext callContext;
   private final ClientContext clientContext;
   private final RetrySettings chunkRetrySettings;
 
   private volatile @Nullable String uploadSessionUrl;
+  private volatile @Nullable RewindableStreamBuffer buffer;
 
   @GuardedBy("lock")
   private boolean done;
@@ -120,7 +116,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.callContext = checkNotNull(callContext, "callContext must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
     this.chunkRetrySettings = DEFAULT_CHUNK_RETRY_SETTINGS;
-    this.buffer = new byte[chunkSize];
     synchronized (lock) {
       this.inFlightFuture = startFuture;
     }
@@ -138,6 +133,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               }
             }
             uploadSessionUrl = session.getUploadUrl();
+            buffer = new RewindableStreamBuffer(payload, chunkSize, uploadSessionUrl);
             transmitChunk(0L);
           }
 
@@ -227,39 +223,42 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       }
     }
 
-    int bytesRead;
-    try {
-      bytesRead = ByteStreams.read(payload, buffer, 0, chunkSize);
-    } catch (IOException e) {
-      finish(null, e);
-      return;
-    }
-
-    boolean isFinal = bytesRead < chunkSize;
-    byte[] chunkPayload;
-    if (bytesRead == chunkSize) {
-      chunkPayload = buffer;
-    } else if (bytesRead == 0) {
-      chunkPayload = EMPTY_PAYLOAD;
-    } else {
-      chunkPayload = Arrays.copyOf(buffer, bytesRead);
-    }
-
     String url = uploadSessionUrl;
     if (url == null) {
       finish(null, new IllegalStateException("Upload session URL not available"));
       return;
     }
 
+    RewindableStreamBuffer streamBuffer = buffer;
+    if (streamBuffer == null) {
+      finish(null, new IllegalStateException("Upload buffer not initialized"));
+      return;
+    }
+
+    try {
+      streamBuffer.fill(currentOffset);
+    } catch (IOException e) {
+      finish(null, e);
+      return;
+    }
+
+    UploadCommand command;
+    if (streamBuffer.isFinal()) {
+      command =
+          streamBuffer.isEmpty() ? UploadCommand.FINALIZE : UploadCommand.UPLOAD_FINALIZE;
+    } else {
+      command = UploadCommand.UPLOAD;
+    }
+
     ChunkUploadRequest chunkRequest =
         ChunkUploadRequest.newBuilder()
             .setUploadUrl(url)
-            .setPayload(chunkPayload)
-            .setOffset(currentOffset)
-            .setFinal(isFinal)
+            .setPayload(streamBuffer.getBuffer())
+            .setPayloadLength(streamBuffer.getPayloadLength())
+            .setOffset(streamBuffer.getBufferBaseOffset())
+            .setFinal(streamBuffer.isFinal())
             .build();
 
-    UploadCommand command = isFinal ? UploadCommand.UPLOAD_FINALIZE : UploadCommand.UPLOAD;
     ChunkAttemptCallable<ResponseT> attemptCallable =
         new ChunkAttemptCallable<>(
             uploadChunkCallable, chunkRequest, callContext, command);
@@ -277,7 +276,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     attemptCallable.setRetryingFuture(retryingFuture);
     setInFlightFuture(retryingFuture);
 
-    long chunkLength = chunkPayload.length;
+    long chunkLength = chunkRequest.getPayloadLength();
+    boolean isFinal = chunkRequest.isFinal();
     ApiFutures.addCallback(
         retryingFuture,
         new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
