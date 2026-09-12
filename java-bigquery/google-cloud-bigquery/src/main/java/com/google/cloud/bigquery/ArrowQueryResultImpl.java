@@ -422,12 +422,17 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
 
     private void ensureStreamInitialized() {
+      ReadRowsRequest request;
       lock.lock();
       try {
         if (streamInitialized || closed) {
           return;
         }
-        if (totalRows >= 0 && totalRowsYielded >= totalRows && yieldedInitialBatch) {
+        if (totalRows >= 0
+            && totalRowsYielded >= totalRows
+            && (yieldedInitialBatch
+                || initialRecordBatchBytes == null
+                || initialRecordBatchBytes.length == 0)) {
           streamInitialized = true;
           return;
         }
@@ -446,10 +451,23 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           return;
         }
         long offset = totalRowsYielded;
-        ReadRowsRequest request =
-            ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
+        request = ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
+      } finally {
+        lock.unlock();
+      }
 
-        ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
+      ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
+
+      lock.lock();
+      try {
+        if (closed || streamInitialized) {
+          try {
+            stream.cancel();
+          } catch (Throwable t) {
+            // ignore
+          }
+          return;
+        }
         serverStream = stream;
         streamIterator = stream.iterator();
         streamInitialized = true;
