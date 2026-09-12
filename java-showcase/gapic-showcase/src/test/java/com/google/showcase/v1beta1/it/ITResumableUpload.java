@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
+import com.google.api.gax.rpc.ResumableUploadStatus;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
@@ -35,6 +36,7 @@ import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.showcase.v1beta1.ResumableUploadServiceClient;
 import com.google.showcase.v1beta1.ResumableUploadServiceSettings;
 import com.google.showcase.v1beta1.UploadMediaRequest;
@@ -47,10 +49,12 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterAll;
@@ -124,7 +128,9 @@ class ITResumableUpload {
 
     try (InputStream stream = Files.newInputStream(file)) {
       ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, (ResumableUploadCallSettings) null);
+          client
+              .uploadMediaCallable()
+              .futureCall(request, stream, (ResumableUploadCallSettings) null);
 
       UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
       assertThat(future.isDone()).isTrue();
@@ -309,7 +315,9 @@ class ITResumableUpload {
       // 2. Asynchronous callable futureCall delegation
       try (InputStream stream = Files.newInputStream(file)) {
         ResumableUploadFuture<UploadMediaResponse> future =
-            grpcClient.uploadMediaCallable().futureCall(request, stream, (ResumableUploadCallSettings) null);
+            grpcClient
+                .uploadMediaCallable()
+                .futureCall(request, stream, (ResumableUploadCallSettings) null);
         UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
         assertThat(future.isDone()).isTrue();
         assertThat(future.isCancelled()).isFalse();
@@ -375,8 +383,7 @@ class ITResumableUpload {
                 String.format(
                     "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":2}",
                     clientUuid)));
-    ApiCallContext callContext =
-        HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
 
     Path file =
         createTempFile(
@@ -411,18 +418,14 @@ class ITResumableUpload {
             ImmutableList.of("fatal_error_on_start"),
             "X-Goog-Test-Scenario-Config",
             ImmutableList.of(
-                String.format(
-                    "{\"client_uuid\":\"%s\",\"error_code\":403}",
-                    clientUuid)));
-    ApiCallContext callContext =
-        HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+                String.format("{\"client_uuid\":\"%s\",\"error_code\":403}", clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
 
     Path file =
         createTempFile(
             tempDir,
             "it-start-retry-fatal.txt",
-            "Data for testStartRetry_fatalErrorOnStart_failsFast"
-                .getBytes(StandardCharsets.UTF_8));
+            "Data for testStartRetry_fatalErrorOnStart_failsFast".getBytes(StandardCharsets.UTF_8));
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-start-retry-fatal.txt").build();
 
@@ -439,6 +442,57 @@ class ITResumableUpload {
       assertThat(apiException.getStatusCode().getCode())
           .isEqualTo(StatusCode.Code.PERMISSION_DENIED);
       assertThat(future.getUploadSessionUrl()).isNull();
+    }
+  }
+
+  @Test
+  void testChunkRetry_nonFatalErrorOnChunkUpload_succeeds(@TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":1,"
+                        + "\"after_offset\":0}",
+                    clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-chunk-retry-success.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-chunk-retry-success.txt").build();
+
+    List<ResumableUploadStatus> reportedStatuses = new CopyOnWriteArrayList<>();
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(
+                  request,
+                  stream,
+                  callContext,
+                  ResumableUploadCallSettings.newBuilder()
+                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                      .build());
+      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(response.getName()).isEqualTo("it-chunk-retry-success.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+
+      List<ResumableUploadStatus.State> states = new ArrayList<>();
+      for (ResumableUploadStatus s : reportedStatuses) {
+        states.add(s.getState());
+      }
+      assertThat(states).doesNotContain(ResumableUploadStatus.State.RECOVERING);
+      assertThat(states).doesNotContain(ResumableUploadStatus.State.OFFSET_RECEIVED);
+      assertThat(states).contains(ResumableUploadStatus.State.FINALIZED);
     }
   }
 
