@@ -40,7 +40,16 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  *
  * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigQuery extends Service<BigQueryOptions> {
+public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
+
+  /**
+   * Closes any background resources and active streaming clients (such as {@code
+   * BigQueryReadClient}) managed by this BigQuery service instance.
+   *
+   * @throws Exception if closing underlying resources fails
+   */
+  @Override
+  void close() throws Exception;
 
   /**
    * Fields of a BigQuery Dataset resource.

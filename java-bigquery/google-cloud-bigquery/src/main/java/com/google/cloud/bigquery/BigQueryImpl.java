@@ -317,6 +317,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } else {
       settingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     }
+    if (options.getMergedHeaderProvider(null) != null) {
+      settingsBuilder.setHeaderProvider(options.getMergedHeaderProvider(null));
+    }
     if (options.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(options.getUniverseDomain());
     }
@@ -2369,8 +2372,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         if (timeoutMs != null) {
           content.setTimeoutMs(timeoutMs);
         }
-
-        Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
         com.google.api.services.bigquery.model.QueryResponse results;
         try {
           results =
@@ -2891,5 +2892,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
     }
     return false;
+  }
+
+  @Override
+  public void close() throws Exception {
+    readClientLock.lock();
+    try {
+      if (bqReadClient != null) {
+        bqReadClient.close();
+      }
+    } finally {
+      readClientLock.unlock();
+    }
   }
 }
