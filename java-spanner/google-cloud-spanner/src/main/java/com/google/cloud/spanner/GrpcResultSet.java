@@ -133,6 +133,11 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   }
 
   @Override
+  public boolean isDataAvailable() {
+    return iterator.isDataAvailable();
+  }
+
+  @Override
   public void close() {
     synchronized (this) {
       if (closed) {

@@ -47,13 +47,13 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private final BlockingQueue<PartialResultSet> stream;
   private final Statement statement;
 
-  private SpannerRpc.StreamingCall call;
+  private volatile SpannerRpc.StreamingCall call;
   private volatile boolean withBeginTransaction;
   private final boolean lastStatement;
   private TimeUnit streamWaitTimeoutUnit;
   private long streamWaitTimeoutValue;
-  private SpannerException error;
-  private boolean done;
+  private volatile SpannerException error;
+  private volatile boolean done;
 
   @VisibleForTesting
   GrpcStreamIterator(
@@ -130,6 +130,11 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   }
 
   @Override
+  public boolean isDataAvailable() {
+    return !stream.isEmpty() || error != null || done;
+  }
+
+  @Override
   protected final PartialResultSet computeNext() {
     PartialResultSet next;
     try {
@@ -155,9 +160,11 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     call = null;
 
     if (error != null) {
+      done = true;
       throw SpannerExceptionFactory.asSpannerException(error);
     }
 
+    done = true;
     endOfData();
     return null;
   }
@@ -187,6 +194,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     @Override
     public void onCompleted() {
       if (!done) {
+        done = true;
         addToStream(END_OF_STREAM);
       }
     }
