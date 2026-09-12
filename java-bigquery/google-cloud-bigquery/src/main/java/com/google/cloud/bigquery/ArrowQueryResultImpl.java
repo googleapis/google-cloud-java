@@ -246,6 +246,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     private boolean streamInitialized = false;
     private long totalRowsYielded = 0;
 
+    private ReadRowsResponse peekedResponse = null;
+
     private boolean isClosed() {
       lock.lock();
       try {
@@ -283,13 +285,23 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       if (hasInitialBatchToYield()) {
         return true;
       }
+      if (peekedResponse != null) {
+        return true;
+      }
       try {
         ensureStreamInitialized();
         Iterator<ReadRowsResponse> iterator = getStreamIterator();
         if (iterator == null) {
           return false;
         }
-        return iterator.hasNext();
+        while (iterator.hasNext()) {
+          ReadRowsResponse response = iterator.next();
+          if (response.hasArrowRecordBatch()) {
+            peekedResponse = response;
+            return true;
+          }
+        }
+        return false;
       } catch (Exception e) {
         if (isClosed()) {
           return false;
@@ -338,33 +350,45 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
       // 2. Stream subsequent batches from gRPC
       try {
-        ensureStreamInitialized();
-        Iterator<ReadRowsResponse> iterator = getStreamIterator();
-        if (iterator == null || !iterator.hasNext()) {
-          throw new NoSuchElementException("No more Arrow batches available in query stream.");
-        }
+        ReadRowsResponse targetResponse = null;
+        if (peekedResponse != null) {
+          targetResponse = peekedResponse;
+          peekedResponse = null;
+        } else {
+          ensureStreamInitialized();
+          Iterator<ReadRowsResponse> iterator = getStreamIterator();
+          if (iterator == null || !iterator.hasNext()) {
+            throw new NoSuchElementException("No more Arrow batches available in query stream.");
+          }
 
-        while (iterator.hasNext()) {
-          ReadRowsResponse response = iterator.next();
-          if (response.hasArrowRecordBatch()) {
-            com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
-                response.getArrowRecordBatch();
-            try {
-              lock.lock();
-              try {
-                checkNotClosed();
-                loadBatch(batch.getSerializedRecordBatch());
-                totalRowsYielded += root.getRowCount();
-                return root;
-              } finally {
-                lock.unlock();
-              }
-            } catch (IOException e) {
-              throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
+          while (iterator.hasNext()) {
+            ReadRowsResponse response = iterator.next();
+            if (response.hasArrowRecordBatch()) {
+              targetResponse = response;
+              break;
             }
           }
         }
-        throw new NoSuchElementException("No more Arrow batches available in query stream.");
+
+        if (targetResponse == null || !targetResponse.hasArrowRecordBatch()) {
+          throw new NoSuchElementException("No more Arrow batches available in query stream.");
+        }
+
+        com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
+            targetResponse.getArrowRecordBatch();
+        try {
+          lock.lock();
+          try {
+            checkNotClosed();
+            loadBatch(batch.getSerializedRecordBatch());
+            totalRowsYielded += root.getRowCount();
+            return root;
+          } finally {
+            lock.unlock();
+          }
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
+        }
       } catch (NoSuchElementException | BigQueryException e) {
         throw e;
       } catch (Exception e) {
