@@ -25,6 +25,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
@@ -44,11 +45,13 @@ import com.google.showcase.v1beta1.UploadMediaResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import io.grpc.ManagedChannelBuilder;
 import java.io.ByteArrayInputStream;
+import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,6 +60,7 @@ import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -599,6 +603,68 @@ class ITResumableUpload {
       assertThat(states).contains(ResumableUploadStatus.State.OFFSET_RECEIVED);
       assertThat(states).contains(ResumableUploadStatus.State.FINALIZED);
     }
+  }
+
+  @Test
+  void testGlobalTimeoutWatchdog_exhaustsTimeoutUnderFailures_failsWithDeadlineExceeded(
+      @TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":100,"
+                        + "\"after_offset\":0}",
+                    clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    // Warm up the HTTP connection pool so session initiation completes in ~5ms,
+    // ensuring the watchdog timeout fires during chunk upload retries rather than
+    // racing JVM/connection setup.
+    client.uploadMedia(
+        UploadMediaRequest.newBuilder().setName("it-warmup.txt").build(),
+        new ByteArrayInputStream(new byte[16]));
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-watchdog-timeout.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-watchdog-timeout.txt").build();
+
+    AtomicInteger closeCount = new AtomicInteger(0);
+    InputStream rawStream = Files.newInputStream(file);
+    InputStream stream =
+        new FilterInputStream(rawStream) {
+          @Override
+          public void close() throws IOException {
+            closeCount.incrementAndGet();
+            super.close();
+          }
+        };
+
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(
+                request,
+                stream,
+                callContext,
+                ResumableUploadCallSettings.newBuilder()
+                    .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                    .setGlobalTimeout(Duration.ofMillis(100))
+                    .build());
+
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    DeadlineExceededException cause = (DeadlineExceededException) exception.getCause();
+    assertThat(cause.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+    assertThat(cause.getMessage()).contains("timed out for session");
+    assertThat(future.isDone()).isTrue();
+    assertThat(future.isCancelled()).isFalse();
+    assertThat(closeCount.get()).isEqualTo(1);
   }
 
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {
