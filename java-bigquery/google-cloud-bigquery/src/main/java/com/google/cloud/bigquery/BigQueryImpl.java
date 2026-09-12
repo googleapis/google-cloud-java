@@ -286,15 +286,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * BigQueryImpl}.
    *
    * @return the active BigQueryReadClient instance
-   * @throws IOException if initializing the storage read client fails
+   * @throws BigQueryException if initializing the storage read client fails
    */
-  BigQueryReadClient getBigQueryReadClient() throws IOException {
+  BigQueryReadClient getBigQueryReadClient() {
     readClientLock.lock();
     try {
       if (bqReadClient == null) {
         BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
         configureReadSettings(settingsBuilder, getOptions());
-        bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
+        try {
+          bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
+        }
       }
       return bqReadClient;
     } finally {
@@ -2439,12 +2443,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               String.format(
                   "projects/%s/datasets/%s/tables/%s",
                   destProject, destinationTable.getDataset(), destinationTable.getTable());
-          BigQueryReadClient client;
-          try {
-            client = getBigQueryReadClient();
-          } catch (IOException e) {
-            throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
-          }
+          BigQueryReadClient client = getBigQueryReadClient();
           CreateReadSessionRequest request =
               CreateReadSessionRequest.newBuilder()
                   .setParent(parent)
@@ -2505,11 +2504,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         BigQueryReadClient client = null;
         if (streamName != null) {
-          try {
-            client = getBigQueryReadClient();
-          } catch (IOException e) {
-            throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
-          }
+          client = getBigQueryReadClient();
         }
 
         JobCreationReason jobCreationReason =
@@ -2570,12 +2565,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 "projects/%s/datasets/%s/tables/%s",
                 destProject, destinationTable.getDataset(), destinationTable.getTable());
 
-        BigQueryReadClient client;
-        try {
-          client = getBigQueryReadClient();
-        } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
-        }
+        BigQueryReadClient client = getBigQueryReadClient();
 
         CreateReadSessionRequest request =
             CreateReadSessionRequest.newBuilder()
