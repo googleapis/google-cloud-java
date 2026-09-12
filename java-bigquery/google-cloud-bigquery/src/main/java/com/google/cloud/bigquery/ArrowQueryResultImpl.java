@@ -333,6 +333,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           }
         }
         return false;
+      } catch (BigQueryException e) {
+        if (isClosed()) {
+          return false;
+        }
+        throw e;
       } catch (Exception e) {
         if (isClosed()) {
           return false;
