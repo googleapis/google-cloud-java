@@ -52,6 +52,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -84,6 +87,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       queryStatusCallable;
   private final InputStream payload;
+  private final ResumableUploadCallSettings settings;
   private final int chunkSize;
   private final ApiCallContext callContext;
   private final ClientContext clientContext;
@@ -100,6 +104,9 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
   @GuardedBy("lock")
   private @Nullable ApiFuture<?> inFlightFuture;
+
+  @GuardedBy("lock")
+  private @Nullable ScheduledFuture<?> timeoutFuture;
 
   ResumableUploadChunkCoordinator(
       SettableApiFuture<ResponseT> result,
@@ -139,7 +146,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.queryStatusCallable =
         checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
-    checkNotNull(settings, "settings must not be null");
+    this.settings = checkNotNull(settings, "settings must not be null");
     checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
     this.chunkSize = settings.getChunkSize();
     this.callContext = checkNotNull(callContext, "callContext must not be null");
@@ -152,6 +159,19 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void start() {
+    Duration timeout = settings.getGlobalTimeout();
+    if (timeout != null && !timeout.isZero() && !timeout.isNegative()) {
+      ScheduledExecutorService executor = clientContext.getExecutor();
+      if (executor != null) {
+        synchronized (lock) {
+          if (!done) {
+            this.timeoutFuture =
+                executor.schedule(this::onTimeout, timeout.toMillis(), TimeUnit.MILLISECONDS);
+          }
+        }
+      }
+    }
+
     ApiFutures.addCallback(
         startFuture,
         new ApiFutureCallback<ResumableUploadSession>() {
@@ -178,6 +198,17 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         MoreExecutors.directExecutor());
   }
 
+  private void onTimeout() {
+    synchronized (lock) {
+      if (done) {
+        return;
+      }
+    }
+    Duration timeout = settings.getGlobalTimeout();
+    Duration effectiveTimeout = timeout != null ? timeout : Duration.ZERO;
+    finish(null, new ResumableUploadTimeoutException(uploadSessionUrl, effectiveTimeout));
+  }
+
   @Nullable String getUploadSessionUrl() {
     return uploadSessionUrl;
   }
@@ -186,7 +217,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     boolean shouldCancel = false;
     synchronized (lock) {
       if (done) {
-        shouldCancel = result.isCancelled();
+        shouldCancel = true;
       } else {
         this.inFlightFuture = future;
       }
@@ -197,6 +228,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void cancel(boolean mayInterruptIfRunning) {
+    ScheduledFuture<?> timeout;
     ApiFuture<?> inFlight;
     synchronized (lock) {
       if (done) {
@@ -205,6 +237,11 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       done = true;
       inFlight = this.inFlightFuture;
       this.inFlightFuture = null;
+      timeout = this.timeoutFuture;
+      this.timeoutFuture = null;
+    }
+    if (timeout != null) {
+      timeout.cancel(false);
     }
     if (inFlight != null) {
       inFlight.cancel(mayInterruptIfRunning);
@@ -213,12 +250,23 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   private void finish(@Nullable ResponseT response, @Nullable Throwable error) {
+    ScheduledFuture<?> timeout;
+    ApiFuture<?> inFlight;
     synchronized (lock) {
       if (done) {
         return;
       }
       done = true;
+      inFlight = inFlightFuture;
       inFlightFuture = null;
+      timeout = timeoutFuture;
+      timeoutFuture = null;
+    }
+    if (timeout != null) {
+      timeout.cancel(false);
+    }
+    if (inFlight != null) {
+      inFlight.cancel(true);
     }
     IOException closeError = closePayload();
     if (error == null) {

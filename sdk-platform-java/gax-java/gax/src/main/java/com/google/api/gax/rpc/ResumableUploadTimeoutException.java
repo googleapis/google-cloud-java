@@ -29,6 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -51,11 +54,40 @@ class ResumableUploadTimeoutException extends DeadlineExceededException {
         }
       };
 
-  ResumableUploadTimeoutException(String message) {
+  private final @Nullable String uploadSessionUrl;
+  private final Duration timeoutDuration;
+
+  ResumableUploadTimeoutException(@Nullable String uploadSessionUrl, Duration timeoutDuration) {
+    this(
+        uploadSessionUrl != null
+            ? "Resumable upload timed out for session: " + uploadSessionUrl
+            : "Resumable upload timed out before session initiation completed",
+        uploadSessionUrl,
+        timeoutDuration);
+  }
+
+  ResumableUploadTimeoutException(
+      String message, @Nullable String uploadSessionUrl, Duration timeoutDuration) {
     super(message, null, TIMEOUT_STATUS_CODE, false);
+    this.uploadSessionUrl = uploadSessionUrl;
+    this.timeoutDuration = checkNotNull(timeoutDuration, "timeoutDuration must not be null");
+  }
+
+  ResumableUploadTimeoutException(String message) {
+    this(message, null, Duration.ZERO);
   }
 
   ResumableUploadTimeoutException(String message, Throwable cause) {
     super(message, cause, TIMEOUT_STATUS_CODE, false);
+    this.uploadSessionUrl = null;
+    this.timeoutDuration = Duration.ZERO;
+  }
+
+  public @Nullable String getUploadSessionUrl() {
+    return uploadSessionUrl;
+  }
+
+  public Duration getTimeoutDuration() {
+    return timeoutDuration;
   }
 }
