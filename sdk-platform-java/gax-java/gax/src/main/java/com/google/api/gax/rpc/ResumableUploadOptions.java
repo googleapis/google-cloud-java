@@ -56,6 +56,12 @@ public abstract class ResumableUploadOptions {
   public abstract @Nullable Duration getGlobalTimeout();
 
   /**
+   * Returns the listener notified of upload progress and state transitions, or {@code null} if not
+   * set.
+   */
+  public abstract @Nullable ResumableUploadProgressListener getProgressListener();
+
+  /**
    * Merges another {@code ResumableUploadOptions} instance with this one. Fields set in {@code
    * other} override fields in this instance.
    *
@@ -73,6 +79,10 @@ public abstract class ResumableUploadOptions {
     if (other.getGlobalTimeout() != null) {
       builder.setGlobalTimeout(other.getGlobalTimeout());
     }
+    ResumableUploadProgressListener otherProgressListener = other.getProgressListener();
+    if (otherProgressListener != null) {
+      builder.setProgressListener(otherProgressListener);
+    }
     return builder.build();
   }
 
@@ -85,13 +95,36 @@ public abstract class ResumableUploadOptions {
   /** Builder for {@link ResumableUploadOptions}. */
   @AutoValue.Builder
   public abstract static class Builder {
+    /**
+     * Sets the chunk size in bytes. The payload is sent in chunks of this size, and each chunk is
+     * buffered in memory so it can be resent if the upload needs to recover. Must be positive;
+     * defaults to 8 MB.
+     */
     public abstract Builder setChunkSize(int chunkSize);
 
+    /** Returns the chunk size in bytes. See {@link #setChunkSize(int)}. */
     public abstract int getChunkSize();
 
+    /**
+     * Sets the global timeout bounding the entire upload, including session initiation, chunk
+     * transmission, and recovery. If the upload has not completed when the timeout elapses, it is
+     * cancelled and fails. Must be positive.
+     */
     public abstract Builder setGlobalTimeout(@Nullable Duration globalTimeout);
 
+    /**
+     * Returns the global upload timeout, or {@code null} if unset. See {@link
+     * #setGlobalTimeout(Duration)}.
+     */
     public abstract @Nullable Duration getGlobalTimeout();
+
+    /**
+     * Sets the listener notified of upload progress and state transitions. Updates are delivered in
+     * order, beginning with {@link ResumableUploadProgress#STATE_STARTING}. Callbacks are
+     * dispatched on the client's background executor.
+     */
+    public abstract Builder setProgressListener(
+        @Nullable ResumableUploadProgressListener progressListener);
 
     abstract ResumableUploadOptions autoBuild();
 

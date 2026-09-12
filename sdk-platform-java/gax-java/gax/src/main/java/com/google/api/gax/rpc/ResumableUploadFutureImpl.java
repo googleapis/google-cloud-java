@@ -81,6 +81,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final ApiCallContext callContext;
   private final ScheduledExecutorService executor;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
+  private final ResumableUploadProgressTracker progressTracker =
+      new ResumableUploadProgressTracker();
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable String uploadSessionUrl;
@@ -143,6 +145,10 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
     this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
     this.inFlightFuture = startFuture;
+    ResumableUploadProgressListener progressListener = options.getProgressListener();
+    if (progressListener != null) {
+      progressTracker.addListener(progressListener, executor);
+    }
   }
 
   private void start() {
@@ -165,7 +171,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
                     options.getChunkSize(),
                     callContext,
                     recoveryAlgorithm,
-                    executor);
+                    executor,
+                    progressTracker);
             ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
             synchronized (lock) {
               if (inFlightFuture == null) {
@@ -237,6 +244,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       inFlightFuture = null;
     }
     inFlight.cancel(true);
+    progressTracker.onFailed();
     closePayload();
     resultFuture.setException(t);
   }
@@ -272,6 +280,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       inFlightFuture = null;
     }
     inFlight.cancel(mayInterruptIfRunning);
+    progressTracker.onFailed();
     closePayload();
     return cancelled;
   }
