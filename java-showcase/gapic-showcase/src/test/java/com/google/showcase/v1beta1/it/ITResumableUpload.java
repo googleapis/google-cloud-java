@@ -18,8 +18,16 @@ package com.google.showcase.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
+import com.google.api.gax.rpc.ResumableUploadStatus;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.OAuth2Credentials;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.showcase.v1beta1.ResumableUploadServiceClient;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
@@ -30,6 +38,12 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -42,6 +56,8 @@ import org.junit.jupiter.api.io.TempDir;
 class ITResumableUpload {
 
   private static final int SHOWCASE_CHUNK_SIZE = 256 * 1024; // 256KB
+  private static final Credentials DUMMY_CREDENTIALS =
+      OAuth2Credentials.create(new AccessToken("fake-token", new Date(Long.MAX_VALUE)));
   private static ResumableUploadServiceClient client;
 
   @BeforeAll
@@ -159,7 +175,8 @@ class ITResumableUpload {
         UploadMediaRequest.newBuilder().setName("it-grpc-delegation.txt").build();
 
     try (ResumableUploadServiceClient grpcClient =
-        TestClientInitializer.createGrpcResumableUploadClient(SHOWCASE_CHUNK_SIZE)) {
+        TestClientInitializer.createGrpcResumableUploadClient(
+            NoCredentialsProvider.create(), SHOWCASE_CHUNK_SIZE)) {
       try (InputStream stream = Files.newInputStream(file)) {
         UploadMediaResponse response = grpcClient.uploadMedia(request, stream);
         assertThat(response.getName()).isEqualTo("it-grpc-delegation.txt");
@@ -179,6 +196,57 @@ class ITResumableUpload {
         assertThat(response.getName()).isEqualTo("it-grpc-delegation.txt");
         assertThat(response.getSize()).isEqualTo(Files.size(file));
       }
+    }
+  }
+
+  @Test
+  void testChunkRetry_nonFatalErrorOnChunkUpload_succeeds(@TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":1,"
+                        + "\"after_offset\":0}",
+                    clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-chunk-retry-success.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-chunk-retry-success.txt").build();
+
+    List<ResumableUploadStatus> reportedStatuses = new CopyOnWriteArrayList<>();
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(
+                  request,
+                  stream,
+                  callContext,
+                  ResumableUploadCallSettings.newBuilder()
+                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                      .build());
+      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(response.getName()).isEqualTo("it-chunk-retry-success.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+
+      List<ResumableUploadStatus.State> states = new ArrayList<>();
+      for (ResumableUploadStatus s : reportedStatuses) {
+        states.add(s.getState());
+      }
+      assertThat(states).doesNotContain(ResumableUploadStatus.State.RECOVERING);
+      assertThat(states).doesNotContain(ResumableUploadStatus.State.OFFSET_RECEIVED);
+      assertThat(states).contains(ResumableUploadStatus.State.FINALIZED);
     }
   }
 
