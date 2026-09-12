@@ -24,6 +24,12 @@ import org.apache.arrow.vector.types.pojo.Schema;
  * <b>[Beta]</b> A query result container providing zero-copy access to Apache Arrow {@link
  * VectorSchemaRoot} batches.
  *
+ * <p><b>Important Usage Warning:</b> The {@link VectorSchemaRoot} returned by the iterator is a
+ * single, shared, mutated instance across iterations. Data in the root is only valid during the
+ * current iteration step and will be overwritten or cleared on the next call to {@link
+ * java.util.Iterator#next()}. Callers needing data across iteration steps must copy the data out of
+ * the vectors before advancing the iterator.
+ *
  * <p>Implementations manage direct off-heap native memory buffers. Callers must invoke {@link
  * #close()} (idiomatically via a {@code try-with-resources} block) to ensure native allocations and
  * underlying gRPC streaming channels are deterministically released.

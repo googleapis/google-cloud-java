@@ -77,9 +77,31 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     this.readClient = readClient;
 
     if (this.arrowSchema != null) {
-      this.allocator = ArrowDeserializer.createChildAllocator("ArrowQueryResult");
-      this.root = VectorSchemaRoot.create(this.arrowSchema, this.allocator);
-      this.loader = new VectorLoader(this.root);
+      BufferAllocator alloc = null;
+      VectorSchemaRoot vRoot = null;
+      try {
+        alloc = ArrowDeserializer.createChildAllocator("ArrowQueryResult");
+        vRoot = VectorSchemaRoot.create(this.arrowSchema, alloc);
+        this.loader = new VectorLoader(vRoot);
+        this.allocator = alloc;
+        this.root = vRoot;
+      } catch (Throwable t) {
+        if (vRoot != null) {
+          try {
+            vRoot.close();
+          } catch (Throwable suppressed) {
+            t.addSuppressed(suppressed);
+          }
+        }
+        if (alloc != null) {
+          try {
+            alloc.close();
+          } catch (Throwable suppressed) {
+            t.addSuppressed(suppressed);
+          }
+        }
+        throw t;
+      }
     } else {
       if ((initialRecordBatchBytes != null && initialRecordBatchBytes.length > 0)
           || streamName != null) {
