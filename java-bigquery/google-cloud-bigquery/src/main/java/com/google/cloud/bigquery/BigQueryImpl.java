@@ -2519,7 +2519,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW))
                 .setMaxStreamCount(1)
                 .build();
-        ReadSession readSession = client.createReadSession(request);
+        ReadSession readSession;
+        try {
+          readSession = client.createReadSession(request);
+        } catch (Exception e) {
+          throw new BigQueryException(0, "Failed to create ReadSession for fallback query", e);
+        }
 
         return ArrowQueryResultImpl.fromReadSession(readSession, completedJob.getJobId(), client);
       }
