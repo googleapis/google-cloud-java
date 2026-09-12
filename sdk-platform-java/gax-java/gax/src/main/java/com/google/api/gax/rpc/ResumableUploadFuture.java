@@ -41,6 +41,12 @@ import org.jspecify.annotations.Nullable;
  * <p>The payload {@link java.io.InputStream} supplied when initiating the upload is managed by this
  * future and will be closed automatically upon completion, failure, or cancellation.
  *
+ * <p>If the upload fails, {@link #get()} throws an {@link java.util.concurrent.ExecutionException}
+ * whose cause is an {@link ApiException}. If the upload is cancelled, {@link #get()} throws a
+ * {@link java.util.concurrent.CancellationException}. When the upload session URL is known, it is
+ * included in the exception message. A rejection by the server is terminal and is not retried or
+ * recovered.
+ *
  * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
