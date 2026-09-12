@@ -176,18 +176,6 @@ public class TelemetryManagerTest {
   }
 
   @Test
-  public void testCalculateBucketIndex() {
-    int index1 = TelemetryManager.calculateBucketIndex(5); // < 10, index 0
-    assertEquals(0, index1);
-
-    int index2 = TelemetryManager.calculateBucketIndex(150); // < 250, index 3
-    assertEquals(3, index2);
-
-    int index3 = TelemetryManager.calculateBucketIndex(20000); // Overflow > 10000, index 8
-    assertEquals(8, index3);
-  }
-
-  @Test
   public void testOptOutConfiguration() {
     Properties props = new Properties();
 

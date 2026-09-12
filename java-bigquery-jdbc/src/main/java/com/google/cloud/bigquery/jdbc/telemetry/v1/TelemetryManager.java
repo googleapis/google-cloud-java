@@ -178,20 +178,6 @@ public final class TelemetryManager implements AutoCloseable {
     }
   }
 
-  static final double[] HISTOGRAM_BOUNDS = {
-    10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0
-  };
-
-  static int calculateBucketIndex(long durationMs) {
-    int bucketIndex = HISTOGRAM_BOUNDS.length;
-    for (int i = 0; i < HISTOGRAM_BOUNDS.length; i++) {
-      if (durationMs < HISTOGRAM_BOUNDS[i]) {
-        return i;
-      }
-    }
-    return bucketIndex;
-  }
-
   static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
     runSafely(
         () -> {

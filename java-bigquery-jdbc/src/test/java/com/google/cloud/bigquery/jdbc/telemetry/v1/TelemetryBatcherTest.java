@@ -357,8 +357,8 @@ public class TelemetryBatcherTest {
     assertEquals(2, exec.getCount());
     assertEquals(340, exec.getDuration().getSum());
     assertEquals(2, exec.getDuration().getCount());
-    assertEquals(1, exec.getDuration().getBucketCounts(2));
-    assertEquals(1, exec.getDuration().getBucketCounts(4));
+    assertEquals(1, exec.getDuration().getBucketCounts(1));
+    assertEquals(1, exec.getDuration().getBucketCounts(3));
 
     assertEquals(1, payloadBuilder.getConnectionAttemptsCount());
     ConnectionAttempt conn = payloadBuilder.getConnectionAttempts(0);
@@ -378,5 +378,22 @@ public class TelemetryBatcherTest {
     assertEquals(DriverFeature.DRIVER_FEATURE_CUSTOM, feat.getDriverFeature());
     assertEquals("CustomFeature", feat.getCustomFeatureName());
     assertEquals(1, feat.getCount());
+  }
+
+  @Test
+  public void testCalculateBucket() {
+    int index1 = TelemetryBatcher.StatementAccumulator.calculateBucket(5); // < 50, index 0
+    assertEquals(0, index1);
+
+    int index2 = TelemetryBatcher.StatementAccumulator.calculateBucket(150); // < 250, index 2
+    assertEquals(2, index2);
+
+    int index3 = TelemetryBatcher.StatementAccumulator.calculateBucket(20000); // < 30000, index 8
+    assertEquals(8, index3);
+
+    int index4 =
+        TelemetryBatcher.StatementAccumulator.calculateBucket(
+            4000000); // Overflow > 3600000 (1 hr), index 16
+    assertEquals(16, index4);
   }
 }

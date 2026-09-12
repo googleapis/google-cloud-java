@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
 import java.time.Instant;
@@ -444,8 +445,10 @@ final class TelemetryBatcher implements AutoCloseable {
   }
 
   static final class StatementAccumulator implements TelemetryAccumulator {
-    private static final double[] HISTOGRAM_BOUNDS = {
-      10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0
+    @VisibleForTesting
+    static final double[] HISTOGRAM_BOUNDS = {
+      50.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2500.0, 5000.0, 10000.0, 30000.0, 60000.0, 120000.0,
+      300000.0, 600000.0, 1200000.0, 1800000.0, 3600000.0
     };
 
     private final StatementKey key;
@@ -468,7 +471,8 @@ final class TelemetryBatcher implements AutoCloseable {
       bucketCounts[bucket].increment();
     }
 
-    private static int calculateBucket(long durationMs) {
+    @VisibleForTesting
+    static int calculateBucket(long durationMs) {
       for (int i = 0; i < HISTOGRAM_BOUNDS.length; i++) {
         if (durationMs < HISTOGRAM_BOUNDS[i]) {
           return i;
