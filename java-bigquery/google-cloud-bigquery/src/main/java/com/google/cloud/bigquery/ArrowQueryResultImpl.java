@@ -246,113 +246,192 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     private boolean streamInitialized = false;
     private long totalRowsYielded = 0;
 
-    @Override
-    public boolean hasNext() {
+    private boolean isClosed() {
       lock.lock();
       try {
-        if (closed) {
-          return false;
-        }
-        if (!yieldedInitialBatch
-            && initialRecordBatchBytes != null
-            && initialRecordBatchBytes.length > 0) {
-          return true;
-        }
-        try {
-          ensureStreamInitialized();
-          if (streamIterator == null) {
-            return false;
-          }
-          return streamIterator.hasNext();
-        } catch (Exception e) {
-          throw new BigQueryException(0, "Error reading from Arrow stream", e);
-        }
+        return closed;
       } finally {
         lock.unlock();
+      }
+    }
+
+    private boolean hasInitialBatchToYield() {
+      lock.lock();
+      try {
+        return !yieldedInitialBatch
+            && initialRecordBatchBytes != null
+            && initialRecordBatchBytes.length > 0;
+      } finally {
+        lock.unlock();
+      }
+    }
+
+    private Iterator<ReadRowsResponse> getStreamIterator() {
+      lock.lock();
+      try {
+        return streamIterator;
+      } finally {
+        lock.unlock();
+      }
+    }
+
+    @Override
+    public boolean hasNext() {
+      if (isClosed()) {
+        return false;
+      }
+      if (hasInitialBatchToYield()) {
+        return true;
+      }
+      try {
+        ensureStreamInitialized();
+        Iterator<ReadRowsResponse> iterator = getStreamIterator();
+        if (iterator == null) {
+          return false;
+        }
+        return iterator.hasNext();
+      } catch (Exception e) {
+        if (isClosed()) {
+          return false;
+        }
+        throw new BigQueryException(0, "Error reading from Arrow stream", e);
       }
     }
 
     @Override
     public VectorSchemaRoot next() {
+      if (isClosed()) {
+        throw new NoSuchElementException("ArrowQueryResult has already been closed");
+      }
+
+      // 1. Yield initial batch from REST response if present
+      byte[] initialBytes = null;
       lock.lock();
       try {
-        checkNotClosed();
-
-        // 1. Yield initial batch from REST response if present
         if (!yieldedInitialBatch
             && initialRecordBatchBytes != null
             && initialRecordBatchBytes.length > 0) {
           yieldedInitialBatch = true;
-          try {
-            loadBatch(initialRecordBatchBytes);
-            totalRowsYielded += root.getRowCount();
-            return root;
-          } catch (IOException e) {
-            throw new BigQueryException(0, "Failed to load initial Arrow record batch", e);
-          }
-        }
-        yieldedInitialBatch = true;
-
-        // 2. Stream subsequent batches from gRPC
-        try {
-          ensureStreamInitialized();
-          if (streamIterator == null || !streamIterator.hasNext()) {
-            throw new NoSuchElementException("No more Arrow batches available in query stream.");
-          }
-
-          while (streamIterator.hasNext()) {
-            ReadRowsResponse response = streamIterator.next();
-            if (response.hasArrowRecordBatch()) {
-              com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
-                  response.getArrowRecordBatch();
-              try {
-                loadBatch(batch.getSerializedRecordBatch());
-                totalRowsYielded += root.getRowCount();
-                return root;
-              } catch (IOException e) {
-                throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
-              }
-            }
-          }
-          throw new NoSuchElementException("No more Arrow batches available in query stream.");
-        } catch (NoSuchElementException | BigQueryException e) {
-          throw e;
-        } catch (Exception e) {
-          throw new BigQueryException(0, "Error reading from Arrow stream", e);
+          initialBytes = initialRecordBatchBytes;
+        } else {
+          yieldedInitialBatch = true;
         }
       } finally {
         lock.unlock();
       }
+
+      if (initialBytes != null) {
+        try {
+          lock.lock();
+          try {
+            checkNotClosed();
+            loadBatch(initialBytes);
+            totalRowsYielded += root.getRowCount();
+            return root;
+          } finally {
+            lock.unlock();
+          }
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to load initial Arrow record batch", e);
+        }
+      }
+
+      // 2. Stream subsequent batches from gRPC
+      try {
+        ensureStreamInitialized();
+        Iterator<ReadRowsResponse> iterator = getStreamIterator();
+        if (iterator == null || !iterator.hasNext()) {
+          throw new NoSuchElementException("No more Arrow batches available in query stream.");
+        }
+
+        while (iterator.hasNext()) {
+          ReadRowsResponse response = iterator.next();
+          if (response.hasArrowRecordBatch()) {
+            com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
+                response.getArrowRecordBatch();
+            try {
+              lock.lock();
+              try {
+                checkNotClosed();
+                loadBatch(batch.getSerializedRecordBatch());
+                totalRowsYielded += root.getRowCount();
+                return root;
+              } finally {
+                lock.unlock();
+              }
+            } catch (IOException e) {
+              throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
+            }
+          }
+        }
+        throw new NoSuchElementException("No more Arrow batches available in query stream.");
+      } catch (NoSuchElementException | BigQueryException e) {
+        throw e;
+      } catch (Exception e) {
+        if (isClosed()) {
+          throw new NoSuchElementException("Query stream was closed.");
+        }
+        throw new BigQueryException(0, "Error reading from Arrow stream", e);
+      }
     }
 
     private void ensureStreamInitialized() {
-      if (streamInitialized) {
-        return;
-      }
-      streamInitialized = true;
-      if (totalRows >= 0 && totalRowsYielded >= totalRows && yieldedInitialBatch) {
-        return;
-      }
-      if (streamName == null || readClient == null) {
-        if (totalRows > 0 && totalRowsYielded < totalRows) {
-          throw new BigQueryException(
-              0,
-              "Cannot stream query results: stream name or read client is missing, "
-                  + "but there are more rows to read (totalRows="
-                  + totalRows
-                  + ", yielded="
-                  + totalRowsYielded
-                  + ")");
+      lock.lock();
+      try {
+        if (streamInitialized) {
+          return;
         }
-        return;
+        if (closed) {
+          return;
+        }
+        if (totalRows >= 0 && totalRowsYielded >= totalRows && yieldedInitialBatch) {
+          streamInitialized = true;
+          return;
+        }
+        if (streamName == null || readClient == null) {
+          if (totalRows > 0 && totalRowsYielded < totalRows) {
+            throw new BigQueryException(
+                0,
+                "Cannot stream query results: stream name or read client is missing, "
+                    + "but there are more rows to read (totalRows="
+                    + totalRows
+                    + ", yielded="
+                    + totalRowsYielded
+                    + ")");
+          }
+          streamInitialized = true;
+          return;
+        }
+      } finally {
+        lock.unlock();
       }
-      ReadRowsRequest request =
-          ReadRowsRequest.newBuilder()
-              .setReadStream(streamName)
-              .setOffset(totalRowsYielded)
-              .build();
-      serverStream = readClient.readRowsCallable().call(request);
-      streamIterator = serverStream.iterator();
+
+      ReadRowsRequest request;
+      lock.lock();
+      try {
+        request =
+            ReadRowsRequest.newBuilder()
+                .setReadStream(streamName)
+                .setOffset(totalRowsYielded)
+                .build();
+      } finally {
+        lock.unlock();
+      }
+
+      ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
+
+      lock.lock();
+      try {
+        if (closed) {
+          stream.cancel();
+          return;
+        }
+        serverStream = stream;
+        streamIterator = stream.iterator();
+        streamInitialized = true;
+      } finally {
+        lock.unlock();
+      }
     }
 
     private void loadBatch(byte[] bytes) throws IOException {
