@@ -16,7 +16,10 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
+import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,11 +30,12 @@ import java.util.logging.Logger;
  * <p>All telemetry operations are wrapped in exception safeguards so that failures in metric
  * collection or batch dispatching never impact standard JDBC functionality.
  */
-final class TelemetryManager implements AutoCloseable {
+public final class TelemetryManager implements AutoCloseable {
   private static final Logger logger =
       new BigQueryJdbcCustomLogger(TelemetryManager.class.getName());
 
   private static volatile TelemetryManager instance;
+  private static volatile boolean globallyDisabled = false;
 
   private final TelemetryBatcher batcher;
 
@@ -43,13 +47,37 @@ final class TelemetryManager implements AutoCloseable {
    * Initializes or replaces the shared {@link TelemetryManager} instance with default configuration
    * and transport.
    */
-  static TelemetryManager getInstance() {
+  public static TelemetryManager getInstance() {
+    return getInstance(null);
+  }
+
+  public static TelemetryManager getInstance(Properties properties) {
+    if (globallyDisabled) {
+      return null;
+    }
+
+    if (properties != null) {
+      TelemetryConfiguration configCheck =
+          TelemetryConfiguration.builder().resolveProperties(properties).build();
+      if (!configCheck.isEnabled()) {
+        synchronized (TelemetryManager.class) {
+          globallyDisabled = true;
+          closeInstance();
+        }
+        return null;
+      }
+    }
+
     TelemetryManager localRef = instance;
     if (localRef == null) {
       synchronized (TelemetryManager.class) {
+        if (globallyDisabled) {
+          return null;
+        }
         localRef = instance;
         if (localRef == null) {
-          TelemetryConfiguration config = TelemetryConfiguration.builder().build();
+          TelemetryConfiguration config =
+              TelemetryConfiguration.builder().resolveProperties(properties).build();
           ClearcutTransport transport = new ClearcutTransport(config);
           TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
           localRef = new TelemetryManager(batcher);
@@ -81,7 +109,7 @@ final class TelemetryManager implements AutoCloseable {
    * Executes a telemetry logging operation safely inside an exception-isolated block. Guaranteed to
    * catch all {@link Throwable} exceptions to protect JDBC driver operations.
    */
-  static void runSafely(Runnable action) {
+  public static void runSafely(Runnable action) {
     if (action == null) {
       return;
     }
@@ -92,13 +120,13 @@ final class TelemetryManager implements AutoCloseable {
     }
   }
 
-  /** Package-private helper to check if an active instance is present and initialized. */
-  static boolean isInitialized() {
+  /** Helper to check if an active instance is present and initialized. */
+  public static boolean isInitialized() {
     return instance != null;
   }
 
   /** Flushes pending buffered metrics and shuts down the shared instance. */
-  static synchronized void closeInstance() {
+  public static synchronized void closeInstance() {
     TelemetryManager localRef = instance;
     instance = null;
     if (localRef != null) {
@@ -115,5 +143,92 @@ final class TelemetryManager implements AutoCloseable {
     if (batcher != null) {
       batcher.close();
     }
+  }
+
+  // Package-private test helper to reset the global kill switch between test runs
+  static synchronized void resetGlobalDisableForTest() {
+    globallyDisabled = false;
+  }
+
+  static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
+    if (bqStatementType == null) {
+      return StatementType.STATEMENT_TYPE_UNSPECIFIED;
+    }
+
+    EnumValueDescriptor desc =
+        StatementType.getDescriptor().findValueByName("STATEMENT_TYPE_" + bqStatementType.name());
+
+    return desc != null ? StatementType.valueOf(desc) : StatementType.STATEMENT_TYPE_OTHER;
+  }
+
+  static AuthenticationType toAuthenticationType(int oauthType) {
+    switch (oauthType) {
+      case 0:
+        return AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT;
+      case 1:
+        return AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION;
+      case 2:
+        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
+      case 3:
+        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
+      case 4:
+        return AuthenticationType.AUTHENTICATION_TYPE_TOKEN;
+      default:
+        return AuthenticationType.AUTHENTICATION_TYPE_CUSTOM;
+    }
+  }
+
+  static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offer(
+                    ConnectionAttempt.newBuilder()
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .setAuthType(authType)
+                        .build());
+          }
+        });
+  }
+
+  static void recordStatementExecution(
+      StatementType statementType,
+      QueryApiType apiType,
+      Status status,
+      int errorCode,
+      long durationMs) {
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offer(
+                    StatementExecution.newBuilder()
+                        .setStatementType(statementType)
+                        .setQueryApiType(apiType)
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .build(),
+                    durationMs);
+          }
+        });
+  }
+
+  static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offer(
+                    FeatureUsage.newBuilder()
+                        .setDriverFeature(feature)
+                        .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
+                        .build());
+          }
+        });
   }
 }

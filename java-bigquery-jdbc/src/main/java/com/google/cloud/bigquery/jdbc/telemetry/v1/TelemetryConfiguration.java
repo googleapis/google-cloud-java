@@ -17,15 +17,13 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import java.util.Objects;
+import java.util.Properties;
 
 /** Configuration settings for the BigQuery JDBC driver telemetry client. */
 final class TelemetryConfiguration {
-  static final boolean DEFAULT_ENABLED = true;
-  // TODO: change DEFAULT_LOG_SOURCE value once the value is assigned.
-  static final int DEFAULT_LOG_SOURCE = -1;
+
+  static final int DEFAULT_LOG_SOURCE = 3071;
   static final String DEFAULT_ENDPOINT_URL = "https://play.googleapis.com/log";
-  static final long DEFAULT_UPLOAD_INTERVAL_MS = 300_000L;
-  static final int DEFAULT_BATCH_SIZE_THRESHOLD = 5000;
 
   private final boolean enabled;
   private final int logSource;
@@ -119,11 +117,12 @@ final class TelemetryConfiguration {
 
   /** Builder for {@link TelemetryConfiguration}. */
   static class Builder {
-    private boolean enabled = DEFAULT_ENABLED;
+    private boolean enabled = TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
     private int logSource = DEFAULT_LOG_SOURCE;
     private String endpointUrl = DEFAULT_ENDPOINT_URL;
-    private long uploadIntervalMs = DEFAULT_UPLOAD_INTERVAL_MS;
-    private int batchSizeThreshold = DEFAULT_BATCH_SIZE_THRESHOLD;
+    private long uploadIntervalMs =
+        TelemetryPropertyUtility.DEFAULT_TELEMETRY_UPLOAD_INTERVAL_VALUE;
+    private int batchSizeThreshold = TelemetryPropertyUtility.DEFAULT_TELEMETRY_BATCH_SIZE_VALUE;
     private DriverEnvironment driverEnvironment;
 
     Builder setEnabled(boolean enabled) {
@@ -153,6 +152,24 @@ final class TelemetryConfiguration {
 
     Builder setDriverEnvironment(DriverEnvironment driverEnvironment) {
       this.driverEnvironment = driverEnvironment;
+      return this;
+    }
+
+    Builder resolveProperties(Properties connectionProperties) {
+      // 1. Connection Properties (lowest precedence)
+      if (connectionProperties != null) {
+        String enableStr = connectionProperties.getProperty("EnableDiagnosticTelemetry");
+        this.enabled = TelemetryPropertyUtility.convertStringToBoolean(enableStr, this.enabled);
+      }
+
+      // 2. Environment Variables (overrides connection properties)
+      String envEnabled = System.getenv("BIGQUERY_JDBC_TELEMETRY_ENABLED");
+      this.enabled = TelemetryPropertyUtility.convertStringToBoolean(envEnabled, enabled);
+
+      // 3. JVM System Properties (highest precedence)
+      String sysEnabled = System.getProperty("BIGQUERY_JDBC_TELEMETRY_ENABLED");
+      this.enabled = TelemetryPropertyUtility.convertStringToBoolean(sysEnabled, enabled);
+
       return this;
     }
 

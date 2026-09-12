@@ -128,6 +128,7 @@ public class DataSource implements javax.sql.DataSource {
       BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
   private OpenTelemetry customOpenTelemetry;
   private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
+  private Boolean enableDiagnosticTelemetry;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -387,6 +388,12 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setUseGlobalOpenTelemetry(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableDiagnosticTelemetry(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -729,6 +736,9 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
           String.valueOf(this.useGlobalOpenTelemetry));
     }
+    connectionProperties.setProperty(
+        BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+        String.valueOf(getEnableDiagnosticTelemetry()));
     return connectionProperties;
   }
 
@@ -1574,5 +1584,16 @@ public class DataSource implements javax.sql.DataSource {
           String.format(
               "Invalid value for %s. It must be greater than or equal to %d.", propertyName, min));
     }
+  }
+
+  public Boolean getEnableDiagnosticTelemetry() {
+    if (this.enableDiagnosticTelemetry != null) {
+      return this.enableDiagnosticTelemetry;
+    }
+    return BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
+  }
+
+  public void setEnableDiagnosticTelemetry(Boolean enableDiagnosticTelemetry) {
+    this.enableDiagnosticTelemetry = enableDiagnosticTelemetry;
   }
 }
