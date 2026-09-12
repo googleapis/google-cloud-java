@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.CodedOutputStream;
 import java.io.Serializable;
 import javax.annotation.Nonnull;
 
@@ -198,6 +199,26 @@ public class RowMutationEntry implements MutationApi<RowMutationEntry>, Serializ
       @Nonnull Value input) {
     mutation.mergeToCell(familyName, qualifier, timestamp, input);
     return this;
+  }
+
+  /** Returns the row key these mutations apply to. */
+  public ByteString getRowKey() {
+    return key;
+  }
+
+  /** Returns the number of mutations accumulated in this entry. */
+  public int getMutationCount() {
+    return mutation.getMutationCount();
+  }
+
+  /** Returns the serialized size of {@link #toProto()}, without building it. */
+  public long getSerializedSize() {
+    long size = mutation.getMutationsSerializedSize();
+    if (!key.isEmpty()) {
+      // An empty row key is not written at all, so it contributes no tag or length prefix.
+      size += CodedOutputStream.computeBytesSize(MutateRowsRequest.Entry.ROW_KEY_FIELD_NUMBER, key);
+    }
+    return size;
   }
 
   @InternalApi
