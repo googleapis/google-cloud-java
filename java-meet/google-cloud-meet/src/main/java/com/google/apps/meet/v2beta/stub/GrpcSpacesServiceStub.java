@@ -26,6 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.BatchUpdateMembersRequest;
+import com.google.apps.meet.v2beta.BatchUpdateMembersResponse;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
@@ -38,6 +40,7 @@ import com.google.apps.meet.v2beta.ListMembersRequest;
 import com.google.apps.meet.v2beta.ListMembersResponse;
 import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
+import com.google.apps.meet.v2beta.UpdateMemberRequest;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -148,6 +151,27 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<UpdateMemberRequest, Member> updateMemberMethodDescriptor =
+      MethodDescriptor.<UpdateMemberRequest, Member>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.apps.meet.v2beta.SpacesService/UpdateMember")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateMemberRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Member.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersMethodDescriptor =
+          MethodDescriptor.<BatchUpdateMembersRequest, BatchUpdateMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/BatchUpdateMembers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable;
@@ -160,6 +184,9 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
   private final UnaryCallable<ListMembersRequest, ListMembersPagedResponse>
       listMembersPagedCallable;
   private final UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable;
+  private final UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable;
+  private final UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -296,6 +323,28 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<UpdateMemberRequest, Member> updateMemberTransportSettings =
+        GrpcCallSettings.<UpdateMemberRequest, Member>newBuilder()
+            .setMethodDescriptor(updateMemberMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("member.name", String.valueOf(request.getMember().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+        batchUpdateMembersTransportSettings =
+            GrpcCallSettings.<BatchUpdateMembersRequest, BatchUpdateMembersResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateMembersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.createSpaceCallable =
         callableFactory.createUnaryCallable(
@@ -331,6 +380,14 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
     this.deleteMemberCallable =
         callableFactory.createUnaryCallable(
             deleteMemberTransportSettings, settings.deleteMemberSettings(), clientContext);
+    this.updateMemberCallable =
+        callableFactory.createUnaryCallable(
+            updateMemberTransportSettings, settings.updateMemberSettings(), clientContext);
+    this.batchUpdateMembersCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateMembersTransportSettings,
+            settings.batchUpdateMembersSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -389,6 +446,17 @@ public class GrpcSpacesServiceStub extends SpacesServiceStub {
   @Override
   public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
     return deleteMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable() {
+    return updateMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable() {
+    return batchUpdateMembersCallable;
   }
 
   @Override

@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -217,6 +218,8 @@ public class SecureSourceManagerClientTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -263,6 +266,8 @@ public class SecureSourceManagerClientTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockSecureSourceManager.addResponse(expectedResponse);
 
@@ -309,6 +314,8 @@ public class SecureSourceManagerClientTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -369,6 +376,8 @@ public class SecureSourceManagerClientTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3011,6 +3020,64 @@ public class SecureSourceManagerClientTest {
               .setSha("sha113836")
               .build();
       client.fetchBlob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchRefsTest() throws Exception {
+    Ref responsesElement = Ref.newBuilder().build();
+    FetchRefsResponse expectedResponse =
+        FetchRefsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRefs(Arrays.asList(responsesElement))
+            .build();
+    mockSecureSourceManager.addResponse(expectedResponse);
+
+    FetchRefsRequest request =
+        FetchRefsRequest.newBuilder()
+            .setRepository(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchRefsPagedResponse pagedListResponse = client.fetchRefs(request);
+
+    List<Ref> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRefsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockSecureSourceManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchRefsRequest actualRequest = ((FetchRefsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getRepository(), actualRequest.getRepository());
+    Assert.assertEquals(request.getType(), actualRequest.getType());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchRefsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSecureSourceManager.addException(exception);
+
+    try {
+      FetchRefsRequest request =
+          FetchRefsRequest.newBuilder()
+              .setRepository(
+                  RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchRefs(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

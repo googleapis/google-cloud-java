@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -419,6 +420,12 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
   /** Returns the object with the settings used for calls to fetchBlob. */
   public UnaryCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
     return ((SecureSourceManagerStubSettings) getStubSettings()).fetchBlobSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchRefs. */
+  public PagedCallSettings<FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+      fetchRefsSettings() {
+    return ((SecureSourceManagerStubSettings) getStubSettings()).fetchRefsSettings();
   }
 
   /** Returns the object with the settings used for calls to createIssue. */
@@ -1058,6 +1065,12 @@ public class SecureSourceManagerSettings extends ClientSettings<SecureSourceMana
     /** Returns the builder for the settings used for calls to fetchBlob. */
     public UnaryCallSettings.Builder<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
       return getStubSettingsBuilder().fetchBlobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchRefs. */
+    public PagedCallSettings.Builder<FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+        fetchRefsSettings() {
+      return getStubSettingsBuilder().fetchRefsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createIssue. */

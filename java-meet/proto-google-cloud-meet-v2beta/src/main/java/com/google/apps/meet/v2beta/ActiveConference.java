@@ -131,6 +131,26 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int MEDIA_API_CONSENTER_PRESENT_FIELD_NUMBER = 2;
+  private boolean mediaApiConsenterPresent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether a media api consenter is present in the
+   * conference.
+   * </pre>
+   *
+   * <code>bool media_api_consenter_present = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The mediaApiConsenterPresent.
+   */
+  @java.lang.Override
+  public boolean getMediaApiConsenterPresent() {
+    return mediaApiConsenterPresent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -148,6 +168,9 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(conferenceRecord_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, conferenceRecord_);
     }
+    if (mediaApiConsenterPresent_ != false) {
+      output.writeBool(2, mediaApiConsenterPresent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +182,9 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(conferenceRecord_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, conferenceRecord_);
+    }
+    if (mediaApiConsenterPresent_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, mediaApiConsenterPresent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -177,6 +203,7 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
         (com.google.apps.meet.v2beta.ActiveConference) obj;
 
     if (!getConferenceRecord().equals(other.getConferenceRecord())) return false;
+    if (getMediaApiConsenterPresent() != other.getMediaApiConsenterPresent()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -190,6 +217,8 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CONFERENCE_RECORD_FIELD_NUMBER;
     hash = (53 * hash) + getConferenceRecord().hashCode();
+    hash = (37 * hash) + MEDIA_API_CONSENTER_PRESENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMediaApiConsenterPresent());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -331,6 +360,7 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       conferenceRecord_ = "";
+      mediaApiConsenterPresent_ = false;
       return this;
     }
 
@@ -370,6 +400,9 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.conferenceRecord_ = conferenceRecord_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mediaApiConsenterPresent_ = mediaApiConsenterPresent_;
+      }
     }
 
     @java.lang.Override
@@ -388,6 +421,9 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
         conferenceRecord_ = other.conferenceRecord_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getMediaApiConsenterPresent() != false) {
+        setMediaApiConsenterPresent(other.getMediaApiConsenterPresent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -421,6 +457,12 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                mediaApiConsenterPresent_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -567,6 +609,68 @@ public final class ActiveConference extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       conferenceRecord_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean mediaApiConsenterPresent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a media api consenter is present in the
+     * conference.
+     * </pre>
+     *
+     * <code>bool media_api_consenter_present = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The mediaApiConsenterPresent.
+     */
+    @java.lang.Override
+    public boolean getMediaApiConsenterPresent() {
+      return mediaApiConsenterPresent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a media api consenter is present in the
+     * conference.
+     * </pre>
+     *
+     * <code>bool media_api_consenter_present = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The mediaApiConsenterPresent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMediaApiConsenterPresent(boolean value) {
+
+      mediaApiConsenterPresent_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a media api consenter is present in the
+     * conference.
+     * </pre>
+     *
+     * <code>bool media_api_consenter_present = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMediaApiConsenterPresent() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      mediaApiConsenterPresent_ = false;
       onChanged();
       return this;
     }

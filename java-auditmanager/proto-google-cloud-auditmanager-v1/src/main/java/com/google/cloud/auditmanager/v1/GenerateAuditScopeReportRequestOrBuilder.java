@@ -77,7 +77,7 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=316
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -98,7 +98,7 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
-   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=316
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
@@ -162,4 +162,29 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * @return The bytes for complianceFramework.
    */
   com.google.protobuf.ByteString getComplianceFrameworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validates the request and does not generate the
+   * audit scope report. This executes standard request validation (such as
+   * schema, framework existence, scope, and IAM checks) and skips the apply
+   * phase.
+   *
+   * Use this field for the following purposes:
+   * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+   * dry-run mutations (e.g., `terraform plan`) without creating real
+   * resources or incurring costs.
+   * * **User Interface Validation**: Enable real-time form and permission
+   * validation in custom UIs before submitting requests.
+   * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+   * safely without consuming resource quotas.
+   * </pre>
+   *
+   * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

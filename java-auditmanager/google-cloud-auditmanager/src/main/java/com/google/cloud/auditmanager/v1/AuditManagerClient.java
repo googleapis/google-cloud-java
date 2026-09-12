@@ -36,6 +36,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -57,9 +58,12 @@ import org.jspecify.annotations.Nullable;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
- *   String scope = "scope109264468";
- *   List<EnrollResourceRequest.EligibleDestination> destinations = new ArrayList<>();
- *   Enrollment response = auditManagerClient.enrollResource(scope, destinations);
+ *   EnrollmentStatusScopeName parent =
+ *       EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+ *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+ *   String auditScheduleId = "auditScheduleId1594553421";
+ *   AuditSchedule response =
+ *       auditManagerClient.createAuditSchedule(parent, auditSchedule, auditScheduleId);
  * }
  * }</pre>
  *
@@ -72,6 +76,84 @@ import org.jspecify.annotations.Nullable;
  *      <th>Method</th>
  *      <th>Description</th>
  *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAuditSchedule</td>
+ *      <td><p> Creates a new audit schedule in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAuditSchedule(CreateAuditScheduleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAuditSchedule(EnrollmentStatusScopeName parent, AuditSchedule auditSchedule, String auditScheduleId)
+ *           <li><p> createAuditSchedule(LocationName parent, AuditSchedule auditSchedule, String auditScheduleId)
+ *           <li><p> createAuditSchedule(String parent, AuditSchedule auditSchedule, String auditScheduleId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAuditScheduleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAuditSchedule</td>
+ *      <td><p> Updates an existing audit schedule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAuditSchedule(UpdateAuditScheduleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAuditSchedule(AuditSchedule auditSchedule, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAuditScheduleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAuditSchedule</td>
+ *      <td><p> Gets details of a single audit schedule.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAuditSchedule(GetAuditScheduleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAuditSchedule(AuditScheduleName name)
+ *           <li><p> getAuditSchedule(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAuditScheduleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAuditSchedules</td>
+ *      <td><p> Lists audit schedules in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAuditSchedules(ListAuditSchedulesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAuditSchedules(EnrollmentStatusScopeName parent)
+ *           <li><p> listAuditSchedules(LocationName parent)
+ *           <li><p> listAuditSchedules(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAuditSchedulesPagedCallable()
+ *           <li><p> listAuditSchedulesCallable()
+ *      </ul>
+ *       </td>
  *    </tr>
  *    <tr>
  *      <td><p> EnrollResource</td>
@@ -394,6 +476,647 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a new audit schedule in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   EnrollmentStatusScopeName parent =
+   *       EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+   *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+   *   String auditScheduleId = "auditScheduleId1594553421";
+   *   AuditSchedule response =
+   *       auditManagerClient.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Project or folder that this audit schedule is for, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *     </ul>
+   *
+   * @param auditSchedule Required. Audit schedule to create.
+   * @param auditScheduleId Required. ID to use for the audit schedule, which becomes the final
+   *     component of the audit schedule's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule createAuditSchedule(
+      @Nullable EnrollmentStatusScopeName parent,
+      AuditSchedule auditSchedule,
+      String auditScheduleId) {
+    CreateAuditScheduleRequest request =
+        CreateAuditScheduleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAuditSchedule(auditSchedule)
+            .setAuditScheduleId(auditScheduleId)
+            .build();
+    return createAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new audit schedule in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+   *   String auditScheduleId = "auditScheduleId1594553421";
+   *   AuditSchedule response =
+   *       auditManagerClient.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Project or folder that this audit schedule is for, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *     </ul>
+   *
+   * @param auditSchedule Required. Audit schedule to create.
+   * @param auditScheduleId Required. ID to use for the audit schedule, which becomes the final
+   *     component of the audit schedule's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule createAuditSchedule(
+      @Nullable LocationName parent, AuditSchedule auditSchedule, String auditScheduleId) {
+    CreateAuditScheduleRequest request =
+        CreateAuditScheduleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAuditSchedule(auditSchedule)
+            .setAuditScheduleId(auditScheduleId)
+            .build();
+    return createAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new audit schedule in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+   *   String auditScheduleId = "auditScheduleId1594553421";
+   *   AuditSchedule response =
+   *       auditManagerClient.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Project or folder that this audit schedule is for, in one of the
+   *     following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *     </ul>
+   *
+   * @param auditSchedule Required. Audit schedule to create.
+   * @param auditScheduleId Required. ID to use for the audit schedule, which becomes the final
+   *     component of the audit schedule's resource name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule createAuditSchedule(
+      String parent, AuditSchedule auditSchedule, String auditScheduleId) {
+    CreateAuditScheduleRequest request =
+        CreateAuditScheduleRequest.newBuilder()
+            .setParent(parent)
+            .setAuditSchedule(auditSchedule)
+            .setAuditScheduleId(auditScheduleId)
+            .build();
+    return createAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new audit schedule in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   CreateAuditScheduleRequest request =
+   *       CreateAuditScheduleRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAuditSchedule(AuditSchedule.newBuilder().build())
+   *           .setAuditScheduleId("auditScheduleId1594553421")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   AuditSchedule response = auditManagerClient.createAuditSchedule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule createAuditSchedule(CreateAuditScheduleRequest request) {
+    return createAuditScheduleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new audit schedule in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   CreateAuditScheduleRequest request =
+   *       CreateAuditScheduleRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAuditSchedule(AuditSchedule.newBuilder().build())
+   *           .setAuditScheduleId("auditScheduleId1594553421")
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<AuditSchedule> future =
+   *       auditManagerClient.createAuditScheduleCallable().futureCall(request);
+   *   // Do something.
+   *   AuditSchedule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleCallable() {
+    return stub.createAuditScheduleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AuditSchedule response = auditManagerClient.updateAuditSchedule(auditSchedule, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param auditSchedule Required. Audit schedule to update.
+   * @param updateMask Optional. List of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule updateAuditSchedule(
+      AuditSchedule auditSchedule, FieldMask updateMask) {
+    UpdateAuditScheduleRequest request =
+        UpdateAuditScheduleRequest.newBuilder()
+            .setAuditSchedule(auditSchedule)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   UpdateAuditScheduleRequest request =
+   *       UpdateAuditScheduleRequest.newBuilder()
+   *           .setAuditSchedule(AuditSchedule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   AuditSchedule response = auditManagerClient.updateAuditSchedule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule updateAuditSchedule(UpdateAuditScheduleRequest request) {
+    return updateAuditScheduleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   UpdateAuditScheduleRequest request =
+   *       UpdateAuditScheduleRequest.newBuilder()
+   *           .setAuditSchedule(AuditSchedule.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<AuditSchedule> future =
+   *       auditManagerClient.updateAuditScheduleCallable().futureCall(request);
+   *   // Do something.
+   *   AuditSchedule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleCallable() {
+    return stub.updateAuditScheduleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   AuditScheduleName name =
+   *       AuditScheduleName.ofProjectLocationAuditScheduleName(
+   *           "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]");
+   *   AuditSchedule response = auditManagerClient.getAuditSchedule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the audit schedule to retrieve, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/auditSchedules/{audit_schedule}`
+   *       <li>`folders/{folder}/locations/{location}/auditSchedules/{audit_schedule}`
+   *       <li>`organizations/{organization}/locations/{location}/auditSchedules/{audit_schedule}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule getAuditSchedule(@Nullable AuditScheduleName name) {
+    GetAuditScheduleRequest request =
+        GetAuditScheduleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   String name =
+   *       AuditScheduleName.ofProjectLocationAuditScheduleName(
+   *               "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+   *           .toString();
+   *   AuditSchedule response = auditManagerClient.getAuditSchedule(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the audit schedule to retrieve, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/auditSchedules/{audit_schedule}`
+   *       <li>`folders/{folder}/locations/{location}/auditSchedules/{audit_schedule}`
+   *       <li>`organizations/{organization}/locations/{location}/auditSchedules/{audit_schedule}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule getAuditSchedule(String name) {
+    GetAuditScheduleRequest request = GetAuditScheduleRequest.newBuilder().setName(name).build();
+    return getAuditSchedule(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   GetAuditScheduleRequest request =
+   *       GetAuditScheduleRequest.newBuilder()
+   *           .setName(
+   *               AuditScheduleName.ofProjectLocationAuditScheduleName(
+   *                       "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+   *                   .toString())
+   *           .build();
+   *   AuditSchedule response = auditManagerClient.getAuditSchedule(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuditSchedule getAuditSchedule(GetAuditScheduleRequest request) {
+    return getAuditScheduleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single audit schedule.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   GetAuditScheduleRequest request =
+   *       GetAuditScheduleRequest.newBuilder()
+   *           .setName(
+   *               AuditScheduleName.ofProjectLocationAuditScheduleName(
+   *                       "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AuditSchedule> future =
+   *       auditManagerClient.getAuditScheduleCallable().futureCall(request);
+   *   // Do something.
+   *   AuditSchedule response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable() {
+    return stub.getAuditScheduleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   EnrollmentStatusScopeName parent =
+   *       EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+   *   for (AuditSchedule element : auditManagerClient.listAuditSchedules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent for the audit schedule, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuditSchedulesPagedResponse listAuditSchedules(
+      @Nullable EnrollmentStatusScopeName parent) {
+    ListAuditSchedulesRequest request =
+        ListAuditSchedulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAuditSchedules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AuditSchedule element : auditManagerClient.listAuditSchedules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent for the audit schedule, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuditSchedulesPagedResponse listAuditSchedules(@Nullable LocationName parent) {
+    ListAuditSchedulesRequest request =
+        ListAuditSchedulesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAuditSchedules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AuditSchedule element : auditManagerClient.listAuditSchedules(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent for the audit schedule, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuditSchedulesPagedResponse listAuditSchedules(String parent) {
+    ListAuditSchedulesRequest request =
+        ListAuditSchedulesRequest.newBuilder().setParent(parent).build();
+    return listAuditSchedules(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   ListAuditSchedulesRequest request =
+   *       ListAuditSchedulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AuditSchedule element : auditManagerClient.listAuditSchedules(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuditSchedulesPagedResponse listAuditSchedules(
+      ListAuditSchedulesRequest request) {
+    return listAuditSchedulesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   ListAuditSchedulesRequest request =
+   *       ListAuditSchedulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AuditSchedule> future =
+   *       auditManagerClient.listAuditSchedulesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AuditSchedule element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable() {
+    return stub.listAuditSchedulesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists audit schedules in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
+   *   ListAuditSchedulesRequest request =
+   *       ListAuditSchedulesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAuditSchedulesResponse response =
+   *         auditManagerClient.listAuditSchedulesCallable().call(request);
+   *     for (AuditSchedule element : response.getAuditSchedulesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable() {
+    return stub.listAuditSchedulesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Adds your project, folder, or organization to Audit Manager. This method creates the Audit
    * Manager service agent in your workload and grants required permissions to the service agent. If
    * you make this request on a workload that's already enrolled, then this method overrides the
@@ -457,6 +1180,7 @@ public class AuditManagerClient implements BackgroundResource {
    *       EnrollResourceRequest.newBuilder()
    *           .setScope("scope109264468")
    *           .addAllDestinations(new ArrayList<EnrollResourceRequest.EligibleDestination>())
+   *           .setValidateOnly(true)
    *           .build();
    *   Enrollment response = auditManagerClient.enrollResource(request);
    * }
@@ -489,6 +1213,7 @@ public class AuditManagerClient implements BackgroundResource {
    *       EnrollResourceRequest.newBuilder()
    *           .setScope("scope109264468")
    *           .addAllDestinations(new ArrayList<EnrollResourceRequest.EligibleDestination>())
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Enrollment> future =
    *       auditManagerClient.enrollResourceCallable().futureCall(request);
@@ -584,6 +1309,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .setValidateOnly(true)
    *           .build();
    *   AuditScopeReport response = auditManagerClient.generateAuditScopeReport(request);
    * }
@@ -622,6 +1348,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<AuditScopeReport> future =
    *       auditManagerClient.generateAuditScopeReportCallable().futureCall(request);
@@ -1886,6 +2613,89 @@ public class AuditManagerClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListAuditSchedulesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAuditSchedulesRequest,
+          ListAuditSchedulesResponse,
+          AuditSchedule,
+          ListAuditSchedulesPage,
+          ListAuditSchedulesFixedSizeCollection> {
+
+    public static ApiFuture<ListAuditSchedulesPagedResponse> createAsync(
+        PageContext<ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule> context,
+        ApiFuture<ListAuditSchedulesResponse> futureResponse) {
+      ApiFuture<ListAuditSchedulesPage> futurePage =
+          ListAuditSchedulesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAuditSchedulesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAuditSchedulesPagedResponse(ListAuditSchedulesPage page) {
+      super(page, ListAuditSchedulesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAuditSchedulesPage
+      extends AbstractPage<
+          ListAuditSchedulesRequest,
+          ListAuditSchedulesResponse,
+          AuditSchedule,
+          ListAuditSchedulesPage> {
+
+    private ListAuditSchedulesPage(
+        @Nullable PageContext<ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>
+            context,
+        @Nullable ListAuditSchedulesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAuditSchedulesPage createEmptyPage() {
+      return new ListAuditSchedulesPage(null, null);
+    }
+
+    @Override
+    protected ListAuditSchedulesPage createPage(
+        @Nullable PageContext<ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>
+            context,
+        @Nullable ListAuditSchedulesResponse response) {
+      return new ListAuditSchedulesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAuditSchedulesPage> createPageAsync(
+        @Nullable PageContext<ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>
+            context,
+        ApiFuture<ListAuditSchedulesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAuditSchedulesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAuditSchedulesRequest,
+          ListAuditSchedulesResponse,
+          AuditSchedule,
+          ListAuditSchedulesPage,
+          ListAuditSchedulesFixedSizeCollection> {
+
+    private ListAuditSchedulesFixedSizeCollection(
+        @Nullable List<ListAuditSchedulesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAuditSchedulesFixedSizeCollection createEmptyCollection() {
+      return new ListAuditSchedulesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAuditSchedulesFixedSizeCollection createCollection(
+        @Nullable List<ListAuditSchedulesPage> pages, int collectionSize) {
+      return new ListAuditSchedulesFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListAuditReportsPagedResponse

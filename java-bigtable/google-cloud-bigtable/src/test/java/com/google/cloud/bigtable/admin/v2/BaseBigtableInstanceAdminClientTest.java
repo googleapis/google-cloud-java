@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMemoryLayersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -49,6 +50,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -64,11 +66,15 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.LogicalViewName;
 import com.google.bigtable.admin.v2.MaterializedView;
 import com.google.bigtable.admin.v2.MaterializedViewName;
+import com.google.bigtable.admin.v2.MemoryLayer;
+import com.google.bigtable.admin.v2.MemoryLayerName;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
 import com.google.bigtable.admin.v2.ProjectName;
@@ -76,6 +82,7 @@ import com.google.bigtable.admin.v2.StorageType;
 import com.google.bigtable.admin.v2.UpdateAppProfileRequest;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
@@ -1097,6 +1104,225 @@ public class BaseBigtableInstanceAdminClientTest {
     try {
       String name = "name3373707";
       client.deleteCluster(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMemoryLayerTest() throws Exception {
+    MemoryLayer expectedResponse =
+        MemoryLayer.newBuilder()
+            .setName(MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+            .setMemoryConfig(MemoryLayer.MemoryConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMemoryLayerTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(resultOperation);
+
+    MemoryLayer memoryLayer = MemoryLayer.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    MemoryLayer actualResponse = client.updateMemoryLayerAsync(memoryLayer, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMemoryLayerRequest actualRequest = ((UpdateMemoryLayerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(memoryLayer, actualRequest.getMemoryLayer());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMemoryLayerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      MemoryLayer memoryLayer = MemoryLayer.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMemoryLayerAsync(memoryLayer, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listMemoryLayersTest() throws Exception {
+    MemoryLayer responsesElement = MemoryLayer.newBuilder().build();
+    ListMemoryLayersResponse expectedResponse =
+        ListMemoryLayersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMemoryLayers(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+
+    ListMemoryLayersPagedResponse pagedListResponse = client.listMemoryLayers(parent);
+
+    List<MemoryLayer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMemoryLayersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMemoryLayersRequest actualRequest = ((ListMemoryLayersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMemoryLayersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      client.listMemoryLayers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMemoryLayersTest2() throws Exception {
+    MemoryLayer responsesElement = MemoryLayer.newBuilder().build();
+    ListMemoryLayersResponse expectedResponse =
+        ListMemoryLayersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMemoryLayers(Arrays.asList(responsesElement))
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMemoryLayersPagedResponse pagedListResponse = client.listMemoryLayers(parent);
+
+    List<MemoryLayer> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMemoryLayersList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMemoryLayersRequest actualRequest = ((ListMemoryLayersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMemoryLayersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMemoryLayers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMemoryLayerTest() throws Exception {
+    MemoryLayer expectedResponse =
+        MemoryLayer.newBuilder()
+            .setName(MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+            .setMemoryConfig(MemoryLayer.MemoryConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    MemoryLayerName name = MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+
+    MemoryLayer actualResponse = client.getMemoryLayer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMemoryLayerRequest actualRequest = ((GetMemoryLayerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMemoryLayerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      MemoryLayerName name = MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+      client.getMemoryLayer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMemoryLayerTest2() throws Exception {
+    MemoryLayer expectedResponse =
+        MemoryLayer.newBuilder()
+            .setName(MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+            .setMemoryConfig(MemoryLayer.MemoryConfig.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockBigtableInstanceAdmin.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    MemoryLayer actualResponse = client.getMemoryLayer(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBigtableInstanceAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMemoryLayerRequest actualRequest = ((GetMemoryLayerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMemoryLayerExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBigtableInstanceAdmin.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMemoryLayer(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

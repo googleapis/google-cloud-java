@@ -736,6 +736,27 @@ public class MockSecureSourceManagerImpl extends SecureSourceManagerImplBase {
   }
 
   @Override
+  public void fetchRefs(
+      FetchRefsRequest request, StreamObserver<FetchRefsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchRefsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchRefsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchRefs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchRefsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createIssue(CreateIssueRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {

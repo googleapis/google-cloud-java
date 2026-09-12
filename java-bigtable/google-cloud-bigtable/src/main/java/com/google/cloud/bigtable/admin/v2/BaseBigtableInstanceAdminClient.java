@@ -50,6 +50,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.InstanceName;
@@ -65,10 +66,14 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.LogicalViewName;
 import com.google.bigtable.admin.v2.MaterializedView;
 import com.google.bigtable.admin.v2.MaterializedViewName;
+import com.google.bigtable.admin.v2.MemoryLayer;
+import com.google.bigtable.admin.v2.MemoryLayerName;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -81,6 +86,8 @@ import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerMetadata;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -357,6 +364,65 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateMemoryLayer</td>
+ *      <td><p> Updates the memory layer of a cluster.
+ * <p>  To enable the memory layer, set the memory_config. To disable the memory layer, unset the memory_config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMemoryLayerAsync(UpdateMemoryLayerRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateMemoryLayerAsync(MemoryLayer memoryLayer, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMemoryLayerOperationCallable()
+ *           <li><p> updateMemoryLayerCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMemoryLayers</td>
+ *      <td><p> Lists information about memory layers.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMemoryLayers(ListMemoryLayersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMemoryLayers(ClusterName parent)
+ *           <li><p> listMemoryLayers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMemoryLayersPagedCallable()
+ *           <li><p> listMemoryLayersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMemoryLayer</td>
+ *      <td><p> Gets information about the memory layer of a cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMemoryLayer(GetMemoryLayerRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMemoryLayer(MemoryLayerName name)
+ *           <li><p> getMemoryLayer(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMemoryLayerCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2451,6 +2517,443 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {
     return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the memory layer of a cluster.
+   *
+   * <p>To enable the memory layer, set the memory_config. To disable the memory layer, unset the
+   * memory_config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   MemoryLayer memoryLayer = MemoryLayer.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MemoryLayer response =
+   *       baseBigtableInstanceAdminClient.updateMemoryLayerAsync(memoryLayer, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param memoryLayer Required. The memory layer to update.
+   *     <p>The memory layer's `name` format is as follows:
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}/memoryLayer`.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MemoryLayer, UpdateMemoryLayerMetadata> updateMemoryLayerAsync(
+      MemoryLayer memoryLayer, FieldMask updateMask) {
+    UpdateMemoryLayerRequest request =
+        UpdateMemoryLayerRequest.newBuilder()
+            .setMemoryLayer(memoryLayer)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateMemoryLayerAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the memory layer of a cluster.
+   *
+   * <p>To enable the memory layer, set the memory_config. To disable the memory layer, unset the
+   * memory_config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMemoryLayerRequest request =
+   *       UpdateMemoryLayerRequest.newBuilder()
+   *           .setMemoryLayer(MemoryLayer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   MemoryLayer response = baseBigtableInstanceAdminClient.updateMemoryLayerAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<MemoryLayer, UpdateMemoryLayerMetadata> updateMemoryLayerAsync(
+      UpdateMemoryLayerRequest request) {
+    return updateMemoryLayerOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the memory layer of a cluster.
+   *
+   * <p>To enable the memory layer, set the memory_config. To disable the memory layer, unset the
+   * memory_config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMemoryLayerRequest request =
+   *       UpdateMemoryLayerRequest.newBuilder()
+   *           .setMemoryLayer(MemoryLayer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<MemoryLayer, UpdateMemoryLayerMetadata> future =
+   *       baseBigtableInstanceAdminClient.updateMemoryLayerOperationCallable().futureCall(request);
+   *   // Do something.
+   *   MemoryLayer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationCallable() {
+    return stub.updateMemoryLayerOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the memory layer of a cluster.
+   *
+   * <p>To enable the memory layer, set the memory_config. To disable the memory layer, unset the
+   * memory_config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   UpdateMemoryLayerRequest request =
+   *       UpdateMemoryLayerRequest.newBuilder()
+   *           .setMemoryLayer(MemoryLayer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       baseBigtableInstanceAdminClient.updateMemoryLayerCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMemoryLayerRequest, Operation> updateMemoryLayerCallable() {
+    return stub.updateMemoryLayerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about memory layers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   for (MemoryLayer element :
+   *       baseBigtableInstanceAdminClient.listMemoryLayers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the cluster for which a list of memory layers is
+   *     requested. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list
+   *     MemoryLayers for all Clusters in an instance, e.g.,
+   *     `projects/myproject/instances/myinstance/clusters/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMemoryLayersPagedResponse listMemoryLayers(@Nullable ClusterName parent) {
+    ListMemoryLayersRequest request =
+        ListMemoryLayersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMemoryLayers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about memory layers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString();
+   *   for (MemoryLayer element :
+   *       baseBigtableInstanceAdminClient.listMemoryLayers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The unique name of the cluster for which a list of memory layers is
+   *     requested. Values are of the form
+   *     `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list
+   *     MemoryLayers for all Clusters in an instance, e.g.,
+   *     `projects/myproject/instances/myinstance/clusters/-`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMemoryLayersPagedResponse listMemoryLayers(String parent) {
+    ListMemoryLayersRequest request =
+        ListMemoryLayersRequest.newBuilder().setParent(parent).build();
+    return listMemoryLayers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about memory layers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMemoryLayersRequest request =
+   *       ListMemoryLayersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MemoryLayer element :
+   *       baseBigtableInstanceAdminClient.listMemoryLayers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMemoryLayersPagedResponse listMemoryLayers(ListMemoryLayersRequest request) {
+    return listMemoryLayersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about memory layers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMemoryLayersRequest request =
+   *       ListMemoryLayersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MemoryLayer> future =
+   *       baseBigtableInstanceAdminClient.listMemoryLayersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MemoryLayer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersPagedResponse>
+      listMemoryLayersPagedCallable() {
+    return stub.listMemoryLayersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about memory layers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   ListMemoryLayersRequest request =
+   *       ListMemoryLayersRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMemoryLayersResponse response =
+   *         baseBigtableInstanceAdminClient.listMemoryLayersCallable().call(request);
+   *     for (MemoryLayer element : response.getMemoryLayersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersResponse>
+      listMemoryLayersCallable() {
+    return stub.listMemoryLayersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about the memory layer of a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   MemoryLayerName name = MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]");
+   *   MemoryLayer response = baseBigtableInstanceAdminClient.getMemoryLayer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested cluster's memory layer. Values are of
+   *     the form `projects/{project}/instances/{instance}/clusters/{cluster}/memoryLayer`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MemoryLayer getMemoryLayer(@Nullable MemoryLayerName name) {
+    GetMemoryLayerRequest request =
+        GetMemoryLayerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMemoryLayer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about the memory layer of a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   String name = MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString();
+   *   MemoryLayer response = baseBigtableInstanceAdminClient.getMemoryLayer(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The unique name of the requested cluster's memory layer. Values are of
+   *     the form `projects/{project}/instances/{instance}/clusters/{cluster}/memoryLayer`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MemoryLayer getMemoryLayer(String name) {
+    GetMemoryLayerRequest request = GetMemoryLayerRequest.newBuilder().setName(name).build();
+    return getMemoryLayer(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about the memory layer of a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetMemoryLayerRequest request =
+   *       GetMemoryLayerRequest.newBuilder()
+   *           .setName(MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .build();
+   *   MemoryLayer response = baseBigtableInstanceAdminClient.getMemoryLayer(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MemoryLayer getMemoryLayer(GetMemoryLayerRequest request) {
+    return getMemoryLayerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about the memory layer of a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BaseBigtableInstanceAdminClient baseBigtableInstanceAdminClient =
+   *     BaseBigtableInstanceAdminClient.create()) {
+   *   GetMemoryLayerRequest request =
+   *       GetMemoryLayerRequest.newBuilder()
+   *           .setName(MemoryLayerName.of("[PROJECT]", "[INSTANCE]", "[CLUSTER]").toString())
+   *           .build();
+   *   ApiFuture<MemoryLayer> future =
+   *       baseBigtableInstanceAdminClient.getMemoryLayerCallable().futureCall(request);
+   *   // Do something.
+   *   MemoryLayer response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerCallable() {
+    return stub.getMemoryLayerCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5285,6 +5788,86 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListMemoryLayersPagedResponse
+      extends AbstractPagedListResponse<
+          ListMemoryLayersRequest,
+          ListMemoryLayersResponse,
+          MemoryLayer,
+          ListMemoryLayersPage,
+          ListMemoryLayersFixedSizeCollection> {
+
+    public static ApiFuture<ListMemoryLayersPagedResponse> createAsync(
+        PageContext<ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer> context,
+        ApiFuture<ListMemoryLayersResponse> futureResponse) {
+      ApiFuture<ListMemoryLayersPage> futurePage =
+          ListMemoryLayersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMemoryLayersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMemoryLayersPagedResponse(ListMemoryLayersPage page) {
+      super(page, ListMemoryLayersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMemoryLayersPage
+      extends AbstractPage<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer, ListMemoryLayersPage> {
+
+    private ListMemoryLayersPage(
+        @Nullable PageContext<ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>
+            context,
+        @Nullable ListMemoryLayersResponse response) {
+      super(context, response);
+    }
+
+    private static ListMemoryLayersPage createEmptyPage() {
+      return new ListMemoryLayersPage(null, null);
+    }
+
+    @Override
+    protected ListMemoryLayersPage createPage(
+        @Nullable PageContext<ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>
+            context,
+        @Nullable ListMemoryLayersResponse response) {
+      return new ListMemoryLayersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMemoryLayersPage> createPageAsync(
+        @Nullable PageContext<ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>
+            context,
+        ApiFuture<ListMemoryLayersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMemoryLayersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMemoryLayersRequest,
+          ListMemoryLayersResponse,
+          MemoryLayer,
+          ListMemoryLayersPage,
+          ListMemoryLayersFixedSizeCollection> {
+
+    private ListMemoryLayersFixedSizeCollection(
+        @Nullable List<ListMemoryLayersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMemoryLayersFixedSizeCollection createEmptyCollection() {
+      return new ListMemoryLayersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMemoryLayersFixedSizeCollection createCollection(
+        @Nullable List<ListMemoryLayersPage> pages, int collectionSize) {
+      return new ListMemoryLayersFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListAppProfilesPagedResponse

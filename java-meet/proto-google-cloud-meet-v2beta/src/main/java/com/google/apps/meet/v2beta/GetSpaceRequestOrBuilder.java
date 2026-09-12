@@ -48,7 +48,7 @@ public interface GetSpaceRequestOrBuilder
    * Meet](https://support.google.com/meet/answer/10710509).
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>
@@ -81,7 +81,7 @@ public interface GetSpaceRequestOrBuilder
    * Meet](https://support.google.com/meet/answer/10710509).
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>

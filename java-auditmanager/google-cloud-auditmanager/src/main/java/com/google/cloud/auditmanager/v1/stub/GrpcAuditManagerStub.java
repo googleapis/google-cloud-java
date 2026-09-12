@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1.stub;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -30,21 +31,27 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.auditmanager.v1.AuditReport;
+import com.google.cloud.auditmanager.v1.AuditSchedule;
 import com.google.cloud.auditmanager.v1.AuditScopeReport;
+import com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.EnrollResourceRequest;
 import com.google.cloud.auditmanager.v1.Enrollment;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest;
 import com.google.cloud.auditmanager.v1.GetAuditReportRequest;
+import com.google.cloud.auditmanager.v1.GetAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsResponse;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse;
 import com.google.cloud.auditmanager.v1.ListControlsRequest;
 import com.google.cloud.auditmanager.v1.ListControlsResponse;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesRequest;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
 import com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus;
+import com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -67,6 +74,51 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcAuditManagerStub extends AuditManagerStub {
+  private static final MethodDescriptor<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleMethodDescriptor =
+          MethodDescriptor.<CreateAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/CreateAuditSchedule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAuditScheduleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuditSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleMethodDescriptor =
+          MethodDescriptor.<UpdateAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/UpdateAuditSchedule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAuditScheduleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuditSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAuditScheduleRequest, AuditSchedule>
+      getAuditScheduleMethodDescriptor =
+          MethodDescriptor.<GetAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/GetAuditSchedule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAuditScheduleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuditSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesMethodDescriptor =
+          MethodDescriptor.<ListAuditSchedulesRequest, ListAuditSchedulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/ListAuditSchedules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAuditSchedulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAuditSchedulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<EnrollResourceRequest, Enrollment>
       enrollResourceMethodDescriptor =
           MethodDescriptor.<EnrollResourceRequest, Enrollment>newBuilder()
@@ -188,6 +240,15 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private final UnaryCallable<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleCallable;
+  private final UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleCallable;
+  private final UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable;
+  private final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable;
+  private final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable;
   private final UnaryCallable<EnrollResourceRequest, Enrollment> enrollResourceCallable;
   private final UnaryCallable<GenerateAuditScopeReportRequest, AuditScopeReport>
       generateAuditScopeReportCallable;
@@ -257,6 +318,54 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<CreateAuditScheduleRequest, AuditSchedule>
+        createAuditScheduleTransportSettings =
+            GrpcCallSettings.<CreateAuditScheduleRequest, AuditSchedule>newBuilder()
+                .setMethodDescriptor(createAuditScheduleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateAuditScheduleRequest, AuditSchedule>
+        updateAuditScheduleTransportSettings =
+            GrpcCallSettings.<UpdateAuditScheduleRequest, AuditSchedule>newBuilder()
+                .setMethodDescriptor(updateAuditScheduleMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "audit_schedule.name",
+                          String.valueOf(request.getAuditSchedule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleTransportSettings =
+        GrpcCallSettings.<GetAuditScheduleRequest, AuditSchedule>newBuilder()
+            .setMethodDescriptor(getAuditScheduleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+        listAuditSchedulesTransportSettings =
+            GrpcCallSettings.<ListAuditSchedulesRequest, ListAuditSchedulesResponse>newBuilder()
+                .setMethodDescriptor(listAuditSchedulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<EnrollResourceRequest, Enrollment> enrollResourceTransportSettings =
         GrpcCallSettings.<EnrollResourceRequest, Enrollment>newBuilder()
             .setMethodDescriptor(enrollResourceMethodDescriptor)
@@ -370,6 +479,29 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
                 })
             .build();
 
+    this.createAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            createAuditScheduleTransportSettings,
+            settings.createAuditScheduleSettings(),
+            clientContext);
+    this.updateAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            updateAuditScheduleTransportSettings,
+            settings.updateAuditScheduleSettings(),
+            clientContext);
+    this.getAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            getAuditScheduleTransportSettings, settings.getAuditScheduleSettings(), clientContext);
+    this.listAuditSchedulesCallable =
+        callableFactory.createUnaryCallable(
+            listAuditSchedulesTransportSettings,
+            settings.listAuditSchedulesSettings(),
+            clientContext);
+    this.listAuditSchedulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuditSchedulesTransportSettings,
+            settings.listAuditSchedulesSettings(),
+            clientContext);
     this.enrollResourceCallable =
         callableFactory.createUnaryCallable(
             enrollResourceTransportSettings, settings.enrollResourceSettings(), clientContext);
@@ -435,6 +567,33 @@ public class GrpcAuditManagerStub extends AuditManagerStub {
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuditScheduleRequest, AuditSchedule> createAuditScheduleCallable() {
+    return createAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule> updateAuditScheduleCallable() {
+    return updateAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable() {
+    return getAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable() {
+    return listAuditSchedulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable() {
+    return listAuditSchedulesPagedCallable;
   }
 
   @Override

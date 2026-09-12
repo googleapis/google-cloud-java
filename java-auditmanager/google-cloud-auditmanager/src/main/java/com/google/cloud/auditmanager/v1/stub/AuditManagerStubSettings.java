@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1.stub;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -53,22 +54,28 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.auditmanager.v1.AuditReport;
+import com.google.cloud.auditmanager.v1.AuditSchedule;
 import com.google.cloud.auditmanager.v1.AuditScopeReport;
 import com.google.cloud.auditmanager.v1.Control;
+import com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.EnrollResourceRequest;
 import com.google.cloud.auditmanager.v1.Enrollment;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest;
 import com.google.cloud.auditmanager.v1.GetAuditReportRequest;
+import com.google.cloud.auditmanager.v1.GetAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsResponse;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse;
 import com.google.cloud.auditmanager.v1.ListControlsRequest;
 import com.google.cloud.auditmanager.v1.ListControlsResponse;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesRequest;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
 import com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus;
+import com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -102,7 +109,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of enrollResource:
+ * of createAuditSchedule:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -113,10 +120,10 @@ import org.jspecify.annotations.Nullable;
  * AuditManagerStubSettings.Builder auditManagerSettingsBuilder =
  *     AuditManagerStubSettings.newBuilder();
  * auditManagerSettingsBuilder
- *     .enrollResourceSettings()
+ *     .createAuditScheduleSettings()
  *     .setRetrySettings(
  *         auditManagerSettingsBuilder
- *             .enrollResourceSettings()
+ *             .createAuditScheduleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -172,6 +179,14 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
+  private final UnaryCallSettings<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleSettings;
+  private final UnaryCallSettings<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleSettings;
+  private final UnaryCallSettings<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleSettings;
+  private final PagedCallSettings<
+          ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesSettings;
   private final UnaryCallSettings<EnrollResourceRequest, Enrollment> enrollResourceSettings;
   private final UnaryCallSettings<GenerateAuditScopeReportRequest, AuditScopeReport>
       generateAuditScopeReportSettings;
@@ -197,6 +212,44 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+
+  private static final PagedListDescriptor<
+          ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>
+      LIST_AUDIT_SCHEDULES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAuditSchedulesRequest injectToken(
+                ListAuditSchedulesRequest payload, String token) {
+              return ListAuditSchedulesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAuditSchedulesRequest injectPageSize(
+                ListAuditSchedulesRequest payload, int pageSize) {
+              return ListAuditSchedulesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAuditSchedulesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAuditSchedulesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuditSchedule> extractResources(ListAuditSchedulesResponse payload) {
+              return payload.getAuditSchedulesList();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListAuditReportsRequest, ListAuditReportsResponse, AuditReport>
@@ -352,6 +405,27 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
           };
 
   private static final PagedListResponseFactory<
+          ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+      LIST_AUDIT_SCHEDULES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAuditSchedulesRequest,
+              ListAuditSchedulesResponse,
+              ListAuditSchedulesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAuditSchedulesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse> callable,
+                ListAuditSchedulesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAuditSchedulesResponse> futureResponse) {
+              PageContext<ListAuditSchedulesRequest, ListAuditSchedulesResponse, AuditSchedule>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUDIT_SCHEDULES_PAGE_STR_DESC, request, context);
+              return ListAuditSchedulesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListAuditReportsRequest, ListAuditReportsResponse, ListAuditReportsPagedResponse>
       LIST_AUDIT_REPORTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -436,6 +510,30 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
               return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
+
+  /** Returns the object with the settings used for calls to createAuditSchedule. */
+  public UnaryCallSettings<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleSettings() {
+    return createAuditScheduleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAuditSchedule. */
+  public UnaryCallSettings<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleSettings() {
+    return updateAuditScheduleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAuditSchedule. */
+  public UnaryCallSettings<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleSettings() {
+    return getAuditScheduleSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAuditSchedules. */
+  public PagedCallSettings<
+          ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesSettings() {
+    return listAuditSchedulesSettings;
+  }
 
   /** Returns the object with the settings used for calls to enrollResource. */
   public UnaryCallSettings<EnrollResourceRequest, Enrollment> enrollResourceSettings() {
@@ -614,6 +712,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
   protected AuditManagerStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    createAuditScheduleSettings = settingsBuilder.createAuditScheduleSettings().build();
+    updateAuditScheduleSettings = settingsBuilder.updateAuditScheduleSettings().build();
+    getAuditScheduleSettings = settingsBuilder.getAuditScheduleSettings().build();
+    listAuditSchedulesSettings = settingsBuilder.listAuditSchedulesSettings().build();
     enrollResourceSettings = settingsBuilder.enrollResourceSettings().build();
     generateAuditScopeReportSettings = settingsBuilder.generateAuditScopeReportSettings().build();
     generateAuditReportSettings = settingsBuilder.generateAuditReportSettings().build();
@@ -642,6 +744,15 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
   /** Builder for AuditManagerStubSettings. */
   public static class Builder extends StubSettings.Builder<AuditManagerStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CreateAuditScheduleRequest, AuditSchedule>
+        createAuditScheduleSettings;
+    private final UnaryCallSettings.Builder<UpdateAuditScheduleRequest, AuditSchedule>
+        updateAuditScheduleSettings;
+    private final UnaryCallSettings.Builder<GetAuditScheduleRequest, AuditSchedule>
+        getAuditScheduleSettings;
+    private final PagedCallSettings.Builder<
+            ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+        listAuditSchedulesSettings;
     private final UnaryCallSettings.Builder<EnrollResourceRequest, Enrollment>
         enrollResourceSettings;
     private final UnaryCallSettings.Builder<GenerateAuditScopeReportRequest, AuditScopeReport>
@@ -679,10 +790,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
           ImmutableMap.builder();
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -699,6 +810,8 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
@@ -710,8 +823,6 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -722,6 +833,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
     protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
+      createAuditScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAuditScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAuditScheduleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAuditSchedulesSettings = PagedCallSettings.newBuilder(LIST_AUDIT_SCHEDULES_PAGE_STR_FACT);
       enrollResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAuditScopeReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateAuditReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -737,6 +852,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createAuditScheduleSettings,
+              updateAuditScheduleSettings,
+              getAuditScheduleSettings,
+              listAuditSchedulesSettings,
               enrollResourceSettings,
               generateAuditScopeReportSettings,
               generateAuditReportSettings,
@@ -753,6 +872,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
     protected Builder(AuditManagerStubSettings settings) {
       super(settings);
 
+      createAuditScheduleSettings = settings.createAuditScheduleSettings.toBuilder();
+      updateAuditScheduleSettings = settings.updateAuditScheduleSettings.toBuilder();
+      getAuditScheduleSettings = settings.getAuditScheduleSettings.toBuilder();
+      listAuditSchedulesSettings = settings.listAuditSchedulesSettings.toBuilder();
       enrollResourceSettings = settings.enrollResourceSettings.toBuilder();
       generateAuditScopeReportSettings = settings.generateAuditScopeReportSettings.toBuilder();
       generateAuditReportSettings = settings.generateAuditReportSettings.toBuilder();
@@ -770,6 +893,10 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createAuditScheduleSettings,
+              updateAuditScheduleSettings,
+              getAuditScheduleSettings,
+              listAuditSchedulesSettings,
               enrollResourceSettings,
               generateAuditScopeReportSettings,
               generateAuditReportSettings,
@@ -807,6 +934,26 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
     }
 
     private static Builder initDefaults(Builder builder) {
+      builder
+          .createAuditScheduleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateAuditScheduleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAuditScheduleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAuditSchedulesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .enrollResourceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -897,6 +1044,31 @@ public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSetti
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuditSchedule. */
+    public UnaryCallSettings.Builder<CreateAuditScheduleRequest, AuditSchedule>
+        createAuditScheduleSettings() {
+      return createAuditScheduleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuditSchedule. */
+    public UnaryCallSettings.Builder<UpdateAuditScheduleRequest, AuditSchedule>
+        updateAuditScheduleSettings() {
+      return updateAuditScheduleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAuditSchedule. */
+    public UnaryCallSettings.Builder<GetAuditScheduleRequest, AuditSchedule>
+        getAuditScheduleSettings() {
+      return getAuditScheduleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAuditSchedules. */
+    public PagedCallSettings.Builder<
+            ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+        listAuditSchedulesSettings() {
+      return listAuditSchedulesSettings;
     }
 
     /** Returns the builder for the settings used for calls to enrollResource. */
