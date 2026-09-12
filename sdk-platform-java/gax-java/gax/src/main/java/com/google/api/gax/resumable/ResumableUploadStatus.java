@@ -31,55 +31,31 @@ package com.google.api.gax.resumable;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Response value object representing the status and committed offset of a resumable upload session.
- *
- * @param <ResponseT> response type of the upload operation
+ * Represents the session status returned by the server in the {@code X-Goog-Upload-Status} header.
  */
 @NullMarked
 @BetaApi
 @InternalApi
-@AutoValue
-public abstract class QueryStatusResponse<ResponseT> {
+public enum ResumableUploadStatus {
+  ACTIVE,
+  FINAL,
+  UNKNOWN;
 
   /**
-   * The total number of bytes successfully received and committed by the server so far, or {@code
-   * null} if the server did not return a committed offset (e.g. if the upload is already
-   * finalized).
-   *
-   * <p>When {@link #getUploadStatus()} is {@link ResumableUploadStatus#ACTIVE}, this value is
-   * guaranteed to be non-null and represents the starting offset for resuming the upload.
+   * Parses the {@code X-Goog-Upload-Status} header value into a {@link ResumableUploadStatus},
+   * returning {@link #UNKNOWN} if the header is absent or unrecognized.
    */
-  public abstract @Nullable Long getCommittedOffset();
-
-  /**
-   * The response object returned by the server upon final completion (e.g. metadata of the uploaded
-   * resource), or {@code null} if the upload is still in progress.
-   */
-  public abstract @Nullable ResponseT getResponse();
-
-  /** Returns the status of the upload session returned by the server. */
-  public abstract ResumableUploadStatus getUploadStatus();
-
-  public abstract Builder<ResponseT> toBuilder();
-
-  public static <ResponseT> Builder<ResponseT> newBuilder() {
-    return new AutoValue_QueryStatusResponse.Builder<ResponseT>()
-        .setUploadStatus(ResumableUploadStatus.ACTIVE);
-  }
-
-  @AutoValue.Builder
-  public abstract static class Builder<ResponseT> {
-    public abstract Builder<ResponseT> setCommittedOffset(@Nullable Long committedOffset);
-
-    public abstract Builder<ResponseT> setResponse(@Nullable ResponseT response);
-
-    public abstract Builder<ResponseT> setUploadStatus(ResumableUploadStatus uploadStatus);
-
-    public abstract QueryStatusResponse<ResponseT> build();
+  public static ResumableUploadStatus fromHeader(@Nullable String headerValue) {
+    if ("active".equalsIgnoreCase(headerValue)) {
+      return ACTIVE;
+    }
+    if ("final".equalsIgnoreCase(headerValue)) {
+      return FINAL;
+    }
+    return UNKNOWN;
   }
 }
