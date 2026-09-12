@@ -47,7 +47,7 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * BigQueryReadClient}) managed by this BigQuery service instance.
    */
   @Override
-  void close();
+  default void close() {}
 
   /**
    * Fields of a BigQuery Dataset resource.
