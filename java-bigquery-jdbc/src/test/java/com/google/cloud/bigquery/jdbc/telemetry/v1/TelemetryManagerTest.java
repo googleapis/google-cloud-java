@@ -176,20 +176,6 @@ public class TelemetryManagerTest {
   }
 
   @Test
-  public void testToDurationBucketMs() {
-    DurationHistogram h1 = TelemetryManager.toDurationBucketMs(5); // < 10
-    assertEquals(1, h1.getCount());
-    assertEquals(5.0, h1.getSum());
-    assertEquals(1, h1.getBucketCounts(0)); // 0th bucket (bounds 10)
-
-    DurationHistogram h2 = TelemetryManager.toDurationBucketMs(150); // < 250, > 100
-    assertEquals(1, h2.getBucketCounts(3)); // 250 bound is index 3
-
-    DurationHistogram h3 = TelemetryManager.toDurationBucketMs(20000); // Overflow > 10000
-    assertEquals(1, h3.getBucketCounts(8)); // 8th bucket (overflow)
-  }
-
-  @Test
   public void testOptOutConfiguration() {
     Properties props = new Properties();
 

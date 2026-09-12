@@ -178,39 +178,17 @@ public final class TelemetryManager implements AutoCloseable {
     }
   }
 
-  static final double[] HISTOGRAM_BOUNDS = {
-    10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0
-  };
-
-  static DurationHistogram toDurationBucketMs(long durationMs) {
-    DurationHistogram.Builder builder =
-        DurationHistogram.newBuilder().setCount(1).setSum(durationMs);
-
-    int bucketIndex = HISTOGRAM_BOUNDS.length;
-    for (int i = 0; i < HISTOGRAM_BOUNDS.length; i++) {
-      builder.addExplicitBounds(HISTOGRAM_BOUNDS[i]);
-      if (bucketIndex == HISTOGRAM_BOUNDS.length && durationMs < HISTOGRAM_BOUNDS[i]) {
-        bucketIndex = i;
-      }
-    }
-    for (int i = 0; i <= HISTOGRAM_BOUNDS.length; i++) {
-      builder.addBucketCounts(i == bucketIndex ? 1L : 0L);
-    }
-    return builder.build();
-  }
-
   static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
     runSafely(
         () -> {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
             mgr.getBatcher()
-                .offerConnectionAttempt(
+                .offer(
                     ConnectionAttempt.newBuilder()
                         .setStatus(status)
                         .setErrorCode(errorCode)
                         .setAuthType(authType)
-                        .setCount(1)
                         .build());
           }
         });
@@ -227,15 +205,14 @@ public final class TelemetryManager implements AutoCloseable {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
             mgr.getBatcher()
-                .offerStatementExecution(
+                .offer(
                     StatementExecution.newBuilder()
                         .setStatementType(statementType)
                         .setQueryApiType(apiType)
                         .setStatus(status)
                         .setErrorCode(errorCode)
-                        .setCount(1)
-                        .setDuration(toDurationBucketMs(durationMs))
-                        .build());
+                        .build(),
+                    durationMs);
           }
         });
   }
@@ -246,11 +223,10 @@ public final class TelemetryManager implements AutoCloseable {
           TelemetryManager mgr = instance;
           if (mgr != null && mgr.getBatcher() != null) {
             mgr.getBatcher()
-                .offerFeatureUsage(
+                .offer(
                     FeatureUsage.newBuilder()
                         .setDriverFeature(feature)
                         .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
-                        .setCount(1)
                         .build());
           }
         });
