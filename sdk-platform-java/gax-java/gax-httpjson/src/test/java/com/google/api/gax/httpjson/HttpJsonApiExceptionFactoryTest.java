@@ -148,4 +148,17 @@ class HttpJsonApiExceptionFactoryTest {
     assertThat(apiException.getErrorDetails()).isNotNull();
     assertThat(apiException.getErrorDetails().getErrorInfo()).isNull();
   }
+
+  @Test
+  void testCreate_fromHttpJsonStatusRuntimeException() {
+    HttpJsonStatusRuntimeException statusException =
+        new HttpJsonStatusRuntimeException(503, "Failed to upload chunk", null);
+    HttpJsonApiExceptionFactory factory =
+        new HttpJsonApiExceptionFactory(ImmutableSet.of(Code.UNAVAILABLE));
+    ApiException apiException = factory.create(statusException);
+
+    assertThat(apiException.getStatusCode().getTransportCode()).isEqualTo(503);
+    assertThat(apiException.getStatusCode().getCode()).isEqualTo(Code.UNAVAILABLE);
+  }
 }
+
