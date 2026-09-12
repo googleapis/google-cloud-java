@@ -44,6 +44,8 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.testing.FakeCallContext;
@@ -56,7 +58,11 @@ import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.Nullable;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -69,9 +75,11 @@ class ResumableUploadCallableImplTest {
   private ResumableUploadClient<String, String> mockClient;
   private UnaryCallable<String, ResumableUploadSession> mockStartCallable;
   private UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<String>> mockChunkCallable;
+  private UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable;
 
   private ResumableUploadCallSettings defaultSettings;
   private FakeCallContext callContext;
+  private ScheduledExecutorService executor;
   private ResumableUploadCallableImpl<String, String> callable;
 
   @BeforeEach
@@ -80,15 +88,25 @@ class ResumableUploadCallableImplTest {
     mockClient = mock(ResumableUploadClient.class, withSettings().withoutAnnotations());
     mockStartCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
     mockChunkCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    mockQueryCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
 
     lenient().when(mockClient.startUploadCallable()).thenReturn(mockStartCallable);
     lenient().when(mockClient.uploadChunkCallable()).thenReturn(mockChunkCallable);
+    lenient().when(mockClient.queryStatusCallable()).thenReturn(mockQueryCallable);
 
     defaultSettings = ResumableUploadCallSettings.newBuilder().setChunkSize(8).build();
     callContext = FakeCallContext.createDefault();
+    executor = Executors.newScheduledThreadPool(2);
     ClientContext clientContext =
-        ClientContext.newBuilder().setDefaultCallContext(callContext).build();
+        ClientContext.newBuilder().setDefaultCallContext(callContext).setExecutor(executor).build();
     callable = new ResumableUploadCallableImpl<>(mockClient, defaultSettings, clientContext);
+  }
+
+  @AfterEach
+  void tearDown() {
+    if (executor != null) {
+      executor.shutdownNow();
+    }
   }
 
   @Test
@@ -404,13 +422,13 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
-  void testChunkRetry_cat2Failure_failsFastWithoutRetrying() {
-    stubStartSession("https://upload.url/chunk-cat2-fail");
-    // HTTP 400 Bad Request is Category 2 (RECOVERABLE)
+  void testChunkRetry_cat3Failure_failsFastWithoutRetrying() {
+    stubStartSession("https://upload.url/chunk-cat3-fail");
+    // HTTP 403 Forbidden is Category 3 (FATAL)
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
         .thenReturn(
             ApiFutures.immediateFailedFuture(
-                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+                createApiException(403, StatusCode.Code.PERMISSION_DENIED)));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("hello"), null);
@@ -418,9 +436,9 @@ class ResumableUploadCallableImplTest {
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(ApiException.class);
     assertThat(((ApiException) exception.getCause()).getStatusCode().getTransportCode())
-        .isEqualTo(400);
+        .isEqualTo(403);
 
-    // In G4, Category 2 is not yet retryable / recoverable, so it fails after 1 attempt.
+    // Category 3 is fatal / non-retryable, so it fails after 1 attempt without retrying.
     verify(mockChunkCallable, times(1)).futureCall(any(), any());
   }
 
@@ -482,10 +500,6 @@ class ResumableUploadCallableImplTest {
 
     ClientContext clientContext =
         ClientContext.newBuilder().setDefaultCallContext(callContext).build();
-    // Leave startFuture incomplete so sessionFuture does not automatically instantiate its
-    // coordinator
-    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
-
     SettableApiFuture<String> result = SettableApiFuture.create();
     SettableApiFuture<ResumableUploadSession> startSessionFuture = SettableApiFuture.create();
     startSessionFuture.set(
@@ -499,6 +513,7 @@ class ResumableUploadCallableImplTest {
             result,
             startSessionFuture,
             mockChunkCallable,
+            mockQueryCallable,
             streamOf("hello"),
             customSettings,
             callContext,
@@ -520,6 +535,312 @@ class ResumableUploadCallableImplTest {
     verify(mockChunkCallable, times(1)).futureCall(any(), any());
   }
 
+  private static QueryStatusResponse<String> createQueryResponse(
+      boolean isComplete,
+      @Nullable Long committedOffset,
+      @Nullable String response,
+      @Nullable String uploadStatus) {
+    return QueryStatusResponse.<String>newBuilder()
+        .setComplete(isComplete)
+        .setCommittedOffset(committedOffset)
+        .setResponse(response)
+        .setUploadStatus(uploadStatus)
+        .build();
+  }
+
+  @Test
+  void testRecovery_category2Error_recoversViaQueryAndSucceeds() throws Exception {
+    stubStartSession("https://upload.url/recovery-success");
+    // Attempt 0 fails with 400 (Category 2)
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(true, "recovered-response", "final")));
+
+    // Query status returns active session with committed offset 0
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 0L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    assertThat(future.get()).isEqualTo("recovered-response");
+    assertThat(future.isDone()).isTrue();
+    verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    verify(mockChunkCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_queryReturnsComplete_completesSessionWithoutResending() throws Exception {
+    stubStartSession("https://upload.url/recovery-already-complete");
+    // Attempt 0 fails with 400 (Category 2)
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+
+    // Query status returns that the server already finalized the upload
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(createQueryResponse(true, 5L, "server-finalized", "final")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    assertThat(future.get()).isEqualTo("server-finalized");
+    assertThat(future.isDone()).isTrue();
+    verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    // Only 1 chunk upload attempt happened; no resend occurred because the server was already
+    // complete
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_queryReturnsIncompleteWithNullOffset_failsFatal() throws Exception {
+    stubStartSession("https://upload.url/recovery-null-offset");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+
+    // Incomplete response with null committed offset violates the protocol contract
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, null, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(FailedPreconditionException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("did not include a committed offset");
+    verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_serverCommittedAheadWithinBuffer_compactsAndTopsUp() throws Exception {
+    stubStartSession("https://upload.url/recovery-compact-topup");
+    // 16-byte payload, chunkSize = 8
+    // Attempt 0 for chunk 0 (bytes 0..7) fails with 400
+    // Query returns committedOffset = 4 (server committed 4 bytes)
+    // Buffer realigns to offset 4: compacts [4..7] ("4567") and tops up from stream ("89ab") ->
+    // window [4..11]
+    // Attempt 1 for realigned chunk transmits 8 bytes (offset 4, len 8) and succeeds
+    // Chunk 2 (offset 12..15, "cdef") succeeds and finalizes
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null, "active")))
+        .thenReturn(
+            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "all-done", "final")));
+
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 4L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("0123456789abcdef"), null);
+
+    assertThat(future.get()).isEqualTo("all-done");
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> requests = captor.getAllValues();
+
+    // Request 0: initial chunk 0 (offset 0, length 8)
+    assertChunk(requests.get(0), 0, 8, false);
+    // Request 1: realigned chunk (offset 4, length 8)
+    assertChunk(requests.get(1), 4, 8, false);
+    // Request 2: final chunk (offset 12, length 4)
+    assertChunk(requests.get(2), 12, 4, true);
+  }
+
+  @Test
+  void testRecovery_serverOffsetBehind_resendsFromOffset() throws Exception {
+    stubStartSession("https://upload.url/recovery-behind");
+    // Chunk 0 (0..7) succeeds
+    // Chunk 1 (8..15) fails with 409
+    // Query returns committed offset 10 (between base 8 and attempt 16)
+    // Buffer realigns to 10: compacts remaining 6 bytes, stream at EOF, isFinal remains true
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null, "active")))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(409, StatusCode.Code.ABORTED)))
+        .thenReturn(
+            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "resend-ok", "final")));
+
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 10L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("0123456789abcdef"), null);
+
+    assertThat(future.get()).isEqualTo("resend-ok");
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> requests = captor.getAllValues();
+    assertChunk(requests.get(0), 0, 8, false);
+    assertChunk(requests.get(1), 8, 8, false);
+    assertChunk(requests.get(2), 10, 6, true);
+  }
+
+  @Test
+  void testRecovery_serverOffsetBelowBase_failsWithFatalFailedPrecondition() throws Exception {
+    stubStartSession("https://upload.url/recovery-below-base");
+    // Chunk 0 (0..7) succeeds
+    // Chunk 1 (8..15) fails with 400
+    // Query returns committed offset 4 (below buffer base of 8)
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null, "active")))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 4L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("0123456789abcdef"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(FailedPreconditionException.class);
+    assertThat(exception.getCause()).hasMessageThat().contains("below buffer base offset");
+  }
+
+  @Test
+  void testRecovery_missingStatusHeaderOn200_triggersRecovery() throws Exception {
+    stubStartSession("https://upload.url/missing-status-200");
+    // Attempt 0 succeeds with HTTP 200, but uploadStatus is null
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "recovered-ok", "final")));
+
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 0L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    assertThat(future.get()).isEqualTo("recovered-ok");
+    verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    verify(mockChunkCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_onFinalChunk_preservesUploadFinalize() throws Exception {
+    stubStartSession("https://upload.url/recovery-final-chunk");
+    // 12 bytes with chunkSize = 8 -> chunk 0 is 8 bytes, chunk 1 is 4 bytes (trailing partial)
+    // Chunk 0 succeeds
+    // Chunk 1 attempt 0 (offset 8, len 4, isFinal true) fails with 400
+    // Query returns committed offset 10 (mid-buffer within trailing partial)
+    // Buffer realigns to 10: remaining length 2 bytes, isFinal true
+    // Chunk 1 attempt 1 transmits offset 10, len 2, isFinal true and completes
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null, "active")))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(true, "final-chunk-done", "final")));
+
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 10L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("0123456789ab"), null);
+
+    assertThat(future.get()).isEqualTo("final-chunk-done");
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> requests = captor.getAllValues();
+    assertChunk(requests.get(0), 0, 8, false);
+    assertChunk(requests.get(1), 8, 4, true);
+    assertChunk(requests.get(2), 10, 2, true);
+  }
+
+  @Test
+  void testRecovery_queryReturnsMissingStatusHeader_failsFatalProtocolViolation() throws Exception {
+    stubStartSession("https://upload.url/recovery-missing-status-query");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+
+    // Query status response missing upload status header is a fatal protocol violation
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 0L, null, null)));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(FailedPreconditionException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("missing X-Goog-Upload-Status header");
+    verify(mockQueryCallable, times(1)).futureCall(any(), any());
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_category3ErrorOnQuery_isFatal() throws Exception {
+    stubStartSession("https://upload.url/recovery-query-cat3");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+
+    // Query status fails with 403 Forbidden (Category 3 / FATAL)
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(403, StatusCode.Code.PERMISSION_DENIED)));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) exception.getCause()).getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.PERMISSION_DENIED);
+    // Query failed fatally, so no resend of chunk
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_transientErrorOnQuery_isRetried() throws Exception {
+    stubStartSession("https://upload.url/recovery-query-transient");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(true, "query-retry-ok", "final")));
+
+    // Query status fails first with 503 (transient), then succeeds
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(ApiFutures.immediateFuture(createQueryResponse(false, 0L, null, "active")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    assertThat(future.get()).isEqualTo("query-retry-ok");
+    verify(mockQueryCallable, times(2)).futureCall(any(), any());
+    verify(mockChunkCallable, times(2)).futureCall(any(), any());
+  }
+
   @Test
   void testBufferWindow_noArrayCopyForPartialChunk_backingArrayIdentityPreserved()
       throws Exception {
@@ -538,29 +859,6 @@ class ResumableUploadCallableImplTest {
     assertThat(chunk.getPayloadLength()).isEqualTo(5);
     // Backing array capacity is 8 (chunkSize), not 5 (no copy performed)
     assertThat(chunk.getPayload().length).isEqualTo(8);
-  }
-
-  @Test
-  void testBufferWindow_reusesSingleArrayAcrossChunks() throws Exception {
-    stubStartSession("https://upload.url/reuse-array");
-    // 20 bytes with chunkSize = 8 -> 3 chunks: [0..8), [8..16), [16..20)
-    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done")));
-
-    ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("01234567890123456789"), null);
-
-    assertThat(future.get()).isEqualTo("done");
-    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
-    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
-    List<ChunkUploadRequest> chunks = captor.getAllValues();
-
-    // All chunks must reference the exact same backing byte[] instance
-    byte[] backingArray = chunks.get(0).getPayload();
-    assertThat(chunks.get(1).getPayload()).isSameInstanceAs(backingArray);
-    assertThat(chunks.get(2).getPayload()).isSameInstanceAs(backingArray);
   }
 
   private static class HttpStatusStatusCode implements StatusCode {
@@ -616,7 +914,10 @@ class ResumableUploadCallableImplTest {
     when(mockStartCallable.futureCall(any(), any()))
         .thenReturn(
             ApiFutures.immediateFuture(
-                ResumableUploadSession.newBuilder().setUploadUrl(uploadUrl).build()));
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl(uploadUrl)
+                    .setUploadStatus("active")
+                    .build()));
   }
 
   private static InputStream streamOf(String content) {

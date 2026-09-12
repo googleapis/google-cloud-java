@@ -35,9 +35,16 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import java.io.InputStream;
+import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -54,9 +61,22 @@ import org.jspecify.annotations.Nullable;
 public class ResumableUploadCallableImpl<RequestT, ResponseT>
     extends ResumableUploadCallable<RequestT, ResponseT> {
 
+  static final RetrySettings DEFAULT_QUERY_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelayDuration(Duration.ofMillis(100))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxRetryDelayDuration(Duration.ofMinutes(1))
+          .setInitialRpcTimeoutDuration(Duration.ofSeconds(30))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeoutDuration(Duration.ofSeconds(30))
+          .setTotalTimeoutDuration(Duration.ofMinutes(5))
+          .build();
+
   private final ResumableUploadClient<RequestT, ResponseT> client;
   private final ResumableUploadCallSettings defaultCallSettings;
   private final ClientContext clientContext;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      retryingQueryCallable;
 
   public ResumableUploadCallableImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
@@ -66,6 +86,17 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     this.defaultCallSettings =
         checkNotNull(defaultCallSettings, "defaultCallSettings must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
+
+    RetryAlgorithm<QueryStatusResponse<ResponseT>> queryRetryAlgorithm =
+        new RetryAlgorithm<>(
+            new ResumableUploadResultRetryAlgorithm<>(ResumableUploadCommand.QUERY),
+            new ExponentialRetryAlgorithm(DEFAULT_QUERY_RETRY_SETTINGS, clientContext.getClock()));
+
+    this.retryingQueryCallable =
+        new RetryingCallable<>(
+            clientContext.getDefaultCallContext(),
+            checkNotNull(client.queryStatusCallable(), "queryStatusCallable must not be null"),
+            new ScheduledRetryingExecutor<>(queryRetryAlgorithm, clientContext.getExecutor()));
   }
 
   @Override
@@ -89,6 +120,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     return ResumableUploadFutureImpl.create(
         startFuture,
         client.uploadChunkCallable(),
+        retryingQueryCallable,
         payload,
         effectiveSettings,
         clientContext.getDefaultCallContext(),

@@ -29,10 +29,12 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.api.gax.rpc.ResumableUploadCommand.QUERY;
 import static com.google.api.gax.rpc.ResumableUploadCommand.UPLOAD;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.io.IOException;
 import java.util.concurrent.CancellationException;
@@ -91,14 +93,41 @@ class ResumableUploadResultRetryAlgorithmTest {
   }
 
   @Test
-  void testShouldRetry_recoverableErrorReturnsFalse() {
-    // In G1/G4, only TRANSIENT is retried. RECOVERABLE errors fail the chunk attempt
-    // to trigger the query-status recovery loop rather than retrying blindly.
+  void testShouldRetry_recoverableErrorIsRetryable() {
     ResumableUploadResultRetryAlgorithm<String> algorithm =
         new ResumableUploadResultRetryAlgorithm<>(UPLOAD);
 
+    ApiException recoverable400 = createApiException(400, Code.INVALID_ARGUMENT);
+    ApiException recoverable409 = createApiException(409, Code.ABORTED);
     ApiException recoverable412 = createApiException(412, Code.FAILED_PRECONDITION);
-    assertThat(algorithm.shouldRetry(recoverable412, null)).isFalse();
+
+    assertThat(algorithm.shouldRetry(recoverable400, null)).isTrue();
+    assertThat(algorithm.shouldRetry(recoverable409, null)).isTrue();
+    assertThat(algorithm.shouldRetry(recoverable412, null)).isTrue();
+  }
+
+  @Test
+  void testShouldRetry_missingStatusHeaderOnChunkResponse_returnsTrueForUpload() {
+    ResumableUploadResultRetryAlgorithm<ChunkUploadResponse<String>> algorithm =
+        new ResumableUploadResultRetryAlgorithm<>(UPLOAD);
+
+    ChunkUploadResponse<String> responseWithNullStatus =
+        ChunkUploadResponse.create(false, "payload", null);
+    assertThat(algorithm.shouldRetry(null, responseWithNullStatus)).isTrue();
+
+    ChunkUploadResponse<String> responseWithActiveStatus =
+        ChunkUploadResponse.create(false, "payload", "active");
+    assertThat(algorithm.shouldRetry(null, responseWithActiveStatus)).isFalse();
+  }
+
+  @Test
+  void testShouldRetry_missingStatusHeaderOnChunkResponse_returnsFalseForQuery() {
+    ResumableUploadResultRetryAlgorithm<ChunkUploadResponse<String>> algorithm =
+        new ResumableUploadResultRetryAlgorithm<>(QUERY);
+
+    ChunkUploadResponse<String> responseWithNullStatus =
+        ChunkUploadResponse.create(false, "payload", null);
+    assertThat(algorithm.shouldRetry(null, responseWithNullStatus)).isFalse();
   }
 
   @Test

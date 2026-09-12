@@ -29,8 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category.RECOVERABLE;
 import static com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category.TRANSIENT;
 
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category;
 import java.util.Objects;
@@ -41,8 +43,9 @@ import org.jspecify.annotations.Nullable;
 /**
  * An adapter that integrates {@link ResumableUploadErrorClassifier} into GAX retrying machinery.
  *
- * <p>Only transient errors should retry with an identical request; other recoverable errors will
- * need to query the upload server to determine the appropriate next request.
+ * <p>Retries transient errors with the identical request and recoverable errors via session query
+ * and buffer realignment. Responses lacking an upload status header also enter recovery per
+ * protocol specification.
  *
  * @param <ResponseT> the response type of the upload attempt
  */
@@ -59,12 +62,18 @@ final class ResumableUploadResultRetryAlgorithm<ResponseT>
   @Override
   public boolean shouldRetry(
       @Nullable Throwable previousThrowable, @Nullable ResponseT previousResponse) {
-    // Successful commands (null throwable) and cancellations should not retry.
-    if (previousThrowable == null || previousThrowable instanceof CancellationException) {
+    if (previousThrowable instanceof CancellationException) {
       return false;
     }
-    Category category = ResumableUploadErrorClassifier.classify(previousThrowable, command);
-    // Transient errors are retried directly with the identical request.
-    return category == TRANSIENT;
+    Category category = null;
+    if (previousThrowable != null) {
+      category = ResumableUploadErrorClassifier.classify(previousThrowable, command);
+    } else if (previousResponse instanceof ChunkUploadResponse) {
+      ChunkUploadResponse<?> chunkResponse = (ChunkUploadResponse<?>) previousResponse;
+      if (chunkResponse.getUploadStatus() == null) {
+        category = ResumableUploadErrorClassifier.classifyMissingStatusHeader(command);
+      }
+    }
+    return category == TRANSIENT || category == RECOVERABLE;
   }
 }
