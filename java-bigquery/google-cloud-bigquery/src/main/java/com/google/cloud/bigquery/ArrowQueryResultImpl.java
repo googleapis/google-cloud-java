@@ -457,17 +457,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         lock.unlock();
       }
 
-      ReadRowsRequest request;
-      lock.lock();
-      try {
-        request =
-            ReadRowsRequest.newBuilder()
-                .setReadStream(streamName)
-                .setOffset(totalRowsYielded)
-                .build();
-      } finally {
-        lock.unlock();
-      }
+      ReadRowsRequest request =
+          ReadRowsRequest.newBuilder()
+              .setReadStream(streamName)
+              .setOffset(totalRowsYielded)
+              .build();
 
       ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
 
@@ -494,7 +488,15 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         if (deserializedBatch == null) {
           throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
-        ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+        boolean loaded = false;
+        try {
+          ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+          loaded = true;
+        } finally {
+          if (!loaded) {
+            deserializedBatch.close();
+          }
+        }
       }
     }
 
@@ -507,7 +509,15 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         if (deserializedBatch == null) {
           throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
-        ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+        boolean loaded = false;
+        try {
+          ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+          loaded = true;
+        } finally {
+          if (!loaded) {
+            deserializedBatch.close();
+          }
+        }
       }
     }
   }
