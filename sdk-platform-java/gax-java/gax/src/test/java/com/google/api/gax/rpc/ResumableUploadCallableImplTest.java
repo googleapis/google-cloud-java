@@ -46,6 +46,7 @@ import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -392,6 +393,226 @@ class ResumableUploadCallableImplTest {
     assertThrows(
         UnsupportedOperationException.class,
         () -> callable.resumeCall("https://upload.url/session", streamOf("data"), null));
+  }
+
+  @Test
+  void testStartRetry_transientFailureThenSuccess_retriesAndSucceeds() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/retry-ok")
+                    .build()));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done")));
+
+    ApiCallContext fastRetryContext =
+        FakeCallContext.createDefault()
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1))
+                    .setMaxRetryDelayDuration(java.time.Duration.ofMillis(5))
+                    .setTotalTimeoutDuration(java.time.Duration.ofSeconds(5))
+                    .build());
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), fastRetryContext, null);
+
+    assertThat(future.get()).isEqualTo("done");
+    verify(mockStartCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testStartRetry_fatalFailure_failsFastWithoutRetrying() {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(403, StatusCode.Code.PERMISSION_DENIED)));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    assertThat(((ApiException) exception.getCause()).getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.PERMISSION_DENIED);
+    verify(mockStartCallable, times(1)).futureCall(any(), any());
+    verifyNoInteractions(mockChunkCallable);
+  }
+
+  @Test
+  void testStartRetry_transientFailureExhaustion_failsAfterMaxAttempts() {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)));
+
+    ApiCallContext boundedRetryContext =
+        FakeCallContext.createDefault()
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setMaxAttempts(2)
+                    .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1))
+                    .setMaxRetryDelayDuration(java.time.Duration.ofMillis(5))
+                    .setTotalTimeoutDuration(java.time.Duration.ofSeconds(5))
+                    .build());
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), boundedRetryContext, null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    verify(mockStartCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testStartRetry_withRetrySettings_visiblyChangesTiming() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/timing-test")
+                    .build()));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-timing")));
+
+    com.google.api.gax.core.FakeApiClock clock = new com.google.api.gax.core.FakeApiClock(0L);
+    com.google.api.gax.core.RecordingScheduler recordingScheduler =
+        com.google.api.gax.core.RecordingScheduler.create(clock);
+    ClientContext timingClientContext =
+        ClientContext.newBuilder()
+            .setDefaultCallContext(callContext)
+            .setExecutor(recordingScheduler)
+            .setClock(clock)
+            .build();
+    ResumableUploadCallableImpl<String, String> timingCallable =
+        new ResumableUploadCallableImpl<>(mockClient, defaultSettings, timingClientContext);
+
+    ApiCallContext delayedRetryContext =
+        FakeCallContext.createDefault()
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setMaxAttempts(2)
+                    .setInitialRetryDelayDuration(java.time.Duration.ofMillis(120))
+                    .setMaxRetryDelayDuration(java.time.Duration.ofMillis(200))
+                    .setTotalTimeoutDuration(java.time.Duration.ofSeconds(5))
+                    .build());
+
+    ResumableUploadFuture<String> future =
+        timingCallable.futureCall("resource-path", streamOf("data"), delayedRetryContext, null);
+
+    assertThat(future.get()).isEqualTo("done-timing");
+    assertThat(recordingScheduler.getSleepDurations()).isNotEmpty();
+    assertThat(recordingScheduler.getSleepDurations().get(0).toMillis()).isGreaterThan(0L);
+    assertThat(recordingScheduler.getIterationsCount()).isAtLeast(1);
+    verify(mockStartCallable, times(2)).futureCall(any(), any());
+    recordingScheduler.shutdownNow();
+  }
+
+  @Test
+  void testStartRetry_withRetryableCodes_doesNotChangeClassification() throws Exception {
+    // 1. Setting PERMISSION_DENIED as retryable in context does NOT make 403 retryable
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(403, StatusCode.Code.PERMISSION_DENIED)));
+
+    ApiCallContext contextWith403 =
+        FakeCallContext.createDefault()
+            .withRetryableCodes(java.util.Collections.singleton(StatusCode.Code.PERMISSION_DENIED));
+
+    ResumableUploadFuture<String> future1 =
+        callable.futureCall("resource-path", streamOf("data"), contextWith403, null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future1::get);
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    verify(mockStartCallable, times(1)).futureCall(any(), any());
+
+    // 2. Setting empty retryable codes does NOT prevent 503 from being retried
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/retry-empty")
+                    .build()));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-empty")));
+
+    ApiCallContext contextWithEmptyCodes =
+        FakeCallContext.createDefault()
+            .withRetryableCodes(java.util.Collections.emptySet())
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1))
+                    .setMaxRetryDelayDuration(java.time.Duration.ofMillis(5))
+                    .setTotalTimeoutDuration(java.time.Duration.ofSeconds(5))
+                    .build());
+
+    ResumableUploadFuture<String> future2 =
+        callable.futureCall("resource-path", streamOf("data"), contextWithEmptyCodes, null);
+
+    assertThat(future2.get()).isEqualTo("done-empty");
+    verify(mockStartCallable, times(3)).futureCall(any(), any());
+  }
+
+  @Test
+  void testStartRetry_cancellationDuringBackoff_deschedulesPendingAttempt() {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/should-not-reach")
+                    .build()));
+
+    ApiCallContext slowRetryContext =
+        FakeCallContext.createDefault()
+            .withRetrySettings(
+                RetrySettings.newBuilder()
+                    .setInitialRetryDelayDuration(java.time.Duration.ofMinutes(10))
+                    .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(10))
+                    .setTotalTimeoutDuration(java.time.Duration.ofMinutes(30))
+                    .build());
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), slowRetryContext, null);
+
+    assertThat(future.cancel(true)).isTrue();
+    assertThat(future.isCancelled()).isTrue();
+    assertThrows(CancellationException.class, future::get);
+
+    verify(mockStartCallable, times(1)).futureCall(any(), any());
+  }
+
+  private static class HttpStatusStatusCode implements StatusCode {
+    private final int httpStatus;
+    private final StatusCode.Code code;
+
+    HttpStatusStatusCode(int httpStatus, StatusCode.Code code) {
+      this.httpStatus = httpStatus;
+      this.code = code;
+    }
+
+    @Override
+    public StatusCode.Code getCode() {
+      return code;
+    }
+
+    @Override
+    public Integer getTransportCode() {
+      return httpStatus;
+    }
+  }
+
+  private static ApiException createApiException(int httpStatus, StatusCode.Code code) {
+    return ApiExceptionFactory.createException(
+        "HTTP " + httpStatus, null, new HttpStatusStatusCode(httpStatus, code), false);
   }
 
   private void stubStartSession(String uploadUrl) {
