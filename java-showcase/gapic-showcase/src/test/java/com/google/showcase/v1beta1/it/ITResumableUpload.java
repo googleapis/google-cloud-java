@@ -496,6 +496,111 @@ class ITResumableUpload {
     }
   }
 
+  @Test
+  void testChunkRecovery_nonFatalError400OnChunkUpload_recoversAndSucceeds(@TempDir Path tempDir)
+      throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":400,\"failure_count\":1,"
+                        + "\"after_offset\":0}",
+                    clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-chunk-recovery-success.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-chunk-recovery-success.txt").build();
+
+    List<ResumableUploadStatus> reportedStatuses = new CopyOnWriteArrayList<>();
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(
+                  request,
+                  stream,
+                  callContext,
+                  ResumableUploadCallSettings.newBuilder()
+                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                      .build());
+      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(response.getName()).isEqualTo("it-chunk-recovery-success.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+
+      List<ResumableUploadStatus.State> states = new ArrayList<>();
+      for (ResumableUploadStatus s : reportedStatuses) {
+        states.add(s.getState());
+      }
+      assertThat(states).contains(ResumableUploadStatus.State.RECOVERING);
+      assertThat(states).contains(ResumableUploadStatus.State.OFFSET_RECEIVED);
+      assertThat(states).contains(ResumableUploadStatus.State.FINALIZED);
+    }
+  }
+
+  @Test
+  void testChunkRecovery_nonFatalError400OnFinalChunk_recoversAndFinalizes(@TempDir Path tempDir)
+      throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    int afterOffset = 2 * SHOWCASE_CHUNK_SIZE; // 512KB, start of the 3rd (final) chunk
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":400,\"failure_count\":1,"
+                        + "\"after_offset\":%d}",
+                    clientUuid, afterOffset)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-chunk-recovery-final-chunk.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-chunk-recovery-final-chunk.txt").build();
+
+    List<ResumableUploadStatus> reportedStatuses = new CopyOnWriteArrayList<>();
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(
+                  request,
+                  stream,
+                  callContext,
+                  ResumableUploadCallSettings.newBuilder()
+                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                      .build());
+      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(response.getName()).isEqualTo("it-chunk-recovery-final-chunk.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+
+      List<ResumableUploadStatus.State> states = new ArrayList<>();
+      for (ResumableUploadStatus s : reportedStatuses) {
+        states.add(s.getState());
+      }
+      assertThat(states).contains(ResumableUploadStatus.State.RECOVERING);
+      assertThat(states).contains(ResumableUploadStatus.State.OFFSET_RECEIVED);
+      assertThat(states).contains(ResumableUploadStatus.State.FINALIZED);
+    }
+  }
+
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {
     Path path = dir.resolve(fileName);
     Files.write(path, data);
