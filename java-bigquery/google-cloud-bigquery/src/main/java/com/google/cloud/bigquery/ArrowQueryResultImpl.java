@@ -431,13 +431,9 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
 
     private void ensureStreamInitialized() {
-      long offset;
       lock.lock();
       try {
-        if (streamInitialized) {
-          return;
-        }
-        if (closed) {
+        if (streamInitialized || closed) {
           return;
         }
         if (totalRows >= 0 && totalRowsYielded >= totalRows && yieldedInitialBatch) {
@@ -458,22 +454,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           streamInitialized = true;
           return;
         }
-        offset = totalRowsYielded;
-      } finally {
-        lock.unlock();
-      }
+        long offset = totalRowsYielded;
+        ReadRowsRequest request =
+            ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
 
-      ReadRowsRequest request =
-          ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
-
-      ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
-
-      lock.lock();
-      try {
-        if (closed) {
-          stream.cancel();
-          return;
-        }
+        ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
         serverStream = stream;
         streamIterator = stream.iterator();
         streamInitialized = true;
