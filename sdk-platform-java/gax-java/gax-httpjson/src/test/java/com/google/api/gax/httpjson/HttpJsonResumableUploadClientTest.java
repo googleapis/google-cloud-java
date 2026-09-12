@@ -566,7 +566,9 @@ class HttpJsonResumableUploadClientTest {
     UnavailableException ex =
         assertThrows(UnavailableException.class, () -> client.queryStatusCallable().call(request));
     assertThat(ex.isRetryable()).isFalse();
-    assertThat(ex).hasMessageThat().contains("Server terminated upload session with HTTP status: 503");
+    assertThat(ex)
+        .hasMessageThat()
+        .contains("Server terminated upload session with HTTP status: 503");
     assertThat(ex.getStatusCode()).isInstanceOf(ResumableUploadStatusCode.class);
     assertThat(((ResumableUploadStatusCode) ex.getStatusCode()).getUploadStatus())
         .isEqualTo(ResumableUploadStatus.FINAL);

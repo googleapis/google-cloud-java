@@ -39,8 +39,8 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * A {@link StatusCode} that preserves the transport status code of a failed resumable upload command
- * and carries the {@code X-Goog-Upload-Status} header value from the response.
+ * A {@link StatusCode} that preserves the transport status code of a failed resumable upload
+ * command and carries the {@code X-Goog-Upload-Status} header value from the response.
  *
  * <p>Used to propagate a server rejection (a non-2xx response with {@code X-Goog-Upload-Status:
  * final}) from the transport layer to the resumable upload retry logic, so that the rejection is

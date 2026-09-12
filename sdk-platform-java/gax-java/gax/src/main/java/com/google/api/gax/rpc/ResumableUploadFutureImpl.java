@@ -210,10 +210,9 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private void onTimeout() {
-    String sessionUrl = uploadSessionUrl;
     String message;
-    if (sessionUrl != null) {
-      message = "Resumable upload timed out for session: " + sessionUrl;
+    if (uploadSessionUrl != null) {
+      message = "Resumable upload timed out";
     } else {
       message = "Resumable upload timed out before session initiation completed";
     }
@@ -243,9 +242,45 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     if (inFlight != null) {
       inFlight.cancel(true);
     }
+    Throwable terminal = toTerminalException(t);
     progressTracker.onFailed();
-    closePayload();
-    resultFuture.setException(t);
+    try {
+      payload.close();
+    } catch (Throwable closeException) {
+      terminal.addSuppressed(closeException);
+    }
+    resultFuture.setException(terminal);
+  }
+
+  private Throwable toTerminalException(Throwable t) {
+    String url = uploadSessionUrl;
+    if (t instanceof ApiException && url == null) {
+      return t;
+    }
+    String message = firstNonNull(t.getMessage(), t.getClass().getSimpleName());
+    if (url != null) {
+      message = message + " (upload URL: " + url + ")";
+    }
+    ApiException terminal;
+    if (t instanceof ApiException) {
+      ApiException apiException = (ApiException) t;
+      terminal =
+          ApiExceptionFactory.createException(
+              message,
+              apiException,
+              apiException.getStatusCode(),
+              apiException.isRetryable(),
+              apiException.getErrorDetails());
+    } else if (t instanceof IllegalStateException) {
+      terminal =
+          new FailedPreconditionException(message, t, FAILED_PRECONDITION_STATUS_CODE, false);
+    } else {
+      terminal = ApiExceptionFactory.createException(message, t, UNKNOWN_STATUS_CODE, false);
+    }
+    for (Throwable suppressed : t.getSuppressed()) {
+      terminal.addSuppressed(suppressed);
+    }
+    return terminal;
   }
 
   private void closePayload() {
@@ -322,6 +357,32 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
         @Override
         public StatusCode.Code getCode() {
           return StatusCode.Code.DEADLINE_EXCEEDED;
+        }
+
+        @Override
+        public @Nullable Object getTransportCode() {
+          return null;
+        }
+      };
+
+  private static final StatusCode FAILED_PRECONDITION_STATUS_CODE =
+      new StatusCode() {
+        @Override
+        public StatusCode.Code getCode() {
+          return StatusCode.Code.FAILED_PRECONDITION;
+        }
+
+        @Override
+        public @Nullable Object getTransportCode() {
+          return null;
+        }
+      };
+
+  private static final StatusCode UNKNOWN_STATUS_CODE =
+      new StatusCode() {
+        @Override
+        public StatusCode.Code getCode() {
+          return StatusCode.Code.UNKNOWN;
         }
 
         @Override

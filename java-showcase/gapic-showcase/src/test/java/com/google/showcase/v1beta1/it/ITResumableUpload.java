@@ -277,6 +277,7 @@ class ITResumableUpload {
       assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
       NotFoundException notFoundException = (NotFoundException) exception.getCause();
       assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
+      assertThat(notFoundException.getMessage()).contains(future.getUploadSessionUrl());
     }
   }
 
