@@ -52,6 +52,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private final BufferAllocator allocator;
   private final VectorSchemaRoot root;
   private final VectorLoader loader;
+  private ArrowRecordBatch currentRecordBatch;
 
   private final ReentrantLock lock = new ReentrantLock();
   private boolean closed = false;
@@ -200,6 +201,18 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           firstException = t;
         }
       }
+      if (currentRecordBatch != null) {
+        try {
+          currentRecordBatch.close();
+          currentRecordBatch = null;
+        } catch (Throwable t) {
+          if (firstException == null) {
+            firstException = t;
+          } else {
+            firstException.addSuppressed(t);
+          }
+        }
+      }
       if (root != null) {
         try {
           root.close();
@@ -237,6 +250,20 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private void checkNotClosed() {
     if (closed) {
       throw new IllegalStateException("ArrowQueryResult has already been closed");
+    }
+  }
+
+  void loadBatch(ArrowRecordBatch newBatch) {
+    lock.lock();
+    try {
+      checkNotClosed();
+      if (currentRecordBatch != null) {
+        currentRecordBatch.close();
+      }
+      currentRecordBatch = newBatch;
+      loader.load(currentRecordBatch);
+    } finally {
+      lock.unlock();
     }
   }
 
@@ -334,10 +361,10 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
       if (initialBytes != null) {
         try {
+          loadBatch(initialBytes);
           lock.lock();
           try {
             checkNotClosed();
-            loadBatch(initialBytes);
             totalRowsYielded += root.getRowCount();
             return root;
           } finally {
@@ -377,10 +404,10 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
             targetResponse.getArrowRecordBatch();
         try {
+          loadBatch(batch.getSerializedRecordBatch());
           lock.lock();
           try {
             checkNotClosed();
-            loadBatch(batch.getSerializedRecordBatch());
             totalRowsYielded += root.getRowCount();
             return root;
           } finally {
@@ -461,26 +488,26 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     private void loadBatch(byte[] bytes) throws IOException {
       try (ByteArrayReadableSeekableByteChannel byteChannel =
               new ByteArrayReadableSeekableByteChannel(bytes);
-          ReadChannel readChannel = new ReadChannel(byteChannel);
-          ArrowRecordBatch deserializedBatch =
-              MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
+          ReadChannel readChannel = new ReadChannel(byteChannel)) {
+        ArrowRecordBatch deserializedBatch =
+            MessageSerializer.deserializeRecordBatch(readChannel, allocator);
         if (deserializedBatch == null) {
           throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
-        loader.load(deserializedBatch);
+        ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
       }
     }
 
     private void loadBatch(com.google.protobuf.ByteString byteString) throws IOException {
       try (java.nio.channels.ReadableByteChannel channel =
               java.nio.channels.Channels.newChannel(byteString.newInput());
-          ReadChannel readChannel = new ReadChannel(channel);
-          ArrowRecordBatch deserializedBatch =
-              MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
+          ReadChannel readChannel = new ReadChannel(channel)) {
+        ArrowRecordBatch deserializedBatch =
+            MessageSerializer.deserializeRecordBatch(readChannel, allocator);
         if (deserializedBatch == null) {
           throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
-        loader.load(deserializedBatch);
+        ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
       }
     }
   }
