@@ -64,7 +64,7 @@ final class UploadResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgori
     if (previousThrowable instanceof CancellationException) {
       return false;
     }
-    UploadErrorCategory category = null;
+    UploadErrorClassifier.Category category = null;
     if (previousThrowable != null) {
       category = UploadErrorClassifier.classify(previousThrowable, command);
     } else if (previousResponse instanceof ChunkUploadResponse) {
@@ -78,7 +78,8 @@ final class UploadResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgori
         category = UploadErrorClassifier.classifyMissingStatusHeader(command);
       }
     }
-    return category == UploadErrorCategory.TRANSIENT || category == UploadErrorCategory.RECOVERABLE;
+    return category == UploadErrorClassifier.Category.TRANSIENT
+        || category == UploadErrorClassifier.Category.RECOVERABLE;
   }
 
   @Override

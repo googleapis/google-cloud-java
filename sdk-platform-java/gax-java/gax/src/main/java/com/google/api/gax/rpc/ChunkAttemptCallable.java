@@ -124,13 +124,14 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
 
   private boolean needsRecovery() {
     if (lastFailure != null) {
-      UploadErrorCategory category = UploadErrorClassifier.classify(lastFailure, currentCommand);
-      return category == UploadErrorCategory.RECOVERABLE;
+      UploadErrorClassifier.Category category =
+          UploadErrorClassifier.classify(lastFailure, currentCommand);
+      return category == UploadErrorClassifier.Category.RECOVERABLE;
     }
     if (lastResponse != null && lastResponse.getUploadStatus() == null) {
-      UploadErrorCategory category =
+      UploadErrorClassifier.Category category =
           UploadErrorClassifier.classifyMissingStatusHeader(currentCommand);
-      return category == UploadErrorCategory.RECOVERABLE;
+      return category == UploadErrorClassifier.Category.RECOVERABLE;
     }
     return false;
   }

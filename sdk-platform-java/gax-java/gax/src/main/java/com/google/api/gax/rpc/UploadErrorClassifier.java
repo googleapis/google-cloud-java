@@ -38,128 +38,99 @@ import org.jspecify.annotations.Nullable;
 /**
  * Classifies exceptions encountered during resumable upload commands into protocol error
  * categories.
- *
- * <p>Implements the normative 5-step classification order:
- *
- * <ol>
- *   <li>Non-retryable sentinels by type (e.g. rewind below buffer base, session watchdog timeout).
- *   <li>{@link CancellationException} (propagated or terminal, never retried).
- *   <li>{@link ApiException} with {@code StatusCode.Code.UNKNOWN} (unwrap cause; ignore synthetic
- *       HTTP 500 transport code).
- *   <li>Standard table lookup on raw HTTP transport code.
- *   <li>Plain I/O or timeout exceptions (transient), anything else fatal.
- * </ol>
  */
 @NullMarked
 final class UploadErrorClassifier {
 
-  private static final ImmutableMap<Integer, UploadErrorCategory> HTTP_STATUS_MAP =
-      ImmutableMap.<Integer, UploadErrorCategory>builder()
-          // Category 1: Transient - retry identical request with backoff
-          // 408 Request Timeout: connection drop or socket timeout during request transmission
-          .put(408, UploadErrorCategory.TRANSIENT)
-          // 429 Too Many Requests: server-side rate limiting or throttling
-          .put(429, UploadErrorCategory.TRANSIENT)
-          // 500 Internal Server Error: transient server-side error
-          .put(500, UploadErrorCategory.TRANSIENT)
-          // 502 Bad Gateway: transient intermediate proxy or gateway error
-          .put(502, UploadErrorCategory.TRANSIENT)
-          // 503 Service Unavailable: transient server overload or temporary maintenance
-          .put(503, UploadErrorCategory.TRANSIENT)
-          // 504 Gateway Timeout: transient upstream gateway timeout
-          .put(504, UploadErrorCategory.TRANSIENT)
+  enum Category {
+    TRANSIENT,
+    RECOVERABLE,
+    FATAL
+  }
 
-          // Category 2: Recoverable - query status to realign buffer offset before resending
-          // 400 Bad Request: wrong offset or unaligned chunk boundary from upload server
-          .put(400, UploadErrorCategory.RECOVERABLE)
-          // 409 Conflict: offset mismatch between client and server
-          .put(409, UploadErrorCategory.RECOVERABLE)
-          // 412 Precondition Failed: upload session state precondition mismatch
-          .put(412, UploadErrorCategory.RECOVERABLE)
-          // 416 Range Not Satisfiable: chunk byte range out of server bounds
-          .put(416, UploadErrorCategory.RECOVERABLE)
-
-          // Category 3: Fatal - bubble up to fail the upload session immediately
-          // 401 Unauthorized: unauthenticated caller or invalid credentials
-          .put(401, UploadErrorCategory.FATAL)
-          // 403 Forbidden: caller lacks required permissions
-          .put(403, UploadErrorCategory.FATAL)
-          // 404 Not Found: upload session URL expired, unknown, or resource deleted
-          .put(404, UploadErrorCategory.FATAL)
-          // 405 Method Not Allowed: unsupported HTTP method
-          .put(405, UploadErrorCategory.FATAL)
-          // 410 Gone: upload session permanently expired or cancelled
-          .put(410, UploadErrorCategory.FATAL)
-          // 413 Payload Too Large: payload size exceeds maximum allowed upload size
-          .put(413, UploadErrorCategory.FATAL)
-          // 415 Unsupported Media Type: payload media type rejected by server
-          .put(415, UploadErrorCategory.FATAL)
+  private static final ImmutableMap<Integer, Category> HTTP_STATUS_MAP =
+      ImmutableMap.<Integer, Category>builder()
+          .put(408, Category.TRANSIENT)
+          .put(429, Category.TRANSIENT)
+          .put(500, Category.TRANSIENT)
+          .put(502, Category.TRANSIENT)
+          .put(503, Category.TRANSIENT)
+          .put(504, Category.TRANSIENT)
+          .put(400, Category.RECOVERABLE)
+          .put(409, Category.RECOVERABLE)
+          .put(412, Category.RECOVERABLE)
+          .put(416, Category.RECOVERABLE)
+          .put(401, Category.FATAL)
+          .put(403, Category.FATAL)
+          .put(404, Category.FATAL)
+          .put(405, Category.FATAL)
+          .put(410, Category.FATAL)
+          .put(413, Category.FATAL)
+          .put(415, Category.FATAL)
           .build();
 
   private UploadErrorClassifier() {}
 
   /**
-   * Classifies an exception for the given upload command according to the normative classification
-   * order.
+   * Classifies an exception for the given upload command according to protocol rules.
    *
    * @param t the error to classify
    * @param command the upload command that produced the error
    * @return the classified error category
    */
-  static UploadErrorCategory classify(@Nullable Throwable t, UploadCommand command) {
+  static Category classify(@Nullable Throwable t, UploadCommand command) {
     if (t == null) {
-      return UploadErrorCategory.FATAL;
+      return Category.FATAL;
     }
 
-    // Step 1: Non-retryable sentinels by type before inspecting status codes.
+    // Non-retryable sentinels by type before inspecting status codes.
     if (t instanceof UploadProtocolViolationException
         || t instanceof ResumableUploadTimeoutException) {
-      return UploadErrorCategory.FATAL;
+      return Category.FATAL;
     }
 
-    // Step 2: CancellationException -> terminal, do not classify as retryable.
+    // Cancellation is terminal and never retryable.
     if (t instanceof CancellationException) {
-      return UploadErrorCategory.FATAL;
+      return Category.FATAL;
     }
 
-    // Steps 3 & 4: ApiException handling.
+    // Handle ApiExceptions.
     if (t instanceof ApiException) {
       ApiException apiException = (ApiException) t;
 
-      // Step 3: ApiException with Code.UNKNOWN -> ignore the transport code entirely.
-      // GAX transforms unrecognised throwables into Code.UNKNOWN, which carries a synthetic
-      // HTTP transport code 500. Without this step, internal bugs and NPEs would be misclassified
-      // as Cat 1 and retried indefinitely. Real HTTP 500 responses arrive with Code.INTERNAL.
+      // Code.UNKNOWN indicates an unrecognised throwable where synthetic HTTP 500
+      // should be ignored.
+      // Real HTTP 500 responses arrive with Code.INTERNAL.
       if (apiException.getStatusCode().getCode() == StatusCode.Code.UNKNOWN) {
         Throwable cause = apiException.getCause();
         if (cause instanceof IOException) {
-          return UploadErrorCategory.TRANSIENT;
+          return Category.TRANSIENT;
         }
-        return UploadErrorCategory.FATAL;
+        return Category.FATAL;
       }
 
-      // Step 4: Table lookup on raw HTTP transport code.
+      // Status table lookup on raw HTTP transport code.
       Object transportCode = apiException.getStatusCode().getTransportCode();
       if (transportCode instanceof Integer) {
-        UploadErrorCategory category = HTTP_STATUS_MAP.get(transportCode);
+        Category category = HTTP_STATUS_MAP.get(transportCode);
         if (category != null) {
           // The START command cannot enter recovery since no upload session exists yet.
-          if (command == UploadCommand.START && category == UploadErrorCategory.RECOVERABLE) {
-            return UploadErrorCategory.FATAL;
+          if (command == UploadCommand.START && category == Category.RECOVERABLE) {
+            return Category.FATAL;
           }
           return category;
         }
       }
-      return UploadErrorCategory.FATAL;
+      return Category.FATAL;
     }
 
-    // Step 5: Plain I/O or timeout exceptions that bypassed ApiException wrapping.
+    // Plain I/O or timeout exceptions that bypassed ApiException wrapping.
     if (t instanceof IOException) {
-      return UploadErrorCategory.TRANSIENT;
+      return Category.TRANSIENT;
     }
 
-    // Anything else unrecognized -> FATAL. Never default to retryable.
-    return UploadErrorCategory.FATAL;
+    // Unrecognized errors fail the upload immediately. Never default to retryable.
+    return Category.FATAL;
   }
 
   /**
@@ -168,18 +139,18 @@ final class UploadErrorClassifier {
    * @param command the upload command that received a response lacking the status header
    * @return the classified error category
    */
-  static UploadErrorCategory classifyMissingStatusHeader(UploadCommand command) {
+  static Category classifyMissingStatusHeader(UploadCommand command) {
     switch (command) {
       case START:
-        return UploadErrorCategory.TRANSIENT;
+        return Category.TRANSIENT;
       case UPLOAD:
       case FINALIZE:
       case UPLOAD_FINALIZE:
-        return UploadErrorCategory.RECOVERABLE;
+        return Category.RECOVERABLE;
       case QUERY:
       case CANCEL:
       default:
-        return UploadErrorCategory.FATAL;
+        return Category.FATAL;
     }
   }
 }

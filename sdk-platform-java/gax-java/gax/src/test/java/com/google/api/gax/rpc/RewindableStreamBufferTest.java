@@ -154,10 +154,12 @@ class RewindableStreamBufferTest {
     assertThat(exception.getMessage()).contains("4");
     assertThat(exception.getMessage()).contains("8");
     assertThat(exception.getMessage()).contains(UPLOAD_URL);
+    assertThat(exception.getMessage()).contains("seekable stream");
 
     // Must be classified as FATAL by UploadErrorClassifier
-    UploadErrorCategory category = UploadErrorClassifier.classify(exception, UploadCommand.UPLOAD);
-    assertThat(category).isEqualTo(UploadErrorCategory.FATAL);
+    UploadErrorClassifier.Category category =
+        UploadErrorClassifier.classify(exception, UploadCommand.UPLOAD);
+    assertThat(category).isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 
   @Test
@@ -181,8 +183,9 @@ class RewindableStreamBufferTest {
     assertThat(exception.getMessage()).contains(UPLOAD_URL);
 
     // Must be classified as FATAL by UploadErrorClassifier
-    UploadErrorCategory category = UploadErrorClassifier.classify(exception, UploadCommand.UPLOAD);
-    assertThat(category).isEqualTo(UploadErrorCategory.FATAL);
+    UploadErrorClassifier.Category category =
+        UploadErrorClassifier.classify(exception, UploadCommand.UPLOAD);
+    assertThat(category).isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 
   @Test

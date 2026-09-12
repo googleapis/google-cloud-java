@@ -215,7 +215,10 @@ class UploadProgressTracker {
     try {
       listener.onProgress(status);
     } catch (Throwable t) {
-      LOG.log(Level.WARNING, "Exception thrown by ResumableUploadProgressListener", t);
+      LOG.log(
+          Level.WARNING,
+          "Exception thrown by ResumableUploadProgressListener: " + listener.getClass().getName(),
+          t);
     }
   }
 }

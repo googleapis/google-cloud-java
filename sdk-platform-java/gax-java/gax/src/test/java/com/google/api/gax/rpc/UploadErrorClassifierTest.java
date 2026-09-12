@@ -171,8 +171,8 @@ class UploadErrorClassifierTest {
     }
 
     ApiException exception = createApiException(httpStatus, code);
-    UploadErrorCategory result = UploadErrorClassifier.classify(exception, command);
-    assertThat(result).isEqualTo(UploadErrorCategory.valueOf(expectedCategory));
+    UploadErrorClassifier.Category result = UploadErrorClassifier.classify(exception, command);
+    assertThat(result).isEqualTo(UploadErrorClassifier.Category.valueOf(expectedCategory));
   }
 
   @Test
@@ -184,9 +184,9 @@ class UploadErrorClassifierTest {
 
     assertThat(error408.getStatusCode().getCode()).isEqualTo(error412.getStatusCode().getCode());
     assertThat(UploadErrorClassifier.classify(error408, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
     assertThat(UploadErrorClassifier.classify(error412, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.RECOVERABLE);
+        .isEqualTo(UploadErrorClassifier.Category.RECOVERABLE);
   }
 
   @Test
@@ -196,14 +196,14 @@ class UploadErrorClassifierTest {
     // Real wire 500 arrives with Code.INTERNAL and transport code 500.
     ApiException real500 = createApiException(500, Code.INTERNAL);
     assertThat(UploadErrorClassifier.classify(real500, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
 
     // Synthetic 500 from an unrecognised runtime exception arrives with Code.UNKNOWN
     // and synthetic transport code 500. It must be FATAL, not TRANSIENT.
     ApiException synthetic500 =
         createApiExceptionWithCause(500, Code.UNKNOWN, new IllegalStateException("local bug"));
     assertThat(UploadErrorClassifier.classify(synthetic500, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 
   @Test
@@ -213,22 +213,22 @@ class UploadErrorClassifierTest {
     ApiException wrappedIo =
         createApiExceptionWithCause(500, Code.UNKNOWN, new IOException("connection reset"));
     assertThat(UploadErrorClassifier.classify(wrappedIo, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
 
     ApiException wrappedTimeout =
         createApiExceptionWithCause(500, Code.UNKNOWN, new SocketTimeoutException("read timeout"));
     assertThat(UploadErrorClassifier.classify(wrappedTimeout, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
   }
 
   @Test
   void testUnwrappedIoAndTimeoutExceptionsAreTransient() {
     assertThat(UploadErrorClassifier.classify(new IOException("broken pipe"), UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
     assertThat(
             UploadErrorClassifier.classify(
                 new SocketTimeoutException("connect timeout"), UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
   }
 
   @Test
@@ -237,12 +237,12 @@ class UploadErrorClassifierTest {
     assertThat(
             UploadErrorClassifier.classify(
                 new UploadProtocolViolationException("Buffer underflow"), UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
 
     assertThat(
             UploadErrorClassifier.classify(
                 new ResumableUploadTimeoutException("Session expired"), UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
 
     // Watchdog DeadlineExceededException without wire transport code is FATAL
     DeadlineExceededException watchdogDeadline =
@@ -262,24 +262,24 @@ class UploadErrorClassifierTest {
             },
             false);
     assertThat(UploadErrorClassifier.classify(watchdogDeadline, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
 
     // Wire 504 Gateway Timeout carries transport code 504 and is TRANSIENT
     ApiException wire504 = createApiException(504, Code.DEADLINE_EXCEEDED);
     assertThat(UploadErrorClassifier.classify(wire504, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
 
     // CancellationException is fatal
     assertThat(
             UploadErrorClassifier.classify(
                 new CancellationException("upload cancelled"), UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 
   @Test
   void testDegenerateInputsAreFatal() {
     assertThat(UploadErrorClassifier.classify(null, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
 
     // Object transport code that is not Integer
     StatusCode nonIntegerTransportCode =
@@ -297,22 +297,22 @@ class UploadErrorClassifierTest {
     ApiException nonIntegerException =
         ApiExceptionFactory.createException("custom", null, nonIntegerTransportCode, false);
     assertThat(UploadErrorClassifier.classify(nonIntegerException, UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 
   @Test
   void testMissingStatusHeaderPerCommand() {
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.START))
-        .isEqualTo(UploadErrorCategory.TRANSIENT);
+        .isEqualTo(UploadErrorClassifier.Category.TRANSIENT);
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.UPLOAD))
-        .isEqualTo(UploadErrorCategory.RECOVERABLE);
+        .isEqualTo(UploadErrorClassifier.Category.RECOVERABLE);
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.FINALIZE))
-        .isEqualTo(UploadErrorCategory.RECOVERABLE);
+        .isEqualTo(UploadErrorClassifier.Category.RECOVERABLE);
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.UPLOAD_FINALIZE))
-        .isEqualTo(UploadErrorCategory.RECOVERABLE);
+        .isEqualTo(UploadErrorClassifier.Category.RECOVERABLE);
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.QUERY))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
     assertThat(UploadErrorClassifier.classifyMissingStatusHeader(UploadCommand.CANCEL))
-        .isEqualTo(UploadErrorCategory.FATAL);
+        .isEqualTo(UploadErrorClassifier.Category.FATAL);
   }
 }

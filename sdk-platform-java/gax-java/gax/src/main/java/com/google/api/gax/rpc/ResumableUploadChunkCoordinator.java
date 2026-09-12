@@ -119,28 +119,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       ResumableUploadCallSettings settings,
       ApiCallContext callContext,
       ClientContext clientContext) {
-    this(
-        result,
-        startFuture,
-        uploadChunkCallable,
-        queryStatusCallable,
-        payload,
-        settings,
-        callContext,
-        clientContext,
-        DEFAULT_CHUNK_RETRY_SETTINGS);
-  }
-
-  ResumableUploadChunkCoordinator(
-      SettableApiFuture<ResponseT> result,
-      ApiFuture<ResumableUploadSession> startFuture,
-      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
-      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
-      InputStream payload,
-      ResumableUploadCallSettings settings,
-      ApiCallContext callContext,
-      ClientContext clientContext,
-      RetrySettings chunkRetrySettings) {
     this.result = checkNotNull(result, "result must not be null");
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
     this.uploadChunkCallable =
@@ -153,11 +131,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.chunkSize = settings.getChunkSize();
     this.callContext = checkNotNull(callContext, "callContext must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
-    this.chunkRetrySettings =
-        checkNotNull(chunkRetrySettings, "chunkRetrySettings must not be null");
-    synchronized (lock) {
-      this.inFlightFuture = startFuture;
-    }
+    this.chunkRetrySettings = DEFAULT_CHUNK_RETRY_SETTINGS;
+    this.inFlightFuture = startFuture;
   }
 
   void start() {
@@ -179,10 +154,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         new ApiFutureCallback<ResumableUploadSession>() {
           @Override
           public void onSuccess(ResumableUploadSession session) {
-            synchronized (lock) {
-              if (done) {
-                return;
-              }
+            if (isDone()) {
+              return;
             }
             uploadSessionUrl = session.getUploadUrl();
             progressTracker.onStarted(uploadSessionUrl);
@@ -209,12 +182,13 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     return progressTracker.getStatus();
   }
 
-  private void onTimeout() {
+  private boolean isDone() {
     synchronized (lock) {
-      if (done) {
-        return;
-      }
+      return done;
     }
+  }
+
+  private void onTimeout() {
     Duration timeout = settings.getGlobalTimeout();
     Duration effectiveTimeout = timeout != null ? timeout : Duration.ZERO;
     finish(null, new ResumableUploadTimeoutException(uploadSessionUrl, effectiveTimeout));
@@ -291,21 +265,56 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       progressTracker.onFinalized(totalBytes);
       result.set(response);
     } else {
-      progressTracker.onFailed(error, uploadSessionUrl);
+      Throwable augmented = augmentWithUrl(error);
       if (closeError != null) {
-        error.addSuppressed(closeError);
+        augmented.addSuppressed(closeError);
       }
-      result.setException(error);
+      progressTracker.onFailed(augmented, uploadSessionUrl);
+      result.setException(augmented);
     }
   }
 
-  private @Nullable IOException closePayload() {
-    synchronized (lock) {
-      if (payloadClosed) {
-        return null;
-      }
-      payloadClosed = true;
+  private Throwable augmentWithUrl(Throwable t) {
+    if (t instanceof ResumableUploadTimeoutException
+        || t instanceof UploadProtocolViolationException) {
+      return t;
     }
+    String url = uploadSessionUrl != null ? uploadSessionUrl : clientContext.getEndpoint();
+    if (url == null || url.isEmpty()) {
+      return t;
+    }
+    String message = t.getMessage();
+    String label = uploadSessionUrl != null ? "upload URL: " : "endpoint: ";
+    String augmentedMessage =
+        (message != null ? message : t.getClass().getSimpleName()) + " (" + label + url + ")";
+    Throwable augmented = t;
+    if (t instanceof ApiException) {
+      ApiException apiException = (ApiException) t;
+      augmented =
+          ApiExceptionFactory.createException(
+              augmentedMessage,
+              apiException.getCause(),
+              apiException.getStatusCode(),
+              apiException.isRetryable(),
+              apiException.getErrorDetails());
+    } else if (t instanceof IllegalStateException) {
+      augmented = new IllegalStateException(augmentedMessage, t.getCause());
+    } else if (t instanceof IOException) {
+      augmented = new IOException(augmentedMessage, t.getCause());
+    }
+    if (augmented != t) {
+      for (Throwable suppressed : t.getSuppressed()) {
+        augmented.addSuppressed(suppressed);
+      }
+    }
+    return augmented;
+  }
+
+  private @Nullable IOException closePayload() {
+    if (payloadClosed) {
+      return null;
+    }
+    payloadClosed = true;
     try {
       payload.close();
       return null;
@@ -315,10 +324,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   private void transmitChunk(long currentOffset) {
-    synchronized (lock) {
-      if (done) {
-        return;
-      }
+    if (isDone()) {
+      return;
     }
 
     String url = uploadSessionUrl;
@@ -386,10 +393,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
           @Override
           public void onSuccess(ChunkUploadResponse<ResponseT> response) {
-            synchronized (lock) {
-              if (done) {
-                return;
-              }
+            if (isDone()) {
+              return;
             }
             long nextOffset = streamBuffer.getBufferBaseOffset() + streamBuffer.getPayloadLength();
             progressTracker.onChunkUploaded(nextOffset);

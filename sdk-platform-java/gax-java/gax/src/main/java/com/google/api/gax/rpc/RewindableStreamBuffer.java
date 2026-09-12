@@ -101,7 +101,8 @@ final class RewindableStreamBuffer {
       throw new UploadProtocolViolationException(
           String.format(
               "Server committed offset %d is below buffer base offset %d for upload URL %s; cannot"
-                  + " rewind stream before buffer base",
+                  + " rewind stream before buffer base. A seekable stream is required to rewind to"
+                  + " earlier offsets.",
               committedOffset, bufferBaseOffset, uploadUrl));
     }
 
