@@ -2322,6 +2322,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       QueryJobConfiguration configuration, JobId jobId, Long timeoutMs, JobOption... options)
       throws InterruptedException, JobException {
     checkNotNull(configuration, "configuration cannot be null");
+    Job.checkNotDryRun(configuration, "queryArrow");
     Span querySpan = null;
     if (getOptions().isOpenTelemetryTracingEnabled()
         && getOptions().getOpenTelemetryTracer() != null) {
@@ -2399,6 +2400,20 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         JobId actualJobId =
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : jobId;
+
+        if (results.getJobComplete() != null && !results.getJobComplete()) {
+          if (actualJobId == null) {
+            throw new BigQueryException(
+                0, "Query is incomplete but no job reference was returned.");
+          }
+          Job job = getJob(actualJobId);
+          if (job != null) {
+            job = job.waitFor();
+            if (job.getStatus().getError() != null) {
+              throw new BigQueryException(Collections.singletonList(job.getStatus().getError()));
+            }
+          }
+        }
 
         org.apache.arrow.vector.types.pojo.Schema arrowSchema = null;
         if (results.getArrowSchema() != null) {

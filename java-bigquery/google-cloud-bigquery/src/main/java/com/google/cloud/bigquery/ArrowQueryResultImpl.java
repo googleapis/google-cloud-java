@@ -242,7 +242,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
             && initialRecordBatchBytes.length > 0) {
           yieldedInitialBatch = true;
           try {
-            loadBatchBytes(initialRecordBatchBytes);
+            loadBatch(initialRecordBatchBytes);
             totalRowsYielded += root.getRowCount();
             return root;
           } catch (IOException e) {
@@ -264,7 +264,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
               com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
                   response.getArrowRecordBatch();
               try {
-                loadBatchBytes(batch.getSerializedRecordBatch().toByteArray());
+                loadBatch(batch.getSerializedRecordBatch());
                 totalRowsYielded += root.getRowCount();
                 return root;
               } catch (IOException e) {
@@ -289,21 +289,44 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       if (totalRows >= 0 && totalRowsYielded >= totalRows && yieldedInitialBatch) {
         return;
       }
-      if (streamName != null && readClient != null) {
-        ReadRowsRequest request =
-            ReadRowsRequest.newBuilder()
-                .setReadStream(streamName)
-                .setOffset(totalRowsYielded)
-                .build();
-        serverStream = readClient.readRowsCallable().call(request);
-        streamIterator = serverStream.iterator();
+      if (streamName == null || readClient == null) {
+        if (totalRows > 0 && totalRowsYielded < totalRows) {
+          throw new BigQueryException(
+              0,
+              "Cannot stream query results: stream name or read client is missing, "
+                  + "but there are more rows to read (totalRows="
+                  + totalRows
+                  + ", yielded="
+                  + totalRowsYielded
+                  + ")");
+        }
+        return;
       }
+      ReadRowsRequest request =
+          ReadRowsRequest.newBuilder()
+              .setReadStream(streamName)
+              .setOffset(totalRowsYielded)
+              .build();
+      serverStream = readClient.readRowsCallable().call(request);
+      streamIterator = serverStream.iterator();
     }
 
-    private void loadBatchBytes(byte[] bytes) throws IOException {
+    private void loadBatch(byte[] bytes) throws IOException {
       try (ByteArrayReadableSeekableByteChannel byteChannel =
               new ByteArrayReadableSeekableByteChannel(bytes);
           ReadChannel readChannel = new ReadChannel(byteChannel);
+          ArrowRecordBatch deserializedBatch =
+              MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
+        if (deserializedBatch != null) {
+          loader.load(deserializedBatch);
+        }
+      }
+    }
+
+    private void loadBatch(com.google.protobuf.ByteString byteString) throws IOException {
+      try (java.nio.channels.ReadableByteChannel channel =
+              java.nio.channels.Channels.newChannel(byteString.newInput());
+          ReadChannel readChannel = new ReadChannel(channel);
           ArrowRecordBatch deserializedBatch =
               MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
         if (deserializedBatch != null) {
