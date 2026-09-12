@@ -29,38 +29,22 @@
  */
 package com.google.api.gax.rpc;
 
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import java.util.concurrent.Executor;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
-/**
- * A specialized {@link ApiFuture} for tracking and controlling an in-flight resumable upload.
- *
- * <p>The payload {@link java.io.InputStream} supplied when initiating the upload is managed by this
- * future and will be closed automatically upon completion, failure, or cancellation.
- *
- * @param <ResponseT> the type of the final response message returned once the upload completes
- */
+/** A callback listener for observing progress and state transitions of a resumable upload. */
 @BetaApi
+@FunctionalInterface
 @NullMarked
-public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
-
-  /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
-  @Nullable String getUploadSessionUrl();
+public interface ResumableUploadProgressListener {
 
   /**
-   * Registers a listener to receive progress and state transition notifications for this upload.
+   * Invoked when upload progress or state changes.
    *
-   * <p>A snapshot of the current upload status is dispatched to the listener immediately upon
-   * subscription on the provided executor. Subsequent status updates are delivered in order.
+   * <p>Cancellation via {@link ResumableUploadFuture#cancel(boolean)} can be invoked safely from
+   * within this callback.
    *
-   * @param listener callback listener to receive progress notifications
-   * @param executor executor on which the listener callbacks are dispatched
+   * @param status the current status snapshot of the upload
    */
-  void addProgressListener(ResumableUploadProgressListener listener, Executor executor);
-
-  /** Returns the current status snapshot of the upload session. */
-  ResumableUploadStatus getStatus();
+  void onProgress(ResumableUploadStatus status);
 }

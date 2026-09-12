@@ -68,6 +68,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
   private final RewindableStreamBuffer buffer;
   private final String uploadUrl;
   private final ApiCallContext originalCallContext;
+  private final @Nullable UploadProgressTracker progressTracker;
 
   private volatile ChunkUploadRequest currentRequest;
   private volatile UploadCommand currentCommand;
@@ -85,6 +86,26 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       ChunkUploadRequest request,
       ApiCallContext callContext,
       UploadCommand command) {
+    this(
+        uploadChunkCallable,
+        queryStatusCallable,
+        buffer,
+        uploadUrl,
+        request,
+        callContext,
+        command,
+        null);
+  }
+
+  ChunkAttemptCallable(
+      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
+      RewindableStreamBuffer buffer,
+      String uploadUrl,
+      ChunkUploadRequest request,
+      ApiCallContext callContext,
+      UploadCommand command,
+      @Nullable UploadProgressTracker progressTracker) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -94,6 +115,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     this.currentRequest = checkNotNull(request, "request must not be null");
     this.originalCallContext = checkNotNull(callContext, "callContext must not be null");
     this.currentCommand = checkNotNull(command, "command must not be null");
+    this.progressTracker = progressTracker;
   }
 
   void setRetryingFuture(RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture) {
@@ -128,6 +150,9 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
       ApiCallContext attemptContext,
       RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    if (progressTracker != null) {
+      progressTracker.onRecovering(lastFailure);
+    }
     QueryStatusRequest queryRequest = QueryStatusRequest.create(uploadUrl);
     ApiFuture<QueryStatusResponse<ResponseT>> queryFuture =
         queryStatusCallable.futureCall(queryRequest, attemptContext);
@@ -190,7 +215,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       failAttempt(
           attemptFuture,
           new UploadProtocolViolationException(
-              "Incomplete query status response did not include a committed offset for upload URL: "
+              "Incomplete query status response did not include a committed offset for upload"
+                  + " URL: "
                   + uploadUrl));
       return;
     }
@@ -198,6 +224,9 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     // Normal path: realign buffer to committedOffset, compact and top up.
     try {
       buffer.realignTo(committedOffset);
+      if (progressTracker != null) {
+        progressTracker.onOffsetReceived(committedOffset);
+      }
     } catch (Throwable e) {
       failAttempt(attemptFuture, e);
       return;
@@ -207,7 +236,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     // Preserve upload,finalize for a trailing partial after realignment.
     UploadCommand realignedCommand;
     if (buffer.isFinal()) {
-      realignedCommand = buffer.isEmpty() ? UploadCommand.FINALIZE : UploadCommand.UPLOAD_FINALIZE;
+      realignedCommand =
+          buffer.isEmpty() ? UploadCommand.FINALIZE : UploadCommand.UPLOAD_FINALIZE;
     } else {
       realignedCommand = UploadCommand.UPLOAD;
     }

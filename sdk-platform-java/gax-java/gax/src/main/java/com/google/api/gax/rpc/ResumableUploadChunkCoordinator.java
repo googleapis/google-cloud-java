@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -92,6 +93,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final ApiCallContext callContext;
   private final ClientContext clientContext;
   private final RetrySettings chunkRetrySettings;
+  private final UploadProgressTracker progressTracker = new UploadProgressTracker();
 
   private volatile @Nullable String uploadSessionUrl;
   private volatile @Nullable RewindableStreamBuffer buffer;
@@ -183,6 +185,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               }
             }
             uploadSessionUrl = session.getUploadUrl();
+            progressTracker.onStarted(uploadSessionUrl);
             buffer = new RewindableStreamBuffer(payload, chunkSize, uploadSessionUrl);
             transmitChunk(0L);
           }
@@ -196,6 +199,14 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
+  }
+
+  void addProgressListener(ResumableUploadProgressListener listener, Executor executor) {
+    progressTracker.addListener(listener, executor);
+  }
+
+  ResumableUploadStatus getStatus() {
+    return progressTracker.getStatus();
   }
 
   private void onTimeout() {
@@ -246,6 +257,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     if (inFlight != null) {
       inFlight.cancel(mayInterruptIfRunning);
     }
+    progressTracker.onFailed(
+        new CancellationException("Upload was cancelled"), uploadSessionUrl);
     closePayload();
   }
 
@@ -270,8 +283,15 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     }
     IOException closeError = closePayload();
     if (error == null) {
+      RewindableStreamBuffer currentBuffer = buffer;
+      long totalBytes =
+          currentBuffer != null
+              ? currentBuffer.getBufferBaseOffset() + currentBuffer.getPayloadLength()
+              : 0L;
+      progressTracker.onFinalized(totalBytes);
       result.set(response);
     } else {
+      progressTracker.onFailed(error, uploadSessionUrl);
       if (closeError != null) {
         error.addSuppressed(closeError);
       }
@@ -345,7 +365,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
             url,
             chunkRequest,
             callContext,
-            command);
+            command,
+            progressTracker);
 
     RetryAlgorithm<ChunkUploadResponse<ResponseT>> retryAlgorithm =
         new RetryAlgorithm<>(
@@ -371,6 +392,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               }
             }
             long nextOffset = streamBuffer.getBufferBaseOffset() + streamBuffer.getPayloadLength();
+            progressTracker.onChunkUploaded(nextOffset);
             if (response.isComplete()) {
               finish(response.getResponse(), null);
             } else if (streamBuffer.isFinal()) {
