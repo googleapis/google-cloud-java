@@ -38,6 +38,8 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
@@ -81,8 +83,11 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
   private final SettableApiFuture<ResponseT> result;
   private final ApiFuture<ResumableUploadSession> startFuture;
-  private final RetryingCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
-      retryingChunkCallable;
+  private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
+      uploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      queryStatusCallable;
+  private final ScheduledRetryingExecutor<ChunkUploadResponse<ResponseT>> retryingExecutor;
   private final InputStream payload;
   private final int chunkSize;
   private final ApiCallContext callContext;
@@ -105,13 +110,17 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       SettableApiFuture<ResponseT> result,
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
       ResumableUploadCallSettings settings,
       ApiCallContext callContext,
       ClientContext clientContext) {
     this.result = checkNotNull(result, "result must not be null");
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
-    checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
+    this.uploadChunkCallable =
+        checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
+    this.queryStatusCallable =
+        checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
     checkNotNull(settings, "settings must not be null");
     checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
@@ -124,11 +133,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
         new RetryAlgorithm<>(
             new ResumableUploadResultRetryAlgorithm<>(ResumableUploadCommand.UPLOAD),
             new ExponentialRetryAlgorithm(chunkRetrySettings, clientContext.getClock()));
-    ScheduledRetryingExecutor<ChunkUploadResponse<ResponseT>> retryingExecutor =
+    this.retryingExecutor =
         new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
-    this.retryingChunkCallable =
-        new RetryingCallable<>(
-            clientContext.getDefaultCallContext(), uploadChunkCallable, retryingExecutor);
 
     synchronized (lock) {
       this.inFlightFuture = startFuture;
@@ -273,6 +279,16 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       return;
     }
 
+    ResumableUploadCommand command;
+    if (streamBuffer.isFinal()) {
+      command =
+          streamBuffer.isEmpty()
+              ? ResumableUploadCommand.FINALIZE
+              : ResumableUploadCommand.UPLOAD_FINALIZE;
+    } else {
+      command = ResumableUploadCommand.UPLOAD;
+    }
+
     ChunkUploadRequest chunkRequest =
         ChunkUploadRequest.newBuilder()
             .setUploadUrl(url)
@@ -282,12 +298,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
             .setFinal(streamBuffer.isFinal())
             .build();
 
+    ChunkAttemptCallable<ResponseT> attemptCallable =
+        new ChunkAttemptCallable<>(
+            uploadChunkCallable,
+            queryStatusCallable,
+            streamBuffer,
+            url,
+            chunkRequest,
+            callContext,
+            command);
+
     RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture =
-        retryingChunkCallable.futureCall(chunkRequest, callContext);
+        retryingExecutor.createFuture(attemptCallable, callContext);
+    attemptCallable.setRetryingFuture(retryingFuture);
     setInFlightFuture(retryingFuture);
 
-    long chunkLength = chunkRequest.getPayloadLength();
-    boolean isFinal = chunkRequest.isFinal();
     ApiFutures.addCallback(
         retryingFuture,
         new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
@@ -298,10 +323,10 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
                 return;
               }
             }
-            long nextOffset = currentOffset + chunkLength;
+            long nextOffset = streamBuffer.getBufferBaseOffset() + streamBuffer.getPayloadLength();
             if (response.isComplete()) {
               finish(response.getResponse(), null);
-            } else if (isFinal) {
+            } else if (streamBuffer.isFinal()) {
               finish(
                   null,
                   new IllegalStateException(
@@ -322,5 +347,13 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
+
+    try {
+      attemptCallable.call();
+    } catch (Throwable t) {
+      if (!retryingFuture.isDone()) {
+        finish(null, t);
+      }
+    }
   }
 }

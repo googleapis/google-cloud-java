@@ -38,6 +38,8 @@ import static org.mockito.Mockito.withSettings;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -58,6 +60,7 @@ class ResumableUploadChunkCoordinatorTest {
   private ClientContext clientContext;
   private ApiCallContext callContext;
   private UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<String>> mockChunkCallable;
+  private UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable;
   private ResumableUploadCallSettings settings;
 
   @BeforeEach
@@ -68,6 +71,7 @@ class ResumableUploadChunkCoordinatorTest {
     clientContext =
         ClientContext.newBuilder().setDefaultCallContext(callContext).setExecutor(executor).build();
     mockChunkCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
+    mockQueryCallable = mock(UnaryCallable.class, withSettings().withoutAnnotations());
     settings = ResumableUploadCallSettings.newBuilder().setChunkSize(256).build();
   }
 
@@ -101,7 +105,14 @@ class ResumableUploadChunkCoordinatorTest {
 
     ResumableUploadChunkCoordinator<String> coordinator =
         new ResumableUploadChunkCoordinator<>(
-            result, startFuture, mockChunkCallable, payload, settings, callContext, clientContext);
+            result,
+            startFuture,
+            mockChunkCallable,
+            mockQueryCallable,
+            payload,
+            settings,
+            callContext,
+            clientContext);
 
     AtomicInteger completionListenerCount = new AtomicInteger(0);
     result.addListener(completionListenerCount::incrementAndGet, MoreExecutors.directExecutor());

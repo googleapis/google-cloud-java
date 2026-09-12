@@ -39,6 +39,8 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -59,11 +61,14 @@ class ResumableUploadFutureImplTest {
         mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
         .thenReturn(chunkFuture);
+    UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     ResumableUploadCallSettings settings = ResumableUploadCallSettings.newBuilder().build();
     return new ResumableUploadChunkCoordinator<>(
         result,
         startFuture,
         mockChunkCallable,
+        mockQueryCallable,
         new ByteArrayInputStream(new byte[] {1, 2, 3}),
         settings,
         clientContext.getDefaultCallContext(),
