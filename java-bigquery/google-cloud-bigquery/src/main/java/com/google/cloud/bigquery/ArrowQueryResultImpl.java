@@ -371,14 +371,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       if (initialBytes != null) {
         try {
           loadBatch(initialBytes);
-          lock.lock();
-          try {
-            checkNotClosed();
-            totalRowsYielded += root.getRowCount();
-            return root;
-          } finally {
-            lock.unlock();
-          }
+          return root;
         } catch (IOException e) {
           throw new BigQueryException(0, "Failed to load initial Arrow record batch", e);
         }
@@ -414,14 +407,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
             targetResponse.getArrowRecordBatch();
         try {
           loadBatch(batch.getSerializedRecordBatch());
-          lock.lock();
-          try {
-            checkNotClosed();
-            totalRowsYielded += root.getRowCount();
-            return root;
-          } finally {
-            lock.unlock();
-          }
+          return root;
         } catch (IOException e) {
           throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
         }
@@ -494,6 +480,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
             }
           }
         }
+        totalRowsYielded += root.getRowCount();
       } finally {
         lock.unlock();
       }
@@ -520,6 +507,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
             }
           }
         }
+        totalRowsYielded += root.getRowCount();
       } finally {
         lock.unlock();
       }
