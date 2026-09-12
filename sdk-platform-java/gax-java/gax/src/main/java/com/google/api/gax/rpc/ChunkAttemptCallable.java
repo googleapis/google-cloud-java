@@ -31,14 +31,17 @@ package com.google.api.gax.rpc;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.NanoClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.time.Duration;
@@ -68,6 +71,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
   private final RewindableStreamBuffer buffer;
   private final String uploadUrl;
   private final ApiCallContext originalCallContext;
+  private final long deadlineNanos;
+  private final ApiClock clock;
 
   private volatile ChunkUploadRequest currentRequest;
   private volatile ResumableUploadCommand currentCommand;
@@ -85,6 +90,28 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       ChunkUploadRequest request,
       ApiCallContext callContext,
       ResumableUploadCommand command) {
+    this(
+        uploadChunkCallable,
+        queryStatusCallable,
+        buffer,
+        uploadUrl,
+        request,
+        callContext,
+        command,
+        Long.MAX_VALUE,
+        NanoClock.getDefaultClock());
+  }
+
+  ChunkAttemptCallable(
+      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
+      RewindableStreamBuffer buffer,
+      String uploadUrl,
+      ChunkUploadRequest request,
+      ApiCallContext callContext,
+      ResumableUploadCommand command,
+      long deadlineNanos,
+      ApiClock clock) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -94,6 +121,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     this.currentRequest = checkNotNull(request, "request must not be null");
     this.originalCallContext = checkNotNull(callContext, "callContext must not be null");
     this.currentCommand = checkNotNull(command, "command must not be null");
+    this.deadlineNanos = deadlineNanos;
+    this.clock = checkNotNull(clock, "clock must not be null");
   }
 
   void setRetryingFuture(RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture) {
@@ -129,9 +158,36 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
       ApiCallContext attemptContext,
       RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    // Per GAX-R7: query uses sensible unary defaults trimmed to the remaining global deadline.
+    long remainingNanos =
+        deadlineNanos == Long.MAX_VALUE
+            ? Long.MAX_VALUE
+            : Math.max(1L, deadlineNanos - clock.nanoTime());
+    Duration queryTotal =
+        Duration.ofNanos(
+            Math.min(
+                ResumableUploadCallableImpl.DEFAULT_QUERY_RETRY_SETTINGS
+                    .getTotalTimeoutDuration()
+                    .toNanos(),
+                remainingNanos));
+    Duration queryRpc =
+        Duration.ofNanos(
+            Math.min(
+                ResumableUploadCallableImpl.DEFAULT_QUERY_RETRY_SETTINGS
+                    .getInitialRpcTimeoutDuration()
+                    .toNanos(),
+                queryTotal.toNanos()));
+    RetrySettings trimmedQuerySettings =
+        ResumableUploadCallableImpl.DEFAULT_QUERY_RETRY_SETTINGS.toBuilder()
+            .setTotalTimeoutDuration(queryTotal)
+            .setInitialRpcTimeoutDuration(queryRpc)
+            .setMaxRpcTimeoutDuration(queryRpc)
+            .build();
+    ApiCallContext queryContext = originalCallContext.withRetrySettings(trimmedQuerySettings);
+
     QueryStatusRequest queryRequest = QueryStatusRequest.create(uploadUrl);
     ApiFuture<QueryStatusResponse<ResponseT>> queryFuture =
-        queryStatusCallable.futureCall(queryRequest, attemptContext);
+        queryStatusCallable.futureCall(queryRequest, queryContext);
     if (queryFuture == null) {
       failAttempt(
           attemptFuture, new IllegalStateException("queryStatusCallable returned a null future"));
