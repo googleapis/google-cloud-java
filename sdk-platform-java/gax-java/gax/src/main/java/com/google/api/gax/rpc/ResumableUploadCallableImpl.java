@@ -37,6 +37,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
@@ -78,6 +80,9 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
   private final ClientContext clientContext;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       retryingUploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      retryingQueryCallable;
+  private final ExponentialRetryAlgorithm recoveryAlgorithm;
 
   public ResumableUploadCallableImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
@@ -90,6 +95,11 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     this.retryingUploadChunkCallable =
         createRetryingCallable(
             client.uploadChunkCallable(), ResumableUploadCommand.UPLOAD, clientContext);
+    this.retryingQueryCallable =
+        createRetryingCallable(
+            client.queryStatusCallable(), ResumableUploadCommand.QUERY, clientContext);
+    this.recoveryAlgorithm =
+        new ExponentialRetryAlgorithm(RETRY_SETTINGS, clientContext.getClock());
   }
 
   @Override
@@ -113,9 +123,11 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     return ResumableUploadFutureImpl.create(
         startFuture,
         retryingUploadChunkCallable,
+        retryingQueryCallable,
         payload,
         effectiveSettings,
-        clientContext.getDefaultCallContext());
+        clientContext,
+        recoveryAlgorithm);
   }
 
   @Override
