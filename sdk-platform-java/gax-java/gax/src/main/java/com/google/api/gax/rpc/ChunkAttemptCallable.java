@@ -34,9 +34,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
-import com.google.api.gax.retrying.NonCancellableFuture;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.time.Duration;
@@ -48,9 +50,11 @@ import org.jspecify.annotations.Nullable;
  * A {@link Callable} representing an attempt to transmit a single chunk in a resumable upload
  * session. Used with {@link com.google.api.gax.retrying.ScheduledRetryingExecutor}.
  *
- * <p>Execution follows the standard six-step attempt template with an initial attempt preparation
- * seam. The callable never blocks on {@code .get()}; results and cancellations propagate
- * asynchronously.
+ * <p>Execution follows the standard attempt template with pre-attempt recovery handling. When the
+ * previous attempt failed with a Category 2 (recoverable) error or missing status header, {@code
+ * prepareAttempt} queries session status, realigns the buffer window, tops up from the stream, and
+ * dispatches the chunk upload request. The callable never blocks on {@code .get()}; results and
+ * cancellations propagate asynchronously.
  *
  * @param <ResponseT> the type of the final response message once the upload completes
  */
@@ -59,43 +63,199 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
 
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
-  private final ChunkUploadRequest request;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      queryStatusCallable;
+  private final RewindableStreamBuffer buffer;
+  private final String uploadUrl;
   private final ApiCallContext originalCallContext;
-  private final UploadCommand command;
+
+  private volatile ChunkUploadRequest currentRequest;
+  private volatile UploadCommand currentCommand;
 
   private volatile @Nullable RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture;
+  private volatile @Nullable ApiFuture<?> inFlightFuture;
   private volatile @Nullable Throwable lastFailure;
+  private volatile @Nullable ChunkUploadResponse<ResponseT> lastResponse;
 
   ChunkAttemptCallable(
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
+      RewindableStreamBuffer buffer,
+      String uploadUrl,
       ChunkUploadRequest request,
       ApiCallContext callContext,
       UploadCommand command) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
-    this.request = checkNotNull(request, "request must not be null");
+    this.queryStatusCallable =
+        checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
+    this.buffer = checkNotNull(buffer, "buffer must not be null");
+    this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
+    this.currentRequest = checkNotNull(request, "request must not be null");
     this.originalCallContext = checkNotNull(callContext, "callContext must not be null");
-    this.command = checkNotNull(command, "command must not be null");
+    this.currentCommand = checkNotNull(command, "command must not be null");
   }
 
   void setRetryingFuture(RetryingFuture<ChunkUploadResponse<ResponseT>> retryingFuture) {
     this.retryingFuture = checkNotNull(retryingFuture, "retryingFuture must not be null");
   }
 
-  /**
-   * Pre-attempt hook called before each transmission attempt.
-   *
-   * <p>In this phase, Category 2 (recoverable) errors throw to fail fast. Subsequent phases expand
-   * this seam into the query status -> realign buffer -> top up recovery sequence.
-   */
-  void prepareAttempt() {
+  private boolean needsRecovery() {
     if (lastFailure != null) {
-      UploadErrorCategory category = UploadErrorClassifier.classify(lastFailure, command);
-      if (category == UploadErrorCategory.RECOVERABLE) {
-        throw new UnsupportedOperationException(
-            "Category 2 (recoverable) error recovery is not yet implemented", lastFailure);
-      }
+      UploadErrorCategory category = UploadErrorClassifier.classify(lastFailure, currentCommand);
+      return category == UploadErrorCategory.RECOVERABLE;
     }
+    if (lastResponse != null && lastResponse.getUploadStatus() == null) {
+      UploadErrorCategory category =
+          UploadErrorClassifier.classifyMissingStatusHeader(currentCommand);
+      return category == UploadErrorCategory.RECOVERABLE;
+    }
+    return false;
+  }
+
+  private void failAttempt(
+      SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture, Throwable t) {
+    lastFailure = t;
+    lastResponse = null;
+    attemptFuture.setException(t);
+  }
+
+  /**
+   * Pre-attempt recovery step invoked before transmitting an attempt when the previous attempt
+   * encountered a Category 2 (recoverable) error or missing status header.
+   */
+  private void prepareAttempt(
+      SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
+      ApiCallContext attemptContext,
+      RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    QueryStatusRequest queryRequest = QueryStatusRequest.create(uploadUrl);
+    ApiFuture<QueryStatusResponse<ResponseT>> queryFuture =
+        queryStatusCallable.futureCall(queryRequest, attemptContext);
+    if (queryFuture == null) {
+      failAttempt(
+          attemptFuture, new IllegalStateException("queryStatusCallable returned a null future"));
+      return;
+    }
+    this.inFlightFuture = queryFuture;
+
+    ApiFutures.addCallback(
+        queryFuture,
+        new ApiFutureCallback<QueryStatusResponse<ResponseT>>() {
+          @Override
+          public void onSuccess(QueryStatusResponse<ResponseT> queryResponse) {
+            handleQuerySuccess(
+                queryResponse, attemptFuture, attemptContext, currentRetryingFuture);
+          }
+
+          @Override
+          public void onFailure(Throwable t) {
+            failAttempt(attemptFuture, t);
+          }
+        },
+        MoreExecutors.directExecutor());
+  }
+
+  private void handleQuerySuccess(
+      QueryStatusResponse<ResponseT> queryResponse,
+      SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
+      ApiCallContext attemptContext,
+      RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    if (currentRetryingFuture.isDone()) {
+      return;
+    }
+
+    if (queryResponse.getUploadStatus() == null) {
+      failAttempt(
+          attemptFuture,
+          new UploadProtocolViolationException(
+              "Query status response missing X-Goog-Upload-Status header for upload URL: "
+                  + uploadUrl));
+      return;
+    }
+
+    // Server already finalized the upload.
+    if (queryResponse.isComplete()) {
+      ChunkUploadResponse<ResponseT> response =
+          ChunkUploadResponse.create(
+              true, queryResponse.getResponse(), queryResponse.getUploadStatus());
+      lastFailure = null;
+      lastResponse = response;
+      attemptFuture.set(response);
+      return;
+    }
+
+    // Incomplete query response with null committed offset violates the protocol invariant.
+    Long committedOffset = queryResponse.getCommittedOffset();
+    if (committedOffset == null) {
+      failAttempt(
+          attemptFuture,
+          new UploadProtocolViolationException(
+              "Incomplete query status response did not include a committed offset for upload URL: "
+                  + uploadUrl));
+      return;
+    }
+
+    // Normal path: realign buffer to committedOffset, compact and top up.
+    try {
+      buffer.realignTo(committedOffset);
+    } catch (Throwable e) {
+      failAttempt(attemptFuture, e);
+      return;
+    }
+
+    // Determine the upload command for the realigned buffer.
+    // Preserve upload,finalize for a trailing partial after realignment.
+    UploadCommand realignedCommand;
+    if (buffer.isFinal()) {
+      realignedCommand = buffer.isEmpty() ? UploadCommand.FINALIZE : UploadCommand.UPLOAD_FINALIZE;
+    } else {
+      realignedCommand = UploadCommand.UPLOAD;
+    }
+
+    ChunkUploadRequest realignedRequest =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(uploadUrl)
+            .setPayload(buffer.getBuffer())
+            .setPayloadLength(buffer.getPayloadLength())
+            .setOffset(buffer.getBufferBaseOffset())
+            .setFinal(buffer.isFinal())
+            .build();
+
+    this.currentRequest = realignedRequest;
+    this.currentCommand = realignedCommand;
+
+    dispatchChunkUpload(attemptFuture, attemptContext, currentRetryingFuture);
+  }
+
+  private void dispatchChunkUpload(
+      SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
+      ApiCallContext attemptContext,
+      RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    attemptContext
+        .getTracer()
+        .attemptStarted(
+            currentRequest, currentRetryingFuture.getAttemptSettings().getOverallAttemptCount());
+
+    ApiFuture<ChunkUploadResponse<ResponseT>> chunkFuture =
+        uploadChunkCallable.futureCall(currentRequest, attemptContext);
+    this.inFlightFuture = chunkFuture;
+
+    ApiFutures.addCallback(
+        chunkFuture,
+        new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
+          @Override
+          public void onSuccess(ChunkUploadResponse<ResponseT> response) {
+            lastFailure = null;
+            lastResponse = response;
+            attemptFuture.set(response);
+          }
+
+          @Override
+          public void onFailure(Throwable t) {
+            failAttempt(attemptFuture, t);
+          }
+        },
+        MoreExecutors.directExecutor());
   }
 
   @Override
@@ -104,64 +264,38 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
         checkNotNull(retryingFuture, "retryingFuture must be set before call()");
     ApiCallContext attemptContext = originalCallContext;
 
+    Duration rpcTimeout = currentRetryingFuture.getAttemptSettings().getRpcTimeoutDuration();
+    if (!rpcTimeout.isZero() && attemptContext.getTimeoutDuration() == null) {
+      attemptContext = attemptContext.withTimeoutDuration(rpcTimeout);
+    }
+
+    SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture = SettableApiFuture.create();
+    currentRetryingFuture.setAttemptFuture(attemptFuture);
+
+    if (currentRetryingFuture.isDone()) {
+      return null;
+    }
+
+    currentRetryingFuture.addListener(
+        () -> {
+          if (currentRetryingFuture.isCancelled()) {
+            ApiFuture<?> inFlight = inFlightFuture;
+            if (inFlight != null) {
+              inFlight.cancel(true);
+            }
+            attemptFuture.cancel(true);
+          }
+        },
+        MoreExecutors.directExecutor());
+
     try {
-      // Seam for recoverable error handling.
-      prepareAttempt();
-
-      // Set the RPC timeout if caller did not provide their own.
-      Duration rpcTimeout = currentRetryingFuture.getAttemptSettings().getRpcTimeoutDuration();
-      if (!rpcTimeout.isZero() && attemptContext.getTimeoutDuration() == null) {
-        attemptContext = attemptContext.withTimeoutDuration(rpcTimeout);
+      if (needsRecovery()) {
+        prepareAttempt(attemptFuture, attemptContext, currentRetryingFuture);
+      } else {
+        dispatchChunkUpload(attemptFuture, attemptContext, currentRetryingFuture);
       }
-
-      // Placeholder non-cancellable future.
-      currentRetryingFuture.setAttemptFuture(
-          new NonCancellableFuture<ChunkUploadResponse<ResponseT>>());
-
-      // Early exit if retryingFuture was already cancelled or completed.
-      if (currentRetryingFuture.isDone()) {
-        return null;
-      }
-
-      // Dispatch chunk upload and wire cancellation propagation and error
-      // tracking.
-      attemptContext
-          .getTracer()
-          .attemptStarted(
-              request, currentRetryingFuture.getAttemptSettings().getOverallAttemptCount());
-
-      ApiFuture<ChunkUploadResponse<ResponseT>> internalFuture =
-          uploadChunkCallable.futureCall(request, attemptContext);
-
-      // Propagate cancellation to the feeder future immediately.
-      currentRetryingFuture.addListener(
-          () -> {
-            if (currentRetryingFuture.isCancelled()) {
-              internalFuture.cancel(true);
-            }
-          },
-          MoreExecutors.directExecutor());
-
-      ApiFutures.addCallback(
-          internalFuture,
-          new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
-            @Override
-            public void onSuccess(ChunkUploadResponse<ResponseT> response) {
-              lastFailure = null;
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-              lastFailure = t;
-            }
-          },
-          MoreExecutors.directExecutor());
-
-      currentRetryingFuture.setAttemptFuture(internalFuture);
-    } catch (Throwable e) {
-      lastFailure = e;
-      currentRetryingFuture.setAttemptFuture(
-          ApiFutures.<ChunkUploadResponse<ResponseT>>immediateFailedFuture(e));
+    } catch (Throwable t) {
+      failAttempt(attemptFuture, t);
     }
 
     return null;

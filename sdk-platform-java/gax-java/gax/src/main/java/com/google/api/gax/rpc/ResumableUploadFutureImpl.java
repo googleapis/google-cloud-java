@@ -35,6 +35,8 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import java.io.InputStream;
 import java.util.concurrent.ExecutionException;
@@ -58,12 +60,14 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   static <ResponseT> ResumableUploadFutureImpl<ResponseT> create(
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
       ResumableUploadCallSettings settings,
       ApiCallContext callContext) {
     return create(
         startFuture,
         uploadChunkCallable,
+        queryStatusCallable,
         payload,
         settings,
         callContext,
@@ -73,6 +77,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   static <ResponseT> ResumableUploadFutureImpl<ResponseT> create(
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
       ResumableUploadCallSettings settings,
       ApiCallContext callContext,
@@ -83,6 +88,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             result,
             startFuture,
             uploadChunkCallable,
+            queryStatusCallable,
             payload,
             settings,
             callContext,

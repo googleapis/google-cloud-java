@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithmWithContext;
 import com.google.api.gax.retrying.RetryingContext;
@@ -38,16 +40,17 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * An adapter that integrates {@link UploadErrorClassifier} into GAX retrying machinery via
- * {@link ResultRetryAlgorithmWithContext}.
+ * An adapter that integrates {@link UploadErrorClassifier} into GAX retrying machinery via {@link
+ * ResultRetryAlgorithmWithContext}.
  *
- * <p>Retries transient (Category 1) errors with the identical request.
+ * <p>Retries transient (Category 1) errors with the identical request and recoverable (Category 2)
+ * errors via session query and buffer realignment. Responses lacking an upload status header also
+ * enter recovery per protocol specification.
  *
  * @param <ResponseT> the response type of the upload attempt
  */
 @NullMarked
-final class UploadResultRetryAlgorithm<ResponseT>
-    extends BasicResultRetryAlgorithm<ResponseT> {
+final class UploadResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
   private final UploadCommand command;
 
@@ -58,12 +61,24 @@ final class UploadResultRetryAlgorithm<ResponseT>
   @Override
   public boolean shouldRetry(
       @Nullable Throwable previousThrowable, @Nullable ResponseT previousResponse) {
-    if (previousThrowable == null || previousThrowable instanceof CancellationException) {
+    if (previousThrowable instanceof CancellationException) {
       return false;
     }
-    UploadErrorCategory category = UploadErrorClassifier.classify(previousThrowable, command);
-    // Transient errors are retried directly with the identical request.
-    return category == UploadErrorCategory.TRANSIENT;
+    UploadErrorCategory category = null;
+    if (previousThrowable != null) {
+      category = UploadErrorClassifier.classify(previousThrowable, command);
+    } else if (previousResponse instanceof ChunkUploadResponse) {
+      ChunkUploadResponse<?> chunkResponse = (ChunkUploadResponse<?>) previousResponse;
+      if (chunkResponse.getUploadStatus() == null) {
+        category = UploadErrorClassifier.classifyMissingStatusHeader(command);
+      }
+    } else if (previousResponse instanceof ResumableUploadSession) {
+      ResumableUploadSession session = (ResumableUploadSession) previousResponse;
+      if (session.getUploadStatus() == null) {
+        category = UploadErrorClassifier.classifyMissingStatusHeader(command);
+      }
+    }
+    return category == UploadErrorCategory.TRANSIENT || category == UploadErrorCategory.RECOVERABLE;
   }
 
   @Override

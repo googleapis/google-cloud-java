@@ -42,15 +42,19 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 
 class ChunkAttemptCallableTest {
 
@@ -88,8 +92,10 @@ class ChunkAttemptCallableTest {
 
   @Test
   @SuppressWarnings("unchecked")
-  void call_successfulChunk_setsAttemptFuture() {
+  void call_successfulChunk_setsAttemptFuture() throws Exception {
     UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<String>> mockChunkCallable =
+        mock(UnaryCallable.class);
+    UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable =
         mock(UnaryCallable.class);
 
     ChunkUploadRequest request =
@@ -108,10 +114,20 @@ class ChunkAttemptCallableTest {
         .thenReturn(internalFuture);
 
     ApiCallContext callContext = FakeCallContext.createDefault();
+    ByteArrayInputStream stream = new ByteArrayInputStream(new byte[] {1, 2, 3});
+    RewindableStreamBuffer buffer =
+        new RewindableStreamBuffer(stream, 8, "https://upload.url/test");
+    buffer.fill(0L);
 
     ChunkAttemptCallable<String> callable =
         new ChunkAttemptCallable<>(
-            mockChunkCallable, request, callContext, UploadCommand.UPLOAD);
+            mockChunkCallable,
+            mockQueryCallable,
+            buffer,
+            "https://upload.url/test",
+            request,
+            callContext,
+            UploadCommand.UPLOAD);
 
     callable.setRetryingFuture(mockExternalFuture);
     ChunkUploadResponse<String> callResult = callable.call();
@@ -119,13 +135,18 @@ class ChunkAttemptCallableTest {
     // Call returns immediately without blocking
     assertThat(callResult).isNull();
     verify(mockChunkCallable).futureCall(eq(request), any());
-    verify(mockExternalFuture).setAttemptFuture(internalFuture);
+    ArgumentCaptor<ApiFuture<ChunkUploadResponse<String>>> captor =
+        ArgumentCaptor.forClass(ApiFuture.class);
+    verify(mockExternalFuture).setAttemptFuture(captor.capture());
+    assertThat(captor.getValue().get()).isEqualTo(expectedResponse);
   }
 
   @Test
   @SuppressWarnings("unchecked")
-  void call_returnsWithoutBlocking_andPropagatesCancellation() {
+  void call_returnsWithoutBlocking_andPropagatesCancellation() throws Exception {
     UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<String>> mockChunkCallable =
+        mock(UnaryCallable.class);
+    UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable =
         mock(UnaryCallable.class);
 
     SettableApiFuture<ChunkUploadResponse<String>> internalFuture = SettableApiFuture.create();
@@ -141,10 +162,20 @@ class ChunkAttemptCallableTest {
             .build();
 
     ApiCallContext callContext = FakeCallContext.createDefault();
+    ByteArrayInputStream stream = new ByteArrayInputStream(new byte[] {1, 2, 3});
+    RewindableStreamBuffer buffer =
+        new RewindableStreamBuffer(stream, 8, "https://upload.url/test");
+    buffer.fill(0L);
 
     ChunkAttemptCallable<String> callable =
         new ChunkAttemptCallable<>(
-            mockChunkCallable, request, callContext, UploadCommand.UPLOAD);
+            mockChunkCallable,
+            mockQueryCallable,
+            buffer,
+            "https://upload.url/test",
+            request,
+            callContext,
+            UploadCommand.UPLOAD);
 
     List<Runnable> listeners = new ArrayList<>();
     doAnswer(
