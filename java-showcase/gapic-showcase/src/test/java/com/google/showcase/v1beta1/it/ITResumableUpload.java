@@ -667,6 +667,102 @@ class ITResumableUpload {
     assertThat(closeCount.get()).isEqualTo(1);
   }
 
+  @Test
+  void testProgressListener_multiChunkUploadWithCat2Recovery_reportsOrderedStatesAndMonotonicBytes(
+      @TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    int afterOffset = SHOWCASE_CHUNK_SIZE; // 256KB, error injected on the second chunk
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":400,\"failure_count\":1,"
+                        + "\"after_offset\":%d}",
+                    clientUuid, afterOffset)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-progress-listener.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-progress-listener.txt").build();
+
+    List<ResumableUploadStatus> reportedStatuses = new CopyOnWriteArrayList<>();
+
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(
+                  request,
+                  stream,
+                  callContext,
+                  ResumableUploadCallSettings.newBuilder()
+                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                      .build());
+
+      // Note: addProgressListener is registered immediately after futureCall, relying on
+      // snapshot-on-subscribe. If the session initiation HTTP call ever completes before
+      // this registration, the initial STARTED state could be missed in the observed sequence.
+      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+
+      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(response.getName()).isEqualTo("it-progress-listener.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+      assertThat(future.getStatus().getState()).isEqualTo(ResumableUploadStatus.State.FINALIZED);
+      assertThat(future.getStatus().getBytesUploaded()).isEqualTo(totalBytes);
+    }
+
+    // Verify progress statuses
+    assertThat(reportedStatuses).isNotEmpty();
+
+    // Verify monotonic bytes uploaded
+    long lastBytes = -1;
+    for (ResumableUploadStatus status : reportedStatuses) {
+      assertThat(status.getBytesUploaded()).isAtLeast(lastBytes);
+      lastBytes = status.getBytesUploaded();
+      if (status.getState() != ResumableUploadStatus.State.STARTING) {
+        assertThat(status.getUploadUrl()).isNotNull();
+      }
+    }
+
+    // Verify final state and byte count
+    ResumableUploadStatus finalStatus = reportedStatuses.get(reportedStatuses.size() - 1);
+    assertThat(finalStatus.getState()).isEqualTo(ResumableUploadStatus.State.FINALIZED);
+    assertThat(finalStatus.getBytesUploaded()).isEqualTo(totalBytes);
+
+    // Verify observed sequence contains STARTED, UPLOADING, RECOVERING, FINALIZED in order
+    List<ResumableUploadStatus.State> observedStates = new ArrayList<>();
+    for (ResumableUploadStatus status : reportedStatuses) {
+      observedStates.add(status.getState());
+    }
+
+    int startedIdx = observedStates.indexOf(ResumableUploadStatus.State.STARTED);
+    int uploadingIdx = observedStates.indexOf(ResumableUploadStatus.State.UPLOADING);
+    int recoveringIdx = observedStates.indexOf(ResumableUploadStatus.State.RECOVERING);
+    int finalizedIdx = observedStates.lastIndexOf(ResumableUploadStatus.State.FINALIZED);
+
+    assertThat(startedIdx).isNotEqualTo(-1);
+    assertThat(uploadingIdx).isNotEqualTo(-1);
+    assertThat(recoveringIdx).isNotEqualTo(-1);
+    assertThat(finalizedIdx).isNotEqualTo(-1);
+
+    assertThat(startedIdx).isLessThan(uploadingIdx);
+    assertThat(uploadingIdx).isLessThan(recoveringIdx);
+    assertThat(recoveringIdx).isLessThan(finalizedIdx);
+
+    // Verify offset_received is also observed during recovery
+    int offsetReceivedIdx = observedStates.indexOf(ResumableUploadStatus.State.OFFSET_RECEIVED);
+    assertThat(offsetReceivedIdx).isNotEqualTo(-1);
+    assertThat(recoveringIdx).isLessThan(offsetReceivedIdx);
+    assertThat(offsetReceivedIdx).isLessThan(finalizedIdx);
+  }
+
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {
     Path path = dir.resolve(fileName);
     Files.write(path, data);
