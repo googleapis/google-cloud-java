@@ -20,21 +20,16 @@ commonScriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 # ex: update_dependency google-cloud-java/google-cloud-jar-parent google-cloud-shared-dependencies 1.2.3
 function update_pom_dependency {
   pushd "$1" || exit 1
-  xmllint --shell pom.xml &>/dev/null <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="$2"]
-cd ../x:version
-set $3
-save pom.xml
-EOF
+  python3 "${commonScriptDir}/pom_utils.py" update-dep-version pom.xml "$2" "$3"
   popd || exit 1
 }
 
 # Find all pom.xml files that declare a specific version for the given artifact ($1)
 function find_all_poms_with_versioned_dependency {
   poms=($(find . -name pom.xml))
+  found=()
   for pom in "${poms[@]}"; do
-    if xmllint --xpath "//*[local-name()='artifactId' and text()='$1']/following-sibling::*[local-name()='version']" "$pom" &>/dev/null; then
+    if python3 "${commonScriptDir}/pom_utils.py" has-versioned-dep "$pom" "$1"; then
       found+=("$pom")
     fi
   done
@@ -59,8 +54,11 @@ function update_all_poms_dependency {
 # Parse the version of the pom.xml file in the given directory ($1)
 # ex: VERSION=$(parse_pom_version java-shared-dependencies)
 function parse_pom_version {
-  # Namespace (xmlns) prevents xmllint from specifying tag names in XPath
-  result=$(sed -e 's/xmlns=".*"//' "$1/pom.xml" | xmllint --xpath '/project/version/text()' -)
+  local pom_file="$1/pom.xml"
+  if [ ! -f "${pom_file}" ]; then
+    pom_file="$1"
+  fi
+  result=$(python3 "${commonScriptDir}/pom_utils.py" get-version "${pom_file}")
 
   if [ -z "${result}" ]; then
     echo "Version is not found in $1"

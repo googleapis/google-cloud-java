@@ -16,27 +16,22 @@
 set -eo pipefail
 set -x
 
-function modify_shared_config() {
-  xmllint --shell pom.xml <<EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-config"]
-  cd ../x:version
-  set ${SHARED_CONFIG_VERSION}
-  save pom.xml
-EOF
-}
-
 ## Get the directory of the build script and install all modules in the monorepo
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/../pom_utils.py"
 ## cd to the parent directory, i.e. the root of the git repo
 cd "${scriptDir}/../.."
+
+function modify_shared_config() {
+  python3 "${POM_UTILS}" update-dep-version pom.xml google-cloud-shared-config "${SHARED_CONFIG_VERSION}"
+}
 
 # Build and install the entire monorepo to local cache (including the under-test java-shared-config)
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
 
 # Get the version of java-shared-config under test
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
-SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -)
+SHARED_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version "${VERSION_POM}")
 
 # Use GCP Maven Mirror (as in original script)
 mkdir -p "${HOME}/.m2"
