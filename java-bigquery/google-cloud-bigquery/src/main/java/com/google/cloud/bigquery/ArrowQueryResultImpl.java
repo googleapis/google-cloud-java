@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.storage.v1.ReadSession;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.concurrent.locks.ReentrantLock;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
@@ -52,7 +53,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private final VectorSchemaRoot root;
   private final VectorLoader loader;
 
-  private final Object lock = new Object();
+  private final ReentrantLock lock = new ReentrantLock();
   private boolean closed = false;
   private boolean iteratorCreated = false;
   private ServerStream<ReadRowsResponse> serverStream;
@@ -80,6 +81,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       this.root = VectorSchemaRoot.create(this.arrowSchema, this.allocator);
       this.loader = new VectorLoader(this.root);
     } else {
+      if ((initialRecordBatchBytes != null && initialRecordBatchBytes.length > 0)
+          || streamName != null) {
+        throw new IllegalArgumentException(
+            "Arrow schema cannot be null when query results or streams are present.");
+      }
       this.allocator = null;
       this.root = null;
       this.loader = null;
@@ -98,8 +104,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         throw new BigQueryException(0, "Failed to deserialize Arrow schema from ReadSession", e);
       }
     }
-    String streamName =
-        readSession.getStreamsCount() > 0 ? readSession.getStreams(0).getName() : null;
+
+    String streamName = null;
+    if (readSession.getStreamsCount() > 0) {
+      streamName = readSession.getStreams(0).getName();
+    }
+
     return new ArrowQueryResultImpl(
         pojoSchema,
         jobId,
@@ -138,19 +148,23 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
   @Override
   public Iterator<VectorSchemaRoot> iterator() {
-    synchronized (lock) {
+    lock.lock();
+    try {
       checkNotClosed();
       if (iteratorCreated) {
         throw new IllegalStateException("ArrowQueryResult can only be iterated once");
       }
       iteratorCreated = true;
       return new VectorBatchIterator();
+    } finally {
+      lock.unlock();
     }
   }
 
   @Override
   public void close() {
-    synchronized (lock) {
+    lock.lock();
+    try {
       if (closed) {
         return;
       }
@@ -193,6 +207,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       } else if (firstException != null) {
         throw new RuntimeException("Failed to close Arrow resources", firstException);
       }
+    } finally {
+      lock.unlock();
     }
   }
 
@@ -210,7 +226,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
     @Override
     public boolean hasNext() {
-      synchronized (lock) {
+      lock.lock();
+      try {
         if (closed) {
           return false;
         }
@@ -228,12 +245,15 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         } catch (Exception e) {
           throw new BigQueryException(0, "Error reading from Arrow stream", e);
         }
+      } finally {
+        lock.unlock();
       }
     }
 
     @Override
     public VectorSchemaRoot next() {
-      synchronized (lock) {
+      lock.lock();
+      try {
         checkNotClosed();
 
         // 1. Yield initial batch from REST response if present
@@ -278,6 +298,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         } catch (Exception e) {
           throw new BigQueryException(0, "Error reading from Arrow stream", e);
         }
+      } finally {
+        lock.unlock();
       }
     }
 
@@ -317,9 +339,10 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           ReadChannel readChannel = new ReadChannel(byteChannel);
           ArrowRecordBatch deserializedBatch =
               MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
-        if (deserializedBatch != null) {
-          loader.load(deserializedBatch);
+        if (deserializedBatch == null) {
+          throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
+        loader.load(deserializedBatch);
       }
     }
 
@@ -329,9 +352,10 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           ReadChannel readChannel = new ReadChannel(channel);
           ArrowRecordBatch deserializedBatch =
               MessageSerializer.deserializeRecordBatch(readChannel, allocator)) {
-        if (deserializedBatch != null) {
-          loader.load(deserializedBatch);
+        if (deserializedBatch == null) {
+          throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
         }
+        loader.load(deserializedBatch);
       }
     }
   }
