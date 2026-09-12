@@ -212,14 +212,15 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private void onTimeout() {
-    String sessionUrl = uploadSessionUrl;
     String message;
-    if (sessionUrl != null) {
-      message = "Resumable upload timed out for session: " + sessionUrl;
+    if (uploadSessionUrl != null) {
+      message = "Resumable upload timed out";
     } else {
       message = "Resumable upload timed out before session initiation completed";
     }
-    fail(ApiExceptionFactory.createException(message, null, TIMEOUT_STATUS_CODE, false));
+    fail(
+        ApiExceptionFactory.createException(
+            message, null, statusCodeOf(StatusCode.Code.DEADLINE_EXCEEDED), false));
   }
 
   private void succeed(@Nullable ResponseT result) {
@@ -229,7 +230,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       }
       inFlightFuture = null;
     }
-    closePayload();
+    closePayload(null);
     resultFuture.set(result);
   }
 
@@ -243,19 +244,44 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       inFlightFuture = null;
     }
     inFlight.cancel(true);
+    ApiException terminal = toTerminalException(t);
     progressTracker.onFailed();
-    closePayload();
-    resultFuture.setException(t);
+    closePayload(terminal);
+    resultFuture.setException(terminal);
   }
 
-  private void closePayload() {
+  private ApiException toTerminalException(Throwable t) {
+    if (t instanceof ApiException && uploadSessionUrl == null) {
+      return (ApiException) t;
+    }
+    String message = firstNonNull(t.getMessage(), t.getClass().getSimpleName());
+    if (uploadSessionUrl != null) {
+      message = message + " (upload URL: " + uploadSessionUrl + ")";
+    }
+    // Rethrow with URL included in message.
+    if (t instanceof ApiException) {
+      ApiException apiException = (ApiException) t;
+      return ApiExceptionFactory.createException(
+          message,
+          apiException.getCause(),
+          apiException.getStatusCode(),
+          apiException.isRetryable(),
+          apiException.getErrorDetails());
+    }
+    return ApiExceptionFactory.createException(
+        message, t, statusCodeOf(StatusCode.Code.UNKNOWN), false);
+  }
+
+  private void closePayload(@Nullable Throwable primaryException) {
     if (payload == null) {
       return;
     }
     try {
       payload.close();
-    } catch (IOException ignored) {
-      // Suppressed during stream cleanup
+    } catch (Throwable e) {
+      if (primaryException != null) {
+        primaryException.addSuppressed(e);
+      }
     }
   }
 
@@ -283,7 +309,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     }
     inFlight.cancel(mayInterruptIfRunning);
     progressTracker.onFailed();
-    closePayload();
+    closePayload(null);
     return cancelled;
   }
 
@@ -308,16 +334,17 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     return resultFuture.get(timeout, unit);
   }
 
-  private static final StatusCode TIMEOUT_STATUS_CODE =
-      new StatusCode() {
-        @Override
-        public StatusCode.Code getCode() {
-          return StatusCode.Code.DEADLINE_EXCEEDED;
-        }
+  private static StatusCode statusCodeOf(StatusCode.Code code) {
+    return new StatusCode() {
+      @Override
+      public StatusCode.Code getCode() {
+        return code;
+      }
 
-        @Override
-        public @Nullable Object getTransportCode() {
-          return null;
-        }
-      };
+      @Override
+      public @Nullable Object getTransportCode() {
+        return null;
+      }
+    };
+  }
 }

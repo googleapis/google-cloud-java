@@ -41,13 +41,10 @@ import org.junit.jupiter.api.Test;
 
 class RewindableStreamBufferTest {
 
-  private static final String UPLOAD_URL = "https://upload.example.com/session-1";
-
   @Test
   void testExactMultiplePayloads() throws IOException {
     byte[] data = "0123456789abcdef".getBytes(StandardCharsets.UTF_8); // 16 bytes, chunk size 8
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     // Chunk 0: 8 bytes
     buffer.fill();
@@ -74,8 +71,7 @@ class RewindableStreamBufferTest {
   @Test
   void testShortFinalChunk() throws IOException {
     byte[] data = "short".getBytes(StandardCharsets.UTF_8); // 5 bytes, chunk size 8
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     buffer.fill();
     assertThat(buffer.getBufferBaseOffset()).isEqualTo(0L);
@@ -87,7 +83,7 @@ class RewindableStreamBufferTest {
   @Test
   void testZeroBytePayload() throws IOException {
     RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(new byte[0]), 8, UPLOAD_URL);
+        new RewindableStreamBuffer(new ByteArrayInputStream(new byte[0]), 8);
 
     buffer.fill();
     assertThat(buffer.getBufferBaseOffset()).isEqualTo(0L);
@@ -100,8 +96,7 @@ class RewindableStreamBufferTest {
   void testRealignToMidBufferOffset_compactsAndTopsUp() throws IOException {
     // 20 bytes: chunk size 8
     byte[] data = "0123456789ABCDEFGHIJ".getBytes(StandardCharsets.UTF_8);
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     // Initial fill: "01234567" (bytes 0..7)
     buffer.fill();
@@ -121,8 +116,7 @@ class RewindableStreamBufferTest {
   @Test
   void testRealignToBufferBaseOffset_isNoOp() throws IOException {
     byte[] data = "0123456789".getBytes(StandardCharsets.UTF_8);
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     buffer.fill();
     assertThat(buffer.getPayload()).hasLength(8);
@@ -138,8 +132,7 @@ class RewindableStreamBufferTest {
   @Test
   void testRealignToBelowBaseOffset_throwsIllegalStateException() throws IOException {
     byte[] data = "0123456789abcdef".getBytes(StandardCharsets.UTF_8);
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     // Advanced to chunk 1 (base offset 8)
     buffer.fill();
@@ -152,14 +145,13 @@ class RewindableStreamBufferTest {
 
     assertThat(exception.getMessage()).contains("4");
     assertThat(exception.getMessage()).contains("8");
-    assertThat(exception.getMessage()).contains(UPLOAD_URL);
+    assertThat(exception.getMessage()).contains("must be restarted");
   }
 
   @Test
   void testRealignToBeyondBufferWindow_throwsIllegalStateException() throws IOException {
     byte[] data = "0123456789abcdef".getBytes(StandardCharsets.UTF_8);
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     // Initial fill at 0: window is [0, 8]
     buffer.fill();
@@ -172,15 +164,13 @@ class RewindableStreamBufferTest {
 
     assertThat(exception.getMessage()).contains("10");
     assertThat(exception.getMessage()).contains("8");
-    assertThat(exception.getMessage()).contains(UPLOAD_URL);
   }
 
   @Test
   void testRealignToMidBufferOffset_reachingEofMarksFinal() throws IOException {
     // 10 bytes total, chunk size 8
     byte[] data = "0123456789".getBytes(StandardCharsets.UTF_8);
-    RewindableStreamBuffer buffer =
-        new RewindableStreamBuffer(new ByteArrayInputStream(data), 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
     // Initial fill: "01234567" (bytes 0..7), stream still has "89" remaining
     buffer.fill();
@@ -207,7 +197,7 @@ class RewindableStreamBufferTest {
           }
         };
 
-    RewindableStreamBuffer buffer = new RewindableStreamBuffer(shortReadingStream, 8, UPLOAD_URL);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(shortReadingStream, 8);
     buffer.fill();
 
     // Must greedily fill all 8 bytes despite short reads, and not be marked final yet
