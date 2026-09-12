@@ -22,13 +22,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.httpjson.HttpJsonCallContext;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.showcase.v1beta1.ResumableUploadServiceClient;
 import com.google.showcase.v1beta1.ResumableUploadServiceSettings;
 import com.google.showcase.v1beta1.UploadMediaRequest;
@@ -42,6 +48,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -350,6 +360,85 @@ class ITResumableUpload {
           assertThrows(FailedPreconditionException.class, () -> grpcClient.uploadMediaCallable());
       assertThat(callableException.getMessage())
           .contains("Resumable uploads execute over HTTP/REST and require credentials");
+    }
+  }
+
+  @Test
+  void testStartRetry_nonFatalErrorOnStart_succeeds(@TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_start"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":2}",
+                    clientUuid)));
+    ApiCallContext callContext =
+        HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    Path file =
+        createTempFile(
+            tempDir,
+            "it-start-retry-success.txt",
+            "Data for testStartRetry_nonFatalErrorOnStart_succeeds"
+                .getBytes(StandardCharsets.UTF_8));
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-start-retry-success.txt").build();
+
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(request, stream, callContext, (ResumableUploadCallSettings) null);
+      UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
+
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(response.getName()).isEqualTo("it-start-retry-success.txt");
+      assertThat(response.getSize()).isEqualTo(Files.size(file));
+    }
+  }
+
+  @Test
+  void testStartRetry_fatalErrorOnStart_failsFast(@TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("fatal_error_on_start"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":403}",
+                    clientUuid)));
+    ApiCallContext callContext =
+        HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    Path file =
+        createTempFile(
+            tempDir,
+            "it-start-retry-fatal.txt",
+            "Data for testStartRetry_fatalErrorOnStart_failsFast"
+                .getBytes(StandardCharsets.UTF_8));
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-start-retry-fatal.txt").build();
+
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client
+              .uploadMediaCallable()
+              .futureCall(request, stream, callContext, (ResumableUploadCallSettings) null);
+
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(10, TimeUnit.SECONDS));
+      assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+      ApiException apiException = (ApiException) exception.getCause();
+      assertThat(apiException.getStatusCode().getCode())
+          .isEqualTo(StatusCode.Code.PERMISSION_DENIED);
+      assertThat(future.getUploadSessionUrl()).isNull();
     }
   }
 
