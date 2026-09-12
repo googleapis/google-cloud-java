@@ -91,7 +91,8 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
         client.uploadChunkCallable(),
         payload,
         effectiveSettings,
-        clientContext.getDefaultCallContext());
+        clientContext.getDefaultCallContext(),
+        clientContext);
   }
 
   @Override
