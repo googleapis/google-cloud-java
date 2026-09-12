@@ -45,11 +45,9 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
   /**
    * Closes any background resources and active streaming clients (such as {@code
    * BigQueryReadClient}) managed by this BigQuery service instance.
-   *
-   * @throws Exception if closing underlying resources fails
    */
   @Override
-  void close() throws Exception;
+  void close();
 
   /**
    * Fields of a BigQuery Dataset resource.
