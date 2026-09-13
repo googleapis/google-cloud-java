@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListCon
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -36,6 +37,7 @@ import com.google.apps.meet.v2beta.GetConferenceRecordRequest;
 import com.google.apps.meet.v2beta.GetParticipantRequest;
 import com.google.apps.meet.v2beta.GetParticipantSessionRequest;
 import com.google.apps.meet.v2beta.GetRecordingRequest;
+import com.google.apps.meet.v2beta.GetSmartNoteRequest;
 import com.google.apps.meet.v2beta.GetTranscriptEntryRequest;
 import com.google.apps.meet.v2beta.GetTranscriptRequest;
 import com.google.apps.meet.v2beta.ListConferenceRecordsRequest;
@@ -46,6 +48,8 @@ import com.google.apps.meet.v2beta.ListParticipantsRequest;
 import com.google.apps.meet.v2beta.ListParticipantsResponse;
 import com.google.apps.meet.v2beta.ListRecordingsRequest;
 import com.google.apps.meet.v2beta.ListRecordingsResponse;
+import com.google.apps.meet.v2beta.ListSmartNotesRequest;
+import com.google.apps.meet.v2beta.ListSmartNotesResponse;
 import com.google.apps.meet.v2beta.ListTranscriptEntriesRequest;
 import com.google.apps.meet.v2beta.ListTranscriptEntriesResponse;
 import com.google.apps.meet.v2beta.ListTranscriptsRequest;
@@ -53,6 +57,7 @@ import com.google.apps.meet.v2beta.ListTranscriptsResponse;
 import com.google.apps.meet.v2beta.Participant;
 import com.google.apps.meet.v2beta.ParticipantSession;
 import com.google.apps.meet.v2beta.Recording;
+import com.google.apps.meet.v2beta.SmartNote;
 import com.google.apps.meet.v2beta.Transcript;
 import com.google.apps.meet.v2beta.TranscriptEntry;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -219,6 +224,28 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetSmartNoteRequest, SmartNote>
+      getSmartNoteMethodDescriptor =
+          MethodDescriptor.<GetSmartNoteRequest, SmartNote>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.apps.meet.v2beta.ConferenceRecordsService/GetSmartNote")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetSmartNoteRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SmartNote.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListSmartNotesRequest, ListSmartNotesResponse>
+      listSmartNotesMethodDescriptor =
+          MethodDescriptor.<ListSmartNotesRequest, ListSmartNotesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.apps.meet.v2beta.ConferenceRecordsService/ListSmartNotes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSmartNotesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSmartNotesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetConferenceRecordRequest, ConferenceRecord>
       getConferenceRecordCallable;
   private final UnaryCallable<ListConferenceRecordsRequest, ListConferenceRecordsResponse>
@@ -251,6 +278,10 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
       listTranscriptEntriesCallable;
   private final UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesPagedCallable;
+  private final UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable;
+  private final UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> listSmartNotesCallable;
+  private final UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -434,6 +465,29 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<GetSmartNoteRequest, SmartNote> getSmartNoteTransportSettings =
+        GrpcCallSettings.<GetSmartNoteRequest, SmartNote>newBuilder()
+            .setMethodDescriptor(getSmartNoteMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListSmartNotesRequest, ListSmartNotesResponse>
+        listSmartNotesTransportSettings =
+            GrpcCallSettings.<ListSmartNotesRequest, ListSmartNotesResponse>newBuilder()
+                .setMethodDescriptor(listSmartNotesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getConferenceRecordCallable =
         callableFactory.createUnaryCallable(
@@ -507,6 +561,15 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
             listTranscriptEntriesTransportSettings,
             settings.listTranscriptEntriesSettings(),
             clientContext);
+    this.getSmartNoteCallable =
+        callableFactory.createUnaryCallable(
+            getSmartNoteTransportSettings, settings.getSmartNoteSettings(), clientContext);
+    this.listSmartNotesCallable =
+        callableFactory.createUnaryCallable(
+            listSmartNotesTransportSettings, settings.listSmartNotesSettings(), clientContext);
+    this.listSmartNotesPagedCallable =
+        callableFactory.createPagedCallable(
+            listSmartNotesTransportSettings, settings.listSmartNotesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -615,6 +678,22 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
   public UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesPagedCallable() {
     return listTranscriptEntriesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable() {
+    return getSmartNoteCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> listSmartNotesCallable() {
+    return listSmartNotesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable() {
+    return listSmartNotesPagedCallable;
   }
 
   @Override
