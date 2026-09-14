@@ -311,7 +311,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private transient BigQueryReadClient bqReadClient;
     private transient ServerStream<ReadRowsResponse> stream;
     private transient Iterator<ReadRowsResponse> streamIterator;
-    private final Queue<FieldValueList> buffer = new ArrayDeque<>();
+    private transient Queue<FieldValueList> buffer = new ArrayDeque<>();
     private long totalRowsReturned = 0L;
     private boolean streamClosed = false;
 
@@ -336,6 +336,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     @Override
     public Page<FieldValueList> getNextPage() {
+      if (buffer == null) {
+        buffer = new ArrayDeque<>();
+      }
       if (streamClosed || totalRowsReturned >= maxResults) {
         closeClient();
         return null;
