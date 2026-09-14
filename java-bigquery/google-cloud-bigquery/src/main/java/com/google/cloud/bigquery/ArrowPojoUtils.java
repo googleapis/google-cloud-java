@@ -20,13 +20,12 @@ import com.google.cloud.bigquery.Field.Mode;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.vector.types.pojo.ArrowType;
-import org.apache.arrow.vector.types.pojo.Field;
-import org.apache.arrow.vector.types.pojo.Schema;
 import org.jspecify.annotations.NullMarked;
 
 /**
- * Internal helper utility for converting Apache Arrow POJO definitions (such as {@link Schema},
- * {@link Field}, and {@link ArrowType}) into BigQuery Veneer objects.
+ * Internal helper utility for converting Apache Arrow POJO definitions (such as {@link
+ * org.apache.arrow.vector.types.pojo.Schema}, {@link org.apache.arrow.vector.types.pojo.Field}, and
+ * {@link ArrowType}) into BigQuery Veneer objects.
  *
  * <p>This class handles standard Java objects and metadata conversions. For operations involving
  * Arrow vectors, off-heap memory, or deserializing byte streams, use {@link ArrowDeserializer}.
@@ -37,22 +36,23 @@ final class ArrowPojoUtils {
   private ArrowPojoUtils() {}
 
   /**
-   * Converts an Apache Arrow {@link Schema} into a BigQuery Veneer {@link Schema}.
+   * Converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Schema} into a BigQuery
+   * Veneer {@link Schema}.
    *
    * @param arrowSchema the Apache Arrow schema definition
    * @return the corresponding BigQuery Veneer Schema
    */
-  static com.google.cloud.bigquery.Schema arrowSchemaToBigQuerySchema(Schema arrowSchema) {
-    List<com.google.cloud.bigquery.Field> fields = new ArrayList<>();
-    for (Field arrowField : arrowSchema.getFields()) {
+  static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
+    List<Field> fields = new ArrayList<>();
+    for (org.apache.arrow.vector.types.pojo.Field arrowField : arrowSchema.getFields()) {
       fields.add(arrowFieldToBigQueryField(arrowField));
     }
-    return com.google.cloud.bigquery.Schema.of(fields);
+    return Schema.of(fields);
   }
 
   /**
-   * Recursively converts an Apache Arrow {@link Field} into a BigQuery Veneer {@link
-   * com.google.cloud.bigquery.Field}.
+   * Recursively converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Field} into a
+   * BigQuery Veneer {@link Field}.
    *
    * <p>Handles primitive types, repeated/list types, and nested struct/record types.
    *
@@ -60,38 +60,34 @@ final class ArrowPojoUtils {
    * @return the corresponding BigQuery Veneer Field
    * @throws IllegalArgumentException if an Arrow List field contains no child elements
    */
-  static com.google.cloud.bigquery.Field arrowFieldToBigQueryField(Field arrowField) {
+  static Field arrowFieldToBigQueryField(org.apache.arrow.vector.types.pojo.Field arrowField) {
     String name = arrowField.getName();
     ArrowType type = arrowField.getType();
-    com.google.cloud.bigquery.Field.Builder builder;
+    Field.Builder builder;
 
     if (type instanceof ArrowType.List) {
       if (arrowField.getChildren().isEmpty()) {
         throw new IllegalArgumentException(
             "Arrow List field must have at least one child field: " + name);
       }
-      Field innerField = arrowField.getChildren().get(0);
+      org.apache.arrow.vector.types.pojo.Field innerField = arrowField.getChildren().get(0);
       if (innerField.getType() instanceof ArrowType.List) {
         throw new IllegalArgumentException(
             "Nested arrays (List of List) are not supported by BigQuery: " + name);
       }
       if (innerField.getType() instanceof ArrowType.Struct) {
-        builder =
-            com.google.cloud.bigquery.Field.newBuilder(
-                name, LegacySQLTypeName.RECORD, getSubFields(innerField));
+        builder = Field.newBuilder(name, LegacySQLTypeName.RECORD, getSubFields(innerField));
       } else {
         LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
-        builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
+        builder = Field.newBuilder(name, innerType);
       }
       builder.setMode(Mode.REPEATED);
     } else {
       if (type instanceof ArrowType.Struct) {
-        builder =
-            com.google.cloud.bigquery.Field.newBuilder(
-                name, LegacySQLTypeName.RECORD, getSubFields(arrowField));
+        builder = Field.newBuilder(name, LegacySQLTypeName.RECORD, getSubFields(arrowField));
       } else {
         LegacySQLTypeName bqType = arrowTypeToLegacySQLTypeName(type);
-        builder = com.google.cloud.bigquery.Field.newBuilder(name, bqType);
+        builder = Field.newBuilder(name, bqType);
       }
       if (arrowField.isNullable()) {
         builder.setMode(Mode.NULLABLE);
@@ -102,13 +98,13 @@ final class ArrowPojoUtils {
     return builder.build();
   }
 
-  private static FieldList getSubFields(Field structField) {
+  private static FieldList getSubFields(org.apache.arrow.vector.types.pojo.Field structField) {
     if (structField.getChildren().isEmpty()) {
       throw new IllegalArgumentException(
           "Arrow Struct field must have at least one child field: " + structField.getName());
     }
-    List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-    for (Field childField : structField.getChildren()) {
+    List<Field> subFields = new ArrayList<>();
+    for (org.apache.arrow.vector.types.pojo.Field childField : structField.getChildren()) {
       subFields.add(arrowFieldToBigQueryField(childField));
     }
     return FieldList.of(subFields);
