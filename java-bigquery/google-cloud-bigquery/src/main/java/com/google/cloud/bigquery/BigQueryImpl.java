@@ -2419,7 +2419,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } else {
       firstPageRows =
           transformTableData(
-              results.getRows(), schema, getOptions().getDataFormatOptions().useInt64Timestamp());
+              results.getRows() != null ? results.getRows() : ImmutableList.of(),
+              schema,
+              getOptions().getDataFormatOptions().useInt64Timestamp());
     }
 
     if (content.getMaxResults() != null && firstPageRows.size() > content.getMaxResults()) {
