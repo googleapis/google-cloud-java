@@ -341,7 +341,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Boolean.class);
+      Boolean result = BigQueryTypeRegistry.convert(value, Boolean.class);
+      return result != null && result;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Boolean.class, e);
     }
@@ -352,7 +353,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getByte");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Byte.class);
+      Byte result = BigQueryTypeRegistry.convert(value, Byte.class);
+      return result != null ? result : 0;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Byte.class, e);
     }
@@ -363,7 +365,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getShort");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Short.class);
+      Short result = BigQueryTypeRegistry.convert(value, Short.class);
+      return result != null ? result : 0;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Short.class, e);
     }
@@ -374,7 +377,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getInt");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Integer.class);
+      Integer result = BigQueryTypeRegistry.convert(value, Integer.class);
+      return result != null ? result : 0;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Integer.class, e);
     }
@@ -385,7 +389,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getLong");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Long.class);
+      Long result = BigQueryTypeRegistry.convert(value, Long.class);
+      return result != null ? result : 0L;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Long.class, e);
     }
@@ -396,7 +401,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getFloat");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Float.class);
+      Float result = BigQueryTypeRegistry.convert(value, Float.class);
+      return result != null ? result : 0.0f;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Float.class, e);
     }
@@ -407,7 +413,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getDouble");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Double.class);
+      Double result = BigQueryTypeRegistry.convert(value, Double.class);
+      return result != null ? result : 0.0d;
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Double.class, e);
     }
@@ -503,14 +510,14 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public Blob getBlob(int columnIndex) throws SQLException {
     LOG.finestTrace("getBlob");
     byte[] value = getBytes(columnIndex);
-    return new javax.sql.rowset.serial.SerialBlob(value);
+    return value == null ? null : new javax.sql.rowset.serial.SerialBlob(value);
   }
 
   @Override
   public Clob getClob(int columnIndex) throws SQLException {
     LOG.finestTrace("getClob");
     String value = getString(columnIndex);
-    return new javax.sql.rowset.serial.SerialClob(value.toCharArray());
+    return value == null ? null : new javax.sql.rowset.serial.SerialClob(value.toCharArray());
   }
 
   @Override
