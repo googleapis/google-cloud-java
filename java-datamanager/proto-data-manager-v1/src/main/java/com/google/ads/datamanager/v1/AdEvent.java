@@ -55,6 +55,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     advertiserId_ = "";
     eventType_ = 0;
     eventId_ = "";
+    ipAddress_ = "";
     mobileDeviceId_ = "";
     campaignId_ = "";
     campaignName_ = "";
@@ -1292,6 +1293,67 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     return deviceInfo_ == null
         ? com.google.ads.datamanager.v1.DeviceInfo.getDefaultInstance()
         : deviceInfo_;
+  }
+
+  public static final int IP_ADDRESS_FIELD_NUMBER = 34;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP address used for measurement. This must be same value as
+   * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+   * Keep it blank if you do not want to share IP for measurement.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The ipAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpAddress() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipAddress_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP address used for measurement. This must be same value as
+   * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+   * Keep it blank if you do not want to share IP for measurement.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIpAddressBytes() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MOBILE_DEVICE_ID_FIELD_NUMBER = 9;
@@ -2789,6 +2851,9 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(33, measurementAllowed_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 34, ipAddress_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2913,6 +2978,9 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(33, measurementAllowed_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(34, ipAddress_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2943,6 +3011,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     if (hasDeviceInfo()) {
       if (!getDeviceInfo().equals(other.getDeviceInfo())) return false;
     }
+    if (!getIpAddress().equals(other.getIpAddress())) return false;
     if (!getMobileDeviceId().equals(other.getMobileDeviceId())) return false;
     if (!getCampaignId().equals(other.getCampaignId())) return false;
     if (!getCampaignName().equals(other.getCampaignName())) return false;
@@ -3068,6 +3137,8 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DEVICE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceInfo().hashCode();
     }
+    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getIpAddress().hashCode();
     hash = (37 * hash) + MOBILE_DEVICE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getMobileDeviceId().hashCode();
     hash = (37 * hash) + CAMPAIGN_ID_FIELD_NUMBER;
@@ -3352,6 +3423,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         deviceInfoBuilder_.dispose();
         deviceInfoBuilder_ = null;
       }
+      ipAddress_ = "";
       mobileDeviceId_ = "";
       campaignId_ = "";
       campaignName_ = "";
@@ -3446,42 +3518,40 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.mobileDeviceId_ = mobileDeviceId_;
+        result.ipAddress_ = ipAddress_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.campaignId_ = campaignId_;
+        result.mobileDeviceId_ = mobileDeviceId_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.campaignName_ = campaignName_;
+        result.campaignId_ = campaignId_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.adGroupId_ = adGroupId_;
+        result.campaignName_ = campaignName_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.adGroupId_ = adGroupId_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.adId_ = adId_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.adHeight_ = adHeight_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.adWidth_ = adWidth_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.regionCode_ = regionCode_;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.source_ = source_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.medium_ = medium_;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.attributionHint_ = attributionHint_;
-      }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.viewabilityInfo_ =
-            viewabilityInfoBuilder_ == null ? viewabilityInfo_ : viewabilityInfoBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        result.attributionHint_ = attributionHint_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3490,6 +3560,11 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.viewabilityInfo_ =
+            viewabilityInfoBuilder_ == null ? viewabilityInfo_ : viewabilityInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.measurementAllowed_ = measurementAllowed_;
         to_bitField0_ |= 0x00000010;
       }
@@ -3547,29 +3622,34 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       if (other.hasDeviceInfo()) {
         mergeDeviceInfo(other.getDeviceInfo());
       }
+      if (!other.getIpAddress().isEmpty()) {
+        ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       if (!other.getMobileDeviceId().isEmpty()) {
         mobileDeviceId_ = other.mobileDeviceId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getCampaignId().isEmpty()) {
         campaignId_ = other.campaignId_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getCampaignName().isEmpty()) {
         campaignName_ = other.campaignName_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getAdGroupId().isEmpty()) {
         adGroupId_ = other.adGroupId_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.getAdId().isEmpty()) {
         adId_ = other.adId_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.getAdHeight() != 0) {
@@ -3580,17 +3660,17 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getRegionCode().isEmpty()) {
         regionCode_ = other.regionCode_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (!other.getSource().isEmpty()) {
         source_ = other.source_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.getMedium().isEmpty()) {
         medium_ = other.medium_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.attributionHint_ != 0) {
@@ -3810,31 +3890,31 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
             case 74:
               {
                 mobileDeviceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 campaignId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
               {
                 campaignName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 98:
               {
                 adGroupId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 98
             case 106:
               {
                 adId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 106
             case 112:
@@ -3882,31 +3962,31 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
             case 160:
               {
                 adHeight_ = input.readInt32();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 160
             case 168:
               {
                 adWidth_ = input.readInt32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 168
             case 178:
               {
                 regionCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 178
             case 186:
               {
                 source_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 186
             case 194:
               {
                 medium_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 194
             case 200:
@@ -3954,22 +4034,28 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
             case 248:
               {
                 attributionHint_ = input.readEnum();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 248
             case 258:
               {
                 input.readMessage(
                     internalGetViewabilityInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 258
             case 264:
               {
                 measurementAllowed_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 264
+            case 274:
+              {
+                ipAddress_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 274
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5381,6 +5467,137 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       return deviceInfoBuilder_;
     }
 
+    private java.lang.Object ipAddress_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP address used for measurement. This must be same value as
+     * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+     * Keep it blank if you do not want to share IP for measurement.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The ipAddress.
+     */
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP address used for measurement. This must be same value as
+     * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+     * Keep it blank if you do not want to share IP for measurement.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for ipAddress.
+     */
+    public com.google.protobuf.ByteString getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP address used for measurement. This must be same value as
+     * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+     * Keep it blank if you do not want to share IP for measurement.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddress(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ipAddress_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP address used for measurement. This must be same value as
+     * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+     * Keep it blank if you do not want to share IP for measurement.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIpAddress() {
+      ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. IP address used for measurement. This must be same value as
+     * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+     * Keep it blank if you do not want to share IP for measurement.
+     * </pre>
+     *
+     * <code>
+     * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddressBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ipAddress_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object mobileDeviceId_ = "";
 
     /**
@@ -5446,7 +5663,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       mobileDeviceId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5464,7 +5681,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMobileDeviceId() {
       mobileDeviceId_ = getDefaultInstance().getMobileDeviceId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5487,7 +5704,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       mobileDeviceId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5557,7 +5774,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       campaignId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5575,7 +5792,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCampaignId() {
       campaignId_ = getDefaultInstance().getCampaignId();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5598,7 +5815,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       campaignId_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5668,7 +5885,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       campaignName_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5686,7 +5903,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCampaignName() {
       campaignName_ = getDefaultInstance().getCampaignName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5709,7 +5926,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       campaignName_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5779,7 +5996,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       adGroupId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5797,7 +6014,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAdGroupId() {
       adGroupId_ = getDefaultInstance().getAdGroupId();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5820,7 +6037,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       adGroupId_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5890,7 +6107,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       adId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5908,7 +6125,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAdId() {
       adId_ = getDefaultInstance().getAdId();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -5931,7 +6148,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       adId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6738,7 +6955,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     public Builder setAdHeight(int value) {
 
       adHeight_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6755,7 +6972,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAdHeight() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       adHeight_ = 0;
       onChanged();
       return this;
@@ -6794,7 +7011,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     public Builder setAdWidth(int value) {
 
       adWidth_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6811,7 +7028,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAdWidth() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       adWidth_ = 0;
       onChanged();
       return this;
@@ -6882,7 +7099,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       regionCode_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6900,7 +7117,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegionCode() {
       regionCode_ = getDefaultInstance().getRegionCode();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -6923,7 +7140,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       regionCode_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6996,7 +7213,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       source_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7015,7 +7232,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSource() {
       source_ = getDefaultInstance().getSource();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7039,7 +7256,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       source_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7109,7 +7326,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       medium_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7127,7 +7344,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMedium() {
       medium_ = getDefaultInstance().getMedium();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7150,7 +7367,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       medium_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7967,7 +8184,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder setAttributionHintValue(int value) {
       attributionHint_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8016,7 +8233,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       attributionHint_ = value.getNumber();
       onChanged();
       return this;
@@ -8039,7 +8256,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAttributionHint() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       attributionHint_ = 0;
       onChanged();
       return this;
@@ -8066,7 +8283,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * @return Whether the viewabilityInfo field is set.
      */
     public boolean hasViewabilityInfo() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -8112,7 +8329,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       } else {
         viewabilityInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8135,7 +8352,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
       } else {
         viewabilityInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8153,7 +8370,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeViewabilityInfo(com.google.ads.datamanager.v1.ViewabilityInfo value) {
       if (viewabilityInfoBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && viewabilityInfo_ != null
             && viewabilityInfo_
                 != com.google.ads.datamanager.v1.ViewabilityInfo.getDefaultInstance()) {
@@ -8165,7 +8382,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
         viewabilityInfoBuilder_.mergeFrom(value);
       }
       if (viewabilityInfo_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -8183,7 +8400,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearViewabilityInfo() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       viewabilityInfo_ = null;
       if (viewabilityInfoBuilder_ != null) {
         viewabilityInfoBuilder_.dispose();
@@ -8205,7 +8422,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.datamanager.v1.ViewabilityInfo.Builder getViewabilityInfoBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetViewabilityInfoFieldBuilder().getBuilder();
     }
@@ -8277,7 +8494,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasMeasurementAllowed() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -8317,7 +8534,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
     public Builder setMeasurementAllowed(boolean value) {
 
       measurementAllowed_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8337,7 +8554,7 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearMeasurementAllowed() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       measurementAllowed_ = false;
       onChanged();
       return this;

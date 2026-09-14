@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMemoryLayersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -53,6 +54,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -66,8 +68,11 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MemoryLayer;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -79,6 +84,8 @@ import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerMetadata;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableInstanceAdminStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -267,6 +274,30 @@ public class BaseBigtableInstanceAdminSettings
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings() {
     return ((BigtableInstanceAdminStubSettings) getStubSettings()).deleteClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMemoryLayer. */
+  public UnaryCallSettings<UpdateMemoryLayerRequest, Operation> updateMemoryLayerSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).updateMemoryLayerSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMemoryLayer. */
+  public OperationCallSettings<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings())
+        .updateMemoryLayerOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMemoryLayers. */
+  public PagedCallSettings<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+      listMemoryLayersSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).listMemoryLayersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMemoryLayer. */
+  public UnaryCallSettings<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerSettings() {
+    return ((BigtableInstanceAdminStubSettings) getStubSettings()).getMemoryLayerSettings();
   }
 
   /** Returns the object with the settings used for calls to createAppProfile. */
@@ -606,6 +637,31 @@ public class BaseBigtableInstanceAdminSettings
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings() {
       return getStubSettingsBuilder().deleteClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMemoryLayer. */
+    public UnaryCallSettings.Builder<UpdateMemoryLayerRequest, Operation>
+        updateMemoryLayerSettings() {
+      return getStubSettingsBuilder().updateMemoryLayerSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMemoryLayer. */
+    public OperationCallSettings.Builder<
+            UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+        updateMemoryLayerOperationSettings() {
+      return getStubSettingsBuilder().updateMemoryLayerOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMemoryLayers. */
+    public PagedCallSettings.Builder<
+            ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+        listMemoryLayersSettings() {
+      return getStubSettingsBuilder().listMemoryLayersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMemoryLayer. */
+    public UnaryCallSettings.Builder<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerSettings() {
+      return getStubSettingsBuilder().getMemoryLayerSettings();
     }
 
     /** Returns the builder for the settings used for calls to createAppProfile. */
