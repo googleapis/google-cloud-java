@@ -417,4 +417,37 @@ public class BigQueryTemporalUtilityTest {
     assertThat(BigQueryTemporalUtility.formatTimestampValue("1680174859.123456789123", true))
         .isEqualTo("2023-03-30 11:14:19.123456789123");
   }
+
+  @Test
+  public void testTruncateFractionalSeconds() {
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds(null, 12)).isNull();
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds("2026-04-08 10:00:00", 12))
+        .isEqualTo("2026-04-08 10:00:00");
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds("2026-04-08 10:00:00.123456", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345+00:00", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012+00:00");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345Z", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012Z");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 6))
+        .isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 9))
+        .isEqualTo("2026-04-08 10:00:00.123456789");
+  }
 }
