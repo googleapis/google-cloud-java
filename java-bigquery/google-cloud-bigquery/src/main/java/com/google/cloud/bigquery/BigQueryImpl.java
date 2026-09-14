@@ -26,6 +26,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.ProjectList;
@@ -323,8 +324,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } else {
       settingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     }
-    if (options.getMergedHeaderProvider(null) != null) {
-      settingsBuilder.setHeaderProvider(options.getMergedHeaderProvider(null));
+    HeaderProvider headerProvider = options.getMergedHeaderProvider(null);
+    if (headerProvider != null) {
+      settingsBuilder.setHeaderProvider(headerProvider);
     }
     if (options.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(options.getUniverseDomain());
@@ -2379,15 +2381,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
       QueryJobConfiguration arrowConfig = configuration;
-      if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW) {
-        arrowConfig =
-            configuration.toBuilder().setQueryResultsFormat(QueryResultsFormat.ARROW).build();
-      }
-      if (arrowConfig.getJobCreationMode() == null) {
-        arrowConfig =
-            arrowConfig.toBuilder()
-                .setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL)
-                .build();
+      if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW
+          || arrowConfig.getJobCreationMode() == null) {
+        QueryJobConfiguration.Builder builder = configuration.toBuilder();
+        if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW) {
+          builder.setQueryResultsFormat(QueryResultsFormat.ARROW);
+        }
+        if (arrowConfig.getJobCreationMode() == null) {
+          builder.setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL);
+        }
+        arrowConfig = builder.build();
       }
 
       QueryRequestInfo requestInfo =
@@ -2528,13 +2531,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       } else {
         // Fallback path: jobs.insert + BigQuery Storage Read API
         Job job = create(JobInfo.of(jobId, arrowConfig), options);
-        Job completedJob;
-        try {
-          completedJob = job.waitFor();
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          throw e;
-        }
+        Job completedJob = job.waitFor();
 
         if (completedJob == null) {
           throw new BigQueryException(0, "Job no longer exists or could not be retrieved.");
