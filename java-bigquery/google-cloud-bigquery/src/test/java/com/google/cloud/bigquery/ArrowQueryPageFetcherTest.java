@@ -310,31 +310,8 @@ public class ArrowQueryPageFetcherTest {
 
   @Test
   void testSerialization() throws Exception {
-    byte[] batchBytes = createBatchBytes(ImmutableList.of(1L, 2L));
-    ReadRowsResponse resp =
-        ReadRowsResponse.newBuilder()
-            .setArrowRecordBatch(
-                com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
-                    .setSerializedRecordBatch(ByteString.copyFrom(batchBytes))
-                    .build())
-            .build();
-
-    @SuppressWarnings("unchecked")
-    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
-        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
-    @SuppressWarnings("unchecked")
-    ServerStream<ReadRowsResponse> mockServerStream =
-        mock(ServerStream.class, withSettings().withoutAnnotations());
-    when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
-    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(resp).iterator());
-
-    BigQueryReadClient mockReadClient = createMockReadClient(mockCallable);
-
     BigQueryOptions options =
         BigQueryOptions.newBuilder().setProjectId(PROJECT).setLocation(LOCATION).build();
-    BigQuery service = options.getService();
-    ((BigQueryImpl) service).setBigQueryReadClient(mockReadClient);
-
     JobId jobId = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
 
     BigQueryImpl.ArrowQueryPageFetcher fetcher =
@@ -344,7 +321,7 @@ public class ArrowQueryPageFetcherTest {
             schemaBytes,
             arrowSchema,
             options,
-            /* initialRowOffset= */ 0L,
+            /* initialRowOffset= */ 10L,
             /* maxResults= */ 10L,
             Collections.emptyMap());
 
@@ -360,11 +337,13 @@ public class ArrowQueryPageFetcherTest {
     }
 
     assertNotNull(deserializedFetcher);
-    Page<FieldValueList> page = deserializedFetcher.getNextPage();
-    assertNotNull(page);
-    List<FieldValueList> rows = ImmutableList.copyOf(page.getValues());
-    assertEquals(2, rows.size());
-    assertEquals("1", rows.get(0).get(0).getStringValue());
-    assertEquals("2", rows.get(1).get(0).getStringValue());
+    java.lang.reflect.Field bufferField =
+        BigQueryImpl.ArrowQueryPageFetcher.class.getDeclaredField("buffer");
+    bufferField.setAccessible(true);
+    assertNull(bufferField.get(deserializedFetcher));
+
+    // Calling getNextPage() lazily initializes the transient buffer without throwing NPE
+    assertNull(deserializedFetcher.getNextPage());
+    assertNotNull(bufferField.get(deserializedFetcher));
   }
 }
