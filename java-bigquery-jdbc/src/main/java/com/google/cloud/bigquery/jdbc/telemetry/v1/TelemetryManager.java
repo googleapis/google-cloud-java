@@ -16,9 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,6 +35,8 @@ import java.util.logging.Logger;
 public final class TelemetryManager implements AutoCloseable {
   private static final Logger logger =
       new BigQueryJdbcCustomLogger(TelemetryManager.class.getName());
+
+  private static volatile boolean shutdownHookRegistered = false;
 
   private static volatile TelemetryManager instance;
   private static volatile boolean globallyDisabled = false;
@@ -69,6 +73,7 @@ public final class TelemetryManager implements AutoCloseable {
     }
 
     TelemetryManager localRef = instance;
+
     if (localRef == null) {
       synchronized (TelemetryManager.class) {
         if (globallyDisabled) {
@@ -82,6 +87,7 @@ public final class TelemetryManager implements AutoCloseable {
           TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
           localRef = new TelemetryManager(batcher);
           instance = localRef;
+          registerShutdownHook();
         }
       }
     }
@@ -150,7 +156,7 @@ public final class TelemetryManager implements AutoCloseable {
     globallyDisabled = false;
   }
 
-  static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
+  public static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
     if (bqStatementType == null) {
       return StatementType.STATEMENT_TYPE_UNSPECIFIED;
     }
@@ -161,24 +167,25 @@ public final class TelemetryManager implements AutoCloseable {
     return desc != null ? StatementType.valueOf(desc) : StatementType.STATEMENT_TYPE_OTHER;
   }
 
-  static AuthenticationType toAuthenticationType(int oauthType) {
+  public static AuthenticationType toAuthenticationType(int oauthType) {
     switch (oauthType) {
       case 0:
         return AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT;
       case 1:
         return AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION;
       case 2:
-        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
-      case 3:
-        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
-      case 4:
         return AuthenticationType.AUTHENTICATION_TYPE_TOKEN;
+      case 3:
+        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
+      case 4:
+        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
       default:
         return AuthenticationType.AUTHENTICATION_TYPE_CUSTOM;
     }
   }
 
-  static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
+  public static void recordConnectionAttempt(
+      Status status, int errorCode, AuthenticationType authType) {
     runSafely(
         () -> {
           TelemetryManager mgr = instance;
@@ -194,7 +201,7 @@ public final class TelemetryManager implements AutoCloseable {
         });
   }
 
-  static void recordStatementExecution(
+  public static void recordStatementExecution(
       StatementType statementType,
       QueryApiType apiType,
       Status status,
@@ -217,7 +224,21 @@ public final class TelemetryManager implements AutoCloseable {
         });
   }
 
-  static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
+  public static void recordStatementExecution(
+      StatementExecution.Builder statementExecutionBuilder, long durationMs) {
+    if (statementExecutionBuilder == null) {
+      return;
+    }
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher().offer(statementExecutionBuilder.build(), durationMs);
+          }
+        });
+  }
+
+  public static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
     runSafely(
         () -> {
           TelemetryManager mgr = instance;
@@ -230,5 +251,72 @@ public final class TelemetryManager implements AutoCloseable {
                         .build());
           }
         });
+  }
+
+  public static void recordError(int errorCode, int errorXdbcCode, String methodName) {
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offer(
+                    ErrorMetric.newBuilder()
+                        .setErrorCode(errorCode)
+                        .setErrorXdbcCode(errorXdbcCode)
+                        .setMethodName(methodName == null ? "" : methodName)
+                        .build());
+          }
+        });
+  }
+
+  /**
+   * Extracts the numeric error code from the throwable chain. Traverses causes to unpack
+   * BigQueryException (HTTP status codes) or SQLException error codes. Returns 1000 as the fallback
+   * driver error code.
+   */
+  public static int extractErrorCode(Throwable t) {
+    while (t != null) {
+      if (t instanceof BigQueryException) {
+        int code = ((BigQueryException) t).getCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      if (t instanceof SQLException) {
+        int code = ((SQLException) t).getErrorCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      t = t.getCause();
+    }
+    return 1000;
+  }
+
+  private static void registerShutdownHook() {
+    if (!shutdownHookRegistered) {
+      synchronized (TelemetryManager.class) {
+        if (!shutdownHookRegistered) {
+          try {
+            Runtime.getRuntime()
+                .addShutdownHook(
+                    new Thread(
+                        () -> {
+                          try {
+                            closeInstance();
+                          } catch (Throwable t) {
+                            logger.warning("Error closing TelemetryManager during JVM shutdown");
+                          }
+                        },
+                        "bigquery-jdbc-telemetry-shutdown-hook"));
+            shutdownHookRegistered = true;
+          } catch (IllegalStateException e) {
+            // Thrown if the JVM is already in the process of shutting down
+          } catch (SecurityException e) {
+            logger.warning("SecurityManager prevented registering telemetry shutdown hook");
+          }
+        }
+      }
+    }
   }
 }

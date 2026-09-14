@@ -48,7 +48,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final boolean ownsExecutor;
   private final ReentrantLock flushLock = new ReentrantLock();
 
-  // Live telemetry accumulators. Lock-free to eliminate object allocation and GC overhead.
+  // Live telemetry accumulator. Lock-free to eliminate object allocation and GC overhead.
   private ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
       new ConcurrentHashMap<>();
 

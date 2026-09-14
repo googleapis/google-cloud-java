@@ -48,6 +48,9 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
@@ -149,6 +152,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private static final ThreadFactory JDBC_THREAD_FACTORY =
       new BigQueryThreadFactory("BigQuery-Thread-");
 
+  protected StatementExecution.Builder currentExecutionBuilder = StatementExecution.newBuilder();
+
   static {
     BigQueryDaemonPollingTask.startGcDaemonTask(
         referenceQueueArrowRs,
@@ -171,6 +176,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.parentJobId = null;
     this.currentJobIdIndex = -1;
     this.currentUpdateCount = -1;
+
+    this.currentExecutionBuilder = StatementExecution.newBuilder();
   }
 
   private BigQuerySettings generateBigQuerySettings() {
@@ -574,6 +581,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
       saveSessionIdIfPresent(tableResult);
+      this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_JOBLESS_QUERY);
       return new ExecuteResult(tableResult, null);
     }
 
@@ -604,6 +612,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         job = refreshedJob;
       }
     }
+    this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
     return new ExecuteResult(tableResult, job);
   }
 
@@ -655,19 +664,54 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           jobConfiguration.toBuilder().setJobTimeoutMs(Long.valueOf(queryTimeout) * 1000).build();
     }
 
+    long startTime = System.currentTimeMillis();
+
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
       StatementType statementType = getStatementType(executeResult);
+
+      this.currentExecutionBuilder.setStatementType(
+          TelemetryManager.toStatementType(statementType));
+
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
+
+      this.currentExecutionBuilder.setStatus(
+          com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+
     } catch (InterruptedException ex) {
+      this.currentExecutionBuilder
+          .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+          .setErrorCode(TelemetryManager.extractErrorCode(ex));
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
+      this.currentExecutionBuilder
+          .setStatus(
+              isCanceled
+                  ? com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_CANCELLED
+                  : com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+          .setErrorCode(TelemetryManager.extractErrorCode(ex));
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
       }
       throw new BigQueryJdbcException("BigQueryException during runQuery", ex);
+    } finally {
+      long durationMs = System.currentTimeMillis() - startTime;
+
+      // Safety net: If an uncaught RuntimeException occurred before setting STATUS_SUCCESS,
+      // mark it as an ERROR so failures are never reported as UNSPECIFIED.
+      if (this.currentExecutionBuilder.getStatus()
+          == com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_UNSPECIFIED) {
+        this.currentExecutionBuilder
+            .setStatus(
+                isCanceled
+                    ? com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_CANCELLED
+                    : com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(1000);
+      }
+
+      TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
     }
   }
 
@@ -831,7 +875,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void updateAffectedRowCount(Long count) throws SQLException {
-    // TODO(neenu): check if this need to be closed vs removed)
     if (this.currentResultSet != null) {
       try {
         this.currentResultSet.close();
@@ -1077,6 +1120,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       try {
         LOG.info("Using ReadAPI to read the data.");
         resultSet = processArrowResultSet(results, job);
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -1088,6 +1132,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
       resultSet = processJsonResultSet(results, job);
+
+      // Jobless vs Standard REST
+      if (jobId == null) {
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_JOBLESS_QUERY);
+      } else {
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
+      }
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
