@@ -187,4 +187,49 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
                         && r.getMessage().contains("Failed to parse connection URL properties"));
     assertThat(foundSevere).isTrue();
   }
+
+  @Test
+  public void testConnect_recordsFailedConnectionWithErrorCode() throws Exception {
+    ByteArrayOutputStream capturedBytes = new ByteArrayOutputStream();
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (getStreamingContent() != null) {
+                  getStreamingContent().writeTo(capturedBytes);
+                }
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+
+    TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
+    TelemetryManager.init(config, new ClearcutTransport(mockTransport, config));
+
+    // Calling connect with invalid OAuthType triggers SQLException
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=invalid;",
+                new Properties()));
+
+    // Flush and verify error was recorded
+    TelemetryManager.getInstance().getBatcher().flush();
+
+    LogRequest logRequest = LogRequest.parseFrom(capturedBytes.toByteArray());
+    TelemetryPayload payload =
+        TelemetryPayload.parseFrom(logRequest.getLogEvent(0).getSourceExtension());
+
+    assertThat(payload.getConnectionAttemptsCount()).isEqualTo(1);
+    ConnectionAttempt attempt = payload.getConnectionAttempts(0);
+    assertThat(attempt.getStatus()).isEqualTo(Status.STATUS_ERROR);
+    assertThat(attempt.getErrorCode()).isEqualTo(1000); // generic fallback code
+  }
 }

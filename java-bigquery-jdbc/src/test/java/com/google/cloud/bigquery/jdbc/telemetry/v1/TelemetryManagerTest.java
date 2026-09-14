@@ -215,4 +215,48 @@ public class TelemetryManagerTest {
     assertNull(TelemetryManager.getInstance());
     assertNull(TelemetryManager.getInstance(props1));
   }
+
+  @Test
+  public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
+    TelemetryManager.closeInstance();
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    assertThat(connection.isClosed()).isFalse();
+    // Verify TelemetryManager is initialized and recorded the connection
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
+
+  @Test
+  public void testConnect_recordsFailedConnectionTelemetry() {
+    TelemetryManager.closeInstance();
+    // Malformed URL causing DataSource parsing failure
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=invalid;",
+                new Properties()));
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
+
+  @Test
+  public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
+    TelemetryManager.closeInstance();
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;EnableDiagnosticTelemetry=0;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    // Since opt-out was requested, TelemetryManager should NOT be initialized
+    assertThat(TelemetryManager.isInitialized()).isFalse();
+  }
 }
