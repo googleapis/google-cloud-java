@@ -2466,7 +2466,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   private void validate(
       String method,
       BiFunction<ResultSet, Integer, Object> getter,
-      ImmutableMap<String, Object> expectedResult)
+      ImmutableMap<String, Object> expectedResult,
+      Object expectedNullValue)
       throws Exception {
 
     try (Connection connection = DriverManager.getConnection(connection_uri);
@@ -2486,6 +2487,14 @@ public class ITBigQueryJDBCTest extends ITBase {
       resultSetRegular.next();
       resultSetArrow.next();
 
+      String queryNull =
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null", PROJECT_ID, DATASET);
+      ResultSet resultSetRegularNull = statement.executeQuery(queryNull);
+      ResultSet resultSetArrowNull = statementHTAPI.executeQuery(queryNull);
+      resultSetRegularNull.next();
+      resultSetArrowNull.next();
+
       for (int i = 1; i <= resultSetRegular.getMetaData().getColumnCount(); i++) {
         String columnName = resultSetRegular.getMetaData().getColumnName(i);
 
@@ -2494,18 +2503,42 @@ public class ITBigQueryJDBCTest extends ITBase {
         String htapiApiLabel =
             String.format("[Method: %s] [Column: %s] [API: HTAPI]", method, columnName);
 
+        String regularApiLabelNull =
+            String.format("[Method: %s] [Column: %s] [API: Regular Null]", method, columnName);
+        String htapiApiLabelNull =
+            String.format("[Method: %s] [Column: %s] [API: HTAPI Null]", method, columnName);
+
         if (expectedResult.containsKey(columnName)) {
           Object expectedValue = expectedResult.get(columnName);
 
           assertEquals(expectedValue, getter.apply(resultSetRegular, i), regularApiLabel);
-          assertEquals(expectedValue, getter.apply(resultSetArrow, i), htapiApiLabel);
+          assertFalse(resultSetRegular.wasNull());
 
+          assertEquals(expectedValue, getter.apply(resultSetArrow, i), htapiApiLabel);
+          assertFalse(resultSetArrow.wasNull());
+
+          Object nullVal = columnName.contains("array") ? "[]" : expectedNullValue;
+          boolean expectedWasNull = !columnName.contains("array");
+
+          assertEquals(nullVal, getter.apply(resultSetRegularNull, i), regularApiLabelNull);
+          assertEquals(expectedWasNull, resultSetRegularNull.wasNull());
+
+          assertEquals(nullVal, getter.apply(resultSetArrowNull, i), htapiApiLabelNull);
+          assertEquals(expectedWasNull, resultSetArrowNull.wasNull());
         } else {
           String regularMsg = "Expected exception but got a value. " + regularApiLabel;
           assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetRegular, i), regularMsg);
 
           String htapiMsg = "Expected exception but got a value. " + htapiApiLabel;
           assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetArrow, i), htapiMsg);
+
+          // TODO(b/561731174): support incompatible conversions for NULL values
+          // String regularMsgNull = "Expected exception but got a value. " + regularApiLabelNull;
+          // assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetRegularNull, i),
+          // regularMsgNull);
+
+          // String htapiMsgNull = "Expected exception but got a value. " + htapiApiLabelNull;
+          // assertEquals(EXCEPTION_REPLACEMENT, getter.apply(resultSetArrowNull, i), htapiMsgNull);
         }
       }
     }
@@ -2563,10 +2596,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getString(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getString", getter, stringResults);
+    validate("getString", getter, stringResults, null);
   }
 
   @Test
@@ -2583,10 +2617,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getInt(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getInt", getter, result);
+    validate("getInt", getter, result, 0);
   }
 
   @Test
@@ -2603,10 +2638,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getLong(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getLong", getter, result);
+    validate("getLong", getter, result, 0L);
   }
 
   @Test
@@ -2625,10 +2661,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getBoolean(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getBool", getter, result);
+    validate("getBool", getter, result, false);
   }
 
   @Test
@@ -2646,10 +2683,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getFloat(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getFloat", getter, result);
+    validate("getFloat", getter, result, 0.0f);
   }
 
   @Test
@@ -2667,10 +2705,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getDouble(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getDouble", getter, result);
+    validate("getDouble", getter, result, 0.0d);
   }
 
   @Test
@@ -2687,10 +2726,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getShort(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getShort", getter, result);
+    validate("getShort", getter, result, (short) 0);
   }
 
   @Test
@@ -2708,10 +2748,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getTime(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getTime", getter, result);
+    validate("getTime", getter, result, null);
   }
 
   @Test
@@ -2727,10 +2768,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getDate(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getDate", getter, result);
+    validate("getDate", getter, result, null);
   }
 
   @Test
@@ -2747,10 +2789,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getTimestamp(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getTimestamp", getter, result);
+    validate("getTimestamp", getter, result, null);
   }
 
   @Test
@@ -2766,10 +2809,11 @@ public class ITBigQueryJDBCTest extends ITBase {
           try {
             return s.getByte(i);
           } catch (Exception e) {
+            System.out.println(e);
             return EXCEPTION_REPLACEMENT;
           }
         };
-    validate("getByte", getter, result);
+    validate("getByte", getter, result, (byte) 0);
   }
 
   @Test

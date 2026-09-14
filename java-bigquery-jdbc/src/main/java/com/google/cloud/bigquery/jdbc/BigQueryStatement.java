@@ -716,11 +716,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       this.currentJobIdIndex += 1;
       Job currentJob = this.parentJobId.getJobs().get(this.currentJobIdIndex);
       QueryStatistics queryStatistics = currentJob.getStatistics();
-      ScriptStatistics scriptStatistics = queryStatistics != null ? queryStatistics.getScriptStatistics() : null;
+      ScriptStatistics scriptStatistics =
+          queryStatistics != null ? queryStatistics.getScriptStatistics() : null;
       // EXPRESSION jobs are not relevant for customer query and can be
       // created by BQ depending on various conditions. We will just ignore
       // them when presenting results.
-      if (scriptStatistics == null || !"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
+      if (scriptStatistics == null
+          || !"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
         return currentJob;
       }
     }
