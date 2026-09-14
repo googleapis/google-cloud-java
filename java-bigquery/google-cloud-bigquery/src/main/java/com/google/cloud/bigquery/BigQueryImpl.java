@@ -2360,6 +2360,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     byte[] arrowSchemaBytes = null;
     if (results.getJobComplete() && (results.getSchema() != null || isArrow)) {
       if (isArrow) {
+        if (results.getArrowSchema().getSerializedSchema() == null) {
+          throw new BigQueryException(0, "Arrow schema is missing from the response");
+        }
         arrowSchemaBytes = results.getArrowSchema().decodeSerializedSchema();
         try {
           arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
