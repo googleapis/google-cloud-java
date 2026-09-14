@@ -7504,15 +7504,13 @@ class ITBigQueryTest {
 
   @Test
   void testQueryResultsFormatArrow() throws InterruptedException {
-    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
     String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
             .build();
-    try (ArrowQueryResult result = bigQuery.queryArrow(config)) {
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       assertNotNull(result);
       int batchCount = 0;
       long totalRows = 0;
@@ -7528,15 +7526,13 @@ class ITBigQueryTest {
 
   @Test
   void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
-    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
-    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
     String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
             .build();
-    try (ArrowQueryResult result = bigQuery.queryArrow(config)) {
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       assertNotNull(result);
       long totalRows = 0;
       for (VectorSchemaRoot root : result) {
