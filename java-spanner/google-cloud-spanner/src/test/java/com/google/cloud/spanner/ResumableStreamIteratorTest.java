@@ -484,8 +484,8 @@ public class ResumableStreamIteratorTest {
     assertThat(totalTimeoutExceeded(1000L, 60000L, 1000L)).isTrue();
   }
 
-  private boolean totalTimeoutExceeded(
-      long timeoutMillis, long startOffsetMillis, long delayMillis) throws Exception {
+  private boolean totalTimeoutExceeded(long timeoutMillis, long startOffsetMillis, long delayMillis)
+      throws Exception {
     initWithLimitAndRetrySettings(
         Integer.MAX_VALUE,
         RetrySettings.newBuilder()
@@ -494,7 +494,8 @@ public class ResumableStreamIteratorTest {
     Field startNanos = ResumableStreamIterator.class.getDeclaredField("retrySequenceStartNanos");
     startNanos.setAccessible(true);
     startNanos.setLong(
-        resumableStreamIterator, System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(startOffsetMillis));
+        resumableStreamIterator,
+        System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(startOffsetMillis));
     Method totalTimeoutExceeded =
         ResumableStreamIterator.class.getDeclaredMethod("totalTimeoutExceeded", long.class);
     totalTimeoutExceeded.setAccessible(true);

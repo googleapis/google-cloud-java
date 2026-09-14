@@ -57,18 +57,18 @@ import javax.annotation.Nullable;
  * settings: consecutive failed attempts are limited by {@link RetrySettings#getMaxAttempts()} if
  * that has been set to a value greater than zero, and the total time spent on a sequence of
  * consecutive failed attempts is limited by {@link RetrySettings#getTotalTimeout()} if that has
- * been set to a positive value. Only consecutive failures count against these budgets: any
- * progress on the stream (that is, receiving a resume token that differs from the last seen resume
- * token) resets both, so a long-running stream that regularly makes progress is not terminated by
- * an occasional transient error.
+ * been set to a positive value. Only consecutive failures count against these budgets: any progress
+ * on the stream (that is, receiving a resume token that differs from the last seen resume token)
+ * resets both, so a long-running stream that regularly makes progress is not terminated by an
+ * occasional transient error.
  *
- * <p>These limits bound the number of streams that this iterator starts. Each (re)started stream
- * is a call through the underlying GAX callable, and GAX applies the same {@link RetrySettings} to
+ * <p>These limits bound the number of streams that this iterator starts. Each (re)started stream is
+ * a call through the underlying GAX callable, and GAX applies the same {@link RetrySettings} to
  * attempts of that call that fail before any response has been received. A stream that repeatedly
  * fails before its first response can therefore consist of up to maxAttempts RPC attempts itself,
- * so a configured maxAttempts of N bounds the total number of RPC attempts without progress by
- * N*N, not by N. The total timeout is measured in wall-clock time from the first failure of the
- * sequence and therefore spans both layers.
+ * so a configured maxAttempts of N bounds the total number of RPC attempts without progress by N*N,
+ * not by N. The total timeout is measured in wall-clock time from the first failure of the sequence
+ * and therefore spans both layers.
  */
 @VisibleForTesting
 abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet>
@@ -95,8 +95,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
 
   /**
    * The value of {@link System#nanoTime()} at the first failure of the current sequence of
-   * consecutive failed attempts. Only meaningful when {@link #attempts} is nonzero. Used to
-   * enforce {@link RetrySettings#getTotalTimeout()} for non-default retry settings.
+   * consecutive failed attempts. Only meaningful when {@link #attempts} is nonzero. Used to enforce
+   * {@link RetrySettings#getTotalTimeout()} for non-default retry settings.
    */
   private long retrySequenceStartNanos = -1L;
 
@@ -185,8 +185,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     if (totalTimeoutMillis <= 0L) {
       return false;
     }
-    long elapsedMillis =
-        TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - retrySequenceStartNanos);
+    long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - retrySequenceStartNanos);
     if (elapsedMillis < 0L) {
       elapsedMillis = 0L;
     }

@@ -271,9 +271,9 @@ public class StreamingRetryBudgetMockServerTest {
   }
 
   /**
-   * A query where every ExecuteStreamingSql attempt fails with a retryable error must fail once
-   * the configured total timeout has been exhausted, also if no maximum number of attempts has
-   * been set. Without a bounded resume loop this test never finishes.
+   * A query where every ExecuteStreamingSql attempt fails with a retryable error must fail once the
+   * configured total timeout has been exhausted, also if no maximum number of attempts has been
+   * set. Without a bounded resume loop this test never finishes.
    */
   @Test(timeout = 60000L)
   public void totalTimeoutExhausted_stopsStreamingRetries() {
@@ -295,11 +295,11 @@ public class StreamingRetryBudgetMockServerTest {
   }
 
   /**
-   * The total timeout must also be enforced when the retryable errors carry a server-supplied
-   * retry delay (RetryInfo), as such errors bypass the exponential backoff. Without that, a
-   * client with no maximum number of attempts and a total timeout would retry forever when the
-   * server keeps returning, for example, RESOURCE_EXHAUSTED with a retry delay. Without a bounded
-   * resume loop this test never finishes.
+   * The total timeout must also be enforced when the retryable errors carry a server-supplied retry
+   * delay (RetryInfo), as such errors bypass the exponential backoff. Without that, a client with
+   * no maximum number of attempts and a total timeout would retry forever when the server keeps
+   * returning, for example, RESOURCE_EXHAUSTED with a retry delay. Without a bounded resume loop
+   * this test never finishes.
    */
   @Test(timeout = 60000L)
   public void totalTimeoutExhausted_withServerSuppliedRetryDelay_stopsStreamingRetries() {
@@ -340,8 +340,8 @@ public class StreamingRetryBudgetMockServerTest {
 
   /**
    * Only consecutive failures count against the maximum number of attempts: any progress on the
-   * stream resets the budget. A stream that fails, resumes and makes progress, and then fails
-   * again must succeed with maxAttempts=2, as the two failures are not consecutive.
+   * stream resets the budget. A stream that fails, resumes and makes progress, and then fails again
+   * must succeed with maxAttempts=2, as the two failures are not consecutive.
    */
   @Test(timeout = 60000L)
   public void progressOnStream_resetsAttempts() {
