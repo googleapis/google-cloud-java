@@ -2902,17 +2902,4 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
     return false;
   }
-
-  @Override
-  public void close() {
-    readClientLock.lock();
-    try {
-      if (bqReadClient != null) {
-        bqReadClient.close();
-        bqReadClient = null;
-      }
-    } finally {
-      readClientLock.unlock();
-    }
-  }
 }
