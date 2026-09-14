@@ -29,6 +29,7 @@ import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
@@ -39,8 +40,10 @@ import java.util.List;
 import java.util.Queue;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.BigIntVector;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.DateDayVector;
+import org.apache.arrow.vector.DecimalVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.Float8Vector;
 import org.apache.arrow.vector.IntVector;
@@ -662,6 +665,224 @@ public class ArrowDeserializerTest {
       } finally {
         structVector.close();
         listVector.close();
+      }
+    }
+  }
+
+  @Test
+  public void testArrowVectorToFieldValue_primitives() {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      try (BigIntVector int64Vector = new BigIntVector("int64_col", allocator);
+          IntVector int32Vector = new IntVector("int32_col", allocator);
+          VarCharVector strVector = new VarCharVector("str_col", allocator);
+          BitVector boolVector = new BitVector("bool_col", allocator);
+          Float8Vector floatVector = new Float8Vector("float_col", allocator);
+          DateDayVector dateVector = new DateDayVector("date_col", allocator);
+          TimeMicroVector timeVector = new TimeMicroVector("time_col", allocator);
+          TimeStampMicroVector tsVector = new TimeStampMicroVector("ts_col", allocator);
+          VarBinaryVector bytesVector = new VarBinaryVector("bytes_col", allocator);
+          DecimalVector decVector = new DecimalVector("num_col", allocator, 38, 9)) {
+
+        int64Vector.allocateNew(1);
+        int64Vector.set(0, 9876543210L);
+
+        int32Vector.allocateNew(1);
+        int32Vector.set(0, 42);
+
+        strVector.allocateNew(1);
+        strVector.set(0, "hello world".getBytes(StandardCharsets.UTF_8));
+
+        boolVector.allocateNew(1);
+        boolVector.set(0, 1);
+
+        floatVector.allocateNew(1);
+        floatVector.set(0, 3.14159);
+
+        dateVector.allocateNew(1);
+        dateVector.set(0, 18993); // 2022-01-01
+
+        timeVector.allocateNew(1);
+        timeVector.set(0, 43800000000L); // 12:10:00
+
+        tsVector.allocateNew(1);
+        tsVector.set(0, 1408452095220000L);
+
+        bytesVector.allocateNew(1);
+        bytesVector.set(0, "raw_data".getBytes(StandardCharsets.UTF_8));
+
+        decVector.allocateNew(1);
+        decVector.set(0, new BigDecimal("123.456000000"));
+
+        FieldValue int64Val =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                int64Vector, 0, LegacySQLTypeName.INTEGER, Field.Mode.NULLABLE, null, "int64_col");
+        assertEquals("9876543210", int64Val.getStringValue());
+
+        FieldValue int32Val =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                int32Vector, 0, LegacySQLTypeName.INTEGER, Field.Mode.NULLABLE, null, "int32_col");
+        assertEquals("42", int32Val.getStringValue());
+
+        FieldValue strVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                strVector, 0, LegacySQLTypeName.STRING, Field.Mode.NULLABLE, null, "str_col");
+        assertEquals("hello world", strVal.getStringValue());
+
+        FieldValue boolVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                boolVector, 0, LegacySQLTypeName.BOOLEAN, Field.Mode.NULLABLE, null, "bool_col");
+        assertEquals("true", boolVal.getStringValue());
+
+        FieldValue floatVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                floatVector, 0, LegacySQLTypeName.FLOAT, Field.Mode.NULLABLE, null, "float_col");
+        assertEquals("3.14159", floatVal.getStringValue());
+
+        FieldValue dateVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                dateVector, 0, LegacySQLTypeName.DATE, Field.Mode.NULLABLE, null, "date_col");
+        assertEquals("2022-01-01", dateVal.getStringValue());
+
+        FieldValue timeVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                timeVector, 0, LegacySQLTypeName.TIME, Field.Mode.NULLABLE, null, "time_col");
+        assertEquals("12:10:00", timeVal.getStringValue());
+
+        FieldValue tsVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                tsVector, 0, LegacySQLTypeName.TIMESTAMP, Field.Mode.NULLABLE, null, "ts_col");
+        assertEquals("1408452095.220000", tsVal.getStringValue());
+
+        FieldValue bytesVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                bytesVector, 0, LegacySQLTypeName.BYTES, Field.Mode.NULLABLE, null, "bytes_col");
+        assertEquals(
+            BaseEncoding.base64().encode("raw_data".getBytes(StandardCharsets.UTF_8)),
+            bytesVal.getStringValue());
+
+        FieldValue decVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                decVector, 0, LegacySQLTypeName.NUMERIC, Field.Mode.NULLABLE, null, "num_col");
+        assertEquals("123.456000000", decVal.getStringValue());
+      }
+    }
+  }
+
+  @Test
+  public void testArrowVectorToFieldValue_nullHandling() {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      try (IntVector intVector = new IntVector("id", allocator);
+          StructVector structVector = StructVector.empty("person", allocator);
+          ListVector listVector = ListVector.empty("items", allocator)) {
+
+        intVector.allocateNew(1);
+        intVector.setNull(0);
+
+        structVector.addOrGet(
+            "sub", FieldType.nullable(new ArrowType.Int(32, true)), IntVector.class);
+        structVector.allocateNew();
+        structVector.setNull(0);
+
+        listVector.addOrGetVector(FieldType.nullable(new ArrowType.Int(32, true)));
+        listVector.allocateNew();
+        listVector.setNull(0);
+
+        FieldValue primNull =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                intVector, 0, LegacySQLTypeName.INTEGER, Field.Mode.NULLABLE, null, "id");
+        assertEquals(FieldValue.Attribute.PRIMITIVE, primNull.getAttribute());
+        assertTrue(primNull.isNull());
+
+        FieldList subFields = FieldList.of(Field.of("sub", LegacySQLTypeName.INTEGER));
+        FieldValue recordNull =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                structVector,
+                0,
+                LegacySQLTypeName.RECORD,
+                Field.Mode.NULLABLE,
+                subFields,
+                "person");
+        assertEquals(FieldValue.Attribute.RECORD, recordNull.getAttribute());
+        assertTrue(recordNull.isNull());
+
+        FieldValue repeatedNull =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                listVector, 0, LegacySQLTypeName.INTEGER, Field.Mode.REPEATED, null, "items");
+        assertEquals(FieldValue.Attribute.REPEATED, repeatedNull.getAttribute());
+        assertTrue(repeatedNull.getRepeatedValue().isEmpty());
+      }
+    }
+  }
+
+  @Test
+  public void testArrowVectorToFieldValue_repeatedAndUnsupportedType() {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      try (ListVector listVector = ListVector.empty("numbers", allocator);
+          IntVector intVector = new IntVector("invalid_repeated", allocator)) {
+
+        UnionListWriter writer = listVector.getWriter();
+        writer.allocate();
+        writer.setPosition(0);
+        writer.startList();
+        writer.integer().writeInt(100);
+        writer.integer().writeInt(200);
+        writer.endList();
+        writer.setValueCount(1);
+
+        FieldValue repeatedVal =
+            ArrowDeserializer.arrowVectorToFieldValue(
+                listVector, 0, LegacySQLTypeName.INTEGER, Field.Mode.REPEATED, null, "numbers");
+        assertEquals(FieldValue.Attribute.REPEATED, repeatedVal.getAttribute());
+        assertEquals(2, repeatedVal.getRepeatedValue().size());
+        assertEquals("100", repeatedVal.getRepeatedValue().get(0).getStringValue());
+        assertEquals("200", repeatedVal.getRepeatedValue().get(1).getStringValue());
+
+        // When mode == REPEATED but vector is not a ListVector, an IllegalArgumentException should
+        // be thrown
+        intVector.allocateNew(1);
+        intVector.set(0, 10);
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                ArrowDeserializer.arrowVectorToFieldValue(
+                    intVector,
+                    0,
+                    LegacySQLTypeName.INTEGER,
+                    Field.Mode.REPEATED,
+                    null,
+                    "invalid_repeated"));
+      }
+    }
+  }
+
+  @Test
+  public void testArrowVectorToFieldValue_structSubfieldMismatchThrows() {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      try (StructVector structVector = StructVector.empty("person", allocator)) {
+        structVector.addOrGet(
+            "id", FieldType.nullable(new ArrowType.Int(32, true)), IntVector.class);
+        structVector.allocateNew();
+        structVector.setIndexDefined(0);
+        structVector.setValueCount(1);
+
+        // Mismatched subfields (expects 2 subfields, but struct has 1)
+        FieldList mismatchedSubFields =
+            FieldList.of(
+                Field.of("id", LegacySQLTypeName.INTEGER),
+                Field.of("name", LegacySQLTypeName.STRING));
+
+        IllegalArgumentException thrown =
+            assertThrows(
+                IllegalArgumentException.class,
+                () ->
+                    ArrowDeserializer.arrowVectorToFieldValue(
+                        structVector,
+                        0,
+                        LegacySQLTypeName.RECORD,
+                        Field.Mode.NULLABLE,
+                        mismatchedSubFields,
+                        "person"));
+        assertTrue(thrown.getMessage().contains("Schema mismatch for field 'person'"));
       }
     }
   }

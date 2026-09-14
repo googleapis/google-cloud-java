@@ -37,24 +37,14 @@ import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BigIntVector;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.DateDayVector;
-import org.apache.arrow.vector.DateMilliVector;
 import org.apache.arrow.vector.FieldVector;
-import org.apache.arrow.vector.Float4Vector;
 import org.apache.arrow.vector.Float8Vector;
 import org.apache.arrow.vector.IntVector;
-import org.apache.arrow.vector.LargeVarCharVector;
-import org.apache.arrow.vector.SmallIntVector;
 import org.apache.arrow.vector.TimeMicroVector;
-import org.apache.arrow.vector.TimeMilliVector;
-import org.apache.arrow.vector.TimeNanoVector;
-import org.apache.arrow.vector.TimeSecVector;
 import org.apache.arrow.vector.TimeStampVector;
-import org.apache.arrow.vector.TinyIntVector;
 import org.apache.arrow.vector.VarCharVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
-import org.apache.arrow.vector.complex.FixedSizeListVector;
-import org.apache.arrow.vector.complex.LargeListVector;
 import org.apache.arrow.vector.complex.ListVector;
 import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.ipc.ReadChannel;
@@ -304,7 +294,8 @@ final class ArrowDeserializer {
    * @param name the BigQuery field name
    * @return the converted FieldValue object
    */
-  private static FieldValue arrowVectorToFieldValue(
+  @VisibleForTesting
+  static FieldValue arrowVectorToFieldValue(
       FieldVector vector,
       int rowIndex,
       LegacySQLTypeName type,
@@ -325,28 +316,14 @@ final class ArrowDeserializer {
 
     // Handle repeated fields
     if (mode == Field.Mode.REPEATED) {
-      FieldVector dataVector;
-      int start;
-      int end;
-      if (vector instanceof ListVector) {
-        ListVector listVector = (ListVector) vector;
-        dataVector = (FieldVector) listVector.getDataVector();
-        start = listVector.getElementStartIndex(rowIndex);
-        end = listVector.getElementEndIndex(rowIndex);
-      } else if (vector instanceof LargeListVector) {
-        LargeListVector largeListVector = (LargeListVector) vector;
-        dataVector = (FieldVector) largeListVector.getDataVector();
-        start = (int) largeListVector.getElementStartIndex(rowIndex);
-        end = (int) largeListVector.getElementEndIndex(rowIndex);
-      } else if (vector instanceof FixedSizeListVector) {
-        FixedSizeListVector fixedListVector = (FixedSizeListVector) vector;
-        dataVector = (FieldVector) fixedListVector.getDataVector();
-        start = fixedListVector.getElementStartIndex(rowIndex);
-        end = fixedListVector.getElementEndIndex(rowIndex);
-      } else {
+      if (!(vector instanceof ListVector)) {
         throw new IllegalArgumentException(
             "Unsupported repeated vector type: " + vector.getClass().getName());
       }
+      ListVector listVector = (ListVector) vector;
+      FieldVector dataVector = (FieldVector) listVector.getDataVector();
+      int start = listVector.getElementStartIndex(rowIndex);
+      int end = listVector.getElementEndIndex(rowIndex);
       List<FieldValue> elements = new ArrayList<>(end - start);
       for (int k = start; k < end; k++) {
         elements.add(
@@ -411,27 +388,12 @@ final class ArrowDeserializer {
       if (vector instanceof DateDayVector) {
         int days = ((DateDayVector) vector).get(rowIndex);
         stringVal = LocalDate.ofEpochDay(days).toString();
-      } else if (vector instanceof DateMilliVector) {
-        long millis = ((DateMilliVector) vector).get(rowIndex);
-        stringVal = LocalDate.ofEpochDay(Math.floorDiv(millis, 86400000L)).toString();
       } else {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }
     } else if (type == LegacySQLTypeName.TIME) {
-      if (vector instanceof TimeSecVector
-          || vector instanceof TimeMilliVector
-          || vector instanceof TimeMicroVector
-          || vector instanceof TimeNanoVector) {
-        long nanosOfDay;
-        if (vector instanceof TimeSecVector) {
-          nanosOfDay = ((TimeSecVector) vector).get(rowIndex) * 1_000_000_000L;
-        } else if (vector instanceof TimeMilliVector) {
-          nanosOfDay = ((TimeMilliVector) vector).get(rowIndex) * 1_000_000L;
-        } else if (vector instanceof TimeMicroVector) {
-          nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
-        } else {
-          nanosOfDay = ((TimeNanoVector) vector).get(rowIndex);
-        }
+      if (vector instanceof TimeMicroVector) {
+        long nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
         stringVal =
             DateTimeFormatter.ISO_LOCAL_TIME.format(
                 LocalTime.ofNanoOfDay((nanosOfDay / 1_000L) * 1_000L));
@@ -440,22 +402,14 @@ final class ArrowDeserializer {
       }
     } else if (vector instanceof VarCharVector) {
       stringVal = new String(((VarCharVector) vector).get(rowIndex), StandardCharsets.UTF_8);
-    } else if (vector instanceof LargeVarCharVector) {
-      stringVal = new String(((LargeVarCharVector) vector).get(rowIndex), StandardCharsets.UTF_8);
     } else if (vector instanceof IntVector) {
       stringVal = Integer.toString(((IntVector) vector).get(rowIndex));
     } else if (vector instanceof BigIntVector) {
       stringVal = Long.toString(((BigIntVector) vector).get(rowIndex));
-    } else if (vector instanceof SmallIntVector) {
-      stringVal = Short.toString(((SmallIntVector) vector).get(rowIndex));
-    } else if (vector instanceof TinyIntVector) {
-      stringVal = Byte.toString(((TinyIntVector) vector).get(rowIndex));
     } else if (vector instanceof BitVector) {
       stringVal = ((BitVector) vector).get(rowIndex) == 1 ? "true" : "false";
     } else if (vector instanceof Float8Vector) {
       stringVal = Double.toString(((Float8Vector) vector).get(rowIndex));
-    } else if (vector instanceof Float4Vector) {
-      stringVal = Float.toString(((Float4Vector) vector).get(rowIndex));
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
