@@ -90,6 +90,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -133,6 +134,17 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
     SEV_SNP_CAPABLE(426919),
     /** <code>SNP_SVSM_CAPABLE = 52921460;</code> */
     SNP_SVSM_CAPABLE(52921460),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the guest OS is safe for free page reporting (FPR) during
+     * suspend.
+     * </pre>
+     *
+     * <code>SUSPEND_SAFE_FPR = 223956441;</code>
+     */
+    SUSPEND_SAFE_FPR(223956441),
     /** <code>TDX_CAPABLE = 240446133;</code> */
     TDX_CAPABLE(240446133),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
@@ -201,6 +213,18 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
     /** <code>SNP_SVSM_CAPABLE = 52921460;</code> */
     public static final int SNP_SVSM_CAPABLE_VALUE = 52921460;
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the guest OS is safe for free page reporting (FPR) during
+     * suspend.
+     * </pre>
+     *
+     * <code>SUSPEND_SAFE_FPR = 223956441;</code>
+     */
+    public static final int SUSPEND_SAFE_FPR_VALUE = 223956441;
+
     /** <code>TDX_CAPABLE = 240446133;</code> */
     public static final int TDX_CAPABLE_VALUE = 240446133;
 
@@ -263,6 +287,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
           return SEV_SNP_CAPABLE;
         case 52921460:
           return SNP_SVSM_CAPABLE;
+        case 223956441:
+          return SUSPEND_SAFE_FPR;
         case 240446133:
           return TDX_CAPABLE;
         case 195865408:
@@ -350,6 +376,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -386,6 +413,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -430,6 +458,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -793,6 +822,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see
@@ -828,6 +858,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see
@@ -871,6 +902,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see
@@ -914,6 +946,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see
@@ -956,6 +989,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see
@@ -994,6 +1028,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - IDPF
      * - SNP_SVSM_CAPABLE
      * - CCA_CAPABLE
+     * - SUSPEND_SAFE_FPR
      *
      *
      * For more information, see

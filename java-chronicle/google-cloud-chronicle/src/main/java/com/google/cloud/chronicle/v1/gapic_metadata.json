@@ -188,6 +188,57 @@
         }
       }
     },
+    "FeedsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FeedsServiceClient",
+          "rpcs": {
+            "CreateFeed": {
+              "methods": ["createFeed", "createFeed", "createFeed", "createFeedCallable"]
+            },
+            "DeleteFeed": {
+              "methods": ["deleteFeed", "deleteFeed", "deleteFeed", "deleteFeedCallable"]
+            },
+            "DisableFeed": {
+              "methods": ["disableFeed", "disableFeed", "disableFeed", "disableFeedCallable"]
+            },
+            "EnableFeed": {
+              "methods": ["enableFeed", "enableFeed", "enableFeed", "enableFeedCallable"]
+            },
+            "FetchServiceAccountForCustomer": {
+              "methods": ["fetchServiceAccountForCustomer", "fetchServiceAccountForCustomer", "fetchServiceAccountForCustomer", "fetchServiceAccountForCustomerCallable"]
+            },
+            "GenerateSecret": {
+              "methods": ["generateSecret", "generateSecret", "generateSecret", "generateSecretCallable"]
+            },
+            "GetFeed": {
+              "methods": ["getFeed", "getFeed", "getFeed", "getFeedCallable"]
+            },
+            "GetFeedPack": {
+              "methods": ["getFeedPack", "getFeedPack", "getFeedPack", "getFeedPackCallable"]
+            },
+            "ImportPushLogs": {
+              "methods": ["importPushLogs", "importPushLogs", "importPushLogs", "importPushLogsCallable"]
+            },
+            "ListFeedPacks": {
+              "methods": ["listFeedPacks", "listFeedPacks", "listFeedPacks", "listFeedPacksPagedCallable", "listFeedPacksCallable"]
+            },
+            "ListFeedSourceTypeSchemas": {
+              "methods": ["listFeedSourceTypeSchemas", "listFeedSourceTypeSchemas", "listFeedSourceTypeSchemas", "listFeedSourceTypeSchemasPagedCallable", "listFeedSourceTypeSchemasCallable"]
+            },
+            "ListFeeds": {
+              "methods": ["listFeeds", "listFeeds", "listFeeds", "listFeedsPagedCallable", "listFeedsCallable"]
+            },
+            "ListLogTypeSchemas": {
+              "methods": ["listLogTypeSchemas", "listLogTypeSchemas", "listLogTypeSchemas", "listLogTypeSchemasPagedCallable", "listLogTypeSchemasCallable"]
+            },
+            "UpdateFeed": {
+              "methods": ["updateFeed", "updateFeed", "updateFeedCallable"]
+            }
+          }
+        }
+      }
+    },
     "FindingsRefinementService": {
       "clients": {
         "grpc": {

@@ -85,6 +85,7 @@ public class CompletionServiceClientHttpJsonTest {
             .setAttributionToken("attributionToken104706234")
             .addAllRecentSearchResults(new ArrayList<CompleteQueryResponse.RecentSearchResult>())
             .putAllAttributeResults(new HashMap<String, CompleteQueryResponse.AttributeResult>())
+            .addAllAgentPrompts(new ArrayList<CompleteQueryResponse.AgentPrompt>())
             .build();
     mockService.addResponse(expectedResponse);
 

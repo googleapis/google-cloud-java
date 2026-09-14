@@ -17,14 +17,13 @@
 package com.google.cloud.compute.v1.integration;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
@@ -77,6 +76,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -179,21 +179,9 @@ public class ITComputeGoldenSignals extends BaseTest {
 
     tracer = openTelemetrySdk.getTracer("testing-compute");
 
-    // Configure TraceServiceClient with retry settings
+    // Configure TraceServiceClient with BaseApiTracerFactory so its calls are not traced
     TraceServiceSettings.Builder settingsBuilder = TraceServiceSettings.newBuilder();
-    settingsBuilder
-        .getTraceSettings()
-        .setRetrySettings(
-            RetrySettings.newBuilder()
-                .setTotalTimeoutDuration(Duration.ofMinutes(5))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(10))
-                .build())
-        .setRetryableCodes(
-            StatusCode.Code.NOT_FOUND, StatusCode.Code.INTERNAL, StatusCode.Code.DEADLINE_EXCEEDED);
-
     settingsBuilder.getStubSettingsBuilder().setTracerFactory(BaseApiTracerFactory.getInstance());
-
     traceClient = TraceServiceClient.create(settingsBuilder.build());
 
     // Combine tracers using CompositeTracerFactory
@@ -304,19 +292,23 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private void fetchAndValidateTrace(String traceId, boolean expectError) throws Exception {
-    Trace trace = null;
-    try {
-      trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
-    } catch (Exception e) {
-      logger.error(
-          "Exception occurred while fetching trace for project: "
-              + DEFAULT_PROJECT
-              + ", traceId: "
-              + traceId,
-          e);
-      throw e;
-    }
-    assertThat(trace).isNotNull();
+    AtomicReference<Trace> traceRef = new AtomicReference<>();
+    await("Polling Cloud Trace for trace " + traceId)
+        .atMost(Duration.ofMinutes(2))
+        .pollDelay(Duration.ofSeconds(10))
+        .pollInterval(Duration.ofSeconds(3))
+        .ignoreExceptions()
+        .until(
+            () -> {
+              Trace trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
+              if (trace != null && trace.getSpansCount() > 0) {
+                traceRef.set(trace);
+                return true;
+              }
+              return false;
+            });
+
+    Trace trace = traceRef.get();
 
     for (TraceSpan span : trace.getSpansList()) {
       logger.info("Verifying attributes for span: " + span.getName());
