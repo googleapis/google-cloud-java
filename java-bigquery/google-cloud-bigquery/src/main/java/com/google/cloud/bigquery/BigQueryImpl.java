@@ -351,7 +351,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       int port = hostAndPort.getPortOrDefault(443);
       settingsBuilder.setEndpoint(endpointHost + ":" + port);
-      if (endpointHost.contains("localhost") || endpointHost.contains("127.0.0.1")) {
+      if (endpointHost.contains("localhost")
+          || endpointHost.contains("127.0.0.1")
+          || endpointHost.contains("::1")) {
         settingsBuilder.setTransportChannelProvider(
             BigQueryReadSettings.defaultGrpcTransportProviderBuilder()
                 .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
