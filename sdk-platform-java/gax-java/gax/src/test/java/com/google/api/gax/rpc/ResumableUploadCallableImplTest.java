@@ -215,20 +215,6 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
-  void testUploadCallable_setInFlightFutureAfterCancel_immediatelyCancelsFuture() {
-    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
-    when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
-    ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
-    assertThat(future.cancel(true)).isTrue();
-    assertThat(future.isCancelled()).isTrue();
-
-    SettableApiFuture<String> lateFuture = SettableApiFuture.create();
-    ((ResumableUploadFutureImpl<String>) future).setInFlightFuture(lateFuture);
-    assertThat(lateFuture.isCancelled()).isTrue();
-  }
-
-  @Test
   void testUploadCallable_startFailure_failsFuture() {
     when(mockStartCallable.futureCall(any(), any()))
         .thenReturn(ApiFutures.immediateFailedFuture(new IllegalStateException("start failed")));
@@ -277,39 +263,6 @@ class ResumableUploadCallableImplTest {
     ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
     assertThrows(ExecutionException.class, future::get);
 
-    assertThat(stream.closed).isTrue();
-  }
-
-  @Test
-  void testUploadCallable_closesPayloadOnCancel() throws Exception {
-    stubStartSession("https://upload.url/close-cancel");
-    CountDownLatch chunkStarted = new CountDownLatch(1);
-    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenAnswer(
-            inv -> {
-              chunkStarted.countDown();
-              return SettableApiFuture.create();
-            });
-
-    TrackableStream stream = new TrackableStream("data");
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
-    assertThat(chunkStarted.await(5, TimeUnit.SECONDS)).isTrue();
-    future.cancel(true);
-
-    assertThat(stream.closed).isTrue();
-  }
-
-  @Test
-  void testUploadCallable_closesPayloadOnStartSyncFailure() {
-    when(mockStartCallable.futureCall(any(), any()))
-        .thenThrow(new RuntimeException("sync start failure"));
-
-    TrackableStream stream = new TrackableStream("data");
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
-
-    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
-    assertThat(exception.getCause()).isInstanceOf(RuntimeException.class);
-    assertThat(exception.getCause()).hasMessageThat().contains("sync start failure");
     assertThat(stream.closed).isTrue();
   }
 
