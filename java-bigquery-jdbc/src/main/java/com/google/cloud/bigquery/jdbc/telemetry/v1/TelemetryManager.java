@@ -16,9 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -154,7 +156,7 @@ public final class TelemetryManager implements AutoCloseable {
     globallyDisabled = false;
   }
 
-  static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
+  public static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
     if (bqStatementType == null) {
       return StatementType.STATEMENT_TYPE_UNSPECIFIED;
     }
@@ -222,6 +224,20 @@ public final class TelemetryManager implements AutoCloseable {
         });
   }
 
+  public static void recordStatementExecution(
+      StatementExecution.Builder statementExecutionBuilder, long durationMs) {
+    if (statementExecutionBuilder == null) {
+      return;
+    }
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher().offer(statementExecutionBuilder.build(), durationMs);
+          }
+        });
+  }
+
   public static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
     runSafely(
         () -> {
@@ -251,6 +267,30 @@ public final class TelemetryManager implements AutoCloseable {
                         .build());
           }
         });
+  }
+
+  /**
+   * Extracts the numeric error code from the throwable chain. Traverses causes to unpack
+   * BigQueryException (HTTP status codes) or SQLException error codes. Returns 1000 as the fallback
+   * driver error code.
+   */
+  public static int extractErrorCode(Throwable t) {
+    while (t != null) {
+      if (t instanceof BigQueryException) {
+        int code = ((BigQueryException) t).getCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      if (t instanceof SQLException) {
+        int code = ((SQLException) t).getErrorCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      t = t.getCause();
+    }
+    return 1000;
   }
 
   private static void registerShutdownHook() {

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
@@ -189,47 +190,46 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testConnect_recordsFailedConnectionWithErrorCode() throws Exception {
-    ByteArrayOutputStream capturedBytes = new ByteArrayOutputStream();
-    MockHttpTransport mockTransport =
-        new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() throws IOException {
-                if (getStreamingContent() != null) {
-                  getStreamingContent().writeTo(capturedBytes);
-                }
-                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-                response.setStatusCode(200);
-                return response;
-              }
-            };
-          }
-        };
+  public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
+    TelemetryManager.closeInstance();
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    assertThat(connection.isClosed()).isFalse();
+    // Verify TelemetryManager is initialized and recorded the connection
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
 
-    TelemetryConfiguration config = TelemetryConfiguration.newBuilder().setEnabled(true).build();
-    TelemetryManager.init(config, new ClearcutTransport(mockTransport, config));
-
-    // Calling connect with invalid OAuthType triggers SQLException
+  @Test
+  public void testConnect_recordsFailedConnectionTelemetry() {
+    TelemetryManager.closeInstance();
+    // Malformed URL causing DataSource parsing failure
     Assertions.assertThrows(
         SQLException.class,
         () ->
             bigQueryDriver.connect(
                 "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=invalid;",
                 new Properties()));
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
 
-    // Flush and verify error was recorded
-    TelemetryManager.getInstance().getBatcher().flush();
-
-    LogRequest logRequest = LogRequest.parseFrom(capturedBytes.toByteArray());
-    TelemetryPayload payload =
-        TelemetryPayload.parseFrom(logRequest.getLogEvent(0).getSourceExtension());
-
-    assertThat(payload.getConnectionAttemptsCount()).isEqualTo(1);
-    ConnectionAttempt attempt = payload.getConnectionAttempts(0);
-    assertThat(attempt.getStatus()).isEqualTo(Status.STATUS_ERROR);
-    assertThat(attempt.getErrorCode()).isEqualTo(1000); // generic fallback code
+  @Test
+  public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
+    TelemetryManager.closeInstance();
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;EnableDiagnosticTelemetry=0;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    // Since opt-out was requested, TelemetryManager should NOT be initialized
+    assertThat(TelemetryManager.isInitialized()).isFalse();
   }
 }

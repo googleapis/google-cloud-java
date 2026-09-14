@@ -127,7 +127,7 @@ public class BigQueryDriver implements Driver {
   @Override
   public Connection connect(String url, Properties info) throws SQLException {
     LOG.finest("++enter++");
-    AuthenticationType authType;
+    AuthenticationType authType = AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED;
     try {
       if (acceptsURL(url)) {
         Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
@@ -145,7 +145,6 @@ public class BigQueryDriver implements Driver {
           connectInfo.setProperty(
               BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME, telemetryOptOut);
         }
-        authType = AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED;
         TelemetryManager.getInstance(connectInfo);
 
         Level logLevel;
@@ -239,7 +238,6 @@ public class BigQueryDriver implements Driver {
         throw new BigQueryJdbcException("Failed to establish BigQuery connection", t);
       }
     }
-    return null;
   }
 
   /**

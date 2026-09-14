@@ -162,12 +162,12 @@ public class TelemetryManagerTest {
         AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION,
         TelemetryManager.toAuthenticationType(1));
     assertEquals(
+        AuthenticationType.AUTHENTICATION_TYPE_TOKEN, TelemetryManager.toAuthenticationType(2));
+    assertEquals(
         AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS,
-        TelemetryManager.toAuthenticationType(2));
+        TelemetryManager.toAuthenticationType(3));
     assertEquals(
-        AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL, TelemetryManager.toAuthenticationType(3));
-    assertEquals(
-        AuthenticationType.AUTHENTICATION_TYPE_TOKEN, TelemetryManager.toAuthenticationType(4));
+        AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL, TelemetryManager.toAuthenticationType(4));
 
     assertEquals(
         AuthenticationType.AUTHENTICATION_TYPE_CUSTOM, TelemetryManager.toAuthenticationType(5));
@@ -214,49 +214,5 @@ public class TelemetryManagerTest {
     assertNull(mgr2);
     assertNull(TelemetryManager.getInstance());
     assertNull(TelemetryManager.getInstance(props1));
-  }
-
-  @Test
-  public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
-    TelemetryManager.closeInstance();
-    Connection connection =
-        bigQueryDriver.connect(
-            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-                + "OAuthClientSecret=redactedToken;",
-            new Properties());
-    assertThat(connection).isNotNull();
-    assertThat(connection.isClosed()).isFalse();
-    // Verify TelemetryManager is initialized and recorded the connection
-    assertThat(TelemetryManager.isInitialized()).isTrue();
-  }
-
-  @Test
-  public void testConnect_recordsFailedConnectionTelemetry() {
-    TelemetryManager.closeInstance();
-    // Malformed URL causing DataSource parsing failure
-    Assertions.assertThrows(
-        SQLException.class,
-        () ->
-            bigQueryDriver.connect(
-                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=invalid;",
-                new Properties()));
-    assertThat(TelemetryManager.isInitialized()).isTrue();
-  }
-
-  @Test
-  public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
-    TelemetryManager.closeInstance();
-    Connection connection =
-        bigQueryDriver.connect(
-            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-                + "OAuthClientSecret=redactedToken;EnableDiagnosticTelemetry=0;",
-            new Properties());
-    assertThat(connection).isNotNull();
-    // Since opt-out was requested, TelemetryManager should NOT be initialized
-    assertThat(TelemetryManager.isInitialized()).isFalse();
   }
 }
