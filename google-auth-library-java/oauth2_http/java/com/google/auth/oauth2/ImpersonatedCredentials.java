@@ -681,6 +681,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
    *     "ImpersonatedCredentials.INCLUDE_EMAIL" is provided as a list option.<br>
    *     Only one option value is supported: "ImpersonatedCredentials.INCLUDE_EMAIL" If no options
    *     are set, the default excludes the "includeEmail" attribute in the API request.
+   *     If a quota project is configured, it is used for the IAM request.
    * @return IdToken object which includes the raw id_token, expiration, and audience
    * @throws IOException if the attempt to get an ID token failed
    */
@@ -689,9 +690,13 @@ public class ImpersonatedCredentials extends GoogleCredentials
       String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
+    GoogleCredentials idTokenSourceCredentials = sourceCredentials;
+    if (this.quotaProjectId != null) {
+      idTokenSourceCredentials = sourceCredentials.createWithQuotaProject(this.quotaProjectId);
+    }
     return IamUtils.getIdToken(
         getAccount(),
-        sourceCredentials,
+        idTokenSourceCredentials,
         transportFactory.create(),
         targetAudience,
         includeEmail,
