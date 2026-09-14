@@ -62,6 +62,20 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private boolean iteratorCreated = false;
   private ServerStream<ReadRowsResponse> serverStream;
 
+  /**
+   * Constructs an {@link ArrowQueryResultImpl}.
+   *
+   * @param arrowSchema the Arrow schema describing column types, or {@code null} if empty
+   * @param jobId the ID of the query job
+   * @param queryId the ID of the fast-path query execution
+   * @param jobCreationReason the reason why a job was created
+   * @param totalRows the total number of rows returned by the query, or -1 if unknown
+   * @param initialRecordBatchBytes serialized Arrow record batch bytes from the REST response
+   * @param streamName the Storage Read API stream name for reading subsequent rows
+   * @param readClient the {@link BigQueryReadClient} for streaming rows via gRPC
+   * @throws IllegalArgumentException if {@code arrowSchema} is null but query data or stream is
+   *     present
+   */
   ArrowQueryResultImpl(
       Schema arrowSchema,
       JobId jobId,
@@ -118,6 +132,16 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
   }
 
+  /**
+   * Constructs an {@link ArrowQueryResultImpl} from a BigQuery Storage Read API {@link
+   * ReadSession}.
+   *
+   * @param readSession the read session containing the Arrow schema and stream names
+   * @param jobId the ID of the associated BigQuery query job
+   * @param readClient the client used to stream rows from the read session
+   * @return a new {@link ArrowQueryResultImpl} instance
+   * @throws BigQueryException if deserializing the Arrow schema from the session fails
+   */
   static ArrowQueryResultImpl fromReadSession(
       ReadSession readSession, JobId jobId, BigQueryReadClient readClient) {
     Schema pojoSchema = null;
@@ -250,12 +274,23 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
   }
 
+  /**
+   * Asserts that this query result instance has not been closed.
+   *
+   * @throws IllegalStateException if the query result has already been closed
+   */
   private void checkNotClosed() {
     if (closed) {
       throw new IllegalStateException("ArrowQueryResult has already been closed");
     }
   }
 
+  /**
+   * Loads an {@link ArrowRecordBatch} into the underlying {@link VectorSchemaRoot} and releases the
+   * previously loaded batch to prevent memory leaks.
+   *
+   * @param newBatch the Arrow record batch to load
+   */
   void loadBatch(ArrowRecordBatch newBatch) {
     lock.lock();
     try {
@@ -279,6 +314,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
     private ReadRowsResponse peekedResponse = null;
 
+    /**
+     * Checks whether the enclosing query result has been closed.
+     *
+     * @return {@code true} if closed, {@code false} otherwise
+     */
     private boolean isClosed() {
       lock.lock();
       try {
@@ -288,6 +328,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    /**
+     * Checks whether the initial Arrow batch from the query response is pending and unconsumed.
+     *
+     * @return {@code true} if an initial batch is present and not yet yielded, {@code false}
+     *     otherwise
+     */
     private boolean hasInitialBatchToYield() {
       lock.lock();
       try {
@@ -299,6 +345,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    /**
+     * Retrieves the active gRPC stream iterator.
+     *
+     * @return the {@link Iterator} of {@link ReadRowsResponse} messages, or {@code null} if not
+     *     initialized
+     */
     private Iterator<ReadRowsResponse> getStreamIterator() {
       lock.lock();
       try {
@@ -421,6 +473,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    /**
+     * Initializes the gRPC {@code ReadRows} stream via {@link BigQueryReadClient} if more rows
+     * remain to be consumed and the stream has not yet been started.
+     *
+     * @throws BigQueryException if stream initialization fails or required stream parameters are
+     *     missing
+     */
     private void ensureStreamInitialized() {
       ReadRowsRequest request;
       lock.lock();
@@ -476,6 +535,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    /**
+     * Deserializes an Arrow record batch from raw bytes and loads it into the root vector.
+     *
+     * @param bytes serialized Arrow record batch bytes
+     * @throws IOException if deserialization fails
+     */
     private void loadBatch(byte[] bytes) throws IOException {
       lock.lock();
       try {
@@ -504,6 +569,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    /**
+     * Deserializes an Arrow record batch from a protobuf {@link ByteString} and loads it into the
+     * root vector.
+     *
+     * @param byteString serialized Arrow record batch bytes as a {@link ByteString}
+     * @throws IOException if deserialization fails
+     */
     private void loadBatch(ByteString byteString) throws IOException {
       lock.lock();
       try {
