@@ -10,14 +10,32 @@
         "grpc": {
           "libraryClient": "SpacesServiceClient",
           "rpcs": {
+            "BatchUpdateMembers": {
+              "methods": ["batchUpdateMembers", "batchUpdateMembersCallable"]
+            },
+            "CreateMember": {
+              "methods": ["createMember", "createMember", "createMember", "createMemberCallable"]
+            },
             "CreateSpace": {
               "methods": ["createSpace", "createSpace", "createSpaceCallable"]
+            },
+            "DeleteMember": {
+              "methods": ["deleteMember", "deleteMember", "deleteMember", "deleteMemberCallable"]
             },
             "EndActiveConference": {
               "methods": ["endActiveConference", "endActiveConference", "endActiveConference", "endActiveConferenceCallable"]
             },
+            "GetMember": {
+              "methods": ["getMember", "getMember", "getMember", "getMemberCallable"]
+            },
             "GetSpace": {
               "methods": ["getSpace", "getSpace", "getSpace", "getSpaceCallable"]
+            },
+            "ListMembers": {
+              "methods": ["listMembers", "listMembers", "listMembers", "listMembersPagedCallable", "listMembersCallable"]
+            },
+            "UpdateMember": {
+              "methods": ["updateMember", "updateMember", "updateMemberCallable"]
             },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]
@@ -43,6 +61,9 @@
             "GetRecording": {
               "methods": ["getRecording", "getRecording", "getRecording", "getRecordingCallable"]
             },
+            "GetSmartNote": {
+              "methods": ["getSmartNote", "getSmartNote", "getSmartNote", "getSmartNoteCallable"]
+            },
             "GetTranscript": {
               "methods": ["getTranscript", "getTranscript", "getTranscript", "getTranscriptCallable"]
             },
@@ -60,6 +81,9 @@
             },
             "ListRecordings": {
               "methods": ["listRecordings", "listRecordings", "listRecordings", "listRecordingsPagedCallable", "listRecordingsCallable"]
+            },
+            "ListSmartNotes": {
+              "methods": ["listSmartNotes", "listSmartNotes", "listSmartNotes", "listSmartNotesPagedCallable", "listSmartNotesCallable"]
             },
             "ListTranscriptEntries": {
               "methods": ["listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntries", "listTranscriptEntriesPagedCallable", "listTranscriptEntriesCallable"]

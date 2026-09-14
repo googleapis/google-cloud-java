@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListConfere
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -55,6 +56,7 @@ import com.google.apps.meet.v2.GetConferenceRecordRequest;
 import com.google.apps.meet.v2.GetParticipantRequest;
 import com.google.apps.meet.v2.GetParticipantSessionRequest;
 import com.google.apps.meet.v2.GetRecordingRequest;
+import com.google.apps.meet.v2.GetSmartNoteRequest;
 import com.google.apps.meet.v2.GetTranscriptEntryRequest;
 import com.google.apps.meet.v2.GetTranscriptRequest;
 import com.google.apps.meet.v2.ListConferenceRecordsRequest;
@@ -65,6 +67,8 @@ import com.google.apps.meet.v2.ListParticipantsRequest;
 import com.google.apps.meet.v2.ListParticipantsResponse;
 import com.google.apps.meet.v2.ListRecordingsRequest;
 import com.google.apps.meet.v2.ListRecordingsResponse;
+import com.google.apps.meet.v2.ListSmartNotesRequest;
+import com.google.apps.meet.v2.ListSmartNotesResponse;
 import com.google.apps.meet.v2.ListTranscriptEntriesRequest;
 import com.google.apps.meet.v2.ListTranscriptEntriesResponse;
 import com.google.apps.meet.v2.ListTranscriptsRequest;
@@ -72,6 +76,7 @@ import com.google.apps.meet.v2.ListTranscriptsResponse;
 import com.google.apps.meet.v2.Participant;
 import com.google.apps.meet.v2.ParticipantSession;
 import com.google.apps.meet.v2.Recording;
+import com.google.apps.meet.v2.SmartNote;
 import com.google.apps.meet.v2.Transcript;
 import com.google.apps.meet.v2.TranscriptEntry;
 import com.google.common.collect.ImmutableList;
@@ -181,6 +186,10 @@ public class ConferenceRecordsServiceStubSettings
           ListTranscriptEntriesResponse,
           ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesSettings;
+  private final UnaryCallSettings<GetSmartNoteRequest, SmartNote> getSmartNoteSettings;
+  private final PagedCallSettings<
+          ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+      listSmartNotesSettings;
 
   private static final PagedListDescriptor<
           ListConferenceRecordsRequest, ListConferenceRecordsResponse, ConferenceRecord>
@@ -413,6 +422,41 @@ public class ConferenceRecordsServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote>
+      LIST_SMART_NOTES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSmartNotesRequest injectToken(ListSmartNotesRequest payload, String token) {
+              return ListSmartNotesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSmartNotesRequest injectPageSize(
+                ListSmartNotesRequest payload, int pageSize) {
+              return ListSmartNotesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSmartNotesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSmartNotesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SmartNote> extractResources(ListSmartNotesResponse payload) {
+              return payload.getSmartNotesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListConferenceRecordsRequest,
           ListConferenceRecordsResponse,
@@ -541,6 +585,23 @@ public class ConferenceRecordsServiceStubSettings
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+      LIST_SMART_NOTES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>() {
+            @Override
+            public ApiFuture<ListSmartNotesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> callable,
+                ListSmartNotesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSmartNotesResponse> futureResponse) {
+              PageContext<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote> pageContext =
+                  PageContext.create(callable, LIST_SMART_NOTES_PAGE_STR_DESC, request, context);
+              return ListSmartNotesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to getConferenceRecord. */
   public UnaryCallSettings<GetConferenceRecordRequest, ConferenceRecord>
       getConferenceRecordSettings() {
@@ -620,6 +681,18 @@ public class ConferenceRecordsServiceStubSettings
           ListTranscriptEntriesPagedResponse>
       listTranscriptEntriesSettings() {
     return listTranscriptEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSmartNote. */
+  public UnaryCallSettings<GetSmartNoteRequest, SmartNote> getSmartNoteSettings() {
+    return getSmartNoteSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSmartNotes. */
+  public PagedCallSettings<
+          ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+      listSmartNotesSettings() {
+    return listSmartNotesSettings;
   }
 
   public ConferenceRecordsServiceStub createStub() throws IOException {
@@ -745,6 +818,8 @@ public class ConferenceRecordsServiceStubSettings
     listTranscriptsSettings = settingsBuilder.listTranscriptsSettings().build();
     getTranscriptEntrySettings = settingsBuilder.getTranscriptEntrySettings().build();
     listTranscriptEntriesSettings = settingsBuilder.listTranscriptEntriesSettings().build();
+    getSmartNoteSettings = settingsBuilder.getSmartNoteSettings().build();
+    listSmartNotesSettings = settingsBuilder.listSmartNotesSettings().build();
   }
 
   @Override
@@ -794,6 +869,10 @@ public class ConferenceRecordsServiceStubSettings
             ListTranscriptEntriesResponse,
             ListTranscriptEntriesPagedResponse>
         listTranscriptEntriesSettings;
+    private final UnaryCallSettings.Builder<GetSmartNoteRequest, SmartNote> getSmartNoteSettings;
+    private final PagedCallSettings.Builder<
+            ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+        listSmartNotesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -847,6 +926,8 @@ public class ConferenceRecordsServiceStubSettings
       getTranscriptEntrySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTranscriptEntriesSettings =
           PagedCallSettings.newBuilder(LIST_TRANSCRIPT_ENTRIES_PAGE_STR_FACT);
+      getSmartNoteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSmartNotesSettings = PagedCallSettings.newBuilder(LIST_SMART_NOTES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -861,7 +942,9 @@ public class ConferenceRecordsServiceStubSettings
               getTranscriptSettings,
               listTranscriptsSettings,
               getTranscriptEntrySettings,
-              listTranscriptEntriesSettings);
+              listTranscriptEntriesSettings,
+              getSmartNoteSettings,
+              listSmartNotesSettings);
       initDefaults(this);
     }
 
@@ -880,6 +963,8 @@ public class ConferenceRecordsServiceStubSettings
       listTranscriptsSettings = settings.listTranscriptsSettings.toBuilder();
       getTranscriptEntrySettings = settings.getTranscriptEntrySettings.toBuilder();
       listTranscriptEntriesSettings = settings.listTranscriptEntriesSettings.toBuilder();
+      getSmartNoteSettings = settings.getSmartNoteSettings.toBuilder();
+      listSmartNotesSettings = settings.listSmartNotesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -894,7 +979,9 @@ public class ConferenceRecordsServiceStubSettings
               getTranscriptSettings,
               listTranscriptsSettings,
               getTranscriptEntrySettings,
-              listTranscriptEntriesSettings);
+              listTranscriptEntriesSettings,
+              getSmartNoteSettings,
+              listSmartNotesSettings);
     }
 
     private static Builder createDefault() {
@@ -979,6 +1066,16 @@ public class ConferenceRecordsServiceStubSettings
 
       builder
           .listTranscriptEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSmartNoteSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSmartNotesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1079,6 +1176,18 @@ public class ConferenceRecordsServiceStubSettings
             ListTranscriptEntriesPagedResponse>
         listTranscriptEntriesSettings() {
       return listTranscriptEntriesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSmartNote. */
+    public UnaryCallSettings.Builder<GetSmartNoteRequest, SmartNote> getSmartNoteSettings() {
+      return getSmartNoteSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSmartNotes. */
+    public PagedCallSettings.Builder<
+            ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+        listSmartNotesSettings() {
+      return listSmartNotesSettings;
     }
 
     @Override

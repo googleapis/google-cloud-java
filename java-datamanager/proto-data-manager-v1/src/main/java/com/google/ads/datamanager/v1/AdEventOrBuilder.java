@@ -346,6 +346,40 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
+   * Optional. IP address used for measurement. This must be same value as
+   * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+   * Keep it blank if you do not want to share IP for measurement.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. IP address used for measurement. This must be same value as
+   * [DeviceInfo.ip_address][google.ads.datamanager.v1.DeviceInfo.ip_address].
+   * Keep it blank if you do not want to share IP for measurement.
+   * </pre>
+   *
+   * <code>
+   * string ip_address = 34 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString getIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The device ID of the device that the ad was served to.
    * </pre>
    *

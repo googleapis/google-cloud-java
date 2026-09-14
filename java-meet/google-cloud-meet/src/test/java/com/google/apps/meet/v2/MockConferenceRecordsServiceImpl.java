@@ -316,4 +316,46 @@ public class MockConferenceRecordsServiceImpl extends ConferenceRecordsServiceIm
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getSmartNote(
+      GetSmartNoteRequest request, StreamObserver<SmartNote> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SmartNote) {
+      requests.add(request);
+      responseObserver.onNext(((SmartNote) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSmartNote, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SmartNote.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSmartNotes(
+      ListSmartNotesRequest request, StreamObserver<ListSmartNotesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSmartNotesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSmartNotesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSmartNotes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSmartNotesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

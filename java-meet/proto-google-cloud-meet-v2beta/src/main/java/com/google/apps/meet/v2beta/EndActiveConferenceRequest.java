@@ -87,7 +87,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>
@@ -121,7 +121,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>
@@ -468,7 +468,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>
@@ -501,7 +501,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>
@@ -534,7 +534,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>
@@ -566,7 +566,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>
@@ -594,7 +594,7 @@ public final class EndActiveConferenceRequest extends com.google.protobuf.Genera
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>

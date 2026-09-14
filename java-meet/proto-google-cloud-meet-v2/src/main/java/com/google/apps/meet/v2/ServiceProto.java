@@ -57,6 +57,38 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2_EndActiveConferenceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_CreateMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_CreateMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_GetMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_GetMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_ListMembersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_ListMembersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_ListMembersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_ListMembersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_DeleteMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_DeleteMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_UpdateMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_UpdateMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_BatchUpdateMembersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_BatchUpdateMembersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_BatchUpdateMembersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_BatchUpdateMembersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_apps_meet_v2_GetConferenceRecordRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2_GetConferenceRecordRequest_fieldAccessorTable;
@@ -128,6 +160,18 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_apps_meet_v2_ListTranscriptEntriesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_apps_meet_v2_ListTranscriptEntriesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_GetSmartNoteRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_GetSmartNoteRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_ListSmartNotesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_ListSmartNotesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_apps_meet_v2_ListSmartNotesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_apps_meet_v2_ListSmartNotesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -154,7 +198,37 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"M\n"
           + "\032EndActiveConferenceRequest\022/\n"
           + "\004name\030\001 \001(\tB!\340A\002\372A\033\n"
-          + "\031meet.googleapis.com/Space\"X\n"
+          + "\031meet.googleapis.com/Space\"{\n"
+          + "\023CreateMemberRequest\0222\n"
+          + "\006parent\030\001 \001("
+          + "\tB\"\340A\002\372A\034\022\032meet.googleapis.com/Member\0220\n"
+          + "\006member\030\002 \001(\0132\033.google.apps.meet.v2.MemberB\003\340A\002\"D\n"
+          + "\020GetMemberRequest\0220\n"
+          + "\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
+          + "\032meet.googleapis.com/Member\"y\n"
+          + "\022ListMembersRequest\0222\n"
+          + "\006parent\030\001 \001("
+          + "\tB\"\340A\002\372A\034\022\032meet.googleapis.com/Member\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\\\n"
+          + "\023ListMembersResponse\022,\n"
+          + "\007members\030\001 \003(\0132\033.google.apps.meet.v2.Member\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"G\n"
+          + "\023DeleteMemberRequest\0220\n"
+          + "\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
+          + "\032meet.googleapis.com/Member\"}\n"
+          + "\023UpdateMemberRequest\0220\n"
+          + "\006member\030\001 \001(\0132\033.google.apps.meet.v2.MemberB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\306\001\n"
+          + "\031BatchUpdateMembersRequest\0222\n"
+          + "\006parent\030\001 \001("
+          + "\tB\"\340A\002\372A\034\022\032meet.googleapis.com/Member\022?\n"
+          + "\010requests\030\002 \003(\0132("
+          + ".google.apps.meet.v2.UpdateMemberRequestB\003\340A\002\0224\n"
+          + "\013update_mask\030\003 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"J\n"
+          + "\032BatchUpdateMembersResponse\022,\n"
+          + "\007members\030\001 \003(\0132\033.google.apps.meet.v2.Member\"X\n"
           + "\032GetConferenceRecordRequest\022:\n"
           + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
           + "$meet.googleapis.com/ConferenceRecord\"d\n"
@@ -183,8 +257,8 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&meet.googleapis.com/ParticipantSession\"\246\001\n"
           + "\036ListParticipantSessionsRequest\022>\n"
-          + "\006parent\030\001 \001("
-          + "\tB.\340A\002\372A(\022&meet.googleapis.com/ParticipantSession\022\026\n"
+          + "\006parent\030\001 \001(\tB.\340A\002\372A(\022"
+          + "&meet.googleapis.com/ParticipantSession\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\201\001\n"
@@ -225,73 +299,105 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\035ListTranscriptEntriesResponse\022@\n"
           + "\022transcript_entries\030\001"
           + " \003(\0132$.google.apps.meet.v2.TranscriptEntry\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\352\005\n\r"
+          + "\017next_page_token\030\002 \001(\t\"J\n"
+          + "\023GetSmartNoteRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
+          + "\035meet.googleapis.com/SmartNote\"\177\n"
+          + "\025ListSmartNotesRequest\0225\n"
+          + "\006parent\030\001 \001("
+          + "\tB%\340A\002\372A\037\022\035meet.googleapis.com/SmartNote\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"f\n"
+          + "\026ListSmartNotesResponse\0223\n"
+          + "\013smart_notes\030\001 \003(\0132\036.google.apps.meet.v2.SmartNote\022\027\n"
+          + "\017next_page_token\030\002 \001(\t2\344\014\n\r"
           + "SpacesService\022u\n"
-          + "\013CreateSpace\022\'.google.apps.meet.v2.Crea"
-          + "teSpaceRequest\032\032.google.apps.meet.v2.Space\"!\332A\005space\202\323\344\223\002\023\"\n"
+          + "\013CreateSpace\022\'.google.apps.meet.v2.Create"
+          + "SpaceRequest\032\032.google.apps.meet.v2.Space\"!\332A\005space\202\323\344\223\002\023\"\n"
           + "/v2/spaces:\005space\022p\n"
-          + "\010GetSpace\022$.google.apps.meet.v2.GetSpace"
-          + "Request\032\032.google.apps.meet.v2.Space\"\"\332A\004name\202\323\344\223\002\025\022\023/v2/{name=spaces/*}\022\220\001\n"
-          + "\013UpdateSpace\022\'.google.apps.meet.v2.UpdateSpac"
-          + "eRequest\032\032.google.apps.meet.v2.Space\"<\332A"
-          + "\021space,update_mask\202\323\344\223\002\"2\031/v2/{space.name=spaces/*}:\005space\022\231\001\n"
-          + "\023EndActiveConference\022/.google.apps.meet.v2.EndActiveConfer"
-          + "enceRequest\032\026.google.protobuf.Empty\"9\332A\004"
-          + "name\202\323\344\223\002,\"\'/v2/{name=spaces/*}:endActiv"
-          + "eConference:\001*\032\300\001\312A\023meet.googleapis.com\322"
-          + "A\246\001https://www.googleapis.com/auth/meetings.space.created,https://www.googleapis"
-          + ".com/auth/meetings.space.readonly,https:"
-          + "//www.googleapis.com/auth/meetings.space.settings2\343\021\n"
+          + "\010GetSpace\022$.google.apps.meet.v2.GetSpaceRe"
+          + "quest\032\032.google.apps.meet.v2.Space\"\"\332A\004name\202\323\344\223\002\025\022\023/v2/{name=spaces/*}\022\220\001\n"
+          + "\013UpdateSpace\022\'.google.apps.meet.v2.UpdateSpaceR"
+          + "equest\032\032.google.apps.meet.v2.Space\"<\332A\021s"
+          + "pace,update_mask\202\323\344\223\002\"2\031/v2/{space.name=spaces/*}:\005space\022\231\001\n"
+          + "\023EndActiveConference\022/.google.apps.meet.v2.EndActiveConferen"
+          + "ceRequest\032\026.google.protobuf.Empty\"9\332A\004na"
+          + "me\202\323\344\223\002,\"\'/v2/{name=spaces/*}:endActiveConference:\001*\022\224\001\n"
+          + "\014CreateMember\022(.google.a"
+          + "pps.meet.v2.CreateMemberRequest\032\033.google.apps.meet.v2.Member\"=\332A\r"
+          + "parent,member\202\323"
+          + "\344\223\002\'\"\035/v2/{parent=spaces/*}/members:\006member\022}\n"
+          + "\tGetMember\022%.google.apps.meet.v2.GetMemberRequest\032\033.google.apps.meet.v2.Me"
+          + "mber\",\332A\004name\202\323\344\223\002\037\022\035/v2/{name=spaces/*/members/*}\022\220\001\n"
+          + "\013ListMembers\022\'.google.apps.meet.v2.ListMembersRequest\032(.google.app"
+          + "s.meet.v2.ListMembersResponse\".\332A\006parent\202\323\344\223\002\037\022\035/v2/{parent=spaces/*}/members\022~\n"
+          + "\014DeleteMember\022(.google.apps.meet.v2.Dele"
+          + "teMemberRequest\032\026.google.protobuf.Empty\""
+          + ",\332A\004name\202\323\344\223\002\037*\035/v2/{name=spaces/*/members/*}\022\240\001\n"
+          + "\014UpdateMember\022(.google.apps.meet.v2.UpdateMemberRequest\032\033.google.apps.m"
+          + "eet.v2.Member\"I\332A\022member,update_mask\202\323\344\223"
+          + "\002.2$/v2/{member.name=spaces/*/members/*}:\006member\022\253\001\n"
+          + "\022BatchUpdateMembers\022..google.apps.meet.v2.BatchUpdateMembersRequest\032"
+          + "/.google.apps.meet.v2.BatchUpdateMembers"
+          + "Response\"4\202\323\344\223\002.\")/v2/{parent=spaces/*}/"
+          + "members:batchUpdate:\001*\032\300\001\312A\023meet.googlea"
+          + "pis.com\322A\246\001https://www.googleapis.com/au"
+          + "th/meetings.space.created,https://www.googleapis.com/auth/meetings.space.readonl"
+          + "y,https://www.googleapis.com/auth/meetings.space.settings2\244\024\n"
           + "\030ConferenceRecordsService\022\234\001\n"
-          + "\023GetConferenceRecord\022/.google.apps.mee"
-          + "t.v2.GetConferenceRecordRequest\032%.google"
-          + ".apps.meet.v2.ConferenceRecord\"-\332A\004name\202\323\344\223\002"
+          + "\023GetConferenceRecord\022/.google.apps.meet.v2.GetConferenceRecordRequest\032"
+          + "%.google.apps.meet.v2.ConferenceRecord\"-\332A\004name\202\323\344\223\002"
           + " \022\036/v2/{name=conferenceRecords/*}\022\235\001\n"
-          + "\025ListConferenceRecords\0221.google.apps.me"
-          + "et.v2.ListConferenceRecordsRequest\0322.google.apps.meet.v2.ListConferenceRecordsRe"
-          + "sponse\"\035\202\323\344\223\002\027\022\025/v2/conferenceRecords\022\234\001\n"
-          + "\016GetParticipant\022*.google.apps.meet.v2.GetParticipantRequest\032"
-          + " .google.apps.meet."
-          + "v2.Participant\"<\332A\004name\202\323\344\223\002/\022-/v2/{name=conferenceRecords/*/participants/*}\022\257\001\n"
-          + "\020ListParticipants\022,.google.apps.meet.v2."
-          + "ListParticipantsRequest\032-.google.apps.me"
-          + "et.v2.ListParticipantsResponse\">\332A\006paren"
-          + "t\202\323\344\223\002/\022-/v2/{parent=conferenceRecords/*}/participants\022\307\001\n"
-          + "\025GetParticipantSession\0221.google.apps.meet.v2.GetParticipantSes"
-          + "sionRequest\032\'.google.apps.meet.v2.Partic"
-          + "ipantSession\"R\332A\004name\202\323\344\223\002E\022C/v2/{name=c"
-          + "onferenceRecords/*/participants/*/participantSessions/*}\022\332\001\n"
-          + "\027ListParticipantSessions\0223.google.apps.meet.v2.ListParticipa"
-          + "ntSessionsRequest\0324.google.apps.meet.v2."
-          + "ListParticipantSessionsResponse\"T\332A\006pare"
-          + "nt\202\323\344\223\002E\022C/v2/{parent=conferenceRecords/"
-          + "*/participants/*}/participantSessions\022\224\001\n"
-          + "\014GetRecording\022(.google.apps.meet.v2.Get"
-          + "RecordingRequest\032\036.google.apps.meet.v2.R"
-          + "ecording\":\332A\004name\202\323\344\223\002-\022+/v2/{name=conferenceRecords/*/recordings/*}\022\247\001\n"
-          + "\016ListRecordings\022*.google.apps.meet.v2.ListRecord"
-          + "ingsRequest\032+.google.apps.meet.v2.ListRe"
-          + "cordingsResponse\"<\332A\006parent\202\323\344\223\002-\022+/v2/{"
-          + "parent=conferenceRecords/*}/recordings\022\230\001\n\r"
-          + "GetTranscript\022).google.apps.meet.v2.GetTranscriptRequest\032\037.google.apps.meet.v"
-          + "2.Transcript\";\332A\004name\202\323\344\223\002.\022,/v2/{name=conferenceRecords/*/transcripts/*}\022\253\001\n"
-          + "\017ListTranscripts\022+.google.apps.meet.v2.List"
-          + "TranscriptsRequest\032,.google.apps.meet.v2"
-          + ".ListTranscriptsResponse\"=\332A\006parent\202\323\344\223\002"
-          + ".\022,/v2/{parent=conferenceRecords/*}/transcripts\022\261\001\n"
-          + "\022GetTranscriptEntry\022..google.apps.meet.v2.GetTranscriptEntryRequest\032$"
-          + ".google.apps.meet.v2.TranscriptEntry\"E\332A"
-          + "\004name\202\323\344\223\0028\0226/v2/{name=conferenceRecords/*/transcripts/*/entries/*}\022\307\001\n"
-          + "\025ListTranscriptEntries\0221.google.apps.meet.v2.List"
-          + "TranscriptEntriesRequest\0322.google.apps.m"
-          + "eet.v2.ListTranscriptEntriesResponse\"G\332A"
-          + "\006parent\202\323\344\223\0028\0226/v2/{parent=conferenceRec"
-          + "ords/*/transcripts/*}/entries\032\207\001\312A\023meet."
-          + "googleapis.com\322Anhttps://www.googleapis.com/auth/meetings.space.created,https://"
-          + "www.googleapis.com/auth/meetings.space.readonlyB\241\001\n"
-          + "\027com.google.apps.meet.v2B\014ServiceProtoP\001Z1cloud.google.com/go/apps/me"
-          + "et/apiv2/meetpb;meetpb\252\002\023Google.Apps.Mee"
-          + "t.V2\312\002\023Google\\Apps\\Meet\\V2\352\002\026Google::Apps::Meet::V2b\006proto3"
+          + "\025ListConferenceRecords\0221.google.apps.meet.v2.ListConferenceRecordsReque"
+          + "st\0322.google.apps.meet.v2.ListConferenceR"
+          + "ecordsResponse\"\035\202\323\344\223\002\027\022\025/v2/conferenceRecords\022\234\001\n"
+          + "\016GetParticipant\022*.google.apps.meet.v2.GetParticipantRequest\032 .google.ap"
+          + "ps.meet.v2.Participant\"<\332A\004name\202\323\344\223\002/\022-/"
+          + "v2/{name=conferenceRecords/*/participants/*}\022\257\001\n"
+          + "\020ListParticipants\022,.google.apps.meet.v2.ListParticipantsRequest\032-.google"
+          + ".apps.meet.v2.ListParticipantsResponse\">"
+          + "\332A\006parent\202\323\344\223\002/\022-/v2/{parent=conferenceRecords/*}/participants\022\307\001\n"
+          + "\025GetParticipantSession\0221.google.apps.meet.v2.GetPartic"
+          + "ipantSessionRequest\032\'.google.apps.meet.v"
+          + "2.ParticipantSession\"R\332A\004name\202\323\344\223\002E\022C/v2"
+          + "/{name=conferenceRecords/*/participants/*/participantSessions/*}\022\332\001\n"
+          + "\027ListParticipantSessions\0223.google.apps.meet.v2.ListP"
+          + "articipantSessionsRequest\0324.google.apps.meet.v2.ListParticipantSessionsResponse\""
+          + "T\332A\006parent\202\323\344\223\002E\022C/v2/{parent=conference"
+          + "Records/*/participants/*}/participantSessions\022\224\001\n"
+          + "\014GetRecording\022(.google.apps.meet.v2.GetRecordingRequest\032\036.google.apps.m"
+          + "eet.v2.Recording\":\332A\004name\202\323\344\223\002-\022+/v2/{name=conferenceRecords/*/recordings/*}\022\247\001\n"
+          + "\016ListRecordings\022*.google.apps.meet.v2.Li"
+          + "stRecordingsRequest\032+.google.apps.meet.v"
+          + "2.ListRecordingsResponse\"<\332A\006parent\202\323\344\223\002"
+          + "-\022+/v2/{parent=conferenceRecords/*}/recordings\022\230\001\n\r"
+          + "GetTranscript\022).google.apps.meet.v2.GetTranscriptRequest\032\037.google.app"
+          + "s.meet.v2.Transcript\";\332A\004name\202\323\344\223\002.\022,/v2"
+          + "/{name=conferenceRecords/*/transcripts/*}\022\253\001\n"
+          + "\017ListTranscripts\022+.google.apps.meet.v2.ListTranscriptsRequest\032,.google.apps"
+          + ".meet.v2.ListTranscriptsResponse\"=\332A\006par"
+          + "ent\202\323\344\223\002.\022,/v2/{parent=conferenceRecords/*}/transcripts\022\261\001\n"
+          + "\022GetTranscriptEntry\022..google.apps.meet.v2.GetTranscriptEntryR"
+          + "equest\032$.google.apps.meet.v2.TranscriptE"
+          + "ntry\"E\332A\004name\202\323\344\223\0028\0226/v2/{name=conferenceRecords/*/transcripts/*/entries/*}\022\307\001\n"
+          + "\025ListTranscriptEntries\0221.google.apps.meet"
+          + ".v2.ListTranscriptEntriesRequest\0322.google.apps.meet.v2.ListTranscriptEntriesResp"
+          + "onse\"G\332A\006parent\202\323\344\223\0028\0226/v2/{parent=confe"
+          + "renceRecords/*/transcripts/*}/entries\022\224\001\n"
+          + "\014GetSmartNote\022(.google.apps.meet.v2.Get"
+          + "SmartNoteRequest\032\036.google.apps.meet.v2.S"
+          + "martNote\":\332A\004name\202\323\344\223\002-\022+/v2/{name=conferenceRecords/*/smartNotes/*}\022\247\001\n"
+          + "\016ListSmartNotes\022*.google.apps.meet.v2.ListSmartN"
+          + "otesRequest\032+.google.apps.meet.v2.ListSm"
+          + "artNotesResponse\"<\332A\006parent\202\323\344\223\002-\022+/v2/{"
+          + "parent=conferenceRecords/*}/smartNotes\032\207"
+          + "\001\312A\023meet.googleapis.com\322Anhttps://www.go"
+          + "ogleapis.com/auth/meetings.space.created"
+          + ",https://www.googleapis.com/auth/meetings.space.readonlyB\241\001\n"
+          + "\027com.google.apps.meet.v2B\014ServiceProtoP\001Z1cloud.google.com/g"
+          + "o/apps/meet/apiv2/meetpb;meetpb\252\002\023Google"
+          + ".Apps.Meet.V2\312\002\023Google\\Apps\\Meet\\V2\352\002\026Go"
+          + "ogle::Apps::Meet::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -337,8 +443,72 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_apps_meet_v2_GetConferenceRecordRequest_descriptor =
+    internal_static_google_apps_meet_v2_CreateMemberRequest_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_apps_meet_v2_CreateMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_CreateMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Member",
+            });
+    internal_static_google_apps_meet_v2_GetMemberRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_apps_meet_v2_GetMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_GetMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_apps_meet_v2_ListMembersRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_apps_meet_v2_ListMembersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_ListMembersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_apps_meet_v2_ListMembersResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_apps_meet_v2_ListMembersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_ListMembersResponse_descriptor,
+            new java.lang.String[] {
+              "Members", "NextPageToken",
+            });
+    internal_static_google_apps_meet_v2_DeleteMemberRequest_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_apps_meet_v2_DeleteMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_DeleteMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_apps_meet_v2_UpdateMemberRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_apps_meet_v2_UpdateMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_UpdateMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Member", "UpdateMask",
+            });
+    internal_static_google_apps_meet_v2_BatchUpdateMembersRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_apps_meet_v2_BatchUpdateMembersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_BatchUpdateMembersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests", "UpdateMask",
+            });
+    internal_static_google_apps_meet_v2_BatchUpdateMembersResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_apps_meet_v2_BatchUpdateMembersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_BatchUpdateMembersResponse_descriptor,
+            new java.lang.String[] {
+              "Members",
+            });
+    internal_static_google_apps_meet_v2_GetConferenceRecordRequest_descriptor =
+        getDescriptor().getMessageType(12);
     internal_static_google_apps_meet_v2_GetConferenceRecordRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetConferenceRecordRequest_descriptor,
@@ -346,7 +516,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListConferenceRecordsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(13);
     internal_static_google_apps_meet_v2_ListConferenceRecordsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListConferenceRecordsRequest_descriptor,
@@ -354,7 +524,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "PageSize", "PageToken", "Filter",
             });
     internal_static_google_apps_meet_v2_ListConferenceRecordsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(14);
     internal_static_google_apps_meet_v2_ListConferenceRecordsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListConferenceRecordsResponse_descriptor,
@@ -362,7 +532,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ConferenceRecords", "NextPageToken",
             });
     internal_static_google_apps_meet_v2_GetParticipantRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(15);
     internal_static_google_apps_meet_v2_GetParticipantRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetParticipantRequest_descriptor,
@@ -370,7 +540,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListParticipantsRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(16);
     internal_static_google_apps_meet_v2_ListParticipantsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListParticipantsRequest_descriptor,
@@ -378,7 +548,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_apps_meet_v2_ListParticipantsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(17);
     internal_static_google_apps_meet_v2_ListParticipantsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListParticipantsResponse_descriptor,
@@ -386,7 +556,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Participants", "NextPageToken", "TotalSize",
             });
     internal_static_google_apps_meet_v2_GetParticipantSessionRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(18);
     internal_static_google_apps_meet_v2_GetParticipantSessionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetParticipantSessionRequest_descriptor,
@@ -394,7 +564,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListParticipantSessionsRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(19);
     internal_static_google_apps_meet_v2_ListParticipantSessionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListParticipantSessionsRequest_descriptor,
@@ -402,7 +572,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_apps_meet_v2_ListParticipantSessionsResponse_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(20);
     internal_static_google_apps_meet_v2_ListParticipantSessionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListParticipantSessionsResponse_descriptor,
@@ -410,7 +580,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "ParticipantSessions", "NextPageToken",
             });
     internal_static_google_apps_meet_v2_GetRecordingRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(21);
     internal_static_google_apps_meet_v2_GetRecordingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetRecordingRequest_descriptor,
@@ -418,7 +588,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListRecordingsRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(22);
     internal_static_google_apps_meet_v2_ListRecordingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListRecordingsRequest_descriptor,
@@ -426,7 +596,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_apps_meet_v2_ListRecordingsResponse_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(23);
     internal_static_google_apps_meet_v2_ListRecordingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListRecordingsResponse_descriptor,
@@ -434,7 +604,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Recordings", "NextPageToken",
             });
     internal_static_google_apps_meet_v2_GetTranscriptRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(24);
     internal_static_google_apps_meet_v2_GetTranscriptRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetTranscriptRequest_descriptor,
@@ -442,7 +612,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListTranscriptsRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(25);
     internal_static_google_apps_meet_v2_ListTranscriptsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListTranscriptsRequest_descriptor,
@@ -450,7 +620,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_apps_meet_v2_ListTranscriptsResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(26);
     internal_static_google_apps_meet_v2_ListTranscriptsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListTranscriptsResponse_descriptor,
@@ -458,7 +628,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Transcripts", "NextPageToken",
             });
     internal_static_google_apps_meet_v2_GetTranscriptEntryRequest_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(27);
     internal_static_google_apps_meet_v2_GetTranscriptEntryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_GetTranscriptEntryRequest_descriptor,
@@ -466,7 +636,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_apps_meet_v2_ListTranscriptEntriesRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(28);
     internal_static_google_apps_meet_v2_ListTranscriptEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListTranscriptEntriesRequest_descriptor,
@@ -474,12 +644,36 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_apps_meet_v2_ListTranscriptEntriesResponse_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(29);
     internal_static_google_apps_meet_v2_ListTranscriptEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_apps_meet_v2_ListTranscriptEntriesResponse_descriptor,
             new java.lang.String[] {
               "TranscriptEntries", "NextPageToken",
+            });
+    internal_static_google_apps_meet_v2_GetSmartNoteRequest_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_apps_meet_v2_GetSmartNoteRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_GetSmartNoteRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_apps_meet_v2_ListSmartNotesRequest_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_apps_meet_v2_ListSmartNotesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_ListSmartNotesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_apps_meet_v2_ListSmartNotesResponse_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_apps_meet_v2_ListSmartNotesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_apps_meet_v2_ListSmartNotesResponse_descriptor,
+            new java.lang.String[] {
+              "SmartNotes", "NextPageToken",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
