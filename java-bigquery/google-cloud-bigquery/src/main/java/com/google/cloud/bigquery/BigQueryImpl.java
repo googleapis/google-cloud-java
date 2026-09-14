@@ -27,6 +27,7 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
@@ -501,7 +502,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } else {
       settingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     }
-    HeaderProvider headerProvider = options.getMergedHeaderProvider(null);
+    HeaderProvider headerProvider = options.getMergedHeaderProvider(new NoHeaderProvider());
     if (headerProvider != null) {
       settingsBuilder.setHeaderProvider(headerProvider);
     }
