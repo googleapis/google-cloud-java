@@ -192,12 +192,25 @@ public class BigQueryParameterHandlerTest {
             excessString, StandardSQLTypeName.TIMESTAMP, true);
     assertEquals("2024-01-01 12:34:56.123456789012", truncatedPicos);
 
-    // 'T' is replaced with space and whitespace is trimmed
+    // 'T' delimiter at index 10 is replaced with space and whitespace is trimmed
     String isoString = "  2024-01-01T12:34:56.123456789012  ";
     Object replacedT =
         BigQueryParameterHandler.formatValueForQueryParameter(
             isoString, StandardSQLTypeName.TIMESTAMP, true);
     assertEquals("2024-01-01 12:34:56.123456789012", replacedT);
+
+    // Characters matching 'T' in timezone names are not replaced
+    String timezoneWithT = "  2024-01-01T12:34:56.123456 America/Toronto  ";
+    Object preservedTimezone =
+        BigQueryParameterHandler.formatValueForQueryParameter(
+            timezoneWithT, StandardSQLTypeName.TIMESTAMP, false);
+    assertEquals("2024-01-01 12:34:56.123456 America/Toronto", preservedTimezone);
+
+    String utcTimezone = "2024-01-01 12:34:56.123456 UTC";
+    Object preservedUtc =
+        BigQueryParameterHandler.formatValueForQueryParameter(
+            utcTimezone, StandardSQLTypeName.TIMESTAMP, false);
+    assertEquals("2024-01-01 12:34:56.123456 UTC", preservedUtc);
 
     // When enableTimestampPicos is false, truncated to 6 digits
     Object microsFormatted =
