@@ -55,7 +55,7 @@ public class ITRetryDmlAsPartitionedDmlTest extends ITAbstractSpannerTest {
   public static void setup() {
     // This shadows the setup() method in the super class and prevents it from being executed.
     // That allows us to have a custom setup method in this class.
-    assumeFalse("Skipping the test due to a known bug b/422916293", isSpannerOmni());
+    assumeFalse("Skipping the test due to a known bug b/441255724", isSpannerOmni());
   }
 
   @BeforeClass
