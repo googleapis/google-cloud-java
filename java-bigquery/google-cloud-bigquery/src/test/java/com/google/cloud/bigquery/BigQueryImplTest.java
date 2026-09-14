@@ -3268,7 +3268,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testQueryWithArrowFormatMissingSerializedSchema() {
+  void testQueryWithArrowFormatMissingSerializedSchema() throws Exception {
     JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
         new com.google.api.services.bigquery.model.QueryResponse()
