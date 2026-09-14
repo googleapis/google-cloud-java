@@ -24,7 +24,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 
 /** This class returns ResultSetMetadata for the JSON and the Arrow ResultSets */
@@ -32,27 +31,25 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   private final BigQueryJdbcResultSetLogger LOG =
       BigQueryJdbcResultSetLogger.getLogger(this.getClass());
   private final FieldList schemaFieldList;
-  private final Statement statement;
+  private final BigQueryStatement statement;
   private final int columnCount;
   private final boolean enableTimestampPicos;
 
   private static final int DEFAULT_DISPLAY_SIZE = 50;
 
-  private BigQueryResultSetMetadata(FieldList schemaFieldList, Statement statement) {
+  private BigQueryResultSetMetadata(FieldList schemaFieldList, BigQueryStatement statement) {
     LOG.finestTrace("<init>");
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
-    this.enableTimestampPicos =
-        statement instanceof BigQueryStatement
-            && ((BigQueryStatement) statement).isEnableTimestampPicos();
+    this.enableTimestampPicos = statement != null && statement.isEnableTimestampPicos();
   }
 
-  static BigQueryResultSetMetadata of(FieldList schemaFieldList, Statement statement) {
+  static BigQueryResultSetMetadata of(FieldList schemaFieldList, BigQueryStatement statement) {
     return new BigQueryResultSetMetadata(schemaFieldList, statement);
   }
 
-  Statement getStatement() {
+  BigQueryStatement getStatement() {
     return this.statement;
   }
 
