@@ -50,7 +50,6 @@ import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.ipc.ReadChannel;
 import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
-import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.jspecify.annotations.NullMarked;
 
@@ -80,22 +79,6 @@ final class ArrowDeserializer {
   }
 
   private ArrowDeserializer() {}
-
-  /**
-   * Deserializes a raw binary Arrow schema payload into an Apache Arrow Schema object.
-   *
-   * @param schemaBytes the raw binary Arrow schema payload
-   * @return the deserialized Apache Arrow Schema object
-   * @throws IOException if deserialization of the Arrow schema fails
-   */
-  static org.apache.arrow.vector.types.pojo.Schema deserializeSchema(byte[] schemaBytes)
-      throws IOException {
-    try (ByteArrayReadableSeekableByteChannel byteChannel =
-            new ByteArrayReadableSeekableByteChannel(schemaBytes);
-        ReadChannel readChannel = new ReadChannel(byteChannel)) {
-      return MessageSerializer.deserializeSchema(readChannel);
-    }
-  }
 
   /**
    * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch,
@@ -155,7 +138,6 @@ final class ArrowDeserializer {
     try (BufferAllocator childAllocator = createChildAllocator("loadArrowRows");
         VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, childAllocator)) {
       VectorLoader loader = new VectorLoader(root);
-      boolean hasMore = false;
       while (rowBatch.size() < pageSize
           && iterator.hasNext()
           && (totalRowsReturned + rowBatch.size() < maxResults)) {
@@ -177,8 +159,7 @@ final class ArrowDeserializer {
             // Step 2: Populate rowBatch up to pageSize. If the batch contains more rows than the
             // remaining page capacity, buffer the unconsumed rows for subsequent pages to prevent
             // data loss when the stream response crosses a page boundary.
-            int i = 0;
-            for (; i < batchRowCount; i++) {
+            for (int i = 0; i < batchRowCount; i++) {
               if (rowBatch.size() < pageSize
                   && (totalRowsReturned + rowBatch.size() < maxResults)) {
                 rowBatch.add(arrowRootToFieldValueList(root, i, schema));
@@ -188,18 +169,14 @@ final class ArrowDeserializer {
                 break;
               }
             }
-            if (i < batchRowCount && (totalRowsReturned + rowBatch.size() < maxResults)) {
-              hasMore = true;
-            }
             root.clear();
           }
         }
       }
-      // Step 3: Determine if more rows are available either in the buffer, remaining unconsumed in
-      // a batch, or remaining in the stream iterator, guarded by maxResults.
+      // Step 3: Determine if more rows are available either in the buffer or remaining in the
+      // stream iterator, guarded by maxResults.
       return (totalRowsReturned + rowBatch.size() < maxResults)
-          && (hasMore
-              || !buffer.isEmpty()
+          && (!buffer.isEmpty()
               || (iterator.hasNext()
                   && (totalRowsReturned + rowBatch.size() + buffer.size() < maxResults)));
     }
@@ -364,26 +341,7 @@ final class ArrowDeserializer {
     String stringVal;
     if (type == LegacySQLTypeName.TIMESTAMP) {
       TimeStampVector tsVector = (TimeStampVector) vector;
-      long rawVal = tsVector.get(rowIndex);
-      ArrowType.Timestamp tsType = (ArrowType.Timestamp) vector.getField().getType();
-      long micros;
-      switch (tsType.getUnit()) {
-        case SECOND:
-          micros = rawVal * 1_000_000L;
-          break;
-        case MILLISECOND:
-          micros = rawVal * 1_000L;
-          break;
-        case MICROSECOND:
-          micros = rawVal;
-          break;
-        case NANOSECOND:
-          micros = rawVal / 1_000L;
-          break;
-        default:
-          micros = rawVal;
-      }
-      stringVal = formatTimestampMicros(micros);
+      stringVal = formatTimestampMicros(tsVector.get(rowIndex));
     } else if (type == LegacySQLTypeName.DATE) {
       if (vector instanceof DateDayVector) {
         int days = ((DateDayVector) vector).get(rowIndex);
@@ -393,10 +351,9 @@ final class ArrowDeserializer {
       }
     } else if (type == LegacySQLTypeName.TIME) {
       if (vector instanceof TimeMicroVector) {
-        long nanosOfDay = ((TimeMicroVector) vector).get(rowIndex) * 1_000L;
+        long microsOfDay = ((TimeMicroVector) vector).get(rowIndex);
         stringVal =
-            DateTimeFormatter.ISO_LOCAL_TIME.format(
-                LocalTime.ofNanoOfDay((nanosOfDay / 1_000L) * 1_000L));
+            DateTimeFormatter.ISO_LOCAL_TIME.format(LocalTime.ofNanoOfDay(microsOfDay * 1_000L));
       } else {
         stringVal = String.valueOf(vector.getObject(rowIndex));
       }

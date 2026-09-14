@@ -65,17 +65,13 @@ final class ArrowPojoUtils {
     ArrowType type = arrowField.getType();
     com.google.cloud.bigquery.Field.Builder builder;
 
-    if (type instanceof ArrowType.List
-        || type instanceof ArrowType.LargeList
-        || type instanceof ArrowType.FixedSizeList) {
+    if (type instanceof ArrowType.List) {
       if (arrowField.getChildren().isEmpty()) {
         throw new IllegalArgumentException(
             "Arrow List field must have at least one child field: " + name);
       }
       Field innerField = arrowField.getChildren().get(0);
-      if (innerField.getType() instanceof ArrowType.List
-          || innerField.getType() instanceof ArrowType.LargeList
-          || innerField.getType() instanceof ArrowType.FixedSizeList) {
+      if (innerField.getType() instanceof ArrowType.List) {
         throw new IllegalArgumentException(
             "Nested arrays (List of List) are not supported by BigQuery: " + name);
       }
@@ -132,12 +128,10 @@ final class ArrowPojoUtils {
       case FloatingPoint:
         return LegacySQLTypeName.FLOAT;
       case Utf8:
-      case LargeUtf8:
         return LegacySQLTypeName.STRING;
       case Bool:
         return LegacySQLTypeName.BOOLEAN;
       case Binary:
-      case LargeBinary:
         return LegacySQLTypeName.BYTES;
       case Decimal:
         if (((ArrowType.Decimal) type).getPrecision() > 38) {

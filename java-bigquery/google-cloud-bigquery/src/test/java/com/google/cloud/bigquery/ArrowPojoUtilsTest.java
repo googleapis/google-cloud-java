@@ -184,28 +184,16 @@ public class ArrowPojoUtilsTest {
   }
 
   @Test
-  public void testArrowSchemaToBigQuerySchema_LargeTypes() {
+  public void testArrowSchemaToBigQuerySchema_LargeTypesThrowException() {
     Field largeStrField =
         new Field("large_str", FieldType.nullable(new ArrowType.LargeUtf8()), null);
-    Field largeBytesField =
-        new Field("large_bytes", FieldType.nullable(new ArrowType.LargeBinary()), null);
-    Field largeListField =
-        new Field(
-            "large_list",
-            FieldType.nullable(new ArrowType.LargeList()),
-            ImmutableList.of(
-                new Field("item", FieldType.nullable(new ArrowType.Int(64, true)), null)));
-    Schema arrowSchema =
-        new Schema(ImmutableList.of(largeStrField, largeBytesField, largeListField));
+    Schema arrowSchema = new Schema(ImmutableList.of(largeStrField));
 
-    com.google.cloud.bigquery.Schema bqSchema =
-        ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
-
-    assertEquals(3, bqSchema.getFields().size());
-    assertEquals(LegacySQLTypeName.STRING, bqSchema.getFields().get(0).getType());
-    assertEquals(LegacySQLTypeName.BYTES, bqSchema.getFields().get(1).getType());
-    assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(2).getType());
-    assertEquals(Mode.REPEATED, bqSchema.getFields().get(2).getMode());
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
+    assertTrue(thrown.getMessage().contains("Unsupported Arrow type: LargeUtf8"));
   }
 
   @Test
@@ -229,7 +217,7 @@ public class ArrowPojoUtilsTest {
   }
 
   @Test
-  public void testArrowSchemaToBigQuerySchema_FixedSizeList() {
+  public void testArrowSchemaToBigQuerySchema_FixedSizeListThrowsException() {
     Field fixedListField =
         new Field(
             "fixed_list",
@@ -238,12 +226,11 @@ public class ArrowPojoUtilsTest {
                 new Field("item", FieldType.nullable(new ArrowType.Int(32, true)), null)));
     Schema arrowSchema = new Schema(ImmutableList.of(fixedListField));
 
-    com.google.cloud.bigquery.Schema bqSchema =
-        ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema);
-
-    assertEquals(1, bqSchema.getFields().size());
-    assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(0).getType());
-    assertEquals(Mode.REPEATED, bqSchema.getFields().get(0).getMode());
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchema));
+    assertTrue(thrown.getMessage().contains("Unsupported Arrow type: FixedSizeList"));
   }
 
   @Test
