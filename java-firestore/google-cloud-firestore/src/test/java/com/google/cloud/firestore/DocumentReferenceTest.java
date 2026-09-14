@@ -933,7 +933,15 @@ public class DocumentReferenceTest {
             "second.timestampValue",
             "second.trueValue",
             "second.model.foo",
-            "second.vectorValue");
+            "second.vectorValue",
+            "second.minKey",
+            "second.maxKey",
+            "second.regexValue",
+            "second.int32Value",
+            "second.decimal128Value",
+            "second.bsonObjectId",
+            "second.bsonTimestamp",
+            "second.bsonBinaryData");
 
     CommitRequest expectedCommit = commit(set(nestedUpdate, updateMask));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
