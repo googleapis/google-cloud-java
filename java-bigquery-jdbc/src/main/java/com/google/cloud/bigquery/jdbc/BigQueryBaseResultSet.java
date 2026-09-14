@@ -32,10 +32,12 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
 import java.math.BigDecimal;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.sql.Array;
 import java.sql.Blob;
@@ -51,6 +53,8 @@ import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
+import javax.sql.rowset.serial.SerialBlob;
+import javax.sql.rowset.serial.SerialClob;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
@@ -341,8 +345,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     try {
       Object value = getObject(columnIndex);
-      Boolean result = BigQueryTypeRegistry.convert(value, Boolean.class);
-      return result != null && result;
+      if (value == null) {
+        return false;
+      }
+      return BigQueryTypeRegistry.convert(value, Boolean.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Boolean.class, e);
     }
@@ -353,8 +359,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getByte");
     try {
       Object value = getObject(columnIndex);
-      Byte result = BigQueryTypeRegistry.convert(value, Byte.class);
-      return result != null ? result : 0;
+      if (value == null) {
+        return 0;
+      }
+      return BigQueryTypeRegistry.convert(value, Byte.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Byte.class, e);
     }
@@ -365,8 +373,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getShort");
     try {
       Object value = getObject(columnIndex);
-      Short result = BigQueryTypeRegistry.convert(value, Short.class);
-      return result != null ? result : 0;
+      if (value == null) {
+        return 0;
+      }
+      return BigQueryTypeRegistry.convert(value, Short.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Short.class, e);
     }
@@ -377,8 +387,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getInt");
     try {
       Object value = getObject(columnIndex);
-      Integer result = BigQueryTypeRegistry.convert(value, Integer.class);
-      return result != null ? result : 0;
+      if (value == null) {
+        return 0;
+      }
+      return BigQueryTypeRegistry.convert(value, Integer.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Integer.class, e);
     }
@@ -389,8 +401,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getLong");
     try {
       Object value = getObject(columnIndex);
-      Long result = BigQueryTypeRegistry.convert(value, Long.class);
-      return result != null ? result : 0L;
+      if (value == null) {
+        return 0L;
+      }
+      return BigQueryTypeRegistry.convert(value, Long.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Long.class, e);
     }
@@ -401,8 +415,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getFloat");
     try {
       Object value = getObject(columnIndex);
-      Float result = BigQueryTypeRegistry.convert(value, Float.class);
-      return result != null ? result : 0.0f;
+      if (value == null) {
+        return 0.0f;
+      }
+      return BigQueryTypeRegistry.convert(value, Float.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Float.class, e);
     }
@@ -413,8 +429,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getDouble");
     try {
       Object value = getObject(columnIndex);
-      Double result = BigQueryTypeRegistry.convert(value, Double.class);
-      return result != null ? result : 0.0d;
+      if (value == null) {
+        return 0.0d;
+      }
+      return BigQueryTypeRegistry.convert(value, Double.class);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Double.class, e);
     }
@@ -449,9 +467,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getDate");
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, java.sql.Date.class);
+      return BigQueryTypeRegistry.convert(value, Date.class);
     } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, java.sql.Date.class, e);
+      throw createCoercionException(columnIndex, Date.class, e);
     }
   }
 
@@ -460,13 +478,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getTime");
     StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
     if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, java.sql.Time.class, null);
+      throw createCoercionException(columnIndex, Time.class, null);
     }
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, java.sql.Time.class);
+      return BigQueryTypeRegistry.convert(value, Time.class);
     } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, java.sql.Time.class, e);
+      throw createCoercionException(columnIndex, Time.class, e);
     }
   }
 
@@ -475,13 +493,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getTimestamp");
     StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
     if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, java.sql.Timestamp.class, null);
+      throw createCoercionException(columnIndex, Timestamp.class, null);
     }
     try {
       Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, java.sql.Timestamp.class);
+      return BigQueryTypeRegistry.convert(value, Timestamp.class);
     } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, java.sql.Timestamp.class, e);
+      throw createCoercionException(columnIndex, Timestamp.class, e);
     }
   }
 
@@ -510,14 +528,14 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public Blob getBlob(int columnIndex) throws SQLException {
     LOG.finestTrace("getBlob");
     byte[] value = getBytes(columnIndex);
-    return value == null ? null : new javax.sql.rowset.serial.SerialBlob(value);
+    return value == null ? null : new SerialBlob(value);
   }
 
   @Override
   public Clob getClob(int columnIndex) throws SQLException {
     LOG.finestTrace("getClob");
     String value = getString(columnIndex);
-    return value == null ? null : new javax.sql.rowset.serial.SerialClob(value.toCharArray());
+    return value == null ? null : new SerialClob(value.toCharArray());
   }
 
   @Override
@@ -527,12 +545,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return value == null ? null : new StringReader(value);
   }
 
-  private InputStream getInputStream(String value, java.nio.charset.Charset charset) {
+  private InputStream getInputStream(String value, Charset charset) {
     LOG.finestTrace("getInputStream");
     if (value == null) {
       return null;
     }
-    return new java.io.ByteArrayInputStream(value.getBytes(charset));
+    return new ByteArrayInputStream(value.getBytes(charset));
   }
 
   @Override
@@ -553,7 +571,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public InputStream getBinaryStream(int columnIndex) throws SQLException {
     LOG.finestTrace("getBinaryStream");
     byte[] bytes = getBytes(columnIndex);
-    return bytes == null ? null : new java.io.ByteArrayInputStream(bytes);
+    return bytes == null ? null : new ByteArrayInputStream(bytes);
   }
 
   @Override
