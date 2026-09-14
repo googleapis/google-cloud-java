@@ -36,6 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.json.GenericJson;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import org.jspecify.annotations.NullMarked;
@@ -49,7 +50,9 @@ import org.jspecify.annotations.Nullable;
  * information.</a>
  */
 @NullMarked
-public final class CredentialAccessBoundary {
+public final class CredentialAccessBoundary implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   private static final int RULES_SIZE_LIMIT = 10;
 
@@ -63,7 +66,7 @@ public final class CredentialAccessBoundary {
         accessBoundaryRules.size() < RULES_SIZE_LIMIT,
         String.format(
             "The provided list has more than %s access boundary rules.", RULES_SIZE_LIMIT));
-    this.accessBoundaryRules = accessBoundaryRules;
+    this.accessBoundaryRules = new ArrayList<>(accessBoundaryRules);
   }
 
   /**
@@ -161,7 +164,9 @@ public final class CredentialAccessBoundary {
    *   .build();
    * </code></pre>
    */
-  public static final class AccessBoundaryRule {
+  public static final class AccessBoundaryRule implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final String availableResource;
     private final List<String> availablePermissions;
@@ -293,7 +298,10 @@ public final class CredentialAccessBoundary {
      *   .build();
      * </code></pre>
      */
-    public static final class AvailabilityCondition {
+    public static final class AvailabilityCondition implements Serializable {
+
+      private static final long serialVersionUID = 1L;
+
       private final String expression;
 
       @Nullable private final String title;
