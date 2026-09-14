@@ -62,8 +62,8 @@ public interface CreateApiConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier to assign to the API Config. Must be unique within scope of
-   * the parent resource.
+   * Required. Identifier to assign to the API Config. Must be unique within
+   * scope of the parent resource.
    * </pre>
    *
    * <code>string api_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,8 +76,8 @@ public interface CreateApiConfigRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier to assign to the API Config. Must be unique within scope of
-   * the parent resource.
+   * Required. Identifier to assign to the API Config. Must be unique within
+   * scope of the parent resource.
    * </pre>
    *
    * <code>string api_config_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

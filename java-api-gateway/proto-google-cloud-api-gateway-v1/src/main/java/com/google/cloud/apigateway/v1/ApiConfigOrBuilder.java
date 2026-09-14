@@ -237,8 +237,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Google Cloud IAM Service Account that Gateways serving this config
-   * should use to authenticate to other services. This may either be the
+   * Immutable. The Google Cloud IAM Service Account that Gateways serving this
+   * config should use to authenticate to other services. This may either be the
    * Service Account's email
    * (`{ACCOUNT_ID}&#64;{PROJECT}.iam.gserviceaccount.com`) or its full resource
    * name (`projects/{PROJECT}/accounts/{UNIQUE_ID}`). This is most often used
@@ -258,8 +258,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Immutable. The Google Cloud IAM Service Account that Gateways serving this config
-   * should use to authenticate to other services. This may either be the
+   * Immutable. The Google Cloud IAM Service Account that Gateways serving this
+   * config should use to authenticate to other services. This may either be the
    * Service Account's email
    * (`{ACCOUNT_ID}&#64;{PROJECT}.iam.gserviceaccount.com`) or its full resource
    * name (`projects/{PROJECT}/accounts/{UNIQUE_ID}`). This is most often used
@@ -414,8 +414,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. gRPC service definition files. If specified, openapi_documents must
-   * not be included.
+   * Optional. gRPC service definition files. If specified, openapi_documents
+   * must not be included.
    * </pre>
    *
    * <code>
@@ -429,8 +429,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. gRPC service definition files. If specified, openapi_documents must
-   * not be included.
+   * Optional. gRPC service definition files. If specified, openapi_documents
+   * must not be included.
    * </pre>
    *
    * <code>
@@ -443,8 +443,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. gRPC service definition files. If specified, openapi_documents must
-   * not be included.
+   * Optional. gRPC service definition files. If specified, openapi_documents
+   * must not be included.
    * </pre>
    *
    * <code>
@@ -457,8 +457,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. gRPC service definition files. If specified, openapi_documents must
-   * not be included.
+   * Optional. gRPC service definition files. If specified, openapi_documents
+   * must not be included.
    * </pre>
    *
    * <code>
@@ -472,8 +472,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. gRPC service definition files. If specified, openapi_documents must
-   * not be included.
+   * Optional. gRPC service definition files. If specified, openapi_documents
+   * must not be included.
    * </pre>
    *
    * <code>
@@ -487,8 +487,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Service Configuration files. At least one must be included when using gRPC
-   * service definitions. See
+   * Optional. Service Configuration files. At least one must be included when
+   * using gRPC service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
    *
@@ -511,8 +511,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Service Configuration files. At least one must be included when using gRPC
-   * service definitions. See
+   * Optional. Service Configuration files. At least one must be included when
+   * using gRPC service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
    *
@@ -535,8 +535,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Service Configuration files. At least one must be included when using gRPC
-   * service definitions. See
+   * Optional. Service Configuration files. At least one must be included when
+   * using gRPC service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
    *
@@ -559,8 +559,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Service Configuration files. At least one must be included when using gRPC
-   * service definitions. See
+   * Optional. Service Configuration files. At least one must be included when
+   * using gRPC service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
    *
@@ -584,8 +584,8 @@ public interface ApiConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Service Configuration files. At least one must be included when using gRPC
-   * service definitions. See
+   * Optional. Service Configuration files. At least one must be included when
+   * using gRPC service definitions. See
    * https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview
    * for the expected file contents.
    *

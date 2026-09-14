@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -57,6 +58,8 @@ import com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobResponse;
+import com.google.cloud.securesourcemanager.v1.FetchRefsRequest;
+import com.google.cloud.securesourcemanager.v1.FetchRefsResponse;
 import com.google.cloud.securesourcemanager.v1.FetchTreeRequest;
 import com.google.cloud.securesourcemanager.v1.FetchTreeResponse;
 import com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest;
@@ -384,6 +387,14 @@ public abstract class SecureSourceManagerStub implements BackgroundResource {
 
   public UnaryCallable<FetchBlobRequest, FetchBlobResponse> fetchBlobCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchBlobCallable()");
+  }
+
+  public UnaryCallable<FetchRefsRequest, FetchRefsPagedResponse> fetchRefsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchRefsPagedCallable()");
+  }
+
+  public UnaryCallable<FetchRefsRequest, FetchRefsResponse> fetchRefsCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchRefsCallable()");
   }
 
   public OperationCallable<CreateIssueRequest, Issue, OperationMetadata>

@@ -14,31 +14,30 @@
  * limitations under the License.
  */
 
-package com.google.cloud.auditmanager.v1.stub.samples;
+package com.google.cloud.auditmanager.v1.samples;
 
-// [START auditmanager_v1_generated_AuditManagerStubSettings_EnrollResource_sync]
-import com.google.cloud.auditmanager.v1.stub.AuditManagerStubSettings;
+// [START auditmanager_v1_generated_AuditManagerSettings_CreateAuditSchedule_sync]
+import com.google.cloud.auditmanager.v1.AuditManagerSettings;
 import java.time.Duration;
 
-public class SyncEnrollResource {
+public class SyncCreateAuditSchedule {
 
   public static void main(String[] args) throws Exception {
-    syncEnrollResource();
+    syncCreateAuditSchedule();
   }
 
-  public static void syncEnrollResource() throws Exception {
+  public static void syncCreateAuditSchedule() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    AuditManagerStubSettings.Builder auditManagerSettingsBuilder =
-        AuditManagerStubSettings.newBuilder();
+    AuditManagerSettings.Builder auditManagerSettingsBuilder = AuditManagerSettings.newBuilder();
     auditManagerSettingsBuilder
-        .enrollResourceSettings()
+        .createAuditScheduleSettings()
         .setRetrySettings(
             auditManagerSettingsBuilder
-                .enrollResourceSettings()
+                .createAuditScheduleSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -50,7 +49,7 @@ public class SyncEnrollResource {
                 .setRpcTimeoutMultiplier(1.5)
                 .setTotalTimeoutDuration(Duration.ofSeconds(300))
                 .build());
-    AuditManagerStubSettings auditManagerSettings = auditManagerSettingsBuilder.build();
+    AuditManagerSettings auditManagerSettings = auditManagerSettingsBuilder.build();
   }
 }
-// [END auditmanager_v1_generated_AuditManagerStubSettings_EnrollResource_sync]
+// [END auditmanager_v1_generated_AuditManagerSettings_CreateAuditSchedule_sync]
