@@ -35,7 +35,6 @@ import org.apache.arrow.vector.ipc.ReadChannel;
 import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.Schema;
-import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
 /**
  * Implementation of {@link ArrowQueryResult} that provides zero-copy streaming of Apache Arrow
@@ -542,31 +541,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      * @throws IOException if deserialization fails
      */
     private void loadBatch(byte[] bytes) throws IOException {
-      lock.lock();
-      try {
-        checkNotClosed();
-        try (ByteArrayReadableSeekableByteChannel byteChannel =
-                new ByteArrayReadableSeekableByteChannel(bytes);
-            ReadChannel readChannel = new ReadChannel(byteChannel)) {
-          ArrowRecordBatch deserializedBatch =
-              MessageSerializer.deserializeRecordBatch(readChannel, allocator);
-          if (deserializedBatch == null) {
-            throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
-          }
-          boolean loaded = false;
-          try {
-            ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
-            loaded = true;
-          } finally {
-            if (!loaded) {
-              deserializedBatch.close();
-            }
-          }
-        }
-        totalRowsYielded += root.getRowCount();
-      } finally {
-        lock.unlock();
-      }
+      loadBatch(ByteString.copyFrom(bytes));
     }
 
     /**
