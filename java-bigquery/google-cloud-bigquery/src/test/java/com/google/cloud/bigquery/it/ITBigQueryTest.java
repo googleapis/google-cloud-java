@@ -45,6 +45,7 @@ import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.Acl.Expr;
 import com.google.cloud.bigquery.Acl.User;
+import com.google.cloud.bigquery.ArrowQueryResult;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -118,6 +119,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.QueryResultsFormat;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
@@ -203,6 +205,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -7495,6 +7498,50 @@ class ITBigQueryTest {
     ((Job) result).cancel();
     // Allow 2 seconds of timeout value to account for random delays
     assertTrue(millis < 1_000_000 * 2);
+  }
+
+  @Test
+  void testQueryResultsFormatArrow() throws InterruptedException {
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    try (ArrowQueryResult result = bigQuery.queryArrow(config)) {
+      assertNotNull(result);
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertTrue(batchCount > 0);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    try (ArrowQueryResult result = bigQuery.queryArrow(config)) {
+      assertNotNull(result);
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        totalRows += root.getRowCount();
+      }
+      assertEquals(15000, totalRows);
+    }
   }
 
   @Test
