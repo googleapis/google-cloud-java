@@ -81,6 +81,22 @@ final class ArrowDeserializer {
   private ArrowDeserializer() {}
 
   /**
+   * Deserializes a raw binary Arrow schema payload into an Apache Arrow Schema object.
+   *
+   * @param schemaBytes the raw binary Arrow schema payload
+   * @return the deserialized Apache Arrow Schema object
+   * @throws IOException if deserialization of the Arrow schema fails
+   */
+  static org.apache.arrow.vector.types.pojo.Schema deserializeSchema(byte[] schemaBytes)
+      throws IOException {
+    try (ByteArrayReadableSeekableByteChannel byteChannel =
+            new ByteArrayReadableSeekableByteChannel(schemaBytes);
+        ReadChannel readChannel = new ReadChannel(byteChannel)) {
+      return MessageSerializer.deserializeSchema(readChannel);
+    }
+  }
+
+  /**
    * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch,
    * buffering any unconsumed rows that exceed the requested page size to prevent data loss across
    * page boundaries.

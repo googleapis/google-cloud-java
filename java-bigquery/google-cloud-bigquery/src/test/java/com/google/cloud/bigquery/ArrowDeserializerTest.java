@@ -106,6 +106,19 @@ public class ArrowDeserializerTest {
   }
 
   @Test
+  public void testDeserializeSchema() throws IOException {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+    MessageSerializer.serialize(channel, arrowSchema);
+    byte[] schemaBytes = out.toByteArray();
+
+    org.apache.arrow.vector.types.pojo.Schema deserialized =
+        ArrowDeserializer.deserializeSchema(schemaBytes);
+    assertEquals(arrowSchema, deserialized);
+  }
+
+  @Test
   public void testDeserializeRecordBatchPrimitives() throws IOException {
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
       IntVector intVector = new IntVector("id", allocator);
