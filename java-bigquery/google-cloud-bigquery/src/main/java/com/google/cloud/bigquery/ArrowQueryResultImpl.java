@@ -35,6 +35,7 @@ import org.apache.arrow.vector.ipc.ReadChannel;
 import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.Schema;
+import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
 /**
  * Implementation of {@link ArrowQueryResult} that provides zero-copy streaming of Apache Arrow
@@ -541,7 +542,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      * @throws IOException if deserialization fails
      */
     private void loadBatch(byte[] bytes) throws IOException {
-      loadBatch(ByteString.copyFrom(bytes));
+      loadBatch(new ByteArrayReadableSeekableByteChannel(bytes));
     }
 
     /**
@@ -552,11 +553,21 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      * @throws IOException if deserialization fails
      */
     private void loadBatch(ByteString byteString) throws IOException {
+      loadBatch(Channels.newChannel(byteString.newInput()));
+    }
+
+    /**
+     * Deserializes an Arrow record batch from a {@link ReadableByteChannel} and loads it into the
+     * root vector.
+     *
+     * @param channel readable byte channel providing serialized Arrow record batch bytes
+     * @throws IOException if deserialization fails
+     */
+    private void loadBatch(ReadableByteChannel channel) throws IOException {
       lock.lock();
       try {
         checkNotClosed();
-        try (ReadableByteChannel channel = Channels.newChannel(byteString.newInput());
-            ReadChannel readChannel = new ReadChannel(channel)) {
+        try (ReadChannel readChannel = new ReadChannel(channel)) {
           ArrowRecordBatch deserializedBatch =
               MessageSerializer.deserializeRecordBatch(readChannel, allocator);
           if (deserializedBatch == null) {
