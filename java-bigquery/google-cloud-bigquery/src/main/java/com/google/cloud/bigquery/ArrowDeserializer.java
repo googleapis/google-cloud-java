@@ -52,6 +52,7 @@ import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal helper utility for managing Arrow vector memory and deserializing IPC record batches
@@ -293,7 +294,7 @@ final class ArrowDeserializer {
       int rowIndex,
       LegacySQLTypeName type,
       Field.Mode mode,
-      @org.jspecify.annotations.Nullable FieldList subFields,
+      @Nullable FieldList subFields,
       String name) {
     if (mode == Field.Mode.REPEATED) {
       if (vector.isNull(rowIndex)) {
