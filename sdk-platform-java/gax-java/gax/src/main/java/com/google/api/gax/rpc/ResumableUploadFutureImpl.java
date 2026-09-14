@@ -29,21 +29,14 @@
  */
 package com.google.api.gax.rpc;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.ApiFutureCallback;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
-import com.google.common.util.concurrent.MoreExecutors;
-import com.google.errorprone.annotations.concurrent.GuardedBy;
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
@@ -52,191 +45,77 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * Implementation of {@link ResumableUploadFuture} responsible for the end-to-end management of a
- * resumable upload session.
+ * Caller-facing delegation handle for a resumable upload session.
  *
  * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @NullMarked
 final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFuture<ResponseT> {
 
-  private final Object lock = new Object();
+  private final SettableApiFuture<ResponseT> result;
+  private final ResumableUploadChunkCoordinator<ResponseT> coordinator;
 
-  private final ApiFuture<ResumableUploadSession> startFuture;
-  private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
-      uploadChunkCallable;
-  private final InputStream payload;
-  private final ResumableUploadCallSettings settings;
-  private final ApiCallContext callContext;
-  private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
-
-  private volatile @Nullable String uploadSessionUrl;
-
-  @GuardedBy("lock")
-  private @Nullable ApiFuture<?> inFlightFuture;
-
-  /**
-   * Creates and initiates a new resumable upload future tracking session initiation and chunk
-   * streaming.
-   *
-   * <p>The provided {@code payload} stream is managed by the returned future and will be closed
-   * automatically upon completion, failure, or cancellation.
-   */
   static <ResponseT> ResumableUploadFutureImpl<ResponseT> create(
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       InputStream payload,
       ResumableUploadCallSettings settings,
       ApiCallContext callContext) {
-    ResumableUploadFutureImpl<ResponseT> future =
-        new ResumableUploadFutureImpl<>(
-            startFuture, uploadChunkCallable, payload, settings, callContext);
-    try {
-      future.start();
-    } catch (Throwable t) {
-      future.fail(t);
-    }
-    return future;
+    SettableApiFuture<ResponseT> result = SettableApiFuture.create();
+    ResumableUploadChunkCoordinator<ResponseT> coordinator =
+        new ResumableUploadChunkCoordinator<>(
+            result, startFuture, uploadChunkCallable, payload, settings, callContext);
+    ResumableUploadFutureImpl<ResponseT> handle =
+        new ResumableUploadFutureImpl<>(result, coordinator);
+    coordinator.start();
+    return handle;
   }
 
-  private ResumableUploadFutureImpl(
-      ApiFuture<ResumableUploadSession> startFuture,
-      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
-      InputStream payload,
-      ResumableUploadCallSettings settings,
-      ApiCallContext callContext) {
-    this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
-    this.uploadChunkCallable =
-        checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
-    this.payload = checkNotNull(payload, "payload must not be null");
-    this.settings = checkNotNull(settings, "settings must not be null");
-    checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
-    this.callContext = checkNotNull(callContext, "callContext must not be null");
-    this.inFlightFuture = startFuture;
+  ResumableUploadFutureImpl(
+      SettableApiFuture<ResponseT> result,
+      ResumableUploadChunkCoordinator<ResponseT> coordinator) {
+    this.result = checkNotNull(result, "result must not be null");
+    this.coordinator = checkNotNull(coordinator, "coordinator must not be null");
   }
 
-  private void start() {
-    ApiFutures.addCallback(
-        startFuture,
-        new ApiFutureCallback<ResumableUploadSession>() {
-          @Override
-          public void onSuccess(ResumableUploadSession session) {
-            if (resultFuture.isDone()) {
-              return;
-            }
-            uploadSessionUrl = session.getUploadUrl();
-            ResumableUploadChunkCoordinator<ResponseT> coordinator =
-                new ResumableUploadChunkCoordinator<>(
-                    uploadChunkCallable,
-                    session.getUploadUrl(),
-                    payload,
-                    settings.getChunkSize(),
-                    callContext,
-                    ResumableUploadFutureImpl.this);
-            try {
-              coordinator.start();
-            } catch (Throwable t) {
-              fail(t);
-            }
-          }
-
-          @Override
-          public void onFailure(Throwable t) {
-            if (t instanceof CancellationException || resultFuture.isDone()) {
-              return;
-            }
-            fail(t);
-          }
-        },
-        MoreExecutors.directExecutor());
-  }
-
-  /**
-   * Registers the active in-flight future for cancellation. If this session future has already been
-   * canceled, the supplied future is canceled immediately.
-   */
-  void setInFlightFuture(ApiFuture<?> inFlightFuture) {
-    boolean shouldCancel = false;
-    synchronized (lock) {
-      if (resultFuture.isDone()) {
-        shouldCancel = resultFuture.isCancelled();
-      } else {
-        this.inFlightFuture = inFlightFuture;
-      }
-    }
-    if (shouldCancel) {
-      inFlightFuture.cancel(true);
-    }
-  }
-
-  void succeed(@Nullable ResponseT result) {
-    synchronized (lock) {
-      inFlightFuture = null;
-    }
-    closePayload();
-    resultFuture.set(result);
-  }
-
-  void fail(Throwable t) {
-    synchronized (lock) {
-      inFlightFuture = null;
-    }
-    closePayload();
-    resultFuture.setException(t);
-  }
-
-  private void closePayload() {
-    try {
-      payload.close();
-    } catch (IOException ignored) {
-      // Suppressed during stream cleanup
-    }
+  void setInFlightFuture(ApiFuture<?> future) {
+    coordinator.setInFlightFuture(future);
   }
 
   @Override
   public @Nullable String getUploadSessionUrl() {
-    return uploadSessionUrl;
+    return coordinator.getUploadSessionUrl();
   }
 
   @Override
   public void addListener(Runnable listener, Executor executor) {
-    resultFuture.addListener(listener, executor);
+    result.addListener(listener, executor);
   }
 
   @Override
   public boolean cancel(boolean mayInterruptIfRunning) {
-    boolean cancelled;
-    ApiFuture<?> inFlight;
-    synchronized (lock) {
-      cancelled = resultFuture.cancel(mayInterruptIfRunning);
-      inFlight = this.inFlightFuture;
-      this.inFlightFuture = null;
-    }
-    if (inFlight != null) {
-      inFlight.cancel(mayInterruptIfRunning);
-    }
-    closePayload();
-    return cancelled;
+    coordinator.cancel(mayInterruptIfRunning);
+    return result.cancel(mayInterruptIfRunning);
   }
 
   @Override
   public boolean isCancelled() {
-    return resultFuture.isCancelled();
+    return result.isCancelled();
   }
 
   @Override
   public boolean isDone() {
-    return resultFuture.isDone();
+    return result.isDone();
   }
 
   @Override
   public ResponseT get() throws InterruptedException, ExecutionException {
-    return resultFuture.get();
+    return result.get();
   }
 
   @Override
   public ResponseT get(long timeout, TimeUnit unit)
       throws InterruptedException, ExecutionException, TimeoutException {
-    return resultFuture.get(timeout, unit);
+    return result.get(timeout, unit);
   }
 }
