@@ -2402,31 +2402,27 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     Collection<FieldValueList> firstPageRows;
     if (isArrow) {
-      if (results.getArrowRecordBatch() != null
-          && results.getArrowRecordBatch().getSerializedRecordBatch() != null) {
-        try {
-          firstPageRows =
-              ArrowDeserializer.deserializeRecordBatch(
-                  results.getArrowRecordBatch().decodeSerializedRecordBatch(),
-                  schema,
-                  arrowSchemaPojo);
-        } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
-        }
-      } else {
-        firstPageRows = ImmutableList.of();
+      try {
+        firstPageRows =
+            ArrowDeserializer.deserializeRecordBatch(
+                results.getArrowRecordBatch().decodeSerializedRecordBatch(),
+                schema,
+                arrowSchemaPojo);
+      } catch (IOException e) {
+        throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
       }
     } else {
       firstPageRows =
-          results.getRows() != null
-              ? transformTableData(
-                  results.getRows(),
-                  schema,
-                  getOptions().getDataFormatOptions().useInt64Timestamp())
-              : ImmutableList.of();
+          transformTableData(
+              results.getRows(), schema, getOptions().getDataFormatOptions().useInt64Timestamp());
     }
 
-    boolean hasMorePages = results.getPageToken() != null;
+    if (content.getMaxResults() != null && firstPageRows.size() > content.getMaxResults()) {
+      firstPageRows =
+          ImmutableList.copyOf(Iterables.limit(firstPageRows, content.getMaxResults().intValue()));
+    }
+
+    boolean hasMorePages = results.getPageToken() != null && results.getJobComplete();
     long initialRowOffset = 0L;
     if (hasMorePages && isArrow) {
       Long parsedOffset = Longs.tryParse(results.getPageToken());
