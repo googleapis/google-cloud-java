@@ -2931,7 +2931,7 @@ public class BigQueryImplTest {
         new com.google.api.services.bigquery.model.QueryResponse()
             .setQueryId("q-optional-1")
             .setJobComplete(true)
-            .setTotalRows(java.math.BigInteger.ZERO);
+            .setTotalRows(BigInteger.ZERO);
 
     ArgumentCaptor<QueryRequest> requestPbCapture = ArgumentCaptor.forClass(QueryRequest.class);
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
