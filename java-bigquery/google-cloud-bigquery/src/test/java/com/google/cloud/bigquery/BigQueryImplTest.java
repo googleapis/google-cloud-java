@@ -3268,6 +3268,30 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testQueryWithArrowFormatMissingSerializedSchema() {
+    JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-arrow-missing-schema")
+            .setJobComplete(true)
+            .setJobReference(queryJob.toPb())
+            .setTotalRows(BigInteger.valueOf(2L))
+            .setArrowSchema(new com.google.api.services.bigquery.model.ArrowSchema());
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    BigQueryException e = assertThrows(BigQueryException.class, () -> bigquery.query(config));
+    assertTrue(e.getMessage().contains("Arrow schema is missing from the response"));
+  }
+
+  @Test
   void testGetQueryResults() throws IOException {
     JobId queryJob = JobId.of(JOB);
     GetQueryResultsResponse responsePb =
