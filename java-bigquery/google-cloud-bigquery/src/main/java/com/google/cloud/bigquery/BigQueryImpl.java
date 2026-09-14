@@ -27,6 +27,7 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
 import com.google.api.services.bigquery.model.ProjectList;
@@ -53,6 +54,8 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
+import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
@@ -70,10 +73,13 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
@@ -280,8 +286,176 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
+  /**
+   * NextPageFetcher implementation for queries returning results in Arrow format. Reads subsequent
+   * pages from the job's default gRPC storage read stream.
+   *
+   * <p>Note: Neither {@link Page} nor {@link TableResult} implements {@link AutoCloseable}. The
+   * underlying gRPC stream is automatically canceled and resources released when iteration reaches
+   * the end (or maximum results requested) or when an error occurs. Callers that do not iterate to
+   * completion rely on server-side stream timeouts and garbage collection to release stream
+   * resources.
+   */
+  static class ArrowQueryPageFetcher implements NextPageFetcher<FieldValueList> {
+    private static final long serialVersionUID = 1L;
+    private static final long DEFAULT_PAGE_SIZE = 10000L;
+
+    private final JobId jobId;
+    private final Schema schema;
+    private final byte[] arrowSchemaBytes;
+    private final BigQueryOptions serviceOptions;
+    private final long maxResults;
+    private final Map<BigQueryRpc.Option, ?> optionsMap;
+
+    private transient org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
+    private transient BigQueryReadClient bqReadClient;
+    private transient ServerStream<ReadRowsResponse> stream;
+    private transient Iterator<ReadRowsResponse> streamIterator;
+    private final Queue<FieldValueList> buffer = new ArrayDeque<>();
+    private long totalRowsReturned = 0L;
+    private boolean streamClosed = false;
+
+    ArrowQueryPageFetcher(
+        JobId jobId,
+        Schema schema,
+        byte[] arrowSchemaBytes,
+        org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
+        BigQueryOptions serviceOptions,
+        long initialRowOffset,
+        Long maxResults,
+        Map<BigQueryRpc.Option, ?> optionsMap) {
+      this.jobId = jobId;
+      this.schema = schema;
+      this.arrowSchemaBytes = arrowSchemaBytes;
+      this.arrowSchemaPojo = arrowSchemaPojo;
+      this.serviceOptions = serviceOptions;
+      this.totalRowsReturned = initialRowOffset;
+      this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
+      this.optionsMap = optionsMap;
+    }
+
+    @Override
+    public Page<FieldValueList> getNextPage() {
+      if (streamClosed || totalRowsReturned >= maxResults) {
+        closeClient();
+        return null;
+      }
+
+      Number optionPageSize =
+          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
+      long pageSize =
+          optionPageSize != null && optionPageSize.longValue() > 0
+              ? optionPageSize.longValue()
+              : DEFAULT_PAGE_SIZE;
+      List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
+
+      try {
+        String location =
+            jobId.getLocation() != null ? jobId.getLocation() : serviceOptions.getLocation();
+        if (location == null) {
+          throw new BigQueryException(
+              0, "Location must be specified to read Arrow rows from storage stream");
+        }
+
+        if (bqReadClient == null) {
+          BigQuery service = serviceOptions.getService();
+          if (service instanceof BigQueryImpl) {
+            BigQueryImpl impl = (BigQueryImpl) service;
+            bqReadClient = impl.getBigQueryReadClient();
+          } else {
+            throw new IllegalStateException(
+                "Arrow query result pagination requires an instance of BigQueryImpl to manage BigQueryReadClient lifecycle");
+          }
+        }
+
+        if (streamIterator == null) {
+          String streamName =
+              String.format(
+                  "projects/%s/locations/%s/jobs/%s/streams/_default",
+                  jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
+                  location,
+                  jobId.getJob());
+
+          ReadRowsRequest readRowsRequest =
+              ReadRowsRequest.newBuilder()
+                  .setReadStream(streamName)
+                  .setOffset(totalRowsReturned)
+                  .build();
+
+          stream = bqReadClient.readRowsCallable().call(readRowsRequest);
+          streamIterator = stream.iterator();
+        }
+
+        if (arrowSchemaPojo == null && arrowSchemaBytes != null) {
+          arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+        }
+
+        boolean hasMore =
+            ArrowDeserializer.loadArrowRows(
+                streamIterator,
+                arrowSchemaPojo,
+                schema,
+                rowBatch,
+                buffer,
+                pageSize,
+                totalRowsReturned,
+                maxResults);
+
+        if (rowBatch.isEmpty()) {
+          streamClosed = true;
+          closeClient();
+          return null;
+        }
+
+        totalRowsReturned += rowBatch.size();
+
+        String nextPageToken = null;
+        if (hasMore && totalRowsReturned < maxResults) {
+          nextPageToken = String.valueOf(totalRowsReturned);
+        } else {
+          streamClosed = true;
+          closeClient();
+        }
+
+        return new PageImpl<>(this, nextPageToken, rowBatch);
+
+      } catch (BigQueryException e) {
+        streamClosed = true;
+        closeClient();
+        throw e;
+      } catch (Exception e) {
+        streamClosed = true;
+        closeClient();
+        throw new BigQueryException(0, "Failed to read Arrow rows from storage stream", e);
+      }
+    }
+
+    private void closeClient() {
+      if (stream != null) {
+        try {
+          stream.cancel();
+        } catch (Exception e) {
+          // Ignore cancellation exceptions
+        }
+      }
+      bqReadClient = null;
+      streamIterator = null;
+      stream = null;
+    }
+  }
+
   private final ReentrantLock readClientLock = new ReentrantLock();
   private transient BigQueryReadClient bqReadClient;
+
+  @VisibleForTesting
+  void setBigQueryReadClient(BigQueryReadClient client) {
+    readClientLock.lock();
+    try {
+      this.bqReadClient = client;
+    } finally {
+      readClientLock.unlock();
+    }
+  }
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
