@@ -95,9 +95,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
 
   /**
    * The value of {@link System#nanoTime()} at the first failure of the current sequence of
-   * consecutive failed attempts, or -1 if there is no active failure sequence. Reset to -1 every
-   * time the stream returns a new resume token. Used to enforce {@link
-   * RetrySettings#getTotalTimeout()} for non-default retry settings.
+   * consecutive failed attempts. Only meaningful when {@link #attempts} is nonzero. Used to
+   * enforce {@link RetrySettings#getTotalTimeout()} for non-default retry settings.
    */
   private long retrySequenceStartNanos = -1L;
 
@@ -188,7 +187,13 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     }
     long elapsedMillis =
         TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - retrySequenceStartNanos);
-    return elapsedMillis + Math.max(proposedDelayMillis, 0L) >= totalTimeoutMillis;
+    if (elapsedMillis < 0L) {
+      elapsedMillis = 0L;
+    }
+    if (elapsedMillis >= totalTimeoutMillis) {
+      return true;
+    }
+    return Math.max(proposedDelayMillis, 0L) >= totalTimeoutMillis - elapsedMillis;
   }
 
   private ExponentialBackOff newBackOff() {
@@ -358,7 +363,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
         }
       } catch (SpannerException spannerException) {
         if (safeToRetry && isRetryable(spannerException)) {
-          if (retrySequenceStartNanos == -1L) {
+          if (attempts == 0) {
             retrySequenceStartNanos = System.nanoTime();
           }
           attempts++;

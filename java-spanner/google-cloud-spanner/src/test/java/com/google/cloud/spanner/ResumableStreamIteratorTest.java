@@ -47,6 +47,7 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -443,6 +444,61 @@ public class ResumableStreamIteratorTest {
     assertEquals(errorCodeParameter, e.getErrorCode());
     Mockito.verify(starter, Mockito.times(1)).startStream(null, null);
     Mockito.verify(starter, Mockito.times(1)).startStream(token, null);
+  }
+
+  @Test
+  public void activeRetrySequence_preservesNegativeOneStartTime() throws Exception {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE, RetrySettings.newBuilder().setMaxAttempts(2).build());
+    Field attempts = ResumableStreamIterator.class.getDeclaredField("attempts");
+    attempts.setAccessible(true);
+    attempts.setInt(resumableStreamIterator, 1);
+    Field startNanos = ResumableStreamIterator.class.getDeclaredField("retrySequenceStartNanos");
+    startNanos.setAccessible(true);
+    startNanos.setLong(resumableStreamIterator, -1L);
+    ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+    Mockito.when(stream.next())
+        .thenThrow(new RetryableException(errorCodeParameter, "failed by test"));
+    Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(stream));
+
+    assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+
+    assertEquals(-1L, startNanos.getLong(resumableStreamIterator));
+  }
+
+  @Test
+  public void totalTimeout_largeDelayDoesNotOverflow() throws Exception {
+    assertThat(totalTimeoutExceeded(1000L, -100L, Long.MAX_VALUE)).isTrue();
+  }
+
+  @Test
+  public void totalTimeout_negativeElapsedIsClamped() throws Exception {
+    assertThat(totalTimeoutExceeded(Long.MAX_VALUE, 60000L, Long.MAX_VALUE)).isTrue();
+    assertThat(totalTimeoutExceeded(Long.MAX_VALUE, 60000L, 0L)).isFalse();
+  }
+
+  @Test
+  public void totalTimeout_elapsedBudgetAndNegativeDelay() throws Exception {
+    assertThat(totalTimeoutExceeded(1000L, -60000L, -1L)).isTrue();
+    assertThat(totalTimeoutExceeded(1000L, 60000L, -1L)).isFalse();
+    assertThat(totalTimeoutExceeded(1000L, 60000L, 1000L)).isTrue();
+  }
+
+  private boolean totalTimeoutExceeded(
+      long timeoutMillis, long startOffsetMillis, long delayMillis) throws Exception {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(timeoutMillis))
+            .build());
+    Field startNanos = ResumableStreamIterator.class.getDeclaredField("retrySequenceStartNanos");
+    startNanos.setAccessible(true);
+    startNanos.setLong(
+        resumableStreamIterator, System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(startOffsetMillis));
+    Method totalTimeoutExceeded =
+        ResumableStreamIterator.class.getDeclaredMethod("totalTimeoutExceeded", long.class);
+    totalTimeoutExceeded.setAccessible(true);
+    return (boolean) totalTimeoutExceeded.invoke(resumableStreamIterator, delayMillis);
   }
 
   @Test(timeout = 60000L)

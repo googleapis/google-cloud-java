@@ -106,6 +106,7 @@ public class StreamingRetryBudgetMockServerTest {
 
   private static MockSpannerServiceImpl mockSpanner;
   private static Server server;
+  private static ScheduledThreadPoolExecutor scheduledExecutor;
   private static LocalChannelProvider channelProvider;
 
   private Spanner spanner;
@@ -136,11 +137,12 @@ public class StreamingRetryBudgetMockServerTest {
     mockSpanner.setAbortProbability(0.0D); // We don't want any unpredictable aborted transactions.
     mockSpanner.putStatementResult(StatementResult.query(SELECT_QUERY, createResultSet(ROW_COUNT)));
 
+    scheduledExecutor = new ScheduledThreadPoolExecutor(1);
     String uniqueName = InProcessServerBuilder.generateName();
     server =
         InProcessServerBuilder.forName(uniqueName)
             // We need to use a real executor for timeouts to occur.
-            .scheduledExecutorService(new ScheduledThreadPoolExecutor(1))
+            .scheduledExecutorService(scheduledExecutor)
             .addService(mockSpanner)
             .build()
             .start();
@@ -149,8 +151,16 @@ public class StreamingRetryBudgetMockServerTest {
 
   @AfterClass
   public static void stopServer() throws InterruptedException {
-    server.shutdown();
-    server.awaitTermination();
+    if (server != null) {
+      server.shutdown();
+      server.awaitTermination();
+    }
+    if (scheduledExecutor != null) {
+      scheduledExecutor.shutdown();
+      if (!scheduledExecutor.awaitTermination(10, TimeUnit.SECONDS)) {
+        scheduledExecutor.shutdownNow();
+      }
+    }
   }
 
   @Before
