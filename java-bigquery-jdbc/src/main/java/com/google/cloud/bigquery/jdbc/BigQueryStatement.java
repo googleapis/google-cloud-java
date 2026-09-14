@@ -242,7 +242,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeQuery", this.connection, sql, () -> executeQueryImpl(sql));
   }
@@ -267,7 +267,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeLargeUpdate",
         this.connection,
@@ -308,7 +308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.execute", this.connection, sql, () -> executeImpl(sql));
   }
@@ -1705,6 +1705,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeBatch",
         this.connection,
@@ -1863,6 +1864,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   void checkClosed() throws SQLException {
     if (isClosed()) {
       throw new BigQueryJdbcException("This " + getClass().getName() + " has been closed");
+    }
+  }
+
+  /**
+   * Validates that the statement is open and that execution configuration settings are compatible.
+   *
+   * @throws SQLException if the statement is closed or settings are incompatible
+   */
+  void validateExecution() throws SQLException {
+    checkClosed();
+    if (isEnableTimestampPicos() && getUseLegacySql()) {
+      throw new BigQueryJdbcException(
+          "Picosecond data is incompatible with Legacy SQL. "
+              + "To query your Picosecond data, please set QueryDialect to SQL "
+              + "and restructure your query as a Standard SQL query.");
     }
   }
 
