@@ -104,7 +104,10 @@ class BigQueryParameterHandler {
       return formatTimestampParameter((Timestamp) parameterValue, enableTimestampPicos);
     }
     if (sqlType == StandardSQLTypeName.TIMESTAMP && parameterValue instanceof String) {
-      String str = ((String) parameterValue).trim().replace('T', ' ');
+      String str = ((String) parameterValue).trim();
+      if (str.length() > 10 && str.charAt(10) == 'T') {
+        str = str.substring(0, 10) + ' ' + str.substring(11);
+      }
       return BigQueryTemporalUtility.truncateFractionalSeconds(str, enableTimestampPicos ? 12 : 6);
     }
     if (parameterValue instanceof Time) {
