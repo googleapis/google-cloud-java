@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1.stub;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -25,21 +26,27 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.auditmanager.v1.AuditReport;
+import com.google.cloud.auditmanager.v1.AuditSchedule;
 import com.google.cloud.auditmanager.v1.AuditScopeReport;
+import com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.EnrollResourceRequest;
 import com.google.cloud.auditmanager.v1.Enrollment;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest;
 import com.google.cloud.auditmanager.v1.GetAuditReportRequest;
+import com.google.cloud.auditmanager.v1.GetAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsResponse;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse;
 import com.google.cloud.auditmanager.v1.ListControlsRequest;
 import com.google.cloud.auditmanager.v1.ListControlsResponse;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesRequest;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
 import com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus;
+import com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -67,6 +74,28 @@ public abstract class AuditManagerStub implements BackgroundResource {
   public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
       getHttpJsonOperationsStub() {
     return null;
+  }
+
+  public UnaryCallable<CreateAuditScheduleRequest, AuditSchedule> createAuditScheduleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAuditScheduleCallable()");
+  }
+
+  public UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule> updateAuditScheduleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAuditScheduleCallable()");
+  }
+
+  public UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAuditScheduleCallable()");
+  }
+
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuditSchedulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuditSchedulesCallable()");
   }
 
   public UnaryCallable<EnrollResourceRequest, Enrollment> enrollResourceCallable() {

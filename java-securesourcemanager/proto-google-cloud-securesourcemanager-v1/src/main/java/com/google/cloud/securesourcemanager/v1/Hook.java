@@ -107,6 +107,17 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      * <code>PULL_REQUEST = 2;</code>
      */
     PULL_REQUEST(2),
+    /**
+     *
+     *
+     * <pre>
+     * Triggers when a general comment is added, edited, or deleted on a pull
+     * request.
+     * </pre>
+     *
+     * <code>PULL_REQUEST_COMMENT = 3;</code>
+     */
+    PULL_REQUEST_COMMENT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -154,6 +165,18 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
      */
     public static final int PULL_REQUEST_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Triggers when a general comment is added, edited, or deleted on a pull
+     * request.
+     * </pre>
+     *
+     * <code>PULL_REQUEST_COMMENT = 3;</code>
+     */
+    public static final int PULL_REQUEST_COMMENT_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -184,6 +207,8 @@ public final class Hook extends com.google.protobuf.GeneratedMessage
           return PUSH;
         case 2:
           return PULL_REQUEST;
+        case 3:
+          return PULL_REQUEST_COMMENT;
         default:
           return null;
       }

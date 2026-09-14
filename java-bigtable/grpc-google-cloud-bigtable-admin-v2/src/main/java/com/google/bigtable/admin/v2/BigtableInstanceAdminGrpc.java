@@ -569,6 +569,145 @@ public final class BigtableInstanceAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateMemoryLayerRequest, com.google.longrunning.Operation>
+      getUpdateMemoryLayerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMemoryLayer",
+      requestType = com.google.bigtable.admin.v2.UpdateMemoryLayerRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.UpdateMemoryLayerRequest, com.google.longrunning.Operation>
+      getUpdateMemoryLayerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.UpdateMemoryLayerRequest, com.google.longrunning.Operation>
+        getUpdateMemoryLayerMethod;
+    if ((getUpdateMemoryLayerMethod = BigtableInstanceAdminGrpc.getUpdateMemoryLayerMethod)
+        == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getUpdateMemoryLayerMethod = BigtableInstanceAdminGrpc.getUpdateMemoryLayerMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getUpdateMemoryLayerMethod =
+              getUpdateMemoryLayerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.UpdateMemoryLayerRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMemoryLayer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.UpdateMemoryLayerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("UpdateMemoryLayer"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMemoryLayerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListMemoryLayersRequest,
+          com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+      getListMemoryLayersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMemoryLayers",
+      requestType = com.google.bigtable.admin.v2.ListMemoryLayersRequest.class,
+      responseType = com.google.bigtable.admin.v2.ListMemoryLayersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.ListMemoryLayersRequest,
+          com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+      getListMemoryLayersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.ListMemoryLayersRequest,
+            com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+        getListMemoryLayersMethod;
+    if ((getListMemoryLayersMethod = BigtableInstanceAdminGrpc.getListMemoryLayersMethod) == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getListMemoryLayersMethod = BigtableInstanceAdminGrpc.getListMemoryLayersMethod)
+            == null) {
+          BigtableInstanceAdminGrpc.getListMemoryLayersMethod =
+              getListMemoryLayersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.ListMemoryLayersRequest,
+                          com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMemoryLayers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListMemoryLayersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.ListMemoryLayersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("ListMemoryLayers"))
+                      .build();
+        }
+      }
+    }
+    return getListMemoryLayersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetMemoryLayerRequest,
+          com.google.bigtable.admin.v2.MemoryLayer>
+      getGetMemoryLayerMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMemoryLayer",
+      requestType = com.google.bigtable.admin.v2.GetMemoryLayerRequest.class,
+      responseType = com.google.bigtable.admin.v2.MemoryLayer.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.admin.v2.GetMemoryLayerRequest,
+          com.google.bigtable.admin.v2.MemoryLayer>
+      getGetMemoryLayerMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.admin.v2.GetMemoryLayerRequest,
+            com.google.bigtable.admin.v2.MemoryLayer>
+        getGetMemoryLayerMethod;
+    if ((getGetMemoryLayerMethod = BigtableInstanceAdminGrpc.getGetMemoryLayerMethod) == null) {
+      synchronized (BigtableInstanceAdminGrpc.class) {
+        if ((getGetMemoryLayerMethod = BigtableInstanceAdminGrpc.getGetMemoryLayerMethod) == null) {
+          BigtableInstanceAdminGrpc.getGetMemoryLayerMethod =
+              getGetMemoryLayerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.admin.v2.GetMemoryLayerRequest,
+                          com.google.bigtable.admin.v2.MemoryLayer>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMemoryLayer"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.GetMemoryLayerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.admin.v2.MemoryLayer.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableInstanceAdminMethodDescriptorSupplier("GetMemoryLayer"))
+                      .build();
+        }
+      }
+    }
+    return getGetMemoryLayerMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.bigtable.admin.v2.CreateAppProfileRequest,
           com.google.bigtable.admin.v2.AppProfile>
       getCreateAppProfileMethod;
@@ -1713,6 +1852,51 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
+     * Updates the memory layer of a cluster.
+     * To enable the memory layer, set the memory_config.
+     * To disable the memory layer, unset the memory_config.
+     * </pre>
+     */
+    default void updateMemoryLayer(
+        com.google.bigtable.admin.v2.UpdateMemoryLayerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMemoryLayerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about memory layers.
+     * </pre>
+     */
+    default void listMemoryLayers(
+        com.google.bigtable.admin.v2.ListMemoryLayersRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMemoryLayersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about the memory layer of a cluster.
+     * </pre>
+     */
+    default void getMemoryLayer(
+        com.google.bigtable.admin.v2.GetMemoryLayerRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MemoryLayer> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMemoryLayerMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an app profile within an instance.
      * </pre>
      */
@@ -2245,6 +2429,57 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
+     * Updates the memory layer of a cluster.
+     * To enable the memory layer, set the memory_config.
+     * To disable the memory layer, unset the memory_config.
+     * </pre>
+     */
+    public void updateMemoryLayer(
+        com.google.bigtable.admin.v2.UpdateMemoryLayerRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMemoryLayerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about memory layers.
+     * </pre>
+     */
+    public void listMemoryLayers(
+        com.google.bigtable.admin.v2.ListMemoryLayersRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMemoryLayersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about the memory layer of a cluster.
+     * </pre>
+     */
+    public void getMemoryLayer(
+        com.google.bigtable.admin.v2.GetMemoryLayerRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MemoryLayer> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMemoryLayerMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an app profile within an instance.
      * </pre>
      */
@@ -2764,6 +2999,49 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
+     * Updates the memory layer of a cluster.
+     * To enable the memory layer, set the memory_config.
+     * To disable the memory layer, unset the memory_config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMemoryLayer(
+        com.google.bigtable.admin.v2.UpdateMemoryLayerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMemoryLayerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about memory layers.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListMemoryLayersResponse listMemoryLayers(
+        com.google.bigtable.admin.v2.ListMemoryLayersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMemoryLayersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about the memory layer of a cluster.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.MemoryLayer getMemoryLayer(
+        com.google.bigtable.admin.v2.GetMemoryLayerRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMemoryLayerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an app profile within an instance.
      * </pre>
      */
@@ -3231,6 +3509,47 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
+     * Updates the memory layer of a cluster.
+     * To enable the memory layer, set the memory_config.
+     * To disable the memory layer, unset the memory_config.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMemoryLayer(
+        com.google.bigtable.admin.v2.UpdateMemoryLayerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMemoryLayerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about memory layers.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListMemoryLayersResponse listMemoryLayers(
+        com.google.bigtable.admin.v2.ListMemoryLayersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMemoryLayersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about the memory layer of a cluster.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.MemoryLayer getMemoryLayer(
+        com.google.bigtable.admin.v2.GetMemoryLayerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMemoryLayerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an app profile within an instance.
      * </pre>
      */
@@ -3686,6 +4005,49 @@ public final class BigtableInstanceAdminGrpc {
      *
      *
      * <pre>
+     * Updates the memory layer of a cluster.
+     * To enable the memory layer, set the memory_config.
+     * To disable the memory layer, unset the memory_config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMemoryLayer(com.google.bigtable.admin.v2.UpdateMemoryLayerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMemoryLayerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about memory layers.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.ListMemoryLayersResponse>
+        listMemoryLayers(com.google.bigtable.admin.v2.ListMemoryLayersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMemoryLayersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about the memory layer of a cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.admin.v2.MemoryLayer>
+        getMemoryLayer(com.google.bigtable.admin.v2.GetMemoryLayerRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMemoryLayerMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an app profile within an instance.
      * </pre>
      */
@@ -3954,25 +4316,28 @@ public final class BigtableInstanceAdminGrpc {
   private static final int METHODID_UPDATE_CLUSTER = 9;
   private static final int METHODID_PARTIAL_UPDATE_CLUSTER = 10;
   private static final int METHODID_DELETE_CLUSTER = 11;
-  private static final int METHODID_CREATE_APP_PROFILE = 12;
-  private static final int METHODID_GET_APP_PROFILE = 13;
-  private static final int METHODID_LIST_APP_PROFILES = 14;
-  private static final int METHODID_UPDATE_APP_PROFILE = 15;
-  private static final int METHODID_DELETE_APP_PROFILE = 16;
-  private static final int METHODID_GET_IAM_POLICY = 17;
-  private static final int METHODID_SET_IAM_POLICY = 18;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 19;
-  private static final int METHODID_LIST_HOT_TABLETS = 20;
-  private static final int METHODID_CREATE_LOGICAL_VIEW = 21;
-  private static final int METHODID_GET_LOGICAL_VIEW = 22;
-  private static final int METHODID_LIST_LOGICAL_VIEWS = 23;
-  private static final int METHODID_UPDATE_LOGICAL_VIEW = 24;
-  private static final int METHODID_DELETE_LOGICAL_VIEW = 25;
-  private static final int METHODID_CREATE_MATERIALIZED_VIEW = 26;
-  private static final int METHODID_GET_MATERIALIZED_VIEW = 27;
-  private static final int METHODID_LIST_MATERIALIZED_VIEWS = 28;
-  private static final int METHODID_UPDATE_MATERIALIZED_VIEW = 29;
-  private static final int METHODID_DELETE_MATERIALIZED_VIEW = 30;
+  private static final int METHODID_UPDATE_MEMORY_LAYER = 12;
+  private static final int METHODID_LIST_MEMORY_LAYERS = 13;
+  private static final int METHODID_GET_MEMORY_LAYER = 14;
+  private static final int METHODID_CREATE_APP_PROFILE = 15;
+  private static final int METHODID_GET_APP_PROFILE = 16;
+  private static final int METHODID_LIST_APP_PROFILES = 17;
+  private static final int METHODID_UPDATE_APP_PROFILE = 18;
+  private static final int METHODID_DELETE_APP_PROFILE = 19;
+  private static final int METHODID_GET_IAM_POLICY = 20;
+  private static final int METHODID_SET_IAM_POLICY = 21;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 22;
+  private static final int METHODID_LIST_HOT_TABLETS = 23;
+  private static final int METHODID_CREATE_LOGICAL_VIEW = 24;
+  private static final int METHODID_GET_LOGICAL_VIEW = 25;
+  private static final int METHODID_LIST_LOGICAL_VIEWS = 26;
+  private static final int METHODID_UPDATE_LOGICAL_VIEW = 27;
+  private static final int METHODID_DELETE_LOGICAL_VIEW = 28;
+  private static final int METHODID_CREATE_MATERIALIZED_VIEW = 29;
+  private static final int METHODID_GET_MATERIALIZED_VIEW = 30;
+  private static final int METHODID_LIST_MATERIALIZED_VIEWS = 31;
+  private static final int METHODID_UPDATE_MATERIALIZED_VIEW = 32;
+  private static final int METHODID_DELETE_MATERIALIZED_VIEW = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4054,6 +4419,23 @@ public final class BigtableInstanceAdminGrpc {
           serviceImpl.deleteCluster(
               (com.google.bigtable.admin.v2.DeleteClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMORY_LAYER:
+          serviceImpl.updateMemoryLayer(
+              (com.google.bigtable.admin.v2.UpdateMemoryLayerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_MEMORY_LAYERS:
+          serviceImpl.listMemoryLayers(
+              (com.google.bigtable.admin.v2.ListMemoryLayersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.ListMemoryLayersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MEMORY_LAYER:
+          serviceImpl.getMemoryLayer(
+              (com.google.bigtable.admin.v2.GetMemoryLayerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.admin.v2.MemoryLayer>)
+                  responseObserver);
           break;
         case METHODID_CREATE_APP_PROFILE:
           serviceImpl.createAppProfile(
@@ -4253,6 +4635,25 @@ public final class BigtableInstanceAdminGrpc {
                     com.google.bigtable.admin.v2.DeleteClusterRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_CLUSTER)))
         .addMethod(
+            getUpdateMemoryLayerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.UpdateMemoryLayerRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MEMORY_LAYER)))
+        .addMethod(
+            getListMemoryLayersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.ListMemoryLayersRequest,
+                    com.google.bigtable.admin.v2.ListMemoryLayersResponse>(
+                    service, METHODID_LIST_MEMORY_LAYERS)))
+        .addMethod(
+            getGetMemoryLayerMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.admin.v2.GetMemoryLayerRequest,
+                    com.google.bigtable.admin.v2.MemoryLayer>(service, METHODID_GET_MEMORY_LAYER)))
+        .addMethod(
             getCreateAppProfileMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4433,6 +4834,9 @@ public final class BigtableInstanceAdminGrpc {
                       .addMethod(getUpdateClusterMethod())
                       .addMethod(getPartialUpdateClusterMethod())
                       .addMethod(getDeleteClusterMethod())
+                      .addMethod(getUpdateMemoryLayerMethod())
+                      .addMethod(getListMemoryLayersMethod())
+                      .addMethod(getGetMemoryLayerMethod())
                       .addMethod(getCreateAppProfileMethod())
                       .addMethod(getGetAppProfileMethod())
                       .addMethod(getListAppProfilesMethod())
