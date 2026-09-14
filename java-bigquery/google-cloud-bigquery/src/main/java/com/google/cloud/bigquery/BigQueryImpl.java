@@ -2402,14 +2402,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     Collection<FieldValueList> firstPageRows;
     if (isArrow) {
-      try {
-        firstPageRows =
-            ArrowDeserializer.deserializeRecordBatch(
-                results.getArrowRecordBatch().decodeSerializedRecordBatch(),
-                schema,
-                arrowSchemaPojo);
-      } catch (IOException e) {
-        throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
+      if (results.getArrowRecordBatch() == null
+          || results.getArrowRecordBatch().getSerializedRecordBatch() == null) {
+        firstPageRows = ImmutableList.of();
+      } else {
+        try {
+          firstPageRows =
+              ArrowDeserializer.deserializeRecordBatch(
+                  results.getArrowRecordBatch().decodeSerializedRecordBatch(),
+                  schema,
+                  arrowSchemaPojo);
+        } catch (IOException e) {
+          throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
+        }
       }
     } else {
       firstPageRows =
