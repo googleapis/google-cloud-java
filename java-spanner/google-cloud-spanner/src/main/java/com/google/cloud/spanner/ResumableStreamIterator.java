@@ -28,7 +28,6 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
-import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
@@ -38,7 +37,6 @@ import io.grpc.Context;
 import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
@@ -53,14 +51,15 @@ import javax.annotation.Nullable;
  * have a resume token until one is seen or buffer space is exceeded, which reduces the chance of
  * yielding data to the caller that cannot be resumed.
  *
- * <p>When non-default streaming retry settings are used, the resume loop is bounded by those
- * settings: consecutive failed attempts are limited by {@link RetrySettings#getMaxAttempts()} if
- * that has been set to a value greater than zero, and the total time spent on a sequence of
- * consecutive failed attempts is limited by {@link RetrySettings#getTotalTimeout()} if that has
- * been set to a positive value. Only consecutive failures count against these budgets: any progress
- * on the stream (that is, receiving a resume token that differs from the last seen resume token)
- * resets both, so a long-running stream that regularly makes progress is not terminated by an
- * occasional transient error.
+ * <p>The resume loop is bounded by the streaming retry settings: consecutive failed attempts are
+ * limited by {@link RetrySettings#getMaxAttempts()} if that has been set to a value greater than
+ * zero, and the total time spent on a sequence of consecutive failed attempts is limited by {@link
+ * RetrySettings#getTotalTimeout()} if that has been set to a positive value. Only consecutive
+ * failures count against these budgets: any progress on the stream (that is, receiving a resume
+ * token that differs from the last seen resume token) resets both, so a long-running stream that
+ * regularly makes progress is not terminated by an occasional transient error. The default settings
+ * have no maximum number of attempts or total timeout. Setting maxAttempts to 1 disables streaming
+ * retries.
  *
  * <p>These limits bound the number of streams that this iterator starts. Each (re)started stream is
  * a call through the underlying GAX callable, and GAX applies the same {@link RetrySettings} to
@@ -73,8 +72,6 @@ import javax.annotation.Nullable;
 @VisibleForTesting
 abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet>
     implements CloseableIterator<PartialResultSet> {
-  private static final RetrySettings DEFAULT_STREAMING_RETRY_SETTINGS =
-      SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings();
   private final ErrorHandler errorHandler;
   private AsyncResultSet.StreamMessageListener streamMessageListener;
   private final RetrySettings streamingRetrySettings;
@@ -96,7 +93,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   /**
    * The value of {@link System#nanoTime()} at the first failure of the current sequence of
    * consecutive failed attempts. Only meaningful when {@link #attempts} is nonzero. Used to enforce
-   * {@link RetrySettings#getTotalTimeout()} for non-default retry settings.
+   * {@link RetrySettings#getTotalTimeout()} when a positive timeout is configured.
    */
   private long retrySequenceStartNanos = -1L;
 
@@ -153,10 +150,6 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     this.requestId = xGoogRequestIdCreator.nextRequestId(0);
   }
 
-  private boolean hasDefaultStreamingRetrySettings() {
-    return Objects.equals(streamingRetrySettings, DEFAULT_STREAMING_RETRY_SETTINGS);
-  }
-
   /**
    * Returns true if the number of consecutive failed attempts has reached the maximum number of
    * attempts in the retry settings. {@link RetrySettings#getMaxAttempts()} equal to zero means that
@@ -173,19 +166,16 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
    * Returns true if retrying after the proposed delay would exceed the total timeout in the retry
    * settings. The total timeout limits the wall-clock time that is spent on a sequence of
    * consecutive failed attempts without progress, measured from the first failure of the sequence.
-   * It is only enforced for non-default retry settings that set a positive total timeout: a total
-   * timeout of zero means that no total timeout has been set, and that only maxAttempts (if set)
-   * limits the retries. This mirrors the interpretation of these values in GAX.
+   * It is only enforced for retry settings that set a positive total timeout: a total timeout of
+   * zero means that no total timeout has been set, and that only maxAttempts (if set) limits the
+   * retries. This mirrors the interpretation of these values in GAX.
    */
   private boolean totalTimeoutExceeded(long proposedDelayMillis) {
-    if (hasDefaultStreamingRetrySettings()) {
-      return false;
-    }
     long totalTimeoutMillis = streamingRetrySettings.getTotalTimeout().toMillis();
     if (totalTimeoutMillis <= 0L) {
       return false;
     }
-    long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - retrySequenceStartNanos);
+    long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(nanoTime() - retrySequenceStartNanos);
     if (elapsedMillis < 0L) {
       elapsedMillis = 0L;
     }
@@ -196,16 +186,6 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   }
 
   private ExponentialBackOff newBackOff() {
-    if (hasDefaultStreamingRetrySettings()) {
-      return new ExponentialBackOff.Builder()
-          .setMultiplier(streamingRetrySettings.getRetryDelayMultiplier())
-          .setInitialIntervalMillis(
-              Math.max(10, (int) streamingRetrySettings.getInitialRetryDelay().toMillis()))
-          .setMaxIntervalMillis(
-              Math.max(1000, (int) streamingRetrySettings.getMaxRetryDelay().toMillis()))
-          .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
-          .build();
-    }
     return new ExponentialBackOff.Builder()
         .setMultiplier(streamingRetrySettings.getRetryDelayMultiplier())
         // All of these values must be > 0.
@@ -362,47 +342,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
         }
       } catch (SpannerException spannerException) {
         if (safeToRetry && isRetryable(spannerException)) {
-          if (attempts == 0) {
-            retrySequenceStartNanos = System.nanoTime();
-          }
-          attempts++;
-          if (maxAttemptsExhausted()) {
-            span.addAnnotation(
-                "Stream broken. Not retrying because the maximum number of attempts has been"
-                    + " exhausted",
-                spannerException);
-            span.setStatus(spannerException);
-            throw spannerException;
-          }
-          // Determine the retry delay: either the delay that the server included in the error, or
-          // otherwise a delay determined by the exponential backoff.
-          long delayMillis = spannerException.getRetryDelayInMillis();
-          if (delayMillis == -1L) {
-            if (this.backOff == null) {
-              this.backOff = newBackOff();
-            }
-            delayMillis = nextBackOffMillis(this.backOff);
-          }
-          // The total timeout budget applies regardless of whether the delay came from the server
-          // or from the backoff.
-          if (totalTimeoutExceeded(delayMillis)) {
-            span.addAnnotation(
-                "Stream broken. Not retrying because the total timeout has been exhausted",
-                spannerException);
-            span.setStatus(spannerException);
-            throw spannerException;
-          }
-          span.addAnnotation("Stream broken. Safe to retry", spannerException);
-          logger.log(Level.FINE, "Retryable exception, will sleep and retry", spannerException);
-          // Truncate any items in the buffer before the last retry token.
-          while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
-            buffer.removeLast();
-          }
-          assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
-          stream = null;
-          try (IScope s = tracer.withSpan(span)) {
-            backoffSleep(context, delayMillis);
-          }
+          handleRetryableException(context, spannerException);
 
           continue;
         }
@@ -425,6 +365,62 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
         span.setStatus(e);
         throw e;
       }
+    }
+  }
+
+  /** Monotonic time source, overridable for deterministic retry-budget tests. */
+  @VisibleForTesting
+  long nanoTime() {
+    return System.nanoTime();
+  }
+
+  @VisibleForTesting
+  long checkRetryBudgetAndGetDelay(SpannerException spannerException) {
+    if (attempts == 0) {
+      retrySequenceStartNanos = nanoTime();
+    }
+    attempts++;
+    if (maxAttemptsExhausted()) {
+      span.addAnnotation(
+          "Stream broken. Not retrying because the maximum number of attempts has been"
+              + " exhausted",
+          spannerException);
+      span.setStatus(spannerException);
+      throw spannerException;
+    }
+    // Determine the retry delay: either the delay that the server included in the error, or
+    // otherwise a delay determined by the exponential backoff.
+    long delayMillis = spannerException.getRetryDelayInMillis();
+    if (delayMillis == -1L) {
+      if (this.backOff == null) {
+        this.backOff = newBackOff();
+      }
+      delayMillis = nextBackOffMillis(this.backOff);
+    }
+    // The total timeout budget applies regardless of whether the delay came from the server
+    // or from the backoff.
+    if (totalTimeoutExceeded(delayMillis)) {
+      span.addAnnotation(
+          "Stream broken. Not retrying because the total timeout has been exhausted",
+          spannerException);
+      span.setStatus(spannerException);
+      throw spannerException;
+    }
+    return delayMillis;
+  }
+
+  private void handleRetryableException(Context context, SpannerException spannerException) {
+    long delayMillis = checkRetryBudgetAndGetDelay(spannerException);
+    span.addAnnotation("Stream broken. Safe to retry", spannerException);
+    logger.log(Level.FINE, "Retryable exception, will sleep and retry", spannerException);
+    // Truncate any items in the buffer before the last retry token.
+    while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
+      buffer.removeLast();
+    }
+    assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
+    stream = null;
+    try (IScope s = tracer.withSpan(span)) {
+      backoffSleep(context, delayMillis);
     }
   }
 

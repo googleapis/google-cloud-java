@@ -30,6 +30,7 @@ import com.google.common.base.Stopwatch;
 import com.google.protobuf.ListValue;
 import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
@@ -56,12 +57,14 @@ import org.junit.runners.JUnit4;
 /**
  * Tests that the streaming resume loop in {@link ResumableStreamIterator} honors the {@link
  * RetrySettings#getMaxAttempts()} and {@link RetrySettings#getTotalTimeout()} that have been
- * configured for ExecuteStreamingSql, instead of retrying indefinitely, while the default settings
- * (no maximum number of attempts) keep the existing unbounded resume behavior.
+ * configured for ExecuteStreamingSql and StreamingRead, instead of retrying indefinitely, while the
+ * default settings (no maximum number of attempts) keep the existing unbounded resume behavior.
  *
- * <p>See https://github.com/googleapis/google-cloud-java/issues/12255. The tests in this class
- * drive a real {@link Spanner} client against an in-process mock Spanner server, so the entire
- * client stack (client -> GAX -> resume loop) is exercised.
+ * <p>Setting {@code maxAttempts=1} is the supported way to disable streaming retries, as requested
+ * in https://github.com/googleapis/google-cloud-java/issues/12255; an empty retryable-code set
+ * alone does not disable retries for intrinsically retryable errors. The tests in this class drive
+ * a real {@link Spanner} client against an in-process mock Spanner server, so the entire client
+ * stack (client -> GAX -> resume loop) is exercised.
  */
 @RunWith(JUnit4.class)
 public class StreamingRetryBudgetMockServerTest {
@@ -113,6 +116,8 @@ public class StreamingRetryBudgetMockServerTest {
   private DatabaseClient client;
   private Spanner spannerWithCustomRetrySettings;
   private DatabaseClient clientWithCustomRetrySettings;
+  private Spanner spannerWithoutRetries;
+  private DatabaseClient clientWithoutRetries;
   private Spanner spannerWithTotalTimeout;
   private DatabaseClient clientWithTotalTimeout;
 
@@ -136,6 +141,9 @@ public class StreamingRetryBudgetMockServerTest {
     mockSpanner = new MockSpannerServiceImpl();
     mockSpanner.setAbortProbability(0.0D); // We don't want any unpredictable aborted transactions.
     mockSpanner.putStatementResult(StatementResult.query(SELECT_QUERY, createResultSet(ROW_COUNT)));
+    mockSpanner.putStatementResult(
+        StatementResult.read(
+            "T", KeySet.all(), Collections.singletonList("C"), createResultSet(ROW_COUNT)));
 
     scheduledExecutor = new ScheduledThreadPoolExecutor(1);
     String uniqueName = InProcessServerBuilder.generateName();
@@ -209,6 +217,11 @@ public class StreamingRetryBudgetMockServerTest {
         .executeStreamingSqlSettings()
         .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED)
         .setRetrySettings(customRetrySettings);
+    builder
+        .getSpannerStubSettingsBuilder()
+        .streamingReadSettings()
+        .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED)
+        .setRetrySettings(customRetrySettings);
     spannerWithCustomRetrySettings = builder.build().getService();
     clientWithCustomRetrySettings =
         spannerWithCustomRetrySettings.getDatabaseClient(
@@ -230,17 +243,110 @@ public class StreamingRetryBudgetMockServerTest {
         .executeStreamingSqlSettings()
         .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED)
         .setRetrySettings(totalTimeoutRetrySettings);
+    builder
+        .getSpannerStubSettingsBuilder()
+        .streamingReadSettings()
+        .setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED)
+        .setRetrySettings(totalTimeoutRetrySettings);
     spannerWithTotalTimeout = builder.build().getService();
     clientWithTotalTimeout =
         spannerWithTotalTimeout.getDatabaseClient(
+            DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
+    // Leave retryable codes enabled in both layers: maxAttempts alone must disable retries.
+    RetrySettings noRetries =
+        customRetrySettings.toBuilder()
+            .setMaxAttempts(1)
+            .setTotalTimeoutDuration(Duration.ZERO)
+            .build();
+    builder
+        .getSpannerStubSettingsBuilder()
+        .executeStreamingSqlSettings()
+        .setRetrySettings(noRetries);
+    builder.getSpannerStubSettingsBuilder().streamingReadSettings().setRetrySettings(noRetries);
+    spannerWithoutRetries = builder.build().getService();
+    clientWithoutRetries =
+        spannerWithoutRetries.getDatabaseClient(
             DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
   }
 
   @After
   public void tearDown() {
+    spannerWithoutRetries.close();
     spannerWithTotalTimeout.close();
     spannerWithCustomRetrySettings.close();
     spanner.close();
+  }
+
+  @Test
+  public void defaultStreamingRetrySettings_areNormalized() {
+    RetrySettings expected =
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(Duration.ZERO)
+            .setMaxAttempts(0)
+            .setInitialRetryDelayDuration(Duration.ofMillis(10))
+            .setMaxRetryDelayDuration(Duration.ofMillis(1000))
+            .build();
+    assertEquals(expected, spanner.getOptions().getSpannerRpcV1().getExecuteQueryRetrySettings());
+    assertEquals(expected, spanner.getOptions().getSpannerRpcV1().getReadRetrySettings());
+  }
+
+  @Test(timeout = 60000L)
+  public void maxAttemptsOne_disablesStreamingSqlRetries() {
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofStickyException(UNAVAILABLE));
+    mockSpanner.clearRequests();
+    try (ResultSet resultSet = clientWithoutRetries.singleUse().executeQuery(SELECT_QUERY)) {
+      SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+    }
+    assertEquals(1, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+  }
+
+  @Test(timeout = 60000L)
+  public void maxAttemptsOne_disablesStreamingReadRetries() {
+    mockSpanner.setStreamingReadExecutionTime(
+        SimulatedExecutionTime.ofStickyException(UNAVAILABLE));
+    mockSpanner.clearRequests();
+    try (ResultSet resultSet =
+        clientWithoutRetries.singleUse().read("T", KeySet.all(), Collections.singletonList("C"))) {
+      SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+    }
+    assertEquals(1, mockSpanner.countRequestsOfType(ReadRequest.class));
+  }
+
+  @Test(timeout = 60000L)
+  public void maxAttemptsExhausted_stopsStreamingReadRetries() {
+    mockSpanner.setStreamingReadExecutionTime(
+        SimulatedExecutionTime.ofStickyException(DEADLINE_EXCEEDED));
+    mockSpanner.clearRequests();
+    try (ResultSet resultSet =
+        clientWithCustomRetrySettings
+            .singleUse()
+            .read("T", KeySet.all(), Collections.singletonList("C"))) {
+      SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
+    }
+    // Both GAX and the resume loop allow two attempts, as with ExecuteStreamingSql.
+    assertEquals(4, mockSpanner.countRequestsOfType(ReadRequest.class));
+  }
+
+  @Test(timeout = 60000L)
+  public void totalTimeoutExhausted_stopsStreamingReadRetries() {
+    mockSpanner.setStreamingReadExecutionTime(
+        SimulatedExecutionTime.ofStickyException(UNAVAILABLE));
+    mockSpanner.clearRequests();
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    try (ResultSet resultSet =
+        clientWithTotalTimeout
+            .singleUse()
+            .read("T", KeySet.all(), Collections.singletonList("C"))) {
+      SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+    }
+    assertTrue(mockSpanner.countRequestsOfType(ReadRequest.class) > 1);
+    assertTrue(stopwatch.elapsed(TimeUnit.MILLISECONDS) < 10000L);
   }
 
   /**
@@ -336,6 +442,22 @@ public class StreamingRetryBudgetMockServerTest {
     assertEquals(ROW_COUNT, rows);
     // 5 failed attempts + 1 successful attempt.
     assertEquals(6, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+  }
+
+  @Test(timeout = 60000L)
+  public void defaultRetrySettings_keepsUnboundedReadResumes() {
+    mockSpanner.setStreamingReadExecutionTime(
+        SimulatedExecutionTime.ofExceptions(Collections.nCopies(5, UNAVAILABLE)));
+    mockSpanner.clearRequests();
+    int rows = 0;
+    try (ResultSet resultSet =
+        client.singleUse().read("T", KeySet.all(), Collections.singletonList("C"))) {
+      while (resultSet.next()) {
+        rows++;
+      }
+    }
+    assertEquals(ROW_COUNT, rows);
+    assertEquals(6, mockSpanner.countRequestsOfType(ReadRequest.class));
   }
 
   /**
