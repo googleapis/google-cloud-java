@@ -37,6 +37,8 @@ public class GcpFallbackState {
   private final AtomicLong primaryFailures = new AtomicLong(0);
   private final AtomicLong fallbackSuccesses = new AtomicLong(0);
   private final AtomicLong fallbackFailures = new AtomicLong(0);
+  private final AtomicLong generation = new AtomicLong(0);
+  private final AtomicBoolean targetFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
 
@@ -52,29 +54,57 @@ public class GcpFallbackState {
    * @param execService the executor service to use.
    */
   @VisibleForTesting
-  public GcpFallbackState(ScheduledExecutorService execService) {
+  GcpFallbackState(ScheduledExecutorService execService) {
     this.execService = execService;
     this.ownsExecutor = true;
   }
 
-  public AtomicLong getPrimarySuccesses() {
+  AtomicLong getPrimarySuccesses() {
     return primarySuccesses;
   }
 
-  public AtomicLong getPrimaryFailures() {
+  AtomicLong getPrimaryFailures() {
     return primaryFailures;
   }
 
-  public AtomicLong getFallbackSuccesses() {
+  AtomicLong getFallbackSuccesses() {
     return fallbackSuccesses;
   }
 
-  public AtomicLong getFallbackFailures() {
+  AtomicLong getFallbackFailures() {
     return fallbackFailures;
   }
 
-  public AtomicBoolean getInFallbackMode() {
-    return inFallbackMode;
+  public boolean isInFallbackMode() {
+    return inFallbackMode.get();
+  }
+
+  long getGeneration() {
+    return generation.get();
+  }
+
+  boolean getTargetFallbackMode() {
+    return targetFallbackMode.get();
+  }
+
+  /** Bumps the generation counter with a directive to target fallback mode. */
+  synchronized void triggerFallback() {
+    inFallbackMode.set(true);
+    targetFallbackMode.set(true);
+    generation.incrementAndGet();
+  }
+
+  /** Records channel recovery by clearing primary error counts and updating fallback mode. */
+  synchronized long recordRecovery(boolean perChannelRecovery) {
+    if (inFallbackMode.get()) {
+      primaryFailures.set(0);
+      primarySuccesses.set(0);
+      inFallbackMode.set(false);
+    }
+    if (!perChannelRecovery && targetFallbackMode.compareAndSet(true, false)) {
+      generation.incrementAndGet();
+    }
+    return generation.get();
   }
 
   /**
@@ -83,7 +113,7 @@ public class GcpFallbackState {
    * @param options optional fallback channel configuration options.
    * @return the active ScheduledExecutorService.
    */
-  public synchronized ScheduledExecutorService getOrCreateExecutorService(
+  synchronized ScheduledExecutorService getOrCreateExecutorService(
       GcpFallbackChannelOptions options) {
     if (this.execService != null) {
       return this.execService;
@@ -101,7 +131,7 @@ public class GcpFallbackState {
   }
 
   /** Schedules a periodic task (e.g., probe) on the shared background executor service. */
-  public synchronized ScheduledFuture<?> scheduleTask(
+  synchronized ScheduledFuture<?> scheduleTask(
       Runnable command, long initialDelay, long period, TimeUnit unit) {
     if (this.execService == null || this.execService.isShutdown()) {
       return null;
@@ -115,7 +145,7 @@ public class GcpFallbackState {
    *
    * @param options the fallback channel configuration options.
    */
-  public synchronized void startPeriodicEvaluation(GcpFallbackChannelOptions options) {
+  synchronized void startPeriodicEvaluation(GcpFallbackChannelOptions options) {
     if (options == null
         || !options.isEnableFallback()
         || options.getPeriod() == null
@@ -148,8 +178,9 @@ public class GcpFallbackState {
    * @param options the fallback channel configuration options.
    * @param openTelemetry telemetry module for recording error metrics.
    */
-  public void checkErrorRates(
+  void checkErrorRates(
       GcpFallbackChannelOptions options, GcpFallbackOpenTelemetry openTelemetry) {
+    boolean wasInFallback = inFallbackMode.get();
     long successes = primarySuccesses.getAndSet(0);
     long failures = primaryFailures.getAndSet(0);
     float errRate = 0f;
@@ -160,9 +191,9 @@ public class GcpFallbackState {
       openTelemetry.getModule().reportErrorRate(options.getPrimaryChannelName(), errRate);
     }
 
-    if (!inFallbackMode.get() && options.isEnableFallback()) {
+    if (!wasInFallback && options.isEnableFallback()) {
       if (failures >= options.getMinFailedCalls() && errRate >= options.getErrorRateThreshold()) {
-        inFallbackMode.set(true);
+        triggerFallback();
         if (openTelemetry != null && openTelemetry.getModule() != null) {
           openTelemetry
               .getModule()
@@ -189,7 +220,7 @@ public class GcpFallbackState {
   }
 
   /** Stops any running scheduled evaluation. */
-  public synchronized void stopPeriodicEvaluation() {
+  synchronized void stopPeriodicEvaluation() {
     if (scheduledEvaluationFuture != null) {
       scheduledEvaluationFuture.cancel(false);
       scheduledEvaluationFuture = null;
