@@ -2704,8 +2704,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
 
       if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
-        throw new IllegalArgumentException(
-            "Arrow results format is only supported for fast query path execution (e.g. no destination table, no custom clustering, etc.).");
+        throw new UnsupportedOperationException(
+            "Arrow results format for slow query path execution is not yet supported.");
       }
 
       return create(JobInfo.of(jobId, configuration), options);
