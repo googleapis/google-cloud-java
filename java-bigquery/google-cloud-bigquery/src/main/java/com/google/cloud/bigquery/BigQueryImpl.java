@@ -2485,6 +2485,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     if (!Boolean.TRUE.equals(results.getJobComplete()) || results.getArrowSchema() == null) {
+      if (results.getJobReference() == null) {
+        throw new BigQueryException(
+            0, "Job is incomplete or Arrow schema is missing, but no job reference was returned.");
+      }
       JobId jobId = JobId.fromPb(results.getJobReference());
       return getJob(jobId, options);
     }
@@ -2557,6 +2561,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     if (hasMorePages) {
+      if (results.getJobReference() == null) {
+        throw new BigQueryException(
+            0, "More pages exist, but no job reference was returned to fetch them.");
+      }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
       NextPageFetcher<FieldValueList> pageFetcher =
