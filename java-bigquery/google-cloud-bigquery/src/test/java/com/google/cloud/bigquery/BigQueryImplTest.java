@@ -2956,12 +2956,12 @@ public class BigQueryImplTest {
             .setDestinationTable(TableId.of("dataset", "table"))
             .build();
     bigquery = options.getService();
-    IllegalArgumentException exception =
-        assertThrows(IllegalArgumentException.class, () -> bigquery.query(config));
+    UnsupportedOperationException exception =
+        assertThrows(UnsupportedOperationException.class, () -> bigquery.query(config));
     assertTrue(
         exception
             .getMessage()
-            .contains("Arrow results format is only supported for fast query path execution"));
+            .contains("Arrow results format for slow query path execution is not yet supported."));
   }
 
   @Test
