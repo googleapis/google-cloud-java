@@ -238,7 +238,7 @@ case ${JOB_TYPE} in
         # Format those specific modules instead of the entire codebase, reducing format check time.
         # The --relative flag is when building in the submodule as only files modified in the module
         # should be accounted for.
-        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
+        changed_file_list=$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
         has_code_change="false"
@@ -301,6 +301,9 @@ case ${JOB_TYPE} in
             unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
             MODULE_FILTER="-pl ${unique_modules}"
             echo "Formatting only changed modules: ${unique_modules}"
+        else
+            echo "No formatting-eligible Java modules affected. Skipping linter check."
+            exit 0
         fi
     else
         echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."

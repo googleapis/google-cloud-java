@@ -63,6 +63,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.Text;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -408,5 +409,67 @@ public class BigQueryArrowArrayOfPrimitivesTest {
   private void ensureArrayIsInvalid(Executable block) {
     Exception exception = assertThrows(IllegalStateException.class, block);
     assertThat(exception.getMessage()).isEqualTo(INVALID_ARRAY);
+  }
+
+  @Test
+  public void testArrowArrayTimestampPicosEnabled() throws SQLException {
+    Field field =
+        Field.newBuilder("picosArray", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    JsonStringArrayList<Text> values = new JsonStringArrayList<>();
+    values.add(new Text("2026-04-08T10:00:00.123456789123Z"));
+    values.add(new Text("2026-04-08T11:00:00.987654321012Z"));
+
+    BigQueryArrowArray array =
+        new BigQueryArrowArray(
+            field, values, true, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class));
+
+    assertThat(array.getBaseTypeName()).isEqualTo("TIMESTAMP");
+    assertThat(array.getBaseType()).isEqualTo(Types.TIMESTAMP);
+
+    Object result = array.getArray();
+    assertThat(result).isInstanceOf(String[].class);
+    assertThat((String[]) result)
+        .asList()
+        .containsExactly("2026-04-08 10:00:00.123456789123", "2026-04-08 11:00:00.987654321012")
+        .inOrder();
+
+    ResultSet rs = array.getResultSet();
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getInt(1)).isEqualTo(1);
+    assertThat(rs.getString(2)).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject(2)).isEqualTo("2026-04-08 10:00:00.123456789123");
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getInt(1)).isEqualTo(2);
+    assertThat(rs.getString(2)).isEqualTo("2026-04-08 11:00:00.987654321012");
+    assertThat(rs.getObject(2)).isEqualTo("2026-04-08 11:00:00.987654321012");
+  }
+
+  @Test
+  public void testArrowArrayTimestampPicosDisabled() throws SQLException {
+    Field field =
+        Field.newBuilder("picosArray", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    JsonStringArrayList<Text> values = new JsonStringArrayList<>();
+    values.add(new Text("2026-04-08T10:00:00.123456789123Z"));
+
+    BigQueryArrowArray array =
+        new BigQueryArrowArray(
+            field, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class));
+
+    Object result = array.getArray();
+    assertThat(result).isInstanceOf(Timestamp[].class);
+    Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
+    assertThat((Timestamp[]) result).asList().containsExactly(expectedTs);
+
+    ResultSet rs = array.getResultSet();
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString(2)).isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(rs.getObject(2)).isEqualTo(expectedTs);
   }
 }

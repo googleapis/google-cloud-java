@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -47,6 +49,7 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
+  static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
 
@@ -304,6 +307,34 @@ final class BigQueryTemporalUtility {
     long fractionVal = enableTimestampPicos ? microsOfSecond * 1_000_000L : microsOfSecond;
     appendPadded(sb, fractionVal, scale);
     return sb.toString();
+  }
+
+  /**
+   * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
+   * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
+   * string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
+   */
+  static String formatTimestampValue(Object value, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    if (value == null) {
+      return null;
+    }
+    if (value instanceof Long) {
+      return formatTimestampStringFromMicroseconds((Long) value, enableTimestampPicos);
+    }
+    String str = value.toString();
+    if (str.indexOf(':') >= 0) {
+      return formatTimestampStringFromIso(str, enableTimestampPicos);
+    }
+    return formatTimestampStringFromEpochDecimal(str, enableTimestampPicos);
+  }
+
+  static boolean isPicosecondTimestamp(Field field) {
+    return field != null
+        && field.getType() != null
+        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP
+        && field.getTimestampPrecision() != null
+        && field.getTimestampPrecision() > 6;
   }
 
   private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {

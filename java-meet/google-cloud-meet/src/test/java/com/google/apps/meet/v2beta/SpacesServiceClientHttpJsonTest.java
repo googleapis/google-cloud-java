@@ -32,6 +32,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -86,6 +87,8 @@ public class SpacesServiceClientHttpJsonTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -134,6 +137,8 @@ public class SpacesServiceClientHttpJsonTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -182,6 +187,8 @@ public class SpacesServiceClientHttpJsonTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -230,6 +237,8 @@ public class SpacesServiceClientHttpJsonTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -240,6 +249,8 @@ public class SpacesServiceClientHttpJsonTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -276,6 +287,8 @@ public class SpacesServiceClientHttpJsonTest {
               .setMeetingCode("meetingCode-883894584")
               .setConfig(SpaceConfig.newBuilder().build())
               .setActiveConference(ActiveConference.newBuilder().build())
+              .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+              .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpace(space, updateMask);
@@ -817,6 +830,116 @@ public class SpacesServiceClientHttpJsonTest {
     try {
       String name = "spaces/space-6456/members/member-6456";
       client.deleteMember(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMemberTest() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Member member =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Member actualResponse = client.updateMember(member, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMemberExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Member member =
+          Member.newBuilder()
+              .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+              .setEmail("email96619420")
+              .setUser("user3599307")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMember(member, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateMembersTest() throws Exception {
+    BatchUpdateMembersResponse expectedResponse =
+        BatchUpdateMembersResponse.newBuilder().addAllMembers(new ArrayList<Member>()).build();
+    mockService.addResponse(expectedResponse);
+
+    BatchUpdateMembersRequest request =
+        BatchUpdateMembersRequest.newBuilder()
+            .setParent(SpaceName.of("[SPACE]").toString())
+            .addAllRequests(new ArrayList<UpdateMemberRequest>())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    BatchUpdateMembersResponse actualResponse = client.batchUpdateMembers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateMembersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BatchUpdateMembersRequest request =
+          BatchUpdateMembersRequest.newBuilder()
+              .setParent(SpaceName.of("[SPACE]").toString())
+              .addAllRequests(new ArrayList<UpdateMemberRequest>())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.batchUpdateMembers(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
