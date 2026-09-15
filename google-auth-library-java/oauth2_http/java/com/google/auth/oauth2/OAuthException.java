@@ -48,8 +48,8 @@ import org.jspecify.annotations.Nullable;
 class OAuthException extends GoogleAuthException {
 
   private final String errorCode;
-  @Nullable private final String errorDescription;
-  @Nullable private final String errorUri;
+  private final @Nullable String errorDescription;
+  private final @Nullable String errorUri;
 
   OAuthException(String errorCode, @Nullable String errorDescription, @Nullable String errorUri) {
     this.errorCode = checkNotNull(errorCode);
