@@ -25,6 +25,7 @@ import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.locks.ReentrantLock;
@@ -85,7 +86,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       byte[] initialRecordBatchBytes,
       String streamName,
       BigQueryReadClient readClient) {
-    this.arrowSchema = arrowSchema;
+    this.arrowSchema = arrowSchema != null ? arrowSchema : new Schema(Collections.emptyList());
+    if (arrowSchema == null
+        && ((initialRecordBatchBytes != null && initialRecordBatchBytes.length > 0)
+            || streamName != null)) {
+      throw new IllegalArgumentException(
+          "Arrow schema cannot be null when query results or streams are present.");
+    }
     this.jobId = jobId;
     this.queryId = queryId;
     this.jobCreationReason = jobCreationReason;
@@ -94,41 +101,30 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     this.streamName = streamName;
     this.readClient = readClient;
 
-    if (this.arrowSchema != null) {
-      BufferAllocator alloc = null;
-      VectorSchemaRoot vRoot = null;
-      try {
-        alloc = ArrowDeserializer.createChildAllocator("ArrowQueryResult");
-        vRoot = VectorSchemaRoot.create(this.arrowSchema, alloc);
-        this.loader = new VectorLoader(vRoot);
-        this.allocator = alloc;
-        this.root = vRoot;
-      } catch (Throwable t) {
-        if (vRoot != null) {
-          try {
-            vRoot.close();
-          } catch (Throwable suppressed) {
-            t.addSuppressed(suppressed);
-          }
+    BufferAllocator alloc = null;
+    VectorSchemaRoot vRoot = null;
+    try {
+      alloc = ArrowDeserializer.createChildAllocator("ArrowQueryResult");
+      vRoot = VectorSchemaRoot.create(this.arrowSchema, alloc);
+      this.loader = new VectorLoader(vRoot);
+      this.allocator = alloc;
+      this.root = vRoot;
+    } catch (Throwable t) {
+      if (vRoot != null) {
+        try {
+          vRoot.close();
+        } catch (Throwable suppressed) {
+          t.addSuppressed(suppressed);
         }
-        if (alloc != null) {
-          try {
-            alloc.close();
-          } catch (Throwable suppressed) {
-            t.addSuppressed(suppressed);
-          }
+      }
+      if (alloc != null) {
+        try {
+          alloc.close();
+        } catch (Throwable suppressed) {
+          t.addSuppressed(suppressed);
         }
-        throw t;
       }
-    } else {
-      if ((initialRecordBatchBytes != null && initialRecordBatchBytes.length > 0)
-          || streamName != null) {
-        throw new IllegalArgumentException(
-            "Arrow schema cannot be null when query results or streams are present.");
-      }
-      this.allocator = null;
-      this.root = null;
-      this.loader = null;
+      throw t;
     }
   }
 

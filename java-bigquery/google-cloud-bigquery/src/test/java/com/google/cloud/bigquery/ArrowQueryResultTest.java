@@ -371,4 +371,27 @@ public class ArrowQueryResultTest {
       assertFalse(it.hasNext());
     }
   }
+
+  @Test
+  void testNullOrEmptySchemaProducesEmptyIterator() {
+    ArrowQueryResultImpl result =
+        new ArrowQueryResultImpl(
+            /* arrowSchema= */ null,
+            JobId.of("p", "ddl-job"),
+            /* queryId= */ null,
+            /* jobCreationReason= */ null,
+            0L,
+            /* initialRecordBatchBytes= */ null,
+            /* streamName= */ null,
+            /* readClient= */ null);
+
+    assertNotNull(result.getArrowSchema());
+    assertTrue(result.getArrowSchema().getFields().isEmpty());
+
+    try (ArrowQueryResult res = result) {
+      Iterator<VectorSchemaRoot> it = result.iterator();
+      assertFalse(it.hasNext());
+      assertThrows(NoSuchElementException.class, it::next);
+    }
+  }
 }
