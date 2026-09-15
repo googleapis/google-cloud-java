@@ -45,14 +45,20 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.Clock;
+import com.google.api.client.util.SecurityUtils;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.TestExternalAccountCredentials.TestCredentialSource;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.security.KeyStore;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -66,7 +72,19 @@ import org.junit.jupiter.api.Test;
 class ExternalAccountCredentialsTest extends BaseSerializationTest {
 
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
+  private static final String STS_MTLS_URL = "https://sts.mtls.googleapis.com/v1/token";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+
+  private static KeyStore createPopulatedKeyStore() {
+    try (InputStream certStream =
+            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
+        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      return SecurityUtils.createMtlsKeyStore(combined);
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to create test KeyStore", e);
+    }
+  }
 
   private static final Map<String, Object> FILE_CREDENTIAL_SOURCE_MAP =
       new HashMap<String, Object>() {
@@ -198,6 +216,32 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     assertEquals("tokenInfoUrl", credential.getTokenInfoUrl());
     assertNotNull(credential.getCredentialSource());
     assertEquals(GOOGLE_DEFAULT_UNIVERSE, credential.getUniverseDomain());
+  }
+
+  @Test
+  void fromJson_identityPoolCredentials_withActorTokenType() throws Exception {
+    GenericJson json = buildJsonIdentityPoolCredential();
+    json.put("token_url", STS_MTLS_URL);
+    json.put("actor_token_type", "actorTokenType");
+
+    Map<String, Object> credentialSource = (Map<String, Object>) json.get("credential_source");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("actor_token_field_name", "actor_token");
+    formatMap.put("subject_token_field_name", "subject_token");
+    credentialSource.put("format", formatMap);
+
+    java.security.KeyStore ks = createPopulatedKeyStore();
+    com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
+        new com.google.auth.mtls.MtlsHttpTransportFactory(ks);
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(json, mockTransportFactory);
+
+    assertInstanceOf(IdentityPoolCredentials.class, credential);
+    IdentityPoolCredentials idpCreds = (IdentityPoolCredentials) credential;
+    assertEquals("subjectTokenType", idpCreds.getSubjectTokenType());
+    assertEquals("actorTokenType", idpCreds.getActorTokenType());
   }
 
   @Test
