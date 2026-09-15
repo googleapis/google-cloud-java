@@ -59,9 +59,9 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
   private ArrowRecordBatch currentRecordBatch;
 
   private final ReentrantLock lock = new ReentrantLock();
-  private boolean closed = false;
+  private volatile boolean closed = false;
   private boolean iteratorCreated = false;
-  private ServerStream<ReadRowsResponse> serverStream;
+  private volatile ServerStream<ReadRowsResponse> serverStream;
 
   /**
    * Constructs an {@link ArrowQueryResultImpl}.
@@ -316,50 +316,14 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
     private ReadRowsResponse peekedResponse = null;
 
-    /**
-     * Checks whether the enclosing query result has been closed.
-     *
-     * @return {@code true} if closed, {@code false} otherwise
-     */
     private boolean isClosed() {
-      lock.lock();
-      try {
-        return closed;
-      } finally {
-        lock.unlock();
-      }
+      return closed;
     }
 
-    /**
-     * Checks whether the initial Arrow batch from the query response is pending and unconsumed.
-     *
-     * @return {@code true} if an initial batch is present and not yet yielded, {@code false}
-     *     otherwise
-     */
     private boolean hasInitialBatchToYield() {
-      lock.lock();
-      try {
-        return !yieldedInitialBatch
-            && initialRecordBatchBytes != null
-            && initialRecordBatchBytes.length > 0;
-      } finally {
-        lock.unlock();
-      }
-    }
-
-    /**
-     * Retrieves the active gRPC stream iterator.
-     *
-     * @return the {@link Iterator} of {@link ReadRowsResponse} messages, or {@code null} if not
-     *     initialized
-     */
-    private Iterator<ReadRowsResponse> getStreamIterator() {
-      lock.lock();
-      try {
-        return streamIterator;
-      } finally {
-        lock.unlock();
-      }
+      return !yieldedInitialBatch
+          && initialRecordBatchBytes != null
+          && initialRecordBatchBytes.length > 0;
     }
 
     @Override
@@ -375,12 +339,11 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
       try {
         ensureStreamInitialized();
-        Iterator<ReadRowsResponse> iterator = getStreamIterator();
-        if (iterator == null) {
+        if (streamIterator == null) {
           return false;
         }
-        while (iterator.hasNext()) {
-          ReadRowsResponse response = iterator.next();
+        while (streamIterator.hasNext()) {
+          ReadRowsResponse response = streamIterator.next();
           if (response.hasArrowRecordBatch()) {
             peekedResponse = response;
             return true;
@@ -408,18 +371,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
       // 1. Yield initial batch from REST response if present
       byte[] initialBytes = null;
-      lock.lock();
-      try {
-        if (!yieldedInitialBatch
-            && initialRecordBatchBytes != null
-            && initialRecordBatchBytes.length > 0) {
-          yieldedInitialBatch = true;
-          initialBytes = initialRecordBatchBytes;
-        } else {
-          yieldedInitialBatch = true;
-        }
-      } finally {
-        lock.unlock();
+      if (!yieldedInitialBatch
+          && initialRecordBatchBytes != null
+          && initialRecordBatchBytes.length > 0) {
+        yieldedInitialBatch = true;
+        initialBytes = initialRecordBatchBytes;
+      } else {
+        yieldedInitialBatch = true;
       }
 
       if (initialBytes != null) {
@@ -439,13 +397,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           peekedResponse = null;
         } else {
           ensureStreamInitialized();
-          Iterator<ReadRowsResponse> iterator = getStreamIterator();
-          if (iterator == null || !iterator.hasNext()) {
+          if (streamIterator == null || !streamIterator.hasNext()) {
             throw new NoSuchElementException("No more Arrow batches available in query stream.");
           }
 
-          while (iterator.hasNext()) {
-            ReadRowsResponse response = iterator.next();
+          while (streamIterator.hasNext()) {
+            ReadRowsResponse response = streamIterator.next();
             if (response.hasArrowRecordBatch()) {
               targetResponse = response;
               break;
@@ -483,58 +440,48 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      *     missing
      */
     private void ensureStreamInitialized() {
-      ReadRowsRequest request;
-      lock.lock();
-      try {
-        if (streamInitialized || closed) {
-          return;
-        }
-        if (totalRows >= 0
-            && totalRowsYielded >= totalRows
-            && (yieldedInitialBatch
-                || initialRecordBatchBytes == null
-                || initialRecordBatchBytes.length == 0)) {
-          streamInitialized = true;
-          return;
-        }
-        if (streamName == null || readClient == null) {
-          if (totalRows > 0 && totalRowsYielded < totalRows) {
-            throw new BigQueryException(
-                0,
-                "Cannot stream query results: stream name or read client is missing, "
-                    + "but there are more rows to read (totalRows="
-                    + totalRows
-                    + ", yielded="
-                    + totalRowsYielded
-                    + ")");
-          }
-          streamInitialized = true;
-          return;
-        }
-        long offset = totalRowsYielded;
-        request = ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
-      } finally {
-        lock.unlock();
+      if (streamInitialized || closed) {
+        return;
       }
+      if (totalRows >= 0
+          && totalRowsYielded >= totalRows
+          && (yieldedInitialBatch
+              || initialRecordBatchBytes == null
+              || initialRecordBatchBytes.length == 0)) {
+        streamInitialized = true;
+        return;
+      }
+      if (streamName == null || readClient == null) {
+        if (totalRows > 0 && totalRowsYielded < totalRows) {
+          throw new BigQueryException(
+              0,
+              "Cannot stream query results: stream name or read client is missing, "
+                  + "but there are more rows to read (totalRows="
+                  + totalRows
+                  + ", yielded="
+                  + totalRowsYielded
+                  + ")");
+        }
+        streamInitialized = true;
+        return;
+      }
+      long offset = totalRowsYielded;
+      ReadRowsRequest request =
+          ReadRowsRequest.newBuilder().setReadStream(streamName).setOffset(offset).build();
 
       ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(request);
 
-      lock.lock();
-      try {
-        if (closed || streamInitialized) {
-          try {
-            stream.cancel();
-          } catch (Throwable t) {
-            // ignore
-          }
-          return;
+      if (closed || streamInitialized) {
+        try {
+          stream.cancel();
+        } catch (Throwable t) {
+          // ignore
         }
-        serverStream = stream;
-        streamIterator = stream.iterator();
-        streamInitialized = true;
-      } finally {
-        lock.unlock();
+        return;
       }
+      serverStream = stream;
+      streamIterator = stream.iterator();
+      streamInitialized = true;
     }
 
     /**
@@ -566,29 +513,24 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      * @throws IOException if deserialization fails
      */
     private void loadBatch(ReadableByteChannel channel) throws IOException {
-      lock.lock();
-      try {
-        checkNotClosed();
-        try (ReadChannel readChannel = new ReadChannel(channel)) {
-          ArrowRecordBatch deserializedBatch =
-              MessageSerializer.deserializeRecordBatch(readChannel, allocator);
-          if (deserializedBatch == null) {
-            throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
-          }
-          boolean loaded = false;
-          try {
-            ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
-            loaded = true;
-          } finally {
-            if (!loaded) {
-              deserializedBatch.close();
-            }
+      checkNotClosed();
+      try (ReadChannel readChannel = new ReadChannel(channel)) {
+        ArrowRecordBatch deserializedBatch =
+            MessageSerializer.deserializeRecordBatch(readChannel, allocator);
+        if (deserializedBatch == null) {
+          throw new IOException("Unexpected end of stream when deserializing ArrowRecordBatch");
+        }
+        boolean loaded = false;
+        try {
+          ArrowQueryResultImpl.this.loadBatch(deserializedBatch);
+          loaded = true;
+        } finally {
+          if (!loaded) {
+            deserializedBatch.close();
           }
         }
-        totalRowsYielded += root.getRowCount();
-      } finally {
-        lock.unlock();
       }
+      totalRowsYielded += root.getRowCount();
     }
   }
 }
