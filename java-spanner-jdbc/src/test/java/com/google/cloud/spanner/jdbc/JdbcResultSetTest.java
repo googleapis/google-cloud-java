@@ -30,6 +30,7 @@ import static org.mockito.Mockito.when;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.ResultSets;
 import com.google.cloud.spanner.Struct;
@@ -54,9 +55,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Types;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.Period;
 import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -1962,5 +1965,84 @@ public class JdbcResultSetTest {
 
     // The copy should not contain any rows.
     assertFalse(copy.next());
+  }
+
+  @Test
+  public void testGetInterval() throws SQLException {
+    Interval interval = Interval.parseFromString("P1Y2M3DT4H5M6S");
+    ResultSet original =
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("col_interval", Type.interval()),
+                StructField.of("col_string", Type.string()),
+                StructField.of("col_int64", Type.int64()),
+                StructField.of("col_null", Type.interval())),
+            ImmutableList.of(
+                Struct.newBuilder()
+                    .set("col_interval")
+                    .to(interval)
+                    .set("col_string")
+                    .to(interval.toString())
+                    .set("col_int64")
+                    .to(100L)
+                    .set("col_null")
+                    .to((Interval) null)
+                    .build()));
+
+    JdbcResultSet resultSet = (JdbcResultSet) JdbcResultSet.of(original);
+    assertTrue(resultSet.next());
+
+    // From INTERVAL column
+    assertEquals(interval, resultSet.getInterval(1));
+    assertEquals(interval, resultSet.getInterval("col_interval"));
+    assertEquals(interval, resultSet.getObject(1, Interval.class));
+    assertEquals(interval, resultSet.getObject("col_interval", Interval.class));
+    assertEquals(interval, resultSet.getObject(1));
+    assertEquals(interval.toString(), resultSet.getString(1));
+
+    // From STRING column
+    assertEquals(interval, resultSet.getInterval(2));
+    assertEquals(interval, resultSet.getInterval("col_string"));
+    assertEquals(interval, resultSet.getObject(2, Interval.class));
+    assertEquals(interval, resultSet.getObject("col_string", Interval.class));
+
+    // Null INTERVAL column
+    assertNull(resultSet.getInterval(4));
+    assertTrue(resultSet.wasNull());
+    assertNull(resultSet.getObject(4, Interval.class));
+    assertNull(resultSet.getObject(4));
+
+    // Invalid column type for getInterval
+    JdbcSqlExceptionImpl sqlException =
+        assertThrows(JdbcSqlExceptionImpl.class, () -> resultSet.getInterval(3));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    // Duration and Period conversions (consistent with pgjdbc)
+    Interval timeInterval = Interval.parseFromString("PT1H30M");
+    Interval dateInterval = Interval.parseFromString("P1Y2M3D");
+    ResultSet timeAndDateRows =
+        ResultSets.forRows(
+            Type.struct(
+                StructField.of("col_time", Type.interval()),
+                StructField.of("col_date", Type.interval())),
+            ImmutableList.of(
+                Struct.newBuilder()
+                    .set("col_time")
+                    .to(timeInterval)
+                    .set("col_date")
+                    .to(dateInterval)
+                    .build()));
+    JdbcResultSet rs2 = (JdbcResultSet) JdbcResultSet.of(timeAndDateRows);
+    assertTrue(rs2.next());
+    assertEquals(Duration.ofMinutes(90), rs2.getObject(1, Duration.class));
+    assertEquals(Period.of(1, 2, 3), rs2.getObject(2, Period.class));
+
+    // Converting time interval to Period should fail
+    sqlException = assertThrows(JdbcSqlExceptionImpl.class, () -> rs2.getObject(1, Period.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    // Converting date interval (with months) to Duration should fail
+    sqlException = assertThrows(JdbcSqlExceptionImpl.class, () -> rs2.getObject(2, Duration.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
   }
 }
