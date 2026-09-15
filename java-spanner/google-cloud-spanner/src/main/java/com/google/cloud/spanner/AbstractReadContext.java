@@ -1301,6 +1301,7 @@ abstract class AbstractReadContext
                     request.getLastStatement(),
                     prefetchChunks,
                     cancelQueryWhenClientIsClosed);
+            setStream(stream);
             if (streamListener != null) {
               stream.registerListener(streamListener);
             }
@@ -1536,6 +1537,7 @@ abstract class AbstractReadContext
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
                     lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed);
+            setStream(stream);
             if (streamListener != null) {
               stream.registerListener(streamListener);
             }

@@ -43,9 +43,10 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Wraps an iterator over partial result sets, supporting resuming RPCs on error. This class keeps
@@ -64,14 +65,24 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   private final Set<Code> retryableCodes;
   private static final Logger logger = Logger.getLogger(ResumableStreamIterator.class.getName());
   private BackOff backOff;
-  private final LinkedList<PartialResultSet> buffer = new LinkedList<>();
+  @VisibleForTesting final LinkedList<PartialResultSet> buffer = new LinkedList<>();
   private final int maxBufferSize;
   private final ISpan span;
   private final TraceWrapper tracer;
-  private CloseableIterator<PartialResultSet> stream;
+
+  /** Guards state transitions between {@link #stream} and {@link #closed}. */
+  private final Object streamLock = new Object();
+
+  /** Indicates whether this iterator has been closed. */
+  private volatile boolean closed;
+
+  /** Ensures the tracing span is finalized at most once. */
+  private final AtomicBoolean spanEnded = new AtomicBoolean(false);
+
+  private volatile CloseableIterator<PartialResultSet> stream;
   private int attempts;
   private ByteString resumeToken;
-  private boolean finished;
+  private volatile boolean finished;
   private final XGoogSpannerRequestId requestId;
 
   /**
@@ -79,7 +90,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
    * reached the maximum buffer size without seeing a restart token; in this case, we will drain the
    * buffer and remain in this state until we see a new restart token.
    */
-  private boolean safeToRetry = true;
+  private volatile boolean safeToRetry = true;
 
   protected ResumableStreamIterator(
       int maxBufferSize,
@@ -123,7 +134,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     this.requestId = xGoogRequestIdCreator.nextRequestId(0);
   }
 
-  private ExponentialBackOff newBackOff() {
+  @VisibleForTesting
+  ExponentialBackOff newBackOff() {
     if (Objects.equals(streamingRetrySettings, DEFAULT_STREAMING_RETRY_SETTINGS)) {
       return new ExponentialBackOff.Builder()
           .setMultiplier(streamingRetrySettings.getRetryDelayMultiplier())
@@ -163,7 +175,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     backoffSleep(context, nextBackOffMillis(backoff));
   }
 
-  private static long nextBackOffMillis(BackOff backoff) throws SpannerException {
+  @VisibleForTesting
+  static long nextBackOffMillis(BackOff backoff) throws SpannerException {
     try {
       return backoff.nextBackOffMillis();
     } catch (IOException e) {
@@ -219,13 +232,76 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     return false;
   }
 
+  /** Ensures the tracing span opened in the constructor is ended exactly once. */
+  private void endSpanOnce() {
+    if (spanEnded.compareAndSet(false, true)) {
+      span.end();
+    }
+  }
+
+  /**
+   * Safely attaches a newly initialized gRPC stream. If {@link #close(String)} was called while
+   * stream acquisition was in flight, the newly acquired stream is immediately closed and discarded
+   * rather than being resurrected or leaked.
+   *
+   * @param streamToAssign the newly opened stream iterator
+   * @param requestPrefetch whether to eagerly request initial prefetch chunks if attached
+   */
+  private void assignStream(
+      CloseableIterator<PartialResultSet> streamToAssign, boolean requestPrefetch) {
+    boolean isClosed;
+    synchronized (streamLock) {
+      isClosed = this.closed;
+      if (!isClosed) {
+        this.stream = streamToAssign;
+      }
+    }
+    if (isClosed) {
+      if (streamToAssign != null) {
+        streamToAssign.close(null);
+      }
+      endSpanOnce();
+    } else if (requestPrefetch && streamToAssign != null) {
+      streamToAssign.requestPrefetchChunks();
+    }
+  }
+
+  /** Resets the active stream reference during retries or channel failovers. */
+  private void resetStream() {
+    synchronized (streamLock) {
+      this.stream = null;
+    }
+  }
+
+  /**
+   * Registers the active stream early during {@code startStream()} setup so that in-flight RPCs can
+   * be cancelled immediately if {@link #close(String)} is invoked before {@code startStream()}
+   * returns.
+   */
+  void setStream(CloseableIterator<PartialResultSet> stream) {
+    assignStream(stream, /* requestPrefetch= */ false);
+  }
+
   @Override
   public void close(@Nullable String message) {
-    if (stream != null) {
-      stream.close(message);
-      span.end();
-      stream = null;
+    CloseableIterator<PartialResultSet> streamToClose;
+    synchronized (streamLock) {
+      closed = true;
+      streamToClose = this.stream;
+      this.stream = null;
     }
+    // Perform stream teardown outside the lock to prevent deadlocks with external callbacks.
+    if (streamToClose != null) {
+      streamToClose.close(message);
+    }
+    endSpanOnce();
+    synchronized (buffer) {
+      buffer.clear();
+    }
+  }
+
+  boolean isClosed() {
+    return closed;
   }
 
   @Override
@@ -247,20 +323,55 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   }
 
   @Override
+  public boolean isDataAvailable() {
+    // If closed, return true to unblock any waiting async consumer so it can observe EOF/closure
+    // instead of hanging indefinitely.
+    if (closed) {
+      return true;
+    }
+    synchronized (buffer) {
+      if (!buffer.isEmpty()
+          && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
+        return true;
+      }
+    }
+    if (finished) {
+      return true;
+    }
+    CloseableIterator<PartialResultSet> currentStream = this.stream;
+    return currentStream != null && currentStream.isDataAvailable();
+  }
+
+  @Override
   protected PartialResultSet computeNext() {
     int numAttemptsOnOtherChannel = 0;
     Context context = Context.current();
-    while (true) {
+    while (!closed) {
       // Eagerly start stream before consuming any buffered items.
       startGrpcStreaming();
+      if (closed) {
+        break;
+      }
       // Buffer contains items up to a resume token or has reached capacity: flush.
-      if (!buffer.isEmpty()
-          && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
-        return buffer.pop();
+      PartialResultSet buffered = null;
+      synchronized (buffer) {
+        if (!buffer.isEmpty()
+            && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
+          buffered = buffer.pop();
+        }
+      }
+      if (buffered != null) {
+        return buffered;
+      }
+      // Snapshot the volatile stream reference to guard against concurrent close() nulling the
+      // field between check and dereference.
+      CloseableIterator<PartialResultSet> currentStream = this.stream;
+      if (currentStream == null) {
+        break;
       }
       try {
-        if (stream.hasNext()) {
-          PartialResultSet next = stream.next();
+        if (currentStream.hasNext()) {
+          PartialResultSet next = currentStream.next();
           boolean hasResumeToken = !next.getResumeToken().isEmpty();
           if (hasResumeToken) {
             resumeToken = next.getResumeToken();
@@ -269,20 +380,23 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
           // If the buffer is empty and this chunk has a resume token or we cannot resume safely
           // anyway, we can yield it immediately rather than placing it in the buffer to be
           // returned on the next iteration.
-          if ((hasResumeToken || !safeToRetry) && buffer.isEmpty()) {
-            return next;
-          }
-          buffer.add(next);
-          if (buffer.size() > maxBufferSize && buffer.getLast().getResumeToken().isEmpty()) {
-            // We need to flush without a restart token.  Errors encountered until we see
-            // such a token will fail the read.
-            safeToRetry = false;
+          synchronized (buffer) {
+            if ((hasResumeToken || !safeToRetry) && buffer.isEmpty()) {
+              return next;
+            }
+            buffer.add(next);
+            if (buffer.size() > maxBufferSize && buffer.getLast().getResumeToken().isEmpty()) {
+              // We need to flush without a restart token.  Errors encountered until we see
+              // such a token will fail the read.
+              safeToRetry = false;
+            }
           }
         } else {
           finished = true;
-          if (buffer.isEmpty()) {
-            endOfData();
-            return null;
+          synchronized (buffer) {
+            if (buffer.isEmpty()) {
+              break;
+            }
           }
         }
       } catch (SpannerException spannerException) {
@@ -290,12 +404,14 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
           span.addAnnotation("Stream broken. Safe to retry", spannerException);
           logger.log(Level.FINE, "Retryable exception, will sleep and retry", spannerException);
           // Truncate any items in the buffer before the last retry token.
-          while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
-            buffer.removeLast();
+          synchronized (buffer) {
+            while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
+              buffer.removeLast();
+            }
+            assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
           }
-          assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
-          stream = null;
-          try (IScope s = tracer.withSpan(span)) {
+          resetStream();
+          try (IScope scope = tracer.withSpan(span)) {
             long delay = spannerException.getRetryDelayInMillis();
             if (delay != -1) {
               backoffSleep(context, delay);
@@ -310,12 +426,16 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
           continue;
         }
         // Check if we should retry the request on a different gRPC channel.
-        if (resumeToken == null && buffer.isEmpty()) {
+        boolean bufferIsEmpty;
+        synchronized (buffer) {
+          bufferIsEmpty = buffer.isEmpty();
+        }
+        if (resumeToken == null && bufferIsEmpty) {
           Throwable translated = errorHandler.translateException(spannerException);
           if (translated instanceof RetryOnDifferentGrpcChannelException) {
             if (++numAttemptsOnOtherChannel < errorHandler.getMaxAttempts()
                 && prepareIteratorForRetryOnDifferentGrpcChannel()) {
-              stream = null;
+              resetStream();
               continue;
             }
           }
@@ -329,20 +449,30 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
         throw e;
       }
     }
+    endOfData();
+    return null;
   }
 
+  /**
+   * Lazily starts the underlying gRPC stream under {@link #streamLock} if streaming has not already
+   * been initiated and the iterator has not been closed.
+   */
   private void startGrpcStreaming() {
-    if (stream == null) {
-      span.addAnnotation(
-          "Starting/Resuming stream",
-          "ResumeToken",
-          resumeToken == null ? "null" : resumeToken.toStringUtf8());
-      try (IScope scope = tracer.withSpan(span)) {
-        // When start a new stream set the Span as current to make the gRPC Span a child of
-        // this Span.
-        stream = checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
-        stream.requestPrefetchChunks();
+    synchronized (streamLock) {
+      if (stream != null || closed) {
+        return;
       }
+    }
+    span.addAnnotation(
+        "Starting/Resuming stream",
+        "ResumeToken",
+        resumeToken == null ? "null" : resumeToken.toStringUtf8());
+    try (IScope scope = tracer.withSpan(span)) {
+      // When start a new stream set the Span as current to make the gRPC Span a child of
+      // this Span.
+      CloseableIterator<PartialResultSet> streamIterator =
+          checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
+      assignStream(streamIterator, /* requestPrefetch= */ true);
     }
   }
 
