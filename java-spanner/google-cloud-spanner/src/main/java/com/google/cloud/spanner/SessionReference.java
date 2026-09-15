@@ -38,6 +38,7 @@ class SessionReference {
   private volatile Instant lastUseTime;
   @Nullable private final Instant createTime;
   private final boolean isMultiplexed;
+  private volatile DatabaseMetadata databaseMetadata;
 
   SessionReference(String name, @Nullable String databaseRole, Map<SpannerRpc.Option, ?> options) {
     this.options = options;
@@ -90,6 +91,15 @@ class SessionReference {
 
   boolean getIsMultiplexed() {
     return isMultiplexed;
+  }
+
+  @Nullable
+  DatabaseMetadata getDatabaseMetadata() {
+    return databaseMetadata;
+  }
+
+  void setDatabaseMetadata(DatabaseMetadata databaseMetadata) {
+    this.databaseMetadata = databaseMetadata;
   }
 
   void markUsed(Instant instant) {

@@ -54,6 +54,8 @@ import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.ArrayList;
 import java.util.List;
@@ -223,7 +225,18 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     private CommitResponse commitResponse;
     private final Clock clock;
 
+    private final boolean routeToLeader;
     private final Map<SpannerRpc.Option, ?> channelHint;
+
+    private static final class TransactionMode {
+      private final IsolationLevel isolationLevel;
+      private final ReadLockMode readLockMode;
+
+      TransactionMode(IsolationLevel isolationLevel, ReadLockMode readLockMode) {
+        this.isolationLevel = isolationLevel;
+        this.readLockMode = readLockMode;
+      }
+    }
 
     private TransactionContextImpl(Builder builder) {
       super(builder);
@@ -238,6 +251,81 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
               ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
               session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
       this.previousTransactionId = builder.previousTransactionId;
+
+      TransactionMode effectiveMode = resolveEffectiveMode(this.options);
+      this.routeToLeader = !canEnableLRYW(effectiveMode);
+    }
+
+    /**
+     * Resolves the effective isolation level and read lock mode using the following precedence: 1.
+     * Call-site options explicitly passed to the transaction (`callSite`). 2. Client-side static
+     * default transaction options configured on `SpannerOptions`. 3. Database-level defaults
+     * queried from `INFORMATION_SCHEMA.DATABASE_OPTIONS` (`dbDefaults`). 4. Hardcoded spanner
+     * defaults (`SERIALIZABLE` isolation level).
+     */
+    private TransactionMode resolveEffectiveMode(Options callSite) {
+      IsolationLevel isolationLevel = callSite.isolationLevel();
+      ReadLockMode readLockMode = callSite.readLockMode();
+
+      TransactionOptions defaultTxOptions = null;
+      if (session.getSpanner() != null && session.getSpanner().getOptions() != null) {
+        defaultTxOptions = session.getSpanner().getOptions().getDefaultTransactionOptions();
+      }
+      if (defaultTxOptions != null) {
+        if (isUnspecified(isolationLevel)) {
+          isolationLevel = defaultTxOptions.getIsolationLevel();
+        }
+        if (isUnspecified(readLockMode) && defaultTxOptions.hasReadWrite()) {
+          readLockMode = defaultTxOptions.getReadWrite().getReadLockMode();
+        }
+      }
+
+      DatabaseMetadata dbDefaults = null;
+      if (session.getSessionReference() != null) {
+        dbDefaults = session.getSessionReference().getDatabaseMetadata();
+      }
+      if (dbDefaults != null) {
+        if (isUnspecified(isolationLevel)) {
+          isolationLevel = dbDefaults.getIsolationLevel();
+        }
+        if (isUnspecified(readLockMode)) {
+          readLockMode = dbDefaults.getReadLockMode();
+        }
+      }
+
+      if (isUnspecified(isolationLevel)) {
+        isolationLevel = IsolationLevel.SERIALIZABLE;
+      }
+      // For REPEATABLE_READ, keep lock mode unspecified/null when not explicitly set so that
+      // canEnableLRYW evaluates to true for Leader-Routed Read-Your-Writes.
+      if (isUnspecified(readLockMode) && isolationLevel != IsolationLevel.REPEATABLE_READ) {
+        readLockMode = ReadLockMode.PESSIMISTIC;
+      }
+
+      return new TransactionMode(isolationLevel, readLockMode);
+    }
+
+    private static boolean isUnspecified(IsolationLevel level) {
+      return level == null
+          || level == IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED
+          || level == IsolationLevel.UNRECOGNIZED;
+    }
+
+    private static boolean isUnspecified(ReadLockMode mode) {
+      return mode == null
+          || mode == ReadLockMode.READ_LOCK_MODE_UNSPECIFIED
+          || mode == ReadLockMode.UNRECOGNIZED;
+    }
+
+    /**
+     * Determines whether Leader-Routed Read-Your-Writes (LRYW) can be enabled (`routeToLeader =
+     * false`). LRYW is enabled when readLockMode is OPTIMISTIC, or when isolation level is
+     * REPEATABLE_READ and readLockMode is unspecified.
+     */
+    private static boolean canEnableLRYW(TransactionMode mode) {
+      return mode.readLockMode == ReadLockMode.OPTIMISTIC
+          || (mode.isolationLevel == IsolationLevel.REPEATABLE_READ
+              && isUnspecified(mode.readLockMode));
     }
 
     @Override
@@ -247,7 +335,7 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
     @Override
     protected boolean isRouteToLeader() {
-      return true;
+      return routeToLeader;
     }
 
     private void increaseAsyncOperations() {
