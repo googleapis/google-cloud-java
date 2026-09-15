@@ -34,12 +34,16 @@ public class AsyncSlowFibonacci {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create()) {
-      FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
-      ApiFuture<Empty> future = deprecatedServiceClient.slowFibonacciCallable().futureCall(request);
-      // Do something.
-      future.get();
-    }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
+    FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
+    ApiFuture<Empty> future = deprecatedServiceClient.slowFibonacciCallable().futureCall(request);
+    // Do something.
+    future.get();
   }
 }
 // [END goldensample_generated_DeprecatedService_SlowFibonacci_async]

@@ -108,7 +108,7 @@ public class ClientLibraryPackageInfoComposer {
           ServiceClientHeaderSampleComposer.composeClassHeaderSample(
               service, clientType, context.resourceNames(), context.messages());
       javaDocCommentBuilder.addSampleCode(
-          SampleCodeWriter.writeInlineSample(packageInfoSampleCode.body()));
+          SampleCodeWriter.writeInlineSample(packageInfoSampleCode));
     }
 
     return CommentStatement.withComment(javaDocCommentBuilder.build());
