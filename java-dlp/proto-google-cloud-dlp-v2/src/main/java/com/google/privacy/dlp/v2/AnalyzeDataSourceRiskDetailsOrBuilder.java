@@ -104,11 +104,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Numerical stats result
+   * Output only. Numerical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the numericalStatsResult field is set.
@@ -119,11 +119,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Numerical stats result
+   * Output only. Numerical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The numericalStatsResult.
@@ -135,11 +135,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Numerical stats result
+   * Output only. Numerical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResult numerical_stats_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.NumericalStatsResultOrBuilder
@@ -149,11 +149,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Categorical stats result
+   * Output only. Categorical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the categoricalStatsResult field is set.
@@ -164,11 +164,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Categorical stats result
+   * Output only. Categorical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The categoricalStatsResult.
@@ -180,11 +180,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Categorical stats result
+   * Output only. Categorical stats result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResult categorical_stats_result = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.CategoricalStatsResultOrBuilder
@@ -194,11 +194,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-anonymity result
+   * Output only. K-anonymity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the kAnonymityResult field is set.
@@ -209,11 +209,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-anonymity result
+   * Output only. K-anonymity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The kAnonymityResult.
@@ -224,11 +224,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-anonymity result
+   * Output only. K-anonymity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResult k_anonymity_result = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KAnonymityResultOrBuilder
@@ -238,11 +238,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * L-divesity result
+   * Output only. L-divesity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the lDiversityResult field is set.
@@ -253,11 +253,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * L-divesity result
+   * Output only. L-divesity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The lDiversityResult.
@@ -268,11 +268,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * L-divesity result
+   * Output only. L-divesity result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResult l_diversity_result = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.LDiversityResultOrBuilder
@@ -282,11 +282,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-map result
+   * Output only. K-map result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the kMapEstimationResult field is set.
@@ -297,11 +297,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-map result
+   * Output only. K-map result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The kMapEstimationResult.
@@ -313,11 +313,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * K-map result
+   * Output only. K-map result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResult k_map_estimation_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.KMapEstimationResultOrBuilder
@@ -327,11 +327,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Delta-presence result
+   * Output only. Delta-presence result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the deltaPresenceEstimationResult field is set.
@@ -342,11 +342,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Delta-presence result
+   * Output only. Delta-presence result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The deltaPresenceEstimationResult.
@@ -358,11 +358,11 @@ public interface AnalyzeDataSourceRiskDetailsOrBuilder
    *
    *
    * <pre>
-   * Delta-presence result
+   * Output only. Delta-presence result
    * </pre>
    *
    * <code>
-   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9;
+   * .google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResult delta_presence_estimation_result = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails.DeltaPresenceEstimationResultOrBuilder

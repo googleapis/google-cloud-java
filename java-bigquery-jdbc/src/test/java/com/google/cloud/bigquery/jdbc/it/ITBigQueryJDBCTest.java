@@ -54,7 +54,10 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
@@ -103,7 +106,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
@@ -131,8 +133,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(123.456789, resultSet.getDouble(5), 0.0);
     assertEquals("testString", resultSet.getString(6));
     assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
+    assertEquals(expectedTimestamp, resultSet.getTimestamp(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
@@ -341,7 +344,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDefaultDatasetWithProject() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ".testDataset";
+        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ":testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -2508,9 +2511,62 @@ public class ITBigQueryJDBCTest extends ITBase {
     }
   }
 
+  private void validateNull(
+      String method,
+      BiFunction<ResultSet, Integer, Object> getter,
+      ImmutableMap<String, Object> expectedResult,
+      Object expectedDefaultValue)
+      throws Exception {
+
+    try (Connection connection = DriverManager.getConnection(connection_uri);
+        Connection connectionHTAPI =
+            DriverManager.getConnection(
+                connection_uri
+                    + ";HighThroughputMinTableSize=0;HighThroughputActivationRatio=0;EnableHighThroughputAPI=1;");
+        Statement statement = connection.createStatement();
+        Statement statementHTAPI = connectionHTAPI.createStatement()) {
+
+      String query =
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null", PROJECT_ID, DATASET);
+      ResultSet resultSetRegular = statement.executeQuery(query);
+      ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
+      resultSetRegular.next();
+      resultSetArrow.next();
+
+      for (int i = 1; i <= resultSetRegular.getMetaData().getColumnCount(); i++) {
+        String columnName = resultSetRegular.getMetaData().getColumnName(i);
+        if (!columnName.contains("array") && expectedResult.containsKey(columnName)) {
+          String regularApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: Regular] [Null Scenario]", method, columnName);
+          String htapiApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: HTAPI] [Null Scenario]", method, columnName);
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetRegular, i), regularApiLabel);
+          assertTrue(resultSetRegular.wasNull(), regularApiLabel + " wasNull should be true");
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetArrow, i), htapiApiLabel);
+          assertTrue(resultSetArrow.wasNull(), htapiApiLabel + " wasNull should be true");
+        }
+      }
+    }
+  }
+
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetString() throws Exception {
+    DateTimeFormatter timestampFormatter =
+        DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+    String expectedTimestampString =
+        timestampFormatter.format(
+            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDateTime());
+    String expectedArrayTimestamp =
+        String.format(
+            "[%s, %s]",
+            Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
+            Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
+
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
             .put("stringField", "StringValue")
@@ -2520,7 +2576,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("numericField", "12345.67")
             .put("bigNumericField", "98765432109876543210.123456789")
             .put("booleanField", "true")
-            .put("timestampFiled", "2023-07-28 12:30:00.000000")
+            .put("timestampFiled", expectedTimestampString)
             .put("dateField", "2023-07-28")
             .put("timeField", "12:30:00.000")
             .put("dateTimeField", "2023-07-28 12:30:00.000000")
@@ -2537,7 +2593,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayNumeric", "[10.5, 20.5]")
             .put("arrayBignumeric", "[100.1, 200.2]")
             .put("arrayBoolean", "[true, false]")
-            .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
+            .put("arrayTimestamp", expectedArrayTimestamp)
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
             .put("arrayTime", "[01:00:00, 02:00:00]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
@@ -2555,6 +2611,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getString", getter, stringResults);
+    validateNull("getString", getter, stringResults, null);
   }
 
   @Test
@@ -2575,6 +2632,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getInt", getter, result);
+    validateNull("getInt", getter, result, 0);
   }
 
   @Test
@@ -2595,6 +2653,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getLong", getter, result);
+    validateNull("getLong", getter, result, 0L);
   }
 
   @Test
@@ -2617,6 +2676,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getBool", getter, result);
+    validateNull("getBool", getter, result, false);
   }
 
   @Test
@@ -2638,6 +2698,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getFloat", getter, result);
+    validateNull("getFloat", getter, result, 0.0f);
   }
 
   @Test
@@ -2659,6 +2720,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDouble", getter, result);
+    validateNull("getDouble", getter, result, 0.0d);
   }
 
   @Test
@@ -2679,16 +2741,18 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getShort", getter, result);
+    validateNull("getShort", getter, result, (short) 0);
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTime() throws Exception {
+    LocalTime expectedTimestampLocalTime =
+        Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalTime();
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Time.valueOf("12:30:00"))
             .put("dateTimeField", Time.valueOf("12:30:00"))
-            .put("timestampFiled", Time.valueOf("12:30:00"))
+            .put("timestampFiled", Time.valueOf(expectedTimestampLocalTime))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
@@ -2699,6 +2763,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTime", getter, result);
+    validateNull("getTime", getter, result, null);
   }
 
   @Test
@@ -2718,17 +2783,17 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDate", getter, result);
+    validateNull("getDate", getter, result, null);
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTimestamp() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Timestamp.valueOf("1970-01-01 12:30:00"))
             .put("dateField", Timestamp.valueOf("2023-07-28 00:00:00"))
             .put("dateTimeField", Timestamp.valueOf("2023-07-28 12:30:00"))
-            .put("timestampFiled", Timestamp.valueOf("2023-07-28 12:30:00"))
+            .put("timestampFiled", Timestamp.from(Instant.parse("2023-07-28T12:30:00Z")))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
@@ -2739,6 +2804,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTimestamp", getter, result);
+    validateNull("getTimestamp", getter, result, null);
   }
 
   @Test
@@ -2758,6 +2824,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getByte", getter, result);
+    validateNull("getByte", getter, result, (byte) 0);
   }
 
   @Test

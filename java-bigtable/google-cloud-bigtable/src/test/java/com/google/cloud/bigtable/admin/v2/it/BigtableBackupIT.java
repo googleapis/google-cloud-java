@@ -76,11 +76,23 @@ public class BigtableBackupIT {
   private static BigtableInstanceAdminClient instanceAdmin;
   private static BigtableDataClient dataClient;
 
+  /**
+   * The RestoreTable API only kicks off an optimize-restored-table operation once the backup is a
+   * couple of minutes old. Rather than have every restore test block for the full duration, the
+   * backups they restore from are created up front in {@link #setUpClass()} and the tests only wait
+   * for whatever is left of the window once the rest of the class has run.
+   */
+  private static final Duration RESTORE_BACKUP_MIN_AGE = Duration.ofMinutes(2);
+
   private static String targetCluster;
   private static String targetClusterHot;
   private static Table testTable;
   private static Table testTableHot;
   private static Instance testInstance;
+
+  private static String restoreBackupId;
+  private static String crossInstanceRestoreBackupId;
+  private static Stopwatch restoreBackupAge;
 
   @BeforeClass
   public static void setUpClass() throws InterruptedException, IOException {
@@ -115,10 +127,36 @@ public class BigtableBackupIT {
     testTableHot =
         tableAdminHot.createTable(
             CreateTableRequest.of(PrefixGenerator.newPrefix("hot-table")).addFamily("cf"));
+
+    // Start the RESTORE_BACKUP_MIN_AGE clock now so the restore tests can overlap it with the rest
+    // of the class instead of each sleeping through it.
+    restoreBackupId = PrefixGenerator.newPrefix("restore");
+    crossInstanceRestoreBackupId = PrefixGenerator.newPrefix("cross-instance-restore");
+    tableAdmin.createBackup(createBackupRequest(restoreBackupId));
+    tableAdmin.createBackup(createBackupRequest(crossInstanceRestoreBackupId));
+    restoreBackupAge = Stopwatch.createStarted();
+  }
+
+  /** Blocks until the backups created by {@link #setUpClass()} are old enough to restore from. */
+  private static void awaitRestorableBackups() throws InterruptedException {
+    long remainingMillis =
+        RESTORE_BACKUP_MIN_AGE.toMillis() - restoreBackupAge.elapsed(TimeUnit.MILLISECONDS);
+    if (remainingMillis > 0) {
+      Thread.sleep(remainingMillis);
+    }
   }
 
   @AfterClass
   public static void tearDownClass() {
+    for (String backupId : new String[] {restoreBackupId, crossInstanceRestoreBackupId}) {
+      if (backupId != null) {
+        try {
+          tableAdmin.deleteBackup(targetCluster, backupId);
+        } catch (Exception e) {
+          // Ignore, the owning test deletes it on the happy path.
+        }
+      }
+    }
     if (testTable != null) {
       try {
         tableAdmin.deleteTable(testTable.getId());
@@ -314,13 +352,12 @@ public class BigtableBackupIT {
 
   @Test
   public void restoreTableTest() throws InterruptedException, ExecutionException {
-    String backupId = prefixGenerator.newPrefix();
+    String backupId = restoreBackupId;
     String restoredTableId = prefixGenerator.newPrefix();
-    tableAdmin.createBackup(createBackupRequest(backupId));
 
-    // Wait 2 minutes so that the RestoreTable API will trigger an optimize restored
+    // Wait until the backup is old enough for the RestoreTable API to trigger an optimize restored
     // table operation.
-    Thread.sleep(120 * 1000);
+    awaitRestorableBackups();
 
     try {
       RestoreTableRequest req =
@@ -348,16 +385,8 @@ public class BigtableBackupIT {
   @Test
   public void crossInstanceRestoreTest()
       throws InterruptedException, IOException, ExecutionException, TimeoutException {
-    String backupId = prefixGenerator.newPrefix();
+    String backupId = crossInstanceRestoreBackupId;
     String restoredTableId = prefixGenerator.newPrefix();
-
-    // Create the backup
-    tableAdmin.createBackup(
-        CreateBackupRequest.of(targetCluster, backupId)
-            .setSourceTableId(testTable.getId())
-            .setExpireTime(Instant.now().plus(Duration.ofHours(6))));
-
-    Stopwatch stopwatch = Stopwatch.createStarted();
 
     // Set up a new instance to test cross-instance restore. The backup will be restored here
     String targetInstance = prefixGenerator.newPrefix();
@@ -371,12 +400,9 @@ public class BigtableBackupIT {
     try (BigtableTableAdminClient destTableAdmin =
         testEnvRule.env().getTableAdminClientForInstance(targetInstance)) {
 
-      // Wait 2 minutes so that the RestoreTable API will trigger an optimize restored
-      // table operation.
-      Thread.sleep(
-          Duration.ofMinutes(2)
-              .minus(Duration.ofMillis(stopwatch.elapsed(TimeUnit.MILLISECONDS)))
-              .toMillis());
+      // Wait until the backup is old enough for the RestoreTable API to trigger an optimize
+      // restored table operation.
+      awaitRestorableBackups();
 
       try {
         RestoreTableRequest req =
@@ -534,7 +560,7 @@ public class BigtableBackupIT {
     }
   }
 
-  private CreateBackupRequest createBackupRequest(String backupId) {
+  private static CreateBackupRequest createBackupRequest(String backupId) {
     return CreateBackupRequest.of(targetCluster, backupId)
         .setSourceTableId(testTable.getId())
         .setExpireTime(Instant.now().plus(Duration.ofDays(15)));

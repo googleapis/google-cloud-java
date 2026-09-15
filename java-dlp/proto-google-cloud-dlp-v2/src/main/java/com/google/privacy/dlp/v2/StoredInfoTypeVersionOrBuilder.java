@@ -67,11 +67,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -81,11 +82,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -95,11 +97,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -107,11 +110,13 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Stored info type version state. Read-only, updated by the system
-   * during dictionary creation.
+   * Output only. Stored info type version state. Read-only, updated by the
+   * system during dictionary creation.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -121,11 +126,13 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Stored info type version state. Read-only, updated by the system
-   * during dictionary creation.
+   * Output only. Stored info type version state. Read-only, updated by the
+   * system during dictionary creation.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -135,10 +142,10 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -150,7 +157,9 @@ public interface StoredInfoTypeVersionOrBuilder
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
 
@@ -158,10 +167,10 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -173,7 +182,9 @@ public interface StoredInfoTypeVersionOrBuilder
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
 
@@ -181,10 +192,10 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -196,7 +207,9 @@ public interface StoredInfoTypeVersionOrBuilder
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getErrorsCount();
 
@@ -204,10 +217,10 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -219,7 +232,9 @@ public interface StoredInfoTypeVersionOrBuilder
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
 
@@ -227,10 +242,10 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -242,7 +257,9 @@ public interface StoredInfoTypeVersionOrBuilder
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
@@ -250,10 +267,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the stats field is set.
    */
@@ -263,10 +282,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The stats.
    */
@@ -276,10 +297,12 @@ public interface StoredInfoTypeVersionOrBuilder
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder();
 }

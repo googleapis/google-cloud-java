@@ -54,6 +54,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
 
   private AnswerQueryRequest() {
     query_ = "";
+    filter_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,6 +125,147 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object filter_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Applies a strict filter to the search results used to ground the
+   * answer. The expression supports a subset of the syntax described at
+   * https://google.aip.dev/160.
+   *
+   * Supported fields for filtering:
+   *
+   * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+   * field in bytes.
+   * * `data_source` (STRING): The source of the document, e.g.
+   * `docs.cloud.google.com`. See
+   * https://developers.google.com/knowledge/reference/corpus-reference for
+   * the complete list of data sources in the corpus.
+   * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+   * meaningfully updated. A meaningful update is one that changes document's
+   * markdown content or metadata.
+   * * `uri` (STRING): The document URI, e.g.
+   * `https://docs.cloud.google.com/bigquery/docs/tables`.
+   *
+   * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+   *
+   * STRING fields support `=` (equals) and `!=` (not equals) operators for
+   * **exact match** on the whole string. Partial match, prefix match, and
+   * regexp match are not supported.
+   *
+   * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+   * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+   *
+   * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+   * operators. `OR` has higher precedence than `AND`. Use parentheses for
+   * explicit precedence grouping.
+   *
+   * Examples:
+   *
+   * * Filter by `Document.content_length_bytes`:
+   * `content_length_bytes &lt; 50000`
+   * * `data_source = "docs.cloud.google.com" OR data_source =
+   * "firebase.google.com"`
+   * * `data_source != "firebase.google.com"`
+   * * `update_time &lt; "2024-01-01T00:00:00Z"`
+   * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+   * "developer.chrome.com" OR data_source = "web.dev")`
+   * * `uri = "https://docs.cloud.google.com/release-notes"`
+   *
+   * The `filter` string must not exceed 500 characters; values longer than 500
+   * characters will result in an `INVALID_ARGUMENT` error.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Applies a strict filter to the search results used to ground the
+   * answer. The expression supports a subset of the syntax described at
+   * https://google.aip.dev/160.
+   *
+   * Supported fields for filtering:
+   *
+   * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+   * field in bytes.
+   * * `data_source` (STRING): The source of the document, e.g.
+   * `docs.cloud.google.com`. See
+   * https://developers.google.com/knowledge/reference/corpus-reference for
+   * the complete list of data sources in the corpus.
+   * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+   * meaningfully updated. A meaningful update is one that changes document's
+   * markdown content or metadata.
+   * * `uri` (STRING): The document URI, e.g.
+   * `https://docs.cloud.google.com/bigquery/docs/tables`.
+   *
+   * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+   *
+   * STRING fields support `=` (equals) and `!=` (not equals) operators for
+   * **exact match** on the whole string. Partial match, prefix match, and
+   * regexp match are not supported.
+   *
+   * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+   * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+   *
+   * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+   * operators. `OR` has higher precedence than `AND`. Use parentheses for
+   * explicit precedence grouping.
+   *
+   * Examples:
+   *
+   * * Filter by `Document.content_length_bytes`:
+   * `content_length_bytes &lt; 50000`
+   * * `data_source = "docs.cloud.google.com" OR data_source =
+   * "firebase.google.com"`
+   * * `data_source != "firebase.google.com"`
+   * * `update_time &lt; "2024-01-01T00:00:00Z"`
+   * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+   * "developer.chrome.com" OR data_source = "web.dev")`
+   * * `uri = "https://docs.cloud.google.com/release-notes"`
+   *
+   * The `filter` string must not exceed 500 characters; values longer than 500
+   * characters will result in an `INVALID_ARGUMENT` error.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -141,6 +283,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(query_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, query_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, filter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +297,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(query_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, query_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, filter_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +318,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
         (com.google.developers.knowledge.v1.AnswerQueryRequest) obj;
 
     if (!getQuery().equals(other.getQuery())) return false;
+    if (!getFilter().equals(other.getFilter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +332,8 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + QUERY_FIELD_NUMBER;
     hash = (53 * hash) + getQuery().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -326,6 +477,7 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       query_ = "";
+      filter_ = "";
       return this;
     }
 
@@ -365,6 +517,9 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.query_ = query_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.filter_ = filter_;
+      }
     }
 
     @java.lang.Override
@@ -383,6 +538,11 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       if (!other.getQuery().isEmpty()) {
         query_ = other.query_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -417,6 +577,12 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                filter_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -543,6 +709,337 @@ public final class AnswerQueryRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       query_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applies a strict filter to the search results used to ground the
+     * answer. The expression supports a subset of the syntax described at
+     * https://google.aip.dev/160.
+     *
+     * Supported fields for filtering:
+     *
+     * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+     * field in bytes.
+     * * `data_source` (STRING): The source of the document, e.g.
+     * `docs.cloud.google.com`. See
+     * https://developers.google.com/knowledge/reference/corpus-reference for
+     * the complete list of data sources in the corpus.
+     * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+     * meaningfully updated. A meaningful update is one that changes document's
+     * markdown content or metadata.
+     * * `uri` (STRING): The document URI, e.g.
+     * `https://docs.cloud.google.com/bigquery/docs/tables`.
+     *
+     * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     *
+     * STRING fields support `=` (equals) and `!=` (not equals) operators for
+     * **exact match** on the whole string. Partial match, prefix match, and
+     * regexp match are not supported.
+     *
+     * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+     * operators. `OR` has higher precedence than `AND`. Use parentheses for
+     * explicit precedence grouping.
+     *
+     * Examples:
+     *
+     * * Filter by `Document.content_length_bytes`:
+     * `content_length_bytes &lt; 50000`
+     * * `data_source = "docs.cloud.google.com" OR data_source =
+     * "firebase.google.com"`
+     * * `data_source != "firebase.google.com"`
+     * * `update_time &lt; "2024-01-01T00:00:00Z"`
+     * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+     * "developer.chrome.com" OR data_source = "web.dev")`
+     * * `uri = "https://docs.cloud.google.com/release-notes"`
+     *
+     * The `filter` string must not exceed 500 characters; values longer than 500
+     * characters will result in an `INVALID_ARGUMENT` error.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applies a strict filter to the search results used to ground the
+     * answer. The expression supports a subset of the syntax described at
+     * https://google.aip.dev/160.
+     *
+     * Supported fields for filtering:
+     *
+     * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+     * field in bytes.
+     * * `data_source` (STRING): The source of the document, e.g.
+     * `docs.cloud.google.com`. See
+     * https://developers.google.com/knowledge/reference/corpus-reference for
+     * the complete list of data sources in the corpus.
+     * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+     * meaningfully updated. A meaningful update is one that changes document's
+     * markdown content or metadata.
+     * * `uri` (STRING): The document URI, e.g.
+     * `https://docs.cloud.google.com/bigquery/docs/tables`.
+     *
+     * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     *
+     * STRING fields support `=` (equals) and `!=` (not equals) operators for
+     * **exact match** on the whole string. Partial match, prefix match, and
+     * regexp match are not supported.
+     *
+     * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+     * operators. `OR` has higher precedence than `AND`. Use parentheses for
+     * explicit precedence grouping.
+     *
+     * Examples:
+     *
+     * * Filter by `Document.content_length_bytes`:
+     * `content_length_bytes &lt; 50000`
+     * * `data_source = "docs.cloud.google.com" OR data_source =
+     * "firebase.google.com"`
+     * * `data_source != "firebase.google.com"`
+     * * `update_time &lt; "2024-01-01T00:00:00Z"`
+     * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+     * "developer.chrome.com" OR data_source = "web.dev")`
+     * * `uri = "https://docs.cloud.google.com/release-notes"`
+     *
+     * The `filter` string must not exceed 500 characters; values longer than 500
+     * characters will result in an `INVALID_ARGUMENT` error.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applies a strict filter to the search results used to ground the
+     * answer. The expression supports a subset of the syntax described at
+     * https://google.aip.dev/160.
+     *
+     * Supported fields for filtering:
+     *
+     * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+     * field in bytes.
+     * * `data_source` (STRING): The source of the document, e.g.
+     * `docs.cloud.google.com`. See
+     * https://developers.google.com/knowledge/reference/corpus-reference for
+     * the complete list of data sources in the corpus.
+     * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+     * meaningfully updated. A meaningful update is one that changes document's
+     * markdown content or metadata.
+     * * `uri` (STRING): The document URI, e.g.
+     * `https://docs.cloud.google.com/bigquery/docs/tables`.
+     *
+     * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     *
+     * STRING fields support `=` (equals) and `!=` (not equals) operators for
+     * **exact match** on the whole string. Partial match, prefix match, and
+     * regexp match are not supported.
+     *
+     * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+     * operators. `OR` has higher precedence than `AND`. Use parentheses for
+     * explicit precedence grouping.
+     *
+     * Examples:
+     *
+     * * Filter by `Document.content_length_bytes`:
+     * `content_length_bytes &lt; 50000`
+     * * `data_source = "docs.cloud.google.com" OR data_source =
+     * "firebase.google.com"`
+     * * `data_source != "firebase.google.com"`
+     * * `update_time &lt; "2024-01-01T00:00:00Z"`
+     * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+     * "developer.chrome.com" OR data_source = "web.dev")`
+     * * `uri = "https://docs.cloud.google.com/release-notes"`
+     *
+     * The `filter` string must not exceed 500 characters; values longer than 500
+     * characters will result in an `INVALID_ARGUMENT` error.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      filter_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applies a strict filter to the search results used to ground the
+     * answer. The expression supports a subset of the syntax described at
+     * https://google.aip.dev/160.
+     *
+     * Supported fields for filtering:
+     *
+     * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+     * field in bytes.
+     * * `data_source` (STRING): The source of the document, e.g.
+     * `docs.cloud.google.com`. See
+     * https://developers.google.com/knowledge/reference/corpus-reference for
+     * the complete list of data sources in the corpus.
+     * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+     * meaningfully updated. A meaningful update is one that changes document's
+     * markdown content or metadata.
+     * * `uri` (STRING): The document URI, e.g.
+     * `https://docs.cloud.google.com/bigquery/docs/tables`.
+     *
+     * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     *
+     * STRING fields support `=` (equals) and `!=` (not equals) operators for
+     * **exact match** on the whole string. Partial match, prefix match, and
+     * regexp match are not supported.
+     *
+     * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+     * operators. `OR` has higher precedence than `AND`. Use parentheses for
+     * explicit precedence grouping.
+     *
+     * Examples:
+     *
+     * * Filter by `Document.content_length_bytes`:
+     * `content_length_bytes &lt; 50000`
+     * * `data_source = "docs.cloud.google.com" OR data_source =
+     * "firebase.google.com"`
+     * * `data_source != "firebase.google.com"`
+     * * `update_time &lt; "2024-01-01T00:00:00Z"`
+     * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+     * "developer.chrome.com" OR data_source = "web.dev")`
+     * * `uri = "https://docs.cloud.google.com/release-notes"`
+     *
+     * The `filter` string must not exceed 500 characters; values longer than 500
+     * characters will result in an `INVALID_ARGUMENT` error.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      filter_ = getDefaultInstance().getFilter();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Applies a strict filter to the search results used to ground the
+     * answer. The expression supports a subset of the syntax described at
+     * https://google.aip.dev/160.
+     *
+     * Supported fields for filtering:
+     *
+     * * `content_length_bytes` (INTEGER): The length of the `Document.content`
+     * field in bytes.
+     * * `data_source` (STRING): The source of the document, e.g.
+     * `docs.cloud.google.com`. See
+     * https://developers.google.com/knowledge/reference/corpus-reference for
+     * the complete list of data sources in the corpus.
+     * * `update_time` (TIMESTAMP): The timestamp of when the document was last
+     * meaningfully updated. A meaningful update is one that changes document's
+     * markdown content or metadata.
+     * * `uri` (STRING): The document URI, e.g.
+     * `https://docs.cloud.google.com/bigquery/docs/tables`.
+     *
+     * INTEGER fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     *
+     * STRING fields support `=` (equals) and `!=` (not equals) operators for
+     * **exact match** on the whole string. Partial match, prefix match, and
+     * regexp match are not supported.
+     *
+     * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
+     * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
+     * operators. `OR` has higher precedence than `AND`. Use parentheses for
+     * explicit precedence grouping.
+     *
+     * Examples:
+     *
+     * * Filter by `Document.content_length_bytes`:
+     * `content_length_bytes &lt; 50000`
+     * * `data_source = "docs.cloud.google.com" OR data_source =
+     * "firebase.google.com"`
+     * * `data_source != "firebase.google.com"`
+     * * `update_time &lt; "2024-01-01T00:00:00Z"`
+     * * `update_time &gt;= "2025-01-22T00:00:00Z" AND (data_source =
+     * "developer.chrome.com" OR data_source = "web.dev")`
+     * * `uri = "https://docs.cloud.google.com/release-notes"`
+     *
+     * The `filter` string must not exceed 500 characters; values longer than 500
+     * characters will result in an `INVALID_ARGUMENT` error.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      filter_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

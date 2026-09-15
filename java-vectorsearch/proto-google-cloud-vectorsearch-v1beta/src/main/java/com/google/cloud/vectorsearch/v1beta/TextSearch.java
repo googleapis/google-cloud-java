@@ -343,6 +343,78 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
     return filter_ == null ? com.google.protobuf.Struct.getDefaultInstance() : filter_;
   }
 
+  public static final int STRUCTURED_QUERY_FIELD_NUMBER = 6;
+  private com.google.cloud.vectorsearch.v1beta.StructuredQuery structuredQuery_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the structuredQuery field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructuredQuery() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The structuredQuery.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.StructuredQuery getStructuredQuery() {
+    return structuredQuery_ == null
+        ? com.google.cloud.vectorsearch.v1beta.StructuredQuery.getDefaultInstance()
+        : structuredQuery_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Structured query definition. When set, `search_text` and
+   * `data_field_names` must be left empty; otherwise the request will be
+   * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+   * `structured_query` is unset, both `search_text` and `data_field_names`
+   * are required.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder
+      getStructuredQueryOrBuilder() {
+    return structuredQuery_ == null
+        ? com.google.cloud.vectorsearch.v1beta.StructuredQuery.getDefaultInstance()
+        : structuredQuery_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -372,6 +444,9 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getFilter());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(6, getStructuredQuery());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -400,6 +475,9 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFilter());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStructuredQuery());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -431,6 +509,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
     if (hasFilter()) {
       if (!getFilter().equals(other.getFilter())) return false;
     }
+    if (hasStructuredQuery() != other.hasStructuredQuery()) return false;
+    if (hasStructuredQuery()) {
+      if (!getStructuredQuery().equals(other.getStructuredQuery())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -459,6 +541,10 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
       hash = (53 * hash) + getFilter().hashCode();
+    }
+    if (hasStructuredQuery()) {
+      hash = (37 * hash) + STRUCTURED_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + getStructuredQuery().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -603,6 +689,7 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetOutputFieldsFieldBuilder();
         internalGetFilterFieldBuilder();
+        internalGetStructuredQueryFieldBuilder();
       }
     }
 
@@ -622,6 +709,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
       if (filterBuilder_ != null) {
         filterBuilder_.dispose();
         filterBuilder_ = null;
+      }
+      structuredQuery_ = null;
+      if (structuredQueryBuilder_ != null) {
+        structuredQueryBuilder_.dispose();
+        structuredQueryBuilder_ = null;
       }
       return this;
     }
@@ -680,6 +772,11 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
         result.filter_ = filterBuilder_ == null ? filter_ : filterBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.structuredQuery_ =
+            structuredQueryBuilder_ == null ? structuredQuery_ : structuredQueryBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -719,6 +816,9 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
+      }
+      if (other.hasStructuredQuery()) {
+        mergeStructuredQuery(other.getStructuredQuery());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -778,6 +878,13 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetStructuredQueryFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1583,6 +1690,259 @@ public final class TextSearch extends com.google.protobuf.GeneratedMessage
         filter_ = null;
       }
       return filterBuilder_;
+    }
+
+    private com.google.cloud.vectorsearch.v1beta.StructuredQuery structuredQuery_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.StructuredQuery,
+            com.google.cloud.vectorsearch.v1beta.StructuredQuery.Builder,
+            com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder>
+        structuredQueryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the structuredQuery field is set.
+     */
+    public boolean hasStructuredQuery() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The structuredQuery.
+     */
+    public com.google.cloud.vectorsearch.v1beta.StructuredQuery getStructuredQuery() {
+      if (structuredQueryBuilder_ == null) {
+        return structuredQuery_ == null
+            ? com.google.cloud.vectorsearch.v1beta.StructuredQuery.getDefaultInstance()
+            : structuredQuery_;
+      } else {
+        return structuredQueryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructuredQuery(com.google.cloud.vectorsearch.v1beta.StructuredQuery value) {
+      if (structuredQueryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        structuredQuery_ = value;
+      } else {
+        structuredQueryBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructuredQuery(
+        com.google.cloud.vectorsearch.v1beta.StructuredQuery.Builder builderForValue) {
+      if (structuredQueryBuilder_ == null) {
+        structuredQuery_ = builderForValue.build();
+      } else {
+        structuredQueryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStructuredQuery(
+        com.google.cloud.vectorsearch.v1beta.StructuredQuery value) {
+      if (structuredQueryBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && structuredQuery_ != null
+            && structuredQuery_
+                != com.google.cloud.vectorsearch.v1beta.StructuredQuery.getDefaultInstance()) {
+          getStructuredQueryBuilder().mergeFrom(value);
+        } else {
+          structuredQuery_ = value;
+        }
+      } else {
+        structuredQueryBuilder_.mergeFrom(value);
+      }
+      if (structuredQuery_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStructuredQuery() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      structuredQuery_ = null;
+      if (structuredQueryBuilder_ != null) {
+        structuredQueryBuilder_.dispose();
+        structuredQueryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.StructuredQuery.Builder
+        getStructuredQueryBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetStructuredQueryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder
+        getStructuredQueryOrBuilder() {
+      if (structuredQueryBuilder_ != null) {
+        return structuredQueryBuilder_.getMessageOrBuilder();
+      } else {
+        return structuredQuery_ == null
+            ? com.google.cloud.vectorsearch.v1beta.StructuredQuery.getDefaultInstance()
+            : structuredQuery_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Structured query definition. When set, `search_text` and
+     * `data_field_names` must be left empty; otherwise the request will be
+     * rejected with an `INVALID_ARGUMENT` error. Conversely, when
+     * `structured_query` is unset, both `search_text` and `data_field_names`
+     * are required.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.StructuredQuery structured_query = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.StructuredQuery,
+            com.google.cloud.vectorsearch.v1beta.StructuredQuery.Builder,
+            com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder>
+        internalGetStructuredQueryFieldBuilder() {
+      if (structuredQueryBuilder_ == null) {
+        structuredQueryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.StructuredQuery,
+                com.google.cloud.vectorsearch.v1beta.StructuredQuery.Builder,
+                com.google.cloud.vectorsearch.v1beta.StructuredQueryOrBuilder>(
+                getStructuredQuery(), getParentForChildren(), isClean());
+        structuredQuery_ = null;
+      }
+      return structuredQueryBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.TextSearch)

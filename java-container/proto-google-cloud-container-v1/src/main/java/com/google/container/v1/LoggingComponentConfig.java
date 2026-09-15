@@ -170,6 +170,16 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      * <code>KCP_HPA = 9;</code>
      */
     KCP_HPA(9),
+    /**
+     *
+     *
+     * <pre>
+     * vertical pod autoscaler decision logs
+     * </pre>
+     *
+     * <code>KCP_VPA = 10;</code>
+     */
+    KCP_VPA(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -282,6 +292,17 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
      */
     public static final int KCP_HPA_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * vertical pod autoscaler decision logs
+     * </pre>
+     *
+     * <code>KCP_VPA = 10;</code>
+     */
+    public static final int KCP_VPA_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -324,6 +345,8 @@ public final class LoggingComponentConfig extends com.google.protobuf.GeneratedM
           return KCP_CONNECTION;
         case 9:
           return KCP_HPA;
+        case 10:
+          return KCP_VPA;
         default:
           return null;
       }

@@ -30,9 +30,157 @@ public interface AudienceSegmentOrBuilder
    *
    *
    * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that does
+   * not contain a rule. Cookies are usually added to these segments through
+   * cookie upload.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.NonRuleBasedFirstPartyAudienceSegment non_rule_based_first_party_audience_segment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nonRuleBasedFirstPartyAudienceSegment field is set.
+   */
+  boolean hasNonRuleBasedFirstPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that does
+   * not contain a rule. Cookies are usually added to these segments through
+   * cookie upload.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.NonRuleBasedFirstPartyAudienceSegment non_rule_based_first_party_audience_segment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nonRuleBasedFirstPartyAudienceSegment.
+   */
+  com.google.ads.admanager.v1.AudienceSegment.NonRuleBasedFirstPartyAudienceSegment
+      getNonRuleBasedFirstPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that does
+   * not contain a rule. Cookies are usually added to these segments through
+   * cookie upload.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.NonRuleBasedFirstPartyAudienceSegment non_rule_based_first_party_audience_segment = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudienceSegment.NonRuleBasedFirstPartyAudienceSegmentOrBuilder
+      getNonRuleBasedFirstPartyAudienceSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that
+   * contains a rule.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegment rule_based_first_party_audience_segment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ruleBasedFirstPartyAudienceSegment field is set.
+   */
+  boolean hasRuleBasedFirstPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that
+   * contains a rule.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegment rule_based_first_party_audience_segment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ruleBasedFirstPartyAudienceSegment.
+   */
+  com.google.ads.admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegment
+      getRuleBasedFirstPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An `AudienceSegment` owned by the publisher network that
+   * contains a rule.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegment rule_based_first_party_audience_segment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegmentOrBuilder
+      getRuleBasedFirstPartyAudienceSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An `AudienceSegment` owned by a data provider and licensed
+   * to the Ad Manager publisher network.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.ThirdPartyAudienceSegment third_party_audience_segment = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the thirdPartyAudienceSegment field is set.
+   */
+  boolean hasThirdPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An `AudienceSegment` owned by a data provider and licensed
+   * to the Ad Manager publisher network.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.ThirdPartyAudienceSegment third_party_audience_segment = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The thirdPartyAudienceSegment.
+   */
+  com.google.ads.admanager.v1.AudienceSegment.ThirdPartyAudienceSegment
+      getThirdPartyAudienceSegment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An `AudienceSegment` owned by a data provider and licensed
+   * to the Ad Manager publisher network.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudienceSegment.ThirdPartyAudienceSegment third_party_audience_segment = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudienceSegment.ThirdPartyAudienceSegmentOrBuilder
+      getThirdPartyAudienceSegmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the `AudienceSegment`.
    * Format: `networks/{network_code}/audienceSegments/{audience_segment_id}`
-   * The `audience_segment_id` may have up to 1 of the following suffixes:
+   * The `audience_segment_id` is not always numerical and may have one of
+   * the following suffixes:
    * - `~direct` for directly licensed third-party segments
    * - `~global` for globally licensed third-party segments
    * </pre>
@@ -49,7 +197,8 @@ public interface AudienceSegmentOrBuilder
    * <pre>
    * Identifier. The resource name of the `AudienceSegment`.
    * Format: `networks/{network_code}/audienceSegments/{audience_segment_id}`
-   * The `audience_segment_id` may have up to 1 of the following suffixes:
+   * The `audience_segment_id` is not always numerical and may have one of
+   * the following suffixes:
    * - `~direct` for directly licensed third-party segments
    * - `~global` for globally licensed third-party segments
    * </pre>
@@ -59,6 +208,20 @@ public interface AudienceSegmentOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ID of the `AudienceSegment`. Up to two resources may share
+   * this ID.
+   * </pre>
+   *
+   * <code>int64 shared_id = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The sharedId.
+   */
+  long getSharedId();
 
   /**
    *
@@ -101,4 +264,389 @@ public interface AudienceSegmentOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Unordered list. IDs of the categories that this audience segment
+   * belongs to. See `segment_categories` for additional information about the
+   * categories.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 category_ids = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return A list containing the categoryIds.
+   */
+  java.util.List<java.lang.Long> getCategoryIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Unordered list. IDs of the categories that this audience segment
+   * belongs to. See `segment_categories` for additional information about the
+   * categories.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 category_ids = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @return The count of categoryIds.
+   */
+  int getCategoryIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Unordered list. IDs of the categories that this audience segment
+   * belongs to. See `segment_categories` for additional information about the
+   * categories.
+   * </pre>
+   *
+   * <code>
+   * repeated int64 category_ids = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = UNORDERED_LIST];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The categoryIds at the given index.
+   */
+  long getCategoryIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the `AudienceSegment`. This has a maximum length
+   * of 8192 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the `AudienceSegment`. This has a maximum length
+   * of 8192 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the `AudienceSegment`. This has a maximum length
+   * of 8192 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Status of the `AudienceSegment` used to
+   * determine whether the segment is available for targeting. Defaults to
+   * `ACTIVE` if not set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentStatusEnum.AudienceSegmentStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Status of the `AudienceSegment` used to
+   * determine whether the segment is available for targeting. Defaults to
+   * `ACTIVE` if not set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentStatusEnum.AudienceSegmentStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Status of the `AudienceSegment` used to
+   * determine whether the segment is available for targeting. Defaults to
+   * `ACTIVE` if not set.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentStatusEnum.AudienceSegmentStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.AudienceSegmentStatusEnum.AudienceSegmentStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique identifiers in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 size = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the size field is set.
+   */
+  boolean hasSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique identifiers in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 size = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The size.
+   */
+  long getSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique mobile web identifiers in the
+   * `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 mobile_web_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the mobileWebSize field is set.
+   */
+  boolean hasMobileWebSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique mobile web identifiers in the
+   * `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 mobile_web_size = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The mobileWebSize.
+   */
+  long getMobileWebSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique Identifier for Advertisers (IDFA) identifiers
+   * in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 idfa_size = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the idfaSize field is set.
+   */
+  boolean hasIdfaSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique Identifier for Advertisers (IDFA) identifiers
+   * in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 idfa_size = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The idfaSize.
+   */
+  long getIdfaSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique AdID identifiers in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 ad_id_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the adIdSize field is set.
+   */
+  boolean hasAdIdSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique AdID identifiers in the `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 ad_id_size = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The adIdSize.
+   */
+  long getAdIdSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique publisher-provided (PPID) identifiers in the
+   * `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 ppid_size = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the ppidSize field is set.
+   */
+  boolean hasPpidSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of unique publisher-provided (PPID) identifiers in the
+   * `AudienceSegment`.
+   * </pre>
+   *
+   * <code>optional int64 ppid_size = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The ppidSize.
+   */
+  long getPpidSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Display name of the owner data provider. For a first-party
+   * audience segment, this is the display name of the publisher network.
+   * Otherwise, this is the display name of the entity providing the audience
+   * segment.
+   * </pre>
+   *
+   * <code>
+   * optional string data_provider_display_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataProviderDisplayName field is set.
+   */
+  boolean hasDataProviderDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Display name of the owner data provider. For a first-party
+   * audience segment, this is the display name of the publisher network.
+   * Otherwise, this is the display name of the entity providing the audience
+   * segment.
+   * </pre>
+   *
+   * <code>
+   * optional string data_provider_display_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataProviderDisplayName.
+   */
+  java.lang.String getDataProviderDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Display name of the owner data provider. For a first-party
+   * audience segment, this is the display name of the publisher network.
+   * Otherwise, this is the display name of the entity providing the audience
+   * segment.
+   * </pre>
+   *
+   * <code>
+   * optional string data_provider_display_name = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for dataProviderDisplayName.
+   */
+  com.google.protobuf.ByteString getDataProviderDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Type of the `AudienceSegment`. Every
+   * `AudienceSegment` is either `FIRST_PARTY` or `THIRD_PARTY`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentTypeEnum.AudienceSegmentType segment_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the segmentType field is set.
+   */
+  boolean hasSegmentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Type of the `AudienceSegment`. Every
+   * `AudienceSegment` is either `FIRST_PARTY` or `THIRD_PARTY`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentTypeEnum.AudienceSegmentType segment_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for segmentType.
+   */
+  int getSegmentTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Non-empty default. Type of the `AudienceSegment`. Every
+   * `AudienceSegment` is either `FIRST_PARTY` or `THIRD_PARTY`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.AudienceSegmentTypeEnum.AudienceSegmentType segment_type = 12 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The segmentType.
+   */
+  com.google.ads.admanager.v1.AudienceSegmentTypeEnum.AudienceSegmentType getSegmentType();
+
+  com.google.ads.admanager.v1.AudienceSegment.SubTypeCase getSubTypeCase();
 }

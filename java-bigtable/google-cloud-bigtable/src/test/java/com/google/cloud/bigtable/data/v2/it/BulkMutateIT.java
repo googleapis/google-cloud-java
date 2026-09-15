@@ -53,11 +53,6 @@ public class BulkMutateIT {
 
   @Test(timeout = 60 * 1000)
   public void test() throws IOException, InterruptedException {
-    assume()
-        .withMessage("Emulator does not support microsecond timestamp granularity")
-        .that(testEnvRule.env())
-        .isNotInstanceOf(EmulatorEnv.class);
-
     BigtableDataSettings settings = testEnvRule.env().getDataClientSettings();
     String rowPrefix = UUID.randomUUID().toString();
     // Set target latency really low so it'll trigger adjusting thresholds

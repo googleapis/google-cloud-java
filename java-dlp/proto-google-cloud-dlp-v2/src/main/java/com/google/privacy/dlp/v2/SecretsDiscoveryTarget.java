@@ -32,7 +32,7 @@ package com.google.privacy.dlp.v2;
  * No inspect template should be included in the discovery config for a
  * security benchmarks scan. Instead, the built-in list of secrets and
  * credentials infoTypes will be used (see
- * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
  *
  * Credentials and secrets discovered will be reported as vulnerabilities to
  * Security Command Center.
@@ -242,7 +242,7 @@ public final class SecretsDiscoveryTarget extends com.google.protobuf.GeneratedM
    * No inspect template should be included in the discovery config for a
    * security benchmarks scan. Instead, the built-in list of secrets and
    * credentials infoTypes will be used (see
-   * https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#credentials_and_secrets).
    *
    * Credentials and secrets discovered will be reported as vulnerabilities to
    * Security Command Center.

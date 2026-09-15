@@ -98,6 +98,7 @@ public class SyncUpdateNodePool {
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
               .setTaintConfig(TaintConfig.newBuilder().build())
+              .setMaintenancePolicy(NodePool.NodePoolMaintenancePolicy.newBuilder().build())
               .build();
       Operation response = clusterManagerClient.updateNodePool(request);
     }

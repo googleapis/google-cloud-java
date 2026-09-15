@@ -393,4 +393,48 @@ public interface ClusterUpgradeInfoOrBuilder
    * @return The bytes for endOfExtendedSupportTimestamp.
    */
   com.google.protobuf.ByteString getEndOfExtendedSupportTimestampBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rollbackSafeUpgradeStatus field is set.
+   */
+  boolean hasRollbackSafeUpgradeStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rollbackSafeUpgradeStatus.
+   */
+  com.google.container.v1.RollbackSafeUpgradeStatus getRollbackSafeUpgradeStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder
+      getRollbackSafeUpgradeStatusOrBuilder();
 }

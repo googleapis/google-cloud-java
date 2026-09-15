@@ -186,6 +186,18 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * <code>BACKGROUND_SEARCH_INDEX_REFRESH = 9;</code>
      */
     BACKGROUND_SEARCH_INDEX_REFRESH(9),
+    /**
+     *
+     *
+     * <pre>
+     * Automated materialized view refresh jobs will use the reservation.
+     * Reservations with this job type will take priority over a default QUERY
+     * reservation assignment (if it exists).
+     * </pre>
+     *
+     * <code>AUTOMATIC_MATERIALIZED_VIEW_REFRESH = 10;</code>
+     */
+    AUTOMATIC_MATERIALIZED_VIEW_REFRESH(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -309,6 +321,19 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      */
     public static final int BACKGROUND_SEARCH_INDEX_REFRESH_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * Automated materialized view refresh jobs will use the reservation.
+     * Reservations with this job type will take priority over a default QUERY
+     * reservation assignment (if it exists).
+     * </pre>
+     *
+     * <code>AUTOMATIC_MATERIALIZED_VIEW_REFRESH = 10;</code>
+     */
+    public static final int AUTOMATIC_MATERIALIZED_VIEW_REFRESH_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -351,6 +376,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
           return BACKGROUND_COLUMN_METADATA_INDEX;
         case 9:
           return BACKGROUND_SEARCH_INDEX_REFRESH;
+        case 10:
+          return AUTOMATIC_MATERIALIZED_VIEW_REFRESH;
         default:
           return null;
       }
@@ -801,7 +828,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.Assignment.enable_gemini_in_bigquery is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1398
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1457
    * @return The enableGeminiInBigquery.
    */
   @java.lang.Override
@@ -895,10 +922,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Represents the principal for this assignment. If not empty, jobs
-   * run by this principal will utilize the associated reservation. Otherwise,
-   * jobs will fall back to using the reservation assigned to the project,
-   * folder, or organization (in that order). If no reservation is assigned at
-   * any of these levels, on-demand capacity will be used.
+   * run by this principal utilize the associated reservation. Otherwise, jobs
+   * fall back to using the reservation assigned to the project, folder,
+   * or organization, in that order. If no reservation is assigned at any of
+   * these levels, on-demand capacity is used.
    *
    * The supported formats are:
    *
@@ -908,7 +935,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
    * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
    * for workload identity pool identities.
    * * The special value `unknown_or_deleted_user` represents principals which
-   * cannot be read from the user info service, for example deleted users.
+   * cannot be read from the user info service, for example, deleted users.
    * </pre>
    *
    * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -933,10 +960,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Represents the principal for this assignment. If not empty, jobs
-   * run by this principal will utilize the associated reservation. Otherwise,
-   * jobs will fall back to using the reservation assigned to the project,
-   * folder, or organization (in that order). If no reservation is assigned at
-   * any of these levels, on-demand capacity will be used.
+   * run by this principal utilize the associated reservation. Otherwise, jobs
+   * fall back to using the reservation assigned to the project, folder,
+   * or organization, in that order. If no reservation is assigned at any of
+   * these levels, on-demand capacity is used.
    *
    * The supported formats are:
    *
@@ -946,7 +973,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
    * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
    * for workload identity pool identities.
    * * The special value `unknown_or_deleted_user` represents principals which
-   * cannot be read from the user info service, for example deleted users.
+   * cannot be read from the user info service, for example, deleted users.
    * </pre>
    *
    * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2056,7 +2083,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Assignment.enable_gemini_in_bigquery is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1398
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1457
      * @return The enableGeminiInBigquery.
      */
     @java.lang.Override
@@ -2081,7 +2108,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Assignment.enable_gemini_in_bigquery is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1398
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1457
      * @param value The enableGeminiInBigquery to set.
      * @return This builder for chaining.
      */
@@ -2110,7 +2137,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Assignment.enable_gemini_in_bigquery is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1398
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1457
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2391,10 +2418,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Represents the principal for this assignment. If not empty, jobs
-     * run by this principal will utilize the associated reservation. Otherwise,
-     * jobs will fall back to using the reservation assigned to the project,
-     * folder, or organization (in that order). If no reservation is assigned at
-     * any of these levels, on-demand capacity will be used.
+     * run by this principal utilize the associated reservation. Otherwise, jobs
+     * fall back to using the reservation assigned to the project, folder,
+     * or organization, in that order. If no reservation is assigned at any of
+     * these levels, on-demand capacity is used.
      *
      * The supported formats are:
      *
@@ -2404,7 +2431,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
      * for workload identity pool identities.
      * * The special value `unknown_or_deleted_user` represents principals which
-     * cannot be read from the user info service, for example deleted users.
+     * cannot be read from the user info service, for example, deleted users.
      * </pre>
      *
      * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2428,10 +2455,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Represents the principal for this assignment. If not empty, jobs
-     * run by this principal will utilize the associated reservation. Otherwise,
-     * jobs will fall back to using the reservation assigned to the project,
-     * folder, or organization (in that order). If no reservation is assigned at
-     * any of these levels, on-demand capacity will be used.
+     * run by this principal utilize the associated reservation. Otherwise, jobs
+     * fall back to using the reservation assigned to the project, folder,
+     * or organization, in that order. If no reservation is assigned at any of
+     * these levels, on-demand capacity is used.
      *
      * The supported formats are:
      *
@@ -2441,7 +2468,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
      * for workload identity pool identities.
      * * The special value `unknown_or_deleted_user` represents principals which
-     * cannot be read from the user info service, for example deleted users.
+     * cannot be read from the user info service, for example, deleted users.
      * </pre>
      *
      * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2465,10 +2492,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Represents the principal for this assignment. If not empty, jobs
-     * run by this principal will utilize the associated reservation. Otherwise,
-     * jobs will fall back to using the reservation assigned to the project,
-     * folder, or organization (in that order). If no reservation is assigned at
-     * any of these levels, on-demand capacity will be used.
+     * run by this principal utilize the associated reservation. Otherwise, jobs
+     * fall back to using the reservation assigned to the project, folder,
+     * or organization, in that order. If no reservation is assigned at any of
+     * these levels, on-demand capacity is used.
      *
      * The supported formats are:
      *
@@ -2478,7 +2505,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
      * for workload identity pool identities.
      * * The special value `unknown_or_deleted_user` represents principals which
-     * cannot be read from the user info service, for example deleted users.
+     * cannot be read from the user info service, for example, deleted users.
      * </pre>
      *
      * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2501,10 +2528,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Represents the principal for this assignment. If not empty, jobs
-     * run by this principal will utilize the associated reservation. Otherwise,
-     * jobs will fall back to using the reservation assigned to the project,
-     * folder, or organization (in that order). If no reservation is assigned at
-     * any of these levels, on-demand capacity will be used.
+     * run by this principal utilize the associated reservation. Otherwise, jobs
+     * fall back to using the reservation assigned to the project, folder,
+     * or organization, in that order. If no reservation is assigned at any of
+     * these levels, on-demand capacity is used.
      *
      * The supported formats are:
      *
@@ -2514,7 +2541,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
      * for workload identity pool identities.
      * * The special value `unknown_or_deleted_user` represents principals which
-     * cannot be read from the user info service, for example deleted users.
+     * cannot be read from the user info service, for example, deleted users.
      * </pre>
      *
      * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2533,10 +2560,10 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Represents the principal for this assignment. If not empty, jobs
-     * run by this principal will utilize the associated reservation. Otherwise,
-     * jobs will fall back to using the reservation assigned to the project,
-     * folder, or organization (in that order). If no reservation is assigned at
-     * any of these levels, on-demand capacity will be used.
+     * run by this principal utilize the associated reservation. Otherwise, jobs
+     * fall back to using the reservation assigned to the project, folder,
+     * or organization, in that order. If no reservation is assigned at any of
+     * these levels, on-demand capacity is used.
      *
      * The supported formats are:
      *
@@ -2546,7 +2573,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
      * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
      * for workload identity pool identities.
      * * The special value `unknown_or_deleted_user` represents principals which
-     * cannot be read from the user info service, for example deleted users.
+     * cannot be read from the user info service, for example, deleted users.
      * </pre>
      *
      * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>

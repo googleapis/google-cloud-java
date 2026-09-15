@@ -10469,6 +10469,51 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return The noExternalIpAddress.
      */
     boolean getNoExternalIpAddress();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nicType field is set.
+     */
+    boolean hasNicType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for nicType.
+     */
+    int getNicTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nicType.
+     */
+    com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType getNicType();
   }
 
   /**
@@ -10504,6 +10549,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
     private NetworkInterface() {
       network_ = "";
       subnetwork_ = "";
+      nicType_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -10521,6 +10567,201 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
               com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.Builder.class);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine VM instance NIC type.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType}
+     */
+    public enum NicType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * No type specified.
+       * </pre>
+       *
+       * <code>NIC_TYPE_UNSPECIFIED = 0;</code>
+       */
+      NIC_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * GVNIC
+       * </pre>
+       *
+       * <code>GVNIC = 1;</code>
+       */
+      GVNIC(1),
+      /**
+       *
+       *
+       * <pre>
+       * IRDMA
+       * </pre>
+       *
+       * <code>IRDMA = 2;</code>
+       */
+      IRDMA(2),
+      /**
+       *
+       *
+       * <pre>
+       * MRDMA
+       * </pre>
+       *
+       * <code>MRDMA = 3;</code>
+       */
+      MRDMA(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "NicType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * No type specified.
+       * </pre>
+       *
+       * <code>NIC_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int NIC_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * GVNIC
+       * </pre>
+       *
+       * <code>GVNIC = 1;</code>
+       */
+      public static final int GVNIC_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * IRDMA
+       * </pre>
+       *
+       * <code>IRDMA = 2;</code>
+       */
+      public static final int IRDMA_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * MRDMA
+       * </pre>
+       *
+       * <code>MRDMA = 3;</code>
+       */
+      public static final int MRDMA_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static NicType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static NicType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return NIC_TYPE_UNSPECIFIED;
+          case 1:
+            return GVNIC;
+          case 2:
+            return IRDMA;
+          case 3:
+            return MRDMA;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<NicType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<NicType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<NicType>() {
+            public NicType findValueByNumber(int number) {
+              return NicType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final NicType[] VALUES = values();
+
+      public static NicType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private NicType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType)
+    }
+
+    private int bitField0_;
     public static final int NETWORK_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -10680,6 +10921,67 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return noExternalIpAddress_;
     }
 
+    public static final int NIC_TYPE_FIELD_NUMBER = 7;
+    private int nicType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the nicType field is set.
+     */
+    @java.lang.Override
+    public boolean hasNicType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for nicType.
+     */
+    @java.lang.Override
+    public int getNicTypeValue() {
+      return nicType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The NIC type of the network interface.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The nicType.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType getNicType() {
+      com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType result =
+          com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType.forNumber(nicType_);
+      return result == null
+          ? com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -10703,6 +11005,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (noExternalIpAddress_ != false) {
         output.writeBool(3, noExternalIpAddress_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(7, nicType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10720,6 +11025,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (noExternalIpAddress_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, noExternalIpAddress_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, nicType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -10740,6 +11048,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (!getNetwork().equals(other.getNetwork())) return false;
       if (!getSubnetwork().equals(other.getSubnetwork())) return false;
       if (getNoExternalIpAddress() != other.getNoExternalIpAddress()) return false;
+      if (hasNicType() != other.hasNicType()) return false;
+      if (hasNicType()) {
+        if (nicType_ != other.nicType_) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -10757,6 +11069,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getSubnetwork().hashCode();
       hash = (37 * hash) + NO_EXTERNAL_IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoExternalIpAddress());
+      if (hasNicType()) {
+        hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + nicType_;
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -10901,6 +11217,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         network_ = "";
         subnetwork_ = "";
         noExternalIpAddress_ = false;
+        nicType_ = 0;
         return this;
       }
 
@@ -10948,6 +11265,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.noExternalIpAddress_ = noExternalIpAddress_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.nicType_ = nicType_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -10976,6 +11299,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (other.getNoExternalIpAddress() != false) {
           setNoExternalIpAddress(other.getNoExternalIpAddress());
+        }
+        if (other.hasNicType()) {
+          setNicTypeValue(other.getNicTypeValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -11021,6 +11347,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 56:
+                {
+                  nicType_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 56
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11402,6 +11734,132 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public Builder clearNoExternalIpAddress() {
         bitField0_ = (bitField0_ & ~0x00000004);
         noExternalIpAddress_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int nicType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the nicType field is set.
+       */
+      @java.lang.Override
+      public boolean hasNicType() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for nicType.
+       */
+      @java.lang.Override
+      public int getNicTypeValue() {
+        return nicType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for nicType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicTypeValue(int value) {
+        nicType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The nicType.
+       */
+      @java.lang.Override
+      public com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType getNicType() {
+        com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType result =
+            com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType.forNumber(nicType_);
+        return result == null
+            ? com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The nicType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNicType(
+          com.google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        nicType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The NIC type of the network interface.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.batch.v1.AllocationPolicy.NetworkInterface.NicType nic_type = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNicType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        nicType_ = 0;
         onChanged();
         return this;
       }

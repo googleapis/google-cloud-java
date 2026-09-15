@@ -849,6 +849,12 @@ public class StorageControlClientHttpJsonTest {
   }
 
   @Test
+  public void disableRapidCacheUnsupportedMethodTest() throws Exception {
+    // The disableRapidCache() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
   public void getRapidCacheUnsupportedMethodTest() throws Exception {
     // The getRapidCache() method is not supported in REST transport.
     // This empty test is generated for technical reasons.

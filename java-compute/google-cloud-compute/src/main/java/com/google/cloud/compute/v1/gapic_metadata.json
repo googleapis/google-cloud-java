@@ -3091,6 +3091,9 @@
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
+            "GetHealth": {
+              "methods": ["getHealthAsync", "getHealthAsync", "getHealthOperationCallable", "getHealthCallable"]
+            },
             "GetVersion": {
               "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
             },

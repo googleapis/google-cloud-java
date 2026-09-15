@@ -58,6 +58,18 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
         .internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 3:
+        return internalGetTaskOutputs();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -173,6 +185,130 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     return com.google.cloud.bigquery.migration.v2.TranslationTaskResult.getDefaultInstance();
   }
 
+  public static final int TASK_OUTPUTS_FIELD_NUMBER = 3;
+
+  private static final class TaskOutputsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+                    newDefaultInstance(
+                        com.google.cloud.bigquery.migration.v2.MigrationEntitiesProto
+                            .internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.bigquery.migration.v2.TaskOutput.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      taskOutputs_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      internalGetTaskOutputs() {
+    if (taskOutputs_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TaskOutputsDefaultEntryHolder.defaultEntry);
+    }
+    return taskOutputs_;
+  }
+
+  public int getTaskOutputsCount() {
+    return internalGetTaskOutputs().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTaskOutputs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTaskOutputs().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTaskOutputsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      getTaskOutputs() {
+    return getTaskOutputsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      getTaskOutputsMap() {
+    return internalGetTaskOutputs().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.bigquery.migration.v2.TaskOutput defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput> map =
+        internalGetTaskOutputs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput> map =
+        internalGetTaskOutputs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -191,6 +327,8 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       output.writeMessage(
           2, (com.google.cloud.bigquery.migration.v2.TranslationTaskResult) details_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTaskOutputs(), TaskOutputsDefaultEntryHolder.defaultEntry, 3);
     getUnknownFields().writeTo(output);
   }
 
@@ -204,6 +342,18 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.bigquery.migration.v2.TranslationTaskResult) details_);
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+        entry : internalGetTaskOutputs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+          taskOutputs__ =
+              TaskOutputsDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, taskOutputs__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -221,6 +371,7 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     com.google.cloud.bigquery.migration.v2.MigrationTaskResult other =
         (com.google.cloud.bigquery.migration.v2.MigrationTaskResult) obj;
 
+    if (!internalGetTaskOutputs().equals(other.internalGetTaskOutputs())) return false;
     if (!getDetailsCase().equals(other.getDetailsCase())) return false;
     switch (detailsCase_) {
       case 2:
@@ -240,6 +391,10 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (!internalGetTaskOutputs().getMap().isEmpty()) {
+      hash = (37 * hash) + TASK_OUTPUTS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTaskOutputs().hashCode();
+    }
     switch (detailsCase_) {
       case 2:
         hash = (37 * hash) + TRANSLATION_TASK_RESULT_FIELD_NUMBER;
@@ -368,6 +523,28 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
           .internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetTaskOutputs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableTaskOutputs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -392,6 +569,7 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       if (translationTaskResultBuilder_ != null) {
         translationTaskResultBuilder_.clear();
       }
+      internalGetMutableTaskOutputs().clear();
       detailsCase_ = 0;
       details_ = null;
       return this;
@@ -431,6 +609,10 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
 
     private void buildPartial0(com.google.cloud.bigquery.migration.v2.MigrationTaskResult result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.taskOutputs_ =
+            internalGetTaskOutputs().build(TaskOutputsDefaultEntryHolder.defaultEntry);
+      }
     }
 
     private void buildPartialOneofs(
@@ -455,6 +637,8 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.bigquery.migration.v2.MigrationTaskResult other) {
       if (other == com.google.cloud.bigquery.migration.v2.MigrationTaskResult.getDefaultInstance())
         return this;
+      internalGetMutableTaskOutputs().mergeFrom(other.internalGetTaskOutputs());
+      bitField0_ |= 0x00000002;
       switch (other.getDetailsCase()) {
         case TRANSLATION_TASK_RESULT:
           {
@@ -499,6 +683,20 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
                 detailsCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+                    taskOutputs__ =
+                        input.readMessage(
+                            TaskOutputsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableTaskOutputs()
+                    .ensureBuilderMap()
+                    .put(taskOutputs__.getKey(), taskOutputs__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -764,6 +962,261 @@ public final class MigrationTaskResult extends com.google.protobuf.GeneratedMess
       detailsCase_ = 2;
       onChanged();
       return translationTaskResultBuilder_;
+    }
+
+    private static final class TaskOutputsConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder,
+            com.google.cloud.bigquery.migration.v2.TaskOutput> {
+      @java.lang.Override
+      public com.google.cloud.bigquery.migration.v2.TaskOutput build(
+          com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder val) {
+        if (val instanceof com.google.cloud.bigquery.migration.v2.TaskOutput) {
+          return (com.google.cloud.bigquery.migration.v2.TaskOutput) val;
+        }
+        return ((com.google.cloud.bigquery.migration.v2.TaskOutput.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+          defaultEntry() {
+        return TaskOutputsDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final TaskOutputsConverter taskOutputsConverter = new TaskOutputsConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder,
+            com.google.cloud.bigquery.migration.v2.TaskOutput,
+            com.google.cloud.bigquery.migration.v2.TaskOutput.Builder>
+        taskOutputs_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder,
+            com.google.cloud.bigquery.migration.v2.TaskOutput,
+            com.google.cloud.bigquery.migration.v2.TaskOutput.Builder>
+        internalGetTaskOutputs() {
+      if (taskOutputs_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(taskOutputsConverter);
+      }
+      return taskOutputs_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder,
+            com.google.cloud.bigquery.migration.v2.TaskOutput,
+            com.google.cloud.bigquery.migration.v2.TaskOutput.Builder>
+        internalGetMutableTaskOutputs() {
+      if (taskOutputs_ == null) {
+        taskOutputs_ = new com.google.protobuf.MapFieldBuilder<>(taskOutputsConverter);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return taskOutputs_;
+    }
+
+    public int getTaskOutputsCount() {
+      return internalGetTaskOutputs().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTaskOutputs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTaskOutputs().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getTaskOutputsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+        getTaskOutputs() {
+      return getTaskOutputsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+        getTaskOutputsMap() {
+      return internalGetTaskOutputs().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.bigquery.migration.v2.TaskOutput defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder>
+          map = internalGetMutableTaskOutputs().ensureBuilderMap();
+      return map.containsKey(key) ? taskOutputsConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder>
+          map = internalGetMutableTaskOutputs().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return taskOutputsConverter.build(map.get(key));
+    }
+
+    public Builder clearTaskOutputs() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableTaskOutputs().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    public Builder removeTaskOutputs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTaskOutputs().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+        getMutableTaskOutputs() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableTaskOutputs().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    public Builder putTaskOutputs(
+        java.lang.String key, com.google.cloud.bigquery.migration.v2.TaskOutput value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTaskOutputs().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    public Builder putAllTaskOutputs(
+        java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableTaskOutputs().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The map of task output types to the task outputs, e.g. "LINEAGE".
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+     * </code>
+     */
+    public com.google.cloud.bigquery.migration.v2.TaskOutput.Builder putTaskOutputsBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder>
+          builderMap = internalGetMutableTaskOutputs().ensureBuilderMap();
+      com.google.cloud.bigquery.migration.v2.TaskOutputOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.bigquery.migration.v2.TaskOutput.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.bigquery.migration.v2.TaskOutput) {
+        entry = ((com.google.cloud.bigquery.migration.v2.TaskOutput) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.bigquery.migration.v2.TaskOutput.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.migration.v2.MigrationTaskResult)

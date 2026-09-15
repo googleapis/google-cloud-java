@@ -100,6 +100,7 @@ public class AssistantServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setUserMetadata(AssistUserMetadata.newBuilder().build())
+            .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
             .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
             .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
             .build();
@@ -131,6 +132,7 @@ public class AssistantServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                     .toString())
             .setUserMetadata(AssistUserMetadata.newBuilder().build())
+            .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
             .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
             .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
             .build();

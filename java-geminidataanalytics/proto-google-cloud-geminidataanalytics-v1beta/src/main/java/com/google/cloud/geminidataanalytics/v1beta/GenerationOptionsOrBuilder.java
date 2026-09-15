@@ -83,4 +83,18 @@ public interface GenerationOptionsOrBuilder
    * @return The generateDisambiguationQuestion.
    */
   boolean getGenerateDisambiguationQuestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true (default to false), returns internal debugging
+   * information.
+   * </pre>
+   *
+   * <code>bool generate_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The generateDebugInfo.
+   */
+  boolean getGenerateDebugInfo();
 }

@@ -73,6 +73,1791 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.Builder.class);
   }
 
+  public interface AgentsSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>
+        getAgentSpecsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec getAgentSpecs(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getAgentSpecsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                    .AgentSpecOrBuilder>
+        getAgentSpecsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpecOrBuilder
+        getAgentSpecsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec}
+   */
+  public static final class AgentsSpec extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)
+      AgentsSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AgentsSpec");
+    }
+
+    // Use AgentsSpec.newBuilder() to construct.
+    private AgentsSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AgentsSpec() {
+      agentSpecs_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.class,
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder.class);
+    }
+
+    public interface AgentSpecOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. ID to identify the agent resource serving the request.
+       *
+       * This field must conform to
+       * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+       * with a length limit of 63 characters.
+       * </pre>
+       *
+       * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The agentId.
+       */
+      java.lang.String getAgentId();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. ID to identify the agent resource serving the request.
+       *
+       * This field must conform to
+       * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+       * with a length limit of 63 characters.
+       * </pre>
+       *
+       * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for agentId.
+       */
+      com.google.protobuf.ByteString getAgentIdBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification of an agent.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec}
+     */
+    public static final class AgentSpec extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+        AgentSpecOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "AgentSpec");
+      }
+
+      // Use AgentSpec.newBuilder() to construct.
+      private AgentSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AgentSpec() {
+        agentId_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                    .Builder.class);
+      }
+
+      public static final int AGENT_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object agentId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. ID to identify the agent resource serving the request.
+       *
+       * This field must conform to
+       * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+       * with a length limit of 63 characters.
+       * </pre>
+       *
+       * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The agentId.
+       */
+      @java.lang.Override
+      public java.lang.String getAgentId() {
+        java.lang.Object ref = agentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          agentId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. ID to identify the agent resource serving the request.
+       *
+       * This field must conform to
+       * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+       * with a length limit of 63 characters.
+       * </pre>
+       *
+       * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for agentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getAgentIdBytes() {
+        java.lang.Object ref = agentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          agentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, agentId_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agentId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, agentId_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec other =
+            (com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec) obj;
+
+        if (!getAgentId().equals(other.getAgentId())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + AGENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentId().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specification of an agent.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+              .AgentSpecOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          agentId_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+            build() {
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec result =
+              new com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.agentId_ = agentId_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                  .getDefaultInstance()) return this;
+          if (!other.getAgentId().isEmpty()) {
+            agentId_ = other.agentId_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    agentId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object agentId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID to identify the agent resource serving the request.
+         *
+         * This field must conform to
+         * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+         * with a length limit of 63 characters.
+         * </pre>
+         *
+         * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The agentId.
+         */
+        public java.lang.String getAgentId() {
+          java.lang.Object ref = agentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            agentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID to identify the agent resource serving the request.
+         *
+         * This field must conform to
+         * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+         * with a length limit of 63 characters.
+         * </pre>
+         *
+         * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for agentId.
+         */
+        public com.google.protobuf.ByteString getAgentIdBytes() {
+          java.lang.Object ref = agentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            agentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID to identify the agent resource serving the request.
+         *
+         * This field must conform to
+         * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+         * with a length limit of 63 characters.
+         * </pre>
+         *
+         * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The agentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAgentId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          agentId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID to identify the agent resource serving the request.
+         *
+         * This field must conform to
+         * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+         * with a length limit of 63 characters.
+         * </pre>
+         *
+         * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearAgentId() {
+          agentId_ = getDefaultInstance().getAgentId();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. ID to identify the agent resource serving the request.
+         *
+         * This field must conform to
+         * [RFC-1034](https://tools.ietf.org/html/rfc1034)
+         * with a length limit of 63 characters.
+         * </pre>
+         *
+         * <code>string agent_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for agentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAgentIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          agentId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec)
+      private static final com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+              .AgentSpec
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AgentSpec> PARSER =
+          new com.google.protobuf.AbstractParser<AgentSpec>() {
+            @java.lang.Override
+            public AgentSpec parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AgentSpec> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AgentSpec> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int AGENT_SPECS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>
+        agentSpecs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>
+        getAgentSpecsList() {
+      return agentSpecs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                    .AgentSpecOrBuilder>
+        getAgentSpecsOrBuilderList() {
+      return agentSpecs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getAgentSpecsCount() {
+      return agentSpecs_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+        getAgentSpecs(int index) {
+      return agentSpecs_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpecOrBuilder
+        getAgentSpecsOrBuilder(int index) {
+      return agentSpecs_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < agentSpecs_.size(); i++) {
+        output.writeMessage(1, agentSpecs_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < agentSpecs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, agentSpecs_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec other =
+          (com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec) obj;
+
+      if (!getAgentSpecsList().equals(other.getAgentSpecsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAgentSpecsCount() > 0) {
+        hash = (37 * hash) + AGENT_SPECS_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentSpecsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.class,
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (agentSpecsBuilder_ == null) {
+          agentSpecs_ = java.util.Collections.emptyList();
+        } else {
+          agentSpecs_ = null;
+          agentSpecsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.AssistantServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec build() {
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec result =
+            new com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec result) {
+        if (agentSpecsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            agentSpecs_ = java.util.Collections.unmodifiableList(agentSpecs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.agentSpecs_ = agentSpecs_;
+        } else {
+          result.agentSpecs_ = agentSpecsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                .getDefaultInstance()) return this;
+        if (agentSpecsBuilder_ == null) {
+          if (!other.agentSpecs_.isEmpty()) {
+            if (agentSpecs_.isEmpty()) {
+              agentSpecs_ = other.agentSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAgentSpecsIsMutable();
+              agentSpecs_.addAll(other.agentSpecs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.agentSpecs_.isEmpty()) {
+            if (agentSpecsBuilder_.isEmpty()) {
+              agentSpecsBuilder_.dispose();
+              agentSpecsBuilder_ = null;
+              agentSpecs_ = other.agentSpecs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              agentSpecsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetAgentSpecsFieldBuilder()
+                      : null;
+            } else {
+              agentSpecsBuilder_.addAllMessages(other.agentSpecs_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                      m =
+                          input.readMessage(
+                              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                                  .AgentSpec.parser(),
+                              extensionRegistry);
+                  if (agentSpecsBuilder_ == null) {
+                    ensureAgentSpecsIsMutable();
+                    agentSpecs_.add(m);
+                  } else {
+                    agentSpecsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>
+          agentSpecs_ = java.util.Collections.emptyList();
+
+      private void ensureAgentSpecsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          agentSpecs_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>(
+                  agentSpecs_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec,
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                  .AgentSpecOrBuilder>
+          agentSpecsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec>
+          getAgentSpecsList() {
+        if (agentSpecsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(agentSpecs_);
+        } else {
+          return agentSpecsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getAgentSpecsCount() {
+        if (agentSpecsBuilder_ == null) {
+          return agentSpecs_.size();
+        } else {
+          return agentSpecsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+          getAgentSpecs(int index) {
+        if (agentSpecsBuilder_ == null) {
+          return agentSpecs_.get(index);
+        } else {
+          return agentSpecsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec value) {
+        if (agentSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.set(index, value);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAgentSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec.Builder
+              builderForValue) {
+        if (agentSpecsBuilder_ == null) {
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentSpecsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAgentSpecs(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec value) {
+        if (agentSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.add(value);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAgentSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec value) {
+        if (agentSpecsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.add(index, value);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAgentSpecs(
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec.Builder
+              builderForValue) {
+        if (agentSpecsBuilder_ == null) {
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          agentSpecsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAgentSpecs(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec.Builder
+              builderForValue) {
+        if (agentSpecsBuilder_ == null) {
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentSpecsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllAgentSpecs(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                          .AgentSpec>
+              values) {
+        if (agentSpecsBuilder_ == null) {
+          ensureAgentSpecsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, agentSpecs_);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAgentSpecs() {
+        if (agentSpecsBuilder_ == null) {
+          agentSpecs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeAgentSpecs(int index) {
+        if (agentSpecsBuilder_ == null) {
+          ensureAgentSpecsIsMutable();
+          agentSpecs_.remove(index);
+          onChanged();
+        } else {
+          agentSpecsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+              .Builder
+          getAgentSpecsBuilder(int index) {
+        return internalGetAgentSpecsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+              .AgentSpecOrBuilder
+          getAgentSpecsOrBuilder(int index) {
+        if (agentSpecsBuilder_ == null) {
+          return agentSpecs_.get(index);
+        } else {
+          return agentSpecsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                      .AgentSpecOrBuilder>
+          getAgentSpecsOrBuilderList() {
+        if (agentSpecsBuilder_ != null) {
+          return agentSpecsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(agentSpecs_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+              .Builder
+          addAgentSpecsBuilder() {
+        return internalGetAgentSpecsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+              .Builder
+          addAgentSpecsBuilder(int index) {
+        return internalGetAgentSpecsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specification of agents that are used to serve the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec agent_specs = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                  .Builder>
+          getAgentSpecsBuilderList() {
+        return internalGetAgentSpecsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec,
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                  .AgentSpecOrBuilder>
+          internalGetAgentSpecsFieldBuilder() {
+        if (agentSpecsBuilder_ == null) {
+          agentSpecsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec,
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.AgentSpec
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                      .AgentSpecOrBuilder>(
+                  agentSpecs_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          agentSpecs_ = null;
+        }
+        return agentSpecsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec)
+    private static final com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AgentsSpec> PARSER =
+        new com.google.protobuf.AbstractParser<AgentsSpec>() {
+          @java.lang.Override
+          public AgentsSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AgentsSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AgentsSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ToolsSpecOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec)
@@ -5991,6 +7776,68 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
         : userMetadata_;
   }
 
+  public static final int AGENTS_SPEC_FIELD_NUMBER = 22;
+  private com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agentsSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentsSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentsSpec() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentsSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec getAgentsSpec() {
+    return agentsSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+            .getDefaultInstance()
+        : agentsSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification of agents that are used to serve the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder
+      getAgentsSpecOrBuilder() {
+    return agentsSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+            .getDefaultInstance()
+        : agentsSpec_;
+  }
+
   public static final int TOOLS_SPEC_FIELD_NUMBER = 18;
   private com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec toolsSpec_;
 
@@ -6009,7 +7856,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasToolsSpec() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -6070,7 +7917,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasGenerationSpec() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -6141,11 +7988,14 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getUserMetadata());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(18, getToolsSpec());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(19, getGenerationSpec());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(22, getAgentsSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6168,11 +8018,14 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUserMetadata());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getToolsSpec());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getGenerationSpec());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getAgentsSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6199,6 +8052,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     if (hasUserMetadata() != other.hasUserMetadata()) return false;
     if (hasUserMetadata()) {
       if (!getUserMetadata().equals(other.getUserMetadata())) return false;
+    }
+    if (hasAgentsSpec() != other.hasAgentsSpec()) return false;
+    if (hasAgentsSpec()) {
+      if (!getAgentsSpec().equals(other.getAgentsSpec())) return false;
     }
     if (hasToolsSpec() != other.hasToolsSpec()) return false;
     if (hasToolsSpec()) {
@@ -6230,6 +8087,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     if (hasUserMetadata()) {
       hash = (37 * hash) + USER_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getUserMetadata().hashCode();
+    }
+    if (hasAgentsSpec()) {
+      hash = (37 * hash) + AGENTS_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentsSpec().hashCode();
     }
     if (hasToolsSpec()) {
       hash = (37 * hash) + TOOLS_SPEC_FIELD_NUMBER;
@@ -6385,6 +8246,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetQueryFieldBuilder();
         internalGetUserMetadataFieldBuilder();
+        internalGetAgentsSpecFieldBuilder();
         internalGetToolsSpecFieldBuilder();
         internalGetGenerationSpecFieldBuilder();
       }
@@ -6405,6 +8267,11 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       if (userMetadataBuilder_ != null) {
         userMetadataBuilder_.dispose();
         userMetadataBuilder_ = null;
+      }
+      agentsSpec_ = null;
+      if (agentsSpecBuilder_ != null) {
+        agentsSpecBuilder_.dispose();
+        agentsSpecBuilder_ = null;
       }
       toolsSpec_ = null;
       if (toolsSpecBuilder_ != null) {
@@ -6469,13 +8336,17 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.toolsSpec_ = toolsSpecBuilder_ == null ? toolsSpec_ : toolsSpecBuilder_.build();
+        result.agentsSpec_ = agentsSpecBuilder_ == null ? agentsSpec_ : agentsSpecBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.toolsSpec_ = toolsSpecBuilder_ == null ? toolsSpec_ : toolsSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.generationSpec_ =
             generationSpecBuilder_ == null ? generationSpec_ : generationSpecBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6508,6 +8379,9 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasUserMetadata()) {
         mergeUserMetadata(other.getUserMetadata());
+      }
+      if (other.hasAgentsSpec()) {
+        mergeAgentsSpec(other.getAgentsSpec());
       }
       if (other.hasToolsSpec()) {
         mergeToolsSpec(other.getToolsSpec());
@@ -6570,16 +8444,23 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     internalGetToolsSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     internalGetGenerationSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 154
+            case 178:
+              {
+                input.readMessage(
+                    internalGetAgentsSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7349,6 +9230,228 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       return userMetadataBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agentsSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec,
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder>
+        agentsSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentsSpec field is set.
+     */
+    public boolean hasAgentsSpec() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentsSpec.
+     */
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec getAgentsSpec() {
+      if (agentsSpecBuilder_ == null) {
+        return agentsSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                .getDefaultInstance()
+            : agentsSpec_;
+      } else {
+        return agentsSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentsSpec(
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec value) {
+      if (agentsSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentsSpec_ = value;
+      } else {
+        agentsSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentsSpec(
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder
+            builderForValue) {
+      if (agentsSpecBuilder_ == null) {
+        agentsSpec_ = builderForValue.build();
+      } else {
+        agentsSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentsSpec(
+        com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec value) {
+      if (agentsSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && agentsSpec_ != null
+            && agentsSpec_
+                != com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                    .getDefaultInstance()) {
+          getAgentsSpecBuilder().mergeFrom(value);
+        } else {
+          agentsSpec_ = value;
+        }
+      } else {
+        agentsSpecBuilder_.mergeFrom(value);
+      }
+      if (agentsSpec_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentsSpec() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      agentsSpec_ = null;
+      if (agentsSpecBuilder_ != null) {
+        agentsSpecBuilder_.dispose();
+        agentsSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder
+        getAgentsSpecBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetAgentsSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder
+        getAgentsSpecOrBuilder() {
+      if (agentsSpecBuilder_ != null) {
+        return agentsSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return agentsSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec
+                .getDefaultInstance()
+            : agentsSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification of agents that are used to serve the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec agents_spec = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec,
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder>
+        internalGetAgentsSpecFieldBuilder() {
+      if (agentsSpecBuilder_ == null) {
+        agentsSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec,
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.AgentsSpecOrBuilder>(
+                getAgentsSpec(), getParentForChildren(), isClean());
+        agentsSpec_ = null;
+      }
+      return agentsSpecBuilder_;
+    }
+
     private com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec toolsSpec_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec,
@@ -7370,7 +9473,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the toolsSpec field is set.
      */
     public boolean hasToolsSpec() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -7418,7 +9521,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       } else {
         toolsSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7442,7 +9545,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       } else {
         toolsSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7461,7 +9564,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeToolsSpec(
         com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec value) {
       if (toolsSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && toolsSpec_ != null
             && toolsSpec_
                 != com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec
@@ -7474,7 +9577,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
         toolsSpecBuilder_.mergeFrom(value);
       }
       if (toolsSpec_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -7492,7 +9595,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearToolsSpec() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       toolsSpec_ = null;
       if (toolsSpecBuilder_ != null) {
         toolsSpecBuilder_.dispose();
@@ -7515,7 +9618,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.ToolsSpec.Builder
         getToolsSpecBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetToolsSpecFieldBuilder().getBuilder();
     }
@@ -7593,7 +9696,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * @return Whether the generationSpec field is set.
      */
     public boolean hasGenerationSpec() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -7642,7 +9745,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       } else {
         generationSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7666,7 +9769,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
       } else {
         generationSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -7685,7 +9788,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
     public Builder mergeGenerationSpec(
         com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.GenerationSpec value) {
       if (generationSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && generationSpec_ != null
             && generationSpec_
                 != com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.GenerationSpec
@@ -7698,7 +9801,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
         generationSpecBuilder_.mergeFrom(value);
       }
       if (generationSpec_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -7716,7 +9819,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearGenerationSpec() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       generationSpec_ = null;
       if (generationSpecBuilder_ != null) {
         generationSpecBuilder_.dispose();
@@ -7739,7 +9842,7 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.discoveryengine.v1beta.StreamAssistRequest.GenerationSpec.Builder
         getGenerationSpecBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetGenerationSpecFieldBuilder().getBuilder();
     }

@@ -1248,6 +1248,36 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertSame(Clock.SYSTEM, deserializedCredentials.clock);
   }
 
+  /**
+   * Verifies that {@link AwsCredentials} can successfully refresh access tokens after being
+   * serialized and deserialized.
+   */
+  @Test
+  void serialize_refreshAccessToken_success() throws IOException, ClassNotFoundException {
+    // Uses an in-memory MockHttpTransport (no network calls) that returns canned HTTP responses
+    // for both AWS IMDS metadata endpoints and the GCP STS token exchange endpoint.
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    // Use an IMDS credential source so that token refresh is forced to retrieve AWS credentials
+    // and region from the metadata server via HTTP, exercising the supplier's transportFactory.
+    AwsCredentials awsCredential =
+        AwsCredentials.newBuilder(AWS_CREDENTIAL)
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setHttpTransportFactory(transportFactory)
+            .setCredentialSource(buildAwsCredentialSource(transportFactory))
+            .build();
+
+    AwsCredentials deserialized = serializeAndDeserialize(awsCredential);
+
+    // refreshAccessToken() calls getCredentials(), getRegion(), and the STS token endpoint,
+    // verifying that the restored transportFactory is used for all HTTP requests.
+    AccessToken accessToken = deserialized.refreshAccessToken();
+
+    // Verifies the access token returned from the simulated STS exchange matches the mock.
+    assertEquals(transportFactory.transport.getAccessToken(), accessToken.getTokenValue());
+  }
+
   private static void ValidateRequest(
       MockLowLevelHttpRequest request, String expectedUrl, Map<String, String> expectedHeaders) {
     assertEquals(expectedUrl, request.getUrl());

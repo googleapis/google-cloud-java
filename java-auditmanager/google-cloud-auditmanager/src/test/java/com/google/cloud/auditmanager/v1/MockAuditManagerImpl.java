@@ -60,6 +60,91 @@ public class MockAuditManagerImpl extends AuditManagerImplBase {
   }
 
   @Override
+  public void createAuditSchedule(
+      CreateAuditScheduleRequest request, StreamObserver<AuditSchedule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuditSchedule) {
+      requests.add(request);
+      responseObserver.onNext(((AuditSchedule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAuditSchedule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuditSchedule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAuditSchedule(
+      UpdateAuditScheduleRequest request, StreamObserver<AuditSchedule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuditSchedule) {
+      requests.add(request);
+      responseObserver.onNext(((AuditSchedule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAuditSchedule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuditSchedule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAuditSchedule(
+      GetAuditScheduleRequest request, StreamObserver<AuditSchedule> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuditSchedule) {
+      requests.add(request);
+      responseObserver.onNext(((AuditSchedule) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuditSchedule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuditSchedule.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAuditSchedules(
+      ListAuditSchedulesRequest request,
+      StreamObserver<ListAuditSchedulesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAuditSchedulesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAuditSchedulesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAuditSchedules, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAuditSchedulesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void enrollResource(
       EnrollResourceRequest request, StreamObserver<Enrollment> responseObserver) {
     Object response = responses.poll();

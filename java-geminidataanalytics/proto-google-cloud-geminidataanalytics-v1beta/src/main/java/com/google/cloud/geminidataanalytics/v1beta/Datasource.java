@@ -84,7 +84,9 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     ALLOY_DB_REFERENCE(12),
     SPANNER_REFERENCE(13),
     CLOUD_SQL_REFERENCE(14),
+    BIGTABLE_REFERENCE(15),
     BIGQUERY_PROPERTY_GRAPH_REFERENCE(16),
+    FIRESTORE_REFERENCE(17),
     REFERENCE_NOT_SET(0);
     private final int value;
 
@@ -116,8 +118,12 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
           return SPANNER_REFERENCE;
         case 14:
           return CLOUD_SQL_REFERENCE;
+        case 15:
+          return BIGTABLE_REFERENCE;
         case 16:
           return BIGQUERY_PROPERTY_GRAPH_REFERENCE;
+        case 17:
+          return FIRESTORE_REFERENCE;
         case 0:
           return REFERENCE_NOT_SET;
         default:
@@ -499,6 +505,64 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference.getDefaultInstance();
   }
 
+  public static final int BIGTABLE_REFERENCE_FIELD_NUMBER = 15;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   *
+   * @return Whether the bigtableReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigtableReference() {
+    return referenceCase_ == 15;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   *
+   * @return The bigtableReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigtableReference getBigtableReference() {
+    if (referenceCase_ == 15) {
+      return (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder
+      getBigtableReferenceOrBuilder() {
+    if (referenceCase_ == 15) {
+      return (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+  }
+
   public static final int BIGQUERY_PROPERTY_GRAPH_REFERENCE_FIELD_NUMBER = 16;
 
   /**
@@ -563,6 +627,64 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference
         .getDefaultInstance();
+  }
+
+  public static final int FIRESTORE_REFERENCE_FIELD_NUMBER = 17;
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   *
+   * @return Whether the firestoreReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasFirestoreReference() {
+    return referenceCase_ == 17;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   *
+   * @return The firestoreReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.FirestoreReference getFirestoreReference() {
+    if (referenceCase_ == 17) {
+      return (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder
+      getFirestoreReferenceOrBuilder() {
+    if (referenceCase_ == 17) {
+      return (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_;
+    }
+    return com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 7;
@@ -734,10 +856,18 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
     }
+    if (referenceCase_ == 15) {
+      output.writeMessage(
+          15, (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_);
+    }
     if (referenceCase_ == 16) {
       output.writeMessage(
           16,
           (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference) reference_);
+    }
+    if (referenceCase_ == 17) {
+      output.writeMessage(
+          17, (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -782,12 +912,22 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference) reference_);
     }
+    if (referenceCase_ == 15) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_);
+    }
     if (referenceCase_ == 16) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               16,
               (com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference)
                   reference_);
+    }
+    if (referenceCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -833,9 +973,15 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       case 14:
         if (!getCloudSqlReference().equals(other.getCloudSqlReference())) return false;
         break;
+      case 15:
+        if (!getBigtableReference().equals(other.getBigtableReference())) return false;
+        break;
       case 16:
         if (!getBigqueryPropertyGraphReference().equals(other.getBigqueryPropertyGraphReference()))
           return false;
+        break;
+      case 17:
+        if (!getFirestoreReference().equals(other.getFirestoreReference())) return false;
         break;
       case 0:
       default:
@@ -884,9 +1030,17 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + CLOUD_SQL_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getCloudSqlReference().hashCode();
         break;
+      case 15:
+        hash = (37 * hash) + BIGTABLE_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getBigtableReference().hashCode();
+        break;
       case 16:
         hash = (37 * hash) + BIGQUERY_PROPERTY_GRAPH_REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getBigqueryPropertyGraphReference().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + FIRESTORE_REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getFirestoreReference().hashCode();
         break;
       case 0:
       default:
@@ -1057,8 +1211,14 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       if (cloudSqlReferenceBuilder_ != null) {
         cloudSqlReferenceBuilder_.clear();
       }
+      if (bigtableReferenceBuilder_ != null) {
+        bigtableReferenceBuilder_.clear();
+      }
       if (bigqueryPropertyGraphReferenceBuilder_ != null) {
         bigqueryPropertyGraphReferenceBuilder_.clear();
+      }
+      if (firestoreReferenceBuilder_ != null) {
+        firestoreReferenceBuilder_.clear();
       }
       schema_ = null;
       if (schemaBuilder_ != null) {
@@ -1110,11 +1270,11 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.Datasource result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.structSchema_ =
             structSchemaBuilder_ == null ? structSchema_ : structSchemaBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -1140,8 +1300,14 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       if (referenceCase_ == 14 && cloudSqlReferenceBuilder_ != null) {
         result.reference_ = cloudSqlReferenceBuilder_.build();
       }
+      if (referenceCase_ == 15 && bigtableReferenceBuilder_ != null) {
+        result.reference_ = bigtableReferenceBuilder_.build();
+      }
       if (referenceCase_ == 16 && bigqueryPropertyGraphReferenceBuilder_ != null) {
         result.reference_ = bigqueryPropertyGraphReferenceBuilder_.build();
+      }
+      if (referenceCase_ == 17 && firestoreReferenceBuilder_ != null) {
+        result.reference_ = firestoreReferenceBuilder_.build();
       }
     }
 
@@ -1197,9 +1363,19 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
             mergeCloudSqlReference(other.getCloudSqlReference());
             break;
           }
+        case BIGTABLE_REFERENCE:
+          {
+            mergeBigtableReference(other.getBigtableReference());
+            break;
+          }
         case BIGQUERY_PROPERTY_GRAPH_REFERENCE:
           {
             mergeBigqueryPropertyGraphReference(other.getBigqueryPropertyGraphReference());
+            break;
+          }
+        case FIRESTORE_REFERENCE:
+          {
+            mergeFirestoreReference(other.getFirestoreReference());
             break;
           }
         case REFERENCE_NOT_SET:
@@ -1259,14 +1435,14 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 input.readMessage(internalGetSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 82:
               {
                 input.readMessage(
                     internalGetStructSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 98:
@@ -1290,6 +1466,13 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
                 referenceCase_ = 14;
                 break;
               } // case 114
+            case 122:
+              {
+                input.readMessage(
+                    internalGetBigtableReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 15;
+                break;
+              } // case 122
             case 130:
               {
                 input.readMessage(
@@ -1298,6 +1481,13 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
                 referenceCase_ = 16;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    internalGetFirestoreReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                referenceCase_ = 17;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2673,6 +2863,240 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder>
+        bigtableReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     *
+     * @return Whether the bigtableReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigtableReference() {
+      return referenceCase_ == 15;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     *
+     * @return The bigtableReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.BigtableReference getBigtableReference() {
+      if (bigtableReferenceBuilder_ == null) {
+        if (referenceCase_ == 15) {
+          return (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+      } else {
+        if (referenceCase_ == 15) {
+          return bigtableReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    public Builder setBigtableReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigtableReference value) {
+      if (bigtableReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        bigtableReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    public Builder setBigtableReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigtableReference.Builder builderForValue) {
+      if (bigtableReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        bigtableReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    public Builder mergeBigtableReference(
+        com.google.cloud.geminidataanalytics.v1beta.BigtableReference value) {
+      if (bigtableReferenceBuilder_ == null) {
+        if (referenceCase_ == 15
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.BigtableReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.BigtableReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 15) {
+          bigtableReferenceBuilder_.mergeFrom(value);
+        } else {
+          bigtableReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 15;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    public Builder clearBigtableReference() {
+      if (bigtableReferenceBuilder_ == null) {
+        if (referenceCase_ == 15) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 15) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        bigtableReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigtableReference.Builder
+        getBigtableReferenceBuilder() {
+      return internalGetBigtableReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder
+        getBigtableReferenceOrBuilder() {
+      if ((referenceCase_ == 15) && (bigtableReferenceBuilder_ != null)) {
+        return bigtableReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 15) {
+          return (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Bigtable instance.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder>
+        internalGetBigtableReferenceFieldBuilder() {
+      if (bigtableReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 15)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.BigtableReference.getDefaultInstance();
+        }
+        bigtableReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.BigtableReference,
+                com.google.cloud.geminidataanalytics.v1beta.BigtableReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.BigtableReference) reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 15;
+      onChanged();
+      return bigtableReferenceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference,
             com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReference.Builder,
             com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder>
@@ -2926,6 +3350,240 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       return bigqueryPropertyGraphReferenceBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReference,
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder>
+        firestoreReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     *
+     * @return Whether the firestoreReference field is set.
+     */
+    @java.lang.Override
+    public boolean hasFirestoreReference() {
+      return referenceCase_ == 17;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     *
+     * @return The firestoreReference.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.FirestoreReference getFirestoreReference() {
+      if (firestoreReferenceBuilder_ == null) {
+        if (referenceCase_ == 17) {
+          return (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
+      } else {
+        if (referenceCase_ == 17) {
+          return firestoreReferenceBuilder_.getMessage();
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    public Builder setFirestoreReference(
+        com.google.cloud.geminidataanalytics.v1beta.FirestoreReference value) {
+      if (firestoreReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reference_ = value;
+        onChanged();
+      } else {
+        firestoreReferenceBuilder_.setMessage(value);
+      }
+      referenceCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    public Builder setFirestoreReference(
+        com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.Builder builderForValue) {
+      if (firestoreReferenceBuilder_ == null) {
+        reference_ = builderForValue.build();
+        onChanged();
+      } else {
+        firestoreReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      referenceCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    public Builder mergeFirestoreReference(
+        com.google.cloud.geminidataanalytics.v1beta.FirestoreReference value) {
+      if (firestoreReferenceBuilder_ == null) {
+        if (referenceCase_ == 17
+            && reference_
+                != com.google.cloud.geminidataanalytics.v1beta.FirestoreReference
+                    .getDefaultInstance()) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.newBuilder(
+                      (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          reference_ = value;
+        }
+        onChanged();
+      } else {
+        if (referenceCase_ == 17) {
+          firestoreReferenceBuilder_.mergeFrom(value);
+        } else {
+          firestoreReferenceBuilder_.setMessage(value);
+        }
+      }
+      referenceCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    public Builder clearFirestoreReference() {
+      if (firestoreReferenceBuilder_ == null) {
+        if (referenceCase_ == 17) {
+          referenceCase_ = 0;
+          reference_ = null;
+          onChanged();
+        }
+      } else {
+        if (referenceCase_ == 17) {
+          referenceCase_ = 0;
+          reference_ = null;
+        }
+        firestoreReferenceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.Builder
+        getFirestoreReferenceBuilder() {
+      return internalGetFirestoreReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder
+        getFirestoreReferenceOrBuilder() {
+      if ((referenceCase_ == 17) && (firestoreReferenceBuilder_ != null)) {
+        return firestoreReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        if (referenceCase_ == 17) {
+          return (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_;
+        }
+        return com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A reference to a Firestore database.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReference,
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder>
+        internalGetFirestoreReferenceFieldBuilder() {
+      if (firestoreReferenceBuilder_ == null) {
+        if (!(referenceCase_ == 17)) {
+          reference_ =
+              com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.getDefaultInstance();
+        }
+        firestoreReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.FirestoreReference,
+                com.google.cloud.geminidataanalytics.v1beta.FirestoreReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder>(
+                (com.google.cloud.geminidataanalytics.v1beta.FirestoreReference) reference_,
+                getParentForChildren(),
+                isClean());
+        reference_ = null;
+      }
+      referenceCase_ = 17;
+      onChanged();
+      return firestoreReferenceBuilder_;
+    }
+
     private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.geminidataanalytics.v1beta.Schema,
@@ -2947,7 +3605,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2993,7 +3651,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3016,7 +3674,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3034,7 +3692,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSchema(com.google.cloud.geminidataanalytics.v1beta.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -3045,7 +3703,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         schemaBuilder_.mergeFrom(value);
       }
       if (schema_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3063,7 +3721,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -3085,7 +3743,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetSchemaFieldBuilder().getBuilder();
     }
@@ -3164,7 +3822,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * @return Whether the structSchema field is set.
      */
     public boolean hasStructSchema() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3218,7 +3876,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         structSchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3244,7 +3902,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
       } else {
         structSchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3266,7 +3924,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStructSchema(com.google.protobuf.Struct value) {
       if (structSchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && structSchema_ != null
             && structSchema_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getStructSchemaBuilder().mergeFrom(value);
@@ -3277,7 +3935,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
         structSchemaBuilder_.mergeFrom(value);
       }
       if (structSchema_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3299,7 +3957,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStructSchema() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       structSchema_ = null;
       if (structSchemaBuilder_ != null) {
         structSchemaBuilder_.dispose();
@@ -3325,7 +3983,7 @@ public final class Datasource extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Struct.Builder getStructSchemaBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetStructSchemaFieldBuilder().getBuilder();
     }

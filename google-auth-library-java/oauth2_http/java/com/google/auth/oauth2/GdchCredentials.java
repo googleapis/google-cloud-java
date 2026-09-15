@@ -110,10 +110,10 @@ public class GdchCredentials extends GoogleCredentials {
   private final String projectId;
   private final String serviceIdentityName;
   private final URI tokenServerUri;
-  private final String apiAudience;
+  private final @Nullable String apiAudience;
   private final int lifetime;
   private final String transportFactoryClassName;
-  private final String caCertPath;
+  private final @Nullable String caCertPath;
   private transient HttpTransportFactory transportFactory;
 
   /**
@@ -444,7 +444,7 @@ public class GdchCredentials extends GoogleCredentials {
    *
    * @return the audience string, or null if no audience has been set.
    */
-  public final String getGdchAudience() {
+  public final @Nullable String getGdchAudience() {
     return apiAudience;
   }
 
@@ -472,7 +472,7 @@ public class GdchCredentials extends GoogleCredentials {
     return transportFactory;
   }
 
-  public final String getCaCertPath() {
+  public final @Nullable String getCaCertPath() {
     return caCertPath;
   }
 
@@ -542,24 +542,26 @@ public class GdchCredentials extends GoogleCredentials {
   }
 
   public static class Builder extends GoogleCredentials.Builder {
-    private String projectId;
-    private String privateKeyId;
-    private PrivateKey privateKey;
-    private String serviceIdentityName;
-    private URI tokenServerUri;
-    private String apiAudience;
-    private HttpTransportFactory transportFactory;
-    private String caCertPath;
+    private @Nullable String projectId;
+    private @Nullable String privateKeyId;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String serviceIdentityName;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String apiAudience;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String caCertPath;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
 
     protected Builder() {}
 
     protected Builder(GdchCredentials credentials) {
+      super(credentials);
       this.projectId = credentials.projectId;
       this.privateKeyId = credentials.privateKeyId;
       this.privateKey = credentials.privateKey;
       this.serviceIdentityName = credentials.serviceIdentityName;
       this.tokenServerUri = credentials.tokenServerUri;
+      this.apiAudience = credentials.apiAudience;
       this.transportFactory = credentials.transportFactory;
       this.caCertPath = credentials.caCertPath;
       this.lifetime = credentials.lifetime;
@@ -602,7 +604,7 @@ public class GdchCredentials extends GoogleCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setCaCertPath(String caCertPath) {
+    public Builder setCaCertPath(@Nullable String caCertPath) {
       this.caCertPath = caCertPath;
       return this;
     }
@@ -624,32 +626,43 @@ public class GdchCredentials extends GoogleCredentials {
       return this;
     }
 
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    public String getServiceIdentityName() {
+    public @Nullable String getServiceIdentityName() {
       return serviceIdentityName;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable String getGdchAudience() {
+      return apiAudience;
+    }
+
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    public String getCaCertPath() {
+    public @Nullable String getCaCertPath() {
       return caCertPath;
+    }
+
+    @Override
+    @CanIgnoreReturnValue
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
+      super.setQuotaProjectId(quotaProjectId);
+      return this;
     }
 
     public int getLifetime() {
@@ -942,7 +955,8 @@ public class GdchCredentials extends GoogleCredentials {
       throw new GoogleAuthException(
           false,
           0,
-          "Failed to create EC Private Key for GDCH. Please ensure the private key data is valid and represents a P-256 private key.",
+          "Failed to create EC Private Key for GDCH. Please ensure the private key data is valid"
+              + " and represents a P-256 private key.",
           e);
     }
   }

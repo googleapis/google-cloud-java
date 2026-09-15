@@ -197,11 +197,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Provides a token that can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
+   * Provides a token that can be sent as `page_token` to retrieve the next
+   * page.
+   * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
-   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string next_page_token = 2;</code>
    *
    * @return The nextPageToken.
    */
@@ -222,11 +223,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. Provides a token that can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
+   * Provides a token that can be sent as `page_token` to retrieve the next
+   * page.
+   * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
-   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string next_page_token = 2;</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -1151,11 +1153,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Provides a token that can be sent as `page_token` to retrieve the
-     * next page. If this field is omitted, there are no subsequent pages.
+     * Provides a token that can be sent as `page_token` to retrieve the next
+     * page.
+     * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
-     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string next_page_token = 2;</code>
      *
      * @return The nextPageToken.
      */
@@ -1175,11 +1178,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Provides a token that can be sent as `page_token` to retrieve the
-     * next page. If this field is omitted, there are no subsequent pages.
+     * Provides a token that can be sent as `page_token` to retrieve the next
+     * page.
+     * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
-     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string next_page_token = 2;</code>
      *
      * @return The bytes for nextPageToken.
      */
@@ -1199,11 +1203,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Provides a token that can be sent as `page_token` to retrieve the
-     * next page. If this field is omitted, there are no subsequent pages.
+     * Provides a token that can be sent as `page_token` to retrieve the next
+     * page.
+     * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
-     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string next_page_token = 2;</code>
      *
      * @param value The nextPageToken to set.
      * @return This builder for chaining.
@@ -1222,11 +1227,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Provides a token that can be sent as `page_token` to retrieve the
-     * next page. If this field is omitted, there are no subsequent pages.
+     * Provides a token that can be sent as `page_token` to retrieve the next
+     * page.
+     * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
-     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string next_page_token = 2;</code>
      *
      * @return This builder for chaining.
      */
@@ -1241,11 +1247,12 @@ public final class SearchDocumentChunksResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. Provides a token that can be sent as `page_token` to retrieve the
-     * next page. If this field is omitted, there are no subsequent pages.
+     * Provides a token that can be sent as `page_token` to retrieve the next
+     * page.
+     * If this field is omitted, there are no subsequent pages.
      * </pre>
      *
-     * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string next_page_token = 2;</code>
      *
      * @param value The bytes for nextPageToken to set.
      * @return This builder for chaining.
