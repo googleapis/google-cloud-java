@@ -63,6 +63,12 @@
           "rpcs": {
             "CalendarMode": {
               "methods": ["calendarMode", "calendarMode", "calendarModeCallable"]
+            },
+            "Capacity": {
+              "methods": ["capacity", "capacity", "capacityCallable"]
+            },
+            "CapacityHistory": {
+              "methods": ["capacityHistory", "capacityHistory", "capacityHistoryCallable"]
             }
           }
         }
@@ -1923,6 +1929,18 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ProjectViews": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectViewsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
             }
           }
         }

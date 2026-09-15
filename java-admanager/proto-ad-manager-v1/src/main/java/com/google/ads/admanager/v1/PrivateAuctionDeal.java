@@ -1158,6 +1158,70 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         : targeting_;
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 26;
+  private com.google.protobuf.Timestamp startTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getStartTime() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+
   public static final int END_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp endTime_;
 
@@ -1176,7 +1240,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1230,7 +1294,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasFloorPrice() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1369,7 +1433,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1433,7 +1497,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasAuctionPriorityEnabled() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1470,7 +1534,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasBlockOverrideEnabled() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1488,6 +1552,43 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public boolean getBlockOverrideEnabled() {
     return blockOverrideEnabled_;
+  }
+
+  public static final int PUBLISHER_FLOOR_EXEMPT_FIELD_NUMBER = 24;
+  private boolean publisherFloorExempt_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the deal is exempt from publisher floor price.
+   * </pre>
+   *
+   * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the publisherFloorExempt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublisherFloorExempt() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the deal is exempt from publisher floor price.
+   * </pre>
+   *
+   * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publisherFloorExempt.
+   */
+  @java.lang.Override
+  public boolean getPublisherFloorExempt() {
+    return publisherFloorExempt_;
   }
 
   public static final int BUYER_PERMISSION_TYPE_FIELD_NUMBER = 13;
@@ -1509,7 +1610,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasBuyerPermissionType() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1575,7 +1676,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasBuyerData() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1634,7 +1735,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasDealPriority() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1675,6 +1776,41 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         : dealPriority_;
   }
 
+  public static final int ARCHIVED_FIELD_NUMBER = 23;
+  private boolean archived_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the deal is archived.
+   * </pre>
+   *
+   * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchived() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the deal is archived.
+   * </pre>
+   *
+   * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  @java.lang.Override
+  public boolean getArchived() {
+    return archived_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 15;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -1693,7 +1829,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1749,7 +1885,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1820,31 +1956,31 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(6, getTargeting());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(8, getEndTime());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(9, getFloorPrice());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeEnum(10, status_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(11, auctionPriorityEnabled_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeBool(12, blockOverrideEnabled_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeEnum(13, buyerPermissionType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(14, getBuyerData());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(15, getCreateTime());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(16, getUpdateTime());
     }
     for (int i = 0; i < creativeSizes_.size(); i++) {
@@ -1853,8 +1989,17 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 20, privateAuctionDisplayName_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(22, getDealPriority());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeBool(23, archived_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(24, publisherFloorExempt_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(26, getStartTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1883,31 +2028,31 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTargeting());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEndTime());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getFloorPrice());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, status_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, auctionPriorityEnabled_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, blockOverrideEnabled_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, buyerPermissionType_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getBuyerData());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getCreateTime());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getUpdateTime());
     }
     for (int i = 0; i < creativeSizes_.size(); i++) {
@@ -1917,8 +2062,17 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(20, privateAuctionDisplayName_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getDealPriority());
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, archived_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, publisherFloorExempt_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getStartTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1962,6 +2116,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasTargeting()) {
       if (!getTargeting().equals(other.getTargeting())) return false;
     }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
+    }
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
@@ -1983,6 +2141,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasBlockOverrideEnabled()) {
       if (getBlockOverrideEnabled() != other.getBlockOverrideEnabled()) return false;
     }
+    if (hasPublisherFloorExempt() != other.hasPublisherFloorExempt()) return false;
+    if (hasPublisherFloorExempt()) {
+      if (getPublisherFloorExempt() != other.getPublisherFloorExempt()) return false;
+    }
     if (hasBuyerPermissionType() != other.hasBuyerPermissionType()) return false;
     if (hasBuyerPermissionType()) {
       if (buyerPermissionType_ != other.buyerPermissionType_) return false;
@@ -1994,6 +2156,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasDealPriority() != other.hasDealPriority()) return false;
     if (hasDealPriority()) {
       if (!getDealPriority().equals(other.getDealPriority())) return false;
+    }
+    if (hasArchived() != other.hasArchived()) return false;
+    if (hasArchived()) {
+      if (getArchived() != other.getArchived()) return false;
     }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -2040,6 +2206,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + TARGETING_FIELD_NUMBER;
       hash = (53 * hash) + getTargeting().hashCode();
     }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
@@ -2064,6 +2234,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + BLOCK_OVERRIDE_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBlockOverrideEnabled());
     }
+    if (hasPublisherFloorExempt()) {
+      hash = (37 * hash) + PUBLISHER_FLOOR_EXEMPT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPublisherFloorExempt());
+    }
     if (hasBuyerPermissionType()) {
       hash = (37 * hash) + BUYER_PERMISSION_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + buyerPermissionType_;
@@ -2075,6 +2249,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasDealPriority()) {
       hash = (37 * hash) + DEAL_PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + getDealPriority().hashCode();
+    }
+    if (hasArchived()) {
+      hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
     }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -2226,6 +2404,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetTargetingFieldBuilder();
+        internalGetStartTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
         internalGetFloorPriceFieldBuilder();
         internalGetCreativeSizesFieldBuilder();
@@ -2251,6 +2430,11 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         targetingBuilder_.dispose();
         targetingBuilder_ = null;
       }
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
+        startTimeBuilder_ = null;
+      }
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -2267,10 +2451,11 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         creativeSizes_ = null;
         creativeSizesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       status_ = 0;
       auctionPriorityEnabled_ = false;
       blockOverrideEnabled_ = false;
+      publisherFloorExempt_ = false;
       buyerPermissionType_ = 0;
       buyerData_ = null;
       if (buyerDataBuilder_ != null) {
@@ -2282,6 +2467,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         dealPriorityBuilder_.dispose();
         dealPriorityBuilder_ = null;
       }
+      archived_ = false;
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2329,9 +2515,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(com.google.ads.admanager.v1.PrivateAuctionDeal result) {
       if (creativeSizesBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           creativeSizes_ = java.util.Collections.unmodifiableList(creativeSizes_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.creativeSizes_ = creativeSizes_;
       } else {
@@ -2370,45 +2556,57 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.floorPrice_ = floorPriceBuilder_ == null ? floorPrice_ : floorPriceBuilder_.build();
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.status_ = status_;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.floorPrice_ = floorPriceBuilder_ == null ? floorPrice_ : floorPriceBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.auctionPriorityEnabled_ = auctionPriorityEnabled_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.blockOverrideEnabled_ = blockOverrideEnabled_;
+        result.auctionPriorityEnabled_ = auctionPriorityEnabled_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.buyerPermissionType_ = buyerPermissionType_;
+        result.blockOverrideEnabled_ = blockOverrideEnabled_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.buyerData_ = buyerDataBuilder_ == null ? buyerData_ : buyerDataBuilder_.build();
+        result.publisherFloorExempt_ = publisherFloorExempt_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.dealPriority_ =
-            dealPriorityBuilder_ == null ? dealPriority_ : dealPriorityBuilder_.build();
+        result.buyerPermissionType_ = buyerPermissionType_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.buyerData_ = buyerDataBuilder_ == null ? buyerData_ : buyerDataBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.dealPriority_ =
+            dealPriorityBuilder_ == null ? dealPriority_ : dealPriorityBuilder_.build();
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.archived_ = archived_;
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00040000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2450,6 +2648,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       if (other.hasTargeting()) {
         mergeTargeting(other.getTargeting());
       }
+      if (other.hasStartTime()) {
+        mergeStartTime(other.getStartTime());
+      }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
@@ -2460,7 +2661,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         if (!other.creativeSizes_.isEmpty()) {
           if (creativeSizes_.isEmpty()) {
             creativeSizes_ = other.creativeSizes_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureCreativeSizesIsMutable();
             creativeSizes_.addAll(other.creativeSizes_);
@@ -2473,7 +2674,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
             creativeSizesBuilder_.dispose();
             creativeSizesBuilder_ = null;
             creativeSizes_ = other.creativeSizes_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             creativeSizesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCreativeSizesFieldBuilder()
@@ -2492,6 +2693,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       if (other.hasBlockOverrideEnabled()) {
         setBlockOverrideEnabled(other.getBlockOverrideEnabled());
       }
+      if (other.hasPublisherFloorExempt()) {
+        setPublisherFloorExempt(other.getPublisherFloorExempt());
+      }
       if (other.hasBuyerPermissionType()) {
         setBuyerPermissionTypeValue(other.getBuyerPermissionTypeValue());
       }
@@ -2500,6 +2704,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasDealPriority()) {
         mergeDealPriority(other.getDealPriority());
+      }
+      if (other.hasArchived()) {
+        setArchived(other.getArchived());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -2573,59 +2780,59 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
             case 66:
               {
                 input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     internalGetFloorPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 80:
               {
                 status_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 80
             case 88:
               {
                 auctionPriorityEnabled_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 88
             case 96:
               {
                 blockOverrideEnabled_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 96
             case 104:
               {
                 buyerPermissionType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 104
             case 114:
               {
                 input.readMessage(
                     internalGetBuyerDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 130
             case 146:
@@ -2650,9 +2857,28 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     internalGetDealPriorityFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 178
+            case 184:
+              {
+                archived_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 184
+            case 192:
+              {
+                publisherFloorExempt_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 192
+            case 210:
+              {
+                input.readMessage(
+                    internalGetStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3469,6 +3695,241 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       return targetingBuilder_;
     }
 
+    private com.google.protobuf.Timestamp startTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    public com.google.protobuf.Timestamp getStartTime() {
+      if (startTimeBuilder_ == null) {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      } else {
+        return startTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startTime_ = value;
+      } else {
+        startTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startTimeBuilder_ == null) {
+        startTime_ = builderForValue.build();
+      } else {
+        startTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
+        } else {
+          startTime_ = value;
+        }
+      } else {
+        startTimeBuilder_.mergeFrom(value);
+      }
+      if (startTime_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder clearStartTime() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
+        startTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetStartTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      if (startTimeBuilder_ != null) {
+        return startTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+     * If unset, the `startTime` will default as follows:
+     * On create: To the deal's `create_time`.
+     * On update: To the deal's existing `start_time`, which can be null.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetStartTimeFieldBuilder() {
+      if (startTimeBuilder_ == null) {
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
+        startTime_ = null;
+      }
+      return startTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -3490,7 +3951,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3534,7 +3995,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3556,7 +4017,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3574,7 +4035,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -3585,7 +4046,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3603,7 +4064,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -3625,7 +4086,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetEndTimeFieldBuilder().getBuilder();
     }
@@ -3695,7 +4156,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the floorPrice field is set.
      */
     public boolean hasFloorPrice() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3737,7 +4198,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         floorPriceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3758,7 +4219,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         floorPriceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3775,7 +4236,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeFloorPrice(com.google.type.Money value) {
       if (floorPriceBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && floorPrice_ != null
             && floorPrice_ != com.google.type.Money.getDefaultInstance()) {
           getFloorPriceBuilder().mergeFrom(value);
@@ -3786,7 +4247,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         floorPriceBuilder_.mergeFrom(value);
       }
       if (floorPrice_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3803,7 +4264,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearFloorPrice() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       floorPrice_ = null;
       if (floorPriceBuilder_ != null) {
         floorPriceBuilder_.dispose();
@@ -3824,7 +4285,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.type.Money.Builder getFloorPriceBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetFloorPriceFieldBuilder().getBuilder();
     }
@@ -3875,9 +4336,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         java.util.Collections.emptyList();
 
     private void ensureCreativeSizesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         creativeSizes_ = new java.util.ArrayList<com.google.ads.admanager.v1.Size>(creativeSizes_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -4124,7 +4585,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     public Builder clearCreativeSizes() {
       if (creativeSizesBuilder_ == null) {
         creativeSizes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         creativeSizesBuilder_.clear();
@@ -4267,7 +4728,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
                 com.google.ads.admanager.v1.Size.Builder,
                 com.google.ads.admanager.v1.SizeOrBuilder>(
                 creativeSizes_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         creativeSizes_ = null;
@@ -4292,7 +4753,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4329,7 +4790,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder setStatusValue(int value) {
       status_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4380,7 +4841,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -4400,7 +4861,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       status_ = 0;
       onChanged();
       return this;
@@ -4422,7 +4883,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasAuctionPriorityEnabled() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4458,7 +4919,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     public Builder setAuctionPriorityEnabled(boolean value) {
 
       auctionPriorityEnabled_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4476,7 +4937,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearAuctionPriorityEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       auctionPriorityEnabled_ = false;
       onChanged();
       return this;
@@ -4498,7 +4959,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasBlockOverrideEnabled() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4534,7 +4995,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     public Builder setBlockOverrideEnabled(boolean value) {
 
       blockOverrideEnabled_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4552,8 +5013,84 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBlockOverrideEnabled() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       blockOverrideEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean publisherFloorExempt_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the deal is exempt from publisher floor price.
+     * </pre>
+     *
+     * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the publisherFloorExempt field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublisherFloorExempt() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the deal is exempt from publisher floor price.
+     * </pre>
+     *
+     * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The publisherFloorExempt.
+     */
+    @java.lang.Override
+    public boolean getPublisherFloorExempt() {
+      return publisherFloorExempt_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the deal is exempt from publisher floor price.
+     * </pre>
+     *
+     * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The publisherFloorExempt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublisherFloorExempt(boolean value) {
+
+      publisherFloorExempt_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the deal is exempt from publisher floor price.
+     * </pre>
+     *
+     * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublisherFloorExempt() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      publisherFloorExempt_ = false;
       onChanged();
       return this;
     }
@@ -4576,7 +5113,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasBuyerPermissionType() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4615,7 +5152,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder setBuyerPermissionTypeValue(int value) {
       buyerPermissionType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4666,7 +5203,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       buyerPermissionType_ = value.getNumber();
       onChanged();
       return this;
@@ -4687,7 +5224,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearBuyerPermissionType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       buyerPermissionType_ = 0;
       onChanged();
       return this;
@@ -4714,7 +5251,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the buyerData field is set.
      */
     public boolean hasBuyerData() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4760,7 +5297,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         buyerDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4783,7 +5320,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         buyerDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4801,7 +5338,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeBuyerData(com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerData value) {
       if (buyerDataBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && buyerData_ != null
             && buyerData_
                 != com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerData.getDefaultInstance()) {
@@ -4813,7 +5350,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         buyerDataBuilder_.mergeFrom(value);
       }
       if (buyerData_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4831,7 +5368,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearBuyerData() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       buyerData_ = null;
       if (buyerDataBuilder_ != null) {
         buyerDataBuilder_.dispose();
@@ -4853,7 +5390,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.ads.admanager.v1.PrivateAuctionDeal.BuyerData.Builder getBuyerDataBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetBuyerDataFieldBuilder().getBuilder();
     }
@@ -4929,7 +5466,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the dealPriority field is set.
      */
     public boolean hasDealPriority() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -4975,7 +5512,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         dealPriorityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4998,7 +5535,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         dealPriorityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5016,7 +5553,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDealPriority(com.google.ads.admanager.v1.NonGuaranteedDealPriority value) {
       if (dealPriorityBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && dealPriority_ != null
             && dealPriority_
                 != com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()) {
@@ -5028,7 +5565,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         dealPriorityBuilder_.mergeFrom(value);
       }
       if (dealPriority_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -5046,7 +5583,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDealPriority() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       dealPriority_ = null;
       if (dealPriorityBuilder_ != null) {
         dealPriorityBuilder_.dispose();
@@ -5068,7 +5605,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder getDealPriorityBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetDealPriorityFieldBuilder().getBuilder();
     }
@@ -5123,6 +5660,78 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       return dealPriorityBuilder_;
     }
 
+    private boolean archived_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the deal is archived.
+     * </pre>
+     *
+     * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the archived field is set.
+     */
+    @java.lang.Override
+    public boolean hasArchived() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the deal is archived.
+     * </pre>
+     *
+     * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The archived.
+     */
+    @java.lang.Override
+    public boolean getArchived() {
+      return archived_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the deal is archived.
+     * </pre>
+     *
+     * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The archived to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchived(boolean value) {
+
+      archived_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the deal is archived.
+     * </pre>
+     *
+     * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchived() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      archived_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -5144,7 +5753,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5190,7 +5799,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5212,7 +5821,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5230,7 +5839,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -5241,7 +5850,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -5259,7 +5868,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -5281,7 +5890,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5357,7 +5966,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5405,7 +6014,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5428,7 +6037,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5447,7 +6056,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5458,7 +6067,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -5477,7 +6086,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5500,7 +6109,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
