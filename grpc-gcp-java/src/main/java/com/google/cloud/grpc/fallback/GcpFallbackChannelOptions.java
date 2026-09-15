@@ -25,6 +25,7 @@ import io.grpc.Status;
 import java.time.Duration;
 import java.util.EnumSet;
 import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Function;
 
 public class GcpFallbackChannelOptions {
@@ -37,9 +38,15 @@ public class GcpFallbackChannelOptions {
   private final Function<Channel, String> fallbackProbingFunction;
   private final Duration primaryProbingInterval;
   private final Duration fallbackProbingInterval;
+  private final int minPrimaryProbeSuccessCount;
+  private final Duration minPrimaryProbeSuccessDuration;
+  private final boolean enableRecovery;
+  private final boolean enablePerChannelRecovery;
   private final String primaryChannelName;
   private final String fallbackChannelName;
   private final GcpFallbackOpenTelemetry openTelemetry;
+  private final ScheduledExecutorService sharedExecutorService;
+  private final GcpFallbackState sharedState;
 
   public GcpFallbackChannelOptions(Builder builder) {
     this.enableFallback = builder.enableFallback;
@@ -51,9 +58,15 @@ public class GcpFallbackChannelOptions {
     this.fallbackProbingFunction = builder.fallbackProbingFunction;
     this.primaryProbingInterval = builder.primaryProbingInterval;
     this.fallbackProbingInterval = builder.fallbackProbingInterval;
+    this.minPrimaryProbeSuccessCount = builder.minPrimaryProbeSuccessCount;
+    this.minPrimaryProbeSuccessDuration = builder.minPrimaryProbeSuccessDuration;
+    this.enableRecovery = builder.enableRecovery;
+    this.enablePerChannelRecovery = builder.enablePerChannelRecovery;
     this.primaryChannelName = builder.primaryChannelName;
     this.fallbackChannelName = builder.fallbackChannelName;
     this.openTelemetry = builder.openTelemetry;
+    this.sharedExecutorService = builder.sharedExecutorService;
+    this.sharedState = builder.sharedState;
   }
 
   public static Builder newBuilder() {
@@ -96,6 +109,22 @@ public class GcpFallbackChannelOptions {
     return fallbackProbingInterval;
   }
 
+  public int getMinPrimaryProbeSuccessCount() {
+    return minPrimaryProbeSuccessCount;
+  }
+
+  public Duration getMinPrimaryProbeSuccessDuration() {
+    return minPrimaryProbeSuccessDuration;
+  }
+
+  public boolean isEnableRecovery() {
+    return enableRecovery;
+  }
+
+  public boolean isEnablePerChannelRecovery() {
+    return enablePerChannelRecovery;
+  }
+
   public String getPrimaryChannelName() {
     return primaryChannelName;
   }
@@ -106,6 +135,14 @@ public class GcpFallbackChannelOptions {
 
   public GcpFallbackOpenTelemetry getGcpOpenTelemetry() {
     return openTelemetry;
+  }
+
+  public ScheduledExecutorService getSharedExecutorService() {
+    return sharedExecutorService;
+  }
+
+  public GcpFallbackState getSharedState() {
+    return sharedState;
   }
 
   public static class Builder {
@@ -122,10 +159,17 @@ public class GcpFallbackChannelOptions {
     private Duration primaryProbingInterval = Duration.ofMinutes(1);
     private Duration fallbackProbingInterval = Duration.ofMinutes(15);
 
+    private int minPrimaryProbeSuccessCount = 10;
+    private Duration minPrimaryProbeSuccessDuration = Duration.ZERO;
+    private boolean enableRecovery = false;
+    private boolean enablePerChannelRecovery = false;
+
     private String primaryChannelName = "primary";
     private String fallbackChannelName = "fallback";
 
     private GcpFallbackOpenTelemetry openTelemetry = null;
+    private ScheduledExecutorService sharedExecutorService = null;
+    private GcpFallbackState sharedState = null;
 
     public Builder() {}
 
@@ -184,6 +228,26 @@ public class GcpFallbackChannelOptions {
       return this;
     }
 
+    public Builder setMinPrimaryProbeSuccessCount(int minPrimaryProbeSuccessCount) {
+      this.minPrimaryProbeSuccessCount = minPrimaryProbeSuccessCount;
+      return this;
+    }
+
+    public Builder setMinPrimaryProbeSuccessDuration(Duration minPrimaryProbeSuccessDuration) {
+      this.minPrimaryProbeSuccessDuration = minPrimaryProbeSuccessDuration;
+      return this;
+    }
+
+    public Builder setEnableRecovery(boolean enableRecovery) {
+      this.enableRecovery = enableRecovery;
+      return this;
+    }
+
+    public Builder setEnablePerChannelRecovery(boolean enablePerChannelRecovery) {
+      this.enablePerChannelRecovery = enablePerChannelRecovery;
+      return this;
+    }
+
     public Builder setPrimaryChannelName(String primaryChannelName) {
       this.primaryChannelName = primaryChannelName;
       return this;
@@ -196,6 +260,16 @@ public class GcpFallbackChannelOptions {
 
     public Builder setGcpFallbackOpenTelemetry(GcpFallbackOpenTelemetry openTelemetry) {
       this.openTelemetry = openTelemetry;
+      return this;
+    }
+
+    public Builder setSharedExecutorService(ScheduledExecutorService sharedExecutorService) {
+      this.sharedExecutorService = sharedExecutorService;
+      return this;
+    }
+
+    public Builder setSharedState(GcpFallbackState sharedState) {
+      this.sharedState = sharedState;
       return this;
     }
 
