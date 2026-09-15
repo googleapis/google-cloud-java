@@ -302,6 +302,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private static final long DEFAULT_PAGE_SIZE = 10000L;
 
     private final JobId jobId;
+    private final String customStreamName;
     private final Schema schema;
     private final byte[] arrowSchemaBytes;
     private final BigQueryOptions serviceOptions;
@@ -325,7 +326,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         long initialRowOffset,
         Long maxResults,
         Map<BigQueryRpc.Option, ?> optionsMap) {
+      this(
+          jobId,
+          null,
+          schema,
+          arrowSchemaBytes,
+          arrowSchemaPojo,
+          serviceOptions,
+          initialRowOffset,
+          maxResults,
+          optionsMap);
+    }
+
+    ArrowQueryPageFetcher(
+        JobId jobId,
+        String customStreamName,
+        Schema schema,
+        byte[] arrowSchemaBytes,
+        org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
+        BigQueryOptions serviceOptions,
+        long initialRowOffset,
+        Long maxResults,
+        Map<BigQueryRpc.Option, ?> optionsMap) {
       this.jobId = jobId;
+      this.customStreamName = customStreamName;
       this.schema = schema;
       this.arrowSchemaBytes = arrowSchemaBytes;
       this.arrowSchemaPojo = arrowSchemaPojo;
@@ -354,21 +378,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
 
       try {
-        // Resolve job location in order: JobId location -> BigQueryOptions location -> "global"
-        // default.
-        // The Storage Read API stream resource name requires a location component (e.g.
-        // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
-        // location
-        // was provided on the job or service options, defaulting to "global" allows queries created
-        // without an explicit location to still stream results without failing.
-        String location = jobId.getLocation();
-        if (location == null) {
-          location = serviceOptions.getLocation();
-        }
-        if (location == null) {
-          location = "global";
-        }
-
         if (streamIterator == null) {
           if (bqReadClient == null) {
             BigQuery service = serviceOptions.getService();
@@ -382,13 +391,32 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             bqReadClient = ((BigQueryImpl) service).getBigQueryReadClient(location);
           }
 
-          // Construct the default stream path for reading job query results via Storage Read API.
-          String streamName =
-              String.format(
-                  "projects/%s/locations/%s/jobs/%s/streams/_default",
-                  jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
-                  location,
-                  jobId.getJob());
+          String streamName;
+          if (customStreamName != null) {
+            streamName = customStreamName;
+          } else {
+            // Resolve job location in order: JobId location -> BigQueryOptions location -> "global"
+            // default.
+            // The Storage Read API stream resource name requires a location component (e.g.
+            // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
+            // location was provided on the job or service options, defaulting to "global" allows
+            // queries created without an explicit location to still stream results without failing.
+            String location = jobId.getLocation();
+            if (location == null) {
+              location = serviceOptions.getLocation();
+            }
+            if (location == null) {
+              location = "global";
+            }
+
+            // Construct the default stream path for reading job query results via Storage Read API.
+            streamName =
+                String.format(
+                    "projects/%s/locations/%s/jobs/%s/streams/_default",
+                    jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
+                    location,
+                    jobId.getJob());
+          }
 
           ReadRowsRequest readRowsRequest =
               ReadRowsRequest.newBuilder()
@@ -2710,8 +2738,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         return queryRpc(projectId, content, options);
       }
       if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
-        throw new UnsupportedOperationException(
-            "Arrow results format for slow query path execution is not yet supported.");
+        return queryFallbackArrow(jobId, configuration, options);
       }
       return create(JobInfo.of(jobId, configuration), options);
     } finally {
@@ -2988,6 +3015,172 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     return ArrowQueryResultImpl.fromReadSession(readSession, jobId, client);
+  }
+
+  /**
+   * Executes a slow-path query job using {@code jobs.insert}, awaits its completion, and streams
+   * the result rows via the BigQuery Storage Read API in Arrow format, wrapping the decoded rows in
+   * a {@link TableResult}.
+   *
+   * @param jobId the job ID, or {@code null}
+   * @param configuration the query job configuration
+   * @param options query job options
+   * @return a {@link TableResult} containing the decoded rows and job execution metadata
+   * @throws InterruptedException if interrupted while awaiting job completion
+   * @throws BigQueryException if job execution or ReadSession creation fails
+   */
+  private TableResult queryFallbackArrow(
+      JobId jobId, QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException {
+    Job job = create(JobInfo.of(jobId, configuration), options);
+    Job completedJob = job.waitFor();
+
+    if (completedJob == null) {
+      throw new BigQueryException(0, "Job no longer exists or could not be retrieved.");
+    }
+
+    if (completedJob.getStatus().getError() != null) {
+      throw new BigQueryException(Collections.singletonList(completedJob.getStatus().getError()));
+    }
+
+    TableId destinationTable = null;
+    if (completedJob.getConfiguration() instanceof QueryJobConfiguration) {
+      destinationTable =
+          ((QueryJobConfiguration) completedJob.getConfiguration()).getDestinationTable();
+    }
+    if (destinationTable == null) {
+      destinationTable = configuration.getDestinationTable();
+    }
+    if (destinationTable == null) {
+      throw new BigQueryException(0, "Unable to resolve destination table for fallback query");
+    }
+
+    JobStatistics.QueryStatistics stats =
+        completedJob.getStatistics() instanceof JobStatistics.QueryStatistics
+            ? (JobStatistics.QueryStatistics) completedJob.getStatistics()
+            : null;
+
+    StatementType statementType = stats != null ? stats.getStatementType() : null;
+    Long totalBytesBilled = stats != null ? stats.getTotalBytesBilled() : null;
+    Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
+    Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
+    Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+    SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
+
+    String destProject =
+        destinationTable.getProject() != null
+            ? destinationTable.getProject()
+            : (completedJob.getJobId() != null && completedJob.getJobId().getProject() != null
+                ? completedJob.getJobId().getProject()
+                : getOptions().getProjectId());
+    String parent = String.format("projects/%s", destProject);
+    String srcTable =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s",
+            destProject, destinationTable.getDataset(), destinationTable.getTable());
+
+    BigQueryReadClient client = getBigQueryReadClient();
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parent)
+            .setReadSession(
+                ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW))
+            .setMaxStreamCount(1)
+            .build();
+    ReadSession readSession;
+    try {
+      readSession = client.createReadSession(request);
+    } catch (Exception e) {
+      throw new BigQueryException(0, "Failed to create ReadSession for fallback query", e);
+    }
+
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
+    byte[] arrowSchemaBytes = null;
+    if (readSession.hasArrowSchema()) {
+      arrowSchemaBytes = readSession.getArrowSchema().getSerializedSchema().toByteArray();
+      try {
+        arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+      } catch (IOException e) {
+        throw new BigQueryException(0, "Failed to deserialize Arrow schema from ReadSession", e);
+      }
+    }
+    Schema schema =
+        arrowSchemaPojo != null
+            ? ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchemaPojo)
+            : (stats != null ? stats.getSchema() : null);
+
+    String streamName =
+        readSession.getStreamsCount() > 0 ? readSession.getStreams(0).getName() : null;
+
+    if (streamName == null) {
+      return TableResult.newBuilder()
+          .setSchema(schema)
+          .setTotalRows(numDmlAffectedRows != null ? numDmlAffectedRows : 0L)
+          .setPageNoSchema(
+              new PageImpl<>(
+                  new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+                  null,
+                  ImmutableList.of()))
+          .setJobId(completedJob.getJobId())
+          .setRowsInPage(0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
+          .build();
+    }
+
+    ArrowQueryPageFetcher pageFetcher =
+        new ArrowQueryPageFetcher(
+            completedJob.getJobId(),
+            streamName,
+            schema,
+            arrowSchemaBytes,
+            arrowSchemaPojo,
+            getOptions(),
+            0L,
+            configuration.getMaxResults(),
+            optionMap(options));
+
+    Page<FieldValueList> firstPage = pageFetcher.getNextPage();
+    List<FieldValueList> firstPageRows =
+        firstPage != null ? ImmutableList.copyOf(firstPage.getValues()) : ImmutableList.of();
+    long rowsInPage = (long) firstPageRows.size();
+
+    Table destTable = null;
+    try {
+      destTable = getTable(destinationTable);
+    } catch (Exception e) {
+      // Non-fatal table lookup failure
+    }
+    long totalRows =
+        numDmlAffectedRows != null
+            ? numDmlAffectedRows
+            : (destTable != null && destTable.getNumRows() != null
+                ? destTable.getNumRows().longValue()
+                : rowsInPage);
+
+    return TableResult.newBuilder()
+        .setSchema(schema)
+        .setTotalRows(totalRows)
+        .setPageNoSchema(
+            firstPage != null
+                ? firstPage
+                : new PageImpl<>(
+                    new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+                    null,
+                    ImmutableList.of()))
+        .setJobId(completedJob.getJobId())
+        .setRowsInPage(rowsInPage)
+        .setStatementType(statementType)
+        .setTotalBytesBilled(totalBytesBilled)
+        .setTotalBytesProcessed(totalBytesProcessed)
+        .setTotalSlotMs(totalSlotMs)
+        .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
+        .build();
   }
 
   @Override
