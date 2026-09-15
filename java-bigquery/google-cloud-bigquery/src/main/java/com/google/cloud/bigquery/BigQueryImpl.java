@@ -77,7 +77,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -2536,7 +2535,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
 
     // Deserialize first page of rows from the Arrow record batch (if present).
-    Collection<FieldValueList> firstPageRows;
+    List<FieldValueList> firstPageRows;
     if (results.getArrowRecordBatch() == null
         || results.getArrowRecordBatch().getSerializedRecordBatch() == null) {
       firstPageRows = ImmutableList.of();
