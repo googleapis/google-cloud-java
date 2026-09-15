@@ -35,7 +35,6 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -54,11 +53,6 @@ public class ITConnectionTest {
     DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
-  }
-
-  @AfterAll
-  public static void afterClass() {
-    // Shared dataset cleanup is handled by ITBase shutdown hook.
   }
 
   @Test

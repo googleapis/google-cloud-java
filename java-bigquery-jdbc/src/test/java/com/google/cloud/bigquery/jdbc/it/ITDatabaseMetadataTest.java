@@ -41,7 +41,6 @@ import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
@@ -70,11 +69,6 @@ public class ITDatabaseMetadataTest extends ITBase {
     CONSTRAINTS_DATASET = ITBase.getSharedDataset();
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
-  }
-
-  @AfterAll
-  public static void afterClass() {
-    // Shared dataset cleanup is handled by ITBase shutdown hook.
   }
 
   @Disabled
