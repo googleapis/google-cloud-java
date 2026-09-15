@@ -2457,13 +2457,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     try (Scope queryRpcScope = queryRpc != null ? queryRpc.makeCurrent() : null) {
       results =
           BigQueryRetryHelper.runWithRetries(
-              new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
-                @Override
-                public com.google.api.services.bigquery.model.QueryResponse call()
-                    throws IOException {
-                  return bigQueryRpc.queryRpcSkipExceptionTranslation(projectId, content);
-                }
-              },
+              () -> bigQueryRpc.queryRpcSkipExceptionTranslation(projectId, content),
               getOptions().getRetrySettings(),
               getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
@@ -2547,8 +2541,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           ImmutableList.copyOf(Iterables.limit(firstPageRows, content.getMaxResults().intValue()));
     }
 
-    boolean hasMorePages =
-        results.getPageToken() != null && Boolean.TRUE.equals(results.getJobComplete());
+    boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = 0L;
     if (hasMorePages) {
       Long parsedOffset = Longs.tryParse(results.getPageToken());
