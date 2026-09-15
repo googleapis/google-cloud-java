@@ -2438,6 +2438,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .build();
   }
 
+  /**
+   * Executes a fast-path query RPC request expecting Arrow-formatted wire response.
+   *
+   * <p>Deserializes the returned Arrow IPC schema and record batch into standard {@link
+   * TableResult} row-based representations, configuring {@link ArrowQueryPageFetcher} for
+   * subsequent pages when pagination tokens are returned.
+   *
+   * @param projectId project ID in which to execute the query
+   * @param content query request content PB
+   * @param options job options
+   * @return either a {@link Job} if incomplete/fallback is required, or {@link TableResult}
+   * @throws InterruptedException if interrupted while awaiting RPC execution
+   */
   private Object queryRpcArrow(
       final String projectId, final QueryRequest content, JobOption... options)
       throws InterruptedException {
@@ -2478,6 +2491,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(bigQueryErrors);
     }
 
+    // If query is incomplete or did not return an Arrow schema, fallback to fetching the Job.
     if (!Boolean.TRUE.equals(results.getJobComplete()) || results.getArrowSchema() == null) {
       if (results.getJobReference() == null) {
         throw new BigQueryException(
@@ -2491,6 +2505,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(0, "Arrow schema is missing from the response");
     }
 
+    // Deserialize Arrow IPC schema and convert to veneer BigQuery Schema.
     byte[] arrowSchemaBytes = results.getArrowSchema().decodeSerializedSchema();
     org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
     try {
@@ -2520,6 +2535,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     SessionInfo sessionInfo =
         results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
 
+    // Deserialize first page of rows from the Arrow record batch (if present).
     Collection<FieldValueList> firstPageRows;
     if (results.getArrowRecordBatch() == null
         || results.getArrowRecordBatch().getSerializedRecordBatch() == null) {
@@ -2536,11 +2552,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
     }
 
+    // Enforce maxResults limit on the first page if requested.
     if (content.getMaxResults() != null && firstPageRows.size() > content.getMaxResults()) {
       firstPageRows =
           ImmutableList.copyOf(Iterables.limit(firstPageRows, content.getMaxResults().intValue()));
     }
 
+    // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = 0L;
     if (hasMorePages) {
@@ -2553,6 +2571,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
     }
 
+    // Multi-page results: configure ArrowQueryPageFetcher for subsequent tabledata.list calls.
     if (hasMorePages) {
       if (results.getJobReference() == null) {
         throw new BigQueryException(
