@@ -74,8 +74,11 @@ import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
+import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadStream;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
@@ -2949,19 +2952,126 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testQueryArrowResultsFormatUnsupportedConfiguration() {
-    QueryJobConfiguration config =
-        QueryJobConfiguration.newBuilder("SELECT 1")
-            .setQueryResultsFormat(QueryResultsFormat.ARROW)
-            .setDestinationTable(TableId.of("dataset", "table"))
+  void testQueryWithArrowFormatSlowPathFallback() throws Exception {
+    JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
+    com.google.api.services.bigquery.model.JobStatus jobStatus =
+        new com.google.api.services.bigquery.model.JobStatus().setState("DONE");
+
+    com.google.api.services.bigquery.model.Job jobResponsePb =
+        new com.google.api.services.bigquery.model.Job()
+            .setJobReference(queryJob.toPb())
+            .setStatus(jobStatus)
+            .setConfiguration(
+                new com.google.api.services.bigquery.model.JobConfiguration()
+                    .setQuery(
+                        new JobConfigurationQuery()
+                            .setQuery("SELECT id FROM test")
+                            .setDestinationTable(TABLE_ID.toPb())))
+            .setStatistics(
+                new com.google.api.services.bigquery.model.JobStatistics()
+                    .setTotalSlotMs(50L)
+                    .setQuery(
+                        new com.google.api.services.bigquery.model.JobStatistics2()
+                            .setStatementType("SELECT")
+                            .setTotalBytesBilled(100L)
+                            .setTotalBytesProcessed(200L)));
+
+    when(bigqueryRpcMock.createSkipExceptionTranslation(
+            any(com.google.api.services.bigquery.model.Job.class), any()))
+        .thenReturn(jobResponsePb);
+    when(bigqueryRpcMock.getJobSkipExceptionTranslation(eq(PROJECT), eq(JOB), any(), any()))
+        .thenReturn(jobResponsePb);
+    when(bigqueryRpcMock.getQueryResultsSkipExceptionTranslation(
+            eq(PROJECT), eq(JOB), any(), any()))
+        .thenReturn(
+            new GetQueryResultsResponse().setJobComplete(true).setJobReference(queryJob.toPb()));
+
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    byte[] batchBytes;
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      BigIntVector idVector = new BigIntVector("id", allocator);
+      idVector.allocateNew(1);
+      idVector.set(0, 42L);
+      idVector.setValueCount(1);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(idVector))) {
+        VectorUnloader unloader = new VectorUnloader(root);
+        try (ArrowRecordBatch recordBatch = unloader.getRecordBatch();
+            ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+          WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+          MessageSerializer.serialize(channel, recordBatch);
+          batchBytes = out.toByteArray();
+        }
+      } finally {
+        idVector.close();
+      }
+    }
+
+    com.google.cloud.bigquery.storage.v1.ArrowRecordBatch protoBatch =
+        com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(ByteString.copyFrom(batchBytes))
             .build();
+    ReadRowsResponse streamResponse =
+        ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
+
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
+    when(mockCallable.call(any(ReadRowsRequest.class))).thenReturn(mockServerStream);
+    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+
+    ReadSession readSession =
+        ReadSession.newBuilder()
+            .setName("projects/" + PROJECT + "/locations/" + LOCATION + "/sessions/session-1")
+            .setArrowSchema(
+                com.google.cloud.bigquery.storage.v1.ArrowSchema.newBuilder()
+                    .setSerializedSchema(ByteString.copyFrom(schemaBytes)))
+            .addStreams(ReadStream.newBuilder().setName("stream-1"))
+            .build();
+
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    when(mockReadClient.createReadSession(any(CreateReadSessionRequest.class)))
+        .thenReturn(readSession);
+    when(mockReadClient.readRowsCallable()).thenReturn(mockCallable);
+
     bigquery = options.getService();
-    IllegalArgumentException exception =
-        assertThrows(IllegalArgumentException.class, () -> bigquery.query(config));
-    assertTrue(
-        exception
-            .getMessage()
-            .contains("Arrow results format is only supported for fast query path execution"));
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT id FROM test")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setDestinationTable(TABLE_ID)
+            .build();
+
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(1, Iterables.size(result.getValues()));
+    assertEquals(queryJob, result.getJobId());
+    assertEquals("42", result.getValues().iterator().next().get(0).getStringValue());
+    assertEquals(StatementType.SELECT, result.getStatementType());
+    assertEquals(100L, result.getTotalBytesBilled());
+    assertEquals(200L, result.getTotalBytesProcessed());
+    assertEquals(50L, result.getTotalSlotMs());
+
+    verify(bigqueryRpcMock)
+        .createSkipExceptionTranslation(
+            any(com.google.api.services.bigquery.model.Job.class), any());
+    verify(mockReadClient).createReadSession(any(CreateReadSessionRequest.class));
+    verify(mockCallable).call(any(ReadRowsRequest.class));
   }
 
   @Test
