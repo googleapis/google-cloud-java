@@ -2355,24 +2355,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     long numRows;
     Schema schema;
-    boolean isArrow = results.getArrowSchema() != null;
-    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
-    byte[] arrowSchemaBytes = null;
-    if (results.getJobComplete() && (results.getSchema() != null || isArrow)) {
-      if (isArrow) {
-        if (results.getArrowSchema().getSerializedSchema() == null) {
-          throw new BigQueryException(0, "Arrow schema is missing from the response");
-        }
-        arrowSchemaBytes = results.getArrowSchema().decodeSerializedSchema();
-        try {
-          arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
-        } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to deserialize Arrow schema from response", e);
-        }
-        schema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchemaPojo);
-      } else {
-        schema = Schema.fromPb(results.getSchema());
-      }
+    if (results.getJobComplete() && results.getSchema() != null) {
+      schema = Schema.fromPb(results.getSchema());
       if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
         numRows = 0L;
       } else if (results.getNumDmlAffectedRows() != null) {
@@ -2400,78 +2384,25 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     SessionInfo sessionInfo =
         results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
 
-    Collection<FieldValueList> firstPageRows;
-    if (isArrow) {
-      if (results.getArrowRecordBatch() == null
-          || results.getArrowRecordBatch().getSerializedRecordBatch() == null) {
-        firstPageRows = ImmutableList.of();
-      } else {
-        try {
-          firstPageRows =
-              ArrowDeserializer.deserializeRecordBatch(
-                  results.getArrowRecordBatch().decodeSerializedRecordBatch(),
-                  schema,
-                  arrowSchemaPojo);
-        } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
-        }
-      }
-    } else {
-      firstPageRows =
-          transformTableData(
-              results.getRows() != null ? results.getRows() : ImmutableList.of(),
-              schema,
-              getOptions().getDataFormatOptions().useInt64Timestamp());
-    }
-
-    if (content.getMaxResults() != null && firstPageRows.size() > content.getMaxResults()) {
-      firstPageRows =
-          ImmutableList.copyOf(Iterables.limit(firstPageRows, content.getMaxResults().intValue()));
-    }
-
-    boolean hasMorePages = results.getPageToken() != null && results.getJobComplete();
-    long initialRowOffset = 0L;
-    if (hasMorePages && isArrow) {
-      Long parsedOffset = Longs.tryParse(results.getPageToken());
-      initialRowOffset = parsedOffset != null ? parsedOffset : firstPageRows.size();
-      if (content.getMaxResults() != null
-          && (initialRowOffset >= content.getMaxResults()
-              || firstPageRows.size() >= content.getMaxResults())) {
-        hasMorePages = false;
-      }
-    }
-
-    if (hasMorePages) {
+    if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
-
-      NextPageFetcher<FieldValueList> pageFetcher;
-      if (isArrow) {
-        pageFetcher =
-            new ArrowQueryPageFetcher(
-                jobId,
-                schema,
-                arrowSchemaBytes,
-                arrowSchemaPojo,
-                getOptions(),
-                initialRowOffset,
-                content.getMaxResults(),
-                optionMap(options));
-      } else {
-        pageFetcher = new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options));
-      }
-
       return TableResult.newBuilder()
           .setSchema(schema)
           .setTotalRows(numRows)
           .setPageNoSchema(
               new PageImpl<>(
                   // fetch next pages of results
-                  pageFetcher, cursor, firstPageRows))
+                  new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
+                  cursor,
+                  transformTableData(
+                      results.getRows() != null ? results.getRows() : ImmutableList.of(),
+                      schema,
+                      getOptions().getDataFormatOptions().useInt64Timestamp())))
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
-          .setRowsInPage((long) firstPageRows.size())
+          .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
           .setStatementType(statementType)
           .setTotalBytesBilled(totalBytesBilled)
           .setTotalBytesProcessed(totalBytesProcessed)
@@ -2488,8 +2419,183 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             new PageImpl<>(
                 new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
                 null,
-                firstPageRows))
+                transformTableData(
+                    results.getRows() != null ? results.getRows() : ImmutableList.of(),
+                    schema,
+                    getOptions().getDataFormatOptions().useInt64Timestamp())))
         // Return the JobID of the successful job
+        .setJobId(
+            results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
+        .setQueryId(results.getQueryId())
+        .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+        .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+        .setStatementType(statementType)
+        .setTotalBytesBilled(totalBytesBilled)
+        .setTotalBytesProcessed(totalBytesProcessed)
+        .setTotalSlotMs(totalSlotMs)
+        .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
+        .build();
+  }
+
+  private Object queryRpcArrow(
+      final String projectId, final QueryRequest content, JobOption... options)
+      throws InterruptedException {
+    com.google.api.services.bigquery.model.QueryResponse results;
+    Span queryRpc = null;
+    if (getOptions().isOpenTelemetryTracingEnabled()
+        && getOptions().getOpenTelemetryTracer() != null) {
+      queryRpc =
+          getOptions()
+              .getOpenTelemetryTracer()
+              .spanBuilder("com.google.cloud.bigquery.BigQuery.queryRpc")
+              .setAttribute("bq.query.project_id", projectId)
+              .setAllAttributes(otelAttributesFromQueryRequest(content))
+              .setAllAttributes(otelAttributesFromOptions(options))
+              .startSpan();
+    }
+    try (Scope queryRpcScope = queryRpc != null ? queryRpc.makeCurrent() : null) {
+      results =
+          BigQueryRetryHelper.runWithRetries(
+              new Callable<com.google.api.services.bigquery.model.QueryResponse>() {
+                @Override
+                public com.google.api.services.bigquery.model.QueryResponse call()
+                    throws IOException {
+                  return bigQueryRpc.queryRpcSkipExceptionTranslation(projectId, content);
+                }
+              },
+              getOptions().getRetrySettings(),
+              getOptions().getResultRetryAlgorithm(),
+              getOptions().getClock(),
+              DEFAULT_RETRY_CONFIG,
+              getOptions().isOpenTelemetryTracingEnabled(),
+              getOptions().getOpenTelemetryTracer());
+    } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    } finally {
+      if (queryRpc != null) {
+        queryRpc.end();
+      }
+    }
+
+    if (results.getErrors() != null) {
+      List<BigQueryError> bigQueryErrors =
+          Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION);
+      throw new BigQueryException(bigQueryErrors);
+    }
+
+    if (!Boolean.TRUE.equals(results.getJobComplete()) || results.getArrowSchema() == null) {
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      return getJob(jobId, options);
+    }
+
+    if (results.getArrowSchema().getSerializedSchema() == null) {
+      throw new BigQueryException(0, "Arrow schema is missing from the response");
+    }
+
+    byte[] arrowSchemaBytes = results.getArrowSchema().decodeSerializedSchema();
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
+    try {
+      arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+    } catch (IOException e) {
+      throw new BigQueryException(0, "Failed to deserialize Arrow schema from response", e);
+    }
+    Schema schema = ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchemaPojo);
+
+    long numRows;
+    if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
+      numRows = 0L;
+    } else if (results.getNumDmlAffectedRows() != null) {
+      numRows = results.getNumDmlAffectedRows();
+    } else {
+      numRows = results.getTotalRows().longValue();
+    }
+
+    StatementType statementType =
+        results.getStatementType() != null
+            ? StatementType.valueOf(results.getStatementType())
+            : null;
+    Long totalBytesBilled = results.getTotalBytesBilled();
+    Long totalBytesProcessed = results.getTotalBytesProcessed();
+    Long totalSlotMs = results.getTotalSlotMs();
+    Long numDmlAffectedRows = results.getNumDmlAffectedRows();
+    SessionInfo sessionInfo =
+        results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
+
+    Collection<FieldValueList> firstPageRows;
+    if (results.getArrowRecordBatch() == null
+        || results.getArrowRecordBatch().getSerializedRecordBatch() == null) {
+      firstPageRows = ImmutableList.of();
+    } else {
+      try {
+        firstPageRows =
+            ArrowDeserializer.deserializeRecordBatch(
+                results.getArrowRecordBatch().decodeSerializedRecordBatch(),
+                schema,
+                arrowSchemaPojo);
+      } catch (IOException e) {
+        throw new BigQueryException(0, "Failed to deserialize Arrow record batch", e);
+      }
+    }
+
+    if (content.getMaxResults() != null && firstPageRows.size() > content.getMaxResults()) {
+      firstPageRows =
+          ImmutableList.copyOf(Iterables.limit(firstPageRows, content.getMaxResults().intValue()));
+    }
+
+    boolean hasMorePages =
+        results.getPageToken() != null && Boolean.TRUE.equals(results.getJobComplete());
+    long initialRowOffset = 0L;
+    if (hasMorePages) {
+      Long parsedOffset = Longs.tryParse(results.getPageToken());
+      initialRowOffset = parsedOffset != null ? parsedOffset : firstPageRows.size();
+      if (content.getMaxResults() != null
+          && (initialRowOffset >= content.getMaxResults()
+              || firstPageRows.size() >= content.getMaxResults())) {
+        hasMorePages = false;
+      }
+    }
+
+    if (hasMorePages) {
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      String cursor = results.getPageToken();
+      NextPageFetcher<FieldValueList> pageFetcher =
+          new ArrowQueryPageFetcher(
+              jobId,
+              schema,
+              arrowSchemaBytes,
+              arrowSchemaPojo,
+              getOptions(),
+              initialRowOffset,
+              content.getMaxResults(),
+              optionMap(options));
+
+      return TableResult.newBuilder()
+          .setSchema(schema)
+          .setTotalRows(numRows)
+          .setPageNoSchema(new PageImpl<>(pageFetcher, cursor, firstPageRows))
+          .setJobId(jobId)
+          .setQueryId(results.getQueryId())
+          .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+          .setRowsInPage((long) firstPageRows.size())
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
+          .build();
+    }
+
+    // only 1 page of result
+    return TableResult.newBuilder()
+        .setSchema(schema)
+        .setTotalRows(numRows)
+        .setPageNoSchema(
+            new PageImpl<>(
+                new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
+                null,
+                firstPageRows))
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
@@ -2572,6 +2678,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           content.setTimeoutMs(timeoutMs);
         }
 
+        if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
+          return queryRpcArrow(projectId, content, options);
+        }
         return queryRpc(projectId, content, options);
       }
 
