@@ -302,7 +302,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  String getActorTokenType() {
+  @Nullable String getActorTokenType() {
     return this.actorTokenType;
   }
 

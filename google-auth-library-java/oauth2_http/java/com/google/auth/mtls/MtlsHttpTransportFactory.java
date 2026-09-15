@@ -61,10 +61,11 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, Serializa
   private final transient boolean hasKeyStore;
 
   /**
-   * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
-   * factory in its serializable {@code transportFactory} field, and {@link ObjectInputStream} needs
-   * a no-arg constructor to reconstruct it during deserialization. Not intended for direct use;
-   * callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
+   * Default no-arg constructor creating an instance without a KeyStore ({@code hasKeyStore() ==
+   * false}). Note that standard deserialization via {@link ObjectInputStream} bypasses this
+   * constructor and zero-initializes the transient fields to {@code null} and {@code false}. Not
+   * intended for direct use; callers configuring mTLS should use {@link
+   * #MtlsHttpTransportFactory(KeyStore)}.
    */
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
