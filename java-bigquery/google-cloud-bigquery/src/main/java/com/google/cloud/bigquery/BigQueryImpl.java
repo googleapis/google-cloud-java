@@ -2595,7 +2595,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setPageNoSchema(new PageImpl<>(pageFetcher, cursor, firstPageRows))
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
-          .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+          .setJobCreationReason(
+              results.getJobCreationReason() != null
+                  ? JobCreationReason.fromPb(results.getJobCreationReason())
+                  : null)
           .setRowsInPage((long) firstPageRows.size())
           .setStatementType(statementType)
           .setTotalBytesBilled(totalBytesBilled)
@@ -2618,7 +2621,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
-        .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+        .setJobCreationReason(
+            results.getJobCreationReason() != null
+                ? JobCreationReason.fromPb(results.getJobCreationReason())
+                : null)
         .setRowsInPage((long) firstPageRows.size())
         .setStatementType(statementType)
         .setTotalBytesBilled(totalBytesBilled)
