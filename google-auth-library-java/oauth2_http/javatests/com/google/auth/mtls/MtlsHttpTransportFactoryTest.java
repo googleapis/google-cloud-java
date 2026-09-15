@@ -50,6 +50,7 @@ import java.io.SequenceInputStream;
 import java.security.KeyStore;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
+import java.util.Enumeration;
 import org.junit.jupiter.api.Test;
 
 class MtlsHttpTransportFactoryTest {
@@ -150,5 +151,28 @@ class MtlsHttpTransportFactoryTest {
 
     assertNotNull(deserialized);
     assertFalse(deserialized.hasKeyStore());
+  }
+
+  @Test
+  void hasKeyStore_cachesStateAtConstructionTime() throws Exception {
+    KeyStore keyStore;
+    try (InputStream certStream = new FileInputStream(new File(TEST_CERT_PATH));
+        InputStream keyStream = new FileInputStream(new File(TEST_KEY_PATH));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      keyStore = SecurityUtils.createMtlsKeyStore(combined);
+    }
+
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(keyStore);
+    assertTrue(factory.hasKeyStore());
+
+    // Mutate the KeyStore after construction by deleting all entries
+    Enumeration<String> aliases = keyStore.aliases();
+    while (aliases.hasMoreElements()) {
+      keyStore.deleteEntry(aliases.nextElement());
+    }
+    assertEquals(0, keyStore.size());
+
+    // hasKeyStore() should still return the cached true value evaluated at construction
+    assertTrue(factory.hasKeyStore());
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2026 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -42,6 +42,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -95,6 +96,16 @@ class FileIdentityPoolSubjectTokenSupplier
    * @throws IOException if the file cannot be read or the required fields are missing
    */
   TokenPair readTokens(ExternalAccountSupplierContext context) throws IOException {
+    if (credentialSource.credentialFormatType != CredentialFormatType.JSON) {
+      throw new IOException(
+          "readTokens() is only supported for JSON-formatted credential sources.");
+    }
+
+    String subjectFieldName = credentialSource.subjectTokenFieldName;
+    if (subjectFieldName == null) {
+      throw new IOException("Subject token field name must be specified for JSON credentials.");
+    }
+
     String credentialFilePath = credentialSource.getCredentialLocation();
     if (!Files.exists(Paths.get(credentialFilePath), LinkOption.NOFOLLOW_LINKS)) {
       throw new IOException(
@@ -102,17 +113,7 @@ class FileIdentityPoolSubjectTokenSupplier
               "Invalid credential location. The file at %s does not exist.", credentialFilePath));
     }
 
-    if (credentialSource.credentialFormatType != CredentialFormatType.JSON) {
-      throw new IOException(
-          "readTokens() is only supported for JSON-formatted credential sources.");
-    }
-
     GenericJson parsedJson = readAndParseJsonFile(credentialFilePath);
-
-    String subjectFieldName = credentialSource.subjectTokenFieldName;
-    if (subjectFieldName == null) {
-      throw new IOException("Subject token field name must be specified for JSON credentials.");
-    }
     String subject = extractField(parsedJson, subjectFieldName);
 
     String actor = null;
@@ -124,6 +125,11 @@ class FileIdentityPoolSubjectTokenSupplier
   }
 
   private String getToken(@Nullable String targetFieldName) throws IOException {
+    if (credentialSource.credentialFormatType == CredentialFormatType.JSON
+        && targetFieldName == null) {
+      throw new IOException("Target field name must be specified for JSON credentials.");
+    }
+
     String credentialFilePath = credentialSource.getCredentialLocation();
     if (!Files.exists(Paths.get(credentialFilePath), LinkOption.NOFOLLOW_LINKS)) {
       throw new IOException(
@@ -132,9 +138,6 @@ class FileIdentityPoolSubjectTokenSupplier
     }
 
     if (credentialSource.credentialFormatType == CredentialFormatType.JSON) {
-      if (targetFieldName == null) {
-        throw new IOException("Target field name must be specified for JSON credentials.");
-      }
       GenericJson parsedJson = readAndParseJsonFile(credentialFilePath);
       return extractField(parsedJson, targetFieldName);
     }
@@ -179,7 +182,7 @@ class FileIdentityPoolSubjectTokenSupplier
       @Nullable String targetFieldName)
       throws IOException {
     try (InputStream in = inputStream;
-        java.io.Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8)) {
+        Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8)) {
       if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
         return CharStreams.toString(new BufferedReader(reader));
       }

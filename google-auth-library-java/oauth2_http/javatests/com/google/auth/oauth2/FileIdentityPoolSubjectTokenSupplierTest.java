@@ -487,4 +487,40 @@ class FileIdentityPoolSubjectTokenSupplierTest {
     IOException exception = assertThrows(IOException.class, () -> supplier.readTokens(null));
     assertTrue(exception.getMessage().contains("only supported for JSON-formatted"));
   }
+
+  @Test
+  void preconditionsCheckedBeforeFileExists(@TempDir Path tempDir) {
+    Path nonExistentFile = tempDir.resolve("does_not_exist.json");
+
+    // 1. readTokens() with TEXT format fails with format error before checking Files.exists()
+    Map<String, Object> textSourceMap = new HashMap<>();
+    textSourceMap.put("file", nonExistentFile.toString());
+    IdentityPoolCredentialSource textSource = new IdentityPoolCredentialSource(textSourceMap);
+    FileIdentityPoolSubjectTokenSupplier textSupplier =
+        new FileIdentityPoolSubjectTokenSupplier(textSource);
+
+    IOException readTokensException =
+        assertThrows(IOException.class, () -> textSupplier.readTokens(null));
+    assertEquals(
+        "readTokens() is only supported for JSON-formatted credential sources.",
+        readTokensException.getMessage());
+
+    // 2. getActorToken() with JSON format and missing actor_token_field_name fails before
+    // Files.exists()
+    Map<String, Object> jsonSourceMap = new HashMap<>();
+    jsonSourceMap.put("file", nonExistentFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    jsonSourceMap.put("format", formatMap);
+    IdentityPoolCredentialSource jsonSource = new IdentityPoolCredentialSource(jsonSourceMap);
+    FileIdentityPoolSubjectTokenSupplier jsonSupplier =
+        new FileIdentityPoolSubjectTokenSupplier(jsonSource);
+
+    IOException getActorTokenException =
+        assertThrows(IOException.class, () -> jsonSupplier.getActorToken(null));
+    assertEquals(
+        "Target field name must be specified for JSON credentials.",
+        getActorTokenException.getMessage());
+  }
 }
