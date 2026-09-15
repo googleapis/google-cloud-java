@@ -24,7 +24,8 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Wrapper message for ReportVisibility enum.
+ * Wrapper message for
+ * [ReportVisibility][google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility].
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ReportVisibilityEnum}
@@ -373,7 +374,8 @@ public final class ReportVisibilityEnum extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Wrapper message for ReportVisibility enum.
+   * Wrapper message for
+   * [ReportVisibility][google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility].
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ReportVisibilityEnum}
