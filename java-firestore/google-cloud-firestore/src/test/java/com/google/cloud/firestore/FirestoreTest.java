@@ -35,12 +35,14 @@ import static org.mockito.Mockito.doReturn;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.firestore.models.RequestOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.protobuf.Message;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -221,5 +223,28 @@ public class FirestoreTest {
             transform("array", arrayRemove(SINGLE_FIELD_VALUE)));
     CommitRequest actualRequest = commitCapture.getValue();
     assertEquals(expectedRequest, actualRequest);
+  }
+
+  @Test
+  public void getAllWithExecutionOptions() throws Exception {
+    doAnswer(getAllResponseWithoutOnComplete(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            getAllCapture.capture(),
+            streamObserverCapture.capture(),
+            ArgumentMatchers.<ServerStreamingCallable>any());
+
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("getall-tag").build())
+            .build();
+
+    firestoreMock
+        .getAll(new DocumentReference[] {firestoreMock.document("coll/doc")}, executionOptions)
+        .get();
+
+    assertEquals(
+        Arrays.asList("getall-tag"),
+        getAllCapture.getValue().getRequestOptions().getRequestTagsList());
   }
 }
