@@ -151,8 +151,14 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       }
     }
 
+    if (readSession.getStreamsCount() > 1) {
+      throw new IllegalArgumentException(
+          "ArrowQueryResult only supports single-stream ReadSessions, but got "
+              + readSession.getStreamsCount()
+              + " streams.");
+    }
     String streamName = null;
-    if (readSession.getStreamsCount() > 0) {
+    if (readSession.getStreamsCount() == 1) {
       streamName = readSession.getStreams(0).getName();
     }
 

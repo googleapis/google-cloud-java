@@ -394,4 +394,25 @@ public class ArrowQueryResultTest {
       assertThrows(NoSuchElementException.class, it::next);
     }
   }
+
+  @Test
+  void testFromReadSessionWithMultipleStreamsThrowsIllegalArgumentException() {
+    ReadSession readSession =
+        ReadSession.newBuilder()
+            .addStreams(ReadStream.newBuilder().setName("stream-1"))
+            .addStreams(ReadStream.newBuilder().setName("stream-2"))
+            .build();
+    JobId jobId = JobId.of("p", "fallback-job");
+
+    IllegalArgumentException thrown =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> ArrowQueryResultImpl.fromReadSession(readSession, jobId, null));
+
+    assertTrue(
+        thrown
+            .getMessage()
+            .contains(
+                "ArrowQueryResult only supports single-stream ReadSessions, but got 2 streams."));
+  }
 }
