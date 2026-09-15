@@ -42,6 +42,8 @@ public final class SchemaBundle {
   private SchemaBundle(@Nonnull com.google.bigtable.admin.v2.SchemaBundle proto) {
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "SchemaBundle must have a name");
+    // proto_schema and avro_schema are defined in a protobuf oneof, so at most one
+    // can be set.
     Preconditions.checkArgument(
         proto.hasProtoSchema() || proto.hasAvroSchema(),
         "Schemabundle must have a proto_schema or avro_schema field");

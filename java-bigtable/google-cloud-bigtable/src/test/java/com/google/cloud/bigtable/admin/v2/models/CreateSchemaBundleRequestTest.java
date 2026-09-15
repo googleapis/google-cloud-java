@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.collect.ImmutableList;
@@ -177,6 +178,32 @@ public class CreateSchemaBundleRequestTest {
             CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
                 .setAvroSchema(TEST_UPDATED_AVRO_SCHEMA)
                 .hashCode());
+  }
+
+  @Test
+  public void testSetProtoSchemaWhenAvroSchemaAlreadySetThrowsException() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+    ByteString protoSchema = ByteString.copyFromUtf8("proto");
+
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, () -> request.setProtoSchema(protoSchema));
+    assertThat(exception)
+        .hasMessageThat()
+        .contains("Cannot set proto_schema when avro_schema is already set");
+  }
+
+  @Test
+  public void testSetAvroSchemaWhenProtoSchemaAlreadySetThrowsException() {
+    CreateSchemaBundleRequest request =
+        CreateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setProtoSchema(ByteString.copyFromUtf8("proto"));
+
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, () -> request.setAvroSchema(TEST_AVRO_SCHEMA));
+    assertThat(exception)
+        .hasMessageThat()
+        .contains("Cannot set avro_schema when proto_schema is already set");
   }
 
   private String getResourceFilePath(String filePath) throws URISyntaxException {

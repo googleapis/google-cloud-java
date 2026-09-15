@@ -73,6 +73,9 @@ public final class CreateSchemaBundleRequest {
   /** Sets the proto schema for this schema bundle. */
   public CreateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema) {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
+    Preconditions.checkState(
+        !requestBuilder.getSchemaBundleBuilder().hasAvroSchema(),
+        "Cannot set proto_schema when avro_schema is already set");
     requestBuilder
         .getSchemaBundleBuilder()
         .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema));
@@ -85,9 +88,12 @@ public final class CreateSchemaBundleRequest {
     return setAvroSchema(Collections.singletonList(avroSchema));
   }
 
-  /** Sets the avro schema for this schema bundle. */
+  /** Sets a list of avro schemas for this schema bundle. */
   public CreateSchemaBundleRequest setAvroSchema(@Nonnull List<String> avroSchema) {
     Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    Preconditions.checkState(
+        !requestBuilder.getSchemaBundleBuilder().hasProtoSchema(),
+        "Cannot set avro_schema when proto_schema is already set");
     requestBuilder
         .getSchemaBundleBuilder()
         .setAvroSchema(AvroSchema.newBuilder().addAllJsonSchemas(avroSchema));
