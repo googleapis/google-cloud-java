@@ -235,44 +235,52 @@ public class BuiltinMetricsIT {
   @Test
   public void testInternalMetrics() throws Exception {
     logger.info("Started testing internal metrics");
+    Table table =
+        tableAdminClient.createTable(
+            CreateTableRequest.of(PrefixGenerator.newPrefix("BuiltinMetricsIT#testInternal"))
+                .addFamily("cf"));
+    logger.info("Create table: " + table.getId());
 
-    TableId tableId = testEnvRule.env().getTableId();
-    String familyId = testEnvRule.env().getFamilyId();
+    try {
+      Instant start = Instant.now().minus(Duration.ofSeconds(10));
 
-    Instant start = Instant.now().minus(Duration.ofSeconds(10));
+      // Send a MutateRow and ReadRows request to generate connection activity.
+      clientDefault.mutateRow(
+          RowMutation.create(TableId.of(table.getId()), "a-new-key").setCell("cf", "q", "abc"));
+      ArrayList<Row> ignored =
+          Lists.newArrayList(
+              clientDefault.readRows(Query.create(TableId.of(table.getId())).limit(10)));
 
-    // Send a MutateRow and ReadRows request to generate connection activity.
-    clientDefault.mutateRow(RowMutation.create(tableId, "a-new-key").setCell(familyId, "q", "abc"));
-    ArrayList<Row> ignored =
-        Lists.newArrayList(clientDefault.readRows(Query.create(tableId).limit(10)));
+      // This stopwatch is used for to limit fetching of metric data in verifyMetrics
+      Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
 
-    // This stopwatch is used for to limit fetching of metric data in verifyMetrics
-    Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
+      ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
 
-    ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
+      Instant end = Instant.now().plus(Duration.ofMinutes(10));
+      TimeInterval interval =
+          TimeInterval.newBuilder()
+              .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
+              .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
+              .build();
 
-    Instant end = Instant.now().plus(Duration.ofMinutes(10));
-    TimeInterval interval =
-        TimeInterval.newBuilder()
-            .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
-            .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
-            .build();
-
-    List<String> views = ImmutableList.of("per_connection_error_count");
-    for (String view : views) {
-      // Filter on instance name
-      String metricFilter =
-          String.format(
-              "metric.type=\"bigtable.googleapis.com/internal/client/%s\" AND"
-                  + " resource.labels.instance=\"%s\"",
-              view, testEnvRule.env().getInstanceId());
-      ListTimeSeriesRequest.Builder requestBuilder =
-          ListTimeSeriesRequest.newBuilder()
-              .setName(name.toString())
-              .setFilter(metricFilter)
-              .setInterval(interval)
-              .setView(ListTimeSeriesRequest.TimeSeriesView.FULL);
-      verifyMetricsArePublished(requestBuilder.build(), metricsPollingStopwatch, view);
+      List<String> views = ImmutableList.of("per_connection_error_count");
+      for (String view : views) {
+        // Filter on instance name
+        String metricFilter =
+            String.format(
+                "metric.type=\"bigtable.googleapis.com/internal/client/%s\" AND"
+                    + " resource.labels.instance=\"%s\"",
+                view, testEnvRule.env().getInstanceId());
+        ListTimeSeriesRequest.Builder requestBuilder =
+            ListTimeSeriesRequest.newBuilder()
+                .setName(name.toString())
+                .setFilter(metricFilter)
+                .setInterval(interval)
+                .setView(ListTimeSeriesRequest.TimeSeriesView.FULL);
+        verifyMetricsArePublished(requestBuilder.build(), metricsPollingStopwatch, view);
+      }
+    } finally {
+      tableAdminClient.deleteTable(table.getId());
     }
   }
 
