@@ -68,6 +68,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     etag_ = "";
     desiredStackType_ = 0;
     desiredInTransitEncryptionConfig_ = 0;
+    desiredEmulatedVersion_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1018,7 +1019,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3704
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Override
@@ -1043,7 +1044,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3704
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Override
@@ -1395,7 +1396,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3742
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Override
@@ -1425,7 +1426,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3686
+   *     google/container/v1/cluster_service.proto;l=3742
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Override
@@ -2107,7 +2108,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3731
+   *     See google/container/v1/cluster_service.proto;l=3787
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Override
@@ -2131,7 +2132,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3731
+   *     See google/container/v1/cluster_service.proto;l=3787
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Override
@@ -3498,7 +3499,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3836
+   *     See google/container/v1/cluster_service.proto;l=3892
    * @return Whether the desiredCompliancePostureConfig field is set.
    */
   @java.lang.Override
@@ -3523,7 +3524,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=3836
+   *     See google/container/v1/cluster_service.proto;l=3892
    * @return The desiredCompliancePostureConfig.
    */
   @java.lang.Override
@@ -3694,7 +3695,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3852
+   *     google/container/v1/cluster_service.proto;l=3908
    * @return Whether the userManagedKeysConfig field is set.
    */
   @java.lang.Override
@@ -3720,7 +3721,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3852
+   *     google/container/v1/cluster_service.proto;l=3908
    * @return The userManagedKeysConfig.
    */
   @java.lang.Override
@@ -3891,7 +3892,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3865
+   *     google/container/v1/cluster_service.proto;l=3921
    * @return Whether the desiredEnterpriseConfig field is set.
    */
   @java.lang.Override
@@ -3915,7 +3916,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=3865
+   *     google/container/v1/cluster_service.proto;l=3921
    * @return The desiredEnterpriseConfig.
    */
   @java.lang.Override
@@ -4495,6 +4496,66 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         : desiredControlPlaneEgress_;
   }
 
+  public static final int DESIRED_ROLLBACK_SAFE_UPGRADE_FIELD_NUMBER = 161;
+  private com.google.container.v1.RollbackSafeUpgrade desiredRollbackSafeUpgrade_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredRollbackSafeUpgrade field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredRollbackSafeUpgrade() {
+    return ((bitField2_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredRollbackSafeUpgrade.
+   */
+  @java.lang.Override
+  public com.google.container.v1.RollbackSafeUpgrade getDesiredRollbackSafeUpgrade() {
+    return desiredRollbackSafeUpgrade_ == null
+        ? com.google.container.v1.RollbackSafeUpgrade.getDefaultInstance()
+        : desiredRollbackSafeUpgrade_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired rollback safe upgrade configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.RollbackSafeUpgradeOrBuilder
+      getDesiredRollbackSafeUpgradeOrBuilder() {
+    return desiredRollbackSafeUpgrade_ == null
+        ? com.google.container.v1.RollbackSafeUpgrade.getDefaultInstance()
+        : desiredRollbackSafeUpgrade_;
+  }
+
   public static final int DESIRED_MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER = 163;
   private com.google.container.v1.ManagedOpenTelemetryConfig desiredManagedOpentelemetryConfig_;
 
@@ -4513,7 +4574,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredManagedOpentelemetryConfig() {
-    return ((bitField2_ & 0x00000001) != 0);
+    return ((bitField2_ & 0x00000002) != 0);
   }
 
   /**
@@ -4572,7 +4633,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredAutopilotClusterPolicyConfig() {
-    return ((bitField2_ & 0x00000002) != 0);
+    return ((bitField2_ & 0x00000004) != 0);
   }
 
   /**
@@ -4631,7 +4692,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredManagedMachineLearningDiagnosticsConfig() {
-    return ((bitField2_ & 0x00000004) != 0);
+    return ((bitField2_ & 0x00000008) != 0);
   }
 
   /**
@@ -4692,7 +4753,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDesiredNodeCreationConfig() {
-    return ((bitField2_ & 0x00000008) != 0);
+    return ((bitField2_ & 0x00000010) != 0);
   }
 
   /**
@@ -4732,6 +4793,78 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     return desiredNodeCreationConfig_ == null
         ? com.google.container.v1.NodeCreationConfig.getDefaultInstance()
         : desiredNodeCreationConfig_;
+  }
+
+  public static final int DESIRED_EMULATED_VERSION_FIELD_NUMBER = 182;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object desiredEmulatedVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the desiredEmulatedVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredEmulatedVersion() {
+    return ((bitField2_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The desiredEmulatedVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getDesiredEmulatedVersion() {
+    java.lang.Object ref = desiredEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      desiredEmulatedVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired emulated version for the cluster.
+   * </pre>
+   *
+   * <code>optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for desiredEmulatedVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDesiredEmulatedVersionBytes() {
+    java.lang.Object ref = desiredEmulatedVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      desiredEmulatedVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4983,16 +5116,22 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       output.writeMessage(160, getDesiredControlPlaneEgress());
     }
     if (((bitField2_ & 0x00000001) != 0)) {
-      output.writeMessage(163, getDesiredManagedOpentelemetryConfig());
+      output.writeMessage(161, getDesiredRollbackSafeUpgrade());
     }
     if (((bitField2_ & 0x00000002) != 0)) {
-      output.writeMessage(164, getDesiredAutopilotClusterPolicyConfig());
+      output.writeMessage(163, getDesiredManagedOpentelemetryConfig());
     }
     if (((bitField2_ & 0x00000004) != 0)) {
-      output.writeMessage(166, getDesiredManagedMachineLearningDiagnosticsConfig());
+      output.writeMessage(164, getDesiredAutopilotClusterPolicyConfig());
     }
     if (((bitField2_ & 0x00000008) != 0)) {
+      output.writeMessage(166, getDesiredManagedMachineLearningDiagnosticsConfig());
+    }
+    if (((bitField2_ & 0x00000010) != 0)) {
       output.writeMessage(171, getDesiredNodeCreationConfig());
+    }
+    if (((bitField2_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 182, desiredEmulatedVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5355,22 +5494,30 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     if (((bitField2_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              163, getDesiredManagedOpentelemetryConfig());
+              161, getDesiredRollbackSafeUpgrade());
     }
     if (((bitField2_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              164, getDesiredAutopilotClusterPolicyConfig());
+              163, getDesiredManagedOpentelemetryConfig());
     }
     if (((bitField2_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              166, getDesiredManagedMachineLearningDiagnosticsConfig());
+              164, getDesiredAutopilotClusterPolicyConfig());
     }
     if (((bitField2_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
+              166, getDesiredManagedMachineLearningDiagnosticsConfig());
+    }
+    if (((bitField2_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
               171, getDesiredNodeCreationConfig());
+    }
+    if (((bitField2_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(182, desiredEmulatedVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5721,6 +5868,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       if (!getDesiredControlPlaneEgress().equals(other.getDesiredControlPlaneEgress()))
         return false;
     }
+    if (hasDesiredRollbackSafeUpgrade() != other.hasDesiredRollbackSafeUpgrade()) return false;
+    if (hasDesiredRollbackSafeUpgrade()) {
+      if (!getDesiredRollbackSafeUpgrade().equals(other.getDesiredRollbackSafeUpgrade()))
+        return false;
+    }
     if (hasDesiredManagedOpentelemetryConfig() != other.hasDesiredManagedOpentelemetryConfig())
       return false;
     if (hasDesiredManagedOpentelemetryConfig()) {
@@ -5743,6 +5895,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     if (hasDesiredNodeCreationConfig()) {
       if (!getDesiredNodeCreationConfig().equals(other.getDesiredNodeCreationConfig()))
         return false;
+    }
+    if (hasDesiredEmulatedVersion() != other.hasDesiredEmulatedVersion()) return false;
+    if (hasDesiredEmulatedVersion()) {
+      if (!getDesiredEmulatedVersion().equals(other.getDesiredEmulatedVersion())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -6051,6 +6207,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DESIRED_CONTROL_PLANE_EGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredControlPlaneEgress().hashCode();
     }
+    if (hasDesiredRollbackSafeUpgrade()) {
+      hash = (37 * hash) + DESIRED_ROLLBACK_SAFE_UPGRADE_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredRollbackSafeUpgrade().hashCode();
+    }
     if (hasDesiredManagedOpentelemetryConfig()) {
       hash = (37 * hash) + DESIRED_MANAGED_OPENTELEMETRY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredManagedOpentelemetryConfig().hashCode();
@@ -6066,6 +6226,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     if (hasDesiredNodeCreationConfig()) {
       hash = (37 * hash) + DESIRED_NODE_CREATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredNodeCreationConfig().hashCode();
+    }
+    if (hasDesiredEmulatedVersion()) {
+      hash = (37 * hash) + DESIRED_EMULATED_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredEmulatedVersion().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6266,6 +6430,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         internalGetDesiredSecretSyncConfigFieldBuilder();
         internalGetDesiredPrivilegedAdmissionConfigFieldBuilder();
         internalGetDesiredControlPlaneEgressFieldBuilder();
+        internalGetDesiredRollbackSafeUpgradeFieldBuilder();
         internalGetDesiredManagedOpentelemetryConfigFieldBuilder();
         internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder();
         internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder();
@@ -6584,6 +6749,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredControlPlaneEgressBuilder_.dispose();
         desiredControlPlaneEgressBuilder_ = null;
       }
+      desiredRollbackSafeUpgrade_ = null;
+      if (desiredRollbackSafeUpgradeBuilder_ != null) {
+        desiredRollbackSafeUpgradeBuilder_.dispose();
+        desiredRollbackSafeUpgradeBuilder_ = null;
+      }
       desiredManagedOpentelemetryConfig_ = null;
       if (desiredManagedOpentelemetryConfigBuilder_ != null) {
         desiredManagedOpentelemetryConfigBuilder_.dispose();
@@ -6604,6 +6774,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredNodeCreationConfigBuilder_.dispose();
         desiredNodeCreationConfigBuilder_ = null;
       }
+      desiredEmulatedVersion_ = "";
       return this;
     }
 
@@ -7128,32 +7299,43 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField2_ = 0;
       if (((from_bitField2_ & 0x00002000) != 0)) {
+        result.desiredRollbackSafeUpgrade_ =
+            desiredRollbackSafeUpgradeBuilder_ == null
+                ? desiredRollbackSafeUpgrade_
+                : desiredRollbackSafeUpgradeBuilder_.build();
+        to_bitField2_ |= 0x00000001;
+      }
+      if (((from_bitField2_ & 0x00004000) != 0)) {
         result.desiredManagedOpentelemetryConfig_ =
             desiredManagedOpentelemetryConfigBuilder_ == null
                 ? desiredManagedOpentelemetryConfig_
                 : desiredManagedOpentelemetryConfigBuilder_.build();
-        to_bitField2_ |= 0x00000001;
+        to_bitField2_ |= 0x00000002;
       }
-      if (((from_bitField2_ & 0x00004000) != 0)) {
+      if (((from_bitField2_ & 0x00008000) != 0)) {
         result.desiredAutopilotClusterPolicyConfig_ =
             desiredAutopilotClusterPolicyConfigBuilder_ == null
                 ? desiredAutopilotClusterPolicyConfig_
                 : desiredAutopilotClusterPolicyConfigBuilder_.build();
-        to_bitField2_ |= 0x00000002;
+        to_bitField2_ |= 0x00000004;
       }
-      if (((from_bitField2_ & 0x00008000) != 0)) {
+      if (((from_bitField2_ & 0x00010000) != 0)) {
         result.desiredManagedMachineLearningDiagnosticsConfig_ =
             desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null
                 ? desiredManagedMachineLearningDiagnosticsConfig_
                 : desiredManagedMachineLearningDiagnosticsConfigBuilder_.build();
-        to_bitField2_ |= 0x00000004;
+        to_bitField2_ |= 0x00000008;
       }
-      if (((from_bitField2_ & 0x00010000) != 0)) {
+      if (((from_bitField2_ & 0x00020000) != 0)) {
         result.desiredNodeCreationConfig_ =
             desiredNodeCreationConfigBuilder_ == null
                 ? desiredNodeCreationConfig_
                 : desiredNodeCreationConfigBuilder_.build();
-        to_bitField2_ |= 0x00000008;
+        to_bitField2_ |= 0x00000010;
+      }
+      if (((from_bitField2_ & 0x00040000) != 0)) {
+        result.desiredEmulatedVersion_ = desiredEmulatedVersion_;
+        to_bitField2_ |= 0x00000020;
       }
       result.bitField1_ |= to_bitField1_;
       result.bitField2_ |= to_bitField2_;
@@ -7433,6 +7615,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       if (other.hasDesiredControlPlaneEgress()) {
         mergeDesiredControlPlaneEgress(other.getDesiredControlPlaneEgress());
       }
+      if (other.hasDesiredRollbackSafeUpgrade()) {
+        mergeDesiredRollbackSafeUpgrade(other.getDesiredRollbackSafeUpgrade());
+      }
       if (other.hasDesiredManagedOpentelemetryConfig()) {
         mergeDesiredManagedOpentelemetryConfig(other.getDesiredManagedOpentelemetryConfig());
       }
@@ -7445,6 +7630,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDesiredNodeCreationConfig()) {
         mergeDesiredNodeCreationConfig(other.getDesiredNodeCreationConfig());
+      }
+      if (other.hasDesiredEmulatedVersion()) {
+        desiredEmulatedVersion_ = other.desiredEmulatedVersion_;
+        bitField2_ |= 0x00040000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -8037,12 +8227,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
                 bitField2_ |= 0x00001000;
                 break;
               } // case 1282
+            case 1290:
+              {
+                input.readMessage(
+                    internalGetDesiredRollbackSafeUpgradeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField2_ |= 0x00002000;
+                break;
+              } // case 1290
             case 1306:
               {
                 input.readMessage(
                     internalGetDesiredManagedOpentelemetryConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00002000;
+                bitField2_ |= 0x00004000;
                 break;
               } // case 1306
             case 1314:
@@ -8050,7 +8248,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00004000;
+                bitField2_ |= 0x00008000;
                 break;
               } // case 1314
             case 1330:
@@ -8059,7 +8257,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
                     internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00008000;
+                bitField2_ |= 0x00010000;
                 break;
               } // case 1330
             case 1370:
@@ -8067,9 +8265,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDesiredNodeCreationConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField2_ |= 0x00010000;
+                bitField2_ |= 0x00020000;
                 break;
               } // case 1370
+            case 1458:
+              {
+                desiredEmulatedVersion_ = input.readStringRequireUtf8();
+                bitField2_ |= 0x00040000;
+                break;
+              } // case 1458
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10792,7 +10996,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3704
      * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
      */
     @java.lang.Deprecated
@@ -10816,7 +11020,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3648
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3704
      * @return The desiredMasterAuthorizedNetworksConfig.
      */
     @java.lang.Deprecated
@@ -12051,7 +12255,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3686
+     *     See google/container/v1/cluster_service.proto;l=3742
      * @return Whether the desiredPrivateClusterConfig field is set.
      */
     @java.lang.Deprecated
@@ -12080,7 +12284,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3686
+     *     See google/container/v1/cluster_service.proto;l=3742
      * @return The desiredPrivateClusterConfig.
      */
     @java.lang.Deprecated
@@ -14586,7 +14790,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3731
+     *     See google/container/v1/cluster_service.proto;l=3787
      * @return Whether the desiredEnablePrivateEndpoint field is set.
      */
     @java.lang.Override
@@ -14610,7 +14814,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3731
+     *     See google/container/v1/cluster_service.proto;l=3787
      * @return The desiredEnablePrivateEndpoint.
      */
     @java.lang.Override
@@ -14634,7 +14838,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3731
+     *     See google/container/v1/cluster_service.proto;l=3787
      * @param value The desiredEnablePrivateEndpoint to set.
      * @return This builder for chaining.
      */
@@ -14662,7 +14866,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-     *     See google/container/v1/cluster_service.proto;l=3731
+     *     See google/container/v1/cluster_service.proto;l=3787
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19079,7 +19283,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3836
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3892
      * @return Whether the desiredCompliancePostureConfig field is set.
      */
     @java.lang.Deprecated
@@ -19103,7 +19307,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_compliance_posture_config is
-     *     deprecated. See google/container/v1/cluster_service.proto;l=3836
+     *     deprecated. See google/container/v1/cluster_service.proto;l=3892
      * @return The desiredCompliancePostureConfig.
      */
     @java.lang.Deprecated
@@ -19770,7 +19974,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3852
+     *     google/container/v1/cluster_service.proto;l=3908
      * @return Whether the userManagedKeysConfig field is set.
      */
     @java.lang.Deprecated
@@ -19795,7 +19999,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3852
+     *     google/container/v1/cluster_service.proto;l=3908
      * @return The userManagedKeysConfig.
      */
     @java.lang.Deprecated
@@ -20475,7 +20679,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3865
+     *     google/container/v1/cluster_service.proto;l=3921
      * @return Whether the desiredEnterpriseConfig field is set.
      */
     @java.lang.Deprecated
@@ -20498,7 +20702,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.ClusterUpdate.desired_enterprise_config is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=3865
+     *     google/container/v1/cluster_service.proto;l=3921
      * @return The desiredEnterpriseConfig.
      */
     @java.lang.Deprecated
@@ -22668,6 +22872,224 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       return desiredControlPlaneEgressBuilder_;
     }
 
+    private com.google.container.v1.RollbackSafeUpgrade desiredRollbackSafeUpgrade_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RollbackSafeUpgrade,
+            com.google.container.v1.RollbackSafeUpgrade.Builder,
+            com.google.container.v1.RollbackSafeUpgradeOrBuilder>
+        desiredRollbackSafeUpgradeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the desiredRollbackSafeUpgrade field is set.
+     */
+    public boolean hasDesiredRollbackSafeUpgrade() {
+      return ((bitField2_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The desiredRollbackSafeUpgrade.
+     */
+    public com.google.container.v1.RollbackSafeUpgrade getDesiredRollbackSafeUpgrade() {
+      if (desiredRollbackSafeUpgradeBuilder_ == null) {
+        return desiredRollbackSafeUpgrade_ == null
+            ? com.google.container.v1.RollbackSafeUpgrade.getDefaultInstance()
+            : desiredRollbackSafeUpgrade_;
+      } else {
+        return desiredRollbackSafeUpgradeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDesiredRollbackSafeUpgrade(
+        com.google.container.v1.RollbackSafeUpgrade value) {
+      if (desiredRollbackSafeUpgradeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredRollbackSafeUpgrade_ = value;
+      } else {
+        desiredRollbackSafeUpgradeBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDesiredRollbackSafeUpgrade(
+        com.google.container.v1.RollbackSafeUpgrade.Builder builderForValue) {
+      if (desiredRollbackSafeUpgradeBuilder_ == null) {
+        desiredRollbackSafeUpgrade_ = builderForValue.build();
+      } else {
+        desiredRollbackSafeUpgradeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDesiredRollbackSafeUpgrade(
+        com.google.container.v1.RollbackSafeUpgrade value) {
+      if (desiredRollbackSafeUpgradeBuilder_ == null) {
+        if (((bitField2_ & 0x00002000) != 0)
+            && desiredRollbackSafeUpgrade_ != null
+            && desiredRollbackSafeUpgrade_
+                != com.google.container.v1.RollbackSafeUpgrade.getDefaultInstance()) {
+          getDesiredRollbackSafeUpgradeBuilder().mergeFrom(value);
+        } else {
+          desiredRollbackSafeUpgrade_ = value;
+        }
+      } else {
+        desiredRollbackSafeUpgradeBuilder_.mergeFrom(value);
+      }
+      if (desiredRollbackSafeUpgrade_ != null) {
+        bitField2_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDesiredRollbackSafeUpgrade() {
+      bitField2_ = (bitField2_ & ~0x00002000);
+      desiredRollbackSafeUpgrade_ = null;
+      if (desiredRollbackSafeUpgradeBuilder_ != null) {
+        desiredRollbackSafeUpgradeBuilder_.dispose();
+        desiredRollbackSafeUpgradeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.RollbackSafeUpgrade.Builder
+        getDesiredRollbackSafeUpgradeBuilder() {
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return internalGetDesiredRollbackSafeUpgradeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1.RollbackSafeUpgradeOrBuilder
+        getDesiredRollbackSafeUpgradeOrBuilder() {
+      if (desiredRollbackSafeUpgradeBuilder_ != null) {
+        return desiredRollbackSafeUpgradeBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredRollbackSafeUpgrade_ == null
+            ? com.google.container.v1.RollbackSafeUpgrade.getDefaultInstance()
+            : desiredRollbackSafeUpgrade_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired rollback safe upgrade configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgrade desired_rollback_safe_upgrade = 161 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RollbackSafeUpgrade,
+            com.google.container.v1.RollbackSafeUpgrade.Builder,
+            com.google.container.v1.RollbackSafeUpgradeOrBuilder>
+        internalGetDesiredRollbackSafeUpgradeFieldBuilder() {
+      if (desiredRollbackSafeUpgradeBuilder_ == null) {
+        desiredRollbackSafeUpgradeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.RollbackSafeUpgrade,
+                com.google.container.v1.RollbackSafeUpgrade.Builder,
+                com.google.container.v1.RollbackSafeUpgradeOrBuilder>(
+                getDesiredRollbackSafeUpgrade(), getParentForChildren(), isClean());
+        desiredRollbackSafeUpgrade_ = null;
+      }
+      return desiredRollbackSafeUpgradeBuilder_;
+    }
+
     private com.google.container.v1.ManagedOpenTelemetryConfig desiredManagedOpentelemetryConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.container.v1.ManagedOpenTelemetryConfig,
@@ -22689,7 +23111,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredManagedOpentelemetryConfig field is set.
      */
     public boolean hasDesiredManagedOpentelemetryConfig() {
-      return ((bitField2_ & 0x00002000) != 0);
+      return ((bitField2_ & 0x00004000) != 0);
     }
 
     /**
@@ -22737,7 +23159,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedOpentelemetryConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -22760,7 +23182,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedOpentelemetryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -22779,7 +23201,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredManagedOpentelemetryConfig(
         com.google.container.v1.ManagedOpenTelemetryConfig value) {
       if (desiredManagedOpentelemetryConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00002000) != 0)
+        if (((bitField2_ & 0x00004000) != 0)
             && desiredManagedOpentelemetryConfig_ != null
             && desiredManagedOpentelemetryConfig_
                 != com.google.container.v1.ManagedOpenTelemetryConfig.getDefaultInstance()) {
@@ -22791,7 +23213,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredManagedOpentelemetryConfigBuilder_.mergeFrom(value);
       }
       if (desiredManagedOpentelemetryConfig_ != null) {
-        bitField2_ |= 0x00002000;
+        bitField2_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -22809,7 +23231,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredManagedOpentelemetryConfig() {
-      bitField2_ = (bitField2_ & ~0x00002000);
+      bitField2_ = (bitField2_ & ~0x00004000);
       desiredManagedOpentelemetryConfig_ = null;
       if (desiredManagedOpentelemetryConfigBuilder_ != null) {
         desiredManagedOpentelemetryConfigBuilder_.dispose();
@@ -22832,7 +23254,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.ManagedOpenTelemetryConfig.Builder
         getDesiredManagedOpentelemetryConfigBuilder() {
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return internalGetDesiredManagedOpentelemetryConfigFieldBuilder().getBuilder();
     }
@@ -22907,7 +23329,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredAutopilotClusterPolicyConfig field is set.
      */
     public boolean hasDesiredAutopilotClusterPolicyConfig() {
-      return ((bitField2_ & 0x00004000) != 0);
+      return ((bitField2_ & 0x00008000) != 0);
     }
 
     /**
@@ -22952,7 +23374,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredAutopilotClusterPolicyConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -22974,7 +23396,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredAutopilotClusterPolicyConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -22992,7 +23414,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredAutopilotClusterPolicyConfig(
         com.google.container.v1.ClusterPolicyConfig value) {
       if (desiredAutopilotClusterPolicyConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00004000) != 0)
+        if (((bitField2_ & 0x00008000) != 0)
             && desiredAutopilotClusterPolicyConfig_ != null
             && desiredAutopilotClusterPolicyConfig_
                 != com.google.container.v1.ClusterPolicyConfig.getDefaultInstance()) {
@@ -23004,7 +23426,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredAutopilotClusterPolicyConfigBuilder_.mergeFrom(value);
       }
       if (desiredAutopilotClusterPolicyConfig_ != null) {
-        bitField2_ |= 0x00004000;
+        bitField2_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -23021,7 +23443,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredAutopilotClusterPolicyConfig() {
-      bitField2_ = (bitField2_ & ~0x00004000);
+      bitField2_ = (bitField2_ & ~0x00008000);
       desiredAutopilotClusterPolicyConfig_ = null;
       if (desiredAutopilotClusterPolicyConfigBuilder_ != null) {
         desiredAutopilotClusterPolicyConfigBuilder_.dispose();
@@ -23043,7 +23465,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.ClusterPolicyConfig.Builder
         getDesiredAutopilotClusterPolicyConfigBuilder() {
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return internalGetDesiredAutopilotClusterPolicyConfigFieldBuilder().getBuilder();
     }
@@ -23118,7 +23540,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredManagedMachineLearningDiagnosticsConfig field is set.
      */
     public boolean hasDesiredManagedMachineLearningDiagnosticsConfig() {
-      return ((bitField2_ & 0x00008000) != 0);
+      return ((bitField2_ & 0x00010000) != 0);
     }
 
     /**
@@ -23166,7 +23588,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedMachineLearningDiagnosticsConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -23189,7 +23611,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredManagedMachineLearningDiagnosticsConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -23208,7 +23630,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredManagedMachineLearningDiagnosticsConfig(
         com.google.container.v1.ManagedMachineLearningDiagnosticsConfig value) {
       if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00008000) != 0)
+        if (((bitField2_ & 0x00010000) != 0)
             && desiredManagedMachineLearningDiagnosticsConfig_ != null
             && desiredManagedMachineLearningDiagnosticsConfig_
                 != com.google.container.v1.ManagedMachineLearningDiagnosticsConfig
@@ -23221,7 +23643,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredManagedMachineLearningDiagnosticsConfigBuilder_.mergeFrom(value);
       }
       if (desiredManagedMachineLearningDiagnosticsConfig_ != null) {
-        bitField2_ |= 0x00008000;
+        bitField2_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -23239,7 +23661,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredManagedMachineLearningDiagnosticsConfig() {
-      bitField2_ = (bitField2_ & ~0x00008000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       desiredManagedMachineLearningDiagnosticsConfig_ = null;
       if (desiredManagedMachineLearningDiagnosticsConfigBuilder_ != null) {
         desiredManagedMachineLearningDiagnosticsConfigBuilder_.dispose();
@@ -23262,7 +23684,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.ManagedMachineLearningDiagnosticsConfig.Builder
         getDesiredManagedMachineLearningDiagnosticsConfigBuilder() {
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return internalGetDesiredManagedMachineLearningDiagnosticsConfigFieldBuilder().getBuilder();
     }
@@ -23340,7 +23762,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the desiredNodeCreationConfig field is set.
      */
     public boolean hasDesiredNodeCreationConfig() {
-      return ((bitField2_ & 0x00010000) != 0);
+      return ((bitField2_ & 0x00020000) != 0);
     }
 
     /**
@@ -23386,7 +23808,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredNodeCreationConfigBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -23409,7 +23831,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         desiredNodeCreationConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -23428,7 +23850,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
     public Builder mergeDesiredNodeCreationConfig(
         com.google.container.v1.NodeCreationConfig value) {
       if (desiredNodeCreationConfigBuilder_ == null) {
-        if (((bitField2_ & 0x00010000) != 0)
+        if (((bitField2_ & 0x00020000) != 0)
             && desiredNodeCreationConfig_ != null
             && desiredNodeCreationConfig_
                 != com.google.container.v1.NodeCreationConfig.getDefaultInstance()) {
@@ -23440,7 +23862,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredNodeCreationConfigBuilder_.mergeFrom(value);
       }
       if (desiredNodeCreationConfig_ != null) {
-        bitField2_ |= 0x00010000;
+        bitField2_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -23458,7 +23880,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDesiredNodeCreationConfig() {
-      bitField2_ = (bitField2_ & ~0x00010000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       desiredNodeCreationConfig_ = null;
       if (desiredNodeCreationConfigBuilder_ != null) {
         desiredNodeCreationConfigBuilder_.dispose();
@@ -23481,7 +23903,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
      */
     public com.google.container.v1.NodeCreationConfig.Builder
         getDesiredNodeCreationConfigBuilder() {
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return internalGetDesiredNodeCreationConfigFieldBuilder().getBuilder();
     }
@@ -23534,6 +23956,144 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessage
         desiredNodeCreationConfig_ = null;
       }
       return desiredNodeCreationConfigBuilder_;
+    }
+
+    private java.lang.Object desiredEmulatedVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the desiredEmulatedVersion field is set.
+     */
+    public boolean hasDesiredEmulatedVersion() {
+      return ((bitField2_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The desiredEmulatedVersion.
+     */
+    public java.lang.String getDesiredEmulatedVersion() {
+      java.lang.Object ref = desiredEmulatedVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        desiredEmulatedVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for desiredEmulatedVersion.
+     */
+    public com.google.protobuf.ByteString getDesiredEmulatedVersionBytes() {
+      java.lang.Object ref = desiredEmulatedVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        desiredEmulatedVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The desiredEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEmulatedVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      desiredEmulatedVersion_ = value;
+      bitField2_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDesiredEmulatedVersion() {
+      desiredEmulatedVersion_ = getDefaultInstance().getDesiredEmulatedVersion();
+      bitField2_ = (bitField2_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired emulated version for the cluster.
+     * </pre>
+     *
+     * <code>
+     * optional string desired_emulated_version = 182 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for desiredEmulatedVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDesiredEmulatedVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      desiredEmulatedVersion_ = value;
+      bitField2_ |= 0x00040000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.ClusterUpdate)

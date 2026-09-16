@@ -72,7 +72,7 @@ public interface SearchAssetsRequestOrBuilder
    *
    * <pre>
    * Required. The parent corpus to search.
-   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface SearchAssetsRequestOrBuilder
    *
    * <pre>
    * Required. The parent corpus to search.
-   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
    * </pre>
    *
    * <code>

@@ -104,7 +104,7 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\005value\030\002 \001(\t:\0028\001:\237\001\352A\233\001\n"
           + ",oracledatabase.googleapis.com/CloudVmCluster\022Jprojects/{proj"
           + "ect}/locations/{location}/cloudVmCluster"
-          + "s/{cloud_vm_cluster}*\017cloudVmClusters2\016cloudVmCluster\"\265\016\n"
+          + "s/{cloud_vm_cluster}*\017cloudVmClusters2\016cloudVmCluster\"\305\022\n"
           + "\030CloudVmClusterProperties\022\021\n"
           + "\004ocid\030\001 \001(\tB\003\340A\003\022_\n"
           + "\014license_type\030\002 \001(\0162D.google.cloud.oracledatabase.v1.Clo"
@@ -147,7 +147,11 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "compute_model\030% \001("
           + "\0162,.google.cloud.oracledatabase.v1.ComputeModelB\003\340A\003\022t\n"
           + "\027storage_management_type\030& \001(\0162N.google.cloud.oracledatabase.v1.C"
-          + "loudVmClusterProperties.StorageManagementTypeB\003\340A\003\"]\n"
+          + "loudVmClusterProperties.StorageManagementTypeB\003\340A\003\022z\n"
+          + "\033vm_file_system_storage_type\030\' \001(\0162P.google.cloud.oracledatabase.v1"
+          + ".CloudVmClusterProperties.VmFileSystemStorageTypeB\003\340A\001\022q\n"
+          + "\026vm_backup_storage_type\030( \001(\0162L.google.cloud.oracledatabase.v1."
+          + "CloudVmClusterProperties.VmBackupStorageTypeB\003\340A\001\"]\n"
           + "\013LicenseType\022\034\n"
           + "\030LICENSE_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020LICENSE_INCLUDED\020\001\022\032\n"
@@ -168,16 +172,24 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
           + "\025StorageManagementType\022\'\n"
           + "#STORAGE_MANAGEMENT_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003ASM\020\001\022\014\n"
-          + "\010EXASCALE\020\002\"\214\001\n"
+          + "\010EXASCALE\020\002\"\227\001\n"
+          + "\027VmFileSystemStorageType\022+\n"
+          + "\'VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED\020\000\022%\n"
+          + "!VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL\020\001\022(\n"
+          + "$VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE\020\002\"\204\001\n"
+          + "\023VmBackupStorageType\022&\n"
+          + "\"VM_BACKUP_STORAGE_TYPE_UNSPECIFIED\020\000\022 \n"
+          + "\034VM_BACKUP_STORAGE_TYPE_LOCAL\020\001\022#\n"
+          + "\037VM_BACKUP_STORAGE_TYPE_EXASCALE\020\002\"\214\001\n"
           + "\025DataCollectionOptions\022\'\n"
           + "\032diagnostics_events_enabled\030\001 \001(\010B\003\340A\001\022&\n"
           + "\031health_monitoring_enabled\030\002 \001(\010B\003\340A\001\022\"\n"
           + "\025incident_logs_enabled\030\003 \001(\010B\003\340A\001B\355\001\n"
-          + "\"com.google.cloud.oracledatabase.v1B\023CloudVmClusterProtoP\001ZJcloud.google"
-          + ".com/go/oracledatabase/apiv1/oracledatab"
-          + "asepb;oracledatabasepb\252\002\036Google.Cloud.Or"
-          + "acleDatabase.V1\312\002\036Google\\Cloud\\OracleDat"
-          + "abase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
+          + "\"com.google.cloud.oracledatabase.v1B\023CloudVmClusterProtoP\001ZJclou"
+          + "d.google.com/go/oracledatabase/apiv1/ora"
+          + "cledatabasepb;oracledatabasepb\252\002\036Google."
+          + "Cloud.OracleDatabase.V1\312\002\036Google\\Cloud\\O"
+          + "racleDatabase\\V1\352\002!Google::Cloud::OracleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -259,6 +271,8 @@ public final class CloudVmClusterProto extends com.google.protobuf.GeneratedFile
               "ClusterName",
               "ComputeModel",
               "StorageManagementType",
+              "VmFileSystemStorageType",
+              "VmBackupStorageType",
             });
     internal_static_google_cloud_oracledatabase_v1_DataCollectionOptions_descriptor =
         getDescriptor().getMessageType(2);

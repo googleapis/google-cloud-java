@@ -65,15 +65,15 @@ import com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode;
 import io.grpc.Deadline;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.context.Scope;
+import java.lang.ref.WeakReference;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
@@ -100,8 +100,20 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   private static final ThreadFactory KEEP_ALIVE_THREAD_FACTORY =
       ThreadFactoryUtil.createVirtualOrPlatformDaemonThreadFactory(
           "read-write-transaction-keep-alive", true);
-  private static final ScheduledExecutorService KEEP_ALIVE_SERVICE =
-      Executors.newSingleThreadScheduledExecutor(KEEP_ALIVE_THREAD_FACTORY);
+  private static final ScheduledThreadPoolExecutor KEEP_ALIVE_SERVICE = createKeepAliveService();
+
+  private static ScheduledThreadPoolExecutor createKeepAliveService() {
+    ScheduledThreadPoolExecutor executor =
+        new ScheduledThreadPoolExecutor(1, KEEP_ALIVE_THREAD_FACTORY);
+    executor.setRemoveOnCancelPolicy(true);
+    return executor;
+  }
+
+  @VisibleForTesting
+  static ScheduledThreadPoolExecutor getKeepAliveService() {
+    return KEEP_ALIVE_SERVICE;
+  }
+
   private static final ParsedStatement SELECT1_STATEMENT =
       AbstractStatementParser.getInstance(Dialect.GOOGLE_STANDARD_SQL)
           .parse(Statement.of("SELECT 1"));
@@ -146,7 +158,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   private Savepoint autoSavepoint;
 
   private final int maxInternalRetries;
-  private final ReentrantLock abortedLock = new ReentrantLock();
+  @VisibleForTesting final ReentrantLock abortedLock = new ReentrantLock();
   private final long transactionId;
   private final DatabaseClient dbClient;
   private final TransactionOption[] transactionOptions;
@@ -468,14 +480,15 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         && rolledBackToSavepointException == null;
   }
 
-  private void maybeScheduleKeepAlivePing() {
+  @VisibleForTesting
+  void maybeScheduleKeepAlivePing() {
     if (shouldPing()) {
       keepAliveLock.lock();
       try {
-        if (keepAliveFuture == null || keepAliveFuture.isDone()) {
+        if (shouldPing() && (keepAliveFuture == null || keepAliveFuture.isDone())) {
           keepAliveFuture =
               KEEP_ALIVE_SERVICE.schedule(
-                  new KeepAliveRunnable(),
+                  new KeepAliveRunnable(this),
                   keepAliveIntervalMillis > 0
                       ? keepAliveIntervalMillis
                       : DEFAULT_KEEP_ALIVE_INTERVAL_MILLIS,
@@ -487,12 +500,26 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     }
   }
 
+  @VisibleForTesting
+  ScheduledFuture<?> getKeepAliveFuture() {
+    if (keepAliveLock != null) {
+      keepAliveLock.lock();
+      try {
+        return keepAliveFuture;
+      } finally {
+        keepAliveLock.unlock();
+      }
+    }
+    return null;
+  }
+
   private void cancelScheduledKeepAlivePing() {
     if (keepAliveLock != null) {
       keepAliveLock.lock();
       try {
         if (keepAliveFuture != null) {
           keepAliveFuture.cancel(false);
+          keepAliveFuture = null;
         }
       } finally {
         keepAliveLock.unlock();
@@ -500,23 +527,49 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     }
   }
 
-  private class KeepAliveRunnable implements Runnable {
+  @VisibleForTesting
+  static class KeepAliveRunnable implements Runnable {
+    final WeakReference<ReadWriteTransaction> transactionRef;
+
+    KeepAliveRunnable(ReadWriteTransaction transaction) {
+      this.transactionRef = new WeakReference<>(transaction);
+    }
+
     @Override
+    @SuppressWarnings("FutureReturnValueIgnored")
     public void run() {
-      if (shouldPing()) {
-        // Do a shoot-and-forget ping and schedule a new ping over 8 seconds after this ping has
-        // finished.
-        ApiFuture<ResultSet> future =
-            executeQueryAsync(
-                CallType.SYNC,
-                SELECT1_STATEMENT,
-                AnalyzeMode.NONE,
-                Options.tag(
-                    System.getProperty(
-                        "spanner.connection.keep_alive_query_tag",
-                        "connection.transaction-keep-alive")));
-        future.addListener(
-            ReadWriteTransaction.this::maybeScheduleKeepAlivePing, MoreExecutors.directExecutor());
+      ReadWriteTransaction transaction = transactionRef.get();
+      if (transaction != null && transaction.shouldPing()) {
+        transaction.keepAliveLock.lock();
+        transaction.keepAliveFuture = null;
+        transaction.keepAliveLock.unlock();
+        if (transaction.shouldPing()) {
+          boolean schedulePing = false;
+          if (transaction.abortedLock.tryLock()) {
+            try {
+              // Do a shoot-and-forget ping.
+              // Note: executeQueryAsync automatically adds StatementResultCallback,
+              // which calls maybeScheduleKeepAlivePing() upon completion.
+              transaction.executeQueryAsync(
+                  CallType.SYNC,
+                  SELECT1_STATEMENT,
+                  AnalyzeMode.NONE,
+                  Options.tag(
+                      System.getProperty(
+                          "spanner.connection.keep_alive_query_tag",
+                          "connection.transaction-keep-alive")));
+            } catch (Throwable t) {
+              schedulePing = true;
+            } finally {
+              transaction.abortedLock.unlock();
+            }
+          } else {
+            schedulePing = true;
+          }
+          if (schedulePing) {
+            transaction.maybeScheduleKeepAlivePing();
+          }
+        }
       }
     }
   }

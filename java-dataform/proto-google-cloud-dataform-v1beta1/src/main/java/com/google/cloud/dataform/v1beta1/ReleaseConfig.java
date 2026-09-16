@@ -1830,9 +1830,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
+   * cron_schedule. Must be a time zone name from the [time zone
+   * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+   * left unspecified, the default is `UTC`.
    * </pre>
    *
    * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1857,9 +1857,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
+   * cron_schedule. Must be a time zone name from the [time zone
+   * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+   * left unspecified, the default is `UTC`.
    * </pre>
    *
    * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3324,9 +3324,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the time zone to be used when interpreting
-     * cron_schedule. Must be a time zone name from the time zone database
-     * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-     * unspecified, the default is UTC.
+     * cron_schedule. Must be a time zone name from the [time zone
+     * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+     * left unspecified, the default is `UTC`.
      * </pre>
      *
      * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3350,9 +3350,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the time zone to be used when interpreting
-     * cron_schedule. Must be a time zone name from the time zone database
-     * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-     * unspecified, the default is UTC.
+     * cron_schedule. Must be a time zone name from the [time zone
+     * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+     * left unspecified, the default is `UTC`.
      * </pre>
      *
      * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3376,9 +3376,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the time zone to be used when interpreting
-     * cron_schedule. Must be a time zone name from the time zone database
-     * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-     * unspecified, the default is UTC.
+     * cron_schedule. Must be a time zone name from the [time zone
+     * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+     * left unspecified, the default is `UTC`.
      * </pre>
      *
      * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3401,9 +3401,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the time zone to be used when interpreting
-     * cron_schedule. Must be a time zone name from the time zone database
-     * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-     * unspecified, the default is UTC.
+     * cron_schedule. Must be a time zone name from the [time zone
+     * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+     * left unspecified, the default is `UTC`.
      * </pre>
      *
      * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3422,9 +3422,9 @@ public final class ReleaseConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Specifies the time zone to be used when interpreting
-     * cron_schedule. Must be a time zone name from the time zone database
-     * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-     * unspecified, the default is UTC.
+     * cron_schedule. Must be a time zone name from the [time zone
+     * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+     * left unspecified, the default is `UTC`.
      * </pre>
      *
      * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -32,7 +32,9 @@ import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.client.DatastoreFactory;
+import java.util.Arrays;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
@@ -202,6 +204,18 @@ public class DatastoreOptionsTest {
   public void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
+  }
+
+  @Test
+  public void testRequestTags() {
+    assertTrue(options.build().getRequestTags().isEmpty());
+    assertThat(options.setRequestTags(Arrays.asList("tag1", "tag2")).build().getRequestTags())
+        .containsExactly("tag1", "tag2")
+        .inOrder();
+    assertThat(options.setRequestTags(ImmutableList.of("tag3")).build().getRequestTags())
+        .containsExactly("tag3");
+    assertThat(options.setRequestTags(Arrays.asList("tag4")).build().getRequestTags())
+        .containsExactly("tag4");
   }
 
   @Test

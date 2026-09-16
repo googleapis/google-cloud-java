@@ -73,6 +73,7 @@ jobs:
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - run: mvn -version
       - name: Test with Java 8
         # Direct goal invocation ("surefire:test") prevents recompiling tests

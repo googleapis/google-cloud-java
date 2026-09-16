@@ -394,5 +394,48 @@ public interface ReasoningEngineSpecOrBuilder
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.IdentityType getIdentityType();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buildSpec field is set.
+   */
+  boolean hasBuildSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buildSpec.
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec getBuildSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder getBuildSpecOrBuilder();
+
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSourceCase getDeploymentSourceCase();
 }

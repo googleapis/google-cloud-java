@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -285,6 +286,391 @@ public class CompanyServiceClientTest {
     try {
       String parent = "networks/network-5450";
       client.listCompanies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCompanyTest() throws Exception {
+    Company expectedResponse =
+        Company.newBuilder()
+            .setName(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setCompanyId(-847673315)
+            .setDisplayName("displayName1714148973")
+            .setAddress("address-1147692044")
+            .setEmail("email96619420")
+            .setFax("fax101149")
+            .setPhone("phone106642798")
+            .setExternalId("externalId-1699764666")
+            .setComment("comment950398559")
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .addAllAppliedTeams(new ArrayList<String>())
+            .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    Company company = Company.newBuilder().build();
+
+    Company actualResponse = client.createCompany(parent, company);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCompanyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      Company company = Company.newBuilder().build();
+      client.createCompany(parent, company);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCompanyTest2() throws Exception {
+    Company expectedResponse =
+        Company.newBuilder()
+            .setName(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setCompanyId(-847673315)
+            .setDisplayName("displayName1714148973")
+            .setAddress("address-1147692044")
+            .setEmail("email96619420")
+            .setFax("fax101149")
+            .setPhone("phone106642798")
+            .setExternalId("externalId-1699764666")
+            .setComment("comment950398559")
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .addAllAppliedTeams(new ArrayList<String>())
+            .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    Company company = Company.newBuilder().build();
+
+    Company actualResponse = client.createCompany(parent, company);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createCompanyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      Company company = Company.newBuilder().build();
+      client.createCompany(parent, company);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCompaniesTest() throws Exception {
+    BatchCreateCompaniesResponse expectedResponse =
+        BatchCreateCompaniesResponse.newBuilder().addAllCompanies(new ArrayList<Company>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateCompanyRequest> requests = new ArrayList<>();
+
+    BatchCreateCompaniesResponse actualResponse = client.batchCreateCompanies(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCompaniesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateCompanyRequest> requests = new ArrayList<>();
+      client.batchCreateCompanies(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateCompaniesTest2() throws Exception {
+    BatchCreateCompaniesResponse expectedResponse =
+        BatchCreateCompaniesResponse.newBuilder().addAllCompanies(new ArrayList<Company>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateCompanyRequest> requests = new ArrayList<>();
+
+    BatchCreateCompaniesResponse actualResponse = client.batchCreateCompanies(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateCompaniesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateCompanyRequest> requests = new ArrayList<>();
+      client.batchCreateCompanies(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCompanyTest() throws Exception {
+    Company expectedResponse =
+        Company.newBuilder()
+            .setName(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setCompanyId(-847673315)
+            .setDisplayName("displayName1714148973")
+            .setAddress("address-1147692044")
+            .setEmail("email96619420")
+            .setFax("fax101149")
+            .setPhone("phone106642798")
+            .setExternalId("externalId-1699764666")
+            .setComment("comment950398559")
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .addAllAppliedTeams(new ArrayList<String>())
+            .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Company company =
+        Company.newBuilder()
+            .setName(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+            .setCompanyId(-847673315)
+            .setDisplayName("displayName1714148973")
+            .setAddress("address-1147692044")
+            .setEmail("email96619420")
+            .setFax("fax101149")
+            .setPhone("phone106642798")
+            .setExternalId("externalId-1699764666")
+            .setComment("comment950398559")
+            .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+            .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+            .addAllAppliedTeams(new ArrayList<String>())
+            .setThirdPartyCompanyId(2003341038)
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Company actualResponse = client.updateCompany(company, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCompanyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Company company =
+          Company.newBuilder()
+              .setName(CompanyName.of("[NETWORK_CODE]", "[COMPANY]").toString())
+              .setCompanyId(-847673315)
+              .setDisplayName("displayName1714148973")
+              .setAddress("address-1147692044")
+              .setEmail("email96619420")
+              .setFax("fax101149")
+              .setPhone("phone106642798")
+              .setExternalId("externalId-1699764666")
+              .setComment("comment950398559")
+              .addAllAppliedLabels(new ArrayList<AppliedLabel>())
+              .setPrimaryContact(ContactName.of("[NETWORK_CODE]", "[CONTACT]").toString())
+              .addAllAppliedTeams(new ArrayList<String>())
+              .setThirdPartyCompanyId(2003341038)
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCompany(company, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCompaniesTest() throws Exception {
+    BatchUpdateCompaniesResponse expectedResponse =
+        BatchUpdateCompaniesResponse.newBuilder().addAllCompanies(new ArrayList<Company>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateCompanyRequest> requests = new ArrayList<>();
+
+    BatchUpdateCompaniesResponse actualResponse = client.batchUpdateCompanies(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCompaniesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateCompanyRequest> requests = new ArrayList<>();
+      client.batchUpdateCompanies(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateCompaniesTest2() throws Exception {
+    BatchUpdateCompaniesResponse expectedResponse =
+        BatchUpdateCompaniesResponse.newBuilder().addAllCompanies(new ArrayList<Company>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateCompanyRequest> requests = new ArrayList<>();
+
+    BatchUpdateCompaniesResponse actualResponse = client.batchUpdateCompanies(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateCompaniesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateCompanyRequest> requests = new ArrayList<>();
+      client.batchUpdateCompanies(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

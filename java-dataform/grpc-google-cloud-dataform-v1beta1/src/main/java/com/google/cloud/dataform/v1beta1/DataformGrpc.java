@@ -1608,6 +1608,248 @@ public final class DataformGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest,
+          com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+      getSyncWorkspaceRefsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SyncWorkspaceRefs",
+      requestType = com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest,
+          com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+      getSyncWorkspaceRefsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest,
+            com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+        getSyncWorkspaceRefsMethod;
+    if ((getSyncWorkspaceRefsMethod = DataformGrpc.getSyncWorkspaceRefsMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getSyncWorkspaceRefsMethod = DataformGrpc.getSyncWorkspaceRefsMethod) == null) {
+          DataformGrpc.getSyncWorkspaceRefsMethod =
+              getSyncWorkspaceRefsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest,
+                          com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SyncWorkspaceRefs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("SyncWorkspaceRefs"))
+                      .build();
+        }
+      }
+    }
+    return getSyncWorkspaceRefsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest,
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+      getFetchWorkspaceBranchesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchWorkspaceBranches",
+      requestType = com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest,
+          com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+      getFetchWorkspaceBranchesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest,
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+        getFetchWorkspaceBranchesMethod;
+    if ((getFetchWorkspaceBranchesMethod = DataformGrpc.getFetchWorkspaceBranchesMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getFetchWorkspaceBranchesMethod = DataformGrpc.getFetchWorkspaceBranchesMethod)
+            == null) {
+          DataformGrpc.getFetchWorkspaceBranchesMethod =
+              getFetchWorkspaceBranchesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest,
+                          com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchWorkspaceBranches"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("FetchWorkspaceBranches"))
+                      .build();
+        }
+      }
+    }
+    return getFetchWorkspaceBranchesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteBranchRequest,
+          com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+      getDeleteBranchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteBranch",
+      requestType = com.google.cloud.dataform.v1beta1.DeleteBranchRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.DeleteBranchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.DeleteBranchRequest,
+          com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+      getDeleteBranchMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.DeleteBranchRequest,
+            com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+        getDeleteBranchMethod;
+    if ((getDeleteBranchMethod = DataformGrpc.getDeleteBranchMethod) == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getDeleteBranchMethod = DataformGrpc.getDeleteBranchMethod) == null) {
+          DataformGrpc.getDeleteBranchMethod =
+              getDeleteBranchMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.DeleteBranchRequest,
+                          com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteBranch"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteBranchRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.DeleteBranchResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new DataformMethodDescriptorSupplier("DeleteBranch"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBranchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest,
+          com.google.protobuf.Empty>
+      getCheckoutWorkspaceBranchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CheckoutWorkspaceBranch",
+      requestType = com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest,
+          com.google.protobuf.Empty>
+      getCheckoutWorkspaceBranchMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest,
+            com.google.protobuf.Empty>
+        getCheckoutWorkspaceBranchMethod;
+    if ((getCheckoutWorkspaceBranchMethod = DataformGrpc.getCheckoutWorkspaceBranchMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getCheckoutWorkspaceBranchMethod = DataformGrpc.getCheckoutWorkspaceBranchMethod)
+            == null) {
+          DataformGrpc.getCheckoutWorkspaceBranchMethod =
+              getCheckoutWorkspaceBranchMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CheckoutWorkspaceBranch"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("CheckoutWorkspaceBranch"))
+                      .build();
+        }
+      }
+    }
+    return getCheckoutWorkspaceBranchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest,
+          com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+      getFetchCurrentWorkspaceBranchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchCurrentWorkspaceBranch",
+      requestType = com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest.class,
+      responseType = com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest,
+          com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+      getFetchCurrentWorkspaceBranchMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest,
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+        getFetchCurrentWorkspaceBranchMethod;
+    if ((getFetchCurrentWorkspaceBranchMethod = DataformGrpc.getFetchCurrentWorkspaceBranchMethod)
+        == null) {
+      synchronized (DataformGrpc.class) {
+        if ((getFetchCurrentWorkspaceBranchMethod =
+                DataformGrpc.getFetchCurrentWorkspaceBranchMethod)
+            == null) {
+          DataformGrpc.getFetchCurrentWorkspaceBranchMethod =
+              getFetchCurrentWorkspaceBranchMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest,
+                          com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchCurrentWorkspaceBranch"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataformMethodDescriptorSupplier("FetchCurrentWorkspaceBranch"))
+                      .build();
+        }
+      }
+    }
+    return getFetchCurrentWorkspaceBranchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dataform.v1beta1.PushGitCommitsRequest,
           com.google.cloud.dataform.v1beta1.PushGitCommitsResponse>
       getPushGitCommitsMethod;
@@ -4065,6 +4307,82 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Syncs the refs of a Workspace.
+     * </pre>
+     */
+    default void syncWorkspaceRefs(
+        com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSyncWorkspaceRefsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches branches in a Workspace.
+     * </pre>
+     */
+    default void fetchWorkspaceBranches(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchWorkspaceBranchesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a branch in a Workspace.
+     * </pre>
+     */
+    default void deleteBranch(
+        com.google.cloud.dataform.v1beta1.DeleteBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteBranchMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checkout a branch in a Workspace.
+     * </pre>
+     */
+    default void checkoutWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCheckoutWorkspaceBranchMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the current branch of a Workspace.
+     * </pre>
+     */
+    default void fetchCurrentWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchCurrentWorkspaceBranchMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pushes Git commits from a Workspace to the Repository's remote.
      * </pre>
      */
@@ -5297,6 +5615,92 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Syncs the refs of a Workspace.
+     * </pre>
+     */
+    public void syncWorkspaceRefs(
+        com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSyncWorkspaceRefsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches branches in a Workspace.
+     * </pre>
+     */
+    public void fetchWorkspaceBranches(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchWorkspaceBranchesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a branch in a Workspace.
+     * </pre>
+     */
+    public void deleteBranch(
+        com.google.cloud.dataform.v1beta1.DeleteBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteBranchMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checkout a branch in a Workspace.
+     * </pre>
+     */
+    public void checkoutWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCheckoutWorkspaceBranchMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the current branch of a Workspace.
+     * </pre>
+     */
+    public void fetchCurrentWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchCurrentWorkspaceBranchMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pushes Git commits from a Workspace to the Repository's remote.
      * </pre>
      */
@@ -6504,6 +6908,77 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Syncs the refs of a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse syncWorkspaceRefs(
+        com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSyncWorkspaceRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches branches in a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse fetchWorkspaceBranches(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchWorkspaceBranchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.DeleteBranchResponse deleteBranch(
+        com.google.cloud.dataform.v1beta1.DeleteBranchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checkout a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.protobuf.Empty checkoutWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCheckoutWorkspaceBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the current branch of a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse
+        fetchCurrentWorkspaceBranch(
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchCurrentWorkspaceBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pushes Git commits from a Workspace to the Repository's remote.
      * </pre>
      */
@@ -7558,6 +8033,72 @@ public final class DataformGrpc {
         com.google.cloud.dataform.v1beta1.PullGitCommitsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getPullGitCommitsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Syncs the refs of a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse syncWorkspaceRefs(
+        com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncWorkspaceRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches branches in a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse fetchWorkspaceBranches(
+        com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchWorkspaceBranchesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.DeleteBranchResponse deleteBranch(
+        com.google.cloud.dataform.v1beta1.DeleteBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checkout a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.protobuf.Empty checkoutWorkspaceBranch(
+        com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckoutWorkspaceBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the current branch of a Workspace.
+     * </pre>
+     */
+    public com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse
+        fetchCurrentWorkspaceBranch(
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchCurrentWorkspaceBranchMethod(), getCallOptions(), request);
     }
 
     /**
@@ -8620,6 +9161,78 @@ public final class DataformGrpc {
      *
      *
      * <pre>
+     * Syncs the refs of a Workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>
+        syncWorkspaceRefs(com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSyncWorkspaceRefsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches branches in a Workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>
+        fetchWorkspaceBranches(
+            com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchWorkspaceBranchesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.DeleteBranchResponse>
+        deleteBranch(com.google.cloud.dataform.v1beta1.DeleteBranchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteBranchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checkout a branch in a Workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        checkoutWorkspaceBranch(
+            com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCheckoutWorkspaceBranchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches the current branch of a Workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranch(
+            com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchCurrentWorkspaceBranchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Pushes Git commits from a Workspace to the Repository's remote.
      * </pre>
      */
@@ -9247,46 +9860,51 @@ public final class DataformGrpc {
   private static final int METHODID_DELETE_WORKSPACE = 31;
   private static final int METHODID_INSTALL_NPM_PACKAGES = 32;
   private static final int METHODID_PULL_GIT_COMMITS = 33;
-  private static final int METHODID_PUSH_GIT_COMMITS = 34;
-  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 35;
-  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 36;
-  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 37;
-  private static final int METHODID_RESET_WORKSPACE_CHANGES = 38;
-  private static final int METHODID_FETCH_FILE_DIFF = 39;
-  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 40;
-  private static final int METHODID_SEARCH_FILES = 41;
-  private static final int METHODID_MAKE_DIRECTORY = 42;
-  private static final int METHODID_REMOVE_DIRECTORY = 43;
-  private static final int METHODID_MOVE_DIRECTORY = 44;
-  private static final int METHODID_READ_FILE = 45;
-  private static final int METHODID_REMOVE_FILE = 46;
-  private static final int METHODID_MOVE_FILE = 47;
-  private static final int METHODID_WRITE_FILE = 48;
-  private static final int METHODID_LIST_RELEASE_CONFIGS = 49;
-  private static final int METHODID_GET_RELEASE_CONFIG = 50;
-  private static final int METHODID_CREATE_RELEASE_CONFIG = 51;
-  private static final int METHODID_UPDATE_RELEASE_CONFIG = 52;
-  private static final int METHODID_DELETE_RELEASE_CONFIG = 53;
-  private static final int METHODID_LIST_COMPILATION_RESULTS = 54;
-  private static final int METHODID_GET_COMPILATION_RESULT = 55;
-  private static final int METHODID_CREATE_COMPILATION_RESULT = 56;
-  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 57;
-  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 58;
-  private static final int METHODID_GET_WORKFLOW_CONFIG = 59;
-  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 60;
-  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 61;
-  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 62;
-  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 63;
-  private static final int METHODID_GET_WORKFLOW_INVOCATION = 64;
-  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 65;
-  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 66;
-  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 67;
-  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 68;
-  private static final int METHODID_GET_CONFIG = 69;
-  private static final int METHODID_UPDATE_CONFIG = 70;
-  private static final int METHODID_GET_IAM_POLICY = 71;
-  private static final int METHODID_SET_IAM_POLICY = 72;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 73;
+  private static final int METHODID_SYNC_WORKSPACE_REFS = 34;
+  private static final int METHODID_FETCH_WORKSPACE_BRANCHES = 35;
+  private static final int METHODID_DELETE_BRANCH = 36;
+  private static final int METHODID_CHECKOUT_WORKSPACE_BRANCH = 37;
+  private static final int METHODID_FETCH_CURRENT_WORKSPACE_BRANCH = 38;
+  private static final int METHODID_PUSH_GIT_COMMITS = 39;
+  private static final int METHODID_FETCH_FILE_GIT_STATUSES = 40;
+  private static final int METHODID_FETCH_GIT_AHEAD_BEHIND = 41;
+  private static final int METHODID_COMMIT_WORKSPACE_CHANGES = 42;
+  private static final int METHODID_RESET_WORKSPACE_CHANGES = 43;
+  private static final int METHODID_FETCH_FILE_DIFF = 44;
+  private static final int METHODID_QUERY_DIRECTORY_CONTENTS = 45;
+  private static final int METHODID_SEARCH_FILES = 46;
+  private static final int METHODID_MAKE_DIRECTORY = 47;
+  private static final int METHODID_REMOVE_DIRECTORY = 48;
+  private static final int METHODID_MOVE_DIRECTORY = 49;
+  private static final int METHODID_READ_FILE = 50;
+  private static final int METHODID_REMOVE_FILE = 51;
+  private static final int METHODID_MOVE_FILE = 52;
+  private static final int METHODID_WRITE_FILE = 53;
+  private static final int METHODID_LIST_RELEASE_CONFIGS = 54;
+  private static final int METHODID_GET_RELEASE_CONFIG = 55;
+  private static final int METHODID_CREATE_RELEASE_CONFIG = 56;
+  private static final int METHODID_UPDATE_RELEASE_CONFIG = 57;
+  private static final int METHODID_DELETE_RELEASE_CONFIG = 58;
+  private static final int METHODID_LIST_COMPILATION_RESULTS = 59;
+  private static final int METHODID_GET_COMPILATION_RESULT = 60;
+  private static final int METHODID_CREATE_COMPILATION_RESULT = 61;
+  private static final int METHODID_QUERY_COMPILATION_RESULT_ACTIONS = 62;
+  private static final int METHODID_LIST_WORKFLOW_CONFIGS = 63;
+  private static final int METHODID_GET_WORKFLOW_CONFIG = 64;
+  private static final int METHODID_CREATE_WORKFLOW_CONFIG = 65;
+  private static final int METHODID_UPDATE_WORKFLOW_CONFIG = 66;
+  private static final int METHODID_DELETE_WORKFLOW_CONFIG = 67;
+  private static final int METHODID_LIST_WORKFLOW_INVOCATIONS = 68;
+  private static final int METHODID_GET_WORKFLOW_INVOCATION = 69;
+  private static final int METHODID_CREATE_WORKFLOW_INVOCATION = 70;
+  private static final int METHODID_DELETE_WORKFLOW_INVOCATION = 71;
+  private static final int METHODID_CANCEL_WORKFLOW_INVOCATION = 72;
+  private static final int METHODID_QUERY_WORKFLOW_INVOCATION_ACTIONS = 73;
+  private static final int METHODID_GET_CONFIG = 74;
+  private static final int METHODID_UPDATE_CONFIG = 75;
+  private static final int METHODID_GET_IAM_POLICY = 76;
+  private static final int METHODID_SET_IAM_POLICY = 77;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 78;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9512,6 +10130,38 @@ public final class DataformGrpc {
               (com.google.cloud.dataform.v1beta1.PullGitCommitsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dataform.v1beta1.PullGitCommitsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SYNC_WORKSPACE_REFS:
+          serviceImpl.syncWorkspaceRefs(
+              (com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_WORKSPACE_BRANCHES:
+          serviceImpl.fetchWorkspaceBranches(
+              (com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BRANCH:
+          serviceImpl.deleteBranch(
+              (com.google.cloud.dataform.v1beta1.DeleteBranchRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dataform.v1beta1.DeleteBranchResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CHECKOUT_WORKSPACE_BRANCH:
+          serviceImpl.checkoutWorkspaceBranch(
+              (com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_FETCH_CURRENT_WORKSPACE_BRANCH:
+          serviceImpl.fetchCurrentWorkspaceBranch(
+              (com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>)
                   responseObserver);
           break;
         case METHODID_PUSH_GIT_COMMITS:
@@ -10008,6 +10658,40 @@ public final class DataformGrpc {
                     com.google.cloud.dataform.v1beta1.PullGitCommitsResponse>(
                     service, METHODID_PULL_GIT_COMMITS)))
         .addMethod(
+            getSyncWorkspaceRefsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest,
+                    com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse>(
+                    service, METHODID_SYNC_WORKSPACE_REFS)))
+        .addMethod(
+            getFetchWorkspaceBranchesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest,
+                    com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse>(
+                    service, METHODID_FETCH_WORKSPACE_BRANCHES)))
+        .addMethod(
+            getDeleteBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.DeleteBranchRequest,
+                    com.google.cloud.dataform.v1beta1.DeleteBranchResponse>(
+                    service, METHODID_DELETE_BRANCH)))
+        .addMethod(
+            getCheckoutWorkspaceBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest,
+                    com.google.protobuf.Empty>(service, METHODID_CHECKOUT_WORKSPACE_BRANCH)))
+        .addMethod(
+            getFetchCurrentWorkspaceBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest,
+                    com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse>(
+                    service, METHODID_FETCH_CURRENT_WORKSPACE_BRANCH)))
+        .addMethod(
             getPushGitCommitsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -10361,6 +11045,11 @@ public final class DataformGrpc {
                       .addMethod(getDeleteWorkspaceMethod())
                       .addMethod(getInstallNpmPackagesMethod())
                       .addMethod(getPullGitCommitsMethod())
+                      .addMethod(getSyncWorkspaceRefsMethod())
+                      .addMethod(getFetchWorkspaceBranchesMethod())
+                      .addMethod(getDeleteBranchMethod())
+                      .addMethod(getCheckoutWorkspaceBranchMethod())
+                      .addMethod(getFetchCurrentWorkspaceBranchMethod())
                       .addMethod(getPushGitCommitsMethod())
                       .addMethod(getFetchFileGitStatusesMethod())
                       .addMethod(getFetchGitAheadBehindMethod())

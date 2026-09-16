@@ -254,4 +254,47 @@ public interface WriteRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  boolean hasRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  com.google.firestore.v1.RequestOptions getRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.firestore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder();
 }

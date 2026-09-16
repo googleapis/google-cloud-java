@@ -24,7 +24,7 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The evaluation details for a control.
+ * Evaluation details for a control.
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.ControlDetails}
@@ -78,7 +78,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -94,7 +94,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -112,7 +112,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -172,7 +172,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -188,7 +189,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -206,7 +208,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -416,7 +419,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The evaluation details for a control.
+   * Evaluation details for a control.
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.ControlDetails}
@@ -623,7 +626,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -638,7 +641,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -659,7 +662,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -682,7 +685,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -702,7 +705,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -730,7 +733,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -750,7 +753,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -765,7 +768,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -784,7 +787,7 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The control for which the findings are being reported.
+     * Control that the findings are being reported for.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -924,7 +927,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -939,7 +943,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -960,7 +965,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -983,7 +989,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -1004,7 +1011,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -1033,7 +1041,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -1053,7 +1062,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -1068,7 +1078,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -1088,7 +1099,8 @@ public final class ControlDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Report summary with compliance, violation counts etc.
+     * A control report summary that provides a high-level overview of the
+     * compliance controls and the assessment status.
      * </pre>
      *
      * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>

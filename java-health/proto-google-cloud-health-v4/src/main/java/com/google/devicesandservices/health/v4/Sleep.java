@@ -55,6 +55,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     type_ = 0;
     stages_ = java.util.Collections.emptyList();
     outOfBedSegments_ = java.util.Collections.emptyList();
+    shortAwakenings_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5011,6 +5012,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Sleep and sleep stages algorithms finished processing.
+     * A `true` value indicates whether all data processing for the session is
+     * complete.
+     * A `false` value means sleep period is detected but sleep stages is still
+     * processing.
      * </pre>
      *
      * <code>bool processed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5072,6 +5077,22 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      * @return The bytes for externalId.
      */
     com.google.protobuf.ByteString getExternalIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `main_sleep`: the longest sleep session with stages within
+     * one day. If no sleep session has stages, then the longest sleep is the
+     * `main_sleep`.  If there are multiple days of sleep in the response, there
+     * is one `main_sleep` per day.
+     * </pre>
+     *
+     * <code>bool main_sleep = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The mainSleep.
+     */
+    boolean getMainSleep();
   }
 
   /**
@@ -5521,6 +5542,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Sleep and sleep stages algorithms finished processing.
+     * A `true` value indicates whether all data processing for the session is
+     * complete.
+     * A `false` value means sleep period is detected but sleep stages is still
+     * processing.
      * </pre>
      *
      * <code>bool processed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5625,6 +5650,28 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int MAIN_SLEEP_FIELD_NUMBER = 9;
+    private boolean mainSleep_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `main_sleep`: the longest sleep session with stages within
+     * one day. If no sleep session has stages, then the longest sleep is the
+     * `main_sleep`.  If there are multiple days of sleep in the response, there
+     * is one `main_sleep` per day.
+     * </pre>
+     *
+     * <code>bool main_sleep = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The mainSleep.
+     */
+    @java.lang.Override
+    public boolean getMainSleep() {
+      return mainSleep_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5657,6 +5704,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, externalId_);
       }
+      if (mainSleep_ != false) {
+        output.writeBool(9, mainSleep_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5684,6 +5734,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(externalId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(7, externalId_);
       }
+      if (mainSleep_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, mainSleep_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5705,6 +5758,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       if (getNap() != other.getNap()) return false;
       if (getManuallyEdited() != other.getManuallyEdited()) return false;
       if (!getExternalId().equals(other.getExternalId())) return false;
+      if (getMainSleep() != other.getMainSleep()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5726,6 +5780,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManuallyEdited());
       hash = (37 * hash) + EXTERNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getExternalId().hashCode();
+      hash = (37 * hash) + MAIN_SLEEP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMainSleep());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5872,6 +5928,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         nap_ = false;
         manuallyEdited_ = false;
         externalId_ = "";
+        mainSleep_ = false;
         return this;
       }
 
@@ -5925,6 +5982,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.externalId_ = externalId_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.mainSleep_ = mainSleep_;
+        }
       }
 
       @java.lang.Override
@@ -5957,6 +6017,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
           externalId_ = other.externalId_;
           bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (other.getMainSleep() != false) {
+          setMainSleep(other.getMainSleep());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6014,6 +6077,12 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 58
+              case 72:
+                {
+                  mainSleep_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 72
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6150,6 +6219,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. Sleep and sleep stages algorithms finished processing.
+       * A `true` value indicates whether all data processing for the session is
+       * complete.
+       * A `false` value means sleep period is detected but sleep stages is still
+       * processing.
        * </pre>
        *
        * <code>bool processed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6166,6 +6239,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. Sleep and sleep stages algorithms finished processing.
+       * A `true` value indicates whether all data processing for the session is
+       * complete.
+       * A `false` value means sleep period is detected but sleep stages is still
+       * processing.
        * </pre>
        *
        * <code>bool processed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6186,6 +6263,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. Sleep and sleep stages algorithms finished processing.
+       * A `true` value indicates whether all data processing for the session is
+       * complete.
+       * A `false` value means sleep period is detected but sleep stages is still
+       * processing.
        * </pre>
        *
        * <code>bool processed = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6424,6 +6505,71 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         externalId_ = value;
         bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private boolean mainSleep_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. `main_sleep`: the longest sleep session with stages within
+       * one day. If no sleep session has stages, then the longest sleep is the
+       * `main_sleep`.  If there are multiple days of sleep in the response, there
+       * is one `main_sleep` per day.
+       * </pre>
+       *
+       * <code>bool main_sleep = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The mainSleep.
+       */
+      @java.lang.Override
+      public boolean getMainSleep() {
+        return mainSleep_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. `main_sleep`: the longest sleep session with stages within
+       * one day. If no sleep session has stages, then the longest sleep is the
+       * `main_sleep`.  If there are multiple days of sleep in the response, there
+       * is one `main_sleep` per day.
+       * </pre>
+       *
+       * <code>bool main_sleep = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The mainSleep to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMainSleep(boolean value) {
+
+        mainSleep_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. `main_sleep`: the longest sleep session with stages within
+       * one day. If no sleep session has stages, then the longest sleep is the
+       * `main_sleep`.  If there are multiple days of sleep in the response, there
+       * is one `main_sleep` per day.
+       * </pre>
+       *
+       * <code>bool main_sleep = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMainSleep() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        mainSleep_ = false;
         onChanged();
         return this;
       }
@@ -9727,7 +9873,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -9745,7 +9892,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -9765,7 +9913,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -9943,6 +10092,99 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int SHORT_AWAKENINGS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage> shortAwakenings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage>
+      getShortAwakeningsList() {
+    return shortAwakenings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>
+      getShortAwakeningsOrBuilderList() {
+    return shortAwakenings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getShortAwakeningsCount() {
+    return shortAwakenings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.Sleep.SleepStage getShortAwakenings(int index) {
+    return shortAwakenings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder
+      getShortAwakeningsOrBuilder(int index) {
+    return shortAwakenings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -9983,6 +10225,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(11, getUpdateTime());
     }
+    for (int i = 0; i < shortAwakenings_.size(); i++) {
+      output.writeMessage(12, shortAwakenings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -10017,6 +10262,9 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
+    }
+    for (int i = 0; i < shortAwakenings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, shortAwakenings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -10057,6 +10305,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
+    if (!getShortAwakeningsList().equals(other.getShortAwakeningsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -10097,6 +10346,10 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (getShortAwakeningsCount() > 0) {
+      hash = (37 * hash) + SHORT_AWAKENINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getShortAwakeningsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -10246,6 +10499,7 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         internalGetSummaryFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetShortAwakeningsFieldBuilder();
       }
     }
 
@@ -10293,6 +10547,13 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      if (shortAwakeningsBuilder_ == null) {
+        shortAwakenings_ = java.util.Collections.emptyList();
+      } else {
+        shortAwakenings_ = null;
+        shortAwakeningsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -10346,6 +10607,15 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         result.outOfBedSegments_ = outOfBedSegments_;
       } else {
         result.outOfBedSegments_ = outOfBedSegmentsBuilder_.build();
+      }
+      if (shortAwakeningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          shortAwakenings_ = java.util.Collections.unmodifiableList(shortAwakenings_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.shortAwakenings_ = shortAwakenings_;
+      } else {
+        result.shortAwakenings_ = shortAwakeningsBuilder_.build();
       }
     }
 
@@ -10462,6 +10732,33 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (shortAwakeningsBuilder_ == null) {
+        if (!other.shortAwakenings_.isEmpty()) {
+          if (shortAwakenings_.isEmpty()) {
+            shortAwakenings_ = other.shortAwakenings_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureShortAwakeningsIsMutable();
+            shortAwakenings_.addAll(other.shortAwakenings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.shortAwakenings_.isEmpty()) {
+          if (shortAwakeningsBuilder_.isEmpty()) {
+            shortAwakeningsBuilder_.dispose();
+            shortAwakeningsBuilder_ = null;
+            shortAwakenings_ = other.shortAwakenings_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            shortAwakeningsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetShortAwakeningsFieldBuilder()
+                    : null;
+          } else {
+            shortAwakeningsBuilder_.addAllMessages(other.shortAwakenings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -10556,6 +10853,20 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 90
+            case 98:
+              {
+                com.google.devicesandservices.health.v4.Sleep.SleepStage m =
+                    input.readMessage(
+                        com.google.devicesandservices.health.v4.Sleep.SleepStage.parser(),
+                        extensionRegistry);
+                if (shortAwakeningsBuilder_ == null) {
+                  ensureShortAwakeningsIsMutable();
+                  shortAwakenings_.add(m);
+                } else {
+                  shortAwakeningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11788,7 +12099,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11805,7 +12117,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11828,7 +12141,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11853,7 +12167,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11876,7 +12191,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11909,7 +12225,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11931,7 +12248,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11949,7 +12267,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -11971,7 +12290,8 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Sleep metadata: processing, main, manually edited, stages status.
+     * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+     * `stages_status`.
      * </pre>
      *
      * <code>
@@ -12633,6 +12953,446 @@ public final class Sleep extends com.google.protobuf.GeneratedMessage
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage>
+        shortAwakenings_ = java.util.Collections.emptyList();
+
+    private void ensureShortAwakeningsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        shortAwakenings_ =
+            new java.util.ArrayList<com.google.devicesandservices.health.v4.Sleep.SleepStage>(
+                shortAwakenings_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.devicesandservices.health.v4.Sleep.SleepStage,
+            com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder,
+            com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>
+        shortAwakeningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage>
+        getShortAwakeningsList() {
+      if (shortAwakeningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(shortAwakenings_);
+      } else {
+        return shortAwakeningsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getShortAwakeningsCount() {
+      if (shortAwakeningsBuilder_ == null) {
+        return shortAwakenings_.size();
+      } else {
+        return shortAwakeningsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Sleep.SleepStage getShortAwakenings(int index) {
+      if (shortAwakeningsBuilder_ == null) {
+        return shortAwakenings_.get(index);
+      } else {
+        return shortAwakeningsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setShortAwakenings(
+        int index, com.google.devicesandservices.health.v4.Sleep.SleepStage value) {
+      if (shortAwakeningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.set(index, value);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setShortAwakenings(
+        int index,
+        com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder builderForValue) {
+      if (shortAwakeningsBuilder_ == null) {
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addShortAwakenings(
+        com.google.devicesandservices.health.v4.Sleep.SleepStage value) {
+      if (shortAwakeningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.add(value);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addShortAwakenings(
+        int index, com.google.devicesandservices.health.v4.Sleep.SleepStage value) {
+      if (shortAwakeningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.add(index, value);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addShortAwakenings(
+        com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder builderForValue) {
+      if (shortAwakeningsBuilder_ == null) {
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addShortAwakenings(
+        int index,
+        com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder builderForValue) {
+      if (shortAwakeningsBuilder_ == null) {
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllShortAwakenings(
+        java.lang.Iterable<? extends com.google.devicesandservices.health.v4.Sleep.SleepStage>
+            values) {
+      if (shortAwakeningsBuilder_ == null) {
+        ensureShortAwakeningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shortAwakenings_);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearShortAwakenings() {
+      if (shortAwakeningsBuilder_ == null) {
+        shortAwakenings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeShortAwakenings(int index) {
+      if (shortAwakeningsBuilder_ == null) {
+        ensureShortAwakeningsIsMutable();
+        shortAwakenings_.remove(index);
+        onChanged();
+      } else {
+        shortAwakeningsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder
+        getShortAwakeningsBuilder(int index) {
+      return internalGetShortAwakeningsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder
+        getShortAwakeningsOrBuilder(int index) {
+      if (shortAwakeningsBuilder_ == null) {
+        return shortAwakenings_.get(index);
+      } else {
+        return shortAwakeningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>
+        getShortAwakeningsOrBuilderList() {
+      if (shortAwakeningsBuilder_ != null) {
+        return shortAwakeningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(shortAwakenings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder
+        addShortAwakeningsBuilder() {
+      return internalGetShortAwakeningsFieldBuilder()
+          .addBuilder(
+              com.google.devicesandservices.health.v4.Sleep.SleepStage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder
+        addShortAwakeningsBuilder(int index) {
+      return internalGetShortAwakeningsFieldBuilder()
+          .addBuilder(
+              index, com.google.devicesandservices.health.v4.Sleep.SleepStage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of short awake segments (under a set threshold) that are
+     * part of the sleep session. These can overlap with sleep stages.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder>
+        getShortAwakeningsBuilderList() {
+      return internalGetShortAwakeningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.devicesandservices.health.v4.Sleep.SleepStage,
+            com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder,
+            com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>
+        internalGetShortAwakeningsFieldBuilder() {
+      if (shortAwakeningsBuilder_ == null) {
+        shortAwakeningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.devicesandservices.health.v4.Sleep.SleepStage,
+                com.google.devicesandservices.health.v4.Sleep.SleepStage.Builder,
+                com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>(
+                shortAwakenings_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        shortAwakenings_ = null;
+      }
+      return shortAwakeningsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.devicesandservices.health.v4.Sleep)

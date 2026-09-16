@@ -62,13 +62,17 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     contentUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     adTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     assetKey_ = "";
+    slate_ = "";
     adBreakFillType_ = 0;
     underfillAdBreakFillType_ = 0;
+    daiAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     sourceContentConfigurations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     adMediaDeliveryConfig_ = "";
     dynamicAdInsertionType_ = 0;
     streamingFormat_ = 0;
     customAssetKey_ = "";
+    daiEncodingProfiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    segmentUrlAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
     adBreakMarkups_ = emptyIntList();
     effectiveAssetKey_ = "";
   }
@@ -770,6 +774,152 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SLATE_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object slate_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the slate field is set.
+   */
+  @java.lang.Override
+  public boolean hasSlate() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The slate.
+   */
+  @java.lang.Override
+  public java.lang.String getSlate() {
+    java.lang.Object ref = slate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      slate_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for slate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSlateBytes() {
+    java.lang.Object ref = slate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      slate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DVR_WINDOW_DURATION_FIELD_NUMBER = 59;
+  private com.google.protobuf.Duration dvrWindowDuration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dvrWindowDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDvrWindowDuration() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dvrWindowDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDvrWindowDuration() {
+    return dvrWindowDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : dvrWindowDuration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDvrWindowDurationOrBuilder() {
+    return dvrWindowDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : dvrWindowDuration_;
+  }
+
   public static final int ENABLE_DAI_AUTHENTICATION_KEYS_FIELD_NUMBER = 14;
   private boolean enableDaiAuthenticationKeys_ = false;
 
@@ -789,7 +939,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEnableDaiAuthenticationKeys() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -831,7 +981,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdBreakFillType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -901,7 +1051,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUnderfillAdBreakFillType() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -977,7 +1127,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdHolidayDuration() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1042,7 +1192,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEnableMaxFillerDuration() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1084,7 +1234,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxFillerDuration() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1151,7 +1301,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPodServingSegmentDuration() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1215,7 +1365,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEnableDurationlessAdBreaks() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1256,7 +1406,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDefaultAdBreakDuration() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1297,6 +1447,98 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     return defaultAdBreakDuration_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
         : defaultAdBreakDuration_;
+  }
+
+  public static final int DAI_AUTHENTICATION_KEYS_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList daiAuthenticationKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the daiAuthenticationKeys.
+   */
+  public com.google.protobuf.ProtocolStringList getDaiAuthenticationKeysList() {
+    return daiAuthenticationKeys_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of daiAuthenticationKeys.
+   */
+  public int getDaiAuthenticationKeysCount() {
+    return daiAuthenticationKeys_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The daiAuthenticationKeys at the given index.
+   */
+  public java.lang.String getDaiAuthenticationKeys(int index) {
+    return daiAuthenticationKeys_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the daiAuthenticationKeys at the given index.
+   */
+  public com.google.protobuf.ByteString getDaiAuthenticationKeysBytes(int index) {
+    return daiAuthenticationKeys_.getByteString(index);
   }
 
   public static final int SOURCE_CONTENT_CONFIGURATIONS_FIELD_NUMBER = 26;
@@ -1413,7 +1655,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdMediaDeliveryConfig() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -1491,7 +1733,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPrerollSettings() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -1553,7 +1795,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasHlsSettings() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -1616,7 +1858,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAllowlistedIpsEnabled() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -1658,7 +1900,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDynamicAdInsertionType() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -1726,7 +1968,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRelativePlaylistDeliveryEnabled() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -1768,7 +2010,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStreamingFormat() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -1832,7 +2074,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPrefetchEnabled() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -1869,7 +2111,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPrefetchSettings() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
@@ -1930,7 +2172,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasForcedCueInEnabled() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -1973,7 +2215,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasShortSegmentDroppingEnabled() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -2018,7 +2260,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCustomAssetKey() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
 
   /**
@@ -2075,6 +2317,174 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DAI_ENCODING_PROFILES_FIELD_NUMBER = 40;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList daiEncodingProfiles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the daiEncodingProfiles.
+   */
+  public com.google.protobuf.ProtocolStringList getDaiEncodingProfilesList() {
+    return daiEncodingProfiles_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of daiEncodingProfiles.
+   */
+  public int getDaiEncodingProfilesCount() {
+    return daiEncodingProfiles_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The daiEncodingProfiles at the given index.
+   */
+  public java.lang.String getDaiEncodingProfiles(int index) {
+    return daiEncodingProfiles_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the daiEncodingProfiles at the given index.
+   */
+  public com.google.protobuf.ByteString getDaiEncodingProfilesBytes(int index) {
+    return daiEncodingProfiles_.getByteString(index);
+  }
+
+  public static final int SEGMENT_URL_AUTHENTICATION_KEYS_FIELD_NUMBER = 41;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList segmentUrlAuthenticationKeys_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the segmentUrlAuthenticationKeys.
+   */
+  public com.google.protobuf.ProtocolStringList getSegmentUrlAuthenticationKeysList() {
+    return segmentUrlAuthenticationKeys_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of segmentUrlAuthenticationKeys.
+   */
+  public int getSegmentUrlAuthenticationKeysCount() {
+    return segmentUrlAuthenticationKeys_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The segmentUrlAuthenticationKeys at the given index.
+   */
+  public java.lang.String getSegmentUrlAuthenticationKeys(int index) {
+    return segmentUrlAuthenticationKeys_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the segmentUrlAuthenticationKeys at the given index.
+   */
+  public com.google.protobuf.ByteString getSegmentUrlAuthenticationKeysBytes(int index) {
+    return segmentUrlAuthenticationKeys_.getByteString(index);
   }
 
   public static final int AD_BREAK_MARKUPS_FIELD_NUMBER = 42;
@@ -2221,7 +2631,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdBreakMarkupTypesEnabled() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
 
   /**
@@ -2262,7 +2672,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLiveStreamConditioning() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
 
   /**
@@ -2323,7 +2733,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEarlyBreakNotificationMultiBreakSchedulingEnabled() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
 
   /**
@@ -2364,7 +2774,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAdPodTrimTolerance() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
 
   /**
@@ -2428,7 +2838,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEffectiveAssetKey() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
 
   /**
@@ -2503,7 +2913,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasAuxiliaryAdSettings() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
 
   /**
@@ -2594,71 +3004,85 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 11, assetKey_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeBool(14, enableDaiAuthenticationKeys_);
-    }
-    if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(15, adBreakFillType_);
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, slate_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(16, underfillAdBreakFillType_);
+      output.writeBool(14, enableDaiAuthenticationKeys_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeMessage(17, getAdHolidayDuration());
+      output.writeEnum(15, adBreakFillType_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeBool(18, enableMaxFillerDuration_);
+      output.writeEnum(16, underfillAdBreakFillType_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeMessage(19, getMaxFillerDuration());
+      output.writeMessage(17, getAdHolidayDuration());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeMessage(20, getPodServingSegmentDuration());
+      output.writeBool(18, enableMaxFillerDuration_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      output.writeBool(21, enableDurationlessAdBreaks_);
+      output.writeMessage(19, getMaxFillerDuration());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeMessage(20, getPodServingSegmentDuration());
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeBool(21, enableDurationlessAdBreaks_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(22, getDefaultAdBreakDuration());
+    }
+    for (int i = 0; i < daiAuthenticationKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 24, daiAuthenticationKeys_.getRaw(i));
     }
     for (int i = 0; i < sourceContentConfigurations_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 26, sourceContentConfigurations_.getRaw(i));
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 27, adMediaDeliveryConfig_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(28, getPrerollSettings());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeMessage(29, getHlsSettings());
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeBool(30, allowlistedIpsEnabled_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeEnum(31, dynamicAdInsertionType_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeBool(33, relativePlaylistDeliveryEnabled_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeEnum(34, streamingFormat_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeBool(35, prefetchEnabled_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeMessage(36, getPrefetchSettings());
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeBool(37, forcedCueInEnabled_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       output.writeBool(38, shortSegmentDroppingEnabled_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 39, customAssetKey_);
+    }
+    for (int i = 0; i < daiEncodingProfiles_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 40, daiEncodingProfiles_.getRaw(i));
+    }
+    for (int i = 0; i < segmentUrlAuthenticationKeys_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 41, segmentUrlAuthenticationKeys_.getRaw(i));
     }
     if (getAdBreakMarkupsList().size() > 0) {
       output.writeUInt32NoTag(338);
@@ -2667,23 +3091,26 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < adBreakMarkups_.size(); i++) {
       output.writeEnumNoTag(adBreakMarkups_.getInt(i));
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       output.writeBool(43, adBreakMarkupTypesEnabled_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeMessage(46, getLiveStreamConditioning());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       output.writeBool(54, earlyBreakNotificationMultiBreakSchedulingEnabled_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       output.writeMessage(55, getAdPodTrimTolerance());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 56, effectiveAssetKey_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       output.writeMessage(57, getAuxiliaryAdSettings());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(59, getDvrWindowDuration());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2738,36 +3165,47 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, assetKey_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, slate_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(14, enableDaiAuthenticationKeys_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, adBreakFillType_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, underfillAdBreakFillType_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getAdHolidayDuration());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableMaxFillerDuration_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getMaxFillerDuration());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, getPodServingSegmentDuration());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(21, enableDurationlessAdBreaks_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(22, getDefaultAdBreakDuration());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < daiAuthenticationKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(daiAuthenticationKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getDaiAuthenticationKeysList().size();
     }
     {
       int dataSize = 0;
@@ -2777,44 +3215,60 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getSourceContentConfigurationsList().size();
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(27, adMediaDeliveryConfig_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getPrerollSettings());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getHlsSettings());
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, allowlistedIpsEnabled_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(31, dynamicAdInsertionType_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               33, relativePlaylistDeliveryEnabled_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(34, streamingFormat_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(35, prefetchEnabled_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(36, getPrefetchSettings());
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(37, forcedCueInEnabled_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(38, shortSegmentDroppingEnabled_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(39, customAssetKey_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < daiEncodingProfiles_.size(); i++) {
+        dataSize += computeStringSizeNoTag(daiEncodingProfiles_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getDaiEncodingProfilesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < segmentUrlAuthenticationKeys_.size(); i++) {
+        dataSize += computeStringSizeNoTag(segmentUrlAuthenticationKeys_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getSegmentUrlAuthenticationKeysList().size();
     }
     {
       int dataSize = 0;
@@ -2829,27 +3283,30 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       adBreakMarkupsMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(43, adBreakMarkupTypesEnabled_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(46, getLiveStreamConditioning());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               54, earlyBreakNotificationMultiBreakSchedulingEnabled_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(55, getAdPodTrimTolerance());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(56, effectiveAssetKey_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(57, getAuxiliaryAdSettings());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(59, getDvrWindowDuration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2901,6 +3358,14 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     if (hasAssetKey()) {
       if (!getAssetKey().equals(other.getAssetKey())) return false;
     }
+    if (hasSlate() != other.hasSlate()) return false;
+    if (hasSlate()) {
+      if (!getSlate().equals(other.getSlate())) return false;
+    }
+    if (hasDvrWindowDuration() != other.hasDvrWindowDuration()) return false;
+    if (hasDvrWindowDuration()) {
+      if (!getDvrWindowDuration().equals(other.getDvrWindowDuration())) return false;
+    }
     if (hasEnableDaiAuthenticationKeys() != other.hasEnableDaiAuthenticationKeys()) return false;
     if (hasEnableDaiAuthenticationKeys()) {
       if (getEnableDaiAuthenticationKeys() != other.getEnableDaiAuthenticationKeys()) return false;
@@ -2938,6 +3403,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     if (hasDefaultAdBreakDuration()) {
       if (!getDefaultAdBreakDuration().equals(other.getDefaultAdBreakDuration())) return false;
     }
+    if (!getDaiAuthenticationKeysList().equals(other.getDaiAuthenticationKeysList())) return false;
     if (!getSourceContentConfigurationsList().equals(other.getSourceContentConfigurationsList()))
       return false;
     if (hasAdMediaDeliveryConfig() != other.hasAdMediaDeliveryConfig()) return false;
@@ -2990,6 +3456,9 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     if (hasCustomAssetKey()) {
       if (!getCustomAssetKey().equals(other.getCustomAssetKey())) return false;
     }
+    if (!getDaiEncodingProfilesList().equals(other.getDaiEncodingProfilesList())) return false;
+    if (!getSegmentUrlAuthenticationKeysList().equals(other.getSegmentUrlAuthenticationKeysList()))
+      return false;
     if (!adBreakMarkups_.equals(other.adBreakMarkups_)) return false;
     if (hasAdBreakMarkupTypesEnabled() != other.hasAdBreakMarkupTypesEnabled()) return false;
     if (hasAdBreakMarkupTypesEnabled()) {
@@ -3070,6 +3539,14 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ASSET_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getAssetKey().hashCode();
     }
+    if (hasSlate()) {
+      hash = (37 * hash) + SLATE_FIELD_NUMBER;
+      hash = (53 * hash) + getSlate().hashCode();
+    }
+    if (hasDvrWindowDuration()) {
+      hash = (37 * hash) + DVR_WINDOW_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDvrWindowDuration().hashCode();
+    }
     if (hasEnableDaiAuthenticationKeys()) {
       hash = (37 * hash) + ENABLE_DAI_AUTHENTICATION_KEYS_FIELD_NUMBER;
       hash =
@@ -3107,6 +3584,10 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     if (hasDefaultAdBreakDuration()) {
       hash = (37 * hash) + DEFAULT_AD_BREAK_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultAdBreakDuration().hashCode();
+    }
+    if (getDaiAuthenticationKeysCount() > 0) {
+      hash = (37 * hash) + DAI_AUTHENTICATION_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getDaiAuthenticationKeysList().hashCode();
     }
     if (getSourceContentConfigurationsCount() > 0) {
       hash = (37 * hash) + SOURCE_CONTENT_CONFIGURATIONS_FIELD_NUMBER;
@@ -3162,6 +3643,14 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     if (hasCustomAssetKey()) {
       hash = (37 * hash) + CUSTOM_ASSET_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getCustomAssetKey().hashCode();
+    }
+    if (getDaiEncodingProfilesCount() > 0) {
+      hash = (37 * hash) + DAI_ENCODING_PROFILES_FIELD_NUMBER;
+      hash = (53 * hash) + getDaiEncodingProfilesList().hashCode();
+    }
+    if (getSegmentUrlAuthenticationKeysCount() > 0) {
+      hash = (37 * hash) + SEGMENT_URL_AUTHENTICATION_KEYS_FIELD_NUMBER;
+      hash = (53 * hash) + getSegmentUrlAuthenticationKeysList().hashCode();
     }
     if (getAdBreakMarkupsCount() > 0) {
       hash = (37 * hash) + AD_BREAK_MARKUPS_FIELD_NUMBER;
@@ -3343,6 +3832,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetStartTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
+        internalGetDvrWindowDurationFieldBuilder();
         internalGetAdHolidayDurationFieldBuilder();
         internalGetMaxFillerDurationFieldBuilder();
         internalGetPodServingSegmentDurationFieldBuilder();
@@ -3388,6 +3878,12 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       contentUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       adTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       assetKey_ = "";
+      slate_ = "";
+      dvrWindowDuration_ = null;
+      if (dvrWindowDurationBuilder_ != null) {
+        dvrWindowDurationBuilder_.dispose();
+        dvrWindowDurationBuilder_ = null;
+      }
       enableDaiAuthenticationKeys_ = false;
       adBreakFillType_ = 0;
       underfillAdBreakFillType_ = 0;
@@ -3413,6 +3909,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         defaultAdBreakDurationBuilder_.dispose();
         defaultAdBreakDurationBuilder_ = null;
       }
+      daiAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       sourceContentConfigurations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       adMediaDeliveryConfig_ = "";
       prerollSettings_ = null;
@@ -3438,6 +3935,8 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       forcedCueInEnabled_ = false;
       shortSegmentDroppingEnabled_ = false;
       customAssetKey_ = "";
+      daiEncodingProfiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      segmentUrlAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
       adBreakMarkups_ = emptyIntList();
       adBreakMarkupTypesEnabled_ = false;
       liveStreamConditioning_ = null;
@@ -3541,103 +4040,105 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.enableDaiAuthenticationKeys_ = enableDaiAuthenticationKeys_;
+        result.slate_ = slate_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.adBreakFillType_ = adBreakFillType_;
+        result.dvrWindowDuration_ =
+            dvrWindowDurationBuilder_ == null
+                ? dvrWindowDuration_
+                : dvrWindowDurationBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.underfillAdBreakFillType_ = underfillAdBreakFillType_;
+        result.enableDaiAuthenticationKeys_ = enableDaiAuthenticationKeys_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.adBreakFillType_ = adBreakFillType_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.underfillAdBreakFillType_ = underfillAdBreakFillType_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.adHolidayDuration_ =
             adHolidayDurationBuilder_ == null
                 ? adHolidayDuration_
                 : adHolidayDurationBuilder_.build();
-        to_bitField0_ |= 0x00000800;
+        to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.enableMaxFillerDuration_ = enableMaxFillerDuration_;
-        to_bitField0_ |= 0x00001000;
+        to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.maxFillerDuration_ =
             maxFillerDurationBuilder_ == null
                 ? maxFillerDuration_
                 : maxFillerDurationBuilder_.build();
-        to_bitField0_ |= 0x00002000;
+        to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.podServingSegmentDuration_ =
             podServingSegmentDurationBuilder_ == null
                 ? podServingSegmentDuration_
                 : podServingSegmentDurationBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.enableDurationlessAdBreaks_ = enableDurationlessAdBreaks_;
-        to_bitField0_ |= 0x00008000;
+        to_bitField0_ |= 0x00020000;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.defaultAdBreakDuration_ =
             defaultAdBreakDurationBuilder_ == null
                 ? defaultAdBreakDuration_
                 : defaultAdBreakDurationBuilder_.build();
-        to_bitField0_ |= 0x00010000;
+        to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        daiAuthenticationKeys_.makeImmutable();
+        result.daiAuthenticationKeys_ = daiAuthenticationKeys_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         sourceContentConfigurations_.makeImmutable();
         result.sourceContentConfigurations_ = sourceContentConfigurations_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.adMediaDeliveryConfig_ = adMediaDeliveryConfig_;
-        to_bitField0_ |= 0x00020000;
-      }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.prerollSettings_ =
-            prerollSettingsBuilder_ == null ? prerollSettings_ : prerollSettingsBuilder_.build();
-        to_bitField0_ |= 0x00040000;
-      }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.hlsSettings_ =
-            hlsSettingsBuilder_ == null ? hlsSettings_ : hlsSettingsBuilder_.build();
         to_bitField0_ |= 0x00080000;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.allowlistedIpsEnabled_ = allowlistedIpsEnabled_;
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.prerollSettings_ =
+            prerollSettingsBuilder_ == null ? prerollSettings_ : prerollSettingsBuilder_.build();
         to_bitField0_ |= 0x00100000;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.dynamicAdInsertionType_ = dynamicAdInsertionType_;
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.hlsSettings_ =
+            hlsSettingsBuilder_ == null ? hlsSettings_ : hlsSettingsBuilder_.build();
         to_bitField0_ |= 0x00200000;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.relativePlaylistDeliveryEnabled_ = relativePlaylistDeliveryEnabled_;
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.allowlistedIpsEnabled_ = allowlistedIpsEnabled_;
         to_bitField0_ |= 0x00400000;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.streamingFormat_ = streamingFormat_;
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.dynamicAdInsertionType_ = dynamicAdInsertionType_;
         to_bitField0_ |= 0x00800000;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.prefetchEnabled_ = prefetchEnabled_;
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.relativePlaylistDeliveryEnabled_ = relativePlaylistDeliveryEnabled_;
         to_bitField0_ |= 0x01000000;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.prefetchSettings_ =
-            prefetchSettingsBuilder_ == null ? prefetchSettings_ : prefetchSettingsBuilder_.build();
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.streamingFormat_ = streamingFormat_;
         to_bitField0_ |= 0x02000000;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.forcedCueInEnabled_ = forcedCueInEnabled_;
-        to_bitField0_ |= 0x04000000;
-      }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.shortSegmentDroppingEnabled_ = shortSegmentDroppingEnabled_;
-        to_bitField0_ |= 0x08000000;
+        result.prefetchEnabled_ = prefetchEnabled_;
+        to_bitField0_ |= 0x04000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3646,47 +4147,68 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.customAssetKey_ = customAssetKey_;
-        to_bitField0_ |= 0x10000000;
+        result.prefetchSettings_ =
+            prefetchSettingsBuilder_ == null ? prefetchSettings_ : prefetchSettingsBuilder_.build();
+        to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        adBreakMarkups_.makeImmutable();
-        result.adBreakMarkups_ = adBreakMarkups_;
+        result.forcedCueInEnabled_ = forcedCueInEnabled_;
+        to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.adBreakMarkupTypesEnabled_ = adBreakMarkupTypesEnabled_;
+        result.shortSegmentDroppingEnabled_ = shortSegmentDroppingEnabled_;
         to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.customAssetKey_ = customAssetKey_;
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        daiEncodingProfiles_.makeImmutable();
+        result.daiEncodingProfiles_ = daiEncodingProfiles_;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        segmentUrlAuthenticationKeys_.makeImmutable();
+        result.segmentUrlAuthenticationKeys_ = segmentUrlAuthenticationKeys_;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        adBreakMarkups_.makeImmutable();
+        result.adBreakMarkups_ = adBreakMarkups_;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.adBreakMarkupTypesEnabled_ = adBreakMarkupTypesEnabled_;
+        to_bitField0_ |= 0x80000000;
+      }
+      int to_bitField1_ = 0;
+      if (((from_bitField1_ & 0x00000100) != 0)) {
         result.liveStreamConditioning_ =
             liveStreamConditioningBuilder_ == null
                 ? liveStreamConditioning_
                 : liveStreamConditioningBuilder_.build();
-        to_bitField0_ |= 0x40000000;
+        to_bitField1_ |= 0x00000001;
       }
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000200) != 0)) {
         result.earlyBreakNotificationMultiBreakSchedulingEnabled_ =
             earlyBreakNotificationMultiBreakSchedulingEnabled_;
-        to_bitField0_ |= 0x80000000;
+        to_bitField1_ |= 0x00000002;
       }
-      int to_bitField1_ = 0;
-      if (((from_bitField1_ & 0x00000020) != 0)) {
+      if (((from_bitField1_ & 0x00000400) != 0)) {
         result.adPodTrimTolerance_ =
             adPodTrimToleranceBuilder_ == null
                 ? adPodTrimTolerance_
                 : adPodTrimToleranceBuilder_.build();
-        to_bitField1_ |= 0x00000001;
+        to_bitField1_ |= 0x00000004;
       }
-      if (((from_bitField1_ & 0x00000040) != 0)) {
+      if (((from_bitField1_ & 0x00000800) != 0)) {
         result.effectiveAssetKey_ = effectiveAssetKey_;
-        to_bitField1_ |= 0x00000002;
+        to_bitField1_ |= 0x00000008;
       }
-      if (((from_bitField1_ & 0x00000080) != 0)) {
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.auxiliaryAdSettings_ =
             auxiliaryAdSettingsBuilder_ == null
                 ? auxiliaryAdSettings_
                 : auxiliaryAdSettingsBuilder_.build();
-        to_bitField1_ |= 0x00000004;
+        to_bitField1_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -3757,6 +4279,14 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (other.hasSlate()) {
+        slate_ = other.slate_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.hasDvrWindowDuration()) {
+        mergeDvrWindowDuration(other.getDvrWindowDuration());
+      }
       if (other.hasEnableDaiAuthenticationKeys()) {
         setEnableDaiAuthenticationKeys(other.getEnableDaiAuthenticationKeys());
       }
@@ -3784,10 +4314,20 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (other.hasDefaultAdBreakDuration()) {
         mergeDefaultAdBreakDuration(other.getDefaultAdBreakDuration());
       }
+      if (!other.daiAuthenticationKeys_.isEmpty()) {
+        if (daiAuthenticationKeys_.isEmpty()) {
+          daiAuthenticationKeys_ = other.daiAuthenticationKeys_;
+          bitField0_ |= 0x00400000;
+        } else {
+          ensureDaiAuthenticationKeysIsMutable();
+          daiAuthenticationKeys_.addAll(other.daiAuthenticationKeys_);
+        }
+        onChanged();
+      }
       if (!other.sourceContentConfigurations_.isEmpty()) {
         if (sourceContentConfigurations_.isEmpty()) {
           sourceContentConfigurations_ = other.sourceContentConfigurations_;
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00800000;
         } else {
           ensureSourceContentConfigurationsIsMutable();
           sourceContentConfigurations_.addAll(other.sourceContentConfigurations_);
@@ -3796,7 +4336,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAdMediaDeliveryConfig()) {
         adMediaDeliveryConfig_ = other.adMediaDeliveryConfig_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.hasPrerollSettings()) {
@@ -3831,14 +4371,34 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasCustomAssetKey()) {
         customAssetKey_ = other.customAssetKey_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.daiEncodingProfiles_.isEmpty()) {
+        if (daiEncodingProfiles_.isEmpty()) {
+          daiEncodingProfiles_ = other.daiEncodingProfiles_;
+          bitField1_ |= 0x00000010;
+        } else {
+          ensureDaiEncodingProfilesIsMutable();
+          daiEncodingProfiles_.addAll(other.daiEncodingProfiles_);
+        }
+        onChanged();
+      }
+      if (!other.segmentUrlAuthenticationKeys_.isEmpty()) {
+        if (segmentUrlAuthenticationKeys_.isEmpty()) {
+          segmentUrlAuthenticationKeys_ = other.segmentUrlAuthenticationKeys_;
+          bitField1_ |= 0x00000020;
+        } else {
+          ensureSegmentUrlAuthenticationKeysIsMutable();
+          segmentUrlAuthenticationKeys_.addAll(other.segmentUrlAuthenticationKeys_);
+        }
         onChanged();
       }
       if (!other.adBreakMarkups_.isEmpty()) {
         if (adBreakMarkups_.isEmpty()) {
           adBreakMarkups_ = other.adBreakMarkups_;
           adBreakMarkups_.makeImmutable();
-          bitField1_ |= 0x00000002;
+          bitField1_ |= 0x00000040;
         } else {
           ensureAdBreakMarkupsIsMutable();
           adBreakMarkups_.addAll(other.adBreakMarkups_);
@@ -3860,7 +4420,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEffectiveAssetKey()) {
         effectiveAssetKey_ = other.effectiveAssetKey_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (other.hasAuxiliaryAdSettings()) {
@@ -3963,42 +4523,48 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                slate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             case 112:
               {
                 enableDaiAuthenticationKeys_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 120:
               {
                 adBreakFillType_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 120
             case 128:
               {
                 underfillAdBreakFillType_ = input.readEnum();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 128
             case 138:
               {
                 input.readMessage(
                     internalGetAdHolidayDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 144:
               {
                 enableMaxFillerDuration_ = input.readBool();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 144
             case 154:
               {
                 input.readMessage(
                     internalGetMaxFillerDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 162:
@@ -4006,13 +4572,13 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetPodServingSegmentDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
             case 168:
               {
                 enableDurationlessAdBreaks_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 168
             case 178:
@@ -4020,9 +4586,16 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDefaultAdBreakDurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 178
+            case 194:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDaiAuthenticationKeysIsMutable();
+                daiAuthenticationKeys_.add(s);
+                break;
+              } // case 194
             case 210:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -4033,78 +4606,92 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
             case 218:
               {
                 adMediaDeliveryConfig_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     internalGetPrerollSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(
                     internalGetHlsSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 234
             case 240:
               {
                 allowlistedIpsEnabled_ = input.readBool();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 240
             case 248:
               {
                 dynamicAdInsertionType_ = input.readEnum();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 248
             case 264:
               {
                 relativePlaylistDeliveryEnabled_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 264
             case 272:
               {
                 streamingFormat_ = input.readEnum();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 272
             case 280:
               {
                 prefetchEnabled_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 280
             case 290:
               {
                 input.readMessage(
                     internalGetPrefetchSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 290
             case 296:
               {
                 forcedCueInEnabled_ = input.readBool();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 296
             case 304:
               {
                 shortSegmentDroppingEnabled_ = input.readBool();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 304
             case 314:
               {
                 customAssetKey_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 314
+            case 322:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDaiEncodingProfilesIsMutable();
+                daiEncodingProfiles_.add(s);
+                break;
+              } // case 322
+            case 330:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSegmentUrlAuthenticationKeysIsMutable();
+                segmentUrlAuthenticationKeys_.add(s);
+                break;
+              } // case 330
             case 336:
               {
                 int tmpRaw = input.readEnum();
@@ -4126,7 +4713,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
             case 344:
               {
                 adBreakMarkupTypesEnabled_ = input.readBool();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000080;
                 break;
               } // case 344
             case 370:
@@ -4134,35 +4721,42 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetLiveStreamConditioningFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000100;
                 break;
               } // case 370
             case 432:
               {
                 earlyBreakNotificationMultiBreakSchedulingEnabled_ = input.readBool();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000200;
                 break;
               } // case 432
             case 442:
               {
                 input.readMessage(
                     internalGetAdPodTrimToleranceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 442
             case 450:
               {
                 effectiveAssetKey_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 450
             case 458:
               {
                 input.readMessage(
                     internalGetAuxiliaryAdSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000080;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 458
+            case 474:
+              {
+                input.readMessage(
+                    internalGetDvrWindowDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 474
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6053,6 +6647,386 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object slate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the slate field is set.
+     */
+    public boolean hasSlate() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The slate.
+     */
+    public java.lang.String getSlate() {
+      java.lang.Object ref = slate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        slate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for slate.
+     */
+    public com.google.protobuf.ByteString getSlateBytes() {
+      java.lang.Object ref = slate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        slate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The slate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSlate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      slate_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSlate() {
+      slate_ = getDefaultInstance().getSlate();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The slate to use for this live stream. If not set, network
+     * default slate will be used. Format:
+     * "networks/{network_code}/slates/{slate_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for slate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSlateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      slate_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration dvrWindowDuration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        dvrWindowDurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dvrWindowDuration field is set.
+     */
+    public boolean hasDvrWindowDuration() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dvrWindowDuration.
+     */
+    public com.google.protobuf.Duration getDvrWindowDuration() {
+      if (dvrWindowDurationBuilder_ == null) {
+        return dvrWindowDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dvrWindowDuration_;
+      } else {
+        return dvrWindowDurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDvrWindowDuration(com.google.protobuf.Duration value) {
+      if (dvrWindowDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dvrWindowDuration_ = value;
+      } else {
+        dvrWindowDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDvrWindowDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (dvrWindowDurationBuilder_ == null) {
+        dvrWindowDuration_ = builderForValue.build();
+      } else {
+        dvrWindowDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDvrWindowDuration(com.google.protobuf.Duration value) {
+      if (dvrWindowDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && dvrWindowDuration_ != null
+            && dvrWindowDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDvrWindowDurationBuilder().mergeFrom(value);
+        } else {
+          dvrWindowDuration_ = value;
+        }
+      } else {
+        dvrWindowDurationBuilder_.mergeFrom(value);
+      }
+      if (dvrWindowDuration_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDvrWindowDuration() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      dvrWindowDuration_ = null;
+      if (dvrWindowDurationBuilder_ != null) {
+        dvrWindowDurationBuilder_.dispose();
+        dvrWindowDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getDvrWindowDurationBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetDvrWindowDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDvrWindowDurationOrBuilder() {
+      if (dvrWindowDurationBuilder_ != null) {
+        return dvrWindowDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return dvrWindowDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : dvrWindowDuration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration of the DVR window. If unset the default window as
+     * provided by the input encoder will be used. Modifying this value for an
+     * active live stream can impact traffic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetDvrWindowDurationFieldBuilder() {
+      if (dvrWindowDurationBuilder_ == null) {
+        dvrWindowDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDvrWindowDuration(), getParentForChildren(), isClean());
+        dvrWindowDuration_ = null;
+      }
+      return dvrWindowDurationBuilder_;
+    }
+
     private boolean enableDaiAuthenticationKeys_;
 
     /**
@@ -6071,7 +7045,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnableDaiAuthenticationKeys() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -6111,7 +7085,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setEnableDaiAuthenticationKeys(boolean value) {
 
       enableDaiAuthenticationKeys_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6131,7 +7105,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableDaiAuthenticationKeys() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       enableDaiAuthenticationKeys_ = false;
       onChanged();
       return this;
@@ -6156,7 +7130,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAdBreakFillType() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6197,7 +7171,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder setAdBreakFillTypeValue(int value) {
       adBreakFillType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6248,7 +7222,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       adBreakFillType_ = value.getNumber();
       onChanged();
       return this;
@@ -6270,7 +7244,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAdBreakFillType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       adBreakFillType_ = 0;
       onChanged();
       return this;
@@ -6298,7 +7272,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasUnderfillAdBreakFillType() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6345,7 +7319,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder setUnderfillAdBreakFillTypeValue(int value) {
       underfillAdBreakFillType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6403,7 +7377,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       underfillAdBreakFillType_ = value.getNumber();
       onChanged();
       return this;
@@ -6428,7 +7402,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearUnderfillAdBreakFillType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       underfillAdBreakFillType_ = 0;
       onChanged();
       return this;
@@ -6458,7 +7432,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the adHolidayDuration field is set.
      */
     public boolean hasAdHolidayDuration() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6510,7 +7484,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         adHolidayDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6535,7 +7509,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         adHolidayDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6556,7 +7530,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAdHolidayDuration(com.google.protobuf.Duration value) {
       if (adHolidayDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && adHolidayDuration_ != null
             && adHolidayDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getAdHolidayDurationBuilder().mergeFrom(value);
@@ -6567,7 +7541,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         adHolidayDurationBuilder_.mergeFrom(value);
       }
       if (adHolidayDuration_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6588,7 +7562,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAdHolidayDuration() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       adHolidayDuration_ = null;
       if (adHolidayDurationBuilder_ != null) {
         adHolidayDurationBuilder_.dispose();
@@ -6613,7 +7587,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getAdHolidayDurationBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetAdHolidayDurationFieldBuilder().getBuilder();
     }
@@ -6691,7 +7665,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnableMaxFillerDuration() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6731,7 +7705,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setEnableMaxFillerDuration(boolean value) {
 
       enableMaxFillerDuration_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6751,7 +7725,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableMaxFillerDuration() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       enableMaxFillerDuration_ = false;
       onChanged();
       return this;
@@ -6781,7 +7755,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the maxFillerDuration field is set.
      */
     public boolean hasMaxFillerDuration() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6833,7 +7807,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         maxFillerDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6858,7 +7832,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         maxFillerDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6879,7 +7853,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMaxFillerDuration(com.google.protobuf.Duration value) {
       if (maxFillerDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && maxFillerDuration_ != null
             && maxFillerDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getMaxFillerDurationBuilder().mergeFrom(value);
@@ -6890,7 +7864,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         maxFillerDurationBuilder_.mergeFrom(value);
       }
       if (maxFillerDuration_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6911,7 +7885,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMaxFillerDuration() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       maxFillerDuration_ = null;
       if (maxFillerDurationBuilder_ != null) {
         maxFillerDurationBuilder_.dispose();
@@ -6936,7 +7910,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getMaxFillerDurationBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return internalGetMaxFillerDurationFieldBuilder().getBuilder();
     }
@@ -7019,7 +7993,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the podServingSegmentDuration field is set.
      */
     public boolean hasPodServingSegmentDuration() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -7069,7 +8043,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         podServingSegmentDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7094,7 +8068,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         podServingSegmentDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7114,7 +8088,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePodServingSegmentDuration(com.google.protobuf.Duration value) {
       if (podServingSegmentDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && podServingSegmentDuration_ != null
             && podServingSegmentDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getPodServingSegmentDurationBuilder().mergeFrom(value);
@@ -7125,7 +8099,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         podServingSegmentDurationBuilder_.mergeFrom(value);
       }
       if (podServingSegmentDuration_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -7145,7 +8119,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPodServingSegmentDuration() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       podServingSegmentDuration_ = null;
       if (podServingSegmentDurationBuilder_ != null) {
         podServingSegmentDurationBuilder_.dispose();
@@ -7169,7 +8143,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getPodServingSegmentDurationBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetPodServingSegmentDurationFieldBuilder().getBuilder();
     }
@@ -7245,7 +8219,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnableDurationlessAdBreaks() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -7285,7 +8259,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setEnableDurationlessAdBreaks(boolean value) {
 
       enableDurationlessAdBreaks_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7305,7 +8279,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableDurationlessAdBreaks() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       enableDurationlessAdBreaks_ = false;
       onChanged();
       return this;
@@ -7333,7 +8307,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the defaultAdBreakDuration field is set.
      */
     public boolean hasDefaultAdBreakDuration() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7381,7 +8355,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         defaultAdBreakDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7404,7 +8378,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         defaultAdBreakDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7423,7 +8397,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDefaultAdBreakDuration(com.google.protobuf.Duration value) {
       if (defaultAdBreakDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && defaultAdBreakDuration_ != null
             && defaultAdBreakDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDefaultAdBreakDurationBuilder().mergeFrom(value);
@@ -7434,7 +8408,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         defaultAdBreakDurationBuilder_.mergeFrom(value);
       }
       if (defaultAdBreakDuration_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -7453,7 +8427,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDefaultAdBreakDuration() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       defaultAdBreakDuration_ = null;
       if (defaultAdBreakDurationBuilder_ != null) {
         defaultAdBreakDurationBuilder_.dispose();
@@ -7476,7 +8450,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDefaultAdBreakDurationBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return internalGetDefaultAdBreakDurationFieldBuilder().getBuilder();
     }
@@ -7532,6 +8506,244 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       return defaultAdBreakDurationBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList daiAuthenticationKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDaiAuthenticationKeysIsMutable() {
+      if (!daiAuthenticationKeys_.isModifiable()) {
+        daiAuthenticationKeys_ =
+            new com.google.protobuf.LazyStringArrayList(daiAuthenticationKeys_);
+      }
+      bitField0_ |= 0x00400000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the daiAuthenticationKeys.
+     */
+    public com.google.protobuf.ProtocolStringList getDaiAuthenticationKeysList() {
+      daiAuthenticationKeys_.makeImmutable();
+      return daiAuthenticationKeys_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of daiAuthenticationKeys.
+     */
+    public int getDaiAuthenticationKeysCount() {
+      return daiAuthenticationKeys_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The daiAuthenticationKeys at the given index.
+     */
+    public java.lang.String getDaiAuthenticationKeys(int index) {
+      return daiAuthenticationKeys_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the daiAuthenticationKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getDaiAuthenticationKeysBytes(int index) {
+      return daiAuthenticationKeys_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The daiAuthenticationKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDaiAuthenticationKeys(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDaiAuthenticationKeysIsMutable();
+      daiAuthenticationKeys_.set(index, value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The daiAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDaiAuthenticationKeys(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDaiAuthenticationKeysIsMutable();
+      daiAuthenticationKeys_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The daiAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDaiAuthenticationKeys(java.lang.Iterable<java.lang.String> values) {
+      ensureDaiAuthenticationKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, daiAuthenticationKeys_);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDaiAuthenticationKeys() {
+      daiAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKey objects used to authenticate
+     * stream create requests for this live stream. Modifying settings for an
+     * active live stream may break the stream for some users. Exercise caution.
+     * Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the daiAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDaiAuthenticationKeysBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDaiAuthenticationKeysIsMutable();
+      daiAuthenticationKeys_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList sourceContentConfigurations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -7540,7 +8752,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         sourceContentConfigurations_ =
             new com.google.protobuf.LazyStringArrayList(sourceContentConfigurations_);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
     }
 
     /**
@@ -7655,7 +8867,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       ensureSourceContentConfigurationsIsMutable();
       sourceContentConfigurations_.set(index, value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7684,7 +8896,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       ensureSourceContentConfigurationsIsMutable();
       sourceContentConfigurations_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7710,7 +8922,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder addAllSourceContentConfigurations(java.lang.Iterable<java.lang.String> values) {
       ensureSourceContentConfigurationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceContentConfigurations_);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7734,7 +8946,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSourceContentConfigurations() {
       sourceContentConfigurations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -7765,7 +8977,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureSourceContentConfigurationsIsMutable();
       sourceContentConfigurations_.add(value);
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7788,7 +9000,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the adMediaDeliveryConfig field is set.
      */
     public boolean hasAdMediaDeliveryConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7866,7 +9078,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       adMediaDeliveryConfig_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7888,7 +9100,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAdMediaDeliveryConfig() {
       adMediaDeliveryConfig_ = getDefaultInstance().getAdMediaDeliveryConfig();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7915,7 +9127,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       adMediaDeliveryConfig_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7942,7 +9154,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the prerollSettings field is set.
      */
     public boolean hasPrerollSettings() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -7990,7 +9202,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         prerollSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8014,7 +9226,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         prerollSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -8033,7 +9245,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePrerollSettings(com.google.ads.admanager.v1.PrerollSettings value) {
       if (prerollSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && prerollSettings_ != null
             && prerollSettings_
                 != com.google.ads.admanager.v1.PrerollSettings.getDefaultInstance()) {
@@ -8045,7 +9257,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         prerollSettingsBuilder_.mergeFrom(value);
       }
       if (prerollSettings_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -8064,7 +9276,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPrerollSettings() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       prerollSettings_ = null;
       if (prerollSettingsBuilder_ != null) {
         prerollSettingsBuilder_.dispose();
@@ -8087,7 +9299,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.PrerollSettings.Builder getPrerollSettingsBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return internalGetPrerollSettingsFieldBuilder().getBuilder();
     }
@@ -8165,7 +9377,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the hlsSettings field is set.
      */
     public boolean hasHlsSettings() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -8213,7 +9425,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         hlsSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8236,7 +9448,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         hlsSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8255,7 +9467,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeHlsSettings(com.google.ads.admanager.v1.HlsSettings value) {
       if (hlsSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && hlsSettings_ != null
             && hlsSettings_ != com.google.ads.admanager.v1.HlsSettings.getDefaultInstance()) {
           getHlsSettingsBuilder().mergeFrom(value);
@@ -8266,7 +9478,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         hlsSettingsBuilder_.mergeFrom(value);
       }
       if (hlsSettings_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -8285,7 +9497,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearHlsSettings() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       hlsSettings_ = null;
       if (hlsSettingsBuilder_ != null) {
         hlsSettingsBuilder_.dispose();
@@ -8308,7 +9520,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.HlsSettings.Builder getHlsSettingsBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return internalGetHlsSettingsFieldBuilder().getBuilder();
     }
@@ -8383,7 +9595,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAllowlistedIpsEnabled() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -8425,7 +9637,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setAllowlistedIpsEnabled(boolean value) {
 
       allowlistedIpsEnabled_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8446,7 +9658,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAllowlistedIpsEnabled() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       allowlistedIpsEnabled_ = false;
       onChanged();
       return this;
@@ -8470,7 +9682,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasDynamicAdInsertionType() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -8509,7 +9721,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder setDynamicAdInsertionTypeValue(int value) {
       dynamicAdInsertionType_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8560,7 +9772,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       dynamicAdInsertionType_ = value.getNumber();
       onChanged();
       return this;
@@ -8581,7 +9793,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDynamicAdInsertionType() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       dynamicAdInsertionType_ = 0;
       onChanged();
       return this;
@@ -8607,7 +9819,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRelativePlaylistDeliveryEnabled() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -8651,7 +9863,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setRelativePlaylistDeliveryEnabled(boolean value) {
 
       relativePlaylistDeliveryEnabled_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8673,7 +9885,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRelativePlaylistDeliveryEnabled() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       relativePlaylistDeliveryEnabled_ = false;
       onChanged();
       return this;
@@ -8696,7 +9908,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasStreamingFormat() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -8733,7 +9945,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStreamingFormatValue(int value) {
       streamingFormat_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8786,7 +9998,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x40000000;
       streamingFormat_ = value.getNumber();
       onChanged();
       return this;
@@ -8806,7 +10018,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStreamingFormat() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       streamingFormat_ = 0;
       onChanged();
       return this;
@@ -8827,7 +10039,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPrefetchEnabled() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -8861,7 +10073,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setPrefetchEnabled(boolean value) {
 
       prefetchEnabled_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8878,7 +10090,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPrefetchEnabled() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       prefetchEnabled_ = false;
       onChanged();
       return this;
@@ -8905,7 +10117,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the prefetchSettings field is set.
      */
     public boolean hasPrefetchSettings() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -8951,7 +10163,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         prefetchSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8974,7 +10186,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         prefetchSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8992,7 +10204,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePrefetchSettings(com.google.ads.admanager.v1.PrefetchSettings value) {
       if (prefetchSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && prefetchSettings_ != null
             && prefetchSettings_
                 != com.google.ads.admanager.v1.PrefetchSettings.getDefaultInstance()) {
@@ -9004,7 +10216,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         prefetchSettingsBuilder_.mergeFrom(value);
       }
       if (prefetchSettings_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -9022,7 +10234,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPrefetchSettings() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       prefetchSettings_ = null;
       if (prefetchSettingsBuilder_ != null) {
         prefetchSettingsBuilder_.dispose();
@@ -9044,7 +10256,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.PrefetchSettings.Builder getPrefetchSettingsBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetPrefetchSettingsFieldBuilder().getBuilder();
     }
@@ -9117,7 +10329,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasForcedCueInEnabled() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -9159,7 +10371,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setForcedCueInEnabled(boolean value) {
 
       forcedCueInEnabled_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9180,7 +10392,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearForcedCueInEnabled() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       forcedCueInEnabled_ = false;
       onChanged();
       return this;
@@ -9205,7 +10417,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasShortSegmentDroppingEnabled() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
 
     /**
@@ -9247,7 +10459,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setShortSegmentDroppingEnabled(boolean value) {
 
       shortSegmentDroppingEnabled_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9268,7 +10480,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearShortSegmentDroppingEnabled() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000004);
       shortSegmentDroppingEnabled_ = false;
       onChanged();
       return this;
@@ -9293,7 +10505,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the customAssetKey field is set.
      */
     public boolean hasCustomAssetKey() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -9374,7 +10586,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       customAssetKey_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -9397,7 +10609,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCustomAssetKey() {
       customAssetKey_ = getDefaultInstance().getCustomAssetKey();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -9425,7 +10637,446 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       customAssetKey_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList daiEncodingProfiles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDaiEncodingProfilesIsMutable() {
+      if (!daiEncodingProfiles_.isModifiable()) {
+        daiEncodingProfiles_ = new com.google.protobuf.LazyStringArrayList(daiEncodingProfiles_);
+      }
+      bitField1_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the daiEncodingProfiles.
+     */
+    public com.google.protobuf.ProtocolStringList getDaiEncodingProfilesList() {
+      daiEncodingProfiles_.makeImmutable();
+      return daiEncodingProfiles_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of daiEncodingProfiles.
+     */
+    public int getDaiEncodingProfilesCount() {
+      return daiEncodingProfiles_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The daiEncodingProfiles at the given index.
+     */
+    public java.lang.String getDaiEncodingProfiles(int index) {
+      return daiEncodingProfiles_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the daiEncodingProfiles at the given index.
+     */
+    public com.google.protobuf.ByteString getDaiEncodingProfilesBytes(int index) {
+      return daiEncodingProfiles_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The daiEncodingProfiles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDaiEncodingProfiles(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDaiEncodingProfilesIsMutable();
+      daiEncodingProfiles_.set(index, value);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The daiEncodingProfiles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDaiEncodingProfiles(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDaiEncodingProfilesIsMutable();
+      daiEncodingProfiles_.add(value);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The daiEncodingProfiles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDaiEncodingProfiles(java.lang.Iterable<java.lang.String> values) {
+      ensureDaiEncodingProfilesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, daiEncodingProfiles_);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDaiEncodingProfiles() {
+      daiEncodingProfiles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiEncodingProfiles that will be used for this live
+     * stream event. Format:
+     * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the daiEncodingProfiles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDaiEncodingProfilesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDaiEncodingProfilesIsMutable();
+      daiEncodingProfiles_.add(value);
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList segmentUrlAuthenticationKeys_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSegmentUrlAuthenticationKeysIsMutable() {
+      if (!segmentUrlAuthenticationKeys_.isModifiable()) {
+        segmentUrlAuthenticationKeys_ =
+            new com.google.protobuf.LazyStringArrayList(segmentUrlAuthenticationKeys_);
+      }
+      bitField1_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the segmentUrlAuthenticationKeys.
+     */
+    public com.google.protobuf.ProtocolStringList getSegmentUrlAuthenticationKeysList() {
+      segmentUrlAuthenticationKeys_.makeImmutable();
+      return segmentUrlAuthenticationKeys_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of segmentUrlAuthenticationKeys.
+     */
+    public int getSegmentUrlAuthenticationKeysCount() {
+      return segmentUrlAuthenticationKeys_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The segmentUrlAuthenticationKeys at the given index.
+     */
+    public java.lang.String getSegmentUrlAuthenticationKeys(int index) {
+      return segmentUrlAuthenticationKeys_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the segmentUrlAuthenticationKeys at the given index.
+     */
+    public com.google.protobuf.ByteString getSegmentUrlAuthenticationKeysBytes(int index) {
+      return segmentUrlAuthenticationKeys_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The segmentUrlAuthenticationKeys to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSegmentUrlAuthenticationKeys(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSegmentUrlAuthenticationKeysIsMutable();
+      segmentUrlAuthenticationKeys_.set(index, value);
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The segmentUrlAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSegmentUrlAuthenticationKeys(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSegmentUrlAuthenticationKeysIsMutable();
+      segmentUrlAuthenticationKeys_.add(value);
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The segmentUrlAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSegmentUrlAuthenticationKeys(java.lang.Iterable<java.lang.String> values) {
+      ensureSegmentUrlAuthenticationKeysIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, segmentUrlAuthenticationKeys_);
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSegmentUrlAuthenticationKeys() {
+      segmentUrlAuthenticationKeys_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+     * url requests for this live stream. Format:
+     * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+     * </pre>
+     *
+     * <code>
+     * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the segmentUrlAuthenticationKeys to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSegmentUrlAuthenticationKeysBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSegmentUrlAuthenticationKeysIsMutable();
+      segmentUrlAuthenticationKeys_.add(value);
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -9436,7 +11087,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       if (!adBreakMarkups_.isModifiable()) {
         adBreakMarkups_ = makeMutableCopy(adBreakMarkups_);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000040;
     }
 
     /**
@@ -9594,7 +11245,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAdBreakMarkups() {
       adBreakMarkups_ = emptyIntList();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -9725,7 +11376,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasAdBreakMarkupTypesEnabled() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
 
     /**
@@ -9767,7 +11418,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setAdBreakMarkupTypesEnabled(boolean value) {
 
       adBreakMarkupTypesEnabled_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9788,7 +11439,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAdBreakMarkupTypesEnabled() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000080);
       adBreakMarkupTypesEnabled_ = false;
       onChanged();
       return this;
@@ -9815,7 +11466,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the liveStreamConditioning field is set.
      */
     public boolean hasLiveStreamConditioning() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
 
     /**
@@ -9862,7 +11513,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         liveStreamConditioningBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9885,7 +11536,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         liveStreamConditioningBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9904,7 +11555,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder mergeLiveStreamConditioning(
         com.google.ads.admanager.v1.LiveStreamConditioning value) {
       if (liveStreamConditioningBuilder_ == null) {
-        if (((bitField1_ & 0x00000008) != 0)
+        if (((bitField1_ & 0x00000100) != 0)
             && liveStreamConditioning_ != null
             && liveStreamConditioning_
                 != com.google.ads.admanager.v1.LiveStreamConditioning.getDefaultInstance()) {
@@ -9916,7 +11567,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         liveStreamConditioningBuilder_.mergeFrom(value);
       }
       if (liveStreamConditioning_ != null) {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -9934,7 +11585,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLiveStreamConditioning() {
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000100);
       liveStreamConditioning_ = null;
       if (liveStreamConditioningBuilder_ != null) {
         liveStreamConditioningBuilder_.dispose();
@@ -9957,7 +11608,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public com.google.ads.admanager.v1.LiveStreamConditioning.Builder
         getLiveStreamConditioningBuilder() {
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000100;
       onChanged();
       return internalGetLiveStreamConditioningFieldBuilder().getBuilder();
     }
@@ -10030,7 +11681,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEarlyBreakNotificationMultiBreakSchedulingEnabled() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000200) != 0);
     }
 
     /**
@@ -10070,7 +11721,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
     public Builder setEarlyBreakNotificationMultiBreakSchedulingEnabled(boolean value) {
 
       earlyBreakNotificationMultiBreakSchedulingEnabled_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -10090,7 +11741,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEarlyBreakNotificationMultiBreakSchedulingEnabled() {
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000200);
       earlyBreakNotificationMultiBreakSchedulingEnabled_ = false;
       onChanged();
       return this;
@@ -10118,7 +11769,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the adPodTrimTolerance field is set.
      */
     public boolean hasAdPodTrimTolerance() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
 
     /**
@@ -10166,7 +11817,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         adPodTrimToleranceBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10189,7 +11840,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         adPodTrimToleranceBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -10208,7 +11859,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAdPodTrimTolerance(com.google.protobuf.Duration value) {
       if (adPodTrimToleranceBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000400) != 0)
             && adPodTrimTolerance_ != null
             && adPodTrimTolerance_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getAdPodTrimToleranceBuilder().mergeFrom(value);
@@ -10219,7 +11870,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         adPodTrimToleranceBuilder_.mergeFrom(value);
       }
       if (adPodTrimTolerance_ != null) {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -10238,7 +11889,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAdPodTrimTolerance() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000400);
       adPodTrimTolerance_ = null;
       if (adPodTrimToleranceBuilder_ != null) {
         adPodTrimToleranceBuilder_.dispose();
@@ -10261,7 +11912,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getAdPodTrimToleranceBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000400;
       onChanged();
       return internalGetAdPodTrimToleranceFieldBuilder().getBuilder();
     }
@@ -10334,7 +11985,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the effectiveAssetKey field is set.
      */
     public boolean hasEffectiveAssetKey() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
 
     /**
@@ -10409,7 +12060,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       effectiveAssetKey_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10430,7 +12081,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEffectiveAssetKey() {
       effectiveAssetKey_ = getDefaultInstance().getEffectiveAssetKey();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -10456,7 +12107,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       effectiveAssetKey_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -10482,7 +12133,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * @return Whether the auxiliaryAdSettings field is set.
      */
     public boolean hasAuxiliaryAdSettings() {
-      return ((bitField1_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
 
     /**
@@ -10528,7 +12179,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         auxiliaryAdSettingsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10551,7 +12202,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
       } else {
         auxiliaryAdSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -10569,7 +12220,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAuxiliaryAdSettings(com.google.ads.admanager.v1.AuxiliaryAdSettings value) {
       if (auxiliaryAdSettingsBuilder_ == null) {
-        if (((bitField1_ & 0x00000080) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && auxiliaryAdSettings_ != null
             && auxiliaryAdSettings_
                 != com.google.ads.admanager.v1.AuxiliaryAdSettings.getDefaultInstance()) {
@@ -10581,7 +12232,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
         auxiliaryAdSettingsBuilder_.mergeFrom(value);
       }
       if (auxiliaryAdSettings_ != null) {
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -10599,7 +12250,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAuxiliaryAdSettings() {
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00001000);
       auxiliaryAdSettings_ = null;
       if (auxiliaryAdSettingsBuilder_ != null) {
         auxiliaryAdSettingsBuilder_.dispose();
@@ -10621,7 +12272,7 @@ public final class LiveStream extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.AuxiliaryAdSettings.Builder getAuxiliaryAdSettingsBuilder() {
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00001000;
       onChanged();
       return internalGetAuxiliaryAdSettingsFieldBuilder().getBuilder();
     }

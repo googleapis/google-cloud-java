@@ -52,6 +52,30 @@ public final class CompanyServiceProto extends com.google.protobuf.GeneratedFile
       internal_static_google_ads_admanager_v1_ListCompaniesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCompaniesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateCompanyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateCompanyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCompaniesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCompaniesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCompaniesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCompaniesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateCompanyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateCompanyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCompaniesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCompaniesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCompaniesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCompaniesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -66,7 +90,8 @@ public final class CompanyServiceProto extends com.google.protobuf.GeneratedFile
           + "e.proto\022\027google.ads.admanager.v1\032.google"
           + "/ads/admanager/v1/company_messages.proto"
           + "\032\034google/api/annotations.proto\032\027google/a"
-          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"K\n"
+          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"K\n"
           + "\021GetCompanyRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Company\"\300\001\n"
@@ -81,21 +106,57 @@ public final class CompanyServiceProto extends com.google.protobuf.GeneratedFile
           + "\025ListCompaniesResponse\0223\n"
           + "\tcompanies\030\001 \003(\0132 .google.ads.admanager.v1.Company\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\300\003\n"
+          + "total_size\030\003 \001(\005\"\210\001\n"
+          + "\024CreateCompanyRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0226\n"
+          + "\007company\030\002 \001(\0132"
+          + " .google.ads.admanager.v1.CompanyB\003\340A\002\"\235\001\n"
+          + "\033BatchCreateCompaniesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022D\n"
+          + "\010requests\030\002 \003(\0132-.google"
+          + ".ads.admanager.v1.CreateCompanyRequestB\003\340A\002\"S\n"
+          + "\034BatchCreateCompaniesResponse\0223\n"
+          + "\tcompanies\030\001 \003(\0132 .google.ads.admanager.v1.Company\"\204\001\n"
+          + "\024UpdateCompanyRequest\0226\n"
+          + "\007company\030\001 \001(\0132 .google.ads.admanager.v1.CompanyB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\235\001\n"
+          + "\033BatchUpdateCompaniesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022D\n"
+          + "\010requests\030\002"
+          + " \003(\0132-.google.ads.admanager.v1.UpdateCompanyRequestB\003\340A\002\"S\n"
+          + "\034BatchUpdateCompaniesResponse\0223\n"
+          + "\tcompanies\030\001 \003(\0132 .google.ads.admanager.v1.Company2\301\t\n"
           + "\016CompanyService\022\214\001\n\n"
-          + "GetCompany\022*.google.ads.admanager.v1.GetCompanyRequest\032 .google.ad"
-          + "s.admanager.v1.Company\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=networks/*/companies/*}\022\242\001\n\r"
-          + "ListCompanies\022-.google.ads.admanager.v1.Lis"
-          + "tCompaniesRequest\032..google.ads.admanager"
-          + ".v1.ListCompaniesResponse\"2\332A\006parent\202\323\344\223"
-          + "\002#\022!/v1/{parent=networks/*}/companies\032z\312"
-          + "A\030admanager.googleapis.com\322A\\https://www"
-          + ".googleapis.com/auth/admanager,https://w"
-          + "ww.googleapis.com/auth/admanager.readonlyB\307\001\n"
-          + "\033com.google.ads.admanager.v1B\023CompanyServiceProtoP\001Z@google.golang.org/genp"
-          + "roto/googleapis/ads/admanager/v1;admanag"
-          + "er\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ad"
-          + "s\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "GetCompany\022*.google.ads.admanager.v1.GetCompanyRequest\032 .google.ads."
+          + "admanager.v1.Company\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=networks/*/companies/*}\022\242\001\n\r"
+          + "ListCompanies\022-.google.ads.admanager.v1.ListC"
+          + "ompaniesRequest\032..google.ads.admanager.v"
+          + "1.ListCompaniesResponse\"2\332A\006parent\202\323\344\223\002#\022!/v1/{parent=networks/*}/companies\022\245\001\n\r"
+          + "CreateCompany\022-.google.ads.admanager.v1.CreateCompanyRequest\032 .google.ads.admana"
+          + "ger.v1.Company\"C\332A\016parent,company\202\323\344\223\002,\""
+          + "!/v1/{parent=networks/*}/companies:\007company\022\317\001\n"
+          + "\024BatchCreateCompanies\0224.google.ads.admanager.v1.BatchCreateCompaniesReque"
+          + "st\0325.google.ads.admanager.v1.BatchCreate"
+          + "CompaniesResponse\"J\332A\017parent,requests\202\323\344"
+          + "\223\0022\"-/v1/{parent=networks/*}/companies:batchCreate:\001*\022\262\001\n\r"
+          + "UpdateCompany\022-.google.ads.admanager.v1.UpdateCompanyRequest\032 "
+          + ".google.ads.admanager.v1.Company\"P\332A\023com"
+          + "pany,update_mask\202\323\344\223\00242)/v1/{company.name=networks/*/companies/*}:\007company\022\317\001\n"
+          + "\024BatchUpdateCompanies\0224.google.ads.admanag"
+          + "er.v1.BatchUpdateCompaniesRequest\0325.google.ads.admanager.v1.BatchUpdateCompanies"
+          + "Response\"J\332A\017parent,requests\202\323\344\223\0022\"-/v1/"
+          + "{parent=networks/*}/companies:batchUpdat"
+          + "e:\001*\032z\312A\030admanager.googleapis.com\322A\\http"
+          + "s://www.googleapis.com/auth/admanager,ht"
+          + "tps://www.googleapis.com/auth/admanager.readonlyB\307\001\n"
+          + "\033com.google.ads.admanager.v1B\023CompanyServiceProtoP\001Z@google.golang.o"
+          + "rg/genproto/googleapis/ads/admanager/v1;"
+          + "admanager\252\002\027Google.Ads.AdManager.V1\312\002\027Go"
+          + "ogle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,6 +167,7 @@ public final class CompanyServiceProto extends com.google.protobuf.GeneratedFile
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetCompanyRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -131,12 +193,61 @@ public final class CompanyServiceProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "Companies", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateCompanyRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateCompanyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateCompanyRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Company",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCompaniesRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchCreateCompaniesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCompaniesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCompaniesResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateCompaniesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCompaniesResponse_descriptor,
+            new java.lang.String[] {
+              "Companies",
+            });
+    internal_static_google_ads_admanager_v1_UpdateCompanyRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateCompanyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateCompanyRequest_descriptor,
+            new java.lang.String[] {
+              "Company", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCompaniesRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateCompaniesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCompaniesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCompaniesResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateCompaniesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCompaniesResponse_descriptor,
+            new java.lang.String[] {
+              "Companies",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.CompanyMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

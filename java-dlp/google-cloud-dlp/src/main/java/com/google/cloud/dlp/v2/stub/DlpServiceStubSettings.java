@@ -18,6 +18,7 @@ package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListContentPoliciesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -64,7 +65,9 @@ import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.ContentPolicy;
 import com.google.privacy.dlp.v2.CreateConnectionRequest;
+import com.google.privacy.dlp.v2.CreateContentPolicyRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -75,6 +78,7 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteConnectionRequest;
+import com.google.privacy.dlp.v2.DeleteContentPolicyRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
@@ -89,6 +93,7 @@ import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
+import com.google.privacy.dlp.v2.GetContentPolicyRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -109,6 +114,8 @@ import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
 import com.google.privacy.dlp.v2.ListConnectionsResponse;
+import com.google.privacy.dlp.v2.ListContentPoliciesRequest;
+import com.google.privacy.dlp.v2.ListContentPoliciesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -139,6 +146,7 @@ import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.UpdateConnectionRequest;
+import com.google.privacy.dlp.v2.UpdateContentPolicyRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -328,6 +336,15 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       searchConnectionsSettings;
   private final UnaryCallSettings<DeleteConnectionRequest, Empty> deleteConnectionSettings;
   private final UnaryCallSettings<UpdateConnectionRequest, Connection> updateConnectionSettings;
+  private final UnaryCallSettings<CreateContentPolicyRequest, ContentPolicy>
+      createContentPolicySettings;
+  private final UnaryCallSettings<UpdateContentPolicyRequest, ContentPolicy>
+      updateContentPolicySettings;
+  private final UnaryCallSettings<GetContentPolicyRequest, ContentPolicy> getContentPolicySettings;
+  private final PagedCallSettings<
+          ListContentPoliciesRequest, ListContentPoliciesResponse, ListContentPoliciesPagedResponse>
+      listContentPoliciesSettings;
+  private final UnaryCallSettings<DeleteContentPolicyRequest, Empty> deleteContentPolicySettings;
 
   private static final PagedListDescriptor<
           ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
@@ -802,6 +819,44 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListContentPoliciesRequest, ListContentPoliciesResponse, ContentPolicy>
+      LIST_CONTENT_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListContentPoliciesRequest, ListContentPoliciesResponse, ContentPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListContentPoliciesRequest injectToken(
+                ListContentPoliciesRequest payload, String token) {
+              return ListContentPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListContentPoliciesRequest injectPageSize(
+                ListContentPoliciesRequest payload, int pageSize) {
+              return ListContentPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListContentPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListContentPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ContentPolicy> extractResources(ListContentPoliciesResponse payload) {
+              return payload.getContentPoliciesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInspectTemplatesRequest,
           ListInspectTemplatesResponse,
@@ -1073,6 +1128,27 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
                       PageContext.create(
                           callable, SEARCH_CONNECTIONS_PAGE_STR_DESC, request, context);
               return SearchConnectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListContentPoliciesRequest, ListContentPoliciesResponse, ListContentPoliciesPagedResponse>
+      LIST_CONTENT_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListContentPoliciesRequest,
+              ListContentPoliciesResponse,
+              ListContentPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListContentPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListContentPoliciesRequest, ListContentPoliciesResponse> callable,
+                ListContentPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListContentPoliciesResponse> futureResponse) {
+              PageContext<ListContentPoliciesRequest, ListContentPoliciesResponse, ContentPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_CONTENT_POLICIES_PAGE_STR_DESC, request, context);
+              return ListContentPoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1409,6 +1485,35 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return updateConnectionSettings;
   }
 
+  /** Returns the object with the settings used for calls to createContentPolicy. */
+  public UnaryCallSettings<CreateContentPolicyRequest, ContentPolicy>
+      createContentPolicySettings() {
+    return createContentPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateContentPolicy. */
+  public UnaryCallSettings<UpdateContentPolicyRequest, ContentPolicy>
+      updateContentPolicySettings() {
+    return updateContentPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getContentPolicy. */
+  public UnaryCallSettings<GetContentPolicyRequest, ContentPolicy> getContentPolicySettings() {
+    return getContentPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listContentPolicies. */
+  public PagedCallSettings<
+          ListContentPoliciesRequest, ListContentPoliciesResponse, ListContentPoliciesPagedResponse>
+      listContentPoliciesSettings() {
+    return listContentPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteContentPolicy. */
+  public UnaryCallSettings<DeleteContentPolicyRequest, Empty> deleteContentPolicySettings() {
+    return deleteContentPolicySettings;
+  }
+
   public DlpServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1576,6 +1681,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     searchConnectionsSettings = settingsBuilder.searchConnectionsSettings().build();
     deleteConnectionSettings = settingsBuilder.deleteConnectionSettings().build();
     updateConnectionSettings = settingsBuilder.updateConnectionSettings().build();
+    createContentPolicySettings = settingsBuilder.createContentPolicySettings().build();
+    updateContentPolicySettings = settingsBuilder.updateContentPolicySettings().build();
+    getContentPolicySettings = settingsBuilder.getContentPolicySettings().build();
+    listContentPoliciesSettings = settingsBuilder.listContentPoliciesSettings().build();
+    deleteContentPolicySettings = settingsBuilder.deleteContentPolicySettings().build();
   }
 
   @Override
@@ -1721,6 +1831,19 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         deleteConnectionSettings;
     private final UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
         updateConnectionSettings;
+    private final UnaryCallSettings.Builder<CreateContentPolicyRequest, ContentPolicy>
+        createContentPolicySettings;
+    private final UnaryCallSettings.Builder<UpdateContentPolicyRequest, ContentPolicy>
+        updateContentPolicySettings;
+    private final UnaryCallSettings.Builder<GetContentPolicyRequest, ContentPolicy>
+        getContentPolicySettings;
+    private final PagedCallSettings.Builder<
+            ListContentPoliciesRequest,
+            ListContentPoliciesResponse,
+            ListContentPoliciesPagedResponse>
+        listContentPoliciesSettings;
+    private final UnaryCallSettings.Builder<DeleteContentPolicyRequest, Empty>
+        deleteContentPolicySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1837,6 +1960,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       searchConnectionsSettings = PagedCallSettings.newBuilder(SEARCH_CONNECTIONS_PAGE_STR_FACT);
       deleteConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateConnectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createContentPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateContentPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getContentPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listContentPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_CONTENT_POLICIES_PAGE_STR_FACT);
+      deleteContentPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1894,7 +2023,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listConnectionsSettings,
               searchConnectionsSettings,
               deleteConnectionSettings,
-              updateConnectionSettings);
+              updateConnectionSettings,
+              createContentPolicySettings,
+              updateContentPolicySettings,
+              getContentPolicySettings,
+              listContentPoliciesSettings,
+              deleteContentPolicySettings);
       initDefaults(this);
     }
 
@@ -1956,6 +2090,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       searchConnectionsSettings = settings.searchConnectionsSettings.toBuilder();
       deleteConnectionSettings = settings.deleteConnectionSettings.toBuilder();
       updateConnectionSettings = settings.updateConnectionSettings.toBuilder();
+      createContentPolicySettings = settings.createContentPolicySettings.toBuilder();
+      updateContentPolicySettings = settings.updateContentPolicySettings.toBuilder();
+      getContentPolicySettings = settings.getContentPolicySettings.toBuilder();
+      listContentPoliciesSettings = settings.listContentPoliciesSettings.toBuilder();
+      deleteContentPolicySettings = settings.deleteContentPolicySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -2013,7 +2152,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               listConnectionsSettings,
               searchConnectionsSettings,
               deleteConnectionSettings,
-              updateConnectionSettings);
+              updateConnectionSettings,
+              createContentPolicySettings,
+              updateContentPolicySettings,
+              getContentPolicySettings,
+              listContentPoliciesSettings,
+              deleteContentPolicySettings);
     }
 
     private static Builder createDefault() {
@@ -2313,6 +2457,31 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       builder
           .updateConnectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createContentPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateContentPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getContentPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listContentPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteContentPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2681,6 +2850,39 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     public UnaryCallSettings.Builder<UpdateConnectionRequest, Connection>
         updateConnectionSettings() {
       return updateConnectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createContentPolicy. */
+    public UnaryCallSettings.Builder<CreateContentPolicyRequest, ContentPolicy>
+        createContentPolicySettings() {
+      return createContentPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateContentPolicy. */
+    public UnaryCallSettings.Builder<UpdateContentPolicyRequest, ContentPolicy>
+        updateContentPolicySettings() {
+      return updateContentPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getContentPolicy. */
+    public UnaryCallSettings.Builder<GetContentPolicyRequest, ContentPolicy>
+        getContentPolicySettings() {
+      return getContentPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listContentPolicies. */
+    public PagedCallSettings.Builder<
+            ListContentPoliciesRequest,
+            ListContentPoliciesResponse,
+            ListContentPoliciesPagedResponse>
+        listContentPoliciesSettings() {
+      return listContentPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteContentPolicy. */
+    public UnaryCallSettings.Builder<DeleteContentPolicyRequest, Empty>
+        deleteContentPolicySettings() {
+      return deleteContentPolicySettings;
     }
 
     @Override

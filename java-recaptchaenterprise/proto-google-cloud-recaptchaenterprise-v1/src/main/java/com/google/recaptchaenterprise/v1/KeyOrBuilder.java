@@ -232,6 +232,43 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   *
+   * @return Whether the universalSettings field is set.
+   */
+  boolean hasUniversalSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   *
+   * @return The universalSettings.
+   */
+  com.google.recaptchaenterprise.v1.UniversalKeySettings getUniversalSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   */
+  com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder getUniversalSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. See [Creating and managing labels]
    * (https://cloud.google.com/recaptcha/docs/labels).
    * </pre>

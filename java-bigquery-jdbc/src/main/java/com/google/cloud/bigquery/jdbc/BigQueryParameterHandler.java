@@ -128,7 +128,7 @@ class BigQueryParameterHandler {
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
     parameter.setType(type);
-    parameter.setSqlType(BigQueryJdbcTypeMappings.classToType(type));
+    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
@@ -208,7 +208,7 @@ class BigQueryParameterHandler {
     }
     parameter.setValue(value);
     parameter.setType(type);
-    parameter.setSqlType(BigQueryJdbcTypeMappings.classToType(type));
+    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName(paramName);
     parameter.setParamType(paramType);
     parameter.setScale(scale);
@@ -243,7 +243,7 @@ class BigQueryParameterHandler {
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
     parameter.setType(type);
-    parameter.setSqlType(BigQueryJdbcTypeMappings.classToType(type));
+    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);

@@ -51,7 +51,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.Executor;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -79,11 +78,11 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   private final String quotaProjectId;
   private final @Nullable String gdchApiAudience;
   private final @Nullable WatchdogProvider streamWatchdogProvider;
-  @Nonnull private final java.time.Duration streamWatchdogCheckInterval;
-  @Nonnull private final ApiTracerFactory tracerFactory;
+  private final java.time.Duration streamWatchdogCheckInterval;
+  private final ApiTracerFactory tracerFactory;
   // Track if deprecated setExecutorProvider is called
   private boolean deprecatedExecutorProviderSet;
-  @Nonnull private final EndpointContext endpointContext;
+  private final EndpointContext endpointContext;
   private final String apiKey;
 
   /**
@@ -137,9 +136,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   /**
    * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
    */
-  @Nullable
   @Deprecated
-  public final ExecutorProvider getExecutorProvider() {
+  public final @Nullable ExecutorProvider getExecutorProvider() {
     return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
   }
 
@@ -219,13 +217,11 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   }
 
   /** This method is obsolete. Use {@link #getStreamWatchdogCheckIntervalDuration()} instead. */
-  @Nonnull
   @ObsoleteApi("Use getStreamWatchdogCheckIntervalDuration() instead")
   public final org.threeten.bp.Duration getStreamWatchdogCheckInterval() {
     return toThreetenDuration(getStreamWatchdogCheckIntervalDuration());
   }
 
-  @Nonnull
   public final java.time.Duration getStreamWatchdogCheckIntervalDuration() {
     return streamWatchdogCheckInterval;
   }
@@ -235,7 +231,6 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
    * operations.
    */
   @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-  @Nonnull
   public ApiTracerFactory getTracerFactory() {
     return tracerFactory;
   }
@@ -299,8 +294,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     private @Nullable String quotaProjectId;
     private @Nullable String gdchApiAudience;
     private @Nullable WatchdogProvider streamWatchdogProvider;
-    @Nonnull private java.time.Duration streamWatchdogCheckInterval;
-    @Nonnull private ApiTracerFactory tracerFactory;
+    private java.time.Duration streamWatchdogCheckInterval;
+    private ApiTracerFactory tracerFactory;
     private boolean deprecatedExecutorProviderSet;
     private @Nullable String universeDomain;
     private final EndpointContext endpointContext;
@@ -567,7 +562,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * #setStreamWatchdogCheckIntervalDuration(java.time.Duration)} instead.
      */
     @ObsoleteApi("Use setStreamWatchdogCheckIntervalDuration(java.time.Duration) instead")
-    public B setStreamWatchdogCheckInterval(@Nonnull org.threeten.bp.Duration checkInterval) {
+    public B setStreamWatchdogCheckInterval(org.threeten.bp.Duration checkInterval) {
       return setStreamWatchdogCheckIntervalDuration(toJavaTimeDuration(checkInterval));
     }
 
@@ -575,7 +570,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * Sets how often the {@link Watchdog} will check ongoing streaming RPCs. Defaults to 10 secs.
      * Use {@link java.time.Duration#ZERO} to disable.
      */
-    public B setStreamWatchdogCheckIntervalDuration(@Nonnull java.time.Duration checkInterval) {
+    public B setStreamWatchdogCheckIntervalDuration(java.time.Duration checkInterval) {
       Preconditions.checkNotNull(checkInterval);
       this.streamWatchdogCheckInterval = checkInterval;
       return self();
@@ -599,7 +594,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * @param tracerFactory an instance of {@link ApiTracerFactory} to set.
      */
     @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-    public B setTracerFactory(@Nonnull ApiTracerFactory tracerFactory) {
+    public B setTracerFactory(ApiTracerFactory tracerFactory) {
       Preconditions.checkNotNull(tracerFactory);
       this.tracerFactory = tracerFactory;
       return self();
@@ -623,9 +618,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     /**
      * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
      */
-    @Nullable
     @Deprecated
-    public ExecutorProvider getExecutorProvider() {
+    public @Nullable ExecutorProvider getExecutorProvider() {
       return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
     }
 
@@ -699,13 +693,11 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
       return toThreetenDuration(getStreamWatchdogCheckIntervalDuration());
     }
 
-    @Nonnull
     public java.time.Duration getStreamWatchdogCheckIntervalDuration() {
       return Preconditions.checkNotNull(streamWatchdogCheckInterval);
     }
 
     @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-    @Nonnull
     public ApiTracerFactory getTracerFactory() {
       return tracerFactory;
     }

@@ -48,17 +48,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITInstanceAdminTest {
 
-  @ClassRule
-  public static IntegrationTestEnv env =
-      new IntegrationTestEnv(true) {
-        @Override
-        protected void before() throws Throwable {
-          assumeFalse(
-              "ITInstanceAdminTest is disabled when running against cloud-devel or cloud-staging",
-              isRunningOnCloudDevelOrStaging());
-          super.before();
-        }
-      };
+  @ClassRule public static IntegrationTestEnv env = new IntegrationTestEnv(true);
 
   static InstanceAdminClient instanceClient;
 
@@ -67,12 +57,6 @@ public class ITInstanceAdminTest {
     assumeFalse(
         "instance / instanceConfig operations are not supported on Spanner Omni", isSpannerOmni());
     instanceClient = env.getTestHelper().getClient().getInstanceAdminClient();
-  }
-
-  private static boolean isRunningOnCloudDevelOrStaging() {
-    String jobType = System.getenv("JOB_TYPE");
-    return jobType != null
-        && (jobType.contains("cloud-devel") || jobType.contains("cloud-staging"));
   }
 
   @Test

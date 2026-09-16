@@ -43,6 +43,7 @@ class BigQuerySettings {
   private final boolean unsupportedHTAPIFallback;
 
   private final boolean enableSession;
+  private final boolean enableTimestampPicos;
 
   private final ConnectionProperty sessionInfoConnectionProperty;
 
@@ -120,6 +121,7 @@ class BigQuerySettings {
     this.maxResultPerPage = builder.maxResultPerPage;
     this.defaultDataset = builder.defaultDataset;
     this.enableSession = builder.enableSession;
+    this.enableTimestampPicos = builder.enableTimestampPicos;
     this.unsupportedHTAPIFallback = builder.unsupportedHTAPIFallback;
     this.sessionInfoConnectionProperty = builder.sessionInfoConnectionProperty;
     this.useWriteAPI = builder.useWriteAPI;
@@ -169,6 +171,15 @@ class BigQuerySettings {
    */
   boolean isEnableSession() {
     return enableSession;
+  }
+
+  /**
+   * Returns whether picosecond precision is enabled for TIMESTAMP data types.
+   *
+   * @return true if picosecond precision is enabled, false otherwise.
+   */
+  boolean isEnableTimestampPicos() {
+    return enableTimestampPicos;
   }
 
   /**
@@ -476,6 +487,7 @@ class BigQuerySettings {
     private int highThroughputMinTableSize;
     private int highThroughputActivationRatio;
     private boolean enableSession;
+    private boolean enableTimestampPicos;
     private boolean unsupportedHTAPIFallback;
     private ConnectionProperty sessionInfoConnectionProperty;
     private boolean useQueryCache;
@@ -516,6 +528,7 @@ class BigQuerySettings {
       this.highThroughputMinTableSize = querySettings.getHighThroughputMinTableSize();
       this.highThroughputActivationRatio = querySettings.getHighThroughputActivationRatio();
       this.enableSession = querySettings.isEnableSession();
+      this.enableTimestampPicos = querySettings.isEnableTimestampPicos();
       this.unsupportedHTAPIFallback = querySettings.isUnsupportedHTAPIFallback();
       this.sessionInfoConnectionProperty = querySettings.getSessionInfoConnectionProperty();
       this.useQueryCache = querySettings.getUseQueryCache();
@@ -605,6 +618,15 @@ class BigQuerySettings {
      */
     Builder setEnableSession(boolean enableSession) {
       this.enableSession = enableSession;
+      return this;
+    }
+
+    /**
+     * Setting true enables 12-digit picosecond precision for TIMESTAMP(12) columns. Disabled by
+     * default.
+     */
+    Builder setEnableTimestampPicos(boolean enableTimestampPicos) {
+      this.enableTimestampPicos = enableTimestampPicos;
       return this;
     }
 

@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Compute Engine API
+ * A client to Compute Engine API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -453,6 +453,27 @@
  *   String project = "project-309310695";
  *   String healthCheck = "healthCheck-1938093044";
  *   HealthCheck response = healthChecksClient.get(project, healthCheck);
+ * }
+ * }</pre>
+ *
+ * <p>======================= HostsClient =======================
+ *
+ * <p>Service Description: The Hosts API.
+ *
+ * <p>Sample for HostsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (HostsClient hostsClient = HostsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String association = "association-87499647";
+ *   String host = "host3208616";
+ *   Host response = hostsClient.get(project, zone, association, host);
  * }
  * }</pre>
  *
@@ -1859,6 +1880,25 @@
  *   String project = "project-309310695";
  *   String region = "region-934795532";
  *   Region response = regionsClient.get(project, region);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ReliabilityRisksClient =======================
+ *
+ * <p>Service Description: The ReliabilityRisks API.
+ *
+ * <p>Sample for ReliabilityRisksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReliabilityRisksClient reliabilityRisksClient = ReliabilityRisksClient.create()) {
+ *   String project = "project-309310695";
+ *   String reliabilityRisk = "reliabilityRisk-127967703";
+ *   ReliabilityRisk response = reliabilityRisksClient.get(project, reliabilityRisk);
  * }
  * }</pre>
  *

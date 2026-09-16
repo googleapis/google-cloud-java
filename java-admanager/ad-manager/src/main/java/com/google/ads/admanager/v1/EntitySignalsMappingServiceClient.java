@@ -70,7 +70,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntitySignalsMapping</td>
- *      <td><p> API to retrieve a `EntitySignalsMapping` object.</td>
+ *      <td><p> Retrieves a `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +89,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListEntitySignalsMappings</td>
- *      <td><p> API to retrieve a list of `EntitySignalsMapping` objects.</td>
+ *      <td><p> Lists `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -109,7 +109,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEntitySignalsMapping</td>
- *      <td><p> API to create an `EntitySignalsMapping` object.</td>
+ *      <td><p> Creates an `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -128,7 +128,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateEntitySignalsMapping</td>
- *      <td><p> API to update an `EntitySignalsMapping` object.</td>
+ *      <td><p> Updates an `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -146,7 +146,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateEntitySignalsMappings</td>
- *      <td><p> API to batch create `EntitySignalsMapping` objects.</td>
+ *      <td><p> Creates `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -162,7 +162,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateEntitySignalsMappings</td>
- *      <td><p> API to batch update `EntitySignalsMapping` objects.</td>
+ *      <td><p> Batch updates `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -275,7 +275,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -309,7 +309,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -340,7 +340,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -373,7 +373,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -405,7 +405,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -440,7 +440,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -510,7 +510,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -550,7 +550,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -594,7 +594,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -631,7 +631,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -668,7 +668,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -700,7 +700,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -733,7 +733,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -771,7 +771,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -803,7 +803,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -836,7 +836,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -874,7 +874,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -912,7 +912,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -944,7 +944,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -978,7 +978,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1016,7 +1016,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1054,7 +1054,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1086,7 +1086,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *

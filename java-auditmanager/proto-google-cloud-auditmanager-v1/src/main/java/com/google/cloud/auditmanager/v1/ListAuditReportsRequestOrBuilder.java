@@ -30,7 +30,12 @@ public interface ListAuditReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent scope for which to list the reports.
+   * Required. Parent organization, folder, or project to list reports for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -45,7 +50,12 @@ public interface ListAuditReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent scope for which to list the reports.
+   * Required. Parent organization, folder, or project to list reports for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>
@@ -60,7 +70,10 @@ public interface ListAuditReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of resources to return.
+   * Optional. Maximum number of items to return in a single page. The service
+   * might return fewer items than this value. If unspecified, the service picks
+   * an appropriate default. The maximum value is 100; values above 100 are
+   * reduced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,8 +86,8 @@ public interface ListAuditReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request,
-   * if any.
+   * Optional. A page token, received from a previous call, to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -87,8 +100,8 @@ public interface ListAuditReportsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request,
-   * if any.
+   * Optional. A page token, received from a previous call, to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

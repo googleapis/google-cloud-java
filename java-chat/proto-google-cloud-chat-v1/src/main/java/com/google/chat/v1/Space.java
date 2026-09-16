@@ -467,9 +467,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Named spaces that support message threads. When users respond to a
-     * message, they can reply in-thread, which keeps their response in the
-     * context of the original message.
+     * Spaces that support message threads. When users respond to a message,
+     * they can reply in-thread, which keeps their response in the context of
+     * the original message.
      * </pre>
      *
      * <code>THREADED_MESSAGES = 2;</code>
@@ -490,8 +490,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Direct messages (DMs) between two people and group conversations between
-     * 3 or more people.
+     * Spaces that don't support message threading. This space threading state
+     * is only used for special cases including:
+     *
+     * * Continuous meeting chat where threading is intentionally turned off.
+     * * Legacy group conversations that were created prior to 2022.
      * </pre>
      *
      * <code>UNTHREADED_MESSAGES = 4;</code>
@@ -525,9 +528,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Named spaces that support message threads. When users respond to a
-     * message, they can reply in-thread, which keeps their response in the
-     * context of the original message.
+     * Spaces that support message threads. When users respond to a message,
+     * they can reply in-thread, which keeps their response in the context of
+     * the original message.
      * </pre>
      *
      * <code>THREADED_MESSAGES = 2;</code>
@@ -550,8 +553,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Direct messages (DMs) between two people and group conversations between
-     * 3 or more people.
+     * Spaces that don't support message threading. This space threading state
+     * is only used for special cases including:
+     *
+     * * Continuous meeting chat where threading is intentionally turned off.
+     * * Legacy group conversations that were created prior to 2022.
      * </pre>
      *
      * <code>UNTHREADED_MESSAGES = 4;</code>
@@ -11132,7 +11138,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -11153,7 +11159,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
    * @return The type.
    */
   @java.lang.Override
@@ -11239,7 +11245,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
    * @return The threaded.
    */
   @java.lang.Override
@@ -13329,7 +13335,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -13350,7 +13356,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -13374,7 +13380,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
      * @return The type.
      */
     @java.lang.Override
@@ -13396,7 +13402,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -13423,7 +13429,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=302
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13616,7 +13622,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
      * @return The threaded.
      */
     @java.lang.Override
@@ -13636,7 +13642,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -13660,7 +13666,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=314
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

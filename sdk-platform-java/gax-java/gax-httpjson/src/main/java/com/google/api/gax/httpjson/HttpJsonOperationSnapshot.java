@@ -31,9 +31,11 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.longrunning.Operation;
+import java.util.Collections;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -50,6 +52,7 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
   private final Object response;
   private final StatusCode errorCode;
   private final String errorMessage;
+  private final ErrorDetails errorDetails;
 
   private HttpJsonOperationSnapshot(
       String name,
@@ -57,13 +60,15 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
       boolean done,
       Object response,
       StatusCode errorCode,
-      String errorMessage) {
+      String errorMessage,
+      ErrorDetails errorDetails) {
     this.name = name;
     this.metadata = metadata;
     this.done = done;
     this.response = response;
     this.errorCode = errorCode;
     this.errorMessage = errorMessage;
+    this.errorDetails = errorDetails;
   }
 
   /** {@inheritDoc} */
@@ -102,6 +107,12 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     return this.errorMessage;
   }
 
+  /** {@inheritDoc} */
+  @Override
+  public ErrorDetails getErrorDetails() {
+    return this.errorDetails;
+  }
+
   public static HttpJsonOperationSnapshot create(Operation operation) {
     return newBuilder().setOperation(operation).build();
   }
@@ -117,6 +128,19 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     private Object response;
     private StatusCode errorCode;
     private String errorMessage;
+    private ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
+
+    /**
+     * Sets the LRO error details.
+     *
+     * @param errorDetails the LRO error details
+     * @return the builder instance
+     */
+    Builder setErrorDetails(final ErrorDetails errorDetails) {
+      this.errorDetails = errorDetails;
+      return this;
+    }
 
     public Builder setName(String name) {
       this.name = name;
@@ -153,11 +177,14 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
       this.errorCode =
           HttpJsonStatusCode.of(com.google.rpc.Code.forNumber(operation.getError().getCode()));
       this.errorMessage = operation.getError().getMessage();
+      this.errorDetails =
+          ErrorDetails.builder().setRawErrorMessages(operation.getError().getDetailsList()).build();
       return this;
     }
 
     public HttpJsonOperationSnapshot build() {
-      return new HttpJsonOperationSnapshot(name, metadata, done, response, errorCode, errorMessage);
+      return new HttpJsonOperationSnapshot(
+          name, metadata, done, response, errorCode, errorMessage, errorDetails);
     }
   }
 }

@@ -419,7 +419,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this subscriber will be created. Format:
-   *     projects/{project} Example: projects/my-project-123
+   *     projects/{project_number} Example: projects/1234567890
    * @param subscriber Required. The subscriber to create.
    * @param subscriberId Optional. The ID to use for the subscriber, which will become the final
    *     component of the subscriber's resource name.
@@ -483,7 +483,7 @@ public class DataSubscriptionServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where this subscriber will be created. Format:
-   *     projects/{project} Example: projects/my-project-123
+   *     projects/{project_number} Example: projects/1234567890
    * @param subscriber Required. The subscriber to create.
    * @param subscriberId Optional. The ID to use for the subscriber, which will become the final
    *     component of the subscriber's resource name.

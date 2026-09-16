@@ -33,7 +33,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @InternalApi("for testing")
 @AutoValue
@@ -43,22 +43,19 @@ public abstract class FakeOperationSnapshot implements OperationSnapshot {
   public abstract String getName();
 
   @Override
-  @Nullable
-  public abstract Object getMetadata();
+  public abstract @Nullable Object getMetadata();
 
   @Override
   public abstract boolean isDone();
 
   @Override
-  @Nullable
-  public abstract Object getResponse();
+  public abstract @Nullable Object getResponse();
 
   @Override
   public abstract StatusCode getErrorCode();
 
   @Override
-  @Nullable
-  public abstract String getErrorMessage();
+  public abstract @Nullable String getErrorMessage();
 
   public static Builder newBuilder() {
     return new AutoValue_FakeOperationSnapshot.Builder();

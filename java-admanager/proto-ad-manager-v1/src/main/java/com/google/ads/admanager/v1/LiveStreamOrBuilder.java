@@ -521,6 +521,106 @@ public interface LiveStreamOrBuilder
    *
    *
    * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the slate field is set.
+   */
+  boolean hasSlate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The slate.
+   */
+  java.lang.String getSlate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The slate to use for this live stream. If not set, network
+   * default slate will be used. Format:
+   * "networks/{network_code}/slates/{slate_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string slate = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for slate.
+   */
+  com.google.protobuf.ByteString getSlateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dvrWindowDuration field is set.
+   */
+  boolean hasDvrWindowDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dvrWindowDuration.
+   */
+  com.google.protobuf.Duration getDvrWindowDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration of the DVR window. If unset the default window as
+   * provided by the input encoder will be used. Modifying this value for an
+   * active live stream can impact traffic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration dvr_window_duration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDvrWindowDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Whether the live stream's requests to the IMA SDK API will be
    * authenticated using the DAI authentication keys.
    * </pre>
@@ -920,6 +1020,84 @@ public interface LiveStreamOrBuilder
    * </code>
    */
   com.google.protobuf.DurationOrBuilder getDefaultAdBreakDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the daiAuthenticationKeys.
+   */
+  java.util.List<java.lang.String> getDaiAuthenticationKeysList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of daiAuthenticationKeys.
+   */
+  int getDaiAuthenticationKeysCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The daiAuthenticationKeys at the given index.
+   */
+  java.lang.String getDaiAuthenticationKeys(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKey objects used to authenticate
+   * stream create requests for this live stream. Modifying settings for an
+   * active live stream may break the stream for some users. Exercise caution.
+   * Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_authentication_keys = 24 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the daiAuthenticationKeys at the given index.
+   */
+  com.google.protobuf.ByteString getDaiAuthenticationKeysBytes(int index);
 
   /**
    *
@@ -1494,6 +1672,146 @@ public interface LiveStreamOrBuilder
    * @return The bytes for customAssetKey.
    */
   com.google.protobuf.ByteString getCustomAssetKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the daiEncodingProfiles.
+   */
+  java.util.List<java.lang.String> getDaiEncodingProfilesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of daiEncodingProfiles.
+   */
+  int getDaiEncodingProfilesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The daiEncodingProfiles at the given index.
+   */
+  java.lang.String getDaiEncodingProfiles(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiEncodingProfiles that will be used for this live
+   * stream event. Format:
+   * "networks/{network_code}/daiEncodingProfiles/{dai_encoding_profile_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string dai_encoding_profiles = 40 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the daiEncodingProfiles at the given index.
+   */
+  com.google.protobuf.ByteString getDaiEncodingProfilesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the segmentUrlAuthenticationKeys.
+   */
+  java.util.List<java.lang.String> getSegmentUrlAuthenticationKeysList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of segmentUrlAuthenticationKeys.
+   */
+  int getSegmentUrlAuthenticationKeysCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The segmentUrlAuthenticationKeys at the given index.
+   */
+  java.lang.String getSegmentUrlAuthenticationKeys(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of DaiAuthenticationKeys used to authenticate ad segment
+   * url requests for this live stream. Format:
+   * "networks/{network_code}/daiAuthenticationKeys/{dai_authentication_key_id}"
+   * </pre>
+   *
+   * <code>
+   * repeated string segment_url_authentication_keys = 41 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the segmentUrlAuthenticationKeys at the given index.
+   */
+  com.google.protobuf.ByteString getSegmentUrlAuthenticationKeysBytes(int index);
 
   /**
    *

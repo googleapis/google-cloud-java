@@ -135,6 +135,7 @@ public final class IngestedUserListInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Data Management Platform IDs:
+     *
      * - Google User ID
      * - Partner Provided ID
      * - Publisher Provided ID
@@ -143,6 +144,7 @@ public final class IngestedUserListInfo extends com.google.protobuf.GeneratedMes
      * - Roku ID
      * - Amazon Fire TV ID
      * - Xbox or Microsoft ID
+     * - Generic Device ID
      * </pre>
      *
      * <code>PSEUDONYMOUS_ID = 5;</code>
@@ -221,6 +223,7 @@ public final class IngestedUserListInfo extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Data Management Platform IDs:
+     *
      * - Google User ID
      * - Partner Provided ID
      * - Publisher Provided ID
@@ -229,6 +232,7 @@ public final class IngestedUserListInfo extends com.google.protobuf.GeneratedMes
      * - Roku ID
      * - Amazon Fire TV ID
      * - Xbox or Microsoft ID
+     * - Generic Device ID
      * </pre>
      *
      * <code>PSEUDONYMOUS_ID = 5;</code>

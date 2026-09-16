@@ -55,6 +55,8 @@ public final class ResourceStatusReservationConsumptionInfo
 
   private ResourceStatusReservationConsumptionInfo() {
     consumedReservation_ = "";
+    consumedReservationBlock_ = "";
+    consumedReservationSubBlock_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -145,6 +147,150 @@ public final class ResourceStatusReservationConsumptionInfo
     }
   }
 
+  public static final int CONSUMED_RESERVATION_BLOCK_FIELD_NUMBER = 142321091;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumedReservationBlock_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return Whether the consumedReservationBlock field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsumedReservationBlock() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return The consumedReservationBlock.
+   */
+  @java.lang.Override
+  public java.lang.String getConsumedReservationBlock() {
+    java.lang.Object ref = consumedReservationBlock_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consumedReservationBlock_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return The bytes for consumedReservationBlock.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConsumedReservationBlockBytes() {
+    java.lang.Object ref = consumedReservationBlock_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      consumedReservationBlock_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONSUMED_RESERVATION_SUB_BLOCK_FIELD_NUMBER = 461540356;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object consumedReservationSubBlock_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return Whether the consumedReservationSubBlock field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsumedReservationSubBlock() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return The consumedReservationSubBlock.
+   */
+  @java.lang.Override
+  public java.lang.String getConsumedReservationSubBlock() {
+    java.lang.Object ref = consumedReservationSubBlock_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consumedReservationSubBlock_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return The bytes for consumedReservationSubBlock.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getConsumedReservationSubBlockBytes() {
+    java.lang.Object ref = consumedReservationSubBlock_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      consumedReservationSubBlock_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -159,8 +305,16 @@ public final class ResourceStatusReservationConsumptionInfo
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 142321091, consumedReservationBlock_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 318474741, consumedReservation_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 461540356, consumedReservationSubBlock_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -171,9 +325,19 @@ public final class ResourceStatusReservationConsumptionInfo
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              142321091, consumedReservationBlock_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(318474741, consumedReservation_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              461540356, consumedReservationSubBlock_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -195,6 +359,15 @@ public final class ResourceStatusReservationConsumptionInfo
     if (hasConsumedReservation()) {
       if (!getConsumedReservation().equals(other.getConsumedReservation())) return false;
     }
+    if (hasConsumedReservationBlock() != other.hasConsumedReservationBlock()) return false;
+    if (hasConsumedReservationBlock()) {
+      if (!getConsumedReservationBlock().equals(other.getConsumedReservationBlock())) return false;
+    }
+    if (hasConsumedReservationSubBlock() != other.hasConsumedReservationSubBlock()) return false;
+    if (hasConsumedReservationSubBlock()) {
+      if (!getConsumedReservationSubBlock().equals(other.getConsumedReservationSubBlock()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -209,6 +382,14 @@ public final class ResourceStatusReservationConsumptionInfo
     if (hasConsumedReservation()) {
       hash = (37 * hash) + CONSUMED_RESERVATION_FIELD_NUMBER;
       hash = (53 * hash) + getConsumedReservation().hashCode();
+    }
+    if (hasConsumedReservationBlock()) {
+      hash = (37 * hash) + CONSUMED_RESERVATION_BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + getConsumedReservationBlock().hashCode();
+    }
+    if (hasConsumedReservationSubBlock()) {
+      hash = (37 * hash) + CONSUMED_RESERVATION_SUB_BLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + getConsumedReservationSubBlock().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -354,6 +535,8 @@ public final class ResourceStatusReservationConsumptionInfo
       super.clear();
       bitField0_ = 0;
       consumedReservation_ = "";
+      consumedReservationBlock_ = "";
+      consumedReservationSubBlock_ = "";
       return this;
     }
 
@@ -398,6 +581,14 @@ public final class ResourceStatusReservationConsumptionInfo
         result.consumedReservation_ = consumedReservation_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.consumedReservationBlock_ = consumedReservationBlock_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.consumedReservationSubBlock_ = consumedReservationSubBlock_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -420,6 +611,16 @@ public final class ResourceStatusReservationConsumptionInfo
       if (other.hasConsumedReservation()) {
         consumedReservation_ = other.consumedReservation_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (other.hasConsumedReservationBlock()) {
+        consumedReservationBlock_ = other.consumedReservationBlock_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasConsumedReservationSubBlock()) {
+        consumedReservationSubBlock_ = other.consumedReservationSubBlock_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -448,12 +649,24 @@ public final class ResourceStatusReservationConsumptionInfo
             case 0:
               done = true;
               break;
+            case 1138568730:
+              {
+                consumedReservationBlock_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1138568730
             case -1747169366:
               {
                 consumedReservation_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1747169366
+            case -602644446:
+              {
+                consumedReservationSubBlock_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -602644446
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -601,6 +814,270 @@ public final class ResourceStatusReservationConsumptionInfo
       checkByteStringIsUtf8(value);
       consumedReservation_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object consumedReservationBlock_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @return Whether the consumedReservationBlock field is set.
+     */
+    public boolean hasConsumedReservationBlock() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @return The consumedReservationBlock.
+     */
+    public java.lang.String getConsumedReservationBlock() {
+      java.lang.Object ref = consumedReservationBlock_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consumedReservationBlock_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @return The bytes for consumedReservationBlock.
+     */
+    public com.google.protobuf.ByteString getConsumedReservationBlockBytes() {
+      java.lang.Object ref = consumedReservationBlock_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        consumedReservationBlock_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @param value The consumedReservationBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumedReservationBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      consumedReservationBlock_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConsumedReservationBlock() {
+      consumedReservationBlock_ = getDefaultInstance().getConsumedReservationBlock();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation block that this
+     * instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_block = 142321091;</code>
+     *
+     * @param value The bytes for consumedReservationBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumedReservationBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      consumedReservationBlock_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object consumedReservationSubBlock_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @return Whether the consumedReservationSubBlock field is set.
+     */
+    public boolean hasConsumedReservationSubBlock() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @return The consumedReservationSubBlock.
+     */
+    public java.lang.String getConsumedReservationSubBlock() {
+      java.lang.Object ref = consumedReservationSubBlock_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consumedReservationSubBlock_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @return The bytes for consumedReservationSubBlock.
+     */
+    public com.google.protobuf.ByteString getConsumedReservationSubBlockBytes() {
+      java.lang.Object ref = consumedReservationSubBlock_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        consumedReservationSubBlock_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @param value The consumedReservationSubBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumedReservationSubBlock(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      consumedReservationSubBlock_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConsumedReservationSubBlock() {
+      consumedReservationSubBlock_ = getDefaultInstance().getConsumedReservationSubBlock();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The full resource name of the reservation sub-block that
+     * this instance is consuming from.
+     * </pre>
+     *
+     * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+     *
+     * @param value The bytes for consumedReservationSubBlock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConsumedReservationSubBlockBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      consumedReservationSubBlock_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

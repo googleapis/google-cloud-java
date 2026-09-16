@@ -1,5 +1,216 @@
 # Changelog
 
+## [1.91.0](https://github.com/googleapis/google-cloud-java/compare/v1.90.0...v1.91.0) (2026-09-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **datalabeling:** remove java-datalabeling library ([#14189](https://github.com/googleapis/google-cloud-java/issues/14189))
+* **datacatalog:** remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178))
+
+### Features
+
+* **apptopology:** onboard a new library ([#14204](https://github.com/googleapis/google-cloud-java/issues/14204)) ([f871a07](https://github.com/googleapis/google-cloud-java/commit/f871a072bcee3a5d2c9ae3efae7ac96024162770))
+* **bigtable:** Option to disable direct access fallback ([#14193](https://github.com/googleapis/google-cloud-java/issues/14193)) ([5b6a974](https://github.com/googleapis/google-cloud-java/commit/5b6a97473af68c0556f333836265fe977f4eda5b))
+* **datacatalog:** remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178)) ([2910f63](https://github.com/googleapis/google-cloud-java/commit/2910f638cdaac419108926fcad009da1cea5ea87))
+* **datalabeling:** remove java-datalabeling library ([#14189](https://github.com/googleapis/google-cloud-java/issues/14189)) ([334d35a](https://github.com/googleapis/google-cloud-java/commit/334d35a1012e8b416d1bfc772738dc46786f87d0)), refs [#14176](https://github.com/googleapis/google-cloud-java/issues/14176)
+* **gax:** add getSingleHeader to HttpHeadersUtils ([#14137](https://github.com/googleapis/google-cloud-java/issues/14137)) ([f114422](https://github.com/googleapis/google-cloud-java/commit/f1144226d048b97875d26cde7989f25e3daf3166))
+* **gax:** add ResumableUploadClient.startUpload() and supporting types ([#14138](https://github.com/googleapis/google-cloud-java/issues/14138)) ([d7e2be2](https://github.com/googleapis/google-cloud-java/commit/d7e2be2af3be62bf23c5fb99380ffaff1f8bc618))
+* **gax:** add ResumableUploadResponseParser ([#14135](https://github.com/googleapis/google-cloud-java/issues/14135)) ([e1a0b17](https://github.com/googleapis/google-cloud-java/commit/e1a0b17a449b1d312c3c257910b73be9adcf37e0))
+* **gax:** allow non-JSON HttpContent and absolute request URLs in HttpRequestRunnable ([#14134](https://github.com/googleapis/google-cloud-java/issues/14134)) ([ac4a49a](https://github.com/googleapis/google-cloud-java/commit/ac4a49abd604a1b043f386bc49559e03c8850cb0))
+* **gax:** implement queryStatusCallable for resumable uploads ([#14155](https://github.com/googleapis/google-cloud-java/issues/14155)) ([67719c0](https://github.com/googleapis/google-cloud-java/commit/67719c072860e38de8c50dcb8979427e65eed6ef))
+* **gax:** implement startUploadCallable for resumable uploads ([#14139](https://github.com/googleapis/google-cloud-java/issues/14139)) ([4e65b6c](https://github.com/googleapis/google-cloud-java/commit/4e65b6c360f77b41eee26596e7f272114422a5dd))
+* **gax:** implement uploadChunkCallable for resumable uploads ([#14140](https://github.com/googleapis/google-cloud-java/issues/14140)) ([1c643de](https://github.com/googleapis/google-cloud-java/commit/1c643decbc82525e55e890e2849720bffc9945eb))
+* **google/shopping/merchant/loyaltycustomers/v1:** onboard new library ([#14257](https://github.com/googleapis/google-cloud-java/issues/14257)) ([590a51c](https://github.com/googleapis/google-cloud-java/commit/590a51cf658911c8a170ecc96695e0d4ef0b3e4d))
+* **grpc-gcp:** drain scaled-down channels ([#14216](https://github.com/googleapis/google-cloud-java/issues/14216)) ([bbbd18c](https://github.com/googleapis/google-cloud-java/commit/bbbd18ce7e13ef0a8726c52f1ab252b0ee499e06))
+* **grpc-gcp:** move scale-up to background worker ([#14206](https://github.com/googleapis/google-cloud-java/issues/14206)) ([41f0a2e](https://github.com/googleapis/google-cloud-java/commit/41f0a2e83651b76a0deca31bf9704af21d566ce9))
+* **grpc-gcp:** penalize retryable channel errors ([#14219](https://github.com/googleapis/google-cloud-java/issues/14219)) ([829872e](https://github.com/googleapis/google-cloud-java/commit/829872e642d690385f685f7766693c93ddb05cdc))
+* **grpc-gcp:** prime scaled channels before publish ([#14232](https://github.com/googleapis/google-cloud-java/issues/14232)) ([dd75645](https://github.com/googleapis/google-cloud-java/commit/dd75645240b7738b537d7cb01faf3cc55ceaeb66))
+* **spanner:** add client-level CallContextConfigurator to SpannerOptions ([#14256](https://github.com/googleapis/google-cloud-java/issues/14256)) ([eef74d2](https://github.com/googleapis/google-cloud-java/commit/eef74d291f0ca7e90115ca6bebca463363df4970))
+* **spanner:** prime scaled-up dynamic channel pool channels with SELECT 1 ([#14254](https://github.com/googleapis/google-cloud-java/issues/14254)) ([4d26645](https://github.com/googleapis/google-cloud-java/commit/4d26645014ce053ad6f0b48b9c4ecb87ece024c5))
+
+
+### Bug Fixes
+
+* **auth:** refine JSpecify nullability annotations for external account credentials ([#14164](https://github.com/googleapis/google-cloud-java/issues/14164)) ([385e1f2](https://github.com/googleapis/google-cloud-java/commit/385e1f2bbea67b35cbed78d1e1e7b3ed7c03313d))
+* **bigquery-jdbc:** resolve `statementType` via `getJob` fallback to avoid post-execution dry run for DDL ([#14265](https://github.com/googleapis/google-cloud-java/issues/14265)) ([d38d9f0](https://github.com/googleapis/google-cloud-java/commit/d38d9f0ec623a818c6d0223f124dcac224b5656f))
+* **bigtable:** truncate client generated timestamps on the emulator c… ([#14234](https://github.com/googleapis/google-cloud-java/issues/14234)) ([94e680f](https://github.com/googleapis/google-cloud-java/commit/94e680fcb47db4fbd008f5b458563fdc733ead3b))
+* **gax:** propagate structured LRO error details to ApiException ([#14022](https://github.com/googleapis/google-cloud-java/issues/14022)) ([865a15b](https://github.com/googleapis/google-cloud-java/commit/865a15bb14d687f88c23bb3c32cbfbbe8e536c62))
+* **grpc-gcp:** correct channel lifecycle bookkeeping ([#14196](https://github.com/googleapis/google-cloud-java/issues/14196)) ([3df32ba](https://github.com/googleapis/google-cloud-java/commit/3df32bad3301e24e4138410c41b53a4a789ea75b))
+* **grpc-gcp:** prevent hot-channel skew ([#14198](https://github.com/googleapis/google-cloud-java/issues/14198)) ([07a7505](https://github.com/googleapis/google-cloud-java/commit/07a7505d59fb3faeaa90754e28d36c454acc2e05))
+* **java-sql:** temp fix for lint and skip generate ([#14005](https://github.com/googleapis/google-cloud-java/issues/14005)) ([b6f73db](https://github.com/googleapis/google-cloud-java/commit/b6f73db6937c5f4d9c7fba0cceeed7b107a4ec3f))
+* **spanner:** prioritize leader replica for read-write transactions in location-aware routing ([#14195](https://github.com/googleapis/google-cloud-java/issues/14195)) ([6383f81](https://github.com/googleapis/google-cloud-java/commit/6383f815968cda69d0186651cffc685bb754449a))
+* **spanner:** route ExecuteBatchDml through transaction affinity endpoint ([#14192](https://github.com/googleapis/google-cloud-java/issues/14192)) ([5e9e3cd](https://github.com/googleapis/google-cloud-java/commit/5e9e3cd03eadc280456b38ac127ba1f58b715616))
+* **storage:** resolve GraalVM Native Image test failure for java-storage ([#14226](https://github.com/googleapis/google-cloud-java/issues/14226)) ([93e0920](https://github.com/googleapis/google-cloud-java/commit/93e0920de08d98467752b6216407dfbe1a70b842))
+
+
+### Performance Improvements
+
+* **bigquery-jdbc:** eliminate sync getJob RPC call ([#14197](https://github.com/googleapis/google-cloud-java/issues/14197)) ([ccf12b0](https://github.com/googleapis/google-cloud-java/commit/ccf12b0607be2f3e3ce6edbd63bdfe5d2ec55e4e))
+* **ci:** replace mvn help:evaluate with native bash and sed extraction ([#14218](https://github.com/googleapis/google-cloud-java/issues/14218)) ([744a522](https://github.com/googleapis/google-cloud-java/commit/744a52216e6ab58e90ee0e7c92f273299125a282))
+
+
+### Dependencies
+
+* Upgrade grpc-java to 1.83.0 ([#13967](https://github.com/googleapis/google-cloud-java/issues/13967)) ([0cdc695](https://github.com/googleapis/google-cloud-java/commit/0cdc69579859c7ec1828a2684ad90b0e02807836))
+
+## [1.90.0](https://github.com/googleapis/google-cloud-java/compare/v1.89.0...v1.90.0) (2026-08-24)
+
+
+### Features
+
+* **bigquery-jdbc:** implement TypeRegistry and TypeDescriptor ([#13947](https://github.com/googleapis/google-cloud-java/issues/13947)) ([0557e69](https://github.com/googleapis/google-cloud-java/commit/0557e69149c08c1adcb91249e51cd6cda10b5643))
+* **bigquery:** add QueryResultsFormat and ArrowSerializationOptions configurations ([#13942](https://github.com/googleapis/google-cloud-java/issues/13942)) ([ff03e19](https://github.com/googleapis/google-cloud-java/commit/ff03e193f0e35c2da53572fe44dc46d5907dc1ad))
+* **bigquery:** expose `StatementType` and query execution stats on `TableResult` ([#14145](https://github.com/googleapis/google-cloud-java/issues/14145)) ([7d16de8](https://github.com/googleapis/google-cloud-java/commit/7d16de84c4eb559dc49fb8ed62f2bbd7c69d061a))
+* **bigtable:** enable microsecond timestamps in client ([#14057](https://github.com/googleapis/google-cloud-java/issues/14057)) ([57aaf8d](https://github.com/googleapis/google-cloud-java/commit/57aaf8d00d53b636e68837ddcf8a464fbc3f62de))
+* **bigtable:** route single-entry MutateRows through a point-write c… ([#14028](https://github.com/googleapis/google-cloud-java/issues/14028)) ([a403703](https://github.com/googleapis/google-cloud-java/commit/a40370311cd2b14d1ecdf4b62c82d570b956c68f))
+* **datastore:** add support for request tags ([#13732](https://github.com/googleapis/google-cloud-java/issues/13732)) ([b1f6186](https://github.com/googleapis/google-cloud-java/commit/b1f6186a85ae9aec1ae1bc3a26031601ad91bfc5))
+* **ftp:** onboard a new library ([#14068](https://github.com/googleapis/google-cloud-java/issues/14068)) ([f41b2d9](https://github.com/googleapis/google-cloud-java/commit/f41b2d9becf930eb38842e75765d8d800eac4692))
+* **gax:** add ResumableUploadCallable and ResumableUploadCallSettings ([#14052](https://github.com/googleapis/google-cloud-java/issues/14052)) ([a5e26e8](https://github.com/googleapis/google-cloud-java/commit/a5e26e821e6dcbf1d521f087fc4a733eadae402e))
+* **google/cloud/biglake/hive/v1:** onboard a new library ([#14130](https://github.com/googleapis/google-cloud-java/issues/14130)) ([650c839](https://github.com/googleapis/google-cloud-java/commit/650c839937613516dd976ee9454d86cc06662712))
+* **google/maps/mapmanagement/v2:** onboard a new library ([#14131](https://github.com/googleapis/google-cloud-java/issues/14131)) ([7d00726](https://github.com/googleapis/google-cloud-java/commit/7d007261e7a91a7c6a7a186431827cb526558d54))
+* **spanner:** support user-provided OpenTelemetry for client metrics export ([#13741](https://github.com/googleapis/google-cloud-java/issues/13741)) ([da74dee](https://github.com/googleapis/google-cloud-java/commit/da74dee5ceb34b5255a0583acbca96d085e65404))
+* update API sources and regenerate ([#14000](https://github.com/googleapis/google-cloud-java/issues/14000)) ([9337a93](https://github.com/googleapis/google-cloud-java/commit/9337a93a7e9f73494d23fbc2fae05df2d4318f11))
+* **workloadidentity:** onboard a new library ([#14060](https://github.com/googleapis/google-cloud-java/issues/14060)) ([ab226ee](https://github.com/googleapis/google-cloud-java/commit/ab226ee66dce097dc0b259da165976217689e603))
+
+
+### Bug Fixes
+
+* add documentation for insertall api that there's no default retry ([#13953](https://github.com/googleapis/google-cloud-java/issues/13953)) ([1fdb4f1](https://github.com/googleapis/google-cloud-java/commit/1fdb4f1ccb4d19f8b6fa976b1f9d3b930d65771b))
+* add retry behavior documentation to insertall interface to clarify the behavior ([#14058](https://github.com/googleapis/google-cloud-java/issues/14058)) ([1b8f9e3](https://github.com/googleapis/google-cloud-java/commit/1b8f9e3953257e1019c11010e003f9855992dee7))
+* **auth:** fix JSpecify nullability in UserAuthorizer and TokenStore ([#14150](https://github.com/googleapis/google-cloud-java/issues/14150)) ([0d5fac0](https://github.com/googleapis/google-cloud-java/commit/0d5fac03c020a254a0f8f57a486904cbde718f5a))
+* **auth:** fix remaining nullability in UserAuthorizer and Builder ([#14158](https://github.com/googleapis/google-cloud-java/issues/14158)) ([a51bb8d](https://github.com/googleapis/google-cloud-java/commit/a51bb8da664f0f56294430bb6f7eed5b29b4744a))
+* **auth:** refine JSpecify nullability for ServiceAccountCredentials and UserCredentials ([#14159](https://github.com/googleapis/google-cloud-java/issues/14159)) ([a929250](https://github.com/googleapis/google-cloud-java/commit/a92925057028b64f65a719d54139232912a4d743))
+* **bigquery-jdbc:** enable ITOpenTelemetryTest ([#13991](https://github.com/googleapis/google-cloud-java/issues/13991)) ([fa6641b](https://github.com/googleapis/google-cloud-java/commit/fa6641b6fb1d3e8e1761d40c55dc683d4cb503e0))
+* **bigquery-jdbc:** pass connection proxy settings to OpenTelemetry exporters ([#14011](https://github.com/googleapis/google-cloud-java/issues/14011)) ([115b9b3](https://github.com/googleapis/google-cloud-java/commit/115b9b38fa4a77d24863f1b8e1d4a0f7217a26dc))
+* **bigquery-jdbc:** session context propagation when session is enabled ([#14161](https://github.com/googleapis/google-cloud-java/issues/14161)) ([1e74dda](https://github.com/googleapis/google-cloud-java/commit/1e74dda8001d3078cd24889556af41af2233b0f6))
+* **bigtable:** remove heartbeat miss logging ([#14054](https://github.com/googleapis/google-cloud-java/issues/14054)) ([ec17637](https://github.com/googleapis/google-cloud-java/commit/ec17637ad7d6825e68c0fa9fe1d6d981d6435d8e))
+* **deps:** update dependency com.google.apis:google-api-services-bigquery to v2-rev20260731-2.0.0 ([#14149](https://github.com/googleapis/google-cloud-java/issues/14149)) ([95f6c38](https://github.com/googleapis/google-cloud-java/commit/95f6c388544001e778f2ddd11790d983703f8f69))
+* **deps:** update dependency com.google.cloud:libraries-bom to v26.86.0 ([#14103](https://github.com/googleapis/google-cloud-java/issues/14103)) ([cf5697e](https://github.com/googleapis/google-cloud-java/commit/cf5697eb7f4a255a4ea58af23f8e961200b56438))
+* **gax-httpjson:** reduce Conscrypt fallback error to debug level ([#13962](https://github.com/googleapis/google-cloud-java/issues/13962)) ([8236771](https://github.com/googleapis/google-cloud-java/commit/8236771d127a466d78de0f444c4bf133af423667))
+* **gax-httpjson:** remove unsupported and deprecated PQC named groups ([#14107](https://github.com/googleapis/google-cloud-java/issues/14107)) ([7604971](https://github.com/googleapis/google-cloud-java/commit/7604971c3ed8a419fd01e4800f4a3199a6fc15f1))
+* **gax:** register Conscrypt SSLContext SPI classes for GraalVM reflection ([#14129](https://github.com/googleapis/google-cloud-java/issues/14129)) ([73c0243](https://github.com/googleapis/google-cloud-java/commit/73c0243c3851afc7a17d6bd46a9e94cd5b3a357e))
+* **samples:** align native profile junit and surefire versions with shared config ([#14096](https://github.com/googleapis/google-cloud-java/issues/14096)) ([2b84133](https://github.com/googleapis/google-cloud-java/commit/2b841332df03bf0c66b1f36f5c10e87956f0bcef))
+* **spanner:** add closeAsync to ReadContext and make transaction closing non-blocking ([#14076](https://github.com/googleapis/google-cloud-java/issues/14076)) ([671f892](https://github.com/googleapis/google-cloud-java/commit/671f892fd970705b59810c188f378cc319c800b3))
+* **spanner:** scope server-timing metrics per call and guard interceptor lifecycle callbacks ([#14053](https://github.com/googleapis/google-cloud-java/issues/14053)) ([f35c570](https://github.com/googleapis/google-cloud-java/commit/f35c5709e6d54daa831bade13cd1a1a103aef9b4))
+* **storage:** use JsonUtils for StorageObject serialization in resumable writes and read channels ([#13976](https://github.com/googleapis/google-cloud-java/issues/13976)) ([d94922f](https://github.com/googleapis/google-cloud-java/commit/d94922f68dd56974a1115cfa481233e5a28226ae))
+
+
+### Performance Improvements
+
+* **bigquery-jdbc:** eliminate dry run to resolve statement type ([#14156](https://github.com/googleapis/google-cloud-java/issues/14156)) ([7109ecd](https://github.com/googleapis/google-cloud-java/commit/7109ecd6cecc6fa75e934775fe4e95295bb2317c))
+* **spanner-jdbc:** cache commonly used query parameter names ([#14036](https://github.com/googleapis/google-cloud-java/issues/14036)) ([1eb6aa3](https://github.com/googleapis/google-cloud-java/commit/1eb6aa3931cc97d8a7d6226ca49cf7bada4a6463))
+* **spanner-jdbc:** cache JDBC metadata query strings ([#14041](https://github.com/googleapis/google-cloud-java/issues/14041)) ([31c628f](https://github.com/googleapis/google-cloud-java/commit/31c628fcb80ea3b89050073e0740fab97af96b9d))
+* **spanner-jdbc:** cache positional to named param conversion ([#14034](https://github.com/googleapis/google-cloud-java/issues/14034)) ([30e031b](https://github.com/googleapis/google-cloud-java/commit/30e031b2896b686486002167e6676b8363bd849b))
+
+
+### Dependencies
+
+* **gax-httpjson:** upgrade conscrypt-openjdk-uber to 2.6.2 ([#14117](https://github.com/googleapis/google-cloud-java/issues/14117)) ([2f5481a](https://github.com/googleapis/google-cloud-java/commit/2f5481a3590acf7394ac8342741400f8d087996f))
+* Update gRPC to v1.82.3 ([#13997](https://github.com/googleapis/google-cloud-java/issues/13997)) ([a786107](https://github.com/googleapis/google-cloud-java/commit/a7861072d9a61924238a9f6e76a993447350503d))
+* Upgrade gRPC to v1.82.4 ([#14088](https://github.com/googleapis/google-cloud-java/issues/14088)) ([0c482fe](https://github.com/googleapis/google-cloud-java/commit/0c482fe9f3db0cdb32e8c54b9f1204547fd66eea))
+
+
+### Documentation
+
+* **bigquery-jdbc:** add user guide with connection property and custom endpoint reference ([#13878](https://github.com/googleapis/google-cloud-java/issues/13878)) ([2dde172](https://github.com/googleapis/google-cloud-java/commit/2dde172ec9365b528aec315a2a95e8f9058245eb))
+* **gax:** update LRO troubleshooting documentation link ([#14108](https://github.com/googleapis/google-cloud-java/issues/14108)) ([4c5bbae](https://github.com/googleapis/google-cloud-java/commit/4c5bbaed0f8cb976f651d7ff45c4ee26e6193f76))
+* **spanner-jdbc:** update connection_properties.md documentation ([#14035](https://github.com/googleapis/google-cloud-java/issues/14035)) ([b576fe8](https://github.com/googleapis/google-cloud-java/commit/b576fe8ca98650f9360295b2458b59e3a04cccaa))
+* **spanner:** update CHANGELOG.md for releases 6.117.0 through 6.120.0 ([#13970](https://github.com/googleapis/google-cloud-java/issues/13970)) ([2413811](https://github.com/googleapis/google-cloud-java/commit/24138115b9f352df12ba9fa05b1713916a8d5404))
+
+## [1.89.0](https://github.com/googleapis/google-cloud-java/compare/v1.88.0...v1.89.0) (2026-07-29)
+
+
+### Features
+
+* **agentidentity:** onboard v1 and v1beta API versions ([#13796](https://github.com/googleapis/google-cloud-java/issues/13796)) ([1b1300d](https://github.com/googleapis/google-cloud-java/commit/1b1300d1e0144f41b40b83bf4730a2c5036fb53c))
+* **auth:** add JSpecify Null annotations to Auth ([#13842](https://github.com/googleapis/google-cloud-java/issues/13842)) ([f6f24d4](https://github.com/googleapis/google-cloud-java/commit/f6f24d438bb5818c2047243bf1ddbccb2c1f827e))
+* **bigquery-jdbc:** add `SSLTrustStoreType` and `SSLTrustStoreProvider` connection properties ([#13858](https://github.com/googleapis/google-cloud-java/issues/13858)) ([9449be1](https://github.com/googleapis/google-cloud-java/commit/9449be189c9cb4a220c529b16278f47053dcf83c))
+* **bigquery-jdbc:** add otel trace and span IDs to local logs ([#13935](https://github.com/googleapis/google-cloud-java/issues/13935)) ([2801fbd](https://github.com/googleapis/google-cloud-java/commit/2801fbdc4712d187356e11e6eb717423603db3bf))
+* **bigquery-jdbc:** implement BigQueryParameterMetaData and dynamic type mappings ([#13812](https://github.com/googleapis/google-cloud-java/issues/13812)) ([3d67dba](https://github.com/googleapis/google-cloud-java/commit/3d67dbaa96c2d535324022c8d0453b34a154c19c))
+* **bigquery-jdbc:** implement parameter setters in PreparedStatement ([#13792](https://github.com/googleapis/google-cloud-java/issues/13792)) ([94f7404](https://github.com/googleapis/google-cloud-java/commit/94f74042f7efde7f03173af5b52b7c32c573e1f4))
+* **bigquery-jdbc:** Migrate `getImportedKeys` and `getCrossReference` to BQ API ([#13692](https://github.com/googleapis/google-cloud-java/issues/13692)) ([082b046](https://github.com/googleapis/google-cloud-java/commit/082b046380b4fe52cf8d03f22efd480a84c31c83))
+* **bigquery-jdbc:** migrate `getPrimaryKeys` to use BQ API ([#13691](https://github.com/googleapis/google-cloud-java/issues/13691)) ([1951f49](https://github.com/googleapis/google-cloud-java/commit/1951f4984b259e66e3bf995e1b4e95e0a4d4bfd2))
+* **bigquery-jdbc:** OpenTelemetry integration in BQ JDBC ([#12902](https://github.com/googleapis/google-cloud-java/issues/12902)) ([af18f65](https://github.com/googleapis/google-cloud-java/commit/af18f6559c57af1e3a62b33e9e8a27cec03e3bf6))
+* **bigquery-jdbc:** optimize memory footprint for JSON result set streaming ([#13660](https://github.com/googleapis/google-cloud-java/issues/13660)) ([11f26d3](https://github.com/googleapis/google-cloud-java/commit/11f26d3ce44801b705674e3423a85bc8d100cacb))
+* **bigquery-jdbc:** standardize parameter handling and calendar defensive copying across statement interfaces ([#13805](https://github.com/googleapis/google-cloud-java/issues/13805)) ([ccd13eb](https://github.com/googleapis/google-cloud-java/commit/ccd13ebd155dc59f8b7d689e0a27538c44b56827))
+* **bigtable:** add view_parameters support to BoundStatement ([#13673](https://github.com/googleapis/google-cloud-java/issues/13673)) ([d5cc437](https://github.com/googleapis/google-cloud-java/commit/d5cc43776effc4efa3d3d9bf526fcb4e64535601))
+* **bigtable:** BigtableDataClientFactory session support ([#13829](https://github.com/googleapis/google-cloud-java/issues/13829)) ([284ce13](https://github.com/googleapis/google-cloud-java/commit/284ce13bae39082764d571dc5d2c06d528638354))
+* **commerceproducer:** onboard v1beta API ([#13814](https://github.com/googleapis/google-cloud-java/issues/13814)) ([61b89b3](https://github.com/googleapis/google-cloud-java/commit/61b89b34a470d7956117879e6b13d6c38811fd5f))
+* Default to least-in-flight balancing for Bigtable unary clients ([#13802](https://github.com/googleapis/google-cloud-java/issues/13802)) ([ac9ccd1](https://github.com/googleapis/google-cloud-java/commit/ac9ccd1c87245bca97bd8b062359e9357360c321))
+* **firestore:** Add support for 16MB documents ([#13478](https://github.com/googleapis/google-cloud-java/issues/13478)) ([1b7c2e0](https://github.com/googleapis/google-cloud-java/commit/1b7c2e0cce5a4c7f6d389f3c95ec3263549da74d))
+* **gapic-generator:** add JSpecify Null annotations to the generator classes ([#13769](https://github.com/googleapis/google-cloud-java/issues/13769)) ([843bd7c](https://github.com/googleapis/google-cloud-java/commit/843bd7cb44630b50be3f9891cdb97e90cbba83f2))
+* **gapic-generator:** Add Nullable annotation to generated classes ([#13558](https://github.com/googleapis/google-cloud-java/issues/13558)) ([e3e9d0b](https://github.com/googleapis/google-cloud-java/commit/e3e9d0bc11bcd7cf8659c2da4051dada7606c2e8))
+* **gapic-generator:** Add NullMarked annotation to generated classes ([#13584](https://github.com/googleapis/google-cloud-java/issues/13584)) ([b7a8504](https://github.com/googleapis/google-cloud-java/commit/b7a850434fe03df53531c55dc85f5c694f46ebf8))
+* **gax-httpjson:** Add Post Quantum Cryptography (PQC) Support by default via Conscrypt ([#13853](https://github.com/googleapis/google-cloud-java/issues/13853)) ([550df81](https://github.com/googleapis/google-cloud-java/commit/550df81eb1ff60936daa64a88b148b399071cb24))
+* **gax-java:** add JSpecify Null annotations to gax ([#13799](https://github.com/googleapis/google-cloud-java/issues/13799)) ([65aee08](https://github.com/googleapis/google-cloud-java/commit/65aee0819d8fc983d2781983ed8a1d4fb68d702b))
+* **google/cloud/sql:** onboard a new library ([#13864](https://github.com/googleapis/google-cloud-java/issues/13864)) ([38e272e](https://github.com/googleapis/google-cloud-java/commit/38e272ea2e27a061800fca458040897645bbcff0))
+* **google/maps/navconnect/v1:** onboard a new library ([#13927](https://github.com/googleapis/google-cloud-java/issues/13927)) ([2256394](https://github.com/googleapis/google-cloud-java/commit/22563947a33e873f406106cdba28f488ac719592))
+* **maps-isochrones:** onboard v1 API ([#13817](https://github.com/googleapis/google-cloud-java/issues/13817)) ([3037ab3](https://github.com/googleapis/google-cloud-java/commit/3037ab3ba452a8bf254067c34fdf23eb66ffa6bd))
+* port secure_context testing support to executor proxy ([#13522](https://github.com/googleapis/google-cloud-java/issues/13522)) ([0f81bf0](https://github.com/googleapis/google-cloud-java/commit/0f81bf052a5c0797a5d59c65928a14c883fadecb))
+* **productregistry:** onboard v1 API ([#13816](https://github.com/googleapis/google-cloud-java/issues/13816)) ([9517313](https://github.com/googleapis/google-cloud-java/commit/951731302523fd47ff1d8b78fa25406b59d64a2a))
+* **storage:** allow checksum on appendable upload finalization ([#13833](https://github.com/googleapis/google-cloud-java/issues/13833)) ([ddf9add](https://github.com/googleapis/google-cloud-java/commit/ddf9add8a0c333ac969a683e11410d6a2cdcd9fc))
+* **storage:** enable App-Centric Observability (ACO) support in Otel ([#13248](https://github.com/googleapis/google-cloud-java/issues/13248)) ([4329896](https://github.com/googleapis/google-cloud-java/commit/43298964fc0e323518a865349ab1a0a061afffd0))
+
+
+### Bug Fixes
+
+* **bigquery-jdbc:** Add PerConnectionHandler to list of excempted logging classes ([#13888](https://github.com/googleapis/google-cloud-java/issues/13888)) ([50b3c24](https://github.com/googleapis/google-cloud-java/commit/50b3c24442fb8d36b9362216bf50bdb62506b20f))
+* **bigquery-jdbc:** add preferIPv4Stack to argLine for Kokoro reliability ([#13923](https://github.com/googleapis/google-cloud-java/issues/13923)) ([d5e33d6](https://github.com/googleapis/google-cloud-java/commit/d5e33d68304b0762de392eef85249f338b032d29))
+* **bigquery-jdbc:** add service resource transformer for standalone IT ([#13893](https://github.com/googleapis/google-cloud-java/issues/13893)) ([dc80fe8](https://github.com/googleapis/google-cloud-java/commit/dc80fe866eb84b53a8a5a189ebd4f71725767591))
+* **bigquery-jdbc:** align metadata methods error handling with spec ([#13793](https://github.com/googleapis/google-cloud-java/issues/13793)) ([d85fb10](https://github.com/googleapis/google-cloud-java/commit/d85fb10b0be1450a1f01c8aeb583b9a1e4718040))
+* **bigquery-jdbc:** fix WriteAPI when running in restricted environment ([#13856](https://github.com/googleapis/google-cloud-java/issues/13856)) ([66ba925](https://github.com/googleapis/google-cloud-java/commit/66ba925e7532ceef9a64113b3bc0ccfd55a67286))
+* **bigquery-jdbc:** refine temporal timezone coercion and PreparedStatement parameter setters ([#13813](https://github.com/googleapis/google-cloud-java/issues/13813)) ([6f68c4d](https://github.com/googleapis/google-cloud-java/commit/6f68c4d3c17a21d30230a6d5db1aa21446365307))
+* **bigquery-jdbc:** resolve `ITOpenTelemetryTest` pipeline and trace validation failures ([#13898](https://github.com/googleapis/google-cloud-java/issues/13898)) ([c18141d](https://github.com/googleapis/google-cloud-java/commit/c18141ddae06efd3aac0af30b518c0b0883b8072))
+* **bigquery-jdbc:** resolve failing otel IT in nightly ([#13915](https://github.com/googleapis/google-cloud-java/issues/13915)) ([ac79713](https://github.com/googleapis/google-cloud-java/commit/ac79713593c0fe66aa9ae7b64184a7bd8b07846a))
+* **bigquery:** resultSet.getLong() does not truncate for large int64 values ([#13718](https://github.com/googleapis/google-cloud-java/issues/13718)) ([bc19822](https://github.com/googleapis/google-cloud-java/commit/bc19822672704c3b1a666cb8ec9dc95f2e4ca0d4))
+* **bigquery:** support optional fields in BigLakeConfiguration to prevent NPE on Iceberg/Lakehouse tables ([#13733](https://github.com/googleapis/google-cloud-java/issues/13733)) ([e2cca4d](https://github.com/googleapis/google-cloud-java/commit/e2cca4df5f4702e16942211dfa4c5274d41bb12e))
+* **bigtable:** add materialized view routing param to ReadRows and Sa… ([#13918](https://github.com/googleapis/google-cloud-java/issues/13918)) ([4ddf250](https://github.com/googleapis/google-cloud-java/commit/4ddf2500d842a5b7a981e80974fa8b48fa191142))
+* **bigtable:** bound SessionPoolImpl lock to prevent pod-wide wedge ([#13890](https://github.com/googleapis/google-cloud-java/issues/13890)) ([ed87a68](https://github.com/googleapis/google-cloud-java/commit/ed87a68f51e2d6dec1f7357e977d1dce8914ce01))
+* **bigtable:** fix session creation leaks ([#13887](https://github.com/googleapis/google-cloud-java/issues/13887)) ([d586d07](https://github.com/googleapis/google-cloud-java/commit/d586d070ddeee36ef0803713998e13565389e880))
+* **bigtable:** prevent ClientConfigurationManagerTest from wedging on… ([#13907](https://github.com/googleapis/google-cloud-java/issues/13907)) ([725086d](https://github.com/googleapis/google-cloud-java/commit/725086d5e749ab60035e4a6f3826039121c871d6))
+* **bigtable:** stop installing DirectpathEnforcer on the directpath pool ([#13880](https://github.com/googleapis/google-cloud-java/issues/13880)) ([5f2e056](https://github.com/googleapis/google-cloud-java/commit/5f2e056bc4e3903cbfc98c4183fe1636531db444))
+* **bom:** make release-note-generation Java 8 compatible ([#13837](https://github.com/googleapis/google-cloud-java/issues/13837)) ([bc18390](https://github.com/googleapis/google-cloud-java/commit/bc18390b40d9eaee6635e3c9697ea8c0d53b301e))
+* **ci:** fix java-cloud-bom release-notes workflow errors ([#13682](https://github.com/googleapis/google-cloud-java/issues/13682)) ([b679835](https://github.com/googleapis/google-cloud-java/commit/b679835bbe979fe2745d7dc698105df8a14a9ea0))
+* deprecate resource detector ([#13844](https://github.com/googleapis/google-cloud-java/issues/13844)) ([aba4f01](https://github.com/googleapis/google-cloud-java/commit/aba4f01274a8f8eb0e4b4a3bcf1083e1efeda814))
+* **deps:** align logback versions and add java8 profile in storage ([#13678](https://github.com/googleapis/google-cloud-java/issues/13678)) ([7e57092](https://github.com/googleapis/google-cloud-java/commit/7e57092b8edbd82e098d7a0c1288a518c467e448))
+* do not start stream with direct executor ([#13945](https://github.com/googleapis/google-cloud-java/issues/13945)) ([630e790](https://github.com/googleapis/google-cloud-java/commit/630e79065869d57c946c4b41915eb17e1f8d58fd))
+* fix java-cloud-bom README update workflow after monorepo migration ([#13892](https://github.com/googleapis/google-cloud-java/issues/13892)) ([5b8e295](https://github.com/googleapis/google-cloud-java/commit/5b8e29512670c527fdf2d7cd6ec9b69e5f5106b0))
+* **oauth2_http:** Avoid retrying on 4xx errors during GCE metadata ping ([#13715](https://github.com/googleapis/google-cloud-java/issues/13715)) ([537c16c](https://github.com/googleapis/google-cloud-java/commit/537c16c59b64de948d716a973942e7076b7aff6a))
+* regenerate ([#13714](https://github.com/googleapis/google-cloud-java/issues/13714)) ([8a72860](https://github.com/googleapis/google-cloud-java/commit/8a7286040e2b0d6d66e56df0d123192f1a5e9f27))
+* regenerate libraries ([#13703](https://github.com/googleapis/google-cloud-java/issues/13703)) ([a29ea79](https://github.com/googleapis/google-cloud-java/commit/a29ea79966e7f28e456d85afa7a6f5225d404181)), refs [#13690](https://github.com/googleapis/google-cloud-java/issues/13690)
+* **release:** handle missing release tags gracefully in release-note-generation ([#13795](https://github.com/googleapis/google-cloud-java/issues/13795)) ([43005fb](https://github.com/googleapis/google-cloud-java/commit/43005fbad089220e9517111b1ffc39d9c5c2e73e))
+* **release:** resolve first-party-dependencies SNAPSHOT in libraries-bom ([#13790](https://github.com/googleapis/google-cloud-java/issues/13790)) ([d5bfe21](https://github.com/googleapis/google-cloud-java/commit/d5bfe21f0937bd0e1e4b412785905aa8fb3dc0d9))
+* **spanner:** avoid data race on DIRECTPATH_CHANNEL_CREATED by using volatile ([#13727](https://github.com/googleapis/google-cloud-java/issues/13727)) ([1e05ea5](https://github.com/googleapis/google-cloud-java/commit/1e05ea5ccaddee11639d5539f0274792872fe88e))
+* **spanner:** prevent fastpath tablet routing flaps ([#13803](https://github.com/googleapis/google-cloud-java/issues/13803)) ([4dabdac](https://github.com/googleapis/google-cloud-java/commit/4dabdac2bb81502530f30a108cef2ae701c70bd5))
+* **storage:** BidiAppendableUpload Takeover operation fixes ([#13776](https://github.com/googleapis/google-cloud-java/issues/13776)) ([f2d0474](https://github.com/googleapis/google-cloud-java/commit/f2d04745cde2cfc8b7ec5905a944ccd9683f616d))
+* **storage:** correctly insert explicit nulls for json patch updates ([#13716](https://github.com/googleapis/google-cloud-java/issues/13716)) ([4fb3f4b](https://github.com/googleapis/google-cloud-java/commit/4fb3f4b8a7e30252497882b417f0ba30d1743c0f))
+* update group id mapping ([#13698](https://github.com/googleapis/google-cloud-java/issues/13698)) ([50a72e1](https://github.com/googleapis/google-cloud-java/commit/50a72e1658ab8fac84eef620118d50ece01c6fde))
+* use a new managed channel builder when creating channels ([#13684](https://github.com/googleapis/google-cloud-java/issues/13684)) ([a049999](https://github.com/googleapis/google-cloud-java/commit/a049999722abd0d2d3a6683142fd301bbf502588))
+
+
+### Performance Improvements
+
+* **bigquery-jdbc:** optimize getExportedKeys performance using hybrid metadata lookup ([#13734](https://github.com/googleapis/google-cloud-java/issues/13734)) ([c9738ea](https://github.com/googleapis/google-cloud-java/commit/c9738ea06f905ca5768fbd93116b1bfe40bdfeb3))
+
+
+### Dependencies
+
+* Add Conscrypt to shared-deps ([#13838](https://github.com/googleapis/google-cloud-java/issues/13838)) ([05ce6ce](https://github.com/googleapis/google-cloud-java/commit/05ce6ce2fbe3c9b425c49c5350363b1bd2f499fb))
+* move conscrypt from third-party-dependencies POM to gax-java POM ([#13948](https://github.com/googleapis/google-cloud-java/issues/13948)) ([1e634ec](https://github.com/googleapis/google-cloud-java/commit/1e634ec77c704c7c5aaf4ac84e3cfb86e0e60b18))
+* **shared-deps:** migrate awaitility to shared-dependencies ([#13671](https://github.com/googleapis/google-cloud-java/issues/13671)) ([abb91ef](https://github.com/googleapis/google-cloud-java/commit/abb91efe08d95940d8ff4baf9772fc59e952d62b))
+* **shared-deps:** switch conscrypt shared dependency to conscrypt-openjdk-uber ([#13845](https://github.com/googleapis/google-cloud-java/issues/13845)) ([2e3f208](https://github.com/googleapis/google-cloud-java/commit/2e3f208e3beb3e5616afe88655eca69aeeb92d7f))
+* Update gRPC-Java to v1.82.2 ([#13877](https://github.com/googleapis/google-cloud-java/issues/13877)) ([da228d8](https://github.com/googleapis/google-cloud-java/commit/da228d815ffc4ca2066f431f46203eb748079879))
+* Update http-client to v2.2.0 ([#13854](https://github.com/googleapis/google-cloud-java/issues/13854)) ([334a2c5](https://github.com/googleapis/google-cloud-java/commit/334a2c5250e8e4647c961c3821dd54c2e8f880e2))
+* Update Protobuf-Java to v4.33.6 ([#13876](https://github.com/googleapis/google-cloud-java/issues/13876)) ([5c6478c](https://github.com/googleapis/google-cloud-java/commit/5c6478cfe19f0e6fed142f628f625a978a16f345))
+* Upgrade Guava to v33.6.0-jre ([#13875](https://github.com/googleapis/google-cloud-java/issues/13875)) ([41a7a52](https://github.com/googleapis/google-cloud-java/commit/41a7a523e30ec8666a814af2ec4501179e10ab3a))
+
+
+### Documentation
+
+* add ErrorProne and NullAway integration guide and JSpecify migration playbook ([#13882](https://github.com/googleapis/google-cloud-java/issues/13882)) ([d5ea739](https://github.com/googleapis/google-cloud-java/commit/d5ea7397f01890051feb3b886a801b95069c953d))
+* add JSpecify nullness guidelines to AGENTS.md ([#13881](https://github.com/googleapis/google-cloud-java/issues/13881)) ([54b846b](https://github.com/googleapis/google-cloud-java/commit/54b846b0c59c86a813ee868856a0ba88b50c9cae))
+
 ## [1.88.0](https://github.com/googleapis/google-cloud-java/compare/v1.87.1...v1.88.0) (2026-07-06)
 
 

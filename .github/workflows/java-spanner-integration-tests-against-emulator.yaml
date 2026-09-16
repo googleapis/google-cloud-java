@@ -42,6 +42,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - name: Running tests
       run: .kokoro/build.sh
       env:

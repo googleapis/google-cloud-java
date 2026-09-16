@@ -788,7 +788,8 @@ public class CloudClientExecutor extends CloudExecutor {
               if (finishMode == Mode.COMMIT && rwTxn.runner.getCommitResponse() != null) {
                 com.google.cloud.spanner.CommitResponse commitResponse =
                     rwTxn.runner.getCommitResponse();
-                if (commitResponse.getSnapshotTimestamp() != null) {
+                if ((rwTxn.repeatableRead || rwTxn.optimistic)
+                    && commitResponse.getSnapshotTimestamp() != null) {
                   outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
                       Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
                 }
@@ -2462,14 +2463,10 @@ public class CloudClientExecutor extends CloudExecutor {
       // For initial partition query (no partition token) we simulate precision of the timestamp
       // in nanoseconds as that's closer inlined with the production client code.
 
-      String startTime =
-          timestampToString(
-              !action.hasPartitionToken(), Timestamps.toMicros(action.getStartTime()));
+      String startTime = timestampToString(false, Timestamps.toMicros(action.getStartTime()));
       String endTime = "null";
       if (action.hasEndTime()) {
-        endTime =
-            timestampToString(
-                !action.hasPartitionToken(), Timestamps.toMicros(action.getEndTime()));
+        endTime = timestampToString(false, Timestamps.toMicros(action.getEndTime()));
       }
       String heartbeat = "null";
       if (action.hasHeartbeatMilliseconds()) {

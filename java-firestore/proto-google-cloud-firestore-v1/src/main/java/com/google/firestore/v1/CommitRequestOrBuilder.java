@@ -131,4 +131,47 @@ public interface CommitRequestOrBuilder
    * @return The transaction.
    */
   com.google.protobuf.ByteString getTransaction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  boolean hasRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  com.google.firestore.v1.RequestOptions getRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.firestore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder();
 }

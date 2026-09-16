@@ -196,6 +196,256 @@ public final class SpacesServiceGrpc {
     return getEndActiveConferenceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.CreateMemberRequest, com.google.apps.meet.v2.Member>
+      getCreateMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMember",
+      requestType = com.google.apps.meet.v2.CreateMemberRequest.class,
+      responseType = com.google.apps.meet.v2.Member.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.CreateMemberRequest, com.google.apps.meet.v2.Member>
+      getCreateMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.CreateMemberRequest, com.google.apps.meet.v2.Member>
+        getCreateMemberMethod;
+    if ((getCreateMemberMethod = SpacesServiceGrpc.getCreateMemberMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getCreateMemberMethod = SpacesServiceGrpc.getCreateMemberMethod) == null) {
+          SpacesServiceGrpc.getCreateMemberMethod =
+              getCreateMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.CreateMemberRequest, com.google.apps.meet.v2.Member>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.CreateMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.Member.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpacesServiceMethodDescriptorSupplier("CreateMember"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.GetMemberRequest, com.google.apps.meet.v2.Member>
+      getGetMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMember",
+      requestType = com.google.apps.meet.v2.GetMemberRequest.class,
+      responseType = com.google.apps.meet.v2.Member.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.GetMemberRequest, com.google.apps.meet.v2.Member>
+      getGetMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.GetMemberRequest, com.google.apps.meet.v2.Member>
+        getGetMemberMethod;
+    if ((getGetMemberMethod = SpacesServiceGrpc.getGetMemberMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getGetMemberMethod = SpacesServiceGrpc.getGetMemberMethod) == null) {
+          SpacesServiceGrpc.getGetMemberMethod =
+              getGetMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.GetMemberRequest, com.google.apps.meet.v2.Member>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.GetMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.Member.getDefaultInstance()))
+                      .setSchemaDescriptor(new SpacesServiceMethodDescriptorSupplier("GetMember"))
+                      .build();
+        }
+      }
+    }
+    return getGetMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.ListMembersRequest, com.google.apps.meet.v2.ListMembersResponse>
+      getListMembersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMembers",
+      requestType = com.google.apps.meet.v2.ListMembersRequest.class,
+      responseType = com.google.apps.meet.v2.ListMembersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.ListMembersRequest, com.google.apps.meet.v2.ListMembersResponse>
+      getListMembersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.ListMembersRequest, com.google.apps.meet.v2.ListMembersResponse>
+        getListMembersMethod;
+    if ((getListMembersMethod = SpacesServiceGrpc.getListMembersMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getListMembersMethod = SpacesServiceGrpc.getListMembersMethod) == null) {
+          SpacesServiceGrpc.getListMembersMethod =
+              getListMembersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.ListMembersRequest,
+                          com.google.apps.meet.v2.ListMembersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMembers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.ListMembersRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.ListMembersResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new SpacesServiceMethodDescriptorSupplier("ListMembers"))
+                      .build();
+        }
+      }
+    }
+    return getListMembersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.DeleteMemberRequest, com.google.protobuf.Empty>
+      getDeleteMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMember",
+      requestType = com.google.apps.meet.v2.DeleteMemberRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.DeleteMemberRequest, com.google.protobuf.Empty>
+      getDeleteMemberMethod() {
+    io.grpc.MethodDescriptor<com.google.apps.meet.v2.DeleteMemberRequest, com.google.protobuf.Empty>
+        getDeleteMemberMethod;
+    if ((getDeleteMemberMethod = SpacesServiceGrpc.getDeleteMemberMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getDeleteMemberMethod = SpacesServiceGrpc.getDeleteMemberMethod) == null) {
+          SpacesServiceGrpc.getDeleteMemberMethod =
+              getDeleteMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.DeleteMemberRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.DeleteMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpacesServiceMethodDescriptorSupplier("DeleteMember"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.UpdateMemberRequest, com.google.apps.meet.v2.Member>
+      getUpdateMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMember",
+      requestType = com.google.apps.meet.v2.UpdateMemberRequest.class,
+      responseType = com.google.apps.meet.v2.Member.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.UpdateMemberRequest, com.google.apps.meet.v2.Member>
+      getUpdateMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.UpdateMemberRequest, com.google.apps.meet.v2.Member>
+        getUpdateMemberMethod;
+    if ((getUpdateMemberMethod = SpacesServiceGrpc.getUpdateMemberMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getUpdateMemberMethod = SpacesServiceGrpc.getUpdateMemberMethod) == null) {
+          SpacesServiceGrpc.getUpdateMemberMethod =
+              getUpdateMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.UpdateMemberRequest, com.google.apps.meet.v2.Member>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.UpdateMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.Member.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpacesServiceMethodDescriptorSupplier("UpdateMember"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.BatchUpdateMembersRequest,
+          com.google.apps.meet.v2.BatchUpdateMembersResponse>
+      getBatchUpdateMembersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateMembers",
+      requestType = com.google.apps.meet.v2.BatchUpdateMembersRequest.class,
+      responseType = com.google.apps.meet.v2.BatchUpdateMembersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.BatchUpdateMembersRequest,
+          com.google.apps.meet.v2.BatchUpdateMembersResponse>
+      getBatchUpdateMembersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.BatchUpdateMembersRequest,
+            com.google.apps.meet.v2.BatchUpdateMembersResponse>
+        getBatchUpdateMembersMethod;
+    if ((getBatchUpdateMembersMethod = SpacesServiceGrpc.getBatchUpdateMembersMethod) == null) {
+      synchronized (SpacesServiceGrpc.class) {
+        if ((getBatchUpdateMembersMethod = SpacesServiceGrpc.getBatchUpdateMembersMethod) == null) {
+          SpacesServiceGrpc.getBatchUpdateMembersMethod =
+              getBatchUpdateMembersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.BatchUpdateMembersRequest,
+                          com.google.apps.meet.v2.BatchUpdateMembersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchUpdateMembers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.BatchUpdateMembersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.BatchUpdateMembersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SpacesServiceMethodDescriptorSupplier("BatchUpdateMembers"))
+                      .build();
+        }
+      }
+    }
+    return getBatchUpdateMembersMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SpacesServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SpacesServiceStub> factory =
@@ -279,7 +529,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Gets details about a meeting space.
      * For an example, see [Get a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     default void getSpace(
@@ -294,7 +544,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Updates details about a meeting space.
      * For an example, see [Update a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     default void updateSpace(
@@ -310,7 +560,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
-     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     default void endActiveConference(
@@ -318,6 +568,102 @@ public final class SpacesServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getEndActiveConferenceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    default void createMember(
+        com.google.apps.meet.v2.CreateMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    default void getMember(
+        com.google.apps.meet.v2.GetMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists members.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    default void listMembers(
+        com.google.apps.meet.v2.ListMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListMembersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMembersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the member who was previously assigned roles in the space.
+     * </pre>
+     */
+    default void deleteMember(
+        com.google.apps.meet.v2.DeleteMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member.
+     * </pre>
+     */
+    default void updateMember(
+        com.google.apps.meet.v2.UpdateMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates members of one space within a batch.
+     * </pre>
+     */
+    default void batchUpdateMembers(
+        com.google.apps.meet.v2.BatchUpdateMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.BatchUpdateMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchUpdateMembersMethod(), responseObserver);
     }
   }
 
@@ -377,7 +723,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Gets details about a meeting space.
      * For an example, see [Get a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public void getSpace(
@@ -393,7 +739,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Updates details about a meeting space.
      * For an example, see [Update a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public void updateSpace(
@@ -411,7 +757,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
-     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public void endActiveConference(
@@ -419,6 +765,113 @@ public final class SpacesServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getEndActiveConferenceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public void createMember(
+        com.google.apps.meet.v2.CreateMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public void getMember(
+        com.google.apps.meet.v2.GetMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMemberMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists members.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public void listMembers(
+        com.google.apps.meet.v2.ListMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListMembersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMembersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the member who was previously assigned roles in the space.
+     * </pre>
+     */
+    public void deleteMember(
+        com.google.apps.meet.v2.DeleteMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member.
+     * </pre>
+     */
+    public void updateMember(
+        com.google.apps.meet.v2.UpdateMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates members of one space within a batch.
+     * </pre>
+     */
+    public void batchUpdateMembers(
+        com.google.apps.meet.v2.BatchUpdateMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.BatchUpdateMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateMembersMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -462,7 +915,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Gets details about a meeting space.
      * For an example, see [Get a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request)
@@ -477,7 +930,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Updates details about a meeting space.
      * For an example, see [Update a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space updateSpace(
@@ -492,13 +945,103 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
-     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
         com.google.apps.meet.v2.EndActiveConferenceRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEndActiveConferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member createMember(
+        com.google.apps.meet.v2.CreateMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member getMember(
+        com.google.apps.meet.v2.GetMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists members.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.ListMembersResponse listMembers(
+        com.google.apps.meet.v2.ListMembersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the member who was previously assigned roles in the space.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMember(
+        com.google.apps.meet.v2.DeleteMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member updateMember(
+        com.google.apps.meet.v2.UpdateMemberRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates members of one space within a batch.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.BatchUpdateMembersResponse batchUpdateMembers(
+        com.google.apps.meet.v2.BatchUpdateMembersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchUpdateMembersMethod(), getCallOptions(), request);
     }
   }
 
@@ -540,7 +1083,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Gets details about a meeting space.
      * For an example, see [Get a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space getSpace(com.google.apps.meet.v2.GetSpaceRequest request) {
@@ -554,7 +1097,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Updates details about a meeting space.
      * For an example, see [Update a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.apps.meet.v2.Space updateSpace(
@@ -569,13 +1112,103 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
-     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.protobuf.Empty endActiveConference(
         com.google.apps.meet.v2.EndActiveConferenceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEndActiveConferenceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member createMember(
+        com.google.apps.meet.v2.CreateMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member getMember(
+        com.google.apps.meet.v2.GetMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists members.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.apps.meet.v2.ListMembersResponse listMembers(
+        com.google.apps.meet.v2.ListMembersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the member who was previously assigned roles in the space.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMember(
+        com.google.apps.meet.v2.DeleteMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.Member updateMember(
+        com.google.apps.meet.v2.UpdateMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates members of one space within a batch.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.BatchUpdateMembersResponse batchUpdateMembers(
+        com.google.apps.meet.v2.BatchUpdateMembersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateMembersMethod(), getCallOptions(), request);
     }
   }
 
@@ -617,7 +1250,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Gets details about a meeting space.
      * For an example, see [Get a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -632,7 +1265,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Updates details about a meeting space.
      * For an example, see [Update a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Space>
@@ -647,7 +1280,7 @@ public final class SpacesServiceGrpc {
      * <pre>
      * Ends an active conference (if there's one).
      * For an example, see [End active
-     * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+     * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -655,12 +1288,110 @@ public final class SpacesServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getEndActiveConferenceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Member>
+        createMember(com.google.apps.meet.v2.CreateMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a member.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted, this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Member>
+        getMember(com.google.apps.meet.v2.GetMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists members.
+     * This API supports the `fields` parameter in
+     * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters).
+     * When the `fields` parameter is omitted this API response will default to
+     * "name,email,role".
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.apps.meet.v2.ListMembersResponse>
+        listMembers(com.google.apps.meet.v2.ListMembersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMembersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the member who was previously assigned roles in the space.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteMember(com.google.apps.meet.v2.DeleteMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.Member>
+        updateMember(com.google.apps.meet.v2.UpdateMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates members of one space within a batch.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.apps.meet.v2.BatchUpdateMembersResponse>
+        batchUpdateMembers(com.google.apps.meet.v2.BatchUpdateMembersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchUpdateMembersMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_SPACE = 0;
   private static final int METHODID_GET_SPACE = 1;
   private static final int METHODID_UPDATE_SPACE = 2;
   private static final int METHODID_END_ACTIVE_CONFERENCE = 3;
+  private static final int METHODID_CREATE_MEMBER = 4;
+  private static final int METHODID_GET_MEMBER = 5;
+  private static final int METHODID_LIST_MEMBERS = 6;
+  private static final int METHODID_DELETE_MEMBER = 7;
+  private static final int METHODID_UPDATE_MEMBER = 8;
+  private static final int METHODID_BATCH_UPDATE_MEMBERS = 9;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -698,6 +1429,38 @@ public final class SpacesServiceGrpc {
           serviceImpl.endActiveConference(
               (com.google.apps.meet.v2.EndActiveConferenceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_MEMBER:
+          serviceImpl.createMember(
+              (com.google.apps.meet.v2.CreateMemberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member>) responseObserver);
+          break;
+        case METHODID_GET_MEMBER:
+          serviceImpl.getMember(
+              (com.google.apps.meet.v2.GetMemberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member>) responseObserver);
+          break;
+        case METHODID_LIST_MEMBERS:
+          serviceImpl.listMembers(
+              (com.google.apps.meet.v2.ListMembersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListMembersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_MEMBER:
+          serviceImpl.deleteMember(
+              (com.google.apps.meet.v2.DeleteMemberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_MEMBER:
+          serviceImpl.updateMember(
+              (com.google.apps.meet.v2.UpdateMemberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.Member>) responseObserver);
+          break;
+        case METHODID_BATCH_UPDATE_MEMBERS:
+          serviceImpl.batchUpdateMembers(
+              (com.google.apps.meet.v2.BatchUpdateMembersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.BatchUpdateMembersResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -741,6 +1504,43 @@ public final class SpacesServiceGrpc {
                 new MethodHandlers<
                     com.google.apps.meet.v2.EndActiveConferenceRequest, com.google.protobuf.Empty>(
                     service, METHODID_END_ACTIVE_CONFERENCE)))
+        .addMethod(
+            getCreateMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.CreateMemberRequest, com.google.apps.meet.v2.Member>(
+                    service, METHODID_CREATE_MEMBER)))
+        .addMethod(
+            getGetMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.GetMemberRequest, com.google.apps.meet.v2.Member>(
+                    service, METHODID_GET_MEMBER)))
+        .addMethod(
+            getListMembersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.ListMembersRequest,
+                    com.google.apps.meet.v2.ListMembersResponse>(service, METHODID_LIST_MEMBERS)))
+        .addMethod(
+            getDeleteMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.DeleteMemberRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_MEMBER)))
+        .addMethod(
+            getUpdateMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.UpdateMemberRequest, com.google.apps.meet.v2.Member>(
+                    service, METHODID_UPDATE_MEMBER)))
+        .addMethod(
+            getBatchUpdateMembersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.BatchUpdateMembersRequest,
+                    com.google.apps.meet.v2.BatchUpdateMembersResponse>(
+                    service, METHODID_BATCH_UPDATE_MEMBERS)))
         .build();
   }
 
@@ -796,6 +1596,12 @@ public final class SpacesServiceGrpc {
                       .addMethod(getGetSpaceMethod())
                       .addMethod(getUpdateSpaceMethod())
                       .addMethod(getEndActiveConferenceMethod())
+                      .addMethod(getCreateMemberMethod())
+                      .addMethod(getGetMemberMethod())
+                      .addMethod(getListMembersMethod())
+                      .addMethod(getDeleteMemberMethod())
+                      .addMethod(getUpdateMemberMethod())
+                      .addMethod(getBatchUpdateMembersMethod())
                       .build();
         }
       }

@@ -135,6 +135,7 @@ public class CloudShellCredentials extends GoogleCredentials {
     protected Builder() {}
 
     protected Builder(CloudShellCredentials credentials) {
+      super(credentials);
       this.authPort = credentials.authPort;
     }
 
@@ -144,9 +145,10 @@ public class CloudShellCredentials extends GoogleCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
-      super.quotaProjectId = quotaProjectId;
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
+      super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 

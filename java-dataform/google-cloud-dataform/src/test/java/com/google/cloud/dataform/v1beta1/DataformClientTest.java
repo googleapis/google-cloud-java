@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -2371,7 +2372,11 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2417,7 +2422,11 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2462,7 +2471,11 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2513,7 +2526,11 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -2632,6 +2649,7 @@ public class DataformClientTest {
             .setWorkspace(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
 
     InstallNpmPackagesResponse actualResponse = client.installNpmPackages(request);
@@ -2642,6 +2660,7 @@ public class DataformClientTest {
     InstallNpmPackagesRequest actualRequest = ((InstallNpmPackagesRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getWorkspace(), actualRequest.getWorkspace());
+    Assert.assertEquals(request.getPipelineConfig(), actualRequest.getPipelineConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2659,6 +2678,7 @@ public class DataformClientTest {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       client.installNpmPackages(request);
       Assert.fail("No exception raised");
@@ -2712,6 +2732,274 @@ public class DataformClientTest {
               .setAuthor(CommitAuthor.newBuilder().build())
               .build();
       client.pullGitCommits(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void syncWorkspaceRefsTest() throws Exception {
+    SyncWorkspaceRefsResponse expectedResponse = SyncWorkspaceRefsResponse.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    SyncWorkspaceRefsRequest request =
+        SyncWorkspaceRefsRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setRemoteBranchName("remoteBranchName2129930291")
+            .setDeepen(-1335656811)
+            .build();
+
+    SyncWorkspaceRefsResponse actualResponse = client.syncWorkspaceRefs(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SyncWorkspaceRefsRequest actualRequest = ((SyncWorkspaceRefsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getRemoteBranchName(), actualRequest.getRemoteBranchName());
+    Assert.assertEquals(request.getDeepen(), actualRequest.getDeepen());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void syncWorkspaceRefsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      SyncWorkspaceRefsRequest request =
+          SyncWorkspaceRefsRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setRemoteBranchName("remoteBranchName2129930291")
+              .setDeepen(-1335656811)
+              .build();
+      client.syncWorkspaceRefs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesTest() throws Exception {
+    BranchMetadata responsesElement = BranchMetadata.newBuilder().build();
+    FetchWorkspaceBranchesResponse expectedResponse =
+        FetchWorkspaceBranchesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranches(Arrays.asList(responsesElement))
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    FetchWorkspaceBranchesRequest request =
+        FetchWorkspaceBranchesRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchWorkspaceBranchesPagedResponse pagedListResponse = client.fetchWorkspaceBranches(request);
+
+    List<BranchMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchWorkspaceBranchesRequest actualRequest =
+        ((FetchWorkspaceBranchesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FetchWorkspaceBranchesRequest request =
+          FetchWorkspaceBranchesRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchWorkspaceBranches(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBranchTest() throws Exception {
+    DeleteBranchResponse expectedResponse = DeleteBranchResponse.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    DeleteBranchRequest request =
+        DeleteBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setForce(true)
+            .build();
+
+    DeleteBranchResponse actualResponse = client.deleteBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteBranchRequest actualRequest = ((DeleteBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
+    Assert.assertEquals(request.getForce(), actualRequest.getForce());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteBranchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      DeleteBranchRequest request =
+          DeleteBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setForce(true)
+              .build();
+      client.deleteBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDataform.addResponse(expectedResponse);
+
+    CheckoutWorkspaceBranchRequest request =
+        CheckoutWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setCreateIfNotExists(true)
+            .setSourceBranch("sourceBranch838777245")
+            .build();
+
+    client.checkoutWorkspaceBranch(request);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CheckoutWorkspaceBranchRequest actualRequest =
+        ((CheckoutWorkspaceBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
+    Assert.assertEquals(request.getCreateIfNotExists(), actualRequest.getCreateIfNotExists());
+    Assert.assertEquals(request.getSourceBranch(), actualRequest.getSourceBranch());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      CheckoutWorkspaceBranchRequest request =
+          CheckoutWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setCreateIfNotExists(true)
+              .setSourceBranch("sourceBranch838777245")
+              .build();
+      client.checkoutWorkspaceBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchTest() throws Exception {
+    FetchCurrentWorkspaceBranchResponse expectedResponse =
+        FetchCurrentWorkspaceBranchResponse.newBuilder()
+            .setBranchName("branchName1352954701")
+            .build();
+    mockDataform.addResponse(expectedResponse);
+
+    FetchCurrentWorkspaceBranchRequest request =
+        FetchCurrentWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .build();
+
+    FetchCurrentWorkspaceBranchResponse actualResponse =
+        client.fetchCurrentWorkspaceBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchCurrentWorkspaceBranchRequest actualRequest =
+        ((FetchCurrentWorkspaceBranchRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      FetchCurrentWorkspaceBranchRequest request =
+          FetchCurrentWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .build();
+      client.fetchCurrentWorkspaceBranch(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -4048,6 +4336,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4101,6 +4390,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4151,6 +4441,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4204,6 +4495,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4417,6 +4709,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4472,6 +4765,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4525,6 +4819,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4586,6 +4881,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4647,6 +4943,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4863,6 +5160,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4918,6 +5216,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4969,6 +5268,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -5023,6 +5323,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 

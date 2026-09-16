@@ -351,4 +351,60 @@ public interface AdIdentifiersOrBuilder
    * </code>
    */
   com.google.ads.datamanager.v1.EncryptedUserIdOrBuilder getEncryptedUserIdsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an authenticated user (signed-in), as
+   * defined by the publisher.
+   * </pre>
+   *
+   * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ppid.
+   */
+  java.lang.String getPpid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an authenticated user (signed-in), as
+   * defined by the publisher.
+   * </pre>
+   *
+   * <code>string ppid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ppid.
+   */
+  com.google.protobuf.ByteString getPpidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an unauthenticated user (user who is not
+   * signed-in), as defined by the publisher.
+   * </pre>
+   *
+   * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The visitorPpid.
+   */
+  java.lang.String getVisitorPpid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A unique identifier for an unauthenticated user (user who is not
+   * signed-in), as defined by the publisher.
+   * </pre>
+   *
+   * <code>string visitor_ppid = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for visitorPpid.
+   */
+  com.google.protobuf.ByteString getVisitorPpidBytes();
 }

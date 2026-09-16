@@ -156,6 +156,25 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
     return totalStorageSizeGb_;
   }
 
+  public static final int TOTAL_VM_STORAGE_SIZE_GB_FIELD_NUMBER = 4;
+  private int totalVmStorageSizeGb_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Storage size needed for VM storage on Exascale in GBs.
+   * </pre>
+   *
+   * <code>int32 total_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The totalVmStorageSizeGb.
+   */
+  @java.lang.Override
+  public int getTotalVmStorageSizeGb() {
+    return totalVmStorageSizeGb_;
+  }
+
   public static final int REQUEST_ID_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -236,6 +255,9 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, requestId_);
     }
+    if (totalVmStorageSizeGb_ != 0) {
+      output.writeInt32(4, totalVmStorageSizeGb_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -253,6 +275,9 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, requestId_);
+    }
+    if (totalVmStorageSizeGb_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, totalVmStorageSizeGb_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -274,6 +299,7 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
 
     if (!getName().equals(other.getName())) return false;
     if (getTotalStorageSizeGb() != other.getTotalStorageSizeGb()) return false;
+    if (getTotalVmStorageSizeGb() != other.getTotalVmStorageSizeGb()) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -290,6 +316,8 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + TOTAL_STORAGE_SIZE_GB_FIELD_NUMBER;
     hash = (53 * hash) + getTotalStorageSizeGb();
+    hash = (37 * hash) + TOTAL_VM_STORAGE_SIZE_GB_FIELD_NUMBER;
+    hash = (53 * hash) + getTotalVmStorageSizeGb();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -459,6 +487,7 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
       bitField0_ = 0;
       name_ = "";
       totalStorageSizeGb_ = 0;
+      totalVmStorageSizeGb_ = 0;
       requestId_ = "";
       return this;
     }
@@ -511,6 +540,9 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
         result.totalStorageSizeGb_ = totalStorageSizeGb_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.totalVmStorageSizeGb_ = totalVmStorageSizeGb_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
       }
     }
@@ -543,9 +575,12 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
       if (other.getTotalStorageSizeGb() != 0) {
         setTotalStorageSizeGb(other.getTotalStorageSizeGb());
       }
+      if (other.getTotalVmStorageSizeGb() != 0) {
+        setTotalVmStorageSizeGb(other.getTotalVmStorageSizeGb());
+      }
       if (!other.getRequestId().isEmpty()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -589,9 +624,15 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
             case 26:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 32:
+              {
+                totalVmStorageSizeGb_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -798,6 +839,62 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
       return this;
     }
 
+    private int totalVmStorageSizeGb_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage size needed for VM storage on Exascale in GBs.
+     * </pre>
+     *
+     * <code>int32 total_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The totalVmStorageSizeGb.
+     */
+    @java.lang.Override
+    public int getTotalVmStorageSizeGb() {
+      return totalVmStorageSizeGb_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage size needed for VM storage on Exascale in GBs.
+     * </pre>
+     *
+     * <code>int32 total_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The totalVmStorageSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalVmStorageSizeGb(int value) {
+
+      totalVmStorageSizeGb_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Storage size needed for VM storage on Exascale in GBs.
+     * </pre>
+     *
+     * <code>int32 total_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalVmStorageSizeGb() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      totalVmStorageSizeGb_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object requestId_ = "";
 
     /**
@@ -869,7 +966,7 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -889,7 +986,7 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -914,7 +1011,7 @@ public final class ConfigureExascaleCloudExadataInfrastructureRequest
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

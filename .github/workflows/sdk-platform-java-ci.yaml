@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
@@ -68,10 +68,11 @@ jobs:
     - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3
+    - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3.14.1
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -86,10 +87,11 @@ jobs:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: sdk-platform-java
@@ -104,16 +106,17 @@ jobs:
         with:
           persist-credentials: false
       # Java 8 tests uses JDK 17 to compile and JDK 8 to run tests.
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: 8
           distribution: temurin
           cache: maven
       - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
-      - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3
+      - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3.14.1
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - name: Install all modules using Java 17
         shell: bash
         run: .kokoro/build.sh
@@ -163,7 +166,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
@@ -193,7 +196,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
@@ -221,7 +224,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
@@ -262,7 +265,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: 11
           distribution: temurin
@@ -273,10 +276,11 @@ jobs:
         env:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
-      - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3
+      - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3.14.1
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - run: java -version
       - name: Run tests in Java 8 with the source compiled in Java 11 for gapic-generator-java
         shell: bash
@@ -314,7 +318,7 @@ jobs:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         java-version: 17
         distribution: temurin
@@ -350,7 +354,7 @@ jobs:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         java-version: 11
         distribution: temurin
@@ -375,10 +379,11 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         java-version: 11
         distribution: temurin
+        cache: maven
     - run: mvn -version
     - name: Unit Tests
       run: |
@@ -404,10 +409,11 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         java-version: 17
         distribution: temurin
+        cache: maven
     - run: mvn -version
     - name: Unit Tests
       run: |

@@ -29,8 +29,10 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
@@ -39,13 +41,14 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.TracedUnaryCallable;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create http/json-based direct callables. */
@@ -222,7 +225,28 @@ public class HttpJsonCallableFactory {
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
-  static ApiTracerContext getApiTracerContext(@Nonnull ApiMethodDescriptor<?, ?> methodDescriptor) {
+  /**
+   * Creates a {@link ResumableUploadCallable} to execute resumable uploads. Designed for use by
+   * generated code.
+   *
+   * @param httpJsonCallSettings the http/json call settings
+   * @param callSettings settings configuring chunk size
+   * @param clientContext client context providing default call context
+   * @return {@link ResumableUploadCallable} callable object
+   */
+  @BetaApi
+  public static <RequestT, ResponseT>
+      ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          ResumableUploadCallSettings callSettings,
+          ClientContext clientContext) {
+    ResumableUploadClient<RequestT, ResponseT> uploadClient =
+        HttpJsonResumableUploadClient.create(
+            clientContext, httpJsonCallSettings.getMethodDescriptor());
+    return Callables.resumableUpload(uploadClient, callSettings, clientContext);
+  }
+
+  static ApiTracerContext getApiTracerContext(ApiMethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setHttpMethod(methodDescriptor.getHttpMethod())

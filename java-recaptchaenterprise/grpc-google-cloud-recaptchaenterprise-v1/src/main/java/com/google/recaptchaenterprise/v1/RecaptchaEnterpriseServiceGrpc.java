@@ -646,6 +646,99 @@ public final class RecaptchaEnterpriseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetPolicyRequest,
+          com.google.recaptchaenterprise.v1.Policy>
+      getGetPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetPolicy",
+      requestType = com.google.recaptchaenterprise.v1.GetPolicyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.GetPolicyRequest,
+          com.google.recaptchaenterprise.v1.Policy>
+      getGetPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.GetPolicyRequest,
+            com.google.recaptchaenterprise.v1.Policy>
+        getGetPolicyMethod;
+    if ((getGetPolicyMethod = RecaptchaEnterpriseServiceGrpc.getGetPolicyMethod) == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getGetPolicyMethod = RecaptchaEnterpriseServiceGrpc.getGetPolicyMethod) == null) {
+          RecaptchaEnterpriseServiceGrpc.getGetPolicyMethod =
+              getGetPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.GetPolicyRequest,
+                          com.google.recaptchaenterprise.v1.Policy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.GetPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier("GetPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.UpdatePolicyRequest,
+          com.google.recaptchaenterprise.v1.Policy>
+      getUpdatePolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePolicy",
+      requestType = com.google.recaptchaenterprise.v1.UpdatePolicyRequest.class,
+      responseType = com.google.recaptchaenterprise.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.recaptchaenterprise.v1.UpdatePolicyRequest,
+          com.google.recaptchaenterprise.v1.Policy>
+      getUpdatePolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.recaptchaenterprise.v1.UpdatePolicyRequest,
+            com.google.recaptchaenterprise.v1.Policy>
+        getUpdatePolicyMethod;
+    if ((getUpdatePolicyMethod = RecaptchaEnterpriseServiceGrpc.getUpdatePolicyMethod) == null) {
+      synchronized (RecaptchaEnterpriseServiceGrpc.class) {
+        if ((getUpdatePolicyMethod = RecaptchaEnterpriseServiceGrpc.getUpdatePolicyMethod)
+            == null) {
+          RecaptchaEnterpriseServiceGrpc.getUpdatePolicyMethod =
+              getUpdatePolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.recaptchaenterprise.v1.UpdatePolicyRequest,
+                          com.google.recaptchaenterprise.v1.Policy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.UpdatePolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.recaptchaenterprise.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecaptchaEnterpriseServiceMethodDescriptorSupplier("UpdatePolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdatePolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest,
           com.google.recaptchaenterprise.v1.FirewallPolicy>
       getCreateFirewallPolicyMethod;
@@ -1394,6 +1487,33 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Get the policy for a key.
+     * </pre>
+     */
+    default void getPolicy(
+        com.google.recaptchaenterprise.v1.GetPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the policy for a key.
+     * </pre>
+     */
+    default void updatePolicy(
+        com.google.recaptchaenterprise.v1.UpdatePolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdatePolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
      * Enterprise actions can be executed.
      * A project may have a maximum of 1000 policies.
@@ -1789,6 +1909,36 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Get the policy for a key.
+     * </pre>
+     */
+    public void getPolicy(
+        com.google.recaptchaenterprise.v1.GetPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPolicyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the policy for a key.
+     * </pre>
+     */
+    public void updatePolicy(
+        com.google.recaptchaenterprise.v1.UpdatePolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
      * Enterprise actions can be executed.
      * A project may have a maximum of 1000 policies.
@@ -2162,6 +2312,33 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Get the policy for a key.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Policy getPolicy(
+        com.google.recaptchaenterprise.v1.GetPolicyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the policy for a key.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Policy updatePolicy(
+        com.google.recaptchaenterprise.v1.UpdatePolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
      * Enterprise actions can be executed.
      * A project may have a maximum of 1000 policies.
@@ -2496,6 +2673,32 @@ public final class RecaptchaEnterpriseServiceGrpc {
         com.google.recaptchaenterprise.v1.GetMetricsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetMetricsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the policy for a key.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Policy getPolicy(
+        com.google.recaptchaenterprise.v1.GetPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the policy for a key.
+     * </pre>
+     */
+    public com.google.recaptchaenterprise.v1.Policy updatePolicy(
+        com.google.recaptchaenterprise.v1.UpdatePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2841,6 +3044,34 @@ public final class RecaptchaEnterpriseServiceGrpc {
      *
      *
      * <pre>
+     * Get the policy for a key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.Policy>
+        getPolicy(com.google.recaptchaenterprise.v1.GetPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the policy for a key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.recaptchaenterprise.v1.Policy>
+        updatePolicy(com.google.recaptchaenterprise.v1.UpdatePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA
      * Enterprise actions can be executed.
      * A project may have a maximum of 1000 policies.
@@ -2988,15 +3219,17 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final int METHODID_REMOVE_IP_OVERRIDE = 10;
   private static final int METHODID_LIST_IP_OVERRIDES = 11;
   private static final int METHODID_GET_METRICS = 12;
-  private static final int METHODID_CREATE_FIREWALL_POLICY = 13;
-  private static final int METHODID_LIST_FIREWALL_POLICIES = 14;
-  private static final int METHODID_GET_FIREWALL_POLICY = 15;
-  private static final int METHODID_UPDATE_FIREWALL_POLICY = 16;
-  private static final int METHODID_DELETE_FIREWALL_POLICY = 17;
-  private static final int METHODID_REORDER_FIREWALL_POLICIES = 18;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 19;
-  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 20;
-  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 21;
+  private static final int METHODID_GET_POLICY = 13;
+  private static final int METHODID_UPDATE_POLICY = 14;
+  private static final int METHODID_CREATE_FIREWALL_POLICY = 15;
+  private static final int METHODID_LIST_FIREWALL_POLICIES = 16;
+  private static final int METHODID_GET_FIREWALL_POLICY = 17;
+  private static final int METHODID_UPDATE_FIREWALL_POLICY = 18;
+  private static final int METHODID_DELETE_FIREWALL_POLICY = 19;
+  private static final int METHODID_REORDER_FIREWALL_POLICIES = 20;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUPS = 21;
+  private static final int METHODID_LIST_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 22;
+  private static final int METHODID_SEARCH_RELATED_ACCOUNT_GROUP_MEMBERSHIPS = 23;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3094,6 +3327,18 @@ public final class RecaptchaEnterpriseServiceGrpc {
           serviceImpl.getMetrics(
               (com.google.recaptchaenterprise.v1.GetMetricsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Metrics>)
+                  responseObserver);
+          break;
+        case METHODID_GET_POLICY:
+          serviceImpl.getPolicy(
+              (com.google.recaptchaenterprise.v1.GetPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_POLICY:
+          serviceImpl.updatePolicy(
+              (com.google.recaptchaenterprise.v1.UpdatePolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.recaptchaenterprise.v1.Policy>)
                   responseObserver);
           break;
         case METHODID_CREATE_FIREWALL_POLICY:
@@ -3260,6 +3505,18 @@ public final class RecaptchaEnterpriseServiceGrpc {
                     com.google.recaptchaenterprise.v1.GetMetricsRequest,
                     com.google.recaptchaenterprise.v1.Metrics>(service, METHODID_GET_METRICS)))
         .addMethod(
+            getGetPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.GetPolicyRequest,
+                    com.google.recaptchaenterprise.v1.Policy>(service, METHODID_GET_POLICY)))
+        .addMethod(
+            getUpdatePolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.recaptchaenterprise.v1.UpdatePolicyRequest,
+                    com.google.recaptchaenterprise.v1.Policy>(service, METHODID_UPDATE_POLICY)))
+        .addMethod(
             getCreateFirewallPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3385,6 +3642,8 @@ public final class RecaptchaEnterpriseServiceGrpc {
                       .addMethod(getRemoveIpOverrideMethod())
                       .addMethod(getListIpOverridesMethod())
                       .addMethod(getGetMetricsMethod())
+                      .addMethod(getGetPolicyMethod())
+                      .addMethod(getUpdatePolicyMethod())
                       .addMethod(getCreateFirewallPolicyMethod())
                       .addMethod(getListFirewallPoliciesMethod())
                       .addMethod(getGetFirewallPolicyMethod())

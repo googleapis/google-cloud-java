@@ -218,6 +218,57 @@ public interface WorkspaceOrBuilder
    *
    *
    * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the originalBranch field is set.
+   */
+  boolean hasOriginalBranch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The originalBranch.
+   */
+  java.lang.String getOriginalBranch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for originalBranch.
+   */
+  com.google.protobuf.ByteString getOriginalBranchBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Metadata indicating whether this resource is user-scoped. For
    * `Workspace` resources, the `user_scoped` field is always `true`.
    * </pre>
@@ -260,4 +311,87 @@ public interface WorkspaceOrBuilder
    */
   com.google.cloud.dataform.v1beta1.PrivateResourceMetadataOrBuilder
       getPrivateResourceMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Controls the enablement of branch checkout for the
+   * workspace.
+   *
+   * When set to True, the workspace will be allowed to checkout branches.
+   * </pre>
+   *
+   * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the enableBranchManagement field is set.
+   */
+  boolean hasEnableBranchManagement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Controls the enablement of branch checkout for the
+   * workspace.
+   *
+   * When set to True, the workspace will be allowed to checkout branches.
+   * </pre>
+   *
+   * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enableBranchManagement.
+   */
+  boolean getEnableBranchManagement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The maximum depth of the Git repository to
+   * checkout for this workspace. If defined and greater than 0, the Git
+   * repository will be created as a shallow clone with the given depth,
+   * otherwise a full clone will be performed. This field is available only for
+   * GitHub, Gitlab and 1p repositories with enabled branch management.
+   * </pre>
+   *
+   * <code>
+   * int32 depth = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The depth.
+   */
+  int getDepth();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set to true, the workspace was created as a shallow clone.
+   * Will be set to true if the depth field is set to a value greater than 0,
+   * otherwise it will be set to false.
+   * </pre>
+   *
+   * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the shallow field is set.
+   */
+  boolean hasShallow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set to true, the workspace was created as a shallow clone.
+   * Will be set to true if the depth field is set to a value greater than 0,
+   * otherwise it will be set to false.
+   * </pre>
+   *
+   * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The shallow.
+   */
+  boolean getShallow();
 }

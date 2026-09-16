@@ -67,4 +67,88 @@ public interface ResourceStatusReservationConsumptionInfoOrBuilder
    * @return The bytes for consumedReservation.
    */
   com.google.protobuf.ByteString getConsumedReservationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return Whether the consumedReservationBlock field is set.
+   */
+  boolean hasConsumedReservationBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return The consumedReservationBlock.
+   */
+  java.lang.String getConsumedReservationBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation block that this
+   * instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_block = 142321091;</code>
+   *
+   * @return The bytes for consumedReservationBlock.
+   */
+  com.google.protobuf.ByteString getConsumedReservationBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return Whether the consumedReservationSubBlock field is set.
+   */
+  boolean hasConsumedReservationSubBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return The consumedReservationSubBlock.
+   */
+  java.lang.String getConsumedReservationSubBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The full resource name of the reservation sub-block that
+   * this instance is consuming from.
+   * </pre>
+   *
+   * <code>optional string consumed_reservation_sub_block = 461540356;</code>
+   *
+   * @return The bytes for consumedReservationSubBlock.
+   */
+  com.google.protobuf.ByteString getConsumedReservationSubBlockBytes();
 }

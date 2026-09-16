@@ -71,16 +71,19 @@ public final class UserDataProto extends com.google.protobuf.GeneratedFile {
           + "email_address\030\001 \001(\tH\000\022\026\n"
           + "\014phone_number\030\002 \001(\tH\000\0229\n"
           + "\007address\030\003 \001(\0132&.google.ads.datamanager.v1.AddressInfoH\000B\014\n\n"
-          + "identifier\"t\n"
+          + "identifier\"\304\001\n"
           + "\013AddressInfo\022\027\n\n"
           + "given_name\030\001 \001(\tB\003\340A\002\022\030\n"
           + "\013family_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013region_code\030\003 \001(\tB\003\340A\002\022\030\n"
-          + "\013postal_code\030\004 \001(\tB\003\340A\002B\312\001\n"
+          + "\013postal_code\030\004 \001(\tB\003\340A\002\022\031\n"
+          + "\014address_line\030\005 \001(\tB\003\340A\001\022\021\n"
+          + "\004city\030\006 \001(\tB\003\340A\001\022 \n"
+          + "\023administrative_area\030\007 \001(\tB\003\340A\001B\312\001\n"
           + "\035com.google.ads.datamanager.v1B\r"
-          + "UserDataProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;dataman"
-          + "agerpb\252\002\031Google.Ads.DataManager.V1\312\002\031Goo"
-          + "gle\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "UserDataProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;datama"
+          + "nagerpb\252\002\031Google.Ads.DataManager.V1\312\002\031Go"
+          + "ogle\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -110,7 +113,13 @@ public final class UserDataProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_AddressInfo_descriptor,
             new java.lang.String[] {
-              "GivenName", "FamilyName", "RegionCode", "PostalCode",
+              "GivenName",
+              "FamilyName",
+              "RegionCode",
+              "PostalCode",
+              "AddressLine",
+              "City",
+              "AdministrativeArea",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -34,10 +34,8 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
-    - name: Pre-install Snapshot Dependencies
-      run: |
-        bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Pick Libraries BOM version
       id: pick-version
       shell: bash

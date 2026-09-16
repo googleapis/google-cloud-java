@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.apache.arrow.vector.types.Types.MinorType.INT;
 import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
@@ -255,7 +256,8 @@ public class BigQueryArrowResultSetTest {
             arraySchema,
             BigQueryArrowBatchWrapper.getNestedFieldValueListWrapper(jsonStringArrayList),
             0,
-            jsonStringArrayList.size());
+            jsonStringArrayList.size(),
+            false);
   }
 
   @Test
@@ -437,5 +439,111 @@ public class BigQueryArrowResultSetTest {
     return rowCount;
   }
 
-  // TODO: Unit Test for iteration and getters
+  private VectorSchemaRoot getPicosVectorSchemaRoot() {
+    RootAllocator allocator = new RootAllocator();
+    VarCharVector picosCol = new VarCharVector("picosTimestamp", allocator);
+    picosCol.allocateNew(1);
+    picosCol.set(0, new Text("2026-04-08T10:00:00.123456789123Z"));
+    picosCol.setValueCount(1);
+    return new VectorSchemaRoot(ImmutableList.of(picosCol));
+  }
+
+  @Test
+  public void testTimestampPicosEnabled() throws SQLException, IOException {
+    VectorSchemaRoot root = getPicosVectorSchemaRoot();
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+            .build();
+    BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    BigQueryStatement picosStmt = mock(BigQueryStatement.class);
+    doReturn(true).when(picosStmt).isEnableTimestampPicos();
+
+    Schema schema =
+        Schema.of(
+            Field.newBuilder("picosTimestamp", StandardSQLTypeName.TIMESTAMP)
+                .setTimestampPrecision(12L)
+                .build());
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            schema, arrowSchema, 1, picosStmt, picosBuffer, mock(Future.class), null);
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTimestamp")).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getString(1)).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject("picosTimestamp")).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject(1)).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject("picosTimestamp", String.class))
+        .isEqualTo("2026-04-08 10:00:00.123456789123");
+
+    Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
+    assertThat(rs.getTimestamp("picosTimestamp")).isEqualTo(expectedTs);
+    assertThat(rs.getObject("picosTimestamp", Timestamp.class)).isEqualTo(expectedTs);
+  }
+
+  @Test
+  public void testTimestampPicosDisabled() throws SQLException, IOException {
+    VectorSchemaRoot root = getPicosVectorSchemaRoot();
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+            .build();
+    BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    BigQueryStatement disabledStmt = mock(BigQueryStatement.class);
+    doReturn(false).when(disabledStmt).isEnableTimestampPicos();
+
+    Schema schema =
+        Schema.of(
+            Field.newBuilder("picosTimestamp", StandardSQLTypeName.TIMESTAMP)
+                .setTimestampPrecision(12L)
+                .build());
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            schema, arrowSchema, 1, disabledStmt, picosBuffer, mock(Future.class), null);
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTimestamp")).isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(rs.getString(1)).isEqualTo("2026-04-08 10:00:00.123456");
+    Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
+    assertThat(rs.getObject("picosTimestamp")).isEqualTo(expectedTs);
+    assertThat(rs.getTimestamp("picosTimestamp")).isEqualTo(expectedTs);
+  }
+
+  @Test
+  public void testStandardMicrosecondTimestampWithPicosEnabled() throws SQLException, IOException {
+    VectorSchemaRoot root = getTestVectorSchemaRoot();
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+            .build();
+    BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    BigQueryStatement picosStmt = mock(BigQueryStatement.class);
+    doReturn(true).when(picosStmt).isEnableTimestampPicos();
+
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            QUERY_SCHEMA, arrowSchema, 1, picosStmt, picosBuffer, mock(Future.class), null);
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("timeStampField")).isEqualTo("1970-01-01 00:00:00.010000");
+    assertThat(rs.getObject("timeStampField")).isEqualTo(new Timestamp(10L));
+  }
 }

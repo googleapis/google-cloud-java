@@ -1330,7 +1330,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             Variable.builder().setName("input").setType(methodPageType).build());
 
     // Overrides ApiFunction.apply.
-    // (https://github.com/googleapis/api-common-java/blob/debf25960dea0367b0d3b5e16d57d76c1d01947e/src/main/java/com/google/api/core/ApiFunction.java).
+    // (https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/sdk-platform-java/api-common-java/src/main/java/com/google/api/core/ApiFunction.java).
     Expr pageToTransformExpr =
         LambdaExpr.builder()
             .setArguments(inputVarExpr.toBuilder().setIsDecl(true).build())

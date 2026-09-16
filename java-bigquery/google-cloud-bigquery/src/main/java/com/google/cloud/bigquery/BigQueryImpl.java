@@ -41,6 +41,8 @@ import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
@@ -1659,6 +1661,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public InsertAllResponse insertAll(InsertAllRequest request) {
+    // This API inserts the specified rows into a table using the BigQuery insertAll API.
+    // Note: To prevent duplicate rows, this method does not perform automatic retries unless
+    // insert IDs are provided. Transient service errors (such as UNAVAILABLE) may be thrown and
+    // should be handled by the caller.
     final TableId tableId =
         request
             .getTable()
@@ -2091,6 +2097,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return job;
     }
 
+    StatementType statementType =
+        results.getStatementType() != null
+            ? StatementType.valueOf(results.getStatementType())
+            : null;
+    Long totalBytesBilled = results.getTotalBytesBilled();
+    Long totalBytesProcessed = results.getTotalBytesProcessed();
+    Long totalSlotMs = results.getTotalSlotMs();
+    Long numDmlAffectedRows = results.getNumDmlAffectedRows();
+    SessionInfo sessionInfo =
+        results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
+
     if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
@@ -2110,6 +2127,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
           .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
           .build();
     }
     // only 1 page of result
@@ -2130,6 +2153,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setQueryId(results.getQueryId())
         .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
         .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+        .setStatementType(statementType)
+        .setTotalBytesBilled(totalBytesBilled)
+        .setTotalBytesProcessed(totalBytesProcessed)
+        .setTotalSlotMs(totalSlotMs)
+        .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
         .build();
   }
 

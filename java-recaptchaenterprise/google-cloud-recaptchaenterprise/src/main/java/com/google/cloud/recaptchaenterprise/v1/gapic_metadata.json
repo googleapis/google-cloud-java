@@ -40,6 +40,9 @@
             "GetMetrics": {
               "methods": ["getMetrics", "getMetrics", "getMetrics", "getMetricsCallable"]
             },
+            "GetPolicy": {
+              "methods": ["getPolicy", "getPolicy", "getPolicy", "getPolicyCallable"]
+            },
             "ListFirewallPolicies": {
               "methods": ["listFirewallPolicies", "listFirewallPolicies", "listFirewallPolicies", "listFirewallPoliciesPagedCallable", "listFirewallPoliciesCallable"]
             },
@@ -75,6 +78,9 @@
             },
             "UpdateKey": {
               "methods": ["updateKey", "updateKey", "updateKeyCallable"]
+            },
+            "UpdatePolicy": {
+              "methods": ["updatePolicy", "updatePolicy", "updatePolicyCallable"]
             }
           }
         }

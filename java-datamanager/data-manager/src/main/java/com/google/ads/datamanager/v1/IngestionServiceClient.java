@@ -95,6 +95,20 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RemoveAllAudienceMembers</td>
+ *      <td><p> Removes all audience members from the provided destinations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeAllAudienceMembers(RemoveAllAudienceMembersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeAllAudienceMembersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> IngestEvents</td>
  *      <td><p> Uploads a list of [Event][google.ads.datamanager.v1.Event] resources from the provided [Destination][google.ads.datamanager.v1.Destination].</td>
  *      <td>
@@ -386,6 +400,69 @@ public class IngestionServiceClient implements BackgroundResource {
   public final UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable() {
     return stub.removeAudienceMembersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes all audience members from the provided destinations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveAllAudienceMembersRequest request =
+   *       RemoveAllAudienceMembersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .setRemoveAsOfTime(Timestamp.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RemoveAllAudienceMembersResponse response =
+   *       ingestionServiceClient.removeAllAudienceMembers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveAllAudienceMembersResponse removeAllAudienceMembers(
+      RemoveAllAudienceMembersRequest request) {
+    return removeAllAudienceMembersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes all audience members from the provided destinations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveAllAudienceMembersRequest request =
+   *       RemoveAllAudienceMembersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .setRemoveAsOfTime(Timestamp.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RemoveAllAudienceMembersResponse> future =
+   *       ingestionServiceClient.removeAllAudienceMembersCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveAllAudienceMembersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    return stub.removeAllAudienceMembersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

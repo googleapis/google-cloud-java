@@ -24,7 +24,8 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The additional information for an audit operation.
+ * Additional information about the number of checks that were made during an
+ * audit operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.ReportSummary}
@@ -75,7 +76,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Total number of checks.
+   * Total number of evaluated checks.
    * </pre>
    *
    * <code>int32 total_count = 1;</code>
@@ -132,7 +133,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Number of checks with "manual review needed" status.
+   * Number of checks that require a manual review.
    * </pre>
    *
    * <code>int32 manual_review_needed_count = 4;</code>
@@ -151,7 +152,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Number of checks that could not be performed due to errors.
+   * Number of checks that can't be performed due to errors.
    * </pre>
    *
    * <code>int32 error_count = 5;</code>
@@ -363,7 +364,8 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The additional information for an audit operation.
+   * Additional information about the number of checks that were made during an
+   * audit operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.ReportSummary}
@@ -564,7 +566,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Total number of checks.
+     * Total number of evaluated checks.
      * </pre>
      *
      * <code>int32 total_count = 1;</code>
@@ -580,7 +582,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Total number of checks.
+     * Total number of evaluated checks.
      * </pre>
      *
      * <code>int32 total_count = 1;</code>
@@ -600,7 +602,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Total number of checks.
+     * Total number of evaluated checks.
      * </pre>
      *
      * <code>int32 total_count = 1;</code>
@@ -732,7 +734,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks with "manual review needed" status.
+     * Number of checks that require a manual review.
      * </pre>
      *
      * <code>int32 manual_review_needed_count = 4;</code>
@@ -748,7 +750,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks with "manual review needed" status.
+     * Number of checks that require a manual review.
      * </pre>
      *
      * <code>int32 manual_review_needed_count = 4;</code>
@@ -768,7 +770,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks with "manual review needed" status.
+     * Number of checks that require a manual review.
      * </pre>
      *
      * <code>int32 manual_review_needed_count = 4;</code>
@@ -788,7 +790,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks that could not be performed due to errors.
+     * Number of checks that can't be performed due to errors.
      * </pre>
      *
      * <code>int32 error_count = 5;</code>
@@ -804,7 +806,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks that could not be performed due to errors.
+     * Number of checks that can't be performed due to errors.
      * </pre>
      *
      * <code>int32 error_count = 5;</code>
@@ -824,7 +826,7 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of checks that could not be performed due to errors.
+     * Number of checks that can't be performed due to errors.
      * </pre>
      *
      * <code>int32 error_count = 5;</code>

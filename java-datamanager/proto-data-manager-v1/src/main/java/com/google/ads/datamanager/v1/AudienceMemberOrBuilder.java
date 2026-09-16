@@ -336,6 +336,80 @@ public interface AudienceMemberOrBuilder
    *
    *
    * <pre>
+   * Encrypted Google User IDs.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.GoogleUserIdData google_user_id_data = 9;</code>
+   *
+   * @return Whether the googleUserIdData field is set.
+   */
+  boolean hasGoogleUserIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Encrypted Google User IDs.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.GoogleUserIdData google_user_id_data = 9;</code>
+   *
+   * @return The googleUserIdData.
+   */
+  com.google.ads.datamanager.v1.GoogleUserIdData getGoogleUserIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Encrypted Google User IDs.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.GoogleUserIdData google_user_id_data = 9;</code>
+   */
+  com.google.ads.datamanager.v1.GoogleUserIdDataOrBuilder getGoogleUserIdDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Partner-provided identifiers.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PartnerProvidedIdData partner_provided_id_data = 10;</code>
+   *
+   * @return Whether the partnerProvidedIdData field is set.
+   */
+  boolean hasPartnerProvidedIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Partner-provided identifiers.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PartnerProvidedIdData partner_provided_id_data = 10;</code>
+   *
+   * @return The partnerProvidedIdData.
+   */
+  com.google.ads.datamanager.v1.PartnerProvidedIdData getPartnerProvidedIdData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Partner-provided identifiers.
+   * </pre>
+   *
+   * <code>.google.ads.datamanager.v1.PartnerProvidedIdData partner_provided_id_data = 10;</code>
+   */
+  com.google.ads.datamanager.v1.PartnerProvidedIdDataOrBuilder getPartnerProvidedIdDataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The consent setting for the user.
    * </pre>
    *

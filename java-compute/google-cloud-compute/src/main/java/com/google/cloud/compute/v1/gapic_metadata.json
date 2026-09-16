@@ -722,6 +722,24 @@
         }
       }
     },
+    "Hosts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HostsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "ImageFamilyViews": {
       "clients": {
         "grpc": {
@@ -3023,6 +3041,21 @@
         }
       }
     },
+    "ReliabilityRisks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReliabilityRisksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "ReservationBlocks": {
       "clients": {
         "grpc": {
@@ -3057,6 +3090,9 @@
           "rpcs": {
             "Get": {
               "methods": ["get", "get", "getCallable"]
+            },
+            "GetHealth": {
+              "methods": ["getHealthAsync", "getHealthAsync", "getHealthOperationCallable", "getHealthCallable"]
             },
             "GetVersion": {
               "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]

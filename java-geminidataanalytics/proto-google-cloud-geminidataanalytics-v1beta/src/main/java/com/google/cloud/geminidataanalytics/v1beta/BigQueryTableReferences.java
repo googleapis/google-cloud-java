@@ -73,6 +73,7 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
             com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TABLE_REFERENCES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -271,6 +272,67 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     return propertyGraphReferences_.get(index);
   }
 
+  public static final int AGENT_CONTEXT_REFERENCE_FIELD_NUMBER = 4;
+  private com.google.cloud.geminidataanalytics.v1beta.AgentContextReference agentContextReference_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentContextReference field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentContextReference() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentContextReference.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.AgentContextReference
+      getAgentContextReference() {
+    return agentContextReference_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.getDefaultInstance()
+        : agentContextReference_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder
+      getAgentContextReferenceOrBuilder() {
+    return agentContextReference_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.getDefaultInstance()
+        : agentContextReference_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -291,6 +353,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     for (int i = 0; i < propertyGraphReferences_.size(); i++) {
       output.writeMessage(2, propertyGraphReferences_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getAgentContextReference());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -307,6 +372,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, propertyGraphReferences_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAgentContextReference());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -327,6 +396,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     if (!getTableReferencesList().equals(other.getTableReferencesList())) return false;
     if (!getPropertyGraphReferencesList().equals(other.getPropertyGraphReferencesList()))
       return false;
+    if (hasAgentContextReference() != other.hasAgentContextReference()) return false;
+    if (hasAgentContextReference()) {
+      if (!getAgentContextReference().equals(other.getAgentContextReference())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -345,6 +418,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     if (getPropertyGraphReferencesCount() > 0) {
       hash = (37 * hash) + PROPERTY_GRAPH_REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getPropertyGraphReferencesList().hashCode();
+    }
+    if (hasAgentContextReference()) {
+      hash = (37 * hash) + AGENT_CONTEXT_REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentContextReference().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -481,10 +558,21 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
 
     // Construct using
     // com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetTableReferencesFieldBuilder();
+        internalGetPropertyGraphReferencesFieldBuilder();
+        internalGetAgentContextReferenceFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -505,6 +593,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         propertyGraphReferencesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      agentContextReference_ = null;
+      if (agentContextReferenceBuilder_ != null) {
+        agentContextReferenceBuilder_.dispose();
+        agentContextReferenceBuilder_ = null;
+      }
       return this;
     }
 
@@ -568,6 +661,15 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     private void buildPartial0(
         com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.agentContextReference_ =
+            agentContextReferenceBuilder_ == null
+                ? agentContextReference_
+                : agentContextReferenceBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -640,6 +742,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
           }
         }
       }
+      if (other.hasAgentContextReference()) {
+        mergeAgentContextReference(other.getAgentContextReference());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -695,6 +800,13 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
                 }
                 break;
               } // case 18
+            case 34:
+              {
+                input.readMessage(
+                    internalGetAgentContextReferenceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1637,6 +1749,227 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         propertyGraphReferences_ = null;
       }
       return propertyGraphReferencesBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.AgentContextReference
+        agentContextReference_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReference,
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder>
+        agentContextReferenceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentContextReference field is set.
+     */
+    public boolean hasAgentContextReference() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentContextReference.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.AgentContextReference
+        getAgentContextReference() {
+      if (agentContextReferenceBuilder_ == null) {
+        return agentContextReference_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.getDefaultInstance()
+            : agentContextReference_;
+      } else {
+        return agentContextReferenceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentContextReference(
+        com.google.cloud.geminidataanalytics.v1beta.AgentContextReference value) {
+      if (agentContextReferenceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentContextReference_ = value;
+      } else {
+        agentContextReferenceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentContextReference(
+        com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.Builder builderForValue) {
+      if (agentContextReferenceBuilder_ == null) {
+        agentContextReference_ = builderForValue.build();
+      } else {
+        agentContextReferenceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentContextReference(
+        com.google.cloud.geminidataanalytics.v1beta.AgentContextReference value) {
+      if (agentContextReferenceBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && agentContextReference_ != null
+            && agentContextReference_
+                != com.google.cloud.geminidataanalytics.v1beta.AgentContextReference
+                    .getDefaultInstance()) {
+          getAgentContextReferenceBuilder().mergeFrom(value);
+        } else {
+          agentContextReference_ = value;
+        }
+      } else {
+        agentContextReferenceBuilder_.mergeFrom(value);
+      }
+      if (agentContextReference_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentContextReference() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      agentContextReference_ = null;
+      if (agentContextReferenceBuilder_ != null) {
+        agentContextReferenceBuilder_.dispose();
+        agentContextReferenceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.Builder
+        getAgentContextReferenceBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetAgentContextReferenceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder
+        getAgentContextReferenceOrBuilder() {
+      if (agentContextReferenceBuilder_ != null) {
+        return agentContextReferenceBuilder_.getMessageOrBuilder();
+      } else {
+        return agentContextReference_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.getDefaultInstance()
+            : agentContextReference_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Parameters for retrieving data from Agent Context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReference,
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder>
+        internalGetAgentContextReferenceFieldBuilder() {
+      if (agentContextReferenceBuilder_ == null) {
+        agentContextReferenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.AgentContextReference,
+                com.google.cloud.geminidataanalytics.v1beta.AgentContextReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder>(
+                getAgentContextReference(), getParentForChildren(), isClean());
+        agentContextReference_ = null;
+      }
+      return agentContextReferenceBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.BigQueryTableReferences)

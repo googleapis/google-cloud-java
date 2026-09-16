@@ -36,7 +36,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -72,7 +71,7 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   }
 
   @Override
-  public WatchdogProvider withClock(@Nonnull ApiClock clock) {
+  public WatchdogProvider withClock(ApiClock clock) {
     return new InstantiatingWatchdogProvider(
         Preconditions.checkNotNull(clock), executor, checkInterval);
   }
@@ -87,12 +86,12 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
    */
   @Override
   @ObsoleteApi("Use withCheckIntervalDuration(java.time.Duration) instead")
-  public WatchdogProvider withCheckInterval(@Nonnull org.threeten.bp.Duration checkInterval) {
+  public WatchdogProvider withCheckInterval(org.threeten.bp.Duration checkInterval) {
     return withCheckIntervalDuration(toJavaTimeDuration(checkInterval));
   }
 
   @Override
-  public WatchdogProvider withCheckIntervalDuration(@Nonnull java.time.Duration checkInterval) {
+  public WatchdogProvider withCheckIntervalDuration(java.time.Duration checkInterval) {
     return new InstantiatingWatchdogProvider(
         clock, executor, Preconditions.checkNotNull(checkInterval));
   }
@@ -109,9 +108,8 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   }
 
   @SuppressWarnings("ConstantConditions")
-  @Nullable
   @Override
-  public Watchdog getWatchdog() {
+  public @Nullable Watchdog getWatchdog() {
     Preconditions.checkState(!needsClock(), "A clock is needed");
     Preconditions.checkState(!needsCheckInterval(), "A check interval is needed");
     Preconditions.checkState(!needsExecutor(), "An executor is needed");

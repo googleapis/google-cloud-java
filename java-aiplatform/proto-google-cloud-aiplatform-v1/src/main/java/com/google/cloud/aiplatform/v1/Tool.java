@@ -1434,6 +1434,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+     * Retention Marketplace product. If this value is "false" or omitted, the
+     * Parallel Web Search for Grounding standard subscription will be used. If
+     * this value is "true", the Parallel Web Search for Grounding - ZDR
+     * subscription will be used.
+     * </pre>
+     *
+     * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableZeroDataRetention.
+     */
+    boolean getEnableZeroDataRetention();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Custom configs for ParallelAiSearch.
      * This field can be used to pass any parameter from the Parallel.ai
      * Search API.
@@ -1631,6 +1648,29 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ENABLE_ZERO_DATA_RETENTION_FIELD_NUMBER = 4;
+    private boolean enableZeroDataRetention_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+     * Retention Marketplace product. If this value is "false" or omitted, the
+     * Parallel Web Search for Grounding standard subscription will be used. If
+     * this value is "true", the Parallel Web Search for Grounding - ZDR
+     * subscription will be used.
+     * </pre>
+     *
+     * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableZeroDataRetention.
+     */
+    @java.lang.Override
+    public boolean getEnableZeroDataRetention() {
+      return enableZeroDataRetention_;
+    }
+
     public static final int CUSTOM_CONFIGS_FIELD_NUMBER = 3;
     private com.google.protobuf.Struct customConfigs_;
 
@@ -1755,6 +1795,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getCustomConfigs());
       }
+      if (enableZeroDataRetention_ != false) {
+        output.writeBool(4, enableZeroDataRetention_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1769,6 +1812,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomConfigs());
+      }
+      if (enableZeroDataRetention_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableZeroDataRetention_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1787,6 +1833,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch) obj;
 
       if (!getApiKey().equals(other.getApiKey())) return false;
+      if (getEnableZeroDataRetention() != other.getEnableZeroDataRetention()) return false;
       if (hasCustomConfigs() != other.hasCustomConfigs()) return false;
       if (hasCustomConfigs()) {
         if (!getCustomConfigs().equals(other.getCustomConfigs())) return false;
@@ -1804,6 +1851,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
+      hash = (37 * hash) + ENABLE_ZERO_DATA_RETENTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableZeroDataRetention());
       if (hasCustomConfigs()) {
         hash = (37 * hash) + CUSTOM_CONFIGS_FIELD_NUMBER;
         hash = (53 * hash) + getCustomConfigs().hashCode();
@@ -1960,6 +2009,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         apiKey_ = "";
+        enableZeroDataRetention_ = false;
         customConfigs_ = null;
         if (customConfigsBuilder_ != null) {
           customConfigsBuilder_.dispose();
@@ -2004,8 +2054,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.apiKey_ = apiKey_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enableZeroDataRetention_ = enableZeroDataRetention_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.customConfigs_ =
               customConfigsBuilder_ == null ? customConfigs_ : customConfigsBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -2030,6 +2083,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           apiKey_ = other.apiKey_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (other.getEnableZeroDataRetention() != false) {
+          setEnableZeroDataRetention(other.getEnableZeroDataRetention());
         }
         if (other.hasCustomConfigs()) {
           mergeCustomConfigs(other.getCustomConfigs());
@@ -2070,9 +2126,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetCustomConfigsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  enableZeroDataRetention_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2223,6 +2285,74 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean enableZeroDataRetention_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableZeroDataRetention.
+       */
+      @java.lang.Override
+      public boolean getEnableZeroDataRetention() {
+        return enableZeroDataRetention_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableZeroDataRetention to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableZeroDataRetention(boolean value) {
+
+        enableZeroDataRetention_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableZeroDataRetention() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        enableZeroDataRetention_ = false;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Struct customConfigs_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Struct,
@@ -2259,7 +2389,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * @return Whether the customConfigs field is set.
        */
       public boolean hasCustomConfigs() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
 
       /**
@@ -2335,7 +2465,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         } else {
           customConfigsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2372,7 +2502,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         } else {
           customConfigsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2405,7 +2535,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeCustomConfigs(com.google.protobuf.Struct value) {
         if (customConfigsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && customConfigs_ != null
               && customConfigs_ != com.google.protobuf.Struct.getDefaultInstance()) {
             getCustomConfigsBuilder().mergeFrom(value);
@@ -2416,7 +2546,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           customConfigsBuilder_.mergeFrom(value);
         }
         if (customConfigs_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
@@ -2449,7 +2579,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearCustomConfigs() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         customConfigs_ = null;
         if (customConfigsBuilder_ != null) {
           customConfigsBuilder_.dispose();
@@ -2486,7 +2616,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public com.google.protobuf.Struct.Builder getCustomConfigsBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return internalGetCustomConfigsFieldBuilder().getBuilder();
       }
@@ -2618,6 +2748,975 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ExaAiSearchOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.ExaAiSearch)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The API key for ExaAiSearch.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The apiKey.
+     */
+    java.lang.String getApiKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The API key for ExaAiSearch.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for apiKey.
+     */
+    com.google.protobuf.ByteString getApiKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customConfigs field is set.
+     */
+    boolean hasCustomConfigs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customConfigs.
+     */
+    com.google.protobuf.Struct getCustomConfigs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ExaAiSearch tool type.
+   * A tool that uses the Exa.ai search engine for grounding.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ExaAiSearch}
+   */
+  public static final class ExaAiSearch extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Tool.ExaAiSearch)
+      ExaAiSearchOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ExaAiSearch");
+    }
+
+    // Use ExaAiSearch.newBuilder() to construct.
+    private ExaAiSearch(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ExaAiSearch() {
+      apiKey_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ExaAiSearch_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ExaAiSearch_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.class,
+              com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int API_KEY_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object apiKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The API key for ExaAiSearch.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The apiKey.
+     */
+    @java.lang.Override
+    public java.lang.String getApiKey() {
+      java.lang.Object ref = apiKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        apiKey_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The API key for ExaAiSearch.
+     * </pre>
+     *
+     * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for apiKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getApiKeyBytes() {
+      java.lang.Object ref = apiKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        apiKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CUSTOM_CONFIGS_FIELD_NUMBER = 2;
+    private com.google.protobuf.Struct customConfigs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customConfigs field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomConfigs() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customConfigs.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getCustomConfigs() {
+      return customConfigs_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : customConfigs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field can be used to pass any parameter from the Exa.ai
+     * Search API.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder() {
+      return customConfigs_ == null
+          ? com.google.protobuf.Struct.getDefaultInstance()
+          : customConfigs_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiKey_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, apiKey_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getCustomConfigs());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiKey_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, apiKey_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCustomConfigs());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Tool.ExaAiSearch)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Tool.ExaAiSearch other =
+          (com.google.cloud.aiplatform.v1.Tool.ExaAiSearch) obj;
+
+      if (!getApiKey().equals(other.getApiKey())) return false;
+      if (hasCustomConfigs() != other.hasCustomConfigs()) return false;
+      if (hasCustomConfigs()) {
+        if (!getCustomConfigs().equals(other.getCustomConfigs())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + API_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getApiKey().hashCode();
+      if (hasCustomConfigs()) {
+        hash = (37 * hash) + CUSTOM_CONFIGS_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomConfigs().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.aiplatform.v1.Tool.ExaAiSearch prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ExaAiSearch tool type.
+     * A tool that uses the Exa.ai search engine for grounding.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ExaAiSearch}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Tool.ExaAiSearch)
+        com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ExaAiSearch_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ExaAiSearch_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.class,
+                com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetCustomConfigsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        apiKey_ = "";
+        customConfigs_ = null;
+        if (customConfigsBuilder_ != null) {
+          customConfigsBuilder_.dispose();
+          customConfigsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ExaAiSearch_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch build() {
+        com.google.cloud.aiplatform.v1.Tool.ExaAiSearch result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch buildPartial() {
+        com.google.cloud.aiplatform.v1.Tool.ExaAiSearch result =
+            new com.google.cloud.aiplatform.v1.Tool.ExaAiSearch(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Tool.ExaAiSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.apiKey_ = apiKey_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.customConfigs_ =
+              customConfigsBuilder_ == null ? customConfigs_ : customConfigsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Tool.ExaAiSearch) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Tool.ExaAiSearch) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Tool.ExaAiSearch other) {
+        if (other == com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance())
+          return this;
+        if (!other.getApiKey().isEmpty()) {
+          apiKey_ = other.apiKey_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasCustomConfigs()) {
+          mergeCustomConfigs(other.getCustomConfigs());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  apiKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetCustomConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object apiKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The API key for ExaAiSearch.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The apiKey.
+       */
+      public java.lang.String getApiKey() {
+        java.lang.Object ref = apiKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          apiKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The API key for ExaAiSearch.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for apiKey.
+       */
+      public com.google.protobuf.ByteString getApiKeyBytes() {
+        java.lang.Object ref = apiKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          apiKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The API key for ExaAiSearch.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The apiKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The API key for ExaAiSearch.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearApiKey() {
+        apiKey_ = getDefaultInstance().getApiKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The API key for ExaAiSearch.
+       * </pre>
+       *
+       * <code>string api_key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for apiKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setApiKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        apiKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Struct customConfigs_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          customConfigsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the customConfigs field is set.
+       */
+      public boolean hasCustomConfigs() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The customConfigs.
+       */
+      public com.google.protobuf.Struct getCustomConfigs() {
+        if (customConfigsBuilder_ == null) {
+          return customConfigs_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : customConfigs_;
+        } else {
+          return customConfigsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomConfigs(com.google.protobuf.Struct value) {
+        if (customConfigsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          customConfigs_ = value;
+        } else {
+          customConfigsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCustomConfigs(com.google.protobuf.Struct.Builder builderForValue) {
+        if (customConfigsBuilder_ == null) {
+          customConfigs_ = builderForValue.build();
+        } else {
+          customConfigsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeCustomConfigs(com.google.protobuf.Struct value) {
+        if (customConfigsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && customConfigs_ != null
+              && customConfigs_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getCustomConfigsBuilder().mergeFrom(value);
+          } else {
+            customConfigs_ = value;
+          }
+        } else {
+          customConfigsBuilder_.mergeFrom(value);
+        }
+        if (customConfigs_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearCustomConfigs() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        customConfigs_ = null;
+        if (customConfigsBuilder_ != null) {
+          customConfigsBuilder_.dispose();
+          customConfigsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getCustomConfigsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetCustomConfigsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getCustomConfigsOrBuilder() {
+        if (customConfigsBuilder_ != null) {
+          return customConfigsBuilder_.getMessageOrBuilder();
+        } else {
+          return customConfigs_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : customConfigs_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. This field can be used to pass any parameter from the Exa.ai
+       * Search API.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct custom_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          internalGetCustomConfigsFieldBuilder() {
+        if (customConfigsBuilder_ == null) {
+          customConfigsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getCustomConfigs(), getParentForChildren(), isClean());
+          customConfigs_ = null;
+        }
+        return customConfigsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Tool.ExaAiSearch)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Tool.ExaAiSearch)
+    private static final com.google.cloud.aiplatform.v1.Tool.ExaAiSearch DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Tool.ExaAiSearch();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ExaAiSearch getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExaAiSearch> PARSER =
+        new com.google.protobuf.AbstractParser<ExaAiSearch>() {
+          @java.lang.Override
+          public ExaAiSearch parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ExaAiSearch> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExaAiSearch> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -4739,6 +5838,71 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         : parallelAiSearch_;
   }
 
+  public static final int EXA_AI_SEARCH_FIELD_NUMBER = 15;
+  private com.google.cloud.aiplatform.v1.Tool.ExaAiSearch exaAiSearch_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exaAiSearch field is set.
+   */
+  @java.lang.Override
+  public boolean hasExaAiSearch() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exaAiSearch.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch getExaAiSearch() {
+    return exaAiSearch_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance()
+        : exaAiSearch_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder getExaAiSearchOrBuilder() {
+    return exaAiSearch_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance()
+        : exaAiSearch_;
+  }
+
   public static final int CODE_EXECUTION_FIELD_NUMBER = 4;
   private com.google.cloud.aiplatform.v1.Tool.CodeExecution codeExecution_;
 
@@ -4758,7 +5922,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCodeExecution() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -4819,7 +5983,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlContext() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -4880,7 +6044,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasComputerUse() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -4948,7 +6112,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -4960,14 +6124,17 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(10, getUrlContext());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(11, getComputerUse());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(13, getParallelAiSearch());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(15, getExaAiSearch());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4989,7 +6156,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -5001,14 +6168,17 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUrlContext());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getParallelAiSearch());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getExaAiSearch());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5049,6 +6219,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (hasParallelAiSearch() != other.hasParallelAiSearch()) return false;
     if (hasParallelAiSearch()) {
       if (!getParallelAiSearch().equals(other.getParallelAiSearch())) return false;
+    }
+    if (hasExaAiSearch() != other.hasExaAiSearch()) return false;
+    if (hasExaAiSearch()) {
+      if (!getExaAiSearch().equals(other.getExaAiSearch())) return false;
     }
     if (hasCodeExecution() != other.hasCodeExecution()) return false;
     if (hasCodeExecution()) {
@@ -5100,6 +6274,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (hasParallelAiSearch()) {
       hash = (37 * hash) + PARALLEL_AI_SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getParallelAiSearch().hashCode();
+    }
+    if (hasExaAiSearch()) {
+      hash = (37 * hash) + EXA_AI_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + getExaAiSearch().hashCode();
     }
     if (hasCodeExecution()) {
       hash = (37 * hash) + CODE_EXECUTION_FIELD_NUMBER;
@@ -5266,6 +6444,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         internalGetGoogleMapsFieldBuilder();
         internalGetEnterpriseWebSearchFieldBuilder();
         internalGetParallelAiSearchFieldBuilder();
+        internalGetExaAiSearchFieldBuilder();
         internalGetCodeExecutionFieldBuilder();
         internalGetUrlContextFieldBuilder();
         internalGetComputerUseFieldBuilder();
@@ -5312,6 +6491,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (parallelAiSearchBuilder_ != null) {
         parallelAiSearchBuilder_.dispose();
         parallelAiSearchBuilder_ = null;
+      }
+      exaAiSearch_ = null;
+      if (exaAiSearchBuilder_ != null) {
+        exaAiSearchBuilder_.dispose();
+        exaAiSearchBuilder_ = null;
       }
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
@@ -5410,18 +6594,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.codeExecution_ =
-            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
+        result.exaAiSearch_ =
+            exaAiSearchBuilder_ == null ? exaAiSearch_ : exaAiSearchBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        result.codeExecution_ =
+            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.computerUse_ =
             computerUseBuilder_ == null ? computerUse_ : computerUseBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5482,6 +6671,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasParallelAiSearch()) {
         mergeParallelAiSearch(other.getParallelAiSearch());
+      }
+      if (other.hasExaAiSearch()) {
+        mergeExaAiSearch(other.getExaAiSearch());
       }
       if (other.hasCodeExecution()) {
         mergeCodeExecution(other.getCodeExecution());
@@ -5550,7 +6742,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
@@ -5578,14 +6770,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetUrlContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(
                     internalGetComputerUseFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 90
             case 106:
@@ -5595,6 +6787,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 106
+            case 122:
+              {
+                input.readMessage(
+                    internalGetExaAiSearchFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7548,6 +8747,238 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       return parallelAiSearchBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.Tool.ExaAiSearch exaAiSearch_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearch,
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder>
+        exaAiSearchBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the exaAiSearch field is set.
+     */
+    public boolean hasExaAiSearch() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The exaAiSearch.
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch getExaAiSearch() {
+      if (exaAiSearchBuilder_ == null) {
+        return exaAiSearch_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance()
+            : exaAiSearch_;
+      } else {
+        return exaAiSearchBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExaAiSearch(com.google.cloud.aiplatform.v1.Tool.ExaAiSearch value) {
+      if (exaAiSearchBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exaAiSearch_ = value;
+      } else {
+        exaAiSearchBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExaAiSearch(
+        com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder builderForValue) {
+      if (exaAiSearchBuilder_ == null) {
+        exaAiSearch_ = builderForValue.build();
+      } else {
+        exaAiSearchBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExaAiSearch(com.google.cloud.aiplatform.v1.Tool.ExaAiSearch value) {
+      if (exaAiSearchBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && exaAiSearch_ != null
+            && exaAiSearch_
+                != com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance()) {
+          getExaAiSearchBuilder().mergeFrom(value);
+        } else {
+          exaAiSearch_ = value;
+        }
+      } else {
+        exaAiSearchBuilder_.mergeFrom(value);
+      }
+      if (exaAiSearch_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExaAiSearch() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      exaAiSearch_ = null;
+      if (exaAiSearchBuilder_ != null) {
+        exaAiSearchBuilder_.dispose();
+        exaAiSearchBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder getExaAiSearchBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetExaAiSearchFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder getExaAiSearchOrBuilder() {
+      if (exaAiSearchBuilder_ != null) {
+        return exaAiSearchBuilder_.getMessageOrBuilder();
+      } else {
+        return exaAiSearch_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.getDefaultInstance()
+            : exaAiSearch_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Uses Exa.ai to search for information to
+     * answer user queries. The search results will be grounded on Exa.ai
+     * and presented to the model for response generation
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearch,
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder>
+        internalGetExaAiSearchFieldBuilder() {
+      if (exaAiSearchBuilder_ == null) {
+        exaAiSearchBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.Tool.ExaAiSearch,
+                com.google.cloud.aiplatform.v1.Tool.ExaAiSearch.Builder,
+                com.google.cloud.aiplatform.v1.Tool.ExaAiSearchOrBuilder>(
+                getExaAiSearch(), getParentForChildren(), isClean());
+        exaAiSearch_ = null;
+      }
+      return exaAiSearchBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.Tool.CodeExecution codeExecution_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.aiplatform.v1.Tool.CodeExecution,
@@ -7570,7 +9001,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the codeExecution field is set.
      */
     public boolean hasCodeExecution() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -7618,7 +9049,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         codeExecutionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7642,7 +9073,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         codeExecutionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -7661,7 +9092,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCodeExecution(com.google.cloud.aiplatform.v1.Tool.CodeExecution value) {
       if (codeExecutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && codeExecution_ != null
             && codeExecution_
                 != com.google.cloud.aiplatform.v1.Tool.CodeExecution.getDefaultInstance()) {
@@ -7673,7 +9104,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         codeExecutionBuilder_.mergeFrom(value);
       }
       if (codeExecution_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -7692,7 +9123,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCodeExecution() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
         codeExecutionBuilder_.dispose();
@@ -7715,7 +9146,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Tool.CodeExecution.Builder getCodeExecutionBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetCodeExecutionFieldBuilder().getBuilder();
     }
@@ -7792,7 +9223,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlContext field is set.
      */
     public boolean hasUrlContext() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -7838,7 +9269,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         urlContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7861,7 +9292,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         urlContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -7879,7 +9310,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1.UrlContext value) {
       if (urlContextBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && urlContext_ != null
             && urlContext_ != com.google.cloud.aiplatform.v1.UrlContext.getDefaultInstance()) {
           getUrlContextBuilder().mergeFrom(value);
@@ -7890,7 +9321,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         urlContextBuilder_.mergeFrom(value);
       }
       if (urlContext_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -7908,7 +9339,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUrlContext() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       urlContext_ = null;
       if (urlContextBuilder_ != null) {
         urlContextBuilder_.dispose();
@@ -7930,7 +9361,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.UrlContext.Builder getUrlContextBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetUrlContextFieldBuilder().getBuilder();
     }
@@ -8007,7 +9438,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * @return Whether the computerUse field is set.
      */
     public boolean hasComputerUse() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -8057,7 +9488,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         computerUseBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8082,7 +9513,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       } else {
         computerUseBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -8102,7 +9533,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeComputerUse(com.google.cloud.aiplatform.v1.Tool.ComputerUse value) {
       if (computerUseBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && computerUse_ != null
             && computerUse_
                 != com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()) {
@@ -8114,7 +9545,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         computerUseBuilder_.mergeFrom(value);
       }
       if (computerUse_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -8134,7 +9565,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearComputerUse() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       computerUse_ = null;
       if (computerUseBuilder_ != null) {
         computerUseBuilder_.dispose();
@@ -8158,7 +9589,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder getComputerUseBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetComputerUseFieldBuilder().getBuilder();
     }

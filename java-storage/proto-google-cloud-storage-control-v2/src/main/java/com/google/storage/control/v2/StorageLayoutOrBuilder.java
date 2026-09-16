@@ -201,4 +201,47 @@ public interface StorageLayoutOrBuilder
    */
   com.google.storage.control.v2.StorageLayout.HierarchicalNamespaceOrBuilder
       getHierarchicalNamespaceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Rapid Cache configuration for the bucket.
+   * </pre>
+   *
+   * <code>
+   * .google.storage.control.v2.StorageLayout.RapidCacheInfo rapid_cache_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rapidCacheInfo field is set.
+   */
+  boolean hasRapidCacheInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Rapid Cache configuration for the bucket.
+   * </pre>
+   *
+   * <code>
+   * .google.storage.control.v2.StorageLayout.RapidCacheInfo rapid_cache_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rapidCacheInfo.
+   */
+  com.google.storage.control.v2.StorageLayout.RapidCacheInfo getRapidCacheInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The Rapid Cache configuration for the bucket.
+   * </pre>
+   *
+   * <code>
+   * .google.storage.control.v2.StorageLayout.RapidCacheInfo rapid_cache_info = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.storage.control.v2.StorageLayout.RapidCacheInfoOrBuilder getRapidCacheInfoOrBuilder();
 }

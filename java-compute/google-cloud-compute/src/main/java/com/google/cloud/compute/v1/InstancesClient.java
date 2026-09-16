@@ -2081,6 +2081,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -2112,6 +2113,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -2144,6 +2146,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -7030,6 +7033,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -7065,6 +7069,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -7101,6 +7106,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")

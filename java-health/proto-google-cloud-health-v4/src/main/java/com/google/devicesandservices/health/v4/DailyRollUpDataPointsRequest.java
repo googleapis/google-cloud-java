@@ -334,10 +334,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    *
    * The supported values are:
    *
-   * - `users/me/dataSourceFamilies/all-sources` - default value
-   * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-   * - `users/me/dataSourceFamilies/google-sources` - Google first party
-   * sources
+   * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+   * from all available data sources.
+   * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+   * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+   * Watch). Excludes manually logged data.
+   * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+   * Google data, such as data from tracker devices, manually logged data, and
+   * Health Connect.
    * </pre>
    *
    * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -368,10 +372,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    *
    * The supported values are:
    *
-   * - `users/me/dataSourceFamilies/all-sources` - default value
-   * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-   * - `users/me/dataSourceFamilies/google-sources` - Google first party
-   * sources
+   * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+   * from all available data sources.
+   * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+   * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+   * Watch). Excludes manually logged data.
+   * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+   * Google data, such as data from tracker devices, manually logged data, and
+   * Health Connect.
    * </pre>
    *
    * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1519,10 +1527,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - default value
-     * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-     * - `users/me/dataSourceFamilies/google-sources` - Google first party
-     * sources
+     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+     * from all available data sources.
+     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
      * </pre>
      *
      * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1552,10 +1564,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - default value
-     * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-     * - `users/me/dataSourceFamilies/google-sources` - Google first party
-     * sources
+     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+     * from all available data sources.
+     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
      * </pre>
      *
      * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1585,10 +1601,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - default value
-     * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-     * - `users/me/dataSourceFamilies/google-sources` - Google first party
-     * sources
+     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+     * from all available data sources.
+     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
      * </pre>
      *
      * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1617,10 +1637,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - default value
-     * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-     * - `users/me/dataSourceFamilies/google-sources` - Google first party
-     * sources
+     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+     * from all available data sources.
+     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
      * </pre>
      *
      * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1645,10 +1669,14 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - default value
-     * - `users/me/dataSourceFamilies/google-wearables` - tracker devices
-     * - `users/me/dataSourceFamilies/google-sources` - Google first party
-     * sources
+     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
+     * from all available data sources.
+     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
+     * Watch). Excludes manually logged data.
+     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * Google data, such as data from tracker devices, manually logged data, and
+     * Health Connect.
      * </pre>
      *
      * <code>string data_source_family = 7 [(.google.api.field_behavior) = OPTIONAL];</code>

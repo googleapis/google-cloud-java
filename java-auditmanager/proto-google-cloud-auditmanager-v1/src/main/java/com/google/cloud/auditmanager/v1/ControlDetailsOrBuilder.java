@@ -30,7 +30,7 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -43,7 +43,7 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -56,7 +56,7 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * The control for which the findings are being reported.
+   * Control that the findings are being reported for.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.Control control = 1;</code>
@@ -97,7 +97,8 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -110,7 +111,8 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>
@@ -123,7 +125,8 @@ public interface ControlDetailsOrBuilder
    *
    *
    * <pre>
-   * Report summary with compliance, violation counts etc.
+   * A control report summary that provides a high-level overview of the
+   * compliance controls and the assessment status.
    * </pre>
    *
    * <code>.google.cloud.auditmanager.v1.ReportSummary control_report_summary = 3;</code>

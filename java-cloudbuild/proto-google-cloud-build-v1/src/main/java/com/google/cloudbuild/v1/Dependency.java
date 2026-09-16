@@ -195,6 +195,22 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
      * @return The bytes for destPath.
      */
     com.google.protobuf.ByteString getDestPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if remote tags should be fetched too (default false).
+     * Note: when depth is 1 (default), git fetch only retrieves tags pointing
+     * to commits within the shallow boundary. Set depth to -1 to fetch all
+     * historical tags.
+     * </pre>
+     *
+     * <code>bool fetch_tags = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fetchTags.
+     */
+    boolean getFetchTags();
   }
 
   /**
@@ -453,6 +469,28 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int FETCH_TAGS_FIELD_NUMBER = 6;
+    private boolean fetchTags_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. True if remote tags should be fetched too (default false).
+     * Note: when depth is 1 (default), git fetch only retrieves tags pointing
+     * to commits within the shallow boundary. Set depth to -1 to fetch all
+     * historical tags.
+     * </pre>
+     *
+     * <code>bool fetch_tags = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fetchTags.
+     */
+    @java.lang.Override
+    public boolean getFetchTags() {
+      return fetchTags_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -482,6 +520,9 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destPath_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, destPath_);
       }
+      if (fetchTags_ != false) {
+        output.writeBool(6, fetchTags_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -505,6 +546,9 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(destPath_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, destPath_);
+      }
+      if (fetchTags_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, fetchTags_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -530,6 +574,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
       if (getRecurseSubmodules() != other.getRecurseSubmodules()) return false;
       if (getDepth() != other.getDepth()) return false;
       if (!getDestPath().equals(other.getDestPath())) return false;
+      if (getFetchTags() != other.getFetchTags()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -553,6 +598,8 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDepth());
       hash = (37 * hash) + DEST_PATH_FIELD_NUMBER;
       hash = (53 * hash) + getDestPath().hashCode();
+      hash = (37 * hash) + FETCH_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFetchTags());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -712,6 +759,7 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
         recurseSubmodules_ = false;
         depth_ = 0L;
         destPath_ = "";
+        fetchTags_ = false;
         return this;
       }
 
@@ -766,6 +814,9 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.destPath_ = destPath_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.fetchTags_ = fetchTags_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -800,6 +851,9 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
           destPath_ = other.destPath_;
           bitField0_ |= 0x00000010;
           onChanged();
+        }
+        if (other.getFetchTags() != false) {
+          setFetchTags(other.getFetchTags());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -858,6 +912,12 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 48:
+                {
+                  fetchTags_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 48
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1427,6 +1487,71 @@ public final class Dependency extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         destPath_ = value;
         bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private boolean fetchTags_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. True if remote tags should be fetched too (default false).
+       * Note: when depth is 1 (default), git fetch only retrieves tags pointing
+       * to commits within the shallow boundary. Set depth to -1 to fetch all
+       * historical tags.
+       * </pre>
+       *
+       * <code>bool fetch_tags = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The fetchTags.
+       */
+      @java.lang.Override
+      public boolean getFetchTags() {
+        return fetchTags_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. True if remote tags should be fetched too (default false).
+       * Note: when depth is 1 (default), git fetch only retrieves tags pointing
+       * to commits within the shallow boundary. Set depth to -1 to fetch all
+       * historical tags.
+       * </pre>
+       *
+       * <code>bool fetch_tags = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The fetchTags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFetchTags(boolean value) {
+
+        fetchTags_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. True if remote tags should be fetched too (default false).
+       * Note: when depth is 1 (default), git fetch only retrieves tags pointing
+       * to commits within the shallow boundary. Set depth to -1 to fetch all
+       * historical tags.
+       * </pre>
+       *
+       * <code>bool fetch_tags = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFetchTags() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        fetchTags_ = false;
         onChanged();
         return this;
       }

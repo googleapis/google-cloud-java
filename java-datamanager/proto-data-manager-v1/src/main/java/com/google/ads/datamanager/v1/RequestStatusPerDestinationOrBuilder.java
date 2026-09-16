@@ -342,5 +342,50 @@ public interface RequestStatusPerDestinationOrBuilder
   com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatusOrBuilder
       getAudienceMembersRemovalStatusOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   *
+   * @return Whether the removeAllAudienceMembersStatus field is set.
+   */
+  boolean hasRemoveAllAudienceMembersStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   *
+   * @return The removeAllAudienceMembersStatus.
+   */
+  com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+      getRemoveAllAudienceMembersStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   */
+  com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatusOrBuilder
+      getRemoveAllAudienceMembersStatusOrBuilder();
+
   com.google.ads.datamanager.v1.RequestStatusPerDestination.StatusCase getStatusCase();
 }

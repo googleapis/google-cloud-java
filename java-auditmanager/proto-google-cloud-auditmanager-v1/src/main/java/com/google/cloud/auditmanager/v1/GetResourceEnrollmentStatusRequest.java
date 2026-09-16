@@ -24,7 +24,8 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * Message for getting the enrollment status of a resource.
+ * Request message for
+ * [GetResourceEnrollmentStatus][google.cloud.auditmanager.v1.AuditManager.GetResourceEnrollmentStatus].
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest}
@@ -80,10 +81,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Format
-   * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * Required. Name of the resource enrollment status, in one of the following
+   * formats:
+   *
+   * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
    * </pre>
    *
    * <code>
@@ -109,10 +112,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Format
-   * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * Required. Name of the resource enrollment status, in one of the following
+   * formats:
+   *
+   * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
    * </pre>
    *
    * <code>
@@ -300,7 +305,8 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Message for getting the enrollment status of a resource.
+   * Request message for
+   * [GetResourceEnrollmentStatus][google.cloud.auditmanager.v1.AuditManager.GetResourceEnrollmentStatus].
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest}
@@ -459,10 +465,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Format
-     * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+     * Required. Name of the resource enrollment status, in one of the following
+     * formats:
+     *
+     * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
      * </pre>
      *
      * <code>
@@ -487,10 +495,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Format
-     * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+     * Required. Name of the resource enrollment status, in one of the following
+     * formats:
+     *
+     * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
      * </pre>
      *
      * <code>
@@ -515,10 +525,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Format
-     * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+     * Required. Name of the resource enrollment status, in one of the following
+     * formats:
+     *
+     * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
      * </pre>
      *
      * <code>
@@ -542,10 +554,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Format
-     * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+     * Required. Name of the resource enrollment status, in one of the following
+     * formats:
+     *
+     * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
      * </pre>
      *
      * <code>
@@ -565,10 +579,12 @@ public final class GetResourceEnrollmentStatusRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Format
-     * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-     * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+     * Required. Name of the resource enrollment status, in one of the following
+     * formats:
+     *
+     * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+     * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
      * </pre>
      *
      * <code>

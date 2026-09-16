@@ -118,6 +118,16 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>MILLIS = 1;</code>
      */
     MILLIS(1),
+    /**
+     *
+     *
+     * <pre>
+     * The table keeps data versioned at a granularity of 1us.
+     * </pre>
+     *
+     * <code>MICROS = 2;</code>
+     */
+    MICROS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -154,6 +164,17 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      */
     public static final int MILLIS_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * The table keeps data versioned at a granularity of 1us.
+     * </pre>
+     *
+     * <code>MICROS = 2;</code>
+     */
+    public static final int MICROS_VALUE = 2;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -182,6 +203,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           return TIMESTAMP_GRANULARITY_UNSPECIFIED;
         case 1:
           return MILLIS;
+        case 2:
+          return MICROS;
         default:
           return null;
       }

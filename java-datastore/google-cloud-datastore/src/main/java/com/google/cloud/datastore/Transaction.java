@@ -389,6 +389,14 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   List<Entity> put(FullEntity<?>... entities);
 
   /**
+   * Commit the transaction with specified {@link DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException if could not commit the transaction or if no longer active
+   */
+  @BetaApi
+  Response commit(DatastoreExecutionOptions executionOptions);
+
+  /**
    * Commit the transaction.
    *
    * <p>Example of committing a transaction.
@@ -411,6 +419,14 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * @throws DatastoreException if could not commit the transaction or if no longer active
    */
   Response commit();
+
+  /**
+   * Rollback the transaction with specified {@link DatastoreExecutionOptions}.
+   *
+   * @throws DatastoreException if transaction was already committed
+   */
+  @BetaApi
+  void rollback(DatastoreExecutionOptions executionOptions);
 
   /**
    * Rollback the transaction.

@@ -206,13 +206,15 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "google/firestore/v1/query_profile.proto\032"
           + "\037google/firestore/v1/write.proto\032\033google"
           + "/protobuf/empty.proto\032\037google/protobuf/t"
-          + "imestamp.proto\032\036google/protobuf/wrappers.proto\032\027google/rpc/status.proto\"\270\001\n"
+          + "imestamp.proto\032\036google/protobuf/wrappers.proto\032\027google/rpc/status.proto\"\373\001\n"
           + "\022GetDocumentRequest\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022/\n"
           + "\004mask\030\002 \001(\0132!.google.firestore.v1.DocumentMask\022\025\n"
           + "\013transaction\030\003 \001(\014H\000\022/\n"
-          + "\tread_time\030\005 \001(\0132\032.google.protobuf.TimestampH\000B\026\n"
-          + "\024consistency_selector\"\273\002\n"
+          + "\tread_time\030\005 \001(\0132\032.google.protobuf.TimestampH\000\022A\n"
+          + "\017request_options\030\n"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\026\n"
+          + "\024consistency_selector\"\376\002\n"
           + "\024ListDocumentsRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\032\n\r"
           + "collection_id\030\002 \001(\tB\003\340A\001\022\026\n"
@@ -223,25 +225,33 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\013transaction\030\010 \001(\014H\000\022/\n"
           + "\tread_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampH\000\022\024\n"
-          + "\014show_missing\030\014 \001(\010B\026\n"
+          + "\014show_missing\030\014 \001(\010\022A\n"
+          + "\017request_options\030\r"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\026\n"
           + "\024consistency_selector\"b\n"
           + "\025ListDocumentsResponse\0220\n"
           + "\tdocuments\030\001 \003(\0132\035.google.firestore.v1.Document\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\304\001\n"
+          + "\017next_page_token\030\002 \001(\t\"\207\002\n"
           + "\025CreateDocumentRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\032\n\r"
           + "collection_id\030\002 \001(\tB\003\340A\002\022\023\n"
           + "\013document_id\030\003 \001(\t\0224\n"
           + "\010document\030\004 \001(\0132\035.google.firestore.v1.DocumentB\003\340A\002\022/\n"
-          + "\004mask\030\005 \001(\0132!.google.firestore.v1.DocumentMask\"\363\001\n"
+          + "\004mask\030\005 \001(\0132!.google.firestore.v1.DocumentMask\022A\n"
+          + "\017request_options\030\006"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\"\266\002\n"
           + "\025UpdateDocumentRequest\0224\n"
           + "\010document\030\001 \001(\0132\035.google.firestore.v1.DocumentB\003\340A\002\0226\n"
           + "\013update_mask\030\002 \001(\0132!.google.firestore.v1.DocumentMask\022/\n"
           + "\004mask\030\003 \001(\0132!.google.firestore.v1.DocumentMask\022;\n"
-          + "\020current_document\030\004 \001(\0132!.google.firestore.v1.Precondition\"g\n"
+          + "\020current_document\030\004 \001(\0132!.google.firestore.v1.Precondition\022A\n"
+          + "\017request_options\030\005"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\"\252\001\n"
           + "\025DeleteDocumentRequest\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022;\n"
-          + "\020current_document\030\002 \001(\0132!.google.firestore.v1.Precondition\"\231\002\n"
+          + "\020current_document\030\002 \001(\0132!.google.firestore.v1.Precondition\022A\n"
+          + "\017request_options\030\003 \001(\013"
+          + "2#.google.firestore.v1.RequestOptionsB\003\340A\001\"\334\002\n"
           + "\030BatchGetDocumentsRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\tdocuments\030\002 \003(\t\022/\n"
@@ -249,29 +259,37 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\013transaction\030\004 \001(\014H\000\022B\n"
           + "\017new_transaction\030\005"
           + " \001(\0132\'.google.firestore.v1.TransactionOptionsH\000\022/\n"
-          + "\tread_time\030\007 \001(\0132\032.google.protobuf.TimestampH\000B\026\n"
+          + "\tread_time\030\007 \001(\0132\032.google.protobuf.TimestampH\000\022A\n"
+          + "\017request_options\030\010"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\026\n"
           + "\024consistency_selector\"\254\001\n"
           + "\031BatchGetDocumentsResponse\022.\n"
           + "\005found\030\001 \001(\0132\035.google.firestore.v1.DocumentH\000\022\021\n"
           + "\007missing\030\002 \001(\tH\000\022\023\n"
           + "\013transaction\030\003 \001(\014\022-\n"
           + "\tread_time\030\004 \001(\0132\032.google.protobuf.TimestampB\010\n"
-          + "\006result\"j\n"
+          + "\006result\"\255\001\n"
           + "\027BeginTransactionRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\0228\n"
-          + "\007options\030\002 \001(\0132\'.google.firestore.v1.TransactionOptions\"/\n"
+          + "\007options\030\002 \001(\0132\'.google.firestore.v1.TransactionOptions\022A\n"
+          + "\017request_options\030\003"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\"/\n"
           + "\030BeginTransactionResponse\022\023\n"
-          + "\013transaction\030\001 \001(\014\"g\n\r"
+          + "\013transaction\030\001 \001(\014\"\252\001\n\r"
           + "CommitRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022*\n"
           + "\006writes\030\002 \003(\0132\032.google.firestore.v1.Write\022\023\n"
-          + "\013transaction\030\003 \001(\014\"z\n"
+          + "\013transaction\030\003 \001(\014\022A\n"
+          + "\017request_options\030\004"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\"z\n"
           + "\016CommitResponse\0227\n\r"
           + "write_results\030\001 \003(\0132 .google.firestore.v1.WriteResult\022/\n"
-          + "\013commit_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"B\n"
+          + "\013commit_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\205\001\n"
           + "\017RollbackRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013transaction\030\002 \001(\014B\003\340A\002\"\335\002\n"
+          + "\013transaction\030\002 \001(\014B\003\340A\002\022A\n"
+          + "\017request_options\030\003"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\"\240\003\n"
           + "\017RunQueryRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022@\n"
           + "\020structured_query\030\002"
@@ -281,7 +299,9 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\'.google.firestore.v1.TransactionOptionsH\001\022/\n"
           + "\tread_time\030\007 \001(\0132\032.google.protobuf.TimestampH\001\022A\n"
           + "\017explain_options\030\n"
-          + " \001(\0132#.google.firestore.v1.ExplainOptionsB\003\340A\001B\014\n\n"
+          + " \001(\0132#.google.firestore.v1.ExplainOptionsB\003\340A\001\022A\n"
+          + "\017request_options\030\013"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\014\n\n"
           + "query_typeB\026\n"
           + "\024consistency_selector\"\207\002\n"
           + "\020RunQueryResponse\022\023\n"
@@ -291,33 +311,37 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\017skipped_results\030\004 \001(\005\022\016\n"
           + "\004done\030\006 \001(\010H\000\022<\n"
           + "\017explain_metrics\030\013 \001(\0132#.google.firestore.v1.ExplainMetricsB\027\n"
-          + "\025continuation_selector\"\322\002\n"
+          + "\025continuation_selector\"\225\003\n"
           + "\026ExecutePipelineRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022F\n"
-          + "\023structured_pipeline\030\002 \001(\0132\'.g"
-          + "oogle.firestore.v1.StructuredPipelineH\000\022\025\n"
+          + "\023structured_pipeline\030\002"
+          + " \001(\0132\'.google.firestore.v1.StructuredPipelineH\000\022\025\n"
           + "\013transaction\030\005 \001(\014H\001\022B\n"
-          + "\017new_transaction\030\006"
-          + " \001(\0132\'.google.firestore.v1.TransactionOptionsH\001\022/\n"
+          + "\017new_transaction\030\006 \001("
+          + "\0132\'.google.firestore.v1.TransactionOptionsH\001\022/\n"
           + "\tread_time\030\007 \001(\0132\032.google.protobuf.TimestampH\001\022$\n"
-          + "\027auto_commit_transaction\030\t \001(\010B\003\340A\001B\017\n\r"
+          + "\027auto_commit_transaction\030\t \001(\010B\003\340A\001\022A\n"
+          + "\017request_options\030\n"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\017\n\r"
           + "pipeline_typeB\026\n"
           + "\024consistency_selector\"\314\001\n"
           + "\027ExecutePipelineResponse\022\023\n"
           + "\013transaction\030\001 \001(\014\022.\n"
           + "\007results\030\002 \003(\0132\035.google.firestore.v1.Document\0222\n"
           + "\016execution_time\030\003 \001(\0132\032.google.protobuf.Timestamp\0228\n\r"
-          + "explain_stats\030\004 \001(\0132!.google.firestore.v1.ExplainStats\"\377\002\n"
+          + "explain_stats\030\004 \001(\0132!.google.firestore.v1.ExplainStats\"\302\003\n"
           + "\032RunAggregationQueryRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022W\n"
-          + "\034structured_aggregation_query\030\002 \001(\0132/.go"
-          + "ogle.firestore.v1.StructuredAggregationQueryH\000\022\025\n"
+          + "\034structured_aggregation_query\030\002"
+          + " \001(\0132/.google.firestore.v1.StructuredAggregationQueryH\000\022\025\n"
           + "\013transaction\030\004 \001(\014H\001\022B\n"
-          + "\017new_transaction\030\005"
-          + " \001(\0132\'.google.firestore.v1.TransactionOptionsH\001\022/\n"
+          + "\017new_transaction\030\005 \001(\0132\'.go"
+          + "ogle.firestore.v1.TransactionOptionsH\001\022/\n"
           + "\tread_time\030\006 \001(\0132\032.google.protobuf.TimestampH\001\022A\n"
           + "\017explain_options\030\010"
-          + " \001(\0132#.google.firestore.v1.ExplainOptionsB\003\340A\001B\014\n\n"
+          + " \001(\0132#.google.firestore.v1.ExplainOptionsB\003\340A\001\022A\n"
+          + "\017request_options\030\t"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\014\n\n"
           + "query_typeB\026\n"
           + "\024consistency_selector\"\327\001\n"
           + "\033RunAggregationQueryResponse\0226\n"
@@ -325,7 +349,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\013transaction\030\002 \001(\014\022-\n"
           + "\tread_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022<\n"
           + "\017explain_metrics\030\n"
-          + " \001(\0132#.google.firestore.v1.ExplainMetrics\"\205\002\n"
+          + " \001(\0132#.google.firestore.v1.ExplainMetrics\"\310\002\n"
           + "\025PartitionQueryRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022@\n"
           + "\020structured_query\030\002"
@@ -333,18 +357,22 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\017partition_count\030\003 \001(\003\022\022\n\n"
           + "page_token\030\004 \001(\t\022\021\n"
           + "\tpage_size\030\005 \001(\005\022/\n"
-          + "\tread_time\030\006 \001(\0132\032.google.protobuf.TimestampH\001B\014\n\n"
+          + "\tread_time\030\006 \001(\0132\032.google.protobuf.TimestampH\001\022A\n"
+          + "\017request_options\030\007"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\014\n\n"
           + "query_typeB\026\n"
           + "\024consistency_selector\"b\n"
           + "\026PartitionQueryResponse\022/\n\n"
           + "partitions\030\001 \003(\0132\033.google.firestore.v1.Cursor\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\350\001\n"
+          + "\017next_page_token\030\002 \001(\t\"\253\002\n"
           + "\014WriteRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\tstream_id\030\002 \001(\t\022*\n"
           + "\006writes\030\003 \003(\0132\032.google.firestore.v1.Write\022\024\n"
           + "\014stream_token\030\004 \001(\014\022=\n"
-          + "\006labels\030\005 \003(\0132-.google.firestore.v1.WriteRequest.LabelsEntry\032-\n"
+          + "\006labels\030\005 \003(\0132-.google.firestore.v1.WriteRequest.LabelsEntry\022A\n"
+          + "\017request_options\030\006 \001("
+          + "\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\242\001\n\r"
@@ -352,12 +380,14 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\tstream_id\030\001 \001(\t\022\024\n"
           + "\014stream_token\030\002 \001(\014\0227\n\r"
           + "write_results\030\003 \003(\0132 .google.firestore.v1.WriteResult\022/\n"
-          + "\013commit_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\362\001\n\r"
+          + "\013commit_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\265\002\n\r"
           + "ListenRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\0221\n\n"
           + "add_target\030\002 \001(\0132\033.google.firestore.v1.TargetH\000\022\027\n\r"
           + "remove_target\030\003 \001(\005H\000\022>\n"
-          + "\006labels\030\004 \003(\0132..google.firestore.v1.ListenRequest.LabelsEntry\032-\n"
+          + "\006labels\030\004 \003(\0132..google.firestore.v1.ListenRequest.LabelsEntry\022A\n"
+          + "\017request_options\030\005"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\017\n\r"
@@ -371,8 +401,8 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "response_type\"\326\003\n"
           + "\006Target\0228\n"
           + "\005query\030\002 \001(\0132\'.google.firestore.v1.Target.QueryTargetH\000\022@\n"
-          + "\tdocuments\030\003"
-          + " \001(\0132+.google.firestore.v1.Target.DocumentsTargetH\000\022\026\n"
+          + "\tdocuments\030\003 \001(\0132"
+          + "+.google.firestore.v1.Target.DocumentsTargetH\000\022\026\n"
           + "\014resume_token\030\004 \001(\014H\001\022/\n"
           + "\tread_time\030\013 \001(\0132\032.google.protobuf.TimestampH\001\022\021\n"
           + "\ttarget_id\030\005 \001(\005\022\014\n"
@@ -388,8 +418,8 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\013target_typeB\r\n"
           + "\013resume_type\"\252\002\n"
           + "\014TargetChange\022N\n"
-          + "\022target_change_type\030\001"
-          + " \001(\01622.google.firestore.v1.TargetChange.TargetChangeType\022\022\n\n"
+          + "\022target_change_type\030\001 \001(\01622.google.f"
+          + "irestore.v1.TargetChange.TargetChangeType\022\022\n\n"
           + "target_ids\030\002 \003(\005\022!\n"
           + "\005cause\030\003 \001(\0132\022.google.rpc.Status\022\024\n"
           + "\014resume_token\030\004 \001(\014\022-\n"
@@ -399,21 +429,25 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "\003ADD\020\001\022\n\n"
           + "\006REMOVE\020\002\022\013\n"
           + "\007CURRENT\020\003\022\t\n"
-          + "\005RESET\020\004\"\237\001\n"
+          + "\005RESET\020\004\"\342\001\n"
           + "\030ListCollectionIdsRequest\022\023\n"
           + "\006parent\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022/\n"
-          + "\tread_time\030\004 \001(\0132\032.google.protobuf.TimestampH\000B\026\n"
+          + "\tread_time\030\004 \001(\0132\032.google.protobuf.TimestampH\000\022A\n"
+          + "\017request_options\030\005"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001B\026\n"
           + "\024consistency_selector\"L\n"
           + "\031ListCollectionIdsResponse\022\026\n"
           + "\016collection_ids\030\001 \003(\t\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\311\001\n"
+          + "\017next_page_token\030\002 \001(\t\"\214\002\n"
           + "\021BatchWriteRequest\022\025\n"
           + "\010database\030\001 \001(\tB\003\340A\002\022*\n"
           + "\006writes\030\002 \003(\0132\032.google.firestore.v1.Write\022B\n"
           + "\006labels\030\003"
-          + " \003(\01322.google.firestore.v1.BatchWriteRequest.LabelsEntry\032-\n"
+          + " \003(\01322.google.firestore.v1.BatchWriteRequest.LabelsEntry\022A\n"
+          + "\017request_options\030\004"
+          + " \001(\0132#.google.firestore.v1.RequestOptionsB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"q\n"
@@ -421,82 +455,80 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
           + "write_results\030\001 \003(\0132 .google.firestore.v1.WriteResult\022\"\n"
           + "\006status\030\002 \003(\0132\022.google.rpc.Status2\373\033\n"
           + "\tFirestore\022\217\001\n"
-          + "\013GetDocument\022\'.google.firestore.v1.GetDocumentRequest\032\035.google.fire"
-          + "store.v1.Document\"8\202\323\344\223\0022\0220/v1/{name=projects/*/databases/*/documents/*/**}\022\365\001\n\r"
-          + "ListDocuments\022).google.firestore.v1.ListDocumentsRequest\032*.google.firestore.v1.L"
-          + "istDocumentsResponse\"\214\001\202\323\344\223\002\205\001\022B/v1/{par"
-          + "ent=projects/*/databases/*/documents/*/**}/{collection_id}Z?\022=/v1/{parent=projec"
-          + "ts/*/databases/*/documents}/{collection_id}\022\277\001\n"
-          + "\016UpdateDocument\022*.google.firestore.v1.UpdateDocumentRequest\032\035.google.fire"
-          + "store.v1.Document\"b\332A\024document,update_ma"
-          + "sk\202\323\344\223\002E29/v1/{document.name=projects/*/"
-          + "databases/*/documents/*/**}:\010document\022\225\001\n"
-          + "\016DeleteDocument\022*.google.firestore.v1.D"
-          + "eleteDocumentRequest\032\026.google.protobuf.E"
-          + "mpty\"?\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/databases/*/documents/*/**}\022\271\001\n"
-          + "\021BatchGetDocuments\022-.google.firestore.v1.BatchG"
-          + "etDocumentsRequest\032..google.firestore.v1"
-          + ".BatchGetDocumentsResponse\"C\202\323\344\223\002=\"8/v1/"
-          + "{database=projects/*/databases/*}/documents:batchGet:\001*0\001\022\307\001\n"
-          + "\020BeginTransaction\022,.google.firestore.v1.BeginTransactionReq"
-          + "uest\032-.google.firestore.v1.BeginTransact"
-          + "ionResponse\"V\332A\010database\202\323\344\223\002E\"@/v1/{dat"
-          + "abase=projects/*/databases/*}/documents:beginTransaction:\001*\022\246\001\n"
-          + "\006Commit\022\".google.firestore.v1.CommitRequest\032#.google.fire"
-          + "store.v1.CommitResponse\"S\332A\017database,wri"
-          + "tes\202\323\344\223\002;\"6/v1/{database=projects/*/databases/*}/documents:commit:\001*\022\244\001\n"
-          + "\010Rollback\022$.google.firestore.v1.RollbackRequest\032"
-          + "\026.google.protobuf.Empty\"Z\332A\024database,tra"
-          + "nsaction\202\323\344\223\002=\"8/v1/{database=projects/*/databases/*}/documents:rollback:\001*\022\337\001\n"
-          + "\010RunQuery\022$.google.firestore.v1.RunQueryR"
-          + "equest\032%.google.firestore.v1.RunQueryRes"
-          + "ponse\"\203\001\202\323\344\223\002}\"6/v1/{parent=projects/*/d"
-          + "atabases/*/documents}:runQuery:\001*Z@\";/v1"
-          + "/{parent=projects/*/databases/*/documents/*/**}:runQuery:\001*0\001\022\236\002\n"
-          + "\017ExecutePipeline\022+.google.firestore.v1.ExecutePipelineR"
-          + "equest\032,.google.firestore.v1.ExecutePipe"
-          + "lineResponse\"\255\001\202\323\344\223\002D\"?/v1/{database=pro"
-          + "jects/*/databases/*}/documents:executePipeline:\001*\212\323\344\223\002]\022&\n"
+          + "\013GetDocument\022\'.google.firestore.v1.GetDocume"
+          + "ntRequest\032\035.google.firestore.v1.Document"
+          + "\"8\202\323\344\223\0022\0220/v1/{name=projects/*/databases/*/documents/*/**}\022\365\001\n\r"
+          + "ListDocuments\022).google.firestore.v1.ListDocumentsRequest\032"
+          + "*.google.firestore.v1.ListDocumentsRespo"
+          + "nse\"\214\001\202\323\344\223\002\205\001\022B/v1/{parent=projects/*/da"
+          + "tabases/*/documents/*/**}/{collection_id"
+          + "}Z?\022=/v1/{parent=projects/*/databases/*/documents}/{collection_id}\022\277\001\n"
+          + "\016UpdateDocument\022*.google.firestore.v1.UpdateDocume"
+          + "ntRequest\032\035.google.firestore.v1.Document"
+          + "\"b\332A\024document,update_mask\202\323\344\223\002E29/v1/{do"
+          + "cument.name=projects/*/databases/*/documents/*/**}:\010document\022\225\001\n"
+          + "\016DeleteDocument\022*.google.firestore.v1.DeleteDocumentRequ"
+          + "est\032\026.google.protobuf.Empty\"?\332A\004name\202\323\344\223"
+          + "\0022*0/v1/{name=projects/*/databases/*/documents/*/**}\022\271\001\n"
+          + "\021BatchGetDocuments\022-.google.firestore.v1.BatchGetDocumentsReques"
+          + "t\032..google.firestore.v1.BatchGetDocument"
+          + "sResponse\"C\202\323\344\223\002=\"8/v1/{database=project"
+          + "s/*/databases/*}/documents:batchGet:\001*0\001\022\307\001\n"
+          + "\020BeginTransaction\022,.google.firestore.v1.BeginTransactionRequest\032-.google.fir"
+          + "estore.v1.BeginTransactionResponse\"V\332A\010d"
+          + "atabase\202\323\344\223\002E\"@/v1/{database=projects/*/"
+          + "databases/*}/documents:beginTransaction:\001*\022\246\001\n"
+          + "\006Commit\022\".google.firestore.v1.CommitRequest\032#.google.firestore.v1.CommitRe"
+          + "sponse\"S\332A\017database,writes\202\323\344\223\002;\"6/v1/{d"
+          + "atabase=projects/*/databases/*}/documents:commit:\001*\022\244\001\n"
+          + "\010Rollback\022$.google.firestore.v1.RollbackRequest\032\026.google.protobuf"
+          + ".Empty\"Z\332A\024database,transaction\202\323\344\223\002=\"8/"
+          + "v1/{database=projects/*/databases/*}/documents:rollback:\001*\022\337\001\n"
+          + "\010RunQuery\022$.google.firestore.v1.RunQueryRequest\032%.google.f"
+          + "irestore.v1.RunQueryResponse\"\203\001\202\323\344\223\002}\"6/"
+          + "v1/{parent=projects/*/databases/*/documents}:runQuery:\001*Z@\";/v1/{parent=projects"
+          + "/*/databases/*/documents/*/**}:runQuery:\001*0\001\022\236\002\n"
+          + "\017ExecutePipeline\022+.google.firestore.v1.ExecutePipelineRequest\032,.google.f"
+          + "irestore.v1.ExecutePipelineResponse\"\255\001\202\323"
+          + "\344\223\002D\"?/v1/{database=projects/*/databases"
+          + "/*}/documents:executePipeline:\001*\212\323\344\223\002]\022&\n"
           + "\010database\022\032projects/{project_id=*}/**\0223\n"
           + "\010database\022\'projects/*/databases/{database_id=*}/**0\001\022\227\002\n"
-          + "\023RunAggregationQuery\022/.google.firestore.v1.Run"
-          + "AggregationQueryRequest\0320.google.firesto"
-          + "re.v1.RunAggregationQueryResponse\"\232\001\202\323\344\223"
-          + "\002\223\001\"A/v1/{parent=projects/*/databases/*/"
-          + "documents}:runAggregationQuery:\001*ZK\"F/v1"
-          + "/{parent=projects/*/databases/*/documents/*/**}:runAggregationQuery:\001*0\001\022\374\001\n"
-          + "\016PartitionQuery\022*.google.firestore.v1.Partit"
-          + "ionQueryRequest\032+.google.firestore.v1.Pa"
-          + "rtitionQueryResponse\"\220\001\202\323\344\223\002\211\001\"</v1/{par"
-          + "ent=projects/*/databases/*/documents}:partitionQuery:\001*ZF\"A/v1/{parent=projects/"
-          + "*/databases/*/documents/*/**}:partitionQuery:\001*\022\224\001\n"
-          + "\005Write\022!.google.firestore.v1.WriteRequest\032\".google.firestore.v1.Write"
-          + "Response\"@\202\323\344\223\002:\"5/v1/{database=projects"
-          + "/*/databases/*}/documents:write:\001*(\0010\001\022\230\001\n"
-          + "\006Listen\022\".google.firestore.v1.ListenRe"
-          + "quest\032#.google.firestore.v1.ListenRespon"
-          + "se\"A\202\323\344\223\002;\"6/v1/{database=projects/*/databases/*}/documents:listen:\001*(\0010\001\022\224\002\n"
-          + "\021ListCollectionIds\022-.google.firestore.v1.Li"
-          + "stCollectionIdsRequest\032..google.firestor"
-          + "e.v1.ListCollectionIdsResponse\"\237\001\332A\006pare"
-          + "nt\202\323\344\223\002\217\001\"?/v1/{parent=projects/*/databa"
-          + "ses/*/documents}:listCollectionIds:\001*ZI\""
-          + "D/v1/{parent=projects/*/databases/*/documents/*/**}:listCollectionIds:\001*\022\244\001\n\n"
-          + "BatchWrite\022&.google.firestore.v1.BatchWrite"
-          + "Request\032\'.google.firestore.v1.BatchWrite"
-          + "Response\"E\202\323\344\223\002?\":/v1/{database=projects"
-          + "/*/databases/*}/documents:batchWrite:\001*\022\257\001\n"
-          + "\016CreateDocument\022*.google.firestore.v1"
-          + ".CreateDocumentRequest\032\035.google.firestor"
-          + "e.v1.Document\"R\202\323\344\223\002L\"@/v1/{parent=proje"
-          + "cts/*/databases/*/documents/**}/{collect"
-          + "ion_id}:\010document\032v\312A\030firestore.googleap"
-          + "is.com\322AXhttps://www.googleapis.com/auth"
-          + "/cloud-platform,https://www.googleapis.com/auth/datastoreB\277\001\n"
-          + "\027com.google.firestore.v1B\016FirestoreProtoP\001Z;cloud.google.co"
-          + "m/go/firestore/apiv1/firestorepb;firesto"
-          + "repb\252\002\031Google.Cloud.Firestore.V1\312\002\031Googl"
-          + "e\\Cloud\\Firestore\\V1\352\002\034Google::Cloud::Firestore::V1b\006proto3"
+          + "\023RunAggregationQuery\022/.google.firestore.v1.RunAggregationQueryR"
+          + "equest\0320.google.firestore.v1.RunAggregat"
+          + "ionQueryResponse\"\232\001\202\323\344\223\002\223\001\"A/v1/{parent="
+          + "projects/*/databases/*/documents}:runAggregationQuery:\001*ZK\"F/v1/{parent=projects"
+          + "/*/databases/*/documents/*/**}:runAggregationQuery:\001*0\001\022\374\001\n"
+          + "\016PartitionQuery\022*.google.firestore.v1.PartitionQueryRequest\032+"
+          + ".google.firestore.v1.PartitionQueryRespo"
+          + "nse\"\220\001\202\323\344\223\002\211\001\"</v1/{parent=projects/*/da"
+          + "tabases/*/documents}:partitionQuery:\001*ZF"
+          + "\"A/v1/{parent=projects/*/databases/*/documents/*/**}:partitionQuery:\001*\022\224\001\n"
+          + "\005Write\022!.google.firestore.v1.WriteRequest\032\".go"
+          + "ogle.firestore.v1.WriteResponse\"@\202\323\344\223\002:\""
+          + "5/v1/{database=projects/*/databases/*}/documents:write:\001*(\0010\001\022\230\001\n"
+          + "\006Listen\022\".google.firestore.v1.ListenRequest\032#.google.fi"
+          + "restore.v1.ListenResponse\"A\202\323\344\223\002;\"6/v1/{"
+          + "database=projects/*/databases/*}/documents:listen:\001*(\0010\001\022\224\002\n"
+          + "\021ListCollectionIds\022-.google.firestore.v1.ListCollectionIdsRe"
+          + "quest\032..google.firestore.v1.ListCollecti"
+          + "onIdsResponse\"\237\001\332A\006parent\202\323\344\223\002\217\001\"?/v1/{p"
+          + "arent=projects/*/databases/*/documents}:listCollectionIds:\001*ZI\"D/v1/{parent=proj"
+          + "ects/*/databases/*/documents/*/**}:listCollectionIds:\001*\022\244\001\n\n"
+          + "BatchWrite\022&.google.firestore.v1.BatchWriteRequest\032\'.google."
+          + "firestore.v1.BatchWriteResponse\"E\202\323\344\223\002?\""
+          + ":/v1/{database=projects/*/databases/*}/documents:batchWrite:\001*\022\257\001\n"
+          + "\016CreateDocument\022*.google.firestore.v1.CreateDocumentRe"
+          + "quest\032\035.google.firestore.v1.Document\"R\202\323"
+          + "\344\223\002L\"@/v1/{parent=projects/*/databases/*"
+          + "/documents/**}/{collection_id}:\010document"
+          + "\032v\312A\030firestore.googleapis.com\322AXhttps://"
+          + "www.googleapis.com/auth/cloud-platform,h"
+          + "ttps://www.googleapis.com/auth/datastoreB\277\001\n"
+          + "\027com.google.firestore.v1B\016FirestoreProtoP\001Z;cloud.google.com/go/firestore/ap"
+          + "iv1/firestorepb;firestorepb\252\002\031Google.Clo"
+          + "ud.Firestore.V1\312\002\031Google\\Cloud\\Firestore"
+          + "\\V1\352\002\034Google::Cloud::Firestore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -525,7 +557,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_GetDocumentRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Mask", "Transaction", "ReadTime", "ConsistencySelector",
+              "Name", "Mask", "Transaction", "ReadTime", "RequestOptions", "ConsistencySelector",
             });
     internal_static_google_firestore_v1_ListDocumentsRequest_descriptor =
         getDescriptor().getMessageType(1);
@@ -542,6 +574,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "Transaction",
               "ReadTime",
               "ShowMissing",
+              "RequestOptions",
               "ConsistencySelector",
             });
     internal_static_google_firestore_v1_ListDocumentsResponse_descriptor =
@@ -558,7 +591,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_CreateDocumentRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "CollectionId", "DocumentId", "Document", "Mask",
+              "Parent", "CollectionId", "DocumentId", "Document", "Mask", "RequestOptions",
             });
     internal_static_google_firestore_v1_UpdateDocumentRequest_descriptor =
         getDescriptor().getMessageType(4);
@@ -566,7 +599,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_UpdateDocumentRequest_descriptor,
             new java.lang.String[] {
-              "Document", "UpdateMask", "Mask", "CurrentDocument",
+              "Document", "UpdateMask", "Mask", "CurrentDocument", "RequestOptions",
             });
     internal_static_google_firestore_v1_DeleteDocumentRequest_descriptor =
         getDescriptor().getMessageType(5);
@@ -574,7 +607,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_DeleteDocumentRequest_descriptor,
             new java.lang.String[] {
-              "Name", "CurrentDocument",
+              "Name", "CurrentDocument", "RequestOptions",
             });
     internal_static_google_firestore_v1_BatchGetDocumentsRequest_descriptor =
         getDescriptor().getMessageType(6);
@@ -588,6 +621,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "Transaction",
               "NewTransaction",
               "ReadTime",
+              "RequestOptions",
               "ConsistencySelector",
             });
     internal_static_google_firestore_v1_BatchGetDocumentsResponse_descriptor =
@@ -604,7 +638,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_BeginTransactionRequest_descriptor,
             new java.lang.String[] {
-              "Database", "Options",
+              "Database", "Options", "RequestOptions",
             });
     internal_static_google_firestore_v1_BeginTransactionResponse_descriptor =
         getDescriptor().getMessageType(9);
@@ -620,7 +654,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_CommitRequest_descriptor,
             new java.lang.String[] {
-              "Database", "Writes", "Transaction",
+              "Database", "Writes", "Transaction", "RequestOptions",
             });
     internal_static_google_firestore_v1_CommitResponse_descriptor =
         getDescriptor().getMessageType(11);
@@ -636,7 +670,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_RollbackRequest_descriptor,
             new java.lang.String[] {
-              "Database", "Transaction",
+              "Database", "Transaction", "RequestOptions",
             });
     internal_static_google_firestore_v1_RunQueryRequest_descriptor =
         getDescriptor().getMessageType(13);
@@ -650,6 +684,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "NewTransaction",
               "ReadTime",
               "ExplainOptions",
+              "RequestOptions",
               "QueryType",
               "ConsistencySelector",
             });
@@ -679,6 +714,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "NewTransaction",
               "ReadTime",
               "AutoCommitTransaction",
+              "RequestOptions",
               "PipelineType",
               "ConsistencySelector",
             });
@@ -702,6 +738,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "NewTransaction",
               "ReadTime",
               "ExplainOptions",
+              "RequestOptions",
               "QueryType",
               "ConsistencySelector",
             });
@@ -725,6 +762,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
               "PageToken",
               "PageSize",
               "ReadTime",
+              "RequestOptions",
               "QueryType",
               "ConsistencySelector",
             });
@@ -742,7 +780,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_WriteRequest_descriptor,
             new java.lang.String[] {
-              "Database", "StreamId", "Writes", "StreamToken", "Labels",
+              "Database", "StreamId", "Writes", "StreamToken", "Labels", "RequestOptions",
             });
     internal_static_google_firestore_v1_WriteRequest_LabelsEntry_descriptor =
         internal_static_google_firestore_v1_WriteRequest_descriptor.getNestedType(0);
@@ -766,7 +804,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_ListenRequest_descriptor,
             new java.lang.String[] {
-              "Database", "AddTarget", "RemoveTarget", "Labels", "TargetChange",
+              "Database", "AddTarget", "RemoveTarget", "Labels", "RequestOptions", "TargetChange",
             });
     internal_static_google_firestore_v1_ListenRequest_LabelsEntry_descriptor =
         internal_static_google_firestore_v1_ListenRequest_descriptor.getNestedType(0);
@@ -834,7 +872,12 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_ListCollectionIdsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "ReadTime", "ConsistencySelector",
+              "Parent",
+              "PageSize",
+              "PageToken",
+              "ReadTime",
+              "RequestOptions",
+              "ConsistencySelector",
             });
     internal_static_google_firestore_v1_ListCollectionIdsResponse_descriptor =
         getDescriptor().getMessageType(28);
@@ -850,7 +893,7 @@ public final class FirestoreProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_v1_BatchWriteRequest_descriptor,
             new java.lang.String[] {
-              "Database", "Writes", "Labels",
+              "Database", "Writes", "Labels", "RequestOptions",
             });
     internal_static_google_firestore_v1_BatchWriteRequest_LabelsEntry_descriptor =
         internal_static_google_firestore_v1_BatchWriteRequest_descriptor.getNestedType(0);

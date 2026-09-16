@@ -23,6 +23,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterManagerGrpc.ClusterManagerImplBase;
 import com.google.container.v1.ClusterUpgradeInfo;
+import com.google.container.v1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
@@ -869,6 +870,28 @@ public class MockClusterManagerImpl extends ClusterManagerImplBase {
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   NodePoolUpgradeInfo.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void completeControlPlaneUpgrade(
+      CompleteControlPlaneUpgradeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CompleteControlPlaneUpgrade, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
@@ -67,6 +68,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
@@ -136,7 +138,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setNull(int parameterIndex, int sqlType) throws SQLException {
     checkClosed();
-    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(sqlType);
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
     this.parameterHandler.setParameter(parameterIndex, null, javaType);
   }
 
@@ -248,7 +250,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (setTemporalObject(parameterIndex, value)) {
       return;
     }
-    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(parameterIndex, value, javaType);
   }
 
@@ -389,15 +391,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         FieldList fieldLists = this.insertSchema.getFields();
         if (fieldLists.size() == parameterList.size()) {
 
-          JsonObject rowObject = new JsonObject();
-          for (int j = 0; j < parameterList.size(); j++) {
-            BigQueryJdbcParameter parameter = parameterList.get(j);
-            if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
-              rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
-            } else {
-              rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
-            }
-          }
+          JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
           jsonArray.add(rowObject);
 
           if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
@@ -429,6 +423,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
     LOG.finer("Commit called.");
     return rowCount;
+  }
+
+  static JsonObject createJsonRow(
+      FieldList fieldLists, List<BigQueryJdbcParameter> parameterList, Gson gson) {
+    JsonObject rowObject = new JsonObject();
+    for (int j = 0; j < parameterList.size(); j++) {
+      BigQueryJdbcParameter parameter = parameterList.get(j);
+      if (parameter.getValue() == null) {
+        rowObject.add(fieldLists.get(j).getName(), JsonNull.INSTANCE);
+      } else if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
+        rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
+      } else {
+        rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
+      }
+    }
+    return rowObject;
   }
 
   private void setInsertMetadata(QueryStatistics statistics) throws SQLException {
@@ -532,13 +542,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setDate(int parameterIndex, Date value, Calendar calendar) throws SQLException {
     checkClosed();
-    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
+    setDate(parameterIndex, BigQueryTemporalUtility.convertDateToCalendar(value, calendar));
   }
 
   @Override
   public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
+    setTime(parameterIndex, BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar));
   }
 
   @Override
@@ -546,7 +556,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       throws SQLException {
     checkClosed();
     setTimestamp(
-        parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
+        parameterIndex, BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override

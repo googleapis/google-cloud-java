@@ -24,6 +24,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -79,7 +80,10 @@ public class IngestionServiceClientTest {
   @Test
   public void ingestAudienceMembersTest() throws Exception {
     IngestAudienceMembersResponse expectedResponse =
-        IngestAudienceMembersResponse.newBuilder().setRequestId("requestId693933066").build();
+        IngestAudienceMembersResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .addAllFieldWarnings(new ArrayList<FieldWarning>())
+            .build();
     mockIngestionService.addResponse(expectedResponse);
 
     IngestAudienceMembersRequest request =
@@ -193,9 +197,61 @@ public class IngestionServiceClientTest {
   }
 
   @Test
+  public void removeAllAudienceMembersTest() throws Exception {
+    RemoveAllAudienceMembersResponse expectedResponse =
+        RemoveAllAudienceMembersResponse.newBuilder().setRequestId("requestId693933066").build();
+    mockIngestionService.addResponse(expectedResponse);
+
+    RemoveAllAudienceMembersRequest request =
+        RemoveAllAudienceMembersRequest.newBuilder()
+            .addAllDestinations(new ArrayList<Destination>())
+            .setRemoveAsOfTime(Timestamp.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    RemoveAllAudienceMembersResponse actualResponse = client.removeAllAudienceMembers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIngestionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveAllAudienceMembersRequest actualRequest =
+        ((RemoveAllAudienceMembersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getDestinationsList(), actualRequest.getDestinationsList());
+    Assert.assertEquals(request.getRemoveAsOfTime(), actualRequest.getRemoveAsOfTime());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeAllAudienceMembersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIngestionService.addException(exception);
+
+    try {
+      RemoveAllAudienceMembersRequest request =
+          RemoveAllAudienceMembersRequest.newBuilder()
+              .addAllDestinations(new ArrayList<Destination>())
+              .setRemoveAsOfTime(Timestamp.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.removeAllAudienceMembers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void ingestEventsTest() throws Exception {
     IngestEventsResponse expectedResponse =
-        IngestEventsResponse.newBuilder().setRequestId("requestId693933066").build();
+        IngestEventsResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .addAllFieldWarnings(new ArrayList<FieldWarning>())
+            .build();
     mockIngestionService.addResponse(expectedResponse);
 
     IngestEventsRequest request =
