@@ -674,7 +674,7 @@ public abstract class JobStatistics implements Serializable {
             this.exportDataStats =
                 ExportDataStats.fromPb(statisticsPb.getQuery().getExportDataStatistics());
           }
-          if(statisticsPb.getQuery().getUndeclaredQueryParameters() != null){
+          if (statisticsPb.getQuery().getUndeclaredQueryParameters() != null) {
             this.queryParameters = statisticsPb.getQuery().getUndeclaredQueryParameters();
           }
         }
