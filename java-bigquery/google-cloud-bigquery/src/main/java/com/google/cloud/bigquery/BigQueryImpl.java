@@ -280,9 +280,33 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private final ReentrantLock readClientLock = new ReentrantLock();
+  private transient ReentrantLock readClientLock = new ReentrantLock();
   private transient Map<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
+
+  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    readClientLock = new ReentrantLock();
+  }
+
+  @Override
+  public void close() {
+    if (readClientLock != null) {
+      readClientLock.lock();
+      try {
+        if (bqReadClients != null) {
+          for (BigQueryReadClient client : bqReadClients.values()) {
+            if (client != null) {
+              client.close();
+            }
+          }
+          bqReadClients.clear();
+        }
+      } finally {
+        readClientLock.unlock();
+      }
+    }
+  }
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -2433,7 +2457,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
       // 2. Check if fast-path query execution is supported (no destination table or custom job ID)
       boolean useFastPath =
-          requestInfo.isFastQuerySupported() && (jobId == null || jobId.getJob() == null);
+          requestInfo.isFastQuerySupported()
+              && (jobId == null || jobId.getJob() == null)
+              && (options == null || options.length == 0);
 
       if (useFastPath) {
         // Fast Path: Execute query directly via the jobs.query REST RPC
@@ -2462,7 +2488,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           throw BigQueryException.translateAndThrow(e);
         }
 
-        if (results.getErrors() != null) {
+        if (results.getErrors() != null && !results.getErrors().isEmpty()) {
           List<BigQueryError> bigQueryErrors =
               Lists.transform(results.getErrors(), BigQueryError.FROM_PB_FUNCTION);
           throw new BigQueryException(bigQueryErrors);
@@ -2510,7 +2536,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchema =
                 ArrowDeserializer.deserializeSchema(
                     results.getArrowSchema().decodeSerializedSchema());
-          } catch (IOException e) {
+          } catch (IOException | IllegalArgumentException e) {
             throw new BigQueryException(0, "Failed to deserialize Arrow schema from response", e);
           }
         }
@@ -2525,7 +2551,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         byte[] initialBatchBytes = null;
         if (results.getArrowRecordBatch() != null
             && results.getArrowRecordBatch().getSerializedRecordBatch() != null) {
-          initialBatchBytes = results.getArrowRecordBatch().decodeSerializedRecordBatch();
+          try {
+            initialBatchBytes = results.getArrowRecordBatch().decodeSerializedRecordBatch();
+          } catch (IllegalArgumentException e) {
+            throw new BigQueryException(0, "Failed to decode Arrow record batch from response", e);
+          }
         }
 
         // Construct default Storage Read API stream name for streaming subsequent pages (if job
