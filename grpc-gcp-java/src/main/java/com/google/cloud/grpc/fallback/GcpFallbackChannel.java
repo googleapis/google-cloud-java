@@ -194,12 +194,14 @@ public class GcpFallbackChannel extends ManagedChannel {
     if (localGeneration.get() < fallbackState.getGeneration()) {
       stateLock.lock();
       try {
-        long poolGen = fallbackState.getGeneration();
-        if (localGeneration.get() < poolGen) {
-          localInFallbackMode.set(fallbackState.getTargetFallbackMode());
-          localProbeSuccesses.set(0);
-          localFirstPrimaryProbeSuccessNanos.set(0);
-          localGeneration.set(poolGen);
+        synchronized (fallbackState) {
+          long poolGen = fallbackState.getGeneration();
+          if (localGeneration.get() < poolGen) {
+            localInFallbackMode.set(fallbackState.getTargetFallbackMode());
+            localProbeSuccesses.set(0);
+            localFirstPrimaryProbeSuccessNanos.set(0);
+            localGeneration.set(poolGen);
+          }
         }
       } finally {
         stateLock.unlock();
@@ -233,9 +235,10 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void init() {
-    localGeneration.set(fallbackState.getGeneration());
-    localInFallbackMode.set(
-        fallbackState.isInFallbackMode() && fallbackState.getTargetFallbackMode());
+    synchronized (fallbackState) {
+      localGeneration.set(fallbackState.getGeneration());
+      localInFallbackMode.set(fallbackState.getTargetFallbackMode());
+    }
     if (options.getPrimaryProbingFunction() != null) {
       this.primaryProbeFuture =
           fallbackState.scheduleTask(
@@ -258,7 +261,7 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void processPrimaryStatusCode(Status.Code statusCode) {
-    if (fallbackChannel != null) {
+    if (fallbackChannel != null && !localInFallbackMode.get()) {
       if (options.getErroneousStates().contains(statusCode)) {
         fallbackState.getPrimaryFailures().incrementAndGet();
       } else {
@@ -317,11 +320,16 @@ public class GcpFallbackChannel extends ManagedChannel {
               && primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
               && durationSatisfied) {
             long recoveredGen =
-                fallbackState.recordRecovery(options.isEnablePerChannelRecovery());
-            localInFallbackMode.set(false);
-            localProbeSuccesses.set(0);
-            localFirstPrimaryProbeSuccessNanos.set(0);
-            localGeneration.set(recoveredGen);
+                fallbackState.recordRecovery(
+                    probeStartGen, options.isEnablePerChannelRecovery());
+            if (recoveredGen != -1) {
+              localInFallbackMode.set(false);
+              localProbeSuccesses.set(0);
+              localFirstPrimaryProbeSuccessNanos.set(0);
+              localGeneration.set(recoveredGen);
+            } else {
+              syncFallbackModeState();
+            }
           }
         } else {
           localProbeSuccesses.set(0);
