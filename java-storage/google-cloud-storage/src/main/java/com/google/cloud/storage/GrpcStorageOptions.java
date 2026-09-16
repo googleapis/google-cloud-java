@@ -153,7 +153,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private final boolean enableOtelMetrics;
   private final boolean enableOtelDebugMetrics;
   private final transient SdkMeterProvider meterProvider;
-  private final java.time.Duration metricInterval;
+  private final Duration metricInterval;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -462,7 +462,7 @@ public final class GrpcStorageOptions extends StorageOptions
    */
   @BetaApi
   @Override
-  public java.time.Duration getMetricInterval() {
+  public Duration getMetricInterval() {
     return metricInterval;
   }
 
@@ -564,7 +564,7 @@ public final class GrpcStorageOptions extends StorageOptions
     private Boolean enableOtelMetrics = null;
     private Boolean enableOtelDebugMetrics = null;
     private SdkMeterProvider meterProvider = null;
-    private java.time.Duration metricInterval = java.time.Duration.ofSeconds(60);
+    private Duration metricInterval = Duration.ofSeconds(60);
 
     private boolean grpcMetricsManuallyEnabled = false;
 
@@ -865,7 +865,7 @@ public final class GrpcStorageOptions extends StorageOptions
      */
     @BetaApi
     @Override
-    public GrpcStorageOptions.Builder setMetricInterval(java.time.Duration metricInterval) {
+    public GrpcStorageOptions.Builder setMetricInterval(Duration metricInterval) {
       this.metricInterval = requireNonNull(metricInterval, "metricInterval must be non null");
       return this;
     }
