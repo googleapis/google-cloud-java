@@ -876,7 +876,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setClientInfo(Properties properties) {
-    this.clientInfo.git();
+    this.clientInfo.clear();
     if (properties != null) {
       this.clientInfo.putAll(properties);
     }

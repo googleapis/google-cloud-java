@@ -1060,7 +1060,9 @@ public class ITBigQueryJDBCTest extends ITBase {
             DATASET, TABLE_NAME);
     String insertQuery =
         String.format(
-            "INSERT INTO %s.%s (StringField, IntegerField, BytesField, DoubleField, BooleanField, NumericField, BigNumericField, DateField, TimeField, DateTimeField, TimestampField, ArrayField, StructField, JsonField, GeographyField, IntervalField, RangeField) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+            "INSERT INTO %s.%s (StringField, IntegerField, BytesField, DoubleField, BooleanField, NumericField, BigNumericField, "
+                + "DateField, TimeField, DateTimeField, TimestampField, ArrayField, StructField, JsonField, GeographyField, IntervalField, RangeField) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
             DATASET, TABLE_NAME);
 
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
@@ -1077,10 +1079,10 @@ public class ITBigQueryJDBCTest extends ITBase {
       assertEquals(expectedValues[i], parameterMetaData.getParameterType(i + 1));
     }
 
-    // Row 1: Testing setString, setInt, setShort, setBytes, setObject, setNull
+    // Testing an Exception is thrown if not all values are set.
     insertStmt.setString(1, "String1");
     insertStmt.setInt(2, 111);
-    insertStmt.setShort(3, (short) 12);
+    insertStmt.setObject(4, 1.5);
     insertStmt.setObject(6, true, Types.BOOLEAN);
     insertStmt.setNull(7, Types.VARCHAR);
 
