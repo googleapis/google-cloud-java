@@ -17,7 +17,6 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
@@ -252,29 +251,30 @@ public class UpdateSchemaBundleRequestTest {
   }
 
   @Test
-  public void testSetProtoSchemaWhenAvroSchemaAlreadySetThrowsException() {
-    UpdateSchemaBundleRequest request =
-        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID).setAvroSchema(TEST_AVRO_SCHEMA);
+  public void testSetProtoSchemaWhenAvroSchemaAlreadySetOverwrites() throws IOException {
     ByteString protoSchema = ByteString.copyFromUtf8("proto");
+    UpdateSchemaBundleRequest request =
+        UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
+            .setAvroSchema(TEST_AVRO_SCHEMA)
+            .setProtoSchema(protoSchema);
 
-    IllegalStateException exception =
-        assertThrows(IllegalStateException.class, () -> request.setProtoSchema(protoSchema));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Cannot set proto_schema when avro_schema is already set");
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest proto =
+        request.toProto(PROJECT_ID, INSTANCE_ID);
+    assertThat(proto.getSchemaBundle().hasProtoSchema()).isTrue();
+    assertThat(proto.getSchemaBundle().hasAvroSchema()).isFalse();
   }
 
   @Test
-  public void testSetAvroSchemaWhenProtoSchemaAlreadySetThrowsException() throws IOException {
+  public void testSetAvroSchemaWhenProtoSchemaAlreadySetOverwrites() throws IOException {
     UpdateSchemaBundleRequest request =
         UpdateSchemaBundleRequest.of(TABLE_ID, SCHEMA_BUNDLE_ID)
-            .setProtoSchema(ByteString.copyFromUtf8("proto"));
+            .setProtoSchema(ByteString.copyFromUtf8("proto"))
+            .setAvroSchema(TEST_AVRO_SCHEMA);
 
-    IllegalStateException exception =
-        assertThrows(IllegalStateException.class, () -> request.setAvroSchema(TEST_AVRO_SCHEMA));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Cannot set avro_schema when proto_schema is already set");
+    com.google.bigtable.admin.v2.UpdateSchemaBundleRequest proto =
+        request.toProto(PROJECT_ID, INSTANCE_ID);
+    assertThat(proto.getSchemaBundle().hasAvroSchema()).isTrue();
+    assertThat(proto.getSchemaBundle().hasProtoSchema()).isFalse();
   }
 
   private String getResourceFilePath(String filePath) throws URISyntaxException {
