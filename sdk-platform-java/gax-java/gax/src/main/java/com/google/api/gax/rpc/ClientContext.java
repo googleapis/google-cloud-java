@@ -35,6 +35,7 @@ import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import com.google.api.client.util.Strings;
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.core.NanoClock;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -289,6 +290,80 @@ public abstract class ClientContext {
         .setStreamWatchdogCheckIntervalDuration(settings.getStreamWatchdogCheckIntervalDuration())
         .setTracerFactory(apiTracerFactory)
         .setEndpointContext(endpointContext)
+        .build();
+  }
+
+  /**
+   * Derives a {@link ClientContext} for a second transport from {@code parent}, replacing the
+   * transport channel, endpoint and internal headers and inheriting everything else.
+   */
+  @InternalApi
+  public static ClientContext createWithTransport(
+      ClientContext parent,
+      String endpoint,
+      TransportChannelProvider transportChannelProvider,
+      HeaderProvider internalHeaderProvider)
+      throws IOException {
+    Credentials credentials = parent.getCredentials();
+    EndpointContext endpointContext = parent.getEndpointContext();
+
+    Map<String, String> internal = internalHeaderProvider.getHeaders();
+    Map<String, String> user = parent.getHeaders();
+    Map<String, String> conflictResolution = new HashMap<>();
+
+    for (String key : Sets.intersection(user.keySet(), internal.keySet())) {
+      if ("user-agent".equals(key)) {
+        conflictResolution.put(key, user.get(key) + " " + internal.get(key));
+        continue;
+      }
+      if (QUOTA_PROJECT_ID_HEADER_KEY.equals(key) && parent.getQuotaProjectId() != null) {
+        continue;
+      }
+      throw new IllegalArgumentException("Header provider can't override the header: " + key);
+    }
+    if (parent.getQuotaProjectId() != null) {
+      conflictResolution.put(QUOTA_PROJECT_ID_HEADER_KEY, parent.getQuotaProjectId());
+    }
+
+    Map<String, String> effective = new HashMap<>();
+    effective.putAll(internal);
+    effective.putAll(user);
+    effective.putAll(conflictResolution);
+    Map<String, String> headers = appendCredentialTypeToHeaderIfPresent(effective, credentials);
+
+    TransportChannelProvider provider = transportChannelProvider;
+    if (provider.needsHeaders()) {
+      provider = provider.withHeaders(headers);
+    }
+    if (provider.needsCredentials() && credentials != null) {
+      provider = provider.withCredentials(credentials);
+    }
+    if (provider.needsEndpoint()) {
+      provider = provider.withEndpoint(endpoint);
+    }
+    provider = provider.withUseS2A(endpointContext.useS2A());
+    if (provider.needsMtlsEndpoint() && endpointContext.mtlsEndpoint() != null) {
+      provider = provider.withMtlsEndpoint(endpointContext.mtlsEndpoint());
+    }
+    TransportChannel channel = provider.getTransportChannel();
+
+    ApiCallContext defaultCallContext = channel.getEmptyCallContext().withTransportChannel(channel);
+    if (credentials != null) {
+      defaultCallContext = defaultCallContext.withCredentials(credentials);
+    }
+    defaultCallContext = defaultCallContext.withEndpointContext(endpointContext);
+
+    ImmutableList.Builder<BackgroundResource> backgroundResources = ImmutableList.builder();
+    if (provider.shouldAutoClose()) {
+      backgroundResources.add(channel);
+    }
+
+    return parent.toBuilder()
+        .setEndpoint(endpoint)
+        .setTransportChannel(channel)
+        .setInternalHeaders(ImmutableMap.copyOf(internal))
+        .setDefaultCallContext(defaultCallContext)
+        .setBackgroundResources(backgroundResources.build())
         .build();
   }
 
