@@ -75,8 +75,7 @@ final class StorageClientMetrics {
   @Nullable private final DoubleHistogram tlsHandshakeDuration;
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
-  static StorageClientMetrics create(
-      MeterProvider meterProvider, boolean enableOtelDebugMetrics) {
+  static StorageClientMetrics create(MeterProvider meterProvider, boolean enableOtelDebugMetrics) {
     Meter meter =
         meterProvider
             .meterBuilder(METER_NAME)
@@ -236,38 +235,31 @@ final class StorageClientMetrics {
     return responseBodySize;
   }
 
-  @Nullable
-  LongUpDownCounter getRequestActive() {
+  @Nullable LongUpDownCounter getRequestActive() {
     return requestActive;
   }
 
-  @Nullable
-  DoubleHistogram getGfeDuration() {
+  @Nullable DoubleHistogram getGfeDuration() {
     return gfeDuration;
   }
 
-  @Nullable
-  LongCounter getGfeHeaderMissing() {
+  @Nullable LongCounter getGfeHeaderMissing() {
     return gfeHeaderMissing;
   }
 
-  @Nullable
-  DoubleHistogram getDnsLookupDuration() {
+  @Nullable DoubleHistogram getDnsLookupDuration() {
     return dnsLookupDuration;
   }
 
-  @Nullable
-  DoubleHistogram getTcpConnectDuration() {
+  @Nullable DoubleHistogram getTcpConnectDuration() {
     return tcpConnectDuration;
   }
 
-  @Nullable
-  DoubleHistogram getTlsHandshakeDuration() {
+  @Nullable DoubleHistogram getTlsHandshakeDuration() {
     return tlsHandshakeDuration;
   }
 
-  @Nullable
-  DoubleHistogram getCredentialRefreshDuration() {
+  @Nullable DoubleHistogram getCredentialRefreshDuration() {
     return credentialRefreshDuration;
   }
 }
