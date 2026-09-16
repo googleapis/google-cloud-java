@@ -51,6 +51,7 @@ import io.opentelemetry.sdk.resources.Resource;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.net.NoRouteToHostException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -232,7 +233,7 @@ final class OpenTelemetryBootstrappingUtils {
         metricServiceEndpoint,
         projectIdToUse,
         detectedAttributes,
-        java.time.Duration.ofSeconds(60),
+        Duration.ofSeconds(60),
         shouldSuppressExceptions,
         "grpc");
   }
@@ -242,7 +243,7 @@ final class OpenTelemetryBootstrappingUtils {
       String metricServiceEndpoint,
       String projectIdToUse,
       Attributes detectedAttributes,
-      java.time.Duration metricInterval,
+      Duration metricInterval,
       boolean shouldSuppressExceptions) {
     return createClientMeterProvider(
         metricServiceEndpoint,
@@ -258,7 +259,7 @@ final class OpenTelemetryBootstrappingUtils {
       String metricServiceEndpoint,
       String projectIdToUse,
       Attributes detectedAttributes,
-      java.time.Duration metricInterval,
+      Duration metricInterval,
       boolean shouldSuppressExceptions,
       String api) {
 
@@ -337,7 +338,7 @@ final class OpenTelemetryBootstrappingUtils {
         .registerMetricReader(
             PeriodicMetricReader.builder(exporter)
                 .setInterval(
-                    metricInterval != null ? metricInterval : java.time.Duration.ofSeconds(60))
+                    metricInterval != null ? metricInterval : Duration.ofSeconds(60))
                 .build())
         .setResource(Resource.create(attributesBuilder.build()));
 
