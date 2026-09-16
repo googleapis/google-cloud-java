@@ -17,8 +17,10 @@
 package com.google.cloud.spanner.connection.it;
 
 import static com.google.cloud.spanner.SpannerApiFutures.get;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
@@ -50,6 +52,7 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -67,6 +70,12 @@ import org.junit.runners.JUnit4;
 public class ITAsyncTransactionRetryTest extends ITAbstractSpannerTest {
   private static final Logger logger =
       Logger.getLogger(ITAsyncTransactionRetryTest.class.getName());
+
+  @BeforeClass
+  public static void setup() {
+    assumeFalse("Skipping the test due to a known bug b/441255724", isSpannerOmni());
+    ITAbstractSpannerTest.setup();
+  }
 
   @Rule public TestName testName = new TestName();
 
