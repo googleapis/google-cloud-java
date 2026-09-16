@@ -64,6 +64,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   static final String URL_METRICS_HEADER_VALUE = "url";
   static final String CERTIFICATE_METRICS_HEADER_VALUE = "certificate";
 
+  private static final LoggerProvider LOGGER_PROVIDER =
+      LoggerProvider.forClazz(IdentityPoolCredentials.class);
   private static final long serialVersionUID = 2471046175477275881L;
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
   private final @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
@@ -113,6 +115,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
               || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
               || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
             this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+          } else {
+            LOGGER_PROVIDER
+                .getLogger()
+                .debug(
+                    "Custom HttpTransportFactory provided with certificate configuration; skipping"
+                        + " automatic MtlsHttpTransportFactory upgrade. Ensure the custom transport"
+                        + " factory is configured for mTLS if required by the token endpoint.");
           }
         } catch (Exception e) {
           throw new RuntimeException(
@@ -187,26 +196,22 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (url == null) {
       return;
     }
-    try {
-      URI uri = URI.create(url);
-      String host = uri.getHost();
-      if (host != null
-          && host.endsWith("googleapis.com")
-          && !host.contains(".mtls.")
-          && !host.contains(".p.")) {
-        throw new IllegalArgumentException(
-            "The "
-                + fieldName
-                + " endpoint ("
-                + url
-                + ") cannot be used with actor tokens because it is a plain public Google API"
-                + " endpoint. Please use an mTLS endpoint (e.g. containing '.mtls.') or Private"
-                + " Service Connect (containing '.p.').");
-      }
-    } catch (IllegalArgumentException e) {
-      throw e;
-    } catch (Exception ignored) {
-      // Ignored: non-parseable URIs will fail downstream on HTTP execute.
+    String host = URI.create(url).getHost();
+    // For Google Default Universe (googleapis.com), actor tokens require mTLS binding so plain
+    // public endpoints (lacking '.mtls.' or Private Service Connect '.p.') are rejected early.
+    // Non-GDU domains (e.g. custom universes or TPC) may use different hostname conventions.
+    if (host != null
+        && host.endsWith("googleapis.com")
+        && !host.contains(".mtls.")
+        && !host.contains(".p.")) {
+      throw new IllegalArgumentException(
+          "The "
+              + fieldName
+              + " endpoint ("
+              + url
+              + ") cannot be used with actor tokens because it is a plain public Google API"
+              + " endpoint. Please use an mTLS endpoint (e.g. containing '.mtls.') or Private"
+              + " Service Connect (containing '.p.').");
     }
   }
 
@@ -226,7 +231,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   public AccessToken refreshAccessToken() throws IOException {
     // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
     HttpTransportFactory cycleTransportFactory = this.transportFactory;
-    if (this.x509Provider != null) {
+    if (this.x509Provider != null && this.transportFactory instanceof MtlsHttpTransportFactory) {
       KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
       cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
     }
@@ -265,7 +270,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return exchangeExternalCredentialForAccessToken(
           stsTokenExchangeRequest.build(), cycleTransportFactory);
     } catch (OAuthException e) {
-      if (e.getHttpStatusCode() == 401 && this.x509Provider != null) {
+      if (e.getHttpStatusCode() == 401
+          && this.x509Provider != null
+          && this.transportFactory instanceof MtlsHttpTransportFactory) {
         try {
           // On 401, re-read from X509Provider for fresh certs and retry once.
           KeyStore freshKeyStore = this.x509Provider.getKeyStore();
@@ -345,6 +352,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
       this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+    } else {
+      LOGGER_PROVIDER
+          .getLogger()
+          .debug(
+              "Custom HttpTransportFactory provided with certificate configuration; skipping"
+                  + " automatic MtlsHttpTransportFactory upgrade. Ensure the custom transport"
+                  + " factory is configured for mTLS if required by the token endpoint.");
     }
 
     // Initialize the subject token supplier with the certificate path.

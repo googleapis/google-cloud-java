@@ -2981,6 +2981,50 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(2, exchangeCount.get());
   }
 
+  @Test
+  void
+      refreshAccessToken_customTransportFactoryWithCertificateConfig_preservesCustomTransportFactory(
+          @TempDir Path tempDir) throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", tokenFile.toString());
+    credentialSourceMap.put("format", formatMap);
+    credentialSourceMap.put("certificate", certificateMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    MockExternalAccountCredentialsTransportFactory customTransportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    TransportCapturingCredentials credential =
+        new TransportCapturingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setCredentialSource(credentialSource)
+                .setHttpTransportFactory(customTransportFactory)
+                .setAudience("audience")
+                .setSubjectTokenType("subjectTokenType")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token"));
+
+    assertSame(customTransportFactory, credential.getTransportFactory());
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(1, credential.getCapturedFactories().size());
+    assertSame(customTransportFactory, credential.getCapturedFactories().get(0));
+  }
+
   // ==================================================================================
   // Helper: TestableIdentityPoolCredentials — overrides exchange for 401 testing
   // ==================================================================================
