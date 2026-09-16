@@ -2410,6 +2410,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               .startSpan();
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
+      // 1. Ensure QueryResultsFormat is ARROW and default JobCreationMode is JOB_CREATION_OPTIONAL
       QueryJobConfiguration arrowConfig = configuration;
       if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW
           || arrowConfig.getJobCreationMode() == null) {
@@ -2426,10 +2427,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       QueryRequestInfo requestInfo =
           new QueryRequestInfo(arrowConfig, getOptions().getDataFormatOptions());
 
+      // 2. Check if fast-path query execution is supported (no destination table or custom job ID)
       boolean useFastPath =
           requestInfo.isFastQuerySupported() && (jobId == null || jobId.getJob() == null);
 
       if (useFastPath) {
+        // Fast Path: Execute query directly via the jobs.query REST RPC
         String projectId =
             jobId != null && jobId.getProject() != null
                 ? jobId.getProject()
@@ -2464,6 +2467,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         JobId actualJobId =
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : jobId;
 
+        // If the query didn't complete within the fast-query timeout, wait for the job and stream
+        // from table
         if (results.getJobComplete() != null && !results.getJobComplete()) {
           if (actualJobId == null) {
             throw new BigQueryException(
@@ -2494,6 +2499,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               destinationTable, job.getJobId(), "completed query");
         }
 
+        // Deserialize Arrow schema and record batch from fast-path query response
         org.apache.arrow.vector.types.pojo.Schema arrowSchema = null;
         if (results.getArrowSchema() != null) {
           try {
@@ -2518,6 +2524,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           initialBatchBytes = results.getArrowRecordBatch().decodeSerializedRecordBatch();
         }
 
+        // Construct default Storage Read API stream name for streaming subsequent pages (if job
+        // created)
         String streamName = null;
         String jobLocation = null;
         if (actualJobId != null && actualJobId.getJob() != null) {
@@ -2557,7 +2565,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             streamName,
             client);
       } else {
-        // Fallback path: jobs.insert + BigQuery Storage Read API
+        // Fallback Path: Submit query job via jobs.insert and stream destination table via Storage
+        // Read API
         Job job = create(JobInfo.of(jobId, arrowConfig), options);
         Job completedJob = job.waitFor();
 
