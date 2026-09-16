@@ -2870,7 +2870,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -2946,7 +2947,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "      \"subject_token_field_name\": \"subject_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";

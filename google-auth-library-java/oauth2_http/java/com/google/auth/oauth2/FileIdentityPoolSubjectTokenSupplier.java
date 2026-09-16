@@ -214,7 +214,7 @@ class FileIdentityPoolSubjectTokenSupplier
   /** Holds a pair of subject and actor tokens read atomically from the same file. */
   static class TokenPair {
     final String subject;
-    @Nullable final String actor;
+    final @Nullable String actor;
 
     TokenPair(String subject, @Nullable String actor) {
       this.subject = subject;

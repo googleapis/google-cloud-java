@@ -66,11 +66,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   private static final long serialVersionUID = 2471046175477275881L;
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
-  @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
-  @Nullable private final String actorTokenType;
+  private final @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
+  private final @Nullable String actorTokenType;
   // Transient: not serialized directly. Reconstructed in readObject() from the credentialSource
   // certificate config so deserialized credentials remain usable for mTLS and refresh.
-  @Nullable private transient X509Provider x509Provider;
+  private transient @Nullable X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 

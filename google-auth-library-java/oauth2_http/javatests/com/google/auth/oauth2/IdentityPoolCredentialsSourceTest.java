@@ -94,7 +94,8 @@ class IdentityPoolCredentialsSourceTest {
             IllegalArgumentException.class,
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
     assertEquals(
-        "Invalid 'certificate' configuration in credential source: Must specify either 'certificate_config_location' or set 'use_default_certificate_config' to true.",
+        "Invalid 'certificate' configuration in credential source: Must specify either"
+            + " 'certificate_config_location' or set 'use_default_certificate_config' to true.",
         exception.getMessage());
   }
 
@@ -113,7 +114,8 @@ class IdentityPoolCredentialsSourceTest {
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
 
     assertEquals(
-        "Invalid 'certificate' configuration in credential source: Cannot specify both 'certificate_config_location' and set 'use_default_certificate_config' to true.",
+        "Invalid 'certificate' configuration in credential source: Cannot specify both"
+            + " 'certificate_config_location' and set 'use_default_certificate_config' to true.",
         exception.getMessage());
   }
 
@@ -149,7 +151,8 @@ class IdentityPoolCredentialsSourceTest {
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
 
     assertEquals(
-        "Invalid type for 'use_default_certificate_config' in certificate configuration: expected Boolean, got String.",
+        "Invalid type for 'use_default_certificate_config' in certificate configuration: expected"
+            + " Boolean, got String.",
         exception.getMessage());
   }
 

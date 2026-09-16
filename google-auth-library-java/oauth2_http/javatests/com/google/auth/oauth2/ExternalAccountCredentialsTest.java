@@ -553,7 +553,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                       ExternalAccountCredentials.fromJson(
                           json, OAuth2Utils.HTTP_TRANSPORT_FACTORY));
       assertEquals(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.",
           e.getMessage());
     }
   }
@@ -717,7 +718,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                           .setCredentialSource(new TestCredentialSource(credentialSource))
                           .build());
       assertEquals(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.",
           exception.getMessage());
     }
   }

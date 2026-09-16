@@ -34,7 +34,6 @@ package com.google.auth.mtls;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
-import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -62,10 +61,13 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, Serializa
 
   /**
    * Default no-arg constructor creating an instance without a KeyStore ({@code hasKeyStore() ==
-   * false}). Note that standard deserialization via {@link ObjectInputStream} bypasses this
-   * constructor and zero-initializes the transient fields to {@code null} and {@code false}. Not
-   * intended for direct use; callers configuring mTLS should use {@link
-   * #MtlsHttpTransportFactory(KeyStore)}.
+   * false}). This constructor is invoked reflectively by {@code
+   * ExternalAccountCredentials.readObject()} during deserialization (since {@code transportFactory}
+   * is transient on {@code ExternalAccountCredentials}), after which {@code
+   * IdentityPoolCredentials.readObject()} reconstructs {@code X509Provider} from the serialized
+   * certificate configuration and replaces the transport factory with {@link
+   * #MtlsHttpTransportFactory(KeyStore)}. Not intended for direct use; callers configuring mTLS
+   * should use {@link #MtlsHttpTransportFactory(KeyStore)}.
    */
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
