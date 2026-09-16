@@ -34,6 +34,10 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.compute.v1.CalendarModeAdviceResponse;
 import com.google.cloud.compute.v1.CalendarModeAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityAdviceResponse;
+import com.google.cloud.compute.v1.CapacityAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityHistoryAdviceRequest;
+import com.google.cloud.compute.v1.CapacityHistoryResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -107,11 +111,26 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
 
   private final UnaryCallSettings<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeSettings;
+  private final UnaryCallSettings<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+      capacitySettings;
+  private final UnaryCallSettings<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistorySettings;
 
   /** Returns the object with the settings used for calls to calendarMode. */
   public UnaryCallSettings<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeSettings() {
     return calendarModeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to capacity. */
+  public UnaryCallSettings<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacitySettings() {
+    return capacitySettings;
+  }
+
+  /** Returns the object with the settings used for calls to capacityHistory. */
+  public UnaryCallSettings<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistorySettings() {
+    return capacityHistorySettings;
   }
 
   public AdviceStub createStub() throws IOException {
@@ -196,6 +215,8 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
     super(settingsBuilder);
 
     calendarModeSettings = settingsBuilder.calendarModeSettings().build();
+    capacitySettings = settingsBuilder.capacitySettings().build();
+    capacityHistorySettings = settingsBuilder.capacityHistorySettings().build();
   }
 
   @Override
@@ -213,6 +234,10 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
     private final UnaryCallSettings.Builder<
             CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
         calendarModeSettings;
+    private final UnaryCallSettings.Builder<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+        capacitySettings;
+    private final UnaryCallSettings.Builder<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+        capacityHistorySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -248,9 +273,12 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
       super(clientContext);
 
       calendarModeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      capacitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      capacityHistorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(calendarModeSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              calendarModeSettings, capacitySettings, capacityHistorySettings);
       initDefaults(this);
     }
 
@@ -258,9 +286,12 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
       super(settings);
 
       calendarModeSettings = settings.calendarModeSettings.toBuilder();
+      capacitySettings = settings.capacitySettings.toBuilder();
+      capacityHistorySettings = settings.capacityHistorySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(calendarModeSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              calendarModeSettings, capacitySettings, capacityHistorySettings);
     }
 
     private static Builder createDefault() {
@@ -278,6 +309,16 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
     private static Builder initDefaults(Builder builder) {
       builder
           .calendarModeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .capacitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .capacityHistorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -303,6 +344,18 @@ public class AdviceStubSettings extends StubSettings<AdviceStubSettings> {
     public UnaryCallSettings.Builder<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
         calendarModeSettings() {
       return calendarModeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to capacity. */
+    public UnaryCallSettings.Builder<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+        capacitySettings() {
+      return capacitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to capacityHistory. */
+    public UnaryCallSettings.Builder<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+        capacityHistorySettings() {
+      return capacityHistorySettings;
     }
 
     @Override

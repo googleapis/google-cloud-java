@@ -1123,6 +1123,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= ProjectViewsClient =======================
+ *
+ * <p>Service Description: The ProjectViews API.
+ *
+ * <p>Sample for ProjectViewsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ProjectViewsClient projectViewsClient = ProjectViewsClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   ProjectView response = projectViewsClient.get(project, region);
+ * }
+ * }</pre>
+ *
  * <p>======================= ProjectsClient =======================
  *
  * <p>Service Description: The Projects API.
