@@ -337,8 +337,7 @@ final class OpenTelemetryBootstrappingUtils {
     providerBuilder
         .registerMetricReader(
             PeriodicMetricReader.builder(exporter)
-                .setInterval(
-                    metricInterval != null ? metricInterval : Duration.ofSeconds(60))
+                .setInterval(metricInterval != null ? metricInterval : Duration.ofSeconds(60))
                 .build())
         .setResource(Resource.create(attributesBuilder.build()));
 
