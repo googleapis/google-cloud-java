@@ -95,12 +95,10 @@ public final class StorageOptionsTest {
   public void builder_explicitDisablingOverridesGate() {
     System.setProperty(StorageMetricsConfig.SYS_PROP_ENABLE_OTEL_METRICS, "true");
 
-    HttpStorageOptions httpOptions =
-        HttpStorageOptions.http().setEnableOtelMetrics(false).build();
+    HttpStorageOptions httpOptions = HttpStorageOptions.http().setEnableOtelMetrics(false).build();
     assertThat(httpOptions.isEnableOtelMetrics()).isFalse();
 
-    GrpcStorageOptions grpcOptions =
-        GrpcStorageOptions.grpc().setEnableOtelMetrics(false).build();
+    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().setEnableOtelMetrics(false).build();
     assertThat(grpcOptions.isEnableOtelMetrics()).isFalse();
   }
 

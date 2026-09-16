@@ -123,12 +123,13 @@ public final class StorageClientMetricsTest {
 
     List<Double> expectedLatencyBoundaries =
         OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries();
-    List<Double> expectedSizeBoundaries =
-        OpenTelemetryBootstrappingUtils.sizeHistogramBoundaries();
+    List<Double> expectedSizeBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramBoundaries();
 
     // Verify standard latency histograms have custom latency boundaries
     assertHistogramBoundaries(
-        metricsMap, StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION, expectedLatencyBoundaries);
+        metricsMap,
+        StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION,
+        expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
         StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION,
@@ -178,7 +179,8 @@ public final class StorageClientMetricsTest {
     assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
     assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
+    assertThat(metricsMap)
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
     assertThat(metricsMap)
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_GFE_HEADER_MISSING);
   }
@@ -187,8 +189,7 @@ public final class StorageClientMetricsTest {
       Map<String, MetricData> metricsMap, String metricName, List<Double> expectedBoundaries) {
     assertThat(metricsMap).containsKey(metricName);
     MetricData metricData = metricsMap.get(metricName);
-    HistogramPointData pointData =
-        metricData.getHistogramData().getPoints().iterator().next();
+    HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
     assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
   }
 }
