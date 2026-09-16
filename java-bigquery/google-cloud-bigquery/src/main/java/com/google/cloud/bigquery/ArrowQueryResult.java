@@ -22,7 +22,8 @@ import org.apache.arrow.vector.types.pojo.Schema;
 
 /**
  * <b>[Beta]</b> A query result container providing zero-copy access to Apache Arrow {@link
- * VectorSchemaRoot} batches.
+ * VectorSchemaRoot} batches. This serves as the high-throughput, Arrow-native counterpart to the
+ * canonical {@link TableResult}.
  *
  * <p><b>Important Usage Warning:</b> The {@link VectorSchemaRoot} returned by the iterator is a
  * single, shared, mutated instance across iterations. Data in the root is only valid during the

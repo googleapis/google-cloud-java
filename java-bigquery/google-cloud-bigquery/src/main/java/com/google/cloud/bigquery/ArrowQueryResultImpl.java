@@ -40,7 +40,8 @@ import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
 /**
  * Implementation of {@link ArrowQueryResult} that provides zero-copy streaming of Apache Arrow
- * {@link VectorSchemaRoot} batches across initial REST response and subsequent gRPC stream.
+ * {@link VectorSchemaRoot} batches across initial REST response and subsequent gRPC stream as the
+ * Arrow-native counterpart to {@link TableResult}.
  */
 class ArrowQueryResultImpl implements ArrowQueryResult {
 
@@ -173,31 +174,44 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
         readClient);
   }
 
+  /** {@inheritDoc} */
   @Override
   public Schema getArrowSchema() {
     return arrowSchema;
   }
 
+  /** {@inheritDoc} */
   @Override
   public JobId getJobId() {
     return jobId;
   }
 
+  /** {@inheritDoc} */
   @Override
   public String getQueryId() {
     return queryId;
   }
 
+  /** {@inheritDoc} */
   @Override
   public JobCreationReason getJobCreationReason() {
     return jobCreationReason;
   }
 
+  /** {@inheritDoc} */
   @Override
   public long getTotalRows() {
     return totalRows;
   }
 
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Note: An {@code ArrowQueryResult} instance can only be iterated once because the underlying
+   * {@link VectorSchemaRoot} is mutated in-place across batches.
+   *
+   * @throws IllegalStateException if this result has already been closed or iterated
+   */
   @Override
   public Iterator<VectorSchemaRoot> iterator() {
     lock.lock();
@@ -213,6 +227,12 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
     }
   }
 
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Cancels any in-flight gRPC read streams and frees off-heap native memory allocated for Arrow
+   * vectors and record batches.
+   */
   @Override
   public void close() {
     lock.lock();
@@ -320,6 +340,14 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       return closed;
     }
 
+    /**
+     * Returns whether an initial Arrow record batch from the fast-path REST query response is
+     * present and has not yet been yielded by the iterator.
+     *
+     * <p>For queries using the fast-path execution, BigQuery returns the first batch of Arrow bytes
+     * inline in the REST response. Subsequent batches are streamed via the Storage Read API gRPC
+     * connection.
+     */
     private boolean hasInitialBatchToYield() {
       return !yieldedInitialBatch
           && initialRecordBatchBytes != null
@@ -371,14 +399,10 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
 
       // 1. Yield initial batch from REST response if present
       byte[] initialBytes = null;
-      if (!yieldedInitialBatch
-          && initialRecordBatchBytes != null
-          && initialRecordBatchBytes.length > 0) {
-        yieldedInitialBatch = true;
+      if (hasInitialBatchToYield()) {
         initialBytes = initialRecordBatchBytes;
-      } else {
-        yieldedInitialBatch = true;
       }
+      yieldedInitialBatch = true;
 
       if (initialBytes != null) {
         try {
@@ -423,9 +447,13 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
           throw new BigQueryException(0, "Failed to load streaming Arrow record batch", e);
         }
       } catch (NoSuchElementException | BigQueryException e) {
+        // Rethrow directly to fulfill Iterator contract and prevent double-wrapping
+        // BigQueryException.
         throw e;
       } catch (Exception e) {
         if (isClosed()) {
+          // Stream was cancelled due to close(); throw NoSuchElementException rather than a
+          // transport error.
           throw new NoSuchElementException("Query stream was closed.");
         }
         throw new BigQueryException(0, "Error reading from Arrow stream", e);
@@ -443,11 +471,7 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
       if (streamInitialized || closed) {
         return;
       }
-      if (totalRows >= 0
-          && totalRowsYielded >= totalRows
-          && (yieldedInitialBatch
-              || initialRecordBatchBytes == null
-              || initialRecordBatchBytes.length == 0)) {
+      if (totalRows >= 0 && totalRowsYielded >= totalRows && !hasInitialBatchToYield()) {
         streamInitialized = true;
         return;
       }
@@ -514,7 +538,8 @@ class ArrowQueryResultImpl implements ArrowQueryResult {
      */
     private void loadBatch(ReadableByteChannel channel) throws IOException {
       checkNotClosed();
-      try (ReadChannel readChannel = new ReadChannel(channel)) {
+      try (ReadableByteChannel byteChannel = channel;
+          ReadChannel readChannel = new ReadChannel(byteChannel)) {
         ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(readChannel, allocator);
         if (deserializedBatch == null) {
