@@ -2962,11 +2962,15 @@ public class BigQueryImplTest {
   void testGetBigQueryReadClientFallbackToGlobal() {
     BigQueryReadClient mockGlobalClient =
         mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    BigQueryReadClient mockRegionalClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
 
     bigquery = options.getService();
     BigQueryImpl bigQueryImpl = (BigQueryImpl) bigquery;
     bigQueryImpl.setBigQueryReadClient(mockGlobalClient);
+    bigQueryImpl.setBigQueryReadClient("us-east1", mockRegionalClient);
 
+    assertSame(mockRegionalClient, bigQueryImpl.getBigQueryReadClient("us-east1"));
     assertSame(mockGlobalClient, bigQueryImpl.getBigQueryReadClient());
     assertSame(mockGlobalClient, bigQueryImpl.getBigQueryReadClient("asia-northeast1"));
   }

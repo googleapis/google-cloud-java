@@ -282,6 +282,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private final ReentrantLock readClientLock = new ReentrantLock();
   private transient Map<String, BigQueryReadClient> bqReadClients;
+  private transient boolean isGlobalClientUserProvided;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -312,7 +313,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         bqReadClients = Maps.newHashMap();
       }
       BigQueryReadClient client = bqReadClients.get(cacheKey);
-      if (client == null && bqReadClients.containsKey("global")) {
+      if (client == null && isGlobalClientUserProvided && bqReadClients.containsKey("global")) {
         client = bqReadClients.get("global");
       }
       if (client == null) {
@@ -344,6 +345,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         bqReadClients = Maps.newHashMap();
       }
       bqReadClients.put(cacheKey, client);
+      if ("global".equals(cacheKey)) {
+        isGlobalClientUserProvided = true;
+      }
     } finally {
       readClientLock.unlock();
     }
@@ -2626,7 +2630,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             "projects/%s/datasets/%s/tables/%s",
             destProject, destinationTable.getDataset(), destinationTable.getTable());
 
-    String location = jobId != null ? jobId.getLocation() : getOptions().getLocation();
+    String location =
+        (jobId != null && jobId.getLocation() != null)
+            ? jobId.getLocation()
+            : getOptions().getLocation();
     BigQueryReadClient client = getBigQueryReadClient(location);
 
     CreateReadSessionRequest request =
