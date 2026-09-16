@@ -281,7 +281,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private final ReentrantLock readClientLock = new ReentrantLock();
-  private transient BigQueryReadClient bqReadClient;
+  private transient Map<String, BigQueryReadClient> bqReadClients;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -292,18 +292,58 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * @throws BigQueryException if initializing the storage read client fails
    */
   BigQueryReadClient getBigQueryReadClient() {
+    return getBigQueryReadClient(getOptions().getLocation());
+  }
+
+  /**
+   * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance for the specified
+   * location used for streaming Arrow query results, reusing credentials and channel configuration
+   * from this {@link BigQueryImpl}.
+   *
+   * @param location the regional location of the dataset/query
+   * @return the active BigQueryReadClient instance
+   * @throws BigQueryException if initializing the storage read client fails
+   */
+  BigQueryReadClient getBigQueryReadClient(String location) {
+    String cacheKey = location != null ? location.toLowerCase() : "global";
     readClientLock.lock();
     try {
-      if (bqReadClient == null) {
+      if (bqReadClients == null) {
+        bqReadClients = Maps.newHashMap();
+      }
+      BigQueryReadClient client = bqReadClients.get(cacheKey);
+      if (client == null && bqReadClients.containsKey("global")) {
+        client = bqReadClients.get("global");
+      }
+      if (client == null) {
         BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
-        configureReadSettings(settingsBuilder, getOptions());
+        configureReadSettings(settingsBuilder, getOptions(), location);
         try {
-          bqReadClient = BigQueryReadClient.create(settingsBuilder.build());
+          client = BigQueryReadClient.create(settingsBuilder.build());
+          bqReadClients.put(cacheKey, client);
         } catch (IOException e) {
-          throw new BigQueryException(0, "Failed to initialize BigQueryReadClient", e);
+          throw new BigQueryException(
+              0, "Failed to initialize BigQueryReadClient for location " + location, e);
         }
       }
-      return bqReadClient;
+      return client;
+    } finally {
+      readClientLock.unlock();
+    }
+  }
+
+  void setBigQueryReadClient(BigQueryReadClient client) {
+    setBigQueryReadClient(null, client);
+  }
+
+  void setBigQueryReadClient(String location, BigQueryReadClient client) {
+    String cacheKey = location != null ? location.toLowerCase() : "global";
+    readClientLock.lock();
+    try {
+      if (bqReadClients == null) {
+        bqReadClients = Maps.newHashMap();
+      }
+      bqReadClients.put(cacheKey, client);
     } finally {
       readClientLock.unlock();
     }
@@ -315,9 +355,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    *
    * @param settingsBuilder the builder to configure
    * @param options the source BigQueryOptions
+   * @param location the regional location of the dataset/query
    */
   private static void configureReadSettings(
-      BigQueryReadSettings.Builder settingsBuilder, BigQueryOptions options) {
+      BigQueryReadSettings.Builder settingsBuilder, BigQueryOptions options, String location) {
     if (options.getCredentials() != null) {
       settingsBuilder.setCredentialsProvider(
           FixedCredentialsProvider.create(options.getCredentials()));
@@ -359,6 +400,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                 .build());
       }
+    } else if (location != null
+        && !location.equalsIgnoreCase("us")
+        && !location.equalsIgnoreCase("eu")) {
+      settingsBuilder.setEndpoint(location.toLowerCase() + "-bigquerystorage.googleapis.com:443");
     }
   }
 
@@ -2494,10 +2539,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         }
 
         String streamName = null;
+        String jobLocation = null;
         if (actualJobId != null && actualJobId.getJob() != null) {
           String jobProject =
               actualJobId.getProject() != null ? actualJobId.getProject() : projectId;
-          String jobLocation =
+          jobLocation =
               actualJobId.getLocation() != null
                   ? actualJobId.getLocation()
                   : (content.getLocation() != null
@@ -2513,7 +2559,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         BigQueryReadClient client = null;
         if (streamName != null) {
-          client = getBigQueryReadClient();
+          client = getBigQueryReadClient(jobLocation);
         }
 
         JobCreationReason jobCreationReason =
@@ -2591,7 +2637,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             "projects/%s/datasets/%s/tables/%s",
             destProject, destinationTable.getDataset(), destinationTable.getTable());
 
-    BigQueryReadClient client = getBigQueryReadClient();
+    String location = jobId != null ? jobId.getLocation() : getOptions().getLocation();
+    BigQueryReadClient client = getBigQueryReadClient(location);
 
     CreateReadSessionRequest request =
         CreateReadSessionRequest.newBuilder()

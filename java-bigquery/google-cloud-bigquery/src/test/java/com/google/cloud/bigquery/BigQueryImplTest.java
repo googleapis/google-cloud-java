@@ -37,6 +37,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
@@ -70,6 +71,7 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.common.base.Function;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
@@ -2938,6 +2940,35 @@ public class BigQueryImplTest {
     QueryRequest requestPb = requestPbCapture.getValue();
     assertEquals("JOB_CREATION_OPTIONAL", requestPb.getJobCreationMode());
     assertEquals("ARROW", requestPb.getQueryResultsFormat());
+  }
+
+  @Test
+  void testGetBigQueryReadClientCachingByLocation() {
+    BigQueryReadClient mockClientUs =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    BigQueryReadClient mockClientEu =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+
+    bigquery = options.getService();
+    BigQueryImpl bigQueryImpl = (BigQueryImpl) bigquery;
+    bigQueryImpl.setBigQueryReadClient("us-east1", mockClientUs);
+    bigQueryImpl.setBigQueryReadClient("europe-west1", mockClientEu);
+
+    assertSame(mockClientUs, bigQueryImpl.getBigQueryReadClient("us-east1"));
+    assertSame(mockClientEu, bigQueryImpl.getBigQueryReadClient("europe-west1"));
+  }
+
+  @Test
+  void testGetBigQueryReadClientFallbackToGlobal() {
+    BigQueryReadClient mockGlobalClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+
+    bigquery = options.getService();
+    BigQueryImpl bigQueryImpl = (BigQueryImpl) bigquery;
+    bigQueryImpl.setBigQueryReadClient(mockGlobalClient);
+
+    assertSame(mockGlobalClient, bigQueryImpl.getBigQueryReadClient());
+    assertSame(mockGlobalClient, bigQueryImpl.getBigQueryReadClient("asia-northeast1"));
   }
 
   @Test
