@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
@@ -85,6 +86,36 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     super(connection);
     setCurrentQuery(query);
     this.parameterHandler = new BigQueryParameterHandler(this.parameterCount);
+    if (this.parameterCount > 0) {
+      populateInferredParameterTypes();
+    }
+  }
+
+  private void populateInferredParameterTypes() {
+    if (this.currentQuery == null) {
+      return;
+    }
+
+    try {
+      List<QueryParameter> undeclaredQueryParameters =
+          getUndeclaredQueryParameters(this.currentQuery);
+      if (undeclaredQueryParameters != null) {
+        int index = 1;
+        for (QueryParameter parameter : undeclaredQueryParameters) {
+          if (parameter.getParameterType() != null) {
+            String typeName = parameter.getParameterType().getType();
+            StandardSQLTypeName sqlTypeName = StandardSQLTypeName.valueOf(typeName);
+            this.parameterHandler.setInferredParameterType(index, sqlTypeName);
+          }
+          index++;
+        }
+      }
+    } catch (Exception ex) {
+
+      System.out.println("Throwing an exception here ");
+      ex.printStackTrace();
+      LOG.warning("Could not infer parameter types via dryRun: " + ex.getMessage());
+    }
   }
 
   void setCurrentQuery(String currentQuery) {

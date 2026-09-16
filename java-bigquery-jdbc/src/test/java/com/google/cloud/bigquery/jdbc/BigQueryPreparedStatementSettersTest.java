@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -324,5 +325,22 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(JsonNull.INSTANCE, jsonRow.get("col1"));
     assertTrue(jsonRow.get("col1").isJsonNull());
     assertEquals("42", jsonRow.get("col2").getAsString());
+  }
+
+  @Test
+  public void testInferredParameterTypeKnownBeforeSetters() throws Exception {
+    // 1. Inferred type is known immediately without calling setInt/setString
+    preparedStatement.parameterHandler.setInferredParameterType(1, StandardSQLTypeName.INT64);
+
+    ParameterMetaData pmd = preparedStatement.getParameterMetaData();
+    assertEquals(Types.BIGINT, pmd.getParameterType(1));
+    assertEquals("INT64", pmd.getParameterTypeName(1));
+
+    // 2. But execute() still fails if caller forgot to set value!
+    assertThrows(BigQueryJdbcException.class, () -> preparedStatement.execute());
+
+    // 3. Once setter is called, execute() succeeds
+    preparedStatement.setLong(1, 42L);
+    // All parameters provided -> proceeds to configureParameters without throwing
   }
 }
