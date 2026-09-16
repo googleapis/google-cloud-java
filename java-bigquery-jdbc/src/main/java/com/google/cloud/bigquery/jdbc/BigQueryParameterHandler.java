@@ -58,7 +58,6 @@ class BigQueryParameterHandler {
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws SQLException {
     LOG.finest("++enter++");
     for (int i = 1; i <= this.parametersArraySize; i++) {
-
       if (!this.userSetParameters.get(i)) {
         throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.");
       }
@@ -142,8 +141,7 @@ class BigQueryParameterHandler {
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
-  void setInferredParameterType(int parameterIndex, StandardSQLTypeName sqlTypeName)
-      throws SQLException {
+  void setInferredParameterType(int parameterIndex, StandardSQLTypeName sqlTypeName) {
     checkValidIndex(parameterIndex);
     BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
 

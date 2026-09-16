@@ -1906,7 +1906,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         getJobConfig(query).setDryRun(true).setParameterMode("POSITIONAL").build();
     Job dryRunJob = this.bigQuery.create((JobInfo.of(dryRunConfig)));
     QueryStatistics jobStatistics = dryRunJob.getStatistics();
-    System.out.println(jobStatistics.getQueryParameters());
     List<QueryParameter> queryParameters = jobStatistics.getQueryParameters();
     return queryParameters;
   }

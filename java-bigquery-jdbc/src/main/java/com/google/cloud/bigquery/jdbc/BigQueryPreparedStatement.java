@@ -111,9 +111,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
       }
     } catch (Exception ex) {
-
-      System.out.println("Throwing an exception here ");
-      ex.printStackTrace();
       LOG.warning("Could not infer parameter types via dryRun: " + ex.getMessage());
     }
   }
