@@ -2913,8 +2913,8 @@ public class BigQueryImplTest {
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .build();
     bigquery = options.getService();
-    IllegalArgumentException exception =
-        assertThrows(IllegalArgumentException.class, () -> bigquery.query(config));
+    UnsupportedOperationException exception =
+        assertThrows(UnsupportedOperationException.class, () -> bigquery.query(config));
     assertTrue(exception.getMessage().contains("Use queryArrow() instead"));
   }
 

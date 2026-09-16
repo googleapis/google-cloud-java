@@ -2320,7 +2320,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Job.checkNotDryRun(configuration, "query");
 
     if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
-      throw new IllegalArgumentException(
+      throw new UnsupportedOperationException(
           "QueryResultsFormat.ARROW is not supported with query(). Use queryArrow() instead.");
     }
 
