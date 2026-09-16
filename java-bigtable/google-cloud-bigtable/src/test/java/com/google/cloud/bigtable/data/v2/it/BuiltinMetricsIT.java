@@ -25,7 +25,11 @@ import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.client.util.Lists;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
+import com.google.cloud.bigtable.admin.v2.models.Cluster;
+import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
@@ -235,52 +239,78 @@ public class BuiltinMetricsIT {
   @Test
   public void testInternalMetrics() throws Exception {
     logger.info("Started testing internal metrics");
-    Table table =
-        tableAdminClient.createTable(
-            CreateTableRequest.of(PrefixGenerator.newPrefix("BuiltinMetricsIT#testInternal"))
-                .addFamily("cf"));
-    logger.info("Create table: " + table.getId());
+
+    // Discover the existing instance's cluster zone so we can create a sibling instance.
+    BigtableInstanceAdminClient instanceAdmin = testEnvRule.env().getInstanceAdminClient();
+    List<Cluster> clusters = instanceAdmin.listClusters(testEnvRule.env().getInstanceId());
+    Cluster existingCluster = clusters.get(0);
+
+    String testInstanceId = PrefixGenerator.newPrefix("bt-metrics-it");
+    String testClusterId = testInstanceId + "-c1";
+    instanceAdmin.createInstance(
+        CreateInstanceRequest.of(testInstanceId)
+            .addCluster(
+                testClusterId,
+                existingCluster.getZone(),
+                existingCluster.getServeNodes(),
+                existingCluster.getStorageType()));
+    logger.info("Created test instance: " + testInstanceId);
 
     try {
-      Instant start = Instant.now().minus(Duration.ofSeconds(10));
+      // Create a table and a data client scoped to the new instance.
+      BigtableTableAdminClient testTableAdmin =
+          BigtableTableAdminClient.create(
+              BigtableTableAdminSettings.newBuilder()
+                  .setProjectId(testEnvRule.env().getProjectId())
+                  .setInstanceId(testInstanceId)
+                  .build());
+      testTableAdmin.createTable(CreateTableRequest.of("test-table").addFamily("cf"));
 
-      // Send a MutateRow and ReadRows request to generate connection activity.
-      clientDefault.mutateRow(
-          RowMutation.create(TableId.of(table.getId()), "a-new-key").setCell("cf", "q", "abc"));
-      ArrayList<Row> ignored =
-          Lists.newArrayList(
-              clientDefault.readRows(Query.create(TableId.of(table.getId())).limit(10)));
-
-      // This stopwatch is used for to limit fetching of metric data in verifyMetrics
-      Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
-
-      ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
-
-      Instant end = Instant.now().plus(Duration.ofMinutes(10));
-      TimeInterval interval =
-          TimeInterval.newBuilder()
-              .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
-              .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
+      BigtableDataSettings testDataSettings =
+          testEnvRule.env().getDataClientSettings().toBuilder()
+              .setInstanceId(testInstanceId)
               .build();
+      try (BigtableDataClient testClient = BigtableDataClient.create(testDataSettings)) {
+        Instant start = Instant.now().minus(Duration.ofSeconds(10));
 
-      List<String> views = ImmutableList.of("per_connection_error_count");
-      for (String view : views) {
-        // Filter on instance name
-        String metricFilter =
-            String.format(
-                "metric.type=\"bigtable.googleapis.com/internal/client/%s\" AND"
-                    + " resource.labels.instance=\"%s\"",
-                view, testEnvRule.env().getInstanceId());
-        ListTimeSeriesRequest.Builder requestBuilder =
-            ListTimeSeriesRequest.newBuilder()
-                .setName(name.toString())
-                .setFilter(metricFilter)
-                .setInterval(interval)
-                .setView(ListTimeSeriesRequest.TimeSeriesView.FULL);
-        verifyMetricsArePublished(requestBuilder.build(), metricsPollingStopwatch, view);
+        // Send a MutateRow and ReadRows request to generate connection activity.
+        testClient.mutateRow(
+            RowMutation.create(TableId.of("test-table"), "a-new-key").setCell("cf", "q", "abc"));
+        ArrayList<Row> ignored =
+            Lists.newArrayList(
+                testClient.readRows(Query.create(TableId.of("test-table")).limit(10)));
+
+        // This stopwatch is used for to limit fetching of metric data in verifyMetrics
+        Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
+
+        ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
+
+        Instant end = Instant.now().plus(Duration.ofMinutes(10));
+        TimeInterval interval =
+            TimeInterval.newBuilder()
+                .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
+                .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
+                .build();
+
+        List<String> views = ImmutableList.of("per_connection_error_count");
+        for (String view : views) {
+          String metricFilter =
+              String.format(
+                  "metric.type=\"bigtable.googleapis.com/internal/client/%s\" AND"
+                      + " resource.labels.instance=\"%s\"",
+                  view, testInstanceId);
+          ListTimeSeriesRequest.Builder requestBuilder =
+              ListTimeSeriesRequest.newBuilder()
+                  .setName(name.toString())
+                  .setFilter(metricFilter)
+                  .setInterval(interval)
+                  .setView(ListTimeSeriesRequest.TimeSeriesView.FULL);
+          verifyMetricsArePublished(requestBuilder.build(), metricsPollingStopwatch, view);
+        }
       }
     } finally {
-      tableAdminClient.deleteTable(table.getId());
+      instanceAdmin.deleteInstance(testInstanceId);
+      logger.info("Deleted test instance: " + testInstanceId);
     }
   }
 
