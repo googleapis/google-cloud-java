@@ -33,6 +33,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -668,6 +669,83 @@ public class GapicSpannerRpcTest {
       }
     } finally {
       executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testStreamingRetrySettingsNormalizedIndependently() {
+    for (boolean customizeRead : new boolean[] {true, false}) {
+      SpannerOptions.Builder builder = createSpannerOptions().toBuilder();
+      RetrySettings customSettings =
+          RetrySettings.newBuilder()
+              .setMaxAttempts(3)
+              .setTotalTimeoutDuration(Duration.ofSeconds(5))
+              .setInitialRetryDelayDuration(Duration.ofMillis(20))
+              .setMaxRetryDelayDuration(Duration.ofMillis(200))
+              .setRetryDelayMultiplier(2.0)
+              .build();
+      if (customizeRead) {
+        builder
+            .getSpannerStubSettingsBuilder()
+            .streamingReadSettings()
+            .setRetrySettings(customSettings);
+      } else {
+        builder
+            .getSpannerStubSettingsBuilder()
+            .executeStreamingSqlSettings()
+            .setRetrySettings(customSettings);
+      }
+      GapicSpannerRpc rpc = new GapicSpannerRpc(builder.build(), true);
+      try {
+        assertEquals(
+            customizeRead ? customSettings : GapicSpannerRpc.DEFAULT_STREAMING_RETRY_SETTINGS,
+            rpc.getReadRetrySettings());
+        assertEquals(
+            customizeRead ? GapicSpannerRpc.DEFAULT_STREAMING_RETRY_SETTINGS : customSettings,
+            rpc.getExecuteQueryRetrySettings());
+      } finally {
+        rpc.shutdown();
+      }
+    }
+  }
+
+  @Test
+  public void testCustomStreamingRetrySettingsRetainExplicitTimeout() {
+    for (boolean unlimited : new boolean[] {true, false}) {
+      SpannerOptions.Builder builder = createSpannerOptions().toBuilder();
+      RetrySettings.Builder readSettings =
+          builder
+              .getSpannerStubSettingsBuilder()
+              .streamingReadSettings()
+              .getRetrySettings()
+              .toBuilder()
+              .setMaxAttempts(2);
+      RetrySettings.Builder querySettings =
+          builder
+              .getSpannerStubSettingsBuilder()
+              .executeStreamingSqlSettings()
+              .getRetrySettings()
+              .toBuilder()
+              .setMaxAttempts(3);
+      if (unlimited) {
+        readSettings.setTotalTimeoutDuration(Duration.ZERO);
+        querySettings.setTotalTimeoutDuration(Duration.ZERO);
+      }
+      builder
+          .getSpannerStubSettingsBuilder()
+          .streamingReadSettings()
+          .setRetrySettings(readSettings.build());
+      builder
+          .getSpannerStubSettingsBuilder()
+          .executeStreamingSqlSettings()
+          .setRetrySettings(querySettings.build());
+      GapicSpannerRpc rpc = new GapicSpannerRpc(builder.build(), true);
+      try {
+        assertEquals(readSettings.build(), rpc.getReadRetrySettings());
+        assertEquals(querySettings.build(), rpc.getExecuteQueryRetrySettings());
+      } finally {
+        rpc.shutdown();
+      }
     }
   }
 

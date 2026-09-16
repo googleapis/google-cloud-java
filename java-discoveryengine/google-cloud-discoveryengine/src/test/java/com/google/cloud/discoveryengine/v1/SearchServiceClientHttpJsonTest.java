@@ -107,6 +107,7 @@ public class SearchServiceClientHttpJsonTest {
             .setOffset(-1019779949)
             .setOneBoxPageSize(1988477988)
             .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+            .setNumResultsPerDataStore(397658288)
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -134,6 +135,9 @@ public class SearchServiceClientHttpJsonTest {
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+            .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -185,6 +189,7 @@ public class SearchServiceClientHttpJsonTest {
               .setOffset(-1019779949)
               .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setNumResultsPerDataStore(397658288)
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -212,6 +217,9 @@ public class SearchServiceClientHttpJsonTest {
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+              .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -248,6 +256,7 @@ public class SearchServiceClientHttpJsonTest {
             .setOffset(-1019779949)
             .setOneBoxPageSize(1988477988)
             .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+            .setNumResultsPerDataStore(397658288)
             .setFilter("filter-1274492040")
             .setCanonicalFilter("canonicalFilter-722283124")
             .setOrderBy("orderBy-1207110587")
@@ -275,6 +284,9 @@ public class SearchServiceClientHttpJsonTest {
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+            .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -326,6 +338,7 @@ public class SearchServiceClientHttpJsonTest {
               .setOffset(-1019779949)
               .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setNumResultsPerDataStore(397658288)
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -353,6 +366,9 @@ public class SearchServiceClientHttpJsonTest {
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+              .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");
