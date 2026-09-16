@@ -3498,6 +3498,11 @@ libraries:
           additional_protos:
             - path: google/cloud/location/locations.proto
             - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/networkservices/v1beta1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
     java:
       api_id_override: networkservices.googleapis.com
       api_description_override: Google Cloud offers a broad portfolio of networking services built on top of planet-scale infrastructure that leverages automation, advanced AI, and programmability, enabling enterprises to connect, scale, secure, modernize and optimize their infrastructure.
