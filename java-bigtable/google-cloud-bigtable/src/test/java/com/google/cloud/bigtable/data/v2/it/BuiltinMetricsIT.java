@@ -97,12 +97,6 @@ public class BuiltinMetricsIT {
 
   private InMemoryMetricReader metricReader;
 
-  // OTel instrument names for all Bigtable client metrics (public and internal) carry the internal
-  // namespace prefix; the public/internal split only happens at export time via each metric's
-  // external name. The custom OTEL InMemoryMetricReader therefore sees the fully qualified names.
-  private static final String INTERNAL_INSTRUMENT_PREFIX =
-      "bigtable.googleapis.com/internal/client/";
-
   public static String[] VIEWS = {
     "operation_latencies",
     "attempt_latencies",
@@ -241,31 +235,23 @@ public class BuiltinMetricsIT {
   @Test
   public void testInternalMetrics() throws Exception {
     logger.info("Started testing internal metrics");
-    tableDefault =
-        tableAdminClient.createTable(
-            CreateTableRequest.of(PrefixGenerator.newPrefix("BuiltinMetricsIT#testInternal"))
-                .addFamily("cf"));
-    logger.info("Create default table: " + tableDefault.getId());
+
+    TableId tableId = testEnvRule.env().getTableId();
+    String familyId = testEnvRule.env().getFamilyId();
 
     Instant start = Instant.now().minus(Duration.ofSeconds(10));
 
-    // Send a MutateRow and ReadRows request and measure the latencies for these requests.
-    clientDefault.mutateRow(
-        RowMutation.create(TableId.of(tableDefault.getId()), "a-new-key")
-            .setCell("cf", "q", "abc"));
+    // Send a MutateRow and ReadRows request to generate connection activity.
+    clientDefault.mutateRow(RowMutation.create(tableId, "a-new-key").setCell(familyId, "q", "abc"));
     ArrayList<Row> ignored =
-        Lists.newArrayList(
-            clientDefault.readRows(Query.create(TableId.of(tableDefault.getId())).limit(10)));
+        Lists.newArrayList(clientDefault.readRows(Query.create(tableId).limit(10)));
 
     // This stopwatch is used for to limit fetching of metric data in verifyMetrics
     Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
 
     ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
 
-    // Interval is set in the monarch request when query metric timestamps.
-    // Restrict it to before we send to request and 3 minute after we send the request. If
-    // it turns out to be still flaky we can increase the filter range.
-    Instant end = Instant.now().plus(Duration.ofMinutes(3));
+    Instant end = Instant.now().plus(Duration.ofMinutes(10));
     TimeInterval interval =
         TimeInterval.newBuilder()
             .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
@@ -328,10 +314,7 @@ public class BuiltinMetricsIT {
       if (view.equals("application_blocking_latencies")) {
         otelMetricName = "application_latencies";
       }
-      // The InMemoryMetricReader records instruments under their fully qualified OTel name, so look
-      // up the metric by the internal-namespace-prefixed name.
-      MetricData dataFromReader =
-          getMetricData(metricReader, INTERNAL_INSTRUMENT_PREFIX + otelMetricName);
+      MetricData dataFromReader = getMetricData(metricReader, otelMetricName);
 
       // Filter on instance and method name
       // Verify that metrics are correct for MutateRows request
