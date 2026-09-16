@@ -24,6 +24,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static com.google.common.truth.TruthJUnit.assume;
 
 import com.google.api.client.util.Lists;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
@@ -41,6 +42,7 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.BoundType;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Range;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
@@ -72,14 +74,12 @@ import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-@Ignore("Temporarily disable flaky test")
 @RunWith(JUnit4.class)
 public class BuiltinMetricsIT {
   @ClassRule public static TestEnvRule testEnvRule = new TestEnvRule();
@@ -96,6 +96,12 @@ public class BuiltinMetricsIT {
   private MetricServiceClient metricClient;
 
   private InMemoryMetricReader metricReader;
+
+  // OTel instrument names for all Bigtable client metrics (public and internal) carry the internal
+  // namespace prefix; the public/internal split only happens at export time via each metric's
+  // external name. The custom OTEL InMemoryMetricReader therefore sees the fully qualified names.
+  private static final String INTERNAL_INSTRUMENT_PREFIX =
+      "bigtable.googleapis.com/internal/client/";
 
   public static String[] VIEWS = {
     "operation_latencies",
@@ -160,7 +166,6 @@ public class BuiltinMetricsIT {
     if (tableDefault != null) {
       tableAdminClient.deleteTable(tableDefault.getId());
     }
-
     if (clientCustomOtel != null) {
       clientCustomOtel.close();
     }
@@ -234,6 +239,58 @@ public class BuiltinMetricsIT {
   }
 
   @Test
+  public void testInternalMetrics() throws Exception {
+    logger.info("Started testing internal metrics");
+    tableDefault =
+        tableAdminClient.createTable(
+            CreateTableRequest.of(PrefixGenerator.newPrefix("BuiltinMetricsIT#testInternal"))
+                .addFamily("cf"));
+    logger.info("Create default table: " + tableDefault.getId());
+
+    Instant start = Instant.now().minus(Duration.ofSeconds(10));
+
+    // Send a MutateRow and ReadRows request and measure the latencies for these requests.
+    clientDefault.mutateRow(
+        RowMutation.create(TableId.of(tableDefault.getId()), "a-new-key")
+            .setCell("cf", "q", "abc"));
+    ArrayList<Row> ignored =
+        Lists.newArrayList(
+            clientDefault.readRows(Query.create(TableId.of(tableDefault.getId())).limit(10)));
+
+    // This stopwatch is used for to limit fetching of metric data in verifyMetrics
+    Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
+
+    ProjectName name = ProjectName.of(testEnvRule.env().getProjectId());
+
+    // Interval is set in the monarch request when query metric timestamps.
+    // Restrict it to before we send to request and 3 minute after we send the request. If
+    // it turns out to be still flaky we can increase the filter range.
+    Instant end = Instant.now().plus(Duration.ofMinutes(3));
+    TimeInterval interval =
+        TimeInterval.newBuilder()
+            .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
+            .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
+            .build();
+
+    List<String> views = ImmutableList.of("per_connection_error_count");
+    for (String view : views) {
+      // Filter on instance name
+      String metricFilter =
+          String.format(
+              "metric.type=\"bigtable.googleapis.com/internal/client/%s\" AND"
+                  + " resource.labels.instance=\"%s\"",
+              view, testEnvRule.env().getInstanceId());
+      ListTimeSeriesRequest.Builder requestBuilder =
+          ListTimeSeriesRequest.newBuilder()
+              .setName(name.toString())
+              .setFilter(metricFilter)
+              .setInterval(interval)
+              .setView(ListTimeSeriesRequest.TimeSeriesView.FULL);
+      verifyMetricsArePublished(requestBuilder.build(), metricsPollingStopwatch, view);
+    }
+  }
+
+  @Test
   public void testBuiltinMetricsWithCustomOTEL() throws Exception {
     logger.info("Started testing builtin metrics with custom OTEL");
     tableCustomOtel =
@@ -271,7 +328,10 @@ public class BuiltinMetricsIT {
       if (view.equals("application_blocking_latencies")) {
         otelMetricName = "application_latencies";
       }
-      MetricData dataFromReader = getMetricData(metricReader, otelMetricName);
+      // The InMemoryMetricReader records instruments under their fully qualified OTel name, so look
+      // up the metric by the internal-namespace-prefixed name.
+      MetricData dataFromReader =
+          getMetricData(metricReader, INTERNAL_INSTRUMENT_PREFIX + otelMetricName);
 
       // Filter on instance and method name
       // Verify that metrics are correct for MutateRows request
@@ -309,7 +369,7 @@ public class BuiltinMetricsIT {
   private ListTimeSeriesResponse verifyMetricsArePublished(
       ListTimeSeriesRequest request, Stopwatch metricsPollingStopwatch, String view)
       throws Exception {
-    ListTimeSeriesResponse response = metricClient.listTimeSeriesCallable().call(request);
+    ListTimeSeriesResponse response = listTimeSeriesToleratingNotFound(request);
     while (response.getTimeSeriesCount() == 0
         && metricsPollingStopwatch.elapsed(TimeUnit.MINUTES) < 10) {
       logger.log(
@@ -322,7 +382,7 @@ public class BuiltinMetricsIT {
               + metricsPollingStopwatch.elapsed(TimeUnit.MINUTES));
       // Call listTimeSeries every minute
       Thread.sleep(Duration.ofMinutes(1).toMillis());
-      response = metricClient.listTimeSeriesCallable().call(request);
+      response = listTimeSeriesToleratingNotFound(request);
     }
 
     assertWithMessage("View " + view + " didn't return any data.")
@@ -330,6 +390,18 @@ public class BuiltinMetricsIT {
         .isGreaterThan(0);
 
     return response;
+  }
+
+  // A metric's descriptor is created lazily the first time that metric is exported, so a brand new
+  // internal metric can return NOT_FOUND for several minutes before it becomes queryable (Cloud
+  // Monitoring reports it may take up to 10 minutes). Treat NOT_FOUND as "no data yet" so the
+  // polling loop keeps retrying within its budget instead of failing immediately.
+  private ListTimeSeriesResponse listTimeSeriesToleratingNotFound(ListTimeSeriesRequest request) {
+    try {
+      return metricClient.listTimeSeriesCallable().call(request);
+    } catch (NotFoundException e) {
+      return ListTimeSeriesResponse.getDefaultInstance();
+    }
   }
 
   private void verifyMetricsWithMetricsReader(
