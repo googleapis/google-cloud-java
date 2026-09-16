@@ -101,6 +101,12 @@ public class BuiltinMetricsIT {
 
   private InMemoryMetricReader metricReader;
 
+  // OTel instruments are always registered under the internal/client/ namespace. The client/
+  // vs internal/client/ split only happens at Cloud Monitoring export time, so the
+  // InMemoryMetricReader sees the full internal name.
+  private static final String INTERNAL_INSTRUMENT_PREFIX =
+      "bigtable.googleapis.com/internal/client/";
+
   public static String[] VIEWS = {
     "operation_latencies",
     "attempt_latencies",
@@ -352,7 +358,8 @@ public class BuiltinMetricsIT {
       if (view.equals("application_blocking_latencies")) {
         otelMetricName = "application_latencies";
       }
-      MetricData dataFromReader = getMetricData(metricReader, otelMetricName);
+      MetricData dataFromReader =
+          getMetricData(metricReader, INTERNAL_INSTRUMENT_PREFIX + otelMetricName);
 
       // Filter on instance and method name
       // Verify that metrics are correct for MutateRows request
