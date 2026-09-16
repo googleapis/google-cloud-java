@@ -304,48 +304,51 @@ final class ITWorkloadIdentityFederationTest {
         File.createTempFile(
             "ITWorkloadIdentityFederation_cert_actor", /* suffix= */ null, /* directory= */ null);
     tokenFile.deleteOnExit();
+    try {
+      GenericJson tokenJson = new GenericJson();
+      tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
+      tokenJson.put("subject_token", subjectToken);
+      tokenJson.put("actor_token", actorToken);
 
-    GenericJson tokenJson = new GenericJson();
-    tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
-    tokenJson.put("subject_token", subjectToken);
-    tokenJson.put("actor_token", actorToken);
+      OAuth2Utils.writeInputStreamToFile(
+          new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+          tokenFile.getAbsolutePath());
 
-    OAuth2Utils.writeInputStreamToFile(
-        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
-        tokenFile.getAbsolutePath());
+      GenericJson config = new GenericJson();
+      config.put("type", "external_account");
+      config.put("audience", OIDC_AUDIENCE);
+      config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
+      config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
+      config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
+      config.put(
+          "service_account_impersonation_url",
+          String.format(
+              "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
+              clientEmail));
 
-    GenericJson config = new GenericJson();
-    config.put("type", "external_account");
-    config.put("audience", OIDC_AUDIENCE);
-    config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
-    config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
-    config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
-    config.put(
-        "service_account_impersonation_url",
-        String.format(
-            "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
-            clientEmail));
+      GenericJson credentialSource = new GenericJson();
+      credentialSource.put("file", tokenFile.getAbsolutePath());
 
-    GenericJson credentialSource = new GenericJson();
-    credentialSource.put("file", tokenFile.getAbsolutePath());
+      GenericJson format = new GenericJson();
+      format.put("type", "json");
+      format.put("subject_token_field_name", "subject_token");
+      format.put("actor_token_field_name", "actor_token");
+      credentialSource.put("format", format);
 
-    GenericJson format = new GenericJson();
-    format.put("type", "json");
-    format.put("subject_token_field_name", "subject_token");
-    format.put("actor_token_field_name", "actor_token");
-    credentialSource.put("format", format);
+      GenericJson certificate = new GenericJson();
+      certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+      credentialSource.put("certificate", certificate);
 
-    GenericJson certificate = new GenericJson();
-    certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
-    credentialSource.put("certificate", certificate);
+      config.put("credential_source", credentialSource);
 
-    config.put("credential_source", credentialSource);
+      IdentityPoolCredentials identityPoolCredentials =
+          (IdentityPoolCredentials)
+              ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 
-    IdentityPoolCredentials identityPoolCredentials =
-        (IdentityPoolCredentials)
-            ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
-
-    callGcs(identityPoolCredentials);
+      callGcs(identityPoolCredentials);
+    } finally {
+      tokenFile.delete();
+    }
   }
 
   /**
@@ -418,45 +421,48 @@ final class ITWorkloadIdentityFederationTest {
             /* suffix= */ null,
             /* directory= */ null);
     tokenFile.deleteOnExit();
+    try {
+      GenericJson tokenJson = new GenericJson();
+      tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
+      tokenJson.put("subject_token", subjectToken);
+      tokenJson.put("actor_token", actorToken);
 
-    GenericJson tokenJson = new GenericJson();
-    tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
-    tokenJson.put("subject_token", subjectToken);
-    tokenJson.put("actor_token", actorToken);
+      OAuth2Utils.writeInputStreamToFile(
+          new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+          tokenFile.getAbsolutePath());
 
-    OAuth2Utils.writeInputStreamToFile(
-        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
-        tokenFile.getAbsolutePath());
+      GenericJson config = new GenericJson();
+      config.put("type", "external_account");
+      config.put("audience", OIDC_AUDIENCE);
+      config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
+      config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
+      config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
 
-    GenericJson config = new GenericJson();
-    config.put("type", "external_account");
-    config.put("audience", OIDC_AUDIENCE);
-    config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
-    config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
-    config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
+      GenericJson credentialSource = new GenericJson();
+      credentialSource.put("file", tokenFile.getAbsolutePath());
 
-    GenericJson credentialSource = new GenericJson();
-    credentialSource.put("file", tokenFile.getAbsolutePath());
+      GenericJson format = new GenericJson();
+      format.put("type", "json");
+      format.put("subject_token_field_name", "subject_token");
+      format.put("actor_token_field_name", "actor_token");
+      credentialSource.put("format", format);
 
-    GenericJson format = new GenericJson();
-    format.put("type", "json");
-    format.put("subject_token_field_name", "subject_token");
-    format.put("actor_token_field_name", "actor_token");
-    credentialSource.put("format", format);
+      GenericJson certificate = new GenericJson();
+      certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+      credentialSource.put("certificate", certificate);
 
-    GenericJson certificate = new GenericJson();
-    certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
-    credentialSource.put("certificate", certificate);
+      config.put("credential_source", credentialSource);
 
-    config.put("credential_source", credentialSource);
+      IdentityPoolCredentials identityPoolCredentials =
+          (IdentityPoolCredentials)
+              ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 
-    IdentityPoolCredentials identityPoolCredentials =
-        (IdentityPoolCredentials)
-            ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
-
-    AccessToken accessToken = identityPoolCredentials.refreshAccessToken();
-    assertNotNull(accessToken);
-    assertNotNull(accessToken.getTokenValue());
+      AccessToken accessToken = identityPoolCredentials.refreshAccessToken();
+      assertNotNull(accessToken);
+      assertNotNull(accessToken.getTokenValue());
+    } finally {
+      tokenFile.delete();
+    }
   }
 
   /**

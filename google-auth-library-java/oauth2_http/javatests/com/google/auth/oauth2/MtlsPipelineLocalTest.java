@@ -589,32 +589,34 @@ class MtlsPipelineLocalTest {
 
     int concurrency = 8;
     ExecutorService clientExecutor = Executors.newFixedThreadPool(concurrency);
-    CountDownLatch startLatch = new CountDownLatch(1);
-    List<Future<AccessToken>> futures = new ArrayList<>();
+    try {
+      CountDownLatch startLatch = new CountDownLatch(1);
+      List<Future<AccessToken>> futures = new ArrayList<>();
 
-    for (int i = 0; i < concurrency; i++) {
-      futures.add(
-          clientExecutor.submit(
-              new Callable<AccessToken>() {
-                @Override
-                public AccessToken call() throws Exception {
-                  startLatch.await();
-                  return credentials.refreshAccessToken();
-                }
-              }));
+      for (int i = 0; i < concurrency; i++) {
+        futures.add(
+            clientExecutor.submit(
+                new Callable<AccessToken>() {
+                  @Override
+                  public AccessToken call() throws Exception {
+                    startLatch.await();
+                    return credentials.refreshAccessToken();
+                  }
+                }));
+      }
+
+      // Release all client threads concurrently
+      startLatch.countDown();
+
+      for (Future<AccessToken> future : futures) {
+        AccessToken token = future.get(10, TimeUnit.SECONDS);
+        assertNotNull(token);
+        assertTrue(token.getTokenValue().startsWith("concurrent_token_"));
+      }
+    } finally {
+      clientExecutor.shutdownNow();
+      assertTrue(clientExecutor.awaitTermination(5, TimeUnit.SECONDS));
     }
-
-    // Release all client threads concurrently
-    startLatch.countDown();
-
-    for (Future<AccessToken> future : futures) {
-      AccessToken token = future.get(10, TimeUnit.SECONDS);
-      assertNotNull(token);
-      assertTrue(token.getTokenValue().startsWith("concurrent_token_"));
-    }
-
-    clientExecutor.shutdown();
-    assertTrue(clientExecutor.awaitTermination(5, TimeUnit.SECONDS));
     assertEquals(concurrency, requestCounter.get());
   }
 
@@ -943,7 +945,7 @@ class MtlsPipelineLocalTest {
 
               int count = iamRequestCount.incrementAndGet();
               if (count == 1) {
-                // Update the cert files on disk on 401 (Cert A -> Cert B)
+                // Rewrite the cert files on disk on 401 to trigger X509Provider reload and retry
                 Files.write(dynamicCertFile, Files.readAllBytes(Paths.get(TEST_CERT_PATH)));
                 Files.write(dynamicKeyFile, Files.readAllBytes(Paths.get(TEST_KEY_PATH)));
 
