@@ -1048,6 +1048,61 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertFalse(dropStatus);
   }
 
+
+
+  @Test
+  public void testPreparedInferredParameterTypes() throws SQLException {
+
+    String TABLE_NAME = "JDBC_PREPARED_EXECUTE_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    /*String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);*/
+
+    String insertQuery =
+        String.format(
+            "INSERT INTO "+DATASET +"."+TABLE_NAME+" (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+    String updateQuery =
+        String.format("UPDATE %s.%s SET StringField=? WHERE IntegerField=?", DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    String selectQuery = String.format("SELECT ? FROM %s.%s", DATASET, TABLE_NAME);
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+
+    int value = insertStmt.getParameterMetaData().getParameterType(1);
+    assertTrue(value == insertStmt.getParameterMetaData().getParameterType(1) );
+    System.out.println(insertStmt.getParameterMetaData().getParameterType(1));
+
+     value = insertStmt.getParameterMetaData().getParameterType(3);
+    assertTrue(value == insertStmt.getParameterMetaData().getParameterType(3));
+    System.out.println(insertStmt.getParameterMetaData().getParameterType(3));
+
+     value = insertStmt.getParameterMetaData().getParameterType(6);
+    assertTrue(value == insertStmt.getParameterMetaData().getParameterType(6));
+    System.out.println(insertStmt.getParameterMetaData().getParameterType(6));
+
+    // Row 1: Testing setString, setInt, setShort, setBytes, setObject, setNull
+    insertStmt.setString(1, "String1");
+    insertStmt.setInt(2, 111);
+    insertStmt.setShort(3, (short) 12);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    assertThrows(BigQueryJdbcException.class, insertStmt::execute);
+
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
   @Test
   public void testPreparedStatementThrowsSyntaxError() throws SQLException {
     String TABLE_NAME = "JDBC_PREPARED_SYNTAX_ERR_TABLE_" + randomNumber;

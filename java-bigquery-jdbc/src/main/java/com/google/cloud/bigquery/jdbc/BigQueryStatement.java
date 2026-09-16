@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.JobListOption;
@@ -1898,5 +1899,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
+  }
+
+  List<QueryParameter> getUndeclaredQueryParameters(String query){
+    QueryJobConfiguration dryRunConfig = getJobConfig(query)
+        .setDryRun(true)
+        .setParameterMode("POSITIONAL").build();
+    Job dryRunJob = this.bigQuery.create((JobInfo.of(dryRunConfig)));
+    QueryStatistics jobStatistics = dryRunJob.getStatistics();
+    System.out.println(jobStatistics.getQueryParameters());
+    List<QueryParameter> queryParameters = jobStatistics.getQueryParameters();
+    return queryParameters;
+
   }
 }
