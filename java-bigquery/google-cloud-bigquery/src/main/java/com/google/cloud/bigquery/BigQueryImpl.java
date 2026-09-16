@@ -2396,23 +2396,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public ArrowQueryResult queryArrow(
       QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException, JobException {
-    return queryArrowWithTimeout(configuration, jobId, null, options);
-  }
-
-  /**
-   * Executes a query in Arrow format with an optional execution timeout.
-   *
-   * @param configuration query job configuration
-   * @param jobId job identifier, or {@code null}
-   * @param timeoutMs query timeout in milliseconds, or {@code null}
-   * @param options query job options
-   * @return an {@link ArrowQueryResult} for streaming results
-   * @throws InterruptedException if interrupted while awaiting results
-   * @throws JobException if the query job fails
-   */
-  private ArrowQueryResult queryArrowWithTimeout(
-      QueryJobConfiguration configuration, JobId jobId, Long timeoutMs, JobOption... options)
-      throws InterruptedException, JobException {
     checkNotNull(configuration, "configuration cannot be null");
     Job.checkNotDryRun(configuration, "queryArrow");
     Span querySpan = null;
@@ -2421,7 +2404,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       querySpan =
           getOptions()
               .getOpenTelemetryTracer()
-              .spanBuilder("com.google.cloud.bigquery.BigQuery.queryArrowWithTimeout")
+              .spanBuilder("com.google.cloud.bigquery.BigQuery.queryArrow")
               .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
@@ -2456,9 +2439,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           content.setLocation(jobId.getLocation());
         } else if (getOptions().getLocation() != null) {
           content.setLocation(getOptions().getLocation());
-        }
-        if (timeoutMs != null) {
-          content.setTimeoutMs(timeoutMs);
         }
         com.google.api.services.bigquery.model.QueryResponse results;
         try {
