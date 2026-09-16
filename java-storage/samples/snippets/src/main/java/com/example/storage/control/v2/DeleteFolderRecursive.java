@@ -26,13 +26,11 @@ import com.google.storage.control.v2.FolderName;
 import com.google.storage.control.v2.StorageControlClient;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public final class DeleteFolderRecursive {
 
   public static void deleteFolderRecursive(String bucketName, String folderName)
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+      throws IOException, ExecutionException, InterruptedException {
     // The name of the bucket
     // String bucketName = "your-unique-bucket-name";
 
@@ -49,7 +47,7 @@ public final class DeleteFolderRecursive {
       OperationFuture<Empty, DeleteFolderRecursiveMetadata> operationFuture =
           storageControl.deleteFolderRecursiveAsync(request);
 
-      operationFuture.get(30, TimeUnit.SECONDS);
+      operationFuture.get();
 
       System.out.printf("Deleted folder: %s%n", folderResourceName);
     }
