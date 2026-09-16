@@ -225,7 +225,7 @@ public class BigQueryDriver implements Driver {
         return null;
       }
     } catch (Throwable t) {
-      int errorCode = extractErrorCode(t);
+      int errorCode = TelemetryManager.extractErrorCode(t);
       TelemetryManager.recordConnectionAttempt(Status.STATUS_ERROR, errorCode, authType);
       if (t instanceof SQLException) {
         throw (SQLException) t;
@@ -313,15 +313,5 @@ public class BigQueryDriver implements Driver {
 
   private static class LazyHolder {
     static final BigQueryDriver INSTANCE = new BigQueryDriver();
-  }
-
-  private static int extractErrorCode(Throwable t) {
-    if (t instanceof SQLException) {
-      int code = ((SQLException) t).getErrorCode();
-      if (code != 0) {
-        return code;
-      }
-    }
-    return 1000;
   }
 }

@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
@@ -320,6 +321,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (this.batchParameters.isEmpty()) {
       return result;
     }
+
     if (useWriteAPI()) {
       long startTime = System.currentTimeMillis();
       StatementExecution.Builder writeApiExecutionBuilder =
@@ -351,10 +353,14 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         writeApiExecutionBuilder
             .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
+        if (e instanceof InterruptedException) {
+          Thread.currentThread().interrupt();
+        }
         throw new BigQueryJdbcRuntimeException("Failed to execute batch with Write API", e);
       } finally {
         long durationMs = System.currentTimeMillis() - startTime;
         TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
 
     } else {
@@ -385,6 +391,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         throw new BigQueryJdbcRuntimeException("Interrupted during individual INSERT batch", ex);
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
+      } finally {
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
     }
   }
@@ -556,6 +564,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (this.insertSchema != null) {
       return BigQueryResultSetMetadata.of(this.insertSchema.getFields(), this);
     }
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+
     return null;
   }
 

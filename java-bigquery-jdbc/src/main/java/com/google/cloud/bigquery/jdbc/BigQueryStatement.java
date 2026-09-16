@@ -48,6 +48,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
@@ -494,6 +495,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // If a ResultSet exists, then it will be closed as well, closing the
     // ownedThreads
     closeStatementResources();
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
   }
 
   @Override
@@ -684,6 +687,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       this.currentExecutionBuilder
           .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
           .setErrorCode(TelemetryManager.extractErrorCode(ex));
+      Thread.currentThread().interrupt();
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
       this.currentExecutionBuilder
@@ -1796,6 +1800,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     clearBatch();
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+
     return result;
   }
 

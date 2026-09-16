@@ -253,6 +253,10 @@ public final class TelemetryManager implements AutoCloseable {
         });
   }
 
+  public static void recordFeatureUsage(DriverFeature feature) {
+    recordFeatureUsage(feature, null);
+  }
+
   public static void recordError(int errorCode, int errorXdbcCode, String methodName) {
     runSafely(
         () -> {
@@ -275,7 +279,8 @@ public final class TelemetryManager implements AutoCloseable {
    * driver error code.
    */
   public static int extractErrorCode(Throwable t) {
-    while (t != null) {
+    int depth = 0;
+    while (t != null && depth++ < 20) {
       if (t instanceof BigQueryException) {
         int code = ((BigQueryException) t).getCode();
         if (code != 0) {
