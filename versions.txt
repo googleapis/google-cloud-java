@@ -1119,3 +1119,5 @@ google-shopping-merchant-loyaltycustomers-bom:0.1.0:0.2.0-SNAPSHOT
 proto-google-shopping-merchant-loyaltycustomers-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-shopping-merchant-loyaltycustomers-v1:0.1.0:0.2.0-SNAPSHOT
 google-shopping-merchant-loyaltycustomers:0.1.0:0.2.0-SNAPSHOT
+proto-google-cloud-backupdr-v1beta:0.56.0:0.57.0-SNAPSHOT
+grpc-google-cloud-backupdr-v1beta:0.56.0:0.57.0-SNAPSHOT
