@@ -22,6 +22,7 @@ import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
 
@@ -93,5 +94,29 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void channelConfigurator_andThen_nullsafe() {
     ChannelConfigurator actual = ChannelConfigurator.identity().andThen(null);
     assertThat(actual).isSameInstanceAs(ChannelConfigurator.identity());
+  }
+
+  @Test
+  public void histogramBoundaries_areValidAndIncreasing() {
+    List<Double> latencyBoundaries = OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries();
+    assertThat(latencyBoundaries).isNotEmpty();
+    for (int i = 1; i < latencyBoundaries.size(); i++) {
+      assertThat(latencyBoundaries.get(i)).isGreaterThan(latencyBoundaries.get(i - 1));
+    }
+
+    List<Double> sizeBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramBoundaries();
+    assertThat(sizeBoundaries).isNotEmpty();
+    for (int i = 1; i < sizeBoundaries.size(); i++) {
+      assertThat(sizeBoundaries.get(i)).isGreaterThan(sizeBoundaries.get(i - 1));
+    }
+  }
+
+  @Test
+  public void registerClientViews_doesNotThrow() {
+    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder builder =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder();
+    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder returned =
+        OpenTelemetryBootstrappingUtils.registerClientViews(builder);
+    assertThat(returned).isSameInstanceAs(builder);
   }
 }

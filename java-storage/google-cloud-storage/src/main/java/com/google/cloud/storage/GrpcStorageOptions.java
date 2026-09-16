@@ -100,6 +100,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,6 +123,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -148,6 +150,10 @@ public final class GrpcStorageOptions extends StorageOptions
   private final GrpcInterceptorProvider grpcInterceptorProvider;
   private final BlobWriteSessionConfig blobWriteSessionConfig;
   private transient OpenTelemetry openTelemetry;
+  private final boolean enableOtelMetrics;
+  private final boolean enableOtelDebugMetrics;
+  private final transient SdkMeterProvider meterProvider;
+  private final java.time.Duration metricInterval;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -165,6 +171,16 @@ public final class GrpcStorageOptions extends StorageOptions
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
     this.blobWriteSessionConfig = builder.blobWriteSessionConfig;
     this.openTelemetry = builder.openTelemetry;
+    this.enableOtelMetrics =
+        builder.enableOtelMetrics != null
+            ? builder.enableOtelMetrics
+            : StorageMetricsConfig.isEnableOtelMetrics();
+    this.enableOtelDebugMetrics =
+        builder.enableOtelDebugMetrics != null
+            ? builder.enableOtelDebugMetrics
+            : StorageMetricsConfig.isEnableOtelDebugMetrics();
+    this.meterProvider = builder.meterProvider;
+    this.metricInterval = builder.metricInterval;
   }
 
   @Override
@@ -415,6 +431,42 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelMetrics() {
+    return enableOtelMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelDebugMetrics() {
+    return enableOtelDebugMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public @Nullable SdkMeterProvider getMeterProvider() {
+    return meterProvider;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public java.time.Duration getMetricInterval() {
+    return metricInterval;
+  }
+
+  /**
    * @since 2.14.0
    */
   @Override
@@ -432,6 +484,10 @@ public final class GrpcStorageOptions extends StorageOptions
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
+        enableOtelMetrics,
+        enableOtelDebugMetrics,
+        meterProvider,
+        metricInterval,
         baseHashCode());
   }
 
@@ -446,11 +502,15 @@ public final class GrpcStorageOptions extends StorageOptions
     GrpcStorageOptions that = (GrpcStorageOptions) o;
     return attemptDirectPath == that.attemptDirectPath
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && enableOtelMetrics == that.enableOtelMetrics
+        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
+        && Objects.equals(meterProvider, that.meterProvider)
+        && Objects.equals(metricInterval, that.metricInterval)
         && this.baseEquals(that);
   }
 
@@ -501,6 +561,10 @@ public final class GrpcStorageOptions extends StorageOptions
     private BlobWriteSessionConfig blobWriteSessionConfig =
         GrpcStorageDefaults.INSTANCE.getDefaultStorageWriterConfig();
     private OpenTelemetry openTelemetry = GrpcStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
+    private Boolean enableOtelMetrics = null;
+    private Boolean enableOtelDebugMetrics = null;
+    private SdkMeterProvider meterProvider = null;
+    private java.time.Duration metricInterval = java.time.Duration.ofSeconds(60);
 
     private boolean grpcMetricsManuallyEnabled = false;
 
@@ -516,6 +580,10 @@ public final class GrpcStorageOptions extends StorageOptions
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
       this.openTelemetry = gso.openTelemetry;
+      this.enableOtelMetrics = gso.isEnableOtelMetrics();
+      this.enableOtelDebugMetrics = gso.isEnableOtelDebugMetrics();
+      this.meterProvider = gso.getMeterProvider();
+      this.metricInterval = gso.getMetricInterval();
     }
 
     /**
@@ -747,6 +815,58 @@ public final class GrpcStorageOptions extends StorageOptions
     public GrpcStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      this.enableOtelMetrics = enableOtelMetrics;
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      this.enableOtelDebugMetrics = enableOtelDebugMetrics;
+      return this;
+    }
+
+    /**
+     * Set a custom {@link SdkMeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom SdkMeterProvider to use
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMeterProvider(SdkMeterProvider meterProvider) {
+      this.meterProvider = meterProvider;
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * @param metricInterval interval duration
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMetricInterval(java.time.Duration metricInterval) {
+      this.metricInterval = requireNonNull(metricInterval, "metricInterval must be non null");
       return this;
     }
 
