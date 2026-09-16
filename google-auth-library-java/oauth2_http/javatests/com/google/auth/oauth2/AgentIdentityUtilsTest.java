@@ -1001,7 +1001,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_certificateOnlyConfig_omittedKeyPath_returnsCertInfo()
+  public void getAgentIdentityCertInfo_certificateOnlyConfig_omittedKeyPath_throwsIOException()
       throws Exception {
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
@@ -1024,13 +1024,13 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
-    assertNotNull(info1);
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Private key is required for Agent Identity bound token request, but key path is"
+                    + " missing."));
     assertEquals(0, fakeTime.getSleepCount());
-
-    // Subsequent call returns cached instance
-    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
-    assertSame(info1, info2);
   }
 
   @Test

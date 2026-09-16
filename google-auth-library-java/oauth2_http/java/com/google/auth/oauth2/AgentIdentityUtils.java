@@ -454,8 +454,6 @@ public final class AgentIdentityUtils {
             if (currentKeyMeta != null && currentKeyMeta.matches(cached.keyMetadata)) {
               return cached.certInfo;
             }
-          } else if (cached.keyMetadata == null) {
-            return cached.certInfo;
           }
         }
       } catch (IOException ignored) {
@@ -478,13 +476,21 @@ public final class AgentIdentityUtils {
         }
 
         if (Strings.isNullOrEmpty(keyPath)) {
-          // Certificate-only configuration (e.g. sidecar/proxy mTLS termination where the
-          // private key is isolated from the application container).
-          CertInfo info = new CertInfo(cert, certContent);
-          if (certMeta != null && certMeta.matches(FileMetadata.of(certPath))) {
-            cachedCredentials = new CachedCredentials(certMeta, null, true, info);
+          boolean explicitConfigOrMtls =
+              !Strings.isNullOrEmpty(envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG))
+                  || "true".equalsIgnoreCase(envReader.getEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE));
+          if (explicitConfigOrMtls) {
+            throw new IOException(
+                "Private key is required for Agent Identity bound token request, but key path is"
+                    + " missing.");
           }
-          return info;
+          Slf4jUtils.log(
+              LOGGER,
+              org.slf4j.event.Level.WARN,
+              Collections.emptyMap(),
+              "Private key path is missing for Agent Identity certificate. Falling back to unbound"
+                  + " token.");
+          return null;
         }
 
         FileMetadata keyMeta = FileMetadata.of(keyPath);
@@ -514,6 +520,11 @@ public final class AgentIdentityUtils {
             "Permission denied reading certificate or key files. Falling back to"
                 + " unbound token.");
         return null;
+      } catch (IOException e) {
+        if (Strings.isNullOrEmpty(keyPath)) {
+          throw e;
+        }
+        LOGGER.warn("Failed to read or verify cert/key, retrying...", e);
       } catch (Exception e) {
         LOGGER.warn("Failed to read or verify cert/key, retrying...", e);
       }
