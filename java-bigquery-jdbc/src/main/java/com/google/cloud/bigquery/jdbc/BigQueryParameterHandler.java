@@ -34,12 +34,12 @@ class BigQueryParameterHandler {
   final ArrayList<BigQueryJdbcParameter> parametersList;
   private long highestIndex = 0;
 
-  BigQueryParameterHandler(int parameterCount, boolean enableTimestampPicos) {
-    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
-  }
-
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);
+  }
+
+  BigQueryParameterHandler(int parameterCount, boolean enableTimestampPicos) {
+    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
   }
 
   BigQueryParameterHandler(
