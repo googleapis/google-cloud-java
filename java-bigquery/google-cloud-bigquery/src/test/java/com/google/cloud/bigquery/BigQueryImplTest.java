@@ -2920,7 +2920,10 @@ public class BigQueryImplTest {
 
   @Test
   void testQueryArrowDefaultsToJobCreationOptional() throws IOException, InterruptedException {
-    QueryJobConfiguration config = QueryJobConfiguration.newBuilder("SELECT 1").build();
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT 1")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
         new com.google.api.services.bigquery.model.QueryResponse()
             .setQueryId("q-optional-1")
@@ -2940,6 +2943,18 @@ public class BigQueryImplTest {
     QueryRequest requestPb = requestPbCapture.getValue();
     assertEquals("JOB_CREATION_OPTIONAL", requestPb.getJobCreationMode());
     assertEquals("ARROW", requestPb.getQueryResultsFormat());
+  }
+
+  @Test
+  void testQueryArrowThrowsWhenQueryResultsFormatNotArrow() {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT 1")
+            .setQueryResultsFormat(QueryResultsFormat.STRUCT_ENCODING)
+            .build();
+    bigquery = options.getService();
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> bigquery.queryArrow(config));
+    assertTrue(exception.getMessage().contains("QueryResultsFormat must be set to ARROW"));
   }
 
   @Test

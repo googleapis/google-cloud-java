@@ -2350,6 +2350,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throws InterruptedException, JobException {
     checkNotNull(configuration, "configuration cannot be null");
     Job.checkNotDryRun(configuration, "queryArrow");
+    if (configuration.getQueryResultsFormat() != QueryResultsFormat.ARROW) {
+      throw new IllegalArgumentException(
+          "QueryResultsFormat must be set to ARROW when calling queryArrow().");
+    }
     Span querySpan = null;
     if (getOptions().isOpenTelemetryTracingEnabled()
         && getOptions().getOpenTelemetryTracer() != null) {
@@ -2362,21 +2366,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               .startSpan();
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
-      // 1. Ensure QueryResultsFormat is ARROW and default JobCreationMode is JOB_CREATION_OPTIONAL
+      // Ensure default JobCreationMode is JOB_CREATION_OPTIONAL
       QueryJobConfiguration arrowConfig = configuration;
-      if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW
-          || arrowConfig.getJobCreationMode() == null) {
-        QueryJobConfiguration.Builder builder = configuration.toBuilder();
-        // QueryJobConfiguration defaults queryResultsFormat to STRUCT_ENCODING.
-        // Because the caller explicitly invoked queryArrow(), override to ARROW
-        // so standard configurations can be used without redundant builder calls.
-        if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW) {
-          builder.setQueryResultsFormat(QueryResultsFormat.ARROW);
-        }
-        if (arrowConfig.getJobCreationMode() == null) {
-          builder.setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL);
-        }
-        arrowConfig = builder.build();
+      if (arrowConfig.getJobCreationMode() == null) {
+        arrowConfig =
+            configuration.toBuilder()
+                .setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL)
+                .build();
       }
 
       QueryRequestInfo requestInfo =
