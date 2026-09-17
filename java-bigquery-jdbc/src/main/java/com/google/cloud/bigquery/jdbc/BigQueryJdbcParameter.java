@@ -119,7 +119,7 @@ class BigQueryJdbcParameter {
         + paramName
         + '\''
         + ", paramType="
-        + paramType
+        + paramType.name()
         + ", scale="
         + scale
         + ", isUserSet="
