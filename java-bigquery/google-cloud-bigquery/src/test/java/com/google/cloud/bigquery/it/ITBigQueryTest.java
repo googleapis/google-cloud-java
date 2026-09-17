@@ -7588,6 +7588,54 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testQueryResultsFormatArrowFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getArrowSchema());
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertEquals(1, batchCount);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("fallback", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
   void testUniverseDomainWithInvalidUniverseDomain() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
