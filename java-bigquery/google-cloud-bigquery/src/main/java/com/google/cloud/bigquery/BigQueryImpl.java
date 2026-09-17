@@ -297,7 +297,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         if (bqReadClients != null) {
           for (BigQueryReadClient client : bqReadClients.values()) {
             if (client != null) {
-              client.close();
+              try {
+                client.close();
+              } catch (Exception ignored) {
+                // Suppress exception to ensure all other clients are closed
+              }
             }
           }
           bqReadClients.clear();
@@ -420,7 +424,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       int port = hostAndPort.getPortOrDefault(443);
       settingsBuilder.setEndpoint(endpointHost + ":" + port);
-      if (endpointHost.contains("localhost")
+      if (host.startsWith("http://")
+          || endpointHost.contains("localhost")
           || endpointHost.contains("127.0.0.1")
           || endpointHost.contains("::1")) {
         settingsBuilder.setTransportChannelProvider(
