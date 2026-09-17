@@ -273,8 +273,7 @@ public class GcpFallbackChannel extends ManagedChannel {
             && !options.getMinPrimaryProbeSuccessDuration().isZero()
             && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
           long elapsedNanos = nowNanos - firstSuccessNanos;
-          durationSatisfied =
-              elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
+          durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
         }
 
         if (primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
