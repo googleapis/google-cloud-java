@@ -84,7 +84,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   BigQueryPreparedStatement(BigQueryConnection connection, String query) {
     super(connection);
     setCurrentQuery(query);
-    this.parameterHandler = new BigQueryParameterHandler(this.parameterCount);
+    this.parameterHandler =
+        new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());
   }
 
   void setCurrentQuery(String currentQuery) {
@@ -99,6 +100,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.executeQuery",
         this.connection,
@@ -108,6 +110,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public long executeLargeUpdate() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.executeLargeUpdate",
         this.connection,
@@ -122,6 +125,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public boolean execute() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.execute",
         this.connection,
@@ -314,6 +318,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int[] executeBatch() throws SQLException {
+    validateExecution();
     int[] result = new int[this.batchParameters.size()];
     if (this.batchParameters.isEmpty()) {
       return result;
@@ -463,7 +468,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       ArrayList<BigQueryJdbcParameter> currentParameterList) throws SQLException {
     LOG.finer("++enter++");
     BigQueryParameterHandler batchHandler =
-        new BigQueryParameterHandler(this.parameterCount, currentParameterList);
+        new BigQueryParameterHandler(
+            this.parameterCount, currentParameterList, this.isEnableTimestampPicos());
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration = batchHandler.configureParameters(jobConfiguration);
@@ -482,7 +488,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       for (BigQueryJdbcParameter parameter : parameterList) {
         Object parameterValue =
             BigQueryParameterHandler.formatValueForQueryParameter(
-                parameter.getValue(), parameter.getSqlType());
+                parameter.getValue(), parameter.getSqlType(), this.isEnableTimestampPicos());
         StandardSQLTypeName sqlType = parameter.getSqlType();
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
