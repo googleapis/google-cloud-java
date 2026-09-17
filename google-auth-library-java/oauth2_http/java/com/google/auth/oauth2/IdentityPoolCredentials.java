@@ -113,9 +113,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           KeyStore mtlsKeyStore = x509Provider.getKeyStore();
           if (builder.transportFactory == null
               || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-              || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
+              || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+              || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
             this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-          } else {
+          } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
             LOGGER_PROVIDER
                 .getLogger()
                 .debug(
@@ -350,9 +351,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
     if (builder.transportFactory == null
         || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-        || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
+        || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+        || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
       this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-    } else {
+    } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
       LOGGER_PROVIDER
           .getLogger()
           .debug(

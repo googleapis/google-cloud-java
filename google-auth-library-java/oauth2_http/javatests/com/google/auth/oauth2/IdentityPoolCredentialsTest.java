@@ -3019,10 +3019,73 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 .setTokenUrl("https://sts.mtls.googleapis.com/v1/token"));
 
     assertSame(customTransportFactory, credential.getTransportFactory());
+    IdentityPoolCredentials scopedCustom =
+        credential.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertSame(customTransportFactory, scopedCustom.getTransportFactory());
+
     AccessToken token = credential.refreshAccessToken();
     assertNotNull(token);
     assertEquals(1, credential.getCapturedFactories().size());
     assertSame(customTransportFactory, credential.getCapturedFactories().get(0));
+  }
+
+  @Test
+  void createScoped_withCertificateConfig_refreshesMtlsTransportSnapshot(@TempDir Path tempDir)
+      throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", tokenFile.toString());
+    credentialSourceMap.put("format", formatMap);
+    credentialSourceMap.put("certificate", certificateMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+
+    KeyStore ks = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider trackingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCount.incrementAndGet();
+            return ks;
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setX509Provider(trackingProvider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertEquals(1, getKeyStoreCount.get());
+    assertTrue(credential.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    HttpTransportFactory originalTransportFactory = credential.getTransportFactory();
+
+    IdentityPoolCredentials scoped =
+        credential.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+
+    assertEquals(2, getKeyStoreCount.get());
+    assertTrue(scoped.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertNotSame(originalTransportFactory, scoped.getTransportFactory());
   }
 
   // ==================================================================================
