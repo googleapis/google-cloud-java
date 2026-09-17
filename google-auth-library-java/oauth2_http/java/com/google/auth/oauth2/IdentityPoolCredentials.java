@@ -115,7 +115,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           if (builder.transportFactory == null
               || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
               || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-              || builder.transportFactory instanceof MtlsHttpTransportFactory) {
+              || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class
+              || (builder.defaultMtlsTransportFactory != null
+                  && builder.transportFactory == builder.defaultMtlsTransportFactory)) {
             this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
             this.defaultMtlsTransportFactory = this.transportFactory;
           } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
@@ -234,7 +236,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.transportFactory == null
         || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || this.transportFactory instanceof MtlsHttpTransportFactory
+        || this.transportFactory.getClass() == MtlsHttpTransportFactory.class
         || (this.defaultMtlsTransportFactory != null
             && this.transportFactory == this.defaultMtlsTransportFactory);
   }
@@ -411,7 +413,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (builder.transportFactory == null
         || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || builder.transportFactory instanceof MtlsHttpTransportFactory) {
+        || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || (builder.defaultMtlsTransportFactory != null
+            && builder.transportFactory == builder.defaultMtlsTransportFactory)) {
       this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
       this.defaultMtlsTransportFactory = this.transportFactory;
     } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
@@ -496,6 +500,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
+    private @Nullable HttpTransportFactory defaultMtlsTransportFactory;
 
     Builder() {}
 
@@ -514,6 +519,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       // instance for atomic token reads.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
+      this.defaultMtlsTransportFactory = credentials.defaultMtlsTransportFactory;
     }
 
     /**
