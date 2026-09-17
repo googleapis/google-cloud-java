@@ -3116,11 +3116,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return TableResult.newBuilder()
           .setSchema(schema)
           .setTotalRows(numDmlAffectedRows != null ? numDmlAffectedRows : 0L)
-          .setPageNoSchema(
-              new PageImpl<>(
-                  new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
-                  null,
-                  ImmutableList.of()))
+          .setPageNoSchema(new PageImpl<>(null, null, ImmutableList.of()))
           .setJobId(completedJob.getJobId())
           .setRowsInPage(0L)
           .setStatementType(statementType)
@@ -3149,29 +3145,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         firstPage != null ? ImmutableList.copyOf(firstPage.getValues()) : ImmutableList.of();
     long rowsInPage = (long) firstPageRows.size();
 
-    Table destTable = null;
-    try {
-      destTable = getTable(destinationTable);
-    } catch (Exception e) {
-      // Non-fatal table lookup failure
-    }
     long totalRows =
         numDmlAffectedRows != null
             ? numDmlAffectedRows
-            : (destTable != null && destTable.getNumRows() != null
-                ? destTable.getNumRows().longValue()
+            : (readSession.getEstimatedRowCount() > 0
+                ? readSession.getEstimatedRowCount()
                 : rowsInPage);
 
     return TableResult.newBuilder()
         .setSchema(schema)
         .setTotalRows(totalRows)
         .setPageNoSchema(
-            firstPage != null
-                ? firstPage
-                : new PageImpl<>(
-                    new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
-                    null,
-                    ImmutableList.of()))
+            firstPage != null ? firstPage : new PageImpl<>(null, null, ImmutableList.of()))
         .setJobId(completedJob.getJobId())
         .setRowsInPage(rowsInPage)
         .setStatementType(statementType)
