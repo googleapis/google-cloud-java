@@ -73,6 +73,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -90,8 +92,11 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
           + "4Az2ZkmeuN6Fk/y9H+Lcb2pskJIXjrL533vrDWGOC48LrsThMQPv8cxBky8HFSEklPpkfTF95tpD43iVwJRB/Gr"
           + "CtGTw65IfJ4/tI09h6zGc4yqvIo1cHX/LQ+SxKLGyir/dQM925rGt/VojxY5ryJR7GLbCzxPnJm/oQJBANwOCO6"
           + "D2hy1LQYJhXh7O+RLtA/tSnT1xyMQsGT+uUCMiKS2bSKx2wxo9k7h3OegNJIu1q6nZ6AbxDK8H3+d0dUCQQDTrP"
-          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAutLPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEAgidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ==\n"
-          + "-----END PRIVATE KEY-----\n";
+          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAut"
+          + "LPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEA"
+          + "gidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJ"
+          + "ADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ"
+          + "==\n-----END PRIVATE KEY-----\n";
 
   // Id Token provided by the default IAM API that does not include the "email" claim
   public static final String STANDARD_ID_TOKEN =
@@ -1087,8 +1092,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     IllegalStateException illegalStateException =
         assertThrows(IllegalStateException.class, builder::build);
     assertEquals(
-        "Universe domain source.domain.xyz in source credentials does not match explicit.domain.com"
-            + " universe domain set for impersonated credentials.",
+        "Universe domain source.domain.xyz in source credentials"
+            + " does not match explicit.domain.com universe domain set for impersonated credentials.",
         illegalStateException.getMessage());
   }
 
@@ -1383,8 +1388,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
         .getTransport()
         .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
 
-    java.util.concurrent.atomic.AtomicReference<HttpTransportFactory> capturedSourceTransport =
-        new java.util.concurrent.atomic.AtomicReference<>();
+    AtomicReference<HttpTransportFactory> capturedSourceTransport = new AtomicReference<>();
     ExternalAccountCredentials mockExternalAccountCredentials =
         new IdentityPoolCredentials(
             IdentityPoolCredentials.newBuilder()
@@ -1392,10 +1396,11 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                     "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
                 .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
                 .setSubjectTokenSupplier(context -> "token")
+                .setQuotaProjectId("test-quota-project")
                 .setTokenUrl("https://sts.googleapis.com/v1/token")) {
           @Override
-          public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) {
-            capturedSourceTransport.set(transportFactory);
+          AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
+            capturedSourceTransport.set(cycleTransportFactory);
             return new AccessToken("intermediate-sts-token-xyz", null);
           }
         };
@@ -1415,10 +1420,16 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     assertEquals(
         "Bearer intermediate-sts-token-xyz",
         customTransportFactory.getTransport().getRequest().getFirstHeaderValue("Authorization"));
+    assertEquals(
+        "test-quota-project",
+        customTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("x-goog-user-project"));
   }
 
   @Test
-  void refreshAccessToken_nullTransportFactory_fallsBackToCredentialsTransport()
+  void refreshAccessToken_nullTransportFactory_fallsBackToCredentialsTransportAndUsesCache()
       throws IOException {
     MockIAMCredentialsServiceTransportFactory credentialsTransportFactory =
         new MockIAMCredentialsServiceTransportFactory();
@@ -1429,8 +1440,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
         .getTransport()
         .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
 
-    java.util.concurrent.atomic.AtomicBoolean sourceRefreshed =
-        new java.util.concurrent.atomic.AtomicBoolean(false);
+    AtomicBoolean sourceRefreshed = new AtomicBoolean(false);
     ExternalAccountCredentials mockExternalAccountCredentials =
         new IdentityPoolCredentials(
             IdentityPoolCredentials.newBuilder()
@@ -1465,14 +1475,14 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .getRequest()
             .getFirstHeaderValue("Authorization"));
 
-    // Also verify public no-arg refreshAccessToken() delegates without overriding source transport
+    // Verify subsequent no-arg refreshAccessToken() uses refreshIfExpired() and reuses cached source token
     sourceRefreshed.set(false);
     credentialsTransportFactory
         .getTransport()
         .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
     AccessToken token2 = credentials.refreshAccessToken();
     assertEquals("final-iam-token-null-transport", token2.getTokenValue());
-    assertTrue(sourceRefreshed.get());
+    assertFalse(sourceRefreshed.get());
   }
 
   @Test

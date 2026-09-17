@@ -239,58 +239,66 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   public AccessToken refreshAccessToken() throws IOException {
     // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
     HttpTransportFactory cycleTransportFactory = this.transportFactory;
+    KeyStore pinnedKeyStore = null;
     if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
-      KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
+      pinnedKeyStore = this.x509Provider.getKeyStore();
       cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
     }
-    return refreshWithRetry(cycleTransportFactory, true);
+    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, true);
   }
 
   @Override
-  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
-      throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
     // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
     // and prevent nested retry amplification. Outer callers manage retry coordination.
-    return refreshWithRetry(cycleTransportFactory, false);
+    return refreshWithRetry(cycleTransportFactory, null, false);
   }
 
   private AccessToken refreshWithRetry(
-      HttpTransportFactory cycleTransportFactory, boolean allowRetry) throws IOException {
-    // Read subject and actor tokens, atomically if from the same file supplier.
-    String subjectToken;
-    String actorToken = null;
-    if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier
-        && this.actorTokenSupplier == this.subjectTokenSupplier) {
-      FileIdentityPoolSubjectTokenSupplier.TokenPair tokens =
-          ((FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
-              .readTokens(supplierContext);
-      subjectToken = tokens.subject;
-      actorToken = tokens.actor;
-    } else {
-      subjectToken = retrieveSubjectToken();
-      if (this.actorTokenSupplier != null) {
-        actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
-      }
-    }
-
-    StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
-        StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
-            .setAudience(getAudience());
-
-    if (actorToken != null && this.actorTokenType != null) {
-      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
-    }
-
-    Collection<String> scopes = getScopes();
-    if (scopes != null && !scopes.isEmpty()) {
-      stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
-    }
-
+      HttpTransportFactory cycleTransportFactory,
+      @Nullable KeyStore pinnedKeyStore,
+      boolean allowRetry)
+      throws IOException {
     try {
+      ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+      if (impersonated != null) {
+        return impersonated.refreshAccessToken(cycleTransportFactory);
+      }
+
+      // Read subject and actor tokens, atomically if from the same file supplier.
+      String subjectToken;
+      String actorToken = null;
+      if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier
+          && this.actorTokenSupplier == this.subjectTokenSupplier) {
+        FileIdentityPoolSubjectTokenSupplier.TokenPair tokens =
+            ((FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+                .readTokens(supplierContext);
+        subjectToken = tokens.subject;
+        actorToken = tokens.actor;
+      } else {
+        subjectToken = retrieveSubjectToken();
+        if (this.actorTokenSupplier != null) {
+          actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
+        }
+      }
+
+      StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
+          StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
+              .setAudience(getAudience());
+
+      if (actorToken != null && this.actorTokenType != null) {
+        stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+      }
+
+      Collection<String> scopes = getScopes();
+      if (scopes != null && !scopes.isEmpty()) {
+        stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
+      }
+
       return exchangeExternalCredentialForAccessToken(
           stsTokenExchangeRequest.build(), cycleTransportFactory);
-    } catch (Exception e) {
+    } catch (IOException | RuntimeException e) {
       if (allowRetry
           && OAuth2Utils.isUnauthorizedException(e)
           && this.x509Provider != null
@@ -313,29 +321,21 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           throw ioException;
         }
 
+        if (!OAuth2Utils.hasCertificateChanged(pinnedKeyStore, freshKeyStore)) {
+          throw e;
+        }
+
         HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
         try {
-          return refreshWithRetry(retryTransportFactory, false);
-        } catch (Exception retryException) {
+          return refreshWithRetry(retryTransportFactory, freshKeyStore, false);
+        } catch (IOException | RuntimeException retryException) {
           if (retryException != e) {
             retryException.addSuppressed(e);
           }
-          if (retryException instanceof IOException) {
-            throw (IOException) retryException;
-          }
-          if (retryException instanceof RuntimeException) {
-            throw (RuntimeException) retryException;
-          }
-          throw new IOException(retryException);
+          throw retryException;
         }
       }
-      if (e instanceof IOException) {
-        throw (IOException) e;
-      }
-      if (e instanceof RuntimeException) {
-        throw (RuntimeException) e;
-      }
-      throw new IOException(e);
+      throw e;
     }
   }
 

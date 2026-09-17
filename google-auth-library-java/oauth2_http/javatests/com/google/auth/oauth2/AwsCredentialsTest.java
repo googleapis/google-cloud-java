@@ -167,7 +167,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(6).getHeaders();
+        transportFactory.transport.getRequests().get(3).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, false);
   }
 
@@ -206,7 +206,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
       // Validate metrics header is set correctly on the sts request.
       Map<String, List<String>> headers =
-          transportFactory.transport.getRequests().get(6).getHeaders();
+          transportFactory.transport.getRequests().get(3).getHeaders();
       ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, true);
     }
   }

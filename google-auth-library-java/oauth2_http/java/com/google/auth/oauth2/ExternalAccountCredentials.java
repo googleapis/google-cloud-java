@@ -529,16 +529,26 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
   }
 
+  @Nullable
+  ImpersonatedCredentials getImpersonatedCredentials() {
+    if (this.shouldBuildImpersonatedCredential()) {
+      this.impersonatedCredentials = this.buildImpersonatedCredentials();
+    }
+    return this.impersonatedCredentials;
+  }
+
   /**
-   * Refreshes the access token using the specified transport factory. Default implementation
-   * delegates to {@link #refreshAccessToken()}. Subclasses should override this method if they
-   * support transport pinning per refresh cycle.
+   * Refreshes the access token using the specified transport factory for per-cycle transport
+   * pinning. Internal subclasses ({@link IdentityPoolCredentials}, {@link AwsCredentials}, {@link
+   * PluggableAuthCredentials}) delegate {@link #refreshAccessToken()} into this method. This
+   * default implementation delegates back to {@link #refreshAccessToken()} for any custom
+   * subclasses that do not override this method.
    *
-   * @param transportFactory the HTTP transport factory to use for this refresh cycle
+   * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
    * @return the refreshed access token
    * @throws IOException if the token refresh fails
    */
-  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     return refreshAccessToken();
   }
 
@@ -568,11 +578,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
       throws IOException {
     // Handle service account impersonation if necessary.
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken(cycleTransportFactory);
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =

@@ -125,7 +125,12 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   }
 
   @Override
-  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(cycleTransportFactory);
+    }
+
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
@@ -136,7 +141,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
       stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
     }
     return exchangeExternalCredentialForAccessToken(
-        stsTokenExchangeRequest.build(), transportFactory);
+        stsTokenExchangeRequest.build(), cycleTransportFactory);
   }
 
   /**

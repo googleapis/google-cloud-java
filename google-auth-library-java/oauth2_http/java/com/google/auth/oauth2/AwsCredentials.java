@@ -124,7 +124,12 @@ public class AwsCredentials extends ExternalAccountCredentials {
   }
 
   @Override
-  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(cycleTransportFactory);
+    }
+
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(retrieveSubjectToken(), getSubjectTokenType())
             .setAudience(getAudience());
@@ -136,7 +141,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
     }
 
     return exchangeExternalCredentialForAccessToken(
-        stsTokenExchangeRequest.build(), transportFactory);
+        stsTokenExchangeRequest.build(), cycleTransportFactory);
   }
 
   @Override

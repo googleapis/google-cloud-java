@@ -80,6 +80,11 @@ import org.jspecify.annotations.Nullable;
  * Also, the target service account must grant the originating principal the "Service Account Token
  * Creator" IAM role.
  *
+ * <p>Note: For mTLS Workload Identity Federation with service account impersonation, applications
+ * should configure {@link IdentityPoolCredentials.Builder#setServiceAccountImpersonationUrl}
+ * directly on {@link IdentityPoolCredentials}, which manages per-cycle mTLS certificate pinning and
+ * 401 recovery across both STS and IAM token exchanges.
+ *
  * <p>Usage:
  *
  * <pre>
@@ -585,24 +590,19 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   /**
-   * Refreshes the access token using the specified transport factory.
+   * Refreshes the access token using the specified transport factory for per-cycle transport
+   * pinning.
    *
-   * <p>This package-private method is intended for internal transport pinning by {@link
-   * ExternalAccountCredentials} during service account impersonation. For mTLS Workload Identity
-   * Federation with impersonation, applications should configure {@code
-   * setServiceAccountImpersonationUrl} directly on {@code IdentityPoolCredentials}, which manages
-   * the certificate lifecycle and 401 recovery.
-   *
-   * @param transportFactory the HTTP transport factory to use, or {@code null} to use this
+   * @param cycleTransportFactory the HTTP transport factory to use, or {@code null} to use this
    *     instance's configured transport factory without overriding source credential transport
    * @return the refreshed access token
    * @throws IOException if token refresh fails
    */
-  AccessToken refreshAccessToken(@Nullable HttpTransportFactory transportFactory)
+  AccessToken refreshAccessToken(@Nullable HttpTransportFactory cycleTransportFactory)
       throws IOException {
     HttpTransportFactory effectiveTransportFactory =
-        transportFactory != null
-            ? transportFactory
+        cycleTransportFactory != null
+            ? cycleTransportFactory
             : (this.transportFactory != null
                 ? this.transportFactory
                 : OAuth2Utils.HTTP_TRANSPORT_FACTORY);
@@ -615,15 +615,29 @@ public class ImpersonatedCredentials extends GoogleCredentials
             this.sourceCredentials.createScoped(
                 Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
       }
-      AccessToken intermediateAccessToken =
-          (transportFactory == null)
-              ? ((ExternalAccountCredentials) this.sourceCredentials).refreshAccessToken()
-              : ((ExternalAccountCredentials) this.sourceCredentials)
+      AccessToken intermediateAccessToken;
+      try {
+        if (cycleTransportFactory == null) {
+          this.sourceCredentials.refreshIfExpired();
+          intermediateAccessToken = this.sourceCredentials.getAccessToken();
+        } else {
+          intermediateAccessToken =
+              ((ExternalAccountCredentials) this.sourceCredentials)
                   .refreshAccessToken(effectiveTransportFactory);
+        }
+      } catch (IOException e) {
+        throw new IOException("Unable to refresh sourceCredentials", e);
+      }
       Credentials authCredentials =
-          intermediateAccessToken != null
-              ? OAuth2Credentials.create(intermediateAccessToken)
-              : this.sourceCredentials;
+          new GoogleCredentials(
+              GoogleCredentials.newBuilder()
+                  .setQuotaProjectId(this.sourceCredentials.getQuotaProjectId())
+                  .setUniverseDomain(this.sourceCredentials.getUniverseDomain())) {
+            @Override
+            public AccessToken refreshAccessToken() {
+              return intermediateAccessToken;
+            }
+          };
       adapter = new HttpCredentialsAdapter(authCredentials);
     } else {
       if (this.sourceCredentials.getAccessToken() == null) {
