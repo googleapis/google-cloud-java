@@ -62,13 +62,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.net.HostAndPort;
-import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -313,7 +310,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
     if (client == null) {
       BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
-      configureReadSettings(settingsBuilder, getOptions(), location);
+      configureReadSettings(settingsBuilder, getOptions());
       try {
         client = BigQueryReadClient.create(settingsBuilder.build());
         bqReadClients.put(cacheKey, client);
@@ -341,15 +338,14 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   /**
-   * Configures a {@link BigQueryReadSettings.Builder} with credentials, universe domain, custom
-   * endpoint, and transport settings mapped from the given {@link BigQueryOptions}.
+   * Configures a {@link BigQueryReadSettings.Builder} with credentials, header provider, and
+   * universe domain mapped from the given {@link BigQueryOptions}.
    *
    * @param settingsBuilder the builder to configure
    * @param options the source BigQueryOptions
-   * @param location the regional location of the dataset/query
    */
   private static void configureReadSettings(
-      BigQueryReadSettings.Builder settingsBuilder, BigQueryOptions options, String location) {
+      BigQueryReadSettings.Builder settingsBuilder, BigQueryOptions options) {
     if (options.getCredentials() != null) {
       settingsBuilder.setCredentialsProvider(
           FixedCredentialsProvider.create(options.getCredentials()));
@@ -360,40 +356,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
     if (options.getUniverseDomain() != null) {
       settingsBuilder.setUniverseDomain(options.getUniverseDomain());
-    }
-    if (options.getHost() != null) {
-      String host = options.getHost();
-      String target = host;
-      if (target.contains("://")) {
-        target = URI.create(target).getAuthority();
-      }
-      HostAndPort hostAndPort = HostAndPort.fromString(target);
-      String endpointHost = hostAndPort.getHost();
-      if (endpointHost.contains("bigquery.googleapis.com")) {
-        endpointHost =
-            endpointHost.replace("bigquery.googleapis.com", "bigquerystorage.googleapis.com");
-      } else if (endpointHost.contains("bigquery.private.googleapis.com")) {
-        endpointHost =
-            endpointHost.replace(
-                "bigquery.private.googleapis.com", "bigquerystorage.private.googleapis.com");
-      } else if (endpointHost.startsWith("bigquery.")) {
-        endpointHost = endpointHost.replaceFirst("^bigquery\\.", "bigquerystorage.");
-      }
-      int port = hostAndPort.getPortOrDefault(443);
-      settingsBuilder.setEndpoint(endpointHost + ":" + port);
-      if (host.startsWith("http://")
-          || endpointHost.contains("localhost")
-          || endpointHost.contains("127.0.0.1")
-          || endpointHost.contains("::1")) {
-        settingsBuilder.setTransportChannelProvider(
-            BigQueryReadSettings.defaultGrpcTransportProviderBuilder()
-                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                .build());
-      }
-    } else if (location != null
-        && !location.equalsIgnoreCase("us")
-        && !location.equalsIgnoreCase("eu")) {
-      settingsBuilder.setEndpoint(location.toLowerCase() + "-bigquerystorage.googleapis.com:443");
     }
   }
 
@@ -2405,6 +2367,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW
           || arrowConfig.getJobCreationMode() == null) {
         QueryJobConfiguration.Builder builder = configuration.toBuilder();
+        // QueryJobConfiguration defaults queryResultsFormat to STRUCT_ENCODING.
+        // Because the caller explicitly invoked queryArrow(), override to ARROW
+        // so standard configurations can be used without redundant builder calls.
         if (arrowConfig.getQueryResultsFormat() != QueryResultsFormat.ARROW) {
           builder.setQueryResultsFormat(QueryResultsFormat.ARROW);
         }
@@ -2527,12 +2492,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         if (actualJobId != null && actualJobId.getJob() != null) {
           String jobProject =
               actualJobId.getProject() != null ? actualJobId.getProject() : projectId;
-          jobLocation =
-              actualJobId.getLocation() != null
-                  ? actualJobId.getLocation()
-                  : (content.getLocation() != null
-                      ? content.getLocation()
-                      : getOptions().getLocation());
+          jobLocation = actualJobId.getLocation();
+          if (jobLocation == null) {
+            jobLocation = content.getLocation();
+          }
+          if (jobLocation == null) {
+            jobLocation = getOptions().getLocation();
+          }
           if (jobLocation != null) {
             streamName =
                 String.format(
