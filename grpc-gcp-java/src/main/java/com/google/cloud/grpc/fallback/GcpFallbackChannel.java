@@ -184,10 +184,9 @@ public class GcpFallbackChannel extends ManagedChannel {
 
   private void resetProbeStatsIfGenerationChanged() {
     long currentGen = fallbackState.getGeneration();
-    if (localProbeGeneration.get() != currentGen) {
+    if (localProbeGeneration.getAndSet(currentGen) != currentGen) {
       localProbeSuccesses.set(0);
       localFirstPrimaryProbeSuccessNanos.set(0);
-      localProbeGeneration.set(currentGen);
     }
   }
 
