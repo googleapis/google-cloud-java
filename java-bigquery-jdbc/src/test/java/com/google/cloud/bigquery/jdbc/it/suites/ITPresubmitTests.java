@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.jdbc.it.ITConnectionPoolingTest;
 import com.google.cloud.bigquery.jdbc.it.ITConnectionTest;
 import com.google.cloud.bigquery.jdbc.it.ITDatabaseMetadataTest;
 import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
+import com.google.cloud.bigquery.jdbc.it.ITJdbcTimestampPicosTest;
 import com.google.cloud.bigquery.jdbc.it.ITLocalSslValidationTest;
 import com.google.cloud.bigquery.jdbc.it.ITPcntTest;
 import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
@@ -39,6 +40,7 @@ import org.junit.platform.suite.api.Suite;
   ITConnectionPoolingTest.class,
   ITDatabaseMetadataTest.class,
   ITDriverTest.class,
+  ITJdbcTimestampPicosTest.class,
   ITLocalSslValidationTest.class,
   ITPcntTest.class,
   ITResultSetMetadataTest.class,

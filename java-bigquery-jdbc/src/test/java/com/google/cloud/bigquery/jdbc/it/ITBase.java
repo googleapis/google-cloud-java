@@ -283,6 +283,9 @@ public class ITBase extends BigQueryJdbcBaseTest {
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
   public static final BigQuery bigQuery = BigQueryJdbcBaseTest.getBigQuery(connectionUrl);
 
+  public static final String FORCE_READ_API_PROPERTIES =
+      "EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThroughputMinTableSize=0;MaxResults=1;";
+
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";
   public static final String dropSchema = "DROP SCHEMA IF EXISTS `%s.%s` CASCADE;";
