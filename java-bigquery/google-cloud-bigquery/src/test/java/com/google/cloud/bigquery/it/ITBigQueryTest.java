@@ -7519,7 +7519,7 @@ class ITBigQueryTest {
         totalRows += root.getRowCount();
         assertEquals(1, root.getRowCount());
       }
-      assertTrue(batchCount > 0);
+      assertEquals(1, batchCount);
       assertEquals(1, totalRows);
     }
   }
@@ -7534,10 +7534,13 @@ class ITBigQueryTest {
             .build();
     try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       assertNotNull(result);
+      int batchCount = 0;
       long totalRows = 0;
       for (VectorSchemaRoot root : result) {
+        batchCount++;
         totalRows += root.getRowCount();
       }
+      assertTrue(batchCount > 1);
       assertEquals(15000, totalRows);
     }
   }
