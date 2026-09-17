@@ -113,7 +113,10 @@ public class QueryBenchmark {
   public void queryWithArrowZeroCopy(QueryParams queryParams, Blackhole blackhole)
       throws Exception {
     QueryJobConfiguration config =
-        QueryJobConfiguration.newBuilder(queryParams.queries).setUseLegacySql(false).build();
+        QueryJobConfiguration.newBuilder(queryParams.queries)
+            .setUseLegacySql(false)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
     try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       for (VectorSchemaRoot root : result) {
         blackhole.consume(root);
