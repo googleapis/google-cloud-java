@@ -17,8 +17,10 @@ package com.google.cloud.firestore.telemetry;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFunction;
 import com.google.cloud.firestore.FirestoreOpenTelemetryOptions;
 import com.google.cloud.firestore.FirestoreOptions;
+import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -109,6 +111,19 @@ public class EnabledTraceUtilTest {
             .build();
     EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
     assertThat(traceUtil.getChannelConfigurator()).isNotNull();
+  }
+
+  // Fails on an opentelemetry-grpc-1.6 version whose interceptor method name EnabledTraceUtil does
+  // not handle. The version shared-dependencies does not manage is covered by the
+  // otel-grpc-compatibility job in java-firestore-ci.yaml.
+  @Test
+  public void grpcChannelConfiguratorInterceptsWithGrpcTelemetry() {
+    OpenTelemetrySdk.builder().buildAndRegisterGlobal();
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> configurator =
+        defaultEnabledTraceUtil().getChannelConfigurator();
+    ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forAddress("localhost", 9999);
+
+    assertThat(configurator.apply(builder)).isNotNull();
   }
 
   @Test
