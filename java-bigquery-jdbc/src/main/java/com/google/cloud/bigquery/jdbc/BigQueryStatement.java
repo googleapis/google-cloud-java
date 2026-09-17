@@ -196,7 +196,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseQueryCache(this.connection.isUseQueryCache());
     querySettings.setQueryDialect(this.connection.getQueryDialect());
     querySettings.setKmsKeyName(this.connection.getKmsKeyName());
-    querySettings.setQueryProperties(this.connection.getQueryProperties());
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    querySettings.setQueryProperties(snapshot.queryProperties);
     querySettings.setAllowLargeResults(this.connection.isAllowLargeResults());
     if (this.connection.getJobTimeoutInSeconds() > 0) {
       querySettings.setJobTimeoutMs(this.connection.getJobTimeoutInSeconds() * 1000L);
@@ -212,8 +213,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // only create session if enable session and session info is null
     if (this.connection.isSessionEnabled()) {
       querySettings.setEnableSession(this.connection.isSessionEnabled());
-      querySettings.setSessionInfoConnectionProperty(
-          this.connection.getSessionInfoConnectionProperty());
+      querySettings.setSessionInfoConnectionProperty(snapshot.sessionInfo);
     }
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
@@ -1508,9 +1508,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
     ConnectionProperty sessionProperty =
         this.connection != null
-            ? this.connection.getSessionInfoConnectionProperty()
+            ? snapshot.sessionInfo
             : this.querySettings.getSessionInfoConnectionProperty();
     boolean isSessionEnabled =
         this.connection != null
@@ -1518,7 +1519,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             : this.querySettings.isEnableSession();
     List<ConnectionProperty> queryProperties =
         this.connection != null
-            ? this.connection.getQueryProperties()
+            ? snapshot.queryProperties
             : this.querySettings.getQueryProperties();
 
     List<ConnectionProperty> props =
@@ -1526,13 +1527,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
     if (sessionProperty != null) {
       boolean hasSessionId =
-          props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
+          props.stream()
+              .anyMatch(cp -> BigQueryConnection.SESSION_ID_KEY.equalsIgnoreCase(cp.getKey()));
       if (!hasSessionId) {
         props.add(sessionProperty);
       }
     } else if (isSessionEnabled) {
       queryConfigBuilder.setCreateSession(true);
-      this.connection.isSessionCreatedByDriver = true;
+      this.connection.markSessionCreatedByDriver();
     }
 
     if (!props.isEmpty()) {

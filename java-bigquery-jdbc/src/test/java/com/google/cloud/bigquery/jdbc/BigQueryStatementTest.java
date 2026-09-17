@@ -223,6 +223,10 @@ public class BigQueryStatementTest {
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
     testExecutorService = Executors.newSingleThreadExecutor();
     doReturn(testExecutorService).when(bigQueryConnection).getExecutorService();
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(bigQueryConnection)
+        .getSessionStateSnapshot();
+
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
