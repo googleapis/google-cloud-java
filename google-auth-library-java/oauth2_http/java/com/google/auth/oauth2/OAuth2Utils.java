@@ -376,8 +376,9 @@ public class OAuth2Utils {
     try {
       Enumeration<String> aliases = keyStore.aliases();
       if (aliases != null) {
-        while (aliases.hasMoreElements()) {
-          String alias = aliases.nextElement();
+        List<String> aliasList = Collections.list(aliases);
+        Collections.sort(aliasList);
+        for (String alias : aliasList) {
           Certificate[] chain = keyStore.getCertificateChain(alias);
           if (chain != null && chain.length > 0) {
             Collections.addAll(certs, chain);

@@ -529,8 +529,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
   }
 
-  @Nullable
-  ImpersonatedCredentials getImpersonatedCredentials() {
+  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
     if (this.shouldBuildImpersonatedCredential()) {
       this.impersonatedCredentials = this.buildImpersonatedCredentials();
     }
@@ -541,7 +540,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    * Refreshes the access token using the specified transport factory for per-cycle transport
    * pinning. Internal subclasses ({@link IdentityPoolCredentials}, {@link AwsCredentials}, {@link
    * PluggableAuthCredentials}) delegate {@link #refreshAccessToken()} into this method. This
-   * default implementation delegates back to {@link #refreshAccessToken()} for any custom
+   * default implementation delegates back to {@link #refreshAccessToken()} for any package-private
    * subclasses that do not override this method.
    *
    * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle

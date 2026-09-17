@@ -70,10 +70,13 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -1475,7 +1478,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .getRequest()
             .getFirstHeaderValue("Authorization"));
 
-    // Verify subsequent no-arg refreshAccessToken() uses refreshIfExpired() and reuses cached source token
+    // Verify subsequent no-arg refreshAccessToken() uses refreshIfExpired() and reuses cached
+    // source token
     sourceRefreshed.set(false);
     credentialsTransportFactory
         .getTransport()
@@ -1535,5 +1539,62 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .getRequest()
             .getContentAsString()
             .contains("https://www.googleapis.com/auth/bigquery"));
+  }
+
+  @Test
+  void refreshAccessToken_standaloneExternalAccountSource_retriesOn401FromIam() throws IOException {
+    AtomicInteger sourceRefreshCount = new AtomicInteger(0);
+    ExternalAccountCredentials mockExternalAccountCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenSupplier(context -> "token")
+                .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+                .setTokenUrl("https://sts.googleapis.com/v1/token")) {
+          @Override
+          public AccessToken refreshAccessToken() {
+            int count = sourceRefreshCount.incrementAndGet();
+            return new AccessToken("intermediate-sts-token-" + count, null);
+          }
+
+          @Override
+          public IdentityPoolCredentials createScoped(Collection<String> scopes) {
+            return this;
+          }
+        };
+
+    MockIAMCredentialsServiceTransportFactory credentialsTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    credentialsTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    credentialsTransportFactory.getTransport().setAccessToken("final-iam-token-after-retry");
+    credentialsTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    // First IAM call returns 401 Unauthorized, second returns 200 OK
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized");
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(mockExternalAccountCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(IMMUTABLE_SCOPES_LIST)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(credentialsTransportFactory)
+            .build();
+
+    AccessToken token = credentials.refreshAccessToken();
+    assertEquals("final-iam-token-after-retry", token.getTokenValue());
+    assertEquals(2, sourceRefreshCount.get());
+    assertEquals(
+        "Bearer intermediate-sts-token-2",
+        credentialsTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("Authorization"));
   }
 }

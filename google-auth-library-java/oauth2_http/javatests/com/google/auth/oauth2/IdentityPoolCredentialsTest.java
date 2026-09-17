@@ -49,6 +49,7 @@ import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.Json;
+import com.google.api.client.json.JsonParser;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
@@ -3352,8 +3353,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
    * without making real HTTP calls.
    */
   private static class TransportCapturingCredentials extends IdentityPoolCredentials {
-    private final java.util.List<HttpTransportFactory> capturedFactories =
-        java.util.Collections.synchronizedList(new java.util.ArrayList<>());
+    private final List<HttpTransportFactory> capturedFactories =
+        Collections.synchronizedList(new ArrayList<>());
 
     TransportCapturingCredentials(IdentityPoolCredentials.Builder builder) {
       super(builder);
@@ -3368,7 +3369,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       return new AccessToken("capturedAccessToken", null);
     }
 
-    java.util.List<HttpTransportFactory> getCapturedFactories() {
+    List<HttpTransportFactory> getCapturedFactories() {
       return capturedFactories;
     }
   }
@@ -3607,36 +3608,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
           }
         };
 
-    MockHttpTransport mockTransport =
-        new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() {
-                if (url.contains("/v1/token")) {
-                  GenericJson response = new GenericJson();
-                  response.setFactory(OAuth2Utils.JSON_FACTORY);
-                  response.put("access_token", "intermediate-sts-token-1");
-                  response.put("token_type", "Bearer");
-                  response.put("expires_in", 3600);
-                  response.put(
-                      "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
-                  return new MockLowLevelHttpResponse()
-                      .setContentType(Json.MEDIA_TYPE)
-                      .setContent(response.toString());
-                } else if (url.contains(":generateAccessToken")) {
-                  return new MockLowLevelHttpResponse()
-                      .setStatusCode(401)
-                      .setContentType(Json.MEDIA_TYPE)
-                      .setContent("{\"error\": {\"code\": 401, \"message\": \"Unauthorized\"}}");
-                }
-                return new MockLowLevelHttpResponse().setStatusCode(404);
-              }
-            };
-          }
-        };
-
+    List<KeyStore> requestKeyStores = new ArrayList<>();
     IdentityPoolCredentials credential =
         new IdentityPoolCredentials(
             IdentityPoolCredentials.newBuilder()
@@ -3650,13 +3622,44 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                     "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
           @Override
           HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
-            return () -> mockTransport;
+            return () ->
+                new MockHttpTransport() {
+                  @Override
+                  public LowLevelHttpRequest buildRequest(String method, String url) {
+                    requestKeyStores.add(keyStore);
+                    return new MockLowLevelHttpRequest(url) {
+                      @Override
+                      public LowLevelHttpResponse execute() {
+                        if (url.contains("/v1/token")) {
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("access_token", "intermediate-sts-token-1");
+                          response.put("token_type", "Bearer");
+                          response.put("expires_in", 3600);
+                          response.put(
+                              "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        } else if (url.contains(":generateAccessToken")) {
+                          return new MockLowLevelHttpResponse()
+                              .setStatusCode(401)
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(
+                                  "{\"error\": {\"code\": 401, \"message\": \"Unauthorized\"}}");
+                        }
+                        return new MockLowLevelHttpResponse().setStatusCode(404);
+                      }
+                    };
+                  }
+                };
           }
         };
 
     IOException thrown = assertThrows(IOException.class, credential::refreshAccessToken);
     assertEquals("Cert rotation reload disk error", thrown.getMessage());
     assertEquals(2, getKeyStoreCallCount.get());
+    assertEquals(Arrays.asList(ks, ks), requestKeyStores);
 
     Throwable[] suppressed = thrown.getSuppressed();
     assertTrue(suppressed.length > 0);
@@ -3971,8 +3974,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Request 1 is IAM generateAccessToken; verify it requested the downstream target scope
     String iamRequestContent = transport.getRequests().get(1).getContentAsString();
-    try (com.google.api.client.json.JsonParser parser =
-        OAuth2Utils.JSON_FACTORY.createJsonParser(iamRequestContent)) {
+    try (JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(iamRequestContent)) {
       GenericJson iamBody = parser.parseAndClose(GenericJson.class);
       assertEquals(targetScopes, iamBody.get("scope"));
     }

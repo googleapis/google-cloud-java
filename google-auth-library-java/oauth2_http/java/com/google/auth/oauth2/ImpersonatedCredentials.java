@@ -318,7 +318,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  String getIamEndpointOverride() {
+  @Nullable String getIamEndpointOverride() {
     return this.iamEndpointOverride;
   }
 
@@ -615,30 +615,34 @@ public class ImpersonatedCredentials extends GoogleCredentials
             this.sourceCredentials.createScoped(
                 Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
       }
-      AccessToken intermediateAccessToken;
-      try {
-        if (cycleTransportFactory == null) {
+      if (cycleTransportFactory == null) {
+        try {
           this.sourceCredentials.refreshIfExpired();
-          intermediateAccessToken = this.sourceCredentials.getAccessToken();
-        } else {
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+        adapter = new HttpCredentialsAdapter(this.sourceCredentials);
+      } else {
+        AccessToken intermediateAccessToken;
+        try {
           intermediateAccessToken =
               ((ExternalAccountCredentials) this.sourceCredentials)
                   .refreshAccessToken(effectiveTransportFactory);
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
         }
-      } catch (IOException e) {
-        throw new IOException("Unable to refresh sourceCredentials", e);
+        Credentials authCredentials =
+            new GoogleCredentials(
+                GoogleCredentials.newBuilder()
+                    .setQuotaProjectId(this.sourceCredentials.getQuotaProjectId())
+                    .setUniverseDomain(this.sourceCredentials.getUniverseDomain())) {
+              @Override
+              public AccessToken refreshAccessToken() {
+                return intermediateAccessToken;
+              }
+            };
+        adapter = new HttpCredentialsAdapter(authCredentials);
       }
-      Credentials authCredentials =
-          new GoogleCredentials(
-              GoogleCredentials.newBuilder()
-                  .setQuotaProjectId(this.sourceCredentials.getQuotaProjectId())
-                  .setUniverseDomain(this.sourceCredentials.getUniverseDomain())) {
-            @Override
-            public AccessToken refreshAccessToken() {
-              return intermediateAccessToken;
-            }
-          };
-      adapter = new HttpCredentialsAdapter(authCredentials);
     } else {
       if (this.sourceCredentials.getAccessToken() == null) {
         // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
@@ -688,7 +692,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
     adapter.initialize(request);
-    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+    if (cycleTransportFactory != null
+        && this.sourceCredentials instanceof ExternalAccountCredentials) {
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);
