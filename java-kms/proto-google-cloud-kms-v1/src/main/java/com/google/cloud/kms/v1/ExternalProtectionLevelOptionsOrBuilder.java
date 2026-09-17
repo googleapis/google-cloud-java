@@ -30,11 +30,11 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The URI for an external resource that this
+   * Optional. The URI for an external resource that this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
-   * <code>string external_key_uri = 1;</code>
+   * <code>string external_key_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalKeyUri.
    */
@@ -44,11 +44,11 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The URI for an external resource that this
+   * Optional. The URI for an external resource that this
    * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] represents.
    * </pre>
    *
-   * <code>string external_key_uri = 1;</code>
+   * <code>string external_key_uri = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalKeyUri.
    */
@@ -58,13 +58,13 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The path to the external key material on the EKM when using
+   * Optional. The path to the external key material on the EKM when using
    * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
    * this field instead of external_key_uri when using an
    * [EkmConnection][google.cloud.kms.v1.EkmConnection].
    * </pre>
    *
-   * <code>string ekm_connection_key_path = 2;</code>
+   * <code>string ekm_connection_key_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ekmConnectionKeyPath.
    */
@@ -74,15 +74,57 @@ public interface ExternalProtectionLevelOptionsOrBuilder
    *
    *
    * <pre>
-   * The path to the external key material on the EKM when using
+   * Optional. The path to the external key material on the EKM when using
    * [EkmConnection][google.cloud.kms.v1.EkmConnection] e.g., "v0/my/key". Set
    * this field instead of external_key_uri when using an
    * [EkmConnection][google.cloud.kms.v1.EkmConnection].
    * </pre>
    *
-   * <code>string ekm_connection_key_path = 2;</code>
+   * <code>string ekm_connection_key_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for ekmConnectionKeyPath.
    */
   com.google.protobuf.ByteString getEkmConnectionKeyPathBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the backend environment where the key
+   * material of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] is
+   * associated with. Setting this field overrides the [CryptoKeyBackend][].
+   * This field may be set when
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] is set to
+   * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string ekm_connection_backend_override = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The ekmConnectionBackendOverride.
+   */
+  java.lang.String getEkmConnectionBackendOverride();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the backend environment where the key
+   * material of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] is
+   * associated with. Setting this field overrides the [CryptoKeyBackend][].
+   * This field may be set when
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] is set to
+   * [EXTERNAL_VPC][google.cloud.kms.v1.ProtectionLevel.EXTERNAL_VPC]. Format:
+   * `projects/&#42;&#47;locations/&#42;&#47;ekmConnections/&#42;`.
+   * </pre>
+   *
+   * <code>
+   * string ekm_connection_backend_override = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for ekmConnectionBackendOverride.
+   */
+  com.google.protobuf.ByteString getEkmConnectionBackendOverrideBytes();
 }

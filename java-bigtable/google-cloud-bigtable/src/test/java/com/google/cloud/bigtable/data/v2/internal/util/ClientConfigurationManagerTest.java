@@ -63,13 +63,15 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Timeout.ThreadMode;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -79,7 +81,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 // Backstop against a wedged blocking call (e.g. manager.start().get()) hanging the CI runner
 // indefinitely. If any test exceeds this, fail fast with a diagnosable timeout instead.
-@Timeout(value = 60, unit = TimeUnit.SECONDS)
+//
+// SEPARATE_THREAD is required, not cosmetic: the default SAME_THREAD mode enforces the timeout by
+// interrupting the test thread, and a thread blocked on monitor entry (`synchronized`) cannot be
+// interrupted. A deadlock like the one testDeadlockPrevention guards against would therefore
+// silently wedge the whole surefire JVM until the CI job's own multi-hour timeout.
+@Timeout(value = 60, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
 class ClientConfigurationManagerTest {
   private static final FeatureFlags FEATURE_FLAGS = FeatureFlags.getDefaultInstance();
 
@@ -380,7 +387,63 @@ class ClientConfigurationManagerTest {
     assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
-  @Disabled("https://github.com/googleapis/google-cloud-java/issues/13903")
+  /**
+   * The manager must never invoke a listener while holding its own monitor, no matter which thread
+   * ends up running the config-fetch continuation. See {@link #testDeadlockPrevention()} for the
+   * deadlock this prevents.
+   *
+   * <p>Where testDeadlockPrevention relies on a real RPC and so only catches the bad interleaving
+   * by luck, this test pins it: the channel answers GetClientConfiguration synchronously on the
+   * calling thread, so the config future is always already complete by the time
+   * sendRequestWithRetries() registers its continuation, and the continuation always runs inline on
+   * the polling thread.
+   */
+  @Test
+  void listenersAreNotifiedWithoutHoldingTheManagerLock() throws Exception {
+    manager.close();
+
+    ChannelProviders.ChannelProvider synchronousProvider =
+        new ForwardingChannelProvider(channelProvider) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            return super.newChannelBuilder().intercept(new SynchronousConfigInterceptor(service));
+          }
+        };
+    manager =
+        new ClientConfigurationManager(
+            FEATURE_FLAGS, CLIENT_INFO, synchronousProvider, noopDebugTracer, mockExecutor);
+
+    manager.start().get();
+
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+
+    ClientConfigurationManager notifyingManager = manager;
+    AtomicInteger notifications = new AtomicInteger();
+    AtomicBoolean lockHeldDuringCallback = new AtomicBoolean();
+    manager.addListener(
+        ClientConfiguration::getSessionConfiguration,
+        newValue -> {
+          notifications.incrementAndGet();
+          lockHeldDuringCallback.set(Thread.holdsLock(notifyingManager));
+        });
+
+    // Change the watched section so the listener actually fires, then poll.
+    ClientConfiguration.Builder builder = service.config.get().toBuilder();
+    builder
+        .getSessionConfigurationBuilder()
+        .getSessionPoolConfigurationBuilder()
+        .setLoadBalancingOptions(
+            LoadBalancingOptions.newBuilder()
+                .setLeastInFlight(LeastInFlight.newBuilder().setRandomSubsetSize(30)));
+    service.config.set(builder.build());
+
+    runnableCaptor.getValue().run();
+
+    assertThat(notifications.get()).isEqualTo(1);
+    assertThat(lockHeldDuringCallback.get()).isFalse();
+  }
+
   @Test
   void testDeadlockPrevention() throws Exception {
     // Initialize the manager and fetch the initial config to schedule polling.
@@ -549,6 +612,49 @@ class ClientConfigurationManagerTest {
       }
       responseObserver.onNext(config.get());
       responseObserver.onCompleted();
+    }
+  }
+
+  /**
+   * Answers GetClientConfiguration from {@link FakeConfigService#config} synchronously, on the
+   * thread that issued the call, without touching the network. Used to make the "response already
+   * delivered before the caller registers its continuation" interleaving deterministic.
+   */
+  private static class SynchronousConfigInterceptor implements ClientInterceptor {
+    private final FakeConfigService service;
+
+    SynchronousConfigInterceptor(FakeConfigService service) {
+      this.service = service;
+    }
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+      return new ClientCall<ReqT, RespT>() {
+        private Listener<RespT> responseListener;
+
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          this.responseListener = responseListener;
+        }
+
+        @Override
+        public void request(int numMessages) {}
+
+        @Override
+        public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+        @Override
+        public void halfClose() {
+          @SuppressWarnings("unchecked")
+          RespT response = (RespT) service.config.get();
+          responseListener.onMessage(response);
+          responseListener.onClose(Status.OK, new Metadata());
+        }
+
+        @Override
+        public void sendMessage(ReqT message) {}
+      };
     }
   }
 

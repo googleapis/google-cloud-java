@@ -44,6 +44,7 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,6 +74,7 @@ class InternalAwsSecurityCredentialsSupplier implements AwsSecurityCredentialsSu
   private final AwsCredentialSource awsCredentialSource;
   private EnvironmentProvider environmentProvider;
   private transient HttpTransportFactory transportFactory;
+  private final String transportFactoryClassName;
 
   /**
    * Constructor for InternalAwsSecurityCredentialsProvider
@@ -83,11 +85,25 @@ class InternalAwsSecurityCredentialsSupplier implements AwsSecurityCredentialsSu
    */
   InternalAwsSecurityCredentialsSupplier(
       AwsCredentialSource awsCredentialSource,
-      EnvironmentProvider environmentProvider,
-      HttpTransportFactory transportFactory) {
-    this.environmentProvider = environmentProvider;
+      @Nullable EnvironmentProvider environmentProvider,
+      @Nullable HttpTransportFactory transportFactory) {
+    this.environmentProvider =
+        environmentProvider == null ? SystemEnvironmentProvider.getInstance() : environmentProvider;
     this.awsCredentialSource = awsCredentialSource;
-    this.transportFactory = transportFactory;
+    this.transportFactory =
+        transportFactory != null ? transportFactory : OAuth2Utils.HTTP_TRANSPORT_FACTORY;
+    this.transportFactoryClassName = this.transportFactory.getClass().getName();
+  }
+
+  @SuppressWarnings("unused")
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    transportFactory = OAuth2Credentials.newInstance(transportFactoryClassName);
+  }
+
+  @VisibleForTesting
+  HttpTransportFactory getTransportFactory() {
+    return transportFactory;
   }
 
   @Override

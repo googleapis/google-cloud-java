@@ -73,6 +73,10 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_devicestreaming_v1_DeviceSession_SessionStateEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_devicestreaming_v1_ClientInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_devicestreaming_v1_AndroidDevice_fieldAccessorTable;
@@ -119,7 +123,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\016device_session\030\001"
           + " \001(\0132..google.cloud.devicestreaming.v1.DeviceSessionB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\265\010\n\r"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\374\010\n\r"
           + "DeviceSession\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003\022O\n"
@@ -137,10 +141,12 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\021active_start_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
           + "\016android_device\030\017"
-          + " \001(\0132..google.cloud.devicestreaming.v1.AndroidDeviceB\003\340A\002\032\275\001\n"
+          + " \001(\0132..google.cloud.devicestreaming.v1.AndroidDeviceB\003\340A\002\022E\n"
+          + "\013client_info\030\025"
+          + " \001(\0132+.google.cloud.devicestreaming.v1.ClientInfoB\003\340A\001\032\275\001\n"
           + "\021SessionStateEvent\022W\n\r"
-          + "session_state\030\001 \001(\0162;.go"
-          + "ogle.cloud.devicestreaming.v1.DeviceSession.SessionStateB\003\340A\003\0223\n\n"
+          + "session_state\030\001 \001(\0162;.google.clou"
+          + "d.devicestreaming.v1.DeviceSession.SessionStateB\003\340A\003\0223\n\n"
           + "event_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
           + "state_message\030\003 \001(\tB\003\340A\003\"\214\001\n"
           + "\014SessionState\022\035\n"
@@ -152,44 +158,46 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\010FINISHED\020\005\022\017\n"
           + "\013UNAVAILABLE\020\006\022\t\n"
           + "\005ERROR\020\007:\205\001\352A\201\001\n"
-          + ",devicestreaming.googleapis.com/DeviceSession\0222projects/{project}/d"
-          + "eviceSessions/{device_session}*\016deviceSessions2\r"
+          + ",devicestreaming.googleapis.com/Devi"
+          + "ceSession\0222projects/{project}/deviceSessions/{device_session}*\016deviceSessions2\r"
           + "deviceSessionB\014\n\n"
-          + "expiration\"~\n\r"
+          + "expiration\"7\n\n"
+          + "ClientInfo\022\023\n"
+          + "\006client\030\001 \001(\tB\003\340A\002\022\024\n"
+          + "\007version\030\002 \001(\tB\003\340A\001\"~\n\r"
           + "AndroidDevice\022\035\n"
           + "\020android_model_id\030\001 \001(\tB\003\340A\002\022\037\n"
           + "\022android_version_id\030\002 \001(\tB\003\340A\002\022\023\n"
           + "\006locale\030\003 \001(\tB\003\340A\001\022\030\n"
           + "\013orientation\030\004 \001(\tB\003\340A\0012\340\t\n"
           + "\023DirectAccessService\022\354\001\n"
-          + "\023CreateDeviceSession\022;.google.cloud.devicestreami"
-          + "ng.v1.CreateDeviceSessionRequest\032..google.cloud.devicestreaming.v1.DeviceSession"
-          + "\"h\332A\'parent,device_session,device_sessio"
-          + "n_id\202\323\344\223\0028\"&/v1/{parent=projects/*}/deviceSessions:\016device_session\022\306\001\n"
-          + "\022ListDeviceSessions\022:.google.cloud.devicestreaming"
-          + ".v1.ListDeviceSessionsRequest\032;.google.cloud.devicestreaming.v1.ListDeviceSessio"
-          + "nsResponse\"7\332A\006parent\202\323\344\223\002(\022&/v1/{parent=projects/*}/deviceSessions\022\263\001\n"
-          + "\020GetDeviceSession\0228.google.cloud.devicestreaming."
-          + "v1.GetDeviceSessionRequest\032..google.clou"
-          + "d.devicestreaming.v1.DeviceSession\"5\332A\004n"
-          + "ame\202\323\344\223\002(\022&/v1/{name=projects/*/deviceSessions/*}\022\244\001\n"
-          + "\023CancelDeviceSession\022;.google.cloud.devicestreaming.v1.CancelDevice"
-          + "SessionRequest\032\026.google.protobuf.Empty\"8"
-          + "\202\323\344\223\0022\"-/v1/{name=projects/*/deviceSessions/*}:cancel:\001*\022\356\001\n"
-          + "\023UpdateDeviceSession\022;.google.cloud.devicestreaming.v1.Updat"
-          + "eDeviceSessionRequest\032..google.cloud.dev"
-          + "icestreaming.v1.DeviceSession\"j\332A\032device"
-          + "_session,update_mask\202\323\344\223\002G25/v1/{device_"
-          + "session.name=projects/*/deviceSessions/*}:\016device_session\022o\n\n"
-          + "AdbConnect\022+.google.cloud.devicestreaming.v1.AdbMessage\032..g"
-          + "oogle.cloud.devicestreaming.v1.DeviceMes"
-          + "sage\"\000(\0010\001\032R\312A\036devicestreaming.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
-          + "#com.google.cloud.devicestreaming.v1B\014ServiceProtoP\001ZMcloud.go"
-          + "ogle.com/go/devicestreaming/apiv1/device"
-          + "streamingpb;devicestreamingpb\252\002\037Google.C"
-          + "loud.DeviceStreaming.V1\312\002\037Google\\Cloud\\D"
-          + "eviceStreaming\\V1\352\002\"Google::Cloud::DeviceStreaming::V1b\006proto3"
+          + "\023CreateDeviceSession\022;.google.cloud.devic"
+          + "estreaming.v1.CreateDeviceSessionRequest\032..google.cloud.devicestreaming.v1.Devic"
+          + "eSession\"h\332A\'parent,device_session,devic"
+          + "e_session_id\202\323\344\223\0028\"&/v1/{parent=projects/*}/deviceSessions:\016device_session\022\306\001\n"
+          + "\022ListDeviceSessions\022:.google.cloud.devices"
+          + "treaming.v1.ListDeviceSessionsRequest\032;.google.cloud.devicestreaming.v1.ListDevi"
+          + "ceSessionsResponse\"7\332A\006parent\202\323\344\223\002(\022&/v1/{parent=projects/*}/deviceSessions\022\263\001\n"
+          + "\020GetDeviceSession\0228.google.cloud.devicest"
+          + "reaming.v1.GetDeviceSessionRequest\032..google.cloud.devicestreaming.v1.DeviceSessi"
+          + "on\"5\332A\004name\202\323\344\223\002(\022&/v1/{name=projects/*/deviceSessions/*}\022\244\001\n"
+          + "\023CancelDeviceSession\022;.google.cloud.devicestreaming.v1.Canc"
+          + "elDeviceSessionRequest\032\026.google.protobuf"
+          + ".Empty\"8\202\323\344\223\0022\"-/v1/{name=projects/*/deviceSessions/*}:cancel:\001*\022\356\001\n"
+          + "\023UpdateDeviceSession\022;.google.cloud.devicestreaming."
+          + "v1.UpdateDeviceSessionRequest\032..google.c"
+          + "loud.devicestreaming.v1.DeviceSession\"j\332"
+          + "A\032device_session,update_mask\202\323\344\223\002G25/v1/"
+          + "{device_session.name=projects/*/deviceSessions/*}:\016device_session\022o\n\n"
+          + "AdbConnect\022+.google.cloud.devicestreaming.v1.AdbMes"
+          + "sage\032..google.cloud.devicestreaming.v1.D"
+          + "eviceMessage\"\000(\0010\001\032R\312A\036devicestreaming.g"
+          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
+          + "#com.google.cloud.devicestreaming.v1B\014ServiceProtoP\001ZM"
+          + "cloud.google.com/go/devicestreaming/apiv"
+          + "1/devicestreamingpb;devicestreamingpb\252\002\037"
+          + "Google.Cloud.DeviceStreaming.V1\312\002\037Google"
+          + "\\Cloud\\DeviceStreaming\\V1\352\002\"Google::Cloud::DeviceStreaming::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -269,6 +277,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "ActiveStartTime",
               "AndroidDevice",
+              "ClientInfo",
               "Expiration",
             });
     internal_static_google_cloud_devicestreaming_v1_DeviceSession_SessionStateEvent_descriptor =
@@ -279,8 +288,16 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "SessionState", "EventTime", "StateMessage",
             });
-    internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor =
+    internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_devicestreaming_v1_ClientInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor,
+            new java.lang.String[] {
+              "Client", "Version",
+            });
+    internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_devicestreaming_v1_AndroidDevice_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor,

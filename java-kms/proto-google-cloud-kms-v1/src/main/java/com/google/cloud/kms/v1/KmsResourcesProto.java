@@ -334,23 +334,24 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "\006ACTIVE\020\002\022\013\n"
           + "\007EXPIRED\020\003:{\352Ax\n"
           + "!cloudkms.googleapis.com/ImportJob\022Sprojects/{project}/locations/{loc"
-          + "ation}/keyRings/{key_ring}/importJobs/{import_job}\"[\n"
-          + "\036ExternalProtectionLevelOptions\022\030\n"
-          + "\020external_key_uri\030\001 \001(\t\022\037\n"
-          + "\027ekm_connection_key_path\030\002 \001(\t\"b\n"
+          + "ation}/keyRings/{key_ring}/importJobs/{import_job}\"\275\001\n"
+          + "\036ExternalProtectionLevelOptions\022\035\n"
+          + "\020external_key_uri\030\001 \001(\tB\003\340A\001\022$\n"
+          + "\027ekm_connection_key_path\030\002 \001(\tB\003\340A\001\022V\n"
+          + "\037ekm_connection_backend_override\030\003 \001(\tB-\340A\001\372A\'\n"
+          + "%cloudkms.googleapis.com/EkmConnection\"b\n"
           + "\035KeyAccessJustificationsPolicy\022A\n"
           + "\026allowed_access_reasons\030\001"
           + " \003(\0162!.google.cloud.kms.v1.AccessReason\"\271\002\n"
           + "\017RetiredResource\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\036\n"
-          + "\021original_resource\030\002 \001(\tB\003\340A\003\022\032\n"
-          + "\r"
+          + "\021original_resource\030\002 \001(\tB\003\340A\003\022\032\n\r"
           + "resource_type\030\003 \001(\tB\003\340A\003\0224\n"
           + "\013delete_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\235\001\352A\231\001\n"
-          + "\'cloudkms.googleapis.com/RetiredResource\022Kprojects/{project}/locations/{l"
-          + "ocation}/retiredResources/{retired_resou"
-          + "rce}*\020retiredResources2\017retiredResource*\201\001\n"
+          + "\'cloudkms.googleapis.com/RetiredResource\022Kprojects/{pr"
+          + "oject}/locations/{location}/retiredResou"
+          + "rces/{retired_resource}*\020retiredResources2\017retiredResource*\201\001\n"
           + "\017ProtectionLevel\022 \n"
           + "\034PROTECTION_LEVEL_UNSPECIFIED\020\000\022\014\n"
           + "\010SOFTWARE\020\001\022\007\n"
@@ -372,9 +373,9 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
           + "#GOOGLE_RESPONSE_TO_PRODUCTION_ALERT\020\n"
           + "\022*\n"
           + "&CUSTOMER_AUTHORIZED_WORKFLOW_SERVICING\020\013B\205\001\n"
-          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)cloud.google.com/go/"
-          + "kms/apiv1/kmspb;kmspb\252\002\023Google.Cloud.Kms"
-          + ".V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
+          + "\027com.google.cloud.kms.v1B\021KmsResourcesProtoP\001Z)c"
+          + "loud.google.com/go/kms/apiv1/kmspb;kmspb"
+          + "\252\002\023Google.Cloud.Kms.V1\312\002\023Google\\Cloud\\Kms\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -522,7 +523,7 @@ public final class KmsResourcesProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_kms_v1_ExternalProtectionLevelOptions_descriptor,
             new java.lang.String[] {
-              "ExternalKeyUri", "EkmConnectionKeyPath",
+              "ExternalKeyUri", "EkmConnectionKeyPath", "EkmConnectionBackendOverride",
             });
     internal_static_google_cloud_kms_v1_KeyAccessJustificationsPolicy_descriptor =
         getDescriptor().getMessageType(9);

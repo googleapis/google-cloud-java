@@ -1133,8 +1133,9 @@ public class ITNightlyBigQueryTest extends ITBase {
     assertEquals("{\"name\":\"Eric\",\"age\":10}", expectedStruct.toString());
     assertArrayEquals(
         new String[] {"one", "two", "three"}, (String[]) resultSet.getArray(9).getArray());
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
+    assertEquals(expectedTimestamp, resultSet.getTimestamp(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
@@ -1177,6 +1178,57 @@ public class ITNightlyBigQueryTest extends ITBase {
       PreparedStatement statement = connection.prepareStatement(insertQuery);
       for (int i = 0; i < 20; ++i) {
         statement.setString(1, i + "StringField");
+        statement.setInt(2, i);
+        statement.setFloat(3, (float) (i + .6));
+        statement.setInt(4, random.nextInt());
+        statement.setInt(5, random.nextInt());
+        statement.setBoolean(6, true);
+
+        statement.addBatch();
+      }
+      int[] result = statement.executeBatch();
+
+      ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+      assertEquals(result.length, resultSetRowCount(resultSet));
+
+      bigQueryStatement.execute(dropQuery);
+
+    } catch (SQLException e) {
+      throw new BigQueryJdbcException(e);
+    }
+  }
+
+  // Verifies batch inserts via BigQuery Storage Write API succeed when parameters are bound to
+  // null.
+  @Test
+  public void testBulkInsertOperationWithSetObjectNull() throws SQLException {
+    String TABLE_NAME = "JDBC_BULK_INSERT_NULL_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING,\n"
+                + "    `IntegerField` INTEGER,"
+                + "    `FloatField` FLOAT64,"
+                + "    `NumericField` NUMERIC,"
+                + "    `BigNumericField` BIGNUMERIC,"
+                + "    `BooleanField` BOOLEAN"
+                + "    );",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format("INSERT INTO %s.%s VALUES(?, ?, ?, ?, ?, ?);", DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
+
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;"
+            + "SWA_ActivationRowCount=5;"
+            + "SWA_AppendRowCount=500";
+
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      bigQueryStatement.execute(createQuery);
+      PreparedStatement statement = connection.prepareStatement(insertQuery);
+      for (int i = 0; i < 20; ++i) {
+        statement.setObject(1, null);
         statement.setInt(2, i);
         statement.setFloat(3, (float) (i + .6));
         statement.setInt(4, random.nextInt());

@@ -261,7 +261,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The index endpoint to search.
    * Format:
-   * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+   * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
    * </pre>
    *
    * <code>
@@ -289,7 +289,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
    * <pre>
    * Required. The index endpoint to search.
    * Format:
-   * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+   * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
    * </pre>
    *
    * <code>
@@ -1505,7 +1505,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The index endpoint to search.
      * Format:
-     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
      * </pre>
      *
      * <code>
@@ -1532,7 +1532,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The index endpoint to search.
      * Format:
-     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
      * </pre>
      *
      * <code>
@@ -1559,7 +1559,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The index endpoint to search.
      * Format:
-     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
      * </pre>
      *
      * <code>
@@ -1585,7 +1585,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The index endpoint to search.
      * Format:
-     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
      * </pre>
      *
      * <code>
@@ -1607,7 +1607,7 @@ public final class SearchIndexEndpointRequest extends com.google.protobuf.Genera
      * <pre>
      * Required. The index endpoint to search.
      * Format:
-     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}'
+     * `projects/{project_id}/locations/{location_id}/indexEndpoints/{index_endpoint_id}`
      * </pre>
      *
      * <code>

@@ -139,12 +139,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Required: Text template for the input to the model. The template
-   * must contain one or more references to fields in the DataObject, e.g.:
-   * "Movie Title: {title} ---- Movie Plot: {plot}".
+   * Optional. Text template for the input to the model. The template must
+   * contain one or more references to fields in the DataObject, e.g.: "Movie
+   * Title: {title} ---- Movie Plot: {plot}".
+   *
+   * Required when using the text-only path.
    * </pre>
    *
-   * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The textTemplate.
    */
@@ -165,12 +167,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Required: Text template for the input to the model. The template
-   * must contain one or more references to fields in the DataObject, e.g.:
-   * "Movie Title: {title} ---- Movie Plot: {plot}".
+   * Optional. Text template for the input to the model. The template must
+   * contain one or more references to fields in the DataObject, e.g.: "Movie
+   * Title: {title} ---- Movie Plot: {plot}".
+   *
+   * Required when using the text-only path.
    * </pre>
    *
-   * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for textTemplate.
    */
@@ -194,11 +198,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Required: Task type for the embeddings.
+   * Optional. Optional: Task type for the embeddings. Required for text-only
+   * embedding models, see
+   * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+   * Not needed for multi modal embedding models, see
+   * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for taskType.
@@ -212,11 +220,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Required: Task type for the embeddings.
+   * Optional. Optional: Task type for the embeddings. Required for text-only
+   * embedding models, see
+   * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+   * Not needed for multi modal embedding models, see
+   * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
    * </pre>
    *
    * <code>
-   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The taskType.
@@ -719,12 +731,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Text template for the input to the model. The template
-     * must contain one or more references to fields in the DataObject, e.g.:
-     * "Movie Title: {title} ---- Movie Plot: {plot}".
+     * Optional. Text template for the input to the model. The template must
+     * contain one or more references to fields in the DataObject, e.g.: "Movie
+     * Title: {title} ---- Movie Plot: {plot}".
+     *
+     * Required when using the text-only path.
      * </pre>
      *
-     * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The textTemplate.
      */
@@ -744,12 +758,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Text template for the input to the model. The template
-     * must contain one or more references to fields in the DataObject, e.g.:
-     * "Movie Title: {title} ---- Movie Plot: {plot}".
+     * Optional. Text template for the input to the model. The template must
+     * contain one or more references to fields in the DataObject, e.g.: "Movie
+     * Title: {title} ---- Movie Plot: {plot}".
+     *
+     * Required when using the text-only path.
      * </pre>
      *
-     * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for textTemplate.
      */
@@ -769,12 +785,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Text template for the input to the model. The template
-     * must contain one or more references to fields in the DataObject, e.g.:
-     * "Movie Title: {title} ---- Movie Plot: {plot}".
+     * Optional. Text template for the input to the model. The template must
+     * contain one or more references to fields in the DataObject, e.g.: "Movie
+     * Title: {title} ---- Movie Plot: {plot}".
+     *
+     * Required when using the text-only path.
      * </pre>
      *
-     * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The textTemplate to set.
      * @return This builder for chaining.
@@ -793,12 +811,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Text template for the input to the model. The template
-     * must contain one or more references to fields in the DataObject, e.g.:
-     * "Movie Title: {title} ---- Movie Plot: {plot}".
+     * Optional. Text template for the input to the model. The template must
+     * contain one or more references to fields in the DataObject, e.g.: "Movie
+     * Title: {title} ---- Movie Plot: {plot}".
+     *
+     * Required when using the text-only path.
      * </pre>
      *
-     * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -813,12 +833,14 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Text template for the input to the model. The template
-     * must contain one or more references to fields in the DataObject, e.g.:
-     * "Movie Title: {title} ---- Movie Plot: {plot}".
+     * Optional. Text template for the input to the model. The template must
+     * contain one or more references to fields in the DataObject, e.g.: "Movie
+     * Title: {title} ---- Movie Plot: {plot}".
+     *
+     * Required when using the text-only path.
      * </pre>
      *
-     * <code>string text_template = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text_template = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for textTemplate to set.
      * @return This builder for chaining.
@@ -840,11 +862,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Task type for the embeddings.
+     * Optional. Optional: Task type for the embeddings. Required for text-only
+     * embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+     * Not needed for multi modal embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for taskType.
@@ -858,11 +884,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Task type for the embeddings.
+     * Optional. Optional: Task type for the embeddings. Required for text-only
+     * embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+     * Not needed for multi modal embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for taskType to set.
@@ -879,11 +909,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Task type for the embeddings.
+     * Optional. Optional: Task type for the embeddings. Required for text-only
+     * embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+     * Not needed for multi modal embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The taskType.
@@ -901,11 +935,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Task type for the embeddings.
+     * Optional. Optional: Task type for the embeddings. Required for text-only
+     * embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+     * Not needed for multi modal embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The taskType to set.
@@ -925,11 +963,15 @@ public final class VertexEmbeddingConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Required: Task type for the embeddings.
+     * Optional. Optional: Task type for the embeddings. Required for text-only
+     * embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/task-types
+     * Not needed for multi modal embedding models, see
+     * https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/embeddings/get-multimodal-embeddings#specify-task-instructions
      * </pre>
      *
      * <code>
-     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.vectorsearch.v1beta.EmbeddingTaskType task_type = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.

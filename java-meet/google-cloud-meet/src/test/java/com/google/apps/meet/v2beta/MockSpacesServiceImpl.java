@@ -243,4 +243,46 @@ public class MockSpacesServiceImpl extends SpacesServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void updateMember(UpdateMemberRequest request, StreamObserver<Member> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Member) {
+      requests.add(request);
+      responseObserver.onNext(((Member) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateMember, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Member.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchUpdateMembers(
+      BatchUpdateMembersRequest request,
+      StreamObserver<BatchUpdateMembersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchUpdateMembersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchUpdateMembersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchUpdateMembers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchUpdateMembersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

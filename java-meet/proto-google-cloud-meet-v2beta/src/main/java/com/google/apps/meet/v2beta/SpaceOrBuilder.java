@@ -38,7 +38,7 @@ public interface SpaceOrBuilder
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -59,7 +59,7 @@ public interface SpaceOrBuilder
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -209,4 +209,147 @@ public interface SpaceOrBuilder
    * <code>.google.apps.meet.v2beta.ActiveConference active_conference = 6;</code>
    */
   com.google.apps.meet.v2beta.ActiveConferenceOrBuilder getActiveConferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess> getPhoneAccessList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.apps.meet.v2beta.Space.PhoneAccess getPhoneAccess(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getPhoneAccessCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>
+      getPhoneAccessOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder getPhoneAccessOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess> getGatewaySipAccessList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.apps.meet.v2beta.Space.GatewaySipAccess getGatewaySipAccess(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getGatewaySipAccessCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>
+      getGatewaySipAccessOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder getGatewaySipAccessOrBuilder(
+      int index);
 }

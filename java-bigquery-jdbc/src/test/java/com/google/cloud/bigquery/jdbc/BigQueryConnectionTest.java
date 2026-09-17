@@ -846,6 +846,13 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertNull(connection.getSessionInfoConnectionProperty());
       assertFalse(connection.isSessionCreatedByDriver());
       assertTrue(connection.isClosed());
+
+    }
+  }
+  @Test
+  public void testEnableTimestampPicosDefault() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertFalse(connection.isEnableTimestampPicos());
     }
   }
 
@@ -870,14 +877,22 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testCloseWithoutSessionDoesNotAbortSession() throws Exception {
-    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
-      BigQuery mockBigQuery = mock(BigQuery.class);
-      connection.bigQuery = mockBigQuery;
+        try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+          BigQuery mockBigQuery = mock(BigQuery.class);
+          connection.bigQuery = mockBigQuery;
 
-      connection.close();
+          connection.close();
 
-      verify(mockBigQuery, never()).create(any(JobInfo.class));
-      assertTrue(connection.isClosed());
+          verify(mockBigQuery, never()).create(any(JobInfo.class));
+          assertTrue(connection.isClosed());
+        }
+      }
+
+      @Test
+  public void testEnableTimestampPicosConfigured() throws Exception {
+    String url = BASE_URL + "EnableTimestampPicos=1;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertTrue(connection.isEnableTimestampPicos());
     }
   }
 }

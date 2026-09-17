@@ -31,6 +31,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -89,6 +90,8 @@ public class SpacesServiceClientTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockSpacesService.addResponse(expectedResponse);
 
@@ -131,6 +134,8 @@ public class SpacesServiceClientTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockSpacesService.addResponse(expectedResponse);
 
@@ -173,6 +178,8 @@ public class SpacesServiceClientTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockSpacesService.addResponse(expectedResponse);
 
@@ -215,6 +222,8 @@ public class SpacesServiceClientTest {
             .setMeetingCode("meetingCode-883894584")
             .setConfig(SpaceConfig.newBuilder().build())
             .setActiveConference(ActiveConference.newBuilder().build())
+            .addAllPhoneAccess(new ArrayList<Space.PhoneAccess>())
+            .addAllGatewaySipAccess(new ArrayList<Space.GatewaySipAccess>())
             .build();
     mockSpacesService.addResponse(expectedResponse);
 
@@ -715,6 +724,97 @@ public class SpacesServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteMember(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateMemberTest() throws Exception {
+    Member expectedResponse =
+        Member.newBuilder()
+            .setName(MemberName.of("[SPACE]", "[MEMBER]").toString())
+            .setEmail("email96619420")
+            .setUser("user3599307")
+            .build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    Member member = Member.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Member actualResponse = client.updateMember(member, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMemberRequest actualRequest = ((UpdateMemberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(member, actualRequest.getMember());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMemberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      Member member = Member.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMember(member, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateMembersTest() throws Exception {
+    BatchUpdateMembersResponse expectedResponse =
+        BatchUpdateMembersResponse.newBuilder().addAllMembers(new ArrayList<Member>()).build();
+    mockSpacesService.addResponse(expectedResponse);
+
+    BatchUpdateMembersRequest request =
+        BatchUpdateMembersRequest.newBuilder()
+            .setParent(SpaceName.of("[SPACE]").toString())
+            .addAllRequests(new ArrayList<UpdateMemberRequest>())
+            .setUpdateMask(FieldMask.newBuilder().build())
+            .build();
+
+    BatchUpdateMembersResponse actualResponse = client.batchUpdateMembers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSpacesService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateMembersRequest actualRequest = ((BatchUpdateMembersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertEquals(request.getUpdateMask(), actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateMembersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSpacesService.addException(exception);
+
+    try {
+      BatchUpdateMembersRequest request =
+          BatchUpdateMembersRequest.newBuilder()
+              .setParent(SpaceName.of("[SPACE]").toString())
+              .addAllRequests(new ArrayList<UpdateMemberRequest>())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .build();
+      client.batchUpdateMembers(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

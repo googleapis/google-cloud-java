@@ -259,7 +259,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> GetTranscriptEntry</td>
  *      <td><p> Gets a `TranscriptEntry` resource by entry ID.
- * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
+ * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when 1) we have interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -279,7 +279,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> ListTranscriptEntries</td>
  *      <td><p> Lists the structured transcript entries per transcript. By default, ordered by start time and in ascending order.
- * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when the Google Docs transcript file is modified after generation.</td>
+ * <p>  Note: The transcript entries returned by the Google Meet API might not match the transcription found in the Google Docs transcript file. This can occur when 1) we have interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified after generation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -294,6 +294,45 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listTranscriptEntriesPagedCallable()
  *           <li><p> listTranscriptEntriesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSmartNote</td>
+ *      <td><p> Gets smart notes by smart note ID.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSmartNote(GetSmartNoteRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSmartNote(SmartNoteName name)
+ *           <li><p> getSmartNote(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSmartNoteCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSmartNotes</td>
+ *      <td><p> Lists the set of smart notes from the conference record. By default, ordered by start time and in ascending order.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSmartNotes(ListSmartNotesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSmartNotes(ConferenceRecordName parent)
+ *           <li><p> listSmartNotes(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSmartNotesPagedCallable()
+ *           <li><p> listSmartNotesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1846,8 +1885,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -1881,8 +1921,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -1914,8 +1955,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -1949,8 +1991,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * Gets a `TranscriptEntry` resource by entry ID.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -1986,8 +2029,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -2026,8 +2070,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -2063,8 +2108,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -2103,8 +2149,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -2142,8 +2189,9 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
    * in ascending order.
    *
    * <p>Note: The transcript entries returned by the Google Meet API might not match the
-   * transcription found in the Google Docs transcript file. This can occur when the Google Docs
-   * transcript file is modified after generation.
+   * transcription found in the Google Docs transcript file. This can occur when 1) we have
+   * interleaved speakers within milliseconds, or 2) the Google Docs transcript file is modified
+   * after generation.
    *
    * <p>Sample code:
    *
@@ -2180,6 +2228,296 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
   public final UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse>
       listTranscriptEntriesCallable() {
     return stub.listTranscriptEntriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart notes by smart note ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   SmartNoteName name = SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]");
+   *   SmartNote response = conferenceRecordsServiceClient.getSmartNote(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the smart note. Format:
+   *     conferenceRecords/{conference_record}/smartNotes/{smart_note}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SmartNote getSmartNote(@Nullable SmartNoteName name) {
+    GetSmartNoteRequest request =
+        GetSmartNoteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSmartNote(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart notes by smart note ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   String name = SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]").toString();
+   *   SmartNote response = conferenceRecordsServiceClient.getSmartNote(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the smart note. Format:
+   *     conferenceRecords/{conference_record}/smartNotes/{smart_note}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SmartNote getSmartNote(String name) {
+    GetSmartNoteRequest request = GetSmartNoteRequest.newBuilder().setName(name).build();
+    return getSmartNote(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart notes by smart note ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   GetSmartNoteRequest request =
+   *       GetSmartNoteRequest.newBuilder()
+   *           .setName(SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]").toString())
+   *           .build();
+   *   SmartNote response = conferenceRecordsServiceClient.getSmartNote(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SmartNote getSmartNote(GetSmartNoteRequest request) {
+    return getSmartNoteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets smart notes by smart note ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   GetSmartNoteRequest request =
+   *       GetSmartNoteRequest.newBuilder()
+   *           .setName(SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]").toString())
+   *           .build();
+   *   ApiFuture<SmartNote> future =
+   *       conferenceRecordsServiceClient.getSmartNoteCallable().futureCall(request);
+   *   // Do something.
+   *   SmartNote response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable() {
+    return stub.getSmartNoteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the set of smart notes from the conference record. By default, ordered by start time and
+   * in ascending order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   ConferenceRecordName parent = ConferenceRecordName.of("[CONFERENCE_RECORD]");
+   *   for (SmartNote element : conferenceRecordsServiceClient.listSmartNotes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `conferenceRecords/{conference_record}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSmartNotesPagedResponse listSmartNotes(@Nullable ConferenceRecordName parent) {
+    ListSmartNotesRequest request =
+        ListSmartNotesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSmartNotes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the set of smart notes from the conference record. By default, ordered by start time and
+   * in ascending order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   String parent = ConferenceRecordName.of("[CONFERENCE_RECORD]").toString();
+   *   for (SmartNote element : conferenceRecordsServiceClient.listSmartNotes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `conferenceRecords/{conference_record}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSmartNotesPagedResponse listSmartNotes(String parent) {
+    ListSmartNotesRequest request = ListSmartNotesRequest.newBuilder().setParent(parent).build();
+    return listSmartNotes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the set of smart notes from the conference record. By default, ordered by start time and
+   * in ascending order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   ListSmartNotesRequest request =
+   *       ListSmartNotesRequest.newBuilder()
+   *           .setParent(ConferenceRecordName.of("[CONFERENCE_RECORD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SmartNote element :
+   *       conferenceRecordsServiceClient.listSmartNotes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSmartNotesPagedResponse listSmartNotes(ListSmartNotesRequest request) {
+    return listSmartNotesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the set of smart notes from the conference record. By default, ordered by start time and
+   * in ascending order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   ListSmartNotesRequest request =
+   *       ListSmartNotesRequest.newBuilder()
+   *           .setParent(ConferenceRecordName.of("[CONFERENCE_RECORD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SmartNote> future =
+   *       conferenceRecordsServiceClient.listSmartNotesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SmartNote element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable() {
+    return stub.listSmartNotesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the set of smart notes from the conference record. By default, ordered by start time and
+   * in ascending order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConferenceRecordsServiceClient conferenceRecordsServiceClient =
+   *     ConferenceRecordsServiceClient.create()) {
+   *   ListSmartNotesRequest request =
+   *       ListSmartNotesRequest.newBuilder()
+   *           .setParent(ConferenceRecordName.of("[CONFERENCE_RECORD]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSmartNotesResponse response =
+   *         conferenceRecordsServiceClient.listSmartNotesCallable().call(request);
+   *     for (SmartNote element : response.getSmartNotesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse>
+      listSmartNotesCallable() {
+    return stub.listSmartNotesCallable();
   }
 
   @Override
@@ -2714,6 +3052,83 @@ public class ConferenceRecordsServiceClient implements BackgroundResource {
     protected ListTranscriptEntriesFixedSizeCollection createCollection(
         @Nullable List<ListTranscriptEntriesPage> pages, int collectionSize) {
       return new ListTranscriptEntriesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSmartNotesPagedResponse
+      extends AbstractPagedListResponse<
+          ListSmartNotesRequest,
+          ListSmartNotesResponse,
+          SmartNote,
+          ListSmartNotesPage,
+          ListSmartNotesFixedSizeCollection> {
+
+    public static ApiFuture<ListSmartNotesPagedResponse> createAsync(
+        PageContext<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote> context,
+        ApiFuture<ListSmartNotesResponse> futureResponse) {
+      ApiFuture<ListSmartNotesPage> futurePage =
+          ListSmartNotesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSmartNotesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSmartNotesPagedResponse(ListSmartNotesPage page) {
+      super(page, ListSmartNotesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSmartNotesPage
+      extends AbstractPage<
+          ListSmartNotesRequest, ListSmartNotesResponse, SmartNote, ListSmartNotesPage> {
+
+    private ListSmartNotesPage(
+        @Nullable PageContext<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote> context,
+        @Nullable ListSmartNotesResponse response) {
+      super(context, response);
+    }
+
+    private static ListSmartNotesPage createEmptyPage() {
+      return new ListSmartNotesPage(null, null);
+    }
+
+    @Override
+    protected ListSmartNotesPage createPage(
+        @Nullable PageContext<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote> context,
+        @Nullable ListSmartNotesResponse response) {
+      return new ListSmartNotesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSmartNotesPage> createPageAsync(
+        @Nullable PageContext<ListSmartNotesRequest, ListSmartNotesResponse, SmartNote> context,
+        ApiFuture<ListSmartNotesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSmartNotesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSmartNotesRequest,
+          ListSmartNotesResponse,
+          SmartNote,
+          ListSmartNotesPage,
+          ListSmartNotesFixedSizeCollection> {
+
+    private ListSmartNotesFixedSizeCollection(
+        @Nullable List<ListSmartNotesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSmartNotesFixedSizeCollection createEmptyCollection() {
+      return new ListSmartNotesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSmartNotesFixedSizeCollection createCollection(
+        @Nullable List<ListSmartNotesPage> pages, int collectionSize) {
+      return new ListSmartNotesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

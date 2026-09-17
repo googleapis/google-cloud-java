@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -104,6 +105,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.KMS_KEY_NAME_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.QUERY_PROPERTIES_NAME,
               BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
@@ -188,6 +190,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
+  boolean enableTimestampPicos;
   boolean enableProjectDiscovery;
   private List<String> discoveredProjectsCache;
   boolean unsupportedHTAPIFallback;
@@ -336,24 +339,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.reqGoogleDriveScope,
               httpTransportFactory,
               this.connectionClassName);
-      String defaultDatasetString = ds.getDefaultDataset();
-      if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
-        this.defaultDataset = null;
-      } else {
-        String[] parts = defaultDatasetString.split("\\.");
-        if (parts.length == 2) {
-          this.defaultDataset = DatasetId.of(parts[0], parts[1]);
-        } else if (parts.length == 1) {
-          this.defaultDataset = DatasetId.of(parts[0]);
-        } else {
-          IllegalArgumentException ex =
-              new IllegalArgumentException(
-                  "DefaultDataset format is invalid. Supported options are datasetId or"
-                      + " projectId.datasetId");
-          LOG.severe(ex.getMessage(), ex);
-          throw ex;
-        }
-      }
+      this.defaultDataset = BigQueryJdbcUrlUtility.parseDefaultDataset(ds.getDefaultDataset());
       this.location = ds.getLocation();
       this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
       this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();
@@ -376,6 +362,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.sslTrustStoreProvider,
               this.connectionClassName);
       this.enableSession = ds.getEnableSession();
+      this.enableTimestampPicos = ds.getEnableTimestampPicos();
       this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
       this.maxResults = ds.getMaxResults();
       Map<String, String> queryPropertiesMap = ds.getQueryProperties();
@@ -687,14 +674,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         transactionBeginJobConfig.setCreateSession(true);
         this.isSessionCreatedByDriver = true;
       }
-      Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
-      job = job.waitFor();
-      Job transactionBeginJob = this.bigQuery.getJob(job.getJobId());
+      TableResult transactionResult = this.bigQuery.query(transactionBeginJobConfig.build());
       if (this.sessionInfoConnectionProperty == null
-          && transactionBeginJob != null
-          && transactionBeginJob.getStatistics() != null
-          && transactionBeginJob.getStatistics().getSessionInfo() != null) {
-        updateSessionInfo(transactionBeginJob.getStatistics().getSessionInfo().getSessionId());
+          && transactionResult != null
+          && transactionResult.getSessionInfo()!= null) {
+        updateSessionInfo(transactionResult.getSessionInfo().getSessionId());
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
@@ -737,6 +721,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   boolean isSessionEnabled() {
     return this.enableSession;
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.enableTimestampPicos;
   }
 
   boolean isUnsupportedHTAPIFallback() {
@@ -1486,8 +1474,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           QueryJobConfiguration.newBuilder("CALL BQ.ABORT_SESSION();")
               .setConnectionProperties(this.queryProperties)
               .build();
-      Job abortJob = this.bigQuery.create(JobInfo.of(abortSessionJobConfig));
-      abortJob.waitFor();
+      this.bigQuery.query(abortSessionJobConfig);
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcRuntimeException("Interrupted during session abort", ex);

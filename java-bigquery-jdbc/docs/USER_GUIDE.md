@@ -209,6 +209,12 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | `EnableSession` | `false` | Enables BigQuery multi-statement session creation and transaction support (`BEGIN`, `COMMIT`, `ROLLBACK`). |
 | `QueryProperties` | `null` | Comma- or semicolon-separated key-value pairs passed as connection-level job properties (e.g., `QueryProperties=session_id=<session_id>` to connect to a pre-existing session). |
 
+### Data Types & Extended Precision Properties
+
+| Property Name | Default Value | Description |
+| :--- | :---: | :--- |
+| `EnableTimestampPicos` | `false` | Enables 12-digit picosecond precision for `TIMESTAMP(12)` data types. When enabled, `TIMESTAMP(12)` columns are retrieved with 12 fractional digits formatted in UTC (`YYYY-MM-DD HH:MM:SS.ffffffffffff`) via `getString()` and `getObject()`, typed as `Types.VARCHAR` (`12`) with type name `"TIMESTAMP_PICOSECONDS"`. Picosecond precision is incompatible with Legacy SQL (`QueryDialect=BIG_QUERY`). |
+
 ### High-Throughput Storage & Write API Properties
 
 | Property Name | Default Value | Description |
