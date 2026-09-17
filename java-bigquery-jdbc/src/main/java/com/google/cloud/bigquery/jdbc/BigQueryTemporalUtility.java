@@ -359,11 +359,7 @@ final class BigQueryTemporalUtility {
     int fractionStart = dotIdx + 1;
     int fractionEnd = fractionStart;
     int len = str.length();
-    while (fractionEnd < len) {
-      char c = str.charAt(fractionEnd);
-      if (c < '0' || c > '9') {
-        break;
-      }
+    while (fractionEnd < len && Character.isDigit(str.charAt(fractionEnd))) {
       fractionEnd++;
     }
 
