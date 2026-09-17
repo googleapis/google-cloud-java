@@ -504,12 +504,12 @@ public class ITStatementTest extends ITBase {
             + ";EnableHighThroughputAPi=1"
             + ";MaxResults=300";
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
 
-    Statement statement = connection.createStatement();
-    validateStatement(statement, 1000);
-    connection.close();
+      Statement statement = connection.createStatement();
+      validateStatement(statement, 1000);
+    }
   }
 }
