@@ -15,24 +15,15 @@
 #   with the associated changes, to the submodule project.
 set -eo pipefail
 
+scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/../.kokoro/presubmit/pom_utils.py"
+
 function modify_shared_config() {
-  xmllint --shell pom.xml <<EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-config"]
-  cd ../x:version
-  set ${SHARED_CONFIG_VERSION}
-  save pom.xml
-EOF
+  python3 "${POM_UTILS}" update-dep-version pom.xml google-cloud-shared-config "${SHARED_CONFIG_VERSION}"
 }
 
 function modify_shared_dependencies() {
-  xmllint --shell pom.xml <<EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-dependencies"]
-  cd ../x:version
-  set ${SHARED_DEPS_VERSION}
-  save pom.xml
-EOF
+  python3 "${POM_UTILS}" update-dep-version pom.xml google-cloud-shared-dependencies "${SHARED_DEPS_VERSION}"
 }
 
 if [ -z "$GRAALVM_VERSION" ]; then
@@ -66,18 +57,12 @@ fi
 
 # Modify graal-sdk version in GAX
 pushd gapic-generator-java/gax-java
-xmllint --shell pom.xml <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="graal-sdk"]
-cd ../x:version
-set ${GRAALVM_VERSION}
-save pom.xml
-EOF
+python3 "${POM_UTILS}" update-dep-version pom.xml graal-sdk "${GRAALVM_VERSION}"
 
 # Get java-shared-dependencies version
 popd
 pushd gapic-generator-java
-SHARED_DEPS_VERSION=$(sed -e 's/xmlns=".*"//' java-shared-dependencies/pom.xml | xmllint --xpath '/project/version/text()' -)
+SHARED_DEPS_VERSION=$(python3 "${POM_UTILS}" get-version java-shared-dependencies/pom.xml)
 echo $SHARED_DEPS_VERSION
 
 if [ ! "$(git branch --list "$GRAALVM_BRANCH")" ]
@@ -99,15 +84,9 @@ fi
 
 # Modify junit-platform-native and native-maven-plugin
 pushd java-shared-config
-SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' pom.xml | xmllint --xpath '/project/version/text()' -)
+SHARED_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version pom.xml)
 
-xmllint --shell pom.xml <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="native-maven-plugin"]
-cd ../x:version
-set ${NATIVE_MAVEN_PLUGIN}
-save pom.xml
-EOF
+python3 "${POM_UTILS}" update-dep-version pom.xml native-maven-plugin "${NATIVE_MAVEN_PLUGIN}"
 
 echo "Modified native-maven-plugin in shared-config"
 git diff
