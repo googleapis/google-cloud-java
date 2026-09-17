@@ -54,12 +54,18 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
@@ -1188,6 +1194,147 @@ class AgentIdentityUtilsTest {
     AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info2);
     assertNotSame(info1, info2);
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_concurrentCacheInvalidationDuringRotation_fallsBackToInitialSnapshot()
+          throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    // Simulate transient file disappearance during steady-state rotation
+    Files.delete(tempDir.resolve("certificates.pem"));
+
+    // While the thread sleeps in loadAndVerifyCredentials backoff, simulate another thread
+    // concurrently clearing/invalidating cachedCredentials
+    fakeTime.setOnSleepCallback(() -> AgentIdentityUtils.clearCachedCredentials());
+
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertSame(info1, info2);
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_concurrentRotationUpdatedByAnotherThread_returnsFreshestCredential()
+          throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+
+    Path certFile = tempDir.resolve("certificates.pem");
+    Path keyFile = tempDir.resolve("private_key.pem");
+    String basePem = new String(Files.readAllBytes(certFile), StandardCharsets.UTF_8);
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    // Delete certFile so Thread A enters the retry sleep loop
+    Files.delete(certFile);
+
+    AtomicReference<AgentIdentityUtils.CertInfo> concurrentRotatedInfo = new AtomicReference<>();
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (concurrentRotatedInfo.get() == null) {
+            try {
+              // Simulate Thread B completing rotation and updating cachedCredentials while Thread A
+              // sleeps
+              String v2Pem = basePem + "\n# rotated-by-thread-B";
+              Files.write(certFile, v2Pem.getBytes(StandardCharsets.UTF_8));
+              AgentIdentityUtils.CertInfo rotated =
+                  AgentIdentityUtils.loadAndVerifyCredentials(
+                      certFile.toString(), keyFile.toString());
+              concurrentRotatedInfo.set(rotated);
+              // Delete certFile again so Thread A's own disk retries fail and must use cache
+              // fallback
+              Files.delete(certFile);
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+
+    AgentIdentityUtils.CertInfo result = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(concurrentRotatedInfo.get());
+    assertNotSame(info1, concurrentRotatedInfo.get());
+    assertSame(concurrentRotatedInfo.get(), result);
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_concurrentThreadsReadingAndRotating_noNpeOrRaceConditions()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+
+    Path certFile = tempDir.resolve("certificates.pem");
+    Path keyFile = tempDir.resolve("private_key.pem");
+    byte[] agentCertBytes = Files.readAllBytes(certFile);
+
+    URL nonAgentUrl = getClass().getClassLoader().getResource("mtlsCertAndKey.pem");
+    assertNotNull(nonAgentUrl);
+    byte[] nonAgentBytes = Files.readAllBytes(Paths.get(nonAgentUrl.toURI()));
+
+    // Prime initial cache
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    int numThreads = 8;
+    int iterations = 100;
+    ExecutorService executor = Executors.newFixedThreadPool(numThreads + 1);
+    try {
+      List<Callable<Void>> tasks = new ArrayList<>();
+      // Mutator thread rapidly alternates between agent cert, non-agent cert (keyMetadata == null),
+      // and cache resets
+      tasks.add(
+          () -> {
+            for (int i = 0; i < iterations; i++) {
+              if (i % 3 == 0) {
+                Files.write(certFile, nonAgentBytes);
+                AgentIdentityUtils.loadAndVerifyCredentials(
+                    certFile.toString(), keyFile.toString());
+              } else if (i % 3 == 1) {
+                Files.write(certFile, agentCertBytes);
+                AgentIdentityUtils.loadAndVerifyCredentials(
+                    certFile.toString(), keyFile.toString());
+              } else {
+                AgentIdentityUtils.clearCachedCredentials();
+              }
+            }
+            Files.write(certFile, agentCertBytes);
+            return null;
+          });
+
+      // Reader threads concurrently call getAgentIdentityCertInfo()
+      for (int t = 0; t < numThreads; t++) {
+        tasks.add(
+            () -> {
+              for (int i = 0; i < iterations; i++) {
+                try {
+                  AgentIdentityUtils.getAgentIdentityCertInfo();
+                } catch (IOException ignored) {
+                  // Expected if mutator wrote non-matching cert/key mid-read, but NPE must NEVER
+                  // occur
+                }
+              }
+              return null;
+            });
+      }
+
+      List<Future<Void>> futures = executor.invokeAll(tasks);
+      for (Future<Void> future : futures) {
+        future.get(); // Re-throws any NullPointerException or RuntimeException
+      }
+    } finally {
+      executor.shutdownNow();
+    }
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {
