@@ -140,8 +140,7 @@ public final class FoldersTest {
   }
 
   @Test
-  public void deleteFolderRecursive()
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+  public void deleteFolderRecursive() throws IOException, ExecutionException, InterruptedException {
     String parentFolderName = UUID.randomUUID().toString();
     FolderName parentFolder = FolderName.of("_", bucket.getName(), parentFolderName);
     storageControl.createFolder(
