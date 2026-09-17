@@ -34,11 +34,14 @@ package com.google.auth.oauth2;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.auth.CredentialTypeForMetrics;
@@ -61,7 +64,6 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,6 +71,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -424,29 +427,16 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public AccessToken refreshAccessToken() throws IOException {
     String tokenUrl = createTokenUrlWithScopes();
-
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
-    HttpResponse response;
-
-    if (boundTokenPayload != null) {
-      java.util.Map<String, String> payload =
-          Collections.singletonMap("certificate_chain", boundTokenPayload);
-      String jsonString = OAuth2Utils.JSON_FACTORY.toString(payload);
-
-      response =
-          getMetadataResponse(tokenUrl, "POST", jsonString, RequestType.ACCESS_TOKEN_REQUEST, true);
-    } else {
-      response = getMetadataResponse(tokenUrl, "GET", null, RequestType.ACCESS_TOKEN_REQUEST, true);
-    }
+    HttpResponse response =
+        getMetadataResponseForToken(tokenUrl, RequestType.ACCESS_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(
           String.format(
-              "Error code %s trying to get security access token from"
-                  + " Compute Engine metadata for the default service account. This may be because"
-                  + " the virtual machine instance does not have permission scopes specified."
-                  + " It is possible to skip checking for Compute Engine metadata by specifying the environment "
-                  + " variable "
+              "Error code %s trying to get security access token from Compute Engine metadata for"
+                  + " the default service account. This may be because the virtual machine instance"
+                  + " does not have permission scopes specified. It is possible to skip checking"
+                  + " for Compute Engine metadata by specifying the environment  variable "
                   + DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR
                   + "=true.",
               statusCode));
@@ -505,22 +495,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
       }
     }
     documentUrl.set("audience", targetAudience);
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
-    HttpResponse response;
-
-    if (boundTokenPayload != null) {
-      java.util.Map<String, String> payload =
-          Collections.singletonMap("certificate_chain", boundTokenPayload);
-      String jsonString = OAuth2Utils.JSON_FACTORY.toString(payload);
-
-      response =
-          getMetadataResponse(
-              documentUrl.toString(), "POST", jsonString, RequestType.ID_TOKEN_REQUEST, true);
-    } else {
-      response =
-          getMetadataResponse(
-              documentUrl.toString(), "GET", null, RequestType.ID_TOKEN_REQUEST, true);
-    }
+    HttpResponse response =
+        getMetadataResponseForToken(documentUrl.toString(), RequestType.ID_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(
@@ -533,7 +509,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
     if (statusCode != HttpStatusCodes.STATUS_CODE_OK) {
       throw new IOException(
           String.format(
-              "Unexpected Error code %s trying to get identity token from Compute Engine metadata: %s",
+              "Unexpected Error code %s trying to get identity token from Compute Engine metadata:"
+                  + " %s",
               statusCode, response.parseAsString()));
     }
     InputStream content = response.getContent();
@@ -548,22 +525,30 @@ public class ComputeEngineCredentials extends GoogleCredentials
     return IdToken.create(rawToken);
   }
 
+  private HttpResponse getMetadataResponseForToken(
+      String url, RequestType requestType, boolean shouldSendMetricsHeader) throws IOException {
+    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+    if (boundTokenPayload != null) {
+      Map<String, String> payload =
+          Collections.singletonMap("certificate_chain", boundTokenPayload);
+      HttpContent content =
+          new JsonHttpContent(OAuth2Utils.JSON_FACTORY, payload)
+              .setMediaType(new HttpMediaType("application/json"));
+      return getMetadataResponse(url, "POST", content, requestType, shouldSendMetricsHeader);
+    }
+    return getMetadataResponse(url, "GET", null, requestType, shouldSendMetricsHeader);
+  }
+
   private HttpResponse getMetadataResponse(
       String url,
       String method,
-      String jsonContent,
+      @Nullable HttpContent content,
       RequestType requestType,
       boolean shouldSendMetricsHeader)
       throws IOException {
     GenericUrl genericUrl = new GenericUrl(url);
     HttpRequest request;
     if ("POST".equals(method)) {
-      com.google.api.client.http.HttpContent content = null;
-      if (jsonContent != null) {
-        content =
-            new com.google.api.client.http.ByteArrayContent(
-                "application/json", jsonContent.getBytes(StandardCharsets.UTF_8));
-      }
       request =
           transportFactory.create().createRequestFactory().buildPostRequest(genericUrl, content);
     } else {

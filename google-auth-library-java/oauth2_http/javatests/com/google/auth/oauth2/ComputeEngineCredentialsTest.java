@@ -76,7 +76,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -96,23 +95,11 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   @BeforeEach
   void setUp() throws IOException {
     envProvider = new TestEnvironmentProvider();
-    // Inject our test environment reader into AgentIdentityUtils
-    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    // Inject our test environment provider into AgentIdentityUtils
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
 
-    // Speed up polling in tests by using a fake time service that advances time immediately
-    final AtomicLong currentTime = new AtomicLong(0);
-    AgentIdentityUtils.setTimeService(
-        new AgentIdentityUtils.TimeService() {
-          @Override
-          public long currentTimeMillis() {
-            return currentTime.get();
-          }
-
-          @Override
-          public void sleep(long millis) {
-            currentTime.addAndGet(millis);
-          }
-        });
+    // Speed up polling in tests by using a no-op sleep service
+    AgentIdentityUtils.setTimeService(millis -> {});
     // Opt out of bound tokens by default in tests to avoid polling delays
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
   }
@@ -122,7 +109,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     // Reset the mocks
     AgentIdentityUtils.resetTimeService();
     AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
-    AgentIdentityUtils.setEnvReader(System::getenv);
+    AgentIdentityUtils.resetEnvironmentProvider();
   }
 
   private static final String TOKEN_URL =
@@ -1287,19 +1274,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
         tempDir.resolve("missing_config.json").toAbsolutePath().toString());
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
-    final AtomicLong currentTime = new AtomicLong(0);
-    AgentIdentityUtils.setTimeService(
-        new AgentIdentityUtils.TimeService() {
-          @Override
-          public long currentTimeMillis() {
-            return currentTime.get();
-          }
-
-          @Override
-          public void sleep(long millis) {
-            currentTime.addAndGet(millis);
-          }
-        });
+    AgentIdentityUtils.setTimeService(millis -> {});
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     ComputeEngineCredentials credentials =
@@ -1362,16 +1337,20 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
-    transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
 
     ComputeEngineCredentials credentials =
-        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setScopes(SCOPES)
+            .build();
     AccessToken token = credentials.refreshAccessToken();
 
     assertNotNull(token);
     com.google.api.client.testing.http.MockLowLevelHttpRequest request =
         transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
+    assertEquals("application/json", request.getContentType());
+    assertTrue(request.getUrl().contains("scopes=foo,bar"));
     String body = request.getContentAsString();
     GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
     String expectedCert =
@@ -1397,24 +1376,14 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     com.google.api.client.testing.http.MockLowLevelHttpRequest request =
         transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
+    assertEquals("application/json", request.getContentType());
+    assertTrue(request.getUrl().contains("audience=https://foo.bar"));
     String body = request.getContentAsString();
     GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
     String expectedCert =
         new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
             .trim();
     assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
-  }
-
-  private static class TestEnvironmentProvider {
-    private final Map<String, String> env = new HashMap<>();
-
-    void setEnv(String key, String value) {
-      env.put(key, value);
-    }
-
-    String getEnv(String key) {
-      return env.get(key);
-    }
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {

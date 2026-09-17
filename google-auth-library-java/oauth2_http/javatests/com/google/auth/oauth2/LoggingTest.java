@@ -83,9 +83,9 @@ import org.slf4j.event.KeyValuePair;
 class LoggingTest {
 
   @BeforeEach
-  void setUp() {
+  void disableBoundTokensByDefault() {
     // Opt out of bound tokens by default to avoid polling delays
-    AgentIdentityUtils.setEnvReader(
+    AgentIdentityUtils.setEnvironmentProvider(
         name -> {
           if (AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN.equals(name)) {
             return "false";
@@ -99,7 +99,7 @@ class LoggingTest {
 
   @AfterEach
   void tearDown() {
-    AgentIdentityUtils.setEnvReader(System::getenv);
+    AgentIdentityUtils.resetEnvironmentProvider();
     for (int i = 0; i < modifiedLoggers.size(); i++) {
       modifiedLoggers.get(i).detachAppender(addedAppenders.get(i));
     }
@@ -128,7 +128,7 @@ class LoggingTest {
 
   @AfterAll
   static void tearDownAll() {
-    LoggingUtils.setEnvironmentProvider(LoggingUtils.SystemEnvironmentProvider.getInstance());
+    LoggingUtils.setEnvironmentProvider(SystemEnvironmentProvider.getInstance());
   }
 
   @Test

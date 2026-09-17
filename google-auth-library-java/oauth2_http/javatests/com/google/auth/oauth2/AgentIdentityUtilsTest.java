@@ -49,6 +49,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.FileTime;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.cert.CertificateException;
@@ -60,6 +61,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -84,14 +86,15 @@ class AgentIdentityUtilsTest {
   @BeforeEach
   void setUp() throws IOException {
     envProvider = new TestEnvironmentProvider();
-    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+    AgentIdentityUtils.setTimeService(new FakeTimeService());
   }
 
   @AfterEach
   void tearDown() throws IOException {
     AgentIdentityUtils.resetTimeService();
     AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
-    AgentIdentityUtils.setEnvReader(System::getenv);
+    AgentIdentityUtils.resetEnvironmentProvider();
   }
 
   @Test
@@ -526,7 +529,7 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void
-      getAgentIdentityCertInfo_wellKnownDirExistsNoFiles_explicitlyEnabled_retriesAndReturnsNull()
+      getAgentIdentityCertInfo_wellKnownDirExistsNoFiles_explicitlyEnabled_retriesAndThrowsIOException()
           throws IOException {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     FakeTimeService fakeTime = new FakeTimeService();
@@ -534,33 +537,38 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
-    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(fakeTime.getSleepCount() > 0);
   }
 
   @Test
   public void readCertificateChain_combinedBundle_stripsPrivateKeyAndRetainsCertificates()
       throws Exception {
-    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
-    assertNotNull(certUrl);
-    String certPem =
-        new String(Files.readAllBytes(Paths.get(certUrl.toURI())), StandardCharsets.UTF_8);
+    URL cert1Url = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(cert1Url);
+    String cert1Pem =
+        new String(Files.readAllBytes(Paths.get(cert1Url.toURI())), StandardCharsets.UTF_8);
+
+    URL cert2Url = getClass().getClassLoader().getResource("x509_leaf_certificate.pem");
+    assertNotNull(cert2Url);
+    String cert2Pem =
+        new String(Files.readAllBytes(Paths.get(cert2Url.toURI())), StandardCharsets.UTF_8);
 
     URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
     assertNotNull(keyUrl);
     String keyPem =
         new String(Files.readAllBytes(Paths.get(keyUrl.toURI())), StandardCharsets.UTF_8);
 
-    // Create a bundle file with cert then private key then cert again
-    String bundleContent = certPem + "\n" + keyPem + "\n" + certPem;
+    // Create a bundle file with cert1 then private key then cert2
+    String bundleContent = cert1Pem + "\n" + keyPem + "\n" + cert2Pem;
     Path bundleFile = tempDir.resolve("bundle.pem");
     Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
 
     String extractedChain = AgentIdentityUtils.readCertificateChain(bundleFile.toString());
 
-    // Verify certificates are retained
-    assertTrue(extractedChain.contains("BEGIN CERTIFICATE"));
-    assertTrue(extractedChain.contains("END CERTIFICATE"));
+    // Verify both certificates are retained
+    assertTrue(extractedChain.contains(cert1Pem.trim()));
+    assertTrue(extractedChain.contains(cert2Pem.trim()));
     // Verify private key is stripped
     assertFalse(extractedChain.contains("PRIVATE KEY"));
     assertFalse(extractedChain.contains("BEGIN PRIVATE KEY"));
@@ -648,7 +656,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void loadAndVerifyCredentials_implicitDiscovery_bundleWithMismatchedKey_returnsNull()
+  public void loadAndVerifyCredentials_implicitDiscovery_bundleWithMismatchedKey_throwsIOException()
       throws Exception {
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
@@ -671,8 +679,11 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
     AgentIdentityUtils.setTimeService(new FakeTimeService());
 
-    assertNull(
-        AgentIdentityUtils.loadAndVerifyCredentials(bundleFile.toString(), bundleFile.toString()));
+    assertThrows(
+        IOException.class,
+        () ->
+            AgentIdentityUtils.loadAndVerifyCredentials(
+                bundleFile.toString(), bundleFile.toString()));
   }
 
   @Test
@@ -716,6 +727,7 @@ class AgentIdentityUtilsTest {
     restrictedDir.toFile().setExecutable(false, false);
 
     try {
+      Assumptions.assumeFalse(Files.isReadable(configFile));
       envProvider.setEnv(
           AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toAbsolutePath().toString());
       assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
@@ -733,6 +745,7 @@ class AgentIdentityUtilsTest {
     configFile.toFile().setReadable(false, false);
 
     try {
+      Assumptions.assumeFalse(Files.isReadable(configFile));
       envProvider.setEnv(
           AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toAbsolutePath().toString());
       assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
@@ -753,6 +766,7 @@ class AgentIdentityUtilsTest {
     restrictedDir.toFile().setExecutable(false, false);
 
     try {
+      Assumptions.assumeFalse(Files.isReadable(bundleFile));
       envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
       AgentIdentityUtils.setWellKnownDir(restrictedDir.toAbsolutePath().toString() + "/");
 
@@ -919,26 +933,49 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_startupPollTimeout_subsequentRefreshDoesNotPoll()
-      throws Exception {
+  public void
+      getAgentIdentityCertInfo_startupPollTimeout_subsequentRefreshDoesNotPollAndThrowsIOException()
+          throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
-    // Initial call polls for all 100 cycles (30s) and times out
-    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertEquals(100, fakeTime.getSleepCount());
+    // Initial call polls for all 100 cycles (99 sleeps) and fails closed with IOException
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(99, fakeTime.getSleepCount());
 
-    // Subsequent token refresh falls back immediately without sleeping
-    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertEquals(100, fakeTime.getSleepCount());
+    // Subsequent token refresh fails closed immediately without sleeping
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(99, fakeTime.getSleepCount());
   }
 
   @Test
-  public void getAgentIdentityCertInfo_startupSucceeded_subsequentRefreshMissingFileDoesNotPoll()
-      throws Exception {
+  public void
+      getAgentIdentityCertInfo_configInWellKnownDirTimeout_subsequentRefreshDoesNotPollAndThrowsIOException()
+          throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv(
+        "GOOGLE_API_CERTIFICATE_CONFIG",
+        tempDir.resolve("missing_config.json").toAbsolutePath().toString());
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+
+    // Initial call polls for all 100 cycles (99 sleeps) and fails closed with IOException
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(99, fakeTime.getSleepCount());
+
+    // Subsequent token refresh fails closed immediately without sleeping
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(99, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_startupSucceeded_subsequentRefreshMissingFileRetriesAndFallsBackToCache()
+          throws Exception {
     setupValidAgentCredentialsInTempDir();
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
@@ -953,15 +990,53 @@ class AgentIdentityUtilsTest {
     // Simulate certificate file disappearing on disk after initial startup
     Files.delete(tempDir.resolve("certificates.pem"));
 
-    // Subsequent token refresh falls back immediately (0 sleeps) instead of freezing for 30s
-    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertEquals(0, fakeTime.getSleepCount());
+    // Subsequent token refresh retries briefly (2 sleeps of 100ms) and falls back to cached cert
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertSame(info1, info2);
+    assertEquals(2, fakeTime.getSleepCount());
   }
 
   @Test
-  public void
-      getAgentIdentityCertInfo_implicitDiscovery_missingPrivateKey_returnsNullAndFallsBackToUnbound()
-          throws Exception {
+  public void getAgentIdentityCertInfo_startupSucceeded_rotationMomentaryUnlinkRecoversDuringRetry()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    Path certFile = tempDir.resolve("certificates.pem");
+    byte[] certBytes = Files.readAllBytes(certFile);
+    // Momentarily unlink certificate file simulating non-atomic unlink+create rotation
+    Files.delete(certFile);
+
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 1) {
+            try {
+              // Re-create the file with updated content during retry sleep
+              Files.write(
+                  certFile,
+                  (new String(certBytes, StandardCharsets.UTF_8) + "\n")
+                      .getBytes(StandardCharsets.UTF_8));
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info2);
+    assertNotSame(info1, info2);
+    assertEquals(1, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_implicitDiscovery_missingPrivateKey_throwsIOException()
+      throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
@@ -973,9 +1048,8 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    // Implicit discovery refuses to issue an unverified bound token, retries 3 times (2 sleeps),
-    // and falls back to null (unbound token) without crashing ADC.
-    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    // Once an Agent Identity certificate is detected on disk, missing private key fails closed
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(2, fakeTime.getSleepCount());
   }
 
@@ -1088,6 +1162,34 @@ class AgentIdentityUtilsTest {
     assertNotSame(info1, info3);
   }
 
+  @Test
+  public void
+      getAgentIdentityCertInfo_rotationWithIdenticalByteLengthAndUpdatedMtime_reloadsCredentials()
+          throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    Path certFile = tempDir.resolve("certificates.pem");
+    String basePem = new String(Files.readAllBytes(certFile), StandardCharsets.UTF_8);
+
+    // Write initial version with a fixed-length trailing comment
+    String v1Pem = basePem + "\n# version-1";
+    Files.write(certFile, v1Pem.getBytes(StandardCharsets.UTF_8));
+    FileTime initialMtime = Files.getLastModifiedTime(certFile);
+    long initialSize = Files.size(certFile);
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    // Overwrite with identical byte length but updated mtime
+    String v2Pem = basePem + "\n# version-2";
+    Files.write(certFile, v2Pem.getBytes(StandardCharsets.UTF_8));
+    Files.setLastModifiedTime(certFile, FileTime.fromMillis(initialMtime.toMillis() + 5000));
+    assertEquals(initialSize, Files.size(certFile));
+
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info2);
+    assertNotSame(info1, info2);
+  }
+
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {
     private final AtomicLong currentTime = new AtomicLong(0);
     private final AtomicInteger sleepCount = new AtomicInteger(0);
@@ -1097,7 +1199,6 @@ class AgentIdentityUtilsTest {
       this.onSleepCallback = callback;
     }
 
-    @Override
     public long currentTimeMillis() {
       return currentTime.get();
     }
@@ -1113,18 +1214,6 @@ class AgentIdentityUtilsTest {
 
     int getSleepCount() {
       return sleepCount.get();
-    }
-  }
-
-  private static class TestEnvironmentProvider {
-    private final java.util.Map<String, String> env = new java.util.HashMap<>();
-
-    void setEnv(String key, String value) {
-      env.put(key, value);
-    }
-
-    String getEnv(String key) {
-      return env.get(key);
     }
   }
 }

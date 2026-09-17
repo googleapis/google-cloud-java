@@ -77,7 +77,7 @@ class DefaultCredentialsProviderTest {
   @BeforeEach
   void setUp() {
     // Isolate tests and opt out of bound tokens by default to avoid polling delays
-    AgentIdentityUtils.setEnvReader(
+    AgentIdentityUtils.setEnvironmentProvider(
         name -> {
           if (AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN.equals(name)) {
             return "false"; // Triggers isTokenBindingEnabled() = false
@@ -89,7 +89,7 @@ class DefaultCredentialsProviderTest {
   @AfterEach
   void tearDown() {
     // Reset to default behavior.
-    AgentIdentityUtils.setEnvReader(System::getenv);
+    AgentIdentityUtils.resetEnvironmentProvider();
   }
 
   private static final String USER_CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";
