@@ -40,10 +40,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  *
  * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
-
-  @Override
-  default void close() {}
+public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Fields of a BigQuery Dataset resource.

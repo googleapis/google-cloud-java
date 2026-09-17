@@ -74,7 +74,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -279,37 +278,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private transient ReentrantLock readClientLock = new ReentrantLock();
   private transient Map<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
-
-  private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
-    readClientLock = new ReentrantLock();
-  }
-
-  @Override
-  public void close() {
-    if (readClientLock != null) {
-      readClientLock.lock();
-      try {
-        if (bqReadClients != null) {
-          for (BigQueryReadClient client : bqReadClients.values()) {
-            if (client != null) {
-              try {
-                client.close();
-              } catch (Exception ignored) {
-                // Suppress exception to ensure all other clients are closed
-              }
-            }
-          }
-          bqReadClients.clear();
-        }
-      } finally {
-        readClientLock.unlock();
-      }
-    }
-  }
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -332,51 +302,41 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * @return the active BigQueryReadClient instance
    * @throws BigQueryException if initializing the storage read client fails
    */
-  BigQueryReadClient getBigQueryReadClient(String location) {
+  synchronized BigQueryReadClient getBigQueryReadClient(String location) {
     String cacheKey = location != null ? location.toLowerCase() : "global";
-    readClientLock.lock();
-    try {
-      if (bqReadClients == null) {
-        bqReadClients = Maps.newHashMap();
-      }
-      BigQueryReadClient client = bqReadClients.get(cacheKey);
-      if (client == null && isGlobalClientUserProvided && bqReadClients.containsKey("global")) {
-        client = bqReadClients.get("global");
-      }
-      if (client == null) {
-        BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
-        configureReadSettings(settingsBuilder, getOptions(), location);
-        try {
-          client = BigQueryReadClient.create(settingsBuilder.build());
-          bqReadClients.put(cacheKey, client);
-        } catch (IOException e) {
-          throw new BigQueryException(
-              0, "Failed to initialize BigQueryReadClient for location " + location, e);
-        }
-      }
-      return client;
-    } finally {
-      readClientLock.unlock();
+    if (bqReadClients == null) {
+      bqReadClients = Maps.newHashMap();
     }
+    BigQueryReadClient client = bqReadClients.get(cacheKey);
+    if (client == null && isGlobalClientUserProvided && bqReadClients.containsKey("global")) {
+      client = bqReadClients.get("global");
+    }
+    if (client == null) {
+      BigQueryReadSettings.Builder settingsBuilder = BigQueryReadSettings.newBuilder();
+      configureReadSettings(settingsBuilder, getOptions(), location);
+      try {
+        client = BigQueryReadClient.create(settingsBuilder.build());
+        bqReadClients.put(cacheKey, client);
+      } catch (IOException e) {
+        throw new BigQueryException(
+            0, "Failed to initialize BigQueryReadClient for location " + location, e);
+      }
+    }
+    return client;
   }
 
   void setBigQueryReadClient(BigQueryReadClient client) {
     setBigQueryReadClient(null, client);
   }
 
-  void setBigQueryReadClient(String location, BigQueryReadClient client) {
+  synchronized void setBigQueryReadClient(String location, BigQueryReadClient client) {
     String cacheKey = location != null ? location.toLowerCase() : "global";
-    readClientLock.lock();
-    try {
-      if (bqReadClients == null) {
-        bqReadClients = Maps.newHashMap();
-      }
-      bqReadClients.put(cacheKey, client);
-      if ("global".equals(cacheKey)) {
-        isGlobalClientUserProvided = true;
-      }
-    } finally {
-      readClientLock.unlock();
+    if (bqReadClients == null) {
+      bqReadClients = Maps.newHashMap();
+    }
+    bqReadClients.put(cacheKey, client);
+    if ("global".equals(cacheKey)) {
+      isGlobalClientUserProvided = true;
     }
   }
 
