@@ -340,7 +340,6 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(Types.BIGINT, pmd.getParameterType(1));
     assertEquals("INT64", pmd.getParameterTypeName(1));
 
-    // 2. But execute() still fails if caller forgot to set value!
     // 2. configureParameters fails before value is supplied
     QueryJobConfiguration.Builder configBuilder = QueryJobConfiguration.newBuilder("SELECT ?");
     BigQueryJdbcException ex =
