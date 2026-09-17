@@ -256,6 +256,10 @@ public class GcpFallbackChannelOptions {
       return this;
     }
 
+    /**
+     * Sets the shared fallback state across channels in a pool. Channels sharing this state should
+     * use consistent fallback evaluation options.
+     */
     public Builder setSharedState(GcpFallbackState sharedState) {
       this.sharedState = sharedState;
       return this;

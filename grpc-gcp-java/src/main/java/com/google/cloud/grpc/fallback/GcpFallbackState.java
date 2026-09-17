@@ -139,7 +139,8 @@ public class GcpFallbackState {
 
   /**
    * Starts the periodic error rate evaluation loop exactly once across all channels sharing this
-   * state.
+   * state. Channels sharing this state should use consistent evaluation options, as the first
+   * channel to start evaluation configures the shared loop.
    *
    * @param options the fallback channel configuration options.
    */
@@ -162,12 +163,17 @@ public class GcpFallbackState {
               ? options.getGcpOpenTelemetry()
               : GcpFallbackOpenTelemetry.newBuilder().build();
 
-      scheduledEvaluationFuture =
-          executor.scheduleAtFixedRate(
-              () -> checkErrorRates(options, openTelemetry),
-              options.getPeriod().toMillis(),
-              options.getPeriod().toMillis(),
-              TimeUnit.MILLISECONDS);
+      try {
+        scheduledEvaluationFuture =
+            executor.scheduleAtFixedRate(
+                () -> checkErrorRates(options, openTelemetry),
+                options.getPeriod().toMillis(),
+                options.getPeriod().toMillis(),
+                TimeUnit.MILLISECONDS);
+      } catch (RuntimeException e) {
+        evaluationStarted.set(false);
+        throw e;
+      }
     }
   }
 
