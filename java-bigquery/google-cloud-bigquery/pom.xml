@@ -122,14 +122,7 @@
       <artifactId>arrow-memory-netty</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax-grpc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.grpc</groupId>
-      <artifactId>grpc-api</artifactId>
-    </dependency>
+
 
     <dependency>
       <groupId>com.google.errorprone</groupId>
