@@ -4046,4 +4046,149 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(1, thrown.getSuppressed().length);
     assertTrue(thrown.getSuppressed()[0] instanceof OAuthException);
   }
+
+  public static class CustomMtlsHttpTransportFactory extends MtlsHttpTransportFactory {
+    public CustomMtlsHttpTransportFactory() {
+      super();
+    }
+  }
+
+  @Test
+  void customMtlsHttpTransportFactorySubclass_preservedInConstructorAndRefreshAndDeserialization()
+      throws Exception {
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "testresources/mtls/certificate_config.json");
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+
+    CustomMtlsHttpTransportFactory customFactory = new CustomMtlsHttpTransportFactory();
+    KeyStore ks = createPopulatedKeyStore();
+    X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
+
+    List<HttpTransportFactory> capturedCycleFactories = new ArrayList<>();
+    IdentityPoolCredentials credentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setHttpTransportFactory(customFactory)
+                .setCredentialSource(credentialSource)
+                .setX509Provider(x509Provider)
+                .setAudience("audience")
+                .setSubjectTokenType("subjectTokenType")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedCycleFactories.add(cycleTransportFactory);
+            return new AccessToken("token", null);
+          }
+        };
+
+    assertSame(
+        customFactory,
+        credentials.getTransportFactory(),
+        "Constructor must preserve custom subclass of MtlsHttpTransportFactory");
+
+    credentials.refreshAccessToken();
+    assertEquals(1, capturedCycleFactories.size());
+    assertSame(
+        customFactory,
+        capturedCycleFactories.get(0),
+        "refreshAccessToken must use custom MtlsHttpTransportFactory subclass without overwriting");
+
+    IdentityPoolCredentials regularCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(customFactory)
+            .setCredentialSource(credentialSource)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(regularCredentials);
+    assertTrue(
+        deserialized.getTransportFactory() instanceof CustomMtlsHttpTransportFactory,
+        "readObject must preserve custom subclass of MtlsHttpTransportFactory");
+  }
+
+  @Test
+  void fileCredentialSourceWithCertConfig_overriddenCreateMtlsTransportFactory_rotatesPerCycle()
+      throws Exception {
+    File tokenFile = File.createTempFile("subject_token", ".txt");
+    tokenFile.deleteOnExit();
+    Files.write(tokenFile.toPath(), "test-subject-token".getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", tokenFile.getAbsolutePath());
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+
+    KeyStore ksA = createPopulatedKeyStore();
+    KeyStore ksB = createRotatedPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            // Call 1: constructor; Call 2: initial refresh attempt; Call 3: 401 retry
+            int count = getKeyStoreCount.incrementAndGet();
+            return count <= 2 ? ksA : ksB;
+          }
+        };
+
+    List<KeyStore> requestKeyStores = new ArrayList<>();
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setCredentialSource(credentialSource)
+                .setX509Provider(rotatingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            return () ->
+                new MockHttpTransport() {
+                  @Override
+                  public LowLevelHttpRequest buildRequest(String method, String url) {
+                    requestKeyStores.add(keyStore);
+                    return new MockLowLevelHttpRequest(url) {
+                      @Override
+                      public LowLevelHttpResponse execute() {
+                        if (keyStore == ksA) {
+                          return new MockLowLevelHttpResponse()
+                              .setStatusCode(401)
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(
+                                  "{\"error\": \"invalid_client\", \"error_description\": \"Unauthorized\"}");
+                        }
+                        GenericJson response = new GenericJson();
+                        response.setFactory(OAuth2Utils.JSON_FACTORY);
+                        response.put("access_token", "rotated-sts-token");
+                        response.put("token_type", "Bearer");
+                        response.put("expires_in", 3600);
+                        response.put(
+                            "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                        return new MockLowLevelHttpResponse()
+                            .setContentType(Json.MEDIA_TYPE)
+                            .setContent(response.toString());
+                      }
+                    };
+                  }
+                };
+          }
+        };
+
+    AccessToken token = credential.refreshAccessToken();
+    assertEquals("rotated-sts-token", token.getTokenValue());
+    assertEquals(Arrays.asList(ksA, ksB), requestKeyStores);
+  }
 }
