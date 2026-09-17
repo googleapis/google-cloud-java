@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -489,5 +490,26 @@ public class ITStatementTest extends ITBase {
         // Ignore cleanup exception if table was not created
       }
     }
+  }
+
+  @Test
+  @Tag("advanced")
+  public void testHighThroughputApiFallbackNoReadApi() throws IOException, SQLException {
+    String saNoReadApi = requireEnvVar("SA_EMAIL_NO_READAPI");
+
+    String connection_uri =
+        ITBase.connectionUrl
+            + ";ServiceAccountImpersonationEmail="
+            + saNoReadApi
+            + ";EnableHighThroughputAPi=1"
+            + ";MaxResults=300";
+
+    Connection connection = DriverManager.getConnection(connection_uri);
+    assertNotNull(connection);
+    assertFalse(connection.isClosed());
+
+    Statement statement = connection.createStatement();
+    validateStatement(statement, 1000);
+    connection.close();
   }
 }

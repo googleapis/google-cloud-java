@@ -716,11 +716,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       this.currentJobIdIndex += 1;
       Job currentJob = this.parentJobId.getJobs().get(this.currentJobIdIndex);
       QueryStatistics queryStatistics = currentJob.getStatistics();
-      ScriptStatistics scriptStatistics = queryStatistics != null ? queryStatistics.getScriptStatistics() : null;
+      ScriptStatistics scriptStatistics =
+          queryStatistics != null ? queryStatistics.getScriptStatistics() : null;
       // EXPRESSION jobs are not relevant for customer query and can be
       // created by BQ depending on various conditions. We will just ignore
       // them when presenting results.
-      if (scriptStatistics == null || !"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
+      if (scriptStatistics == null
+          || !"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
         return currentJob;
       }
     }
@@ -923,16 +925,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         throw new BigQueryJdbcException(
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
-      }
-      if (ex instanceof RuntimeException) {
-        throw (ex instanceof BigQueryJdbcRuntimeException)
-            ? (BigQueryJdbcRuntimeException) ex
-            : new BigQueryJdbcRuntimeException(ex);
-      }
-      if (ex instanceof SQLException) {
-        throw (ex instanceof BigQueryJdbcException)
-            ? (BigQueryJdbcException) ex
-            : new BigQueryJdbcException(ex);
       }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
