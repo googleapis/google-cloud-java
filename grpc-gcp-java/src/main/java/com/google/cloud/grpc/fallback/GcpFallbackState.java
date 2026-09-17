@@ -26,27 +26,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Shared state that coordinates failover across a pool of channels. All channels in a pool share
- * this instance and its background executor, so probing and error rate evaluation run once for the
- * whole pool.
- *
- * targetFallbackMode: whether channels should route to the fallback channel.
- * generation: incremented on every pool-wide transition. A channel re-reads targetFallbackMode when
- * generation advances past the value it last saw.
- * inFallbackMode: whether all traffic is on the fallback channel. Gates error rate evaluation.
- *
- * Failover: the primary error rate crossing the threshold sets targetFallbackMode and increments
- * generation. All channels switch to the fallback channel.
- *
- * Recovery, per-channel disabled: the first channel whose probes succeed clears targetFallbackMode
- * and increments generation. The whole pool returns to the primary channel.
- *
- * Recovery, per-channel enabled: a recovering channel updates only its own state, leaving
- * targetFallbackMode and generation unchanged. Other channels stay on the fallback channel until
- * their own probes succeed. inFallbackMode and targetFallbackMode diverge until then.
- *
- * A shared instance passed to setSharedState must be shut down by the caller. A state a channel
- * created for itself is shut down with that channel.
+ * Shared thread-safe state that coordinates failover, recovery, and periodic error evaluation
+ * across a pool of GcpFallbackChannel instances.
  */
 public class GcpFallbackState {
   private final AtomicLong primarySuccesses = new AtomicLong(0);
@@ -54,12 +35,12 @@ public class GcpFallbackState {
   private final AtomicLong fallbackSuccesses = new AtomicLong(0);
   private final AtomicLong fallbackFailures = new AtomicLong(0);
   private final AtomicLong generation = new AtomicLong(0);
-  private final AtomicBoolean targetFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
 
   private ScheduledExecutorService execService = null;
   private boolean ownsExecutor = false;
+  private boolean isShutdown = false;
   private volatile ScheduledFuture<?> scheduledEvaluationFuture = null;
 
   public GcpFallbackState() {}
@@ -91,15 +72,7 @@ public class GcpFallbackState {
     return fallbackFailures;
   }
 
-  /**
-   * Returns whether periodic error-rate evaluation is armed, i.e. whether any traffic is currently
-   * reaching the primary channel.
-   *
-   * <p>This is <em>not</em> "are the pool's channels routing to the fallback channel". Under
-   * per-channel recovery this returns {@code false} as soon as the first channel recovers, while
-   * other channels may still be in fallback. To ask whether a specific channel is in fallback, call
-   * {@link GcpFallbackChannel#isInFallbackMode()} on that channel.
-   */
+  /** Returns whether the pool is currently in fallback mode. */
   boolean isInFallbackMode() {
     return inFallbackMode.get();
   }
@@ -108,34 +81,25 @@ public class GcpFallbackState {
     return generation.get();
   }
 
-  boolean getTargetFallbackMode() {
-    return targetFallbackMode.get();
-  }
-
-  /** Bumps the generation counter with a directive to target fallback mode. */
+  /** Bumps the generation counter and transitions the pool to fallback mode. */
   synchronized void triggerFallback() {
     inFallbackMode.set(true);
-    targetFallbackMode.set(true);
     generation.incrementAndGet();
   }
 
   /**
-   * Records channel recovery by clearing primary error counts and updating fallback mode.
+   * Records pool recovery by clearing primary error counts and updating fallback mode.
    *
    * @param expectedGen the generation at which the recovery probe started.
-   * @param perChannelRecovery whether recovery is scoped per channel rather than pool-wide.
    * @return the resulting pool generation, or -1 if the pool generation changed concurrently.
    */
-  synchronized long recordRecovery(long expectedGen, boolean perChannelRecovery) {
+  synchronized long recordRecovery(long expectedGen) {
     if (generation.get() != expectedGen) {
       return -1;
     }
-    if (inFallbackMode.get()) {
+    if (inFallbackMode.compareAndSet(true, false)) {
       primaryFailures.set(0);
       primarySuccesses.set(0);
-      inFallbackMode.set(false);
-    }
-    if (!perChannelRecovery && targetFallbackMode.compareAndSet(true, false)) {
       generation.incrementAndGet();
     }
     return generation.get();
@@ -167,7 +131,7 @@ public class GcpFallbackState {
   /** Schedules a periodic task (e.g., probe) on the shared background executor service. */
   synchronized ScheduledFuture<?> scheduleTask(
       Runnable command, long initialDelay, long period, TimeUnit unit) {
-    if (this.execService == null || this.execService.isShutdown()) {
+    if (isShutdown || this.execService == null || this.execService.isShutdown()) {
       return null;
     }
     return this.execService.scheduleAtFixedRate(command, initialDelay, period, unit);
@@ -180,7 +144,8 @@ public class GcpFallbackState {
    * @param options the fallback channel configuration options.
    */
   synchronized void startPeriodicEvaluation(GcpFallbackChannelOptions options) {
-    if (options == null
+    if (isShutdown
+        || options == null
         || !options.isEnableFallback()
         || options.getPeriod() == null
         || options.getPeriod().toMillis() <= 0) {
@@ -212,8 +177,7 @@ public class GcpFallbackState {
    * @param options the fallback channel configuration options.
    * @param openTelemetry telemetry module for recording error metrics.
    */
-  void checkErrorRates(
-      GcpFallbackChannelOptions options, GcpFallbackOpenTelemetry openTelemetry) {
+  void checkErrorRates(GcpFallbackChannelOptions options, GcpFallbackOpenTelemetry openTelemetry) {
     float primaryErrRate = 0f;
     boolean fallbackTriggered = false;
     boolean currentInFallback;
@@ -271,6 +235,7 @@ public class GcpFallbackState {
 
   /** Shuts down the state, cancelling evaluation and shutting down internal executor if owned. */
   public synchronized void shutdown() {
+    isShutdown = true;
     stopPeriodicEvaluation();
     if (ownsExecutor && execService != null && !execService.isShutdown()) {
       execService.shutdown();
@@ -282,6 +247,7 @@ public class GcpFallbackState {
    * owned.
    */
   public synchronized void shutdownNow() {
+    isShutdown = true;
     stopPeriodicEvaluation();
     if (ownsExecutor && execService != null && !execService.isShutdown()) {
       execService.shutdownNow();
