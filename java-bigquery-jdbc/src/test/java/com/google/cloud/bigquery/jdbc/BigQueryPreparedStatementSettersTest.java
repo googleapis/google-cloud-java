@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -61,6 +62,7 @@ public class BigQueryPreparedStatementSettersTest {
   public void setUp() throws Exception {
     connection = mock(BigQueryConnection.class);
     when(connection.getQueryDialect()).thenReturn("SQL");
+    when(connection.getConnectionId()).thenReturn("test-connection-id");
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
   }
 
@@ -329,6 +331,8 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testInferredParameterTypeKnownBeforeSetters() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?");
+
     // 1. Inferred type is known immediately without calling setInt/setString
     preparedStatement.parameterHandler.setInferredParameterType(1, StandardSQLTypeName.INT64);
 
@@ -337,10 +341,21 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals("INT64", pmd.getParameterTypeName(1));
 
     // 2. But execute() still fails if caller forgot to set value!
-    assertThrows(BigQueryJdbcException.class, () -> preparedStatement.execute());
+    // 2. configureParameters fails before value is supplied
+    QueryJobConfiguration.Builder configBuilder = QueryJobConfiguration.newBuilder("SELECT ?");
+    BigQueryJdbcException ex =
+        assertThrows(
+            BigQueryJdbcException.class,
+            () -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+    assertTrue(ex.getMessage().contains("One or more parameters missing"));
+    // 3. Once setter is called, configureParameters succeeds and populates QueryJobConfiguration
 
-    // 3. Once setter is called, execute() succeeds
     preparedStatement.setLong(1, 42L);
-    // All parameters provided -> proceeds to configureParameters without throwing
+    assertDoesNotThrow(() -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+
+    QueryJobConfiguration config = configBuilder.build();
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals("42", config.getPositionalParameters().get(0).getValue());
+    assertEquals(StandardSQLTypeName.INT64, config.getPositionalParameters().get(0).getType());
   }
 }

@@ -24,7 +24,6 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.BitSet;
 
 class BigQueryParameterHandler {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
@@ -49,7 +48,6 @@ class BigQueryParameterHandler {
   };
 
   private int parametersArraySize;
-  private final BitSet userSetParameters = new BitSet();
   ArrayList<BigQueryJdbcParameter> parametersList = new ArrayList<>(parametersArraySize);
 
   private long highestIndex = 0;
@@ -58,7 +56,11 @@ class BigQueryParameterHandler {
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws SQLException {
     LOG.finest("++enter++");
     for (int i = 1; i <= this.parametersArraySize; i++) {
-      if (!this.userSetParameters.get(i)) {
+
+      int arrayIndex = i - 1;
+      if (this.parametersList.size() <= arrayIndex
+          || this.parametersList.get(arrayIndex) == null
+          || !this.parametersList.get(arrayIndex).isUserSet()) {
         throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.");
       }
 
@@ -135,8 +137,7 @@ class BigQueryParameterHandler {
     parameter.setParamName("");
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
-
-    this.userSetParameters.set(parameterIndex);
+    parameter.setUserSet(true);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
@@ -189,10 +190,10 @@ class BigQueryParameterHandler {
 
   void clearParameters() {
     LOG.finest("++enter++");
-    this.userSetParameters.clear();
     for (BigQueryJdbcParameter param : this.parametersList) {
       if (param != null) {
         param.setValue(null);
+        param.setUserSet(false);
       }
     }
     highestIndex = 0;
@@ -232,6 +233,8 @@ class BigQueryParameterHandler {
     parameter.setParamName(paramName);
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+    parameter.setUserSet(true);
+
     if (parameter.getIndex() == -1) {
       parametersList.add(parameter);
     }
@@ -259,6 +262,7 @@ class BigQueryParameterHandler {
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+    parameter.setUserSet(true);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
