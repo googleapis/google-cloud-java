@@ -82,6 +82,42 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.InstancePropertiesPatch.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int EXPOSE_HOST_TOPOLOGY_FIELD_NUMBER = 428530155;
+  private boolean exposeHostTopology_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return Whether the exposeHostTopology field is set.
+   */
+  @java.lang.Override
+  public boolean hasExposeHostTopology() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return The exposeHostTopology.
+   */
+  @java.lang.Override
+  public boolean getExposeHostTopology() {
+    return exposeHostTopology_;
+  }
+
   public static final int LABELS_FIELD_NUMBER = 500195327;
 
   private static final class LabelsDefaultEntryHolder {
@@ -320,6 +356,9 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 86866735);
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(428530155, exposeHostTopology_);
+    }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     getUnknownFields().writeTo(output);
@@ -340,6 +379,9 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(86866735, metadata__);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(428530155, exposeHostTopology_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -367,6 +409,10 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     com.google.cloud.compute.v1.InstancePropertiesPatch other =
         (com.google.cloud.compute.v1.InstancePropertiesPatch) obj;
 
+    if (hasExposeHostTopology() != other.hasExposeHostTopology()) return false;
+    if (hasExposeHostTopology()) {
+      if (getExposeHostTopology() != other.getExposeHostTopology()) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -380,6 +426,10 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasExposeHostTopology()) {
+      hash = (37 * hash) + EXPOSE_HOST_TOPOLOGY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExposeHostTopology());
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -554,6 +604,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      exposeHostTopology_ = false;
       internalGetMutableLabels().clear();
       internalGetMutableMetadata().clear();
       return this;
@@ -592,14 +643,20 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.compute.v1.InstancePropertiesPatch result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.exposeHostTopology_ = exposeHostTopology_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -615,10 +672,13 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.compute.v1.InstancePropertiesPatch other) {
       if (other == com.google.cloud.compute.v1.InstancePropertiesPatch.getDefaultInstance())
         return this;
+      if (other.hasExposeHostTopology()) {
+        setExposeHostTopology(other.getExposeHostTopology());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000001;
-      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       bitField0_ |= 0x00000002;
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -654,9 +714,15 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 694933882
+            case -866726056:
+              {
+                exposeHostTopology_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -866726056
             case -293404678:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -666,7 +732,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -293404678
             default:
@@ -688,6 +754,78 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
 
     private int bitField0_;
 
+    private boolean exposeHostTopology_;
+
+    /**
+     *
+     *
+     * <pre>
+     * This optional flag exposes the hashed physical host ID.
+     * </pre>
+     *
+     * <code>optional bool expose_host_topology = 428530155;</code>
+     *
+     * @return Whether the exposeHostTopology field is set.
+     */
+    @java.lang.Override
+    public boolean hasExposeHostTopology() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This optional flag exposes the hashed physical host ID.
+     * </pre>
+     *
+     * <code>optional bool expose_host_topology = 428530155;</code>
+     *
+     * @return The exposeHostTopology.
+     */
+    @java.lang.Override
+    public boolean getExposeHostTopology() {
+      return exposeHostTopology_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This optional flag exposes the hashed physical host ID.
+     * </pre>
+     *
+     * <code>optional bool expose_host_topology = 428530155;</code>
+     *
+     * @param value The exposeHostTopology to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExposeHostTopology(boolean value) {
+
+      exposeHostTopology_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This optional flag exposes the hashed physical host ID.
+     * </pre>
+     *
+     * <code>optional bool expose_host_topology = 428530155;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExposeHostTopology() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      exposeHostTopology_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -705,7 +843,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return labels_;
     }
@@ -795,7 +933,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -820,7 +958,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -841,7 +979,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -856,7 +994,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -878,7 +1016,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return metadata_;
     }
@@ -976,7 +1114,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     }
 
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -1003,7 +1141,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return internalGetMutableMetadata().getMutableMap();
     }
 
@@ -1026,7 +1164,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
         throw new NullPointerException("map value");
       }
       internalGetMutableMetadata().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1043,7 +1181,7 @@ public final class InstancePropertiesPatch extends com.google.protobuf.Generated
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       return this;
     }
 

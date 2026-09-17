@@ -34,7 +34,8 @@ public interface BackendServiceHAPolicyLeaderNetworkEndpointOrBuilder
    * instance must already be attached to the NEG specified in the
    * haPolicy.leader.backendGroup.
    *
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The value must be a valid RFC1035 name (1-63 characters) or a valid
+   * instance URL.
    * Authorization requires the following IAM permission on the
    * specified resource instance: compute.instances.use
    * </pre>
@@ -53,7 +54,8 @@ public interface BackendServiceHAPolicyLeaderNetworkEndpointOrBuilder
    * instance must already be attached to the NEG specified in the
    * haPolicy.leader.backendGroup.
    *
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The value must be a valid RFC1035 name (1-63 characters) or a valid
+   * instance URL.
    * Authorization requires the following IAM permission on the
    * specified resource instance: compute.instances.use
    * </pre>
@@ -72,7 +74,8 @@ public interface BackendServiceHAPolicyLeaderNetworkEndpointOrBuilder
    * instance must already be attached to the NEG specified in the
    * haPolicy.leader.backendGroup.
    *
-   * The name must be 1-63 characters long, and comply with RFC1035.
+   * The value must be a valid RFC1035 name (1-63 characters) or a valid
+   * instance URL.
    * Authorization requires the following IAM permission on the
    * specified resource instance: compute.instances.use
    * </pre>
