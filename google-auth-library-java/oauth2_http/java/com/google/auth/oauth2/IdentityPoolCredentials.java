@@ -115,7 +115,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
               || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
               || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
               || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
-            this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+            this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
           } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
             LOGGER_PROVIDER
                 .getLogger()
@@ -182,7 +182,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-              + " source or MtlsHttpTransportFactory.");
+              + " configuration in the credential source or provide an mTLS-enabled transport.");
     }
 
     if (this.actorTokenSupplier != null) {
@@ -228,15 +228,35 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
+  private boolean shouldUseMtlsTransportFactory() {
+    return this.transportFactory == null
+        || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+        || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+        || this.transportFactory instanceof MtlsHttpTransportFactory;
+  }
+
   @Override
   public AccessToken refreshAccessToken() throws IOException {
     // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
     HttpTransportFactory cycleTransportFactory = this.transportFactory;
-    if (this.x509Provider != null && this.transportFactory instanceof MtlsHttpTransportFactory) {
+    if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
       KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
-      cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
+      cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
     }
+    return refreshWithRetry(cycleTransportFactory, true);
+  }
 
+  @Override
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
+    // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
+    // and prevent nested retry amplification. Outer callers manage retry coordination.
+    return refreshWithRetry(cycleTransportFactory, false);
+  }
+
+  private AccessToken refreshWithRetry(
+      HttpTransportFactory cycleTransportFactory, boolean allowRetry) throws IOException {
     // Read subject and actor tokens, atomically if from the same file supplier.
     String subjectToken;
     String actorToken = null;
@@ -270,22 +290,35 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     try {
       return exchangeExternalCredentialForAccessToken(
           stsTokenExchangeRequest.build(), cycleTransportFactory);
-    } catch (OAuthException e) {
-      if (e.getHttpStatusCode() == 401
+    } catch (Exception e) {
+      if (allowRetry
+          && OAuth2Utils.isUnauthorizedException(e)
           && this.x509Provider != null
-          && this.transportFactory instanceof MtlsHttpTransportFactory) {
+          && shouldUseMtlsTransportFactory()) {
+        KeyStore freshKeyStore;
         try {
-          // On 401, re-read from X509Provider for fresh certs and retry once.
-          KeyStore freshKeyStore = this.x509Provider.getKeyStore();
-          HttpTransportFactory retryTransportFactory = new MtlsHttpTransportFactory(freshKeyStore);
-          return exchangeExternalCredentialForAccessToken(
-              stsTokenExchangeRequest.build(), retryTransportFactory);
-        } catch (IOException retryException) {
-          retryException.addSuppressed(e);
-          throw retryException;
+          // On 401, re-read from X509Provider for fresh certs.
+          freshKeyStore = this.x509Provider.getKeyStore();
+        } catch (IOException reloadException) {
+          reloadException.addSuppressed(e);
+          throw reloadException;
+        } catch (Exception reloadException) {
+          IOException ioException =
+              new IOException("Failed to reload certificate on retry", reloadException);
+          ioException.addSuppressed(e);
+          throw ioException;
         }
+
+        HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
+        return refreshWithRetry(retryTransportFactory, false);
       }
-      throw e;
+      if (e instanceof IOException) {
+        throw (IOException) e;
+      }
+      if (e instanceof RuntimeException) {
+        throw (RuntimeException) e;
+      }
+      throw new IOException(e);
     }
   }
 
@@ -324,6 +357,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.x509Provider;
   }
 
+  @VisibleForTesting
+  HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+    return new MtlsHttpTransportFactory(keyStore);
+  }
+
   /** Clones the IdentityPoolCredentials with the specified scopes. */
   @Override
   public IdentityPoolCredentials createScoped(Collection<String> newScopes) {
@@ -353,7 +391,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
         || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
-      this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+      this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
     } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
       LOGGER_PROVIDER
           .getLogger()
@@ -395,7 +433,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
       try {
         KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
-        this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+        if (this.transportFactory == null
+            || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+            || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+            || this.transportFactory instanceof MtlsHttpTransportFactory) {
+          this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
+        }
       } catch (Exception e) {
         // Cert loading failure will be handled on refreshAccessToken()
       }

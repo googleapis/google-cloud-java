@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -322,6 +323,29 @@ public class OAuth2Utils {
     String credentials = username + ":" + password;
     String encodedCredentials = BaseEncoding.base64().encode(credentials.getBytes());
     return "Basic " + encodedCredentials;
+  }
+
+  /**
+   * Returns whether the given throwable or any exception in its causal chain represents a 401
+   * Unauthorized error (either an {@link OAuthException} or {@link HttpResponseException} with
+   * status code 401).
+   */
+  static boolean isUnauthorizedException(@Nullable Throwable t) {
+    while (t != null) {
+      if (t instanceof OAuthException && ((OAuthException) t).getHttpStatusCode() == 401) {
+        return true;
+      }
+      if (t instanceof HttpResponseException
+          && ((HttpResponseException) t).getStatusCode() == 401) {
+        return true;
+      }
+      Throwable cause = t.getCause();
+      if (cause == t) {
+        break;
+      }
+      t = cause;
+    }
+    return false;
   }
 
   private OAuth2Utils() {}

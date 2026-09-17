@@ -120,6 +120,11 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    return refreshAccessToken(this.transportFactory);
+  }
+
+  @Override
+  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(retrieveSubjectToken(), getSubjectTokenType())
             .setAudience(getAudience());
@@ -130,7 +135,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
       stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
     }
 
-    return exchangeExternalCredentialForAccessToken(stsTokenExchangeRequest.build());
+    return exchangeExternalCredentialForAccessToken(
+        stsTokenExchangeRequest.build(), transportFactory);
   }
 
   @Override

@@ -89,10 +89,15 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
   private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
   private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
+  private final Queue<Integer> stsStatusCodeSequence = new ArrayDeque<>();
   private final List<MockLowLevelHttpRequest> requests = new ArrayList<>();
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
+
+  public void addStsStatusCodeSequence(Integer... statusCodes) {
+    Collections.addAll(stsStatusCodeSequence, statusCodes);
+  }
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
@@ -173,6 +178,19 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
 
               // Store STS content as multiple calls are made using this transport.
               stsContent = getContentAsString();
+
+              int statusCode =
+                  !stsStatusCodeSequence.isEmpty() ? stsStatusCodeSequence.poll() : 200;
+              if (statusCode != 200) {
+                GenericJson errorResponse = new GenericJson();
+                errorResponse.setFactory(JSON_FACTORY);
+                errorResponse.put("error", "invalid_token");
+                errorResponse.put("error_description", "Invalid or expired client certificate.");
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(statusCode)
+                    .setContentType(Json.MEDIA_TYPE)
+                    .setContent(errorResponse.toPrettyString());
+              }
 
               assertEquals(EXPECTED_GRANT_TYPE, query.get("grant_type"));
               assertNotNull(query.get("subject_token_type"));
