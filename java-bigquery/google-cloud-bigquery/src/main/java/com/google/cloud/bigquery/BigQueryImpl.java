@@ -24,7 +24,6 @@ import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.services.bigquery.model.ErrorProto;
@@ -394,8 +393,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     if (options.getCredentials() != null) {
       settingsBuilder.setCredentialsProvider(
           FixedCredentialsProvider.create(options.getCredentials()));
-    } else {
-      settingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     }
     HeaderProvider headerProvider = options.getMergedHeaderProvider(null);
     if (headerProvider != null) {
