@@ -7550,6 +7550,43 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testQueryRowBasedWithArrowFormat() throws InterruptedException {
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("hello", row.get("name").getStringValue());
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(15000, result.getTotalRows());
+    long count = 0;
+    for (FieldValueList row : result.iterateAll()) {
+      count++;
+      assertEquals(count, row.get("x").getLongValue());
+    }
+    assertEquals(15000, count);
+  }
+
+  @Test
   void testUniverseDomainWithInvalidUniverseDomain() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
