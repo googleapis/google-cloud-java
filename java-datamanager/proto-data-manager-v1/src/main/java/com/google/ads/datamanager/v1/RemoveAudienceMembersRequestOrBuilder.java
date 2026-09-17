@@ -176,10 +176,10 @@ public interface RemoveAudienceMembersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-   * uploads. The encoding type of the user identifiers. Applies to only the
-   * outer encoding for encrypted user identifiers. For non `UserData` uploads,
-   * this field is ignored.
+   * Optional. Must be provided for
+   * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+   * of the user identifiers. Applies to only the outer encoding for encrypted
+   * user identifiers. For non `UserData` uploads, this field is ignored.
    * </pre>
    *
    * <code>
@@ -194,10 +194,10 @@ public interface RemoveAudienceMembersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Required for [UserData][google.ads.datamanager.v1.UserData]
-   * uploads. The encoding type of the user identifiers. Applies to only the
-   * outer encoding for encrypted user identifiers. For non `UserData` uploads,
-   * this field is ignored.
+   * Optional. Must be provided for
+   * [UserData][google.ads.datamanager.v1.UserData] uploads. The encoding type
+   * of the user identifiers. Applies to only the outer encoding for encrypted
+   * user identifiers. For non `UserData` uploads, this field is ignored.
    * </pre>
    *
    * <code>

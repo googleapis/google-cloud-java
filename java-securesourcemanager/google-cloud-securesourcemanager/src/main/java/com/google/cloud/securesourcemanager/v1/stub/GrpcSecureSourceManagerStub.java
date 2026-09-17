@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -62,6 +63,8 @@ import com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobResponse;
+import com.google.cloud.securesourcemanager.v1.FetchRefsRequest;
+import com.google.cloud.securesourcemanager.v1.FetchRefsResponse;
 import com.google.cloud.securesourcemanager.v1.FetchTreeRequest;
 import com.google.cloud.securesourcemanager.v1.FetchTreeResponse;
 import com.google.cloud.securesourcemanager.v1.GetBranchRuleRequest;
@@ -508,6 +511,17 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<FetchRefsRequest, FetchRefsResponse>
+      fetchRefsMethodDescriptor =
+          MethodDescriptor.<FetchRefsRequest, FetchRefsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.securesourcemanager.v1.SecureSourceManager/FetchRefs")
+              .setRequestMarshaller(ProtoUtils.marshaller(FetchRefsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(FetchRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<CreateIssueRequest, Operation> createIssueMethodDescriptor =
       MethodDescriptor.<CreateIssueRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -866,6 +880,8 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
   private final UnaryCallable<FetchTreeRequest, FetchTreeResponse> fetchTreeCallable;
   private final UnaryCallable<FetchTreeRequest, FetchTreePagedResponse> fetchTreePagedCallable;
   private final UnaryCallable<FetchBlobRequest, FetchBlobResponse> fetchBlobCallable;
+  private final UnaryCallable<FetchRefsRequest, FetchRefsResponse> fetchRefsCallable;
+  private final UnaryCallable<FetchRefsRequest, FetchRefsPagedResponse> fetchRefsPagedCallable;
   private final UnaryCallable<CreateIssueRequest, Operation> createIssueCallable;
   private final OperationCallable<CreateIssueRequest, Issue, OperationMetadata>
       createIssueOperationCallable;
@@ -1338,6 +1354,17 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
     GrpcCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobTransportSettings =
         GrpcCallSettings.<FetchBlobRequest, FetchBlobResponse>newBuilder()
             .setMethodDescriptor(fetchBlobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getRepository())
+            .build();
+    GrpcCallSettings<FetchRefsRequest, FetchRefsResponse> fetchRefsTransportSettings =
+        GrpcCallSettings.<FetchRefsRequest, FetchRefsResponse>newBuilder()
+            .setMethodDescriptor(fetchRefsMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1854,6 +1881,12 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
     this.fetchBlobCallable =
         callableFactory.createUnaryCallable(
             fetchBlobTransportSettings, settings.fetchBlobSettings(), clientContext);
+    this.fetchRefsCallable =
+        callableFactory.createUnaryCallable(
+            fetchRefsTransportSettings, settings.fetchRefsSettings(), clientContext);
+    this.fetchRefsPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchRefsTransportSettings, settings.fetchRefsSettings(), clientContext);
     this.createIssueCallable =
         callableFactory.createUnaryCallable(
             createIssueTransportSettings, settings.createIssueSettings(), clientContext);
@@ -2362,6 +2395,16 @@ public class GrpcSecureSourceManagerStub extends SecureSourceManagerStub {
   @Override
   public UnaryCallable<FetchBlobRequest, FetchBlobResponse> fetchBlobCallable() {
     return fetchBlobCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchRefsRequest, FetchRefsResponse> fetchRefsCallable() {
+    return fetchRefsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchRefsRequest, FetchRefsPagedResponse> fetchRefsPagedCallable() {
+    return fetchRefsPagedCallable;
   }
 
   @Override

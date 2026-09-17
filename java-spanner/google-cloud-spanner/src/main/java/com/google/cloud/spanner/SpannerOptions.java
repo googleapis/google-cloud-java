@@ -1669,6 +1669,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * href="https://github.com/googleapis/googleapis/blob/master/google/spanner/v1/spanner_gapic.yaml">spanner_gapic.yaml</a>.
      * Retries are configured for idempotent methods but not for non-idempotent methods.
      *
+     * <p>For streaming queries and reads, configure {@code executeStreamingSqlSettings()} and
+     * {@code streamingReadSettings()}, respectively. Set {@code maxAttempts=1} to disable streaming
+     * retries; an empty set of retryable codes does not disable retries for intrinsically retryable
+     * errors. Defaults allow unlimited streaming resumes. When customizing retry settings, set the
+     * total timeout explicitly: calling {@code toBuilder()} on the stub's retry settings copies
+     * GAPIC's generated one-hour {@code totalTimeout}; set it to zero explicitly for unlimited
+     * resumes. Limits apply to consecutive failures and reset when the stream makes progress by
+     * returning a new resume token.
+     *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
      * <pre><code>

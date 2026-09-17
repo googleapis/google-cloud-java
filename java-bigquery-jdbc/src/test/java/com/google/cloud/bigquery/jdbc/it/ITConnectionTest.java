@@ -35,7 +35,6 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -54,11 +53,6 @@ public class ITConnectionTest {
     DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
-  }
-
-  @AfterAll
-  public static void afterClass() throws InterruptedException {
-    // Shared dataset cleanup is handled by shutdown hook
   }
 
   @Test
@@ -435,5 +429,20 @@ public class ITConnectionTest {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertTrue(connection.isValid(0)); // 0 seconds timeout
     connection.close();
+  }
+
+  @Test
+  public void testDefaultDatasetColonDelimiter() throws SQLException {
+    String urlWithColon =
+        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + ":" + DATASET + ";";
+    try (Connection connection = DriverManager.getConnection(urlWithColon)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      try (Statement stmt = connection.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_NAME)) {
+        assertTrue(rs.next());
+        assertTrue(rs.getMetaData().getColumnCount() > 0);
+      }
+    }
   }
 }

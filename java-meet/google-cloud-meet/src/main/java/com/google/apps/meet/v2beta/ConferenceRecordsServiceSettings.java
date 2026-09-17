@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListCon
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2beta.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -182,6 +183,18 @@ public class ConferenceRecordsServiceSettings
       listTranscriptEntriesSettings() {
     return ((ConferenceRecordsServiceStubSettings) getStubSettings())
         .listTranscriptEntriesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSmartNote. */
+  public UnaryCallSettings<GetSmartNoteRequest, SmartNote> getSmartNoteSettings() {
+    return ((ConferenceRecordsServiceStubSettings) getStubSettings()).getSmartNoteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSmartNotes. */
+  public PagedCallSettings<
+          ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+      listSmartNotesSettings() {
+    return ((ConferenceRecordsServiceStubSettings) getStubSettings()).listSmartNotesSettings();
   }
 
   public static final ConferenceRecordsServiceSettings create(
@@ -376,6 +389,18 @@ public class ConferenceRecordsServiceSettings
             ListTranscriptEntriesPagedResponse>
         listTranscriptEntriesSettings() {
       return getStubSettingsBuilder().listTranscriptEntriesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSmartNote. */
+    public UnaryCallSettings.Builder<GetSmartNoteRequest, SmartNote> getSmartNoteSettings() {
+      return getStubSettingsBuilder().getSmartNoteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSmartNotes. */
+    public PagedCallSettings.Builder<
+            ListSmartNotesRequest, ListSmartNotesResponse, ListSmartNotesPagedResponse>
+        listSmartNotesSettings() {
+      return getStubSettingsBuilder().listSmartNotesSettings();
     }
 
     @Override

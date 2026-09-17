@@ -63,6 +63,12 @@
           "rpcs": {
             "CalendarMode": {
               "methods": ["calendarMode", "calendarMode", "calendarModeCallable"]
+            },
+            "Capacity": {
+              "methods": ["capacity", "capacity", "capacityCallable"]
+            },
+            "CapacityHistory": {
+              "methods": ["capacityHistory", "capacityHistory", "capacityHistoryCallable"]
             }
           }
         }
@@ -1928,6 +1934,18 @@
         }
       }
     },
+    "ProjectViews": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProjectViewsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            }
+          }
+        }
+      }
+    },
     "Projects": {
       "clients": {
         "grpc": {
@@ -3090,6 +3108,9 @@
           "rpcs": {
             "Get": {
               "methods": ["get", "get", "getCallable"]
+            },
+            "GetHealth": {
+              "methods": ["getHealthAsync", "getHealthAsync", "getHealthOperationCallable", "getHealthCallable"]
             },
             "GetVersion": {
               "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]

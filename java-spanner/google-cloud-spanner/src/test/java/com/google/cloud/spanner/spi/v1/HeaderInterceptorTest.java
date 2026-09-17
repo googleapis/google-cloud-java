@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import static com.google.api.gax.grpc.GrpcCallContext.TRACER_KEY;
+import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY;
 import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_HEADER_KEY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -25,6 +26,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.spanner.CompositeTracer;
 import com.google.cloud.spanner.SpannerRpcMetrics;
+import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.collect.ImmutableList;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -170,18 +172,22 @@ public class HeaderInterceptorTest {
           }
         };
 
-    CallOptions callOptions = CallOptions.DEFAULT.withOption(TRACER_KEY, throwingTracer);
+    XGoogSpannerRequestId requestId = XGoogSpannerRequestId.of(1, 1, 1, 1);
+    CallOptions callOptions =
+        CallOptions.DEFAULT
+            .withOption(TRACER_KEY, throwingTracer)
+            .withOption(REQUEST_ID_CALL_OPTIONS_KEY, requestId);
     MethodDescriptor<String, String> methodDescriptor = createMethodDescriptor();
     FakeChannel channel = new FakeChannel();
 
-    String requestId = "1.0000000000000001.1.1.1.1";
-    RequestIdTargetTracker.record(requestId, "test-database", "endpoint-1", 100L, false);
+    RequestIdTargetTracker.record(
+        requestId.getLogicalRequestKey(), "test-database", "endpoint-1", 100L, false);
     assertNotNull(RequestIdTargetTracker.get(requestId));
 
     ClientCall<String, String> call =
         interceptor.interceptCall(methodDescriptor, callOptions, channel);
     CapturingListener<String> responseListener = new CapturingListener<>();
-    call.start(responseListener, createDefaultHeaders(requestId));
+    call.start(responseListener, createDefaultHeaders(requestId.getHeaderValue()));
 
     // Deliver onClose - even though metric recording throws, onClose must propagate downstream
     channel.lastListener.onClose(Status.OK, new Metadata());

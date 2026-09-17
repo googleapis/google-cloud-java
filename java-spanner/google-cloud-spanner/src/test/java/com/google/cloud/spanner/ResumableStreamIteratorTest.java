@@ -23,10 +23,11 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.client.util.BackOff;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
 import com.google.cloud.spanner.XGoogSpannerRequestId.NoopRequestIdCreator;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -42,16 +43,14 @@ import io.grpc.protobuf.ProtoUtils;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.context.Scope;
-import java.io.IOException;
-import java.lang.reflect.Field;
+import io.opentelemetry.api.common.Attributes;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.function.LongSupplier;
 import javax.annotation.Nullable;
-import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -150,6 +149,7 @@ public class ResumableStreamIteratorTest {
 
   Starter starter = Mockito.mock(Starter.class);
   ResumableStreamIterator resumableStreamIterator;
+  private LongSupplier nanoTime = System::nanoTime;
 
   @Before
   public void setUp() {
@@ -159,17 +159,38 @@ public class ResumableStreamIteratorTest {
   }
 
   private void initWithLimit(int maxBufferSize) {
+    initWithLimitAndRetrySettings(
+        maxBufferSize,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(10))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1000))
+            .build());
+  }
 
+  private void initWithLimitAndRetrySettings(int maxBufferSize, RetrySettings retrySettings) {
+    initWithLimitAndRetrySettings(
+        maxBufferSize,
+        retrySettings,
+        new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false));
+  }
+
+  private void initWithLimitAndRetrySettings(
+      int maxBufferSize, RetrySettings retrySettings, TraceWrapper tracer) {
     resumableStreamIterator =
         new ResumableStreamIterator(
             maxBufferSize,
             "",
             new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
-            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            tracer,
             DefaultErrorHandler.INSTANCE,
-            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            retrySettings,
             SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
             NoopRequestIdCreator.INSTANCE) {
+          @Override
+          long nanoTime() {
+            return nanoTime.getAsLong();
+          }
+
           @Override
           AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
               @Nullable ByteString resumeToken,
@@ -195,14 +216,14 @@ public class ResumableStreamIteratorTest {
   public void closedOTSpan() {
     SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenTelemetryTraces();
-    Assume.assumeTrue(
-        "This test is only supported on JDK11 and lower",
-        JavaVersionUtil.getJavaMajorVersion() < 12);
 
     io.opentelemetry.api.trace.Span oTspan = mock(io.opentelemetry.api.trace.Span.class);
     ISpan span = new OpenTelemetrySpan(oTspan);
-    when(oTspan.makeCurrent()).thenReturn(mock(Scope.class));
-    setInternalState(ResumableStreamIterator.class, this.resumableStreamIterator, "span", span);
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    when(tracer.spanBuilderWithExplicitParent(
+            Mockito.anyString(), Mockito.any(), Mockito.any(Attributes.class)))
+        .thenReturn(span);
+    initWithLimitAndRetrySettings(Integer.MAX_VALUE, RetrySettings.newBuilder().build(), tracer);
 
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
@@ -220,12 +241,13 @@ public class ResumableStreamIteratorTest {
   public void closedOCSpan() {
     SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenCensusTraces();
-    Assume.assumeTrue(
-        "This test is only supported on JDK11 and lower",
-        JavaVersionUtil.getJavaMajorVersion() < 12);
     Span mockSpan = mock(Span.class);
     ISpan span = new OpenCensusSpan(mockSpan);
-    setInternalState(ResumableStreamIterator.class, this.resumableStreamIterator, "span", span);
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    when(tracer.spanBuilderWithExplicitParent(
+            Mockito.anyString(), Mockito.any(), Mockito.any(Attributes.class)))
+        .thenReturn(span);
+    initWithLimitAndRetrySettings(Integer.MAX_VALUE, RetrySettings.newBuilder().build(), tracer);
 
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
     Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
@@ -303,32 +325,288 @@ public class ResumableStreamIteratorTest {
   }
 
   @Test
-  public void retryableErrorWithoutRetryInfo() throws IOException {
-    Assume.assumeTrue(
-        "This test is only supported on JDK11 and lower",
-        JavaVersionUtil.getJavaMajorVersion() < 12);
-
-    BackOff backOff = mock(BackOff.class);
-    Mockito.when(backOff.nextBackOffMillis()).thenReturn(1L);
-    setInternalState(
-        ResumableStreamIterator.class, this.resumableStreamIterator, "backOff", backOff);
-
+  public void retryableErrorWithoutRetryInfo() {
     ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
-    Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
     Mockito.when(s1.next())
-        .thenReturn(resultSet(ByteString.copyFromUtf8("r1"), "a"))
         .thenThrow(
             new RetryableException(
                 ErrorCode.UNAVAILABLE, "failed by test", Status.UNAVAILABLE.asRuntimeException()));
 
     ResultSetStream s2 = Mockito.mock(ResultSetStream.class);
-    Mockito.when(starter.startStream(ByteString.copyFromUtf8("r1"), null))
-        .thenReturn(new ResultSetIterator(s2));
     Mockito.when(s2.next())
+        .thenReturn(resultSet(ByteString.copyFromUtf8("r1"), "a"))
         .thenReturn(resultSet(ByteString.copyFromUtf8("r2"), "b"))
         .thenReturn(null);
+
+    Mockito.when(starter.startStream(null, null))
+        .thenReturn(new ResultSetIterator(s1))
+        .thenReturn(new ResultSetIterator(s2));
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b").inOrder();
-    verify(backOff).nextBackOffMillis();
+    Mockito.verify(starter, Mockito.times(2)).startStream(null, null);
+  }
+
+  @Test(timeout = 60000L)
+  public void customMaxAttempts_stopsResumeAfterMaxAttempts() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1L))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1L))
+            .setRetryDelayMultiplier(1.0)
+            .setMaxAttempts(2)
+            .setTotalTimeoutDuration(java.time.Duration.ofSeconds(30L))
+            .build());
+
+    // Every stream fails with a retryable error before returning any data. Without a bound on the
+    // number of attempts, this loops forever.
+    Mockito.when(starter.startStream(Mockito.any(), Mockito.any()))
+        .thenAnswer(
+            invocation -> {
+              ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+              Mockito.when(stream.next())
+                  .thenThrow(new RetryableException(errorCodeParameter, "failed by test"));
+              return new ResultSetIterator(stream);
+            });
+
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+    assertEquals(errorCodeParameter, e.getErrorCode());
+    Mockito.verify(starter, Mockito.times(2)).startStream(Mockito.any(), Mockito.any());
+  }
+
+  @Test(timeout = 60000L)
+  public void customMaxAttemptsWithoutTotalTimeout_makesExactlyMaxAttempts() {
+    // A total timeout of zero means that no total timeout has been set. The number of attempts
+    // must then be limited by maxAttempts alone: the unset total timeout must not be interpreted
+    // as a (near-)zero time budget that stops the retries before maxAttempts has been reached.
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(5L))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(5L))
+            .setRetryDelayMultiplier(1.0)
+            .setMaxAttempts(3)
+            .build());
+
+    // Every stream fails with a retryable error without retry info, so the exponential backoff
+    // determines the retry delays.
+    Mockito.when(starter.startStream(Mockito.any(), Mockito.any()))
+        .thenAnswer(
+            invocation -> {
+              ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+              Mockito.when(stream.next())
+                  .thenThrow(
+                      new RetryableException(
+                          errorCodeParameter,
+                          "failed by test",
+                          errorCodeParameter.getGrpcStatus().asRuntimeException()));
+              return new ResultSetIterator(stream);
+            });
+
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+    assertEquals(errorCodeParameter, e.getErrorCode());
+    Mockito.verify(starter, Mockito.times(3)).startStream(Mockito.any(), Mockito.any());
+  }
+
+  @Test(timeout = 60000L)
+  public void repeatedIdenticalResumeToken_doesNotResetAttempts() {
+    // A stream that repeatedly returns the same resume token has not made any progress: only a
+    // new resume token resets the budget for consecutive failed attempts. Without this, a stream
+    // that always returns the token that was used to resume it and then fails would retry
+    // forever, regardless of maxAttempts.
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1L))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(1L))
+            .setRetryDelayMultiplier(1.0)
+            .setMaxAttempts(2)
+            .setTotalTimeoutDuration(java.time.Duration.ofSeconds(30L))
+            .build());
+
+    ByteString token = ByteString.copyFromUtf8("r1");
+    ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
+    Mockito.when(s1.next())
+        .thenReturn(resultSet(token, "a"))
+        .thenThrow(new RetryableException(errorCodeParameter, "failed by test"));
+    Mockito.when(starter.startStream(null, null)).thenReturn(new ResultSetIterator(s1));
+    // Every resumed stream returns the same resume token again and then fails.
+    Mockito.when(starter.startStream(token, null))
+        .thenAnswer(
+            invocation -> {
+              ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+              Mockito.when(stream.next())
+                  .thenReturn(resultSet(token, "x"))
+                  .thenThrow(new RetryableException(errorCodeParameter, "failed by test"));
+              return new ResultSetIterator(stream);
+            });
+
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+    assertEquals(errorCodeParameter, e.getErrorCode());
+    Mockito.verify(starter, Mockito.times(1)).startStream(null, null);
+    Mockito.verify(starter, Mockito.times(1)).startStream(token, null);
+  }
+
+  @Test
+  public void activeRetrySequence_preservesNegativeOneStartTime() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofSeconds(1))
+            .build());
+    SpannerException exception = new RetryableException(errorCodeParameter, "failed by test");
+    nanoTime = () -> -1L;
+    assertEquals(1L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+    nanoTime = () -> TimeUnit.SECONDS.toNanos(1L);
+    assertThat(
+            assertThrows(
+                SpannerException.class,
+                () -> resumableStreamIterator.checkRetryBudgetAndGetDelay(exception)))
+        .isSameInstanceAs(exception);
+  }
+
+  @Test
+  public void totalTimeout_largeDelayDoesNotOverflow() {
+    assertThat(totalTimeoutExceeded(1000L, 100L, Long.MAX_VALUE)).isTrue();
+  }
+
+  @Test
+  public void totalTimeout_negativeElapsedIsClamped() {
+    assertThat(totalTimeoutExceeded(Long.MAX_VALUE, -60000L, Long.MAX_VALUE)).isTrue();
+    assertThat(totalTimeoutExceeded(Long.MAX_VALUE, -60000L, 0L)).isFalse();
+  }
+
+  @Test
+  public void totalTimeout_elapsedBudgetAndNegativeDelay() {
+    assertThat(totalTimeoutExceeded(1000L, 60000L, -2L)).isTrue();
+    assertThat(totalTimeoutExceeded(1000L, -60000L, -2L)).isFalse();
+    assertThat(totalTimeoutExceeded(1000L, -60000L, 1000L)).isTrue();
+  }
+
+  private boolean totalTimeoutExceeded(long timeoutMillis, long elapsedMillis, long delayMillis) {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(timeoutMillis))
+            .build());
+    SpannerException exception =
+        Mockito.spy(new RetryableException(errorCodeParameter, "failed by test"));
+    when(exception.getRetryDelayInMillis()).thenReturn(0L);
+    nanoTime = () -> 0L;
+    assertEquals(0L, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+    nanoTime = () -> TimeUnit.MILLISECONDS.toNanos(elapsedMillis);
+    when(exception.getRetryDelayInMillis()).thenReturn(delayMillis);
+    try {
+      assertEquals(delayMillis, resumableStreamIterator.checkRetryBudgetAndGetDelay(exception));
+      return false;
+    } catch (SpannerException e) {
+      assertThat(e).isSameInstanceAs(exception);
+      return true;
+    }
+  }
+
+  @Test
+  public void retryBudget_usesConfiguredBackoffWithoutRetryInfo() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(100))
+            .build());
+    SpannerException exception =
+        new RetryableException(
+            errorCodeParameter,
+            "failed by test",
+            errorCodeParameter.getGrpcStatus().asRuntimeException());
+    long delayMillis = resumableStreamIterator.checkRetryBudgetAndGetDelay(exception);
+    assertThat(delayMillis).isAtLeast(50L);
+    assertThat(delayMillis).isAtMost(150L);
+  }
+
+  @Test
+  public void rawGapicSettings_useConfiguredTimeoutWithoutSpecialCase() {
+    RetrySettings settings =
+        SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings();
+    initWithLimitAndRetrySettings(Integer.MAX_VALUE, settings);
+    SpannerException exception =
+        Mockito.spy(new RetryableException(errorCodeParameter, "failed by test"));
+    when(exception.getRetryDelayInMillis())
+        .thenReturn(settings.getTotalTimeoutDuration().toMillis());
+    assertThat(
+            assertThrows(
+                SpannerException.class,
+                () -> resumableStreamIterator.checkRetryBudgetAndGetDelay(exception)))
+        .isSameInstanceAs(exception);
+  }
+
+  @Test(timeout = 60000L)
+  public void customTotalTimeoutSmallerThanRetryDelay_doesNotRetry() {
+    // Retrying is only allowed if the retry delay still fits in the remaining total timeout
+    // budget. A retry delay that is larger than the total timeout means that the first failure
+    // already exhausts the budget.
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofSeconds(1L))
+            .setMaxRetryDelayDuration(java.time.Duration.ofSeconds(1L))
+            .setRetryDelayMultiplier(1.0)
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(100L))
+            .build());
+
+    Mockito.when(starter.startStream(Mockito.any(), Mockito.any()))
+        .thenAnswer(
+            invocation -> {
+              ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+              Mockito.when(stream.next())
+                  .thenThrow(
+                      new RetryableException(
+                          errorCodeParameter,
+                          "failed by test",
+                          errorCodeParameter.getGrpcStatus().asRuntimeException()));
+              return new ResultSetIterator(stream);
+            });
+
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+    assertEquals(errorCodeParameter, e.getErrorCode());
+    Mockito.verify(starter, Mockito.times(1)).startStream(Mockito.any(), Mockito.any());
+    // The one-second retry delay must not have been slept before giving up.
+    assertThat(stopwatch.elapsed(TimeUnit.MILLISECONDS)).isLessThan(5000L);
+  }
+
+  @Test(timeout = 60000L)
+  public void customTotalTimeout_stopsResumeWhenTotalTimeoutIsExhausted() {
+    initWithLimitAndRetrySettings(
+        Integer.MAX_VALUE,
+        RetrySettings.newBuilder()
+            .setInitialRetryDelayDuration(java.time.Duration.ofMillis(1L))
+            .setMaxRetryDelayDuration(java.time.Duration.ofMillis(10L))
+            .setRetryDelayMultiplier(1.0)
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(50L))
+            .build());
+
+    // Every stream fails with a retryable error without retry info, so the exponential backoff
+    // determines the retry delays. Without a bound on the total time spent retrying, this loops
+    // forever.
+    Mockito.when(starter.startStream(Mockito.any(), Mockito.any()))
+        .thenAnswer(
+            invocation -> {
+              ResultSetStream stream = Mockito.mock(ResultSetStream.class);
+              Mockito.when(stream.next())
+                  .thenThrow(
+                      new RetryableException(
+                          errorCodeParameter,
+                          "failed by test",
+                          errorCodeParameter.getGrpcStatus().asRuntimeException()));
+              return new ResultSetIterator(stream);
+            });
+
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> consume(resumableStreamIterator));
+    assertEquals(errorCodeParameter, e.getErrorCode());
   }
 
   @Test
@@ -518,19 +796,5 @@ public class ResumableStreamIteratorTest {
       }
     }
     return r;
-  }
-
-  /**
-   * Sets a private static final field to a specific value. This is only supported on Java11 and
-   * lower.
-   */
-  private static void setInternalState(Class<?> c, Object target, String field, Object value) {
-    try {
-      Field f = c.getDeclaredField(field);
-      f.setAccessible(true);
-      f.set(target, value);
-    } catch (Exception e) {
-      throw new RuntimeException("Unable to set internal state on a private field.", e);
-    }
   }
 }

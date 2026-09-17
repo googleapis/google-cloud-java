@@ -286,14 +286,29 @@ public class ClientConfigurationManager implements AutoCloseable {
     return result;
   }
 
-  private synchronized void sendRequestWithRetries(
+  private void sendRequestWithRetries(
       int attemptCount, CompletableFuture<ClientConfiguration> finalResult) {
-    if (closing) {
+    // Nothing after the synchronized block below may run while holding this monitor, because both
+    // completing finalResult and registering the continuation can run alien code inline on the
+    // current thread: completing the future runs whatever the caller of start() chained onto it,
+    // and the continuation reaches registered ConfigListeners through setClientConfiguration() ->
+    // notifyListeners(). Notifying a listener under this monitor deadlocks against any thread that
+    // holds the listener's own lock and calls a synchronized method such as
+    // getClientConfiguration().
+    @Nullable CompletableFuture<ClientConfiguration> currentRequest = null;
+    synchronized (this) {
+      if (!closing) {
+        // Note that this only starts the call: the response can land before whenComplete() is
+        // registered below, in which case the continuation runs inline on this thread.
+        currentRequest = sendRequest();
+      }
+    }
+
+    if (currentRequest == null) {
       finalResult.completeExceptionally(new RuntimeException("Client is closing"));
       return;
     }
 
-    CompletableFuture<ClientConfiguration> currentRequest = sendRequest();
     // We only schedule the next poll after successfully getting a client config
     // from the server.
     @SuppressWarnings("UnusedVariable")

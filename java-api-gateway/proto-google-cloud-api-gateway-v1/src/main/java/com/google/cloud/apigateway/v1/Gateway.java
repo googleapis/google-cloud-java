@@ -59,6 +59,8 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     apiConfig_ = "";
     state_ = 0;
     defaultHostname_ = "";
+    streamingMode_ = 0;
+    effectiveStreamingMode_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -324,6 +326,334 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.apigateway.v1.Gateway.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Streaming mode for a Gateway.
+   * This enum is frozen. No values are expected to be added in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.apigateway.v1.Gateway.StreamingMode}
+   */
+  public enum StreamingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Lets the service select the streaming mode.
+     * </pre>
+     *
+     * <code>STREAMING_MODE_UNSPECIFIED = 0;</code>
+     */
+    STREAMING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Enables streaming. The gateway supports Server-Sent Events (SSE), HTTP/2
+     * streaming, HTTP chunked transfer, WebSockets, and gRPC bidirectional
+     * streaming.
+     * </pre>
+     *
+     * <code>STREAMING_MODE_ENABLED = 1;</code>
+     */
+    STREAMING_MODE_ENABLED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "StreamingMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lets the service select the streaming mode.
+     * </pre>
+     *
+     * <code>STREAMING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STREAMING_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables streaming. The gateway supports Server-Sent Events (SSE), HTTP/2
+     * streaming, HTTP chunked transfer, WebSockets, and gRPC bidirectional
+     * streaming.
+     * </pre>
+     *
+     * <code>STREAMING_MODE_ENABLED = 1;</code>
+     */
+    public static final int STREAMING_MODE_ENABLED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StreamingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StreamingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STREAMING_MODE_UNSPECIFIED;
+        case 1:
+          return STREAMING_MODE_ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StreamingMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StreamingMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StreamingMode>() {
+          public StreamingMode findValueByNumber(int number) {
+            return StreamingMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.apigateway.v1.Gateway.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final StreamingMode[] VALUES = values();
+
+    public static StreamingMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StreamingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.apigateway.v1.Gateway.StreamingMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The streaming mode a Gateway is served with.
+   * This enum is frozen. No values are expected to be added in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode}
+   */
+  public enum EffectiveStreamingMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the service has not resolved a mode. Every gateway
+     * returned by `GetGateway` and `ListGateways` carries a resolved mode, so
+     * this value should not be returned under normal circumstances.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_UNSPECIFIED = 0;</code>
+     */
+    EFFECTIVE_STREAMING_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the gateway does not support streaming.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_DISABLED = 1;</code>
+     */
+    EFFECTIVE_STREAMING_MODE_DISABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the gateway supports streaming.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_ENABLED = 2;</code>
+     */
+    EFFECTIVE_STREAMING_MODE_ENABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "EffectiveStreamingMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the service has not resolved a mode. Every gateway
+     * returned by `GetGateway` and `ListGateways` carries a resolved mode, so
+     * this value should not be returned under normal circumstances.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EFFECTIVE_STREAMING_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the gateway does not support streaming.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_DISABLED = 1;</code>
+     */
+    public static final int EFFECTIVE_STREAMING_MODE_DISABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the gateway supports streaming.
+     * </pre>
+     *
+     * <code>EFFECTIVE_STREAMING_MODE_ENABLED = 2;</code>
+     */
+    public static final int EFFECTIVE_STREAMING_MODE_ENABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EffectiveStreamingMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EffectiveStreamingMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EFFECTIVE_STREAMING_MODE_UNSPECIFIED;
+        case 1:
+          return EFFECTIVE_STREAMING_MODE_DISABLED;
+        case 2:
+          return EFFECTIVE_STREAMING_MODE_ENABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EffectiveStreamingMode>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EffectiveStreamingMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EffectiveStreamingMode>() {
+              public EffectiveStreamingMode findValueByNumber(int number) {
+                return EffectiveStreamingMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.apigateway.v1.Gateway.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final EffectiveStreamingMode[] VALUES = values();
+
+    public static EffectiveStreamingMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EffectiveStreamingMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode)
   }
 
   private int bitField0_;
@@ -763,8 +1093,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+   * Output only. The default hostname that serves traffic for this Gateway.
    * </pre>
    *
    * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -788,8 +1117,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+   * Output only. The default hostname that serves traffic for this Gateway.
    * </pre>
    *
    * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -807,6 +1135,107 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int STREAMING_MODE_FIELD_NUMBER = 11;
+  private int streamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+   * change it on update is rejected. If unset, the service selects the mode.
+   * This field records only what was requested and is never modified by the
+   * service; read `effective_streaming_mode` for the mode the gateway is served
+   * with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  @java.lang.Override
+  public int getStreamingModeValue() {
+    return streamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+   * change it on update is rejected. If unset, the service selects the mode.
+   * This field records only what was requested and is never modified by the
+   * service; read `effective_streaming_mode` for the mode the gateway is served
+   * with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.apigateway.v1.Gateway.StreamingMode getStreamingMode() {
+    com.google.cloud.apigateway.v1.Gateway.StreamingMode result =
+        com.google.cloud.apigateway.v1.Gateway.StreamingMode.forNumber(streamingMode_);
+    return result == null
+        ? com.google.cloud.apigateway.v1.Gateway.StreamingMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EFFECTIVE_STREAMING_MODE_FIELD_NUMBER = 12;
+  private int effectiveStreamingMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The streaming mode this gateway is actually served with, which
+   * the service resolves at creation from `streaming_mode`, the referenced API
+   * Config, and the platform default at the time. Read this rather than
+   * `streaming_mode` to determine whether a gateway supports streaming.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveStreamingMode.
+   */
+  @java.lang.Override
+  public int getEffectiveStreamingModeValue() {
+    return effectiveStreamingMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The streaming mode this gateway is actually served with, which
+   * the service resolves at creation from `streaming_mode`, the referenced API
+   * Config, and the platform default at the time. Read this rather than
+   * `streaming_mode` to determine whether a gateway supports streaming.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveStreamingMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode getEffectiveStreamingMode() {
+    com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode result =
+        com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode.forNumber(
+            effectiveStreamingMode_);
+    return result == null
+        ? com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -845,6 +1274,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultHostname_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, defaultHostname_);
+    }
+    if (streamingMode_
+        != com.google.cloud.apigateway.v1.Gateway.StreamingMode.STREAMING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(11, streamingMode_);
+    }
+    if (effectiveStreamingMode_
+        != com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode
+            .EFFECTIVE_STREAMING_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, effectiveStreamingMode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -886,6 +1326,17 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(defaultHostname_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, defaultHostname_);
     }
+    if (streamingMode_
+        != com.google.cloud.apigateway.v1.Gateway.StreamingMode.STREAMING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, streamingMode_);
+    }
+    if (effectiveStreamingMode_
+        != com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode
+            .EFFECTIVE_STREAMING_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, effectiveStreamingMode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -915,6 +1366,8 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     if (!getApiConfig().equals(other.getApiConfig())) return false;
     if (state_ != other.state_) return false;
     if (!getDefaultHostname().equals(other.getDefaultHostname())) return false;
+    if (streamingMode_ != other.streamingMode_) return false;
+    if (effectiveStreamingMode_ != other.effectiveStreamingMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -948,6 +1401,10 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + DEFAULT_HOSTNAME_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultHostname().hashCode();
+    hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + streamingMode_;
+    hash = (37 * hash) + EFFECTIVE_STREAMING_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + effectiveStreamingMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1138,6 +1595,8 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       apiConfig_ = "";
       state_ = 0;
       defaultHostname_ = "";
+      streamingMode_ = 0;
+      effectiveStreamingMode_ = 0;
       return this;
     }
 
@@ -1202,6 +1661,12 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.defaultHostname_ = defaultHostname_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.streamingMode_ = streamingMode_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.effectiveStreamingMode_ = effectiveStreamingMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1247,6 +1712,12 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
         defaultHostname_ = other.defaultHostname_;
         bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (other.streamingMode_ != 0) {
+        setStreamingModeValue(other.getStreamingModeValue());
+      }
+      if (other.effectiveStreamingMode_ != 0) {
+        setEffectiveStreamingModeValue(other.getEffectiveStreamingModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1330,6 +1801,18 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 88:
+              {
+                streamingMode_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+            case 96:
+              {
+                effectiveStreamingMode_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2423,8 +2906,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The default API Gateway host name of the form
-     * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+     * Output only. The default hostname that serves traffic for this Gateway.
      * </pre>
      *
      * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2447,8 +2929,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The default API Gateway host name of the form
-     * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+     * Output only. The default hostname that serves traffic for this Gateway.
      * </pre>
      *
      * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2471,8 +2952,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The default API Gateway host name of the form
-     * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+     * Output only. The default hostname that serves traffic for this Gateway.
      * </pre>
      *
      * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2494,8 +2974,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The default API Gateway host name of the form
-     * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+     * Output only. The default hostname that serves traffic for this Gateway.
      * </pre>
      *
      * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2513,8 +2992,7 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The default API Gateway host name of the form
-     * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+     * Output only. The default hostname that serves traffic for this Gateway.
      * </pre>
      *
      * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2529,6 +3007,258 @@ public final class Gateway extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       defaultHostname_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private int streamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+     * change it on update is rejected. If unset, the service selects the mode.
+     * This field records only what was requested and is never modified by the
+     * service; read `effective_streaming_mode` for the mode the gateway is served
+     * with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for streamingMode.
+     */
+    @java.lang.Override
+    public int getStreamingModeValue() {
+      return streamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+     * change it on update is rejected. If unset, the service selects the mode.
+     * This field records only what was requested and is never modified by the
+     * service; read `effective_streaming_mode` for the mode the gateway is served
+     * with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingModeValue(int value) {
+      streamingMode_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+     * change it on update is rejected. If unset, the service selects the mode.
+     * This field records only what was requested and is never modified by the
+     * service; read `effective_streaming_mode` for the mode the gateway is served
+     * with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The streamingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.apigateway.v1.Gateway.StreamingMode getStreamingMode() {
+      com.google.cloud.apigateway.v1.Gateway.StreamingMode result =
+          com.google.cloud.apigateway.v1.Gateway.StreamingMode.forNumber(streamingMode_);
+      return result == null
+          ? com.google.cloud.apigateway.v1.Gateway.StreamingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+     * change it on update is rejected. If unset, the service selects the mode.
+     * This field records only what was requested and is never modified by the
+     * service; read `effective_streaming_mode` for the mode the gateway is served
+     * with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The streamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStreamingMode(com.google.cloud.apigateway.v1.Gateway.StreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      streamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+     * change it on update is rejected. If unset, the service selects the mode.
+     * This field records only what was requested and is never modified by the
+     * service; read `effective_streaming_mode` for the mode the gateway is served
+     * with.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      streamingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int effectiveStreamingMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The streaming mode this gateway is actually served with, which
+     * the service resolves at creation from `streaming_mode`, the referenced API
+     * Config, and the platform default at the time. Read this rather than
+     * `streaming_mode` to determine whether a gateway supports streaming.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for effectiveStreamingMode.
+     */
+    @java.lang.Override
+    public int getEffectiveStreamingModeValue() {
+      return effectiveStreamingMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The streaming mode this gateway is actually served with, which
+     * the service resolves at creation from `streaming_mode`, the referenced API
+     * Config, and the platform default at the time. Read this rather than
+     * `streaming_mode` to determine whether a gateway supports streaming.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for effectiveStreamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveStreamingModeValue(int value) {
+      effectiveStreamingMode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The streaming mode this gateway is actually served with, which
+     * the service resolves at creation from `streaming_mode`, the referenced API
+     * Config, and the platform default at the time. Read this rather than
+     * `streaming_mode` to determine whether a gateway supports streaming.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveStreamingMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode
+        getEffectiveStreamingMode() {
+      com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode result =
+          com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode.forNumber(
+              effectiveStreamingMode_);
+      return result == null
+          ? com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The streaming mode this gateway is actually served with, which
+     * the service resolves at creation from `streaming_mode`, the referenced API
+     * Config, and the platform default at the time. Read this rather than
+     * `streaming_mode` to determine whether a gateway supports streaming.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The effectiveStreamingMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveStreamingMode(
+        com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      effectiveStreamingMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The streaming mode this gateway is actually served with, which
+     * the service resolves at creation from `streaming_mode`, the referenced API
+     * Config, and the platform default at the time. Read this rather than
+     * `streaming_mode` to determine whether a gateway supports streaming.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveStreamingMode() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      effectiveStreamingMode_ = 0;
       onChanged();
       return this;
     }
