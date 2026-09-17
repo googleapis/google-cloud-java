@@ -72,7 +72,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final @Nullable String actorTokenType;
   // Transient: not serialized directly. Reconstructed in readObject() from the credentialSource
   // certificate config so deserialized credentials remain usable for mTLS and refresh.
-  private transient @Nullable X509Provider x509Provider;
+  private transient volatile @Nullable X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -232,7 +232,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.transportFactory == null
         || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || this.transportFactory instanceof MtlsHttpTransportFactory;
+        || this.transportFactory.getClass() == MtlsHttpTransportFactory.class;
   }
 
   @Override
@@ -300,17 +300,34 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           // On 401, re-read from X509Provider for fresh certs.
           freshKeyStore = this.x509Provider.getKeyStore();
         } catch (IOException reloadException) {
-          reloadException.addSuppressed(e);
+          if (reloadException != e) {
+            reloadException.addSuppressed(e);
+          }
           throw reloadException;
         } catch (Exception reloadException) {
           IOException ioException =
               new IOException("Failed to reload certificate on retry", reloadException);
-          ioException.addSuppressed(e);
+          if (ioException != e) {
+            ioException.addSuppressed(e);
+          }
           throw ioException;
         }
 
         HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
-        return refreshWithRetry(retryTransportFactory, false);
+        try {
+          return refreshWithRetry(retryTransportFactory, false);
+        } catch (Exception retryException) {
+          if (retryException != e) {
+            retryException.addSuppressed(e);
+          }
+          if (retryException instanceof IOException) {
+            throw (IOException) retryException;
+          }
+          if (retryException instanceof RuntimeException) {
+            throw (RuntimeException) retryException;
+          }
+          throw new IOException(retryException);
+        }
       }
       if (e instanceof IOException) {
         throw (IOException) e;
@@ -433,10 +450,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
       try {
         KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
-        if (this.transportFactory == null
-            || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-            || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-            || this.transportFactory instanceof MtlsHttpTransportFactory) {
+        if (shouldUseMtlsTransportFactory()) {
           this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
         }
       } catch (Exception e) {
@@ -484,8 +498,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
         this.actorTokenSupplier = credentials.actorTokenSupplier;
+      } else if (credentials.actorTokenSupplier != credentials.subjectTokenSupplier) {
+        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
-      // Note: when credentialSource is present, subjectTokenSupplier and actorTokenSupplier
+      // Note: when credentialSource is present, subjectTokenSupplier and file-based
+      // actorTokenSupplier
       // are intentionally NOT copied here. They will be reconstructed from credentialSource
       // during build(), which ensures they share the same FileIdentityPoolSubjectTokenSupplier
       // instance for atomic token reads.

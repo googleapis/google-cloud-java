@@ -3703,4 +3703,116 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals("Bearer intermediate-sts-token-2", iamAuthHeaders.get(1));
     assertEquals(java.util.Arrays.asList(ksA, ksB), usedKeyStores);
   }
+
+  @Test
+  void
+      refreshAccessToken_impersonation_createScoped_passesCloudPlatformScopeToStsAndTargetScopeToIam()
+          throws Exception {
+    MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+    transport.setExpireTime(TestUtils.getDefaultExpireTime());
+
+    IdentityPoolCredentials baseCredential =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl(transport.getStsUrl())
+            .setServiceAccountImpersonationUrl(transport.getServiceAccountImpersonationUrl())
+            .setHttpTransportFactory(() -> transport)
+            .build();
+
+    List<String> targetScopes =
+        Collections.singletonList("https://www.googleapis.com/auth/devstorage.read_only");
+    transport.setExpectedIamScope("https://www.googleapis.com/auth/devstorage.read_only");
+    IdentityPoolCredentials scopedCredential = baseCredential.createScoped(targetScopes);
+
+    AccessToken token = scopedCredential.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(transport.getServiceAccountAccessToken(), token.getTokenValue());
+
+    // Request 0 is STS token exchange from sourceCredentials; verify it requested cloud-platform
+    // scope
+    String stsRequestContent = transport.getRequests().get(0).getContentAsString();
+    Map<String, String> stsParams = TestUtils.parseQuery(stsRequestContent);
+    assertEquals(OAuth2Utils.CLOUD_PLATFORM_SCOPE, stsParams.get("scope"));
+
+    // Request 1 is IAM generateAccessToken; verify it requested the downstream target scope
+    String iamRequestContent = transport.getRequests().get(1).getContentAsString();
+    try (com.google.api.client.json.JsonParser parser =
+        OAuth2Utils.JSON_FACTORY.createJsonParser(iamRequestContent)) {
+      GenericJson iamBody = parser.parseAndClose(GenericJson.class);
+      assertEquals(targetScopes, iamBody.get("scope"));
+    }
+  }
+
+  @Test
+  void createScoped_withCredentialSourceAndCustomActorTokenSupplier_preservesActorTokenSupplier()
+      throws Exception {
+    IdentityPoolCredentialSource credentialSource =
+        (IdentityPoolCredentialSource) createBaseFileSourcedCredentials().getCredentialSource();
+
+    IdentityPoolActorTokenSupplier customActorSupplier = ctx -> "custom-actor-token";
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setActorTokenSupplier(customActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:access_token")
+            .setX509Provider(
+                new X509Provider(null) {
+                  @Override
+                  public KeyStore getKeyStore() {
+                    return ks;
+                  }
+                })
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    IdentityPoolCredentials scoped =
+        credentials.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertEquals(customActorSupplier, scoped.getIdentityPoolActorTokenSupplier());
+    assertEquals("urn:ietf:params:oauth:token-type:access_token", scoped.getActorTokenType());
+  }
+
+  @Test
+  void refreshAccessToken_401RetryFailureOnSecondAttempt_attachesInitial401AsSuppressed()
+      throws Exception {
+    KeyStore ksA = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksA.load(null, null);
+    KeyStore ksB = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksB.load(null, null);
+    AtomicInteger callCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            return callCount.getAndIncrement() == 0 ? ksA : ksB;
+          }
+        };
+
+    TestableIdentityPoolCredentials credential =
+        new TestableIdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(rotatingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token"),
+            /* failOnFirstExchange= */ true,
+            /* failOnAllExchanges= */ true);
+
+    OAuthException thrown =
+        assertThrows(OAuthException.class, () -> credential.refreshAccessToken());
+    assertEquals(1, thrown.getSuppressed().length);
+    assertTrue(thrown.getSuppressed()[0] instanceof OAuthException);
+  }
 }

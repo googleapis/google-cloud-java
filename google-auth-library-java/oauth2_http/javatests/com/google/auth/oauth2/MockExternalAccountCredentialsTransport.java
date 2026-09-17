@@ -94,6 +94,11 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
+  private String expectedIamScope = OAuth2Utils.CLOUD_PLATFORM_SCOPE;
+
+  public void setExpectedIamScope(String expectedIamScope) {
+    this.expectedIamScope = expectedIamScope;
+  }
 
   public void addStsStatusCodeSequence(Integer... statusCodes) {
     Collections.addAll(stsStatusCodeSequence, statusCodes);
@@ -219,9 +224,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   OAuth2Utils.JSON_FACTORY
                       .createJsonParser(getContentAsString())
                       .parseAndClose(GenericJson.class);
-              assertEquals(
-                  OAuth2Utils.CLOUD_PLATFORM_SCOPE,
-                  ((ArrayList<String>) query.get("scope")).get(0));
+              assertEquals(expectedIamScope, ((ArrayList<String>) query.get("scope")).get(0));
               assertEquals(1, getHeaders().get("authorization").size());
               assertTrue(getHeaders().containsKey("authorization"));
               assertNotNull(getHeaders().get("authorization").get(0));

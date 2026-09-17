@@ -107,7 +107,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final long serialVersionUID = -2133257318957488431L;
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
   private static final int DEFAULT_LIFETIME_IN_SECONDS = 3600;
-  private GoogleCredentials sourceCredentials;
+  private volatile GoogleCredentials sourceCredentials;
   private final String targetPrincipal;
   private List<String> delegates;
   private final List<String> scopes;
@@ -117,7 +117,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ImpersonatedCredentials.class);
 
-  private transient HttpTransportFactory transportFactory;
+  private transient volatile HttpTransportFactory transportFactory;
 
   private transient @Nullable Calendar calendar;
 
@@ -581,7 +581,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    return refreshAccessToken(this.transportFactory);
+    return refreshAccessToken(null);
   }
 
   /**
@@ -593,11 +593,13 @@ public class ImpersonatedCredentials extends GoogleCredentials
    * setServiceAccountImpersonationUrl} directly on {@code IdentityPoolCredentials}, which manages
    * the certificate lifecycle and 401 recovery.
    *
-   * @param transportFactory the HTTP transport factory to use
+   * @param transportFactory the HTTP transport factory to use, or {@code null} to use this
+   *     instance's configured transport factory without overriding source credential transport
    * @return the refreshed access token
    * @throws IOException if token refresh fails
    */
-  AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+  AccessToken refreshAccessToken(@Nullable HttpTransportFactory transportFactory)
+      throws IOException {
     HttpTransportFactory effectiveTransportFactory =
         transportFactory != null
             ? transportFactory
@@ -606,10 +608,15 @@ public class ImpersonatedCredentials extends GoogleCredentials
                 : OAuth2Utils.HTTP_TRANSPORT_FACTORY);
     HttpCredentialsAdapter adapter;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      Collection<String> currentScopes =
+          ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
+      if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
+        this.sourceCredentials =
+            this.sourceCredentials.createScoped(
+                Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+      }
       AccessToken intermediateAccessToken =
-          (transportFactory == null
-                  || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-                  || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)
+          (transportFactory == null)
               ? ((ExternalAccountCredentials) this.sourceCredentials).refreshAccessToken()
               : ((ExternalAccountCredentials) this.sourceCredentials)
                   .refreshAccessToken(effectiveTransportFactory);
@@ -686,10 +693,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
       throw new IOException("Error requesting access token", e);
     }
 
-    GenericData responseData = response.parseAs(GenericData.class);
-    LoggingUtils.logResponsePayload(
-        responseData, LOGGER_PROVIDER, "Response payload for access token");
-    response.disconnect();
+    GenericData responseData;
+    try {
+      responseData = response.parseAs(GenericData.class);
+      LoggingUtils.logResponsePayload(
+          responseData, LOGGER_PROVIDER, "Response payload for access token");
+    } finally {
+      response.disconnect();
+    }
 
     String accessToken =
         OAuth2Utils.validateString(responseData, "accessToken", "Expected to find an accessToken");

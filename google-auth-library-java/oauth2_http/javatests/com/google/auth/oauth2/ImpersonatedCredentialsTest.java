@@ -90,10 +90,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
           + "4Az2ZkmeuN6Fk/y9H+Lcb2pskJIXjrL533vrDWGOC48LrsThMQPv8cxBky8HFSEklPpkfTF95tpD43iVwJRB/Gr"
           + "CtGTw65IfJ4/tI09h6zGc4yqvIo1cHX/LQ+SxKLGyir/dQM925rGt/VojxY5ryJR7GLbCzxPnJm/oQJBANwOCO6"
           + "D2hy1LQYJhXh7O+RLtA/tSnT1xyMQsGT+uUCMiKS2bSKx2wxo9k7h3OegNJIu1q6nZ6AbxDK8H3+d0dUCQQDTrP"
-          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAut"
-          + "LPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEA"
-          + "gidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJ"
-          + "ADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ==\n"
+          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAutLPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEAgidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ==\n"
           + "-----END PRIVATE KEY-----\n";
 
   // Id Token provided by the default IAM API that does not include the "email" claim
@@ -1467,5 +1464,66 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .getTransport()
             .getRequest()
             .getFirstHeaderValue("Authorization"));
+
+    // Also verify public no-arg refreshAccessToken() delegates without overriding source transport
+    sourceRefreshed.set(false);
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+    AccessToken token2 = credentials.refreshAccessToken();
+    assertEquals("final-iam-token-null-transport", token2.getTokenValue());
+    assertTrue(sourceRefreshed.get());
+  }
+
+  @Test
+  void
+      refreshAccessToken_externalAccountSource_appliesCloudPlatformScopeToSourceAndTargetScopeToIam()
+          throws IOException {
+    MockExternalAccountCredentialsTransport stsTransport =
+        new MockExternalAccountCredentialsTransport();
+    stsTransport.setExpireTime(getDefaultExpireTime());
+
+    MockIAMCredentialsServiceTransportFactory iamTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    iamTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    iamTransportFactory.getTransport().setAccessToken("final-iam-token");
+    iamTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    iamTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    IdentityPoolCredentials sourceCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setSubjectTokenSupplier(context -> "subject-token")
+            .setTokenUrl(stsTransport.getStsUrl())
+            .setHttpTransportFactory(() -> stsTransport)
+            .build();
+
+    List<String> targetScopes = Arrays.asList("https://www.googleapis.com/auth/bigquery");
+    ImpersonatedCredentials impersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(targetScopes)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(iamTransportFactory)
+            .build();
+
+    AccessToken token = impersonated.refreshAccessToken();
+    assertEquals("final-iam-token", token.getTokenValue());
+
+    // Verify STS request received cloud-platform scope
+    String stsContent = stsTransport.getRequests().get(0).getContentAsString();
+    Map<String, String> stsParams = TestUtils.parseQuery(stsContent);
+    assertEquals(OAuth2Utils.CLOUD_PLATFORM_SCOPE, stsParams.get("scope"));
+
+    // Verify IAM request received the target bigquery scope
+    assertTrue(
+        iamTransportFactory
+            .getTransport()
+            .getRequest()
+            .getContentAsString()
+            .contains("https://www.googleapis.com/auth/bigquery"));
   }
 }

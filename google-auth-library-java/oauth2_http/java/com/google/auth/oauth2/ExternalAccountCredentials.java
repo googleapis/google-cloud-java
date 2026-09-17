@@ -95,7 +95,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   protected transient HttpTransportFactory transportFactory;
 
-  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -292,16 +292,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       sourceCredentials =
           AwsCredentials.newBuilder((AwsCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     } else if (this instanceof PluggableAuthCredentials) {
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     } else {
       sourceCredentials =
           IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     }
 
@@ -639,6 +642,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     // Properly deserialize the transient transportFactory.
     input.defaultReadObject();
     transportFactory = newInstance(transportFactoryClassName);
+    impersonatedCredentials = null;
   }
 
   public @Nullable String getServiceAccountImpersonationUrl() {
