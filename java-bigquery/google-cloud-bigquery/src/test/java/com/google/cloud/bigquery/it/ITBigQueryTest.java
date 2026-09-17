@@ -7565,6 +7565,7 @@ class ITBigQueryTest {
     FieldValueList row = rows.get(0);
     assertEquals(1L, row.get("id").getLongValue());
     assertEquals("hello", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
   }
 
   @Test
