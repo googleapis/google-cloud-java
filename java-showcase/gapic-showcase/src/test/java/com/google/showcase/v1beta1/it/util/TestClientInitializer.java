@@ -33,6 +33,8 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.IdentityClient;
 import com.google.showcase.v1beta1.IdentitySettings;
+import com.google.showcase.v1beta1.ResumableUploadServiceClient;
+import com.google.showcase.v1beta1.ResumableUploadServiceSettings;
 import com.google.showcase.v1beta1.SequenceServiceClient;
 import com.google.showcase.v1beta1.SequenceServiceSettings;
 import com.google.showcase.v1beta1.WaitRequest;
@@ -538,5 +540,35 @@ public class TestClientInitializer {
                 .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
                 .build());
     return SequenceServiceClient.create(settingsBuilder.build());
+  }
+
+  public static ResumableUploadServiceClient createHttpJsonResumableUploadClient(int chunkSize)
+      throws Exception {
+    ResumableUploadServiceSettings.Builder settingsBuilder =
+        ResumableUploadServiceSettings.newHttpJsonBuilder();
+    settingsBuilder
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setTransportChannelProvider(
+            ResumableUploadServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                .setHttpTransport(new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                .build());
+    settingsBuilder.uploadMediaSettings().setChunkSize(chunkSize);
+    return ResumableUploadServiceClient.create(settingsBuilder.build());
+  }
+
+  public static ResumableUploadServiceClient createGrpcResumableUploadClient(int chunkSize)
+      throws Exception {
+    ResumableUploadServiceSettings.Builder settingsBuilder =
+        ResumableUploadServiceSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                ResumableUploadServiceSettings.defaultGrpcTransportProviderBuilder()
+                    .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT);
+    settingsBuilder.uploadMediaSettings().setChunkSize(chunkSize);
+    return ResumableUploadServiceClient.create(settingsBuilder.build());
   }
 }

@@ -58,6 +58,9 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
   private static final Set<String> REROUTE_TO_GRPC_INTERFACE_IAM_METHOD_ALLOWLIST =
       new HashSet<>(Arrays.asList("SetIamPolicy", "GetIamPolicy", "TestIamPermissions"));
 
+  private static final String BUILD_METHOD_NAME = "build";
+  private static final String NEW_BUILDER_METHOD_NAME = "newBuilder";
+
   private static final TypeStore FIXED_GRPC_TYPE_STORE = createStaticTypes();
 
   protected GrpcServiceStubClassComposer() {
@@ -88,7 +91,7 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
       boolean restNumericEnumsEnabled) {
     MethodInvocationExpr methodDescriptorMaker =
         MethodInvocationExpr.builder()
-            .setMethodName("newBuilder")
+            .setMethodName(NEW_BUILDER_METHOD_NAME)
             .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get("MethodDescriptor"))
             .setGenerics(methodDescriptorVarExpr.variable().type().reference().generics())
             .build();
@@ -155,7 +158,7 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
 
     methodDescriptorMaker =
         MethodInvocationExpr.builder()
-            .setMethodName("build")
+            .setMethodName(BUILD_METHOD_NAME)
             .setExprReferenceExpr(methodDescriptorMaker)
             .setReturnType(methodDescriptorVarExpr.type())
             .build();
