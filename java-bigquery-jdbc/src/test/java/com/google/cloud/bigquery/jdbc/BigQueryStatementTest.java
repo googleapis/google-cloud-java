@@ -224,6 +224,10 @@ public class BigQueryStatementTest {
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
     testExecutorService = Executors.newSingleThreadExecutor();
     doReturn(testExecutorService).when(bigQueryConnection).getExecutorService();
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(bigQueryConnection)
+        .getSessionStateSnapshot();
+
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -506,6 +510,7 @@ public class BigQueryStatementTest {
   @Test
   public void testExecute_legacySqlWithEnableTimestampPicos_throwsException() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
     doReturn(true).when(mockConn).isEnableTimestampPicos();
 
@@ -520,6 +525,7 @@ public class BigQueryStatementTest {
   @Test
   public void testGetJobConfig_standardSql_setsUseLegacySqlFalse() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("SQL").when(mockConn).getQueryDialect();
 
     BigQueryStatement statement = new BigQueryStatement(mockConn);
@@ -532,6 +538,7 @@ public class BigQueryStatementTest {
   @Test
   public void testGetJobConfig_legacySql_setsUseLegacySqlTrue() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
 
     BigQueryStatement statement = new BigQueryStatement(mockConn);
@@ -1203,7 +1210,7 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder("CREATE TEMP TABLE t1 (id INT64)").build();
     bigQueryStatement.executeJob(jobConfig);
 
-    verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
+    verify(bigQueryConnection).initSessionInfo("session_xyz_123");
   }
 
   @Test
