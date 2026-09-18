@@ -1,0 +1,246 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.spanner.omni;
+
+import com.google.api.core.InternalApi;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.net.Socket;
+import java.nio.file.Files;
+import java.security.GeneralSecurityException;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
+import javax.net.ssl.SSLEngine;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509ExtendedTrustManager;
+import javax.net.ssl.X509TrustManager;
+
+/**
+ * An {@link X509ExtendedTrustManager} that dynamically reloads root CA certificates from disk
+ * whenever the certificate file is modified or rotated.
+ */
+@InternalApi
+public class DynamicTrustManager extends X509ExtendedTrustManager {
+  private static final Logger logger = Logger.getLogger(DynamicTrustManager.class.getName());
+
+  private final File caCertFile;
+
+  private static class TrustMaterial {
+    final long lastModified;
+    final long length;
+    final X509ExtendedTrustManager delegate;
+
+    TrustMaterial(long lastModified, long length, X509ExtendedTrustManager delegate) {
+      this.lastModified = lastModified;
+      this.length = length;
+      this.delegate = delegate;
+    }
+  }
+
+  private volatile TrustMaterial currentMaterial;
+
+  public DynamicTrustManager(@Nullable File caCertFile) {
+    this.caCertFile = caCertFile;
+    reloadMaterial();
+  }
+
+  private void checkAndReload() {
+    if (this.caCertFile == null) {
+      return;
+    }
+    TrustMaterial existing = this.currentMaterial;
+    if (existing != null
+        && caCertFile.lastModified() == existing.lastModified
+        && caCertFile.length() == existing.length) {
+      return;
+    }
+    synchronized (this) {
+      existing = this.currentMaterial;
+      if (existing != null
+          && caCertFile.lastModified() == existing.lastModified
+          && caCertFile.length() == existing.length) {
+        return;
+      }
+      try {
+        reloadMaterial();
+      } catch (Exception e) {
+        logger.log(
+            Level.WARNING,
+            "Failed to reload rotated CA certificate from disk, retaining previous material",
+            e);
+      }
+    }
+  }
+
+  private void reloadMaterial() {
+    try {
+      if (this.caCertFile == null) {
+        TrustManagerFactory tmf =
+            TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        tmf.init((KeyStore) null);
+        this.currentMaterial = new TrustMaterial(0, 0, findExtendedTrustManager(tmf));
+        return;
+      }
+
+      long mod = caCertFile.lastModified();
+      long len = caCertFile.length();
+      byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
+
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      Collection<? extends Certificate> certs =
+          cf.generateCertificates(new ByteArrayInputStream(certBytes));
+      if (certs == null || certs.isEmpty()) {
+        throw new CertificateException("No certificates found in CA certificate file");
+      }
+
+      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+      ks.load(null, null);
+      int index = 0;
+      for (Certificate cert : certs) {
+        ks.setCertificateEntry("spanner-ca-" + (++index), cert);
+      }
+
+      TrustManagerFactory tmf =
+          TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+      tmf.init(ks);
+
+      this.currentMaterial = new TrustMaterial(mod, len, findExtendedTrustManager(tmf));
+    } catch (Exception e) {
+      if (this.currentMaterial != null) {
+        logger.log(
+            Level.WARNING,
+            "Error reloading CA certificate, falling back to cached trust manager",
+            e);
+      } else {
+        throw new RuntimeException("Failed to initialize CA certificate", e);
+      }
+    }
+  }
+
+  private static X509ExtendedTrustManager findExtendedTrustManager(TrustManagerFactory tmf)
+      throws GeneralSecurityException {
+    for (TrustManager tm : tmf.getTrustManagers()) {
+      if (tm instanceof X509ExtendedTrustManager) {
+        return (X509ExtendedTrustManager) tm;
+      } else if (tm instanceof X509TrustManager) {
+        return wrapTrustManager((X509TrustManager) tm);
+      }
+    }
+    throw new GeneralSecurityException("No X509TrustManager found in TrustManagerFactory");
+  }
+
+  private static X509ExtendedTrustManager wrapTrustManager(final X509TrustManager tm) {
+    return new X509ExtendedTrustManager() {
+      @Override
+      public void checkClientTrusted(X509Certificate[] chain, String authType, Socket socket)
+          throws CertificateException {
+        tm.checkClientTrusted(chain, authType);
+      }
+
+      @Override
+      public void checkServerTrusted(X509Certificate[] chain, String authType, Socket socket)
+          throws CertificateException {
+        tm.checkServerTrusted(chain, authType);
+      }
+
+      @Override
+      public void checkClientTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
+          throws CertificateException {
+        tm.checkClientTrusted(chain, authType);
+      }
+
+      @Override
+      public void checkServerTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
+          throws CertificateException {
+        tm.checkServerTrusted(chain, authType);
+      }
+
+      @Override
+      public void checkClientTrusted(X509Certificate[] chain, String authType)
+          throws CertificateException {
+        tm.checkClientTrusted(chain, authType);
+      }
+
+      @Override
+      public void checkServerTrusted(X509Certificate[] chain, String authType)
+          throws CertificateException {
+        tm.checkServerTrusted(chain, authType);
+      }
+
+      @Override
+      public X509Certificate[] getAcceptedIssuers() {
+        return tm.getAcceptedIssuers();
+      }
+    };
+  }
+
+  @Override
+  public void checkClientTrusted(X509Certificate[] chain, String authType, Socket socket)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkClientTrusted(chain, authType, socket);
+  }
+
+  @Override
+  public void checkServerTrusted(X509Certificate[] chain, String authType, Socket socket)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkServerTrusted(chain, authType, socket);
+  }
+
+  @Override
+  public void checkClientTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkClientTrusted(chain, authType, engine);
+  }
+
+  @Override
+  public void checkServerTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkServerTrusted(chain, authType, engine);
+  }
+
+  @Override
+  public void checkClientTrusted(X509Certificate[] chain, String authType)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkClientTrusted(chain, authType);
+  }
+
+  @Override
+  public void checkServerTrusted(X509Certificate[] chain, String authType)
+      throws CertificateException {
+    checkAndReload();
+    this.currentMaterial.delegate.checkServerTrusted(chain, authType);
+  }
+
+  @Override
+  public X509Certificate[] getAcceptedIssuers() {
+    checkAndReload();
+    return this.currentMaterial.delegate.getAcceptedIssuers();
+  }
+}
