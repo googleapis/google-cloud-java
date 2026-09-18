@@ -139,6 +139,7 @@ public class Parser {
   static final ImmutableList<Pattern> RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS =
       ImmutableList.of(
           Pattern.compile("^google\\.showcase\\.v1beta1\\.ResumableUploadService\\.UploadMedia$"),
+          Pattern.compile("^google\\.showcase\\.v1beta1\\.MediaService\\.UploadMedia$"),
           Pattern.compile(
               "^google\\.ads\\.googleads\\.v\\d+\\.services\\.YouTubeVideoUploadService\\.CreateYouTubeVideoUpload$"));
 

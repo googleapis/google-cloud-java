@@ -16,23 +16,28 @@
 
 package com.google.showcase.v1beta1.samples;
 
-// [START goldensample_generated_ResumableUploadService_Emtpy_sync]
-import com.google.showcase.v1beta1.ResumableUploadServiceClient;
+// [START goldensample_generated_MediaService_GetMediaMetadata_sync]
+import com.google.showcase.v1beta1.GetMediaMetadataRequest;
+import com.google.showcase.v1beta1.GetMediaMetadataResponse;
+import com.google.showcase.v1beta1.MediaServiceClient;
 
-public class SyncEmtpy {
+public class SyncGetMediaMetadata {
 
   public static void main(String[] args) throws Exception {
-    syncEmtpy();
+    syncGetMediaMetadata();
   }
 
-  public static void syncEmtpy() throws Exception {
+  public static void syncGetMediaMetadata() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (ResumableUploadServiceClient resumableUploadServiceClient =
-        ResumableUploadServiceClient.create()) {}
+    try (MediaServiceClient mediaServiceClient = MediaServiceClient.create()) {
+      GetMediaMetadataRequest request =
+          GetMediaMetadataRequest.newBuilder().setName("name3373707").build();
+      GetMediaMetadataResponse response = mediaServiceClient.getMediaMetadata(request);
+    }
   }
 }
-// [END goldensample_generated_ResumableUploadService_Emtpy_sync]
+// [END goldensample_generated_MediaService_GetMediaMetadata_sync]
