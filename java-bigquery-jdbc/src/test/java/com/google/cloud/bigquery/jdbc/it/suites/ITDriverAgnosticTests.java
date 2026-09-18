@@ -23,7 +23,6 @@ import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
 import com.google.cloud.bigquery.jdbc.it.ITJdbcTimestampPicosTest;
 import com.google.cloud.bigquery.jdbc.it.ITPcntTest;
 import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
-import com.google.cloud.bigquery.jdbc.it.ITStatementTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 

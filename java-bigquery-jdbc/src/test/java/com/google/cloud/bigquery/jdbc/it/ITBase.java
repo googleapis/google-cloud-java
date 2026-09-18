@@ -463,7 +463,8 @@ public class ITBase extends BigQueryJdbcBaseTest {
     validateStatement(stmt, expectedRows, "ResultSet");
   }
 
-  public static <T> void validateStatement(Statement stmt, int expectedRows, String clazz) throws SQLException {
+  public static <T> void validateStatement(Statement stmt, int expectedRows, String clazz)
+      throws SQLException {
     String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, " + expectedRows + "))";
     assertTrue(stmt.execute(query));
     int count = 0;
