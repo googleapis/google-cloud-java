@@ -1228,7 +1228,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       if (match != null) {
         // HashMap iteration order is undefined, so picking one would be non-deterministic.
-        throw new BigQueryJdbcRuntimeException(
+        throw new BigQueryJdbcException(
             String.format(
                 "QueryProperties contains multiple '%s' entries differing only by case ('%s' and"
                     + " '%s'). Specify exactly one.",
