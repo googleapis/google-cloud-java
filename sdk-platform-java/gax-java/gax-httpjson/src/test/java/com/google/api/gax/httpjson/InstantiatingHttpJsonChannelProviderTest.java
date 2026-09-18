@@ -274,7 +274,8 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
       throws Exception {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
-    MtlsProvider failingMtlsProvider = Mockito.mock(MtlsProvider.class);
+    MtlsProvider failingMtlsProvider =
+        Mockito.mock(MtlsProvider.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(failingMtlsProvider.getKeyStore())
         .thenThrow(new IOException("Simulated keystore read failure"));
 
