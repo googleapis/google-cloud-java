@@ -4260,4 +4260,70 @@ public class BigQueryImplTest {
         .testIamPermissionsSkipExceptionTranslation(
             resourceId, checkedPermissions, EMPTY_RPC_OPTIONS);
   }
+
+  @Test
+  void testCloseClosesBigQueryReadClient() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    bigquery.close();
+
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testCloseIsIdempotent() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    bigquery.close();
+    bigquery.close();
+
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testCloseWithoutReadClientDoesNotThrow() {
+    bigquery = options.getService();
+    bigquery.close();
+  }
+
+  @Test
+  void testTryWithResources() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    try (BigQuery bq = options.getService()) {
+      ((BigQueryImpl) bq).setBigQueryReadClient(mockReadClient);
+      assertNotNull(bq);
+    }
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testGetBigQueryReadClientAfterCloseThrows() {
+    bigquery = options.getService();
+    bigquery.close();
+    assertThrows(
+        IllegalStateException.class, () -> ((BigQueryImpl) bigquery).getBigQueryReadClient());
+  }
+
+  @Test
+  void testCloseClosesAllRegionalBigQueryReadClients() {
+    BigQueryReadClient mockReadClientUs =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    BigQueryReadClient mockReadClientEu =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient("us", mockReadClientUs);
+    ((BigQueryImpl) bigquery).setBigQueryReadClient("eu", mockReadClientEu);
+
+    bigquery.close();
+
+    verify(mockReadClientUs, times(1)).close();
+    verify(mockReadClientEu, times(1)).close();
+  }
 }
