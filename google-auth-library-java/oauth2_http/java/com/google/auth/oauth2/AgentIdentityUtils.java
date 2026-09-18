@@ -880,10 +880,10 @@ public final class AgentIdentityUtils {
     else if ("false".equalsIgnoreCase(useClientCert)) {
       if (certsPresent && !mtlsDisabledWarningLogged) {
         mtlsDisabledWarningLogged = true;
-        // Warn that we are ignoring present certs because it was explicitly disabled
+        // Log that we are ignoring present certs because it was explicitly disabled
         LoggingUtils.log(
             LOGGER_PROVIDER,
-            Level.WARNING,
+            Level.FINE,
             Collections.emptyMap(),
             "Token binding protection is disabled because mTLS was explicitly disabled"
                 + " via GOOGLE_API_USE_CLIENT_CERTIFICATE.");
