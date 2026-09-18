@@ -72,8 +72,11 @@ public class QueryArrow {
         }
         System.out.println("Arrow query ran successfully. Total rows: " + totalRows);
       }
-    } catch (BigQueryException | InterruptedException e) {
+    } catch (BigQueryException e) {
       System.out.println("Arrow query did not run \n" + e.toString());
+    } catch (InterruptedException e) {
+      System.out.println("Arrow query was interrupted \n" + e.toString());
+      Thread.currentThread().interrupt();
     }
   }
 }
