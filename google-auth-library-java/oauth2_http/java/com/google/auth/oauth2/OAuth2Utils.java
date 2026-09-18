@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -58,12 +59,18 @@ import java.math.BigDecimal;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.cert.Certificate;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -322,6 +329,71 @@ public class OAuth2Utils {
     String credentials = username + ":" + password;
     String encodedCredentials = BaseEncoding.base64().encode(credentials.getBytes());
     return "Basic " + encodedCredentials;
+  }
+
+  /**
+   * Returns whether the given throwable or any exception in its causal chain represents a 401
+   * Unauthorized error (either an {@link OAuthException} or {@link HttpResponseException} with
+   * status code 401).
+   */
+  static boolean isUnauthorizedException(@Nullable Throwable t) {
+    while (t != null) {
+      if (t instanceof OAuthException && ((OAuthException) t).getHttpStatusCode() == 401) {
+        return true;
+      }
+      if (t instanceof HttpResponseException
+          && ((HttpResponseException) t).getStatusCode() == 401) {
+        return true;
+      }
+      Throwable cause = t.getCause();
+      if (cause == t) {
+        break;
+      }
+      t = cause;
+    }
+    return false;
+  }
+
+  /**
+   * Returns whether the certificate chain in {@code newKeyStore} differs from {@code oldKeyStore}.
+   * Used on 401 retry recovery to avoid retrying when the reloaded certificate is unchanged.
+   */
+  static boolean hasCertificateChanged(
+      @Nullable KeyStore oldKeyStore, @Nullable KeyStore newKeyStore) {
+    if (oldKeyStore == newKeyStore) {
+      return false;
+    }
+    if (oldKeyStore == null || newKeyStore == null) {
+      return true;
+    }
+    List<Certificate> oldCerts = getCertificates(oldKeyStore);
+    List<Certificate> newCerts = getCertificates(newKeyStore);
+    return !oldCerts.equals(newCerts);
+  }
+
+  private static List<Certificate> getCertificates(KeyStore keyStore) {
+    List<Certificate> certs = new ArrayList<>();
+    try {
+      Enumeration<String> aliases = keyStore.aliases();
+      if (aliases != null) {
+        List<String> aliasList = Collections.list(aliases);
+        Collections.sort(aliasList);
+        for (String alias : aliasList) {
+          Certificate[] chain = keyStore.getCertificateChain(alias);
+          if (chain != null && chain.length > 0) {
+            Collections.addAll(certs, chain);
+          } else {
+            Certificate cert = keyStore.getCertificate(alias);
+            if (cert != null) {
+              certs.add(cert);
+            }
+          }
+        }
+      }
+    } catch (KeyStoreException e) {
+      // If a KeyStore cannot be inspected, treat its certificates as empty
+    }
+    return certs;
   }
 
   private OAuth2Utils() {}

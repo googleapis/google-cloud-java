@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExecutableHandler.ExecutableOptions;
 import com.google.common.annotations.VisibleForTesting;
@@ -121,6 +122,18 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    return refreshAccessToken(this.transportFactory);
+  }
+
+  @InternalExtensionOnly
+  @Override
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(cycleTransportFactory);
+    }
+
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
@@ -130,7 +143,8 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     if (scopes != null && !scopes.isEmpty()) {
       stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
     }
-    return exchangeExternalCredentialForAccessToken(stsTokenExchangeRequest.build());
+    return exchangeExternalCredentialForAccessToken(
+        stsTokenExchangeRequest.build(), cycleTransportFactory);
   }
 
   /**

@@ -36,6 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
@@ -95,7 +96,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   protected transient HttpTransportFactory transportFactory;
 
-  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -292,16 +293,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       sourceCredentials =
           AwsCredentials.newBuilder((AwsCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     } else if (this instanceof PluggableAuthCredentials) {
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     } else {
       sourceCredentials =
           IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
               .build();
     }
 
@@ -526,6 +530,30 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
   }
 
+  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
+    if (this.shouldBuildImpersonatedCredential()) {
+      this.impersonatedCredentials = this.buildImpersonatedCredentials();
+    }
+    return this.impersonatedCredentials;
+  }
+
+  /**
+   * Refreshes the access token using the specified transport factory for per-cycle transport
+   * pinning. Internal subclasses ({@link IdentityPoolCredentials}, {@link AwsCredentials}, {@link
+   * PluggableAuthCredentials}) delegate {@link #refreshAccessToken()} into this method. This
+   * default implementation delegates back to {@link #refreshAccessToken()} for any custom
+   * subclasses that do not override this method.
+   *
+   * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
+   * @return the refreshed access token
+   * @throws IOException if the token refresh fails
+   */
+  @InternalExtensionOnly
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    return refreshAccessToken();
+  }
+
   /**
    * Exchanges the external credential for a Google Cloud access token.
    *
@@ -552,11 +580,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
       throws IOException {
     // Handle service account impersonation if necessary.
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =
@@ -626,6 +652,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     // Properly deserialize the transient transportFactory.
     input.defaultReadObject();
     transportFactory = newInstance(transportFactoryClassName);
+    impersonatedCredentials = null;
   }
 
   public @Nullable String getServiceAccountImpersonationUrl() {
