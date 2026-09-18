@@ -302,10 +302,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private static final long DEFAULT_PAGE_SIZE = 10000L;
 
     private final JobId jobId;
+    private final String customStreamName;
     private final Schema schema;
     private final byte[] arrowSchemaBytes;
     private final BigQueryOptions serviceOptions;
     private final long maxResults;
+    private final long pageSize;
     private final Map<BigQueryRpc.Option, ?> optionsMap;
 
     private transient org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
@@ -325,7 +327,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         long initialRowOffset,
         Long maxResults,
         Map<BigQueryRpc.Option, ?> optionsMap) {
+      this(
+          jobId,
+          null,
+          schema,
+          arrowSchemaBytes,
+          arrowSchemaPojo,
+          serviceOptions,
+          initialRowOffset,
+          maxResults,
+          optionsMap);
+    }
+
+    ArrowQueryPageFetcher(
+        JobId jobId,
+        String customStreamName,
+        Schema schema,
+        byte[] arrowSchemaBytes,
+        org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
+        BigQueryOptions serviceOptions,
+        long initialRowOffset,
+        Long maxResults,
+        Map<BigQueryRpc.Option, ?> optionsMap) {
       this.jobId = jobId;
+      this.customStreamName = customStreamName;
       this.schema = schema;
       this.arrowSchemaBytes = arrowSchemaBytes;
       this.arrowSchemaPojo = arrowSchemaPojo;
@@ -333,24 +358,24 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.totalRowsReturned = initialRowOffset;
       this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
       this.optionsMap = optionsMap;
+      Number optionPageSize =
+          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
+      this.pageSize =
+          optionPageSize != null && optionPageSize.longValue() > 0
+              ? optionPageSize.longValue()
+              : DEFAULT_PAGE_SIZE;
     }
 
     @Override
     public Page<FieldValueList> getNextPage() {
+      // Re-initialize transient buffer if the page fetcher was deserialized.
       if (buffer == null) {
         buffer = new ArrayDeque<>();
       }
       if (streamClosed || totalRowsReturned >= maxResults) {
-        closeClient();
         return null;
       }
 
-      Number optionPageSize =
-          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
-      long pageSize =
-          optionPageSize != null && optionPageSize.longValue() > 0
-              ? optionPageSize.longValue()
-              : DEFAULT_PAGE_SIZE;
       List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
 
       try {
@@ -358,9 +383,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         // default.
         // The Storage Read API stream resource name requires a location component (e.g.
         // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
-        // location
-        // was provided on the job or service options, defaulting to "global" allows queries created
-        // without an explicit location to still stream results without failing.
+        // location was provided on the job or service options, defaulting to "global" allows
+        // queries created without an explicit location to still stream results without failing.
         String location = jobId.getLocation();
         if (location == null) {
           location = serviceOptions.getLocation();
@@ -382,13 +406,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             bqReadClient = ((BigQueryImpl) service).getBigQueryReadClient(location);
           }
 
-          // Construct the default stream path for reading job query results via Storage Read API.
-          String streamName =
-              String.format(
-                  "projects/%s/locations/%s/jobs/%s/streams/_default",
-                  jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
-                  location,
-                  jobId.getJob());
+          String streamName;
+          if (customStreamName != null) {
+            streamName = customStreamName;
+          } else {
+            // Construct the default stream path for reading job query results via Storage Read API.
+            streamName =
+                String.format(
+                    "projects/%s/locations/%s/jobs/%s/streams/_default",
+                    jobId.getProject() != null ? jobId.getProject() : serviceOptions.getProjectId(),
+                    location,
+                    jobId.getJob());
+          }
 
           ReadRowsRequest readRowsRequest =
               ReadRowsRequest.newBuilder()
@@ -2530,10 +2559,23 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(bigQueryErrors);
     }
 
-    // If query is incomplete, Arrow format for slow query path is not yet supported.
+    // If the query is incomplete (took longer than the fast-path timeout), transition
+    // to the slow path: retrieve the created job, wait for completion, and read the
+    // results using the Storage Read API in Arrow format.
     if (!Boolean.TRUE.equals(results.getJobComplete())) {
-      throw new UnsupportedOperationException(
-          "Arrow results format for slow query path execution is not yet supported.");
+      if (results.getJobReference() == null) {
+        throw new BigQueryException(
+            0, "Query is incomplete, but no job reference was returned to await completion.");
+      }
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      Job job = getJob(jobId, options);
+      if (job == null) {
+        throw new BigQueryException(0, "Job no longer exists or could not be retrieved: " + jobId);
+      }
+      Job completedJob = job.waitFor();
+      Long maxResults =
+          content.getMaxResults() != null ? content.getMaxResults().longValue() : null;
+      return readArrowTableResultFromJob(completedJob, maxResults, null, options);
     }
 
     // If the query completed but the Arrow schema is missing from the response, fail fast.
@@ -2710,8 +2752,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         return queryRpc(projectId, content, options);
       }
       if (configuration.getQueryResultsFormat() == QueryResultsFormat.ARROW) {
-        throw new UnsupportedOperationException(
-            "Arrow results format for slow query path execution is not yet supported.");
+        return queryFallbackArrow(jobId, configuration, options);
       }
       return create(JobInfo.of(jobId, configuration), options);
     } finally {
@@ -2988,6 +3029,205 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     return ArrowQueryResultImpl.fromReadSession(readSession, jobId, client);
+  }
+
+  /**
+   * Reads query result rows from a completed query job's destination table using the Storage Read
+   * API in Arrow format, returning a populated {@link TableResult}.
+   *
+   * @param completedJob the completed query job
+   * @param maxResults maximum results requested, or {@code null}
+   * @param fallbackDestinationTable fallback destination table if not present on the job
+   * @param options query job options
+   * @return a {@link TableResult} containing decoded rows and execution metadata
+   * @throws BigQueryException if job failed or ReadSession creation fails
+   */
+  private TableResult readArrowTableResultFromJob(
+      Job completedJob, Long maxResults, TableId fallbackDestinationTable, JobOption... options) {
+    if (completedJob == null) {
+      throw new BigQueryException(0, "Job no longer exists or could not be retrieved.");
+    }
+
+    if (completedJob.getStatus().getError() != null) {
+      throw new BigQueryException(Collections.singletonList(completedJob.getStatus().getError()));
+    }
+
+    // Resolve the destination table containing the query results.
+    TableId destinationTable = null;
+    if (completedJob.getConfiguration() instanceof QueryJobConfiguration) {
+      destinationTable =
+          ((QueryJobConfiguration) completedJob.getConfiguration()).getDestinationTable();
+    }
+    if (destinationTable == null) {
+      destinationTable = fallbackDestinationTable;
+    }
+    if (destinationTable == null) {
+      throw new BigQueryException(0, "Unable to resolve destination table for query job");
+    }
+
+    // Extract query execution statistics from the completed job metadata.
+    JobStatistics.QueryStatistics stats =
+        completedJob.getStatistics() instanceof JobStatistics.QueryStatistics
+            ? (JobStatistics.QueryStatistics) completedJob.getStatistics()
+            : null;
+
+    StatementType statementType = stats != null ? stats.getStatementType() : null;
+    Long totalBytesBilled = stats != null ? stats.getTotalBytesBilled() : null;
+    Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
+    Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
+    Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+    SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
+
+    // If the completed job is a DDL or DML statement, return immediately without
+    // making a Storage Read API createReadSession network call.
+    boolean isDml = numDmlAffectedRows != null;
+    boolean isDdl = stats != null && stats.getDdlOperationPerformed() != null;
+    if (isDml || isDdl) {
+      return TableResult.newBuilder()
+          .setSchema(stats != null ? stats.getSchema() : null)
+          .setTotalRows(isDml ? numDmlAffectedRows : 0L)
+          .setPageNoSchema(new PageImpl<>(null, null, ImmutableList.of()))
+          .setJobId(completedJob.getJobId())
+          .setRowsInPage(0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
+          .build();
+    }
+
+    // Create a Storage Read API ReadSession targeting the destination table in Arrow format.
+    String destProject = destinationTable.getProject();
+    if (destProject == null && completedJob.getJobId() != null) {
+      destProject = completedJob.getJobId().getProject();
+    }
+    if (destProject == null) {
+      destProject = getOptions().getProjectId();
+    }
+    String parent = String.format("projects/%s", destProject);
+    String srcTable =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s",
+            destProject, destinationTable.getDataset(), destinationTable.getTable());
+
+    BigQueryReadClient client = getBigQueryReadClient();
+    CreateReadSessionRequest request =
+        CreateReadSessionRequest.newBuilder()
+            .setParent(parent)
+            .setReadSession(
+                ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW))
+            .setMaxStreamCount(1)
+            .build();
+    ReadSession readSession;
+    try {
+      readSession = client.createReadSession(request);
+    } catch (Exception e) {
+      throw new BigQueryException(0, "Failed to create ReadSession for query job", e);
+    }
+
+    // Deserialize the Arrow schema and convert to BigQuery Schema for TableResult metadata.
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
+    byte[] arrowSchemaBytes = null;
+    if (readSession.hasArrowSchema()) {
+      arrowSchemaBytes = readSession.getArrowSchema().getSerializedSchema().toByteArray();
+      try {
+        arrowSchemaPojo = ArrowDeserializer.deserializeSchema(arrowSchemaBytes);
+      } catch (IOException e) {
+        throw new BigQueryException(0, "Failed to deserialize Arrow schema from ReadSession", e);
+      }
+    }
+    Schema schema =
+        arrowSchemaPojo != null
+            ? ArrowPojoUtils.arrowSchemaToBigQuerySchema(arrowSchemaPojo)
+            : (stats != null ? stats.getSchema() : null);
+
+    String streamName =
+        readSession.getStreamsCount() > 0 ? readSession.getStreams(0).getName() : null;
+
+    // If the destination table has no data streams (e.g. empty SELECT query results),
+    // return an empty TableResult populated with execution statistics.
+    if (streamName == null) {
+      return TableResult.newBuilder()
+          .setSchema(schema)
+          .setTotalRows(numDmlAffectedRows != null ? numDmlAffectedRows : 0L)
+          .setPageNoSchema(new PageImpl<>(null, null, ImmutableList.of()))
+          .setJobId(completedJob.getJobId())
+          .setRowsInPage(0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
+          .build();
+    }
+
+    // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
+    ArrowQueryPageFetcher pageFetcher =
+        new ArrowQueryPageFetcher(
+            completedJob.getJobId(),
+            streamName,
+            schema,
+            arrowSchemaBytes,
+            arrowSchemaPojo,
+            getOptions(),
+            0L,
+            maxResults,
+            optionMap(options));
+
+    Page<FieldValueList> firstPage = pageFetcher.getNextPage();
+    List<FieldValueList> firstPageRows =
+        firstPage != null ? ImmutableList.copyOf(firstPage.getValues()) : ImmutableList.of();
+    long rowsInPage = (long) firstPageRows.size();
+
+    // Determine total row count: prefer DML affected rows, fallback to estimated row count,
+    // or actual first page rows returned.
+    long totalRows =
+        numDmlAffectedRows != null
+            ? numDmlAffectedRows
+            : (readSession.getEstimatedRowCount() > 0
+                ? readSession.getEstimatedRowCount()
+                : rowsInPage);
+
+    // Assemble and return the complete TableResult.
+    return TableResult.newBuilder()
+        .setSchema(schema)
+        .setTotalRows(totalRows)
+        .setPageNoSchema(
+            firstPage != null ? firstPage : new PageImpl<>(null, null, ImmutableList.of()))
+        .setJobId(completedJob.getJobId())
+        .setRowsInPage(rowsInPage)
+        .setStatementType(statementType)
+        .setTotalBytesBilled(totalBytesBilled)
+        .setTotalBytesProcessed(totalBytesProcessed)
+        .setTotalSlotMs(totalSlotMs)
+        .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
+        .build();
+  }
+
+  /**
+   * Executes a slow-path query job using {@code jobs.insert}, awaits its completion, and streams
+   * the result rows via the BigQuery Storage Read API in Arrow format, wrapping the decoded rows in
+   * a {@link TableResult}.
+   *
+   * @param jobId the job ID, or {@code null}
+   * @param configuration the query job configuration
+   * @param options query job options
+   * @return a {@link TableResult} containing the decoded rows and job execution metadata
+   * @throws InterruptedException if interrupted while awaiting job completion
+   * @throws BigQueryException if job execution or ReadSession creation fails
+   */
+  private TableResult queryFallbackArrow(
+      JobId jobId, QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException {
+    // Submit the query job via jobs.insert and poll until completion.
+    Job job = create(JobInfo.of(jobId, configuration), options);
+    Job completedJob = job.waitFor();
+    return readArrowTableResultFromJob(
+        completedJob, configuration.getMaxResults(), configuration.getDestinationTable(), options);
   }
 
   @Override
