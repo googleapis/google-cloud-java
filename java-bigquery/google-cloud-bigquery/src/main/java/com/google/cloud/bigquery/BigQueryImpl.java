@@ -307,6 +307,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     private final byte[] arrowSchemaBytes;
     private final BigQueryOptions serviceOptions;
     private final long maxResults;
+    private final long pageSize;
     private final Map<BigQueryRpc.Option, ?> optionsMap;
 
     private transient org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
@@ -357,24 +358,24 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.totalRowsReturned = initialRowOffset;
       this.maxResults = maxResults != null ? maxResults : Long.MAX_VALUE;
       this.optionsMap = optionsMap;
+      Number optionPageSize =
+          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
+      this.pageSize =
+          optionPageSize != null && optionPageSize.longValue() > 0
+              ? optionPageSize.longValue()
+              : DEFAULT_PAGE_SIZE;
     }
 
     @Override
     public Page<FieldValueList> getNextPage() {
+      // Re-initialize transient buffer if the page fetcher was deserialized.
       if (buffer == null) {
         buffer = new ArrayDeque<>();
       }
       if (streamClosed || totalRowsReturned >= maxResults) {
-        closeClient();
         return null;
       }
 
-      Number optionPageSize =
-          optionsMap != null ? (Number) optionsMap.get(BigQueryRpc.Option.MAX_RESULTS) : null;
-      long pageSize =
-          optionPageSize != null && optionPageSize.longValue() > 0
-              ? optionPageSize.longValue()
-              : DEFAULT_PAGE_SIZE;
       List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
 
       try {
