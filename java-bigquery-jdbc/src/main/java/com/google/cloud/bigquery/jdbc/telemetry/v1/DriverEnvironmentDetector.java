@@ -27,8 +27,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /** Utility builder for constructing {@link DriverEnvironment} telemetry protos. */
-final class DriverEnvironmentBuilder {
-  private static final Logger logger = Logger.getLogger(DriverEnvironmentBuilder.class.getName());
+final class DriverEnvironmentDetector {
+  private static final Logger logger = Logger.getLogger(DriverEnvironmentDetector.class.getName());
 
   static final String DRIVER_NAME = "google-bigquery-jdbc-driver";
   static final String CLIENT_LANGUAGE = "java";
@@ -37,7 +37,7 @@ final class DriverEnvironmentBuilder {
   static final String UNKNOWN = "unknown";
   static final String RESTRICTED = "restricted";
 
-  private DriverEnvironmentBuilder() {}
+  private DriverEnvironmentDetector() {}
 
   static DriverEnvironment build() {
     return build(null);
@@ -171,7 +171,7 @@ final class DriverEnvironmentBuilder {
         logger.log(Level.WARNING, "Failed to persist telemetry tag to file", e);
       }
       return newId;
-    } catch (SecurityException e) {
+    } catch (SecurityException | RuntimeException e) {
       return UUID.randomUUID().toString();
     }
   }

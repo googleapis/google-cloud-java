@@ -215,4 +215,15 @@ public class TelemetryManagerTest {
     assertNull(TelemetryManager.getInstance());
     assertNull(TelemetryManager.getInstance(props1));
   }
+
+  @Test
+  public void testGetInstance_populatesDriverEnvironment() {
+    TelemetryManager manager = TelemetryManager.getInstance();
+
+    DriverEnvironment environment = manager.getBatcher().getConfig().getDriverEnvironment();
+    assertNotNull(environment);
+    assertEquals(DriverEnvironmentBuilder.DRIVER_NAME, environment.getDriverName());
+    assertEquals(DriverEnvironmentBuilder.CLIENT_LANGUAGE, environment.getClientLanguage());
+    assertFalse(environment.getTelemetryTag().isEmpty());
+  }
 }

@@ -81,7 +81,10 @@ public final class TelemetryManager implements AutoCloseable {
         return localRef;
       }
       TelemetryConfiguration config =
-          TelemetryConfiguration.builder().resolveProperties(properties).build();
+          TelemetryConfiguration.builder()
+              .resolveProperties(properties)
+              .setDriverEnvironment(DriverEnvironmentDetector.build())
+              .build();
       ClearcutTransport transport = new ClearcutTransport(config);
       TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
       localRef = new TelemetryManager(batcher);
