@@ -222,8 +222,8 @@ public class TelemetryManagerTest {
 
     DriverEnvironment environment = manager.getBatcher().getConfig().getDriverEnvironment();
     assertNotNull(environment);
-    assertEquals(DriverEnvironmentBuilder.DRIVER_NAME, environment.getDriverName());
-    assertEquals(DriverEnvironmentBuilder.CLIENT_LANGUAGE, environment.getClientLanguage());
+    assertEquals(DriverEnvironmentDetector.DRIVER_NAME, environment.getDriverName());
+    assertEquals(DriverEnvironmentDetector.CLIENT_LANGUAGE, environment.getClientLanguage());
     assertFalse(environment.getTelemetryTag().isEmpty());
   }
 }

@@ -42,9 +42,6 @@ public class BigQueryJdbcExceptionTest {
         Arguments.of((ExceptionCreator) BigQueryConversionException::new),
         Arguments.of(
             (ExceptionCreator)
-                (msg, cause) -> new BigQueryJdbcCoercionException((Exception) cause)),
-        Arguments.of(
-            (ExceptionCreator)
                 (msg, cause) ->
                     new BigQueryJdbcSqlSyntaxErrorException(msg, (BigQueryException) cause)));
   }
@@ -57,9 +54,7 @@ public class BigQueryJdbcExceptionTest {
 
     Throwable ex = creator.create(message, cause);
 
-    String expectedPrefix =
-        ex instanceof BigQueryJdbcCoercionException ? "Coercion error" : message;
-    String expectedMessage = expectedPrefix + "\n" + cause.getMessage();
+    String expectedMessage = message + "\n" + cause.getMessage();
 
     assertEquals(expectedMessage, ex.getMessage());
     assertEquals(cause, ex.getCause());

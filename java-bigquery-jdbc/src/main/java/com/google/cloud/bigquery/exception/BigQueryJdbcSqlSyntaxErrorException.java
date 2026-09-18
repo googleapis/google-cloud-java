@@ -32,10 +32,13 @@ public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcSqlSyntaxErrorException(BigQueryException ex) {
-    super(ex.getMessage(), "Incorrect SQL syntax.");
+    super(ex.getMessage(), BigQueryJdbcSqlStates.SYNTAX_ERROR_OR_ACCESS_RULE_VIOLATION, ex);
   }
 
   public BigQueryJdbcSqlSyntaxErrorException(String message, BigQueryException ex) {
-    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    super(
+        BigQueryJdbcExceptionUtils.formatMessage(message, ex),
+        BigQueryJdbcSqlStates.SYNTAX_ERROR_OR_ACCESS_RULE_VIOLATION,
+        ex);
   }
 }

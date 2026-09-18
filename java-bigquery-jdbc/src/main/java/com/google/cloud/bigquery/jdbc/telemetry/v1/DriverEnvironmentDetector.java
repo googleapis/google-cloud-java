@@ -171,7 +171,7 @@ final class DriverEnvironmentDetector {
         logger.log(Level.WARNING, "Failed to persist telemetry tag to file", e);
       }
       return newId;
-    } catch (SecurityException | RuntimeException e) {
+    } catch (RuntimeException e) {
       return UUID.randomUUID().toString();
     }
   }

@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.exception;
 
+import com.google.cloud.bigquery.BigQueryException;
+
 /** Utility class for JDBC exceptions. */
 final class BigQueryJdbcExceptionUtils {
 
@@ -36,5 +38,50 @@ final class BigQueryJdbcExceptionUtils {
         + (cause != null
             ? "\n" + (cause.getMessage() != null ? cause.getMessage() : cause.toString())
             : "");
+  }
+
+  /**
+   * Maps a cause to a standard SQL:2003 SQLState.
+   *
+   * <p>Returns {@code HY000} (general error) for anything unrecognised, so the result is always a
+   * valid 5-character state and never null.
+   *
+   * @param cause the underlying cause, may be null.
+   * @return a 5-character SQLState.
+   */
+  static String sqlStateForCause(Throwable cause) {
+    if (!(cause instanceof BigQueryException)) {
+      return BigQueryJdbcSqlStates.GENERAL_ERROR;
+    }
+    String reason = ((BigQueryException) cause).getReason();
+    if (reason == null) {
+      return BigQueryJdbcSqlStates.GENERAL_ERROR;
+    }
+    switch (reason) {
+      case "invalidQuery":
+      case "invalid":
+      case "badRequest":
+        return BigQueryJdbcSqlStates.SYNTAX_ERROR_OR_ACCESS_RULE_VIOLATION;
+      case "accessDenied":
+        return BigQueryJdbcSqlStates.INSUFFICIENT_PRIVILEGE;
+      case "invalidUser":
+        return BigQueryJdbcSqlStates.INVALID_AUTHORIZATION;
+      case "quotaExceeded":
+      case "rateLimitExceeded":
+      case "resourcesExceeded":
+        return BigQueryJdbcSqlStates.INSUFFICIENT_RESOURCES;
+      case "responseTooLarge":
+        return BigQueryJdbcSqlStates.PROGRAM_LIMIT_EXCEEDED;
+      case "stopped":
+        return BigQueryJdbcSqlStates.QUERY_CANCELED;
+      case "backendError":
+      case "internalError":
+      case "jobInternalError":
+        return BigQueryJdbcSqlStates.SYSTEM_ERROR;
+      case "notImplemented":
+        return BigQueryJdbcSqlStates.FEATURE_NOT_SUPPORTED;
+      default:
+        return BigQueryJdbcSqlStates.GENERAL_ERROR;
+    }
   }
 }
