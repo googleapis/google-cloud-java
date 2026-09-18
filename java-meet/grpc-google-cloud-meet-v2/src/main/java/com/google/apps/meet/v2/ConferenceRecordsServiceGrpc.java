@@ -613,6 +613,94 @@ public final class ConferenceRecordsServiceGrpc {
     return getListTranscriptEntriesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.GetSmartNoteRequest, com.google.apps.meet.v2.SmartNote>
+      getGetSmartNoteMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSmartNote",
+      requestType = com.google.apps.meet.v2.GetSmartNoteRequest.class,
+      responseType = com.google.apps.meet.v2.SmartNote.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.GetSmartNoteRequest, com.google.apps.meet.v2.SmartNote>
+      getGetSmartNoteMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.GetSmartNoteRequest, com.google.apps.meet.v2.SmartNote>
+        getGetSmartNoteMethod;
+    if ((getGetSmartNoteMethod = ConferenceRecordsServiceGrpc.getGetSmartNoteMethod) == null) {
+      synchronized (ConferenceRecordsServiceGrpc.class) {
+        if ((getGetSmartNoteMethod = ConferenceRecordsServiceGrpc.getGetSmartNoteMethod) == null) {
+          ConferenceRecordsServiceGrpc.getGetSmartNoteMethod =
+              getGetSmartNoteMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.GetSmartNoteRequest,
+                          com.google.apps.meet.v2.SmartNote>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSmartNote"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.GetSmartNoteRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.SmartNote.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConferenceRecordsServiceMethodDescriptorSupplier("GetSmartNote"))
+                      .build();
+        }
+      }
+    }
+    return getGetSmartNoteMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.ListSmartNotesRequest,
+          com.google.apps.meet.v2.ListSmartNotesResponse>
+      getListSmartNotesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSmartNotes",
+      requestType = com.google.apps.meet.v2.ListSmartNotesRequest.class,
+      responseType = com.google.apps.meet.v2.ListSmartNotesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.apps.meet.v2.ListSmartNotesRequest,
+          com.google.apps.meet.v2.ListSmartNotesResponse>
+      getListSmartNotesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.apps.meet.v2.ListSmartNotesRequest,
+            com.google.apps.meet.v2.ListSmartNotesResponse>
+        getListSmartNotesMethod;
+    if ((getListSmartNotesMethod = ConferenceRecordsServiceGrpc.getListSmartNotesMethod) == null) {
+      synchronized (ConferenceRecordsServiceGrpc.class) {
+        if ((getListSmartNotesMethod = ConferenceRecordsServiceGrpc.getListSmartNotesMethod)
+            == null) {
+          ConferenceRecordsServiceGrpc.getListSmartNotesMethod =
+              getListSmartNotesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.apps.meet.v2.ListSmartNotesRequest,
+                          com.google.apps.meet.v2.ListSmartNotesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSmartNotes"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.ListSmartNotesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.apps.meet.v2.ListSmartNotesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConferenceRecordsServiceMethodDescriptorSupplier("ListSmartNotes"))
+                      .build();
+        }
+      }
+    }
+    return getListSmartNotesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConferenceRecordsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConferenceRecordsServiceStub> factory =
@@ -839,7 +927,8 @@ public final class ConferenceRecordsServiceGrpc {
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     default void getTranscriptEntry(
@@ -857,7 +946,8 @@ public final class ConferenceRecordsServiceGrpc {
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     default void listTranscriptEntries(
@@ -866,6 +956,36 @@ public final class ConferenceRecordsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListTranscriptEntriesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart notes by smart note ID.
+     * </pre>
+     */
+    default void getSmartNote(
+        com.google.apps.meet.v2.GetSmartNoteRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.SmartNote> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSmartNoteMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of smart notes from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    default void listSmartNotes(
+        com.google.apps.meet.v2.ListSmartNotesRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListSmartNotesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSmartNotesMethod(), responseObserver);
     }
   }
 
@@ -1087,7 +1207,8 @@ public final class ConferenceRecordsServiceGrpc {
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public void getTranscriptEntry(
@@ -1107,7 +1228,8 @@ public final class ConferenceRecordsServiceGrpc {
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public void listTranscriptEntries(
@@ -1116,6 +1238,40 @@ public final class ConferenceRecordsServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListTranscriptEntriesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart notes by smart note ID.
+     * </pre>
+     */
+    public void getSmartNote(
+        com.google.apps.meet.v2.GetSmartNoteRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.SmartNote> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSmartNoteMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of smart notes from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public void listSmartNotes(
+        com.google.apps.meet.v2.ListSmartNotesRequest request,
+        io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListSmartNotesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSmartNotesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1292,7 +1448,8 @@ public final class ConferenceRecordsServiceGrpc {
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.apps.meet.v2.TranscriptEntry getTranscriptEntry(
@@ -1309,7 +1466,8 @@ public final class ConferenceRecordsServiceGrpc {
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.apps.meet.v2.ListTranscriptEntriesResponse listTranscriptEntries(
@@ -1317,6 +1475,33 @@ public final class ConferenceRecordsServiceGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTranscriptEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart notes by smart note ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.SmartNote getSmartNote(
+        com.google.apps.meet.v2.GetSmartNoteRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSmartNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of smart notes from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.ListSmartNotesResponse listSmartNotes(
+        com.google.apps.meet.v2.ListSmartNotesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListSmartNotesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1489,7 +1674,8 @@ public final class ConferenceRecordsServiceGrpc {
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.apps.meet.v2.TranscriptEntry getTranscriptEntry(
@@ -1506,13 +1692,41 @@ public final class ConferenceRecordsServiceGrpc {
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.apps.meet.v2.ListTranscriptEntriesResponse listTranscriptEntries(
         com.google.apps.meet.v2.ListTranscriptEntriesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListTranscriptEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart notes by smart note ID.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.SmartNote getSmartNote(
+        com.google.apps.meet.v2.GetSmartNoteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSmartNoteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of smart notes from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.apps.meet.v2.ListSmartNotesResponse listSmartNotes(
+        com.google.apps.meet.v2.ListSmartNotesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSmartNotesMethod(), getCallOptions(), request);
     }
   }
 
@@ -1692,7 +1906,8 @@ public final class ConferenceRecordsServiceGrpc {
      * Gets a `TranscriptEntry` resource by entry ID.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1710,7 +1925,8 @@ public final class ConferenceRecordsServiceGrpc {
      * by start time and in ascending order.
      * Note: The transcript entries returned by the Google Meet API might not
      * match the transcription found in the Google Docs transcript file. This can
-     * occur when the Google Docs transcript file is modified after generation.
+     * occur when 1) we have interleaved speakers within milliseconds, or
+     * 2) the Google Docs transcript file is modified after generation.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1718,6 +1934,34 @@ public final class ConferenceRecordsServiceGrpc {
         listTranscriptEntries(com.google.apps.meet.v2.ListTranscriptEntriesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListTranscriptEntriesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets smart notes by smart note ID.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.apps.meet.v2.SmartNote>
+        getSmartNote(com.google.apps.meet.v2.GetSmartNoteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSmartNoteMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the set of smart notes from the conference record. By default,
+     * ordered by start time and in ascending order.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.apps.meet.v2.ListSmartNotesResponse>
+        listSmartNotes(com.google.apps.meet.v2.ListSmartNotesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSmartNotesMethod(), getCallOptions()), request);
     }
   }
 
@@ -1733,6 +1977,8 @@ public final class ConferenceRecordsServiceGrpc {
   private static final int METHODID_LIST_TRANSCRIPTS = 9;
   private static final int METHODID_GET_TRANSCRIPT_ENTRY = 10;
   private static final int METHODID_LIST_TRANSCRIPT_ENTRIES = 11;
+  private static final int METHODID_GET_SMART_NOTE = 12;
+  private static final int METHODID_LIST_SMART_NOTES = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1818,6 +2064,17 @@ public final class ConferenceRecordsServiceGrpc {
           serviceImpl.listTranscriptEntries(
               (com.google.apps.meet.v2.ListTranscriptEntriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListTranscriptEntriesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SMART_NOTE:
+          serviceImpl.getSmartNote(
+              (com.google.apps.meet.v2.GetSmartNoteRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.SmartNote>) responseObserver);
+          break;
+        case METHODID_LIST_SMART_NOTES:
+          serviceImpl.listSmartNotes(
+              (com.google.apps.meet.v2.ListSmartNotesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.apps.meet.v2.ListSmartNotesResponse>)
                   responseObserver);
           break;
         default:
@@ -1919,6 +2176,19 @@ public final class ConferenceRecordsServiceGrpc {
                     com.google.apps.meet.v2.ListTranscriptEntriesRequest,
                     com.google.apps.meet.v2.ListTranscriptEntriesResponse>(
                     service, METHODID_LIST_TRANSCRIPT_ENTRIES)))
+        .addMethod(
+            getGetSmartNoteMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.GetSmartNoteRequest, com.google.apps.meet.v2.SmartNote>(
+                    service, METHODID_GET_SMART_NOTE)))
+        .addMethod(
+            getListSmartNotesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.apps.meet.v2.ListSmartNotesRequest,
+                    com.google.apps.meet.v2.ListSmartNotesResponse>(
+                    service, METHODID_LIST_SMART_NOTES)))
         .build();
   }
 
@@ -1982,6 +2252,8 @@ public final class ConferenceRecordsServiceGrpc {
                       .addMethod(getListTranscriptsMethod())
                       .addMethod(getGetTranscriptEntryMethod())
                       .addMethod(getListTranscriptEntriesMethod())
+                      .addMethod(getGetSmartNoteMethod())
+                      .addMethod(getListSmartNotesMethod())
                       .build();
         }
       }

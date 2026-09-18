@@ -21,6 +21,8 @@ import static com.google.apps.meet.v2beta.SpacesServiceClient.ListMembersPagedRe
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.BatchUpdateMembersRequest;
+import com.google.apps.meet.v2beta.BatchUpdateMembersResponse;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
@@ -33,6 +35,7 @@ import com.google.apps.meet.v2beta.ListMembersRequest;
 import com.google.apps.meet.v2beta.ListMembersResponse;
 import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
+import com.google.apps.meet.v2beta.UpdateMemberRequest;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -88,6 +91,15 @@ public abstract class SpacesServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteMemberCallable()");
+  }
+
+  public UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMemberCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateMembersCallable()");
   }
 
   @Override

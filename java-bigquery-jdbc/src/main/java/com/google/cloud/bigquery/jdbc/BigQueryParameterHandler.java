@@ -25,18 +25,32 @@ import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.math.BigInteger;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 class BigQueryParameterHandler {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private final int parametersArraySize;
+  private final boolean enableTimestampPicos;
+  final ArrayList<BigQueryJdbcParameter> parametersList;
+  private long highestIndex = 0;
 
-  public BigQueryParameterHandler(int parameterCount) {
-    this.parametersArraySize = parameterCount;
+  BigQueryParameterHandler(int parameterCount) {
+    this(parameterCount, false);
   }
 
-  BigQueryParameterHandler(int parameterCount, ArrayList<BigQueryJdbcParameter> parametersList) {
+  BigQueryParameterHandler(int parameterCount, boolean enableTimestampPicos) {
+    this(parameterCount, new ArrayList<>(parameterCount), enableTimestampPicos);
+  }
+
+  BigQueryParameterHandler(
+      int parameterCount,
+      ArrayList<BigQueryJdbcParameter> parametersList,
+      boolean enableTimestampPicos) {
     this.parametersArraySize = parameterCount;
     this.parametersList = parametersList;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   // Indicates whether the parameter is input, output or both
@@ -49,11 +63,6 @@ class BigQueryParameterHandler {
     INOUT
   };
 
-  private int parametersArraySize;
-  ArrayList<BigQueryJdbcParameter> parametersList = new ArrayList<>(parametersArraySize);
-
-  private long highestIndex = 0;
-
   QueryJobConfiguration.Builder configureParameters(
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws SQLException {
     LOG.finest("++enter++");
@@ -62,7 +71,8 @@ class BigQueryParameterHandler {
 
         Object parameterValue = getParameter(i);
         StandardSQLTypeName sqlType = getSqlType(i);
-        parameterValue = formatValueForQueryParameter(parameterValue, sqlType);
+        parameterValue =
+            formatValueForQueryParameter(parameterValue, sqlType, this.enableTimestampPicos);
         LOG.finest(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
             parameterValue, sqlType, i);
@@ -78,7 +88,8 @@ class BigQueryParameterHandler {
     return jobConfigurationBuilder;
   }
 
-  static Object formatValueForQueryParameter(Object parameterValue, StandardSQLTypeName sqlType) {
+  static Object formatValueForQueryParameter(
+      Object parameterValue, StandardSQLTypeName sqlType, boolean enableTimestampPicos) {
     if (parameterValue == null) {
       return null;
     }
@@ -91,13 +102,17 @@ class BigQueryParameterHandler {
     if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
       return ((Number) parameterValue).doubleValue();
     }
-    if (parameterValue instanceof java.sql.Timestamp) {
-      java.sql.Timestamp ts = (java.sql.Timestamp) parameterValue;
-      java.sql.Timestamp copy = new java.sql.Timestamp(ts.getTime());
-      copy.setNanos((ts.getNanos() / 1000) * 1000);
-      return copy.toString();
+    if (parameterValue instanceof Timestamp) {
+      return formatTimestampParameter((Timestamp) parameterValue, enableTimestampPicos);
     }
-    if (parameterValue instanceof java.sql.Time) {
+    if (sqlType == StandardSQLTypeName.TIMESTAMP && parameterValue instanceof String) {
+      String str = ((String) parameterValue).trim();
+      if (str.length() > 10 && str.charAt(10) == 'T') {
+        str = str.substring(0, 10) + ' ' + str.substring(11);
+      }
+      return BigQueryTemporalUtility.truncateFractionalSeconds(str, enableTimestampPicos ? 12 : 6);
+    }
+    if (parameterValue instanceof Time) {
       String timeStr = parameterValue.toString();
       if (timeStr.length() == 8) {
         return timeStr + ".000000";
@@ -110,7 +125,17 @@ class BigQueryParameterHandler {
     return parameterValue;
   }
 
-  void setParameter(int parameterIndex, Object value, Class type) {
+  private static String formatTimestampParameter(Timestamp ts, boolean enableTimestampPicos) {
+    if (enableTimestampPicos) {
+      return ts.toString();
+    }
+    Timestamp copy = new Timestamp(ts.getTime());
+    copy.setNanos((ts.getNanos() / 1000) * 1000);
+    return copy.toString();
+  }
+
+  void setParameter(int parameterIndex, Object value, Class type)
+      throws BigQueryJdbcSqlFeatureNotSupportedException {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
     checkValidIndex(parameterIndex);

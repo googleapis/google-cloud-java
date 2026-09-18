@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1.stub;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -85,6 +86,8 @@ import com.google.cloud.securesourcemanager.v1.DeletePullRequestCommentRequest;
 import com.google.cloud.securesourcemanager.v1.DeleteRepositoryRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobRequest;
 import com.google.cloud.securesourcemanager.v1.FetchBlobResponse;
+import com.google.cloud.securesourcemanager.v1.FetchRefsRequest;
+import com.google.cloud.securesourcemanager.v1.FetchRefsResponse;
 import com.google.cloud.securesourcemanager.v1.FetchTreeRequest;
 import com.google.cloud.securesourcemanager.v1.FetchTreeResponse;
 import com.google.cloud.securesourcemanager.v1.FileDiff;
@@ -124,6 +127,7 @@ import com.google.cloud.securesourcemanager.v1.OpenPullRequestRequest;
 import com.google.cloud.securesourcemanager.v1.OperationMetadata;
 import com.google.cloud.securesourcemanager.v1.PullRequest;
 import com.google.cloud.securesourcemanager.v1.PullRequestComment;
+import com.google.cloud.securesourcemanager.v1.Ref;
 import com.google.cloud.securesourcemanager.v1.Repository;
 import com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsRequest;
 import com.google.cloud.securesourcemanager.v1.ResolvePullRequestCommentsResponse;
@@ -239,7 +243,10 @@ import org.jspecify.annotations.Nullable;
 public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/securesourcemanager.read-write")
+          .build();
 
   private final PagedCallSettings<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -320,6 +327,8 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
   private final PagedCallSettings<FetchTreeRequest, FetchTreeResponse, FetchTreePagedResponse>
       fetchTreeSettings;
   private final UnaryCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings;
+  private final PagedCallSettings<FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+      fetchRefsSettings;
   private final UnaryCallSettings<CreateIssueRequest, Operation> createIssueSettings;
   private final OperationCallSettings<CreateIssueRequest, Issue, OperationMetadata>
       createIssueOperationSettings;
@@ -656,6 +665,40 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
             }
           };
 
+  private static final PagedListDescriptor<FetchRefsRequest, FetchRefsResponse, Ref>
+      FETCH_REFS_PAGE_STR_DESC =
+          new PagedListDescriptor<FetchRefsRequest, FetchRefsResponse, Ref>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchRefsRequest injectToken(FetchRefsRequest payload, String token) {
+              return FetchRefsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchRefsRequest injectPageSize(FetchRefsRequest payload, int pageSize) {
+              return FetchRefsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchRefsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchRefsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Ref> extractResources(FetchRefsResponse payload) {
+              return payload.getRefsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListIssuesRequest, ListIssuesResponse, Issue>
       LIST_ISSUES_PAGE_STR_DESC =
           new PagedListDescriptor<ListIssuesRequest, ListIssuesResponse, Issue>() {
@@ -933,6 +976,23 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
               PageContext<FetchTreeRequest, FetchTreeResponse, TreeEntry> pageContext =
                   PageContext.create(callable, FETCH_TREE_PAGE_STR_DESC, request, context);
               return FetchTreePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+      FETCH_REFS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>() {
+            @Override
+            public ApiFuture<FetchRefsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchRefsRequest, FetchRefsResponse> callable,
+                FetchRefsRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchRefsResponse> futureResponse) {
+              PageContext<FetchRefsRequest, FetchRefsResponse, Ref> pageContext =
+                  PageContext.create(callable, FETCH_REFS_PAGE_STR_DESC, request, context);
+              return FetchRefsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1286,6 +1346,12 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
   /** Returns the object with the settings used for calls to fetchBlob. */
   public UnaryCallSettings<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
     return fetchBlobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchRefs. */
+  public PagedCallSettings<FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+      fetchRefsSettings() {
+    return fetchRefsSettings;
   }
 
   /** Returns the object with the settings used for calls to createIssue. */
@@ -1683,6 +1749,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     listPullRequestFileDiffsSettings = settingsBuilder.listPullRequestFileDiffsSettings().build();
     fetchTreeSettings = settingsBuilder.fetchTreeSettings().build();
     fetchBlobSettings = settingsBuilder.fetchBlobSettings().build();
+    fetchRefsSettings = settingsBuilder.fetchRefsSettings().build();
     createIssueSettings = settingsBuilder.createIssueSettings().build();
     createIssueOperationSettings = settingsBuilder.createIssueOperationSettings().build();
     getIssueSettings = settingsBuilder.getIssueSettings().build();
@@ -1853,6 +1920,9 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
             FetchTreeRequest, FetchTreeResponse, FetchTreePagedResponse>
         fetchTreeSettings;
     private final UnaryCallSettings.Builder<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings;
+    private final PagedCallSettings.Builder<
+            FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+        fetchRefsSettings;
     private final UnaryCallSettings.Builder<CreateIssueRequest, Operation> createIssueSettings;
     private final OperationCallSettings.Builder<CreateIssueRequest, Issue, OperationMetadata>
         createIssueOperationSettings;
@@ -2032,6 +2102,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
           PagedCallSettings.newBuilder(LIST_PULL_REQUEST_FILE_DIFFS_PAGE_STR_FACT);
       fetchTreeSettings = PagedCallSettings.newBuilder(FETCH_TREE_PAGE_STR_FACT);
       fetchBlobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchRefsSettings = PagedCallSettings.newBuilder(FETCH_REFS_PAGE_STR_FACT);
       createIssueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createIssueOperationSettings = OperationCallSettings.newBuilder();
       getIssueSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2107,6 +2178,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
               listPullRequestFileDiffsSettings,
               fetchTreeSettings,
               fetchBlobSettings,
+              fetchRefsSettings,
               createIssueSettings,
               getIssueSettings,
               listIssuesSettings,
@@ -2186,6 +2258,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
       listPullRequestFileDiffsSettings = settings.listPullRequestFileDiffsSettings.toBuilder();
       fetchTreeSettings = settings.fetchTreeSettings.toBuilder();
       fetchBlobSettings = settings.fetchBlobSettings.toBuilder();
+      fetchRefsSettings = settings.fetchRefsSettings.toBuilder();
       createIssueSettings = settings.createIssueSettings.toBuilder();
       createIssueOperationSettings = settings.createIssueOperationSettings.toBuilder();
       getIssueSettings = settings.getIssueSettings.toBuilder();
@@ -2271,6 +2344,7 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
               listPullRequestFileDiffsSettings,
               fetchTreeSettings,
               fetchBlobSettings,
+              fetchRefsSettings,
               createIssueSettings,
               getIssueSettings,
               listIssuesSettings,
@@ -2480,6 +2554,11 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
 
       builder
           .fetchBlobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchRefsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3621,6 +3700,12 @@ public class SecureSourceManagerStubSettings extends StubSettings<SecureSourceMa
     /** Returns the builder for the settings used for calls to fetchBlob. */
     public UnaryCallSettings.Builder<FetchBlobRequest, FetchBlobResponse> fetchBlobSettings() {
       return fetchBlobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchRefs. */
+    public PagedCallSettings.Builder<FetchRefsRequest, FetchRefsResponse, FetchRefsPagedResponse>
+        fetchRefsSettings() {
+      return fetchRefsSettings;
     }
 
     /** Returns the builder for the settings used for calls to createIssue. */

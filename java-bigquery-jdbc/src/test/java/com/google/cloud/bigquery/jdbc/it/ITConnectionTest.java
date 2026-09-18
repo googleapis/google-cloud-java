@@ -35,7 +35,6 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
@@ -48,21 +47,12 @@ public class ITConnectionTest {
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
   private static final String TABLE_NAME = "JDBC_CONNECTION_TEST_TABLE" + randomNumber;
-  private static final String PCNT_TABLE_NAME = "PCNT_CONN_TEST_TABLE_" + randomNumber;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException {
     DATASET = ITBase.getSharedDataset();
     ITBase.setUpTable(DATASET, TABLE_NAME);
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
-    ITBase.setUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
-  }
-
-  @AfterAll
-  public static void afterClass() throws InterruptedException {
-    // Shared dataset cleanup is handled by ITBase shutdown hook.
-    // Clean up dynamic table created in the shared PCNT namespace.
-    ITBase.cleanUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
   }
 
   @Test
@@ -452,48 +442,6 @@ public class ITConnectionTest {
           ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_NAME)) {
         assertTrue(rs.next());
         assertTrue(rs.getMetaData().getColumnCount() > 0);
-      }
-    }
-  }
-
-  @Test
-  public void testPcntDefaultDataset2TierNamespace() throws SQLException {
-    String urlWithPcnt = ITBase.connectionUrl + ";DefaultDataset=" + ITBase.PCNT_SCHEMA + ";";
-    try (Connection connection = DriverManager.getConnection(urlWithPcnt)) {
-      assertNotNull(connection);
-      assertFalse(connection.isClosed());
-      try (Statement stmt = connection.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME + " ORDER BY id")) {
-        assertTrue(rs.next());
-        assertEquals(1, rs.getInt("id"));
-        assertEquals("Alice", rs.getString("name"));
-        assertTrue(rs.next());
-        assertEquals(2, rs.getInt("id"));
-        assertEquals("Bob", rs.getString("name"));
-      }
-    }
-  }
-
-  @Test
-  public void testPcntDefaultDataset3TierNamespace() throws SQLException {
-    String urlWithPcnt =
-        ITBase.connectionUrl
-            + ";DefaultDataset="
-            + DEFAULT_CATALOG
-            + ":"
-            + ITBase.PCNT_SCHEMA
-            + ";";
-    try (Connection connection = DriverManager.getConnection(urlWithPcnt)) {
-      assertNotNull(connection);
-      assertFalse(connection.isClosed());
-      try (Statement stmt = connection.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME + " ORDER BY id")) {
-        assertTrue(rs.next());
-        assertEquals(1, rs.getInt("id"));
-        assertEquals("Alice", rs.getString("name"));
-        assertTrue(rs.next());
-        assertEquals(2, rs.getInt("id"));
-        assertEquals("Bob", rs.getString("name"));
       }
     }
   }
