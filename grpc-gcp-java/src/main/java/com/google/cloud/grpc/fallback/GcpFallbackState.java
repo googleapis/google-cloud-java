@@ -38,6 +38,8 @@ public class GcpFallbackState {
   private final AtomicLong primaryFailures = new AtomicLong(0);
   private final AtomicLong fallbackSuccesses = new AtomicLong(0);
   private final AtomicLong fallbackFailures = new AtomicLong(0);
+  private final AtomicLong primaryProbeSuccesses = new AtomicLong(0);
+  private final AtomicLong firstPrimaryProbeSuccessNanos = new AtomicLong(0);
   private final AtomicLong generation = new AtomicLong(0);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
@@ -50,11 +52,6 @@ public class GcpFallbackState {
 
   public GcpFallbackState() {}
 
-  /**
-   * Constructs a fallback state with an explicit executor service for testing.
-   *
-   * @param execService the executor service to use.
-   */
   @VisibleForTesting
   GcpFallbackState(ScheduledExecutorService execService) {
     this.execService = execService;
@@ -71,11 +68,9 @@ public class GcpFallbackState {
     stateChangeCallbacks.remove(callback);
   }
 
-  private void triggerStateChangeCallbacks() {
-    List<Runnable> callbacks;
-    synchronized (this) {
-      callbacks = new ArrayList<>(stateChangeCallbacks);
-      stateChangeCallbacks.clear();
+  private void runStateChangeCallbacks(List<Runnable> callbacks) {
+    if (callbacks == null) {
+      return;
     }
     for (Runnable callback : callbacks) {
       try {
@@ -101,7 +96,11 @@ public class GcpFallbackState {
     return fallbackFailures;
   }
 
-  /** Returns whether the pool is currently in fallback mode. */
+  @VisibleForTesting
+  AtomicLong getPrimaryProbeSuccesses() {
+    return primaryProbeSuccesses;
+  }
+
   boolean isInFallbackMode() {
     return inFallbackMode.get();
   }
@@ -111,54 +110,92 @@ public class GcpFallbackState {
   }
 
   /** Bumps the generation counter and transitions the pool to fallback mode. */
-  void triggerFallback() {
-    boolean changed = false;
+  boolean triggerFallback() {
+    boolean fallbackTriggered = false;
+    List<Runnable> callbacks = null;
     synchronized (this) {
       if (!inFallbackMode.get()) {
+        primaryProbeSuccesses.set(0);
+        firstPrimaryProbeSuccessNanos.set(0);
         generation.incrementAndGet();
         inFallbackMode.set(true);
-        changed = true;
+        fallbackTriggered = true;
+        callbacks = new ArrayList<>(stateChangeCallbacks);
+        stateChangeCallbacks.clear();
       }
     }
-    if (changed) {
-      triggerStateChangeCallbacks();
+    if (fallbackTriggered) {
+      runStateChangeCallbacks(callbacks);
     }
+    return fallbackTriggered;
   }
 
-  /**
-   * Records pool recovery by clearing primary error counts and updating fallback mode.
-   *
-   * @param expectedGen the generation at which the recovery probe started.
-   * @return the resulting pool generation, or -1 if the pool generation changed concurrently.
-   */
-  long recordRecovery(long expectedGen) {
-    boolean changed = false;
-    long currentGen;
+  /** Bumps the generation counter and transitions the pool out of fallback mode. */
+  boolean triggerRecovery(long expectedGeneration) {
+    boolean recovered = false;
+    List<Runnable> callbacks = null;
     synchronized (this) {
-      if (generation.get() != expectedGen) {
-        return -1;
+      if (generation.get() != expectedGeneration || !inFallbackMode.get()) {
+        return false;
       }
-      if (inFallbackMode.get()) {
-        primaryFailures.set(0);
-        primarySuccesses.set(0);
-        generation.incrementAndGet();
-        inFallbackMode.set(false);
-        changed = true;
-      }
-      currentGen = generation.get();
+      primaryFailures.set(0);
+      primarySuccesses.set(0);
+      primaryProbeSuccesses.set(0);
+      firstPrimaryProbeSuccessNanos.set(0);
+      generation.incrementAndGet();
+      inFallbackMode.set(false);
+      recovered = true;
+      callbacks = new ArrayList<>(stateChangeCallbacks);
+      stateChangeCallbacks.clear();
     }
-    if (changed) {
-      triggerStateChangeCallbacks();
+    if (recovered) {
+      runStateChangeCallbacks(callbacks);
     }
-    return currentGen;
+    return recovered;
   }
 
   /**
-   * Retrieves or lazily initializes the background executor service.
-   *
-   * @param options optional fallback channel configuration options.
-   * @return the active ScheduledExecutorService.
+   * Records a primary probe result and recovers the pool if consecutive probe success count and
+   * duration criteria are met.
    */
+  void recordPrimaryProbeResult(
+      boolean success, long expectedGeneration, GcpFallbackChannelOptions options) {
+    if (!options.isEnableRecovery()) {
+      return;
+    }
+    boolean shouldRecover = false;
+    synchronized (this) {
+      if (generation.get() != expectedGeneration || !inFallbackMode.get()) {
+        return;
+      }
+      if (!success) {
+        primaryProbeSuccesses.set(0);
+        firstPrimaryProbeSuccessNanos.set(0);
+        return;
+      }
+      long nowNanos = System.nanoTime();
+      long firstSuccessNanos =
+          firstPrimaryProbeSuccessNanos.updateAndGet(prev -> prev == 0 ? nowNanos : prev);
+      long primaryProbeSuccessCount = primaryProbeSuccesses.incrementAndGet();
+
+      boolean durationSatisfied = true;
+      if (options.getMinPrimaryProbeSuccessDuration() != null
+          && !options.getMinPrimaryProbeSuccessDuration().isZero()
+          && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
+        long elapsedNanos = nowNanos - firstSuccessNanos;
+        durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
+      }
+
+      if (primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
+          && durationSatisfied) {
+        shouldRecover = true;
+      }
+    }
+    if (shouldRecover) {
+      triggerRecovery(expectedGeneration);
+    }
+  }
+
   synchronized ScheduledExecutorService getOrCreateExecutorService(
       GcpFallbackChannelOptions options) {
     return getOrCreateExecutorService(options, null);
@@ -191,7 +228,6 @@ public class GcpFallbackState {
     return this.execService;
   }
 
-  /** Schedules a periodic task (e.g., probe) on the shared background executor service. */
   synchronized ScheduledFuture<?> scheduleTask(
       Runnable command, long initialDelay, long period, TimeUnit unit) {
     if (isShutdown || this.execService == null || this.execService.isShutdown()) {
@@ -209,13 +245,7 @@ public class GcpFallbackState {
         unit);
   }
 
-  /**
-   * Starts the periodic error rate evaluation loop exactly once across all channels sharing this
-   * state. Channels sharing this state should use consistent evaluation options, as the first
-   * channel to start evaluation configures the shared loop.
-   *
-   * @param options the fallback channel configuration options.
-   */
+  /** Starts the periodic error rate evaluation loop once across all channels sharing this state. */
   synchronized void startPeriodicEvaluation(GcpFallbackChannelOptions options) {
     if (isShutdown
         || options == null
@@ -249,55 +279,45 @@ public class GcpFallbackState {
     }
   }
 
-  /**
-   * Evaluates error rates across all channels sharing this state and updates fallback mode.
-   *
-   * @param options the fallback channel configuration options.
-   * @param openTelemetry telemetry module for recording error metrics.
-   */
+  /** Evaluates error rates across all channels sharing this state and updates fallback mode. */
   void checkErrorRates(GcpFallbackChannelOptions options, GcpFallbackOpenTelemetry openTelemetry) {
-    float primaryErrRate = 0f;
-    boolean fallbackTriggered = false;
-    boolean currentInFallback;
+    float primaryErrorRate = 0f;
+    boolean shouldTriggerFallback;
     synchronized (this) {
-      boolean wasInFallback = inFallbackMode.get();
-      long successes = primarySuccesses.getAndSet(0);
-      long failures = primaryFailures.getAndSet(0);
-      if (failures + successes > 0) {
-        primaryErrRate = (float) failures / (failures + successes);
+      long primarySuccessCount = primarySuccesses.getAndSet(0);
+      long primaryFailureCount = primaryFailures.getAndSet(0);
+      if (primaryFailureCount + primarySuccessCount > 0) {
+        primaryErrorRate =
+            (float) primaryFailureCount / (primaryFailureCount + primarySuccessCount);
       }
-      if (!wasInFallback && options.isEnableFallback()) {
-        if (failures >= options.getMinFailedCalls()
-            && primaryErrRate >= options.getErrorRateThreshold()) {
-          generation.incrementAndGet();
-          inFallbackMode.set(true);
-          fallbackTriggered = true;
-        }
-      }
-      currentInFallback = inFallbackMode.get();
+      shouldTriggerFallback =
+          !inFallbackMode.get()
+              && options.isEnableFallback()
+              && primaryFailureCount >= options.getMinFailedCalls()
+              && primaryErrorRate >= options.getErrorRateThreshold();
     }
 
-    if (fallbackTriggered) {
-      triggerStateChangeCallbacks();
+    boolean fallbackTriggered = shouldTriggerFallback && triggerFallback();
+    boolean currentInFallback = inFallbackMode.get();
+
+    long fallbackSuccessCount = fallbackSuccesses.getAndSet(0);
+    long fallbackFailureCount = fallbackFailures.getAndSet(0);
+    float fallbackErrorRate = 0f;
+    if (fallbackFailureCount + fallbackSuccessCount > 0) {
+      fallbackErrorRate =
+          (float) fallbackFailureCount / (fallbackFailureCount + fallbackSuccessCount);
     }
 
     if (openTelemetry != null && openTelemetry.getModule() != null) {
-      openTelemetry.getModule().reportErrorRate(options.getPrimaryChannelName(), primaryErrRate);
+      openTelemetry.getModule().reportErrorRate(options.getPrimaryChannelName(), primaryErrorRate);
       if (fallbackTriggered) {
         openTelemetry
             .getModule()
             .reportFallback(options.getPrimaryChannelName(), options.getFallbackChannelName());
       }
-    }
-
-    long fallbackSucc = fallbackSuccesses.getAndSet(0);
-    long fallbackFail = fallbackFailures.getAndSet(0);
-    float fallbackErrRate = 0f;
-    if (fallbackFail + fallbackSucc > 0) {
-      fallbackErrRate = (float) fallbackFail / (fallbackFail + fallbackSucc);
-    }
-    if (openTelemetry != null && openTelemetry.getModule() != null) {
-      openTelemetry.getModule().reportErrorRate(options.getFallbackChannelName(), fallbackErrRate);
+      openTelemetry
+          .getModule()
+          .reportErrorRate(options.getFallbackChannelName(), fallbackErrorRate);
       openTelemetry
           .getModule()
           .reportCurrentChannel(options.getPrimaryChannelName(), !currentInFallback);
@@ -307,7 +327,6 @@ public class GcpFallbackState {
     }
   }
 
-  /** Stops any running scheduled evaluation. */
   synchronized void stopPeriodicEvaluation() {
     if (scheduledEvaluationFuture != null) {
       scheduledEvaluationFuture.cancel(false);

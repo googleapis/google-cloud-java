@@ -35,7 +35,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -54,10 +53,6 @@ public class GcpFallbackChannel extends ManagedChannel {
   private final GcpFallbackState fallbackState;
   private final boolean ownsFallbackState;
   private final GcpFallbackOpenTelemetry openTelemetry;
-
-  private final AtomicLong localProbeGeneration = new AtomicLong(0);
-  private final AtomicLong localProbeSuccesses = new AtomicLong(0);
-  private final AtomicLong localFirstPrimaryProbeSuccessNanos = new AtomicLong(0);
 
   private final ScheduledExecutorService execService;
   private volatile ScheduledFuture<?> primaryProbeFuture = null;
@@ -95,7 +90,6 @@ public class GcpFallbackChannel extends ManagedChannel {
           execService != null ? new GcpFallbackState(execService) : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -144,6 +138,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       this.fallbackChannel = null;
     }
 
+    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
     init();
   }
 
@@ -184,14 +179,6 @@ public class GcpFallbackChannel extends ManagedChannel {
     init();
   }
 
-  private void resetProbeStatsIfGenerationChanged() {
-    long currentGen = fallbackState.getGeneration();
-    if (localProbeGeneration.getAndSet(currentGen) != currentGen) {
-      localProbeSuccesses.set(0);
-      localFirstPrimaryProbeSuccessNanos.set(0);
-    }
-  }
-
   public boolean isInFallbackMode() {
     return (fallbackState.isInFallbackMode() && fallbackChannel != null) || primaryChannel == null;
   }
@@ -201,14 +188,7 @@ public class GcpFallbackChannel extends ManagedChannel {
     return fallbackState;
   }
 
-  @VisibleForTesting
-  AtomicLong getLocalProbeSuccesses() {
-    resetProbeStatsIfGenerationChanged();
-    return localProbeSuccesses;
-  }
-
   private void init() {
-    localProbeGeneration.set(fallbackState.getGeneration());
     if (options.getPrimaryProbingFunction() != null) {
       this.primaryProbeFuture =
           fallbackState.scheduleTask(
@@ -231,7 +211,7 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void processPrimaryStatusCode(Status.Code statusCode) {
-    if (fallbackChannel != null && !fallbackState.isInFallbackMode()) {
+    if (!isInFallbackMode()) {
       if (options.getErroneousStates().contains(statusCode)) {
         fallbackState.getPrimaryFailures().incrementAndGet();
       } else {
@@ -251,11 +231,10 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void probePrimary() {
-    if (!fallbackState.isInFallbackMode() && primaryChannel != null) {
+    if (!isInFallbackMode()) {
       return;
     }
-    resetProbeStatsIfGenerationChanged();
-    long probeStartGen = localProbeGeneration.get();
+    long probeGeneration = fallbackState.getGeneration();
     String result = "";
     if (primaryDelegateChannel == null) {
       result = INIT_FAILURE_REASON;
@@ -266,29 +245,8 @@ public class GcpFallbackChannel extends ManagedChannel {
         result = e.getClass().getSimpleName();
       }
     }
-    if ("".equals(result) && fallbackState.getGeneration() == probeStartGen) {
-      if (options.isEnableRecovery() && fallbackChannel != null) {
-        long nowNanos = System.nanoTime();
-        long firstSuccessNanos =
-            localFirstPrimaryProbeSuccessNanos.updateAndGet(prev -> prev == 0 ? nowNanos : prev);
-        long primaryProbeSuccessCount = localProbeSuccesses.incrementAndGet();
-
-        boolean durationSatisfied = true;
-        if (options.getMinPrimaryProbeSuccessDuration() != null
-            && !options.getMinPrimaryProbeSuccessDuration().isZero()
-            && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
-          long elapsedNanos = nowNanos - firstSuccessNanos;
-          durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
-        }
-
-        if (primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
-            && durationSatisfied) {
-          fallbackState.recordRecovery(probeStartGen);
-        }
-      }
-    } else {
-      localProbeSuccesses.set(0);
-      localFirstPrimaryProbeSuccessNanos.set(0);
+    if (fallbackChannel != null && primaryDelegateChannel != null) {
+      fallbackState.recordPrimaryProbeResult("".equals(result), probeGeneration, options);
     }
     // Report metric based on result.
     openTelemetry.getModule().reportProbeResult(options.getPrimaryChannelName(), result);
