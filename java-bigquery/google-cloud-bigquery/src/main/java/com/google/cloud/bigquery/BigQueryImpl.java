@@ -3078,13 +3078,34 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
     SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
 
+    // If the completed job is a DDL or DML statement, return immediately without
+    // making a Storage Read API createReadSession network call.
+    boolean isDml = numDmlAffectedRows != null;
+    boolean isDdl = stats != null && stats.getDdlOperationPerformed() != null;
+    if (isDml || isDdl) {
+      return TableResult.newBuilder()
+          .setSchema(stats != null ? stats.getSchema() : null)
+          .setTotalRows(isDml ? numDmlAffectedRows : 0L)
+          .setPageNoSchema(new PageImpl<>(null, null, ImmutableList.of()))
+          .setJobId(completedJob.getJobId())
+          .setRowsInPage(0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
+          .build();
+    }
+
     // Create a Storage Read API ReadSession targeting the destination table in Arrow format.
-    String destProject =
-        destinationTable.getProject() != null
-            ? destinationTable.getProject()
-            : (completedJob.getJobId() != null && completedJob.getJobId().getProject() != null
-                ? completedJob.getJobId().getProject()
-                : getOptions().getProjectId());
+    String destProject = destinationTable.getProject();
+    if (destProject == null && completedJob.getJobId() != null) {
+      destProject = completedJob.getJobId().getProject();
+    }
+    if (destProject == null) {
+      destProject = getOptions().getProjectId();
+    }
     String parent = String.format("projects/%s", destProject);
     String srcTable =
         String.format(
@@ -3125,7 +3146,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     String streamName =
         readSession.getStreamsCount() > 0 ? readSession.getStreams(0).getName() : null;
 
-    // If the destination table has no data streams (e.g. DDL/DML statements or empty results),
+    // If the destination table has no data streams (e.g. empty SELECT query results),
     // return an empty TableResult populated with execution statistics.
     if (streamName == null) {
       return TableResult.newBuilder()
