@@ -378,6 +378,20 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
 
       try {
+        // Resolve job location in order: JobId location -> BigQueryOptions location -> "global"
+        // default.
+        // The Storage Read API stream resource name requires a location component (e.g.
+        // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
+        // location was provided on the job or service options, defaulting to "global" allows
+        // queries created without an explicit location to still stream results without failing.
+        String location = jobId.getLocation();
+        if (location == null) {
+          location = serviceOptions.getLocation();
+        }
+        if (location == null) {
+          location = "global";
+        }
+
         if (streamIterator == null) {
           if (bqReadClient == null) {
             BigQuery service = serviceOptions.getService();
@@ -395,20 +409,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           if (customStreamName != null) {
             streamName = customStreamName;
           } else {
-            // Resolve job location in order: JobId location -> BigQueryOptions location -> "global"
-            // default.
-            // The Storage Read API stream resource name requires a location component (e.g.
-            // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
-            // location was provided on the job or service options, defaulting to "global" allows
-            // queries created without an explicit location to still stream results without failing.
-            String location = jobId.getLocation();
-            if (location == null) {
-              location = serviceOptions.getLocation();
-            }
-            if (location == null) {
-              location = "global";
-            }
-
             // Construct the default stream path for reading job query results via Storage Read API.
             streamName =
                 String.format(
