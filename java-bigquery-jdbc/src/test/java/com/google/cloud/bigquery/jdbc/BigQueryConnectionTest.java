@@ -53,7 +53,6 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.logging.Logging;
@@ -247,7 +246,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertFalse(connectionDefault.enableWriteAPI);
       assertEquals(3, connectionDefault.writeAPIActivationRowCount);
       assertEquals(1000, connectionDefault.writeAPIAppendRowCount);
-    } catch (IOException | SQLException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
 
@@ -262,13 +261,13 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertTrue(connection.enableWriteAPI);
       assertEquals(6, connection.writeAPIActivationRowCount);
       assertEquals(500, connection.writeAPIAppendRowCount);
-    } catch (IOException | SQLException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
   }
 
   @Test
-  public void testTimestampPicosControlsDataFormatOptions() throws IOException, SQLException {
+  public void testTimestampPicosControlsDataFormatOptions() throws SQLException {
     try (BigQueryConnection connection =
         new BigQueryConnection(BASE_URL + "EnableTimestampPicos=1;")) {
       assertEquals(
@@ -299,13 +298,13 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       BigQueryWriteClient writeClient = connectionDefault.getBigQueryWriteClient();
       assertNotNull(writeClient);
       assertFalse(writeClient.isShutdown());
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
   }
 
   @Test
-  public void testAdditionalProjects() throws IOException, BigQueryJdbcException {
+  public void testAdditionalProjects() throws BigQueryJdbcException {
     String url1 =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=2;ProjectId=MyBigQueryProject;"
@@ -316,7 +315,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       String additionalProjects1 = conn1.getAdditionalProjects();
       assertNotNull(additionalProjects1);
       assertEquals("projA,projB", additionalProjects1);
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
     String url2 =
@@ -329,13 +328,13 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       String additionalProjects2 = conn2.getAdditionalProjects();
       assertNotNull(additionalProjects2);
       assertEquals("projX", additionalProjects2);
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
   }
 
   @Test
-  public void testFilterTablesOnDefaultDatasetProperty() throws SQLException, IOException {
+  public void testFilterTablesOnDefaultDatasetProperty() throws SQLException {
     // Test default value
     String urlDefault =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -346,7 +345,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertFalse(
           connectionDefault.isFilterTablesOnDefaultDataset(),
           "Default value for FilterTablesOnDefaultDataset should be false");
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
 
@@ -361,13 +360,13 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertTrue(
           connectionTrue.isFilterTablesOnDefaultDataset(),
           "FilterTablesOnDefaultDataset should be true when set to 1");
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
   }
 
   @Test
-  public void testRequestGoogleDriveScopeProperty() throws IOException, SQLException {
+  public void testRequestGoogleDriveScopeProperty() throws SQLException {
     // Test enabled
     String urlEnabled =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -380,7 +379,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           1,
           connectionEnabled.isRequestGoogleDriveScope(),
           "RequestGoogleDriveScope should be enabled when set to 1");
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
 
@@ -396,7 +395,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           0,
           connectionDisabled.isRequestGoogleDriveScope(),
           "RequestGoogleDriveScope should be disabled when set to 0");
-    } catch (SQLException | IOException e) {
+    } catch (SQLException e) {
       throw new BigQueryJdbcException(e);
     }
   }
@@ -958,8 +957,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testDuplicateSessionIdKeysAreRejected() {
     String url = BASE_URL + ";QueryProperties=session_id=a,Session_Id=b";
-    BigQueryJdbcRuntimeException ex =
-        assertThrows(BigQueryJdbcRuntimeException.class, () -> new BigQueryConnection(url));
+    BigQueryJdbcException ex =
+        assertThrows(BigQueryJdbcException.class, () -> new BigQueryConnection(url));
     assertTrue(ex.getMessage().contains("multiple 'session_id' entries"));
   }
 }

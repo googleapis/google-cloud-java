@@ -256,11 +256,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private final AtomicReference<SessionState> sessionState =
       new AtomicReference<>(new SessionState(null, Collections.emptyList(), false));
 
-  BigQueryConnection(String url) throws IOException {
+  BigQueryConnection(String url) throws SQLException {
     this(url, DataSource.fromUrl(url));
   }
 
-  BigQueryConnection(String url, DataSource ds) throws IOException {
+  BigQueryConnection(String url, DataSource ds) throws SQLException {
     this.connectionId = UUID.randomUUID().toString();
     Baggage baggage =
         Baggage.builder()
@@ -1215,7 +1215,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private ConnectionProperty getSessionPropertyFromQueryProperties(
-      Map<String, String> queryPropertiesMap) {
+      Map<String, String> queryPropertiesMap) throws SQLException {
     LOG.finer("++enter++");
 
     if (queryPropertiesMap == null) {
