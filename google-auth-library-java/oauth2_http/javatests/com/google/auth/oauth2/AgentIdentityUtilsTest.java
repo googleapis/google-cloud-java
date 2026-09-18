@@ -233,8 +233,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_legacyPreventSharingTrue_doesNotOptOut()
-      throws Exception {
+  public void getAgentIdentityCertInfo_legacyPreventSharingTrue_doesNotOptOut() throws Exception {
     setupValidAgentCredentialsInTempDir();
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "true");
@@ -1349,7 +1348,8 @@ class AgentIdentityUtilsTest {
     AgentIdentityUtils.CertInfo initialInfo = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(initialInfo);
 
-    // 2. Overwrite private_key.pem on disk with a mismatched key (and advance mtime so cache invalidates)
+    // 2. Overwrite private_key.pem on disk with a mismatched key (and advance mtime so cache
+    // invalidates)
     KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
     kpg.initialize(2048);
     PrivateKey mismatchedKey = kpg.generateKeyPair().getPrivate();
@@ -1362,7 +1362,8 @@ class AgentIdentityUtilsTest {
     Files.setLastModifiedTime(
         keyPath, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() + 10000));
 
-    // 3. Subsequent call must throw IOException after retries rather than returning stale cached credentials
+    // 3. Subsequent call must throw IOException after retries rather than returning stale cached
+    // credentials
     IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(e.getMessage().contains("mismatch or read failure"));
   }

@@ -539,9 +539,11 @@ public final class AgentIdentityUtils {
       }
     }
 
-    // If files were transiently missing or unreadable during steady-state rotation (lastException != null)
+    // If files were transiently missing or unreadable during steady-state rotation (lastException
+    // != null)
     // and we already have a verified credential cached in memory, fall back to cached credentials
-    // rather than failing or caching an unbound token. Re-read cachedCredentials in case another thread
+    // rather than failing or caching an unbound token. Re-read cachedCredentials in case another
+    // thread
     // completed rotation while this thread was sleeping.
     CachedCredentials latestCached = cachedCredentials;
     CachedCredentials fallbackCached =
