@@ -23,6 +23,7 @@ cd ${scriptDir}/..
 
 # include common functions
 source ${scriptDir}/common.sh
+setup_maven_mirror
 
 # Print out Java
 java -version
