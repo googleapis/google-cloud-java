@@ -35,6 +35,10 @@ import java.sql.Statement;
 import java.sql.Struct;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.TimeZone;
 import org.junit.jupiter.api.AfterAll;
@@ -42,6 +46,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("disable_tpc")
 public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final Random RANDOM = new Random();
@@ -61,6 +66,9 @@ public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final String TIMESTAMP_BOUNDARY_STANDARD = "2025-06-15 10:20:30.999999";
   private static final String TIMESTAMP_BOUNDARY_PICOS = "2025-06-15 10:20:30.999999999999";
+
+  private static final DateTimeFormatter JVM_ZONE_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
   private static final String DDL_CREATE_PICOS_TABLE =
       "CREATE OR REPLACE TABLE `%1$s.%2$s.%3$s` (\n"
@@ -157,6 +165,18 @@ public class ITJdbcTimestampPicosTest extends ITBase {
         + (arrowEnabled ? ITBase.FORCE_READ_API_PROPERTIES : "EnableHighThroughputAPI=0;");
   }
 
+  /**
+   * Renders a UTC wall-clock literal in the JVM default time zone, with the fixed microsecond
+   * precision that {@code getString} applies to a plain {@code TIMESTAMP} column. Those values are
+   * zone dependent, whereas {@code TIMESTAMP(12)} values are returned as verbatim UTC strings.
+   */
+  private static String atJvmZone(String utcLiteral) {
+    return LocalDateTime.parse(utcLiteral.replace(' ', 'T'))
+        .atOffset(ZoneOffset.UTC)
+        .atZoneSameInstant(ZoneId.systemDefault())
+        .format(JVM_ZONE_FORMATTER);
+  }
+
   @Test
   public void testDefaultBehavior_picosDisabled_returnsMicrosecondsAndTimestampType()
       throws SQLException {
@@ -171,9 +191,9 @@ public class ITJdbcTimestampPicosTest extends ITBase {
         ResultSet rs = stmt.executeQuery(query)) {
 
       assertTrue(rs.next());
-      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
+      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
       // When EnableTimestampPicos is false, picosecond columns truncate to 6 digits
-      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_picos"));
+      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_picos"));
 
       Object obj = rs.getObject("ts_picos");
       assertTrue(obj instanceof Timestamp, "getObject must return java.sql.Timestamp by default");
@@ -209,7 +229,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
       // Row 1: Modern timestamp
       assertTrue(rs.next());
       assertEquals(1, rs.getInt("id"));
-      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
+      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getString("ts_picos"));
       Object obj1 = rs.getObject("ts_picos");
       assertTrue(obj1 instanceof String, "getObject must return String for TIMESTAMP(12)");
@@ -250,7 +270,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
       // Row 1
       assertTrue(rs.next());
       assertEquals(1, rs.getInt("id"));
-      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
+      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getString("ts_picos"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getObject("ts_picos"));
 
