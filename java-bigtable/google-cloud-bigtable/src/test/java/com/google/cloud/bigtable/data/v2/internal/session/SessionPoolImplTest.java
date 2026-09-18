@@ -84,6 +84,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -619,7 +620,7 @@ public class SessionPoolImplTest {
 
   @Test
   @SuppressWarnings("GuardedBy")
-  void abnormalCloseScalesUpMultipleSessions() throws Exception {
+  void abnormalCloseReplacesSession() throws Exception {
     ActionList delayedAction =
         ActionList.newBuilder()
             .addActions(
@@ -671,7 +672,7 @@ public class SessionPoolImplTest {
       poolLock.unlock();
     }
 
-    // When the idle session abnormally closes, onSessionClose scales up all needed sessions
+    // When the idle session abnormally closes, onSessionClose performs a 1:1 replacement
     idleHandle
         .getSession()
         .forceClose(
@@ -680,10 +681,91 @@ public class SessionPoolImplTest {
                 .setDescription("missed heartbeat")
                 .build());
 
-    waitForOpenRequestCount(openCountBefore + 5, Duration.ofSeconds(5));
+    waitForOpenRequestCount(openCountBefore + 1, Duration.ofSeconds(5));
 
-    // 1 replacement + 4 scale delta = 5 new sessions created
-    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBefore + 5);
+    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBefore + 1);
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void readySessionsHeartbeatMissDoesNotIncrementConsecutiveFailures() throws Exception {
+    ActionList delayedAction =
+        ActionList.newBuilder()
+            .addActions(
+                Action.newBuilder()
+                    .setDelay(Durations.fromMillis(500))
+                    .setResponse(VirtualRpcResponse.getDefaultInstance()))
+            .build();
+
+    sessionPool.start(
+        OpenFakeSessionRequest.newBuilder().putVrpcActions(0, delayedAction).build(),
+        new Metadata());
+
+    // Wait until initial 5 sessions are READY
+    long deadline = System.currentTimeMillis() + 5000;
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    // Occupy all 5 sessions with active calls
+    for (int i = 0; i < 5; i++) {
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+      rpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          f);
+    }
+
+    // Capture all 5 ready session handles before starting additional calls
+    List<SessionHandle> handles;
+    poolLock.lock();
+    try {
+      handles = new ArrayList<>(sessionPool.sessions.getAllSessions());
+    } finally {
+      poolLock.unlock();
+    }
+    assertThat(handles).hasSize(5);
+
+    // Start a 6th call that must queue in pendingRpcs because all 5 sessions are occupied
+    UnaryResponseFuture<SessionFakeScriptedResponse> pendingFuture = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    queuedRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        pendingFuture);
+
+    // Verify the 6th call could not be immediately dispatched and is queued
+    assertThat(pendingFuture.isDone()).isFalse();
+
+    // Force-close all 5 ready sessions (simulating simultaneous missed heartbeat)
+    for (SessionHandle handle : handles) {
+      handle
+          .getSession()
+          .forceClose(
+              CloseSessionRequest.newBuilder()
+                  .setReason(CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+                  .setDescription("missed heartbeat")
+                  .build());
+    }
+
+    // If consecutiveFailures incremented on READY force-closes, consecutiveFailures would hit 5
+    // and popClosableRpcs() would have rejected pendingFuture with REJECTED.
+    // With the fix, consecutiveFailures does NOT increment for READY sessions. The pending vRPC
+    // remains queued, replacement sessions become READY, and it completes successfully.
+    SessionFakeScriptedResponse response = pendingFuture.get(5, TimeUnit.SECONDS);
+    assertThat(response).isNotNull();
   }
 
   @Nested

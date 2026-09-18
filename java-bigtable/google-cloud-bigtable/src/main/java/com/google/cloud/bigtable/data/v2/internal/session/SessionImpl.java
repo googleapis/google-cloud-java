@@ -311,6 +311,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
           try {
             stream.forceClose(closeReason.getDescription(), null);
           } catch (Throwable t) {
+            debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_force_close_failed");
             logger.log(
                 Level.WARNING,
                 String.format(
@@ -319,7 +320,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
           }
 
           notifyTerminalClose(
-              Status.CANCELLED.withDescription(closeReason.getDescription()),
+              Status.UNAVAILABLE.withDescription(closeReason.getDescription()),
               new Metadata(),
               localRpc,
               prevState);

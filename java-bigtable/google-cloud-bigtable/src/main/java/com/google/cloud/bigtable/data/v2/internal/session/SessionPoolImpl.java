@@ -652,11 +652,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 "Adding new session to replace a going away session %s",
                 handle.getSession().getLogName()));
         createSession(handle.getSession().getOpenParams());
-        while (poolSizer.getScaleDelta() > 0) {
-          if (!createSession(openParams)) {
-            break;
-          }
-        }
       }
     } finally {
       poolLock.unlock();
@@ -703,15 +698,20 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // Handle abnormal close. This can happen if the Session was aborted due to underlying stream
       // termination
       if (prevState != SessionState.WAIT_SERVER_CLOSE) {
-        consecutiveFailures++;
-        if (status.getCode() == Status.Code.UNIMPLEMENTED) {
-          consecutiveUnimplementedFailures++;
-        } else {
-          consecutiveUnimplementedFailures = 0;
-        }
-        // TODO: decide if max consecutive failures should be capped per client
-        if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)) {
-          toBeClosed = popClosableRpcs();
+        // Only count failures during STARTING against the consecutive failure budget.
+        // Drops of established READY sessions (e.g. heartbeat misses) are transport failures
+        // rather than session establishment failures and should not fail pending vRPCs.
+        if (prevState == SessionState.STARTING) {
+          consecutiveFailures++;
+          if (status.getCode() == Status.Code.UNIMPLEMENTED) {
+            consecutiveUnimplementedFailures++;
+          } else {
+            consecutiveUnimplementedFailures = 0;
+          }
+          // TODO: decide if max consecutive failures should be capped per client
+          if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)) {
+            toBeClosed = popClosableRpcs();
+          }
         }
 
         // Budget release for STARTING-phase closes is handled above via sessionsHoldingBudget,
@@ -723,11 +723,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
               String.format(
                   "Replacing abnormally closed session %s", handle.getSession().getLogName()));
           createSession(openParams.withIncrementedAttempts());
-          while (poolSizer.getScaleDelta() > 0) {
-            if (!createSession(openParams)) {
-              break;
-            }
-          }
         }
       }
     } finally {

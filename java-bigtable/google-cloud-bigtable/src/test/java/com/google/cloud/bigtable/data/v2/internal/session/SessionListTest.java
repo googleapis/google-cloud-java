@@ -426,7 +426,6 @@ class SessionListTest {
     // When a starting session terminates with WAIT_SERVER_CLOSE (e.g. server sent GOAWAY before
     // open response, or normal close before open), startingCount and expectedCapacity must
     // decrement cleanly.
-    fakeSession.state = SessionState.CLOSED;
     handle.onSessionClosed(SessionState.WAIT_SERVER_CLOSE);
 
     assertThat(list.getAllSessions()).isEmpty();
@@ -447,15 +446,16 @@ class SessionListTest {
 
     assertThat(stats.getReadyCount()).isEqualTo(1);
     assertThat(list.getAfesWithReadySessions()).hasSize(1);
+    assertThat(stats.getStartingCount()).isEqualTo(0);
 
     // When an idle session terminates with WAIT_SERVER_CLOSE without prior onSessionClosing()
     // (e.g. session.close() or direct termination), readyCount and AFE handles must be cleaned up
     // cleanly.
-    fakeSession.state = SessionState.CLOSED;
     handle.onSessionClosed(SessionState.WAIT_SERVER_CLOSE);
 
     assertThat(list.getAfesWithReadySessions()).isEmpty();
     assertThat(list.getAllSessions()).isEmpty();
+    assertThat(stats.getStartingCount()).isEqualTo(0);
     assertThat(stats.getReadyCount()).isEqualTo(0);
     assertThat(stats.getExpectedCapacity()).isEqualTo(0);
   }
