@@ -1684,4 +1684,54 @@ public class SpannerOptionsTest {
         customOptions.toBuilder().setCallContextConfigurator(null).build();
     assertNull(clearedOptions.getCallContextConfigurator());
   }
+
+  @Test
+  public void testUseClientCertAndTrustCertificate() throws Exception {
+    io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate ssc =
+        new io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate("spanner.test");
+    io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate ca =
+        new io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate("spanner.ca");
+
+    String certPath = ssc.certificate().getAbsolutePath();
+    String keyPath = ssc.privateKey().getAbsolutePath();
+    String caPath = ca.certificate().getAbsolutePath();
+
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://localhost:1234")
+            .useClientCert(certPath, keyPath)
+            .setCaCertificate(caPath)
+            .build();
+
+    assertNotNull(options.getChannelConfigurator());
+
+    SpannerOptions fromBuilder = options.toBuilder().build();
+    assertNotNull(fromBuilder.getChannelConfigurator());
+
+    // Test standalone setCaCertificate
+    SpannerOptions caOnlyOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("https://localhost:1234")
+            .setCaCertificate(caPath)
+            .build();
+
+    assertNotNull(caOnlyOptions.getChannelConfigurator());
+
+    // Test setCaCertificate combined with login (username/password)
+    SpannerOptions loginWithCaOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .setHost("https://localhost:1234")
+            .setCaCertificate(caPath)
+            .login("test-user", "test-pass".toCharArray())
+            .build();
+
+    assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
+    assertNotNull(loginWithCaOptions.getChannelConfigurator());
+  }
 }

@@ -848,4 +848,49 @@ public class SpannerPoolTest {
                 .setCredentials(NoCredentials.getInstance())
                 .build()));
   }
+
+  @Test
+  public void testCertificateAndTrustSettings() {
+    SpannerPoolKey keyDefault =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithTrustCert1 =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithTrustCert2 =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca2.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithClientCert =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?clientCertificate=/path/to/client.crt;clientKey=/path/to/client.key;caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    assertNotEquals(keyDefault, keyWithTrustCert1);
+    assertNotEquals(keyWithTrustCert1, keyWithTrustCert2);
+    assertNotEquals(keyWithTrustCert1, keyWithClientCert);
+
+    assertEquals(
+        keyWithTrustCert1,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
 }

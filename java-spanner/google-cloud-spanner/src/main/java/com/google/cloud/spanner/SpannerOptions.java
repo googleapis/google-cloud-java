@@ -53,6 +53,8 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.DynamicKeyManager;
+import com.google.cloud.spanner.omni.DynamicTrustManager;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
@@ -85,6 +87,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
 import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
@@ -941,14 +944,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
-    if (builder.mTLSContext != null) {
+    if (builder.omniSslContext != null) {
       channelConfigurator =
           channelBuilder -> {
             if (builder.channelConfigurator != null) {
               channelBuilder = builder.channelConfigurator.apply(channelBuilder);
             }
             if (channelBuilder instanceof NettyChannelBuilder) {
-              ((NettyChannelBuilder) channelBuilder).sslContext(builder.mTLSContext);
+              ((NettyChannelBuilder) channelBuilder).sslContext(builder.omniSslContext);
             }
             return channelBuilder;
           };
@@ -1292,6 +1295,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
+      if (builder.sslContextBuilder != null) {
+        try {
+          builder.omniSslContext = builder.sslContextBuilder.build();
+        } catch (Exception e) {
+          throw SpannerExceptionFactory.asSpannerException(e);
+        }
+      }
       if (builder.instanceType == InstanceType.OMNI) {
         builder.enableBuiltInMetrics = false;
         builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
@@ -1314,7 +1324,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         }
         if (builder.credentials instanceof SpannerOmniCredentials) {
           ((SpannerOmniCredentials) builder.credentials)
-              .initChannel(builder.usePlainText, builder.mTLSContext);
+              .initChannel(builder.usePlainText, builder.omniSslContext);
         }
       } else {
         if (builder.username != null || builder.secretBytes != null) {
@@ -1399,7 +1409,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
-    private SslContext mTLSContext = null;
+    private SslContextBuilder sslContextBuilder = null;
+    private SslContext omniSslContext = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
@@ -2240,21 +2251,35 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Configures mTLS authentication using the provided client certificate and key files. mTLS via
-     * useClientCert is only supported for Spanner Omni instances.
+     * useClientCert is only supported for Spanner Omni instances. Certificates and keys are loaded
+     * dynamically and reloaded automatically when rotated on disk.
      *
      * @param clientCertificate Path to the client certificate file.
      * @param clientCertificateKey Path to the client private key file.
-     * @throws SpannerException If an error occurs while configuring the mTLS context
      */
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
-      try {
-        this.mTLSContext =
-            GrpcSslContexts.forClient()
-                .keyManager(new File(clientCertificate), new File(clientCertificateKey))
-                .build();
-      } catch (Exception e) {
-        throw SpannerExceptionFactory.asSpannerException(e);
+      Preconditions.checkNotNull(clientCertificate, "clientCertificate cannot be null");
+      Preconditions.checkNotNull(clientCertificateKey, "clientCertificateKey cannot be null");
+      if (this.sslContextBuilder == null) {
+        this.sslContextBuilder = GrpcSslContexts.forClient();
       }
+      this.sslContextBuilder.keyManager(
+          new DynamicKeyManager(new File(clientCertificate), new File(clientCertificateKey)));
+      return this;
+    }
+
+    /**
+     * Configures the server root CA certificate for SSL/TLS authentication. The CA certificate is
+     * loaded dynamically and reloaded automatically when rotated on disk.
+     *
+     * @param caCertificate Path to the server root CA certificate file.
+     */
+    public Builder setCaCertificate(String caCertificate) {
+      Preconditions.checkNotNull(caCertificate, "caCertificate cannot be null");
+      if (this.sslContextBuilder == null) {
+        this.sslContextBuilder = GrpcSslContexts.forClient();
+      }
+      this.sslContextBuilder.trustManager(new DynamicTrustManager(new File(caCertificate)));
       return this;
     }
 
