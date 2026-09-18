@@ -1168,7 +1168,7 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder("CREATE TEMP TABLE t1 (id INT64)").build();
     bigQueryStatement.executeJob(jobConfig);
 
-    verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
+    verify(bigQueryConnection).initSessionInfo("session_xyz_123");
   }
 
   @Test

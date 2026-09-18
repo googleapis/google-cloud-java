@@ -614,7 +614,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (tableResult.getSessionInfo() != null) {
       String sessionId = tableResult.getSessionInfo().getSessionId();
       if (sessionId != null && !sessionId.isEmpty()) {
-        this.connection.updateSessionInfo(sessionId);
+        this.connection.initSessionInfo(sessionId);
       }
     }
   }
@@ -1508,19 +1508,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
+    // Only reachable from execute paths, which call checkClosed() first, so this.connection is
+    // non-null here; close() is the only thing that nulls it.
     BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
-    ConnectionProperty sessionProperty =
-        this.connection != null
-            ? snapshot.sessionInfo
-            : this.querySettings.getSessionInfoConnectionProperty();
-    boolean isSessionEnabled =
-        this.connection != null
-            ? this.connection.isSessionEnabled()
-            : this.querySettings.isEnableSession();
-    List<ConnectionProperty> queryProperties =
-        this.connection != null
-            ? snapshot.queryProperties
-            : this.querySettings.getQueryProperties();
+    ConnectionProperty sessionProperty = snapshot.sessionInfo;
+    boolean isSessionEnabled = this.connection.isSessionEnabled();
+    List<ConnectionProperty> queryProperties = snapshot.queryProperties;
 
     List<ConnectionProperty> props =
         queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();

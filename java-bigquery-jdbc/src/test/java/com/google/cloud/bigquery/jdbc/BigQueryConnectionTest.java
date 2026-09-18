@@ -28,6 +28,7 @@ import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.mockStatic;
 import static org.mockito.Mockito.never;
@@ -43,9 +44,13 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
+import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -780,11 +785,11 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testUpdateSessionInfo() throws Exception {
+  public void testSessionIdIsWriteOnce() throws Exception {
     try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
       assertNull(connection.getSessionInfoConnectionProperty());
 
-      connection.updateSessionInfo("test_session_id_1");
+      connection.initSessionInfo("test_session_id_1");
       assertNotNull(connection.getSessionInfoConnectionProperty());
       assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
       assertEquals("test_session_id_1", connection.getSessionInfoConnectionProperty().getValue());
@@ -798,9 +803,10 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                           && "test_session_id_1".equals(cp.getValue()));
       assertTrue(found, "queryProperties should contain session_id property");
 
-      // Update to a new session ID and ensure it updates without creating duplicates
-      connection.updateSessionInfo("test_session_id_2");
-      assertEquals("test_session_id_2", connection.getSessionInfoConnectionProperty().getValue());
+      // A connection's session is write-once: a second, different id is ignored rather than
+      // silently swapping the session and stranding the original.
+      connection.initSessionInfo("test_session_id_2");
+      assertEquals("test_session_id_1", connection.getSessionInfoConnectionProperty().getValue());
       long count =
           connection.getQueryProperties().stream()
               .filter(cp -> "session_id".equalsIgnoreCase(cp.getKey()))
@@ -824,20 +830,39 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testCloseWithActiveSessionAbortsSession() throws Exception {
-    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+  public void testCloseAbortsSessionCreatedByDriver() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL + ";EnableSession=1")) {
       BigQuery mockBigQuery = mock(BigQuery.class);
       connection.bigQuery = mockBigQuery;
 
-      connection.updateSessionInfo("test_session_id_to_abort");
-      connection.markSessionCreatedByDriver();
+      // BEGIN TRANSACTION asks BigQuery to create the session, and the result carries the new id.
+      SessionInfo sessionInfo = mock(SessionInfo.class);
+      when(sessionInfo.getSessionId()).thenReturn("driver_created_session");
+      TableResult beginResult = mock(TableResult.class);
+      when(beginResult.getSessionInfo()).thenReturn(sessionInfo);
+      when(mockBigQuery.query(any(QueryJobConfiguration.class))).thenReturn(beginResult);
+
+      // close() rolls the open transaction back before it aborts the session.
+      Job rollbackJob = mock(Job.class);
+      when(mockBigQuery.create(any(JobInfo.class))).thenReturn(rollbackJob);
+      when(rollbackJob.waitFor()).thenReturn(rollbackJob);
+
+      // Drives beginTransaction(), which claims ownership before the id is known.
+      connection.setAutoCommit(false);
+
       assertTrue(connection.isSessionCreatedByDriver());
+      assertEquals(
+          "driver_created_session", connection.getSessionInfoConnectionProperty().getValue());
+
       connection.close();
 
+      // close() also rolls back the open transaction, so match on the abort specifically.
       ArgumentCaptor<QueryJobConfiguration> jobCaptor =
           ArgumentCaptor.forClass(QueryJobConfiguration.class);
-      verify(mockBigQuery).query(jobCaptor.capture());
-      assertEquals("CALL BQ.ABORT_SESSION();", jobCaptor.getValue().getQuery());
+      verify(mockBigQuery, atLeastOnce()).query(jobCaptor.capture());
+      assertTrue(
+          jobCaptor.getAllValues().stream()
+              .anyMatch(config -> "CALL BQ.ABORT_SESSION();".equals(config.getQuery())));
       assertNull(connection.getSessionInfoConnectionProperty());
       assertFalse(connection.isSessionCreatedByDriver());
       assertTrue(connection.isClosed());
@@ -865,7 +890,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
       connection.close();
 
-      verify(mockBigQuery, never()).query(any(QueryJobConfiguration.class));
+      verify(mockBigQuery, never()).create(any(JobInfo.class));
       assertTrue(connection.isClosed());
     }
   }

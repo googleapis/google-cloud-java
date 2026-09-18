@@ -694,7 +694,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       if (this.sessionState.get().sessionInfo == null
           && transactionResult != null
           && transactionResult.getSessionInfo() != null) {
-        updateSessionInfo(transactionResult.getSessionInfo().getSessionId());
+        initSessionInfo(transactionResult.getSessionInfo().getSessionId());
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
@@ -702,20 +702,49 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
   }
 
-  void updateSessionInfo(String sessionId) {
+  /**
+   * Establishes the session for this connection.
+   *
+   * <p>A connection's session is write-once: it is fixed either from a user-supplied {@code
+   * session_id} at construction or by the first job that creates one, and does not change until the
+   * connection closes. Repeat calls with the same id are no-ops. A call with a <em>different</em>
+   * id is ignored and logged, because silently swapping the session would strand the original and
+   * invalidate any open transaction.
+   */
+  void initSessionInfo(String sessionId) {
     LOG.finer("++enter++");
     if (sessionId == null || sessionId.isEmpty()) {
       return;
     }
-    this.sessionState.updateAndGet(
-        current -> current.withSessionId(sessionId, current.createdByDriver));
+    SessionState previous =
+        this.sessionState.getAndUpdate(
+            current ->
+                current.sessionInfo == null
+                    ? current.withSessionId(sessionId, current.createdByDriver)
+                    : current);
+    if (previous.sessionInfo == null) {
+      LOG.info("Established session: %s", sessionId);
+    } else if (!sessionId.equals(previous.sessionInfo.getValue())) {
+      LOG.warning(
+          "Ignoring attempt to change session from '%s' to '%s'; a connection's session is"
+              + " immutable for its lifetime.",
+          previous.sessionInfo.getValue(), sessionId);
+    }
   }
 
-  // Marks the session as driver-owned, so it is aborted when the connection closes.
+  /**
+   * Marks this connection's session as driver-owned, so that it is aborted when the connection
+   * closes.
+   *
+   * <p>This is called when a job is configured with {@code createSession=true}, which is
+   * necessarily <em>before</em> the session id is known. {@link #initSessionInfo} carries the flag
+   * forward onto the session once BigQuery returns its id. If the job fails and no session is ever
+   * established, the flag is harmless: {@link #close} aborts only when an id is also present.
+   */
   void markSessionCreatedByDriver() {
     this.sessionState.updateAndGet(
         current ->
-            current.sessionInfo == null
+            current.createdByDriver
                 ? current
                 : new SessionState(current.sessionInfo, current.queryProperties, true));
   }
