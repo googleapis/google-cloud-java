@@ -48,6 +48,7 @@ import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.webtoken.JsonWebToken.Payload;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
@@ -64,23 +65,55 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 /** Test case for {@link ComputeEngineCredentials}. */
 class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
+
+  private TestEnvironmentProvider envProvider;
+  @TempDir private Path tempDir;
+
+  @BeforeEach
+  void setUp() throws IOException {
+    envProvider = new TestEnvironmentProvider();
+    // Inject our test environment provider into AgentIdentityUtils
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+
+    // Speed up polling in tests by using a no-op sleep service
+    AgentIdentityUtils.setTimeService(millis -> {});
+    // Opt out of bound tokens by default in tests to avoid polling delays
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+  }
+
+  @AfterEach
+  void tearDown() {
+    // Reset the mocks
+    AgentIdentityUtils.resetTimeService();
+    AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
+    AgentIdentityUtils.resetEnvironmentProvider();
+  }
 
   private static final String TOKEN_URL =
       "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token";
@@ -496,7 +529,8 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         new MockMetadataServerTransportFactory();
     String expectedToString =
         String.format(
-            "ComputeEngineCredentials{quotaProjectId=%s, universeDomain=%s, isExplicitUniverseDomain=%s, transportFactoryClassName=%s, scopes=%s}",
+            "ComputeEngineCredentials{quotaProjectId=%s, universeDomain=%s,"
+                + " isExplicitUniverseDomain=%s, transportFactoryClassName=%s, scopes=%s}",
             "some-project",
             "some-domain",
             true,
@@ -1234,6 +1268,123 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     boolean isOnGce = ComputeEngineCredentials.isOnGce(transportFactory, provider);
     assertTrue(isOnGce);
     assertEquals(1, transportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
+        tempDir.resolve("missing_config.json").toAbsolutePath().toString());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    AgentIdentityUtils.setTimeService(millis -> {});
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IOException e = assertThrows(IOException.class, credentials::refreshAccessToken);
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Unable to find Agent Identity certificate config or file for bound token request"
+                    + " after multiple retries."));
+  }
+
+  private void setupCertAndKeyConfig() throws IOException {
+    Path certSource = null;
+    try {
+      certSource =
+          Paths.get(
+              ComputeEngineCredentialsTest.class
+                  .getResource("/agent/agent_spiffe_cert.pem")
+                  .toURI());
+    } catch (URISyntaxException e) {
+      throw new IOException("Failed to load test resource", e);
+    }
+    Path certTarget = tempDir.resolve("certificates.pem");
+    Files.copy(certSource, certTarget, StandardCopyOption.REPLACE_EXISTING);
+
+    Path keySource = null;
+    try {
+      keySource =
+          Paths.get(
+              ComputeEngineCredentialsTest.class
+                  .getResource("/agent/agent_spiffe_key.pem")
+                  .toURI());
+    } catch (URISyntaxException e) {
+      throw new IOException("Failed to load test resource", e);
+    }
+    Path keyTarget = tempDir.resolve("private_key.pem");
+    Files.copy(keySource, keyTarget, StandardCopyOption.REPLACE_EXISTING);
+
+    Path configPath = tempDir.resolve("config.json");
+    Map<String, Object> workload = new HashMap<>();
+    workload.put("cert_path", certTarget.toAbsolutePath().toString());
+    workload.put("key_path", keyTarget.toAbsolutePath().toString());
+
+    Map<String, Object> certConfigs = new HashMap<>();
+    certConfigs.put("workload", workload);
+
+    Map<String, Object> config = new HashMap<>();
+    config.put("cert_configs", certConfigs);
+
+    String configContent = OAuth2Utils.JSON_FACTORY.toString(config);
+    Files.write(configPath, configContent.getBytes(StandardCharsets.UTF_8));
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configPath.toAbsolutePath().toString());
+  }
+
+  @Test
+  void refreshAccessToken_withValidCertAndKey_requestsBoundToken() throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder()
+            .setHttpTransportFactory(transportFactory)
+            .setScopes(SCOPES)
+            .build();
+    AccessToken token = credentials.refreshAccessToken();
+
+    assertNotNull(token);
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    assertEquals("POST", transportFactory.transport.getRequestMethod());
+    assertEquals("application/json", request.getContentType());
+    assertTrue(request.getUrl().contains("scopes=foo,bar"));
+    String body = request.getContentAsString();
+    GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
+    String expectedCert =
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
+            .trim();
+    assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
+  }
+
+  @Test
+  void idTokenWithAudience_withValidCertAndKey_requestsBoundToken() throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IdToken token = credentials.idTokenWithAudience("https://foo.bar", null);
+
+    assertNotNull(token);
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    assertEquals("POST", transportFactory.transport.getRequestMethod());
+    assertEquals("application/json", request.getContentType());
+    assertTrue(request.getUrl().contains("audience=https://foo.bar"));
+    String body = request.getContentAsString();
+    GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
+    String expectedCert =
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
+            .trim();
+    assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {

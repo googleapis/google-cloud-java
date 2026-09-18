@@ -66,7 +66,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
 
   private final IdentityPoolCredentialSource credentialSource;
 
-  private static final Pattern PEM_CERT_PATTERN =
+  static final Pattern PEM_CERT_PATTERN =
       Pattern.compile("-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   CertificateIdentityPoolSubjectTokenSupplier(IdentityPoolCredentialSource credentialSource) {
@@ -222,7 +222,8 @@ public class CertificateIdentityPoolSubjectTokenSupplier
       // elsewhere in the chain.
       if (encodedCurrentCert.equals(encodedLeafCert)) {
         throw new IllegalArgumentException(
-            "The leaf certificate should only appear at the beginning of the trust chain file, or be omitted entirely.");
+            "The leaf certificate should only appear at the beginning of the trust chain file, or"
+                + " be omitted entirely.");
       }
 
       // Add the current certificate to the chain.

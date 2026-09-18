@@ -34,10 +34,26 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link IdTokenCredentials}. */
 class IdTokenCredentialsTest extends BaseSerializationTest {
+
+  private TestEnvironmentProvider envProvider;
+
+  @BeforeEach
+  void setUp() {
+    envProvider = new TestEnvironmentProvider();
+    AgentIdentityUtils.setEnvironmentProvider(envProvider);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+  }
+
+  @AfterEach
+  void tearDown() {
+    AgentIdentityUtils.resetEnvironmentProvider();
+  }
 
   @Test
   void hashCode_equals() throws IOException {
