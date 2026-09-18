@@ -66,6 +66,9 @@ public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final String TIMESTAMP_BOUNDARY_STANDARD = "2025-06-15 10:20:30.999999";
   private static final String TIMESTAMP_BOUNDARY_PICOS = "2025-06-15 10:20:30.999999999999";
+  
+  private static final DateTimeFormatter JVM_ZONE_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
   private static final String DDL_CREATE_PICOS_TABLE =
       "CREATE OR REPLACE TABLE `%1$s.%2$s.%3$s` (\n"
@@ -171,7 +174,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
     return LocalDateTime.parse(utcLiteral.replace(' ', 'T'))
         .atOffset(ZoneOffset.UTC)
         .atZoneSameInstant(ZoneId.systemDefault())
-        .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS"));
+        .format(JVM_ZONE_FORMATTER);
   }
 
   @Test
