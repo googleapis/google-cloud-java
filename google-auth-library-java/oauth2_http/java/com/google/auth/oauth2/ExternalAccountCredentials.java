@@ -36,6 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
@@ -540,14 +541,16 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    * Refreshes the access token using the specified transport factory for per-cycle transport
    * pinning. Internal subclasses ({@link IdentityPoolCredentials}, {@link AwsCredentials}, {@link
    * PluggableAuthCredentials}) delegate {@link #refreshAccessToken()} into this method. This
-   * default implementation delegates back to {@link #refreshAccessToken()} for any package-private
+   * default implementation delegates back to {@link #refreshAccessToken()} for any custom
    * subclasses that do not override this method.
    *
    * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
    * @return the refreshed access token
    * @throws IOException if the token refresh fails
    */
-  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+  @InternalExtensionOnly
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
     return refreshAccessToken();
   }
 

@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -123,8 +124,10 @@ public class AwsCredentials extends ExternalAccountCredentials {
     return refreshAccessToken(this.transportFactory);
   }
 
+  @InternalExtensionOnly
   @Override
-  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
       return impersonated.refreshAccessToken(cycleTransportFactory);

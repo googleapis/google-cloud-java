@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.MtlsUtils;
@@ -253,8 +254,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, true);
   }
 
+  @InternalExtensionOnly
   @Override
-  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
     // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
     // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
     // and prevent nested retry amplification. Outer callers manage retry coordination.

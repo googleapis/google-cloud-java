@@ -1402,7 +1402,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setQuotaProjectId("test-quota-project")
                 .setTokenUrl("https://sts.googleapis.com/v1/token")) {
           @Override
-          AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
+          public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
             capturedSourceTransport.set(cycleTransportFactory);
             return new AccessToken("intermediate-sts-token-xyz", null);
           }

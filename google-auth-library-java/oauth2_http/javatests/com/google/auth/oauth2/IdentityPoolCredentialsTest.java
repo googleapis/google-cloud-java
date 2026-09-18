@@ -2373,14 +2373,22 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     KeyStore ksRetry = createRotatedPopulatedKeyStore();
 
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    CyclicBarrier barrier = new CyclicBarrier(2);
     X509Provider provider =
         new X509Provider() {
           @Override
-          public KeyStore getKeyStore() {
+          public KeyStore getKeyStore() throws IOException {
             int count = getKeyStoreCount.incrementAndGet();
-            // First two calls are for the two threads' initial snapshots,
-            // third call is for Thread B's retry after 401.
-            return count <= 2 ? ksInitial : ksRetry;
+            if (count <= 2) {
+              try {
+                barrier.await(5, TimeUnit.SECONDS);
+              } catch (Exception e) {
+                throw new IOException(e);
+              }
+              return ksInitial;
+            }
+            // Third call is for Thread B's retry after 401.
+            return ksRetry;
           }
         };
 
@@ -2392,7 +2400,6 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Use a credential where one thread gets a 401 (first exchange fails) and the other
     // succeeds. The AtomicInteger tracks per-thread exchange behavior.
     AtomicInteger exchangeCallCount = new AtomicInteger(0);
-    CyclicBarrier barrier = new CyclicBarrier(2);
 
     // Subclass that alternates: first exchange call throws 401, all others succeed.
     IdentityPoolCredentials credential =
@@ -2422,19 +2429,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     ExecutorService executor = Executors.newFixedThreadPool(2);
     try {
-      Future<AccessToken> futureA =
-          executor.submit(
-              () -> {
-                barrier.await(5, TimeUnit.SECONDS);
-                return credential.refreshAccessToken();
-              });
-
-      Future<AccessToken> futureB =
-          executor.submit(
-              () -> {
-                barrier.await(5, TimeUnit.SECONDS);
-                return credential.refreshAccessToken();
-              });
+      Future<AccessToken> futureA = executor.submit(() -> credential.refreshAccessToken());
+      Future<AccessToken> futureB = executor.submit(() -> credential.refreshAccessToken());
 
       AccessToken tokenA = futureA.get(10, TimeUnit.SECONDS);
       AccessToken tokenB = futureB.get(10, TimeUnit.SECONDS);
