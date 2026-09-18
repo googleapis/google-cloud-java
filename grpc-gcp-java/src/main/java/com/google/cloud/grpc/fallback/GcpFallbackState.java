@@ -18,6 +18,8 @@ package com.google.cloud.grpc.fallback;
 
 import com.google.cloud.grpc.GcpThreadFactory;
 import com.google.common.annotations.VisibleForTesting;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
@@ -39,7 +41,7 @@ public class GcpFallbackState {
   private final AtomicLong generation = new AtomicLong(0);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
-  final Set<Runnable> stateChangeCallbacks = ConcurrentHashMap.newKeySet();
+  private final Set<Runnable> stateChangeCallbacks = ConcurrentHashMap.newKeySet();
 
   private ScheduledExecutorService execService = null;
   private boolean ownsExecutor = false;
@@ -59,15 +61,28 @@ public class GcpFallbackState {
     this.ownsExecutor = true;
   }
 
+  synchronized void registerStateChangeCallback(Runnable callback) {
+    if (!isShutdown) {
+      stateChangeCallbacks.add(callback);
+    }
+  }
+
+  synchronized void unregisterStateChangeCallback(Runnable callback) {
+    stateChangeCallbacks.remove(callback);
+  }
+
   private void triggerStateChangeCallbacks() {
-    stateChangeCallbacks.removeIf(
-        callback -> {
-          try {
-            callback.run();
-          } catch (Exception e) {
-          }
-          return true;
-        });
+    List<Runnable> callbacks;
+    synchronized (this) {
+      callbacks = new ArrayList<>(stateChangeCallbacks);
+      stateChangeCallbacks.clear();
+    }
+    for (Runnable callback : callbacks) {
+      try {
+        callback.run();
+      } catch (Exception e) {
+      }
+    }
   }
 
   AtomicLong getPrimarySuccesses() {
@@ -96,9 +111,15 @@ public class GcpFallbackState {
   }
 
   /** Bumps the generation counter and transitions the pool to fallback mode. */
-  synchronized void triggerFallback() {
-    boolean changed = inFallbackMode.compareAndSet(false, true);
-    generation.incrementAndGet();
+  void triggerFallback() {
+    boolean changed = false;
+    synchronized (this) {
+      if (!inFallbackMode.get()) {
+        generation.incrementAndGet();
+        inFallbackMode.set(true);
+        changed = true;
+      }
+    }
     if (changed) {
       triggerStateChangeCallbacks();
     }
@@ -110,17 +131,26 @@ public class GcpFallbackState {
    * @param expectedGen the generation at which the recovery probe started.
    * @return the resulting pool generation, or -1 if the pool generation changed concurrently.
    */
-  synchronized long recordRecovery(long expectedGen) {
-    if (generation.get() != expectedGen) {
-      return -1;
+  long recordRecovery(long expectedGen) {
+    boolean changed = false;
+    long currentGen;
+    synchronized (this) {
+      if (generation.get() != expectedGen) {
+        return -1;
+      }
+      if (inFallbackMode.get()) {
+        primaryFailures.set(0);
+        primarySuccesses.set(0);
+        generation.incrementAndGet();
+        inFallbackMode.set(false);
+        changed = true;
+      }
+      currentGen = generation.get();
     }
-    if (inFallbackMode.compareAndSet(true, false)) {
-      primaryFailures.set(0);
-      primarySuccesses.set(0);
-      generation.incrementAndGet();
+    if (changed) {
       triggerStateChangeCallbacks();
     }
-    return generation.get();
+    return currentGen;
   }
 
   /**
@@ -131,10 +161,25 @@ public class GcpFallbackState {
    */
   synchronized ScheduledExecutorService getOrCreateExecutorService(
       GcpFallbackChannelOptions options) {
+    return getOrCreateExecutorService(options, null);
+  }
+
+  synchronized boolean ownsExecutor() {
+    return ownsExecutor;
+  }
+
+  synchronized ScheduledExecutorService getOrCreateExecutorService(
+      GcpFallbackChannelOptions options, ScheduledExecutorService fallbackExecutor) {
+    if (isShutdown) {
+      return this.execService;
+    }
     if (this.execService != null) {
       return this.execService;
     }
-    if (options != null && options.getSharedExecutorService() != null) {
+    if (fallbackExecutor != null) {
+      this.execService = fallbackExecutor;
+      this.ownsExecutor = false;
+    } else if (options != null && options.getSharedExecutorService() != null) {
       this.execService = options.getSharedExecutorService();
       this.ownsExecutor = false;
     } else {
@@ -224,11 +269,16 @@ public class GcpFallbackState {
       if (!wasInFallback && options.isEnableFallback()) {
         if (failures >= options.getMinFailedCalls()
             && primaryErrRate >= options.getErrorRateThreshold()) {
-          triggerFallback();
+          generation.incrementAndGet();
+          inFallbackMode.set(true);
           fallbackTriggered = true;
         }
       }
       currentInFallback = inFallbackMode.get();
+    }
+
+    if (fallbackTriggered) {
+      triggerStateChangeCallbacks();
     }
 
     if (openTelemetry != null && openTelemetry.getModule() != null) {

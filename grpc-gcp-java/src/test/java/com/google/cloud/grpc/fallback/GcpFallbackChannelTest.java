@@ -51,6 +51,7 @@ import static org.mockito.Mockito.when;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
+import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
@@ -1338,12 +1339,12 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testSharedState_coordinatedFailover() {
-    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
-    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
-    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState();
     GcpFallbackChannelOptions options =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
+            .setSharedExecutorService(mockExec)
             .setMinFailedCalls(3)
             .setErrorRateThreshold(0.5f)
             .build();
@@ -1351,21 +1352,15 @@ public class GcpFallbackChannelTest {
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel1 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec1);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
     GcpFallbackChannel channel2 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec2);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
 
     try {
-      verify(mockExec1)
+      // Both channels share the same state, so only 1 evaluation loop is scheduled
+      verify(mockExec)
           .scheduleAtFixedRate(
               taskCaptor.capture(),
-              eq(options.getPeriod().toMillis()),
-              eq(options.getPeriod().toMillis()),
-              eq(MILLISECONDS));
-      // Channel 2 sharing the same state must NOT schedule a duplicate evaluation loop
-      verify(mockExec2, never())
-          .scheduleAtFixedRate(
-              any(Runnable.class),
               eq(options.getPeriod().toMillis()),
               eq(options.getPeriod().toMillis()),
               eq(MILLISECONDS));
@@ -1428,7 +1423,6 @@ public class GcpFallbackChannelTest {
   public void testSharedState_channelShutdownLeavesSiblingChannelsFunctional()
       throws InterruptedException {
     ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
-    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
     GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
     GcpFallbackChannelOptions options =
         getDefaultOptionsBuilder().setSharedState(sharedState).build();
@@ -1443,9 +1437,9 @@ public class GcpFallbackChannelTest {
     when(mockFallbackDelegateChannel.isTerminated()).thenReturn(true);
 
     GcpFallbackChannel channel1 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec1);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
     GcpFallbackChannel channel2 =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec2);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
 
     try {
       // Shutting down channel1 completes its lifecycle without shutting down the shared executor
@@ -1485,7 +1479,7 @@ public class GcpFallbackChannelTest {
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
 
     try {
       verify(mockExec)
@@ -1544,7 +1538,7 @@ public class GcpFallbackChannelTest {
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
-        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
 
     try {
       verify(mockExec)
@@ -1592,9 +1586,9 @@ public class GcpFallbackChannelTest {
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel1 =
-        new GcpFallbackChannel(options1, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+        new GcpFallbackChannel(options1, mockPrimaryBuilder, mockFallbackBuilder);
     GcpFallbackChannel channel2 =
-        new GcpFallbackChannel(options2, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+        new GcpFallbackChannel(options2, mockPrimaryBuilder, mockFallbackBuilder);
 
     try {
       verify(mockExec, atLeast(2))
@@ -1674,21 +1668,17 @@ public class GcpFallbackChannelTest {
     GcpFallbackChannelOptions options =
         GcpFallbackChannelOptions.newBuilder().setSharedState(sharedState).build();
     gcpFallbackChannel =
-        new GcpFallbackChannel(
-            options,
-            mockPrimaryDelegateChannel,
-            mockFallbackDelegateChannel,
-            mockScheduledExecutorService);
+        new GcpFallbackChannel(options, mockPrimaryDelegateChannel, mockFallbackDelegateChannel);
 
     AtomicLong callbackCount = new AtomicLong(0);
     ArgumentCaptor<Runnable> primaryCallbackCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     // 1. Register callback while in primary mode
     gcpFallbackChannel.notifyWhenStateChanged(
-        io.grpc.ConnectivityState.TRANSIENT_FAILURE, callbackCount::incrementAndGet);
+        ConnectivityState.TRANSIENT_FAILURE, callbackCount::incrementAndGet);
     verify(mockPrimaryDelegateChannel)
         .notifyWhenStateChanged(
-            eq(io.grpc.ConnectivityState.TRANSIENT_FAILURE), primaryCallbackCaptor.capture());
+            eq(ConnectivityState.TRANSIENT_FAILURE), primaryCallbackCaptor.capture());
     assertEquals(0, callbackCount.get());
 
     // 2. Triggering fallback must fire the pending callback
@@ -1702,10 +1692,9 @@ public class GcpFallbackChannelTest {
     // 4. Register callback while in fallback mode
     ArgumentCaptor<Runnable> fallbackCallbackCaptor = ArgumentCaptor.forClass(Runnable.class);
     gcpFallbackChannel.notifyWhenStateChanged(
-        io.grpc.ConnectivityState.READY, callbackCount::incrementAndGet);
+        ConnectivityState.READY, callbackCount::incrementAndGet);
     verify(mockFallbackDelegateChannel)
-        .notifyWhenStateChanged(
-            eq(io.grpc.ConnectivityState.READY), fallbackCallbackCaptor.capture());
+        .notifyWhenStateChanged(eq(ConnectivityState.READY), fallbackCallbackCaptor.capture());
     assertEquals(1, callbackCount.get());
 
     // 5. Recovering back to primary must fire the pending callback once

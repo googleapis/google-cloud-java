@@ -26,6 +26,7 @@ import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.ClientInterceptors;
+import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
@@ -94,7 +95,7 @@ public class GcpFallbackChannel extends ManagedChannel {
           execService != null ? new GcpFallbackState(execService) : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(options);
+    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -164,7 +165,7 @@ public class GcpFallbackChannel extends ManagedChannel {
           execService != null ? new GcpFallbackState(execService) : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(options);
+    this.execService = fallbackState.getOrCreateExecutorService(options, execService);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -328,23 +329,25 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   @Override
-  public io.grpc.ConnectivityState getState(boolean requestConnection) {
+  public ConnectivityState getState(boolean requestConnection) {
     if (isInFallbackMode()) {
       if (fallbackDelegateChannel != null) {
         return fallbackDelegateChannel.getState(requestConnection);
       }
-      return io.grpc.ConnectivityState.SHUTDOWN;
+      return ConnectivityState.SHUTDOWN;
     }
 
     if (primaryDelegateChannel != null) {
       return primaryDelegateChannel.getState(requestConnection);
     }
-    return io.grpc.ConnectivityState.SHUTDOWN;
+    return ConnectivityState.SHUTDOWN;
   }
 
   @Override
-  public void notifyWhenStateChanged(io.grpc.ConnectivityState source, Runnable callback) {
-    ManagedChannel delegate = isInFallbackMode() ? fallbackDelegateChannel : primaryDelegateChannel;
+  public void notifyWhenStateChanged(ConnectivityState source, Runnable callback) {
+    boolean initialFallbackMode = isInFallbackMode();
+    ManagedChannel delegate =
+        initialFallbackMode ? fallbackDelegateChannel : primaryDelegateChannel;
     if (delegate != null) {
       AtomicBoolean fired = new AtomicBoolean(false);
       Runnable once =
@@ -353,11 +356,16 @@ public class GcpFallbackChannel extends ManagedChannel {
               callback.run();
             }
           };
-      fallbackState.stateChangeCallbacks.add(once);
+      fallbackState.registerStateChangeCallback(once);
+      if (isInFallbackMode() != initialFallbackMode) {
+        fallbackState.unregisterStateChangeCallback(once);
+        once.run();
+        return;
+      }
       delegate.notifyWhenStateChanged(
           source,
           () -> {
-            fallbackState.stateChangeCallbacks.remove(once);
+            fallbackState.unregisterStateChangeCallback(once);
             once.run();
           });
     }
@@ -413,7 +421,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
       return execService.isShutdown();
     }
     return true;
@@ -429,7 +437,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
       return execService.isTerminated();
     }
     return true;
@@ -454,7 +462,7 @@ public class GcpFallbackChannel extends ManagedChannel {
       awaitTimeNanos = endTimeNanos - System.nanoTime();
     }
 
-    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+    if (ownsFallbackState && fallbackState.ownsExecutor() && execService != null) {
       return execService.awaitTermination(awaitTimeNanos, NANOSECONDS);
     }
     return true;
