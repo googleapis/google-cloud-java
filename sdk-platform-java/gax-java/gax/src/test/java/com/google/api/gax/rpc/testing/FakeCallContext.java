@@ -242,6 +242,11 @@ public class FakeCallContext implements ApiCallContext {
   }
 
   @Override
+  public TransportChannel getTransportChannel() {
+    return channel != null ? FakeTransportChannel.create(channel) : null;
+  }
+
+  @Override
   public java.time.Duration getTimeoutDuration() {
     return timeout;
   }

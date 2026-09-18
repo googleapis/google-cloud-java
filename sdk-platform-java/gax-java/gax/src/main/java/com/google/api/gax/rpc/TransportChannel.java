@@ -31,10 +31,8 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.core.BackgroundResource;
-import org.jspecify.annotations.NullMarked;
 
 /** Class whose instances can issue RPCs on a particular transport. */
-@NullMarked
 @InternalExtensionOnly
 public interface TransportChannel extends BackgroundResource {
 
@@ -49,4 +47,28 @@ public interface TransportChannel extends BackgroundResource {
    * Returns an empty {@link ApiCallContext} that is compatible with this {@code TransportChannel}.
    */
   ApiCallContext getEmptyCallContext();
+
+  /**
+   * Refreshes or recreates the underlying network connections of this transport channel.
+   *
+   * <p>By default, this is a no-op for transports that do not require stateful connection lifecycle
+   * management.
+   */
+  default void refresh() {}
+
+  /**
+   * Returns true if a certificate rotation has been detected on disk and the transport channel
+   * should be refreshed, or false otherwise.
+   */
+  default boolean shouldRefresh() {
+    return false;
+  }
+
+  /**
+   * Returns a monotonic generation counter tracking the number of successful refreshes or channel
+   * rotations performed by this transport channel.
+   */
+  default long getGeneration() {
+    return 0;
+  }
 }
