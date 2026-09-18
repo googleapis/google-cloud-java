@@ -11,7 +11,6 @@
  * copyright notice, this list of conditions and the following disclaimer
  * in the documentation and/or other materials provided with the
  * distribution.
- *
  *    * Neither the name of Google LLC nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
@@ -46,6 +45,8 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 class OAuthException extends GoogleAuthException {
+
+  private static final long serialVersionUID = 1L;
 
   private final String errorCode;
   @Nullable private final String errorDescription;
@@ -98,18 +99,44 @@ class OAuthException extends GoogleAuthException {
 
   static OAuthException createFromHttpResponseException(HttpResponseException e)
       throws IOException {
-    JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser((e).getContent());
-    GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+    String content = e.getContent();
+    if (content == null || content.trim().isEmpty()) {
+      return new OAuthException(
+          "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+    }
+    try {
+      JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(content);
+      GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
 
-    String errorCode = (String) errorResponse.get("error");
-    String errorDescription = null;
-    String errorUri = null;
-    if (errorResponse.containsKey("error_description")) {
-      errorDescription = (String) errorResponse.get("error_description");
+      String errorCode = null;
+      String errorDescription = null;
+      Object rawError = errorResponse.get("error");
+      if (rawError instanceof String) {
+        errorCode = (String) rawError;
+      } else if (rawError instanceof java.util.Map) {
+        java.util.Map<?, ?> errorMap = (java.util.Map<?, ?>) rawError;
+        if (errorMap.get("status") instanceof String) {
+          errorCode = (String) errorMap.get("status");
+        }
+        if (errorMap.get("message") instanceof String) {
+          errorDescription = (String) errorMap.get("message");
+        }
+      }
+      if (errorCode == null) {
+        errorCode = "http_error_" + e.getStatusCode();
+      }
+      String errorUri = null;
+      if (errorResponse.get("error_description") instanceof String) {
+        errorDescription = (String) errorResponse.get("error_description");
+      }
+      if (errorResponse.get("error_uri") instanceof String) {
+        errorUri = (String) errorResponse.get("error_uri");
+      }
+      return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
+    } catch (Exception parseException) {
+      String fallbackDescription = e.getStatusMessage() != null ? e.getStatusMessage() : content;
+      return new OAuthException(
+          "http_error_" + e.getStatusCode(), fallbackDescription, null, e.getStatusCode());
     }
-    if (errorResponse.containsKey("error_uri")) {
-      errorUri = (String) errorResponse.get("error_uri");
-    }
-    return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
   }
 }

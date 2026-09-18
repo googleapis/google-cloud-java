@@ -46,6 +46,7 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
+import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -79,6 +80,11 @@ import org.jspecify.annotations.Nullable;
  * Also, the target service account must grant the originating principal the "Service Account Token
  * Creator" IAM role.
  *
+ * <p>Note: For mTLS Workload Identity Federation with service account impersonation, applications
+ * should configure {@link IdentityPoolCredentials.Builder#setServiceAccountImpersonationUrl}
+ * directly on {@link IdentityPoolCredentials}, which manages per-cycle mTLS certificate pinning and
+ * 401 recovery across both STS and IAM token exchanges.
+ *
  * <p>Usage:
  *
  * <pre>
@@ -106,7 +112,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final long serialVersionUID = -2133257318957488431L;
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
   private static final int DEFAULT_LIFETIME_IN_SECONDS = 3600;
-  private GoogleCredentials sourceCredentials;
+  private volatile GoogleCredentials sourceCredentials;
   private final String targetPrincipal;
   private List<String> delegates;
   private final List<String> scopes;
@@ -116,7 +122,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ImpersonatedCredentials.class);
 
-  private transient HttpTransportFactory transportFactory;
+  private transient volatile HttpTransportFactory transportFactory;
 
   private transient @Nullable Calendar calendar;
 
@@ -312,7 +318,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  String getIamEndpointOverride() {
+  @Nullable String getIamEndpointOverride() {
     return this.iamEndpointOverride;
   }
 
@@ -580,31 +586,90 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    if (this.sourceCredentials.getAccessToken() == null) {
-      // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
-      this.sourceCredentials =
-          this.sourceCredentials.createScoped(
-              Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
-    }
+    return refreshAccessToken(null);
+  }
 
-    // skip for SA with SSJ flow because it uses self-signed JWT
-    // and will get refreshed at initialize request step
-    // run for other source credential types or SA with GDU assert flow
-    if (!(this.sourceCredentials instanceof ServiceAccountCredentials)
-        || (isDefaultUniverseDomain()
-            && ((ServiceAccountCredentials) this.sourceCredentials)
-                .shouldUseAssertionFlowForGdu())) {
-      try {
-        this.sourceCredentials.refreshIfExpired();
-      } catch (IOException e) {
-        throw new IOException("Unable to refresh sourceCredentials", e);
+  /**
+   * Refreshes the access token using the specified transport factory for per-cycle transport
+   * pinning.
+   *
+   * @param cycleTransportFactory the HTTP transport factory to use, or {@code null} to use this
+   *     instance's configured transport factory without overriding source credential transport
+   * @return the refreshed access token
+   * @throws IOException if token refresh fails
+   */
+  AccessToken refreshAccessToken(@Nullable HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    HttpTransportFactory effectiveTransportFactory =
+        cycleTransportFactory != null
+            ? cycleTransportFactory
+            : (this.transportFactory != null
+                ? this.transportFactory
+                : OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+    HttpCredentialsAdapter adapter;
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      Collection<String> currentScopes =
+          ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
+      if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
+        this.sourceCredentials =
+            this.sourceCredentials.createScoped(
+                Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
       }
+      if (cycleTransportFactory == null) {
+        try {
+          this.sourceCredentials.refreshIfExpired();
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+        adapter = new HttpCredentialsAdapter(this.sourceCredentials);
+      } else {
+        AccessToken intermediateAccessToken;
+        try {
+          intermediateAccessToken =
+              ((ExternalAccountCredentials) this.sourceCredentials)
+                  .refreshAccessToken(effectiveTransportFactory);
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+        Credentials authCredentials =
+            new GoogleCredentials(
+                GoogleCredentials.newBuilder()
+                    .setQuotaProjectId(this.sourceCredentials.getQuotaProjectId())
+                    .setUniverseDomain(this.sourceCredentials.getUniverseDomain())) {
+              @Override
+              public AccessToken refreshAccessToken() {
+                return intermediateAccessToken;
+              }
+            };
+        adapter = new HttpCredentialsAdapter(authCredentials);
+      }
+    } else {
+      if (this.sourceCredentials.getAccessToken() == null) {
+        // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
+        this.sourceCredentials =
+            this.sourceCredentials.createScoped(
+                Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+      }
+
+      // skip for SA with SSJ flow because it uses self-signed JWT
+      // and will get refreshed at initialize request step
+      // run for other source credential types or SA with GDU assert flow
+      if (!(this.sourceCredentials instanceof ServiceAccountCredentials)
+          || (isDefaultUniverseDomain()
+              && ((ServiceAccountCredentials) this.sourceCredentials)
+                  .shouldUseAssertionFlowForGdu())) {
+        try {
+          this.sourceCredentials.refreshIfExpired();
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+      }
+      adapter = new HttpCredentialsAdapter(sourceCredentials);
     }
 
-    HttpTransport httpTransport = this.transportFactory.create();
+    HttpTransport httpTransport = effectiveTransportFactory.create();
     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
 
-    HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(sourceCredentials);
     HttpRequestFactory requestFactory = httpTransport.createRequestFactory();
 
     String endpointUrl =
@@ -627,6 +692,10 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
     adapter.initialize(request);
+    if (cycleTransportFactory != null
+        && this.sourceCredentials instanceof ExternalAccountCredentials) {
+      request.setUnsuccessfulResponseHandler(null);
+    }
     request.setParser(parser);
     MetricsUtils.setMetricsHeader(
         request,
@@ -643,10 +712,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
       throw new IOException("Error requesting access token", e);
     }
 
-    GenericData responseData = response.parseAs(GenericData.class);
-    LoggingUtils.logResponsePayload(
-        responseData, LOGGER_PROVIDER, "Response payload for access token");
-    response.disconnect();
+    GenericData responseData;
+    try {
+      responseData = response.parseAs(GenericData.class);
+      LoggingUtils.logResponsePayload(
+          responseData, LOGGER_PROVIDER, "Response payload for access token");
+    } finally {
+      response.disconnect();
+    }
 
     String accessToken =
         OAuth2Utils.validateString(responseData, "accessToken", "Expected to find an accessToken");
