@@ -35,6 +35,7 @@ import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
@@ -225,21 +226,22 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
-    if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
-      attemptSpan.setAttribute(
-          ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+    if (error != null) {
+      attemptSpan.setStatus(StatusCode.ERROR);
+      if (!Strings.isNullOrEmpty(error.getMessage())) {
+        attemptSpan.setAttribute(
+            ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+      }
     }
 
     endAttempt();
   }
 
   private void endAttempt() {
-    if (attemptSpan == null) {
-      return;
+    if (attemptSpan != null) {
+      attemptSpan.end();
+      attemptSpan = null;
     }
-
-    attemptSpan.end();
-    attemptSpan = null;
   }
 
   @Override
