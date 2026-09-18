@@ -28,6 +28,8 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
@@ -258,6 +260,11 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
       }
     }
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+
     return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
   }
 

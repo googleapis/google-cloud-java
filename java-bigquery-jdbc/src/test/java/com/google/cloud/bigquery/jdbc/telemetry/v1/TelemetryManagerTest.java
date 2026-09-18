@@ -162,12 +162,12 @@ public class TelemetryManagerTest {
         AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION,
         TelemetryManager.toAuthenticationType(1));
     assertEquals(
+        AuthenticationType.AUTHENTICATION_TYPE_TOKEN, TelemetryManager.toAuthenticationType(2));
+    assertEquals(
         AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS,
-        TelemetryManager.toAuthenticationType(2));
+        TelemetryManager.toAuthenticationType(3));
     assertEquals(
-        AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL, TelemetryManager.toAuthenticationType(3));
-    assertEquals(
-        AuthenticationType.AUTHENTICATION_TYPE_TOKEN, TelemetryManager.toAuthenticationType(4));
+        AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL, TelemetryManager.toAuthenticationType(4));
 
     assertEquals(
         AuthenticationType.AUTHENTICATION_TYPE_CUSTOM, TelemetryManager.toAuthenticationType(5));

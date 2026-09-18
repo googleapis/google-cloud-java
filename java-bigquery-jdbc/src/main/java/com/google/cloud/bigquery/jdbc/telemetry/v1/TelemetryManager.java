@@ -16,9 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,45 +58,48 @@ public final class TelemetryManager implements AutoCloseable {
       return null;
     }
 
-    if (properties != null) {
-      TelemetryConfiguration configCheck =
-          TelemetryConfiguration.builder().resolveProperties(properties).build();
-      if (!configCheck.isEnabled()) {
-        synchronized (TelemetryManager.class) {
-          globallyDisabled = true;
-          closeInstance();
-        }
-        return null;
+    if (properties != null
+        && !TelemetryConfiguration.builder().resolveProperties(properties).build().isEnabled()) {
+      synchronized (TelemetryManager.class) {
+        globallyDisabled = true;
+        closeInstance();
       }
+      return null;
     }
 
     TelemetryManager localRef = instance;
-    if (localRef == null) {
-      synchronized (TelemetryManager.class) {
-        if (globallyDisabled) {
-          return null;
-        }
-        localRef = instance;
-        if (localRef == null) {
-          TelemetryConfiguration config =
-              TelemetryConfiguration.builder().resolveProperties(properties).build();
-          ClearcutTransport transport = new ClearcutTransport(config);
-          TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
-          localRef = new TelemetryManager(batcher);
-          instance = localRef;
-        }
-      }
+    if (localRef != null) {
+      return localRef;
     }
-    return localRef;
+
+    synchronized (TelemetryManager.class) {
+      if (globallyDisabled) {
+        return null;
+      }
+      localRef = instance;
+      if (localRef != null) {
+        return localRef;
+      }
+      TelemetryConfiguration config =
+          TelemetryConfiguration.builder().resolveProperties(properties).build();
+      ClearcutTransport transport = new ClearcutTransport(config);
+      TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
+      localRef = new TelemetryManager(batcher);
+      // Registered before the instance is published so that a non-null instance always implies a
+      // registered shutdown hook.
+      registerShutdownHook();
+      instance = localRef;
+      return localRef;
+    }
   }
 
   /** Package-private lifecycle initialisation method for explicit configuration or unit testing. */
   static synchronized void init(TelemetryConfiguration config, ClearcutTransport transport) {
     closeInstance();
-    if (config != null && config.isEnabled() && transport != null) {
-      TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
-      instance = new TelemetryManager(batcher);
+    if (config == null || !config.isEnabled() || transport == null) {
+      return;
     }
+    instance = new TelemetryManager(new TelemetryBatcher(config, transport));
   }
 
   /**
@@ -103,6 +108,15 @@ public final class TelemetryManager implements AutoCloseable {
    */
   TelemetryBatcher getBatcher() {
     return batcher;
+  }
+
+  /**
+   * Returns the {@link TelemetryBatcher} of the active instance, or {@code null} if telemetry is
+   * closed or uninitialized.
+   */
+  private static TelemetryBatcher activeBatcher() {
+    TelemetryManager localRef = instance;
+    return localRef == null ? null : localRef.getBatcher();
   }
 
   /**
@@ -129,20 +143,19 @@ public final class TelemetryManager implements AutoCloseable {
   public static synchronized void closeInstance() {
     TelemetryManager localRef = instance;
     instance = null;
-    if (localRef != null) {
-      try {
-        localRef.close();
-      } catch (Throwable t) {
-        logger.log(Level.FINE, "Error closing TelemetryManager instance", t);
-      }
+    if (localRef == null) {
+      return;
+    }
+    try {
+      localRef.close();
+    } catch (Throwable t) {
+      logger.log(Level.FINE, "Error closing TelemetryManager instance", t);
     }
   }
 
   @Override
   public void close() {
-    if (batcher != null) {
-      batcher.close();
-    }
+    batcher.close();
   }
 
   // Package-private test helper to reset the global kill switch between test runs
@@ -150,7 +163,7 @@ public final class TelemetryManager implements AutoCloseable {
     globallyDisabled = false;
   }
 
-  static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
+  public static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
     if (bqStatementType == null) {
       return StatementType.STATEMENT_TYPE_UNSPECIFIED;
     }
@@ -161,40 +174,41 @@ public final class TelemetryManager implements AutoCloseable {
     return desc != null ? StatementType.valueOf(desc) : StatementType.STATEMENT_TYPE_OTHER;
   }
 
-  static AuthenticationType toAuthenticationType(int oauthType) {
+  public static AuthenticationType toAuthenticationType(int oauthType) {
     switch (oauthType) {
       case 0:
         return AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT;
       case 1:
         return AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION;
       case 2:
-        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
-      case 3:
-        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
-      case 4:
         return AuthenticationType.AUTHENTICATION_TYPE_TOKEN;
+      case 3:
+        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
+      case 4:
+        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
       default:
         return AuthenticationType.AUTHENTICATION_TYPE_CUSTOM;
     }
   }
 
-  static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
+  public static void recordConnectionAttempt(
+      Status status, int errorCode, AuthenticationType authType) {
     runSafely(
         () -> {
-          TelemetryManager mgr = instance;
-          if (mgr != null && mgr.getBatcher() != null) {
-            mgr.getBatcher()
-                .offer(
-                    ConnectionAttempt.newBuilder()
-                        .setStatus(status)
-                        .setErrorCode(errorCode)
-                        .setAuthType(authType)
-                        .build());
+          TelemetryBatcher activeBatcher = activeBatcher();
+          if (activeBatcher == null) {
+            return;
           }
+          activeBatcher.offer(
+              ConnectionAttempt.newBuilder()
+                  .setStatus(status)
+                  .setErrorCode(errorCode)
+                  .setAuthType(authType)
+                  .build());
         });
   }
 
-  static void recordStatementExecution(
+  public static void recordStatementExecution(
       StatementType statementType,
       QueryApiType apiType,
       Status status,
@@ -202,33 +216,123 @@ public final class TelemetryManager implements AutoCloseable {
       long durationMs) {
     runSafely(
         () -> {
-          TelemetryManager mgr = instance;
-          if (mgr != null && mgr.getBatcher() != null) {
-            mgr.getBatcher()
-                .offer(
-                    StatementExecution.newBuilder()
-                        .setStatementType(statementType)
-                        .setQueryApiType(apiType)
-                        .setStatus(status)
-                        .setErrorCode(errorCode)
-                        .build(),
-                    durationMs);
+          TelemetryBatcher activeBatcher = activeBatcher();
+          if (activeBatcher == null) {
+            return;
           }
+          activeBatcher.offer(
+              StatementExecution.newBuilder()
+                  .setStatementType(statementType)
+                  .setQueryApiType(apiType)
+                  .setStatus(status)
+                  .setErrorCode(errorCode)
+                  .build(),
+              durationMs);
         });
   }
 
-  static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
+  public static void recordStatementExecution(
+      StatementExecution.Builder statementExecutionBuilder, long durationMs) {
+    if (statementExecutionBuilder == null) {
+      return;
+    }
     runSafely(
         () -> {
-          TelemetryManager mgr = instance;
-          if (mgr != null && mgr.getBatcher() != null) {
-            mgr.getBatcher()
-                .offer(
-                    FeatureUsage.newBuilder()
-                        .setDriverFeature(feature)
-                        .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
-                        .build());
+          TelemetryBatcher activeBatcher = activeBatcher();
+          if (activeBatcher == null) {
+            return;
           }
+          activeBatcher.offer(statementExecutionBuilder.build(), durationMs);
         });
+  }
+
+  public static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
+    runSafely(
+        () -> {
+          TelemetryBatcher activeBatcher = activeBatcher();
+          if (activeBatcher == null) {
+            return;
+          }
+          activeBatcher.offer(
+              FeatureUsage.newBuilder()
+                  .setDriverFeature(feature)
+                  .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
+                  .build());
+        });
+  }
+
+  public static void recordFeatureUsage(DriverFeature feature) {
+    recordFeatureUsage(feature, null);
+  }
+
+  public static void recordError(int errorCode, int errorXdbcCode, String methodName) {
+    runSafely(
+        () -> {
+          TelemetryBatcher activeBatcher = activeBatcher();
+          if (activeBatcher == null) {
+            return;
+          }
+          activeBatcher.offer(
+              ErrorMetric.newBuilder()
+                  .setErrorCode(errorCode)
+                  .setErrorXdbcCode(errorXdbcCode)
+                  .setMethodName(methodName == null ? "" : methodName)
+                  .build());
+        });
+  }
+
+  /**
+   * Extracts the numeric error code from the throwable chain. Traverses causes to unpack
+   * BigQueryException (HTTP status codes) or SQLException error codes. Returns 1000 as the fallback
+   * driver error code.
+   */
+  public static int extractErrorCode(Throwable t) {
+    int depth = 0;
+    while (t != null && depth++ < 20) {
+      if (t instanceof BigQueryException) {
+        int code = ((BigQueryException) t).getCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      if (t instanceof SQLException) {
+        int code = ((SQLException) t).getErrorCode();
+        if (code != 0) {
+          return code;
+        }
+      }
+      t = t.getCause();
+    }
+    return 1000;
+  }
+
+  /**
+   * Registers the JVM shutdown hook that flushes pending telemetry.
+   *
+   * <p>Only reached from the instance-creation critical section of {@link
+   * #getInstance(Properties)}, which already guarantees single execution, so no further guarding is
+   * needed here.
+   */
+  private static void registerShutdownHook() {
+    try {
+      Runtime.getRuntime()
+          .addShutdownHook(
+              new Thread(
+                  TelemetryManager::closeInstanceOnShutdown,
+                  "bigquery-jdbc-telemetry-shutdown-hook"));
+    } catch (IllegalStateException e) {
+      // Thrown if the JVM is already in the process of shutting down
+    } catch (SecurityException e) {
+      logger.warning("SecurityManager prevented registering telemetry shutdown hook");
+    }
+  }
+
+  /** Shutdown-hook body: flushes and closes the shared instance without propagating failures. */
+  private static void closeInstanceOnShutdown() {
+    try {
+      closeInstance();
+    } catch (Throwable t) {
+      logger.warning("Error closing TelemetryManager during JVM shutdown");
+    }
   }
 }

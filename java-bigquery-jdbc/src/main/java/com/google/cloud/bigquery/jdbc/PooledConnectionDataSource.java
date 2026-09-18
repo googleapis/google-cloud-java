@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.common.annotations.VisibleForTesting;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -54,6 +56,8 @@ public class PooledConnectionDataSource extends DataSource implements Connection
     }
     BigQueryPooledConnection bqPooledConnection = new BigQueryPooledConnection(physicalConnection);
     bqPooledConnection.addConnectionEventListener(connectionPoolManager);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_CONNECTION_POOLING);
     return bqPooledConnection;
   }
 

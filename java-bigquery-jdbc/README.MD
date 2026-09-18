@@ -92,10 +92,6 @@ a connection property (`EnableDiagnosticTelemetry=0`), environment variable,
 or system property, the service immediately shuts down and remains permanently
 off for the remainder of the JVM lifecycle. It will only restart when
 the JVM restarts.
-* Global Worker Settings: Because the telemetry batcher is a shared global
-resource, properties that configure its behavior (`TelemetryUploadInterval`
-and `TelemetryBatchSize`) are exclusively evaluated upon establishing the first
-connection. Subsequent overrides for these specific properties are ignored.
 
 #### Configuration Keys
 
@@ -103,16 +99,8 @@ To configure these properties, you can use the following keys:
 
 * Opt-Out Control:
   * Connection Property: `EnableDiagnosticTelemetry=0;`
-  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_ENABLED=false`
-  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.enabled=false`
-* Upload Interval:
-  * Connection Property: `TelemetryUploadInterval=300000;`
-  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_INTERVAL_MS=300000`
-  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.interval_ms=300000`
-* Batch Size:
-  * Connection Property: `TelemetryBatchSize=5000;`
-  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_BATCH_SIZE=5000`
-  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.batch_size=5000`
+  * Environment Variable: `BIGQUERY_JDBC_TELEMETRY_ENABLED=false`
+  * System Property: `-DBIGQUERY_JDBC_TELEMETRY_ENABLED=false`
 
 ## Developer Guide
 
