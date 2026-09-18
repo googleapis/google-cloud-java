@@ -510,6 +510,7 @@ public class BigQueryStatementTest {
   @Test
   public void testExecute_legacySqlWithEnableTimestampPicos_throwsException() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
     doReturn(true).when(mockConn).isEnableTimestampPicos();
 
@@ -524,6 +525,7 @@ public class BigQueryStatementTest {
   @Test
   public void testGetJobConfig_standardSql_setsUseLegacySqlFalse() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("SQL").when(mockConn).getQueryDialect();
 
     BigQueryStatement statement = new BigQueryStatement(mockConn);
@@ -536,6 +538,7 @@ public class BigQueryStatementTest {
   @Test
   public void testGetJobConfig_legacySql_setsUseLegacySqlTrue() {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
     doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
 
     BigQueryStatement statement = new BigQueryStatement(mockConn);
