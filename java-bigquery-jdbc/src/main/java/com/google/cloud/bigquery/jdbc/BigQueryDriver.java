@@ -224,19 +224,15 @@ public class BigQueryDriver implements Driver {
       } else {
         return null;
       }
+    } catch (IOException e) {
+      TelemetryManager.recordConnectionAttempt(
+          Status.STATUS_ERROR, TelemetryManager.extractErrorCode(e), authType);
+      LOG.warning("Getting a warning: %s", e.getMessage());
+      return null;
     } catch (Throwable t) {
-      int errorCode = TelemetryManager.extractErrorCode(t);
-      TelemetryManager.recordConnectionAttempt(Status.STATUS_ERROR, errorCode, authType);
-      if (t instanceof SQLException) {
-        throw (SQLException) t;
-      } else if (t instanceof RuntimeException) {
-        throw (RuntimeException) t;
-      } else if (t instanceof IOException) {
-        LOG.warning("Getting a warning: " + t.getMessage());
-        return null;
-      } else {
-        throw new BigQueryJdbcException("Failed to establish BigQuery connection", t);
-      }
+      TelemetryManager.recordConnectionAttempt(
+          Status.STATUS_ERROR, TelemetryManager.extractErrorCode(t), authType);
+      throw t;
     }
   }
 
