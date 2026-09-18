@@ -61,9 +61,9 @@ public class BenchmarkValidator {
         double difference =
             calculatePercentageDifference(
                 expectedPercentile.baseline, actualPercentilesMap.get(percentile));
-        // if an absolute different in percentage is greater than allowed difference
+        // if a positive difference in percentage is greater than allowed difference
         // Then we are throwing validation error
-        if (Math.abs(Math.ceil(difference)) > expectedPercentile.difference) {
+        if (difference > expectedPercentile.difference) {
           throw new ValidationException(
               String.format(
                   "[%s][%s] Expected percentile %s[+/-%s] but got %s",

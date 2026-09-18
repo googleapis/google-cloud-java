@@ -851,7 +851,16 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     freezeAfterNumRequests.set(numRequests);
   }
 
+  private volatile boolean recordRequests = true;
+
+  public void setRecordRequests(boolean recordRequests) {
+    this.recordRequests = recordRequests;
+  }
+
   private void maybeFreezeAndRecordRequest(AbstractMessage request) {
+    if (!recordRequests) {
+      return;
+    }
     synchronized (lock) {
       if (freezeAfterNumRequests.get() >= 0) {
         if (freezeAfterNumRequests.decrementAndGet() == -1) {
