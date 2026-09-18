@@ -1368,18 +1368,18 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_mtlsDisabledWithCertsPresent_logsWarningAtMostOnce()
+  public void getAgentIdentityCertInfo_mtlsDisabledWithCertsPresent_logsAtMostOnce()
       throws Exception {
     setupValidAgentCredentialsInTempDir();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
 
-    assertFalse(AgentIdentityUtils.isMtlsDisabledWarningLogged());
+    assertFalse(AgentIdentityUtils.isMtlsDisabledLogged());
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertTrue(AgentIdentityUtils.isMtlsDisabledWarningLogged());
+    assertTrue(AgentIdentityUtils.isMtlsDisabledLogged());
 
-    // Subsequent calls return null without re-triggering warning log
+    // Subsequent calls return null without re-triggering log message
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertTrue(AgentIdentityUtils.isMtlsDisabledWarningLogged());
+    assertTrue(AgentIdentityUtils.isMtlsDisabledLogged());
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {

@@ -160,7 +160,7 @@ public final class AgentIdentityUtils {
 
   // Tracks whether the warning for explicitly disabled mTLS when certificates are present
   // has already been logged in this process to prevent log spam on repeated token refreshes.
-  private static volatile boolean mtlsDisabledWarningLogged = false;
+  private static volatile boolean mtlsDisabledLogged = false;
 
   // In-memory cache of verified credentials to avoid redundant disk reads, X.509/PKCS#8 parsing,
   // and cryptographic signature verification on every token refresh when files are unchanged.
@@ -878,8 +878,8 @@ public final class AgentIdentityUtils {
     }
     // Case 2: Explicitly disabled via environment variable
     else if ("false".equalsIgnoreCase(useClientCert)) {
-      if (certsPresent && !mtlsDisabledWarningLogged) {
-        mtlsDisabledWarningLogged = true;
+      if (certsPresent && !mtlsDisabledLogged) {
+        mtlsDisabledLogged = true;
         // Log that we are ignoring present certs because it was explicitly disabled
         LoggingUtils.log(
             LOGGER_PROVIDER,
@@ -1010,7 +1010,7 @@ public final class AgentIdentityUtils {
     wellKnownDir = dir;
     cachedCredentials = null;
     initialStartupCompleted = false;
-    mtlsDisabledWarningLogged = false;
+    mtlsDisabledLogged = false;
   }
 
   /** Sets the environment variable provider for testing. */
@@ -1019,7 +1019,7 @@ public final class AgentIdentityUtils {
     environmentProvider = provider;
     cachedCredentials = null;
     initialStartupCompleted = false;
-    mtlsDisabledWarningLogged = false;
+    mtlsDisabledLogged = false;
   }
 
   /** Resets the environment variable provider back to default system implementation. */
@@ -1028,7 +1028,7 @@ public final class AgentIdentityUtils {
     environmentProvider = SystemEnvironmentProvider.getInstance();
     cachedCredentials = null;
     initialStartupCompleted = false;
-    mtlsDisabledWarningLogged = false;
+    mtlsDisabledLogged = false;
   }
 
   /** Sets the time and sleep service for testing. */
@@ -1037,7 +1037,7 @@ public final class AgentIdentityUtils {
     timeService = service;
     cachedCredentials = null;
     initialStartupCompleted = false;
-    mtlsDisabledWarningLogged = false;
+    mtlsDisabledLogged = false;
   }
 
   /** Resets the time and sleep service back to default system implementation. */
@@ -1046,7 +1046,7 @@ public final class AgentIdentityUtils {
     timeService = Thread::sleep;
     cachedCredentials = null;
     initialStartupCompleted = false;
-    mtlsDisabledWarningLogged = false;
+    mtlsDisabledLogged = false;
   }
 
   /** Clears only the in-memory cached credentials for testing concurrent invalidation. */
@@ -1055,9 +1055,9 @@ public final class AgentIdentityUtils {
     cachedCredentials = null;
   }
 
-  /** Returns whether the warning for explicitly disabled mTLS has been logged. */
+  /** Returns whether the message for explicitly disabled mTLS has been logged. */
   @VisibleForTesting
-  static boolean isMtlsDisabledWarningLogged() {
-    return mtlsDisabledWarningLogged;
+  static boolean isMtlsDisabledLogged() {
+    return mtlsDisabledLogged;
   }
 }
