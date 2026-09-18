@@ -208,44 +208,65 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     return null;
   }
 
-  private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
-    java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory =
-        () -> {
-          try {
-            HttpTransport httpTransportToUse = httpTransport;
-            if (httpTransportToUse == null) {
-              httpTransportToUse = createHttpTransport();
-            }
-            return ManagedHttpJsonChannel.newBuilder()
-                .setEndpoint(endpoint)
-                .setExecutor(executor)
-                .setHttpTransport(httpTransportToUse)
-                .setManageHttpTransport(httpTransport == null)
-                .build();
-          } catch (Exception e) {
-            throw new java.lang.RuntimeException(
-                "Failed to create fresh ManagedHttpJsonChannel", e);
-          }
-        };
-
-    String workloadCertPath = certificateBasedAccess.getWorkloadCertPath();
-    ManagedHttpJsonChannel channel =
-        workloadCertPath != null
-            ? new RefreshingHttpJsonChannel(channelFactory, workloadCertPath)
-            : channelFactory.get();
-
-    HttpJsonClientInterceptor headerInterceptor =
-        new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
-
-    channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
-    channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
-    if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
-      for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
-        channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+  private ManagedHttpJsonChannel createSingleManagedChannel()
+      throws IOException, GeneralSecurityException {
+    HttpTransport httpTransportToUse = httpTransport;
+    if (httpTransportToUse == null) {
+      httpTransportToUse = createHttpTransport();
+      if (httpTransportToUse == null
+          && mtlsProvider != null
+          && certificateBasedAccess.useMtlsClientCertificate()) {
+        throw new IOException("Failed to initialize mTLS HttpTransport");
       }
     }
+    return ManagedHttpJsonChannel.newBuilder()
+        .setEndpoint(endpoint)
+        .setExecutor(executor)
+        .setHttpTransport(httpTransportToUse)
+        .setManageHttpTransport(httpTransport == null)
+        .build();
+  }
 
-    return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+  private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
+    boolean isMtlsActive =
+        httpTransport == null
+            && mtlsProvider != null
+            && certificateBasedAccess.useMtlsClientCertificate();
+    String workloadCertPath = isMtlsActive ? certificateBasedAccess.getWorkloadCertPath() : null;
+
+    ManagedHttpJsonChannel initialChannel = createSingleManagedChannel();
+    try {
+      java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory =
+          () -> {
+            try {
+              return createSingleManagedChannel();
+            } catch (Exception e) {
+              throw new java.lang.RuntimeException(
+                  "Failed to create fresh ManagedHttpJsonChannel", e);
+            }
+          };
+
+      ManagedHttpJsonChannel channel =
+          workloadCertPath != null
+              ? new RefreshingHttpJsonChannel(initialChannel, channelFactory, workloadCertPath)
+              : initialChannel;
+
+      HttpJsonClientInterceptor headerInterceptor =
+          new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
+
+      channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
+      channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
+      if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
+        for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
+          channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+        }
+      }
+
+      return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+    } catch (Throwable t) {
+      initialChannel.shutdownNow();
+      throw t;
+    }
   }
 
   /** The endpoint to be used for the channel. */

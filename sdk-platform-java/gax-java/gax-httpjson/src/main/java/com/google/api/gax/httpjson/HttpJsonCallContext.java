@@ -601,7 +601,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
         this.retrySettings,
         this.retryableCodes,
         this.endpointContext,
-        (newChannel == null || newChannel.equals(this.channel)) ? this.transportChannel : null);
+        (newChannel != null && newChannel.equals(this.channel)) ? this.transportChannel : null);
   }
 
   public HttpJsonCallContext withCallOptions(HttpJsonCallOptions newCallOptions) {

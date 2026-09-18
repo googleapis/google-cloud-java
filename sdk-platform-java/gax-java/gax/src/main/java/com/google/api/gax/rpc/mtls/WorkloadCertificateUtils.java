@@ -31,15 +31,34 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.auth.mtls.MtlsUtils;
+import java.io.File;
 
 /** Internal utility class for managing dynamic workload certificates. */
 @InternalApi
 public class WorkloadCertificateUtils {
 
+  private static final String EMPTY_FILE_SHA256 =
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+
   private WorkloadCertificateUtils() {}
 
+  /**
+   * Computes the SHA-256 fingerprint of the certificate file at {@code certPath}, returning {@code
+   * ""} if the path is {@code null}, unreadable, empty (e.g., temporarily truncated to 0 bytes
+   * mid-write by an external certificate rotator), or hashes to the empty-byte digest.
+   *
+   * <p>Returning {@code ""} on unreadable or empty files ensures callers ({@code shouldRefresh()}
+   * and {@code refresh()}) safely skip refreshing during transient mid-write states rather than
+   * treating an empty digest as a certificate rotation mismatch.
+   */
   public static String getCertificateFingerprint(String certPath) {
+    if (certPath == null || new File(certPath).length() == 0) {
+      return "";
+    }
     String fingerprint = MtlsUtils.getCertificateFingerprint(certPath);
-    return fingerprint != null ? fingerprint : "";
+    if (fingerprint == null || EMPTY_FILE_SHA256.equalsIgnoreCase(fingerprint)) {
+      return "";
+    }
+    return fingerprint;
   }
 }

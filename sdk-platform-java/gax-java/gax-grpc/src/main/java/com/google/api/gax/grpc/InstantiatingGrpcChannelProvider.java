@@ -401,13 +401,19 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   }
 
   private TransportChannel createChannel() throws IOException {
+    String workloadCertPath =
+        !this.canUseDirectPath()
+                && mtlsProvider != null
+                && certificateBasedAccess.useMtlsClientCertificate()
+            ? certificateBasedAccess.getWorkloadCertPath()
+            : null;
     return GrpcTransportChannel.newBuilder()
         .setManagedChannel(
             ChannelPool.create(
                 channelPoolSettings,
                 InstantiatingGrpcChannelProvider.this::createSingleChannel,
                 backgroundExecutor,
-                certificateBasedAccess.getWorkloadCertPath()))
+                workloadCertPath))
         .setDirectPath(this.canUseDirectPath())
         .build();
   }
@@ -762,6 +768,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       if (channelCredentials != null) {
         // Create the channel using channel credentials created via DCA.
         builder = Grpc.newChannelBuilder(endpoint, channelCredentials);
+      } else if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+        throw new IOException("Failed to initialize mTLS channel credentials");
       } else {
         // Could not create channel credentials via DCA. In accordance with
         // https://google.aip.dev/auth/4115, if credentials not available through

@@ -101,7 +101,6 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
               unauthenticatedException -> {
                 TransportChannel channel = finalContext.getTransportChannel();
                 if (channel != null) {
-                  boolean shouldRetry = false;
                   if (channel.shouldRefresh()) {
                     try {
                       channel.refresh();
@@ -111,11 +110,8 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
                           "Failed to refresh transport channel after authentication error",
                           e);
                     }
-                    shouldRetry = true;
-                  } else if (channel.getGeneration() > attemptGeneration) {
-                    // Channel was rotated by a concurrent request while this call was in flight
-                    shouldRetry = true;
                   }
+                  boolean shouldRetry = channel.getGeneration() > attemptGeneration;
 
                   if (shouldRetry) {
                     UnauthenticatedException newEx =

@@ -663,7 +663,7 @@ public final class GrpcCallContext implements ApiCallContext {
         retryableCodes,
         endpointContext,
         isDirectPath,
-        (newChannel == null || newChannel.equals(channel)) ? transportChannel : null);
+        (newChannel != null && newChannel.equals(channel)) ? transportChannel : null);
   }
 
   /** Returns a new instance with the call options set to the given call options. */

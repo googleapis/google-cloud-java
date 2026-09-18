@@ -543,5 +543,15 @@ class GrpcCallContextTest {
 
     assertEquals(customChannel, updatedContext.getChannel());
     assertNull(updatedContext.getTransportChannel());
+
+    // Clearing channel via withChannel(null) also clears transportChannel
+    GrpcCallContext nullChannelContext = baseContext.withChannel(null);
+    assertNull(nullChannelContext.getChannel());
+    assertNull(nullChannelContext.getTransportChannel());
+
+    // Merging a cleared context into defaultContext falls back to defaultContext's transportChannel
+    GrpcCallContext mergedWithNullChannel = (GrpcCallContext) baseContext.merge(nullChannelContext);
+    assertEquals(defaultChannel, mergedWithNullChannel.getChannel());
+    assertEquals(transportChannel, mergedWithNullChannel.getTransportChannel());
   }
 }

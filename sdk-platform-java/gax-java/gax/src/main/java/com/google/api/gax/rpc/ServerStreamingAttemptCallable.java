@@ -226,6 +226,9 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
         .attemptStarted(request, outerRetryingFuture.getAttemptSettings().getOverallAttemptCount());
 
     final ApiCallContext finalContext = attemptContext;
+    TransportChannel channelForAttempt = finalContext.getTransportChannel();
+    final long attemptGeneration =
+        channelForAttempt != null ? channelForAttempt.getGeneration() : 0;
     innerCallable.call(
         request,
         new StateCheckingResponseObserver<ResponseT>() {
@@ -242,19 +245,43 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
           @Override
           public void onErrorImpl(Throwable t) {
             Throwable cause = t;
-            if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
+            if (cause instanceof ServerStreamingAttemptException) {
               cause = cause.getCause();
             }
             if (cause instanceof UnauthenticatedException) {
+              UnauthenticatedException unauthenticatedException = (UnauthenticatedException) cause;
               TransportChannel transportChannel = finalContext.getTransportChannel();
-              if (transportChannel != null && transportChannel.shouldRefresh()) {
-                try {
-                  transportChannel.refresh();
-                } catch (Exception e) {
-                  LOG.log(
-                      Level.WARNING,
-                      "Failed to refresh transport channel after authentication error",
-                      e);
+              if (transportChannel != null) {
+                if (transportChannel.shouldRefresh()) {
+                  try {
+                    transportChannel.refresh();
+                  } catch (Exception e) {
+                    LOG.log(
+                        Level.WARNING,
+                        "Failed to refresh transport channel after authentication error",
+                        e);
+                  }
+                }
+                boolean shouldRetry = transportChannel.getGeneration() > attemptGeneration;
+                if (shouldRetry) {
+                  UnauthenticatedException newEx =
+                      new UnauthenticatedException(
+                          unauthenticatedException.getMessage(),
+                          unauthenticatedException.getCause(),
+                          unauthenticatedException.getStatusCode(),
+                          true,
+                          unauthenticatedException.getErrorDetails());
+                  for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
+                    newEx.addSuppressed(suppressed);
+                  }
+                  if (t instanceof ServerStreamingAttemptException) {
+                    ServerStreamingAttemptException attemptEx = (ServerStreamingAttemptException) t;
+                    t =
+                        new ServerStreamingAttemptException(
+                            newEx, attemptEx.canResume(), attemptEx.hasSeenResponses());
+                  } else {
+                    t = newEx;
+                  }
                 }
               }
             }

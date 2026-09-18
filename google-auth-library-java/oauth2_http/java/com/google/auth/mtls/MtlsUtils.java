@@ -40,6 +40,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
@@ -62,17 +63,43 @@ public class MtlsUtils {
   }
 
   /**
-   * Returns if mutual TLS client certificate should be used. Delegates directly to
-   * getWorkloadCertPath to avoid duplicate logic.
+   * Returns if mutual TLS client certificate should be used. Returns true if valid workload
+   * certificates are configured or if GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly set to true
+   * (e.g. for Enterprise Certificate Proxy or custom MtlsProviders), unless explicitly disabled via
+   * GOOGLE_API_USE_CLIENT_CERTIFICATE=false.
    */
   public static boolean useMtlsClientCertificate(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
-    return getWorkloadCertPath(envProvider, propProvider) != null;
+    String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    if ("false".equalsIgnoreCase(useClientCertificate)) {
+      return false;
+    }
+    if (getWorkloadCertPath(envProvider, propProvider) != null) {
+      return true;
+    }
+    return "true".equalsIgnoreCase(useClientCertificate);
   }
 
   /**
    * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
    * used.
+   *
+   * <p>Possible outcomes:
+   *
+   * <ol>
+   *   <li><b>Non-null {@link String} (Valid happy path):</b> A valid workload certificate
+   *       configuration was found and both the certificate and private key files exist and are
+   *       readable.
+   *   <li><b>{@link IllegalStateException} (Invalid state - fail closed):</b> An explicit {@code
+   *       GOOGLE_API_CERTIFICATE_CONFIG} path or an existing default well-known certificate
+   *       configuration file is missing, unreadable, malformed, or references missing/unreadable
+   *       certificate or private key files. This is treated as an unrecoverable misconfiguration.
+   *   <li><b>{@code null} (Safe fallback / fail open):</b> Client certificates are explicitly
+   *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE=false}, no explicit configuration
+   *       is set and the default well-known configuration file does not exist on disk, or the
+   *       configuration specifies an non-workload source (e.g., ECP/PKCS11 without a {@code
+   *       workload} section). Callers can proceed without workload certificate file polling.
+   * </ol>
    */
   public static @Nullable String getWorkloadCertPath(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
@@ -174,17 +201,22 @@ public class MtlsUtils {
     }
   }
 
-  /** Centralized SHA-256 Fingerprint Calculator */
+  /**
+   * Computes the lower-case SHA-256 hex fingerprint of the certificate file at {@code certPath}.
+   *
+   * <p>Unlike {@link #getWorkloadCertPath}, which validates configuration at channel initialization
+   * and fails closed on errors, this method is called dynamically at runtime during active RPCs to
+   * detect certificate rotations on disk. External certificate rotators may temporarily delete,
+   * truncate, or rewrite the certificate file mid-RPC. Returning {@code null} on read/digest
+   * exceptions (which callers normalize to {@code ""}) allows runtime refresh checks to ignore
+   * transient mid-write states and keep the active healthy channel without failing in-flight RPCs.
+   */
   public static @Nullable String getCertificateFingerprint(@Nullable String certPath) {
     if (certPath == null) {
       return null;
     }
-    File file = new File(certPath);
-    if (!file.isFile() || !file.canRead()) {
-      return null;
-    }
     try {
-      byte[] certBytes = Files.readAllBytes(file.toPath());
+      byte[] certBytes = Files.readAllBytes(Paths.get(certPath));
       byte[] digest = MessageDigest.getInstance("SHA-256").digest(certBytes);
       return BaseEncoding.base16().lowerCase().encode(digest);
     } catch (Exception e) {

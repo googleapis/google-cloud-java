@@ -33,12 +33,15 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;
+import com.google.api.gax.rpc.mtls.CertificateRotationTracker;
 import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
 import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -55,87 +58,53 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());
 
-  private static class DiskCheckResult {
-    final String fingerprint;
-    final long timestampNanos;
-
-    DiskCheckResult(String fingerprint, long timestampNanos) {
-      this.fingerprint = fingerprint;
-      this.timestampNanos = timestampNanos;
-    }
-  }
-
-  private volatile DiskCheckResult lastDiskCheck = null;
-  private final java.util.concurrent.locks.ReentrantLock diskCheckLock =
-      new java.util.concurrent.locks.ReentrantLock();
+  private final CertificateRotationTracker rotationTracker;
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
   private final String workloadCertPath;
   private final AtomicReference<ChannelEntry> activeEntry;
   // Keep track of all entries to properly await their termination
-  private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =
-      new java.util.concurrent.ConcurrentLinkedQueue<>();
+  private final ConcurrentLinkedQueue<ChannelEntry> allEntries = new ConcurrentLinkedQueue<>();
   private final Object refreshLock = new Object();
-  private final java.util.concurrent.atomic.AtomicLong generation =
-      new java.util.concurrent.atomic.AtomicLong(0);
-  private volatile String activeCertFingerprint = "";
+  private final AtomicLong generation = new AtomicLong(0);
 
   public RefreshingHttpJsonChannel(
       Supplier<ManagedHttpJsonChannel> channelFactory, String workloadCertPath) {
+    this(channelFactory.get(), channelFactory, workloadCertPath);
+  }
+
+  public RefreshingHttpJsonChannel(
+      ManagedHttpJsonChannel initialChannel,
+      Supplier<ManagedHttpJsonChannel> channelFactory,
+      String workloadCertPath) {
     super(true);
     this.channelFactory = channelFactory;
     this.workloadCertPath = workloadCertPath;
-    ChannelEntry initial = new ChannelEntry(channelFactory.get());
+    ChannelEntry initial = new ChannelEntry(initialChannel);
     this.activeEntry = new AtomicReference<>(initial);
     this.allEntries.add(initial);
-    if (workloadCertPath != null) {
-      this.activeCertFingerprint = getCertificateFingerprint(workloadCertPath);
-    }
-  }
-
-  private String getOrUpdateDiskFingerprint(String certPath) {
-    long now = System.nanoTime();
-    DiskCheckResult cached = lastDiskCheck;
-    if (cached != null
-        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
-      return cached.fingerprint;
-    }
-
-    diskCheckLock.lock();
     try {
-      cached = lastDiskCheck;
-      if (cached != null
-          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
-        return cached.fingerprint;
-      }
-      String fingerprint = getCertificateFingerprint(certPath);
-      lastDiskCheck = new DiskCheckResult(fingerprint, System.nanoTime());
-      return fingerprint;
-    } finally {
-      diskCheckLock.unlock();
+      this.rotationTracker =
+          new CertificateRotationTracker(
+              this::getWorkloadCertPath, this::getCertificateFingerprint);
+    } catch (Throwable t) {
+      initialChannel.shutdownNow();
+      throw t;
     }
   }
 
   // Visible for testing
-  protected String getWorkloadCertPath() {
+  String getWorkloadCertPath() {
     return workloadCertPath;
   }
 
   // Visible for testing
-  protected String getCertificateFingerprint(String certPath) {
+  String getCertificateFingerprint(String certPath) {
     return WorkloadCertificateUtils.getCertificateFingerprint(certPath);
   }
 
   @Override
   public boolean shouldRefresh() {
-    String certPath = getWorkloadCertPath();
-    if (certPath == null) {
-      return false;
-    }
-    String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
-    if (currentDiskFingerprint.isEmpty()) {
-      return false;
-    }
-    return !currentDiskFingerprint.equalsIgnoreCase(activeCertFingerprint);
+    return rotationTracker.shouldRefresh();
   }
 
   @Override
@@ -144,17 +113,13 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       if (isShutdown()) {
         return;
       }
-      String certPath = getWorkloadCertPath();
-      if (certPath == null) {
-        return;
-      }
-      String currentDiskFingerprint = getOrUpdateDiskFingerprint(certPath);
+      String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
       if (currentDiskFingerprint.isEmpty()) {
         return;
       }
 
       // Double-check inside refreshLock
-      if (currentDiskFingerprint.equalsIgnoreCase(this.activeCertFingerprint)) {
+      if (rotationTracker.isAlreadyActive(currentDiskFingerprint)) {
         LOG.fine(
             "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate"
                 + " refresh");
@@ -163,13 +128,13 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
       LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
 
-      // Prune terminated entries to prevent memory leak
-      allEntries.removeIf(entry -> entry.channel.isTerminated());
-
       ChannelEntry newEntry = new ChannelEntry(channelFactory.get());
       allEntries.add(newEntry);
+      // Prune terminated entries after adding newEntry to ensure allEntries is never empty
+      allEntries.removeIf(entry -> entry != newEntry && entry.channel.isTerminated());
+
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
-      this.activeCertFingerprint = currentDiskFingerprint;
+      rotationTracker.markRefreshed(currentDiskFingerprint);
       generation.incrementAndGet();
 
       if (oldEntry != null) {
@@ -203,9 +168,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       HttpJsonClientCall<RequestT, ResponseT> delegateCall =
           entry.channel.newCall(methodDescriptor, callOptions);
       return new ReleasingHttpJsonClientCall<>(delegateCall, entry);
-    } catch (Exception e) {
+    } catch (Throwable t) {
       entry.release();
-      throw e;
+      throw t;
     }
   }
 
@@ -238,6 +203,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public boolean isTerminated() {
+    if (!isShuttingDown) {
+      return false;
+    }
     for (ChannelEntry entry : allEntries) {
       if (!entry.channel.isTerminated()) {
         return false;
@@ -260,7 +228,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @VisibleForTesting
   void invalidateDiskFingerprintCache() {
-    this.lastDiskCheck = null;
+    rotationTracker.invalidateCache();
   }
 
   @Override
@@ -274,7 +242,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       if (remainingNanos <= 0) {
         return false;
       }
-      if (!entry.channel.awaitTermination(remainingNanos, TimeUnit.NANOSECONDS)) {
+      if (!entry.channel.awaitTermination(remainingNanos, TimeUnit.NANOSECONDS)
+          && !entry.channel.isTerminated()) {
         return false;
       }
     }
@@ -319,7 +288,12 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
     void release() {
       int count = outstandingCalls.decrementAndGet();
-      if (shutdownRequested.get() && count == 0) {
+      if (count < 0) {
+        LOG.warning("Channel entry reference count dropped below 0");
+      }
+      // Must check outstandingCalls after shutdownRequested (in reverse order of retain()) to
+      // ensure mutual exclusion.
+      if (shutdownRequested.get() && outstandingCalls.get() == 0) {
         shutdown();
       }
     }
@@ -346,7 +320,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private static class ReleasingHttpJsonClientCall<ReqT, RespT>
       extends SimpleForwardingHttpJsonClientCall<ReqT, RespT> {
 
-    private @Nullable CancellationException cancellationException;
+    private final Object callLock = new Object();
+    private volatile @Nullable CancellationException cancellationException;
     private final ChannelEntry entry;
     private final AtomicBoolean wasClosed = new AtomicBoolean(false);
     private final AtomicBoolean wasReleased = new AtomicBoolean(false);
@@ -359,45 +334,65 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
     @Override
     public void start(Listener<RespT> responseListener, HttpJsonMetadata requestHeaders) {
-      wasStarted.set(true);
-      if (cancellationException != null) {
-        if (wasReleased.compareAndSet(false, true)) {
-          entry.release();
+      synchronized (callLock) {
+        if (!wasStarted.compareAndSet(false, true)) {
+          throw new IllegalStateException("Call is already started");
         }
-        throw new IllegalStateException("Call is already cancelled", cancellationException);
-      }
-      try {
-        super.start(
-            new SimpleForwardingHttpJsonClientCallListener<RespT>(responseListener) {
-              @Override
-              public void onClose(int statusCode, HttpJsonMetadata trailers) {
-                if (!wasClosed.compareAndSet(false, true)) {
-                  return;
-                }
-                try {
-                  super.onClose(statusCode, trailers);
-                } finally {
-                  if (wasReleased.compareAndSet(false, true)) {
-                    entry.release();
+        if (cancellationException != null) {
+          if (wasReleased.compareAndSet(false, true)) {
+            entry.release();
+          }
+          throw new IllegalStateException("Call is already cancelled", cancellationException);
+        }
+        try {
+          super.start(
+              new SimpleForwardingHttpJsonClientCallListener<RespT>(responseListener) {
+                @Override
+                public void onClose(int statusCode, HttpJsonMetadata trailers) {
+                  if (!wasClosed.compareAndSet(false, true)) {
+                    return;
+                  }
+                  try {
+                    super.onClose(statusCode, trailers);
+                  } finally {
+                    if (wasReleased.compareAndSet(false, true)) {
+                      entry.release();
+                    }
                   }
                 }
-              }
-            },
-            requestHeaders);
-      } catch (Exception e) {
-        if (wasReleased.compareAndSet(false, true)) {
-          entry.release();
+              },
+              requestHeaders);
+        } catch (Throwable t) {
+          if (wasReleased.compareAndSet(false, true)) {
+            entry.release();
+          }
+          throw t;
         }
-        throw e;
       }
     }
 
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
-      this.cancellationException = new CancellationException(message);
-      super.cancel(message, cause);
-      if (!wasStarted.get() && wasReleased.compareAndSet(false, true)) {
-        entry.release();
+      boolean releaseImmediately = false;
+      try {
+        synchronized (callLock) {
+          this.cancellationException = new CancellationException(message);
+          if (!wasStarted.get()) {
+            releaseImmediately = true;
+          }
+          if (delegate() != null) {
+            super.cancel(message, cause);
+          }
+        }
+      } catch (Throwable t) {
+        if (!wasStarted.get()) {
+          releaseImmediately = true;
+        }
+        throw t;
+      } finally {
+        if (releaseImmediately && wasReleased.compareAndSet(false, true)) {
+          entry.release();
+        }
       }
     }
   }

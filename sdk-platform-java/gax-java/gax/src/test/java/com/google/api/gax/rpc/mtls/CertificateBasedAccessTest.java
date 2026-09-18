@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -107,9 +108,10 @@ class CertificateBasedAccessTest {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     CertificateBasedAccess cba = createCba(env);
-    // Explicit 'true' permits mTLS if certs exist, but if no certs are present, returns false/null
-    // cleanly (Row 3)
-    assertFalse(cba.useMtlsClientCertificate());
+    // Explicit 'true' enables mTLS client certificate usage (for ECP / custom MtlsProvider) even
+    // when no workload cert files are present, while getWorkloadCertPath returns null so file
+    // rotation polling is not active.
+    assertTrue(cba.useMtlsClientCertificate());
     assertNull(cba.getWorkloadCertPath());
   }
 
@@ -142,5 +144,19 @@ class CertificateBasedAccessTest {
     // (Fail Closed)
     assertThrows(IllegalStateException.class, () -> cba.useMtlsClientCertificate());
     assertThrows(IllegalStateException.class, () -> cba.getWorkloadCertPath());
+  }
+
+  @Test
+  void testWorkloadCertificateUtilsEmptyFileReturnsEmptyString() throws Exception {
+    java.io.File tempFile = java.io.File.createTempFile("test-cert-empty", ".pem");
+    tempFile.deleteOnExit();
+    // 0-byte truncated file mid-write should return empty string rather than SHA-256 of empty bytes
+    assertEquals(
+        "", WorkloadCertificateUtils.getCertificateFingerprint(tempFile.getAbsolutePath()));
+
+    java.nio.file.Files.write(
+        tempFile.toPath(), "test-cert-content".getBytes(java.nio.charset.StandardCharsets.UTF_8));
+    String fp = WorkloadCertificateUtils.getCertificateFingerprint(tempFile.getAbsolutePath());
+    assertFalse(fp.isEmpty());
   }
 }

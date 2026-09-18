@@ -47,6 +47,7 @@ public class FakeChannel {
 
   public void refresh() {
     refreshCount++;
+    generation++;
   }
 
   public int getRefreshCount() {

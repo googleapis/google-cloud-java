@@ -48,7 +48,7 @@ import org.junit.jupiter.api.Test;
 class RefreshingHttpJsonChannelTest {
   private static class FakeHttpJsonClientCall<RequestT, ResponseT>
       extends HttpJsonClientCall<RequestT, ResponseT> {
-    private Listener<ResponseT> listener;
+    protected Listener<ResponseT> listener;
 
     @Override
     public void start(Listener<ResponseT> responseListener, HttpJsonMetadata requestHeaders) {
@@ -153,12 +153,12 @@ class RefreshingHttpJsonChannelTest {
     RefreshingHttpJsonChannel ch =
         new RefreshingHttpJsonChannel(channelFactory, "fake/cert/path.json") {
           @Override
-          protected String getWorkloadCertPath() {
+          String getWorkloadCertPath() {
             return testCertPath;
           }
 
           @Override
-          protected String getCertificateFingerprint(String certPath) {
+          String getCertificateFingerprint(String certPath) {
             return testFingerprint;
           }
         };
@@ -191,6 +191,24 @@ class RefreshingHttpJsonChannelTest {
     testFingerprint = "fingerprint2";
 
     assertTrue(channel.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_doesNotCacheNegativeResultAndDetectsSubsequentRotationImmediately() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+
+    // First check returns false (unchanged fingerprint)
+    assertFalse(channel.shouldRefresh());
+
+    // Immediately change fingerprint WITHOUT invalidating cache
+    testFingerprint = "fingerprint2";
+
+    // Must immediately detect rotation because negative/unchanged checks are not cached for 1s
+    assertTrue(channel.shouldRefresh());
+
+    // Refresh updates activeCertFingerprint and clears cache
+    channel.refresh();
+    assertFalse(channel.shouldRefresh());
   }
 
   @Test
@@ -409,5 +427,195 @@ class RefreshingHttpJsonChannelTest {
     channel.shutdownNow();
     assertTrue(channel.isTerminated());
     assertTrue(channel.awaitTermination(1, TimeUnit.SECONDS));
+  }
+
+  @Test
+  void testNewCall_whenDelegateThrowsError_releasesEntryAndShutsDownRetiredChannel() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    firstChannel.nextCall = null;
+    // Configure firstChannel to throw an Error on newCall
+    FakeManagedHttpJsonChannel throwingChannel =
+        new FakeManagedHttpJsonChannel() {
+          @Override
+          public <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
+              ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,
+              HttpJsonCallOptions callOptions) {
+            throw new LinkageError("Simulated native error in newCall");
+          }
+        };
+    channelFactory =
+        () -> {
+          channelFactoryCount.incrementAndGet();
+          lastCreatedChannel = throwingChannel;
+          return throwingChannel;
+        };
+    RefreshingHttpJsonChannel testChannel = createTestChannel();
+
+    assertThrows(LinkageError.class, () -> testChannel.newCall(null, null));
+
+    // Refresh should immediately shut down throwingChannel since ref count returned to 0
+    testFingerprint = "fingerprint2";
+    testChannel.refresh();
+    assertTrue(throwingChannel.isShutdown());
+  }
+
+  @Test
+  void testStart_whenDelegateThrowsError_releasesEntryAndShutsDownRetiredChannel() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    firstChannel.nextCall =
+        new FakeHttpJsonClientCall<Object, Object>() {
+          @Override
+          public void start(Listener<Object> responseListener, HttpJsonMetadata requestHeaders) {
+            throw new AssertionError("Simulated Error in start");
+          }
+        };
+
+    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+    assertFalse(firstChannel.isShutdown());
+
+    assertThrows(
+        AssertionError.class, () -> call.start(new HttpJsonClientCall.Listener<Object>() {}, null));
+    assertTrue(firstChannel.isShutdown());
+  }
+
+  @Test
+  void testCancel_whenDelegateThrowsException_releasesEntryAndShutsDownRetiredChannel() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    firstChannel.nextCall =
+        new FakeHttpJsonClientCall<Object, Object>() {
+          @Override
+          public void cancel(String message, Throwable cause) {
+            throw new RuntimeException("Simulated cancel failure");
+          }
+        };
+
+    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+    assertFalse(firstChannel.isShutdown());
+
+    assertThrows(RuntimeException.class, () -> call.cancel("cancel", null));
+    assertTrue(firstChannel.isShutdown());
+  }
+
+  @Test
+  void testConcurrentStartAndCancel_neverLeaksOrDoubleReleasesEntry() throws Exception {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+
+    int iterations = 100;
+    java.util.concurrent.ExecutorService executor =
+        java.util.concurrent.Executors.newFixedThreadPool(2);
+    try {
+      for (int i = 0; i < iterations; i++) {
+        firstChannel.nextCall =
+            new FakeHttpJsonClientCall<Object, Object>() {
+              private boolean closed = false;
+
+              @Override
+              public synchronized void start(
+                  Listener<Object> responseListener, HttpJsonMetadata requestHeaders) {
+                if (closed) {
+                  // Models HttpJsonClientCallImpl returning early when closed
+                  return;
+                }
+                super.start(responseListener, requestHeaders);
+              }
+
+              @Override
+              public synchronized void cancel(String message, Throwable cause) {
+                closed = true;
+                if (listener != null) {
+                  listener.onClose(499, null);
+                }
+              }
+            };
+
+        HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
+        java.util.concurrent.CyclicBarrier barrier = new java.util.concurrent.CyclicBarrier(2);
+        java.util.concurrent.Future<?> f1 =
+            executor.submit(
+                () -> {
+                  try {
+                    barrier.await();
+                    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
+                  } catch (Exception ignored) {
+                  }
+                });
+        java.util.concurrent.Future<?> f2 =
+            executor.submit(
+                () -> {
+                  try {
+                    barrier.await();
+                    call.cancel("cancel", null);
+                  } catch (Exception ignored) {
+                  }
+                });
+        f1.get(5, TimeUnit.SECONDS);
+        f2.get(5, TimeUnit.SECONDS);
+      }
+    } finally {
+      executor.shutdownNow();
+    }
+
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+    assertTrue(firstChannel.isShutdown());
+  }
+
+  @Test
+  void cancel_whenStartedAndSuperCancelThrows_doesNotReleasePrematurelyUntilOnClose() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeHttpJsonClientCall<Object, Object> delegateCall =
+        new FakeHttpJsonClientCall<Object, Object>() {
+          @Override
+          public void cancel(String message, Throwable cause) {
+            throw new RuntimeException("Simulated cancel failure");
+          }
+        };
+    firstChannel.nextCall = delegateCall;
+
+    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
+    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
+
+    assertThrows(RuntimeException.class, () -> call.cancel("abort", null));
+
+    // Rotate pool while call is still active (onClose hasn't fired yet):
+    // firstChannel must NOT be shut down yet because call is still active
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+    assertFalse(firstChannel.isShutdown());
+
+    // Once onClose fires, entry is released and firstChannel shuts down
+    delegateCall.listener.onClose(200, null);
+    assertTrue(firstChannel.isShutdown());
+  }
+
+  @Test
+  void start_whenCalledTwice_throwsIllegalStateExceptionAndDoesNotReleaseFirstCallEntry() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeHttpJsonClientCall<Object, Object> delegateCall = new FakeHttpJsonClientCall<>();
+    firstChannel.nextCall = delegateCall;
+
+    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
+    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> call.start(new HttpJsonClientCall.Listener<Object>() {}, null));
+
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+    assertFalse(firstChannel.isShutdown());
+
+    delegateCall.listener.onClose(200, null);
+    assertTrue(firstChannel.isShutdown());
   }
 }

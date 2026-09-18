@@ -349,14 +349,21 @@ class HttpJsonCallContextTest {
         HttpJsonCallContext.createDefault().withTransportChannel(transportChannel1);
     Truth.assertThat(context.getTransportChannel()).isSameInstanceAs(transportChannel1);
 
-    // Retains transportChannel when setting same channel or null
+    // Retains transportChannel when setting same channel
     Truth.assertThat(context.withChannel(channel1).getTransportChannel())
         .isSameInstanceAs(transportChannel1);
-    Truth.assertThat(context.withChannel(null).getTransportChannel())
-        .isSameInstanceAs(transportChannel1);
 
-    // Clears transportChannel to null when setting a different channel
+    // Clears transportChannel to null when setting null or a different channel
+    HttpJsonCallContext nullChannelContext = context.withChannel(null);
+    Truth.assertThat(nullChannelContext.getChannel()).isNull();
+    Truth.assertThat(nullChannelContext.getTransportChannel()).isNull();
     Truth.assertThat(context.withChannel(channel2).getTransportChannel()).isNull();
+
+    // Merging a cleared context into default context preserves default context's transportChannel
+    HttpJsonCallContext mergedWithNullChannel = context.merge(nullChannelContext);
+    Truth.assertThat(mergedWithNullChannel.getChannel()).isSameInstanceAs(channel1);
+    Truth.assertThat(mergedWithNullChannel.getTransportChannel())
+        .isSameInstanceAs(transportChannel1);
   }
 
   @Test

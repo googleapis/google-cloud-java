@@ -260,12 +260,36 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void useMtlsClientCertificate_trueWithNoCertsOnDisk_returnsFalseWithoutThrowing() {
+  void
+      useMtlsClientCertificate_trueWithNoCertsOnDisk_returnsTrueWhileWorkloadCertPathReturnsNull() {
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "true" : null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void useMtlsClientCertificate_trueWithEcpOnlyConfig_returnsTrueAndWorkloadCertPathReturnsNull()
+      throws IOException {
+    Path configFile = tempDir.resolve("ecp_config.json");
+    Files.write(configFile, "{\"cert_configs\":{\"enterprise_certificates\":{}}}".getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) return "true";
+          if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) return configFile.toString();
+          return null;
+        };
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
     assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
   }
 
@@ -274,6 +298,46 @@ class MtlsUtilsTest {
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "false" : null;
     PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void useMtlsClientCertificate_falseEvenWhenWorkloadCertsExist_returnsFalse() throws IOException {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(certFile, "dummy cert".getBytes());
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path configFile = tempDir.resolve("config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+            certFile.toString().replace("\\", "\\\\"), keyFile.toString().replace("\\", "\\\\"));
+    Files.write(configFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) return "false";
+          if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) return configFile.toString();
+          return null;
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void useMtlsClientCertificate_unsetWithNoCertsOnDisk_returnsFalse() {
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
 
     assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
     assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));

@@ -275,7 +275,7 @@ class AttemptCallableTest {
   }
 
   @Test
-  void testRefreshThrowsException_originalUnauthenticatedPropagated() {
+  void testRefreshThrowsException_notMarkedRetryableWhenGenerationUnchanged() {
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -286,6 +286,105 @@ class AttemptCallableTest {
           @Override
           public void refresh() {
             throw new RuntimeException("Refresh error");
+          }
+        };
+    FakeTransportChannel transportChannel = FakeTransportChannel.create(fakeChannel);
+
+    ApiCallContext callContext =
+        FakeCallContext.createDefault().withTransportChannel(transportChannel);
+
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Expired cert", null, FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED), false);
+
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
+
+    AttemptCallable<String, String> callable =
+        new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
+    callable.setExternalFuture(mockExternalFuture);
+
+    callable.call();
+
+    ArgumentCaptor<ApiFuture> futureCaptor = ArgumentCaptor.forClass(ApiFuture.class);
+    Mockito.verify(mockExternalFuture, Mockito.times(2)).setAttemptFuture(futureCaptor.capture());
+
+    Throwable thrown = null;
+    try {
+      futureCaptor.getValue().get();
+    } catch (Exception e) {
+      thrown = e.getCause();
+    }
+
+    assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
+    UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
+    assertThat(rethrown.isRetryable()).isFalse();
+  }
+
+  @Test
+  void testRefreshReturnsWithoutAdvancingGeneration_notMarkedRetryable() {
+    FakeChannel fakeChannel =
+        new FakeChannel() {
+          @Override
+          public boolean shouldRefresh() {
+            return true;
+          }
+
+          @Override
+          public void refresh() {
+            // Simulates refresh() returning early without rotating any channel (e.g. unreadable
+            // cert)
+          }
+        };
+    FakeTransportChannel transportChannel = FakeTransportChannel.create(fakeChannel);
+
+    ApiCallContext callContext =
+        FakeCallContext.createDefault().withTransportChannel(transportChannel);
+
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Expired cert", null, FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED), false);
+
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
+
+    AttemptCallable<String, String> callable =
+        new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
+    callable.setExternalFuture(mockExternalFuture);
+
+    callable.call();
+
+    ArgumentCaptor<ApiFuture> futureCaptor = ArgumentCaptor.forClass(ApiFuture.class);
+    Mockito.verify(mockExternalFuture, Mockito.times(2)).setAttemptFuture(futureCaptor.capture());
+
+    Throwable thrown = null;
+    try {
+      futureCaptor.getValue().get();
+    } catch (Exception e) {
+      thrown = e.getCause();
+    }
+
+    assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
+    UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
+    assertThat(rethrown.isRetryable()).isFalse();
+  }
+
+  @Test
+  void testRefreshThrowsException_markedRetryableIfConcurrentThreadAdvancedGeneration() {
+    FakeChannel fakeChannel =
+        new FakeChannel() {
+          @Override
+          public boolean shouldRefresh() {
+            return true;
+          }
+
+          @Override
+          public void refresh() {
+            // Concurrent thread advanced generation before/during refresh failure
+            setGeneration(getGeneration() + 1);
+            throw new RuntimeException("Refresh error on this thread");
           }
         };
     FakeTransportChannel transportChannel = FakeTransportChannel.create(fakeChannel);
