@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.apache.arrow.vector.VectorSchemaRoot;
@@ -120,6 +121,46 @@ public class QueryBenchmark {
     try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       for (VectorSchemaRoot root : result) {
         blackhole.consume(root);
+      }
+    }
+  }
+
+  @Benchmark
+  public void querySimplePath(QueryParams queryParams, Blackhole blackhole) throws Exception {
+    TableResult result =
+        bigquery.query(
+            QueryJobConfiguration.newBuilder(queryParams.queries).setUseLegacySql(false).build());
+    for (FieldValueList row : result.getValues()) {
+      blackhole.consume(row);
+    }
+  }
+
+  @Benchmark
+  public void queryWithArrowRowBasedSimplePath(QueryParams queryParams, Blackhole blackhole)
+      throws Exception {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(queryParams.queries)
+            .setUseLegacySql(false)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    TableResult result = bigquery.query(config);
+    for (FieldValueList row : result.getValues()) {
+      blackhole.consume(row);
+    }
+  }
+
+  @Benchmark
+  public void queryWithArrowZeroCopySimplePath(QueryParams queryParams, Blackhole blackhole)
+      throws Exception {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(queryParams.queries)
+            .setUseLegacySql(false)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      Iterator<VectorSchemaRoot> it = result.iterator();
+      if (it.hasNext()) {
+        blackhole.consume(it.next());
       }
     }
   }
