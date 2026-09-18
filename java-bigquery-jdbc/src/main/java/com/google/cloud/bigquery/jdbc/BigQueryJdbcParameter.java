@@ -28,6 +28,7 @@ class BigQueryJdbcParameter {
   private String paramName;
   private BigQueryStatementParameterType paramType;
   private int scale;
+  private boolean isUserSet = false;
 
   BigQueryJdbcParameter() {}
 
@@ -36,6 +37,7 @@ class BigQueryJdbcParameter {
     this.value = parameter.value;
     this.type = parameter.type;
     this.sqlType = parameter.sqlType;
+    this.isUserSet = parameter.isUserSet;
   }
 
   int getIndex() {
@@ -94,6 +96,14 @@ class BigQueryJdbcParameter {
     this.scale = scale;
   }
 
+  boolean isUserSet() {
+    return isUserSet;
+  }
+
+  void setUserSet(boolean userSet) {
+    isUserSet = userSet;
+  }
+
   @Override
   public String toString() {
     return "BigQueryJdbcParameter{"
@@ -112,6 +122,8 @@ class BigQueryJdbcParameter {
         + paramType.name()
         + ", scale="
         + scale
+        + ", isUserSet="
+        + isUserSet
         + '}';
   }
 }
