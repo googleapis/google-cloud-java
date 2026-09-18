@@ -66,7 +66,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final String TIMESTAMP_BOUNDARY_STANDARD = "2025-06-15 10:20:30.999999";
   private static final String TIMESTAMP_BOUNDARY_PICOS = "2025-06-15 10:20:30.999999999999";
-  
+
   private static final DateTimeFormatter JVM_ZONE_FORMATTER =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
