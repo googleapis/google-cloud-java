@@ -504,6 +504,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private transient ConcurrentHashMap<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
+  private boolean closed = false;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -527,6 +528,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * @throws BigQueryException if initializing the storage read client fails
    */
   BigQueryReadClient getBigQueryReadClient(String location) {
+    if (closed) {
+      throw new IllegalStateException("BigQuery service has been closed");
+    }
     String cacheKey = location != null ? location.toLowerCase() : "global";
     if (bqReadClients == null) {
       synchronized (this) {
@@ -543,6 +547,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return client;
     }
     synchronized (this) {
+      if (closed) {
+        throw new IllegalStateException("BigQuery service has been closed");
+      }
       client = bqReadClients.get(cacheKey);
       if (client == null && isGlobalClientUserProvided) {
         client = bqReadClients.get("global");
@@ -580,6 +587,32 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     bqReadClients.put(cacheKey, client);
     if ("global".equals(cacheKey)) {
       isGlobalClientUserProvided = true;
+    }
+  }
+
+  /**
+   * Closes any background resources and transport channels held by this {@link BigQueryImpl},
+   * including the underlying {@link BigQueryReadClient} instances used for Arrow query streaming.
+   */
+  @Override
+  public void close() {
+    List<BigQueryReadClient> clientsToClose = new ArrayList<>();
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      closed = true;
+      if (bqReadClients != null) {
+        clientsToClose.addAll(bqReadClients.values());
+        bqReadClients.clear();
+      }
+    }
+    for (BigQueryReadClient client : clientsToClose) {
+      try {
+        client.close();
+      } catch (Exception e) {
+        // Ignore exceptions during teardown
+      }
     }
   }
 
