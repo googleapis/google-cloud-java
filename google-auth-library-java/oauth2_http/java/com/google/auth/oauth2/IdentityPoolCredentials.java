@@ -40,7 +40,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.net.URI;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,9 +52,9 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
  *
- * <p>Note: Actor token extraction is currently restricted to file-based JSON credential sources
- * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens, ensure your transport
- * layer is configured for mTLS in tandem.
+ * <p>Note: Actor token extraction from credential configuration files is currently restricted to
+ * file-based JSON credential sources. When configuring certificate-bound OAuth 2.0 tokens, ensure
+ * your transport layer and endpoints are configured for mTLS in tandem.
  */
 @NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
@@ -178,54 +177,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       throw new IllegalArgumentException(
           "An actorTokenSupplier must be specified when an actorTokenType is configured.");
     }
-
-    if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
-      throw new IllegalArgumentException(
-          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-              + " source or MtlsHttpTransportFactory.");
-    }
-
-    if (this.actorTokenSupplier != null) {
-      validateMtlsEndpoint(getTokenUrl(), "tokenUrl");
-      if (getServiceAccountImpersonationUrl() != null) {
-        validateMtlsEndpoint(getServiceAccountImpersonationUrl(), "serviceAccountImpersonationUrl");
-      }
-    }
-  }
-
-  private static void validateMtlsEndpoint(@Nullable String url, String fieldName) {
-    if (url == null) {
-      return;
-    }
-    String host = URI.create(url).getHost();
-    // For Google Default Universe (googleapis.com), actor tokens require mTLS binding so plain
-    // public endpoints (lacking '.mtls.' or Private Service Connect '.p.') are rejected early.
-    // Non-GDU domains (e.g. custom universes or TPC) may use different hostname conventions.
-    if (host != null
-        && host.endsWith("googleapis.com")
-        && !host.contains(".mtls.")
-        && !host.contains(".p.")) {
-      throw new IllegalArgumentException(
-          "The "
-              + fieldName
-              + " endpoint ("
-              + url
-              + ") cannot be used with actor tokens because it is a plain public Google API"
-              + " endpoint. Please use an mTLS endpoint (e.g. containing '.mtls.') or Private"
-              + " Service Connect (containing '.p.').");
-    }
-  }
-
-  /**
-   * Checks whether mTLS is properly configured by verifying that an X509Provider is set or the
-   * transport factory is an MtlsHttpTransportFactory with a non-null KeyStore. This avoids false
-   * positives from a no-arg-constructed MtlsHttpTransportFactory (e.g. after deserialization) that
-   * has no actual certificates.
-   */
-  private boolean isMtlsConfigured() {
-    return this.x509Provider != null
-        || (this.transportFactory instanceof MtlsHttpTransportFactory
-            && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
   @Override
@@ -479,12 +430,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     /**
-     * Sets the actor token supplier used for certificate-bound OAuth 2.0 token exchanges. The
-     * supplier provides an actor token representing the entity on whose behalf the subject is
-     * acting.
+     * Sets the actor token supplier used for OAuth 2.0 token exchanges. The supplier provides an
+     * actor token representing the entity on whose behalf the subject is acting.
      *
-     * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token type}
-     * and requires an mTLS-configured transport.
+     * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token
+     * type}.
      *
      * @param actorTokenSupplier the supplier to use for retrieving actor tokens
      * @return this {@code Builder} object
