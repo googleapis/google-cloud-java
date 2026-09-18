@@ -504,7 +504,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private transient ConcurrentHashMap<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
-  private boolean closed = false;
+  private transient volatile boolean closed = false;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
