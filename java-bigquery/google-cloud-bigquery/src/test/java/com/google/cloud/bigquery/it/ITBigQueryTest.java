@@ -7526,13 +7526,15 @@ class ITBigQueryTest {
 
   @Test
   void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
-    // The BigQuery REST API and Java SDK default to 10,000 rows per page, and the Storage Read API
-    // defaults to ~1,024 rows per batch. Querying 15,000 rows ensures multiple Arrow batches.
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple batches via the BigQuery Storage Read API.
     String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
             .build();
     try (ArrowQueryResult result = bigquery.queryArrow(config)) {
       assertNotNull(result);
