@@ -335,6 +335,30 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     assertThat(transport).isInstanceOf(com.google.api.client.http.javanet.NetHttpTransport.class);
   }
 
+  @Test
+  void createHttpTransport_whenMtlsProviderNullOrNotUsingClientCert_returnsNull()
+      throws IOException, GeneralSecurityException {
+    InstantiatingHttpJsonChannelProvider nullMtlsProviderChannelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(null)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    assertThat(nullMtlsProviderChannelProvider.createHttpTransport()).isNull();
+
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
+    com.google.auth.mtls.MtlsProvider provider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+    InstantiatingHttpJsonChannelProvider disabledMtlsChannelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(provider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    assertThat(disabledMtlsChannelProvider.createHttpTransport()).isNull();
+  }
+
   @Override
   protected Object getMtlsObjectFromTransportChannel(
       MtlsProvider provider, CertificateBasedAccess certificateBasedAccess)

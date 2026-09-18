@@ -511,7 +511,8 @@ class ChannelPoolTest {
       throws IOException {
     ManagedChannel channel1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel channel2 = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
 
     // Initial creation returns channel1, refresh attempt 1 throws IOException, refresh attempt 2
     // returns channel2
@@ -574,7 +575,8 @@ class ChannelPoolTest {
     ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated1SecondPass = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated2 = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
 
     // Initial creation: initial1, initial2
     // Refresh pass 1: rotated1 succeeds, second throws IOException
@@ -632,7 +634,8 @@ class ChannelPoolTest {
     ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
     ManagedChannel createdBeforeRuntimeEx = Mockito.mock(ManagedChannel.class);
     ManagedChannel createdBeforeError = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
 
     Mockito.when(channelFactory.createSingleChannel())
         .thenReturn(initial1, initial2)
@@ -659,7 +662,8 @@ class ChannelPoolTest {
   void refresh_onShutdownPool_noOpsAndCreatesNoChannels() throws IOException {
     ManagedChannel channel1 = mock(ManagedChannel.class);
     ManagedChannel channel2 = mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(channel1, channel2);
 
     pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
@@ -680,7 +684,8 @@ class ChannelPoolTest {
   void generationCounterIncrementsOnRefresh() throws IOException {
     ManagedChannel channel1 = mock(ManagedChannel.class);
     ManagedChannel channel2 = mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(channel1, channel2);
 
     pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
@@ -1234,7 +1239,8 @@ class ChannelPoolTest {
       throws IOException {
     ManagedChannel initial = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
 
     tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
@@ -1268,7 +1274,8 @@ class ChannelPoolTest {
       throws IOException {
     ManagedChannel initial = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
     Mockito.when(initial.newCall(Mockito.any(), Mockito.any()))
         .thenThrow(new LinkageError("Simulated native/JNI linkage error"));
@@ -1288,7 +1295,8 @@ class ChannelPoolTest {
     ManagedChannel initial = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
     ClientCall<Color, Money> mockCall = Mockito.mock(ClientCall.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
     Mockito.when(initial.newCall(Mockito.any(), Mockito.any())).thenReturn((ClientCall) mockCall);
     Mockito.doThrow(new AssertionError("Simulated Error in start"))
@@ -1316,7 +1324,8 @@ class ChannelPoolTest {
     ManagedChannel initial = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
     ClientCall<Color, Money> mockCall = Mockito.mock(ClientCall.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
     Mockito.when(initial.newCall(Mockito.any(), Mockito.any())).thenReturn((ClientCall) mockCall);
     Mockito.doThrow(new RuntimeException("Simulated cancel exception"))
@@ -1338,7 +1347,8 @@ class ChannelPoolTest {
   void concurrentStartAndCancel_neverLeaksOrDoubleReleasesEntry() throws Exception {
     ManagedChannel initial = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    ChannelFactory channelFactory =
+        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
 
     Mockito.when(initial.newCall(Mockito.any(), Mockito.any()))
