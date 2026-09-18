@@ -3111,7 +3111,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "  \"token_url\": \"https://sts.googleapis.com/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
