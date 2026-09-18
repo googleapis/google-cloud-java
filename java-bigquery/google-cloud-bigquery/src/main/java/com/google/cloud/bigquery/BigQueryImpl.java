@@ -2558,10 +2558,23 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(bigQueryErrors);
     }
 
-    // If query is incomplete, Arrow format for slow query path is not yet supported.
+    // If the query is incomplete (took longer than the fast-path timeout), transition
+    // to the slow path: retrieve the created job, wait for completion, and read the
+    // results using the Storage Read API in Arrow format.
     if (!Boolean.TRUE.equals(results.getJobComplete())) {
-      throw new UnsupportedOperationException(
-          "Arrow results format for slow query path execution is not yet supported.");
+      if (results.getJobReference() == null) {
+        throw new BigQueryException(
+            0, "Query is incomplete, but no job reference was returned to await completion.");
+      }
+      JobId jobId = JobId.fromPb(results.getJobReference());
+      Job job = getJob(jobId, options);
+      if (job == null) {
+        throw new BigQueryException(0, "Job no longer exists or could not be retrieved: " + jobId);
+      }
+      Job completedJob = job.waitFor();
+      Long maxResults =
+          content.getMaxResults() != null ? content.getMaxResults().longValue() : null;
+      return readArrowTableResultFromJob(completedJob, maxResults, null, options);
     }
 
     // If the query completed but the Arrow schema is missing from the response, fail fast.
@@ -3018,24 +3031,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   /**
-   * Executes a slow-path query job using {@code jobs.insert}, awaits its completion, and streams
-   * the result rows via the BigQuery Storage Read API in Arrow format, wrapping the decoded rows in
-   * a {@link TableResult}.
+   * Reads query result rows from a completed query job's destination table using the Storage Read
+   * API in Arrow format, returning a populated {@link TableResult}.
    *
-   * @param jobId the job ID, or {@code null}
-   * @param configuration the query job configuration
+   * @param completedJob the completed query job
+   * @param maxResults maximum results requested, or {@code null}
+   * @param fallbackDestinationTable fallback destination table if not present on the job
    * @param options query job options
-   * @return a {@link TableResult} containing the decoded rows and job execution metadata
-   * @throws InterruptedException if interrupted while awaiting job completion
-   * @throws BigQueryException if job execution or ReadSession creation fails
+   * @return a {@link TableResult} containing decoded rows and execution metadata
+   * @throws BigQueryException if job failed or ReadSession creation fails
    */
-  private TableResult queryFallbackArrow(
-      JobId jobId, QueryJobConfiguration configuration, JobOption... options)
-      throws InterruptedException {
-    // Submit the query job via jobs.insert and poll until completion.
-    Job job = create(JobInfo.of(jobId, configuration), options);
-    Job completedJob = job.waitFor();
-
+  private TableResult readArrowTableResultFromJob(
+      Job completedJob, Long maxResults, TableId fallbackDestinationTable, JobOption... options) {
     if (completedJob == null) {
       throw new BigQueryException(0, "Job no longer exists or could not be retrieved.");
     }
@@ -3044,17 +3051,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(Collections.singletonList(completedJob.getStatus().getError()));
     }
 
-    // Resolve the query's destination table where the completed job wrote its results.
+    // Resolve the destination table containing the query results.
     TableId destinationTable = null;
     if (completedJob.getConfiguration() instanceof QueryJobConfiguration) {
       destinationTable =
           ((QueryJobConfiguration) completedJob.getConfiguration()).getDestinationTable();
     }
     if (destinationTable == null) {
-      destinationTable = configuration.getDestinationTable();
+      destinationTable = fallbackDestinationTable;
     }
     if (destinationTable == null) {
-      throw new BigQueryException(0, "Unable to resolve destination table for fallback query");
+      throw new BigQueryException(0, "Unable to resolve destination table for query job");
     }
 
     // Extract query execution statistics from the completed job metadata.
@@ -3095,7 +3102,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     try {
       readSession = client.createReadSession(request);
     } catch (Exception e) {
-      throw new BigQueryException(0, "Failed to create ReadSession for fallback query", e);
+      throw new BigQueryException(0, "Failed to create ReadSession for query job", e);
     }
 
     // Deserialize the Arrow schema and convert to BigQuery Schema for TableResult metadata.
@@ -3145,7 +3152,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchemaPojo,
             getOptions(),
             0L,
-            configuration.getMaxResults(),
+            maxResults,
             optionMap(options));
 
     Page<FieldValueList> firstPage = pageFetcher.getNextPage();
@@ -3177,6 +3184,28 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setNumDmlAffectedRows(numDmlAffectedRows)
         .setSessionInfo(sessionInfo)
         .build();
+  }
+
+  /**
+   * Executes a slow-path query job using {@code jobs.insert}, awaits its completion, and streams
+   * the result rows via the BigQuery Storage Read API in Arrow format, wrapping the decoded rows in
+   * a {@link TableResult}.
+   *
+   * @param jobId the job ID, or {@code null}
+   * @param configuration the query job configuration
+   * @param options query job options
+   * @return a {@link TableResult} containing the decoded rows and job execution metadata
+   * @throws InterruptedException if interrupted while awaiting job completion
+   * @throws BigQueryException if job execution or ReadSession creation fails
+   */
+  private TableResult queryFallbackArrow(
+      JobId jobId, QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException {
+    // Submit the query job via jobs.insert and poll until completion.
+    Job job = create(JobInfo.of(jobId, configuration), options);
+    Job completedJob = job.waitFor();
+    return readArrowTableResultFromJob(
+        completedJob, configuration.getMaxResults(), configuration.getDestinationTable(), options);
   }
 
   @Override
