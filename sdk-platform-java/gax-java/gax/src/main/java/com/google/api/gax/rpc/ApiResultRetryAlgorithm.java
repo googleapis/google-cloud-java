@@ -45,6 +45,15 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
       @Nullable Throwable previousThrowable,
       @Nullable ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
+    return createNextAttempt(null, previousThrowable, previousResponse, previousSettings);
+  }
+
+  @Override
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
+      TimedAttemptSettings previousSettings) {
     if (previousThrowable instanceof UnauthenticatedException
         && ((UnauthenticatedException) previousThrowable).isRetryable()
         && previousSettings.getOverallAttemptCount() == previousSettings.getAttemptCount()) {
@@ -62,15 +71,6 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
           .build();
     }
     return null;
-  }
-
-  @Override
-  public @Nullable TimedAttemptSettings createNextAttempt(
-      @Nullable RetryingContext context,
-      @Nullable Throwable previousThrowable,
-      @Nullable ResponseT previousResponse,
-      TimedAttemptSettings previousSettings) {
-    return createNextAttempt(previousThrowable, previousResponse, previousSettings);
   }
 
   @Override

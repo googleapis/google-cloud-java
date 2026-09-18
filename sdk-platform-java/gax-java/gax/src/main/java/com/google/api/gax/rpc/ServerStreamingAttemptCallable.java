@@ -274,14 +274,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
                   for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
                     newEx.addSuppressed(suppressed);
                   }
-                  if (t instanceof ServerStreamingAttemptException) {
-                    ServerStreamingAttemptException attemptEx = (ServerStreamingAttemptException) t;
-                    t =
-                        new ServerStreamingAttemptException(
-                            newEx, attemptEx.canResume(), attemptEx.hasSeenResponses());
-                  } else {
-                    t = newEx;
-                  }
+                  t = newEx;
                 }
               }
             }
