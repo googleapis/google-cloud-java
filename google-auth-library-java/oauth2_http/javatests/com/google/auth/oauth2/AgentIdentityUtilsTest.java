@@ -52,6 +52,7 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
+import java.security.PrivateKey;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -173,7 +174,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_enableRuntimeBoundTokenFalse_returnsNullImmediately()
+  public void getAgentIdentityCertInfo_enableRuntimeBoundTokenFalse_returnsNullImmediately()
       throws IOException {
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, "/non/existent/path");
@@ -181,7 +182,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_legacyPreventSharingFalse_returnsNullImmediately()
+  public void getAgentIdentityCertInfo_legacyPreventSharingFalse_returnsNullImmediately()
       throws IOException {
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "false");
@@ -190,7 +191,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_useClientCertFalse_returnsNullImmediatelyWithoutPolling()
+  public void getAgentIdentityCertInfo_useClientCertFalse_returnsNullImmediatelyWithoutPolling()
       throws Exception {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
@@ -203,7 +204,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_modernVarOverridesLegacyVar() throws Exception {
+  public void getAgentIdentityCertInfo_modernVarOverridesLegacyVar() throws Exception {
     setupValidAgentCredentialsInTempDir();
     // Modern is true, Legacy is false -> should NOT opt out
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
@@ -219,7 +220,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_enableRuntimeBoundTokenTrue_doesNotOptOut()
+  public void getAgentIdentityCertInfo_enableRuntimeBoundTokenTrue_doesNotOptOut()
       throws Exception {
     setupValidAgentCredentialsInTempDir();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
@@ -232,7 +233,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_legacyPreventSharingTrue_doesNotOptOut()
+  public void getAgentIdentityCertInfo_legacyPreventSharingTrue_doesNotOptOut()
       throws Exception {
     setupValidAgentCredentialsInTempDir();
     envProvider.setEnv(
@@ -246,7 +247,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_bothUnset_defaultsToEnabled() throws Exception {
+  public void getAgentIdentityCertInfo_bothUnset_defaultsToEnabled() throws Exception {
     setupValidAgentCredentialsInTempDir();
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
@@ -279,13 +280,13 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_noConfigEnvVar_returnsNull() throws IOException {
+  public void getAgentIdentityCertInfo_noConfigEnvVar_returnsNull() throws IOException {
     AgentIdentityUtils.setTimeService(new FakeTimeService());
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
-  public void getAgentIdentityCertificate_happyPath_loadsCertificate() throws Exception {
+  public void getAgentIdentityCertInfo_happyPath_loadsCertificate() throws Exception {
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl, "Test resource agent/agent_spiffe_cert.pem not found");
     String certPath = Paths.get(certUrl.toURI()).toAbsolutePath().toString();
@@ -318,7 +319,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_timeout_throwsIOException() {
+  public void getAgentIdentityCertInfo_timeout_throwsIOException() {
     envProvider.setEnv(
         "GOOGLE_API_CERTIFICATE_CONFIG",
         tempDir.resolve("missing.json").toAbsolutePath().toString());
@@ -828,7 +829,7 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void
-      getAgentIdentityCertInfo_missingConfigOutsideWellKnownDir_returnsNullImmediatelyWithoutPolling(
+      getAgentIdentityCertInfo_missingConfigOutsideWellKnownDir_throwsIOExceptionImmediatelyWithoutPolling(
           @TempDir Path outsideDir) throws Exception {
     Path missingConfigFile = outsideDir.resolve("missing_config.json");
     envProvider.setEnv(
@@ -837,8 +838,7 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
-    assertNull(info);
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(0, fakeTime.getSleepCount());
   }
 
@@ -1335,6 +1335,51 @@ class AgentIdentityUtilsTest {
     } finally {
       executor.shutdownNow();
     }
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_steadyStatePermanentKeyMismatch_throwsIOExceptionInsteadOfReturningStaleCache()
+          throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    // 1. Initial call succeeds and populates cache
+    AgentIdentityUtils.CertInfo initialInfo = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(initialInfo);
+
+    // 2. Overwrite private_key.pem on disk with a mismatched key (and advance mtime so cache invalidates)
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(2048);
+    PrivateKey mismatchedKey = kpg.generateKeyPair().getPrivate();
+    String mismatchedKeyPem =
+        "-----BEGIN PRIVATE KEY-----\n"
+            + java.util.Base64.getEncoder().encodeToString(mismatchedKey.getEncoded())
+            + "\n-----END PRIVATE KEY-----\n";
+    Path keyPath = tempDir.resolve("private_key.pem");
+    Files.write(keyPath, mismatchedKeyPem.getBytes(StandardCharsets.UTF_8));
+    Files.setLastModifiedTime(
+        keyPath, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() + 10000));
+
+    // 3. Subsequent call must throw IOException after retries rather than returning stale cached credentials
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.getMessage().contains("mismatch or read failure"));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_mtlsDisabledWithCertsPresent_logsWarningAtMostOnce()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
+
+    assertFalse(AgentIdentityUtils.isMtlsDisabledWarningLogged());
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertTrue(AgentIdentityUtils.isMtlsDisabledWarningLogged());
+
+    // Subsequent calls return null without re-triggering warning log
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertTrue(AgentIdentityUtils.isMtlsDisabledWarningLogged());
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {

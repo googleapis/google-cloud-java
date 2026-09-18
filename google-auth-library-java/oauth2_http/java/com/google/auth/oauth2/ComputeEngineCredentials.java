@@ -38,6 +38,7 @@ import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
@@ -547,12 +548,12 @@ public class ComputeEngineCredentials extends GoogleCredentials
       boolean shouldSendMetricsHeader)
       throws IOException {
     GenericUrl genericUrl = new GenericUrl(url);
+    HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
     HttpRequest request;
     if ("POST".equals(method)) {
-      request =
-          transportFactory.create().createRequestFactory().buildPostRequest(genericUrl, content);
+      request = requestFactory.buildPostRequest(genericUrl, content);
     } else {
-      request = transportFactory.create().createRequestFactory().buildGetRequest(genericUrl);
+      request = requestFactory.buildGetRequest(genericUrl);
     }
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead where appropriate.

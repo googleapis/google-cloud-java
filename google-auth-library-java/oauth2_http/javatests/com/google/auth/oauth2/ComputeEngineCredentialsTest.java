@@ -65,9 +65,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
@@ -1288,31 +1291,31 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   private void setupCertAndKeyConfig() throws IOException {
-    java.nio.file.Path certSource = null;
+    Path certSource = null;
     try {
       certSource =
-          java.nio.file.Paths.get(
+          Paths.get(
               ComputeEngineCredentialsTest.class
                   .getResource("/agent/agent_spiffe_cert.pem")
                   .toURI());
-    } catch (java.net.URISyntaxException e) {
+    } catch (URISyntaxException e) {
       throw new IOException("Failed to load test resource", e);
     }
-    java.nio.file.Path certTarget = tempDir.resolve("certificates.pem");
-    Files.copy(certSource, certTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path certTarget = tempDir.resolve("certificates.pem");
+    Files.copy(certSource, certTarget, StandardCopyOption.REPLACE_EXISTING);
 
-    java.nio.file.Path keySource = null;
+    Path keySource = null;
     try {
       keySource =
-          java.nio.file.Paths.get(
+          Paths.get(
               ComputeEngineCredentialsTest.class
                   .getResource("/agent/agent_spiffe_key.pem")
                   .toURI());
-    } catch (java.net.URISyntaxException e) {
+    } catch (URISyntaxException e) {
       throw new IOException("Failed to load test resource", e);
     }
-    java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
-    Files.copy(keySource, keyTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path keyTarget = tempDir.resolve("private_key.pem");
+    Files.copy(keySource, keyTarget, StandardCopyOption.REPLACE_EXISTING);
 
     Path configPath = tempDir.resolve("config.json");
     Map<String, Object> workload = new HashMap<>();
@@ -1346,8 +1349,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     AccessToken token = credentials.refreshAccessToken();
 
     assertNotNull(token);
-    com.google.api.client.testing.http.MockLowLevelHttpRequest request =
-        transportFactory.transport.getRequest();
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     assertEquals("application/json", request.getContentType());
     assertTrue(request.getUrl().contains("scopes=foo,bar"));
@@ -1373,8 +1375,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     IdToken token = credentials.idTokenWithAudience("https://foo.bar", null);
 
     assertNotNull(token);
-    com.google.api.client.testing.http.MockLowLevelHttpRequest request =
-        transportFactory.transport.getRequest();
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     assertEquals("application/json", request.getContentType());
     assertTrue(request.getUrl().contains("audience=https://foo.bar"));
