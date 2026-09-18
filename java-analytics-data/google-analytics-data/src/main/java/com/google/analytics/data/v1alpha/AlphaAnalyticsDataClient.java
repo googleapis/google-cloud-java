@@ -345,6 +345,21 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> Chat</td>
+ *      <td><p> Provides a chat interface for interacting with Google Analytics data through the API.
+ * <p>  This product uses AI and may display inaccurate info. Your chat activity may be used to improve the product and your use is subject to Google's [Terms](https://policies.google.com/terms), [AI Use Policy](https://policies.google.com/terms/generative-ai/use-policy), and [Privacy Policy](https://policies.google.com/privacy). [Learn more about Chat AI Privacy](https://support.google.com/helpguide/answer/14185196).</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> chat(ChatRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> chatCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> RunReport</td>
  *      <td><p> Returns a customized report of your Google Analytics event data. Reports contain statistics derived from data collected by the Google Analytics tracking code. The data returned from the API is as a table with columns for the requested dimensions and metrics. Metrics are individual measurements of user activity on your property, such as active users or event count. Dimensions break down metrics across some common criteria, such as country or event name.</td>
  *      <td>
@@ -2625,6 +2640,81 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<ListReportTasksRequest, ListReportTasksResponse>
       listReportTasksCallable() {
     return stub.listReportTasksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provides a chat interface for interacting with Google Analytics data through the API.
+   *
+   * <p>This product uses AI and may display inaccurate info. Your chat activity may be used to
+   * improve the product and your use is subject to Google's
+   * [Terms](https://policies.google.com/terms), [AI Use
+   * Policy](https://policies.google.com/terms/generative-ai/use-policy), and [Privacy
+   * Policy](https://policies.google.com/privacy). [Learn more about Chat AI
+   * Privacy](https://support.google.com/helpguide/answer/14185196).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ChatRequest request =
+   *       ChatRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .setUserQuery("userQuery326624189")
+   *           .setSessionId("sessionId607796817")
+   *           .setReturnPropertyQuota(true)
+   *           .build();
+   *   ChatResponse response = alphaAnalyticsDataClient.chat(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ChatResponse chat(ChatRequest request) {
+    return chatCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provides a chat interface for interacting with Google Analytics data through the API.
+   *
+   * <p>This product uses AI and may display inaccurate info. Your chat activity may be used to
+   * improve the product and your use is subject to Google's
+   * [Terms](https://policies.google.com/terms), [AI Use
+   * Policy](https://policies.google.com/terms/generative-ai/use-policy), and [Privacy
+   * Policy](https://policies.google.com/privacy). [Learn more about Chat AI
+   * Privacy](https://support.google.com/helpguide/answer/14185196).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   ChatRequest request =
+   *       ChatRequest.newBuilder()
+   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
+   *           .setUserQuery("userQuery326624189")
+   *           .setSessionId("sessionId607796817")
+   *           .setReturnPropertyQuota(true)
+   *           .build();
+   *   ApiFuture<ChatResponse> future = alphaAnalyticsDataClient.chatCallable().futureCall(request);
+   *   // Do something.
+   *   ChatResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ChatRequest, ChatResponse> chatCallable() {
+    return stub.chatCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
