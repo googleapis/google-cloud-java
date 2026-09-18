@@ -421,6 +421,11 @@ libraries:
           additional_protos:
             - path: google/cloud/location/locations.proto
             - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/backupdr/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
     java:
       api_id_override: backupdr.googleapis.com
       api_description_override: 'Backup and DR Service is a powerful, centralized, cloud-first backup and disaster recovery solution for cloud-based and hybrid workloads. '
@@ -3489,6 +3494,11 @@ libraries:
     version: 0.54.0-SNAPSHOT
     apis:
       - path: google/cloud/networkservices/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/networkservices/v1beta1
         java:
           additional_protos:
             - path: google/cloud/location/locations.proto
