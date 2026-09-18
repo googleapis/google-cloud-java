@@ -867,6 +867,7 @@ public class SessionImplTest {
     assertWithMessage("terminal status should be delivered after open timeout")
         .that(sessionListener.popUntil(Status.class))
         .isNotNull();
+    assertThat(sessionListener.getLastPrevState()).isEqualTo(Session.SessionState.STARTING);
     sw.reset().start();
     while (session.getState() != Session.SessionState.WAIT_SERVER_CLOSE
         && session.getState() != Session.SessionState.CLOSED
