@@ -195,4 +195,22 @@ final class OAuthExceptionTest {
     assertNull(e.getErrorUri());
     assertEquals(400, e.getHttpStatusCode());
   }
+
+  @Test
+  void createFromHttpResponseException_googleApiJsonErrorObject() throws IOException {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 401, /* statusMessage= */ null, new HttpHeaders())
+            .setContent(
+                "{\"error\": {\"code\": 401, \"message\": \"Request had invalid authentication"
+                    + " credentials.\", \"status\": \"UNAUTHENTICATED\"}}")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("UNAUTHENTICATED", e.getErrorCode());
+    assertEquals("Request had invalid authentication credentials.", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(401, e.getHttpStatusCode());
+  }
 }

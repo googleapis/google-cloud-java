@@ -106,6 +106,8 @@ class MtlsPipelineLocalTest {
 
   private static final String TEST_CERT_PATH = "testresources/mtls/test_cert.pem";
   private static final String TEST_KEY_PATH = "testresources/mtls/test_key.pem";
+  private static final String TEST_CERT_2_PATH = "testresources/mtls/test_cert_2.pem";
+  private static final String TEST_KEY_2_PATH = "testresources/mtls/test_key_2.pem";
   private static final String AUDIENCE =
       "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider";
   private static final String ACCESS_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:access_token";
@@ -227,6 +229,10 @@ class MtlsPipelineLocalTest {
     try (FileInputStream fis = new FileInputStream(new File(TEST_CERT_PATH))) {
       Certificate cert = cf.generateCertificate(fis);
       trustStore.setCertificateEntry("client-cert", cert);
+    }
+    try (FileInputStream fis = new FileInputStream(new File(TEST_CERT_2_PATH))) {
+      Certificate cert2 = cf.generateCertificate(fis);
+      trustStore.setCertificateEntry("client-cert-2", cert2);
     }
 
     TrustManagerFactory tmf =
@@ -403,8 +409,31 @@ class MtlsPipelineLocalTest {
    */
   @Test
   void testMtlsPipeline_401Retry_reReadsCertFromDisk(@TempDir Path tempDir) throws Exception {
+    Path dynamicCertFile = tempDir.resolve("dynamic_cert.pem");
+    Path dynamicKeyFile = tempDir.resolve("dynamic_key.pem");
+    Path certConfigFile = tempDir.resolve("dynamic_cert_config.json");
+
+    // Write initial cert and key (Cert A) to disk
+    Files.copy(Paths.get(TEST_CERT_PATH), dynamicCertFile);
+    Files.copy(Paths.get(TEST_KEY_PATH), dynamicKeyFile);
+
+    String certConfigContent =
+        "{\n"
+            + "  \"cert_configs\": {\n"
+            + "    \"workload\": {\n"
+            + "      \"cert_path\": \""
+            + dynamicCertFile.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "      \"key_path\": \""
+            + dynamicKeyFile.toString().replace("\\", "\\\\")
+            + "\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+    Files.write(certConfigFile, certConfigContent.getBytes(StandardCharsets.UTF_8));
+
     AtomicInteger requestCount = new AtomicInteger(0);
-    List<Certificate[]> certsPerRequest = new ArrayList<>();
+    List<Certificate[]> certsPerRequest = Collections.synchronizedList(new ArrayList<>());
 
     server.createContext(
         "/v1/token",
@@ -414,15 +443,17 @@ class MtlsPipelineLocalTest {
             try {
               HttpsExchange httpsExchange = (HttpsExchange) exchange;
               SSLSession session = httpsExchange.getSSLSession();
-              synchronized (certsPerRequest) {
-                certsPerRequest.add(session.getPeerCertificates());
-              }
+              certsPerRequest.add(session.getPeerCertificates());
 
               // Always read and drain the request body
               String body = readRequestBody(exchange);
 
               int count = requestCount.incrementAndGet();
               if (count == 1) {
+                // Rotate cert files on disk from Cert A to Cert B before returning 401
+                Files.write(dynamicCertFile, Files.readAllBytes(Paths.get(TEST_CERT_2_PATH)));
+                Files.write(dynamicKeyFile, Files.readAllBytes(Paths.get(TEST_KEY_2_PATH)));
+
                 // Initial exchange responds with 401 Unauthorized
                 GenericJson error = new GenericJson();
                 error.setFactory(OAuth2Utils.JSON_FACTORY);
@@ -477,8 +508,9 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\":"
-            + " \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\": \""
+            + certConfigFile.toString().replace("\\", "\\\\")
+            + "\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -499,8 +531,11 @@ class MtlsPipelineLocalTest {
     assertTrue(certsPerRequest.get(0)[0] instanceof X509Certificate);
     assertTrue(certsPerRequest.get(1)[0] instanceof X509Certificate);
     assertEquals(
-        ((X509Certificate) certsPerRequest.get(0)[0]).getSubjectX500Principal(),
-        ((X509Certificate) certsPerRequest.get(1)[0]).getSubjectX500Principal());
+        "CN=1009120726878.apps.googleusercontent.com",
+        ((X509Certificate) certsPerRequest.get(0)[0]).getSubjectX500Principal().getName());
+    assertEquals(
+        "CN=rotated-client.apps.googleusercontent.com",
+        ((X509Certificate) certsPerRequest.get(1)[0]).getSubjectX500Principal().getName());
   }
 
   /**
@@ -946,8 +981,8 @@ class MtlsPipelineLocalTest {
               int count = iamRequestCount.incrementAndGet();
               if (count == 1) {
                 // Rewrite the cert files on disk on 401 to trigger X509Provider reload and retry
-                Files.write(dynamicCertFile, Files.readAllBytes(Paths.get(TEST_CERT_PATH)));
-                Files.write(dynamicKeyFile, Files.readAllBytes(Paths.get(TEST_KEY_PATH)));
+                Files.write(dynamicCertFile, Files.readAllBytes(Paths.get(TEST_CERT_2_PATH)));
+                Files.write(dynamicKeyFile, Files.readAllBytes(Paths.get(TEST_KEY_2_PATH)));
 
                 GenericJson error = new GenericJson();
                 error.setFactory(OAuth2Utils.JSON_FACTORY);
@@ -1046,6 +1081,14 @@ class MtlsPipelineLocalTest {
     assertEquals(
         ((X509Certificate) stsCertsList.get(1)[0]).getSubjectX500Principal(),
         ((X509Certificate) iamCertsList.get(1)[0]).getSubjectX500Principal());
+
+    // Verify Attempt 0 presented Cert A and Attempt 1 presented rotated Cert B
+    assertEquals(
+        "CN=1009120726878.apps.googleusercontent.com",
+        ((X509Certificate) iamCertsList.get(0)[0]).getSubjectX500Principal().getName());
+    assertEquals(
+        "CN=rotated-client.apps.googleusercontent.com",
+        ((X509Certificate) iamCertsList.get(1)[0]).getSubjectX500Principal().getName());
 
     // Verify IAM received intermediate tokens 1 and 2 respectively
     assertEquals(2, iamAuthHeaders.size());

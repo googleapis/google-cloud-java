@@ -46,6 +46,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class OAuthException extends GoogleAuthException {
 
+  private static final long serialVersionUID = 1L;
+
   private final String errorCode;
   @Nullable private final String errorDescription;
   @Nullable private final String errorUri;
@@ -106,22 +108,35 @@ class OAuthException extends GoogleAuthException {
       JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(content);
       GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
 
-      String errorCode = (String) errorResponse.get("error");
+      String errorCode = null;
+      String errorDescription = null;
+      Object rawError = errorResponse.get("error");
+      if (rawError instanceof String) {
+        errorCode = (String) rawError;
+      } else if (rawError instanceof java.util.Map) {
+        java.util.Map<?, ?> errorMap = (java.util.Map<?, ?>) rawError;
+        if (errorMap.get("status") instanceof String) {
+          errorCode = (String) errorMap.get("status");
+        }
+        if (errorMap.get("message") instanceof String) {
+          errorDescription = (String) errorMap.get("message");
+        }
+      }
       if (errorCode == null) {
         errorCode = "http_error_" + e.getStatusCode();
       }
-      String errorDescription = null;
       String errorUri = null;
-      if (errorResponse.containsKey("error_description")) {
+      if (errorResponse.get("error_description") instanceof String) {
         errorDescription = (String) errorResponse.get("error_description");
       }
-      if (errorResponse.containsKey("error_uri")) {
+      if (errorResponse.get("error_uri") instanceof String) {
         errorUri = (String) errorResponse.get("error_uri");
       }
       return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
     } catch (Exception parseException) {
+      String fallbackDescription = e.getStatusMessage() != null ? e.getStatusMessage() : content;
       return new OAuthException(
-          "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+          "http_error_" + e.getStatusCode(), fallbackDescription, null, e.getStatusCode());
     }
   }
 }

@@ -633,7 +633,11 @@ final class ITWorkloadIdentityFederationTest {
     request.setParser(parser);
 
     HttpResponse response = request.execute();
-    assertTrue(response.isSuccessStatusCode());
+    try {
+      assertTrue(response.isSuccessStatusCode());
+    } finally {
+      response.disconnect();
+    }
   }
 
   /**
