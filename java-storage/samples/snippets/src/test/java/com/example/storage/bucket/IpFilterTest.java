@@ -23,50 +23,93 @@ import com.example.storage.TestBase;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class IpFilterTest extends TestBase {
 
-  @Test
-  public void testBucketIpFilterLifecycle() throws Exception {
-    String bucketName = RemoteStorageHelper.generateBucketName();
-    String publicRange = "192.0.2.0/24";
-    String vpcNetwork = "projects/" + GOOGLE_CLOUD_PROJECT + "/global/networks/default";
-    String vpcRange = "10.0.0.0/24";
+  private static final String PUBLIC_RANGE = "192.0.2.0/24";
+  private static final String VPC_NETWORK =
+      "projects/" + GOOGLE_CLOUD_PROJECT + "/global/networks/default";
+  private static final String VPC_RANGE = "10.0.0.0/24";
 
-    try {
-      // 1. Create with IP Filter
-      CreateBucketIpFilter.createBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName, publicRange);
-      Bucket created = storage.get(bucketName);
-      assertThat(created.getIpFilter()).isNotNull();
+  private String bucketName;
 
-      // 2. Enable IP Filter with Public and VPC ranges
-      Bucket enabled =
-          EnableBucketIpFilter.enableBucketIpFilter(
-              GOOGLE_CLOUD_PROJECT, bucketName, publicRange, vpcNetwork, vpcRange);
-      assertThat(enabled.getIpFilter().getMode()).isEqualTo("Enabled");
+  @Before
+  public void setUp() {
+    bucketName = RemoteStorageHelper.generateBucketName();
+  }
 
-      // 3. Get IP Filter
-      BucketInfo.IpFilter fetched =
-          GetBucketIpFilter.getBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName);
-      assertThat(fetched.getMode()).isEqualTo("Enabled");
-
-      // 4. Delete IP Filter rules
-      Bucket modified =
-          DeleteBucketIpFilter.deleteBucketIpFilterRules(
-              GOOGLE_CLOUD_PROJECT, bucketName, publicRange, vpcNetwork);
-      assertThat(modified.getIpFilter()).isNotNull();
-
-      // 5. Disable IP Filter
-      Bucket disabled =
+  @After
+  public void tearDown() {
+    if (bucketName != null) {
+      try {
+        Bucket b = storage.get(bucketName);
+        if (b != null && b.getIpFilter() != null && "Enabled".equals(b.getIpFilter().getMode())) {
           DisableBucketIpFilter.disableBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName);
-      assertThat(disabled.getIpFilter().getMode()).isEqualTo("Disabled");
-
-      // 6. List Buckets with IP Filter
-      ListBucketsIpFilter.listBucketsIpFilter(GOOGLE_CLOUD_PROJECT);
-      assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(bucketName);
-    } finally {
+        }
+      } catch (Exception ignored) {
+        // Ignore cleanup errors before force delete
+      }
       RemoteStorageHelper.forceDelete(storage, bucketName);
     }
+  }
+
+  @Test
+  public void testCreateBucketIpFilter() {
+    CreateBucketIpFilter.createBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE);
+    Bucket created = storage.get(bucketName);
+    assertThat(created.getIpFilter()).isNotNull();
+  }
+
+  @Test
+  public void testEnableBucketIpFilter() {
+    storage.create(BucketInfo.of(bucketName));
+    Bucket enabled =
+        EnableBucketIpFilter.enableBucketIpFilter(
+            GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE, VPC_NETWORK, VPC_RANGE);
+    assertThat(enabled.getIpFilter().getMode()).isEqualTo("Enabled");
+  }
+
+  @Test
+  public void testGetBucketIpFilter() {
+    storage.create(BucketInfo.of(bucketName));
+    EnableBucketIpFilter.enableBucketIpFilter(
+        GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE, VPC_NETWORK, VPC_RANGE);
+
+    BucketInfo.IpFilter fetched =
+        GetBucketIpFilter.getBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName);
+    assertThat(fetched.getMode()).isEqualTo("Enabled");
+  }
+
+  @Test
+  public void testDeleteBucketIpFilterRules() {
+    storage.create(BucketInfo.of(bucketName));
+    EnableBucketIpFilter.enableBucketIpFilter(
+        GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE, VPC_NETWORK, VPC_RANGE);
+
+    Bucket modified =
+        DeleteBucketIpFilter.deleteBucketIpFilterRules(
+            GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE, VPC_NETWORK);
+    assertThat(modified.getIpFilter()).isNotNull();
+  }
+
+  @Test
+  public void testDisableBucketIpFilter() {
+    storage.create(BucketInfo.of(bucketName));
+    EnableBucketIpFilter.enableBucketIpFilter(
+        GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE, VPC_NETWORK, VPC_RANGE);
+
+    Bucket disabled = DisableBucketIpFilter.disableBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName);
+    assertThat(disabled.getIpFilter().getMode()).isEqualTo("Disabled");
+  }
+
+  @Test
+  public void testListBucketsIpFilter() {
+    CreateBucketIpFilter.createBucketIpFilter(GOOGLE_CLOUD_PROJECT, bucketName, PUBLIC_RANGE);
+
+    ListBucketsIpFilter.listBucketsIpFilter(GOOGLE_CLOUD_PROJECT);
+    assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(bucketName);
   }
 }

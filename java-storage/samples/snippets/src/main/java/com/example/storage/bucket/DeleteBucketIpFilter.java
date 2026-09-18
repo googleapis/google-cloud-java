@@ -24,7 +24,6 @@ import com.google.cloud.storage.BucketInfo.IpFilter.VpcNetworkSource;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class DeleteBucketIpFilter {
@@ -65,15 +64,9 @@ public class DeleteBucketIpFilter {
     if (ipFilter.getVpcNetworkSources() != null) {
       vpcSources.addAll(ipFilter.getVpcNetworkSources());
     }
-    if (vpcNetworkToDelete != null) {
-      Iterator<VpcNetworkSource> iterator = vpcSources.iterator();
-      while (iterator.hasNext()) {
-        VpcNetworkSource source = iterator.next();
-        if (vpcNetworkToDelete.equals(source.getNetwork())) {
-          iterator.remove();
-          modified = true;
-        }
-      }
+    if (vpcNetworkToDelete != null
+        && vpcSources.removeIf(source -> vpcNetworkToDelete.equals(source.getNetwork()))) {
+      modified = true;
     }
 
     if (modified) {
