@@ -559,6 +559,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         configureReadSettings(settingsBuilder, getOptions());
         try {
           client = BigQueryReadClient.create(settingsBuilder.build());
+          if (closed) {
+            client.close();
+            throw new IllegalStateException("BigQuery service has been closed");
+          }
           if (bqReadClients.size() < MAX_CACHED_READ_CLIENTS) {
             bqReadClients.put(cacheKey, client);
           }
@@ -596,23 +600,21 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    */
   @Override
   public void close() {
-    List<BigQueryReadClient> clientsToClose = new ArrayList<>();
     synchronized (this) {
       if (closed) {
         return;
       }
       closed = true;
-      if (bqReadClients != null) {
-        clientsToClose.addAll(bqReadClients.values());
-        bqReadClients.clear();
-      }
     }
-    for (BigQueryReadClient client : clientsToClose) {
-      try {
-        client.close();
-      } catch (Exception e) {
-        // Ignore exceptions during teardown
+    if (bqReadClients != null) {
+      for (BigQueryReadClient client : bqReadClients.values()) {
+        try {
+          client.close();
+        } catch (Exception e) {
+          // Ignore exceptions during teardown
+        }
       }
+      bqReadClients.clear();
     }
   }
 
