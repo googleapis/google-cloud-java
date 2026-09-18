@@ -690,7 +690,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
 
       // Handle abnormal close. This can happen if the Session was aborted due to underlying stream
-      // termination
+      // termination.
       if (prevState != SessionState.WAIT_SERVER_CLOSE) {
         consecutiveFailures++;
         if (status.getCode() == Status.Code.UNIMPLEMENTED) {
