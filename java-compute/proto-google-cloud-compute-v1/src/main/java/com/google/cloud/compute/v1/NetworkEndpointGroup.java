@@ -144,6 +144,18 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
+     * The network endpoint for targeting a specific network interface of a
+     * VM instance in configurations with multiple network interfaces on the
+     * same network.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_DEDICATED_BACKEND = 321618974;</code>
+     */
+    GCE_VM_IP_DEDICATED_BACKEND(321618974),
+    /**
+     *
+     *
+     * <pre>
      * The network endpoint is represented by IP address and port pair.
      * </pre>
      *
@@ -249,6 +261,19 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>GCE_VM_IP = 401880793;</code>
      */
     public static final int GCE_VM_IP_VALUE = 401880793;
+
+    /**
+     *
+     *
+     * <pre>
+     * The network endpoint for targeting a specific network interface of a
+     * VM instance in configurations with multiple network interfaces on the
+     * same network.
+     * </pre>
+     *
+     * <code>GCE_VM_IP_DEDICATED_BACKEND = 321618974;</code>
+     */
+    public static final int GCE_VM_IP_DEDICATED_BACKEND_VALUE = 321618974;
 
     /**
      *
@@ -360,6 +385,8 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
           return UNDEFINED_NETWORK_ENDPOINT_TYPE;
         case 401880793:
           return GCE_VM_IP;
+        case 321618974:
+          return GCE_VM_IP_DEDICATED_BACKEND;
         case 501838375:
           return GCE_VM_IP_PORT;
         case 22819253:

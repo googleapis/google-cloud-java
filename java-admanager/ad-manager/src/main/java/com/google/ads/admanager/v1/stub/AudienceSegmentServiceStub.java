@@ -23,12 +23,15 @@ import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchCreateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchCreateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.CreateAudienceSegmentRequest;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
@@ -59,6 +62,17 @@ public abstract class AudienceSegmentServiceStub implements BackgroundResource {
   public UnaryCallable<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse>
       listAudienceSegmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<CreateAudienceSegmentRequest, AudienceSegment>
+      createAudienceSegmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAudienceSegmentCallable()");
+  }
+
+  public UnaryCallable<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+      batchCreateAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateAudienceSegmentsCallable()");
   }
 
   public UnaryCallable<BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>

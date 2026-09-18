@@ -271,6 +271,15 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final CallOptions.Key<Boolean> BASE_CONTEXT_MARKER_KEY =
       CallOptions.Key.create("BASE_CONTEXT_MARKER_KEY");
 
+  // Normalize the generated placeholder to the historical streaming resume policy.
+  static final RetrySettings DEFAULT_STREAMING_RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setTotalTimeoutDuration(Duration.ZERO)
+          .setMaxAttempts(0)
+          .setInitialRetryDelayDuration(Duration.ofMillis(10))
+          .setMaxRetryDelayDuration(Duration.ofMillis(1000))
+          .build();
+
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
   private boolean rpcIsClosed;
   private final SpannerStub spannerStub;
@@ -452,8 +461,14 @@ public class GapicSpannerRpc implements SpannerRpc {
         DIRECTPATH_CHANNEL_CREATED =
             ((GrpcTransportChannel) clientContext.getTransportChannel()).isDirectPath()
                 && isEnableDirectAccess;
-        this.readRetrySettings =
+        SpannerStubSettings.Builder defaultStubSettings = SpannerStubSettings.newBuilder();
+        RetrySettings configuredReadRetrySettings =
             options.getSpannerStubSettings().streamingReadSettings().getRetrySettings();
+        this.readRetrySettings =
+            configuredReadRetrySettings.equals(
+                    defaultStubSettings.streamingReadSettings().getRetrySettings())
+                ? DEFAULT_STREAMING_RETRY_SETTINGS
+                : configuredReadRetrySettings;
         Set<Code> streamingReadRetryableCodes =
             options.getSpannerStubSettings().streamingReadSettings().getRetryableCodes();
         this.readRetryableCodes =
@@ -463,8 +478,13 @@ public class GapicSpannerRpc implements SpannerRpc {
                     .add(Code.RESOURCE_EXHAUSTED)
                     .build()
                 : streamingReadRetryableCodes;
-        this.executeQueryRetrySettings =
+        RetrySettings configuredQueryRetrySettings =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetrySettings();
+        this.executeQueryRetrySettings =
+            configuredQueryRetrySettings.equals(
+                    defaultStubSettings.executeStreamingSqlSettings().getRetrySettings())
+                ? DEFAULT_STREAMING_RETRY_SETTINGS
+                : configuredQueryRetrySettings;
         Set<Code> executeStreamingSqlRetryableCodes =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetryableCodes();
         this.executeQueryRetryableCodes =

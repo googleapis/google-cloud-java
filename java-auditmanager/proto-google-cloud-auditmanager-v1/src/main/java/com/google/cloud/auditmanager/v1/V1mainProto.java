@@ -132,6 +132,34 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_auditmanager_v1_ControlDetails_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_auditmanager_v1_ControlDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_CreateAuditScheduleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_CreateAuditScheduleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_UpdateAuditScheduleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_UpdateAuditScheduleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_GetAuditScheduleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_GetAuditScheduleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_AuditSchedule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_AuditSchedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_auditmanager_v1_ScheduleConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_auditmanager_v1_ScheduleConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -146,21 +174,23 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "ger.proto\022\034google.cloud.auditmanager.v1\032"
           + "\034google/api/annotations.proto\032\027google/ap"
           + "i/client.proto\032\037google/api/field_behavio"
-          + "r.proto\032\031google/api/resource.proto\032#goog"
-          + "le/longrunning/operations.proto\032\037google/protobuf/timestamp.proto\"\336\001\n"
+          + "r.proto\032\031google/api/resource.proto\032#google/longrunning/operations.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\372\001\n"
           + "\025EnrollResourceRequest\022\022\n"
           + "\005scope\030\001 \001(\tB\003\340A\002\022b\n"
-          + "\014destinations\030\002 \003(\0132G.google.cloud.auditmanager"
-          + ".v1.EnrollResourceRequest.EligibleDestinationB\003\340A\002\032M\n"
+          + "\014destinations\030\002 \003(\0132G.google.cloud.auditmanager.v1.En"
+          + "rollResourceRequest.EligibleDestinationB\003\340A\002\022\032\n\r"
+          + "validate_only\030\004 \001(\010B\003\340A\001\032M\n"
           + "\023EligibleDestination\022\035\n"
           + "\023eligible_gcs_bucket\030\003 \001(\tH\000B\027\n"
-          + "\025eligible_destinations\"\326\002\n"
+          + "\025eligible_destinations\"\362\002\n"
           + "\037GenerateAuditScopeReportRequest\022\022\n"
           + "\005scope\030\002 \001(\tB\003\340A\002\022\"\n"
           + "\023compliance_standard\030\003 \001(\tB\005\030\001\340A\001\022p\n\r"
-          + "report_format\030\004 \001(\0162T.google.cloud.auditmanager.v1.Gene"
-          + "rateAuditScopeReportRequest.AuditScopeReportFormatB\003\340A\002\022!\n"
-          + "\024compliance_framework\030\005 \001(\tB\003\340A\002\"f\n"
+          + "report_format\030\004 \001(\0162T.google.clou"
+          + "d.auditmanager.v1.GenerateAuditScopeReportRequest.AuditScopeReportFormatB\003\340A\002\022!\n"
+          + "\024compliance_framework\030\005 \001(\tB\003\340A\002\022\032\n\r"
+          + "validate_only\030\006 \001(\010B\003\340A\001\"f\n"
           + "\026AuditScopeReportFormat\022)\n"
           + "%AUDIT_SCOPE_REPORT_FORMAT_UNSPECIFIED\020\000\022!\n"
           + "\035AUDIT_SCOPE_REPORT_FORMAT_ODF\020\001\"\364\002\n"
@@ -168,8 +198,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\007gcs_uri\030\002 \001(\tH\000\022\022\n"
           + "\005scope\030\001 \001(\tB\003\340A\002\022\"\n"
           + "\023compliance_standard\030\003 \001(\tB\005\030\001\340A\001\022f\n\r"
-          + "report_format\030\004 \001(\0162J.google.cloud.auditmanager.v1.Gener"
-          + "ateAuditReportRequest.AuditReportFormatB\003\340A\002\022!\n"
+          + "report_format\030\004 \001(\0162J.google.cloud.auditmanage"
+          + "r.v1.GenerateAuditReportRequest.AuditReportFormatB\003\340A\002\022!\n"
           + "\024compliance_framework\030\005 \001(\tB\003\340A\002\022\032\n\r"
           + "validate_only\030\010 \001(\010B\003\340A\001\"U\n"
           + "\021AuditReportFormat\022#\n"
@@ -189,8 +219,8 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + " \003(\01326.google.cloud.auditmanager.v1.ResourceEnrollmentStatus\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\"\213\001\n"
           + "\027ListAuditReportsRequest\022?\n"
-          + "\006parent\030\001 \001("
-          + "\tB/\340A\002\372A)\022\'auditmanager.googleapis.com/AuditReport\022\026\n"
+          + "\006parent\030\001 \001(\tB/\340A\002\372A)\022\'"
+          + "auditmanager.googleapis.com/AuditReport\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\177\n"
           + "\030ListAuditReportsResponse\022E\n\r"
@@ -206,12 +236,12 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"r\n"
           + "\024ListControlsResponse\022<\n"
-          + "\010controls\030\001"
-          + " \003(\0132%.google.cloud.auditmanager.v1.ControlB\003\340A\003\022\034\n"
+          + "\010controls\030\001 \003"
+          + "(\0132%.google.cloud.auditmanager.v1.ControlB\003\340A\003\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\"\341\002\n"
           + "\030ReportGenerationProgress\022@\n"
-          + "\005state\030\001 \001(\0162,.google."
-          + "cloud.auditmanager.v1.OperationStateB\003\340A\003\022\033\n"
+          + "\005state\030\001 \001(\016"
+          + "2,.google.cloud.auditmanager.v1.OperationStateB\003\340A\003\022\033\n"
           + "\016failure_reason\030\002 \001(\tB\003\340A\003\022#\n"
           + "\033evaluation_percent_complete\030\024 \001(\001\022*\n"
           + "\"report_generation_percent_complete\030\036 \001(\001\022)\n"
@@ -223,19 +253,19 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB\003\340A\010\022R\n"
           + "\023destination_details\030\003"
           + " \003(\01320.google.cloud.auditmanager.v1.DestinationDetailsB\003\340A\003:\223\002\352A\217\002\n"
-          + "&auditmanager.googleapis.com/Enrollment\022@projects/{p"
-          + "roject}/locations/{location}/enrollments/{enrollment}\022>folders/{folder}/location"
-          + "s/{location}/enrollments/{enrollment}\022Jorganizations/{organization}/locations/{l"
-          + "ocation}/enrollments/{enrollment}*\013enrollments2\n"
+          + "&auditmanager.googleapis.com/Enrollment\022@projects/{project}/locations/{location}/e"
+          + "nrollments/{enrollment}\022>folders/{folder}/locations/{location}/enrollments/{enro"
+          + "llment}\022Jorganizations/{organization}/lo"
+          + "cations/{location}/enrollments/{enrollment}*\013enrollments2\n"
           + "enrollment\"\250\003\n"
           + "\020AuditScopeReport\022\037\n"
           + "\025scope_report_contents\030\001 \001(\014H\000\022\021\n"
           + "\004name\030\002 \001(\tB\003\340A\010:\317\002\352A\313\002\n"
-          + ",auditmanager.googleapis.com/AuditScopeReport\022Nprojects/{proj"
-          + "ect}/locations/{location}/auditScopeReports/{audit_scope_report}\022Lfolders/{folde"
-          + "r}/locations/{location}/auditScopeReports/{audit_scope_report}\022Xorganizations/{o"
-          + "rganization}/locations/{location}/auditS"
-          + "copeReports/{audit_scope_report}*\021auditScopeReports2\020auditScopeReportB\016\n"
+          + ",auditmanager.googleapis.com/AuditScopeReport\022Nproj"
+          + "ects/{project}/locations/{location}/auditScopeReports/{audit_scope_report}\022Lfold"
+          + "ers/{folder}/locations/{location}/auditScopeReports/{audit_scope_report}\022Xorgani"
+          + "zations/{organization}/locations/{location}/auditScopeReports/{audit_scope_repor"
+          + "t}*\021auditScopeReports2\020auditScopeReportB\016\n"
           + "\014audit_report\"\200\002\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -251,33 +281,33 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132(.google.cloud.auditmanager.v1.EnrollmentB\003\340A\003\022\027\n"
           + "\010enrolled\030\003 \001(\010B\005\030\001\340A\003\022\031\n"
           + "\014display_name\030\004 \001(\tB\003\340A\003\022m\n"
-          + "\020enrollment_state\030\005 \001(\0162N.google.cloud.auditma"
-          + "nager.v1.ResourceEnrollmentStatus.ResourceEnrollmentStateB\003\340A\003\"s\n"
+          + "\020enrollment_state\030\005 \001(\0162N.google.clo"
+          + "ud.auditmanager.v1.ResourceEnrollmentStatus.ResourceEnrollmentStateB\003\340A\003\"s\n"
           + "\027ResourceEnrollmentState\022)\n"
           + "%RESOURCE_ENROLLMENT_STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014NOT_ENROLLED\020\001\022\r\n"
           + "\tINHERITED\020\002\022\014\n"
           + "\010ENROLLED\020\003:\233\003\352A\227\003\n"
-          + "4auditmanager.googleapis.com/ResourceEnrollmentStatus"
-          + "\022]folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enr"
-          + "ollment_status}\022_projects/{project}/locations/{location}/resourceEnrollmentStatu"
-          + "ses/{resource_enrollment_status}\022iorganizations/{organization}/locations/{locati"
-          + "on}/resourceEnrollmentStatuses/{resource"
-          + "_enrollment_status}*\032resourceEnrollmentStatuses2\030resourceEnrollmentStatus\"\332\007\n"
+          + "4auditmanager.googleapis.com/ResourceEnrollmentStatus\022]folders/{folder}/locations/{"
+          + "location}/resourceEnrollmentStatuses/{resource_enrollment_status}\022_projects/{pro"
+          + "ject}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_statu"
+          + "s}\022iorganizations/{organization}/locations/{location}/resourceEnrollmentStatuses"
+          + "/{resource_enrollment_status}*\032resourceE"
+          + "nrollmentStatuses2\030resourceEnrollmentStatus\"\332\007\n"
           + "\013AuditReport\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022H\n"
           + "\016report_summary\030\002"
           + " \001(\0132+.google.cloud.auditmanager.v1.ReportSummaryB\003\340A\003\022\031\n"
           + "\014operation_id\030\003 \001(\tB\003\340A\003\022R\n"
-          + "\023destination_details\030\004 \001(\01320"
-          + ".google.cloud.auditmanager.v1.DestinationDetailsB\003\340A\003\022\"\n"
+          + "\023destination_details\030\004"
+          + " \001(\01320.google.cloud.auditmanager.v1.DestinationDetailsB\003\340A\003\022\"\n"
           + "\023compliance_standard\030\005 \001(\tB\005\030\001\340A\003\022\022\n"
           + "\005scope\030\006 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022J\n"
-          + "\017control_details\030\010 \003(\0132,.google.cl"
-          + "oud.auditmanager.v1.ControlDetailsB\003\340A\003\022e\n"
-          + "\027report_generation_state\030\t \001(\0162?.googl"
-          + "e.cloud.auditmanager.v1.AuditReport.ReportGenerationStateB\003\340A\003\022!\n"
+          + "\017control_details\030\010 \003(\0132,"
+          + ".google.cloud.auditmanager.v1.ControlDetailsB\003\340A\003\022e\n"
+          + "\027report_generation_state\030\t \001"
+          + "(\0162?.google.cloud.auditmanager.v1.AuditReport.ReportGenerationStateB\003\340A\003\022!\n"
           + "\024compliance_framework\030\n"
           + " \001(\tB\003\340A\003\022\025\n"
           + "\010scope_id\030\013 \001(\tB\003\340A\003\"\201\001\n"
@@ -287,18 +317,18 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\tCOMPLETED\020\002\022\n\n"
           + "\006FAILED\020\003\022\023\n"
           + "\017SUMMARY_UNKNOWN\020\004:\237\002\352A\233\002\n"
-          + "\'auditmanager.googleapis.com/AuditReport\022Cprojects/{project}"
-          + "/locations/{location}/auditReports/{audit_report}\022Afolders/{folder}/locations/{l"
-          + "ocation}/auditReports/{audit_report}\022Morganizations/{organization}/locations/{lo"
-          + "cation}/auditReports/{audit_report}*\014auditReports2\013auditReport\"8\n\r"
+          + "\'auditmanager.googleapis.com/AuditReport\022Cprojects"
+          + "/{project}/locations/{location}/auditReports/{audit_report}\022Afolders/{folder}/lo"
+          + "cations/{location}/auditReports/{audit_report}\022Morganizations/{organization}/loc"
+          + "ations/{location}/auditReports/{audit_report}*\014auditReports2\013auditReport\"8\n\r"
           + "ControlFamily\022\021\n"
           + "\tfamily_id\030\001 \001(\t\022\024\n"
           + "\014display_name\030\002 \001(\t\"\373\004\n"
           + "\007Control\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\003\022A\n"
-          + "\006family\030\003 \001(\0162,.googl"
-          + "e.cloud.auditmanager.v1.Control.FamilyB\003\340A\003\022H\n"
+          + "\006family\030\003 \001"
+          + "(\0162,.google.cloud.auditmanager.v1.Control.FamilyB\003\340A\003\022H\n"
           + "\016control_family\030\n"
           + " \001(\0132+.google.cloud.auditmanager.v1.ControlFamilyB\003\340A\003\022\030\n"
           + "\013description\030\004 \001(\tB\003\340A\003\022 \n"
@@ -340,10 +370,76 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\013error_count\030\005 \001(\005\"\343\001\n"
           + "\016ControlDetails\0226\n"
           + "\007control\030\001 \001(\0132%.google.cloud.auditmanager.v1.Control\022L\n"
-          + "\020compliance_state\030\002 \001(\0162-.google.cl"
-          + "oud.auditmanager.v1.ComplianceStateB\003\340A\003\022K\n"
-          + "\026control_report_summary\030\003 \001(\0132+.googl"
-          + "e.cloud.auditmanager.v1.ReportSummary*\373\002\n"
+          + "\020compliance_state\030\002 \001(\0162-"
+          + ".google.cloud.auditmanager.v1.ComplianceStateB\003\340A\003\022K\n"
+          + "\026control_report_summary\030\003 \001"
+          + "(\0132+.google.cloud.auditmanager.v1.ReportSummary\"\345\001\n"
+          + "\032CreateAuditScheduleRequest\022A\n"
+          + "\006parent\030\001 \001("
+          + "\tB1\340A\002\372A+\022)auditmanager.googleapis.com/AuditSchedule\022H\n"
+          + "\016audit_schedule\030\002"
+          + " \001(\0132+.google.cloud.auditmanager.v1.AuditScheduleB\003\340A\002\022\036\n"
+          + "\021audit_schedule_id\030\003 \001(\tB\003\340A\002\022\032\n\r"
+          + "validate_only\030\004 \001(\010B\003\340A\001\"\270\001\n"
+          + "\032UpdateAuditScheduleRequest\022H\n"
+          + "\016audit_schedule\030\001"
+          + " \001(\0132+.google.cloud.auditmanager.v1.AuditScheduleB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\032\n\r"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"Z\n"
+          + "\027GetAuditScheduleRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")auditmanager.googleapis.com/AuditSchedule\"\217\001\n"
+          + "\031ListAuditSchedulesRequest\022A\n"
+          + "\006parent\030\001 \001("
+          + "\tB1\340A\002\372A+\022)auditmanager.googleapis.com/AuditSchedule\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\220\001\n"
+          + "\032ListAuditSchedulesResponse\022D\n"
+          + "\017audit_schedules\030\001 \003(\013"
+          + "2+.google.cloud.auditmanager.v1.AuditSchedule\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\345\007\n\r"
+          + "AuditSchedule\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\024\n"
+          + "\007gcs_uri\030\003 \001(\tB\003\340A\002\022!\n"
+          + "\024compliance_framework\030\004 \001(\tB\003\340A\002\022Y\n\r"
+          + "report_format\030\005 \001(\0162=.go"
+          + "ogle.cloud.auditmanager.v1.AuditSchedule.AuditReportFormatB\003\340A\002\022J\n"
+          + "\017schedule_config\030\006"
+          + " \001(\0132,.google.cloud.auditmanager.v1.ScheduleConfigB\003\340A\002\022?\n"
+          + "\005state\030\007 \001(\0162+.goo"
+          + "gle.cloud.auditmanager.v1.ScheduleStateB\003\340A\001\0224\n"
+          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0226\n\r"
+          + "next_run_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022:\n"
+          + "\021last_trigger_time\030\013"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
+          + "error_message\030\r"
+          + " \001(\tB\003\340A\003\"U\n"
+          + "\021AuditReportFormat\022#\n"
+          + "\037AUDIT_REPORT_FORMAT_UNSPECIFIED\020\000\022\033\n"
+          + "\027AUDIT_REPORT_FORMAT_ODF\020\001:\261\002\352A\255\002\n"
+          + ")auditmanager.googleapis.com/AuditSchedule\022Gproje"
+          + "cts/{project}/locations/{location}/auditSchedules/{audit_schedule}\022Efolders/{fol"
+          + "der}/locations/{location}/auditSchedules/{audit_schedule}\022Qorganizations/{organi"
+          + "zation}/locations/{location}/auditSchedules/{audit_schedule}*\016auditSchedules2\r"
+          + "auditSchedule\"\311\002\n"
+          + "\016ScheduleConfig\0223\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0221\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022N\n"
+          + "\tfrequency\030\003 \001(\01626.goog"
+          + "le.cloud.auditmanager.v1.ScheduleConfig.FrequencyB\003\340A\002\022\026\n"
+          + "\ttime_zone\030\004 \001(\tB\003\340A\001\"g\n"
+          + "\tFrequency\022\031\n"
+          + "\025FREQUENCY_UNSPECIFIED\020\000\022\t\n"
+          + "\005DAILY\020\001\022\n\n"
+          + "\006WEEKLY\020\002\022\013\n"
+          + "\007MONTHLY\020\003\022\r\n"
+          + "\tQUARTERLY\020\004\022\014\n"
+          + "\010ANNUALLY\020\005*\373\002\n"
           + "\016OperationState\022\037\n"
           + "\033OPERATION_STATE_UNSPECIFIED\020\000\022\037\n"
           + "\033OPERATION_STATE_NOT_STARTED\020\n"
@@ -361,77 +457,110 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\tVIOLATION\020\002\022\030\n"
           + "\024MANUAL_REVIEW_NEEDED\020\003\022\t\n"
           + "\005ERROR\020\004\022\027\n"
-          + "\023AUDIT_NOT_SUPPORTED\020\0052\275\026\n"
-          + "\014AuditManager\022\270\002\n"
-          + "\016EnrollResource\0223.google.cloud.auditmanager.v1.EnrollR"
-          + "esourceRequest\032(.google.cloud.auditmanag"
-          + "er.v1.Enrollment\"\306\001\332A\022scope,destinations"
-          + "\202\323\344\223\002\252\001\"0/v1/{scope=folders/*/locations/"
-          + "*}:enrollResource:\001*Z6\"1/v1/{scope=proje"
-          + "cts/*/locations/*}:enrollResource:\001*Z;\"6"
-          + "/v1/{scope=organizations/*/locations/*}:enrollResource:\001*\022\213\003\n"
-          + "\030GenerateAuditScopeReport\022=.google.cloud.auditmanager.v1.Ge"
-          + "nerateAuditScopeReportRequest\032..google.c"
-          + "loud.auditmanager.v1.AuditScopeReport\"\377\001"
-          + "\332A\'scope,compliance_standard,report_form"
-          + "at\202\323\344\223\002\316\001\"</v1/{scope=folders/*/location"
-          + "s/*}/auditScopeReports:generate:\001*ZB\"=/v1/{scope=projects/*/locations/*}/auditSc"
-          + "opeReports:generate:\001*ZG\"B/v1/{scope=org"
-          + "anizations/*/locations/*}/auditScopeReports:generate:\001*\022\214\003\n"
-          + "\023GenerateAuditReport\0228.google.cloud.auditmanager.v1.GenerateA"
-          + "uditReportRequest\032\035.google.longrunning.Operation\"\233\002\312A \n"
-          + "\013AuditReport\022\021OperationMetadata\332A/scope,gcs_uri,compliance_standa"
-          + "rd,report_format\202\323\344\223\002\277\001\"7/v1/{scope=fold"
-          + "ers/*/locations/*}/auditReports:generate:\001*Z=\"8/v1/{scope=projects/*/locations/*"
-          + "}/auditReports:generate:\001*ZB\"=/v1/{scope"
-          + "=organizations/*/locations/*}/auditReports:generate:\001*\022\262\002\n"
-          + "\020ListAuditReports\0225.google.cloud.auditmanager.v1.ListAuditRepo"
-          + "rtsRequest\0326.google.cloud.auditmanager.v"
-          + "1.ListAuditReportsResponse\"\256\001\332A\006parent\202\323"
-          + "\344\223\002\236\001\0225/v1/{parent=organizations/*/locat"
-          + "ions/*}/auditReportsZ1\022//v1/{parent=folders/*/locations/*}/auditReportsZ2\0220/v1/{"
-          + "parent=projects/*/locations/*}/auditReports\022\237\002\n"
-          + "\016GetAuditReport\0223.google.cloud.auditmanager.v1.GetAuditReportRequest\032).go"
-          + "ogle.cloud.auditmanager.v1.AuditReport\"\254"
-          + "\001\332A\004name\202\323\344\223\002\236\001\022//v1/{name=folders/*/loc"
-          + "ations/*/auditReports/*}Z2\0220/v1/{name=projects/*/locations/*/auditReports/*}Z7\0225"
-          + "/v1/{name=organizations/*/locations/*/auditReports/*}\022\360\002\n"
-          + "\033GetResourceEnrollmentStatus\022@.google.cloud.auditmanager.v1.Get"
-          + "ResourceEnrollmentStatusRequest\0326.google.cloud.auditmanager.v1.ResourceEnrollmen"
-          + "tStatus\"\326\001\332A\004name\202\323\344\223\002\310\001\022>/v1/{name=proj"
-          + "ects/*/locations/*/resourceEnrollmentStatuses/*}Z?\022=/v1/{name=folders/*/location"
-          + "s/*/resourceEnrollmentStatuses/*}ZE\022C/v1"
-          + "/{name=organizations/*/locations/*/resourceEnrollmentStatuses/*}\022\304\002\n"
-          + "\036ListResourceEnrollmentStatuses\022C.google.cloud.audit"
-          + "manager.v1.ListResourceEnrollmentStatusesRequest\032D.google.cloud.auditmanager.v1."
-          + "ListResourceEnrollmentStatusesResponse\"\226"
-          + "\001\332A\006parent\202\323\344\223\002\206\001\022C/v1/{parent=organizat"
-          + "ions/*/locations/*}/resourceEnrollmentSt"
-          + "atusesZ?\022=/v1/{parent=folders/*/locations/*}/resourceEnrollmentStatuses\022\276\002\n"
-          + "\014ListControls\0221.google.cloud.auditmanager.v1."
-          + "ListControlsRequest\0322.google.cloud.audit"
-          + "manager.v1.ListControlsResponse\"\306\001\332A\006par"
-          + "ent\202\323\344\223\002\266\001\022=/v1/{parent=organizations/*/"
-          + "locations/*/standards/*}/controlsZ9\0227/v1/{parent=folders/*/locations/*/standards"
-          + "/*}/controlsZ:\0228/v1/{parent=projects/*/l"
-          + "ocations/*/standards/*}/controls\032\202\001\312A\033au"
-          + "ditmanager.googleapis.com\322Aahttps://www.googleapis.com/auth/cloud-auditmanager,h"
-          + "ttps://www.googleapis.com/auth/cloud-platformB\222\006\n"
-          + " com.google.cloud.auditmanager.v1B\013V1mainProtoP\001ZDcloud.google.com/go/a"
-          + "uditmanager/apiv1/auditmanagerpb;auditma"
-          + "nagerpb\252\002\034Google.Cloud.AuditManager.V1\312\002"
-          + "\034Google\\Cloud\\AuditManager\\V1\352\002\037Google::Cloud::AuditManager::V1\352AS\n"
-          + "*auditmanager"
-          + ".googleapis.com/FolderLocation\022%folders/{folder}/locations/{location}\352Ae\n"
-          + "0auditmanager.googleapis.com/OrganizationLocati"
-          + "on\0221organizations/{organization}/locations/{location}\352A\350\001\n"
-          + "$auditmanager.googleapis.com/Standard\022<projects/{project}/loca"
-          + "tions/{location}/standards/{standard}\022:folders/{folder}/locations/{location}/sta"
-          + "ndards/{standard}\022Forganizations/{organi"
-          + "zation}/locations/{location}/standards/{standard}\352A\215\001\n"
-          + "1auditmanager.googleapis.com/EnrollmentStatusScope\022%folders/{folde"
-          + "r}/locations/{location}\0221organizations/{organization}/locations/{location}b\006prot"
-          + "o3"
+          + "\023AUDIT_NOT_SUPPORTED\020\005*\332\001\n\r"
+          + "ScheduleState\022\036\n"
+          + "\032SCHEDULE_STATE_UNSPECIFIED\020\000\022\031\n"
+          + "\025SCHEDULE_STATE_ACTIVE\020\001\022\031\n"
+          + "\025SCHEDULE_STATE_PAUSED\020\002\022\034\n"
+          + "\030SCHEDULE_STATE_COMPLETED\020\003\022\037\n"
+          + "\033SCHEDULE_STATE_FAILED_SETUP\020\004\022\030\n"
+          + "\024SCHEDULE_STATE_ERROR\020\005\022\032\n"
+          + "\026SCHEDULE_STATE_DELETED\020\0062\332!\n"
+          + "\014AuditManager\022\204\003\n"
+          + "\023CreateAuditSchedule\0228.google.cloud.auditmanage"
+          + "r.v1.CreateAuditScheduleRequest\032+.google"
+          + ".cloud.auditmanager.v1.AuditSchedule\"\205\002\332"
+          + "A\'parent,audit_schedule,audit_schedule_i"
+          + "d\202\323\344\223\002\324\001\"2/v1/{parent=projects/*/locatio"
+          + "ns/*}/auditSchedules:\016audit_scheduleZC\"1/v1/{parent=folders/*/locations/*}/audit"
+          + "Schedules:\016audit_scheduleZI\"7/v1/{parent"
+          + "=organizations/*/locations/*}/auditSchedules:\016audit_schedule\022\244\003\n"
+          + "\023UpdateAuditSchedule\0228.google.cloud.auditmanager.v1.Upda"
+          + "teAuditScheduleRequest\032+.google.cloud.au"
+          + "ditmanager.v1.AuditSchedule\"\245\002\332A\032audit_s"
+          + "chedule,update_mask\202\323\344\223\002\201\0022A/v1/{audit_s"
+          + "chedule.name=projects/*/locations/*/auditSchedules/*}:\016audit_scheduleZR2@/v1/{au"
+          + "dit_schedule.name=folders/*/locations/*/auditSchedules/*}:\016audit_scheduleZX2F/v1"
+          + "/{audit_schedule.name=organizations/*/lo"
+          + "cations/*/auditSchedules/*}:\016audit_schedule\022\253\002\n"
+          + "\020GetAuditSchedule\0225.google.cloud.auditmanager.v1.GetAuditScheduleRequest\032"
+          + "+.google.cloud.auditmanager.v1.AuditSche"
+          + "dule\"\262\001\332A\004name\202\323\344\223\002\244\001\0222/v1/{name=project"
+          + "s/*/locations/*/auditSchedules/*}Z3\0221/v1/{name=folders/*/locations/*/auditSchedu"
+          + "les/*}Z9\0227/v1/{name=organizations/*/locations/*/auditSchedules/*}\022\276\002\n"
+          + "\022ListAuditSchedules\0227.google.cloud.auditmanager.v1."
+          + "ListAuditSchedulesRequest\0328.google.cloud.auditmanager.v1.ListAuditSchedulesRespo"
+          + "nse\"\264\001\332A\006parent\202\323\344\223\002\244\001\0222/v1/{parent=proj"
+          + "ects/*/locations/*}/auditSchedulesZ3\0221/v1/{parent=folders/*/locations/*}/auditSc"
+          + "hedulesZ9\0227/v1/{parent=organizations/*/locations/*}/auditSchedules\022\270\002\n"
+          + "\016EnrollResource\0223.google.cloud.auditmanager.v1.Enr"
+          + "ollResourceRequest\032(.google.cloud.auditm"
+          + "anager.v1.Enrollment\"\306\001\332A\022scope,destinat"
+          + "ions\202\323\344\223\002\252\001\"0/v1/{scope=folders/*/locati"
+          + "ons/*}:enrollResource:\001*Z6\"1/v1/{scope=p"
+          + "rojects/*/locations/*}:enrollResource:\001*"
+          + "Z;\"6/v1/{scope=organizations/*/locations/*}:enrollResource:\001*\022\213\003\n"
+          + "\030GenerateAuditScopeReport\022=.google.cloud.auditmanager.v"
+          + "1.GenerateAuditScopeReportRequest\032..google.cloud.auditmanager.v1.AuditScopeRepor"
+          + "t\"\377\001\332A\'scope,compliance_standard,report_"
+          + "format\202\323\344\223\002\316\001\"</v1/{scope=folders/*/loca"
+          + "tions/*}/auditScopeReports:generate:\001*ZB\"=/v1/{scope=projects/*/locations/*}/aud"
+          + "itScopeReports:generate:\001*ZG\"B/v1/{scope"
+          + "=organizations/*/locations/*}/auditScopeReports:generate:\001*\022\214\003\n"
+          + "\023GenerateAuditReport\0228.google.cloud.auditmanager.v1.Gener"
+          + "ateAuditReportRequest\032\035.google.longrunning.Operation\"\233\002\312A \n"
+          + "\013AuditReport\022\021OperationMetadata\332A/scope,gcs_uri,compliance_st"
+          + "andard,report_format\202\323\344\223\002\277\001\"7/v1/{scope="
+          + "folders/*/locations/*}/auditReports:generate:\001*Z=\"8/v1/{scope=projects/*/locatio"
+          + "ns/*}/auditReports:generate:\001*ZB\"=/v1/{s"
+          + "cope=organizations/*/locations/*}/auditReports:generate:\001*\022\262\002\n"
+          + "\020ListAuditReports\0225.google.cloud.auditmanager.v1.ListAudit"
+          + "ReportsRequest\0326.google.cloud.auditmanag"
+          + "er.v1.ListAuditReportsResponse\"\256\001\332A\006pare"
+          + "nt\202\323\344\223\002\236\001\0225/v1/{parent=organizations/*/l"
+          + "ocations/*}/auditReportsZ1\022//v1/{parent=folders/*/locations/*}/auditReportsZ2\0220/"
+          + "v1/{parent=projects/*/locations/*}/auditReports\022\237\002\n"
+          + "\016GetAuditReport\0223.google.cloud.auditmanager.v1.GetAuditReportRequest\032"
+          + ").google.cloud.auditmanager.v1.AuditRepo"
+          + "rt\"\254\001\332A\004name\202\323\344\223\002\236\001\022//v1/{name=folders/*"
+          + "/locations/*/auditReports/*}Z2\0220/v1/{name=projects/*/locations/*/auditReports/*}"
+          + "Z7\0225/v1/{name=organizations/*/locations/*/auditReports/*}\022\360\002\n"
+          + "\033GetResourceEnrollmentStatus\022@.google.cloud.auditmanager.v1"
+          + ".GetResourceEnrollmentStatusRequest\0326.google.cloud.auditmanager.v1.ResourceEnrol"
+          + "lmentStatus\"\326\001\332A\004name\202\323\344\223\002\310\001\022>/v1/{name="
+          + "projects/*/locations/*/resourceEnrollmentStatuses/*}Z?\022=/v1/{name=folders/*/loca"
+          + "tions/*/resourceEnrollmentStatuses/*}ZE\022"
+          + "C/v1/{name=organizations/*/locations/*/resourceEnrollmentStatuses/*}\022\304\002\n"
+          + "\036ListResourceEnrollmentStatuses\022C.google.cloud.a"
+          + "uditmanager.v1.ListResourceEnrollmentStatusesRequest\032D.google.cloud.auditmanager"
+          + ".v1.ListResourceEnrollmentStatusesRespon"
+          + "se\"\226\001\332A\006parent\202\323\344\223\002\206\001\022C/v1/{parent=organ"
+          + "izations/*/locations/*}/resourceEnrollme"
+          + "ntStatusesZ?\022=/v1/{parent=folders/*/locations/*}/resourceEnrollmentStatuses\022\276\002\n"
+          + "\014ListControls\0221.google.cloud.auditmanager"
+          + ".v1.ListControlsRequest\0322.google.cloud.a"
+          + "uditmanager.v1.ListControlsResponse\"\306\001\332A"
+          + "\006parent\202\323\344\223\002\266\001\022=/v1/{parent=organization"
+          + "s/*/locations/*/standards/*}/controlsZ9\0227/v1/{parent=folders/*/locations/*/stand"
+          + "ards/*}/controlsZ:\0228/v1/{parent=projects"
+          + "/*/locations/*/standards/*}/controls\032\202\001\312"
+          + "A\033auditmanager.googleapis.com\322Aahttps://www.googleapis.com/auth/cloud-auditmanag"
+          + "er,https://www.googleapis.com/auth/cloud-platformB\222\006\n"
+          + " com.google.cloud.auditmanager.v1B\013V1mainProtoP\001ZDcloud.google.com/"
+          + "go/auditmanager/apiv1/auditmanagerpb;aud"
+          + "itmanagerpb\252\002\034Google.Cloud.AuditManager."
+          + "V1\312\002\034Google\\Cloud\\AuditManager\\V1\352\002\037Google::Cloud::AuditManager::V1\352AS\n"
+          + "*auditman"
+          + "ager.googleapis.com/FolderLocation\022%folders/{folder}/locations/{location}\352Ae\n"
+          + "0auditmanager.googleapis.com/OrganizationLo"
+          + "cation\0221organizations/{organization}/locations/{location}\352A\350\001\n"
+          + "$auditmanager.googleapis.com/Standard\022<projects/{project}/"
+          + "locations/{location}/standards/{standard}\022:folders/{folder}/locations/{location}"
+          + "/standards/{standard}\022Forganizations/{or"
+          + "ganization}/locations/{location}/standards/{standard}\352A\215\001\n"
+          + "1auditmanager.googleapis.com/EnrollmentStatusScope\022%folders/{f"
+          + "older}/locations/{location}\0221organizations/{organization}/locations/{location}b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -442,6 +571,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_auditmanager_v1_EnrollResourceRequest_descriptor =
@@ -450,7 +580,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_auditmanager_v1_EnrollResourceRequest_descriptor,
             new java.lang.String[] {
-              "Scope", "Destinations",
+              "Scope", "Destinations", "ValidateOnly",
             });
     internal_static_google_cloud_auditmanager_v1_EnrollResourceRequest_EligibleDestination_descriptor =
         internal_static_google_cloud_auditmanager_v1_EnrollResourceRequest_descriptor.getNestedType(
@@ -467,7 +597,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_auditmanager_v1_GenerateAuditScopeReportRequest_descriptor,
             new java.lang.String[] {
-              "Scope", "ComplianceStandard", "ReportFormat", "ComplianceFramework",
+              "Scope", "ComplianceStandard", "ReportFormat", "ComplianceFramework", "ValidateOnly",
             });
     internal_static_google_cloud_auditmanager_v1_GenerateAuditReportRequest_descriptor =
         getDescriptor().getMessageType(2);
@@ -670,12 +800,80 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Control", "ComplianceState", "ControlReportSummary",
             });
+    internal_static_google_cloud_auditmanager_v1_CreateAuditScheduleRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_cloud_auditmanager_v1_CreateAuditScheduleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_CreateAuditScheduleRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "AuditSchedule", "AuditScheduleId", "ValidateOnly",
+            });
+    internal_static_google_cloud_auditmanager_v1_UpdateAuditScheduleRequest_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_cloud_auditmanager_v1_UpdateAuditScheduleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_UpdateAuditScheduleRequest_descriptor,
+            new java.lang.String[] {
+              "AuditSchedule", "UpdateMask", "ValidateOnly",
+            });
+    internal_static_google_cloud_auditmanager_v1_GetAuditScheduleRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_cloud_auditmanager_v1_GetAuditScheduleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_GetAuditScheduleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesRequest_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesResponse_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_ListAuditSchedulesResponse_descriptor,
+            new java.lang.String[] {
+              "AuditSchedules", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_auditmanager_v1_AuditSchedule_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_auditmanager_v1_AuditSchedule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_AuditSchedule_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "GcsUri",
+              "ComplianceFramework",
+              "ReportFormat",
+              "ScheduleConfig",
+              "State",
+              "CreateTime",
+              "UpdateTime",
+              "NextRunTime",
+              "LastTriggerTime",
+              "ErrorMessage",
+            });
+    internal_static_google_cloud_auditmanager_v1_ScheduleConfig_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_auditmanager_v1_ScheduleConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_auditmanager_v1_ScheduleConfig_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime", "Frequency", "TimeZone",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

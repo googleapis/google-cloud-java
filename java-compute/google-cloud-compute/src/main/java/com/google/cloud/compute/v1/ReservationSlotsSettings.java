@@ -88,7 +88,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for getVersion:
+ * configure the RetrySettings for getHealth:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -119,6 +119,17 @@ public class ReservationSlotsSettings extends ClientSettings<ReservationSlotsSet
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse> getSettings() {
     return ((ReservationSlotsStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthReservationSlotRequest, Operation> getHealthSettings() {
+    return ((ReservationSlotsStubSettings) getStubSettings()).getHealthSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getHealth. */
+  public OperationCallSettings<GetHealthReservationSlotRequest, Operation, Operation>
+      getHealthOperationSettings() {
+    return ((ReservationSlotsStubSettings) getStubSettings()).getHealthOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getVersion. */
@@ -251,6 +262,18 @@ public class ReservationSlotsSettings extends ClientSettings<ReservationSlotsSet
     public UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<GetHealthReservationSlotRequest, Operation>
+        getHealthSettings() {
+      return getStubSettingsBuilder().getHealthSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public OperationCallSettings.Builder<GetHealthReservationSlotRequest, Operation, Operation>
+        getHealthOperationSettings() {
+      return getStubSettingsBuilder().getHealthOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getVersion. */

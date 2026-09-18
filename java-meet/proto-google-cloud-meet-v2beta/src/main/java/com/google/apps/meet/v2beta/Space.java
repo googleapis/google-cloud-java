@@ -56,6 +56,8 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     name_ = "";
     meetingUri_ = "";
     meetingCode_ = "";
+    phoneAccess_ = java.util.Collections.emptyList();
+    gatewaySipAccess_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -71,6 +73,2235 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.apps.meet.v2beta.Space.class,
             com.google.apps.meet.v2beta.Space.Builder.class);
+  }
+
+  public interface PhoneAccessOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.Space.PhoneAccess)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The phone number to dial for this meeting space in E.164 format.
+     * Full phone number with a leading '+' character.
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The phoneNumber.
+     */
+    java.lang.String getPhoneNumber();
+
+    /**
+     *
+     *
+     * <pre>
+     * The phone number to dial for this meeting space in E.164 format.
+     * Full phone number with a leading '+' character.
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    com.google.protobuf.ByteString getPhoneNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The PIN that users must enter after dialing the given number. The PIN
+     * consists of only decimal digits and the length may vary.
+     * </pre>
+     *
+     * <code>string pin = 2;</code>
+     *
+     * @return The pin.
+     */
+    java.lang.String getPin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The PIN that users must enter after dialing the given number. The PIN
+     * consists of only decimal digits and the length may vary.
+     * </pre>
+     *
+     * <code>string pin = 2;</code>
+     *
+     * @return The bytes for pin.
+     */
+    com.google.protobuf.ByteString getPinBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The CLDR/ISO 3166 region code for the country associated with this phone
+     * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+     * Sweden.
+     * </pre>
+     *
+     * <code>string region_code = 3;</code>
+     *
+     * @return The regionCode.
+     */
+    java.lang.String getRegionCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The CLDR/ISO 3166 region code for the country associated with this phone
+     * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+     * Sweden.
+     * </pre>
+     *
+     * <code>string region_code = 3;</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    com.google.protobuf.ByteString getRegionCodeBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP 47/LDML language code for the language associated with this phone
+     * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+     * for Latin American Spanish, "fr-CA" for Canadian French.
+     * </pre>
+     *
+     * <code>string language_code = 4;</code>
+     *
+     * @return The languageCode.
+     */
+    java.lang.String getLanguageCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP 47/LDML language code for the language associated with this phone
+     * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+     * for Latin American Spanish, "fr-CA" for Canadian French.
+     * </pre>
+     *
+     * <code>string language_code = 4;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    com.google.protobuf.ByteString getLanguageCodeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Phone access contains information required to dial into a conference using
+   * a regional phone number and a PIN that is specific to that phone number.
+   * </pre>
+   *
+   * Protobuf type {@code google.apps.meet.v2beta.Space.PhoneAccess}
+   */
+  public static final class PhoneAccess extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.Space.PhoneAccess)
+      PhoneAccessOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "PhoneAccess");
+    }
+
+    // Use PhoneAccess.newBuilder() to construct.
+    private PhoneAccess(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PhoneAccess() {
+      phoneNumber_ = "";
+      pin_ = "";
+      regionCode_ = "";
+      languageCode_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_Space_PhoneAccess_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.apps.meet.v2beta.Space.PhoneAccess.class,
+              com.google.apps.meet.v2beta.Space.PhoneAccess.Builder.class);
+    }
+
+    public static final int PHONE_NUMBER_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object phoneNumber_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The phone number to dial for this meeting space in E.164 format.
+     * Full phone number with a leading '+' character.
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The phoneNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneNumber_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The phone number to dial for this meeting space in E.164 format.
+     * Full phone number with a leading '+' character.
+     * </pre>
+     *
+     * <code>string phone_number = 1;</code>
+     *
+     * @return The bytes for phoneNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPhoneNumberBytes() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        phoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PIN_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pin_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The PIN that users must enter after dialing the given number. The PIN
+     * consists of only decimal digits and the length may vary.
+     * </pre>
+     *
+     * <code>string pin = 2;</code>
+     *
+     * @return The pin.
+     */
+    @java.lang.Override
+    public java.lang.String getPin() {
+      java.lang.Object ref = pin_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pin_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The PIN that users must enter after dialing the given number. The PIN
+     * consists of only decimal digits and the length may vary.
+     * </pre>
+     *
+     * <code>string pin = 2;</code>
+     *
+     * @return The bytes for pin.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPinBytes() {
+      java.lang.Object ref = pin_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REGION_CODE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object regionCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The CLDR/ISO 3166 region code for the country associated with this phone
+     * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+     * Sweden.
+     * </pre>
+     *
+     * <code>string region_code = 3;</code>
+     *
+     * @return The regionCode.
+     */
+    @java.lang.Override
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        regionCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The CLDR/ISO 3166 region code for the country associated with this phone
+     * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+     * Sweden.
+     * </pre>
+     *
+     * <code>string region_code = 3;</code>
+     *
+     * @return The bytes for regionCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        regionCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP 47/LDML language code for the language associated with this phone
+     * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+     * for Latin American Spanish, "fr-CA" for Canadian French.
+     * </pre>
+     *
+     * <code>string language_code = 4;</code>
+     *
+     * @return The languageCode.
+     */
+    @java.lang.Override
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The BCP 47/LDML language code for the language associated with this phone
+     * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+     * for Latin American Spanish, "fr-CA" for Canadian French.
+     * </pre>
+     *
+     * <code>string language_code = 4;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pin_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, pin_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(regionCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, regionCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, languageCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pin_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, pin_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(regionCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, regionCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(languageCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, languageCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.apps.meet.v2beta.Space.PhoneAccess)) {
+        return super.equals(obj);
+      }
+      com.google.apps.meet.v2beta.Space.PhoneAccess other =
+          (com.google.apps.meet.v2beta.Space.PhoneAccess) obj;
+
+      if (!getPhoneNumber().equals(other.getPhoneNumber())) return false;
+      if (!getPin().equals(other.getPin())) return false;
+      if (!getRegionCode().equals(other.getRegionCode())) return false;
+      if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PHONE_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumber().hashCode();
+      hash = (37 * hash) + PIN_FIELD_NUMBER;
+      hash = (53 * hash) + getPin().hashCode();
+      hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionCode().hashCode();
+      hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.apps.meet.v2beta.Space.PhoneAccess prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Phone access contains information required to dial into a conference using
+     * a regional phone number and a PIN that is specific to that phone number.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.Space.PhoneAccess}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.Space.PhoneAccess)
+        com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_PhoneAccess_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.Space.PhoneAccess.class,
+                com.google.apps.meet.v2beta.Space.PhoneAccess.Builder.class);
+      }
+
+      // Construct using com.google.apps.meet.v2beta.Space.PhoneAccess.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        phoneNumber_ = "";
+        pin_ = "";
+        regionCode_ = "";
+        languageCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_PhoneAccess_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.PhoneAccess getDefaultInstanceForType() {
+        return com.google.apps.meet.v2beta.Space.PhoneAccess.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.PhoneAccess build() {
+        com.google.apps.meet.v2beta.Space.PhoneAccess result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.PhoneAccess buildPartial() {
+        com.google.apps.meet.v2beta.Space.PhoneAccess result =
+            new com.google.apps.meet.v2beta.Space.PhoneAccess(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.apps.meet.v2beta.Space.PhoneAccess result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.phoneNumber_ = phoneNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pin_ = pin_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.regionCode_ = regionCode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.languageCode_ = languageCode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.apps.meet.v2beta.Space.PhoneAccess) {
+          return mergeFrom((com.google.apps.meet.v2beta.Space.PhoneAccess) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.apps.meet.v2beta.Space.PhoneAccess other) {
+        if (other == com.google.apps.meet.v2beta.Space.PhoneAccess.getDefaultInstance())
+          return this;
+        if (!other.getPhoneNumber().isEmpty()) {
+          phoneNumber_ = other.phoneNumber_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPin().isEmpty()) {
+          pin_ = other.pin_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getRegionCode().isEmpty()) {
+          regionCode_ = other.regionCode_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getLanguageCode().isEmpty()) {
+          languageCode_ = other.languageCode_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  phoneNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  pin_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  regionCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  languageCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object phoneNumber_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The phone number to dial for this meeting space in E.164 format.
+       * Full phone number with a leading '+' character.
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return The phoneNumber.
+       */
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The phone number to dial for this meeting space in E.164 format.
+       * Full phone number with a leading '+' character.
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return The bytes for phoneNumber.
+       */
+      public com.google.protobuf.ByteString getPhoneNumberBytes() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          phoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The phone number to dial for this meeting space in E.164 format.
+       * Full phone number with a leading '+' character.
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The phone number to dial for this meeting space in E.164 format.
+       * Full phone number with a leading '+' character.
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPhoneNumber() {
+        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The phone number to dial for this meeting space in E.164 format.
+       * Full phone number with a leading '+' character.
+       * </pre>
+       *
+       * <code>string phone_number = 1;</code>
+       *
+       * @param value The bytes for phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pin_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The PIN that users must enter after dialing the given number. The PIN
+       * consists of only decimal digits and the length may vary.
+       * </pre>
+       *
+       * <code>string pin = 2;</code>
+       *
+       * @return The pin.
+       */
+      public java.lang.String getPin() {
+        java.lang.Object ref = pin_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pin_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The PIN that users must enter after dialing the given number. The PIN
+       * consists of only decimal digits and the length may vary.
+       * </pre>
+       *
+       * <code>string pin = 2;</code>
+       *
+       * @return The bytes for pin.
+       */
+      public com.google.protobuf.ByteString getPinBytes() {
+        java.lang.Object ref = pin_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pin_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The PIN that users must enter after dialing the given number. The PIN
+       * consists of only decimal digits and the length may vary.
+       * </pre>
+       *
+       * <code>string pin = 2;</code>
+       *
+       * @param value The pin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPin(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pin_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The PIN that users must enter after dialing the given number. The PIN
+       * consists of only decimal digits and the length may vary.
+       * </pre>
+       *
+       * <code>string pin = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPin() {
+        pin_ = getDefaultInstance().getPin();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The PIN that users must enter after dialing the given number. The PIN
+       * consists of only decimal digits and the length may vary.
+       * </pre>
+       *
+       * <code>string pin = 2;</code>
+       *
+       * @param value The bytes for pin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pin_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object regionCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The CLDR/ISO 3166 region code for the country associated with this phone
+       * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+       * Sweden.
+       * </pre>
+       *
+       * <code>string region_code = 3;</code>
+       *
+       * @return The regionCode.
+       */
+      public java.lang.String getRegionCode() {
+        java.lang.Object ref = regionCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          regionCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The CLDR/ISO 3166 region code for the country associated with this phone
+       * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+       * Sweden.
+       * </pre>
+       *
+       * <code>string region_code = 3;</code>
+       *
+       * @return The bytes for regionCode.
+       */
+      public com.google.protobuf.ByteString getRegionCodeBytes() {
+        java.lang.Object ref = regionCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          regionCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The CLDR/ISO 3166 region code for the country associated with this phone
+       * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+       * Sweden.
+       * </pre>
+       *
+       * <code>string region_code = 3;</code>
+       *
+       * @param value The regionCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        regionCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The CLDR/ISO 3166 region code for the country associated with this phone
+       * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+       * Sweden.
+       * </pre>
+       *
+       * <code>string region_code = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegionCode() {
+        regionCode_ = getDefaultInstance().getRegionCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The CLDR/ISO 3166 region code for the country associated with this phone
+       * access. To be parsed by the i18n RegionCode utility. Example: "SE" for
+       * Sweden.
+       * </pre>
+       *
+       * <code>string region_code = 3;</code>
+       *
+       * @param value The bytes for regionCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        regionCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object languageCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The BCP 47/LDML language code for the language associated with this phone
+       * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+       * for Latin American Spanish, "fr-CA" for Canadian French.
+       * </pre>
+       *
+       * <code>string language_code = 4;</code>
+       *
+       * @return The languageCode.
+       */
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The BCP 47/LDML language code for the language associated with this phone
+       * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+       * for Latin American Spanish, "fr-CA" for Canadian French.
+       * </pre>
+       *
+       * <code>string language_code = 4;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The BCP 47/LDML language code for the language associated with this phone
+       * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+       * for Latin American Spanish, "fr-CA" for Canadian French.
+       * </pre>
+       *
+       * <code>string language_code = 4;</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The BCP 47/LDML language code for the language associated with this phone
+       * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+       * for Latin American Spanish, "fr-CA" for Canadian French.
+       * </pre>
+       *
+       * <code>string language_code = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguageCode() {
+        languageCode_ = getDefaultInstance().getLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The BCP 47/LDML language code for the language associated with this phone
+       * access. To be parsed by the i18n LanguageCode utility. Examples: "es-419"
+       * for Latin American Spanish, "fr-CA" for Canadian French.
+       * </pre>
+       *
+       * <code>string language_code = 4;</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        languageCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.Space.PhoneAccess)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.Space.PhoneAccess)
+    private static final com.google.apps.meet.v2beta.Space.PhoneAccess DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.apps.meet.v2beta.Space.PhoneAccess();
+    }
+
+    public static com.google.apps.meet.v2beta.Space.PhoneAccess getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PhoneAccess> PARSER =
+        new com.google.protobuf.AbstractParser<PhoneAccess>() {
+          @java.lang.Override
+          public PhoneAccess parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PhoneAccess> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PhoneAccess> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.Space.PhoneAccess getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface GatewaySipAccessOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.Space.GatewaySipAccess)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The Session Initiation Protocol (SIP) URI the conference can be reached
+     * through.
+     *
+     * The string is in one of these formats:
+     *
+     * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+     * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+     *
+     * where USER_ID is the 13-digit universal pin (with the future option to
+     * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+     * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * The Session Initiation Protocol (SIP) URI the conference can be reached
+     * through.
+     *
+     * The string is in one of these formats:
+     *
+     * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+     * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+     *
+     * where USER_ID is the 13-digit universal pin (with the future option to
+     * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+     * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The permanent numeric code for manual entry on specially configured
+     * devices.
+     * </pre>
+     *
+     * <code>string sip_access_code = 2;</code>
+     *
+     * @return The sipAccessCode.
+     */
+    java.lang.String getSipAccessCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The permanent numeric code for manual entry on specially configured
+     * devices.
+     * </pre>
+     *
+     * <code>string sip_access_code = 2;</code>
+     *
+     * @return The bytes for sipAccessCode.
+     */
+    com.google.protobuf.ByteString getSipAccessCodeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details how to join the conference through a SIP gateway.
+   * </pre>
+   *
+   * Protobuf type {@code google.apps.meet.v2beta.Space.GatewaySipAccess}
+   */
+  public static final class GatewaySipAccess extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.Space.GatewaySipAccess)
+      GatewaySipAccessOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "GatewaySipAccess");
+    }
+
+    // Use GatewaySipAccess.newBuilder() to construct.
+    private GatewaySipAccess(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GatewaySipAccess() {
+      uri_ = "";
+      sipAccessCode_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.apps.meet.v2beta.ResourceProto
+          .internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.apps.meet.v2beta.Space.GatewaySipAccess.class,
+              com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The Session Initiation Protocol (SIP) URI the conference can be reached
+     * through.
+     *
+     * The string is in one of these formats:
+     *
+     * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+     * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+     *
+     * where USER_ID is the 13-digit universal pin (with the future option to
+     * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+     * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Session Initiation Protocol (SIP) URI the conference can be reached
+     * through.
+     *
+     * The string is in one of these formats:
+     *
+     * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+     * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+     *
+     * where USER_ID is the 13-digit universal pin (with the future option to
+     * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+     * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIP_ACCESS_CODE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sipAccessCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The permanent numeric code for manual entry on specially configured
+     * devices.
+     * </pre>
+     *
+     * <code>string sip_access_code = 2;</code>
+     *
+     * @return The sipAccessCode.
+     */
+    @java.lang.Override
+    public java.lang.String getSipAccessCode() {
+      java.lang.Object ref = sipAccessCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sipAccessCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The permanent numeric code for manual entry on specially configured
+     * devices.
+     * </pre>
+     *
+     * <code>string sip_access_code = 2;</code>
+     *
+     * @return The bytes for sipAccessCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSipAccessCodeBytes() {
+      java.lang.Object ref = sipAccessCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sipAccessCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sipAccessCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, sipAccessCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sipAccessCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sipAccessCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.apps.meet.v2beta.Space.GatewaySipAccess)) {
+        return super.equals(obj);
+      }
+      com.google.apps.meet.v2beta.Space.GatewaySipAccess other =
+          (com.google.apps.meet.v2beta.Space.GatewaySipAccess) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getSipAccessCode().equals(other.getSipAccessCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + SIP_ACCESS_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getSipAccessCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.apps.meet.v2beta.Space.GatewaySipAccess prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details how to join the conference through a SIP gateway.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.Space.GatewaySipAccess}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.Space.GatewaySipAccess)
+        com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.Space.GatewaySipAccess.class,
+                com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder.class);
+      }
+
+      // Construct using com.google.apps.meet.v2beta.Space.GatewaySipAccess.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        sipAccessCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.apps.meet.v2beta.ResourceProto
+            .internal_static_google_apps_meet_v2beta_Space_GatewaySipAccess_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.GatewaySipAccess getDefaultInstanceForType() {
+        return com.google.apps.meet.v2beta.Space.GatewaySipAccess.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.GatewaySipAccess build() {
+        com.google.apps.meet.v2beta.Space.GatewaySipAccess result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.Space.GatewaySipAccess buildPartial() {
+        com.google.apps.meet.v2beta.Space.GatewaySipAccess result =
+            new com.google.apps.meet.v2beta.Space.GatewaySipAccess(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.apps.meet.v2beta.Space.GatewaySipAccess result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sipAccessCode_ = sipAccessCode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.apps.meet.v2beta.Space.GatewaySipAccess) {
+          return mergeFrom((com.google.apps.meet.v2beta.Space.GatewaySipAccess) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.apps.meet.v2beta.Space.GatewaySipAccess other) {
+        if (other == com.google.apps.meet.v2beta.Space.GatewaySipAccess.getDefaultInstance())
+          return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSipAccessCode().isEmpty()) {
+          sipAccessCode_ = other.sipAccessCode_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  sipAccessCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The Session Initiation Protocol (SIP) URI the conference can be reached
+       * through.
+       *
+       * The string is in one of these formats:
+       *
+       * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+       * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+       *
+       * where USER_ID is the 13-digit universal pin (with the future option to
+       * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+       * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Session Initiation Protocol (SIP) URI the conference can be reached
+       * through.
+       *
+       * The string is in one of these formats:
+       *
+       * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+       * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+       *
+       * where USER_ID is the 13-digit universal pin (with the future option to
+       * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+       * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Session Initiation Protocol (SIP) URI the conference can be reached
+       * through.
+       *
+       * The string is in one of these formats:
+       *
+       * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+       * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+       *
+       * where USER_ID is the 13-digit universal pin (with the future option to
+       * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+       * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Session Initiation Protocol (SIP) URI the conference can be reached
+       * through.
+       *
+       * The string is in one of these formats:
+       *
+       * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+       * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+       *
+       * where USER_ID is the 13-digit universal pin (with the future option to
+       * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+       * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Session Initiation Protocol (SIP) URI the conference can be reached
+       * through.
+       *
+       * The string is in one of these formats:
+       *
+       * * "sip:USER_ID&#64;GATEWAY_ADDRESS"
+       * * "sips:USER_ID&#64;GATEWAY_ADDRESS"
+       *
+       * where USER_ID is the 13-digit universal pin (with the future option to
+       * support using a Meet meeting code as well), and GATEWAY_ADDRESS is a
+       * valid address to be resolved using a DNS SRV lookup, or a dotted quad.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sipAccessCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The permanent numeric code for manual entry on specially configured
+       * devices.
+       * </pre>
+       *
+       * <code>string sip_access_code = 2;</code>
+       *
+       * @return The sipAccessCode.
+       */
+      public java.lang.String getSipAccessCode() {
+        java.lang.Object ref = sipAccessCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sipAccessCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The permanent numeric code for manual entry on specially configured
+       * devices.
+       * </pre>
+       *
+       * <code>string sip_access_code = 2;</code>
+       *
+       * @return The bytes for sipAccessCode.
+       */
+      public com.google.protobuf.ByteString getSipAccessCodeBytes() {
+        java.lang.Object ref = sipAccessCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sipAccessCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The permanent numeric code for manual entry on specially configured
+       * devices.
+       * </pre>
+       *
+       * <code>string sip_access_code = 2;</code>
+       *
+       * @param value The sipAccessCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSipAccessCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sipAccessCode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The permanent numeric code for manual entry on specially configured
+       * devices.
+       * </pre>
+       *
+       * <code>string sip_access_code = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSipAccessCode() {
+        sipAccessCode_ = getDefaultInstance().getSipAccessCode();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The permanent numeric code for manual entry on specially configured
+       * devices.
+       * </pre>
+       *
+       * <code>string sip_access_code = 2;</code>
+       *
+       * @param value The bytes for sipAccessCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSipAccessCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sipAccessCode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.Space.GatewaySipAccess)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.Space.GatewaySipAccess)
+    private static final com.google.apps.meet.v2beta.Space.GatewaySipAccess DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.apps.meet.v2beta.Space.GatewaySipAccess();
+    }
+
+    public static com.google.apps.meet.v2beta.Space.GatewaySipAccess getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GatewaySipAccess> PARSER =
+        new com.google.protobuf.AbstractParser<GatewaySipAccess>() {
+          @java.lang.Override
+          public GatewaySipAccess parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GatewaySipAccess> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GatewaySipAccess> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccess getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -91,7 +2322,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -123,7 +2354,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
    *
    * For more information, see [How Meet identifies a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -367,6 +2598,190 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         : activeConference_;
   }
 
+  public static final int PHONE_ACCESS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess> phoneAccess_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess> getPhoneAccessList() {
+    return phoneAccess_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>
+      getPhoneAccessOrBuilderList() {
+    return phoneAccess_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPhoneAccessCount() {
+    return phoneAccess_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.Space.PhoneAccess getPhoneAccess(int index) {
+    return phoneAccess_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. All regional phone access methods for this meeting space. Can
+   * be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder getPhoneAccessOrBuilder(int index) {
+    return phoneAccess_.get(index);
+  }
+
+  public static final int GATEWAY_SIP_ACCESS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess> gatewaySipAccess_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess>
+      getGatewaySipAccessList() {
+    return gatewaySipAccess_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>
+      getGatewaySipAccessOrBuilderList() {
+    return gatewaySipAccess_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getGatewaySipAccessCount() {
+    return gatewaySipAccess_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.Space.GatewaySipAccess getGatewaySipAccess(int index) {
+    return gatewaySipAccess_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The SIP-based access methods that can be used to join the
+   * conference. Can be empty.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder getGatewaySipAccessOrBuilder(
+      int index) {
+    return gatewaySipAccess_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -396,6 +2811,12 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getActiveConference());
     }
+    for (int i = 0; i < phoneAccess_.size(); i++) {
+      output.writeMessage(7, phoneAccess_.get(i));
+    }
+    for (int i = 0; i < gatewaySipAccess_.size(); i++) {
+      output.writeMessage(8, gatewaySipAccess_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -419,6 +2840,12 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getActiveConference());
+    }
+    for (int i = 0; i < phoneAccess_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, phoneAccess_.get(i));
+    }
+    for (int i = 0; i < gatewaySipAccess_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, gatewaySipAccess_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -446,6 +2873,8 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     if (hasActiveConference()) {
       if (!getActiveConference().equals(other.getActiveConference())) return false;
     }
+    if (!getPhoneAccessList().equals(other.getPhoneAccessList())) return false;
+    if (!getGatewaySipAccessList().equals(other.getGatewaySipAccessList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -470,6 +2899,14 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     if (hasActiveConference()) {
       hash = (37 * hash) + ACTIVE_CONFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + getActiveConference().hashCode();
+    }
+    if (getPhoneAccessCount() > 0) {
+      hash = (37 * hash) + PHONE_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneAccessList().hashCode();
+    }
+    if (getGatewaySipAccessCount() > 0) {
+      hash = (37 * hash) + GATEWAY_SIP_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewaySipAccessList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -614,6 +3051,8 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetConfigFieldBuilder();
         internalGetActiveConferenceFieldBuilder();
+        internalGetPhoneAccessFieldBuilder();
+        internalGetGatewaySipAccessFieldBuilder();
       }
     }
 
@@ -634,6 +3073,20 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         activeConferenceBuilder_.dispose();
         activeConferenceBuilder_ = null;
       }
+      if (phoneAccessBuilder_ == null) {
+        phoneAccess_ = java.util.Collections.emptyList();
+      } else {
+        phoneAccess_ = null;
+        phoneAccessBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      if (gatewaySipAccessBuilder_ == null) {
+        gatewaySipAccess_ = java.util.Collections.emptyList();
+      } else {
+        gatewaySipAccess_ = null;
+        gatewaySipAccessBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -660,11 +3113,33 @@ public final class Space extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.apps.meet.v2beta.Space buildPartial() {
       com.google.apps.meet.v2beta.Space result = new com.google.apps.meet.v2beta.Space(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.apps.meet.v2beta.Space result) {
+      if (phoneAccessBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          phoneAccess_ = java.util.Collections.unmodifiableList(phoneAccess_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.phoneAccess_ = phoneAccess_;
+      } else {
+        result.phoneAccess_ = phoneAccessBuilder_.build();
+      }
+      if (gatewaySipAccessBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          gatewaySipAccess_ = java.util.Collections.unmodifiableList(gatewaySipAccess_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.gatewaySipAccess_ = gatewaySipAccess_;
+      } else {
+        result.gatewaySipAccess_ = gatewaySipAccessBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.apps.meet.v2beta.Space result) {
@@ -724,6 +3199,60 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (other.hasActiveConference()) {
         mergeActiveConference(other.getActiveConference());
       }
+      if (phoneAccessBuilder_ == null) {
+        if (!other.phoneAccess_.isEmpty()) {
+          if (phoneAccess_.isEmpty()) {
+            phoneAccess_ = other.phoneAccess_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensurePhoneAccessIsMutable();
+            phoneAccess_.addAll(other.phoneAccess_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.phoneAccess_.isEmpty()) {
+          if (phoneAccessBuilder_.isEmpty()) {
+            phoneAccessBuilder_.dispose();
+            phoneAccessBuilder_ = null;
+            phoneAccess_ = other.phoneAccess_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            phoneAccessBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetPhoneAccessFieldBuilder()
+                    : null;
+          } else {
+            phoneAccessBuilder_.addAllMessages(other.phoneAccess_);
+          }
+        }
+      }
+      if (gatewaySipAccessBuilder_ == null) {
+        if (!other.gatewaySipAccess_.isEmpty()) {
+          if (gatewaySipAccess_.isEmpty()) {
+            gatewaySipAccess_ = other.gatewaySipAccess_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureGatewaySipAccessIsMutable();
+            gatewaySipAccess_.addAll(other.gatewaySipAccess_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.gatewaySipAccess_.isEmpty()) {
+          if (gatewaySipAccessBuilder_.isEmpty()) {
+            gatewaySipAccessBuilder_.dispose();
+            gatewaySipAccessBuilder_ = null;
+            gatewaySipAccess_ = other.gatewaySipAccess_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            gatewaySipAccessBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetGatewaySipAccessFieldBuilder()
+                    : null;
+          } else {
+            gatewaySipAccessBuilder_.addAllMessages(other.gatewaySipAccess_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -781,6 +3310,33 @@ public final class Space extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.apps.meet.v2beta.Space.PhoneAccess m =
+                    input.readMessage(
+                        com.google.apps.meet.v2beta.Space.PhoneAccess.parser(), extensionRegistry);
+                if (phoneAccessBuilder_ == null) {
+                  ensurePhoneAccessIsMutable();
+                  phoneAccess_.add(m);
+                } else {
+                  phoneAccessBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 66:
+              {
+                com.google.apps.meet.v2beta.Space.GatewaySipAccess m =
+                    input.readMessage(
+                        com.google.apps.meet.v2beta.Space.GatewaySipAccess.parser(),
+                        extensionRegistry);
+                if (gatewaySipAccessBuilder_ == null) {
+                  ensureGatewaySipAccessIsMutable();
+                  gatewaySipAccess_.add(m);
+                } else {
+                  gatewaySipAccessBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -814,7 +3370,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -845,7 +3401,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -876,7 +3432,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -906,7 +3462,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -932,7 +3488,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`.
      *
      * For more information, see [How Meet identifies a meeting
-     * space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+     * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1601,6 +4157,862 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         activeConference_ = null;
       }
       return activeConferenceBuilder_;
+    }
+
+    private java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess> phoneAccess_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePhoneAccessIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        phoneAccess_ =
+            new java.util.ArrayList<com.google.apps.meet.v2beta.Space.PhoneAccess>(phoneAccess_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.apps.meet.v2beta.Space.PhoneAccess,
+            com.google.apps.meet.v2beta.Space.PhoneAccess.Builder,
+            com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>
+        phoneAccessBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess> getPhoneAccessList() {
+      if (phoneAccessBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(phoneAccess_);
+      } else {
+        return phoneAccessBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getPhoneAccessCount() {
+      if (phoneAccessBuilder_ == null) {
+        return phoneAccess_.size();
+      } else {
+        return phoneAccessBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.PhoneAccess getPhoneAccess(int index) {
+      if (phoneAccessBuilder_ == null) {
+        return phoneAccess_.get(index);
+      } else {
+        return phoneAccessBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhoneAccess(int index, com.google.apps.meet.v2beta.Space.PhoneAccess value) {
+      if (phoneAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.set(index, value);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPhoneAccess(
+        int index, com.google.apps.meet.v2beta.Space.PhoneAccess.Builder builderForValue) {
+      if (phoneAccessBuilder_ == null) {
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        phoneAccessBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhoneAccess(com.google.apps.meet.v2beta.Space.PhoneAccess value) {
+      if (phoneAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.add(value);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhoneAccess(int index, com.google.apps.meet.v2beta.Space.PhoneAccess value) {
+      if (phoneAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.add(index, value);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhoneAccess(
+        com.google.apps.meet.v2beta.Space.PhoneAccess.Builder builderForValue) {
+      if (phoneAccessBuilder_ == null) {
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.add(builderForValue.build());
+        onChanged();
+      } else {
+        phoneAccessBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addPhoneAccess(
+        int index, com.google.apps.meet.v2beta.Space.PhoneAccess.Builder builderForValue) {
+      if (phoneAccessBuilder_ == null) {
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        phoneAccessBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllPhoneAccess(
+        java.lang.Iterable<? extends com.google.apps.meet.v2beta.Space.PhoneAccess> values) {
+      if (phoneAccessBuilder_ == null) {
+        ensurePhoneAccessIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phoneAccess_);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPhoneAccess() {
+      if (phoneAccessBuilder_ == null) {
+        phoneAccess_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removePhoneAccess(int index) {
+      if (phoneAccessBuilder_ == null) {
+        ensurePhoneAccessIsMutable();
+        phoneAccess_.remove(index);
+        onChanged();
+      } else {
+        phoneAccessBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.PhoneAccess.Builder getPhoneAccessBuilder(int index) {
+      return internalGetPhoneAccessFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder getPhoneAccessOrBuilder(
+        int index) {
+      if (phoneAccessBuilder_ == null) {
+        return phoneAccess_.get(index);
+      } else {
+        return phoneAccessBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>
+        getPhoneAccessOrBuilderList() {
+      if (phoneAccessBuilder_ != null) {
+        return phoneAccessBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(phoneAccess_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.PhoneAccess.Builder addPhoneAccessBuilder() {
+      return internalGetPhoneAccessFieldBuilder()
+          .addBuilder(com.google.apps.meet.v2beta.Space.PhoneAccess.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.PhoneAccess.Builder addPhoneAccessBuilder(int index) {
+      return internalGetPhoneAccessFieldBuilder()
+          .addBuilder(index, com.google.apps.meet.v2beta.Space.PhoneAccess.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. All regional phone access methods for this meeting space. Can
+     * be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.PhoneAccess phone_access = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.apps.meet.v2beta.Space.PhoneAccess.Builder>
+        getPhoneAccessBuilderList() {
+      return internalGetPhoneAccessFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.apps.meet.v2beta.Space.PhoneAccess,
+            com.google.apps.meet.v2beta.Space.PhoneAccess.Builder,
+            com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>
+        internalGetPhoneAccessFieldBuilder() {
+      if (phoneAccessBuilder_ == null) {
+        phoneAccessBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.apps.meet.v2beta.Space.PhoneAccess,
+                com.google.apps.meet.v2beta.Space.PhoneAccess.Builder,
+                com.google.apps.meet.v2beta.Space.PhoneAccessOrBuilder>(
+                phoneAccess_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        phoneAccess_ = null;
+      }
+      return phoneAccessBuilder_;
+    }
+
+    private java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess> gatewaySipAccess_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGatewaySipAccessIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        gatewaySipAccess_ =
+            new java.util.ArrayList<com.google.apps.meet.v2beta.Space.GatewaySipAccess>(
+                gatewaySipAccess_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.apps.meet.v2beta.Space.GatewaySipAccess,
+            com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder,
+            com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>
+        gatewaySipAccessBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess>
+        getGatewaySipAccessList() {
+      if (gatewaySipAccessBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(gatewaySipAccess_);
+      } else {
+        return gatewaySipAccessBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getGatewaySipAccessCount() {
+      if (gatewaySipAccessBuilder_ == null) {
+        return gatewaySipAccess_.size();
+      } else {
+        return gatewaySipAccessBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccess getGatewaySipAccess(int index) {
+      if (gatewaySipAccessBuilder_ == null) {
+        return gatewaySipAccess_.get(index);
+      } else {
+        return gatewaySipAccessBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGatewaySipAccess(
+        int index, com.google.apps.meet.v2beta.Space.GatewaySipAccess value) {
+      if (gatewaySipAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.set(index, value);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGatewaySipAccess(
+        int index, com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder builderForValue) {
+      if (gatewaySipAccessBuilder_ == null) {
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addGatewaySipAccess(com.google.apps.meet.v2beta.Space.GatewaySipAccess value) {
+      if (gatewaySipAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.add(value);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addGatewaySipAccess(
+        int index, com.google.apps.meet.v2beta.Space.GatewaySipAccess value) {
+      if (gatewaySipAccessBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.add(index, value);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addGatewaySipAccess(
+        com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder builderForValue) {
+      if (gatewaySipAccessBuilder_ == null) {
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.add(builderForValue.build());
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addGatewaySipAccess(
+        int index, com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder builderForValue) {
+      if (gatewaySipAccessBuilder_ == null) {
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllGatewaySipAccess(
+        java.lang.Iterable<? extends com.google.apps.meet.v2beta.Space.GatewaySipAccess> values) {
+      if (gatewaySipAccessBuilder_ == null) {
+        ensureGatewaySipAccessIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, gatewaySipAccess_);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGatewaySipAccess() {
+      if (gatewaySipAccessBuilder_ == null) {
+        gatewaySipAccess_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeGatewaySipAccess(int index) {
+      if (gatewaySipAccessBuilder_ == null) {
+        ensureGatewaySipAccessIsMutable();
+        gatewaySipAccess_.remove(index);
+        onChanged();
+      } else {
+        gatewaySipAccessBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder getGatewaySipAccessBuilder(
+        int index) {
+      return internalGetGatewaySipAccessFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder getGatewaySipAccessOrBuilder(
+        int index) {
+      if (gatewaySipAccessBuilder_ == null) {
+        return gatewaySipAccess_.get(index);
+      } else {
+        return gatewaySipAccessBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>
+        getGatewaySipAccessOrBuilderList() {
+      if (gatewaySipAccessBuilder_ != null) {
+        return gatewaySipAccessBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(gatewaySipAccess_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder addGatewaySipAccessBuilder() {
+      return internalGetGatewaySipAccessFieldBuilder()
+          .addBuilder(com.google.apps.meet.v2beta.Space.GatewaySipAccess.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder addGatewaySipAccessBuilder(
+        int index) {
+      return internalGetGatewaySipAccessFieldBuilder()
+          .addBuilder(
+              index, com.google.apps.meet.v2beta.Space.GatewaySipAccess.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The SIP-based access methods that can be used to join the
+     * conference. Can be empty.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.apps.meet.v2beta.Space.GatewaySipAccess gateway_sip_access = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder>
+        getGatewaySipAccessBuilderList() {
+      return internalGetGatewaySipAccessFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.apps.meet.v2beta.Space.GatewaySipAccess,
+            com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder,
+            com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>
+        internalGetGatewaySipAccessFieldBuilder() {
+      if (gatewaySipAccessBuilder_ == null) {
+        gatewaySipAccessBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.apps.meet.v2beta.Space.GatewaySipAccess,
+                com.google.apps.meet.v2beta.Space.GatewaySipAccess.Builder,
+                com.google.apps.meet.v2beta.Space.GatewaySipAccessOrBuilder>(
+                gatewaySipAccess_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        gatewaySipAccess_ = null;
+      }
+      return gatewaySipAccessBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.Space)

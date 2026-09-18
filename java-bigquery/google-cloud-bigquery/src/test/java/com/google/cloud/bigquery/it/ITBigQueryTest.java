@@ -5301,6 +5301,8 @@ class ITBigQueryTest {
     Job job = bigquery.create(JobInfo.of(queryConfig));
     JobStatistics.QueryStatistics statistics = job.getStatistics();
 
+    assertNotNull(statistics.getQueryParameters());
+    assertEquals(7, statistics.getQueryParameters().size());
     assertNotNull(statistics.getTotalBytesProcessed());
   }
 

@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -62,6 +63,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
@@ -353,6 +355,63 @@ public class BigQueryStatementTest {
     assertThat(resultSet).isNotNull();
     assertThat(resultSet).isInstanceOf(BigQueryArrowResultSet.class);
     assertThat(resultSet.isLast()).isFalse(); // as we have 10 rows
+
+    ArgumentCaptor<CreateReadSessionRequest> requestCaptor =
+        ArgumentCaptor.forClass(CreateReadSessionRequest.class);
+    verify(bigQueryStatementSpy).getReadSession(requestCaptor.capture());
+    assertThat(
+            requestCaptor
+                .getValue()
+                .getReadSession()
+                .getReadOptions()
+                .hasArrowSerializationOptions())
+        .isFalse();
+  }
+
+  @Test
+  public void testProcessArrowResultSetWithTimestampPicos() throws SQLException {
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryStatement stmt = new BigQueryStatement(bigQueryConnection);
+    BigQueryStatement bigQueryStatementSpy = Mockito.spy(stmt);
+    BigQueryReadClient bigQueryReadClient = Mockito.spy(mock(BigQueryReadClient.class));
+    Schema schema = Schema.of(fieldList);
+    ReadSession readSession = ReadSession.getDefaultInstance();
+    doReturn(bigQueryReadClient).when(bigQueryStatementSpy).getBigQueryReadClient();
+    doReturn(readSession)
+        .when(bigQueryStatementSpy)
+        .getReadSession(any(CreateReadSessionRequest.class));
+    Future<?> mockWorker = mock(Future.class);
+    doReturn(mockWorker)
+        .when(bigQueryStatementSpy)
+        .populateArrowBufferedQueue(
+            any(ReadSession.class), any(BlockingQueue.class), any(BigQueryReadClient.class));
+
+    doReturn(arrowSchema).when(bigQueryStatementSpy).getArrowSchema(any(ReadSession.class));
+
+    JobId jobId = JobId.of("123");
+    TableResult result = Mockito.mock(TableResult.class);
+    doReturn(schema).when(result).getSchema();
+    doReturn(10L).when(result).getTotalRows();
+    doReturn(TABLE_ID).when(bigQueryStatementSpy).getDestinationTable(any());
+    doReturn(jobId).when(result).getJobId();
+    Job job = mock(Job.class);
+    doReturn(mock(QueryStatistics.class)).when(job).getStatistics();
+    doReturn(job).when(bigquery).getJob(jobId);
+
+    ResultSet resultSet = bigQueryStatementSpy.processArrowResultSet(result, null);
+    assertThat(resultSet).isNotNull();
+
+    ArgumentCaptor<CreateReadSessionRequest> requestCaptor =
+        ArgumentCaptor.forClass(CreateReadSessionRequest.class);
+    verify(bigQueryStatementSpy).getReadSession(requestCaptor.capture());
+    assertThat(
+            requestCaptor
+                .getValue()
+                .getReadSession()
+                .getReadOptions()
+                .getArrowSerializationOptions()
+                .getPicosTimestampPrecision())
+        .isEqualTo(ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS);
   }
 
   @Test
@@ -442,6 +501,44 @@ public class BigQueryStatementTest {
     expectedLabels.put("extraKey1", "extraVal1");
 
     assertTrue(Maps.difference(expectedLabels, jobConfig.getLabels()).areEqual());
+  }
+
+  @Test
+  public void testExecute_legacySqlWithEnableTimestampPicos_throwsException() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+    doReturn(true).when(mockConn).isEnableTimestampPicos();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    BigQueryJdbcException ex =
+        assertThrows(BigQueryJdbcException.class, () -> statement.execute("select 1"));
+    assertTrue(ex.getMessage().contains("Picosecond data is incompatible with Legacy SQL"));
+    assertTrue(ex.getMessage().contains("please set QueryDialect to SQL"));
+  }
+
+  @Test
+  public void testGetJobConfig_standardSql_setsUseLegacySqlFalse() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("SQL").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertFalse(jobConfig.useLegacySql());
+  }
+
+  @Test
+  public void testGetJobConfig_legacySql_setsUseLegacySqlTrue() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertTrue(jobConfig.useLegacySql());
   }
 
   @Test
@@ -1158,5 +1255,12 @@ public class BigQueryStatementTest {
     assertNull(bigQueryStatement.getResultSet());
     verify(bigquery, Mockito.times(1)).getJob(eq(this.jobId));
     verify(bigquery, Mockito.never()).create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testEnableTimestampPicosPropagation() {
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    assertTrue(statement.isEnableTimestampPicos());
   }
 }
