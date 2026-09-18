@@ -19,19 +19,27 @@ package google.showcase.v1beta1;
 import "google/api/annotations.proto";
 import "google/api/client.proto";
 
-option go_package = "github.com/googleapis/gapic-showcase/server/genproto";
 option java_package = "com.google.showcase.v1beta1";
 option java_multiple_files = true;
-option ruby_package = "Google::Showcase::V1beta1";
+option java_outer_classname = "MediaProto";
 
 // A service showcasing universal resumable upload protocol support.
-service ResumableUploadService {
+service MediaService {
   option (google.api.default_host) = "localhost:7469";
 
   // A method with media_upload annotation enabled.
   rpc UploadMedia(UploadMediaRequest) returns (UploadMediaResponse) {
     option (google.api.http) = {
       post: "/v1beta1/files:upload"
+      body: "*"
+    };
+  }
+
+  // A method without resumable upload functionality.
+  rpc GetMediaMetadata(GetMediaMetadataRequest)
+      returns (GetMediaMetadataResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/files:read"
       body: "*"
     };
   }
@@ -44,4 +52,13 @@ message UploadMediaRequest {
 message UploadMediaResponse {
   string name = 1;
   int64 size = 2;
+}
+
+message GetMediaMetadataRequest {
+  string name = 1;
+}
+
+message GetMediaMetadataResponse {
+  string name = 1;
+  string metadata = 3;
 }
