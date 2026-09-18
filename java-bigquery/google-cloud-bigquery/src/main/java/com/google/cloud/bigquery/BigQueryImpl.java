@@ -3032,6 +3032,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   private TableResult queryFallbackArrow(
       JobId jobId, QueryJobConfiguration configuration, JobOption... options)
       throws InterruptedException {
+    // Submit the query job via jobs.insert and poll until completion.
     Job job = create(JobInfo.of(jobId, configuration), options);
     Job completedJob = job.waitFor();
 
@@ -3043,6 +3044,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(Collections.singletonList(completedJob.getStatus().getError()));
     }
 
+    // Resolve the query's destination table where the completed job wrote its results.
     TableId destinationTable = null;
     if (completedJob.getConfiguration() instanceof QueryJobConfiguration) {
       destinationTable =
@@ -3055,6 +3057,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(0, "Unable to resolve destination table for fallback query");
     }
 
+    // Extract query execution statistics from the completed job metadata.
     JobStatistics.QueryStatistics stats =
         completedJob.getStatistics() instanceof JobStatistics.QueryStatistics
             ? (JobStatistics.QueryStatistics) completedJob.getStatistics()
@@ -3067,6 +3070,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
     SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
 
+    // Create a Storage Read API ReadSession targeting the destination table in Arrow format.
     String destProject =
         destinationTable.getProject() != null
             ? destinationTable.getProject()
@@ -3094,6 +3098,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throw new BigQueryException(0, "Failed to create ReadSession for fallback query", e);
     }
 
+    // Deserialize the Arrow schema and convert to BigQuery Schema for TableResult metadata.
     org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
     byte[] arrowSchemaBytes = null;
     if (readSession.hasArrowSchema()) {
@@ -3112,6 +3117,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     String streamName =
         readSession.getStreamsCount() > 0 ? readSession.getStreams(0).getName() : null;
 
+    // If the destination table has no data streams (e.g. DDL/DML statements or empty results),
+    // return an empty TableResult populated with execution statistics.
     if (streamName == null) {
       return TableResult.newBuilder()
           .setSchema(schema)
@@ -3128,6 +3135,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .build();
     }
 
+    // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
     ArrowQueryPageFetcher pageFetcher =
         new ArrowQueryPageFetcher(
             completedJob.getJobId(),
@@ -3145,6 +3153,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         firstPage != null ? ImmutableList.copyOf(firstPage.getValues()) : ImmutableList.of();
     long rowsInPage = (long) firstPageRows.size();
 
+    // Determine total row count: prefer DML affected rows, fallback to estimated row count,
+    // or actual first page rows returned.
     long totalRows =
         numDmlAffectedRows != null
             ? numDmlAffectedRows
@@ -3152,6 +3162,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 ? readSession.getEstimatedRowCount()
                 : rowsInPage);
 
+    // Assemble and return the complete TableResult.
     return TableResult.newBuilder()
         .setSchema(schema)
         .setTotalRows(totalRows)
