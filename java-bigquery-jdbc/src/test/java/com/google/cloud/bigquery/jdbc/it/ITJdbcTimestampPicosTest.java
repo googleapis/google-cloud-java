@@ -154,7 +154,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
         + "EnableTimestampPicos="
         + (picosEnabled ? "1" : "0")
         + ";"
-        + (arrowEnabled ? ITBase.FORCE_READ_API_PROPERTIES : "EnableHighThroughputAPI=0;");
+        + (arrowEnabled ? ITBase.FORCE_READ_API_PROPERTIES +  "MaxResults=1;": "EnableHighThroughputAPI=0;");
   }
 
   @Test

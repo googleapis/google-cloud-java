@@ -35,7 +35,6 @@ import org.junit.platform.suite.api.Suite;
   ITDriverTest.class,
   ITJdbcTimestampPicosTest.class,
   ITPcntTest.class,
-  ITResultSetMetadataTest.class,
-  ITStatementTest.class
+  ITResultSetMetadataTest.class
 })
 public class ITDriverAgnosticTests {}

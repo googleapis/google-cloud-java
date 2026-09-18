@@ -497,19 +497,19 @@ public class ITStatementTest extends ITBase {
   public void testHighThroughputApiFallbackNoReadApi() throws IOException, SQLException {
     String saNoReadApi = requireEnvVar("SA_EMAIL_NO_READAPI");
 
-    String connection_uri =
+    String connectionUri =
         ITBase.connectionUrl
             + ";ServiceAccountImpersonationEmail="
             + saNoReadApi
-            + ";EnableHighThroughputAPi=1"
-            + ";MaxResults=300";
+            + ";MaxResults=10;"
+            + ITBase.FORCE_READ_API_PROPERTIES;
 
-    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+    try (Connection connection = DriverManager.getConnection(connectionUri)) {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
 
       Statement statement = connection.createStatement();
-      validateStatement(statement, 1000);
+      validateStatement(statement, 50, "BigQueryJsonResultSet");
     }
   }
 }
