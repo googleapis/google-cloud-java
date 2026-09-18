@@ -33,6 +33,7 @@ import io.grpc.Status;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -258,7 +259,11 @@ public class GcpFallbackChannel extends ManagedChannel {
     if (primaryDelegateChannel == null) {
       result = INIT_FAILURE_REASON;
     } else {
-      result = options.getPrimaryProbingFunction().apply(primaryDelegateChannel);
+      try {
+        result = options.getPrimaryProbingFunction().apply(primaryDelegateChannel);
+      } catch (Exception e) {
+        result = e.getClass().getSimpleName();
+      }
     }
     if ("".equals(result) && fallbackState.getGeneration() == probeStartGen) {
       if (options.isEnableRecovery() && fallbackChannel != null) {
@@ -293,7 +298,11 @@ public class GcpFallbackChannel extends ManagedChannel {
     if (fallbackDelegateChannel == null) {
       result = INIT_FAILURE_REASON;
     } else {
-      result = options.getFallbackProbingFunction().apply(fallbackDelegateChannel);
+      try {
+        result = options.getFallbackProbingFunction().apply(fallbackDelegateChannel);
+      } catch (Exception e) {
+        result = e.getClass().getSimpleName();
+      }
     }
     // Report metric based on result.
     openTelemetry.getModule().reportProbeResult(options.getFallbackChannelName(), result);
@@ -335,14 +344,22 @@ public class GcpFallbackChannel extends ManagedChannel {
 
   @Override
   public void notifyWhenStateChanged(io.grpc.ConnectivityState source, Runnable callback) {
-    if (isInFallbackMode()) {
-      if (fallbackDelegateChannel != null) {
-        fallbackDelegateChannel.notifyWhenStateChanged(source, callback);
-      }
-    } else {
-      if (primaryDelegateChannel != null) {
-        primaryDelegateChannel.notifyWhenStateChanged(source, callback);
-      }
+    ManagedChannel delegate = isInFallbackMode() ? fallbackDelegateChannel : primaryDelegateChannel;
+    if (delegate != null) {
+      AtomicBoolean fired = new AtomicBoolean(false);
+      Runnable once =
+          () -> {
+            if (fired.compareAndSet(false, true)) {
+              callback.run();
+            }
+          };
+      fallbackState.stateChangeCallbacks.add(once);
+      delegate.notifyWhenStateChanged(
+          source,
+          () -> {
+            fallbackState.stateChangeCallbacks.remove(once);
+            once.run();
+          });
     }
   }
 

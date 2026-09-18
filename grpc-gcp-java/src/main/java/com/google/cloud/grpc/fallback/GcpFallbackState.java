@@ -18,6 +18,8 @@ package com.google.cloud.grpc.fallback;
 
 import com.google.cloud.grpc.GcpThreadFactory;
 import com.google.common.annotations.VisibleForTesting;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -37,6 +39,7 @@ public class GcpFallbackState {
   private final AtomicLong generation = new AtomicLong(0);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
+  final Set<Runnable> stateChangeCallbacks = ConcurrentHashMap.newKeySet();
 
   private ScheduledExecutorService execService = null;
   private boolean ownsExecutor = false;
@@ -54,6 +57,17 @@ public class GcpFallbackState {
   GcpFallbackState(ScheduledExecutorService execService) {
     this.execService = execService;
     this.ownsExecutor = true;
+  }
+
+  private void triggerStateChangeCallbacks() {
+    stateChangeCallbacks.removeIf(
+        callback -> {
+          try {
+            callback.run();
+          } catch (Exception e) {
+          }
+          return true;
+        });
   }
 
   AtomicLong getPrimarySuccesses() {
@@ -83,8 +97,11 @@ public class GcpFallbackState {
 
   /** Bumps the generation counter and transitions the pool to fallback mode. */
   synchronized void triggerFallback() {
-    inFallbackMode.set(true);
+    boolean changed = inFallbackMode.compareAndSet(false, true);
     generation.incrementAndGet();
+    if (changed) {
+      triggerStateChangeCallbacks();
+    }
   }
 
   /**
@@ -101,6 +118,7 @@ public class GcpFallbackState {
       primaryFailures.set(0);
       primarySuccesses.set(0);
       generation.incrementAndGet();
+      triggerStateChangeCallbacks();
     }
     return generation.get();
   }
@@ -134,7 +152,16 @@ public class GcpFallbackState {
     if (isShutdown || this.execService == null || this.execService.isShutdown()) {
       return null;
     }
-    return this.execService.scheduleAtFixedRate(command, initialDelay, period, unit);
+    return this.execService.scheduleAtFixedRate(
+        () -> {
+          try {
+            command.run();
+          } catch (Exception e) {
+          }
+        },
+        initialDelay,
+        period,
+        unit);
   }
 
   /**
@@ -165,7 +192,7 @@ public class GcpFallbackState {
 
       try {
         scheduledEvaluationFuture =
-            executor.scheduleAtFixedRate(
+            scheduleTask(
                 () -> checkErrorRates(options, openTelemetry),
                 options.getPeriod().toMillis(),
                 options.getPeriod().toMillis(),
@@ -242,6 +269,7 @@ public class GcpFallbackState {
   /** Shuts down the state, cancelling evaluation and shutting down internal executor if owned. */
   public synchronized void shutdown() {
     isShutdown = true;
+    stateChangeCallbacks.clear();
     stopPeriodicEvaluation();
     if (ownsExecutor && execService != null && !execService.isShutdown()) {
       execService.shutdown();
@@ -254,6 +282,7 @@ public class GcpFallbackState {
    */
   public synchronized void shutdownNow() {
     isShutdown = true;
+    stateChangeCallbacks.clear();
     stopPeriodicEvaluation();
     if (ownsExecutor && execService != null && !execService.isShutdown()) {
       execService.shutdownNow();
