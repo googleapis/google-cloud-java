@@ -68,6 +68,12 @@ class ServiceStubSettingsClassComposerTest {
             GrpcTestProtoLoader.instance().parseBigqueryService(),
             "bigquery",
             "v2",
+            0),
+        Arguments.of(
+            "ResumableUploadServiceStubSettings",
+            GrpcTestProtoLoader.instance().parseShowcaseResumableUpload(),
+            "localhost:7469",
+            "v1beta1",
             0));
   }
 
