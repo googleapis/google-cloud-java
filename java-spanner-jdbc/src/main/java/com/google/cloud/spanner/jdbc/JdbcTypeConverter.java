@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.Code;
 import com.google.cloud.spanner.Value;
@@ -33,9 +34,12 @@ import java.nio.charset.StandardCharsets;
 import java.sql.Array;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.time.DateTimeException;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -231,6 +235,51 @@ class JdbcTypeConverter {
                   null, AbstractJdbcWrapper.checkedCastToInt((Long) value)));
         }
       }
+      if (targetType.equals(Interval.class)) {
+        if (type.getCode() == Code.INTERVAL) {
+          return value;
+        }
+        if (type.getCode() == Code.STRING) {
+          try {
+            return Interval.parseFromString((String) value);
+          } catch (Exception e) {
+            throw JdbcSqlExceptionFactory.of(
+                "The value does not contain a valid INTERVAL string: " + value,
+                com.google.rpc.Code.INVALID_ARGUMENT,
+                e);
+          }
+        }
+      }
+      if (targetType.equals(Duration.class)) {
+        if (type.getCode() == Code.INTERVAL) {
+          return toDuration((Interval) value);
+        }
+        if (type.getCode() == Code.STRING) {
+          try {
+            return toDuration(Interval.parseFromString((String) value));
+          } catch (Exception e) {
+            throw JdbcSqlExceptionFactory.of(
+                "The value does not contain a valid INTERVAL/Duration string: " + value,
+                com.google.rpc.Code.INVALID_ARGUMENT,
+                e);
+          }
+        }
+      }
+      if (targetType.equals(Period.class)) {
+        if (type.getCode() == Code.INTERVAL) {
+          return toPeriod((Interval) value);
+        }
+        if (type.getCode() == Code.STRING) {
+          try {
+            return toPeriod(Interval.parseFromString((String) value));
+          } catch (Exception e) {
+            throw JdbcSqlExceptionFactory.of(
+                "The value does not contain a valid INTERVAL/Period string: " + value,
+                com.google.rpc.Code.INVALID_ARGUMENT,
+                e);
+          }
+        }
+      }
       if (targetType.equals(java.sql.Array.class)) {
         if (type.getCode() == Code.ARRAY) return value;
       }
@@ -309,7 +358,7 @@ class JdbcTypeConverter {
     return null;
   }
 
-  private static Value convertToSpannerValue(Object value, Type type) throws SQLException {
+  static Value convertToSpannerValue(Object value, Type type) throws SQLException {
     switch (type.getCode()) {
       case ARRAY:
         switch (type.getArrayElementType().getCode()) {
@@ -353,6 +402,9 @@ class JdbcTypeConverter {
           case PG_JSONB:
             return Value.pgJsonbArray(
                 Arrays.asList((String[]) ((java.sql.Array) value).getArray()));
+          case INTERVAL:
+            return Value.intervalArray(
+                Arrays.asList((Interval[]) ((java.sql.Array) value).getArray()));
           case STRUCT:
           default:
             throw JdbcSqlExceptionFactory.of(
@@ -388,6 +440,8 @@ class JdbcTypeConverter {
         return Value.protoMessage(ByteArray.copyFrom((byte[]) value), type.getProtoTypeFqn());
       case ENUM:
         return Value.protoEnum((Long) value, type.getProtoTypeFqn());
+      case INTERVAL:
+        return Value.interval((Interval) value);
       case STRUCT:
       default:
         throw JdbcSqlExceptionFactory.of(
@@ -436,6 +490,9 @@ class JdbcTypeConverter {
     JdbcPreconditions.checkArgument(
         type.getCode() != Code.ENUM || value.getClass().equals(Long.class),
         "input type is enum, but input value is not an instance of Long");
+    JdbcPreconditions.checkArgument(
+        type.getCode() != Code.INTERVAL || value.getClass().equals(Interval.class),
+        "input type is interval, but input value is not an instance of Interval");
   }
 
   @SuppressWarnings("deprecation")
@@ -629,5 +686,123 @@ class JdbcTypeConverter {
       res.add(ba == null ? null : ba.toByteArray());
     }
     return res;
+  }
+
+  /**
+   * Converts a {@link Interval} to a {@link java.time.Duration}.
+   *
+   * <p>Consistent with pgjdbc: only intervals without year or month components can be converted to
+   * {@link Duration}, because months have a variable length depending on the specific calendar
+   * date.
+   */
+  static Duration toDuration(Interval interval) throws SQLException {
+    if (interval == null) {
+      return null;
+    }
+    if (interval.getMonths() != 0) {
+      throw JdbcSqlExceptionFactory.of(
+          "Cannot convert an Interval with year or month components to java.time.Duration. "
+              + "Months have variable duration depending on the specific calendar date.",
+          com.google.rpc.Code.INVALID_ARGUMENT);
+    }
+    long days = interval.getDays();
+    BigInteger nanos = interval.getNanos();
+    BigInteger totalNanos =
+        nanos.add(BigInteger.valueOf(days).multiply(BigInteger.valueOf(86_400L * 1_000_000_000L)));
+    BigInteger[] divRem = totalNanos.divideAndRemainder(BigInteger.valueOf(1_000_000_000L));
+    long seconds;
+    int nanoAdjustment;
+    try {
+      seconds = divRem[0].longValueExact();
+      nanoAdjustment = divRem[1].intValueExact();
+    } catch (ArithmeticException e) {
+      throw JdbcSqlExceptionFactory.of(
+          "Interval value is too large to be represented as a Duration: " + interval,
+          com.google.rpc.Code.INVALID_ARGUMENT,
+          e);
+    }
+    if (nanoAdjustment < 0) {
+      try {
+        seconds = Math.subtractExact(seconds, 1);
+      } catch (ArithmeticException e) {
+        throw JdbcSqlExceptionFactory.of(
+            "Interval value is too large to be represented as a Duration: " + interval,
+            com.google.rpc.Code.INVALID_ARGUMENT,
+            e);
+      }
+      nanoAdjustment += 1_000_000_000;
+    }
+    try {
+      return Duration.ofSeconds(seconds, nanoAdjustment);
+    } catch (ArithmeticException | DateTimeException e) {
+      throw JdbcSqlExceptionFactory.of(
+          "Interval value is too large to be represented as a Duration: " + interval,
+          com.google.rpc.Code.INVALID_ARGUMENT,
+          e);
+    }
+  }
+
+  /**
+   * Converts a {@link Interval} to a {@link java.time.Period}.
+   *
+   * <p>Consistent with pgjdbc: only intervals without time components can be converted to {@link
+   * Period}, because {@link Period} only supports date components (years, months, days).
+   */
+  static Period toPeriod(Interval interval) throws SQLException {
+    if (interval == null) {
+      return null;
+    }
+    if (interval.getNanos().signum() != 0) {
+      throw JdbcSqlExceptionFactory.of(
+          "Cannot convert an Interval with time components (hours, minutes, seconds, nanos) to java.time.Period. "
+              + "java.time.Period only supports date components (years, months, days).",
+          com.google.rpc.Code.INVALID_ARGUMENT);
+    }
+    int totalMonths = interval.getMonths();
+    int years = totalMonths / 12;
+    int months = totalMonths % 12;
+    long days = interval.getDays();
+    try {
+      return Period.of(years, months, Math.toIntExact(days));
+    } catch (ArithmeticException e) {
+      throw JdbcSqlExceptionFactory.of(
+          "Interval days value is too large to be represented as a Period: " + interval,
+          com.google.rpc.Code.INVALID_ARGUMENT,
+          e);
+    }
+  }
+
+  /**
+   * Converts a {@link java.time.Duration} to a Spanner {@link Interval}.
+   *
+   * <p>Consistent with pgjdbc: maps seconds and nanos to an Interval with 0 months and 0 days.
+   */
+  static Interval toInterval(Duration duration) {
+    if (duration == null) {
+      return null;
+    }
+    BigInteger totalNanos =
+        BigInteger.valueOf(duration.getSeconds())
+            .multiply(BigInteger.valueOf(1_000_000_000L))
+            .add(BigInteger.valueOf(duration.getNano()));
+    return Interval.fromMonthsDaysNanos(0, 0, totalNanos);
+  }
+
+  /**
+   * Converts a {@link java.time.Period} to a Spanner {@link Interval}.
+   *
+   * <p>Consistent with pgjdbc: maps years, months, and days to an Interval with 0 nanos.
+   */
+  static Interval toInterval(Period period) throws SQLException {
+    if (period == null) {
+      return null;
+    }
+    long totalMonths = period.toTotalMonths();
+    if (totalMonths < Integer.MIN_VALUE || totalMonths > Integer.MAX_VALUE) {
+      throw JdbcSqlExceptionFactory.of(
+          "Period total months " + totalMonths + " overflows Integer range",
+          com.google.rpc.Code.INVALID_ARGUMENT);
+    }
+    return Interval.fromMonthsDaysNanos((int) totalMonths, period.getDays(), BigInteger.ZERO);
   }
 }
