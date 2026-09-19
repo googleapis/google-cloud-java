@@ -645,20 +645,8 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
   @Test
   void createScoped_preservesImpersonatedServiceAccountEmail() {
-    PluggableAuthCredentials outerCredentials =
-        (PluggableAuthCredentials)
-            PluggableAuthCredentials.newBuilder(CREDENTIAL)
-                .setServiceAccountImpersonationUrl(
-                    "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
-                        + IMPERSONATED_EMAIL
-                        + ":generateAccessToken")
-                .setAccessToken(new AccessToken("cached-outer-token", null))
-                .build();
-    assertNull(
-        outerCredentials.buildImpersonatedCredentials().getSourceCredentials().getAccessToken());
-
     PluggableAuthCredentials sourceCredentials =
-        PluggableAuthCredentials.newBuilder(outerCredentials)
+        PluggableAuthCredentials.newBuilder(CREDENTIAL)
             .setServiceAccountImpersonationUrl(null)
             .setImpersonatedServiceAccountEmail(IMPERSONATED_EMAIL)
             .build();
@@ -668,19 +656,6 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     assertNull(scopedCredentials.getServiceAccountImpersonationUrl());
     assertEquals(IMPERSONATED_EMAIL, scopedCredentials.getServiceAccountEmail());
-
-    // Verify that setting impersonatedServiceAccountEmail also clears
-    // serviceAccountImpersonationUrl regardless of setter call order.
-    PluggableAuthCredentials reorderedCredentials =
-        PluggableAuthCredentials.newBuilder(outerCredentials)
-            .setImpersonatedServiceAccountEmail(IMPERSONATED_EMAIL)
-            .build();
-    assertNull(reorderedCredentials.getServiceAccountImpersonationUrl());
-    assertEquals(IMPERSONATED_EMAIL, reorderedCredentials.getServiceAccountEmail());
-
-    PluggableAuthCredentials clearedCredentials =
-        scopedCredentials.toBuilder().setServiceAccountImpersonationUrl(null).build();
-    assertNull(clearedCredentials.getServiceAccountEmail());
   }
 
   @Test

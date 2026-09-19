@@ -124,12 +124,9 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    // Handle service account impersonation if necessary.
-    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
-    if (impersonated != null) {
-      return impersonated.refreshAccessToken();
+    if (getImpersonatedCredentials() != null) {
+      return this.impersonatedCredentials.refreshAccessToken();
     }
-
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
@@ -159,9 +156,8 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_TOKEN_TYPE", getSubjectTokenType());
     // Always set to 0 for Workload Identity Federation.
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE", "0");
-    String serviceAccountEmail = getServiceAccountEmail();
-    if (serviceAccountEmail != null) {
-      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", serviceAccountEmail);
+    if (getServiceAccountEmail() != null) {
+      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", getServiceAccountEmail());
     }
     if (outputFilePath != null && !outputFilePath.isEmpty()) {
       envMap.put("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE", outputFilePath);
@@ -198,12 +194,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   @Override
   public @Nullable String getServiceAccountEmail() {
     String email = super.getServiceAccountEmail();
-    if (email != null) {
-      return email;
-    }
-    // Fall back to impersonatedServiceAccountEmail when serviceAccountImpersonationUrl is cleared
-    // on the inner sourceCredentials copy.
-    return impersonatedServiceAccountEmail;
+    return email != null ? email : impersonatedServiceAccountEmail;
   }
 
   /** Clones the PluggableAuthCredentials with the specified scopes. */
@@ -300,21 +291,12 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
-      this.impersonatedServiceAccountEmail = null;
       return this;
     }
 
-    /**
-     * Preserves the impersonated service account email for {@code
-     * GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL} on the inner source credentials after clearing
-     * {@code serviceAccountImpersonationUrl}.
-     */
     @CanIgnoreReturnValue
     Builder setImpersonatedServiceAccountEmail(@Nullable String impersonatedServiceAccountEmail) {
       this.impersonatedServiceAccountEmail = impersonatedServiceAccountEmail;
-      if (impersonatedServiceAccountEmail != null) {
-        super.setServiceAccountImpersonationUrl(null);
-      }
       return this;
     }
 
