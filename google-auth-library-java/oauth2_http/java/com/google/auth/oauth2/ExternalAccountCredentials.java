@@ -292,16 +292,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       sourceCredentials =
           AwsCredentials.newBuilder((AwsCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setQuotaProjectId(null)
               .build();
     } else if (this instanceof PluggableAuthCredentials) {
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setQuotaProjectId(null)
               .build();
     } else {
       sourceCredentials =
           IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setQuotaProjectId(null)
               .build();
     }
 
@@ -314,6 +317,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         .setScopes(new ArrayList<>(scopes))
         .setLifetime(this.serviceAccountImpersonationOptions.lifetime)
         .setIamEndpointOverride(serviceAccountImpersonationUrl)
+        .setQuotaProjectId(this.quotaProjectId)
         .build();
   }
 
