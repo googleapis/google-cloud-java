@@ -154,6 +154,7 @@ class RewindableStreamBufferTest {
     assertThat(exception.getMessage()).contains("4");
     assertThat(exception.getMessage()).contains("8");
     assertThat(exception.getMessage()).contains(UPLOAD_URL);
+    assertThat(exception.getMessage()).contains("seekable stream");
 
     // Must be classified as FATAL by ResumableUploadErrorClassifier
     ResumableUploadErrorClassifier.Category category =
