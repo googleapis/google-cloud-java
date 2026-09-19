@@ -1017,6 +1017,60 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void serialize_urlSourced_refreshesSuccessfully() throws Exception {
+    StatefulMockExternalAccountCredentialsTransportFactory.transport =
+        new MockExternalAccountCredentialsTransport();
+    StatefulMockExternalAccountCredentialsTransportFactory transportFactory =
+        new StatefulMockExternalAccountCredentialsTransportFactory();
+
+    IdentityPoolCredentials testCredentials =
+        IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
+            .setHttpTransportFactory(transportFactory)
+            .setCredentialSource(
+                buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
+            .build();
+
+    // Verify deserialization recreates the transient HTTP transport factory inside
+    // UrlIdentityPoolSubjectTokenSupplier so subject token retrieval and token refresh succeed.
+    IdentityPoolCredentials deserializedCredentials = serializeAndDeserialize(testCredentials);
+    assertEquals(testCredentials, deserializedCredentials);
+
+    // In-memory mock transport serves both the metadata server subject token and the STS exchange
+    // response without network calls.
+    AccessToken accessToken = deserializedCredentials.refreshAccessToken();
+    assertEquals("accessToken", accessToken.getTokenValue());
+  }
+
+  @Test
+  void serialize_urlIdentityPoolSubjectTokenSupplier_success() throws Exception {
+    StatefulMockExternalAccountCredentialsTransportFactory.transport =
+        new MockExternalAccountCredentialsTransport();
+    StatefulMockExternalAccountCredentialsTransportFactory transportFactory =
+        new StatefulMockExternalAccountCredentialsTransportFactory();
+
+    IdentityPoolCredentialSource credentialSource =
+        buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl());
+    UrlIdentityPoolSubjectTokenSupplier supplier =
+        new UrlIdentityPoolSubjectTokenSupplier(credentialSource, transportFactory);
+
+    // Verify deserialization recreates the transient HTTP transport factory so that subject token
+    // retrieval succeeds without throwing a NullPointerException.
+    UrlIdentityPoolSubjectTokenSupplier deserializedSupplier = serializeAndDeserialize(supplier);
+    assertNotNull(deserializedSupplier.getTransportFactory());
+
+    // In-memory mock transport returns the subject token without network calls.
+    ExternalAccountSupplierContext context =
+        ExternalAccountSupplierContext.newBuilder()
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .build();
+    String subjectToken = deserializedSupplier.getSubjectToken(context);
+    assertEquals(
+        StatefulMockExternalAccountCredentialsTransportFactory.transport.getSubjectToken(),
+        subjectToken);
+  }
+
+  @Test
   void build_withCertificateSource_succeeds() throws Exception {
     // Set up credential source for certificate type.
     Map<String, Object> certificateMap = new HashMap<>();
@@ -1269,6 +1323,20 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     MockExternalAccountCredentialsTransport transport =
         new MockExternalAccountCredentialsTransport();
+
+    @Override
+    public HttpTransport create() {
+      return transport;
+    }
+  }
+
+  public static class StatefulMockExternalAccountCredentialsTransportFactory
+      implements HttpTransportFactory {
+
+    private static MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+
+    public StatefulMockExternalAccountCredentialsTransportFactory() {}
 
     @Override
     public HttpTransport create() {
