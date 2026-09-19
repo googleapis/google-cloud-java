@@ -25,8 +25,10 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Test;
 
 public class ClearcutTransportTest {
@@ -207,5 +209,45 @@ public class ClearcutTransportTest {
     assertFalse(result.isSuccess());
     assertEquals(1, requestCount.get());
     assertEquals(10, result.getNextRequestWaitMillis());
+  }
+
+  @Test
+  public void testRecordError_reachesPayload() throws Exception {
+    AtomicReference<byte[]> captured = new AtomicReference<>();
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                getStreamingContent().writeTo(out);
+                captured.set(out.toByteArray());
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+    TelemetryConfiguration config =
+        TelemetryConfiguration.newBuilder()
+            .setEnabled(true)
+            .setDriverEnvironment(
+                DriverEnvironment.newBuilder().setDriverName("SimulatedDriver").build())
+            .build();
+    TelemetryManager.init(config, new ClearcutTransport(mockTransport, config));
+    TelemetryManager.recordError(404, 42000, "executeQuery");
+    TelemetryManager.getInstance().getBatcher().flush();
+    LogRequest request = LogRequest.parseFrom(captured.get());
+    TelemetryPayload payload =
+        TelemetryPayload.parseFrom(request.getLogEvents(0).getSourceExtension());
+    assertEquals(1, payload.getErrorsCount());
+    ErrorMetric error = payload.getErrors(0);
+    assertEquals(404, error.getErrorCode());
+    assertEquals(42000, error.getErrorXdbcCode());
+    assertEquals("executeQuery", error.getMethodName());
+    assertEquals(1, error.getCount());
   }
 }

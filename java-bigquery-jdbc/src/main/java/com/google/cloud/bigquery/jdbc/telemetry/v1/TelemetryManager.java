@@ -81,7 +81,10 @@ public final class TelemetryManager implements AutoCloseable {
         return localRef;
       }
       TelemetryConfiguration config =
-          TelemetryConfiguration.builder().resolveProperties(properties).build();
+          TelemetryConfiguration.builder()
+              .resolveProperties(properties)
+              .setDriverEnvironment(DriverEnvironmentDetector.build())
+              .build();
       ClearcutTransport transport = new ClearcutTransport(config);
       TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
       localRef = new TelemetryManager(batcher);
@@ -304,6 +307,32 @@ public final class TelemetryManager implements AutoCloseable {
       t = t.getCause();
     }
     return 1000;
+  }
+
+  /**
+   * Extracts a numeric form of the SQLState from the throwable chain. SQLStates are five-character
+   * strings; the digits-only ones (for example {@code 42000}) carry directly, while states
+   * containing letters (for example {@code HY000}) have no numeric form and yield {@code 0}.
+   *
+   * <p>Returns {@code 0} when no SQLState is present or none is numeric, matching the proto default
+   * for {@code error_xdbc_code} so that unset and unmappable are indistinguishable downstream.
+   */
+  public static int extractXdbcCode(Throwable t) {
+    int depth = 0;
+    while (t != null && depth++ < 20) {
+      if (t instanceof SQLException) {
+        String sqlState = ((SQLException) t).getSQLState();
+        if (sqlState != null && !sqlState.isEmpty()) {
+          try {
+            return Integer.parseInt(sqlState);
+          } catch (NumberFormatException ignored) {
+            // Alphabetic SQLState such as HY000 — no numeric form, keep walking the chain.
+          }
+        }
+      }
+      t = t.getCause();
+    }
+    return 0;
   }
 
   /**
