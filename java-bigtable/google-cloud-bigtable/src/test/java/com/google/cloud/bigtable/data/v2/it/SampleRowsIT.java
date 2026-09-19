@@ -27,7 +27,9 @@ import com.google.cloud.bigtable.admin.v2.models.SubsetView;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
+import com.google.cloud.bigtable.data.v2.models.Range;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
@@ -126,5 +128,42 @@ public class SampleRowsIT {
             .setAuthorizedViewType(SubsetView.create().addRowPrefix("foo"))
             .setDeletionProtection(false);
     return testEnvRule.env().getTableAdminClient().createAuthorizedView(request);
+  }
+
+  @Test
+  public void testWithRowRange() throws InterruptedException, ExecutionException, TimeoutException {
+    String tableId =
+        createPreSplitTable(
+            "SampleRowsIT#RowRange", "apple", "banana", "cherry", "date", "eggplant");
+    BigtableDataClient client = testEnvRule.env().getDataClient();
+
+    try {
+      Range.ByteStringRange range = Range.ByteStringRange.create("banana", "date");
+
+      ApiFuture<List<KeyOffset>> future = client.sampleRowKeysAsync(TableId.of(tableId), range);
+
+      List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
+
+      List<ByteString> resultKeys = new ArrayList<>();
+      for (KeyOffset keyOffset : results) {
+        resultKeys.add(keyOffset.getKey());
+      }
+
+      assertThat(resultKeys)
+          .containsExactly(ByteString.copyFromUtf8("cherry"), ByteString.copyFromUtf8("date"));
+
+    } finally {
+      testEnvRule.env().getTableAdminClient().deleteTable(tableId);
+    }
+  }
+
+  private static String createPreSplitTable(String prefix, String... splitKeys) {
+    String tableId = PrefixGenerator.newPrefix(prefix);
+    CreateTableRequest request = CreateTableRequest.of(tableId);
+    for (String splitKey : splitKeys) {
+      request.addSplit(ByteString.copyFromUtf8(splitKey));
+    }
+    testEnvRule.env().getTableAdminClient().createTable(request);
+    return tableId;
   }
 }
