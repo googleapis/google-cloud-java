@@ -257,10 +257,23 @@ public class TransactionChannelHintTest {
     assertEquals(1, allRemotePorts.size());
   }
 
+  private DatabaseClient getClient(Spanner spanner) {
+    DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    client.getDialect();
+    executeSqlAffinityKeys.clear();
+    beginTransactionAffinityKeys.clear();
+    streamingReadAffinityKeys.clear();
+    executeSqlRemotePorts.clear();
+    beginTransactionRemotePorts.clear();
+    streamingReadRemotePorts.clear();
+    commitRemotePorts.clear();
+    return client;
+  }
+
   @Test
   public void testSingleUseReadOnlyTransaction_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       try (ResultSet resultSet = client.singleUseReadOnlyTransaction().executeQuery(SELECT1)) {
         while (resultSet.next()) {}
       }
@@ -272,7 +285,7 @@ public class TransactionChannelHintTest {
   @Test
   public void testSingleUseReadOnlyTransaction_withTimestampBound_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       try (ResultSet resultSet =
           client
               .singleUseReadOnlyTransaction(TimestampBound.ofExactStaleness(15L, TimeUnit.SECONDS))
@@ -287,7 +300,7 @@ public class TransactionChannelHintTest {
   @Test
   public void testReadOnlyTransaction_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       try (ReadOnlyTransaction transaction = client.readOnlyTransaction()) {
         try (ResultSet resultSet = transaction.executeQuery(SELECT1)) {
           while (resultSet.next()) {}
@@ -307,7 +320,7 @@ public class TransactionChannelHintTest {
   @Test
   public void testReadOnlyTransaction_withTimestampBound_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       try (ReadOnlyTransaction transaction =
           client.readOnlyTransaction(TimestampBound.ofExactStaleness(15L, TimeUnit.SECONDS))) {
         try (ResultSet resultSet = transaction.executeQuery(SELECT1)) {
@@ -328,7 +341,7 @@ public class TransactionChannelHintTest {
   @Test
   public void testTransactionManager_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       try (TransactionManager manager = client.transactionManager()) {
         TransactionContext transaction = manager.begin();
         while (true) {
@@ -359,7 +372,7 @@ public class TransactionChannelHintTest {
   @Test
   public void testTransactionRunner_usesSingleChannelHint() {
     try (Spanner spanner = createSpannerOptions().getService()) {
-      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      DatabaseClient client = getClient(spanner);
       TransactionRunner runner = client.readWriteTransaction();
       runner.run(
           transaction -> {
