@@ -63,4 +63,55 @@ class ChunkUploadRequestTest {
     assertThat(request.isFinal()).isTrue();
     assertThat(request.getPayload()).isEmpty();
   }
+
+  @Test
+  void builder_defaultsPayloadLengthToArrayLength() {
+    byte[] payload = "test-payload".getBytes(StandardCharsets.UTF_8);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl("https://upload.example.com/session/1")
+            .setPayload(payload)
+            .setOffset(0L)
+            .build();
+
+    assertThat(request.getPayloadLength()).isEqualTo(payload.length);
+  }
+
+  @Test
+  void builder_customPayloadLength_preservesValue() {
+    byte[] payload = new byte[1024];
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl("https://upload.example.com/session/1")
+            .setPayload(payload)
+            .setPayloadLength(500)
+            .setOffset(2048L)
+            .build();
+
+    assertThat(request.getPayloadLength()).isEqualTo(500);
+  }
+
+  @Test
+  void builder_invalidBounds_throwsIllegalArgumentException() {
+    byte[] payload = new byte[100];
+    org.junit.jupiter.api.Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ChunkUploadRequest.newBuilder()
+                .setUploadUrl("https://upload.example.com/session/1")
+                .setPayload(payload)
+                .setOffset(0L)
+                .setPayloadLength(-1)
+                .build());
+
+    org.junit.jupiter.api.Assertions.assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ChunkUploadRequest.newBuilder()
+                .setUploadUrl("https://upload.example.com/session/1")
+                .setPayload(payload)
+                .setOffset(0L)
+                .setPayloadLength(150)
+                .build());
+  }
 }

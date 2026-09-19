@@ -32,6 +32,7 @@ package com.google.api.gax.resumable;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Preconditions;
 import org.jspecify.annotations.NullMarked;
 
 /** Request value object for uploading a chunk to an active resumable upload session. */
@@ -48,6 +49,9 @@ public abstract class ChunkUploadRequest {
   @SuppressWarnings("mutable")
   public abstract byte[] getPayload();
 
+  /** The number of bytes within {@link #getPayload()} to upload. */
+  public abstract int getPayloadLength();
+
   /** The byte offset of this chunk in the overall stream. */
   public abstract long getOffset();
 
@@ -56,8 +60,12 @@ public abstract class ChunkUploadRequest {
 
   public abstract Builder toBuilder();
 
+  private static final int UNSET_PAYLOAD_LENGTH = Integer.MIN_VALUE;
+
   public static Builder newBuilder() {
-    return new AutoValue_ChunkUploadRequest.Builder().setFinal(false);
+    return new AutoValue_ChunkUploadRequest.Builder()
+        .setFinal(false)
+        .setPayloadLength(UNSET_PAYLOAD_LENGTH);
   }
 
   @AutoValue.Builder
@@ -66,10 +74,29 @@ public abstract class ChunkUploadRequest {
 
     public abstract Builder setPayload(byte[] payload);
 
+    public abstract Builder setPayloadLength(int payloadLength);
+
     public abstract Builder setOffset(long offset);
 
     public abstract Builder setFinal(boolean isFinal);
 
-    public abstract ChunkUploadRequest build();
+    abstract byte[] getPayload();
+
+    abstract int getPayloadLength();
+
+    abstract ChunkUploadRequest autoBuild();
+
+    public ChunkUploadRequest build() {
+      if (getPayloadLength() == UNSET_PAYLOAD_LENGTH) {
+        setPayloadLength(getPayload().length);
+      }
+      ChunkUploadRequest request = autoBuild();
+      Preconditions.checkArgument(
+          request.getPayloadLength() >= 0, "payloadLength must be non-negative");
+      Preconditions.checkArgument(
+          request.getPayloadLength() <= request.getPayload().length,
+          "payloadLength exceeds payload array length");
+      return request;
+    }
   }
 }
