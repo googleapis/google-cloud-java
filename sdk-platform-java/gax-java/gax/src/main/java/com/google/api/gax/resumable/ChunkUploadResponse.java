@@ -69,7 +69,7 @@ public abstract class ChunkUploadResponse<ResponseT> {
 
   public static <ResponseT> ChunkUploadResponse<ResponseT> create(
       boolean isComplete, @Nullable ResponseT response) {
-    return create(isComplete, response, null);
+    return create(isComplete, response, isComplete ? "final" : "active");
   }
 
   public static <ResponseT> ChunkUploadResponse<ResponseT> create(
