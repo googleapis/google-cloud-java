@@ -224,7 +224,7 @@ public enum ImageryQuality implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ImageryQuality[] VALUES = values();

@@ -3179,11 +3179,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the source field is set.
@@ -3197,11 +3197,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The source.
@@ -3217,11 +3217,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4569,11 +4569,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the source field is set.
@@ -4586,11 +4586,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The source.
@@ -4609,11 +4609,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSource(com.google.cloud.agentregistry.v1.Binding.Source value) {
@@ -4634,11 +4634,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setSource(
@@ -4657,11 +4657,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeSource(com.google.cloud.agentregistry.v1.Binding.Source value) {
@@ -4687,11 +4687,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearSource() {
@@ -4709,11 +4709,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.agentregistry.v1.Binding.Source.Builder getSourceBuilder() {
@@ -4726,11 +4726,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.agentregistry.v1.Binding.SourceOrBuilder getSourceOrBuilder() {
@@ -4747,11 +4747,11 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The target Agent of the Binding.
+     * Optional. The source Agent of the Binding.
      * </pre>
      *
      * <code>
-     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
