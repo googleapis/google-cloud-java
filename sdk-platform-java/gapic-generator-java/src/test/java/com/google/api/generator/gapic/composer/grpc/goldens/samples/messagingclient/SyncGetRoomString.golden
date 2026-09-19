@@ -33,10 +33,14 @@ public class SyncGetRoomString {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (MessagingClient messagingClient = MessagingClient.create()) {
-      String name = RoomName.of("[ROOM]").toString();
-      Room response = messagingClient.getRoom(name);
-    }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    MessagingClient messagingClient = MessagingClient.create();
+    String name = RoomName.of("[ROOM]").toString();
+    Room response = messagingClient.getRoom(name);
   }
 }
 // [END goldensample_generated_Messaging_GetRoom_String_sync]

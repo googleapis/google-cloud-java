@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.generator.gapic.composer.comment.CommentComposer;
 import com.google.api.generator.engine.ast.AnnotationNode;
 import com.google.api.generator.engine.ast.CastExpr;
 import com.google.api.generator.engine.ast.ClassDefinition;
@@ -172,7 +173,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
     Optional<String> docSampleCode = Optional.empty();
     if (sampleCode.isPresent()) {
       samples.add(sampleCode.get());
-      docSampleCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get().body()));
+      docSampleCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get(), CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE));
     }
     // Create a sample for a LRO method using LRO-specific RetrySettings, if one exists in the
     // service.
@@ -191,7 +192,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
     if (lroSampleCode.isPresent()) {
       samples.add(lroSampleCode.get());
       lroDocSampleCode =
-          Optional.of(SampleCodeWriter.writeInlineSample(lroSampleCode.get().body()));
+          Optional.of(SampleCodeWriter.writeInlineSample(lroSampleCode.get(), CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE));
     }
 
     return SettingsCommentComposer.createClassHeaderComments(
