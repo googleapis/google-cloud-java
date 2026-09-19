@@ -47,8 +47,8 @@ import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
@@ -100,6 +100,23 @@ class HttpJsonResumableUploadClientTest {
 
     assertThat(session.getUploadUrl()).isEqualTo(TEST_UPLOAD_URL);
     assertThat(session.getChunkGranularity()).isEqualTo(262144L);
+    assertThat(session.getUploadStatus()).isNull();
+  }
+
+  @Test
+  void startUpload_withUploadStatusHeader_returnsSessionWithUploadStatus() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-URL", TEST_UPLOAD_URL);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    TestRequest request = new TestRequest("upload/v1/resources");
+
+    ResumableUploadSession session = client.startUploadCallable().call(request);
+
+    assertThat(session.getUploadUrl()).isEqualTo(TEST_UPLOAD_URL);
+    assertThat(session.getUploadStatus()).isEqualTo("active");
   }
 
   @Test
@@ -262,6 +279,7 @@ class HttpJsonResumableUploadClientTest {
 
     assertThat(response.isComplete()).isFalse();
     assertThat(response.getResponse()).isNull();
+    assertThat(response.getUploadStatus()).isEqualTo("active");
 
     assertThat(transport.capturedUrl).isEqualTo(TEST_UPLOAD_URL);
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("upload");
@@ -292,6 +310,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(response.isComplete()).isTrue();
     assertThat(response.getResponse())
         .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":524288}");
+    assertThat(response.getUploadStatus()).isEqualTo("final");
 
     assertThat(transport.capturedHeaders.get("x-goog-upload-command"))
         .containsExactly("upload, finalize");
@@ -321,6 +340,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(response.isComplete()).isTrue();
     assertThat(response.getResponse())
         .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+    assertThat(response.getUploadStatus()).isEqualTo("final");
 
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("finalize");
     assertThat(transport.capturedHeaders).doesNotContainKey("x-goog-upload-offset");
@@ -379,7 +399,7 @@ class HttpJsonResumableUploadClientTest {
   }
 
   @Test
-  void uploadChunk_missingUploadStatusHeader_throwsInternalException() {
+  void uploadChunk_missingUploadStatusHeader_returnsNullUploadStatusOnHttp200() {
     MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
     httpResponse.setStatusCode(200);
 
@@ -391,18 +411,15 @@ class HttpJsonResumableUploadClientTest {
             .setOffset(0L)
             .build();
 
-    ExecutionException exception =
-        assertThrows(
-            ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+    ChunkUploadResponse<String> response = client.uploadChunkCallable().call(request);
 
-    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
-    assertThat(exception.getCause())
-        .hasMessageThat()
-        .contains("Upload chunk response did not contain valid X-Goog-Upload-Status header");
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getResponse()).isNull();
+    assertThat(response.getUploadStatus()).isNull();
   }
 
   @Test
-  void uploadChunk_serverReturnsFinalStatusOnNon200_marksExceptionNonRetryable() {
+  void uploadChunk_serverReturnsFinalStatusOnNon200_throwsFailedPreconditionException() {
     MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
     httpResponse.setStatusCode(503);
     httpResponse.addHeader("X-Goog-Upload-Status", "final");
@@ -420,10 +437,37 @@ class HttpJsonResumableUploadClientTest {
         assertThrows(
             ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
 
-    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
-    ApiException apiException = (ApiException) exception.getCause();
-    assertThat(apiException.isRetryable()).isFalse();
-    assertThat(apiException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
+    assertThat(exception.getCause()).isInstanceOf(FailedPreconditionException.class);
+    FailedPreconditionException failedPrecondition =
+        (FailedPreconditionException) exception.getCause();
+    assertThat(failedPrecondition.getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.FAILED_PRECONDITION);
+  }
+
+  @Test
+  void uploadChunk_serverReturnsCancelledStatus_throwsFailedPreconditionException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(503);
+    httpResponse.addHeader("X-Goog-Upload-Status", "cancelled");
+    httpResponse.setContent("{\"error\":{\"message\":\"Upload cancelled by backend\"}}");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(FailedPreconditionException.class);
+    FailedPreconditionException failedPrecondition =
+        (FailedPreconditionException) exception.getCause();
+    assertThat(failedPrecondition.getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.FAILED_PRECONDITION);
   }
 
   @Test
@@ -442,6 +486,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(response.isComplete()).isFalse();
     assertThat(response.getCommittedOffset()).isEqualTo(524288L);
     assertThat(response.getResponse()).isNull();
+    assertThat(response.getUploadStatus()).isEqualTo("active");
 
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("query");
   }
@@ -462,6 +507,23 @@ class HttpJsonResumableUploadClientTest {
     assertThat(response.getCommittedOffset()).isNull();
     assertThat(response.getResponse())
         .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+    assertThat(response.getUploadStatus()).isEqualTo("final");
+  }
+
+  @Test
+  void queryStatus_missingUploadStatusHeader_returnsNullUploadStatusOnHttp200() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Size-Received", "524288");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    QueryStatusRequest request = QueryStatusRequest.create(TEST_UPLOAD_URL);
+
+    QueryStatusResponse<String> response = client.queryStatusCallable().call(request);
+
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getCommittedOffset()).isEqualTo(524288L);
+    assertThat(response.getUploadStatus()).isNull();
   }
 
   @Test
