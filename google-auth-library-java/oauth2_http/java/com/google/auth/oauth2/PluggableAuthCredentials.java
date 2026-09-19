@@ -124,10 +124,12 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    // Handle service account impersonation if necessary.
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
       return impersonated.refreshAccessToken();
     }
+
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
@@ -199,6 +201,8 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     if (email != null) {
       return email;
     }
+    // Fall back to impersonatedServiceAccountEmail when serviceAccountImpersonationUrl is cleared
+    // on the inner sourceCredentials copy.
     return impersonatedServiceAccountEmail;
   }
 
@@ -300,9 +304,17 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    /**
+     * Preserves the impersonated service account email for {@code
+     * GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL} on the inner source credentials after clearing
+     * {@code serviceAccountImpersonationUrl}.
+     */
     @CanIgnoreReturnValue
     Builder setImpersonatedServiceAccountEmail(@Nullable String impersonatedServiceAccountEmail) {
       this.impersonatedServiceAccountEmail = impersonatedServiceAccountEmail;
+      if (impersonatedServiceAccountEmail != null) {
+        super.setServiceAccountImpersonationUrl(null);
+      }
       return this;
     }
 

@@ -95,7 +95,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   protected transient HttpTransportFactory transportFactory;
 
-  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -290,17 +290,20 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
 
     // Create a copy of this instance without service account impersonation.
-    ExternalAccountCredentials sourceCredentials;
+    GoogleCredentials sourceCredentials;
     if (this instanceof AwsCredentials) {
       sourceCredentials =
           AwsCredentials.newBuilder((AwsCredentials) this)
               .setServiceAccountImpersonationUrl(null)
               .build();
     } else if (this instanceof PluggableAuthCredentials) {
+      // Clear serviceAccountImpersonationUrl to prevent infinite recursion while preserving
+      // targetPrincipal for GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL.
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
               .setImpersonatedServiceAccountEmail(targetPrincipal)
+              .setAccessToken(null)
               .build();
     } else {
       sourceCredentials =
@@ -522,15 +525,20 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         && ((String) credentialSource.get("environment_id")).startsWith("aws");
   }
 
-  private boolean shouldBuildImpersonatedCredential() {
-    return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
-  }
-
   @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
+    if (this.serviceAccountImpersonationUrl == null) {
+      return null;
     }
-    return this.impersonatedCredentials;
+    ImpersonatedCredentials localRef = this.impersonatedCredentials;
+    if (localRef == null) {
+      synchronized (this.lock) {
+        localRef = this.impersonatedCredentials;
+        if (localRef == null) {
+          this.impersonatedCredentials = localRef = this.buildImpersonatedCredentials();
+        }
+      }
+    }
+    return localRef;
   }
 
   /**
