@@ -298,7 +298,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
-              .setImpersonatedServiceAccountEmail(getServiceAccountEmail())
               .build();
     } else {
       sourceCredentials =

@@ -645,11 +645,16 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
   @Test
   void createScoped_preservesImpersonatedServiceAccountEmail() {
-    PluggableAuthCredentials sourceCredentials =
+    PluggableAuthCredentials outerCredentials =
         PluggableAuthCredentials.newBuilder(CREDENTIAL)
-            .setServiceAccountImpersonationUrl(null)
-            .setImpersonatedServiceAccountEmail(IMPERSONATED_EMAIL)
+            .setServiceAccountImpersonationUrl(
+                "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
+                    + IMPERSONATED_EMAIL
+                    + ":generateAccessToken")
             .build();
+    PluggableAuthCredentials sourceCredentials =
+        (PluggableAuthCredentials)
+            outerCredentials.buildImpersonatedCredentials().getSourceCredentials();
 
     PluggableAuthCredentials scopedCredentials =
         sourceCredentials.createScoped(Collections.singletonList("scope1"));

@@ -236,7 +236,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     Builder(PluggableAuthCredentials credentials) {
       super(credentials);
       this.handler = credentials.handler;
-      this.impersonatedServiceAccountEmail = credentials.impersonatedServiceAccountEmail;
+      this.impersonatedServiceAccountEmail = credentials.getServiceAccountEmail();
     }
 
     @CanIgnoreReturnValue
@@ -291,12 +291,6 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
-      return this;
-    }
-
-    @CanIgnoreReturnValue
-    Builder setImpersonatedServiceAccountEmail(@Nullable String impersonatedServiceAccountEmail) {
-      this.impersonatedServiceAccountEmail = impersonatedServiceAccountEmail;
       return this;
     }
 
