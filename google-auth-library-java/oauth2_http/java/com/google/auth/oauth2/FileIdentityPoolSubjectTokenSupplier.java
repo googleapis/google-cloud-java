@@ -86,9 +86,10 @@ class FileIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSu
   static String parseToken(InputStream inputStream, IdentityPoolCredentialSource credentialSource)
       throws IOException {
     if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
-      BufferedReader reader =
-          new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-      return CharStreams.toString(reader);
+      try (BufferedReader reader =
+          new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+        return CharStreams.toString(reader);
+      }
     }
 
     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
