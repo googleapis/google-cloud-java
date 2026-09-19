@@ -33,13 +33,27 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.time.Duration;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /** A callable to fork traffic between classic and session based operations. */
 public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, RespT> {
+  private static final Logger LOGGER = Logger.getLogger(DivertingUnaryCallable.class.getName());
+
+  /** Bounds the cause walk so a self-referential or pathologically deep chain can't spin. */
+  private static final int MAX_CAUSE_DEPTH = 8;
+
+  /** Gates the WARNING-level log for statusless throwables to the first occurrence. */
+  private final AtomicBoolean loggedStatusless = new AtomicBoolean();
+
   private final ClientConfigurationManager configurationManager;
 
   private final UnaryCallable<ReqT, RespT> classic;
@@ -121,16 +135,135 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
     }
 
-    Status.Code code = Status.Code.UNKNOWN;
-
-    if (cause instanceof StatusRuntimeException) {
-      code = ((StatusRuntimeException) cause).getStatus().getCode();
-    }
-    if (cause instanceof StatusException) {
-      code = ((StatusException) cause).getStatus().getCode();
+    Status.Code carried = findStatusCode(cause);
+    if (carried != null) {
+      return ApiExceptionFactory.createException(
+          cause.getMessage(), e, GrpcStatusCode.of(carried), false);
     }
 
+    // Nothing in the chain carries a gRPC status, so the code has to be inferred from the throwable
+    // itself. Whatever it comes out as, name the throwable in the message too. This really is the
+    // last chance to say what failed: CSM takes its status from VRpcResult, so a throwable that got
+    // here either escaped before any VRpcResult existed (no CSM record of the operation at all) or
+    // came from an OK one (CSM records a success). Either way it is invisible in the metrics, and
+    // the code and message below are the only evidence the failure happened.
+    Status.Code inferred = classifyStatuslessCause(cause);
+    reportStatusless(cause, inferred);
     return ApiExceptionFactory.createException(
-        cause.getMessage(), e, GrpcStatusCode.of(code), false);
+        describeStatusless(cause, inferred), e, GrpcStatusCode.of(inferred), false);
+  }
+
+  /**
+   * Returns the gRPC code for {@code t}, or null if nothing in its cause chain carries one.
+   *
+   * <p>Unlike a plain {@code instanceof} on the top-level throwable, this walks the whole chain: a
+   * perfectly good {@link StatusRuntimeException} wrapped in any type other than Completion/
+   * ExecutionException would otherwise lose its code and fall through to {@link
+   * #classifyStatuslessCause}, which cannot recover it.
+   *
+   * <p>{@link CancellationException} is treated as CANCELLED so that the two paths a caller can be
+   * routed down agree: the classic path reports it that way via {@code
+   * csm.attributes.Util#extractStatus}, and the same failure should not change code just because
+   * sessionLoad diverted the request. It is checked at every level rather than only the top, unlike
+   * {@code extractStatus}, because a wrapped cancellation losing its code is the same defect the
+   * chain walk exists to fix.
+   */
+  @Nullable
+  private static Status.Code findStatusCode(@Nullable Throwable t) {
+    Throwable current = t;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (current instanceof StatusRuntimeException) {
+        return ((StatusRuntimeException) current).getStatus().getCode();
+      }
+      if (current instanceof StatusException) {
+        return ((StatusException) current).getStatus().getCode();
+      }
+      if (current instanceof CancellationException) {
+        return Status.Code.CANCELLED;
+      }
+      Throwable next = current.getCause();
+      if (next == current) {
+        break; // self-referential chain
+      }
+      current = next;
+    }
+    return null;
+  }
+
+  /**
+   * Infers a code for a throwable whose chain carries no gRPC status, falling back to UNKNOWN.
+   *
+   * <p>UNKNOWN is the honest answer only when the type says nothing. For the two types this path
+   * actually sees it says plenty, so reporting UNKNOWN throws away a classification the caller can
+   * act on:
+   *
+   * <ul>
+   *   <li>{@link IllegalStateException} means a client-side invariant was violated -- {@code
+   *       SessionList}'s close/drain checks, and {@code UnaryResponseFuture}'s OK-without-message
+   *       branch. That is a bug in the client, which is what INTERNAL means.
+   *   <li>{@link RejectedExecutionException} means an executor refused the work, so the client is
+   *       out of a resource it needs: RESOURCE_EXHAUSTED.
+   * </ul>
+   *
+   * <p>Walks the chain outermost-first, like {@link #findStatusCode}, but with lower precedence: a
+   * real status anywhere in the chain still wins over a type inferred here.
+   */
+  private static Status.Code classifyStatuslessCause(@Nullable Throwable cause) {
+    Throwable current = cause;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (current instanceof RejectedExecutionException) {
+        return Status.Code.RESOURCE_EXHAUSTED;
+      }
+      if (current instanceof IllegalStateException) {
+        return Status.Code.INTERNAL;
+      }
+      Throwable next = current.getCause();
+      if (next == current) {
+        break; // self-referential chain
+      }
+      current = next;
+    }
+    return Status.Code.UNKNOWN;
+  }
+
+  /** Renders the cause chain as class names, so the message identifies the failure by itself. */
+  private static String describeStatusless(@Nullable Throwable cause, Status.Code reported) {
+    // No caller reaches here with null today, but this is the diagnostic path: an NPE thrown while
+    // building the error message would destroy exactly the information the message exists to carry.
+    if (cause == null) {
+      return "Session operation failed with a null error; reporting " + reported + ".";
+    }
+    StringBuilder chain = new StringBuilder();
+    Throwable current = cause;
+    for (int depth = 0; current != null && depth < MAX_CAUSE_DEPTH; depth++) {
+      if (chain.length() > 0) {
+        chain.append(" <- ");
+      }
+      chain.append(current.getClass().getName());
+      Throwable next = current.getCause();
+      if (next == current) {
+        break;
+      }
+      current = next;
+    }
+    String message = cause.getMessage();
+    return "Session operation failed with an error that carries no gRPC status; reporting "
+        + reported
+        + ". Cause chain: "
+        + chain
+        + (message != null ? ". Message: " + message : "");
+  }
+
+  /**
+   * Logs the first statusless throwable per callable at WARNING with a full stack, and the rest at
+   * FINE. A storm is exactly when this fires most, so an unconditional WARNING would flood the log
+   * at the moment the operator can least afford it.
+   */
+  private void reportStatusless(@Nullable Throwable cause, Status.Code reported) {
+    if (loggedStatusless.compareAndSet(false, true)) {
+      LOGGER.log(Level.WARNING, describeStatusless(cause, reported), cause);
+    } else if (LOGGER.isLoggable(Level.FINE)) {
+      LOGGER.log(Level.FINE, describeStatusless(cause, reported), cause);
+    }
   }
 }
