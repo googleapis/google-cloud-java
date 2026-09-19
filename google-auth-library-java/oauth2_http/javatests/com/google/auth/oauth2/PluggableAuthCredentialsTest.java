@@ -644,9 +644,16 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createScoped_preservesImpersonatedServiceAccountEmail() {
+  void createScoped_preservesImpersonatedServiceAccountEmail() throws IOException {
+    final String[] recordedImpersonatedEmail = {null};
     PluggableAuthCredentials outerCredentials =
         PluggableAuthCredentials.newBuilder(CREDENTIAL)
+            .setExecutableHandler(
+                options -> {
+                  recordedImpersonatedEmail[0] =
+                      options.getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL");
+                  return "pluggableAuthToken";
+                })
             .setServiceAccountImpersonationUrl(
                 "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
                     + IMPERSONATED_EMAIL
@@ -658,9 +665,11 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     PluggableAuthCredentials scopedCredentials =
         sourceCredentials.createScoped(Collections.singletonList("scope1"));
+    scopedCredentials.retrieveSubjectToken();
 
     assertNull(scopedCredentials.getServiceAccountImpersonationUrl());
-    assertEquals(IMPERSONATED_EMAIL, scopedCredentials.getServiceAccountEmail());
+    assertNull(scopedCredentials.getServiceAccountEmail());
+    assertEquals(IMPERSONATED_EMAIL, recordedImpersonatedEmail[0]);
   }
 
   @Test

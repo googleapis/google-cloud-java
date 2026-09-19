@@ -156,8 +156,12 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_TOKEN_TYPE", getSubjectTokenType());
     // Always set to 0 for Workload Identity Federation.
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE", "0");
-    if (getServiceAccountEmail() != null) {
-      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", getServiceAccountEmail());
+    String serviceAccountEmail =
+        getServiceAccountEmail() != null
+            ? getServiceAccountEmail()
+            : impersonatedServiceAccountEmail;
+    if (serviceAccountEmail != null) {
+      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", serviceAccountEmail);
     }
     if (outputFilePath != null && !outputFilePath.isEmpty()) {
       envMap.put("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE", outputFilePath);
@@ -189,12 +193,6 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
     // Delegate handling of the executable to the handler.
     return this.handler.retrieveTokenFromExecutable(options);
-  }
-
-  @Override
-  public @Nullable String getServiceAccountEmail() {
-    String email = super.getServiceAccountEmail();
-    return email != null ? email : impersonatedServiceAccountEmail;
   }
 
   /** Clones the PluggableAuthCredentials with the specified scopes. */
@@ -236,7 +234,10 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     Builder(PluggableAuthCredentials credentials) {
       super(credentials);
       this.handler = credentials.handler;
-      this.impersonatedServiceAccountEmail = credentials.getServiceAccountEmail();
+      this.impersonatedServiceAccountEmail =
+          credentials.getServiceAccountEmail() != null
+              ? credentials.getServiceAccountEmail()
+              : credentials.impersonatedServiceAccountEmail;
     }
 
     @CanIgnoreReturnValue
