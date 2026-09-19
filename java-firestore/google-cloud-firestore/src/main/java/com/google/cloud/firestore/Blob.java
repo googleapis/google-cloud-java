@@ -27,31 +27,89 @@ public final class Blob implements Serializable {
   private static final long serialVersionUID = 1441087101882481208L;
 
   private final ByteString byteString;
+  private final int subtype;
 
-  private Blob(ByteString byteString) {
+  private Blob(ByteString byteString, int subtype) {
+    if (subtype < 0 || subtype > 255) {
+      throw new IllegalArgumentException(
+          "The subtype for Blob must be a value in the inclusive [0, 255] range.");
+    }
     this.byteString = byteString;
+    this.subtype = subtype;
   }
 
   /**
-   * Creates a new Blob instance from the provided ByteString.
+   * Creates a new Blob instance from the provided ByteString. Defaults to subtype 0 and native
+   * representation.
    *
    * @param byteString The byteString to use for this Blob instance.
    * @return The new Blob instance
    */
   @Nonnull
   public static Blob fromByteString(@Nonnull ByteString byteString) {
-    return new Blob(byteString);
+    return new Blob(byteString, 0);
   }
 
   /**
    * Creates a new Blob instance from the provided bytes. Makes a copy of the bytes passed in.
+   * Defaults to subtype 0 and native representation.
    *
    * @param bytes The bytes to use for this Blob instance.
    * @return The new Blob instance
    */
   @Nonnull
   public static Blob fromBytes(@Nonnull byte[] bytes) {
-    return new Blob(ByteString.copyFrom(bytes));
+    return new Blob(ByteString.copyFrom(bytes), 0);
+  }
+
+  /**
+   * Creates a new Blob instance representing a BSON binary data type. Sets subtype to 0 and
+   * representation to BSON.
+   *
+   * @param bytes The bytes to use for this Blob instance.
+   * @return The new Blob instance
+   */
+  @Nonnull
+  public static Blob createBsonBinary(@Nonnull byte[] bytes) {
+    return new Blob(ByteString.copyFrom(bytes), 0);
+  }
+
+  /**
+   * Creates a new Blob instance representing a BSON binary data type. Sets subtype to 0 and
+   * representation to BSON.
+   *
+   * @param data The ByteString to use for this Blob instance.
+   * @return The new Blob instance
+   */
+  @Nonnull
+  public static Blob createBsonBinary(@Nonnull ByteString data) {
+    return new Blob(data, 0);
+  }
+
+  /**
+   * Creates a new Blob instance representing a BSON binary data type with a specific subtype. Sets
+   * representation to BSON.
+   *
+   * @param subtype The subtype to use for this instance.
+   * @param bytes The bytes to use for this Blob instance.
+   * @return The new Blob instance
+   */
+  @Nonnull
+  public static Blob createBsonBinary(int subtype, @Nonnull byte[] bytes) {
+    return new Blob(ByteString.copyFrom(bytes), subtype);
+  }
+
+  /**
+   * Creates a new Blob instance representing a BSON binary data type with a specific subtype. Sets
+   * representation to BSON.
+   *
+   * @param subtype The subtype to use for this instance.
+   * @param data The ByteString to use for this Blob instance.
+   * @return The new Blob instance
+   */
+  @Nonnull
+  public static Blob createBsonBinary(int subtype, @Nonnull ByteString data) {
+    return new Blob(data, subtype);
   }
 
   /**
@@ -75,6 +133,16 @@ public final class Blob implements Serializable {
   }
 
   /**
+   * Returns the subtype of this binary data. Defaults to 0 for both native binary and BSON binary
+   * if not specified.
+   *
+   * @return The subtype of the binary data.
+   */
+  public int subtype() {
+    return this.subtype;
+  }
+
+  /**
    * Returns true if this Blob is equal to the provided object.
    *
    * @param obj The object to compare against.
@@ -89,11 +157,32 @@ public final class Blob implements Serializable {
       return false;
     }
     Blob blob = (Blob) obj;
-    return Objects.equals(byteString, blob.byteString);
+    return this.subtype == blob.subtype && Objects.equals(byteString, blob.byteString);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(byteString);
+    return Objects.hash(byteString, subtype);
+  }
+
+  @Nonnull
+  @Override
+  public String toString() {
+    String dataStr;
+    if (this.byteString.size() <= 100) {
+      dataStr =
+          com.google.common.io.BaseEncoding.base16()
+              .lowerCase()
+              .encode(this.byteString.toByteArray());
+    } else {
+      dataStr =
+          com.google.common.io.BaseEncoding.base16()
+                  .lowerCase()
+                  .encode(this.byteString.substring(0, 20).toByteArray())
+              + "... (size="
+              + this.byteString.size()
+              + ")";
+    }
+    return "Blob{subtype=" + this.subtype + ", data=" + dataStr + "}";
   }
 }
