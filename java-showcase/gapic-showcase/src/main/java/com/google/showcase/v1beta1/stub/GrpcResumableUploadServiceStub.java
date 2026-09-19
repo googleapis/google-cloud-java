@@ -25,11 +25,13 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.common.collect.ImmutableList;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -55,17 +57,6 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
-  private static final MethodDescriptor<UploadMediaRequest, UploadMediaResponse>
-      uploadMediaMethodDescriptor =
-          MethodDescriptor.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.showcase.v1beta1.ResumableUploadService/UploadMedia")
-              .setRequestMarshaller(ProtoUtils.marshaller(UploadMediaRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(UploadMediaResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -117,7 +108,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
-  private final UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -129,6 +119,7 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
+  private final HttpJsonResumableUploadServiceResumableUploadStub resumableUploadStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcResumableUploadServiceStub create(
@@ -171,10 +162,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
-        GrpcCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-            .setMethodDescriptor(uploadMediaMethodDescriptor)
-            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -230,9 +217,6 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
-    this.uploadMediaCallable =
-        callableFactory.createUnaryCallable(
-            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -254,17 +238,18 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
+    this.resumableUploadStub = HttpJsonResumableUploadServiceResumableUploadStub.create(settings);
+
     this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+        new BackgroundResourceAggregation(
+            ImmutableList.<BackgroundResource>builder()
+                .addAll(clientContext.getBackgroundResources())
+                .add(resumableUploadStub)
+                .build());
   }
 
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  @Override
-  public UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
-    return uploadMediaCallable;
   }
 
   @Override
@@ -297,6 +282,11 @@ public class GrpcResumableUploadServiceStub extends ResumableUploadServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    return resumableUploadStub.uploadMediaCallable();
   }
 
   @Override
