@@ -130,7 +130,8 @@ class ChunkAttemptCallableTest {
             "https://upload.url/test",
             request,
             callContext,
-            ResumableUploadCommand.UPLOAD);
+            ResumableUploadCommand.UPLOAD,
+            new UploadProgressTracker());
 
     callable.setRetryingFuture(mockExternalFuture);
     ChunkUploadResponse<String> callResult = callable.call();
@@ -178,7 +179,8 @@ class ChunkAttemptCallableTest {
             "https://upload.url/test",
             request,
             callContext,
-            ResumableUploadCommand.UPLOAD);
+            ResumableUploadCommand.UPLOAD,
+            new UploadProgressTracker());
 
     List<Runnable> listeners = new ArrayList<>();
     doAnswer(
@@ -251,7 +253,8 @@ class ChunkAttemptCallableTest {
             "https://upload.url/test",
             request,
             callContext,
-            ResumableUploadCommand.UPLOAD);
+            ResumableUploadCommand.UPLOAD,
+            new UploadProgressTracker());
 
     callable.setRetryingFuture(mockExternalFuture);
     callable.call();
@@ -292,7 +295,8 @@ class ChunkAttemptCallableTest {
             "https://upload.url/test",
             request,
             callContext,
-            ResumableUploadCommand.UPLOAD);
+            ResumableUploadCommand.UPLOAD,
+            new UploadProgressTracker());
 
     callable.setRetryingFuture(mockExternalFuture);
 

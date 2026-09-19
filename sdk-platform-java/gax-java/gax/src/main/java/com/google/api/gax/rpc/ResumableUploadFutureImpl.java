@@ -94,6 +94,16 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   @Override
+  public void addProgressListener(ResumableUploadProgressListener listener, Executor executor) {
+    coordinator.addProgressListener(listener, executor);
+  }
+
+  @Override
+  public ResumableUploadStatus getStatus() {
+    return coordinator.getStatus();
+  }
+
+  @Override
   public void addListener(Runnable listener, Executor executor) {
     result.addListener(listener, executor);
   }
@@ -115,12 +125,12 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   @Override
-  public ResponseT get() throws InterruptedException, ExecutionException {
+  public @Nullable ResponseT get() throws InterruptedException, ExecutionException {
     return result.get();
   }
 
   @Override
-  public ResponseT get(long timeout, TimeUnit unit)
+  public @Nullable ResponseT get(long timeout, TimeUnit unit)
       throws InterruptedException, ExecutionException, TimeoutException {
     return result.get(timeout, unit);
   }

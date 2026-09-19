@@ -71,6 +71,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
   private final RewindableStreamBuffer buffer;
   private final String uploadUrl;
   private final ApiCallContext originalCallContext;
+  private final UploadProgressTracker progressTracker;
   private final long deadlineNanos;
   private final ApiClock clock;
 
@@ -89,7 +90,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       String uploadUrl,
       ChunkUploadRequest request,
       ApiCallContext callContext,
-      ResumableUploadCommand command) {
+      ResumableUploadCommand command,
+      UploadProgressTracker progressTracker) {
     this(
         uploadChunkCallable,
         queryStatusCallable,
@@ -98,6 +100,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
         request,
         callContext,
         command,
+        progressTracker,
         Long.MAX_VALUE,
         NanoClock.getDefaultClock());
   }
@@ -110,6 +113,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       ChunkUploadRequest request,
       ApiCallContext callContext,
       ResumableUploadCommand command,
+      UploadProgressTracker progressTracker,
       long deadlineNanos,
       ApiClock clock) {
     this.uploadChunkCallable =
@@ -121,6 +125,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     this.currentRequest = checkNotNull(request, "request must not be null");
     this.originalCallContext = checkNotNull(callContext, "callContext must not be null");
     this.currentCommand = checkNotNull(command, "command must not be null");
+    this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
     this.deadlineNanos = deadlineNanos;
     this.clock = checkNotNull(clock, "clock must not be null");
   }
@@ -158,6 +163,8 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
       SettableApiFuture<ChunkUploadResponse<ResponseT>> attemptFuture,
       ApiCallContext attemptContext,
       RetryingFuture<ChunkUploadResponse<ResponseT>> currentRetryingFuture) {
+    progressTracker.onRecovering(lastFailure);
+
     // Per GAX-R7: query uses sensible unary defaults trimmed to the remaining global deadline.
     long remainingNanos =
         deadlineNanos == Long.MAX_VALUE
@@ -254,6 +261,7 @@ class ChunkAttemptCallable<ResponseT> implements Callable<ChunkUploadResponse<Re
     // Normal path: realign buffer to committedOffset, compact and top up.
     try {
       buffer.realignTo(committedOffset);
+      progressTracker.onOffsetReceived(committedOffset);
     } catch (Throwable e) {
       failAttempt(attemptFuture, e);
       return;
