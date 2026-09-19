@@ -159,11 +159,11 @@ public interface BindingOrBuilder
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the source field is set.
@@ -174,11 +174,11 @@ public interface BindingOrBuilder
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The source.
@@ -189,11 +189,11 @@ public interface BindingOrBuilder
    *
    *
    * <pre>
-   * Required. The target Agent of the Binding.
+   * Optional. The source Agent of the Binding.
    * </pre>
    *
    * <code>
-   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.agentregistry.v1.Binding.Source source = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.agentregistry.v1.Binding.SourceOrBuilder getSourceOrBuilder();
