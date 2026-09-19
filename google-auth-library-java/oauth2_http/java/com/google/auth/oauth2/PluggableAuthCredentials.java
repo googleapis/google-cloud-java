@@ -107,10 +107,13 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   private final ExecutableHandler handler;
 
+  private final @Nullable String impersonatedServiceAccountEmail;
+
   /** Internal constructor. See {@link Builder}. */
   PluggableAuthCredentials(Builder builder) {
     super(builder);
     this.config = (PluggableAuthCredentialSource) builder.credentialSource;
+    this.impersonatedServiceAccountEmail = builder.impersonatedServiceAccountEmail;
 
     if (builder.handler != null) {
       handler = builder.handler;
@@ -121,6 +124,10 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken();
+    }
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
@@ -150,8 +157,9 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_TOKEN_TYPE", getSubjectTokenType());
     // Always set to 0 for Workload Identity Federation.
     envMap.put("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE", "0");
-    if (getServiceAccountEmail() != null) {
-      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", getServiceAccountEmail());
+    String serviceAccountEmail = getServiceAccountEmail();
+    if (serviceAccountEmail != null) {
+      envMap.put("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL", serviceAccountEmail);
     }
     if (outputFilePath != null && !outputFilePath.isEmpty()) {
       envMap.put("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE", outputFilePath);
@@ -183,6 +191,15 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
     // Delegate handling of the executable to the handler.
     return this.handler.retrieveTokenFromExecutable(options);
+  }
+
+  @Override
+  public @Nullable String getServiceAccountEmail() {
+    String email = super.getServiceAccountEmail();
+    if (email != null) {
+      return email;
+    }
+    return impersonatedServiceAccountEmail;
   }
 
   /** Clones the PluggableAuthCredentials with the specified scopes. */
@@ -217,12 +234,14 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   public static class Builder extends ExternalAccountCredentials.Builder {
 
     private @Nullable ExecutableHandler handler;
+    private @Nullable String impersonatedServiceAccountEmail;
 
     Builder() {}
 
     Builder(PluggableAuthCredentials credentials) {
       super(credentials);
       this.handler = credentials.handler;
+      this.impersonatedServiceAccountEmail = credentials.impersonatedServiceAccountEmail;
     }
 
     @CanIgnoreReturnValue
@@ -277,6 +296,13 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
+      this.impersonatedServiceAccountEmail = null;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    Builder setImpersonatedServiceAccountEmail(@Nullable String impersonatedServiceAccountEmail) {
+      this.impersonatedServiceAccountEmail = impersonatedServiceAccountEmail;
       return this;
     }
 

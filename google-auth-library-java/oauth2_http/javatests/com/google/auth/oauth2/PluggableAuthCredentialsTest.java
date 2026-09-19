@@ -212,6 +212,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
 
+    final int[] invocationCount = {0};
+    final ExecutableOptions[] providedOptions = {null};
+    ExecutableHandler executableHandler =
+        options -> {
+          invocationCount[0]++;
+          providedOptions[0] = options;
+          return "pluggableAuthToken";
+        };
+
     PluggableAuthCredentials credential =
         PluggableAuthCredentials.newBuilder()
             .setAudience(
@@ -227,11 +236,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     credential =
         PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setExecutableHandler(executableHandler)
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
 
+    assertEquals(1, invocationCount[0]);
+    assertEquals(
+        credential.getServiceAccountEmail(),
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
@@ -253,6 +266,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
 
+    final int[] invocationCount = {0};
+    final ExecutableOptions[] providedOptions = {null};
+    ExecutableHandler executableHandler =
+        options -> {
+          invocationCount[0]++;
+          providedOptions[0] = options;
+          return "pluggableAuthToken";
+        };
+
     PluggableAuthCredentials credential =
         PluggableAuthCredentials.newBuilder()
             .setAudience(
@@ -270,11 +292,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     credential =
         PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setExecutableHandler(executableHandler)
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
 
+    assertEquals(1, invocationCount[0]);
+    assertEquals(
+        credential.getServiceAccountEmail(),
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
@@ -583,6 +609,25 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials.getExecutableHandler(), newCredentials.getExecutableHandler());
     assertEquals(credentials.getUniverseDomain(), newCredentials.getUniverseDomain());
     assertEquals("universeDomain", newCredentials.getUniverseDomain());
+  }
+
+  @Test
+  void createScoped_preservesImpersonatedServiceAccountEmail() {
+    PluggableAuthCredentials sourceCredentials =
+        PluggableAuthCredentials.newBuilder(CREDENTIAL)
+            .setServiceAccountImpersonationUrl(null)
+            .setImpersonatedServiceAccountEmail("testn@test.iam.gserviceaccount.com")
+            .build();
+
+    PluggableAuthCredentials scopedCredentials =
+        sourceCredentials.createScoped(Arrays.asList("scope1"));
+
+    assertNull(scopedCredentials.getServiceAccountImpersonationUrl());
+    assertEquals("testn@test.iam.gserviceaccount.com", scopedCredentials.getServiceAccountEmail());
+
+    PluggableAuthCredentials clearedCredentials =
+        scopedCredentials.toBuilder().setServiceAccountImpersonationUrl(null).build();
+    assertNull(clearedCredentials.getServiceAccountEmail());
   }
 
   @Test

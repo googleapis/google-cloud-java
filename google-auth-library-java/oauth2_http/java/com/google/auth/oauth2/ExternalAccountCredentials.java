@@ -286,6 +286,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     if (serviceAccountImpersonationUrl == null) {
       return null;
     }
+    String targetPrincipal =
+        ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
+
     // Create a copy of this instance without service account impersonation.
     ExternalAccountCredentials sourceCredentials;
     if (this instanceof AwsCredentials) {
@@ -297,6 +300,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       sourceCredentials =
           PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
               .setServiceAccountImpersonationUrl(null)
+              .setImpersonatedServiceAccountEmail(targetPrincipal)
               .build();
     } else {
       sourceCredentials =
@@ -305,8 +309,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
               .build();
     }
 
-    String targetPrincipal =
-        ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setHttpTransportFactory(transportFactory)
@@ -524,6 +526,13 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
   }
 
+  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
+    if (this.shouldBuildImpersonatedCredential()) {
+      this.impersonatedCredentials = this.buildImpersonatedCredentials();
+    }
+    return this.impersonatedCredentials;
+  }
+
   /**
    * Exchanges the external credential for a Google Cloud access token.
    *
@@ -534,11 +543,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   protected AccessToken exchangeExternalCredentialForAccessToken(
       StsTokenExchangeRequest stsTokenExchangeRequest) throws IOException {
     // Handle service account impersonation if necessary.
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken();
     }
 
     StsRequestHandler.Builder requestHandler =
