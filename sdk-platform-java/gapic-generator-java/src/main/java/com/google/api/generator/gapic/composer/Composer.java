@@ -29,10 +29,12 @@ import com.google.api.generator.gapic.composer.grpc.ServiceStubSettingsClassComp
 import com.google.api.generator.gapic.composer.grpcrest.HttpJsonServiceClientTestClassComposer;
 import com.google.api.generator.gapic.composer.resourcename.ResourceNameHelperClassComposer;
 import com.google.api.generator.gapic.composer.rest.HttpJsonServiceCallableFactoryClassComposer;
+import com.google.api.generator.gapic.composer.rest.HttpJsonServiceResumableUploadStubClassComposer;
 import com.google.api.generator.gapic.composer.rest.HttpJsonServiceStubClassComposer;
 import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.GapicPackageInfo;
+import com.google.api.generator.gapic.model.Method;
 import com.google.api.generator.gapic.model.ReflectConfig;
 import com.google.api.generator.gapic.model.Sample;
 import com.google.api.generator.gapic.model.Service;
@@ -91,6 +93,11 @@ public class Composer {
         .services()
         .forEach(
             s -> {
+              if (s.methods().stream().anyMatch(Method::isResumableUpload)) {
+                clazzes.add(
+                    HttpJsonServiceResumableUploadStubClassComposer.instance()
+                        .generate(context, s));
+              }
               if (context.transport() == Transport.REST) {
                 clazzes.add(
                     com.google.api.generator.gapic.composer.rest.ServiceStubClassComposer.instance()
