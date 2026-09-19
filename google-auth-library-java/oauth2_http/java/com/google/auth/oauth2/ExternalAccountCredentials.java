@@ -953,6 +953,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     @CanIgnoreReturnValue
     public Builder setScopes(Collection<String> scopes) {
       this.scopes = scopes;
+      setAccessToken(null);
       return this;
     }
 
