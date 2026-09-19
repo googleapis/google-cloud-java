@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 final class DriverEnvironmentDetector {
   private static final Logger logger = Logger.getLogger(DriverEnvironmentDetector.class.getName());
 
-  static final String DRIVER_NAME = "google-bigquery-jdbc-driver";
+  static final String DRIVER_NAME = "Google-BigQuery-JDBC-Driver";
   static final String CLIENT_LANGUAGE = "java";
   static final String DEFAULT_TELEMETRY_TAG_DIR = ".bigquery-jdbc";
   static final String DEFAULT_TELEMETRY_TAG_FILE = "telemetry-tag";

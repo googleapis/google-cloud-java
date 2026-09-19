@@ -35,7 +35,7 @@ public class DriverEnvironmentDetectorTest {
   public void testBuildDriverEnvironment() {
     DriverEnvironment env = DriverEnvironmentDetector.build();
     assertNotNull(env);
-    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertEquals("Google-BigQuery-JDBC-Driver", env.getDriverName());
     assertNotNull(env.getDriverVersion());
     assertEquals("java", env.getClientLanguage());
     assertNotNull(env.getClientLanguageVersion());
@@ -49,7 +49,7 @@ public class DriverEnvironmentDetectorTest {
     Path tagFile = tempDir.resolve("telemetry-tag");
     DriverEnvironment env = DriverEnvironmentDetector.build(tagFile);
     assertNotNull(env);
-    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertEquals("Google-BigQuery-JDBC-Driver", env.getDriverName());
     assertNotNull(env.getDriverVersion());
     assertEquals("java", env.getClientLanguage());
     assertNotNull(env.getClientLanguageVersion());

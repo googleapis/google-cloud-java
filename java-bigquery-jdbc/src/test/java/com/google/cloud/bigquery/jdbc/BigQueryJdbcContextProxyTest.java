@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.Assert.assertSame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -121,5 +122,17 @@ public class BigQueryJdbcContextProxyTest {
     SQLException ex = assertThrows(SQLException.class, () -> proxy.executeQuery("SELECT *"));
     assertEquals("Database error", ex.getMessage());
     assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
+
+  @Test
+  public void testInvoke_rethrowsCauseUnchangedAfterTelemetry() throws Exception {
+    Statement failing = mock(Statement.class);
+    SQLException expected = new SQLException("bad syntax", "42000", 404);
+    when(failing.execute("SELECT 1")).thenThrow(expected);
+    Statement proxy = BigQueryJdbcContextProxy.wrap(failing, Statement.class, "conn-1");
+    SQLException actual = assertThrows(SQLException.class, () -> proxy.execute("SELECT 1"));
+    assertSame(expected, actual);
+    assertEquals("42000", actual.getSQLState());
+    assertEquals(404, actual.getErrorCode());
   }
 }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -176,6 +177,11 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
         String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
         LOG.severe("Exception occurred during " + methodName + ": " + errMsg, cause);
       }
+
+      TelemetryManager.recordError(
+          TelemetryManager.extractErrorCode(cause),
+          TelemetryManager.extractXdbcCode(cause),
+          methodName);
 
       throw cause;
     }
