@@ -30,7 +30,7 @@ import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * REST stub transport for the resumable upload methods of ResumableUploadService.
+ * REST stub transport for the resumable upload methods of MediaService.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -38,13 +38,13 @@ import org.jspecify.annotations.NullMarked;
 @InternalApi
 @NullMarked
 @BetaApi
-public class HttpJsonResumableUploadServiceResumableUploadStub implements BackgroundResource {
+public class HttpJsonMediaServiceResumableUploadStub implements BackgroundResource {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
   private static final ApiMethodDescriptor<UploadMediaRequest, UploadMediaResponse>
       uploadMediaMethodDescriptor =
           ApiMethodDescriptor.<UploadMediaRequest, UploadMediaResponse>newBuilder()
-              .setFullMethodName("google.showcase.v1beta1.ResumableUploadService/UploadMedia")
+              .setFullMethodName("google.showcase.v1beta1.MediaService/UploadMedia")
               .setHttpMethod("POST")
               .setType(ApiMethodDescriptor.MethodType.UNARY)
               .setRequestFormatter(
@@ -80,29 +80,27 @@ public class HttpJsonResumableUploadServiceResumableUploadStub implements Backgr
   private final ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse>
       uploadMediaCallable;
 
-  public static HttpJsonResumableUploadServiceResumableUploadStub create(
-      ResumableUploadServiceStubSettings settings) throws IOException {
+  public static HttpJsonMediaServiceResumableUploadStub create(MediaServiceStubSettings settings)
+      throws IOException {
     if (settings
         .getTransportChannelProvider()
         .getTransportName()
         .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
-      return new HttpJsonResumableUploadServiceResumableUploadStub(
-          ClientContext.create(settings), settings);
+      return new HttpJsonMediaServiceResumableUploadStub(ClientContext.create(settings), settings);
     }
-    return new HttpJsonResumableUploadServiceResumableUploadStub(
+    return new HttpJsonMediaServiceResumableUploadStub(
         deriveHttpJsonClientContext(settings), settings);
   }
 
-  private static ClientContext deriveHttpJsonClientContext(
-      ResumableUploadServiceStubSettings settings) throws IOException {
+  private static ClientContext deriveHttpJsonClientContext(MediaServiceStubSettings settings)
+      throws IOException {
     return ClientContext.create(
         settings
             .toBuilder()
             .setHttpJsonInternalHeaderProvider(
                 ApiClientHeaderProvider.newBuilder()
                     .setGeneratedLibToken(
-                        "gapic",
-                        GaxProperties.getLibraryVersion(ResumableUploadServiceStubSettings.class))
+                        "gapic", GaxProperties.getLibraryVersion(MediaServiceStubSettings.class))
                     .setTransportToken(
                         GaxHttpJsonProperties.getHttpJsonTokenName(),
                         GaxHttpJsonProperties.getHttpJsonVersion())
@@ -111,8 +109,8 @@ public class HttpJsonResumableUploadServiceResumableUploadStub implements Backgr
             .build());
   }
 
-  private HttpJsonResumableUploadServiceResumableUploadStub(
-      ClientContext clientContext, ResumableUploadServiceStubSettings settings) {
+  private HttpJsonMediaServiceResumableUploadStub(
+      ClientContext clientContext, MediaServiceStubSettings settings) {
     HttpJsonCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
         HttpJsonCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
             .setMethodDescriptor(uploadMediaMethodDescriptor)
