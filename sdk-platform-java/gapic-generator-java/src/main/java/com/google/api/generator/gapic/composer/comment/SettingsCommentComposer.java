@@ -78,6 +78,10 @@ public class SettingsCommentComposer {
   public static final CommentStatement DEFAULT_CREDENTIALS_PROVIDER_BUILDER_METHOD_COMMENT =
       toCommentStatement("Returns a builder for the default credentials for this service.");
 
+  public static final CommentStatement SET_HTTP_JSON_INTERNAL_HEADER_PROVIDER_METHOD_COMMENT =
+      toCommentStatement(
+          "Sets the internal HeaderProvider for HTTP/JSON. Does not change the transport.");
+
   public static final CommentStatement DEFAULT_TRANSPORT_PROVIDER_BUILDER_METHOD_COMMENT =
       toCommentStatement("Returns a builder for the default ChannelProvider for this service.");
 
@@ -130,6 +134,11 @@ public class SettingsCommentComposer {
         isMethodInternal);
   }
 
+  public static CommentStatement createResumableUploadCallSettingsGetterComment(
+      String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
+    return createCallSettingsGetterComment(javaMethodName, isMethodDeprecated, isMethodInternal);
+  }
+
   public static CommentStatement createBuilderClassComment(String outerClassName) {
     return toCommentStatement(String.format(BUILDER_CLASS_DOC_PATTERN, outerClassName));
   }
@@ -138,6 +147,12 @@ public class SettingsCommentComposer {
       String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
     String methodComment = String.format(CALL_SETTINGS_BUILDER_METHOD_DOC_PATTERN, javaMethodName);
     return toCommentStatement(methodComment, isMethodDeprecated, isMethodInternal);
+  }
+
+  public static CommentStatement createResumableUploadCallSettingsBuilderGetterComment(
+      String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
+    return createCallSettingsBuilderGetterComment(
+        javaMethodName, isMethodDeprecated, isMethodInternal);
   }
 
   public static List<CommentStatement> createClassHeaderComments(
