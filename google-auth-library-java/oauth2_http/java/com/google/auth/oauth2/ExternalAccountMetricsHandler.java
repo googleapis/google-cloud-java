@@ -44,8 +44,8 @@ class ExternalAccountMetricsHandler implements java.io.Serializable {
   private static final String CONFIG_LIFETIME_KEY = "config-lifetime";
   private static final String BYOID_METRICS_SECTION = "google-byoid-sdk";
 
-  private final boolean configLifetime;
-  private final boolean saImpersonation;
+  final boolean configLifetime;
+  final boolean saImpersonation;
   private ExternalAccountCredentials credentials;
 
   /**
@@ -55,9 +55,17 @@ class ExternalAccountMetricsHandler implements java.io.Serializable {
    *     options from.
    */
   ExternalAccountMetricsHandler(ExternalAccountCredentials creds) {
-    this.saImpersonation = creds.getServiceAccountImpersonationUrl() != null;
-    this.configLifetime =
-        creds.getServiceAccountImpersonationOptions().customTokenLifetimeRequested;
+    this(
+        creds,
+        creds.getServiceAccountImpersonationUrl() != null,
+        creds.getServiceAccountImpersonationUrl() != null
+            && creds.getServiceAccountImpersonationOptions().customTokenLifetimeRequested);
+  }
+
+  ExternalAccountMetricsHandler(
+      ExternalAccountCredentials creds, boolean saImpersonation, boolean configLifetime) {
+    this.saImpersonation = saImpersonation;
+    this.configLifetime = configLifetime;
     this.credentials = creds;
   }
 
