@@ -929,16 +929,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
       }
-      if (ex instanceof RuntimeException) {
-        throw (ex instanceof BigQueryJdbcRuntimeException)
-            ? (BigQueryJdbcRuntimeException) ex
-            : new BigQueryJdbcRuntimeException(ex);
-      }
-      if (ex instanceof SQLException) {
-        throw (ex instanceof BigQueryJdbcException)
-            ? (BigQueryJdbcException) ex
-            : new BigQueryJdbcException(ex);
-      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
   }
