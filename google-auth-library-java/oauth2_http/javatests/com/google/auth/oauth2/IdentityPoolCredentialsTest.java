@@ -417,10 +417,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
+    assertEquals(3, transportFactory.transport.getRequests().size());
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(2).getHeaders();
+        transportFactory.transport.getRequests().get(1).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "url", true, false);
   }
 
@@ -450,6 +451,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
+    assertEquals(3, transportFactory.transport.getRequests().size());
 
     // Validate that default lifetime was set correctly on the request.
     GenericJson query =
@@ -461,7 +463,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(2).getHeaders();
+        transportFactory.transport.getRequests().get(1).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "url", true, true);
   }
 
@@ -498,9 +500,15 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         new MockExternalAccountCredentialsTransportFactory();
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+    final int[] invocationCount = {0};
+    IdentityPoolSubjectTokenSupplier countingSupplier =
+        context -> {
+          invocationCount[0]++;
+          return "testSubjectToken";
+        };
     IdentityPoolCredentials credential =
         IdentityPoolCredentials.newBuilder()
-            .setSubjectTokenSupplier(testProvider)
+            .setSubjectTokenSupplier(countingSupplier)
             .setAudience(
                 "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
             .setSubjectTokenType("subjectTokenType")
@@ -513,6 +521,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     AccessToken accessToken = credential.refreshAccessToken();
 
+    assertEquals(1, invocationCount[0]);
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
@@ -520,6 +529,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "programmatic", true, false);
+
+    // Validate that refreshing a second time reuses cached impersonatedCredentials and does not
+    // re-invoke the supplier while the source STS token is still unexpired.
+    credential.refreshAccessToken();
+    assertEquals(1, invocationCount[0]);
   }
 
   @Test
