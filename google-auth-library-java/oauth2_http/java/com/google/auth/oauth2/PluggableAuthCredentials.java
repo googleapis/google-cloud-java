@@ -124,10 +124,10 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    if (this.impersonatedCredentials == null) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
+    if (getServiceAccountImpersonationUrl() != null) {
+      if (this.impersonatedCredentials == null) {
+        this.impersonatedCredentials = this.buildImpersonatedCredentials();
+      }
       return this.impersonatedCredentials.refreshAccessToken();
     }
     String credential = retrieveSubjectToken();
