@@ -34,7 +34,7 @@ import io.grpc.Status;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
@@ -306,19 +306,22 @@ public class GcpFallbackChannel extends ManagedChannel {
     boolean initialFallbackMode = isInFallbackMode();
     ManagedChannel delegate =
         initialFallbackMode ? fallbackDelegateChannel : primaryDelegateChannel;
+    AtomicReference<Runnable> callbackRef = new AtomicReference<>(callback);
+    Runnable once =
+        () -> {
+          Runnable cb = callbackRef.getAndSet(null);
+          if (cb != null) {
+            cb.run();
+          }
+        };
     if (delegate != null) {
-      AtomicBoolean fired = new AtomicBoolean(false);
-      Runnable once =
-          () -> {
-            if (fired.compareAndSet(false, true)) {
-              callback.run();
-            }
-          };
-      fallbackState.registerStateChangeCallback(once);
-      if (isInFallbackMode() != initialFallbackMode) {
-        fallbackState.unregisterStateChangeCallback(once);
-        once.run();
-        return;
+      if (source != ConnectivityState.SHUTDOWN) {
+        fallbackState.registerStateChangeCallback(once);
+        if (isInFallbackMode() != initialFallbackMode) {
+          fallbackState.unregisterStateChangeCallback(once);
+          once.run();
+          return;
+        }
       }
       delegate.notifyWhenStateChanged(
           source,
@@ -326,6 +329,8 @@ public class GcpFallbackChannel extends ManagedChannel {
             fallbackState.unregisterStateChangeCallback(once);
             once.run();
           });
+    } else if (source != ConnectivityState.SHUTDOWN) {
+      once.run();
     }
   }
 

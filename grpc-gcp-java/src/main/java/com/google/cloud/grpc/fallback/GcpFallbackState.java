@@ -75,7 +75,7 @@ public class GcpFallbackState {
     for (Runnable callback : callbacks) {
       try {
         callback.run();
-      } catch (Exception e) {
+      } catch (Throwable t) {
       }
     }
   }
@@ -237,7 +237,7 @@ public class GcpFallbackState {
         () -> {
           try {
             command.run();
-          } catch (Exception e) {
+          } catch (Throwable t) {
           }
         },
         initialDelay,
