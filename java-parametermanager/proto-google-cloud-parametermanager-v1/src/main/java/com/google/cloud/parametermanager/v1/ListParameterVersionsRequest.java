@@ -161,7 +161,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A page token, received from a previous `ListParameterVersions`
+   * call. Provide this to retrieve the subsequent page.
+   *
+   * When paginating, all other parameters provided to `ListParameterVersions`
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +189,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. A token identifying a page of results the server should return.
+   * Optional. A page token, received from a previous `ListParameterVersions`
+   * call. Provide this to retrieve the subsequent page.
+   *
+   * When paginating, all other parameters provided to `ListParameterVersions`
+   * must match the call that provided the page token.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -913,7 +921,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A page token, received from a previous `ListParameterVersions`
+     * call. Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListParameterVersions`
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -936,7 +948,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A page token, received from a previous `ListParameterVersions`
+     * call. Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListParameterVersions`
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -959,7 +975,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A page token, received from a previous `ListParameterVersions`
+     * call. Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListParameterVersions`
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -981,7 +1001,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A page token, received from a previous `ListParameterVersions`
+     * call. Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListParameterVersions`
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -999,7 +1023,11 @@ public final class ListParameterVersionsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. A token identifying a page of results the server should return.
+     * Optional. A page token, received from a previous `ListParameterVersions`
+     * call. Provide this to retrieve the subsequent page.
+     *
+     * When paginating, all other parameters provided to `ListParameterVersions`
+     * must match the call that provided the page token.
      * </pre>
      *
      * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

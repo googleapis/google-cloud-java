@@ -1350,6 +1350,580 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
     }
   }
 
+  public interface BatchSearchMetadataOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, per-result quality signals are returned in
+     * [SearchResult.search_result_metadata][google.cloud.vectorsearch.v1beta.SearchResult.search_result_metadata].
+     * </pre>
+     *
+     * <code>bool search_signals_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The searchSignalsEnabled.
+     */
+    boolean getSearchSignalsEnabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Options controlling which metadata is included in the search results.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions}
+   */
+  public static final class BatchSearchMetadataOptions extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions)
+      BatchSearchMetadataOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "BatchSearchMetadataOptions");
+    }
+
+    // Use BatchSearchMetadataOptions.newBuilder() to construct.
+    private BatchSearchMetadataOptions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BatchSearchMetadataOptions() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_BatchSearchDataObjectsRequest_BatchSearchMetadataOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_BatchSearchDataObjectsRequest_BatchSearchMetadataOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                  .BatchSearchMetadataOptions.class,
+              com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                  .BatchSearchMetadataOptions.Builder.class);
+    }
+
+    public static final int SEARCH_SIGNALS_ENABLED_FIELD_NUMBER = 1;
+    private boolean searchSignalsEnabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, per-result quality signals are returned in
+     * [SearchResult.search_result_metadata][google.cloud.vectorsearch.v1beta.SearchResult.search_result_metadata].
+     * </pre>
+     *
+     * <code>bool search_signals_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The searchSignalsEnabled.
+     */
+    @java.lang.Override
+    public boolean getSearchSignalsEnabled() {
+      return searchSignalsEnabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (searchSignalsEnabled_ != false) {
+        output.writeBool(1, searchSignalsEnabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (searchSignalsEnabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, searchSignalsEnabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+              .BatchSearchMetadataOptions)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions
+          other =
+              (com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                      .BatchSearchMetadataOptions)
+                  obj;
+
+      if (getSearchSignalsEnabled() != other.getSearchSignalsEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SEARCH_SIGNALS_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSearchSignalsEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Options controlling which metadata is included in the search results.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions)
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_BatchSearchDataObjectsRequest_BatchSearchMetadataOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_BatchSearchDataObjectsRequest_BatchSearchMetadataOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions.class,
+                com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        searchSignalsEnabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_BatchSearchDataObjectsRequest_BatchSearchMetadataOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+              .BatchSearchMetadataOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+              .BatchSearchMetadataOptions
+          build() {
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+              .BatchSearchMetadataOptions
+          buildPartial() {
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions
+            result =
+                new com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                  .BatchSearchMetadataOptions
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.searchSignalsEnabled_ = searchSignalsEnabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions) {
+          return mergeFrom(
+              (com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                      .BatchSearchMetadataOptions)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                  .BatchSearchMetadataOptions
+              other) {
+        if (other
+            == com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.getDefaultInstance()) return this;
+        if (other.getSearchSignalsEnabled() != false) {
+          setSearchSignalsEnabled(other.getSearchSignalsEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  searchSignalsEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean searchSignalsEnabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, per-result quality signals are returned in
+       * [SearchResult.search_result_metadata][google.cloud.vectorsearch.v1beta.SearchResult.search_result_metadata].
+       * </pre>
+       *
+       * <code>bool search_signals_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The searchSignalsEnabled.
+       */
+      @java.lang.Override
+      public boolean getSearchSignalsEnabled() {
+        return searchSignalsEnabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, per-result quality signals are returned in
+       * [SearchResult.search_result_metadata][google.cloud.vectorsearch.v1beta.SearchResult.search_result_metadata].
+       * </pre>
+       *
+       * <code>bool search_signals_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The searchSignalsEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSearchSignalsEnabled(boolean value) {
+
+        searchSignalsEnabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, per-result quality signals are returned in
+       * [SearchResult.search_result_metadata][google.cloud.vectorsearch.v1beta.SearchResult.search_result_metadata].
+       * </pre>
+       *
+       * <code>bool search_signals_enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSearchSignalsEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        searchSignalsEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions)
+    private static final com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+              .BatchSearchMetadataOptions();
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BatchSearchMetadataOptions> PARSER =
+        new com.google.protobuf.AbstractParser<BatchSearchMetadataOptions>() {
+          @java.lang.Override
+          public BatchSearchMetadataOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BatchSearchMetadataOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BatchSearchMetadataOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
 
@@ -1561,6 +2135,76 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
         : combine_;
   }
 
+  public static final int METADATA_OPTIONS_FIELD_NUMBER = 4;
+  private com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+          .BatchSearchMetadataOptions
+      metadataOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadataOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasMetadataOptions() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadataOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+          .BatchSearchMetadataOptions
+      getMetadataOptions() {
+    return metadataOptions_ == null
+        ? com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions.getDefaultInstance()
+        : metadataOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+          .BatchSearchMetadataOptionsOrBuilder
+      getMetadataOptionsOrBuilder() {
+    return metadataOptions_ == null
+        ? com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions.getDefaultInstance()
+        : metadataOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1584,6 +2228,9 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getCombine());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getMetadataOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1601,6 +2248,9 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCombine());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMetadataOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1624,6 +2274,10 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
     if (hasCombine()) {
       if (!getCombine().equals(other.getCombine())) return false;
     }
+    if (hasMetadataOptions() != other.hasMetadataOptions()) return false;
+    if (hasMetadataOptions()) {
+      if (!getMetadataOptions().equals(other.getMetadataOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1644,6 +2298,10 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
     if (hasCombine()) {
       hash = (37 * hash) + COMBINE_FIELD_NUMBER;
       hash = (53 * hash) + getCombine().hashCode();
+    }
+    if (hasMetadataOptions()) {
+      hash = (37 * hash) + METADATA_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getMetadataOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1791,6 +2449,7 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetSearchesFieldBuilder();
         internalGetCombineFieldBuilder();
+        internalGetMetadataOptionsFieldBuilder();
       }
     }
 
@@ -1810,6 +2469,11 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
       if (combineBuilder_ != null) {
         combineBuilder_.dispose();
         combineBuilder_ = null;
+      }
+      metadataOptions_ = null;
+      if (metadataOptionsBuilder_ != null) {
+        metadataOptionsBuilder_.dispose();
+        metadataOptionsBuilder_ = null;
       }
       return this;
     }
@@ -1872,6 +2536,11 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
         result.combine_ = combineBuilder_ == null ? combine_ : combineBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.metadataOptions_ =
+            metadataOptionsBuilder_ == null ? metadataOptions_ : metadataOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1926,6 +2595,9 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
       if (other.hasCombine()) {
         mergeCombine(other.getCombine());
       }
+      if (other.hasMetadataOptions()) {
+        mergeMetadataOptions(other.getMetadataOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1977,6 +2649,13 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetMetadataOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2761,6 +3440,257 @@ public final class BatchSearchDataObjectsRequest extends com.google.protobuf.Gen
         combine_ = null;
       }
       return combineBuilder_;
+    }
+
+    private com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        metadataOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions,
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.Builder,
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptionsOrBuilder>
+        metadataOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the metadataOptions field is set.
+     */
+    public boolean hasMetadataOptions() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The metadataOptions.
+     */
+    public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions
+        getMetadataOptions() {
+      if (metadataOptionsBuilder_ == null) {
+        return metadataOptions_ == null
+            ? com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.getDefaultInstance()
+            : metadataOptions_;
+      } else {
+        return metadataOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadataOptions(
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions
+            value) {
+      if (metadataOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        metadataOptions_ = value;
+      } else {
+        metadataOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMetadataOptions(
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.Builder
+            builderForValue) {
+      if (metadataOptionsBuilder_ == null) {
+        metadataOptions_ = builderForValue.build();
+      } else {
+        metadataOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMetadataOptions(
+        com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions
+            value) {
+      if (metadataOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && metadataOptions_ != null
+            && metadataOptions_
+                != com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions.getDefaultInstance()) {
+          getMetadataOptionsBuilder().mergeFrom(value);
+        } else {
+          metadataOptions_ = value;
+        }
+      } else {
+        metadataOptionsBuilder_.mergeFrom(value);
+      }
+      if (metadataOptions_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMetadataOptions() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      metadataOptions_ = null;
+      if (metadataOptionsBuilder_ != null) {
+        metadataOptionsBuilder_.dispose();
+        metadataOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptions.Builder
+        getMetadataOptionsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetMetadataOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+            .BatchSearchMetadataOptionsOrBuilder
+        getMetadataOptionsOrBuilder() {
+      if (metadataOptionsBuilder_ != null) {
+        return metadataOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return metadataOptions_ == null
+            ? com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.getDefaultInstance()
+            : metadataOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options controlling which metadata is included in the search
+     * results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions,
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptions.Builder,
+            com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                .BatchSearchMetadataOptionsOrBuilder>
+        internalGetMetadataOptionsFieldBuilder() {
+      if (metadataOptionsBuilder_ == null) {
+        metadataOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions,
+                com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptions.Builder,
+                com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+                    .BatchSearchMetadataOptionsOrBuilder>(
+                getMetadataOptions(), getParentForChildren(), isClean());
+        metadataOptions_ = null;
+      }
+      return metadataOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest)
