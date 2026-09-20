@@ -286,7 +286,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     if (serviceAccountImpersonationUrl == null) {
       return null;
     }
-
     // Create a copy of this instance without service account impersonation.
     ExternalAccountCredentials sourceCredentials;
     if (this instanceof AwsCredentials) {
@@ -525,15 +524,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
   }
 
-  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
-    synchronized (this.lock) {
-      if (this.shouldBuildImpersonatedCredential()) {
-        this.impersonatedCredentials = this.buildImpersonatedCredentials();
-      }
-      return this.impersonatedCredentials;
-    }
-  }
-
   /**
    * Exchanges the external credential for a Google Cloud access token.
    *
@@ -544,7 +534,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   protected AccessToken exchangeExternalCredentialForAccessToken(
       StsTokenExchangeRequest stsTokenExchangeRequest) throws IOException {
     // Handle service account impersonation if necessary.
-    if (getImpersonatedCredentials() != null) {
+    if (this.shouldBuildImpersonatedCredential()) {
+      this.impersonatedCredentials = this.buildImpersonatedCredentials();
+    }
+    if (this.impersonatedCredentials != null) {
       return this.impersonatedCredentials.refreshAccessToken();
     }
 
