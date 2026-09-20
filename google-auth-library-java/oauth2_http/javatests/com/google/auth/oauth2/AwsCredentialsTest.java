@@ -165,10 +165,18 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
+    // 3 AWS metadata requests (region, role, credentials) + 1 STS + 1 IAM generateAccessToken.
+    assertEquals(5, transportFactory.transport.getRequests().size());
+
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(6).getHeaders();
+        transportFactory.transport.getRequests().get(3).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, false);
+
+    // Refreshing a second time reuses cached impersonatedCredentials and does not re-query AWS
+    // metadata while the source STS token is still unexpired.
+    awsCredential.refreshAccessToken();
+    assertEquals(6, transportFactory.transport.getRequests().size());
   }
 
   @Test
@@ -196,6 +204,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
+    assertEquals(5, transportFactory.transport.getRequests().size());
 
     // Validate that default lifetime was set correctly on the request.
     try (JsonParser jsonParser =
@@ -206,7 +215,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
       // Validate metrics header is set correctly on the sts request.
       Map<String, List<String>> headers =
-          transportFactory.transport.getRequests().get(6).getHeaders();
+          transportFactory.transport.getRequests().get(3).getHeaders();
       ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, true);
     }
   }
@@ -246,7 +255,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
 
-    AwsSecurityCredentialsSupplier supplier =
+    TestAwsSecurityCredentialsSupplier supplier =
         new TestAwsSecurityCredentialsSupplier("test", programmaticAwsCreds, null, null);
 
     AwsCredentials awsCredential =
@@ -264,11 +273,17 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
+    assertEquals(1, supplier.getRegionCount());
+    assertEquals(1, supplier.getCredentialsCount());
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "programmatic", true, false);
+
+    awsCredential.refreshAccessToken();
+    assertEquals(1, supplier.getRegionCount());
+    assertEquals(1, supplier.getCredentialsCount());
   }
 
   @Test
@@ -1353,6 +1368,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
     private final AwsSecurityCredentials credentials;
     private final IOException credentialException;
     private final ExternalAccountSupplierContext expectedContext;
+    private int getRegionCount = 0;
+    private int getCredentialsCount = 0;
 
     TestAwsSecurityCredentialsSupplier(
         String region,
@@ -1365,8 +1382,17 @@ class AwsCredentialsTest extends BaseSerializationTest {
       this.expectedContext = expectedContext;
     }
 
+    int getRegionCount() {
+      return getRegionCount;
+    }
+
+    int getCredentialsCount() {
+      return getCredentialsCount;
+    }
+
     @Override
     public String getRegion(ExternalAccountSupplierContext context) throws IOException {
+      getRegionCount++;
       if (expectedContext != null) {
         assertEquals(expectedContext.getAudience(), context.getAudience());
         assertEquals(expectedContext.getSubjectTokenType(), context.getSubjectTokenType());
@@ -1377,6 +1403,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
     @Override
     public AwsSecurityCredentials getCredentials(ExternalAccountSupplierContext context)
         throws IOException {
+      getCredentialsCount++;
       if (credentialException != null) {
         throw credentialException;
       }
