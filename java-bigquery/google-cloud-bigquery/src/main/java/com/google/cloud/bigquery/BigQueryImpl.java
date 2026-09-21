@@ -67,7 +67,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.primitives.Longs;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
@@ -2620,20 +2619,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
-    long initialRowOffset = 0L;
+    long initialRowOffset = (long) firstPageRows.size();
     if (hasMorePages) {
-      Long parsedOffset = Longs.tryParse(results.getPageToken());
-      if (parsedOffset == null) {
-        throw new BigQueryException(
-            0,
-            String.format(
-                "Unable to parse page token '%s' as a numeric row offset for Arrow query pagination",
-                results.getPageToken()));
-      }
-      initialRowOffset = parsedOffset;
-      if (content.getMaxResults() != null
-          && (initialRowOffset >= content.getMaxResults()
-              || firstPageRows.size() >= content.getMaxResults())) {
+      if (content.getMaxResults() != null && initialRowOffset >= content.getMaxResults()) {
         hasMorePages = false;
       }
     }

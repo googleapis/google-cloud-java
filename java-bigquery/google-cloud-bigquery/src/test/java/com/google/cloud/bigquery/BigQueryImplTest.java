@@ -3284,6 +3284,24 @@ public class BigQueryImplTest {
       schemaBytes = out.toByteArray();
     }
 
+    // Prepare page 1 Arrow batch for initial response with 1 row
+    byte[] page1BatchBytes;
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
+        BigIntVector idVector = new BigIntVector("id", allocator)) {
+      idVector.allocateNew(1);
+      idVector.set(0, 1L);
+      idVector.setValueCount(1);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(idVector))) {
+        VectorUnloader unloader = new VectorUnloader(root);
+        try (ArrowRecordBatch recordBatch = unloader.getRecordBatch();
+            ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+          WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+          MessageSerializer.serialize(channel, recordBatch);
+          page1BatchBytes = out.toByteArray();
+        }
+      }
+    }
+
     // Prepare page 2 Arrow batch for streaming with 2 rows
     byte[] page2BatchBytes;
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
@@ -3310,10 +3328,13 @@ public class BigQueryImplTest {
             .setJobComplete(true)
             .setJobReference(queryJob.toPb())
             .setTotalRows(BigInteger.valueOf(3L))
-            .setPageToken("1")
+            .setPageToken("BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====")
             .setArrowSchema(
                 new com.google.api.services.bigquery.model.ArrowSchema()
-                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)))
+            .setArrowRecordBatch(
+                new com.google.api.services.bigquery.model.ArrowRecordBatch()
+                    .setSerializedRecordBatch(BaseEncoding.base64().encode(page1BatchBytes)));
 
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
         .thenReturn(queryResponsePb);
@@ -3632,7 +3653,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testQueryWithArrowFormatInvalidPageToken() throws Exception {
+  void testQueryWithArrowFormatOpaquePageToken() throws Exception {
     org.apache.arrow.vector.types.pojo.Schema arrowSchema =
         new org.apache.arrow.vector.types.pojo.Schema(
             ImmutableList.of(
@@ -3648,11 +3669,11 @@ public class BigQueryImplTest {
     JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
         new com.google.api.services.bigquery.model.QueryResponse()
-            .setQueryId("q-arrow-invalid-token")
+            .setQueryId("q-arrow-opaque-token")
             .setJobComplete(true)
             .setJobReference(queryJob.toPb())
             .setTotalRows(BigInteger.valueOf(2L))
-            .setPageToken("invalid-non-numeric-token")
+            .setPageToken("BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====")
             .setArrowSchema(
                 new com.google.api.services.bigquery.model.ArrowSchema()
                     .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
@@ -3666,8 +3687,11 @@ public class BigQueryImplTest {
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .build();
-    BigQueryException e = assertThrows(BigQueryException.class, () -> bigquery.query(config));
-    assertTrue(e.getMessage().contains("Unable to parse page token 'invalid-non-numeric-token'"));
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertTrue(result.hasNextPage());
+    assertEquals(
+        "BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====", result.getNextPageToken());
   }
 
   @Test
