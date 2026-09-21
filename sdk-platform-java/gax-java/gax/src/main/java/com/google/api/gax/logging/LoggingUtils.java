@@ -33,6 +33,8 @@ package com.google.api.gax.logging;
 import com.google.api.core.InternalApi;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.slf4j.Logger;
+import org.slf4j.event.Level;
 
 @NullMarked
 @InternalApi
@@ -149,7 +151,7 @@ public class LoggingUtils {
   }
 
   /**
-   * Logs an actionable error message with structured context at a specific log level.
+   * Logs an actionable error message with structured context at DEBUG level.
    *
    * @param logContext A map containing the structured logging context (e.g., RPC service, method,
    *     error details).
@@ -158,9 +160,23 @@ public class LoggingUtils {
    */
   public static void logActionableError(
       Map<String, Object> logContext, LoggerProvider loggerProvider, String message) {
+    logActionableError(logContext, loggerProvider, message, Level.DEBUG);
+  }
+
+  /**
+   * Logs an actionable error message with structured context at a specified log level.
+   *
+   * @param logContext A map containing the structured logging context (e.g., RPC service, method,
+   *     error details).
+   * @param loggerProvider The provider used to obtain the logger.
+   * @param message The human-readable error message.
+   * @param level The SLF4J log level at which to emit the error log.
+   */
+  public static void logActionableError(
+      Map<String, Object> logContext, LoggerProvider loggerProvider, String message, Level level) {
     if (loggingEnabled) {
-      org.slf4j.Logger logger = loggerProvider.getLogger();
-      Slf4jUtils.log(logger, org.slf4j.event.Level.DEBUG, logContext, message);
+      Logger logger = loggerProvider.getLogger();
+      Slf4jUtils.log(logger, level, logContext, message);
     }
   }
 

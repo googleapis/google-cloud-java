@@ -123,4 +123,24 @@ class LoggingUtilsTest {
 
     verify(loggerProvider).getLogger();
   }
+
+  @Test
+  void testLogActionableError_withLevel_success() {
+    LoggingUtils.setLoggingEnabled(true);
+    LoggerProvider loggerProvider =
+        mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
+    Logger logger = mock(Logger.class, Mockito.withSettings().withoutAnnotations());
+    when(loggerProvider.getLogger()).thenReturn(logger);
+
+    org.slf4j.spi.LoggingEventBuilder eventBuilder = mock(org.slf4j.spi.LoggingEventBuilder.class);
+    when(logger.atError()).thenReturn(eventBuilder);
+    when(eventBuilder.addKeyValue(anyString(), any())).thenReturn(eventBuilder);
+
+    Map<String, Object> context = Collections.singletonMap("key", "value");
+    LoggingUtils.logActionableError(
+        context, loggerProvider, "message", org.slf4j.event.Level.ERROR);
+
+    verify(loggerProvider).getLogger();
+    verify(logger).atError();
+  }
 }
