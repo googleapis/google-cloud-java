@@ -70,11 +70,10 @@ public class DynamicKeyManagerTest {
       assertEquals(1, aliases1.length);
       assertEquals(alias1, aliases1[0]);
 
-      // Ensure lastModified timestamp changes upon rotation
-      Thread.sleep(1100);
-
       Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
       Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+      certFile.setLastModified(System.currentTimeMillis() + 2000L);
+      keyFile.setLastModified(System.currentTimeMillis() + 2000L);
 
       String alias2 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
       assertNotNull(alias2);
@@ -172,10 +171,9 @@ public class DynamicKeyManagerTest {
       String aliasBefore = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
       assertNotNull(aliasBefore);
 
-      Thread.sleep(1100);
-
       // Overwrite certFile with corrupt bytes
       Files.write(certFile.toPath(), "NOT A CERTIFICATE CONTENT".getBytes(StandardCharsets.UTF_8));
+      certFile.setLastModified(System.currentTimeMillis() + 2000L);
 
       // DynamicKeyManager should catch reload error and retain previous material
       String aliasAfter = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
@@ -278,10 +276,9 @@ public class DynamicKeyManagerTest {
       assertEquals(
           ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
 
-      Thread.sleep(1100);
-
       // Rotate only cert file (e.g., intermediate state during rotation)
       Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+      certFile.setLastModified(System.currentTimeMillis() + 2000L);
 
       // Key manager should detect mismatch and retain ssc1 credentials
       String aliasAfter = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);

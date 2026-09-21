@@ -300,6 +300,10 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   public X509Certificate[] getAcceptedIssuers() {
     checkAndReload();
     TrustMaterial mat = this.currentMaterial;
-    return mat != null ? mat.delegate.getAcceptedIssuers() : new X509Certificate[0];
+    if (mat == null) {
+      return new X509Certificate[0];
+    }
+    X509Certificate[] issuers = mat.delegate.getAcceptedIssuers();
+    return issuers != null ? issuers : new X509Certificate[0];
   }
 }

@@ -69,10 +69,9 @@ public class DynamicTrustManagerTest {
           CertificateException.class,
           () -> trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA"));
 
-      Thread.sleep(1100);
-
       // Rotate CA file on disk to ca2
       Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+      caFile.setLastModified(System.currentTimeMillis() + 2000L);
 
       // Now ca2 should be accepted and ca1 should be rejected
       X509Certificate[] issuers2 = trustManager.getAcceptedIssuers();
@@ -154,10 +153,9 @@ public class DynamicTrustManagerTest {
       DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
       trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
 
-      Thread.sleep(1100);
-
       // Corrupt the file
       Files.write(caFile.toPath(), "CORRUPT CERT DATA".getBytes(StandardCharsets.UTF_8));
+      caFile.setLastModified(System.currentTimeMillis() + 2000L);
 
       // Trust manager should retain previous CA
       trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
