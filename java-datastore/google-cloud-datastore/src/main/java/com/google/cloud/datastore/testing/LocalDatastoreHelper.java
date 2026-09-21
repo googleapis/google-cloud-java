@@ -65,7 +65,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   // Downloadable emulator settings
   private static final String BIN_NAME = "cloud-datastore-emulator/cloud_datastore_emulator";
   private static final String FILENAME = "cloud-datastore-emulator-" + MIN_VERSION + ".zip";
-  private static final String MD5_CHECKSUM = "e0d1170519cf52e2e5f9f93892cdf70c";
+  private static final String MD5_CHECKSUM = "7c1f5a3276241a8f78cb1a837daaaa47";
   private static final String BIN_CMD_PORT_FLAG = "--port=";
   private static final URL EMULATOR_URL;
   private static final String EMULATOR_URL_ENV_VAR = "DATASTORE_EMULATOR_URL";
