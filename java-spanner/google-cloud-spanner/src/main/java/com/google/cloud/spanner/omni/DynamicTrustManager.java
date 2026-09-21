@@ -159,7 +159,7 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       throw new CertificateException("No certificates found in CA certificate file");
     }
 
-    KeyStore ks = KeyStore.getInstance("JKS");
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
     ks.load(null, null);
     int index = 0;
     for (Certificate cert : certs) {
@@ -304,6 +304,6 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       return new X509Certificate[0];
     }
     X509Certificate[] issuers = mat.delegate.getAcceptedIssuers();
-    return issuers != null ? issuers : new X509Certificate[0];
+    return issuers != null ? issuers.clone() : new X509Certificate[0];
   }
 }
