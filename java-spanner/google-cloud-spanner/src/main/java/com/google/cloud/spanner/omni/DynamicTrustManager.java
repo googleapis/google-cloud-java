@@ -159,7 +159,7 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       throw new CertificateException("No certificates found in CA certificate file");
     }
 
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    KeyStore ks = KeyStore.getInstance("JKS");
     ks.load(null, null);
     int index = 0;
     for (Certificate cert : certs) {
