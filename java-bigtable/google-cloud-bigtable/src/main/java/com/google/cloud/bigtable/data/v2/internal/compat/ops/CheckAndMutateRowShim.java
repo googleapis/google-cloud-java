@@ -59,21 +59,8 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
 
   @Override
   public boolean supports(ConditionalRowMutation request) {
-    TargetId targetId = request.getTargetId();
-    SessionPool<?> pool;
-    // TODO: avoid double lookup
-    if (targetId instanceof TableId) {
-      pool = tables.get((TableId) targetId).getSessionPool();
-    } else if (targetId instanceof AuthorizedViewId) {
-      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
-    } else {
-      return false;
-    }
-    // Currently this will only fallback in case RLS is misconfigured. If the AFE
-    // pool is unavailable, it'll be controlled by ClientConfiguration.
-    return pool.getConsecutiveUnimplementedFailures()
-            < ShimImpl.MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES
-        || pool.hasSession();
+    // TODO: enable once diversion by method is added
+    return false;
   }
 
   @Override
