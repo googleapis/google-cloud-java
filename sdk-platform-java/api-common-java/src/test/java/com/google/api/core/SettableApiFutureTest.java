@@ -34,6 +34,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiFunction;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -84,6 +86,28 @@ class SettableApiFutureTest {
           @Override
           public void execute(Runnable r) {
             r.run();
+          }
+        });
+    future.set(0);
+    Truth.assertThat(flag.get()).isEqualTo(1);
+  }
+
+  @Test
+  void testCompletable() {
+    final AtomicInteger flag = new AtomicInteger();
+    SettableApiFuture<Integer> future = SettableApiFuture.<Integer>create();
+    future.completable(
+        new Executor() {
+          @Override
+          public void execute(Runnable r) {
+            r.run();
+          }
+        }).handle(
+        new BiFunction<Integer, Throwable, Object>() {
+          @Override
+          public Object apply(Integer integer, Throwable throwable) {
+            flag.set(1);
+            return null;
           }
         });
     future.set(0);

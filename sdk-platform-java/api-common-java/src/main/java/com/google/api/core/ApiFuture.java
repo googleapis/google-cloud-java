@@ -29,6 +29,7 @@
  */
 package com.google.api.core;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 
@@ -39,4 +40,18 @@ import java.util.concurrent.Future;
  */
 public interface ApiFuture<V> extends Future<V> {
   void addListener(Runnable listener, Executor executor);
+
+  default CompletableFuture<V> completable(Executor executor) {
+    CompletableFuture<V> completableFuture = new CompletableFuture<>();
+
+    addListener(() -> {
+      try {
+        completableFuture.complete(get());
+      } catch (Exception e) {
+        completableFuture.completeExceptionally(e);
+      }
+    }, executor);
+
+    return completableFuture;
+  }
 }
