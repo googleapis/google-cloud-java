@@ -65,6 +65,11 @@ class LoggingTracer extends BaseApiTracer {
   }
 
   @Override
+  public void operationFailed(Throwable error) {
+    recordActionableError(error);
+  }
+
+  @Override
   public void attemptPermanentFailure(Throwable error) {
     recordActionableError(error);
   }
