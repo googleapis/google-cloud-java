@@ -945,13 +945,17 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
     if (builder.omniSslContext != null) {
+      final SslContext sslContext = builder.omniSslContext;
+      @SuppressWarnings("rawtypes")
+      final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> parentConfigurator =
+          builder.channelConfigurator;
       channelConfigurator =
           channelBuilder -> {
-            if (builder.channelConfigurator != null) {
-              channelBuilder = builder.channelConfigurator.apply(channelBuilder);
+            if (parentConfigurator != null) {
+              channelBuilder = parentConfigurator.apply(channelBuilder);
             }
             if (channelBuilder instanceof NettyChannelBuilder) {
-              ((NettyChannelBuilder) channelBuilder).sslContext(builder.omniSslContext);
+              ((NettyChannelBuilder) channelBuilder).sslContext(sslContext);
             }
             return channelBuilder;
           };

@@ -50,8 +50,8 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
 
   private final File certFile;
   private final File keyFile;
-  private final long checkIntervalMs;
-  private volatile long lastCheckedMs;
+  private final long checkIntervalNs;
+  private volatile long lastCheckedNs;
 
   private static class KeyMaterial {
     final long certLastModified;
@@ -86,17 +86,17 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   DynamicKeyManager(File certFile, File keyFile, long checkIntervalMs) {
     this.certFile = Preconditions.checkNotNull(certFile, "certFile cannot be null");
     this.keyFile = Preconditions.checkNotNull(keyFile, "keyFile cannot be null");
-    this.checkIntervalMs = checkIntervalMs;
+    this.checkIntervalNs = checkIntervalMs * 1_000_000L;
     reloadMaterial();
-    this.lastCheckedMs = System.currentTimeMillis();
+    this.lastCheckedNs = System.nanoTime();
   }
 
   private void checkAndReload() {
-    long now = System.currentTimeMillis();
-    if (now - lastCheckedMs < checkIntervalMs) {
+    long now = System.nanoTime();
+    if (now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    lastCheckedMs = now;
+    lastCheckedNs = now;
     KeyMaterial existing = this.currentMaterial;
     if (existing != null
         && certFile.lastModified() == existing.certLastModified

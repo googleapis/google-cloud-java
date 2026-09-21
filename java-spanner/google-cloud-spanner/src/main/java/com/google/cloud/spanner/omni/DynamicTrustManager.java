@@ -47,8 +47,8 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
 
   private final File caCertFile;
-  private final long checkIntervalMs;
-  private volatile long lastCheckedMs;
+  private final long checkIntervalNs;
+  private volatile long lastCheckedNs;
 
   private static class TrustMaterial {
     final long lastModified;
@@ -70,20 +70,20 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
 
   DynamicTrustManager(@Nullable File caCertFile, long checkIntervalMs) {
     this.caCertFile = caCertFile;
-    this.checkIntervalMs = checkIntervalMs;
+    this.checkIntervalNs = checkIntervalMs * 1_000_000L;
     reloadMaterial();
-    this.lastCheckedMs = System.currentTimeMillis();
+    this.lastCheckedNs = System.nanoTime();
   }
 
   private void checkAndReload() {
     if (this.caCertFile == null) {
       return;
     }
-    long now = System.currentTimeMillis();
-    if (now - lastCheckedMs < checkIntervalMs) {
+    long now = System.nanoTime();
+    if (now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    lastCheckedMs = now;
+    lastCheckedNs = now;
     TrustMaterial existing = this.currentMaterial;
     if (existing != null
         && caCertFile.lastModified() == existing.lastModified
