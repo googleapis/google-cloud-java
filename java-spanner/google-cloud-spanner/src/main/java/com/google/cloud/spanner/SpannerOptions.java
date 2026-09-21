@@ -1305,21 +1305,23 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
-      if (builder.clientCertificate != null
-          || builder.clientCertificateKey != null
-          || builder.caCertificate != null) {
-        if ((builder.clientCertificate == null) != (builder.clientCertificateKey == null)) {
+      boolean hasClientCert = !Strings.isNullOrEmpty(builder.clientCertificate);
+      boolean hasClientKey = !Strings.isNullOrEmpty(builder.clientCertificateKey);
+      boolean hasCaCert = !Strings.isNullOrEmpty(builder.caCertificate);
+
+      if (hasClientCert || hasClientKey || hasCaCert) {
+        if (hasClientCert != hasClientKey) {
           throw new IllegalArgumentException(
               "Both clientCertificate and clientCertificateKey must be provided together");
         }
         try {
           SslContextBuilder sslContextBuilder = GrpcSslContexts.forClient();
-          if (builder.clientCertificate != null) {
+          if (hasClientCert) {
             sslContextBuilder.keyManager(
                 new DynamicKeyManager(
                     new File(builder.clientCertificate), new File(builder.clientCertificateKey)));
           }
-          if (builder.caCertificate != null) {
+          if (hasCaCert) {
             sslContextBuilder.trustManager(
                 new DynamicTrustManager(new File(builder.caCertificate)));
           }
@@ -2289,10 +2291,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param clientCertificateKey Path to the client private key file.
      */
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
-      this.clientCertificate =
-          Preconditions.checkNotNull(clientCertificate, "clientCertificate cannot be null");
-      this.clientCertificateKey =
-          Preconditions.checkNotNull(clientCertificateKey, "clientCertificateKey cannot be null");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificate), "clientCertificate cannot be null or empty");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificateKey),
+          "clientCertificateKey cannot be null or empty");
+      this.clientCertificate = clientCertificate;
+      this.clientCertificateKey = clientCertificateKey;
       return this;
     }
 
@@ -2303,8 +2308,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param caCertificate Path to the server root CA certificate file.
      */
     public Builder setCaCertificate(String caCertificate) {
-      this.caCertificate =
-          Preconditions.checkNotNull(caCertificate, "caCertificate cannot be null");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(caCertificate), "caCertificate cannot be null or empty");
+      this.caCertificate = caCertificate;
       return this;
     }
 

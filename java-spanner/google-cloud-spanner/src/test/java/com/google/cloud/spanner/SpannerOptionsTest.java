@@ -1753,4 +1753,24 @@ public class SpannerOptionsTest {
       ca.delete();
     }
   }
+
+  @Test
+  public void testUseClientCertAndCaCertificateEmptyValidation() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("", "/path/to/key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("/path/to/cert", ""));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert(null, "key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("cert", null));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(""));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(null));
+  }
 }
