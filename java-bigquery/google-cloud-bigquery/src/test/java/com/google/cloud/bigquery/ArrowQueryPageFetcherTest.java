@@ -289,8 +289,8 @@ public class ArrowQueryPageFetcherTest {
   }
 
   @Test
-  void testGetNextPage_missingLocationDefaultsToGlobal() throws IOException {
-    byte[] batchBytes = createBatchBytes(ImmutableList.of(10L));
+  void testGetNextPage_missingLocationDefaultsToUS() throws IOException {
+    byte[] batchBytes = createBatchBytes(ImmutableList.of(1L));
     ReadRowsResponse response =
         ReadRowsResponse.newBuilder()
             .setArrowRecordBatch(
@@ -331,7 +331,7 @@ public class ArrowQueryPageFetcherTest {
     Page<FieldValueList> page = fetcher.getNextPage();
     assertNotNull(page);
     assertEquals(
-        "projects/" + PROJECT + "/locations/global/jobs/" + JOB + "/streams/_default",
+        "projects/" + PROJECT + "/locations/US/jobs/" + JOB + "/streams/_default",
         requestCapture.getValue().getReadStream());
   }
 

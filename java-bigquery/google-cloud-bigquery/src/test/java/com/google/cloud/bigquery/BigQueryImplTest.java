@@ -2955,6 +2955,65 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testQueryArrowDefaultsToUSLocationWhenUnspecified() throws Exception {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(
+            ImmutableList.of(
+                org.apache.arrow.vector.types.pojo.Field.nullable(
+                    "id", new ArrowType.Int(64, true))));
+
+    byte[] schemaBytes;
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      schemaBytes = out.toByteArray();
+    }
+
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT 1")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    com.google.api.services.bigquery.model.JobReference jobRef =
+        new com.google.api.services.bigquery.model.JobReference()
+            .setProjectId(PROJECT)
+            .setJobId(JOB); // No location set
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setJobReference(jobRef)
+            .setJobComplete(true)
+            .setTotalRows(BigInteger.ONE)
+            .setArrowSchema(
+                new com.google.api.services.bigquery.model.ArrowSchema()
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> mockCallable =
+        mock(ServerStreamingCallable.class, withSettings().withoutAnnotations());
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> mockServerStream =
+        mock(ServerStream.class, withSettings().withoutAnnotations());
+    ArgumentCaptor<ReadRowsRequest> requestCapture = ArgumentCaptor.forClass(ReadRowsRequest.class);
+    when(mockCallable.call(requestCapture.capture())).thenReturn(mockServerStream);
+    when(mockServerStream.iterator()).thenReturn(Collections.emptyIterator());
+    when(mockReadClient.readRowsCallable()).thenReturn(mockCallable);
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    ArrowQueryResult result = bigquery.queryArrow(config);
+    assertNotNull(result);
+    result.iterator().hasNext();
+
+    assertEquals(
+        "projects/" + PROJECT + "/locations/US/jobs/" + JOB + "/streams/_default",
+        requestCapture.getValue().getReadStream());
+  }
+
+  @Test
   void testQueryWithArrowFormatSlowPathFallback() throws Exception {
     JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
     com.google.api.services.bigquery.model.JobStatus jobStatus =

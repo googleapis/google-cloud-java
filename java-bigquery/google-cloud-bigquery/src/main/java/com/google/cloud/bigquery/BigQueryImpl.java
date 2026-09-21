@@ -379,18 +379,19 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       List<FieldValueList> rowBatch = new ArrayList<>((int) Math.min(pageSize, 10000L));
 
       try {
-        // Resolve job location in order: JobId location -> BigQueryOptions location -> "global"
+        // Resolve job location in order: JobId location -> BigQueryOptions location -> "US"
         // default.
         // The Storage Read API stream resource name requires a location component (e.g.
         // projects/{project}/locations/{location}/jobs/{job}/streams/_default). If no specific
-        // location was provided on the job or service options, defaulting to "global" allows
-        // queries created without an explicit location to still stream results without failing.
+        // location was provided on the job or service options, defaulting to "US" (the standard
+        // BigQuery default multi-region) allows queries created without an explicit location
+        // to stream results from default datasets without failing.
         String location = jobId.getLocation();
         if (location == null) {
           location = serviceOptions.getLocation();
         }
         if (location == null) {
-          location = "global";
+          location = "US";
         }
 
         if (streamIterator == null) {
@@ -2919,12 +2920,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           if (jobLocation == null) {
             jobLocation = getOptions().getLocation();
           }
-          if (jobLocation != null) {
-            streamName =
-                String.format(
-                    "projects/%s/locations/%s/jobs/%s/streams/_default",
-                    jobProject, jobLocation, actualJobId.getJob());
+          if (jobLocation == null) {
+            jobLocation = "US";
           }
+          streamName =
+              String.format(
+                  "projects/%s/locations/%s/jobs/%s/streams/_default",
+                  jobProject, jobLocation, actualJobId.getJob());
         }
 
         BigQueryReadClient client = null;
