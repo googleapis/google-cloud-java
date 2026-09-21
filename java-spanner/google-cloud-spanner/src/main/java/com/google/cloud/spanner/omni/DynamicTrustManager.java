@@ -71,7 +71,11 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   DynamicTrustManager(@Nullable File caCertFile, long checkIntervalMs) {
     this.caCertFile = caCertFile;
     this.checkIntervalNs = checkIntervalMs * 1_000_000L;
-    reloadMaterial();
+    try {
+      reloadMaterial();
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to initialize CA certificate", e);
+    }
     this.lastCheckedNs = System.nanoTime();
   }
 
@@ -108,49 +112,38 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
     }
   }
 
-  private void reloadMaterial() {
-    try {
-      if (this.caCertFile == null) {
-        TrustManagerFactory tmf =
-            TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        tmf.init((KeyStore) null);
-        this.currentMaterial = new TrustMaterial(0, 0, findExtendedTrustManager(tmf));
-        return;
-      }
-
-      long mod = caCertFile.lastModified();
-      long len = caCertFile.length();
-      byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
-
-      CertificateFactory cf = CertificateFactory.getInstance("X.509");
-      Collection<? extends Certificate> certs =
-          cf.generateCertificates(new ByteArrayInputStream(certBytes));
-      if (certs == null || certs.isEmpty()) {
-        throw new CertificateException("No certificates found in CA certificate file");
-      }
-
-      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-      ks.load(null, null);
-      int index = 0;
-      for (Certificate cert : certs) {
-        ks.setCertificateEntry("spanner-ca-" + (++index), cert);
-      }
-
+  private void reloadMaterial() throws Exception {
+    if (this.caCertFile == null) {
       TrustManagerFactory tmf =
           TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-      tmf.init(ks);
-
-      this.currentMaterial = new TrustMaterial(mod, len, findExtendedTrustManager(tmf));
-    } catch (Exception e) {
-      if (this.currentMaterial != null) {
-        logger.log(
-            Level.WARNING,
-            "Error reloading CA certificate, falling back to cached trust manager",
-            e);
-      } else {
-        throw new RuntimeException("Failed to initialize CA certificate", e);
-      }
+      tmf.init((KeyStore) null);
+      this.currentMaterial = new TrustMaterial(0, 0, findExtendedTrustManager(tmf));
+      return;
     }
+
+    long mod = caCertFile.lastModified();
+    long len = caCertFile.length();
+    byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
+
+    CertificateFactory cf = CertificateFactory.getInstance("X.509");
+    Collection<? extends Certificate> certs =
+        cf.generateCertificates(new ByteArrayInputStream(certBytes));
+    if (certs == null || certs.isEmpty()) {
+      throw new CertificateException("No certificates found in CA certificate file");
+    }
+
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    int index = 0;
+    for (Certificate cert : certs) {
+      ks.setCertificateEntry("spanner-ca-" + (++index), cert);
+    }
+
+    TrustManagerFactory tmf =
+        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    tmf.init(ks);
+
+    this.currentMaterial = new TrustMaterial(mod, len, findExtendedTrustManager(tmf));
   }
 
   private static X509ExtendedTrustManager findExtendedTrustManager(TrustManagerFactory tmf)

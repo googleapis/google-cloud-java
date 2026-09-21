@@ -23,6 +23,7 @@ import java.io.File;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.Principal;
 import java.security.PrivateKey;
@@ -87,7 +88,13 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     this.certFile = Preconditions.checkNotNull(certFile, "certFile cannot be null");
     this.keyFile = Preconditions.checkNotNull(keyFile, "keyFile cannot be null");
     this.checkIntervalNs = checkIntervalMs * 1_000_000L;
-    reloadMaterial();
+    try {
+      reloadMaterial();
+    } catch (IllegalArgumentException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to initialize client certificate/key", e);
+    }
     this.lastCheckedNs = System.nanoTime();
   }
 
@@ -125,39 +132,19 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     }
   }
 
-  private void reloadMaterial() {
-    try {
-      long certMod = certFile.lastModified();
-      long certLen = certFile.length();
-      long keyMod = keyFile.lastModified();
-      long keyLen = keyFile.length();
+  private void reloadMaterial() throws Exception {
+    long certMod = certFile.lastModified();
+    long certLen = certFile.length();
+    long keyMod = keyFile.lastModified();
+    long keyLen = keyFile.length();
 
-      byte[] certBytes = Files.readAllBytes(certFile.toPath());
-      byte[] keyBytes = Files.readAllBytes(keyFile.toPath());
+    byte[] certBytes = Files.readAllBytes(certFile.toPath());
+    byte[] keyBytes = Files.readAllBytes(keyFile.toPath());
 
-      X509Certificate[] chain = parseCertificates(certBytes);
-      PrivateKey key = parsePrivateKey(keyBytes);
+    X509Certificate[] chain = parseCertificates(certBytes);
+    PrivateKey key = parsePrivateKey(keyBytes);
 
-      this.currentMaterial = new KeyMaterial(certMod, certLen, keyMod, keyLen, chain, key);
-    } catch (IllegalArgumentException e) {
-      if (this.currentMaterial != null) {
-        logger.log(
-            Level.WARNING,
-            "Error reloading client certificate or key, falling back to cached credentials",
-            e);
-      } else {
-        throw e;
-      }
-    } catch (Exception e) {
-      if (this.currentMaterial != null) {
-        logger.log(
-            Level.WARNING,
-            "Error reloading client certificate or key, falling back to cached credentials",
-            e);
-      } else {
-        throw new RuntimeException("Failed to initialize client certificate/key", e);
-      }
-    }
+    this.currentMaterial = new KeyMaterial(certMod, certLen, keyMod, keyLen, chain, key);
   }
 
   private static X509Certificate[] parseCertificates(byte[] certBytes) throws CertificateException {
@@ -192,8 +179,16 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(der);
     try {
       return KeyFactory.getInstance("RSA").generatePrivate(spec);
-    } catch (Exception e) {
-      return KeyFactory.getInstance("EC").generatePrivate(spec);
+    } catch (Exception rsaException) {
+      try {
+        return KeyFactory.getInstance("EC").generatePrivate(spec);
+      } catch (Exception ecException) {
+        GeneralSecurityException ex =
+            new GeneralSecurityException("Failed to parse private key as RSA or EC");
+        ex.addSuppressed(rsaException);
+        ex.addSuppressed(ecException);
+        throw ex;
+      }
     }
   }
 
