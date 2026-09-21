@@ -7570,20 +7570,32 @@ class ITBigQueryTest {
 
   @Test
   void testQueryRowBasedWithArrowFormatMultiPage() throws InterruptedException {
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple pages via tabledata.list with Arrow format.
     String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
             .build();
     TableResult result = bigquery.query(config);
     assertNotNull(result);
     assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
     long count = 0;
-    for (FieldValueList row : result.iterateAll()) {
-      count++;
-      assertEquals(count, row.get("x").getLongValue());
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
     }
+    assertTrue(pageCount > 1);
     assertEquals(15000, count);
   }
 
