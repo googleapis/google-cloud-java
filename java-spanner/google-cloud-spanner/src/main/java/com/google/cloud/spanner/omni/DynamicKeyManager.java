@@ -230,23 +230,25 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   }
 
   private static PrivateKey parsePrivateKey(byte[] keyBytes) throws Exception {
-    String keyStr = new String(keyBytes, StandardCharsets.UTF_8);
-    if (keyStr.contains("-----BEGIN RSA PRIVATE KEY-----")
-        || keyStr.contains("-----BEGIN EC PRIVATE KEY-----")) {
-      throw new IllegalArgumentException(
-          "PKCS#1 private keys are not supported. Please convert your key to PKCS#8 format using: "
-              + "openssl pkcs8 -topk8 -nocrypt -in <key> -out <key_pkcs8>");
-    }
     byte[] der;
-    if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
-      der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");
-    } else if (keyBytes.length > 0 && keyBytes[0] == 0x30) {
+    if (keyBytes.length > 0 && keyBytes[0] == 0x30) {
       der = keyBytes;
     } else {
-      try {
-        der = Base64.getMimeDecoder().decode(keyBytes);
-      } catch (IllegalArgumentException e) {
-        der = keyBytes;
+      String keyStr = new String(keyBytes, StandardCharsets.UTF_8);
+      if (keyStr.contains("-----BEGIN RSA PRIVATE KEY-----")
+          || keyStr.contains("-----BEGIN EC PRIVATE KEY-----")) {
+        throw new IllegalArgumentException(
+            "PKCS#1 private keys are not supported. Please convert your key to PKCS#8 format using: "
+                + "openssl pkcs8 -topk8 -nocrypt -in <key> -out <key_pkcs8>");
+      }
+      if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
+        der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");
+      } else {
+        try {
+          der = Base64.getMimeDecoder().decode(keyBytes);
+        } catch (IllegalArgumentException e) {
+          der = keyBytes;
+        }
       }
     }
 
@@ -276,8 +278,8 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     if (end < 0) {
       throw new IllegalArgumentException("PEM does not contain marker: " + endMarker);
     }
-    String base64 = pem.substring(start, end).replaceAll("\\s+", "");
-    return Base64.getDecoder().decode(base64);
+    String base64 = pem.substring(start, end);
+    return Base64.getMimeDecoder().decode(base64);
   }
 
   @Override
