@@ -1733,6 +1733,10 @@ public class SpannerOptionsTest {
 
       assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
       assertNotNull(loginWithCaOptions.getChannelConfigurator());
+
+      SpannerOptions loginFromBuilder = loginWithCaOptions.toBuilder().build();
+      assertTrue(loginFromBuilder.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginFromBuilder.getChannelConfigurator());
     } finally {
       ssc.delete();
       ca.delete();

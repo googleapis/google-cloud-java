@@ -359,6 +359,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean autoTaggingEnabled;
   private final List<String> autoTaggingPackages;
   private final int autoTaggingTracerLimit;
+  private final SslContext omniSslContext;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -944,6 +945,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
+    omniSslContext = builder.omniSslContext;
     if (builder.omniSslContext != null) {
       final SslContext sslContext = builder.omniSslContext;
       @SuppressWarnings("rawtypes")
@@ -1532,6 +1534,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.autoTaggingEnabled = options.autoTaggingEnabled;
       this.autoTaggingPackages = options.autoTaggingPackages;
       this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
+      this.omniSslContext = options.omniSslContext;
     }
 
     @Override

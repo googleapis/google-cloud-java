@@ -36,6 +36,8 @@ import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 import java.util.Collection;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLEngine;
@@ -48,15 +50,17 @@ import javax.net.ssl.X509ExtendedKeyManager;
 @InternalApi
 public class DynamicKeyManager extends X509ExtendedKeyManager {
   private static final Logger logger = Logger.getLogger(DynamicKeyManager.class.getName());
-  private static final String CLIENT_ALIAS = "client";
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
 
   private final File certFile;
   private final File keyFile;
   private final long checkIntervalNs;
+  private final ConcurrentHashMap<String, KeyMaterial> materials = new ConcurrentHashMap<>();
+  private final AtomicLong versionCounter = new AtomicLong();
   private volatile long lastCheckedNs;
 
   private static class KeyMaterial {
+    final String alias;
     final long certLastModified;
     final long certLength;
     final long keyLastModified;
@@ -65,12 +69,14 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     final PrivateKey privateKey;
 
     KeyMaterial(
+        String alias,
         long certLastModified,
         long certLength,
         long keyLastModified,
         long keyLength,
         X509Certificate[] certificateChain,
         PrivateKey privateKey) {
+      this.alias = alias;
       this.certLastModified = certLastModified;
       this.certLength = certLength;
       this.keyLastModified = keyLastModified;
@@ -142,19 +148,29 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   }
 
   private void reloadMaterial() throws Exception {
+    long certMod = certFile.lastModified();
+    long certLen = certFile.length();
+    long keyMod = keyFile.lastModified();
+    long keyLen = keyFile.length();
+
     byte[] certBytes = Files.readAllBytes(certFile.toPath());
     byte[] keyBytes = Files.readAllBytes(keyFile.toPath());
-
-    long certMod = certFile.lastModified();
-    long certLen = certBytes.length;
-    long keyMod = keyFile.lastModified();
-    long keyLen = keyBytes.length;
 
     X509Certificate[] chain = parseCertificates(certBytes);
     PrivateKey key = parsePrivateKey(keyBytes);
     verifyKeyMatch(chain[0].getPublicKey(), key);
 
-    this.currentMaterial = new KeyMaterial(certMod, certLen, keyMod, keyLen, chain, key);
+    String alias = "client-" + versionCounter.incrementAndGet();
+    KeyMaterial newMaterial = new KeyMaterial(alias, certMod, certLen, keyMod, keyLen, chain, key);
+    materials.put(alias, newMaterial);
+    this.currentMaterial = newMaterial;
+    if (materials.size() > 10) {
+      for (String oldAlias : materials.keySet()) {
+        if (!oldAlias.equals(alias) && materials.size() > 10) {
+          materials.remove(oldAlias);
+        }
+      }
+    }
   }
 
   private static void verifyKeyMatch(PublicKey publicKey, PrivateKey privateKey)
@@ -198,6 +214,8 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     byte[] der;
     if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
       der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");
+    } else if (keyBytes.length > 0 && keyBytes[0] == 0x30) {
+      der = keyBytes;
     } else {
       try {
         der = Base64.getMimeDecoder().decode(keyBytes);
@@ -239,33 +257,40 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   @Override
   public String chooseClientAlias(String[] keyType, Principal[] issuers, Socket socket) {
     checkAndReload();
-    return CLIENT_ALIAS;
+    KeyMaterial mat = this.currentMaterial;
+    return mat != null ? mat.alias : null;
   }
 
   @Override
   public String chooseEngineClientAlias(String[] keyType, Principal[] issuers, SSLEngine engine) {
     checkAndReload();
-    return CLIENT_ALIAS;
+    KeyMaterial mat = this.currentMaterial;
+    return mat != null ? mat.alias : null;
   }
 
   @Override
   public X509Certificate[] getCertificateChain(String alias) {
-    checkAndReload();
-    KeyMaterial mat = this.currentMaterial;
+    KeyMaterial mat = alias != null ? materials.get(alias) : null;
+    if (mat == null) {
+      mat = this.currentMaterial;
+    }
     return mat != null ? mat.certificateChain.clone() : null;
   }
 
   @Override
   public PrivateKey getPrivateKey(String alias) {
-    checkAndReload();
-    KeyMaterial mat = this.currentMaterial;
+    KeyMaterial mat = alias != null ? materials.get(alias) : null;
+    if (mat == null) {
+      mat = this.currentMaterial;
+    }
     return mat != null ? mat.privateKey : null;
   }
 
   @Override
   public String[] getClientAliases(String keyType, Principal[] issuers) {
     checkAndReload();
-    return new String[] {CLIENT_ALIAS};
+    KeyMaterial mat = this.currentMaterial;
+    return mat != null ? new String[] {mat.alias} : null;
   }
 
   @Override

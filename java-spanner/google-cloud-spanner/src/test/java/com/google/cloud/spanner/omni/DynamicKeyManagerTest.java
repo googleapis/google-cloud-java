@@ -256,4 +256,24 @@ public class DynamicKeyManagerTest {
       ssc2.delete();
     }
   }
+
+  @Test
+  public void testBinaryDerKeySupported() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.der");
+    try {
+      File certFile = tempFolder.newFile("client-der.crt");
+      File keyFile = tempFolder.newFile("client-der.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
+      Files.write(keyFile.toPath(), ssc.key().getEncoded());
+
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
+      String alias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertNotNull(alias);
+      assertNotNull(keyManager.getCertificateChain(alias));
+      assertNotNull(keyManager.getPrivateKey(alias));
+    } finally {
+      ssc.delete();
+    }
+  }
 }

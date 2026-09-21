@@ -129,9 +129,9 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       return;
     }
 
-    byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
     long mod = caCertFile.lastModified();
-    long len = certBytes.length;
+    long len = caCertFile.length();
+    byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
 
     CertificateFactory cf = CertificateFactory.getInstance("X.509");
     Collection<? extends Certificate> certs =
