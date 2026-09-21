@@ -1305,10 +1305,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
-      if (builder.clientCertificate != null || builder.caCertificate != null) {
+      if (builder.clientCertificate != null
+          || builder.clientCertificateKey != null
+          || builder.caCertificate != null) {
+        if ((builder.clientCertificate == null) != (builder.clientCertificateKey == null)) {
+          throw new IllegalArgumentException(
+              "Both clientCertificate and clientCertificateKey must be provided together");
+        }
         try {
           SslContextBuilder sslContextBuilder = GrpcSslContexts.forClient();
-          if (builder.clientCertificate != null && builder.clientCertificateKey != null) {
+          if (builder.clientCertificate != null) {
             sslContextBuilder.keyManager(
                 new DynamicKeyManager(
                     new File(builder.clientCertificate), new File(builder.clientCertificateKey)));
