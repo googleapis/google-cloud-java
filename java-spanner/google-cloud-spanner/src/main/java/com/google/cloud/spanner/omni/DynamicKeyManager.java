@@ -188,11 +188,14 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
         .keySet()
         .removeIf(
             keyStr -> {
+              if (!keyStr.startsWith("client-")) {
+                return false;
+              }
               try {
                 long ver = Long.parseLong(keyStr.substring("client-".length()));
                 return ver < oldestToKeep;
-              } catch (Exception e) {
-                return true;
+              } catch (NumberFormatException e) {
+                return false;
               }
             });
   }
