@@ -97,7 +97,8 @@ public interface IngestAdEventsRequestOrBuilder
    *
    * <pre>
    * Optional. Information about encryption keys which are used to encrypt the
-   * data.
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
@@ -113,7 +114,8 @@ public interface IngestAdEventsRequestOrBuilder
    *
    * <pre>
    * Optional. Information about encryption keys which are used to encrypt the
-   * data.
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
@@ -129,7 +131,8 @@ public interface IngestAdEventsRequestOrBuilder
    *
    * <pre>
    * Optional. Information about encryption keys which are used to encrypt the
-   * data.
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
@@ -145,9 +148,13 @@ public interface IngestAdEventsRequestOrBuilder
    * Optional. If true, the request is validated, but not executed.
    * </pre>
    *
-   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=281
    * @return The validateOnly.
    */
+  @java.lang.Deprecated
   boolean getValidateOnly();
 }

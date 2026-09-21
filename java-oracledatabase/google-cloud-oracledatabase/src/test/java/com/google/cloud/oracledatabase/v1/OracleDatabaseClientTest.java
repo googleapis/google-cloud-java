@@ -3743,6 +3743,232 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void refreshAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+
+    AutonomousDatabase actualResponse =
+        client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshAutonomousDatabaseRequest actualRequest =
+        ((RefreshAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(refreshCutoffTime, actualRequest.getRefreshCutoffTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+      client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+    Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+
+    AutonomousDatabase actualResponse =
+        client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RefreshAutonomousDatabaseRequest actualRequest =
+        ((RefreshAutonomousDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(refreshCutoffTime, actualRequest.getRefreshCutoffTime());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+      client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesTest() throws Exception {
+    AutonomousDatabaseRefreshableClones expectedResponse =
+        AutonomousDatabaseRefreshableClones.newBuilder()
+            .addAllAutonomousDatabaseRefreshableClones(
+                new ArrayList<AutonomousDatabaseRefreshableClone>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabaseRefreshableClones actualResponse =
+        client.getAutonomousDatabaseRefreshableClones(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutonomousDatabaseRefreshableClonesRequest actualRequest =
+        ((GetAutonomousDatabaseRefreshableClonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.getAutonomousDatabaseRefreshableClones(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesTest2() throws Exception {
+    AutonomousDatabaseRefreshableClones expectedResponse =
+        AutonomousDatabaseRefreshableClones.newBuilder()
+            .addAllAutonomousDatabaseRefreshableClones(
+                new ArrayList<AutonomousDatabaseRefreshableClone>())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AutonomousDatabaseRefreshableClones actualResponse =
+        client.getAutonomousDatabaseRefreshableClones(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAutonomousDatabaseRefreshableClonesRequest actualRequest =
+        ((GetAutonomousDatabaseRefreshableClonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAutonomousDatabaseRefreshableClones(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listOdbNetworksTest() throws Exception {
     OdbNetwork responsesElement = OdbNetwork.newBuilder().build();
     ListOdbNetworksResponse expectedResponse =
@@ -4599,6 +4825,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4653,6 +4880,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -4705,6 +4933,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4773,6 +5002,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4929,6 +5159,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4994,6 +5225,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5061,6 +5293,7 @@ public class OracleDatabaseClientTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

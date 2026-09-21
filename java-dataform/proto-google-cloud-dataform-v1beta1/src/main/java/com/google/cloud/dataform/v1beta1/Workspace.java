@@ -54,6 +54,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
   private Workspace() {
     name_ = "";
     internalMetadata_ = "";
+    originalBranch_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -355,6 +356,87 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     return disableMoves_;
   }
 
+  public static final int ORIGINAL_BRANCH_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object originalBranch_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the originalBranch field is set.
+   */
+  @java.lang.Override
+  public boolean hasOriginalBranch() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The originalBranch.
+   */
+  @java.lang.Override
+  public java.lang.String getOriginalBranch() {
+    java.lang.Object ref = originalBranch_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      originalBranch_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The name of the default upstream branch
+   * for all pull/push operations in the remote repository for this workspace.
+   * If empty, the HEAD branch from repository will be used.
+   * </pre>
+   *
+   * <code>
+   * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for originalBranch.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOriginalBranchBytes() {
+    java.lang.Object ref = originalBranch_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      originalBranch_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PRIVATE_RESOURCE_METADATA_FIELD_NUMBER = 8;
   private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
 
@@ -374,7 +456,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPrivateResourceMetadata() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -418,6 +500,113 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         : privateResourceMetadata_;
   }
 
+  public static final int ENABLE_BRANCH_MANAGEMENT_FIELD_NUMBER = 9;
+  private boolean enableBranchManagement_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Controls the enablement of branch checkout for the
+   * workspace.
+   *
+   * When set to True, the workspace will be allowed to checkout branches.
+   * </pre>
+   *
+   * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the enableBranchManagement field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableBranchManagement() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Controls the enablement of branch checkout for the
+   * workspace.
+   *
+   * When set to True, the workspace will be allowed to checkout branches.
+   * </pre>
+   *
+   * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enableBranchManagement.
+   */
+  @java.lang.Override
+  public boolean getEnableBranchManagement() {
+    return enableBranchManagement_;
+  }
+
+  public static final int DEPTH_FIELD_NUMBER = 10;
+  private int depth_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. The maximum depth of the Git repository to
+   * checkout for this workspace. If defined and greater than 0, the Git
+   * repository will be created as a shallow clone with the given depth,
+   * otherwise a full clone will be performed. This field is available only for
+   * GitHub, Gitlab and 1p repositories with enabled branch management.
+   * </pre>
+   *
+   * <code>
+   * int32 depth = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The depth.
+   */
+  @java.lang.Override
+  public int getDepth() {
+    return depth_;
+  }
+
+  public static final int SHALLOW_FIELD_NUMBER = 11;
+  private boolean shallow_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set to true, the workspace was created as a shallow clone.
+   * Will be set to true if the depth field is set to a value greater than 0,
+   * otherwise it will be set to false.
+   * </pre>
+   *
+   * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the shallow field is set.
+   */
+  @java.lang.Override
+  public boolean hasShallow() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If set to true, the workspace was created as a shallow clone.
+   * Will be set to true if the depth field is set to a value greater than 0,
+   * otherwise it will be set to false.
+   * </pre>
+   *
+   * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The shallow.
+   */
+  @java.lang.Override
+  public boolean getShallow() {
+    return shallow_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -448,7 +637,19 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       output.writeBool(6, disableMoves_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, originalBranch_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(8, getPrivateResourceMetadata());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(9, enableBranchManagement_);
+    }
+    if (depth_ != 0) {
+      output.writeInt32(10, depth_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(11, shallow_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -475,8 +676,20 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, disableMoves_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, originalBranch_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPrivateResourceMetadata());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enableBranchManagement_);
+    }
+    if (depth_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, depth_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, shallow_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -511,9 +724,22 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     if (hasDisableMoves()) {
       if (getDisableMoves() != other.getDisableMoves()) return false;
     }
+    if (hasOriginalBranch() != other.hasOriginalBranch()) return false;
+    if (hasOriginalBranch()) {
+      if (!getOriginalBranch().equals(other.getOriginalBranch())) return false;
+    }
     if (hasPrivateResourceMetadata() != other.hasPrivateResourceMetadata()) return false;
     if (hasPrivateResourceMetadata()) {
       if (!getPrivateResourceMetadata().equals(other.getPrivateResourceMetadata())) return false;
+    }
+    if (hasEnableBranchManagement() != other.hasEnableBranchManagement()) return false;
+    if (hasEnableBranchManagement()) {
+      if (getEnableBranchManagement() != other.getEnableBranchManagement()) return false;
+    }
+    if (getDepth() != other.getDepth()) return false;
+    if (hasShallow() != other.hasShallow()) return false;
+    if (hasShallow()) {
+      if (getShallow() != other.getShallow()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -544,9 +770,23 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DISABLE_MOVES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMoves());
     }
+    if (hasOriginalBranch()) {
+      hash = (37 * hash) + ORIGINAL_BRANCH_FIELD_NUMBER;
+      hash = (53 * hash) + getOriginalBranch().hashCode();
+    }
     if (hasPrivateResourceMetadata()) {
       hash = (37 * hash) + PRIVATE_RESOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateResourceMetadata().hashCode();
+    }
+    if (hasEnableBranchManagement()) {
+      hash = (37 * hash) + ENABLE_BRANCH_MANAGEMENT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableBranchManagement());
+    }
+    hash = (37 * hash) + DEPTH_FIELD_NUMBER;
+    hash = (53 * hash) + getDepth();
+    if (hasShallow()) {
+      hash = (37 * hash) + SHALLOW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShallow());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -712,11 +952,15 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       }
       internalMetadata_ = "";
       disableMoves_ = false;
+      originalBranch_ = "";
       privateResourceMetadata_ = null;
       if (privateResourceMetadataBuilder_ != null) {
         privateResourceMetadataBuilder_.dispose();
         privateResourceMetadataBuilder_ = null;
       }
+      enableBranchManagement_ = false;
+      depth_ = 0;
+      shallow_ = false;
       return this;
     }
 
@@ -777,11 +1021,26 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.originalBranch_ = originalBranch_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.privateResourceMetadata_ =
             privateResourceMetadataBuilder_ == null
                 ? privateResourceMetadata_
                 : privateResourceMetadataBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.enableBranchManagement_ = enableBranchManagement_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.depth_ = depth_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.shallow_ = shallow_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -817,8 +1076,22 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       if (other.hasDisableMoves()) {
         setDisableMoves(other.getDisableMoves());
       }
+      if (other.hasOriginalBranch()) {
+        originalBranch_ = other.originalBranch_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       if (other.hasPrivateResourceMetadata()) {
         mergePrivateResourceMetadata(other.getPrivateResourceMetadata());
+      }
+      if (other.hasEnableBranchManagement()) {
+        setEnableBranchManagement(other.getEnableBranchManagement());
+      }
+      if (other.getDepth() != 0) {
+        setDepth(other.getDepth());
+      }
+      if (other.hasShallow()) {
+        setShallow(other.getShallow());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -878,14 +1151,38 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
+            case 58:
+              {
+                originalBranch_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetPrivateResourceMetadataFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 72:
+              {
+                enableBranchManagement_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+            case 80:
+              {
+                depth_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+            case 88:
+              {
+                shallow_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1675,6 +1972,156 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object originalBranch_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the originalBranch field is set.
+     */
+    public boolean hasOriginalBranch() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The originalBranch.
+     */
+    public java.lang.String getOriginalBranch() {
+      java.lang.Object ref = originalBranch_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originalBranch_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for originalBranch.
+     */
+    public com.google.protobuf.ByteString getOriginalBranchBytes() {
+      java.lang.Object ref = originalBranch_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        originalBranch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The originalBranch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginalBranch(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      originalBranch_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginalBranch() {
+      originalBranch_ = getDefaultInstance().getOriginalBranch();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The name of the default upstream branch
+     * for all pull/push operations in the remote repository for this workspace.
+     * If empty, the HEAD branch from repository will be used.
+     * </pre>
+     *
+     * <code>
+     * optional string original_branch = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for originalBranch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginalBranchBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      originalBranch_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dataform.v1beta1.PrivateResourceMetadata privateResourceMetadata_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dataform.v1beta1.PrivateResourceMetadata,
@@ -1697,7 +2144,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      * @return Whether the privateResourceMetadata field is set.
      */
     public boolean hasPrivateResourceMetadata() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1746,7 +2193,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       } else {
         privateResourceMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1770,7 +2217,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
       } else {
         privateResourceMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1790,7 +2237,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
     public Builder mergePrivateResourceMetadata(
         com.google.cloud.dataform.v1beta1.PrivateResourceMetadata value) {
       if (privateResourceMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && privateResourceMetadata_ != null
             && privateResourceMetadata_
                 != com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.getDefaultInstance()) {
@@ -1802,7 +2249,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         privateResourceMetadataBuilder_.mergeFrom(value);
       }
       if (privateResourceMetadata_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1821,7 +2268,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPrivateResourceMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       privateResourceMetadata_ = null;
       if (privateResourceMetadataBuilder_ != null) {
         privateResourceMetadataBuilder_.dispose();
@@ -1845,7 +2292,7 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dataform.v1beta1.PrivateResourceMetadata.Builder
         getPrivateResourceMetadataBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetPrivateResourceMetadataFieldBuilder().getBuilder();
     }
@@ -1900,6 +2347,248 @@ public final class Workspace extends com.google.protobuf.GeneratedMessage
         privateResourceMetadata_ = null;
       }
       return privateResourceMetadataBuilder_;
+    }
+
+    private boolean enableBranchManagement_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Controls the enablement of branch checkout for the
+     * workspace.
+     *
+     * When set to True, the workspace will be allowed to checkout branches.
+     * </pre>
+     *
+     * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the enableBranchManagement field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableBranchManagement() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Controls the enablement of branch checkout for the
+     * workspace.
+     *
+     * When set to True, the workspace will be allowed to checkout branches.
+     * </pre>
+     *
+     * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enableBranchManagement.
+     */
+    @java.lang.Override
+    public boolean getEnableBranchManagement() {
+      return enableBranchManagement_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Controls the enablement of branch checkout for the
+     * workspace.
+     *
+     * When set to True, the workspace will be allowed to checkout branches.
+     * </pre>
+     *
+     * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enableBranchManagement to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableBranchManagement(boolean value) {
+
+      enableBranchManagement_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Controls the enablement of branch checkout for the
+     * workspace.
+     *
+     * When set to True, the workspace will be allowed to checkout branches.
+     * </pre>
+     *
+     * <code>optional bool enable_branch_management = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableBranchManagement() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      enableBranchManagement_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int depth_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The maximum depth of the Git repository to
+     * checkout for this workspace. If defined and greater than 0, the Git
+     * repository will be created as a shallow clone with the given depth,
+     * otherwise a full clone will be performed. This field is available only for
+     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * </pre>
+     *
+     * <code>
+     * int32 depth = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The depth.
+     */
+    @java.lang.Override
+    public int getDepth() {
+      return depth_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The maximum depth of the Git repository to
+     * checkout for this workspace. If defined and greater than 0, the Git
+     * repository will be created as a shallow clone with the given depth,
+     * otherwise a full clone will be performed. This field is available only for
+     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * </pre>
+     *
+     * <code>
+     * int32 depth = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The depth to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDepth(int value) {
+
+      depth_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. The maximum depth of the Git repository to
+     * checkout for this workspace. If defined and greater than 0, the Git
+     * repository will be created as a shallow clone with the given depth,
+     * otherwise a full clone will be performed. This field is available only for
+     * GitHub, Gitlab and 1p repositories with enabled branch management.
+     * </pre>
+     *
+     * <code>
+     * int32 depth = 10 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDepth() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      depth_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean shallow_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, the workspace was created as a shallow clone.
+     * Will be set to true if the depth field is set to a value greater than 0,
+     * otherwise it will be set to false.
+     * </pre>
+     *
+     * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the shallow field is set.
+     */
+    @java.lang.Override
+    public boolean hasShallow() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, the workspace was created as a shallow clone.
+     * Will be set to true if the depth field is set to a value greater than 0,
+     * otherwise it will be set to false.
+     * </pre>
+     *
+     * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The shallow.
+     */
+    @java.lang.Override
+    public boolean getShallow() {
+      return shallow_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, the workspace was created as a shallow clone.
+     * Will be set to true if the depth field is set to a value greater than 0,
+     * otherwise it will be set to false.
+     * </pre>
+     *
+     * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The shallow to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShallow(boolean value) {
+
+      shallow_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If set to true, the workspace was created as a shallow clone.
+     * Will be set to true if the depth field is set to a value greater than 0,
+     * otherwise it will be set to false.
+     * </pre>
+     *
+     * <code>optional bool shallow = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShallow() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      shallow_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.Workspace)

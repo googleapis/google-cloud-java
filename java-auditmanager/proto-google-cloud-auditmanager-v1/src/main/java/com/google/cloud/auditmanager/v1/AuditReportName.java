@@ -39,6 +39,9 @@ public class AuditReportName implements ResourceName {
   private static final PathTemplate FOLDER_LOCATION_AUDIT_REPORT =
       PathTemplate.createWithoutUrlEncoding(
           "folders/{folder}/locations/{location}/auditReports/{audit_report}");
+  private static final PathTemplate ORGANIZATION_LOCATION_AUDIT_REPORT =
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/locations/{location}/auditReports/{audit_report}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -46,6 +49,7 @@ public class AuditReportName implements ResourceName {
   private final String location;
   private final String auditReport;
   private final String folder;
+  private final String organization;
 
   @Deprecated
   protected AuditReportName() {
@@ -53,6 +57,7 @@ public class AuditReportName implements ResourceName {
     location = null;
     auditReport = null;
     folder = null;
+    organization = null;
   }
 
   private AuditReportName(Builder builder) {
@@ -60,6 +65,7 @@ public class AuditReportName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     auditReport = Preconditions.checkNotNull(builder.getAuditReport());
     folder = null;
+    organization = null;
     pathTemplate = PROJECT_LOCATION_AUDIT_REPORT;
   }
 
@@ -68,7 +74,17 @@ public class AuditReportName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     auditReport = Preconditions.checkNotNull(builder.getAuditReport());
     project = null;
+    organization = null;
     pathTemplate = FOLDER_LOCATION_AUDIT_REPORT;
+  }
+
+  private AuditReportName(OrganizationLocationAuditReportBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    auditReport = Preconditions.checkNotNull(builder.getAuditReport());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_LOCATION_AUDIT_REPORT;
   }
 
   public String getProject() {
@@ -87,6 +103,10 @@ public class AuditReportName implements ResourceName {
     return folder;
   }
 
+  public String getOrganization() {
+    return organization;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -97,6 +117,10 @@ public class AuditReportName implements ResourceName {
 
   public static FolderLocationAuditReportBuilder newFolderLocationAuditReportBuilder() {
     return new FolderLocationAuditReportBuilder();
+  }
+
+  public static OrganizationLocationAuditReportBuilder newOrganizationLocationAuditReportBuilder() {
+    return new OrganizationLocationAuditReportBuilder();
   }
 
   public Builder toBuilder() {
@@ -124,6 +148,15 @@ public class AuditReportName implements ResourceName {
       String folder, String location, String auditReport) {
     return newFolderLocationAuditReportBuilder()
         .setFolder(folder)
+        .setLocation(location)
+        .setAuditReport(auditReport)
+        .build();
+  }
+
+  public static AuditReportName ofOrganizationLocationAuditReportName(
+      String organization, String location, String auditReport) {
+    return newOrganizationLocationAuditReportBuilder()
+        .setOrganization(organization)
         .setLocation(location)
         .setAuditReport(auditReport)
         .build();
@@ -158,6 +191,16 @@ public class AuditReportName implements ResourceName {
         .toString();
   }
 
+  public static String formatOrganizationLocationAuditReportName(
+      String organization, String location, String auditReport) {
+    return newOrganizationLocationAuditReportBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setAuditReport(auditReport)
+        .build()
+        .toString();
+  }
+
   public static @Nullable AuditReportName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -170,6 +213,10 @@ public class AuditReportName implements ResourceName {
       Map<String, String> matchMap = FOLDER_LOCATION_AUDIT_REPORT.match(formattedString);
       return ofFolderLocationAuditReportName(
           matchMap.get("folder"), matchMap.get("location"), matchMap.get("audit_report"));
+    } else if (ORGANIZATION_LOCATION_AUDIT_REPORT.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_AUDIT_REPORT.match(formattedString);
+      return ofOrganizationLocationAuditReportName(
+          matchMap.get("organization"), matchMap.get("location"), matchMap.get("audit_report"));
     }
     throw new ValidationException("AuditReportName.parse: formattedString not in valid format");
   }
@@ -196,7 +243,8 @@ public class AuditReportName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_AUDIT_REPORT.matches(formattedString)
-        || FOLDER_LOCATION_AUDIT_REPORT.matches(formattedString);
+        || FOLDER_LOCATION_AUDIT_REPORT.matches(formattedString)
+        || ORGANIZATION_LOCATION_AUDIT_REPORT.matches(formattedString);
   }
 
   @Override
@@ -216,6 +264,9 @@ public class AuditReportName implements ResourceName {
           }
           if (folder != null) {
             fieldMapBuilder.put("folder", folder);
+          }
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -243,7 +294,8 @@ public class AuditReportName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.auditReport, that.auditReport)
-          && Objects.equals(this.folder, that.folder);
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.organization, that.organization);
     }
     return false;
   }
@@ -261,6 +313,8 @@ public class AuditReportName implements ResourceName {
     h ^= Objects.hashCode(auditReport);
     h *= 1000003;
     h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
     return h;
   }
 
@@ -345,6 +399,46 @@ public class AuditReportName implements ResourceName {
     }
 
     public FolderLocationAuditReportBuilder setAuditReport(String auditReport) {
+      this.auditReport = auditReport;
+      return this;
+    }
+
+    public AuditReportName build() {
+      return new AuditReportName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/locations/{location}/auditReports/{audit_report}. */
+  public static class OrganizationLocationAuditReportBuilder {
+    private String organization;
+    private String location;
+    private String auditReport;
+
+    protected OrganizationLocationAuditReportBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getAuditReport() {
+      return auditReport;
+    }
+
+    public OrganizationLocationAuditReportBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public OrganizationLocationAuditReportBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public OrganizationLocationAuditReportBuilder setAuditReport(String auditReport) {
       this.auditReport = auditReport;
       return this;
     }

@@ -6299,6 +6299,44 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         : workforceIdentityFederationConfig_;
   }
 
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 18;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 19;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6344,6 +6382,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(14, getWorkforceIdentityFederationConfig());
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(18, satisfiesPzi_);
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(19, satisfiesPzs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6396,6 +6440,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, getWorkforceIdentityFederationConfig());
     }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, satisfiesPzi_);
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzs_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6439,6 +6489,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!getWorkforceIdentityFederationConfig()
           .equals(other.getWorkforceIdentityFederationConfig())) return false;
     }
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6482,6 +6534,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + WORKFORCE_IDENTITY_FEDERATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWorkforceIdentityFederationConfig().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6687,6 +6743,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         workforceIdentityFederationConfigBuilder_.dispose();
         workforceIdentityFederationConfigBuilder_ = null;
       }
+      satisfiesPzi_ = false;
+      satisfiesPzs_ = false;
       return this;
     }
 
@@ -6764,6 +6822,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 : workforceIdentityFederationConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -6812,6 +6876,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasWorkforceIdentityFederationConfig()) {
         mergeWorkforceIdentityFederationConfig(other.getWorkforceIdentityFederationConfig());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6911,6 +6981,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 114
+            case 144:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 144
+            case 152:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8742,6 +8824,118 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         workforceIdentityFederationConfig_ = null;
       }
       return workforceIdentityFederationConfigBuilder_;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Instance)

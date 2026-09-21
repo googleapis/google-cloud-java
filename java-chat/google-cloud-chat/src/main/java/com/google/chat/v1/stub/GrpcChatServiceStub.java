@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -90,6 +91,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -199,6 +202,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesMethodDescriptor =
+          MethodDescriptor.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/SearchMessages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchMessagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchMessagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<GetAttachmentRequest, Attachment>
       getAttachmentMethodDescriptor =
@@ -663,6 +678,9 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetMessageRequest, Message> getMessageCallable;
   private final UnaryCallable<UpdateMessageRequest, Message> updateMessageCallable;
   private final UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable;
   private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
   private final UnaryCallable<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentCallable;
@@ -850,6 +868,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<SearchMessagesRequest, SearchMessagesResponse>
+        searchMessagesTransportSettings =
+            GrpcCallSettings.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+                .setMethodDescriptor(searchMessagesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
             .setMethodDescriptor(getAttachmentMethodDescriptor)
@@ -1286,6 +1316,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteMessageCallable =
         callableFactory.createUnaryCallable(
             deleteMessageTransportSettings, settings.deleteMessageSettings(), clientContext);
+    this.searchMessagesCallable =
+        callableFactory.createUnaryCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
+    this.searchMessagesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
     this.getAttachmentCallable =
         callableFactory.createUnaryCallable(
             getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
@@ -1508,6 +1544,17 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     return deleteMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable() {
+    return searchMessagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return searchMessagesPagedCallable;
   }
 
   @Override

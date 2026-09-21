@@ -26,7 +26,7 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Configuration for stored infoTypes. All fields and subfield are provided
  * by the user. For more information, see
- * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes.
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeConfig}
@@ -624,7 +624,7 @@ public final class StoredInfoTypeConfig extends com.google.protobuf.GeneratedMes
    * <pre>
    * Configuration for stored infoTypes. All fields and subfield are provided
    * by the user. For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeConfig}

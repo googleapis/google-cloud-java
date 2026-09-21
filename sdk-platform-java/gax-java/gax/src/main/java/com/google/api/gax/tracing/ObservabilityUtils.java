@@ -182,8 +182,7 @@ final class ObservabilityUtils {
   }
 
   /** Function to extract the ErrorInfo payload from the error, if available */
-  @Nullable
-  static ErrorInfo extractErrorInfo(@Nullable Throwable error) {
+  static @Nullable ErrorInfo extractErrorInfo(@Nullable Throwable error) {
     if (error instanceof ApiException) {
       ApiException apiException = (ApiException) error;
       if (apiException.getErrorDetails() != null) {

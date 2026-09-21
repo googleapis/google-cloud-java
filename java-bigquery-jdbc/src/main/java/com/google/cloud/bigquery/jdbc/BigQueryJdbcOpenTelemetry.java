@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -32,9 +33,12 @@ import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporter;
+import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporterBuilder;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
+import io.opentelemetry.sdk.common.export.ProxyOptions;
+import java.net.InetSocketAddress;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
@@ -85,11 +89,25 @@ class BigQueryJdbcOpenTelemetry {
     private final String projectId;
     private final String credentialsHashOrPath;
     private final boolean enableTrace;
+    private final String proxyHost;
+    private final String proxyPort;
 
-    SdkCacheKey(String projectId, String credentialsHashOrPath, boolean enableTrace) {
+    SdkCacheKey(
+        String projectId,
+        String credentialsHashOrPath,
+        boolean enableTrace,
+        Map<String, String> proxyProperties) {
       this.projectId = projectId;
       this.credentialsHashOrPath = credentialsHashOrPath;
       this.enableTrace = enableTrace;
+      this.proxyHost =
+          proxyProperties != null
+              ? proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
+              : null;
+      this.proxyPort =
+          proxyProperties != null
+              ? proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME)
+              : null;
     }
 
     @Override
@@ -99,12 +117,14 @@ class BigQueryJdbcOpenTelemetry {
       SdkCacheKey that = (SdkCacheKey) o;
       return enableTrace == that.enableTrace
           && Objects.equals(projectId, that.projectId)
-          && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath);
+          && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath)
+          && Objects.equals(proxyHost, that.proxyHost)
+          && Objects.equals(proxyPort, that.proxyPort);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(projectId, credentialsHashOrPath, enableTrace);
+      return Objects.hash(projectId, credentialsHashOrPath, enableTrace, proxyHost, proxyPort);
     }
   }
 
@@ -181,7 +201,8 @@ class BigQueryJdbcOpenTelemetry {
       OpenTelemetry customOpenTelemetry,
       String effectiveCredentials,
       String effectiveProjectId,
-      Credentials fallbackCredentials) {
+      Credentials fallbackCredentials,
+      HeaderProvider headerProvider) {
 
     if (!enableGcpLogExporter || customOpenTelemetry != null) {
       return null;
@@ -199,6 +220,9 @@ class BigQueryJdbcOpenTelemetry {
           LoggingOptions.newBuilder().setProjectId(effectiveProjectId);
       if (credentials != null) {
         loggingOptionsBuilder.setCredentials(credentials);
+      }
+      if (headerProvider != null) {
+        loggingOptionsBuilder.setHeaderProvider(headerProvider);
       }
       return loggingOptionsBuilder.build().getService();
     } catch (Exception e) {
@@ -317,7 +341,8 @@ class BigQueryJdbcOpenTelemetry {
       OpenTelemetry customOpenTelemetry,
       String gcpTelemetryCredentials,
       String gcpTelemetryProjectId,
-      Credentials fallbackCredentials) {
+      Credentials fallbackCredentials,
+      Map<String, String> proxyProperties) {
 
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
@@ -335,7 +360,8 @@ class BigQueryJdbcOpenTelemetry {
         new SdkCacheKey(
             gcpTelemetryProjectId,
             getCredentialsIdentifier(gcpTelemetryCredentials),
-            enableGcpTraceExporter);
+            enableGcpTraceExporter,
+            proxyProperties);
     CachedSdk fastCheck = sdkCache.get(key);
     if (fastCheck != null) {
       CachedSdk result =
@@ -415,11 +441,17 @@ class BigQueryJdbcOpenTelemetry {
                     final Credentials finalCredentials = credentials;
 
                     if (spanExporter instanceof OtlpHttpSpanExporter) {
-                      return ((OtlpHttpSpanExporter) spanExporter)
-                          .toBuilder()
-                              .setHeaders(
-                                  () -> getAuthHeaders(finalCredentials, gcpTelemetryProjectId))
-                              .build();
+                      OtlpHttpSpanExporterBuilder builder =
+                          ((OtlpHttpSpanExporter) spanExporter).toBuilder();
+                      builder.setHeaders(
+                          () -> getAuthHeaders(finalCredentials, gcpTelemetryProjectId));
+
+                      ProxyOptions proxyOptions = createProxyOptions(proxyProperties);
+                      if (proxyOptions != null) {
+                        builder.setProxy(proxyOptions);
+                      }
+
+                      return builder.build();
                     }
                     if (spanExporter instanceof OtlpGrpcSpanExporter) {
                       return ((OtlpGrpcSpanExporter) spanExporter)
@@ -505,5 +537,26 @@ class BigQueryJdbcOpenTelemetry {
     } finally {
       span.end();
     }
+  }
+
+  private static ProxyOptions createProxyOptions(Map<String, String> proxyProperties) {
+    if (proxyProperties == null) {
+      return null;
+    }
+
+    final String host = proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME);
+    final String portStr = proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME);
+    if (host == null || host.isEmpty() || portStr == null || portStr.isEmpty()) {
+      return null;
+    }
+
+    int port;
+    try {
+      port = Integer.parseInt(portStr);
+    } catch (NumberFormatException e) {
+      throw new BigQueryJdbcRuntimeException("Invalid proxy port number: " + portStr, e);
+    }
+
+    return ProxyOptions.create(InetSocketAddress.createUnresolved(host, port));
   }
 }

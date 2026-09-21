@@ -41,6 +41,7 @@ public class AsyncGenerateAuditReportLRO {
               .setScope("scope109264468")
               .setComplianceStandard("complianceStandard-1534269448")
               .setComplianceFramework("complianceFramework-1808314333")
+              .setValidateOnly(true)
               .build();
       OperationFuture<AuditReport, OperationMetadata> future =
           auditManagerClient.generateAuditReportOperationCallable().futureCall(request);

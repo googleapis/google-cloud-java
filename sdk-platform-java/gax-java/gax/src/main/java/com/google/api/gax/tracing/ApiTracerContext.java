@@ -71,8 +71,7 @@ public abstract class ApiTracerContext {
    *
    * @return the server address, or {@code null} if not set
    */
-  @Nullable
-  abstract String serverAddress();
+  abstract @Nullable String serverAddress();
 
   /**
    * Returns the server port of the RPC.
@@ -81,8 +80,7 @@ public abstract class ApiTracerContext {
    *
    * @return the server port, or {@code null} if not set
    */
-  @Nullable
-  abstract Integer serverPort();
+  abstract @Nullable Integer serverPort();
 
   /**
    * Returns the library metadata associated with the RPC.
@@ -117,8 +115,7 @@ public abstract class ApiTracerContext {
    *
    * @return the full method name, or {@code null} if not set
    */
-  @Nullable
-  abstract String fullMethodName();
+  abstract @Nullable String fullMethodName();
 
   /**
    * Returns the transport protocol used for the RPC.
@@ -128,16 +125,14 @@ public abstract class ApiTracerContext {
    *
    * @return the transport protocol, or {@code null} if not set
    */
-  @Nullable
-  abstract Transport transport();
+  abstract @Nullable Transport transport();
 
   /**
    * Returns the type of operation the {@link ApiTracer} is tracing.
    *
    * @return the operation type, or {@code null} if not set
    */
-  @Nullable
-  abstract OperationType operationType();
+  abstract @Nullable OperationType operationType();
 
   /**
    * Returns the HTTP method used for the RPC, in case the RPC is an HttpJson method.
@@ -146,8 +141,7 @@ public abstract class ApiTracerContext {
    *
    * @return the HTTP method, or {@code null} if not set
    */
-  @Nullable
-  abstract String httpMethod();
+  abstract @Nullable String httpMethod();
 
   /**
    * Returns the HTTP path template used for the RPC, in case the RPC is an HttpJson method.
@@ -156,16 +150,13 @@ public abstract class ApiTracerContext {
    *
    * @return the HTTP path template, or {@code null} if not set
    */
-  @Nullable
-  abstract String httpPathTemplate();
+  abstract @Nullable String httpPathTemplate();
 
   /** The service name of a client (e.g. "bigtable", "spanner"). */
-  @Nullable
-  abstract String serviceName();
+  abstract @Nullable String serviceName();
 
   /** The url domain of the request (e.g. "pubsub.googleapis.com"). */
-  @Nullable
-  abstract String urlDomain();
+  abstract @Nullable String urlDomain();
 
   protected abstract @Nullable Supplier<String> destinationResourceIdSupplier();
 

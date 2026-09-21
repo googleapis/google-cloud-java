@@ -110,9 +110,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     return executor == null;
   }
 
-  @Nullable
   @Override
-  public Executor getExecutor() {
+  public @Nullable Executor getExecutor() {
     return executor;
   }
 

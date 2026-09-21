@@ -888,8 +888,8 @@ public interface BackendServiceOrBuilder
    * Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
    * and [external passthrough Network Load
    * Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
-   *
-   * failoverPolicy cannot be specified with haPolicy.
+   * failoverPolicy cannot be specified with haPolicy.failoverPolicy cannot be used by global external Passthrough
+   * Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -911,8 +911,8 @@ public interface BackendServiceOrBuilder
    * Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
    * and [external passthrough Network Load
    * Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
-   *
-   * failoverPolicy cannot be specified with haPolicy.
+   * failoverPolicy cannot be specified with haPolicy.failoverPolicy cannot be used by global external Passthrough
+   * Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -934,8 +934,8 @@ public interface BackendServiceOrBuilder
    * Balancers](https://cloud.google.com/load-balancing/docs/internal/failover-overview)
    * and [external passthrough Network Load
    * Balancers](https://cloud.google.com/load-balancing/docs/network/networklb-failover-overview).
-   *
-   * failoverPolicy cannot be specified with haPolicy.
+   * failoverPolicy cannot be specified with haPolicy.failoverPolicy cannot be used by global external Passthrough
+   * Network Load Balancers.
    * </pre>
    *
    * <code>
@@ -1034,9 +1034,9 @@ public interface BackendServiceOrBuilder
    * haPolicy requires customers to be responsible for tracking backend
    * endpoint health and electing a leader among the healthy endpoints.
    * Therefore, haPolicy cannot be specified with healthChecks.
-   *
-   * haPolicy can only be specified for External Passthrough Network Load
-   * Balancers and Internal Passthrough Network Load Balancers.
+   * haPolicy can only be specified for External Passthrough
+   * Network Load Balancers and Internal Passthrough Network Load Balancers.haPolicy cannot be used by global external Passthrough Network
+   * Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceHAPolicy ha_policy = 519879480;</code>
@@ -1075,9 +1075,9 @@ public interface BackendServiceOrBuilder
    * haPolicy requires customers to be responsible for tracking backend
    * endpoint health and electing a leader among the healthy endpoints.
    * Therefore, haPolicy cannot be specified with healthChecks.
-   *
-   * haPolicy can only be specified for External Passthrough Network Load
-   * Balancers and Internal Passthrough Network Load Balancers.
+   * haPolicy can only be specified for External Passthrough
+   * Network Load Balancers and Internal Passthrough Network Load Balancers.haPolicy cannot be used by global external Passthrough Network
+   * Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceHAPolicy ha_policy = 519879480;</code>
@@ -1116,9 +1116,9 @@ public interface BackendServiceOrBuilder
    * haPolicy requires customers to be responsible for tracking backend
    * endpoint health and electing a leader among the healthy endpoints.
    * Therefore, haPolicy cannot be specified with healthChecks.
-   *
-   * haPolicy can only be specified for External Passthrough Network Load
-   * Balancers and Internal Passthrough Network Load Balancers.
+   * haPolicy can only be specified for External Passthrough
+   * Network Load Balancers and Internal Passthrough Network Load Balancers.haPolicy cannot be used by global external Passthrough Network
+   * Load Balancers.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.BackendServiceHAPolicy ha_policy = 519879480;</code>
@@ -1469,8 +1469,8 @@ public interface BackendServiceOrBuilder
    * <pre>
    * Specifies the load balancer type. A backend service
    * created for one type of load balancer cannot be used with another.
-   * For more information, refer toChoosing
-   * a load balancer.
+   * For more information, refer to
+   * Backend services product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1486,8 +1486,8 @@ public interface BackendServiceOrBuilder
    * <pre>
    * Specifies the load balancer type. A backend service
    * created for one type of load balancer cannot be used with another.
-   * For more information, refer toChoosing
-   * a load balancer.
+   * For more information, refer to
+   * Backend services product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1503,8 +1503,8 @@ public interface BackendServiceOrBuilder
    * <pre>
    * Specifies the load balancer type. A backend service
    * created for one type of load balancer cannot be used with another.
-   * For more information, refer toChoosing
-   * a load balancer.
+   * For more information, refer to
+   * Backend services product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1672,14 +1672,26 @@ public interface BackendServiceOrBuilder
    * If set, the Backend Service responses are expected to contain non-standard
    * HTTP response header field Endpoint-Load-Metrics. The reported
    * metrics to use for computing the weights are specified via thecustomMetrics field.
+   * - WEIGHTED_MAGLEV: Per-endpoint weighted load balancing via
+   * health check reported weights. If set, the backend service must configure
+   * an HTTP-based Health Check, and health check replies are expected to
+   * contain the non-standard HTTP response header fieldX-Load-Balancing-Endpoint-Weight to specify the per-endpoint
+   * weights. If set, load balancing is weighted based on the per-endpoint
+   * weights reported in the last processed health check replies, as long as
+   * every instance either reported a valid weight or had UNAVAILABLE_WEIGHT.
+   * Otherwise, load balancing remains equal-weight.
+   *
+   *
    *
    * This field is applicable to either:
+   *
    * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
    * load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or
    * EXTERNAL_MANAGED.
+   *
    *
    *
    * If sessionAffinity is not configured—that is, if session
@@ -1735,14 +1747,26 @@ public interface BackendServiceOrBuilder
    * If set, the Backend Service responses are expected to contain non-standard
    * HTTP response header field Endpoint-Load-Metrics. The reported
    * metrics to use for computing the weights are specified via thecustomMetrics field.
+   * - WEIGHTED_MAGLEV: Per-endpoint weighted load balancing via
+   * health check reported weights. If set, the backend service must configure
+   * an HTTP-based Health Check, and health check replies are expected to
+   * contain the non-standard HTTP response header fieldX-Load-Balancing-Endpoint-Weight to specify the per-endpoint
+   * weights. If set, load balancing is weighted based on the per-endpoint
+   * weights reported in the last processed health check replies, as long as
+   * every instance either reported a valid weight or had UNAVAILABLE_WEIGHT.
+   * Otherwise, load balancing remains equal-weight.
+   *
+   *
    *
    * This field is applicable to either:
+   *
    * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
    * load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or
    * EXTERNAL_MANAGED.
+   *
    *
    *
    * If sessionAffinity is not configured—that is, if session
@@ -1798,14 +1822,26 @@ public interface BackendServiceOrBuilder
    * If set, the Backend Service responses are expected to contain non-standard
    * HTTP response header field Endpoint-Load-Metrics. The reported
    * metrics to use for computing the weights are specified via thecustomMetrics field.
+   * - WEIGHTED_MAGLEV: Per-endpoint weighted load balancing via
+   * health check reported weights. If set, the backend service must configure
+   * an HTTP-based Health Check, and health check replies are expected to
+   * contain the non-standard HTTP response header fieldX-Load-Balancing-Endpoint-Weight to specify the per-endpoint
+   * weights. If set, load balancing is weighted based on the per-endpoint
+   * weights reported in the last processed health check replies, as long as
+   * every instance either reported a valid weight or had UNAVAILABLE_WEIGHT.
+   * Otherwise, load balancing remains equal-weight.
+   *
+   *
    *
    * This field is applicable to either:
+   *
    * - A regional backend service with the service protocol set to HTTP,
    * HTTPS, HTTP2 or H2C, and load_balancing_scheme set to
    * INTERNAL_MANAGED.
    * - A global backend service with the
    * load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or
    * EXTERNAL_MANAGED.
+   *
    *
    *
    * If sessionAffinity is not configured—that is, if session
@@ -2512,13 +2548,13 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate
-   * with backends.
+   * The protocol this BackendService uses to communicate with backends.
    *
-   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP or GRPC.
-   * depending on the chosen load balancer or Traffic Director configuration.
-   * Refer to the documentation for the load balancers or for Traffic Director
-   * for more information.
+   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP, GRPC, or
+   * UNSPECIFIED, depending on the chosen load balancer or Traffic Director
+   * configuration.
+   * Refer to
+   * Load balancing features for more information.
    *
    * Must be set to GRPC when the backend service is referenced by a URL map
    * that is bound to target gRPC proxy.
@@ -2535,13 +2571,13 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate
-   * with backends.
+   * The protocol this BackendService uses to communicate with backends.
    *
-   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP or GRPC.
-   * depending on the chosen load balancer or Traffic Director configuration.
-   * Refer to the documentation for the load balancers or for Traffic Director
-   * for more information.
+   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP, GRPC, or
+   * UNSPECIFIED, depending on the chosen load balancer or Traffic Director
+   * configuration.
+   * Refer to
+   * Load balancing features for more information.
    *
    * Must be set to GRPC when the backend service is referenced by a URL map
    * that is bound to target gRPC proxy.
@@ -2558,13 +2594,13 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * The protocol this BackendService uses to communicate
-   * with backends.
+   * The protocol this BackendService uses to communicate with backends.
    *
-   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP or GRPC.
-   * depending on the chosen load balancer or Traffic Director configuration.
-   * Refer to the documentation for the load balancers or for Traffic Director
-   * for more information.
+   * Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP, GRPC, or
+   * UNSPECIFIED, depending on the chosen load balancer or Traffic Director
+   * configuration.
+   * Refer to
+   * Load balancing features for more information.
    *
    * Must be set to GRPC when the backend service is referenced by a URL map
    * that is bound to target gRPC proxy.
@@ -2822,7 +2858,11 @@ public interface BackendServiceOrBuilder
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>
@@ -2838,7 +2878,11 @@ public interface BackendServiceOrBuilder
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>
@@ -2854,7 +2898,11 @@ public interface BackendServiceOrBuilder
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>

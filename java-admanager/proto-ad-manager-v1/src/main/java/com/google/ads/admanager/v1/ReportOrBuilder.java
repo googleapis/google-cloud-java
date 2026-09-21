@@ -77,7 +77,7 @@ public interface ReportOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.Report.Visibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for visibility.
@@ -92,12 +92,12 @@ public interface ReportOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.Report.Visibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The visibility.
    */
-  com.google.ads.admanager.v1.Report.Visibility getVisibility();
+  com.google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility getVisibility();
 
   /**
    *

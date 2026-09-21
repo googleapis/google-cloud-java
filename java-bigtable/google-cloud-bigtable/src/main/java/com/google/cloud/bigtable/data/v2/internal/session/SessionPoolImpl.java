@@ -419,8 +419,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       poolState = PoolState.STARTED; // TODO: maybe need a READY state as well?
 
       // Pre-start
-      for (int i = poolSizer.getScaleDelta(); i > 0; i--) {
-        createSession(openParams);
+      while (poolSizer.getScaleDelta() > 0) {
+        if (!createSession(openParams)) {
+          break;
+        }
       }
 
       watchdog.start();
@@ -449,7 +451,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   }
 
   @GuardedBy("poolLock")
-  private void createSession(OpenParams openParams) {
+  private boolean createSession(OpenParams openParams) {
     if (!budget.tryReserveSession()) {
       debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_pool_no_budget");
       logger.fine(
@@ -461,7 +463,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // after failing to create any sessions and exhausting all the budget, we'll retry session
       // creation once the budget becomes available so the VRpc still has a chance to succeed.
       maybeScheduleCreateSessionRetry();
-      return;
+      return false;
     }
 
     // Explicit create session streams in a detached context
@@ -507,6 +509,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
               }
             });
       }
+      return true;
     } catch (RuntimeException | Error e) {
       // A synchronous failure here (e.g. factory.createNew, the SessionImpl constructor, or
       // metadata merge) means no terminal session callback will ever run for this reservation, so
@@ -526,6 +529,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
       // Let the pool recover instead of running permanently short a session.
       maybeScheduleCreateSessionRetry();
+      return false;
     } finally {
       Context.ROOT.detach(prevContext);
     }
@@ -549,8 +553,10 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
               poolLock.lock();
               try {
                 retryCreateSessionFuture = null;
-                if (poolState != PoolState.CLOSED && poolSizer.getScaleDelta() > 0) {
-                  createSession(openParams);
+                while (poolState != PoolState.CLOSED && poolSizer.getScaleDelta() > 0) {
+                  if (!createSession(openParams)) {
+                    break;
+                  }
                 }
               } finally {
                 poolLock.unlock();
@@ -692,15 +698,20 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // Handle abnormal close. This can happen if the Session was aborted due to underlying stream
       // termination
       if (prevState != SessionState.WAIT_SERVER_CLOSE) {
-        consecutiveFailures++;
-        if (status.getCode() == Status.Code.UNIMPLEMENTED) {
-          consecutiveUnimplementedFailures++;
-        } else {
-          consecutiveUnimplementedFailures = 0;
-        }
-        // TODO: decide if max consecutive failures should be capped per client
-        if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)) {
-          toBeClosed = popClosableRpcs();
+        // Only count failures during STARTING against the consecutive failure budget.
+        // Drops of established READY sessions (e.g. heartbeat misses) are transport failures
+        // rather than session establishment failures and should not fail pending vRPCs.
+        if (prevState == SessionState.STARTING) {
+          consecutiveFailures++;
+          if (status.getCode() == Status.Code.UNIMPLEMENTED) {
+            consecutiveUnimplementedFailures++;
+          } else {
+            consecutiveUnimplementedFailures = 0;
+          }
+          // TODO: decide if max consecutive failures should be capped per client
+          if (consecutiveFailures >= getMaxConsecutiveFailures(configManager)) {
+            toBeClosed = popClosableRpcs();
+          }
         }
 
         // Budget release for STARTING-phase closes is handled above via sessionsHoldingBudget,

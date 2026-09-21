@@ -162,9 +162,9 @@ public interface WorkflowConfigOrBuilder
    *
    * <pre>
    * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
+   * cron_schedule. Must be a time zone name from the [time zone
+   * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+   * left unspecified, the default is `UTC`.
    * </pre>
    *
    * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -178,9 +178,9 @@ public interface WorkflowConfigOrBuilder
    *
    * <pre>
    * Optional. Specifies the time zone to be used when interpreting
-   * cron_schedule. Must be a time zone name from the time zone database
-   * (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-   * unspecified, the default is UTC.
+   * cron_schedule. Must be a time zone name from the [time zone
+   * database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+   * left unspecified, the default is `UTC`.
    * </pre>
    *
    * <code>string time_zone = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -410,4 +410,51 @@ public interface WorkflowConfigOrBuilder
    * @return The bytes for internalMetadata.
    */
   com.google.protobuf.ByteString getInternalMetadataBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Trigger configuration for this workflow.
+   * If present, the workflow will be triggered based on the specified triggers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowTriggerConfig workflow_trigger_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workflowTriggerConfig field is set.
+   */
+  boolean hasWorkflowTriggerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Trigger configuration for this workflow.
+   * If present, the workflow will be triggered based on the specified triggers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowTriggerConfig workflow_trigger_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workflowTriggerConfig.
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowTriggerConfig getWorkflowTriggerConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Trigger configuration for this workflow.
+   * If present, the workflow will be triggered based on the specified triggers.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowTriggerConfig workflow_trigger_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowTriggerConfigOrBuilder
+      getWorkflowTriggerConfigOrBuilder();
 }

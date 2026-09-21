@@ -22,6 +22,8 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
@@ -73,6 +75,21 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersMethodDescriptor =
+          MethodDescriptor
+              .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.ads.datamanager.v1.IngestionService/RemoveAllAudienceMembers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveAllAudienceMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveAllAudienceMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<IngestEventsRequest, IngestEventsResponse>
       ingestEventsMethodDescriptor =
           MethodDescriptor.<IngestEventsRequest, IngestEventsResponse>newBuilder()
@@ -112,6 +129,8 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
       ingestAudienceMembersCallable;
   private final UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable;
+  private final UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable;
   private final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable;
   private final UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable;
   private final UnaryCallable<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
@@ -173,6 +192,12 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
                 .<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>newBuilder()
                 .setMethodDescriptor(removeAudienceMembersMethodDescriptor)
                 .build();
+    GrpcCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembersTransportSettings =
+            GrpcCallSettings
+                .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+                .setMethodDescriptor(removeAllAudienceMembersMethodDescriptor)
+                .build();
     GrpcCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsTransportSettings =
         GrpcCallSettings.<IngestEventsRequest, IngestEventsResponse>newBuilder()
             .setMethodDescriptor(ingestEventsMethodDescriptor)
@@ -198,6 +223,11 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
         callableFactory.createUnaryCallable(
             removeAudienceMembersTransportSettings,
             settings.removeAudienceMembersSettings(),
+            clientContext);
+    this.removeAllAudienceMembersCallable =
+        callableFactory.createUnaryCallable(
+            removeAllAudienceMembersTransportSettings,
+            settings.removeAllAudienceMembersSettings(),
             clientContext);
     this.ingestEventsCallable =
         callableFactory.createUnaryCallable(
@@ -229,6 +259,12 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
   public UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable() {
     return removeAudienceMembersCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    return removeAllAudienceMembersCallable;
   }
 
   @Override

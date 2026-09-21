@@ -422,4 +422,83 @@ public interface CompleteQueryResponseOrBuilder
    */
   com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult getAttributeResultsOrThrow(
       java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+      getAgentPromptsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  int getAgentPromptsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+      getAgentPromptsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+      getAgentPromptsOrBuilder(int index);
 }

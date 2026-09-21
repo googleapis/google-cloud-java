@@ -54,6 +54,7 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
 
   private IngestAudienceMembersResponse() {
     requestId_ = "";
+    fieldWarnings_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -124,6 +125,82 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
     }
   }
 
+  public static final int FIELD_WARNINGS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.datamanager.v1.FieldWarning> fieldWarnings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.datamanager.v1.FieldWarning> getFieldWarningsList() {
+    return fieldWarnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.datamanager.v1.FieldWarningOrBuilder>
+      getFieldWarningsOrBuilderList() {
+    return fieldWarnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  @java.lang.Override
+  public int getFieldWarningsCount() {
+    return fieldWarnings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.FieldWarning getFieldWarnings(int index) {
+    return fieldWarnings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.FieldWarningOrBuilder getFieldWarningsOrBuilder(int index) {
+    return fieldWarnings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -141,6 +218,9 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, requestId_);
     }
+    for (int i = 0; i < fieldWarnings_.size(); i++) {
+      output.writeMessage(2, fieldWarnings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -152,6 +232,9 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, requestId_);
+    }
+    for (int i = 0; i < fieldWarnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, fieldWarnings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -170,6 +253,7 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
         (com.google.ads.datamanager.v1.IngestAudienceMembersResponse) obj;
 
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getFieldWarningsList().equals(other.getFieldWarningsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,6 +267,10 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    if (getFieldWarningsCount() > 0) {
+      hash = (37 * hash) + FIELD_WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldWarningsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -326,6 +414,13 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
       super.clear();
       bitField0_ = 0;
       requestId_ = "";
+      if (fieldWarningsBuilder_ == null) {
+        fieldWarnings_ = java.util.Collections.emptyList();
+      } else {
+        fieldWarnings_ = null;
+        fieldWarningsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -353,11 +448,25 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
     public com.google.ads.datamanager.v1.IngestAudienceMembersResponse buildPartial() {
       com.google.ads.datamanager.v1.IngestAudienceMembersResponse result =
           new com.google.ads.datamanager.v1.IngestAudienceMembersResponse(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.ads.datamanager.v1.IngestAudienceMembersResponse result) {
+      if (fieldWarningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          fieldWarnings_ = java.util.Collections.unmodifiableList(fieldWarnings_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.fieldWarnings_ = fieldWarnings_;
+      } else {
+        result.fieldWarnings_ = fieldWarningsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.ads.datamanager.v1.IngestAudienceMembersResponse result) {
@@ -384,6 +493,33 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
         requestId_ = other.requestId_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (fieldWarningsBuilder_ == null) {
+        if (!other.fieldWarnings_.isEmpty()) {
+          if (fieldWarnings_.isEmpty()) {
+            fieldWarnings_ = other.fieldWarnings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFieldWarningsIsMutable();
+            fieldWarnings_.addAll(other.fieldWarnings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.fieldWarnings_.isEmpty()) {
+          if (fieldWarningsBuilder_.isEmpty()) {
+            fieldWarningsBuilder_.dispose();
+            fieldWarningsBuilder_ = null;
+            fieldWarnings_ = other.fieldWarnings_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            fieldWarningsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetFieldWarningsFieldBuilder()
+                    : null;
+          } else {
+            fieldWarningsBuilder_.addAllMessages(other.fieldWarnings_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -417,6 +553,19 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.ads.datamanager.v1.FieldWarning m =
+                    input.readMessage(
+                        com.google.ads.datamanager.v1.FieldWarning.parser(), extensionRegistry);
+                if (fieldWarningsBuilder_ == null) {
+                  ensureFieldWarningsIsMutable();
+                  fieldWarnings_.add(m);
+                } else {
+                  fieldWarningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -545,6 +694,378 @@ public final class IngestAudienceMembersResponse extends com.google.protobuf.Gen
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.ads.datamanager.v1.FieldWarning> fieldWarnings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFieldWarningsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        fieldWarnings_ =
+            new java.util.ArrayList<com.google.ads.datamanager.v1.FieldWarning>(fieldWarnings_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.FieldWarning,
+            com.google.ads.datamanager.v1.FieldWarning.Builder,
+            com.google.ads.datamanager.v1.FieldWarningOrBuilder>
+        fieldWarningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.FieldWarning> getFieldWarningsList() {
+      if (fieldWarningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(fieldWarnings_);
+      } else {
+        return fieldWarningsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public int getFieldWarningsCount() {
+      if (fieldWarningsBuilder_ == null) {
+        return fieldWarnings_.size();
+      } else {
+        return fieldWarningsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public com.google.ads.datamanager.v1.FieldWarning getFieldWarnings(int index) {
+      if (fieldWarningsBuilder_ == null) {
+        return fieldWarnings_.get(index);
+      } else {
+        return fieldWarningsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder setFieldWarnings(int index, com.google.ads.datamanager.v1.FieldWarning value) {
+      if (fieldWarningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.set(index, value);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder setFieldWarnings(
+        int index, com.google.ads.datamanager.v1.FieldWarning.Builder builderForValue) {
+      if (fieldWarningsBuilder_ == null) {
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder addFieldWarnings(com.google.ads.datamanager.v1.FieldWarning value) {
+      if (fieldWarningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.add(value);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder addFieldWarnings(int index, com.google.ads.datamanager.v1.FieldWarning value) {
+      if (fieldWarningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.add(index, value);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder addFieldWarnings(
+        com.google.ads.datamanager.v1.FieldWarning.Builder builderForValue) {
+      if (fieldWarningsBuilder_ == null) {
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder addFieldWarnings(
+        int index, com.google.ads.datamanager.v1.FieldWarning.Builder builderForValue) {
+      if (fieldWarningsBuilder_ == null) {
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder addAllFieldWarnings(
+        java.lang.Iterable<? extends com.google.ads.datamanager.v1.FieldWarning> values) {
+      if (fieldWarningsBuilder_ == null) {
+        ensureFieldWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldWarnings_);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder clearFieldWarnings() {
+      if (fieldWarningsBuilder_ == null) {
+        fieldWarnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public Builder removeFieldWarnings(int index) {
+      if (fieldWarningsBuilder_ == null) {
+        ensureFieldWarningsIsMutable();
+        fieldWarnings_.remove(index);
+        onChanged();
+      } else {
+        fieldWarningsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public com.google.ads.datamanager.v1.FieldWarning.Builder getFieldWarningsBuilder(int index) {
+      return internalGetFieldWarningsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public com.google.ads.datamanager.v1.FieldWarningOrBuilder getFieldWarningsOrBuilder(
+        int index) {
+      if (fieldWarningsBuilder_ == null) {
+        return fieldWarnings_.get(index);
+      } else {
+        return fieldWarningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public java.util.List<? extends com.google.ads.datamanager.v1.FieldWarningOrBuilder>
+        getFieldWarningsOrBuilderList() {
+      if (fieldWarningsBuilder_ != null) {
+        return fieldWarningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(fieldWarnings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public com.google.ads.datamanager.v1.FieldWarning.Builder addFieldWarningsBuilder() {
+      return internalGetFieldWarningsFieldBuilder()
+          .addBuilder(com.google.ads.datamanager.v1.FieldWarning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public com.google.ads.datamanager.v1.FieldWarning.Builder addFieldWarningsBuilder(int index) {
+      return internalGetFieldWarningsFieldBuilder()
+          .addBuilder(index, com.google.ads.datamanager.v1.FieldWarning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed row-level warnings with field paths.
+     * </pre>
+     *
+     * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+     */
+    public java.util.List<com.google.ads.datamanager.v1.FieldWarning.Builder>
+        getFieldWarningsBuilderList() {
+      return internalGetFieldWarningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.datamanager.v1.FieldWarning,
+            com.google.ads.datamanager.v1.FieldWarning.Builder,
+            com.google.ads.datamanager.v1.FieldWarningOrBuilder>
+        internalGetFieldWarningsFieldBuilder() {
+      if (fieldWarningsBuilder_ == null) {
+        fieldWarningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.datamanager.v1.FieldWarning,
+                com.google.ads.datamanager.v1.FieldWarning.Builder,
+                com.google.ads.datamanager.v1.FieldWarningOrBuilder>(
+                fieldWarnings_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        fieldWarnings_ = null;
+      }
+      return fieldWarningsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.IngestAudienceMembersResponse)

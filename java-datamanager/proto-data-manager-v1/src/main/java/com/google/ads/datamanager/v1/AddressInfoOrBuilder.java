@@ -135,4 +135,122 @@ public interface AddressInfoOrBuilder
    * @return The bytes for postalCode.
    */
   com.google.protobuf.ByteString getPostalCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The street and number of the user's address. Used only for
+   * Google Analytics. This field is hashed and possibly encrypted.
+   *
+   * Normalize the value before hashing:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string address_line = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The addressLine.
+   */
+  java.lang.String getAddressLine();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The street and number of the user's address. Used only for
+   * Google Analytics. This field is hashed and possibly encrypted.
+   *
+   * Normalize the value before hashing:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string address_line = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for addressLine.
+   */
+  com.google.protobuf.ByteString getAddressLineBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The city of the user's address. Used only for Google Analytics.
+   *
+   * The value should be normalized as such:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string city = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The city.
+   */
+  java.lang.String getCity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The city of the user's address. Used only for Google Analytics.
+   *
+   * The value should be normalized as such:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string city = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for city.
+   */
+  com.google.protobuf.ByteString getCityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The administrative area (state/province) of the user's address.
+   * Used only for Google Analytics.
+   *
+   * The value should be normalized as such:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string administrative_area = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The administrativeArea.
+   */
+  java.lang.String getAdministrativeArea();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The administrative area (state/province) of the user's address.
+   * Used only for Google Analytics.
+   *
+   * The value should be normalized as such:
+   *
+   * - Remove symbol characters
+   * - Convert to lowercase
+   * - Remove leading and trailing whitespace
+   * </pre>
+   *
+   * <code>string administrative_area = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for administrativeArea.
+   */
+  com.google.protobuf.ByteString getAdministrativeAreaBytes();
 }

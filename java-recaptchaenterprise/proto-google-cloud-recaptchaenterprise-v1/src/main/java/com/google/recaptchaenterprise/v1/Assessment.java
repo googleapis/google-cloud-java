@@ -373,7 +373,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when an account
+   * Output only. Assessment returned by Account defense when an account
    * identifier is provided.
    * </pre>
    *
@@ -392,7 +392,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when an account
+   * Output only. Assessment returned by Account defense when an account
    * identifier is provided.
    * </pre>
    *
@@ -414,7 +414,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Assessment returned by account defender when an account
+   * Output only. Assessment returned by Account defense when an account
    * identifier is provided.
    * </pre>
    *
@@ -695,8 +695,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Assessment returned when a site key, a token, and a phone
-   * number as `user_id` are provided. Account defender and SMS toll fraud
-   * protection need to be enabled.
+   * number as `user_id` are provided. SMS defense needs to be enabled.
    * </pre>
    *
    * <code>
@@ -715,8 +714,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Assessment returned when a site key, a token, and a phone
-   * number as `user_id` are provided. Account defender and SMS toll fraud
-   * protection need to be enabled.
+   * number as `user_id` are provided. SMS defense needs to be enabled.
    * </pre>
    *
    * <code>
@@ -737,8 +735,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Assessment returned when a site key, a token, and a phone
-   * number as `user_id` are provided. Account defender and SMS toll fraud
-   * protection need to be enabled.
+   * number as `user_id` are provided. SMS defense needs to be enabled.
    * </pre>
    *
    * <code>
@@ -819,6 +816,69 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
         : assessmentEnvironment_;
   }
 
+  public static final int POLICY_EVALUATION_FIELD_NUMBER = 16;
+  private com.google.recaptchaenterprise.v1.PolicyEvaluation policyEvaluation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides information about the policy evaluation for this
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the policyEvaluation field is set.
+   */
+  @java.lang.Override
+  public boolean hasPolicyEvaluation() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides information about the policy evaluation for this
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The policyEvaluation.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PolicyEvaluation getPolicyEvaluation() {
+    return policyEvaluation_ == null
+        ? com.google.recaptchaenterprise.v1.PolicyEvaluation.getDefaultInstance()
+        : policyEvaluation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides information about the policy evaluation for this
+   * assessment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PolicyEvaluationOrBuilder
+      getPolicyEvaluationOrBuilder() {
+    return policyEvaluation_ == null
+        ? com.google.recaptchaenterprise.v1.PolicyEvaluation.getDefaultInstance()
+        : policyEvaluation_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -868,6 +928,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(14, getAssessmentEnvironment());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(16, getPolicyEvaluation());
     }
     getUnknownFields().writeTo(output);
   }
@@ -923,6 +986,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, getAssessmentEnvironment());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getPolicyEvaluation());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -989,6 +1055,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
     if (hasAssessmentEnvironment()) {
       if (!getAssessmentEnvironment().equals(other.getAssessmentEnvironment())) return false;
     }
+    if (hasPolicyEvaluation() != other.hasPolicyEvaluation()) return false;
+    if (hasPolicyEvaluation()) {
+      if (!getPolicyEvaluation().equals(other.getPolicyEvaluation())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1045,6 +1115,10 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
     if (hasAssessmentEnvironment()) {
       hash = (37 * hash) + ASSESSMENT_ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + getAssessmentEnvironment().hashCode();
+    }
+    if (hasPolicyEvaluation()) {
+      hash = (37 * hash) + POLICY_EVALUATION_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyEvaluation().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1198,6 +1272,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
         internalGetFraudSignalsFieldBuilder();
         internalGetPhoneFraudAssessmentFieldBuilder();
         internalGetAssessmentEnvironmentFieldBuilder();
+        internalGetPolicyEvaluationFieldBuilder();
       }
     }
 
@@ -1260,6 +1335,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
       if (assessmentEnvironmentBuilder_ != null) {
         assessmentEnvironmentBuilder_.dispose();
         assessmentEnvironmentBuilder_ = null;
+      }
+      policyEvaluation_ = null;
+      if (policyEvaluationBuilder_ != null) {
+        policyEvaluationBuilder_.dispose();
+        policyEvaluationBuilder_ = null;
       }
       return this;
     }
@@ -1369,6 +1449,11 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
                 : assessmentEnvironmentBuilder_.build();
         to_bitField0_ |= 0x00000400;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.policyEvaluation_ =
+            policyEvaluationBuilder_ == null ? policyEvaluation_ : policyEvaluationBuilder_.build();
+        to_bitField0_ |= 0x00000800;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1421,6 +1506,9 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAssessmentEnvironment()) {
         mergeAssessmentEnvironment(other.getAssessmentEnvironment());
+      }
+      if (other.hasPolicyEvaluation()) {
+        mergePolicyEvaluation(other.getPolicyEvaluation());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1534,6 +1622,13 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    internalGetPolicyEvaluationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2558,7 +2653,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2576,7 +2671,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2601,7 +2696,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2628,7 +2723,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2652,7 +2747,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2686,7 +2781,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2709,7 +2804,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2728,7 +2823,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -2751,7 +2846,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Assessment returned by account defender when an account
+     * Output only. Assessment returned by Account defense when an account
      * identifier is provided.
      * </pre>
      *
@@ -3708,8 +3803,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3727,8 +3821,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3752,8 +3845,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3780,8 +3872,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3805,8 +3896,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3839,8 +3929,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3863,8 +3952,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3883,8 +3971,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -3907,8 +3994,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Assessment returned when a site key, a token, and a phone
-     * number as `user_id` are provided. Account defender and SMS toll fraud
-     * protection need to be enabled.
+     * number as `user_id` are provided. SMS defense needs to be enabled.
      * </pre>
      *
      * <code>
@@ -4166,6 +4252,230 @@ public final class Assessment extends com.google.protobuf.GeneratedMessage
         assessmentEnvironment_ = null;
       }
       return assessmentEnvironmentBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.PolicyEvaluation policyEvaluation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.PolicyEvaluation,
+            com.google.recaptchaenterprise.v1.PolicyEvaluation.Builder,
+            com.google.recaptchaenterprise.v1.PolicyEvaluationOrBuilder>
+        policyEvaluationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the policyEvaluation field is set.
+     */
+    public boolean hasPolicyEvaluation() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The policyEvaluation.
+     */
+    public com.google.recaptchaenterprise.v1.PolicyEvaluation getPolicyEvaluation() {
+      if (policyEvaluationBuilder_ == null) {
+        return policyEvaluation_ == null
+            ? com.google.recaptchaenterprise.v1.PolicyEvaluation.getDefaultInstance()
+            : policyEvaluation_;
+      } else {
+        return policyEvaluationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPolicyEvaluation(com.google.recaptchaenterprise.v1.PolicyEvaluation value) {
+      if (policyEvaluationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyEvaluation_ = value;
+      } else {
+        policyEvaluationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPolicyEvaluation(
+        com.google.recaptchaenterprise.v1.PolicyEvaluation.Builder builderForValue) {
+      if (policyEvaluationBuilder_ == null) {
+        policyEvaluation_ = builderForValue.build();
+      } else {
+        policyEvaluationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePolicyEvaluation(com.google.recaptchaenterprise.v1.PolicyEvaluation value) {
+      if (policyEvaluationBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && policyEvaluation_ != null
+            && policyEvaluation_
+                != com.google.recaptchaenterprise.v1.PolicyEvaluation.getDefaultInstance()) {
+          getPolicyEvaluationBuilder().mergeFrom(value);
+        } else {
+          policyEvaluation_ = value;
+        }
+      } else {
+        policyEvaluationBuilder_.mergeFrom(value);
+      }
+      if (policyEvaluation_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPolicyEvaluation() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      policyEvaluation_ = null;
+      if (policyEvaluationBuilder_ != null) {
+        policyEvaluationBuilder_.dispose();
+        policyEvaluationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PolicyEvaluation.Builder getPolicyEvaluationBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetPolicyEvaluationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PolicyEvaluationOrBuilder
+        getPolicyEvaluationOrBuilder() {
+      if (policyEvaluationBuilder_ != null) {
+        return policyEvaluationBuilder_.getMessageOrBuilder();
+      } else {
+        return policyEvaluation_ == null
+            ? com.google.recaptchaenterprise.v1.PolicyEvaluation.getDefaultInstance()
+            : policyEvaluation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides information about the policy evaluation for this
+     * assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PolicyEvaluation policy_evaluation = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.PolicyEvaluation,
+            com.google.recaptchaenterprise.v1.PolicyEvaluation.Builder,
+            com.google.recaptchaenterprise.v1.PolicyEvaluationOrBuilder>
+        internalGetPolicyEvaluationFieldBuilder() {
+      if (policyEvaluationBuilder_ == null) {
+        policyEvaluationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.recaptchaenterprise.v1.PolicyEvaluation,
+                com.google.recaptchaenterprise.v1.PolicyEvaluation.Builder,
+                com.google.recaptchaenterprise.v1.PolicyEvaluationOrBuilder>(
+                getPolicyEvaluation(), getParentForChildren(), isClean());
+        policyEvaluation_ = null;
+      }
+      return policyEvaluationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.Assessment)

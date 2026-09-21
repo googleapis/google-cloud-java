@@ -41,7 +41,6 @@ import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
@@ -58,8 +57,6 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
-  private static final String PCNT_SCHEMA = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
-  private static final String PCNT_TABLE_NAME = "PCNT_TEST_TABLE";
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
@@ -73,9 +70,6 @@ public class ITDatabaseMetadataTest extends ITBase {
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
   }
-
-  @AfterAll
-  public static void afterClass() throws SQLException {}
 
   @Disabled
   @Test
@@ -726,6 +720,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetadataGetTables() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -826,6 +821,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetadataGetSchemas() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -898,6 +894,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetaDataGetFunctions() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -1137,6 +1134,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testAdditionalProjectsInMetadata() throws SQLException {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
@@ -1193,6 +1191,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
+  @Tag("disable_tpc")
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
 
     String defaultDatasetValue = CONSTRAINTS_DATASET;
@@ -1264,6 +1263,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
+  @Tag("disable_tpc")
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;

@@ -64,7 +64,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -106,13 +105,11 @@ public abstract class ClientContext {
   public abstract @Nullable Watchdog getStreamWatchdog();
 
   /** This method is obsolete. Use {@link #getStreamWatchdogCheckIntervalDuration()} instead. */
-  @Nonnull
   @ObsoleteApi("Use getStreamWatchdogCheckIntervalDuration() instead")
   public final org.threeten.bp.Duration getStreamWatchdogCheckInterval() {
     return toThreetenDuration(getStreamWatchdogCheckIntervalDuration());
   }
 
-  @Nonnull
   public abstract java.time.Duration getStreamWatchdogCheckIntervalDuration();
 
   public abstract @Nullable String getUniverseDomain();
@@ -126,7 +123,6 @@ public abstract class ClientContext {
 
   /** Gets the {@link ApiTracerFactory} that will be used to generate traces for operations. */
   @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-  @Nonnull
   public abstract ApiTracerFactory getTracerFactory();
 
   /**

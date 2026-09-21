@@ -312,6 +312,48 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.SearchMessagesRequest, com.google.chat.v1.SearchMessagesResponse>
+      getSearchMessagesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchMessages",
+      requestType = com.google.chat.v1.SearchMessagesRequest.class,
+      responseType = com.google.chat.v1.SearchMessagesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.SearchMessagesRequest, com.google.chat.v1.SearchMessagesResponse>
+      getSearchMessagesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.SearchMessagesRequest, com.google.chat.v1.SearchMessagesResponse>
+        getSearchMessagesMethod;
+    if ((getSearchMessagesMethod = ChatServiceGrpc.getSearchMessagesMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getSearchMessagesMethod = ChatServiceGrpc.getSearchMessagesMethod) == null) {
+          ChatServiceGrpc.getSearchMessagesMethod =
+              getSearchMessagesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.SearchMessagesRequest,
+                          com.google.chat.v1.SearchMessagesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchMessages"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SearchMessagesRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.SearchMessagesResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("SearchMessages"))
+                      .build();
+        }
+      }
+    }
+    return getSearchMessagesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.GetAttachmentRequest, com.google.chat.v1.Attachment>
       getGetAttachmentMethod;
 
@@ -2329,6 +2371,41 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Searches for messages in Google Chat that the calling user has access to.
+     * Returns a list of messages matching the search criteria.
+     * To search across all spaces the user has access to, set `parent` to
+     * `spaces/-`. Using any other value for `parent` results in an
+     * `INVALID_ARGUMENT` error. The returned messages have their `name` field
+     * populated with the full resource name, which includes the specific `space`
+     * in which the message resides.
+     * This API doesn't return all message types. The types of messages listed
+     * below aren't included in the response. Use
+     * [ListMessages][google.chat.v1.ChatService.ListMessages] to list all
+     * messages.
+     * - Private Messages that are visible to the authenticated user.
+     * - Messages posted by Chat apps in spaces or group chats.
+     * - Messages in a Chat app DM.
+     * - Messages from blocked users.
+     * - Messages in spaces that the caller has muted.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *   - `https://www.googleapis.com/auth/chat.messages`
+     * </pre>
+     */
+    default void searchMessages(
+        com.google.chat.v1.SearchMessagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SearchMessagesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchMessagesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
      * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
@@ -2409,17 +2486,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. In the request, set `use_admin_access` to `true`.
-     * For an example, see [Search for and manage
+     * Returns a list of spaces in a Google Workspace organization. For an
+     * example, see [Search for and manage
      * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
-     * Requires [user
+     * When `use_admin_access` is set to `false`, the results are limited to
+     * spaces where the calling user is a joined member. To search with
+     * administrator privileges, set `use_admin_access` to `true`.
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     * - [User
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
      * and one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces`
      * </pre>
      */
     default void searchSpaces(
@@ -3840,6 +3926,43 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Searches for messages in Google Chat that the calling user has access to.
+     * Returns a list of messages matching the search criteria.
+     * To search across all spaces the user has access to, set `parent` to
+     * `spaces/-`. Using any other value for `parent` results in an
+     * `INVALID_ARGUMENT` error. The returned messages have their `name` field
+     * populated with the full resource name, which includes the specific `space`
+     * in which the message resides.
+     * This API doesn't return all message types. The types of messages listed
+     * below aren't included in the response. Use
+     * [ListMessages][google.chat.v1.ChatService.ListMessages] to list all
+     * messages.
+     * - Private Messages that are visible to the authenticated user.
+     * - Messages posted by Chat apps in spaces or group chats.
+     * - Messages in a Chat app DM.
+     * - Messages from blocked users.
+     * - Messages in spaces that the caller has muted.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *   - `https://www.googleapis.com/auth/chat.messages`
+     * </pre>
+     */
+    public void searchMessages(
+        com.google.chat.v1.SearchMessagesRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.SearchMessagesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchMessagesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
      * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
@@ -3925,17 +4048,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. In the request, set `use_admin_access` to `true`.
-     * For an example, see [Search for and manage
+     * Returns a list of spaces in a Google Workspace organization. For an
+     * example, see [Search for and manage
      * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
-     * Requires [user
+     * When `use_admin_access` is set to `false`, the results are limited to
+     * spaces where the calling user is a joined member. To search with
+     * administrator privileges, set `use_admin_access` to `true`.
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     * - [User
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
      * and one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces`
      * </pre>
      */
     public void searchSpaces(
@@ -5394,6 +5526,40 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Searches for messages in Google Chat that the calling user has access to.
+     * Returns a list of messages matching the search criteria.
+     * To search across all spaces the user has access to, set `parent` to
+     * `spaces/-`. Using any other value for `parent` results in an
+     * `INVALID_ARGUMENT` error. The returned messages have their `name` field
+     * populated with the full resource name, which includes the specific `space`
+     * in which the message resides.
+     * This API doesn't return all message types. The types of messages listed
+     * below aren't included in the response. Use
+     * [ListMessages][google.chat.v1.ChatService.ListMessages] to list all
+     * messages.
+     * - Private Messages that are visible to the authenticated user.
+     * - Messages posted by Chat apps in spaces or group chats.
+     * - Messages in a Chat app DM.
+     * - Messages from blocked users.
+     * - Messages in spaces that the caller has muted.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *   - `https://www.googleapis.com/auth/chat.messages`
+     * </pre>
+     */
+    public com.google.chat.v1.SearchMessagesResponse searchMessages(
+        com.google.chat.v1.SearchMessagesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSearchMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
      * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
@@ -5472,17 +5638,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. In the request, set `use_admin_access` to `true`.
-     * For an example, see [Search for and manage
+     * Returns a list of spaces in a Google Workspace organization. For an
+     * example, see [Search for and manage
      * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
-     * Requires [user
+     * When `use_admin_access` is set to `false`, the results are limited to
+     * spaces where the calling user is a joined member. To search with
+     * administrator privileges, set `use_admin_access` to `true`.
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     * - [User
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
      * and one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces`
      * </pre>
      */
     public com.google.chat.v1.SearchSpacesResponse searchSpaces(
@@ -6833,6 +7008,40 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Searches for messages in Google Chat that the calling user has access to.
+     * Returns a list of messages matching the search criteria.
+     * To search across all spaces the user has access to, set `parent` to
+     * `spaces/-`. Using any other value for `parent` results in an
+     * `INVALID_ARGUMENT` error. The returned messages have their `name` field
+     * populated with the full resource name, which includes the specific `space`
+     * in which the message resides.
+     * This API doesn't return all message types. The types of messages listed
+     * below aren't included in the response. Use
+     * [ListMessages][google.chat.v1.ChatService.ListMessages] to list all
+     * messages.
+     * - Private Messages that are visible to the authenticated user.
+     * - Messages posted by Chat apps in spaces or group chats.
+     * - Messages in a Chat app DM.
+     * - Messages from blocked users.
+     * - Messages in spaces that the caller has muted.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *   - `https://www.googleapis.com/auth/chat.messages`
+     * </pre>
+     */
+    public com.google.chat.v1.SearchMessagesResponse searchMessages(
+        com.google.chat.v1.SearchMessagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
      * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
@@ -6911,17 +7120,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. In the request, set `use_admin_access` to `true`.
-     * For an example, see [Search for and manage
+     * Returns a list of spaces in a Google Workspace organization. For an
+     * example, see [Search for and manage
      * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
-     * Requires [user
+     * When `use_admin_access` is set to `false`, the results are limited to
+     * spaces where the calling user is a joined member. To search with
+     * administrator privileges, set `use_admin_access` to `true`.
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     * - [User
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
      * and one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces`
      * </pre>
      */
     public com.google.chat.v1.SearchSpacesResponse searchSpaces(
@@ -8268,6 +8486,41 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Searches for messages in Google Chat that the calling user has access to.
+     * Returns a list of messages matching the search criteria.
+     * To search across all spaces the user has access to, set `parent` to
+     * `spaces/-`. Using any other value for `parent` results in an
+     * `INVALID_ARGUMENT` error. The returned messages have their `name` field
+     * populated with the full resource name, which includes the specific `space`
+     * in which the message resides.
+     * This API doesn't return all message types. The types of messages listed
+     * below aren't included in the response. Use
+     * [ListMessages][google.chat.v1.ChatService.ListMessages] to list all
+     * messages.
+     * - Private Messages that are visible to the authenticated user.
+     * - Messages posted by Chat apps in spaces or group chats.
+     * - Messages in a Chat app DM.
+     * - Messages from blocked users.
+     * - Messages in spaces that the caller has muted.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.messages.readonly`
+     *   - `https://www.googleapis.com/auth/chat.messages`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.SearchMessagesResponse>
+        searchMessages(com.google.chat.v1.SearchMessagesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchMessagesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the metadata of a message attachment. The attachment data is fetched
      * using the [media
      * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download).
@@ -8347,17 +8600,26 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
-     * Returns a list of spaces in a Google Workspace organization based on an
-     * administrator's search. In the request, set `use_admin_access` to `true`.
-     * For an example, see [Search for and manage
+     * Returns a list of spaces in a Google Workspace organization. For an
+     * example, see [Search for and manage
      * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
-     * Requires [user
+     * When `use_admin_access` is set to `false`, the results are limited to
+     * spaces where the calling user is a joined member. To search with
+     * administrator privileges, set `use_admin_access` to `true`.
+     * Supports the following types of
+     * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following authorization scopes:
+     *     - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.spaces`
+     * - [User
      * authentication with administrator
      * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
      * and one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
-     *   - `https://www.googleapis.com/auth/chat.admin.spaces`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`
+     *     - `https://www.googleapis.com/auth/chat.admin.spaces`
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -9447,47 +9709,48 @@ public final class ChatServiceGrpc {
   private static final int METHODID_GET_MESSAGE = 4;
   private static final int METHODID_UPDATE_MESSAGE = 5;
   private static final int METHODID_DELETE_MESSAGE = 6;
-  private static final int METHODID_GET_ATTACHMENT = 7;
-  private static final int METHODID_UPLOAD_ATTACHMENT = 8;
-  private static final int METHODID_LIST_SPACES = 9;
-  private static final int METHODID_SEARCH_SPACES = 10;
-  private static final int METHODID_GET_SPACE = 11;
-  private static final int METHODID_CREATE_SPACE = 12;
-  private static final int METHODID_SET_UP_SPACE = 13;
-  private static final int METHODID_UPDATE_SPACE = 14;
-  private static final int METHODID_DELETE_SPACE = 15;
-  private static final int METHODID_COMPLETE_IMPORT_SPACE = 16;
-  private static final int METHODID_FIND_DIRECT_MESSAGE = 17;
-  private static final int METHODID_FIND_GROUP_CHATS = 18;
-  private static final int METHODID_CREATE_MEMBERSHIP = 19;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 20;
-  private static final int METHODID_DELETE_MEMBERSHIP = 21;
-  private static final int METHODID_CREATE_REACTION = 22;
-  private static final int METHODID_LIST_REACTIONS = 23;
-  private static final int METHODID_DELETE_REACTION = 24;
-  private static final int METHODID_CREATE_CUSTOM_EMOJI = 25;
-  private static final int METHODID_GET_CUSTOM_EMOJI = 26;
-  private static final int METHODID_LIST_CUSTOM_EMOJIS = 27;
-  private static final int METHODID_DELETE_CUSTOM_EMOJI = 28;
-  private static final int METHODID_GET_SPACE_READ_STATE = 29;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 30;
-  private static final int METHODID_GET_THREAD_READ_STATE = 31;
-  private static final int METHODID_GET_AVAILABILITY = 32;
-  private static final int METHODID_MARK_AS_ACTIVE = 33;
-  private static final int METHODID_MARK_AS_AWAY = 34;
-  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 35;
-  private static final int METHODID_UPDATE_AVAILABILITY = 36;
-  private static final int METHODID_GET_SPACE_EVENT = 37;
-  private static final int METHODID_LIST_SPACE_EVENTS = 38;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 39;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 40;
-  private static final int METHODID_CREATE_SECTION = 41;
-  private static final int METHODID_DELETE_SECTION = 42;
-  private static final int METHODID_UPDATE_SECTION = 43;
-  private static final int METHODID_LIST_SECTIONS = 44;
-  private static final int METHODID_POSITION_SECTION = 45;
-  private static final int METHODID_LIST_SECTION_ITEMS = 46;
-  private static final int METHODID_MOVE_SECTION_ITEM = 47;
+  private static final int METHODID_SEARCH_MESSAGES = 7;
+  private static final int METHODID_GET_ATTACHMENT = 8;
+  private static final int METHODID_UPLOAD_ATTACHMENT = 9;
+  private static final int METHODID_LIST_SPACES = 10;
+  private static final int METHODID_SEARCH_SPACES = 11;
+  private static final int METHODID_GET_SPACE = 12;
+  private static final int METHODID_CREATE_SPACE = 13;
+  private static final int METHODID_SET_UP_SPACE = 14;
+  private static final int METHODID_UPDATE_SPACE = 15;
+  private static final int METHODID_DELETE_SPACE = 16;
+  private static final int METHODID_COMPLETE_IMPORT_SPACE = 17;
+  private static final int METHODID_FIND_DIRECT_MESSAGE = 18;
+  private static final int METHODID_FIND_GROUP_CHATS = 19;
+  private static final int METHODID_CREATE_MEMBERSHIP = 20;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 21;
+  private static final int METHODID_DELETE_MEMBERSHIP = 22;
+  private static final int METHODID_CREATE_REACTION = 23;
+  private static final int METHODID_LIST_REACTIONS = 24;
+  private static final int METHODID_DELETE_REACTION = 25;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 26;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 27;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 28;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 29;
+  private static final int METHODID_GET_SPACE_READ_STATE = 30;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 31;
+  private static final int METHODID_GET_THREAD_READ_STATE = 32;
+  private static final int METHODID_GET_AVAILABILITY = 33;
+  private static final int METHODID_MARK_AS_ACTIVE = 34;
+  private static final int METHODID_MARK_AS_AWAY = 35;
+  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 36;
+  private static final int METHODID_UPDATE_AVAILABILITY = 37;
+  private static final int METHODID_GET_SPACE_EVENT = 38;
+  private static final int METHODID_LIST_SPACE_EVENTS = 39;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 40;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 41;
+  private static final int METHODID_CREATE_SECTION = 42;
+  private static final int METHODID_DELETE_SECTION = 43;
+  private static final int METHODID_UPDATE_SECTION = 44;
+  private static final int METHODID_LIST_SECTIONS = 45;
+  private static final int METHODID_POSITION_SECTION = 46;
+  private static final int METHODID_LIST_SECTION_ITEMS = 47;
+  private static final int METHODID_MOVE_SECTION_ITEM = 48;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9542,6 +9805,12 @@ public final class ChatServiceGrpc {
           serviceImpl.deleteMessage(
               (com.google.chat.v1.DeleteMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SEARCH_MESSAGES:
+          serviceImpl.searchMessages(
+              (com.google.chat.v1.SearchMessagesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.SearchMessagesResponse>)
+                  responseObserver);
           break;
         case METHODID_GET_ATTACHMENT:
           serviceImpl.getAttachment(
@@ -9823,6 +10092,12 @@ public final class ChatServiceGrpc {
                 new MethodHandlers<
                     com.google.chat.v1.DeleteMessageRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_MESSAGE)))
+        .addMethod(
+            getSearchMessagesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.SearchMessagesRequest,
+                    com.google.chat.v1.SearchMessagesResponse>(service, METHODID_SEARCH_MESSAGES)))
         .addMethod(
             getGetAttachmentMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -10132,6 +10407,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getGetMessageMethod())
                       .addMethod(getUpdateMessageMethod())
                       .addMethod(getDeleteMessageMethod())
+                      .addMethod(getSearchMessagesMethod())
                       .addMethod(getGetAttachmentMethod())
                       .addMethod(getUploadAttachmentMethod())
                       .addMethod(getListSpacesMethod())

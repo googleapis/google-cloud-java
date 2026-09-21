@@ -60,7 +60,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import io.grpc.MethodDescriptor;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create grpc-based direct callables. */
@@ -330,7 +329,7 @@ public class GrpcCallableFactory {
   }
 
   @VisibleForTesting
-  static ApiTracerContext getApiTracerContext(@Nonnull MethodDescriptor<?, ?> methodDescriptor) {
+  static ApiTracerContext getApiTracerContext(MethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setTransport(ApiTracerContext.Transport.GRPC)

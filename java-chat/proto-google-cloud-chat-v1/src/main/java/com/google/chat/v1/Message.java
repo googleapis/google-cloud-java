@@ -65,6 +65,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     emojiReactionSummaries_ = java.util.Collections.emptyList();
     attachedGifs_ = java.util.Collections.emptyList();
     accessoryWidgets_ = java.util.Collections.emptyList();
+    markupSyntax_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -499,8 +500,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -547,8 +548,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -703,9 +704,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -729,9 +735,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -756,9 +767,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -782,9 +798,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -808,9 +829,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -1363,8 +1389,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -1382,8 +1408,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -1401,8 +1427,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -2060,6 +2086,49 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     return accessoryWidgets_.get(index);
   }
 
+  public static final int MARKUP_SYNTAX_FIELD_NUMBER = 47;
+  private int markupSyntax_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  @java.lang.Override
+  public int getMarkupSyntaxValue() {
+    return markupSyntax_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+    com.google.chat.v1.MarkupSyntax result =
+        com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+    return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2154,6 +2223,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     }
     if (silent_ != false) {
       output.writeBool(46, silent_);
+    }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      output.writeEnum(47, markupSyntax_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2250,6 +2322,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     if (silent_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, silent_);
     }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(47, markupSyntax_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2329,6 +2404,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     }
     if (!getAttachedGifsList().equals(other.getAttachedGifsList())) return false;
     if (!getAccessoryWidgetsList().equals(other.getAccessoryWidgetsList())) return false;
+    if (markupSyntax_ != other.markupSyntax_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2432,6 +2508,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ACCESSORY_WIDGETS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessoryWidgetsList().hashCode();
     }
+    hash = (37 * hash) + MARKUP_SYNTAX_FIELD_NUMBER;
+    hash = (53 * hash) + markupSyntax_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2713,6 +2791,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         accessoryWidgetsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x04000000);
+      markupSyntax_ = 0;
       return this;
     }
 
@@ -2896,6 +2975,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 ? quotedMessageMetadata_
                 : quotedMessageMetadataBuilder_.build();
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.markupSyntax_ = markupSyntax_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3173,6 +3255,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.markupSyntax_ != 0) {
+        setMarkupSyntaxValue(other.getMarkupSyntaxValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3415,6 +3500,12 @@ public final class Message extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00080000;
                 break;
               } // case 368
+            case 376:
+              {
+                markupSyntax_ = input.readEnum();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 376
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4720,8 +4811,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      * * [Markup
      * syntax](https://developers.google.com/workspace/chat/format-messages)
-     * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-     * list.
+     * for bold, italic, strikethrough, monospace, monospace block, bulleted
+     * list, and block quote.
      *
      * * [User
      * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -4767,8 +4858,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      * * [Markup
      * syntax](https://developers.google.com/workspace/chat/format-messages)
-     * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-     * list.
+     * for bold, italic, strikethrough, monospace, monospace block, bulleted
+     * list, and block quote.
      *
      * * [User
      * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -4814,8 +4905,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      * * [Markup
      * syntax](https://developers.google.com/workspace/chat/format-messages)
-     * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-     * list.
+     * for bold, italic, strikethrough, monospace, monospace block, bulleted
+     * list, and block quote.
      *
      * * [User
      * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -4860,8 +4951,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      * * [Markup
      * syntax](https://developers.google.com/workspace/chat/format-messages)
-     * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-     * list.
+     * for bold, italic, strikethrough, monospace, monospace block, bulleted
+     * list, and block quote.
      *
      * * [User
      * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -4902,8 +4993,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      * * [Markup
      * syntax](https://developers.google.com/workspace/chat/format-messages)
-     * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-     * list.
+     * for bold, italic, strikethrough, monospace, monospace block, bulleted
+     * list, and block quote.
      *
      * * [User
      * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -5454,9 +5545,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5483,9 +5579,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5512,9 +5613,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5541,9 +5647,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5576,9 +5687,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5608,9 +5724,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5643,9 +5764,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5678,9 +5804,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5710,9 +5841,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5742,9 +5878,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5775,9 +5916,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5807,9 +5953,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5839,9 +5990,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5864,9 +6020,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5893,9 +6054,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5923,9 +6089,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5949,9 +6120,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -5975,9 +6151,14 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * Optional. An array of
      * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
      *
-     * Only Chat apps can create cards. If your Chat app [authenticates as a
+     * Chat apps can create cards with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+     * As part of the [Developer Preview
+     * Program](https://developers.google.com/workspace/preview), if your Chat app
+     * [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the messages can't contain cards.
+     * it can create card messages. If your Chat app is not part of Developer
+     * Preview Program, it can't create cards with user authentication.
      *
      * To learn how to create a message that contains cards, see [Send a
      * message](https://developers.google.com/workspace/chat/create-messages).
@@ -7954,8 +8135,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -7973,8 +8154,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -7998,8 +8179,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8025,8 +8206,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8049,8 +8230,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8081,8 +8262,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8105,8 +8286,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8124,8 +8305,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -8147,8 +8328,8 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. A URL in `spaces.messages.text` that matches a link preview
-     * pattern. For more information, see [Preview
+     * Output only. A URL in the Chat message `text` field that matches a link
+     * preview pattern. For more information, see [Preview
      * links](https://developers.google.com/workspace/chat/preview-links).
      * </pre>
      *
@@ -10634,6 +10815,116 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         accessoryWidgets_ = null;
       }
       return accessoryWidgetsBuilder_;
+    }
+
+    private int markupSyntax_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the server interprets the message `text` field
+     * content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for markupSyntax.
+     */
+    @java.lang.Override
+    public int getMarkupSyntaxValue() {
+      return markupSyntax_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the server interprets the message `text` field
+     * content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntaxValue(int value) {
+      markupSyntax_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the server interprets the message `text` field
+     * content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The markupSyntax.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+      com.google.chat.v1.MarkupSyntax result =
+          com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+      return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the server interprets the message `text` field
+     * content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntax(com.google.chat.v1.MarkupSyntax value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x08000000;
+      markupSyntax_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the server interprets the message `text` field
+     * content.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarkupSyntax() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      markupSyntax_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.chat.v1.Message)

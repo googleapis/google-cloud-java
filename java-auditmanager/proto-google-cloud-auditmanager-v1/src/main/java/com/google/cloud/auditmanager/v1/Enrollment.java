@@ -24,7 +24,7 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The enrollment resource.
+ * Organization, folder, or project to enroll for audit reports.
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.Enrollment}
@@ -80,8 +80,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The name of this Enrollment, in the format of scope given in
-   * request.
+   * Identifier. Name of the enrollment, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+   * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+   * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -105,8 +108,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The name of this Enrollment, in the format of scope given in
-   * request.
+   * Identifier. Name of the enrollment, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+   * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+   * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -135,7 +141,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -152,7 +159,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -169,7 +177,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -185,7 +194,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -201,7 +211,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -390,7 +401,7 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The enrollment resource.
+   * Organization, folder, or project to enroll for audit reports.
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.Enrollment}
@@ -602,8 +613,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Enrollment, in the format of scope given in
-     * request.
+     * Identifier. Name of the enrollment, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+     * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+     * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -626,8 +640,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Enrollment, in the format of scope given in
-     * request.
+     * Identifier. Name of the enrollment, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+     * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+     * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -650,8 +667,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Enrollment, in the format of scope given in
-     * request.
+     * Identifier. Name of the enrollment, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+     * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+     * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -673,8 +693,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Enrollment, in the format of scope given in
-     * request.
+     * Identifier. Name of the enrollment, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+     * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+     * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -692,8 +715,11 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Enrollment, in the format of scope given in
-     * request.
+     * Identifier. Name of the enrollment, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+     * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+     * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -734,7 +760,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -754,7 +781,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -773,7 +801,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -792,7 +821,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -818,7 +848,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -841,7 +872,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -867,7 +899,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -893,7 +926,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -916,7 +950,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -939,7 +974,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -962,7 +998,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -984,7 +1021,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1006,7 +1044,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1022,7 +1061,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1042,7 +1082,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1062,7 +1103,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1079,7 +1121,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>
@@ -1097,7 +1140,8 @@ public final class Enrollment extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The locations where the generated reports can be uploaded.
+     * Output only. Cloud Storage buckets where you want to upload the audit
+     * reports.
      * </pre>
      *
      * <code>

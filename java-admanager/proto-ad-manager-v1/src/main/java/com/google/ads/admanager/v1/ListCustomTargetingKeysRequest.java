@@ -228,15 +228,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `adTagName`
+   * * `displayName`
+   * * `name`
+   * * `reportableType`
+   * * `status`
+   * * `type`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,15 +263,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `adTagName`
+   * * `displayName`
+   * * `name`
+   * * `reportableType`
+   * * `status`
+   * * `type`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1127,15 +1125,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `adTagName`
+     * * `displayName`
+     * * `name`
+     * * `reportableType`
+     * * `status`
+     * * `type`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1162,15 +1159,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `adTagName`
+     * * `displayName`
+     * * `name`
+     * * `reportableType`
+     * * `status`
+     * * `type`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1197,15 +1193,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `adTagName`
+     * * `displayName`
+     * * `name`
+     * * `reportableType`
+     * * `status`
+     * * `type`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1231,15 +1226,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `adTagName`
+     * * `displayName`
+     * * `name`
+     * * `reportableType`
+     * * `status`
+     * * `type`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1261,15 +1255,14 @@ public final class ListCustomTargetingKeysRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;adTagName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;reportableType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `adTagName`
+     * * `displayName`
+     * * `name`
+     * * `reportableType`
+     * * `status`
+     * * `type`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

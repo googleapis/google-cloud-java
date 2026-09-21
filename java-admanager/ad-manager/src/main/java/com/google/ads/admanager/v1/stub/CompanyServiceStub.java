@@ -18,10 +18,16 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchCreateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchCreateCompaniesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesResponse;
 import com.google.ads.admanager.v1.Company;
+import com.google.ads.admanager.v1.CreateCompanyRequest;
 import com.google.ads.admanager.v1.GetCompanyRequest;
 import com.google.ads.admanager.v1.ListCompaniesRequest;
 import com.google.ads.admanager.v1.ListCompaniesResponse;
+import com.google.ads.admanager.v1.UpdateCompanyRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -48,6 +54,24 @@ public abstract class CompanyServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
     throw new UnsupportedOperationException("Not implemented: listCompaniesCallable()");
+  }
+
+  public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCompanyCallable()");
+  }
+
+  public UnaryCallable<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateCompaniesCallable()");
+  }
+
+  public UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCompanyCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateCompaniesCallable()");
   }
 
   @Override

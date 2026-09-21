@@ -37,11 +37,13 @@ import com.google.cloud.bigtable.common.Status.Code;
 import com.google.cloud.bigtable.test_helpers.env.EmulatorEnv;
 import com.google.cloud.bigtable.test_helpers.env.PrefixGenerator;
 import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -62,7 +64,8 @@ import org.threeten.bp.temporal.ChronoUnit;
 @RunWith(JUnit4.class)
 public class BigtableCmekIT {
 
-  private static final long[] BACKOFF_DURATION = {5, 10, 50, 100, 150, 200, 250, 300};
+  private static final long KEY_STATUS_TIMEOUT_SECONDS = 360;
+  private static final long KEY_STATUS_POLL_INTERVAL_SECONDS = 10;
   private static final Logger LOGGER = Logger.getLogger(BigtableCmekIT.class.getName());
   private static final String TEST_TABLE_ID = "test-table-for-cmek-it";
   private static final String BACKUP_ID = "test-table-for-cmek-it-backup";
@@ -226,7 +229,10 @@ public class BigtableCmekIT {
   }
 
   private void waitForCmekStatus(String tableId, String clusterId) throws InterruptedException {
-    for (int i = 0; i < BACKOFF_DURATION.length; i++) {
+    // Poll at a fine granularity: the key status usually settles well before the deadline and a
+    // coarse backoff would spend minutes asleep after the status was already OK.
+    Stopwatch stopwatch = Stopwatch.createStarted();
+    while (stopwatch.elapsed(TimeUnit.SECONDS) < KEY_STATUS_TIMEOUT_SECONDS) {
       try {
         EncryptionInfo encryptionInfo = tableAdmin.getEncryptionInfo(tableId).get(clusterId).get(0);
         if (encryptionInfo.getStatus().getCode() == Code.OK) {
@@ -234,14 +240,14 @@ public class BigtableCmekIT {
         }
       } catch (ApiException ex) {
         LOGGER.info(
-            "Wait for "
-                + BACKOFF_DURATION[i]
-                + " seconds for key status for table "
+            "Waiting for key status for table "
                 + tableId
                 + " and cluster "
-                + clusterId);
+                + clusterId
+                + ": "
+                + ex);
       }
-      Thread.sleep(BACKOFF_DURATION[i] * 1000);
+      Thread.sleep(KEY_STATUS_POLL_INTERVAL_SECONDS * 1000);
     }
     fail("CMEK key status failed to return");
   }

@@ -7,6 +7,8 @@ Java idiomatic client for [BigQuery JDBC][product-docs].
 
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
+- [Driver User Guide](docs/USER_GUIDE.md)
+- [Storage APIs Deep-Dive Guide](docs/STORAGE_APIS.md)
 
 
 ## Quickstart

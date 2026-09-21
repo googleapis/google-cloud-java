@@ -24,7 +24,7 @@ package com.google.recaptchaenterprise.v1;
  *
  *
  * <pre>
- * Account defender risk assessment.
+ * Account defense risk assessment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}
@@ -74,7 +74,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Labels returned by account defender for this request.
+   * Labels returned by Account defense for this request.
    * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
@@ -96,7 +96,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request matches a known good profile for the user.
+     * The request matches a trusted profile associated with this account.
      * </pre>
      *
      * <code>PROFILE_MATCH = 1;</code>
@@ -164,7 +164,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The request matches a known good profile for the user.
+     * The request matches a trusted profile associated with this account.
      * </pre>
      *
      * <code>PROFILE_MATCH = 1;</code>
@@ -300,6 +300,3787 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountDefenderLabel)
   }
 
+  public interface AccountTakeoverVerdictOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover attempt probability.
+     * Values are from 0.0 (lowest risk) to 1.0 (highest risk).
+     * </pre>
+     *
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The risk.
+     */
+    float getRisk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+        getRiskReasonsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason getRiskReasons(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    int getRiskReasonsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountRiskReasonOrBuilder>
+        getRiskReasonsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReasonOrBuilder
+        getRiskReasonsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>
+        getTrustReasonsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason getTrustReasons(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    int getTrustReasonsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountTrustReasonOrBuilder>
+        getTrustReasonsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReasonOrBuilder
+        getTrustReasonsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Account takeover risk assessment.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict}
+   */
+  public static final class AccountTakeoverVerdict extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+      AccountTakeoverVerdictOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AccountTakeoverVerdict");
+    }
+
+    // Use AccountTakeoverVerdict.newBuilder() to construct.
+    private AccountTakeoverVerdict(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccountTakeoverVerdict() {
+      riskReasons_ = java.util.Collections.emptyList();
+      trustReasons_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTakeoverVerdict_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTakeoverVerdict_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                  .class,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                  .Builder.class);
+    }
+
+    public static final int RISK_FIELD_NUMBER = 1;
+    private float risk_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover attempt probability.
+     * Values are from 0.0 (lowest risk) to 1.0 (highest risk).
+     * </pre>
+     *
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The risk.
+     */
+    @java.lang.Override
+    public float getRisk() {
+      return risk_;
+    }
+
+    public static final int RISK_REASONS_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+        riskReasons_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+        getRiskReasonsList() {
+      return riskReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountRiskReasonOrBuilder>
+        getRiskReasonsOrBuilderList() {
+      return riskReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public int getRiskReasonsCount() {
+      return riskReasons_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        getRiskReasons(int index) {
+      return riskReasons_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears risky. Risk
+     * reasons can be returned even if the risk is low, as trustworthy requests
+     * can still have some risk signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReasonOrBuilder
+        getRiskReasonsOrBuilder(int index) {
+      return riskReasons_.get(index);
+    }
+
+    public static final int TRUST_REASONS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>
+        trustReasons_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>
+        getTrustReasonsList() {
+      return trustReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountTrustReasonOrBuilder>
+        getTrustReasonsOrBuilderList() {
+      return trustReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public int getTrustReasonsCount() {
+      return trustReasons_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        getTrustReasons(int index) {
+      return trustReasons_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unordered list. Reasons why the request appears trustworthy.
+     * Trust reasons can be returned even if the risk is high, as risky requests
+     * can still have some trust signals.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReasonOrBuilder
+        getTrustReasonsOrBuilder(int index) {
+      return trustReasons_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(risk_) != 0) {
+        output.writeFloat(1, risk_);
+      }
+      for (int i = 0; i < riskReasons_.size(); i++) {
+        output.writeMessage(4, riskReasons_.get(i));
+      }
+      for (int i = 0; i < trustReasons_.size(); i++) {
+        output.writeMessage(5, trustReasons_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Float.floatToRawIntBits(risk_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, risk_);
+      }
+      for (int i = 0; i < riskReasons_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, riskReasons_.get(i));
+      }
+      for (int i = 0; i < trustReasons_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, trustReasons_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict other =
+          (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict) obj;
+
+      if (java.lang.Float.floatToIntBits(getRisk())
+          != java.lang.Float.floatToIntBits(other.getRisk())) return false;
+      if (!getRiskReasonsList().equals(other.getRiskReasonsList())) return false;
+      if (!getTrustReasonsList().equals(other.getTrustReasonsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RISK_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getRisk());
+      if (getRiskReasonsCount() > 0) {
+        hash = (37 * hash) + RISK_REASONS_FIELD_NUMBER;
+        hash = (53 * hash) + getRiskReasonsList().hashCode();
+      }
+      if (getTrustReasonsCount() > 0) {
+        hash = (37 * hash) + TRUST_REASONS_FIELD_NUMBER;
+        hash = (53 * hash) + getTrustReasonsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Account takeover risk assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+            .AccountTakeoverVerdictOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTakeoverVerdict_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTakeoverVerdict_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                    .class,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        risk_ = 0F;
+        if (riskReasonsBuilder_ == null) {
+          riskReasons_ = java.util.Collections.emptyList();
+        } else {
+          riskReasons_ = null;
+          riskReasonsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (trustReasonsBuilder_ == null) {
+          trustReasons_ = java.util.Collections.emptyList();
+        } else {
+          trustReasons_ = null;
+          trustReasonsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTakeoverVerdict_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+          build() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+          buildPartial() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict result =
+            new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict(
+                this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+              result) {
+        if (riskReasonsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            riskReasons_ = java.util.Collections.unmodifiableList(riskReasons_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.riskReasons_ = riskReasons_;
+        } else {
+          result.riskReasons_ = riskReasonsBuilder_.build();
+        }
+        if (trustReasonsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            trustReasons_ = java.util.Collections.unmodifiableList(trustReasons_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.trustReasons_ = trustReasons_;
+        } else {
+          result.trustReasons_ = trustReasonsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.risk_ = risk_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+              other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                .getDefaultInstance()) return this;
+        if (java.lang.Float.floatToRawIntBits(other.getRisk()) != 0) {
+          setRisk(other.getRisk());
+        }
+        if (riskReasonsBuilder_ == null) {
+          if (!other.riskReasons_.isEmpty()) {
+            if (riskReasons_.isEmpty()) {
+              riskReasons_ = other.riskReasons_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureRiskReasonsIsMutable();
+              riskReasons_.addAll(other.riskReasons_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.riskReasons_.isEmpty()) {
+            if (riskReasonsBuilder_.isEmpty()) {
+              riskReasonsBuilder_.dispose();
+              riskReasonsBuilder_ = null;
+              riskReasons_ = other.riskReasons_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              riskReasonsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetRiskReasonsFieldBuilder()
+                      : null;
+            } else {
+              riskReasonsBuilder_.addAllMessages(other.riskReasons_);
+            }
+          }
+        }
+        if (trustReasonsBuilder_ == null) {
+          if (!other.trustReasons_.isEmpty()) {
+            if (trustReasons_.isEmpty()) {
+              trustReasons_ = other.trustReasons_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureTrustReasonsIsMutable();
+              trustReasons_.addAll(other.trustReasons_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.trustReasons_.isEmpty()) {
+            if (trustReasonsBuilder_.isEmpty()) {
+              trustReasonsBuilder_.dispose();
+              trustReasonsBuilder_ = null;
+              trustReasons_ = other.trustReasons_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              trustReasonsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetTrustReasonsFieldBuilder()
+                      : null;
+            } else {
+              trustReasonsBuilder_.addAllMessages(other.trustReasons_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  risk_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              case 34:
+                {
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason m =
+                      input.readMessage(
+                          com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                              .AccountRiskReason.parser(),
+                          extensionRegistry);
+                  if (riskReasonsBuilder_ == null) {
+                    ensureRiskReasonsIsMutable();
+                    riskReasons_.add(m);
+                  } else {
+                    riskReasonsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              case 42:
+                {
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason m =
+                      input.readMessage(
+                          com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                              .AccountTrustReason.parser(),
+                          extensionRegistry);
+                  if (trustReasonsBuilder_ == null) {
+                    ensureTrustReasonsIsMutable();
+                    trustReasons_.add(m);
+                  } else {
+                    trustReasonsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float risk_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Account takeover attempt probability.
+       * Values are from 0.0 (lowest risk) to 1.0 (highest risk).
+       * </pre>
+       *
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The risk.
+       */
+      @java.lang.Override
+      public float getRisk() {
+        return risk_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Account takeover attempt probability.
+       * Values are from 0.0 (lowest risk) to 1.0 (highest risk).
+       * </pre>
+       *
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The risk to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRisk(float value) {
+
+        risk_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Account takeover attempt probability.
+       * Values are from 0.0 (lowest risk) to 1.0 (highest risk).
+       * </pre>
+       *
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRisk() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        risk_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+          riskReasons_ = java.util.Collections.emptyList();
+
+      private void ensureRiskReasonsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          riskReasons_ =
+              new java.util.ArrayList<
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>(
+                  riskReasons_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                  .AccountRiskReasonOrBuilder>
+          riskReasonsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+          getRiskReasonsList() {
+        if (riskReasonsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(riskReasons_);
+        } else {
+          return riskReasonsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public int getRiskReasonsCount() {
+        if (riskReasonsBuilder_ == null) {
+          return riskReasons_.size();
+        } else {
+          return riskReasonsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+          getRiskReasons(int index) {
+        if (riskReasonsBuilder_ == null) {
+          return riskReasons_.get(index);
+        } else {
+          return riskReasonsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setRiskReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason value) {
+        if (riskReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRiskReasonsIsMutable();
+          riskReasons_.set(index, value);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setRiskReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+              builderForValue) {
+        if (riskReasonsBuilder_ == null) {
+          ensureRiskReasonsIsMutable();
+          riskReasons_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          riskReasonsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addRiskReasons(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason value) {
+        if (riskReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRiskReasonsIsMutable();
+          riskReasons_.add(value);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addRiskReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason value) {
+        if (riskReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRiskReasonsIsMutable();
+          riskReasons_.add(index, value);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addRiskReasons(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+              builderForValue) {
+        if (riskReasonsBuilder_ == null) {
+          ensureRiskReasonsIsMutable();
+          riskReasons_.add(builderForValue.build());
+          onChanged();
+        } else {
+          riskReasonsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addRiskReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+              builderForValue) {
+        if (riskReasonsBuilder_ == null) {
+          ensureRiskReasonsIsMutable();
+          riskReasons_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          riskReasonsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAllRiskReasons(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason>
+              values) {
+        if (riskReasonsBuilder_ == null) {
+          ensureRiskReasonsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, riskReasons_);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder clearRiskReasons() {
+        if (riskReasonsBuilder_ == null) {
+          riskReasons_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder removeRiskReasons(int index) {
+        if (riskReasonsBuilder_ == null) {
+          ensureRiskReasonsIsMutable();
+          riskReasons_.remove(index);
+          onChanged();
+        } else {
+          riskReasonsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+          getRiskReasonsBuilder(int index) {
+        return internalGetRiskReasonsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReasonOrBuilder
+          getRiskReasonsOrBuilder(int index) {
+        if (riskReasonsBuilder_ == null) {
+          return riskReasons_.get(index);
+        } else {
+          return riskReasonsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                      .AccountRiskReasonOrBuilder>
+          getRiskReasonsOrBuilderList() {
+        if (riskReasonsBuilder_ != null) {
+          return riskReasonsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(riskReasons_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+          addRiskReasonsBuilder() {
+        return internalGetRiskReasonsFieldBuilder()
+            .addBuilder(
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+          addRiskReasonsBuilder(int index) {
+        return internalGetRiskReasonsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears risky. Risk
+       * reasons can be returned even if the risk is low, as trustworthy requests
+       * can still have some risk signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason risk_reasons = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder>
+          getRiskReasonsBuilderList() {
+        return internalGetRiskReasonsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                  .AccountRiskReasonOrBuilder>
+          internalGetRiskReasonsFieldBuilder() {
+        if (riskReasonsBuilder_ == null) {
+          riskReasonsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason,
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                      .Builder,
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                      .AccountRiskReasonOrBuilder>(
+                  riskReasons_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          riskReasons_ = null;
+        }
+        return riskReasonsBuilder_;
+      }
+
+      private java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>
+          trustReasons_ = java.util.Collections.emptyList();
+
+      private void ensureTrustReasonsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          trustReasons_ =
+              new java.util.ArrayList<
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>(
+                  trustReasons_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                  .Builder,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                  .AccountTrustReasonOrBuilder>
+          trustReasonsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason>
+          getTrustReasonsList() {
+        if (trustReasonsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(trustReasons_);
+        } else {
+          return trustReasonsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public int getTrustReasonsCount() {
+        if (trustReasonsBuilder_ == null) {
+          return trustReasons_.size();
+        } else {
+          return trustReasonsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+          getTrustReasons(int index) {
+        if (trustReasonsBuilder_ == null) {
+          return trustReasons_.get(index);
+        } else {
+          return trustReasonsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setTrustReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason value) {
+        if (trustReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTrustReasonsIsMutable();
+          trustReasons_.set(index, value);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder setTrustReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+              builderForValue) {
+        if (trustReasonsBuilder_ == null) {
+          ensureTrustReasonsIsMutable();
+          trustReasons_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          trustReasonsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addTrustReasons(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason value) {
+        if (trustReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTrustReasonsIsMutable();
+          trustReasons_.add(value);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addTrustReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason value) {
+        if (trustReasonsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTrustReasonsIsMutable();
+          trustReasons_.add(index, value);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addTrustReasons(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+              builderForValue) {
+        if (trustReasonsBuilder_ == null) {
+          ensureTrustReasonsIsMutable();
+          trustReasons_.add(builderForValue.build());
+          onChanged();
+        } else {
+          trustReasonsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addTrustReasons(
+          int index,
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+              builderForValue) {
+        if (trustReasonsBuilder_ == null) {
+          ensureTrustReasonsIsMutable();
+          trustReasons_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          trustReasonsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder addAllTrustReasons(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                          .AccountTrustReason>
+              values) {
+        if (trustReasonsBuilder_ == null) {
+          ensureTrustReasonsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, trustReasons_);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder clearTrustReasons() {
+        if (trustReasonsBuilder_ == null) {
+          trustReasons_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public Builder removeTrustReasons(int index) {
+        if (trustReasonsBuilder_ == null) {
+          ensureTrustReasonsIsMutable();
+          trustReasons_.remove(index);
+          onChanged();
+        } else {
+          trustReasonsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+          getTrustReasonsBuilder(int index) {
+        return internalGetTrustReasonsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReasonOrBuilder
+          getTrustReasonsOrBuilder(int index) {
+        if (trustReasonsBuilder_ == null) {
+          return trustReasons_.get(index);
+        } else {
+          return trustReasonsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                      .AccountTrustReasonOrBuilder>
+          getTrustReasonsOrBuilderList() {
+        if (trustReasonsBuilder_ != null) {
+          return trustReasonsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(trustReasons_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+          addTrustReasonsBuilder() {
+        return internalGetTrustReasonsFieldBuilder()
+            .addBuilder(
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+          addTrustReasonsBuilder(int index) {
+        return internalGetTrustReasonsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Unordered list. Reasons why the request appears trustworthy.
+       * Trust reasons can be returned even if the risk is high, as risky requests
+       * can still have some trust signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason trust_reasons = 5 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = UNORDERED_LIST];
+       * </code>
+       */
+      public java.util.List<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                  .Builder>
+          getTrustReasonsBuilderList() {
+        return internalGetTrustReasonsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                  .Builder,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                  .AccountTrustReasonOrBuilder>
+          internalGetTrustReasonsFieldBuilder() {
+        if (trustReasonsBuilder_ == null) {
+          trustReasonsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason,
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                      .Builder,
+                  com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                      .AccountTrustReasonOrBuilder>(
+                  trustReasons_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          trustReasons_ = null;
+        }
+        return trustReasonsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict)
+    private static final com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+            .AccountTakeoverVerdict
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict();
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccountTakeoverVerdict> PARSER =
+        new com.google.protobuf.AbstractParser<AccountTakeoverVerdict>() {
+          @java.lang.Override
+          public AccountTakeoverVerdict parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccountTakeoverVerdict> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccountTakeoverVerdict> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AccountRiskReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A risk reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A risk reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+        getReason();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Risk explainability reasons for Account defense.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason}
+   */
+  public static final class AccountRiskReason extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+      AccountRiskReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AccountRiskReason");
+    }
+
+    // Use AccountRiskReason.newBuilder() to construct.
+    private AccountRiskReason(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccountRiskReason() {
+      reason_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountRiskReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountRiskReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.class,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Risk explainability reasons for Account defense.
+     * Ensure that applications can handle values not explicitly listed.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason}
+     */
+    public enum RiskReason implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>RISK_REASON_UNSPECIFIED = 0;</code>
+       */
+      RISK_REASON_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The client has been observed sending bot-like traffic to this site in
+       * the past. This reason incorporates historical reputation and indicates
+       * that the client is known to use bots, even if the current request is
+       * being made by a human.
+       * </pre>
+       *
+       * <code>CLIENT_HISTORICAL_BOT_ACTIVITY = 1;</code>
+       */
+      CLIENT_HISTORICAL_BOT_ACTIVITY(1),
+      /**
+       *
+       *
+       * <pre>
+       * The account is part of a large group of related accounts, indicating
+       * that it may be part of a fraudulent network. Related accounts are
+       * identified based on having similar traffic patterns and request
+       * characteristics.
+       * </pre>
+       *
+       * <code>ACCOUNT_IN_LARGE_RELATED_GROUP = 2;</code>
+       */
+      ACCOUNT_IN_LARGE_RELATED_GROUP(2),
+      /**
+       *
+       *
+       * <pre>
+       * The client has been observed accessing many accounts on this site.
+       * </pre>
+       *
+       * <code>CLIENT_ACCESSED_MANY_ACCOUNTS = 3;</code>
+       */
+      CLIENT_ACCESSED_MANY_ACCOUNTS(3),
+      /**
+       *
+       *
+       * <pre>
+       * This email domain is a suspected provider of disposable email
+       * addresses.
+       * </pre>
+       *
+       * <code>DISPOSABLE_EMAIL_DOMAIN = 4;</code>
+       */
+      DISPOSABLE_EMAIL_DOMAIN(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "RiskReason");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>RISK_REASON_UNSPECIFIED = 0;</code>
+       */
+      public static final int RISK_REASON_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The client has been observed sending bot-like traffic to this site in
+       * the past. This reason incorporates historical reputation and indicates
+       * that the client is known to use bots, even if the current request is
+       * being made by a human.
+       * </pre>
+       *
+       * <code>CLIENT_HISTORICAL_BOT_ACTIVITY = 1;</code>
+       */
+      public static final int CLIENT_HISTORICAL_BOT_ACTIVITY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The account is part of a large group of related accounts, indicating
+       * that it may be part of a fraudulent network. Related accounts are
+       * identified based on having similar traffic patterns and request
+       * characteristics.
+       * </pre>
+       *
+       * <code>ACCOUNT_IN_LARGE_RELATED_GROUP = 2;</code>
+       */
+      public static final int ACCOUNT_IN_LARGE_RELATED_GROUP_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * The client has been observed accessing many accounts on this site.
+       * </pre>
+       *
+       * <code>CLIENT_ACCESSED_MANY_ACCOUNTS = 3;</code>
+       */
+      public static final int CLIENT_ACCESSED_MANY_ACCOUNTS_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * This email domain is a suspected provider of disposable email
+       * addresses.
+       * </pre>
+       *
+       * <code>DISPOSABLE_EMAIL_DOMAIN = 4;</code>
+       */
+      public static final int DISPOSABLE_EMAIL_DOMAIN_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RiskReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RiskReason forNumber(int value) {
+        switch (value) {
+          case 0:
+            return RISK_REASON_UNSPECIFIED;
+          case 1:
+            return CLIENT_HISTORICAL_BOT_ACTIVITY;
+          case 2:
+            return ACCOUNT_IN_LARGE_RELATED_GROUP;
+          case 3:
+            return CLIENT_ACCESSED_MANY_ACCOUNTS;
+          case 4:
+            return DISPOSABLE_EMAIL_DOMAIN;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RiskReason> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RiskReason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RiskReason>() {
+            public RiskReason findValueByNumber(int number) {
+              return RiskReason.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final RiskReason[] VALUES = values();
+
+      public static RiskReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RiskReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason)
+    }
+
+    public static final int REASON_FIELD_NUMBER = 1;
+    private int reason_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A risk reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override
+    public int getReasonValue() {
+      return reason_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A risk reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+        getReason() {
+      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+          result =
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                  .RiskReason.forNumber(reason_);
+      return result == null
+          ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (reason_
+          != com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+              .RiskReason.RISK_REASON_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (reason_
+          != com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+              .RiskReason.RISK_REASON_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason other =
+          (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason) obj;
+
+      if (reason_ != other.reason_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Risk explainability reasons for Account defense.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountRiskReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountRiskReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.class,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        reason_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountRiskReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason build() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+          buildPartial() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason result =
+            new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                .getDefaultInstance()) return this;
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  reason_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int reason_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A risk reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override
+      public int getReasonValue() {
+        return reason_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A risk reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        reason_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A risk reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The reason.
+       */
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+              .RiskReason
+          getReason() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+            result =
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                    .RiskReason.forNumber(reason_);
+        return result == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+                .RiskReason.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A risk reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A risk reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason.RiskReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason)
+    private static final com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+            .AccountRiskReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason();
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccountRiskReason> PARSER =
+        new com.google.protobuf.AbstractParser<AccountRiskReason>() {
+          @java.lang.Override
+          public AccountRiskReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccountRiskReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccountRiskReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountRiskReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AccountTrustReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A trust reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A trust reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason
+        getReason();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Trust explainability reasons for Account defense.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason}
+   */
+  public static final class AccountTrustReason extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+      AccountTrustReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AccountTrustReason");
+    }
+
+    // Use AccountTrustReason.newBuilder() to construct.
+    private AccountTrustReason(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AccountTrustReason() {
+      reason_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTrustReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTrustReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.class,
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trust explainability reasons for Account defense.
+     * Ensure that applications can handle values not explicitly listed.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason}
+     */
+    public enum TrustReason implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>TRUST_REASON_UNSPECIFIED = 0;</code>
+       */
+      TRUST_REASON_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The request matches a trusted profile associated with this account.
+       * Equivalent to `AccountDefenderLabel.PROFILE_MATCH`.
+       * </pre>
+       *
+       * <code>PROFILE_MATCH = 1;</code>
+       */
+      PROFILE_MATCH(1),
+      /**
+       *
+       *
+       * <pre>
+       * The account's historical activity is reputable. It is unlikely that the
+       * account has been compromised in the past.
+       * </pre>
+       *
+       * <code>ACCOUNT_HISTORY_REPUTABLE = 2;</code>
+       */
+      ACCOUNT_HISTORY_REPUTABLE(2),
+      /**
+       *
+       *
+       * <pre>
+       * The identity shows a global pattern of reputable activity based on
+       * `userInfo` and associated identifiers.
+       * </pre>
+       *
+       * <code>IDENTITY_GLOBAL_ACTIVITY_REPUTABLE = 3;</code>
+       */
+      IDENTITY_GLOBAL_ACTIVITY_REPUTABLE(3),
+      /**
+       *
+       *
+       * <pre>
+       * The identity shows a long-standing history of reputable activity based
+       * on `userInfo` and associated identifiers.
+       * </pre>
+       *
+       * <code>IDENTITY_HISTORY_REPUTABLE = 4;</code>
+       */
+      IDENTITY_HISTORY_REPUTABLE(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "TrustReason");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>TRUST_REASON_UNSPECIFIED = 0;</code>
+       */
+      public static final int TRUST_REASON_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The request matches a trusted profile associated with this account.
+       * Equivalent to `AccountDefenderLabel.PROFILE_MATCH`.
+       * </pre>
+       *
+       * <code>PROFILE_MATCH = 1;</code>
+       */
+      public static final int PROFILE_MATCH_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The account's historical activity is reputable. It is unlikely that the
+       * account has been compromised in the past.
+       * </pre>
+       *
+       * <code>ACCOUNT_HISTORY_REPUTABLE = 2;</code>
+       */
+      public static final int ACCOUNT_HISTORY_REPUTABLE_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * The identity shows a global pattern of reputable activity based on
+       * `userInfo` and associated identifiers.
+       * </pre>
+       *
+       * <code>IDENTITY_GLOBAL_ACTIVITY_REPUTABLE = 3;</code>
+       */
+      public static final int IDENTITY_GLOBAL_ACTIVITY_REPUTABLE_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * The identity shows a long-standing history of reputable activity based
+       * on `userInfo` and associated identifiers.
+       * </pre>
+       *
+       * <code>IDENTITY_HISTORY_REPUTABLE = 4;</code>
+       */
+      public static final int IDENTITY_HISTORY_REPUTABLE_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TrustReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static TrustReason forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TRUST_REASON_UNSPECIFIED;
+          case 1:
+            return PROFILE_MATCH;
+          case 2:
+            return ACCOUNT_HISTORY_REPUTABLE;
+          case 3:
+            return IDENTITY_GLOBAL_ACTIVITY_REPUTABLE;
+          case 4:
+            return IDENTITY_HISTORY_REPUTABLE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<TrustReason> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<TrustReason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<TrustReason>() {
+            public TrustReason findValueByNumber(int number) {
+              return TrustReason.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final TrustReason[] VALUES = values();
+
+      public static TrustReason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private TrustReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason)
+    }
+
+    public static final int REASON_FIELD_NUMBER = 1;
+    private int reason_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A trust reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override
+    public int getReasonValue() {
+      return reason_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A trust reason associated with this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+            .TrustReason
+        getReason() {
+      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason
+          result =
+              com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                  .TrustReason.forNumber(reason_);
+      return result == null
+          ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+              .TrustReason.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (reason_
+          != com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+              .TrustReason.TRUST_REASON_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (reason_
+          != com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+              .TrustReason.TRUST_REASON_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason other =
+          (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason) obj;
+
+      if (reason_ != other.reason_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trust explainability reasons for Account defense.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTrustReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTrustReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                    .class,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        reason_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_AccountTrustReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+          build() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+          buildPartial() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason result =
+            new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                .getDefaultInstance()) return this;
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  reason_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int reason_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A trust reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override
+      public int getReasonValue() {
+        return reason_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A trust reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        reason_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A trust reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The reason.
+       */
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+              .TrustReason
+          getReason() {
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason
+            result =
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                    .TrustReason.forNumber(reason_);
+        return result == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+                .TrustReason.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A trust reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(
+          com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. A trust reason associated with this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason.TrustReason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason)
+    private static final com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+            .AccountTrustReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason();
+    }
+
+    public static com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AccountTrustReason> PARSER =
+        new com.google.protobuf.AbstractParser<AccountTrustReason>() {
+          @java.lang.Override
+          public AccountTrustReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AccountTrustReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccountTrustReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTrustReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int LABELS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -422,6 +4203,70 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
 
   private int labelsMemoizedSerializedSize;
 
+  public static final int ACCOUNT_TAKEOVER_VERDICT_FIELD_NUMBER = 4;
+  private com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+      accountTakeoverVerdict_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Account takeover risk assessment for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the accountTakeoverVerdict field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccountTakeoverVerdict() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Account takeover risk assessment for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The accountTakeoverVerdict.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+      getAccountTakeoverVerdict() {
+    return accountTakeoverVerdict_ == null
+        ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+            .getDefaultInstance()
+        : accountTakeoverVerdict_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Account takeover risk assessment for this request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdictOrBuilder
+      getAccountTakeoverVerdictOrBuilder() {
+    return accountTakeoverVerdict_ == null
+        ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+            .getDefaultInstance()
+        : accountTakeoverVerdict_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -444,6 +4289,9 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     for (int i = 0; i < labels_.size(); i++) {
       output.writeEnumNoTag(labels_.getInt(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getAccountTakeoverVerdict());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -465,6 +4313,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       }
       labelsMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAccountTakeoverVerdict());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -482,6 +4334,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         (com.google.recaptchaenterprise.v1.AccountDefenderAssessment) obj;
 
     if (!labels_.equals(other.labels_)) return false;
+    if (hasAccountTakeoverVerdict() != other.hasAccountTakeoverVerdict()) return false;
+    if (hasAccountTakeoverVerdict()) {
+      if (!getAccountTakeoverVerdict().equals(other.getAccountTakeoverVerdict())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -496,6 +4352,10 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     if (getLabelsCount() > 0) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + labels_.hashCode();
+    }
+    if (hasAccountTakeoverVerdict()) {
+      hash = (37 * hash) + ACCOUNT_TAKEOVER_VERDICT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccountTakeoverVerdict().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -603,7 +4463,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Account defender risk assessment.
+   * Account defense risk assessment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment}
@@ -628,10 +4488,19 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
     }
 
     // Construct using com.google.recaptchaenterprise.v1.AccountDefenderAssessment.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAccountTakeoverVerdictFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -639,6 +4508,11 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       labels_ = emptyIntList();
+      accountTakeoverVerdict_ = null;
+      if (accountTakeoverVerdictBuilder_ != null) {
+        accountTakeoverVerdictBuilder_.dispose();
+        accountTakeoverVerdictBuilder_ = null;
+      }
       return this;
     }
 
@@ -679,6 +4553,15 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
         labels_.makeImmutable();
         result.labels_ = labels_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.accountTakeoverVerdict_ =
+            accountTakeoverVerdictBuilder_ == null
+                ? accountTakeoverVerdict_
+                : accountTakeoverVerdictBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -704,6 +4587,9 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
           labels_.addAll(other.labels_);
         }
         onChanged();
+      }
+      if (other.hasAccountTakeoverVerdict()) {
+        mergeAccountTakeoverVerdict(other.getAccountTakeoverVerdict());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -749,6 +4635,14 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
                 input.popLimit(limit);
                 break;
               } // case 10
+            case 34:
+              {
+                input.readMessage(
+                    internalGetAccountTakeoverVerdictFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1035,6 +4929,238 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
       }
       onChanged();
       return this;
+    }
+
+    private com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        accountTakeoverVerdict_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                .Builder,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                .AccountTakeoverVerdictOrBuilder>
+        accountTakeoverVerdictBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the accountTakeoverVerdict field is set.
+     */
+    public boolean hasAccountTakeoverVerdict() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The accountTakeoverVerdict.
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+        getAccountTakeoverVerdict() {
+      if (accountTakeoverVerdictBuilder_ == null) {
+        return accountTakeoverVerdict_ == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                .getDefaultInstance()
+            : accountTakeoverVerdict_;
+      } else {
+        return accountTakeoverVerdictBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAccountTakeoverVerdict(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict value) {
+      if (accountTakeoverVerdictBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accountTakeoverVerdict_ = value;
+      } else {
+        accountTakeoverVerdictBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAccountTakeoverVerdict(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict.Builder
+            builderForValue) {
+      if (accountTakeoverVerdictBuilder_ == null) {
+        accountTakeoverVerdict_ = builderForValue.build();
+      } else {
+        accountTakeoverVerdictBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAccountTakeoverVerdict(
+        com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict value) {
+      if (accountTakeoverVerdictBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && accountTakeoverVerdict_ != null
+            && accountTakeoverVerdict_
+                != com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountTakeoverVerdict.getDefaultInstance()) {
+          getAccountTakeoverVerdictBuilder().mergeFrom(value);
+        } else {
+          accountTakeoverVerdict_ = value;
+        }
+      } else {
+        accountTakeoverVerdictBuilder_.mergeFrom(value);
+      }
+      if (accountTakeoverVerdict_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAccountTakeoverVerdict() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      accountTakeoverVerdict_ = null;
+      if (accountTakeoverVerdictBuilder_ != null) {
+        accountTakeoverVerdictBuilder_.dispose();
+        accountTakeoverVerdictBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+            .Builder
+        getAccountTakeoverVerdictBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetAccountTakeoverVerdictFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+            .AccountTakeoverVerdictOrBuilder
+        getAccountTakeoverVerdictOrBuilder() {
+      if (accountTakeoverVerdictBuilder_ != null) {
+        return accountTakeoverVerdictBuilder_.getMessageOrBuilder();
+      } else {
+        return accountTakeoverVerdict_ == null
+            ? com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                .getDefaultInstance()
+            : accountTakeoverVerdict_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Account takeover risk assessment for this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict account_takeover_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                .Builder,
+            com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                .AccountTakeoverVerdictOrBuilder>
+        internalGetAccountTakeoverVerdictFieldBuilder() {
+      if (accountTakeoverVerdictBuilder_ == null) {
+        accountTakeoverVerdictBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment.AccountTakeoverVerdict
+                    .Builder,
+                com.google.recaptchaenterprise.v1.AccountDefenderAssessment
+                    .AccountTakeoverVerdictOrBuilder>(
+                getAccountTakeoverVerdict(), getParentForChildren(), isClean());
+        accountTakeoverVerdict_ = null;
+      }
+      return accountTakeoverVerdictBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.AccountDefenderAssessment)

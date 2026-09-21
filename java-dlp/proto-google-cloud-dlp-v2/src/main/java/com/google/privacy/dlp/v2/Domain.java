@@ -302,7 +302,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The [Cloud SQL Vertex
-     * AI](https://cloud.google.com/sql/docs/postgres/integrate-cloud-sql-with-vertex-ai)
+     * AI](https://docs.cloud.google.com/sql/docs/postgres/integrate-cloud-sql-with-vertex-ai)
      * plugin is installed on the database.
      * </pre>
      *
@@ -314,7 +314,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Support for [Cloud SQL vector
-     * embeddings](https://cloud.google.com/sql/docs/mysql/enable-vector-search)
+     * embeddings](https://docs.cloud.google.com/sql/docs/mysql/enable-vector-search)
      * is enabled on the database.
      * </pre>
      *
@@ -406,7 +406,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The [Cloud SQL Vertex
-     * AI](https://cloud.google.com/sql/docs/postgres/integrate-cloud-sql-with-vertex-ai)
+     * AI](https://docs.cloud.google.com/sql/docs/postgres/integrate-cloud-sql-with-vertex-ai)
      * plugin is installed on the database.
      * </pre>
      *
@@ -419,7 +419,7 @@ public final class Domain extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Support for [Cloud SQL vector
-     * embeddings](https://cloud.google.com/sql/docs/mysql/enable-vector-search)
+     * embeddings](https://docs.cloud.google.com/sql/docs/mysql/enable-vector-search)
      * is enabled on the database.
      * </pre>
      *

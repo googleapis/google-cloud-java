@@ -14,7 +14,7 @@ RUN bash -c " \
     && git clone -b ${BRANCH} --depth 1 --single-branch https://github.com/googleapis/google-cloud-java.git \
     && cd /git/google-cloud-java \
     && source .kokoro/common.sh \
-    && install_modules java-bigquery \
+    && install_modules java-bigquery-jdbc \
     && rm -rf /git"
 
 # This will ensure all deps are present

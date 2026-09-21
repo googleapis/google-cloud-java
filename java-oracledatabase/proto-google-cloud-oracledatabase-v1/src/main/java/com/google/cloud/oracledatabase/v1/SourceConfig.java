@@ -53,6 +53,10 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
 
   private SourceConfig() {
     autonomousDatabase_ = "";
+    sourceType_ = 0;
+    cloneType_ = 0;
+    refreshableMode_ = 0;
+    autonomousDatabaseBackup_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +74,599 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.oracledatabase.v1.SourceConfig.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The refresh mode of a refreshable clone.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode}
+   */
+  public enum RefreshableMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>REFRESHABLE_MODE_UNSPECIFIED = 0;</code>
+     */
+    REFRESHABLE_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Automatic refresh.
+     * </pre>
+     *
+     * <code>AUTOMATIC = 1;</code>
+     */
+    AUTOMATIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * Manual refresh.
+     * </pre>
+     *
+     * <code>MANUAL = 2;</code>
+     */
+    MANUAL(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RefreshableMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>REFRESHABLE_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int REFRESHABLE_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Automatic refresh.
+     * </pre>
+     *
+     * <code>AUTOMATIC = 1;</code>
+     */
+    public static final int AUTOMATIC_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Manual refresh.
+     * </pre>
+     *
+     * <code>MANUAL = 2;</code>
+     */
+    public static final int MANUAL_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RefreshableMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RefreshableMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return REFRESHABLE_MODE_UNSPECIFIED;
+        case 1:
+          return AUTOMATIC;
+        case 2:
+          return MANUAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RefreshableMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RefreshableMode>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RefreshableMode>() {
+              public RefreshableMode findValueByNumber(int number) {
+                return RefreshableMode.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.SourceConfig.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RefreshableMode[] VALUES = values();
+
+    public static RefreshableMode valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RefreshableMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the source of the database. For example, a clone or peer from an
+   * existing database.
+   * This enum may be expanded to include other source types in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.oracledatabase.v1.SourceConfig.SourceType}
+   */
+  public enum SourceType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>SOURCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SOURCE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Clone database from an existing database specified in
+     * autonomous_database field.
+     * </pre>
+     *
+     * <code>CLONE_DATABASE = 1;</code>
+     */
+    CLONE_DATABASE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Create a cross-region disaster recovery peer adb from an existing adb.
+     * </pre>
+     *
+     * <code>CROSS_REGION_DISASTER_RECOVERY = 2;</code>
+     */
+    CROSS_REGION_DISASTER_RECOVERY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Create a refreshable clone from an existing database specified in
+     * autonomous_database field.
+     * </pre>
+     *
+     * <code>CLONE_TO_REFRESHABLE = 3;</code>
+     */
+    CLONE_TO_REFRESHABLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Create clone from the backup resource.
+     * </pre>
+     *
+     * <code>BACKUP_FROM_ID = 4;</code>
+     */
+    BACKUP_FROM_ID(4),
+    /**
+     *
+     *
+     * <pre>
+     * Create clone from backup specified by backup_time
+     * field, or use latest available backup if use_latest_available_backup is
+     * true. The autonomous_database field must specify the source database
+     * to clone from.
+     * </pre>
+     *
+     * <code>BACKUP_FROM_TIMESTAMP = 5;</code>
+     */
+    BACKUP_FROM_TIMESTAMP(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SourceType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>SOURCE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Clone database from an existing database specified in
+     * autonomous_database field.
+     * </pre>
+     *
+     * <code>CLONE_DATABASE = 1;</code>
+     */
+    public static final int CLONE_DATABASE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a cross-region disaster recovery peer adb from an existing adb.
+     * </pre>
+     *
+     * <code>CROSS_REGION_DISASTER_RECOVERY = 2;</code>
+     */
+    public static final int CROSS_REGION_DISASTER_RECOVERY_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a refreshable clone from an existing database specified in
+     * autonomous_database field.
+     * </pre>
+     *
+     * <code>CLONE_TO_REFRESHABLE = 3;</code>
+     */
+    public static final int CLONE_TO_REFRESHABLE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Create clone from the backup resource.
+     * </pre>
+     *
+     * <code>BACKUP_FROM_ID = 4;</code>
+     */
+    public static final int BACKUP_FROM_ID_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Create clone from backup specified by backup_time
+     * field, or use latest available backup if use_latest_available_backup is
+     * true. The autonomous_database field must specify the source database
+     * to clone from.
+     * </pre>
+     *
+     * <code>BACKUP_FROM_TIMESTAMP = 5;</code>
+     */
+    public static final int BACKUP_FROM_TIMESTAMP_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SourceType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SOURCE_TYPE_UNSPECIFIED;
+        case 1:
+          return CLONE_DATABASE;
+        case 2:
+          return CROSS_REGION_DISASTER_RECOVERY;
+        case 3:
+          return CLONE_TO_REFRESHABLE;
+        case 4:
+          return BACKUP_FROM_ID;
+        case 5:
+          return BACKUP_FROM_TIMESTAMP;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SourceType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SourceType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SourceType>() {
+          public SourceType findValueByNumber(int number) {
+            return SourceType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.SourceConfig.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final SourceType[] VALUES = values();
+
+    public static SourceType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SourceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.SourceConfig.SourceType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The clone type of the Autonomous Database.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.oracledatabase.v1.SourceConfig.CloneType}
+   */
+  public enum CloneType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>CLONE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    CLONE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database with the source database's data and metadata.
+     * </pre>
+     *
+     * <code>FULL = 1;</code>
+     */
+    FULL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database that includes all the source database schema
+     * metadata, but none of the source database data.
+     * </pre>
+     *
+     * <code>METADATA = 2;</code>
+     */
+    METADATA(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "CloneType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default unspecified value.
+     * </pre>
+     *
+     * <code>CLONE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CLONE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database with the source database's data and metadata.
+     * </pre>
+     *
+     * <code>FULL = 1;</code>
+     */
+    public static final int FULL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database that includes all the source database schema
+     * metadata, but none of the source database data.
+     * </pre>
+     *
+     * <code>METADATA = 2;</code>
+     */
+    public static final int METADATA_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CloneType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CloneType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CLONE_TYPE_UNSPECIFIED;
+        case 1:
+          return FULL;
+        case 2:
+          return METADATA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CloneType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CloneType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CloneType>() {
+          public CloneType findValueByNumber(int number) {
+            return CloneType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.SourceConfig.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final CloneType[] VALUES = values();
+
+    public static CloneType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CloneType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.SourceConfig.CloneType)
+  }
+
+  private int bitField0_;
   public static final int AUTONOMOUS_DATABASE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -150,6 +747,408 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     return automaticBackupsReplicationEnabled_;
   }
 
+  public static final int SOURCE_TYPE_FIELD_NUMBER = 3;
+  private int sourceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source type of the Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for sourceType.
+   */
+  @java.lang.Override
+  public int getSourceTypeValue() {
+    return sourceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The source type of the Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceType.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.SourceConfig.SourceType getSourceType() {
+    com.google.cloud.oracledatabase.v1.SourceConfig.SourceType result =
+        com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.forNumber(sourceType_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CLONE_TYPE_FIELD_NUMBER = 4;
+  private int cloneType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The clone type of the Autonomous Database. This field is only
+   * applicable in case of cloning
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for cloneType.
+   */
+  @java.lang.Override
+  public int getCloneTypeValue() {
+    return cloneType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The clone type of the Autonomous Database. This field is only
+   * applicable in case of cloning
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cloneType.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.SourceConfig.CloneType getCloneType() {
+    com.google.cloud.oracledatabase.v1.SourceConfig.CloneType result =
+        com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.forNumber(cloneType_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int REFRESHABLE_MODE_FIELD_NUMBER = 5;
+  private int refreshableMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The refresh mode of the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for refreshableMode.
+   */
+  @java.lang.Override
+  public int getRefreshableModeValue() {
+    return refreshableMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The refresh mode of the clone.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The refreshableMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode getRefreshableMode() {
+    com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode result =
+        com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode.forNumber(refreshableMode_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int AUTO_REFRESH_FREQUENCY_SECONDS_FIELD_NUMBER = 6;
+  private int autoRefreshFrequencySeconds_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The frequency in seconds a refreshable clone is refreshed after
+   * auto-refresh is enabled.
+   * </pre>
+   *
+   * <code>int32 auto_refresh_frequency_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoRefreshFrequencySeconds.
+   */
+  @java.lang.Override
+  public int getAutoRefreshFrequencySeconds() {
+    return autoRefreshFrequencySeconds_;
+  }
+
+  public static final int AUTO_REFRESH_POINT_LAG_SECONDS_FIELD_NUMBER = 7;
+  private int autoRefreshPointLagSeconds_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time, in seconds, the data of the automatic refreshable clone
+   * lags the primary database at the point of refresh.
+   * </pre>
+   *
+   * <code>
+   * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoRefreshPointLagSeconds field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoRefreshPointLagSeconds() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time, in seconds, the data of the automatic refreshable clone
+   * lags the primary database at the point of refresh.
+   * </pre>
+   *
+   * <code>
+   * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoRefreshPointLagSeconds.
+   */
+  @java.lang.Override
+  public int getAutoRefreshPointLagSeconds() {
+    return autoRefreshPointLagSeconds_;
+  }
+
+  public static final int AUTO_REFRESH_START_TIME_FIELD_NUMBER = 8;
+  private com.google.protobuf.Timestamp autoRefreshStartTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date and time that auto-refreshing will begin for an
+   * Autonomous Database refreshable clone. This value controls only the start
+   * time for the first refresh operation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoRefreshStartTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoRefreshStartTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date and time that auto-refreshing will begin for an
+   * Autonomous Database refreshable clone. This value controls only the start
+   * time for the first refresh operation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoRefreshStartTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getAutoRefreshStartTime() {
+    return autoRefreshStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : autoRefreshStartTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The date and time that auto-refreshing will begin for an
+   * Autonomous Database refreshable clone. This value controls only the start
+   * time for the first refresh operation.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getAutoRefreshStartTimeOrBuilder() {
+    return autoRefreshStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : autoRefreshStartTime_;
+  }
+
+  public static final int AUTONOMOUS_DATABASE_BACKUP_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autonomousDatabaseBackup_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Autonomous Database Backup resource with the
+   * format:
+   * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+   * Required when source_type is BACKUP_FROM_ID.
+   * </pre>
+   *
+   * <code>
+   * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autonomousDatabaseBackup.
+   */
+  @java.lang.Override
+  public java.lang.String getAutonomousDatabaseBackup() {
+    java.lang.Object ref = autonomousDatabaseBackup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autonomousDatabaseBackup_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the Autonomous Database Backup resource with the
+   * format:
+   * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+   * Required when source_type is BACKUP_FROM_ID.
+   * </pre>
+   *
+   * <code>
+   * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autonomousDatabaseBackup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAutonomousDatabaseBackupBytes() {
+    java.lang.Object ref = autonomousDatabaseBackup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      autonomousDatabaseBackup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BACKUP_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp backupTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp specified for the point-in-time clone of the source
+   * Autonomous Database. This field is only applicable
+   * in case of BACKUP_FROM_TIMESTAMP source type and when
+   * use_latest_available_backup is false.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the backupTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp specified for the point-in-time clone of the source
+   * Autonomous Database. This field is only applicable
+   * in case of BACKUP_FROM_TIMESTAMP source type and when
+   * use_latest_available_backup is false.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The backupTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getBackupTime() {
+    return backupTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : backupTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timestamp specified for the point-in-time clone of the source
+   * Autonomous Database. This field is only applicable
+   * in case of BACKUP_FROM_TIMESTAMP source type and when
+   * use_latest_available_backup is false.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getBackupTimeOrBuilder() {
+    return backupTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : backupTime_;
+  }
+
+  public static final int USE_LATEST_AVAILABLE_BACKUP_FIELD_NUMBER = 11;
+  private boolean useLatestAvailableBackup_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Clone from latest available backup timestamp. This field is only
+   * applicable in case of BACKUP_FROM_TIMESTAMP source type.
+   * </pre>
+   *
+   * <code>bool use_latest_available_backup = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useLatestAvailableBackup.
+   */
+  @java.lang.Override
+  public boolean getUseLatestAvailableBackup() {
+    return useLatestAvailableBackup_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -170,6 +1169,40 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     if (automaticBackupsReplicationEnabled_ != false) {
       output.writeBool(2, automaticBackupsReplicationEnabled_);
     }
+    if (sourceType_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.SOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, sourceType_);
+    }
+    if (cloneType_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.CLONE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, cloneType_);
+    }
+    if (refreshableMode_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode
+            .REFRESHABLE_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, refreshableMode_);
+    }
+    if (autoRefreshFrequencySeconds_ != 0) {
+      output.writeInt32(6, autoRefreshFrequencySeconds_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(7, autoRefreshPointLagSeconds_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getAutoRefreshStartTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autonomousDatabaseBackup_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, autonomousDatabaseBackup_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getBackupTime());
+    }
+    if (useLatestAvailableBackup_ != false) {
+      output.writeBool(11, useLatestAvailableBackup_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -186,6 +1219,43 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               2, automaticBackupsReplicationEnabled_);
+    }
+    if (sourceType_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.SOURCE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, sourceType_);
+    }
+    if (cloneType_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.CLONE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, cloneType_);
+    }
+    if (refreshableMode_
+        != com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode
+            .REFRESHABLE_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, refreshableMode_);
+    }
+    if (autoRefreshFrequencySeconds_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(6, autoRefreshFrequencySeconds_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(7, autoRefreshPointLagSeconds_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(8, getAutoRefreshStartTime());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autonomousDatabaseBackup_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, autonomousDatabaseBackup_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getBackupTime());
+    }
+    if (useLatestAvailableBackup_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, useLatestAvailableBackup_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -206,6 +1276,24 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     if (!getAutonomousDatabase().equals(other.getAutonomousDatabase())) return false;
     if (getAutomaticBackupsReplicationEnabled() != other.getAutomaticBackupsReplicationEnabled())
       return false;
+    if (sourceType_ != other.sourceType_) return false;
+    if (cloneType_ != other.cloneType_) return false;
+    if (refreshableMode_ != other.refreshableMode_) return false;
+    if (getAutoRefreshFrequencySeconds() != other.getAutoRefreshFrequencySeconds()) return false;
+    if (hasAutoRefreshPointLagSeconds() != other.hasAutoRefreshPointLagSeconds()) return false;
+    if (hasAutoRefreshPointLagSeconds()) {
+      if (getAutoRefreshPointLagSeconds() != other.getAutoRefreshPointLagSeconds()) return false;
+    }
+    if (hasAutoRefreshStartTime() != other.hasAutoRefreshStartTime()) return false;
+    if (hasAutoRefreshStartTime()) {
+      if (!getAutoRefreshStartTime().equals(other.getAutoRefreshStartTime())) return false;
+    }
+    if (!getAutonomousDatabaseBackup().equals(other.getAutonomousDatabaseBackup())) return false;
+    if (hasBackupTime() != other.hasBackupTime()) return false;
+    if (hasBackupTime()) {
+      if (!getBackupTime().equals(other.getBackupTime())) return false;
+    }
+    if (getUseLatestAvailableBackup() != other.getUseLatestAvailableBackup()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -223,6 +1311,30 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashBoolean(getAutomaticBackupsReplicationEnabled());
+    hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + sourceType_;
+    hash = (37 * hash) + CLONE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + cloneType_;
+    hash = (37 * hash) + REFRESHABLE_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + refreshableMode_;
+    hash = (37 * hash) + AUTO_REFRESH_FREQUENCY_SECONDS_FIELD_NUMBER;
+    hash = (53 * hash) + getAutoRefreshFrequencySeconds();
+    if (hasAutoRefreshPointLagSeconds()) {
+      hash = (37 * hash) + AUTO_REFRESH_POINT_LAG_SECONDS_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoRefreshPointLagSeconds();
+    }
+    if (hasAutoRefreshStartTime()) {
+      hash = (37 * hash) + AUTO_REFRESH_START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoRefreshStartTime().hashCode();
+    }
+    hash = (37 * hash) + AUTONOMOUS_DATABASE_BACKUP_FIELD_NUMBER;
+    hash = (53 * hash) + getAutonomousDatabaseBackup().hashCode();
+    if (hasBackupTime()) {
+      hash = (37 * hash) + BACKUP_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBackupTime().hashCode();
+    }
+    hash = (37 * hash) + USE_LATEST_AVAILABLE_BACKUP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseLatestAvailableBackup());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -353,10 +1465,20 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.oracledatabase.v1.SourceConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAutoRefreshStartTimeFieldBuilder();
+        internalGetBackupTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -365,6 +1487,23 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       autonomousDatabase_ = "";
       automaticBackupsReplicationEnabled_ = false;
+      sourceType_ = 0;
+      cloneType_ = 0;
+      refreshableMode_ = 0;
+      autoRefreshFrequencySeconds_ = 0;
+      autoRefreshPointLagSeconds_ = 0;
+      autoRefreshStartTime_ = null;
+      if (autoRefreshStartTimeBuilder_ != null) {
+        autoRefreshStartTimeBuilder_.dispose();
+        autoRefreshStartTimeBuilder_ = null;
+      }
+      autonomousDatabaseBackup_ = "";
+      backupTime_ = null;
+      if (backupTimeBuilder_ != null) {
+        backupTimeBuilder_.dispose();
+        backupTimeBuilder_ = null;
+      }
+      useLatestAvailableBackup_ = false;
       return this;
     }
 
@@ -407,6 +1546,41 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.automaticBackupsReplicationEnabled_ = automaticBackupsReplicationEnabled_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.sourceType_ = sourceType_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.cloneType_ = cloneType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.refreshableMode_ = refreshableMode_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.autoRefreshFrequencySeconds_ = autoRefreshFrequencySeconds_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.autoRefreshPointLagSeconds_ = autoRefreshPointLagSeconds_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.autoRefreshStartTime_ =
+            autoRefreshStartTimeBuilder_ == null
+                ? autoRefreshStartTime_
+                : autoRefreshStartTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.autonomousDatabaseBackup_ = autonomousDatabaseBackup_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.backupTime_ = backupTimeBuilder_ == null ? backupTime_ : backupTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.useLatestAvailableBackup_ = useLatestAvailableBackup_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -429,6 +1603,35 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.getAutomaticBackupsReplicationEnabled() != false) {
         setAutomaticBackupsReplicationEnabled(other.getAutomaticBackupsReplicationEnabled());
+      }
+      if (other.sourceType_ != 0) {
+        setSourceTypeValue(other.getSourceTypeValue());
+      }
+      if (other.cloneType_ != 0) {
+        setCloneTypeValue(other.getCloneTypeValue());
+      }
+      if (other.refreshableMode_ != 0) {
+        setRefreshableModeValue(other.getRefreshableModeValue());
+      }
+      if (other.getAutoRefreshFrequencySeconds() != 0) {
+        setAutoRefreshFrequencySeconds(other.getAutoRefreshFrequencySeconds());
+      }
+      if (other.hasAutoRefreshPointLagSeconds()) {
+        setAutoRefreshPointLagSeconds(other.getAutoRefreshPointLagSeconds());
+      }
+      if (other.hasAutoRefreshStartTime()) {
+        mergeAutoRefreshStartTime(other.getAutoRefreshStartTime());
+      }
+      if (!other.getAutonomousDatabaseBackup().isEmpty()) {
+        autonomousDatabaseBackup_ = other.autonomousDatabaseBackup_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (other.hasBackupTime()) {
+        mergeBackupTime(other.getBackupTime());
+      }
+      if (other.getUseLatestAvailableBackup() != false) {
+        setUseLatestAvailableBackup(other.getUseLatestAvailableBackup());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -468,6 +1671,62 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                sourceType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 32:
+              {
+                cloneType_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 40:
+              {
+                refreshableMode_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                autoRefreshFrequencySeconds_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                autoRefreshPointLagSeconds_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 66:
+              {
+                input.readMessage(
+                    internalGetAutoRefreshStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 74:
+              {
+                autonomousDatabaseBackup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetBackupTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 88:
+              {
+                useLatestAvailableBackup_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -674,6 +1933,1135 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearAutomaticBackupsReplicationEnabled() {
       bitField0_ = (bitField0_ & ~0x00000002);
       automaticBackupsReplicationEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int sourceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source type of the Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for sourceType.
+     */
+    @java.lang.Override
+    public int getSourceTypeValue() {
+      return sourceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source type of the Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for sourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTypeValue(int value) {
+      sourceType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source type of the Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sourceType.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.SourceConfig.SourceType getSourceType() {
+      com.google.cloud.oracledatabase.v1.SourceConfig.SourceType result =
+          com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.forNumber(sourceType_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.SourceConfig.SourceType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source type of the Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The sourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceType(com.google.cloud.oracledatabase.v1.SourceConfig.SourceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      sourceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The source type of the Autonomous Database.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.SourceType source_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      sourceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int cloneType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The clone type of the Autonomous Database. This field is only
+     * applicable in case of cloning
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for cloneType.
+     */
+    @java.lang.Override
+    public int getCloneTypeValue() {
+      return cloneType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The clone type of the Autonomous Database. This field is only
+     * applicable in case of cloning
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for cloneType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloneTypeValue(int value) {
+      cloneType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The clone type of the Autonomous Database. This field is only
+     * applicable in case of cloning
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cloneType.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.SourceConfig.CloneType getCloneType() {
+      com.google.cloud.oracledatabase.v1.SourceConfig.CloneType result =
+          com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.forNumber(cloneType_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.SourceConfig.CloneType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The clone type of the Autonomous Database. This field is only
+     * applicable in case of cloning
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The cloneType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCloneType(com.google.cloud.oracledatabase.v1.SourceConfig.CloneType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      cloneType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The clone type of the Autonomous Database. This field is only
+     * applicable in case of cloning
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.CloneType clone_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCloneType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      cloneType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int refreshableMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The refresh mode of the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for refreshableMode.
+     */
+    @java.lang.Override
+    public int getRefreshableModeValue() {
+      return refreshableMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The refresh mode of the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for refreshableMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshableModeValue(int value) {
+      refreshableMode_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The refresh mode of the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The refreshableMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode getRefreshableMode() {
+      com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode result =
+          com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode.forNumber(
+              refreshableMode_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The refresh mode of the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The refreshableMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshableMode(
+        com.google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      refreshableMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The refresh mode of the clone.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.SourceConfig.RefreshableMode refreshable_mode = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRefreshableMode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      refreshableMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int autoRefreshFrequencySeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frequency in seconds a refreshable clone is refreshed after
+     * auto-refresh is enabled.
+     * </pre>
+     *
+     * <code>int32 auto_refresh_frequency_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoRefreshFrequencySeconds.
+     */
+    @java.lang.Override
+    public int getAutoRefreshFrequencySeconds() {
+      return autoRefreshFrequencySeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frequency in seconds a refreshable clone is refreshed after
+     * auto-refresh is enabled.
+     * </pre>
+     *
+     * <code>int32 auto_refresh_frequency_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The autoRefreshFrequencySeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoRefreshFrequencySeconds(int value) {
+
+      autoRefreshFrequencySeconds_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The frequency in seconds a refreshable clone is refreshed after
+     * auto-refresh is enabled.
+     * </pre>
+     *
+     * <code>int32 auto_refresh_frequency_seconds = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoRefreshFrequencySeconds() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      autoRefreshFrequencySeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int autoRefreshPointLagSeconds_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time, in seconds, the data of the automatic refreshable clone
+     * lags the primary database at the point of refresh.
+     * </pre>
+     *
+     * <code>
+     * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoRefreshPointLagSeconds field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoRefreshPointLagSeconds() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time, in seconds, the data of the automatic refreshable clone
+     * lags the primary database at the point of refresh.
+     * </pre>
+     *
+     * <code>
+     * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoRefreshPointLagSeconds.
+     */
+    @java.lang.Override
+    public int getAutoRefreshPointLagSeconds() {
+      return autoRefreshPointLagSeconds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time, in seconds, the data of the automatic refreshable clone
+     * lags the primary database at the point of refresh.
+     * </pre>
+     *
+     * <code>
+     * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The autoRefreshPointLagSeconds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoRefreshPointLagSeconds(int value) {
+
+      autoRefreshPointLagSeconds_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time, in seconds, the data of the automatic refreshable clone
+     * lags the primary database at the point of refresh.
+     * </pre>
+     *
+     * <code>
+     * optional int32 auto_refresh_point_lag_seconds = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoRefreshPointLagSeconds() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      autoRefreshPointLagSeconds_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp autoRefreshStartTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        autoRefreshStartTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoRefreshStartTime field is set.
+     */
+    public boolean hasAutoRefreshStartTime() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoRefreshStartTime.
+     */
+    public com.google.protobuf.Timestamp getAutoRefreshStartTime() {
+      if (autoRefreshStartTimeBuilder_ == null) {
+        return autoRefreshStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : autoRefreshStartTime_;
+      } else {
+        return autoRefreshStartTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoRefreshStartTime(com.google.protobuf.Timestamp value) {
+      if (autoRefreshStartTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoRefreshStartTime_ = value;
+      } else {
+        autoRefreshStartTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoRefreshStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (autoRefreshStartTimeBuilder_ == null) {
+        autoRefreshStartTime_ = builderForValue.build();
+      } else {
+        autoRefreshStartTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoRefreshStartTime(com.google.protobuf.Timestamp value) {
+      if (autoRefreshStartTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && autoRefreshStartTime_ != null
+            && autoRefreshStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getAutoRefreshStartTimeBuilder().mergeFrom(value);
+        } else {
+          autoRefreshStartTime_ = value;
+        }
+      } else {
+        autoRefreshStartTimeBuilder_.mergeFrom(value);
+      }
+      if (autoRefreshStartTime_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoRefreshStartTime() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      autoRefreshStartTime_ = null;
+      if (autoRefreshStartTimeBuilder_ != null) {
+        autoRefreshStartTimeBuilder_.dispose();
+        autoRefreshStartTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getAutoRefreshStartTimeBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetAutoRefreshStartTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getAutoRefreshStartTimeOrBuilder() {
+      if (autoRefreshStartTimeBuilder_ != null) {
+        return autoRefreshStartTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return autoRefreshStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : autoRefreshStartTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The date and time that auto-refreshing will begin for an
+     * Autonomous Database refreshable clone. This value controls only the start
+     * time for the first refresh operation.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_refresh_start_time = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetAutoRefreshStartTimeFieldBuilder() {
+      if (autoRefreshStartTimeBuilder_ == null) {
+        autoRefreshStartTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getAutoRefreshStartTime(), getParentForChildren(), isClean());
+        autoRefreshStartTime_ = null;
+      }
+      return autoRefreshStartTimeBuilder_;
+    }
+
+    private java.lang.Object autonomousDatabaseBackup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Autonomous Database Backup resource with the
+     * format:
+     * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+     * Required when source_type is BACKUP_FROM_ID.
+     * </pre>
+     *
+     * <code>
+     * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The autonomousDatabaseBackup.
+     */
+    public java.lang.String getAutonomousDatabaseBackup() {
+      java.lang.Object ref = autonomousDatabaseBackup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autonomousDatabaseBackup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Autonomous Database Backup resource with the
+     * format:
+     * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+     * Required when source_type is BACKUP_FROM_ID.
+     * </pre>
+     *
+     * <code>
+     * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for autonomousDatabaseBackup.
+     */
+    public com.google.protobuf.ByteString getAutonomousDatabaseBackupBytes() {
+      java.lang.Object ref = autonomousDatabaseBackup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        autonomousDatabaseBackup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Autonomous Database Backup resource with the
+     * format:
+     * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+     * Required when source_type is BACKUP_FROM_ID.
+     * </pre>
+     *
+     * <code>
+     * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The autonomousDatabaseBackup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutonomousDatabaseBackup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      autonomousDatabaseBackup_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Autonomous Database Backup resource with the
+     * format:
+     * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+     * Required when source_type is BACKUP_FROM_ID.
+     * </pre>
+     *
+     * <code>
+     * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutonomousDatabaseBackup() {
+      autonomousDatabaseBackup_ = getDefaultInstance().getAutonomousDatabaseBackup();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Autonomous Database Backup resource with the
+     * format:
+     * projects/{project}/locations/{region}/autonomousDatabaseBackups/{autonomous_database_backup}
+     * Required when source_type is BACKUP_FROM_ID.
+     * </pre>
+     *
+     * <code>
+     * string autonomous_database_backup = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for autonomousDatabaseBackup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutonomousDatabaseBackupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      autonomousDatabaseBackup_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp backupTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        backupTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the backupTime field is set.
+     */
+    public boolean hasBackupTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The backupTime.
+     */
+    public com.google.protobuf.Timestamp getBackupTime() {
+      if (backupTimeBuilder_ == null) {
+        return backupTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : backupTime_;
+      } else {
+        return backupTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBackupTime(com.google.protobuf.Timestamp value) {
+      if (backupTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        backupTime_ = value;
+      } else {
+        backupTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBackupTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (backupTimeBuilder_ == null) {
+        backupTime_ = builderForValue.build();
+      } else {
+        backupTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBackupTime(com.google.protobuf.Timestamp value) {
+      if (backupTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && backupTime_ != null
+            && backupTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getBackupTimeBuilder().mergeFrom(value);
+        } else {
+          backupTime_ = value;
+        }
+      } else {
+        backupTimeBuilder_.mergeFrom(value);
+      }
+      if (backupTime_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBackupTime() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      backupTime_ = null;
+      if (backupTimeBuilder_ != null) {
+        backupTimeBuilder_.dispose();
+        backupTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getBackupTimeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetBackupTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getBackupTimeOrBuilder() {
+      if (backupTimeBuilder_ != null) {
+        return backupTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return backupTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : backupTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The timestamp specified for the point-in-time clone of the source
+     * Autonomous Database. This field is only applicable
+     * in case of BACKUP_FROM_TIMESTAMP source type and when
+     * use_latest_available_backup is false.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp backup_time = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetBackupTimeFieldBuilder() {
+      if (backupTimeBuilder_ == null) {
+        backupTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getBackupTime(), getParentForChildren(), isClean());
+        backupTime_ = null;
+      }
+      return backupTimeBuilder_;
+    }
+
+    private boolean useLatestAvailableBackup_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Clone from latest available backup timestamp. This field is only
+     * applicable in case of BACKUP_FROM_TIMESTAMP source type.
+     * </pre>
+     *
+     * <code>bool use_latest_available_backup = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useLatestAvailableBackup.
+     */
+    @java.lang.Override
+    public boolean getUseLatestAvailableBackup() {
+      return useLatestAvailableBackup_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Clone from latest available backup timestamp. This field is only
+     * applicable in case of BACKUP_FROM_TIMESTAMP source type.
+     * </pre>
+     *
+     * <code>bool use_latest_available_backup = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useLatestAvailableBackup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseLatestAvailableBackup(boolean value) {
+
+      useLatestAvailableBackup_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Clone from latest available backup timestamp. This field is only
+     * applicable in case of BACKUP_FROM_TIMESTAMP source type.
+     * </pre>
+     *
+     * <code>bool use_latest_available_backup = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseLatestAvailableBackup() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      useLatestAvailableBackup_ = false;
       onChanged();
       return this;
     }

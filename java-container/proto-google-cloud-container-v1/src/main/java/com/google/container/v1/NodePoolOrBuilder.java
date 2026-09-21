@@ -410,7 +410,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5361
+   *     google/container/v1/cluster_service.proto;l=5441
    * @return The statusMessage.
    */
   @java.lang.Deprecated
@@ -430,7 +430,7 @@ public interface NodePoolOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5361
+   *     google/container/v1/cluster_service.proto;l=5441
    * @return The bytes for statusMessage.
    */
   @java.lang.Deprecated
@@ -557,10 +557,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.container.v1.StatusCondition> getConditionsList();
 
@@ -568,10 +570,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.container.v1.StatusCondition getConditions(int index);
 
@@ -579,10 +583,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getConditionsCount();
 
@@ -590,10 +596,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getConditionsOrBuilderList();
@@ -602,10 +610,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index);
 
@@ -746,12 +756,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of node pool
-   * fields, and may be sent on update requests to ensure the client has an
-   * up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of
+   * node pool fields, and may be sent on update requests to ensure the client
+   * has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 110;</code>
+   * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The etag.
    */
@@ -761,12 +771,12 @@ public interface NodePoolOrBuilder
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of node pool
-   * fields, and may be sent on update requests to ensure the client has an
-   * up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of
+   * node pool fields, and may be sent on update requests to ensure the client
+   * has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 110;</code>
+   * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for etag.
    */
@@ -926,4 +936,47 @@ public interface NodePoolOrBuilder
    */
   com.google.container.v1.NodePool.NodePoolMaintenancePolicyOrBuilder
       getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the kubeletCertInfo field is set.
+   */
+  boolean hasKubeletCertInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kubeletCertInfo.
+   */
+  com.google.container.v1.NodePool.KubeletCertInfo getKubeletCertInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.NodePool.KubeletCertInfoOrBuilder getKubeletCertInfoOrBuilder();
 }

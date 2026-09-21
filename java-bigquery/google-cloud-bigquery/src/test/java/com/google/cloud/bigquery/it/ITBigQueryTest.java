@@ -45,6 +45,7 @@ import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.Acl.Expr;
 import com.google.cloud.bigquery.Acl.User;
+import com.google.cloud.bigquery.ArrowQueryResult;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -113,12 +114,12 @@ import com.google.cloud.bigquery.ModelId;
 import com.google.cloud.bigquery.ModelInfo;
 import com.google.cloud.bigquery.Parameter;
 import com.google.cloud.bigquery.ParquetOptions;
-import com.google.cloud.bigquery.PolicyTags;
 import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.QueryResultsFormat;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
@@ -145,12 +146,6 @@ import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.cloud.bigquery.ViewDefinition;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
-import com.google.cloud.datacatalog.v1.CreatePolicyTagRequest;
-import com.google.cloud.datacatalog.v1.CreateTaxonomyRequest;
-import com.google.cloud.datacatalog.v1.PolicyTag;
-import com.google.cloud.datacatalog.v1.PolicyTagManagerClient;
-import com.google.cloud.datacatalog.v1.Taxonomy;
-import com.google.cloud.datacatalog.v1.Taxonomy.PolicyType;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
@@ -210,6 +205,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -1037,7 +1033,19 @@ class ITBigQueryTest {
                   .build())
           .build();
 
+  /**
+   * Primary client configured dynamically via RemoteBigQueryHelper. Targets the endpoint under test
+   * (e.g., regional canary endpoint us-east7 in regional CI runs).
+   */
   private static BigQuery bigquery;
+
+  /**
+   * Fallback client explicitly targeting the default global endpoint (bigquery.googleapis.com).
+   * Used for tests accessing global public datasets (bigquery-public-data) or cross-region
+   * resources.
+   */
+  private static BigQuery globalBigQuery;
+
   private static Storage storage;
   private static OpenTelemetry otel;
 
@@ -1083,6 +1091,12 @@ class ITBigQueryTest {
     otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
 
     bigquery = bigqueryHelper.getOptions().getService();
+    globalBigQuery =
+        BigQueryOptions.newBuilder()
+            .setProjectId(bigqueryHelper.getOptions().getProjectId())
+            .setCredentials(bigqueryHelper.getOptions().getCredentials())
+            .build()
+            .getService();
     storage = storageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
     storage.create(
@@ -1271,7 +1285,7 @@ class ITBigQueryTest {
 
   @Test
   void testListDatasets() {
-    Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
+    Page<Dataset> datasets = globalBigQuery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();
     Set<String> datasetNames = new HashSet<>();
     Map<String, String> datasetLocation = new HashMap<>();
@@ -2130,92 +2144,6 @@ class ITBigQueryTest {
   }
 
   @Test
-  void testCreateAndUpdateTableWithPolicyTags() throws IOException {
-    // Set up policy tags in the datacatalog service
-    try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
-      CreateTaxonomyRequest createTaxonomyRequest =
-          CreateTaxonomyRequest.newBuilder()
-              .setParent(String.format("projects/%s/locations/%s", PROJECT_ID, "us"))
-              .setTaxonomy(
-                  Taxonomy.newBuilder()
-                      // DisplayName must be unique across org. Use UUID rather than time to ensure
-                      // no collisions
-                      // from parallel test invocations
-                      .setDisplayName(
-                          String.format(
-                              "testing taxonomy %s", UUID.randomUUID().toString().substring(0, 8)))
-                      .setDescription("taxonomy created for integration tests")
-                      .addActivatedPolicyTypes(PolicyType.FINE_GRAINED_ACCESS_CONTROL)
-                      .build())
-              .build();
-      Taxonomy taxonomyResponse = policyTagManagerClient.createTaxonomy(createTaxonomyRequest);
-      String taxonomyId = taxonomyResponse.getName();
-
-      CreatePolicyTagRequest createPolicyTagRequest =
-          CreatePolicyTagRequest.newBuilder()
-              .setParent(taxonomyId)
-              .setPolicyTag(PolicyTag.newBuilder().setDisplayName("ExamplePolicyTag").build())
-              .build();
-      PolicyTag policyTagResponse = policyTagManagerClient.createPolicyTag(createPolicyTagRequest);
-      String policyTagId = policyTagResponse.getName();
-      PolicyTags policyTags =
-          PolicyTags.newBuilder().setNames(ImmutableList.of(policyTagId)).build();
-      Field stringFieldWithPolicy =
-          Field.newBuilder("StringFieldWithPolicy", LegacySQLTypeName.STRING)
-              .setMode(Field.Mode.NULLABLE)
-              .setDescription("field has a policy")
-              .setPolicyTags(policyTags)
-              .build();
-      Schema policySchema =
-          Schema.of(STRING_FIELD_SCHEMA, stringFieldWithPolicy, INTEGER_FIELD_SCHEMA);
-
-      // Test: Amend an existing schema with a policy tag.
-      String tableNameForUpdate = "test_update_table_policytags";
-      TableId tableIdForUpdate = TableId.of(DATASET, tableNameForUpdate);
-      TableInfo tableInfo =
-          TableInfo.newBuilder(tableIdForUpdate, StandardTableDefinition.of(TABLE_SCHEMA))
-              .setDescription("policy tag update test table")
-              .build();
-      Table createdTableForUpdate = bigquery.create(tableInfo);
-      assertNotNull(createdTableForUpdate);
-      Schema schema = createdTableForUpdate.getDefinition().getSchema();
-      FieldList fields = schema.getFields();
-      // Create a new schema adding the current fields, plus the new policy tag field
-      List<Field> fieldList = new ArrayList<>();
-      for (Field field : fields) {
-        fieldList.add(field);
-      }
-      fieldList.add(stringFieldWithPolicy);
-      Schema updatedSchemaWithPolicyTag = Schema.of(fieldList);
-      Table updatedTable =
-          createdTableForUpdate.toBuilder()
-              .setDefinition(StandardTableDefinition.of(updatedSchemaWithPolicyTag))
-              .build();
-      updatedTable.update();
-      Table remoteUpdatedTable = bigquery.getTable(DATASET, tableNameForUpdate);
-      assertEquals(
-          updatedSchemaWithPolicyTag,
-          remoteUpdatedTable.<StandardTableDefinition>getDefinition().getSchema());
-      bigquery.delete(tableIdForUpdate);
-
-      // Test: Create a new table with a policy tag defined.
-      String tableName = "test_create_table_policytags";
-      TableId tableId = TableId.of(DATASET, tableName);
-      StandardTableDefinition tableDefinition =
-          StandardTableDefinition.newBuilder().setSchema(policySchema).build();
-      Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
-      assertNotNull(createdTable);
-      Table remoteTable = bigquery.getTable(DATASET, tableName);
-      assertEquals(policySchema, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
-      bigquery.delete(tableId);
-
-      // Clean up policy tags
-      policyTagManagerClient.deletePolicyTag(policyTagId);
-      policyTagManagerClient.deleteTaxonomy(taxonomyId);
-    }
-  }
-
-  @Test
   void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -2515,24 +2443,30 @@ class ITBigQueryTest {
 
   @Test
   void testSetPermExternalTableSchema() {
-    String tableName = "test_create_external_table_perm";
-    TableId tableId = TableId.of(DATASET, tableName);
-    ExternalTableDefinition externalTableDefinition =
-        ExternalTableDefinition.newBuilder(
-                "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
-            .setSchema(TABLE_SCHEMA)
-            .setConnectionId(
-                "projects/java-docs-samples-testing/locations/us/connections/DEVREL_TEST_CONNECTION")
-            .build();
-    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
-    Table createdTable = bigquery.create(tableInfo);
+    String tempDataset = "extconnset_" + UUID.randomUUID().toString().replace("-", "_");
+    globalBigQuery.create(DatasetInfo.newBuilder(tempDataset).setLocation("US").build());
+    try {
+      String tableName = "test_create_external_table_perm";
+      TableId tableId = TableId.of(tempDataset, tableName);
+      ExternalTableDefinition externalTableDefinition =
+          ExternalTableDefinition.newBuilder(
+                  "gs://" + BUCKET + "/" + JSON_LOAD_FILE, FormatOptions.json())
+              .setSchema(TABLE_SCHEMA)
+              .setConnectionId(
+                  "projects/java-docs-samples-testing/locations/us/connections/DEVREL_TEST_CONNECTION")
+              .build();
+      TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+      Table createdTable = globalBigQuery.create(tableInfo);
 
-    assertNotNull(createdTable);
-    assertEquals(DATASET, createdTable.getTableId().getDataset());
-    assertEquals(tableName, createdTable.getTableId().getTable());
-    Table remoteTable = bigquery.getTable(DATASET, tableName);
-    assertNotNull(remoteTable);
-    assertTrue(remoteTable.delete());
+      assertNotNull(createdTable);
+      assertEquals(tempDataset, createdTable.getTableId().getDataset());
+      assertEquals(tableName, createdTable.getTableId().getTable());
+      Table remoteTable = globalBigQuery.getTable(tempDataset, tableName);
+      assertNotNull(remoteTable);
+      assertTrue(remoteTable.delete());
+    } finally {
+      RemoteBigQueryHelper.forceDelete(globalBigQuery, tempDataset);
+    }
   }
 
   @Test
@@ -2931,11 +2865,11 @@ class ITBigQueryTest {
     String jobName = "jobId_" + UUID.randomUUID().toString();
     JobId jobId =
         JobId.newBuilder().setLocation("us-east1").setJob(jobName).setProject(PROJECT_ID).build();
-    Job createdJob = bigquery.create(JobInfo.of(jobId, config));
-    Job remoteJob = bigquery.getJob(createdJob.getJobId());
+    Job createdJob = globalBigQuery.create(JobInfo.of(jobId, config));
+    Job remoteJob = globalBigQuery.getJob(createdJob.getJobId());
     assertEquals(createdJob.getJobId(), remoteJob.getJobId());
-    assertTrue(bigquery.delete(jobId));
-    assertNull(bigquery.getJob(jobId));
+    assertTrue(globalBigQuery.delete(jobId));
+    assertNull(globalBigQuery.getJob(jobId));
   }
 
   @Test
@@ -3190,10 +3124,10 @@ class ITBigQueryTest {
   void testListPageWithStartIndex() {
     String tableName = "midyear_population_agespecific";
     TableId tableId = TableId.of(PUBLIC_PROJECT, PUBLIC_DATASET, tableName);
-    Table table = bigquery.getTable(tableId);
+    Table table = globalBigQuery.getTable(tableId);
     long numRows = table.getNumRows().longValue();
     Page<FieldValueList> tableResult =
-        bigquery.listTableData(
+        globalBigQuery.listTableData(
             tableId,
             BigQuery.TableDataListOption.startIndex(numRows - 300_000L),
             BigQuery.TableDataListOption.pageSize(600_000L));
@@ -3660,7 +3594,7 @@ class ITBigQueryTest {
   @Test
   void testExecuteSelectDefaultConnectionSettings() throws SQLException {
     // Use the default connection settings
-    Connection connection = bigquery.createConnection();
+    Connection connection = globalBigQuery.createConnection();
     String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
     BigQueryResult bigQueryResult = connection.executeSelect(query);
     assertEquals(42, bigQueryResult.getTotalRows());
@@ -3672,7 +3606,7 @@ class ITBigQueryTest {
     final int rowLimit = 5000;
     final String QUERY =
         "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
-    bigquery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED);
+    globalBigQuery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED);
     // Set priority explicitly to ensure that fast query is not used.
     // min result size and page row count ratio ensure that the ReadAPI is used.
     ConnectionSettings connectionSettingsReadAPIEnabledFastQueryDisabled =
@@ -3684,7 +3618,7 @@ class ITBigQueryTest {
             .build();
 
     Connection connectionReadAPIEnabled =
-        bigquery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
+        globalBigQuery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
 
     String selectQuery = String.format(QUERY, rowLimit);
 
@@ -3711,7 +3645,7 @@ class ITBigQueryTest {
             .build();
 
     Connection connectionReadAPIEnabled =
-        bigquery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
+        globalBigQuery.createConnection(connectionSettingsReadAPIEnabledFastQueryDisabled);
 
     String selectQuery = String.format(QUERY, rowLimit);
 
@@ -4792,11 +4726,11 @@ class ITBigQueryTest {
             .setLocation("europe-west1")
             .setLabels(LABELS)
             .build();
-    bigquery.create(infoUK);
+    globalBigQuery.create(infoUK);
 
     TableDefinition tableDefinition = StandardTableDefinition.of(SIMPLE_SCHEMA);
     TableInfo tableInfo = TableInfo.newBuilder(tableIdFastQueryUk, tableDefinition).build();
-    bigquery.create(tableInfo);
+    globalBigQuery.create(tableInfo);
 
     String insert =
         "INSERT " + UK_DATASET + "." + tableIdFastQueryUk.getTable() + " VALUES('Anna');";
@@ -4805,11 +4739,11 @@ class ITBigQueryTest {
         QueryJobConfiguration.newBuilder(insert)
             .setDefaultDataset(DatasetId.of(UK_DATASET))
             .build();
-    TableResult result = bigquery.query(config);
+    TableResult result = globalBigQuery.query(config);
     assertNotNull(result.getJobId());
     assertEquals(SIMPLE_SCHEMA, result.getSchema());
     // Use `getNumDmlAffectedRows()` for DML operations
-    Job queryJob = bigquery.getJob(result.getJobId());
+    Job queryJob = globalBigQuery.getJob(result.getJobId());
     queryJob = queryJob.waitFor();
     assertNull(
         queryJob.getStatus().getError(),
@@ -4834,7 +4768,7 @@ class ITBigQueryTest {
     QueryJobConfiguration configSelect =
         QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(UK_DATASET)).build();
     try {
-      bigquery.query(configSelect, jobIdWithLocation);
+      globalBigQuery.query(configSelect, jobIdWithLocation);
     } catch (BigQueryException exception) {
       assertTrue(exception.getMessage().contains("Not found"));
       assertEquals(BigQueryException.class, exception.getClass());
@@ -4844,7 +4778,7 @@ class ITBigQueryTest {
     JobId jobIdNoLocation = JobId.newBuilder().build();
     QueryJobConfiguration configNoLocation =
         QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(UK_DATASET)).build();
-    TableResult resultNoLocation = bigquery.query(configNoLocation, jobIdNoLocation);
+    TableResult resultNoLocation = globalBigQuery.query(configNoLocation, jobIdNoLocation);
     for (FieldValueList row : resultNoLocation.getValues()) {
       FieldValue stringCell = row.get(0);
       assertEquals(stringCell, row.get("StringField"));
@@ -4960,34 +4894,40 @@ class ITBigQueryTest {
 
   @Test
   void testFastQuerySlowDDL() throws InterruptedException {
-    String tableName = generateRandomName("test_table_fast_query_ddl_slow_");
-    // This query take more than 10s to run and should fall back on the old query path
-    String slowDdlQuery =
-        String.format(
-            "CREATE OR REPLACE TABLE %s AS SELECT unique_key, agency, complaint_type, descriptor,"
-                + " street_name, city, landmark FROM"
-                + " `bigquery-public-data.new_york.311_service_requests`",
-            tableName);
-    QueryJobConfiguration ddlConfig =
-        QueryJobConfiguration.newBuilder(slowDdlQuery)
-            .setDefaultDataset(DatasetId.of(DATASET))
-            .build();
-    TableResult result = bigquery.query(ddlConfig);
-    assertNotNull(result.getJobId());
-    assertEquals(0, result.getTotalRows());
-    assertNotNull(result.getSchema());
-    // Verify correctness of table content
-    String sqlQuery = String.format("SELECT * FROM %s.%s", DATASET, tableName);
-    QueryJobConfiguration sqlConfig = QueryJobConfiguration.newBuilder(sqlQuery).build();
-    TableResult resultAfterDDL = bigquery.query(sqlConfig);
-    assertNotNull(resultAfterDDL.getJobId());
-    for (FieldValueList row : resultAfterDDL.getValues()) {
-      FieldValue unique_key = row.get(0);
-      assertEquals(unique_key, row.get("unique_key"));
-      FieldValue agency = row.get(1);
-      assertEquals(agency, row.get("agency"));
-      FieldValue complaint_type = row.get(2);
-      assertEquals(complaint_type, row.get("complaint_type"));
+    String tempDataset = "slowddlset_" + UUID.randomUUID().toString().replace("-", "_");
+    globalBigQuery.create(DatasetInfo.newBuilder(tempDataset).setLocation("US").build());
+    try {
+      String tableName = generateRandomName("test_table_fast_query_ddl_slow_");
+      // This query take more than 10s to run and should fall back on the old query path
+      String slowDdlQuery =
+          String.format(
+              "CREATE OR REPLACE TABLE %s AS SELECT unique_key, agency, complaint_type, descriptor,"
+                  + " street_name, city, landmark FROM"
+                  + " `bigquery-public-data.new_york.311_service_requests`",
+              tableName);
+      QueryJobConfiguration ddlConfig =
+          QueryJobConfiguration.newBuilder(slowDdlQuery)
+              .setDefaultDataset(DatasetId.of(tempDataset))
+              .build();
+      TableResult result = globalBigQuery.query(ddlConfig);
+      assertNotNull(result.getJobId());
+      assertEquals(0, result.getTotalRows());
+      assertNotNull(result.getSchema());
+      // Verify correctness of table content
+      String sqlQuery = String.format("SELECT * FROM %s.%s", tempDataset, tableName);
+      QueryJobConfiguration sqlConfig = QueryJobConfiguration.newBuilder(sqlQuery).build();
+      TableResult resultAfterDDL = globalBigQuery.query(sqlConfig);
+      assertNotNull(resultAfterDDL.getJobId());
+      for (FieldValueList row : resultAfterDDL.getValues()) {
+        FieldValue unique_key = row.get(0);
+        assertEquals(unique_key, row.get("unique_key"));
+        FieldValue agency = row.get(1);
+        assertEquals(agency, row.get("agency"));
+        FieldValue complaint_type = row.get(2);
+        assertEquals(complaint_type, row.get("complaint_type"));
+      }
+    } finally {
+      RemoteBigQueryHelper.forceDelete(globalBigQuery, tempDataset);
     }
   }
 
@@ -5075,7 +5015,7 @@ class ITBigQueryTest {
     String sessionId;
 
     // Imports a local file into a table.
-    try (TableDataWriteChannel writer = bigquery.writer(jobId, configuration);
+    try (TableDataWriteChannel writer = globalBigQuery.writer(jobId, configuration);
         OutputStream stream = Channels.newOutputStream(writer)) {
       InputStream inputStream =
           ITBigQueryTest.class.getClassLoader().getResourceAsStream("sessionTest.csv");
@@ -5086,7 +5026,7 @@ class ITBigQueryTest {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    Job loadJob = bigquery.getJob(jobId);
+    Job loadJob = globalBigQuery.getJob(jobId);
     Job completedJob = loadJob.waitFor();
 
     assertNotNull(completedJob);
@@ -5109,7 +5049,7 @@ class ITBigQueryTest {
             .build();
     String sessionJobName = "jobId_" + UUID.randomUUID().toString();
     JobId sessionJobId = JobId.newBuilder().setLocation("us").setJob(sessionJobName).build();
-    try (TableDataWriteChannel writer = bigquery.writer(sessionJobId, sessionConfiguration);
+    try (TableDataWriteChannel writer = globalBigQuery.writer(sessionJobId, sessionConfiguration);
         OutputStream stream = Channels.newOutputStream(writer)) {
       InputStream inputStream =
           ITBigQueryTest.class.getClassLoader().getResourceAsStream("sessionTest.csv");
@@ -5117,7 +5057,7 @@ class ITBigQueryTest {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    Job queryJobWithSession = bigquery.getJob(sessionJobId);
+    Job queryJobWithSession = globalBigQuery.getJob(sessionJobId);
     queryJobWithSession = queryJobWithSession.waitFor();
     LoadStatistics statisticsWithSession = queryJobWithSession.getStatistics();
     assertNotNull(statisticsWithSession.getSessionInfo().getSessionId());
@@ -5128,7 +5068,7 @@ class ITBigQueryTest {
         QueryJobConfiguration.newBuilder(queryTempTable)
             .setConnectionProperties(ImmutableList.of(sessionConnectionProperty))
             .build();
-    Job queryTempTableJob = bigquery.create(JobInfo.of(queryJobConfigurationWithSession));
+    Job queryTempTableJob = globalBigQuery.create(JobInfo.of(queryJobConfigurationWithSession));
     queryTempTableJob = queryTempTableJob.waitFor();
     assertNotNull(queryTempTableJob.getQueryResults());
   }
@@ -5306,12 +5246,12 @@ class ITBigQueryTest {
             + "  FROM `bigquery-public-data`.samples.shakespeare\n"
             + ");";
     QueryJobConfiguration config = QueryJobConfiguration.of(script);
-    Job remoteJob = bigquery.create(JobInfo.of(config));
+    Job remoteJob = globalBigQuery.create(JobInfo.of(config));
     JobInfo info = remoteJob.waitFor();
     JobStatistics jobStatistics = info.getStatistics();
     String parentJobId = info.getJobId().getJob();
     assertEquals(2, jobStatistics.getNumChildJobs().longValue());
-    Page<Job> page = bigquery.listJobs(JobListOption.parentJobId(parentJobId));
+    Page<Job> page = globalBigQuery.listJobs(JobListOption.parentJobId(parentJobId));
     for (Job job : page.iterateAll()) {
       JobStatistics.ScriptStatistics scriptStatistics = job.getStatistics().getScriptStatistics();
       if (scriptStatistics != null) {
@@ -5364,6 +5304,8 @@ class ITBigQueryTest {
     Job job = bigquery.create(JobInfo.of(queryConfig));
     JobStatistics.QueryStatistics statistics = job.getStatistics();
 
+    assertNotNull(statistics.getQueryParameters());
+    assertEquals(7, statistics.getQueryParameters().size());
     assertNotNull(statistics.getTotalBytesProcessed());
   }
 
@@ -6541,7 +6483,7 @@ class ITBigQueryTest {
 
   @Test
   void testCancelNonExistingJob() {
-    assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
+    assertFalse(globalBigQuery.cancel("test_cancel_non_existing_job"));
   }
 
   @Test
@@ -6684,7 +6626,7 @@ class ITBigQueryTest {
 
     Tracer tracer = otel.getTracer("Test Tracer");
     BigQuery otelBigquery =
-        bigquery.getOptions().toBuilder()
+        globalBigQuery.getOptions().toBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
             .build()
@@ -6692,12 +6634,12 @@ class ITBigQueryTest {
 
     String datasetName = "locationset_" + UUID.randomUUID().toString().replace("-", "_");
     Dataset dataset =
-        otelBigquery.create(DatasetInfo.newBuilder(datasetName).setLocation(location).build());
+        globalBigQuery.create(DatasetInfo.newBuilder(datasetName).setLocation(location).build());
     try {
       TableId tableId = TableId.of(dataset.getDatasetId().getDataset(), "sometable");
       Schema schema = Schema.of(Field.of("name", LegacySQLTypeName.STRING));
       TableDefinition tableDef = StandardTableDefinition.of(schema);
-      Table table = otelBigquery.create(TableInfo.newBuilder(tableId, tableDef).build());
+      Table table = globalBigQuery.create(TableInfo.newBuilder(tableId, tableDef).build());
 
       String query =
           String.format(
@@ -6777,7 +6719,7 @@ class ITBigQueryTest {
             "writing to a table with wrong location shouldn't work");
       }
     } finally {
-      RemoteBigQueryHelper.forceDelete(bigquery, datasetName);
+      RemoteBigQueryHelper.forceDelete(globalBigQuery, datasetName);
     }
   }
 
@@ -7448,9 +7390,8 @@ class ITBigQueryTest {
     String location = "EU";
     String wrongLocation = "US";
 
-    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQuery bigQuery =
-        bigqueryHelper.getOptions().toBuilder().setLocation(location).build().getService();
+        globalBigQuery.getOptions().toBuilder().setLocation(location).build().getService();
 
     String datasetName = "locationset_" + UUID.randomUUID().toString().replace("-", "_");
     Dataset dataset =
@@ -7478,7 +7419,7 @@ class ITBigQueryTest {
           BigQueryException.class,
           () -> {
             BigQuery bigQueryWrongLocation =
-                bigqueryHelper.getOptions().toBuilder()
+                globalBigQuery.getOptions().toBuilder()
                     .setLocation(wrongLocation)
                     .build()
                     .getService();
@@ -7562,6 +7503,139 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testQueryResultsFormatArrow() throws InterruptedException {
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      assertNotNull(result);
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertEquals(1, batchCount);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple batches via the BigQuery Storage Read API.
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      assertNotNull(result);
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+      }
+      assertTrue(batchCount > 1);
+      assertEquals(15000, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormat() throws InterruptedException {
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("hello", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(15000, result.getTotalRows());
+    long count = 0;
+    for (FieldValueList row : result.iterateAll()) {
+      count++;
+      assertEquals(count, row.get("x").getLongValue());
+    }
+    assertEquals(15000, count);
+  }
+
+  @Test
+  void testQueryResultsFormatArrowFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getArrowSchema());
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertEquals(1, batchCount);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("fallback", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
   void testUniverseDomainWithInvalidUniverseDomain() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
@@ -7609,9 +7683,8 @@ class ITBigQueryTest {
   @Test
   void testUniverseDomainWithMatchingDomain() {
     // Test a valid domain using the default credentials and Google default universe domain.
-    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
-        bigqueryHelper.getOptions().toBuilder().setUniverseDomain("googleapis.com").build();
+        globalBigQuery.getOptions().toBuilder().setUniverseDomain("googleapis.com").build();
     BigQuery bigQuery = bigQueryOptions.getService();
 
     // Verify that all is well by listing a dataset.
@@ -7701,44 +7774,50 @@ class ITBigQueryTest {
 
   @Test
   void testObjectTable() throws InterruptedException {
-    String tableName = generateRandomName("test_object_table");
-    TableId tableId = TableId.of(DATASET, tableName);
-
-    String sourceUri = "gs://" + BUCKET + "/" + JSON_LOAD_FILE;
-    ExternalTableDefinition externalTableDefinition =
-        ExternalTableDefinition.newBuilder(sourceUri)
-            .setConnectionId(
-                "projects/java-docs-samples-testing/locations/us/connections/DEVREL_TEST_CONNECTION")
-            .setObjectMetadata("SIMPLE")
-            .build();
-    TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
-    Table createdTable = bigquery.create(tableInfo);
-    assertNotNull(createdTable);
-    assertEquals(DATASET, createdTable.getTableId().getDataset());
-    assertEquals(tableName, createdTable.getTableId().getTable());
-    Table remoteTable = bigquery.getTable(DATASET, tableName);
-    assertNotNull(remoteTable);
-
+    String tempDataset = "objectset_" + UUID.randomUUID().toString().replace("-", "_");
+    globalBigQuery.create(DatasetInfo.newBuilder(tempDataset).setLocation("US").build());
     try {
-      assertTrue(remoteTable.getDefinition() instanceof ExternalTableDefinition);
-      assertEquals(createdTable.getTableId(), remoteTable.getTableId());
-      assertEquals(
-          "SIMPLE", ((ExternalTableDefinition) remoteTable.getDefinition()).getObjectMetadata());
-      assertNotNull(remoteTable.getDefinition().getSchema().getFields().get("uri"));
+      String tableName = generateRandomName("test_object_table");
+      TableId tableId = TableId.of(tempDataset, tableName);
 
-      String query = String.format("SELECT * FROM  %s.%s", DATASET, tableName);
-      QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+      String sourceUri = "gs://" + BUCKET + "/" + JSON_LOAD_FILE;
+      ExternalTableDefinition externalTableDefinition =
+          ExternalTableDefinition.newBuilder(sourceUri)
+              .setConnectionId(
+                  "projects/java-docs-samples-testing/locations/us/connections/DEVREL_TEST_CONNECTION")
+              .setObjectMetadata("SIMPLE")
+              .build();
+      TableInfo tableInfo = TableInfo.of(tableId, externalTableDefinition);
+      Table createdTable = globalBigQuery.create(tableInfo);
+      assertNotNull(createdTable);
+      assertEquals(tempDataset, createdTable.getTableId().getDataset());
+      assertEquals(tableName, createdTable.getTableId().getTable());
+      Table remoteTable = globalBigQuery.getTable(tempDataset, tableName);
+      assertNotNull(remoteTable);
 
-      Job remoteJob = bigquery.create(JobInfo.of(config));
-      remoteJob = remoteJob.waitFor();
-      assertNull(remoteJob.getStatus().getError());
+      try {
+        assertTrue(remoteTable.getDefinition() instanceof ExternalTableDefinition);
+        assertEquals(createdTable.getTableId(), remoteTable.getTableId());
+        assertEquals(
+            "SIMPLE", ((ExternalTableDefinition) remoteTable.getDefinition()).getObjectMetadata());
+        assertNotNull(remoteTable.getDefinition().getSchema().getFields().get("uri"));
 
-      Job queryJob = bigquery.getJob(remoteJob.getJobId());
-      JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
-      assertNotNull(statistics);
-      assertThat(statistics.getTotalBytesProcessed()).isGreaterThan(0);
+        String query = String.format("SELECT * FROM  %s.%s", tempDataset, tableName);
+        QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+
+        Job remoteJob = globalBigQuery.create(JobInfo.of(config));
+        remoteJob = remoteJob.waitFor();
+        assertNull(remoteJob.getStatus().getError());
+
+        Job queryJob = globalBigQuery.getJob(remoteJob.getJobId());
+        JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+        assertNotNull(statistics);
+        assertThat(statistics.getTotalBytesProcessed()).isGreaterThan(0);
+      } finally {
+        assertTrue(remoteTable.delete());
+      }
     } finally {
-      assertTrue(remoteTable.delete());
+      RemoteBigQueryHelper.forceDelete(globalBigQuery, tempDataset);
     }
   }
 
@@ -7848,12 +7927,12 @@ class ITBigQueryTest {
   public void testOpenTelemetryTracingDatasets() {
     Tracer tracer = otel.getTracer("Test Tracer");
     BigQueryOptions otelOptions =
-        BigQueryOptions.newBuilder()
+        globalBigQuery.getOptions().toBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
             .setLocation("US")
             .build();
-    BigQuery bigquery = otelOptions.getService();
+    BigQuery otelBigquery = otelOptions.getService();
 
     Span parentSpan =
         tracer
@@ -7872,9 +7951,9 @@ class ITBigQueryTest {
               .setLocation("US")
               .build();
 
-      Dataset dataset = bigquery.create(info);
+      Dataset dataset = otelBigquery.create(info);
       assertNotNull(dataset);
-      dataset = bigquery.getDataset(dataset.getDatasetId().getDataset());
+      dataset = otelBigquery.getDataset(dataset.getDatasetId().getDataset());
       assertNotNull(dataset);
 
       DatasetInfo updatedInfo =
@@ -7884,9 +7963,9 @@ class ITBigQueryTest {
               .setLabels(LABELS)
               .build();
 
-      dataset = bigquery.update(updatedInfo, DatasetOption.accessPolicyVersion(2));
+      dataset = otelBigquery.update(updatedInfo, DatasetOption.accessPolicyVersion(2));
       assertEquals("Updated Description", dataset.getDescription());
-      assertTrue(bigquery.delete(dataset.getDatasetId()));
+      assertTrue(otelBigquery.delete(dataset.getDatasetId()));
     } finally {
       parentSpan.end();
       Map<AttributeKey<?>, Object> createMap =

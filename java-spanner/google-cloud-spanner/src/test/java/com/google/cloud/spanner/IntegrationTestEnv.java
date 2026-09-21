@@ -69,6 +69,8 @@ public class IntegrationTestEnv extends ExternalResource {
    */
   public static final String TEST_INSTANCE_PROPERTY = "spanner.testenv.instance";
 
+  public static final String TEST_INSTANCE_CONFIG_PROPERTY = "spanner.testenv.instance_config";
+
   public static final String MAX_CREATE_INSTANCE_ATTEMPTS =
       "spanner.testenv.max_create_instance_attempts";
 
@@ -130,7 +132,6 @@ public class IntegrationTestEnv extends ExternalResource {
   @Override
   protected void before() throws Throwable {
     this.initializeConfig();
-    assumeFalse(alwaysCreateNewInstance && isCloudDevel());
     assumeFalse(
         "Creating instances is not supported in Spanner Omni",
         alwaysCreateNewInstance && isSpannerOmni());
@@ -211,9 +212,11 @@ public class IntegrationTestEnv extends ExternalResource {
   }
 
   private void initializeInstance(InstanceId instanceId) throws Exception {
+    String instanceConfigName =
+        System.getProperty(TEST_INSTANCE_CONFIG_PROPERTY, "regional-us-east4");
     InstanceConfig instanceConfig;
     try {
-      instanceConfig = instanceAdminClient.getInstanceConfig("regional-us-east4");
+      instanceConfig = instanceAdminClient.getInstanceConfig(instanceConfigName);
     } catch (Throwable ignore) {
       instanceConfig =
           Iterators.get(instanceAdminClient.listInstanceConfigs().iterateAll().iterator(), 0, null);

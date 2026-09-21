@@ -30,7 +30,7 @@ public interface NutrientQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface NutrientQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface NutrientQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -73,7 +73,7 @@ public interface NutrientQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the nutrient.
+   * Required. The nutrient type.
    * </pre>
    *
    * <code>
@@ -88,7 +88,7 @@ public interface NutrientQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the nutrient.
+   * Required. The nutrient type.
    * </pre>
    *
    * <code>

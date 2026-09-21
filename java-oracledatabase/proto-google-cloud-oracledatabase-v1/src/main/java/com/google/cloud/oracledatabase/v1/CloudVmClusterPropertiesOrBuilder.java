@@ -908,4 +908,70 @@ public interface CloudVmClusterPropertiesOrBuilder
    */
   com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
       getStorageManagementType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM file system storage / VM images are stored
+   * on local DB server storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vmFileSystemStorageType.
+   */
+  int getVmFileSystemStorageTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM file system storage / VM images are stored
+   * on local DB server storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vmFileSystemStorageType.
+   */
+  com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+      getVmFileSystemStorageType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM backups are stored on local DB server
+   * storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vmBackupStorageType.
+   */
+  int getVmBackupStorageTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM backups are stored on local DB server
+   * storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vmBackupStorageType.
+   */
+  com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+      getVmBackupStorageType();
 }

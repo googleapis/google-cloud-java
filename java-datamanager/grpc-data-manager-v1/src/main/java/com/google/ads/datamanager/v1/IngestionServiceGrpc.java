@@ -133,6 +133,57 @@ public final class IngestionServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest,
+          com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+      getRemoveAllAudienceMembersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveAllAudienceMembers",
+      requestType = com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest.class,
+      responseType = com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest,
+          com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+      getRemoveAllAudienceMembersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest,
+            com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+        getRemoveAllAudienceMembersMethod;
+    if ((getRemoveAllAudienceMembersMethod = IngestionServiceGrpc.getRemoveAllAudienceMembersMethod)
+        == null) {
+      synchronized (IngestionServiceGrpc.class) {
+        if ((getRemoveAllAudienceMembersMethod =
+                IngestionServiceGrpc.getRemoveAllAudienceMembersMethod)
+            == null) {
+          IngestionServiceGrpc.getRemoveAllAudienceMembersMethod =
+              getRemoveAllAudienceMembersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest,
+                          com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RemoveAllAudienceMembers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IngestionServiceMethodDescriptorSupplier("RemoveAllAudienceMembers"))
+                      .build();
+        }
+      }
+    }
+    return getRemoveAllAudienceMembersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.ads.datamanager.v1.IngestEventsRequest,
           com.google.ads.datamanager.v1.IngestEventsResponse>
       getIngestEventsMethod;
@@ -377,6 +428,21 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Removes all audience members from the provided destinations.
+     * </pre>
+     */
+    default void removeAllAudienceMembers(
+        com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRemoveAllAudienceMembersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Uploads a list of
      * [Event][google.ads.datamanager.v1.Event] resources from
      * the provided [Destination][google.ads.datamanager.v1.Destination].
@@ -500,6 +566,23 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Removes all audience members from the provided destinations.
+     * </pre>
+     */
+    public void removeAllAudienceMembers(
+        com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveAllAudienceMembersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Uploads a list of
      * [Event][google.ads.datamanager.v1.Event] resources from
      * the provided [Destination][google.ads.datamanager.v1.Destination].
@@ -609,6 +692,20 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Removes all audience members from the provided destinations.
+     * </pre>
+     */
+    public com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse removeAllAudienceMembers(
+        com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRemoveAllAudienceMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Uploads a list of
      * [Event][google.ads.datamanager.v1.Event] resources from
      * the provided [Destination][google.ads.datamanager.v1.Destination].
@@ -699,6 +796,19 @@ public final class IngestionServiceGrpc {
         com.google.ads.datamanager.v1.RemoveAudienceMembersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRemoveAudienceMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes all audience members from the provided destinations.
+     * </pre>
+     */
+    public com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse removeAllAudienceMembers(
+        com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveAllAudienceMembersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -801,6 +911,21 @@ public final class IngestionServiceGrpc {
      *
      *
      * <pre>
+     * Removes all audience members from the provided destinations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembers(
+            com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveAllAudienceMembersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Uploads a list of
      * [Event][google.ads.datamanager.v1.Event] resources from
      * the provided [Destination][google.ads.datamanager.v1.Destination].
@@ -847,9 +972,10 @@ public final class IngestionServiceGrpc {
 
   private static final int METHODID_INGEST_AUDIENCE_MEMBERS = 0;
   private static final int METHODID_REMOVE_AUDIENCE_MEMBERS = 1;
-  private static final int METHODID_INGEST_EVENTS = 2;
-  private static final int METHODID_INGEST_AD_EVENTS = 3;
-  private static final int METHODID_RETRIEVE_REQUEST_STATUS = 4;
+  private static final int METHODID_REMOVE_ALL_AUDIENCE_MEMBERS = 2;
+  private static final int METHODID_INGEST_EVENTS = 3;
+  private static final int METHODID_INGEST_AD_EVENTS = 4;
+  private static final int METHODID_RETRIEVE_REQUEST_STATUS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -880,6 +1006,13 @@ public final class IngestionServiceGrpc {
               (com.google.ads.datamanager.v1.RemoveAudienceMembersRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.ads.datamanager.v1.RemoveAudienceMembersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REMOVE_ALL_AUDIENCE_MEMBERS:
+          serviceImpl.removeAllAudienceMembers(
+              (com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>)
                   responseObserver);
           break;
         case METHODID_INGEST_EVENTS:
@@ -933,6 +1066,13 @@ public final class IngestionServiceGrpc {
                     com.google.ads.datamanager.v1.RemoveAudienceMembersRequest,
                     com.google.ads.datamanager.v1.RemoveAudienceMembersResponse>(
                     service, METHODID_REMOVE_AUDIENCE_MEMBERS)))
+        .addMethod(
+            getRemoveAllAudienceMembersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest,
+                    com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse>(
+                    service, METHODID_REMOVE_ALL_AUDIENCE_MEMBERS)))
         .addMethod(
             getIngestEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1007,6 +1147,7 @@ public final class IngestionServiceGrpc {
                       .setSchemaDescriptor(new IngestionServiceFileDescriptorSupplier())
                       .addMethod(getIngestAudienceMembersMethod())
                       .addMethod(getRemoveAudienceMembersMethod())
+                      .addMethod(getRemoveAllAudienceMembersMethod())
                       .addMethod(getIngestEventsMethod())
                       .addMethod(getIngestAdEventsMethod())
                       .addMethod(getRetrieveRequestStatusMethod())

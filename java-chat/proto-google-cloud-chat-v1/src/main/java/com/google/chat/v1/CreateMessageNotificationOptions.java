@@ -113,9 +113,9 @@ public final class CreateMessageNotificationOptions extends com.google.protobuf.
      *
      *
      * <pre>
-     * Silence the notification as if the recipients have [Chat Do Not
-     * Disturb](https://support.google.com/chat/answer/9093489) enabled or
-     * have muted the space.
+     * Do not notify recipients, and do not mark the message as unread.
+     * This behaves similarly to the user muting the conversation or enabling
+     * [Chat Do Not Disturb](https://support.google.com/chat/answer/9093489).
      *
      * Requires [app authentication]
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -171,9 +171,9 @@ public final class CreateMessageNotificationOptions extends com.google.protobuf.
      *
      *
      * <pre>
-     * Silence the notification as if the recipients have [Chat Do Not
-     * Disturb](https://support.google.com/chat/answer/9093489) enabled or
-     * have muted the space.
+     * Do not notify recipients, and do not mark the message as unread.
+     * This behaves similarly to the user muting the conversation or enabling
+     * [Chat Do Not Disturb](https://support.google.com/chat/answer/9093489).
      *
      * Requires [app authentication]
      * (https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).

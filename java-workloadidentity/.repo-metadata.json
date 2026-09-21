@@ -1,0 +1,15 @@
+{
+  "api_shortname": "workloadidentity",
+  "name_pretty": "Workload Identity",
+  "product_documentation": "https://cloud.google.com/iam/",
+  "api_description": "",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-workloadidentity/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-workloadidentity",
+  "distribution_name": "com.google.cloud:google-cloud-workloadidentity",
+  "api_id": "workloadidentity.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}

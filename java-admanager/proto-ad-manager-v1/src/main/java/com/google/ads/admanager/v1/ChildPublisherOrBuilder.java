@@ -55,4 +55,737 @@ public interface ChildPublisherOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The email for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string email = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The email for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string email = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The email.
+   */
+  java.lang.String getEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The email for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>optional string email = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString getEmailBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The resource name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s Ad Manager
+   * network.
+   *
+   * Format: `networks/{network_code}`
+   * </pre>
+   *
+   * <code>
+   * optional string child_network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the childNetwork field is set.
+   */
+  boolean hasChildNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The resource name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s Ad Manager
+   * network.
+   *
+   * Format: `networks/{network_code}`
+   * </pre>
+   *
+   * <code>
+   * optional string child_network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The childNetwork.
+   */
+  java.lang.String getChildNetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The resource name of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s Ad Manager
+   * network.
+   *
+   * Format: `networks/{network_code}`
+   * </pre>
+   *
+   * <code>
+   * optional string child_network = 5 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for childNetwork.
+   */
+  com.google.protobuf.ByteString getChildNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of delegation for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This attribute is immutable while the relationship is active.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationTypeEnum.DelegationType delegation_type = 9 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the delegationType field is set.
+   */
+  boolean hasDelegationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of delegation for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This attribute is immutable while the relationship is active.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationTypeEnum.DelegationType delegation_type = 9 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for delegationType.
+   */
+  int getDelegationTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The type of delegation for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This attribute is immutable while the relationship is active.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationTypeEnum.DelegationType delegation_type = 9 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The delegationType.
+   */
+  com.google.ads.admanager.v1.DelegationTypeEnum.DelegationType getDelegationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revenue share that the parent publisher will receive in
+   * millipercent. For example, 15000 millipercent is 15%.
+   *
+   * This attribute is only settable for Manage Account
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s of non-reseller
+   * parent publishers. Otherwise, it is read-only and always 100%.
+   *
+   * Additionally, this attribute is immutable while the relationship is active.
+   * </pre>
+   *
+   * <code>
+   * optional int64 parent_revenue_share_millipercent = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parentRevenueShareMillipercent field is set.
+   */
+  boolean hasParentRevenueShareMillipercent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revenue share that the parent publisher will receive in
+   * millipercent. For example, 15000 millipercent is 15%.
+   *
+   * This attribute is only settable for Manage Account
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s of non-reseller
+   * parent publishers. Otherwise, it is read-only and always 100%.
+   *
+   * Additionally, this attribute is immutable while the relationship is active.
+   * </pre>
+   *
+   * <code>
+   * optional int64 parent_revenue_share_millipercent = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parentRevenueShareMillipercent.
+   */
+  long getParentRevenueShareMillipercent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The seller ID for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher], as specified in
+   * the parent publisher's sellers.json file.
+   *
+   * This attribute is only applicable to Manage Inventory
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * </pre>
+   *
+   * <code>optional string seller_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the sellerId field is set.
+   */
+  boolean hasSellerId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The seller ID for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher], as specified in
+   * the parent publisher's sellers.json file.
+   *
+   * This attribute is only applicable to Manage Inventory
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * </pre>
+   *
+   * <code>optional string seller_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sellerId.
+   */
+  java.lang.String getSellerId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The seller ID for the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher], as specified in
+   * the parent publisher's sellers.json file.
+   *
+   * This attribute is only applicable to Manage Inventory
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * </pre>
+   *
+   * <code>optional string seller_id = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sellerId.
+   */
+  com.google.protobuf.ByteString getSellerIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall onboarding readiness of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This status is correlated with ad serving, but does not include site-level
+   * approval information.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.McmReadinessStatusEnum.McmReadinessStatus readiness_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the readinessStatus field is set.
+   */
+  boolean hasReadinessStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall onboarding readiness of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This status is correlated with ad serving, but does not include site-level
+   * approval information.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.McmReadinessStatusEnum.McmReadinessStatus readiness_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for readinessStatus.
+   */
+  int getReadinessStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The overall onboarding readiness of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   *
+   * This status is correlated with ad serving, but does not include site-level
+   * approval information.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.McmReadinessStatusEnum.McmReadinessStatus readiness_status = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The readinessStatus.
+   */
+  com.google.ads.admanager.v1.McmReadinessStatusEnum.McmReadinessStatus getReadinessStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the invitation request to the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationInvitationStatusEnum.DelegationInvitationStatus invitation_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the invitationStatus field is set.
+   */
+  boolean hasInvitationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the invitation request to the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationInvitationStatusEnum.DelegationInvitationStatus invitation_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for invitationStatus.
+   */
+  int getInvitationStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the invitation request to the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationInvitationStatusEnum.DelegationInvitationStatus invitation_status = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The invitationStatus.
+   */
+  com.google.ads.admanager.v1.DelegationInvitationStatusEnum.DelegationInvitationStatus
+      getInvitationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approvalStatus field is set.
+   */
+  boolean hasApprovalStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for approvalStatus.
+   */
+  int getApprovalStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The approval status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus approval_status = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approvalStatus.
+   */
+  com.google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus
+      getApprovalStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s identity
+   * verification.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherIdentityVerificationStatusEnum.ChildPublisherIdentityVerificationStatus identity_verification_status = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the identityVerificationStatus field is set.
+   */
+  boolean hasIdentityVerificationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s identity
+   * verification.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherIdentityVerificationStatusEnum.ChildPublisherIdentityVerificationStatus identity_verification_status = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for identityVerificationStatus.
+   */
+  int getIdentityVerificationStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s identity
+   * verification.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherIdentityVerificationStatusEnum.ChildPublisherIdentityVerificationStatus identity_verification_status = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The identityVerificationStatus.
+   */
+  com.google.ads.admanager.v1.ChildPublisherIdentityVerificationStatusEnum
+          .ChildPublisherIdentityVerificationStatus
+      getIdentityVerificationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s address
+   * verification (i.e., mail PIN).
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherAddressVerificationStatusEnum.ChildPublisherAddressVerificationStatus address_verification_status = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the addressVerificationStatus field is set.
+   */
+  boolean hasAddressVerificationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s address
+   * verification (i.e., mail PIN).
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherAddressVerificationStatusEnum.ChildPublisherAddressVerificationStatus address_verification_status = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for addressVerificationStatus.
+   */
+  int getAddressVerificationStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]'s address
+   * verification (i.e., mail PIN).
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildPublisherAddressVerificationStatusEnum.ChildPublisherAddressVerificationStatus address_verification_status = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The addressVerificationStatus.
+   */
+  com.google.ads.admanager.v1.ChildPublisherAddressVerificationStatusEnum
+          .ChildPublisherAddressVerificationStatus
+      getAddressVerificationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pending onboarding tasks that must be completed by the
+   * child publisher before Google's policy compliance (i.e.
+   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask pending_onboarding_tasks = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the pendingOnboardingTasks.
+   */
+  java.util.List<
+          com.google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask>
+      getPendingOnboardingTasksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pending onboarding tasks that must be completed by the
+   * child publisher before Google's policy compliance (i.e.
+   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask pending_onboarding_tasks = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of pendingOnboardingTasks.
+   */
+  int getPendingOnboardingTasksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pending onboarding tasks that must be completed by the
+   * child publisher before Google's policy compliance (i.e.
+   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask pending_onboarding_tasks = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The pendingOnboardingTasks at the given index.
+   */
+  com.google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask
+      getPendingOnboardingTasks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pending onboarding tasks that must be completed by the
+   * child publisher before Google's policy compliance (i.e.
+   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask pending_onboarding_tasks = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for pendingOnboardingTasks.
+   */
+  java.util.List<java.lang.Integer> getPendingOnboardingTasksValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pending onboarding tasks that must be completed by the
+   * child publisher before Google's policy compliance (i.e.
+   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ChildPublisherOnboardingTaskEnum.ChildPublisherOnboardingTask pending_onboarding_tasks = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of pendingOnboardingTasks at the given index.
+   */
+  int getPendingOnboardingTasksValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationAccountStatusEnum.DelegationAccountStatus account_status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the accountStatus field is set.
+   */
+  boolean hasAccountStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationAccountStatusEnum.DelegationAccountStatus account_status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for accountStatus.
+   */
+  int getAccountStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The account status of the
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DelegationAccountStatusEnum.DelegationAccountStatus account_status = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The accountStatus.
+   */
+  com.google.ads.admanager.v1.DelegationAccountStatusEnum.DelegationAccountStatus
+      getAccountStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the approved revenue share that the parent publisher
+   * will receive in millipercent. For example, 15000 millipercent is 15%.
+   *
+   * This attribute is only set for Manage Account
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s of non-reseller
+   * parent publishers.
+   * </pre>
+   *
+   * <code>
+   * optional int64 approved_manage_account_revenue_share_millipercent = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the approvedManageAccountRevenueShareMillipercent field is set.
+   */
+  boolean hasApprovedManageAccountRevenueShareMillipercent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the approved revenue share that the parent publisher
+   * will receive in millipercent. For example, 15000 millipercent is 15%.
+   *
+   * This attribute is only set for Manage Account
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s of non-reseller
+   * parent publishers.
+   * </pre>
+   *
+   * <code>
+   * optional int64 approved_manage_account_revenue_share_millipercent = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The approvedManageAccountRevenueShareMillipercent.
+   */
+  long getApprovedManageAccountRevenueShareMillipercent();
 }

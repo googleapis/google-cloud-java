@@ -61,12 +61,12 @@ public final class MedicalDeviceInfoProto extends com.google.protobuf.GeneratedF
           + "\017service_version\030\002 \001(\tB\003\340A\003\022\035\n"
           + "\020firmware_version\030\003 \001(\tB\003\340A\003\022\034\n"
           + "\017feature_version\030\004 \001(\tB\003\340A\003\022\031\n"
-          + "\014device_model\030\005 \001(\tB\003\340A\003B\214\002\n"
+          + "\014device_model\030\005 \001(\tB\003\340A\003B\210\002\n"
           + "\'com.google.devicesandservices.health.v4B\026MedicalDe"
-          + "viceInfoProtoP\001ZRgoogle.golang.org/genproto/googleapis/devicesandservices/health"
-          + "/apiv4main;healthpb\252\002#Google.DevicesAndS"
-          + "ervices.Health.V4\312\002#Google\\DevicesAndSer"
-          + "vices\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
+          + "viceInfoProtoP\001ZNgoogle.golang.org/genproto/googleapis/devicesandservices/health"
+          + "/apiv4;healthpb\252\002#Google.DevicesAndServi"
+          + "ces.Health.V4\312\002#Google\\DevicesAndService"
+          + "s\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -105,6 +105,29 @@ public class MockIngestionServiceImpl extends IngestionServiceImplBase {
   }
 
   @Override
+  public void removeAllAudienceMembers(
+      RemoveAllAudienceMembersRequest request,
+      StreamObserver<RemoveAllAudienceMembersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveAllAudienceMembersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveAllAudienceMembersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveAllAudienceMembers, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveAllAudienceMembersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void ingestEvents(
       IngestEventsRequest request, StreamObserver<IngestEventsResponse> responseObserver) {
     Object response = responses.poll();

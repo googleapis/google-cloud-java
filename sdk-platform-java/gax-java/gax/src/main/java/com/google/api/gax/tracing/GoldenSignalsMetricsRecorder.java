@@ -59,8 +59,7 @@ class GoldenSignalsMetricsRecorder {
           900.0, 3600.0);
   final DoubleHistogram clientRequestDurationRecorder;
 
-  @Nullable
-  static GoldenSignalsMetricsRecorder create(
+  static @Nullable GoldenSignalsMetricsRecorder create(
       OpenTelemetry openTelemetry, LibraryMetadata libraryMetadata) {
     if (libraryMetadata == null || Strings.isNullOrEmpty(libraryMetadata.artifactName())) {
       return null;

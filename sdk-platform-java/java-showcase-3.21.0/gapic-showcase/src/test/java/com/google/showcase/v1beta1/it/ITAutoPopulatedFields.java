@@ -134,7 +134,7 @@ class ITAutoPopulatedFields {
 
     // Adding `Code.INTERNAL` is necessary because for httpJson requests, the httpJson status code
     // is mapped here:
-    // https://github.com/googleapis/sdk-platform-java/blob/acdde47445916dd306ce8b91489fab45c9c2ef50/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/HttpJsonStatusCode.java#L96-L133
+    // https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/sdk-platform-java/gax-java/gax-httpjson/src/main/java/com/google/api/gax/httpjson/HttpJsonStatusCode.java#L99-L136
     // Therefore, just setting the error code to `Code.UNKNOWN` for httpJson will get translated
     // instead to `Code.INTERNAL`.
     Set<Code> retryableCodes = ImmutableSet.of(Code.UNKNOWN, Code.INTERNAL);

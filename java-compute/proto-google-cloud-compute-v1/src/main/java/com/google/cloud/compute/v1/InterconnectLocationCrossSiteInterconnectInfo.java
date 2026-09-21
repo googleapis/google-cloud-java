@@ -150,6 +150,80 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
     }
   }
 
+  public static final int MAX_DYNAMIC_PATH_BANDWIDTH_GBPS_FIELD_NUMBER = 378021355;
+  private long maxDynamicPathBandwidthGbps_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+   * WireGroup for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+   *
+   * @return Whether the maxDynamicPathBandwidthGbps field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxDynamicPathBandwidthGbps() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+   * WireGroup for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+   *
+   * @return The maxDynamicPathBandwidthGbps.
+   */
+  @java.lang.Override
+  public long getMaxDynamicPathBandwidthGbps() {
+    return maxDynamicPathBandwidthGbps_;
+  }
+
+  public static final int MAX_FIXED_PATH_BANDWIDTH_GBPS_FIELD_NUMBER = 346138080;
+  private long maxFixedPathBandwidthGbps_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+   * for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+   *
+   * @return Whether the maxFixedPathBandwidthGbps field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxFixedPathBandwidthGbps() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+   * for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+   *
+   * @return The maxFixedPathBandwidthGbps.
+   */
+  @java.lang.Override
+  public long getMaxFixedPathBandwidthGbps() {
+    return maxFixedPathBandwidthGbps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -167,6 +241,12 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3053931, city_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(346138080, maxFixedPathBandwidthGbps_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(378021355, maxDynamicPathBandwidthGbps_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -178,6 +258,16 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3053931, city_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              346138080, maxFixedPathBandwidthGbps_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              378021355, maxDynamicPathBandwidthGbps_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -200,6 +290,14 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
     if (hasCity()) {
       if (!getCity().equals(other.getCity())) return false;
     }
+    if (hasMaxDynamicPathBandwidthGbps() != other.hasMaxDynamicPathBandwidthGbps()) return false;
+    if (hasMaxDynamicPathBandwidthGbps()) {
+      if (getMaxDynamicPathBandwidthGbps() != other.getMaxDynamicPathBandwidthGbps()) return false;
+    }
+    if (hasMaxFixedPathBandwidthGbps() != other.hasMaxFixedPathBandwidthGbps()) return false;
+    if (hasMaxFixedPathBandwidthGbps()) {
+      if (getMaxFixedPathBandwidthGbps() != other.getMaxFixedPathBandwidthGbps()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -214,6 +312,14 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
     if (hasCity()) {
       hash = (37 * hash) + CITY_FIELD_NUMBER;
       hash = (53 * hash) + getCity().hashCode();
+    }
+    if (hasMaxDynamicPathBandwidthGbps()) {
+      hash = (37 * hash) + MAX_DYNAMIC_PATH_BANDWIDTH_GBPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxDynamicPathBandwidthGbps());
+    }
+    if (hasMaxFixedPathBandwidthGbps()) {
+      hash = (37 * hash) + MAX_FIXED_PATH_BANDWIDTH_GBPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxFixedPathBandwidthGbps());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -361,6 +467,8 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
       super.clear();
       bitField0_ = 0;
       city_ = "";
+      maxDynamicPathBandwidthGbps_ = 0L;
+      maxFixedPathBandwidthGbps_ = 0L;
       return this;
     }
 
@@ -407,6 +515,14 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
         result.city_ = city_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.maxDynamicPathBandwidthGbps_ = maxDynamicPathBandwidthGbps_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.maxFixedPathBandwidthGbps_ = maxFixedPathBandwidthGbps_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -431,6 +547,12 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
         city_ = other.city_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasMaxDynamicPathBandwidthGbps()) {
+        setMaxDynamicPathBandwidthGbps(other.getMaxDynamicPathBandwidthGbps());
+      }
+      if (other.hasMaxFixedPathBandwidthGbps()) {
+        setMaxFixedPathBandwidthGbps(other.getMaxFixedPathBandwidthGbps());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -464,6 +586,18 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
                 bitField0_ |= 0x00000001;
                 break;
               } // case 24431450
+            case -1525862656:
+              {
+                maxFixedPathBandwidthGbps_ = input.readInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1525862656
+            case -1270796456:
+              {
+                maxDynamicPathBandwidthGbps_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1270796456
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -617,6 +751,158 @@ public final class InterconnectLocationCrossSiteInterconnectInfo
       checkByteStringIsUtf8(value);
       city_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private long maxDynamicPathBandwidthGbps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+     * WireGroup for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+     *
+     * @return Whether the maxDynamicPathBandwidthGbps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxDynamicPathBandwidthGbps() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+     * WireGroup for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+     *
+     * @return The maxDynamicPathBandwidthGbps.
+     */
+    @java.lang.Override
+    public long getMaxDynamicPathBandwidthGbps() {
+      return maxDynamicPathBandwidthGbps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+     * WireGroup for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+     *
+     * @param value The maxDynamicPathBandwidthGbps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxDynamicPathBandwidthGbps(long value) {
+
+      maxDynamicPathBandwidthGbps_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+     * WireGroup for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxDynamicPathBandwidthGbps() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      maxDynamicPathBandwidthGbps_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxFixedPathBandwidthGbps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+     * for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+     *
+     * @return Whether the maxFixedPathBandwidthGbps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxFixedPathBandwidthGbps() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+     * for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+     *
+     * @return The maxFixedPathBandwidthGbps.
+     */
+    @java.lang.Override
+    public long getMaxFixedPathBandwidthGbps() {
+      return maxFixedPathBandwidthGbps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+     * for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+     *
+     * @param value The maxFixedPathBandwidthGbps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxFixedPathBandwidthGbps(long value) {
+
+      maxFixedPathBandwidthGbps_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+     * for this metro.
+     * </pre>
+     *
+     * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxFixedPathBandwidthGbps() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      maxFixedPathBandwidthGbps_ = 0L;
       onChanged();
       return this;
     }

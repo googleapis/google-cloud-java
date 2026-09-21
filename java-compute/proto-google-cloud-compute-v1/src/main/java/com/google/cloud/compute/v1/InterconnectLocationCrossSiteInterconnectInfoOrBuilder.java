@@ -70,4 +70,60 @@ public interface InterconnectLocationCrossSiteInterconnectInfoOrBuilder
    * @return The bytes for city.
    */
   com.google.protobuf.ByteString getCityBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+   * WireGroup for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+   *
+   * @return Whether the maxDynamicPathBandwidthGbps field is set.
+   */
+  boolean hasMaxDynamicPathBandwidthGbps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for dynamic paths allowable per
+   * WireGroup for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_dynamic_path_bandwidth_gbps = 378021355;</code>
+   *
+   * @return The maxDynamicPathBandwidthGbps.
+   */
+  long getMaxDynamicPathBandwidthGbps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+   * for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+   *
+   * @return Whether the maxFixedPathBandwidthGbps field is set.
+   */
+  boolean hasMaxFixedPathBandwidthGbps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The maximum unmetered bandwidth for fixed paths allowable per WireGroup
+   * for this metro.
+   * </pre>
+   *
+   * <code>optional int64 max_fixed_path_bandwidth_gbps = 346138080;</code>
+   *
+   * @return The maxFixedPathBandwidthGbps.
+   */
+  long getMaxFixedPathBandwidthGbps();
 }

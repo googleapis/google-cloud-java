@@ -61,9 +61,33 @@ public final class MigrationEntitiesProto extends com.google.protobuf.GeneratedF
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_migration_v2_TranslationTaskResult_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_bigquery_migration_v2_TranslationTaskResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_TaskOutput_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_TaskOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_RecognizedInput_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_RecognizedInput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_WorkSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_WorkSummary_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -164,21 +188,74 @@ public final class MigrationEntitiesProto extends com.google.protobuf.GeneratedF
           + "\006PAUSED\020\005\022\026\n"
           + "\022PENDING_DEPENDENCY\020\006:\210\001\352A\204\001\n"
           + "1bigquerymigration.googleapis.com/MigrationSubtask\022Oprojects/{project}/locations/"
-          + "{location}/workflows/{workflow}/subtasks/{subtask}\"~\n"
+          + "{location}/workflows/{workflow}/subtasks/{subtask}\"\302\002\n"
           + "\023MigrationTaskResult\022\\\n"
-          + "\027translation_task_result\030\002 \001(\01329.google.clou"
-          + "d.bigquery.migration.v2.TranslationTaskResultH\000B\t\n"
+          + "\027translation_task_result\030\002 \001(\01329.google.clo"
+          + "ud.bigquery.migration.v2.TranslationTaskResultH\000\022^\n"
+          + "\014task_outputs\030\003 \003(\0132H.google."
+          + "cloud.bigquery.migration.v2.MigrationTaskResult.TaskOutputsEntry\032b\n"
+          + "\020TaskOutputsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022=\n"
+          + "\005value\030\002 \001(\0132..google.cloud.bigquery.migration.v2.TaskOutput:\0028\001B"
+          + "\t\n"
           + "\007details\"\314\001\n"
           + "\025TranslationTaskResult\022H\n"
-          + "\023translated_literals\030\001 \003(\0132+.goog"
-          + "le.cloud.bigquery.migration.v2.Literal\022T\n"
-          + "\023report_log_messages\030\002 \003(\01327.google.clo"
-          + "ud.bigquery.migration.v2.GcsReportLogMessage\022\023\n"
-          + "\013console_uri\030\003 \001(\tB\322\001\n"
-          + "&com.google.cloud.bigquery.migration.v2B\026MigrationE"
-          + "ntitiesProtoP\001ZDcloud.google.com/go/bigquery/migration/apiv2/migrationpb;migrati"
-          + "onpb\252\002\"Google.Cloud.BigQuery.Migration.V"
-          + "2\312\002\"Google\\Cloud\\BigQuery\\Migration\\V2b\006proto3"
+          + "\023translated_literals\030\001"
+          + " \003(\0132+.google.cloud.bigquery.migration.v2.Literal\022T\n"
+          + "\023report_log_messages\030\002 \003(\01327.google.cloud."
+          + "bigquery.migration.v2.GcsReportLogMessage\022\023\n"
+          + "\013console_uri\030\003 \001(\t\"\246\002\n\n"
+          + "TaskOutput\022K\n"
+          + "\016lineage_output\030\003"
+          + " \001(\01321.google.cloud.bigquery.migration.v2.LineageOutputH\000\022H\n"
+          + "\005state\030\001"
+          + " \001(\01624.google.cloud.bigquery.migration.v2.TaskOutput.StateB\003\340A\003\022/\n"
+          + "\020processing_error\030\002 \001(\0132\025.google.rpc.ErrorInfo\"F\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007PENDING\020\001\022\r\n"
+          + "\tSUCCEEDED\020\002\022\n\n"
+          + "\006FAILED\020\003B\010\n"
+          + "\006output\"\227\010\n\r"
+          + "LineageOutput\022\022\n\n"
+          + "webapp_uri\030\001 \001(\t\022a\n"
+          + "\021recognized_inputs\030\002 \003(\0132A.google.cloud."
+          + "bigquery.migration.v2.LineageOutput.RecognizedInputB\003\340A\003\022j\n"
+          + "\033processing_progress_reports\030\003 \003(\0132@.google.cloud.bigquery.mi"
+          + "gration.v2.LineageOutput.ProgressReportB\003\340A\003\032\331\001\n"
+          + "\017RecognizedInput\022Y\n"
+          + "\004type\030\001 \001(\0162F"
+          + ".google.cloud.bigquery.migration.v2.LineageOutput.RecognizedInput.TypeB\003\340A\003\022$\n"
+          + "\027uncompressed_size_bytes\030\002 \001(\003B\003\340A\003\"E\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010METADATA\020\001\022\r\n"
+          + "\tQUERY_LOG\020\002\022\n\n"
+          + "\006SCRIPT\020\003\032\306\004\n"
+          + "\016ProgressReport\022o\n"
+          + "\020processing_stage\030\001 \001(\0162P.google.c"
+          + "loud.bigquery.migration.v2.LineageOutput.ProgressReport.ProcessingStageB\003\340A\003\022i\n"
+          + "\016work_summaries\030\002 \003(\0132L.google.cloud.bigq"
+          + "uery.migration.v2.LineageOutput.ProgressReport.WorkSummaryB\003\340A\003\032\367\001\n"
+          + "\013WorkSummary\022f\n"
+          + "\005state\030\001 \001(\0162R.google.cloud.bigquery.m"
+          + "igration.v2.LineageOutput.ProgressReport.WorkSummary.StateB\003\340A\003\022\021\n"
+          + "\004size\030\002 \001(\003B\003\340A\003\022\024\n"
+          + "\007comment\030\003 \001(\tB\003\340A\003\"W\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\r\n"
+          + "\tSUCCEEDED\020\001\022\n\n"
+          + "\006FAILED\020\002\022\017\n"
+          + "\013IN_PROGRESS\020\003\022\013\n"
+          + "\007SKIPPED\020\004\"^\n"
+          + "\017ProcessingStage\022 \n"
+          + "\034PROCESSING_STAGE_UNSPECIFIED\020\000\022\024\n"
+          + "\017INPUT_INGESTION\020\350\007\022\023\n"
+          + "\016POSTPROCESSING\020\320\017B\322\001\n"
+          + "&com.google.cloud.bigquery.migration.v2B\026MigrationEntitiesProtoP\001ZD"
+          + "cloud.google.com/go/bigquery/migration/a"
+          + "piv2/migrationpb;migrationpb\252\002\"Google.Cl"
+          + "oud.BigQuery.Migration.V2\312\002\"Google\\Cloud\\BigQuery\\Migration\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -258,7 +335,16 @@ public final class MigrationEntitiesProto extends com.google.protobuf.GeneratedF
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_descriptor,
             new java.lang.String[] {
-              "TranslationTaskResult", "Details",
+              "TranslationTaskResult", "TaskOutputs", "Details",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_descriptor =
+        internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_MigrationTaskResult_TaskOutputsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_bigquery_migration_v2_TranslationTaskResult_descriptor =
         getDescriptor().getMessageType(4);
@@ -267,6 +353,49 @@ public final class MigrationEntitiesProto extends com.google.protobuf.GeneratedF
             internal_static_google_cloud_bigquery_migration_v2_TranslationTaskResult_descriptor,
             new java.lang.String[] {
               "TranslatedLiterals", "ReportLogMessages", "ConsoleUri",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_TaskOutput_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_bigquery_migration_v2_TaskOutput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_TaskOutput_descriptor,
+            new java.lang.String[] {
+              "LineageOutput", "State", "ProcessingError", "Output",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_LineageOutput_descriptor,
+            new java.lang.String[] {
+              "WebappUri", "RecognizedInputs", "ProcessingProgressReports",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_RecognizedInput_descriptor =
+        internal_static_google_cloud_bigquery_migration_v2_LineageOutput_descriptor.getNestedType(
+            0);
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_RecognizedInput_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_LineageOutput_RecognizedInput_descriptor,
+            new java.lang.String[] {
+              "Type", "UncompressedSizeBytes",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_descriptor =
+        internal_static_google_cloud_bigquery_migration_v2_LineageOutput_descriptor.getNestedType(
+            1);
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_descriptor,
+            new java.lang.String[] {
+              "ProcessingStage", "WorkSummaries",
+            });
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_WorkSummary_descriptor =
+        internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_WorkSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_migration_v2_LineageOutput_ProgressReport_WorkSummary_descriptor,
+            new java.lang.String[] {
+              "State", "Size", "Comment",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesResponse;
+import com.google.cloud.dataform.v1beta1.PipelineConfig;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
 
 public class AsyncInstallNpmPackages {
@@ -41,6 +42,7 @@ public class AsyncInstallNpmPackages {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       ApiFuture<InstallNpmPackagesResponse> future =
           dataformClient.installNpmPackagesCallable().futureCall(request);

@@ -24,9 +24,13 @@ package com.google.container.v1;
  *
  *
  * <pre>
- * TopologyManager defines the configuration options for Topology Manager
- * feature. See
- * https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/
+ * TopologyManager defines the configuration options for the
+ * [`kubelet` Topology Manager
+ * component](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+ * For more information about the supported machine types and versions for the
+ * Topology Manager in GKE, see
+ * [Customizing node system
+ * configuration](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/node-system-config#kubelet-resource-managers).
  * </pre>
  *
  * Protobuf type {@code google.container.v1.TopologyManager}
@@ -403,9 +407,13 @@ public final class TopologyManager extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * TopologyManager defines the configuration options for Topology Manager
-   * feature. See
-   * https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/
+   * TopologyManager defines the configuration options for the
+   * [`kubelet` Topology Manager
+   * component](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/).
+   * For more information about the supported machine types and versions for the
+   * Topology Manager in GKE, see
+   * [Customizing node system
+   * configuration](https://docs.cloud.google.com/kubernetes-engine/docs/how-to/node-system-config#kubelet-resource-managers).
    * </pre>
    *
    * Protobuf type {@code google.container.v1.TopologyManager}

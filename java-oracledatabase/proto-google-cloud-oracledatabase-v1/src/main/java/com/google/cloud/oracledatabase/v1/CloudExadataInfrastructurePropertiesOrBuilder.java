@@ -698,10 +698,10 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The database server type of the Exadata Infrastructure.
+   * Optional. The database server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The databaseServerType.
    */
@@ -711,10 +711,10 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The database server type of the Exadata Infrastructure.
+   * Optional. The database server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for databaseServerType.
    */
@@ -724,10 +724,10 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The storage server type of the Exadata Infrastructure.
+   * Optional. The storage server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The storageServerType.
    */
@@ -737,10 +737,10 @@ public interface CloudExadataInfrastructurePropertiesOrBuilder
    *
    *
    * <pre>
-   * Output only. The storage server type of the Exadata Infrastructure.
+   * Optional. The storage server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for storageServerType.
    */

@@ -17,7 +17,9 @@
 package com.google.cloud.spanner.connection;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -401,11 +403,29 @@ abstract class AbstractBaseUnitOfWork implements UnitOfWork {
         io.opentelemetry.context.Context.current()
             .with(OpenTelemetryContextKeys.THREAD_NAME_KEY, Thread.currentThread().getName())
             .makeCurrent()) {
-      ApiFuture<T> f = statementExecutor.submit(context.wrap(callable));
       final SpannerAsyncExecutionException caller =
           callType == CallType.ASYNC
               ? new SpannerAsyncExecutionException(statement.getStatement())
               : null;
+      final SettableApiFuture<T> statementFuture = SettableApiFuture.create();
+      synchronized (this) {
+        this.currentlyRunningStatementFuture = statementFuture;
+      }
+      final ApiFuture<T> f;
+      try {
+        f = statementExecutor.submit(context.wrap(callable));
+      } catch (Throwable t) {
+        synchronized (this) {
+          if (this.currentlyRunningStatementFuture == statementFuture) {
+            this.currentlyRunningStatementFuture = null;
+          }
+        }
+        if (isSingleUse()) {
+          endUnitOfWorkSpan();
+        }
+        statementFuture.setException(t);
+        throw t;
+      }
       final ApiFuture<T> future =
           ApiFutures.catching(
               f,
@@ -417,25 +437,36 @@ abstract class AbstractBaseUnitOfWork implements UnitOfWork {
                 throw SpannerExceptionFactory.asSpannerException(input);
               },
               MoreExecutors.directExecutor());
-      synchronized (this) {
-        this.currentlyRunningStatementFuture = future;
-      }
-      future.addListener(
-          new Runnable() {
+      ApiFutures.addCallback(
+          future,
+          new ApiFutureCallback<T>() {
             @Override
-            public void run() {
-              synchronized (this) {
-                if (currentlyRunningStatementFuture == future) {
-                  currentlyRunningStatementFuture = null;
-                }
-              }
-              if (isSingleUse()) {
-                endUnitOfWorkSpan();
-              }
+            public void onFailure(Throwable t) {
+              statementFuture.setException(t);
+            }
+
+            @Override
+            public void onSuccess(T result) {
+              statementFuture.set(result);
             }
           },
           MoreExecutors.directExecutor());
-      return future;
+      statementFuture.addListener(
+          () -> {
+            if (statementFuture.isCancelled()) {
+              future.cancel(true);
+            }
+            synchronized (AbstractBaseUnitOfWork.this) {
+              if (currentlyRunningStatementFuture == statementFuture) {
+                currentlyRunningStatementFuture = null;
+              }
+            }
+            if (isSingleUse()) {
+              endUnitOfWorkSpan();
+            }
+          },
+          MoreExecutors.directExecutor());
+      return statementFuture;
     }
   }
 

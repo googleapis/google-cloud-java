@@ -98,6 +98,59 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * This optional flag exposes the hashed physical host ID in the
+   * ResourceStatus resource of the VM.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return Whether the exposeHostTopology field is set.
+   */
+  boolean hasExposeHostTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID in the
+   * ResourceStatus resource of the VM.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return The exposeHostTopology.
+   */
+  boolean getExposeHostTopology();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   *
+   * @return Whether the gracefulShutdown field is set.
+   */
+  boolean hasGracefulShutdown();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   *
+   * @return The gracefulShutdown.
+   */
+  com.google.cloud.compute.v1.SchedulingGracefulShutdown getGracefulShutdown();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SchedulingGracefulShutdownOrBuilder getGracefulShutdownOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specify the time in seconds for host error detection, the value must be
    * within the range of [90, 330] with the increment of 30, if unset, the
    * default behavior of host error recovery will be used.
@@ -513,6 +566,49 @@ public interface SchedulingOrBuilder
    * @return The preemptible.
    */
   boolean getPreemptible();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   *
+   * @return Whether the preemptionNoticeDuration field is set.
+   */
+  boolean hasPreemptionNoticeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   *
+   * @return The preemptionNoticeDuration.
+   */
+  com.google.cloud.compute.v1.Duration getPreemptionNoticeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getPreemptionNoticeDurationOrBuilder();
 
   /**
    *

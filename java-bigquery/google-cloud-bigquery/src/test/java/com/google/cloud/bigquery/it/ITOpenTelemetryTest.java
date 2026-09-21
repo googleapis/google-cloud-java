@@ -94,12 +94,12 @@ public class ITOpenTelemetryTest {
         assertEquals("GET", attrs.get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
         assertEquals("DatasetService", attrs.get(AttributeKey.stringKey("bq.rpc.service")));
         assertEquals("ListDatasets", attrs.get(AttributeKey.stringKey("bq.rpc.method")));
-        assertEquals(
-            "bigquery.googleapis.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
+        assertEquals(getExpectedHost(), attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
         assertEquals(200L, attrs.get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
-        assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
+        assertEquals(getExpectedHost(), attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
-            "https://bigquery.googleapis.com/bigquery/v2/projects/"
+            getExpectedFullHost()
+                + "/bigquery/v2/projects/"
                 + bigqueryHelper.getOptions().getProjectId()
                 + "/datasets?prettyPrint=false",
             attrs.get(HttpTracingRequestInitializer.URL_FULL));
@@ -150,13 +150,13 @@ public class ITOpenTelemetryTest {
             "projects/{+projectId}/datasets/{+datasetId}",
             attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
         assertEquals(
-            "https://bigquery.googleapis.com/bigquery/v2/projects/"
+            getExpectedFullHost()
+                + "/bigquery/v2/projects/"
                 + bigqueryHelper.getOptions().getProjectId()
                 + "/datasets/non_existent_dataset?prettyPrint=false",
             attrs.get(HttpTracingRequestInitializer.URL_FULL));
-        assertEquals(
-            "bigquery.googleapis.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
-        assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
+        assertEquals(getExpectedHost(), attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
+        assertEquals(getExpectedHost(), attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
             "//bigquery.googleapis.com/projects/"
                 + bigqueryHelper.getOptions().getProjectId()
@@ -319,5 +319,36 @@ public class ITOpenTelemetryTest {
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_ARTIFACT,
         attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_ARTIFACT));
     assertNotNull(attrs.get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
+  }
+
+  /**
+   * Returns the expected host header/domain to be matched in telemetry trace assertions.
+   * Dynamically strips protocol prefixes ("https://", "http://") from the configured BigQuery host
+   * options, falling back to the default "bigquery.googleapis.com" if not configured.
+   */
+  private static String getExpectedHost() {
+    String host = bigqueryHelper.getOptions().getHost();
+    if (host == null || host.isEmpty() || host.equals("https://www.googleapis.com")) {
+      return "bigquery.googleapis.com";
+    }
+    if (host.startsWith("https://")) {
+      return host.substring("https://".length());
+    }
+    if (host.startsWith("http://")) {
+      return host.substring("http://".length());
+    }
+    return host;
+  }
+
+  /**
+   * Returns the expected full URL host prefix (including the protocol scheme) for URL assertions.
+   * Defaults to "https://bigquery.googleapis.com" if the host option is not configured.
+   */
+  private static String getExpectedFullHost() {
+    String host = bigqueryHelper.getOptions().getHost();
+    if (host == null || host.isEmpty() || host.equals("https://www.googleapis.com")) {
+      return "https://bigquery.googleapis.com";
+    }
+    return host;
   }
 }

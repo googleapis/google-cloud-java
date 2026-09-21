@@ -48,7 +48,6 @@ public class HttpJsonConscryptUtils {
    *
    * <ol>
    *   <li><b>Standard ML-KEM algorithms</b>: Prioritized first for quantum resistance.
-   *   <li><b>Draft Kyber algorithms</b>: Retained as a fallback for legacy draft PQC deployments.
    *   <li><b>Classical curves</b>: Fallback for endpoints without PQC support.
    * </ol>
    *
@@ -56,20 +55,11 @@ public class HttpJsonConscryptUtils {
    * ClientHello extension in preference order. The server selects the first group it supports.
    *
    * <p>For details on Conscrypt's supported TLS algorithms, see <a
-   * href="https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md">Conscrypt
+   * href="https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md">Conscrypt
    * CAPABILITIES.md</a>.
    */
-  public static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
-      new String[] {
-        "X25519MLKEM768",
-        "SecP256r1MLKEM768",
-        "MLKEM1024",
-        "MLKEM768",
-        "X25519Kyber768Draft00",
-        "X25519",
-        "secp256r1",
-        "secp384r1"
-      };
+  static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
+      new String[] {"X25519MLKEM768", "MLKEM1024", "X25519", "secp256r1", "secp384r1"};
 
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.
@@ -89,7 +79,9 @@ public class HttpJsonConscryptUtils {
         return Conscrypt.newProvider();
       } catch (SecurityException | LinkageError t) {
         LOG.log(
-            Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
+            Level.FINE,
+            "Conscrypt native library unavailable. Falling back to default JDK TLS.",
+            t);
         return null;
       }
     }
@@ -124,7 +116,7 @@ public class HttpJsonConscryptUtils {
                 // intercepts runtime socket configuration errors (e.g. unsupported groups or
                 // closed socket) without swallowing JVM errors like OutOfMemoryError.
                 LOG.log(
-                    Level.WARNING,
+                    Level.FINE,
                     "Failed to set PQC named groups on Conscrypt socket. Falling back to Conscrypt"
                         + " default TLS groups.",
                     e);

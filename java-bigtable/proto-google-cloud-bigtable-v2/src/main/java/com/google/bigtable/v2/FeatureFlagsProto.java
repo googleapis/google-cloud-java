@@ -55,7 +55,7 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n&google/bigtable/v2/feature_flags.proto"
           + "\022\022google.bigtable.v2\032\037google/api/field_b"
-          + "ehavior.proto\"\351\002\n\014FeatureFlags\022\025\n\rrevers"
+          + "ehavior.proto\"\215\003\n\014FeatureFlags\022\025\n\rrevers"
           + "e_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate_limit\030"
           + "\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030\005 \001(\010\022\""
           + "\n\032last_scanned_row_responses\030\004 \001(\010\022\026\n\016ro"
@@ -64,12 +64,13 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
           + "raffic_director_enabled\030\t \001(\010\022\037\n\027direct_"
           + "access_requested\030\n \001(\010\022\021\n\tpeer_info\030\013 \001("
           + "\010\022\033\n\023sessions_compatible\030\014 \001(\010\022\031\n\021sessio"
-          + "ns_required\030\r \001(\010B\273\001\n\026com.google.bigtabl"
-          + "e.v2B\021FeatureFlagsProtoP\001Z8cloud.google."
-          + "com/go/bigtable/apiv2/bigtablepb;bigtabl"
-          + "epb\252\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\"
-          + "Cloud\\Bigtable\\V2\352\002\033Google::Cloud::Bigta"
-          + "ble::V2b\006proto3"
+          + "ns_required\030\r \001(\010\022\"\n\025microsecond_timesta"
+          + "mp\030\016 \001(\010B\003\340A\001B\273\001\n\026com.google.bigtable.v2"
+          + "B\021FeatureFlagsProtoP\001Z8cloud.google.com/"
+          + "go/bigtable/apiv2/bigtablepb;bigtablepb\252"
+          + "\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Clou"
+          + "d\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -94,9 +95,15 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
               "PeerInfo",
               "SessionsCompatible",
               "SessionsRequired",
+              "MicrosecondTimestamp",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

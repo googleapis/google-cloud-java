@@ -237,6 +237,49 @@ public interface ResourceStatusOrBuilder
   com.google.cloud.compute.v1.ResourceStatusSchedulingOrBuilder getSchedulingOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Details about the instance stopping state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return Whether the shutdownDetails field is set.
+   */
+  boolean hasShutdownDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Details about the instance stopping state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusShutdownDetails shutdown_details = 15198553;
+   * </code>
+   *
+   * @return The shutdownDetails.
+   */
+  com.google.cloud.compute.v1.ResourceStatusShutdownDetails getShutdownDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Details about the instance stopping state.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusShutdownDetails shutdown_details = 15198553;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusShutdownDetailsOrBuilder getShutdownDetailsOrBuilder();
+
+  /**
    * <code>optional .google.cloud.compute.v1.UpcomingMaintenance upcoming_maintenance = 227348592;
    * </code>
    *

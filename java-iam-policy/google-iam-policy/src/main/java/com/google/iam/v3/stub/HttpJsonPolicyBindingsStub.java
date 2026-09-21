@@ -315,6 +315,7 @@ public class HttpJsonPolicyBindingsStub extends PolicyBindingsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SearchTargetPolicyBindingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "target", request.getTarget());

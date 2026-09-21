@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Vertex AI Search for commerce API
+ * A client to AI Commerce Search API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

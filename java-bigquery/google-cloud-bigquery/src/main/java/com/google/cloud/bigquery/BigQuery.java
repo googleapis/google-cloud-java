@@ -1354,7 +1354,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Sends an insert all request.
    *
-   * <p>Example of inserting rows into a table without running a load job.
+   * <p>Example of inserting rows into a table without running a load job. To prevent duplicate
+   * rows, this method does not perform automatic retries unless insert IDs are provided. Transient
+   * service errors (such as UNAVAILABLE) may be thrown and should be handled by the caller when
+   * insert IDs are not provided.
    *
    * <pre>{@code
    * String datasetName = "my_dataset_name";
@@ -1635,6 +1638,58 @@ public interface BigQuery extends Service<BigQueryOptions> {
    */
   TableResult query(QueryJobConfiguration configuration, JobId jobId, JobOption... options)
       throws InterruptedException, JobException;
+
+  /**
+   * <b>[Beta]</b> Runs the query associated with the request and returns an {@link
+   * ArrowQueryResult} yielding Apache Arrow {@code VectorSchemaRoot} batches directly for zero-copy
+   * vector access.
+   *
+   * <p>Callers must manage off-heap native memory by closing the returned {@link ArrowQueryResult}
+   * (e.g. via a {@code try-with-resources} block).
+   *
+   * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+   * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * @param configuration the query configuration
+   * @param options query options
+   * @return an {@link ArrowQueryResult} streaming Arrow vectors
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException if the job completes unsuccessfully
+   */
+  @BetaApi
+  default ArrowQueryResult queryArrow(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException, JobException {
+    throw new UnsupportedOperationException("queryArrow is not implemented");
+  }
+
+  /**
+   * <b>[Beta]</b> Runs the query associated with the request, using the given JobId, and returns an
+   * {@link ArrowQueryResult} yielding Apache Arrow {@code VectorSchemaRoot} batches directly for
+   * zero-copy vector access.
+   *
+   * <p>Callers must manage off-heap native memory by closing the returned {@link ArrowQueryResult}
+   * (e.g. via a {@code try-with-resources} block).
+   *
+   * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+   * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * @param configuration the query configuration
+   * @param jobId the job ID to use
+   * @param options query options
+   * @return an {@link ArrowQueryResult} streaming Arrow vectors
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException if the job completes unsuccessfully
+   */
+  @BetaApi
+  default ArrowQueryResult queryArrow(
+      QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+      throws InterruptedException, JobException {
+    throw new UnsupportedOperationException("queryArrow is not implemented");
+  }
 
   /**
    * Starts the query associated with the request, using the given JobId. It returns either

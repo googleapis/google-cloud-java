@@ -78,7 +78,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the weight in grams.
+   * Required. The weight value in grams.
    * </pre>
    *
    * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -94,7 +94,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the weight in grams.
+   * Required. The weight value in grams.
    * </pre>
    *
    * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -500,7 +500,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the weight in grams.
+     * Required. The weight value in grams.
      * </pre>
      *
      * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -516,7 +516,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the weight in grams.
+     * Required. The weight value in grams.
      * </pre>
      *
      * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -532,7 +532,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the weight in grams.
+     * Required. The weight value in grams.
      * </pre>
      *
      * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -552,7 +552,7 @@ public final class WeightQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the weight in grams.
+     * Required. The weight value in grams.
      * </pre>
      *
      * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>

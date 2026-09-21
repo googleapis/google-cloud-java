@@ -336,6 +336,31 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
 
   private int tollPassesMemoizedSerializedSize;
 
+  public static final int AVOID_TUNNELS_FIELD_NUMBER = 7;
+  private boolean avoidTunnels_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, avoids tunnels where reasonable, giving
+   * preference to routes not containing tunnels. Applies only to the `DRIVE`
+   * and `TWO_WHEELER`
+   * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
+   * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference]
+   * must be set to `TRAFFIC_AWARE_OPTIMAL`.
+   * This field is not supported in ComputeRouteMatrix.
+   * </pre>
+   *
+   * <code>bool avoid_tunnels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The avoidTunnels.
+   */
+  @java.lang.Override
+  public boolean getAvoidTunnels() {
+    return avoidTunnels_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -372,6 +397,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < tollPasses_.size(); i++) {
       output.writeEnumNoTag(tollPasses_.getInt(i));
+    }
+    if (avoidTunnels_ != false) {
+      output.writeBool(7, avoidTunnels_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -410,6 +438,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
       }
       tollPassesMemoizedSerializedSize = dataSize;
     }
+    if (avoidTunnels_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, avoidTunnels_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -435,6 +466,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
       if (!getVehicleInfo().equals(other.getVehicleInfo())) return false;
     }
     if (!tollPasses_.equals(other.tollPasses_)) return false;
+    if (getAvoidTunnels() != other.getAvoidTunnels()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -462,6 +494,8 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TOLL_PASSES_FIELD_NUMBER;
       hash = (53 * hash) + tollPasses_.hashCode();
     }
+    hash = (37 * hash) + AVOID_TUNNELS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAvoidTunnels());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -622,6 +656,7 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
         vehicleInfoBuilder_ = null;
       }
       tollPasses_ = emptyIntList();
+      avoidTunnels_ = false;
       return this;
     }
 
@@ -680,6 +715,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
         tollPasses_.makeImmutable();
         result.tollPasses_ = tollPasses_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.avoidTunnels_ = avoidTunnels_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -720,6 +758,9 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
           tollPasses_.addAll(other.tollPasses_);
         }
         onChanged();
+      }
+      if (other.getAvoidTunnels() != false) {
+        setAvoidTunnels(other.getAvoidTunnels());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -796,6 +837,12 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
                 input.popLimit(limit);
                 break;
               } // case 50
+            case 56:
+              {
+                avoidTunnels_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1546,6 +1593,80 @@ public final class RouteModifiers extends com.google.protobuf.GeneratedMessage
       for (int value : values) {
         tollPasses_.addInt(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private boolean avoidTunnels_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, avoids tunnels where reasonable, giving
+     * preference to routes not containing tunnels. Applies only to the `DRIVE`
+     * and `TWO_WHEELER`
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference]
+     * must be set to `TRAFFIC_AWARE_OPTIMAL`.
+     * This field is not supported in ComputeRouteMatrix.
+     * </pre>
+     *
+     * <code>bool avoid_tunnels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The avoidTunnels.
+     */
+    @java.lang.Override
+    public boolean getAvoidTunnels() {
+      return avoidTunnels_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, avoids tunnels where reasonable, giving
+     * preference to routes not containing tunnels. Applies only to the `DRIVE`
+     * and `TWO_WHEELER`
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference]
+     * must be set to `TRAFFIC_AWARE_OPTIMAL`.
+     * This field is not supported in ComputeRouteMatrix.
+     * </pre>
+     *
+     * <code>bool avoid_tunnels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The avoidTunnels to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvoidTunnels(boolean value) {
+
+      avoidTunnels_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, avoids tunnels where reasonable, giving
+     * preference to routes not containing tunnels. Applies only to the `DRIVE`
+     * and `TWO_WHEELER`
+     * [`RouteTravelMode`][google.maps.routing.v2.RouteTravelMode].
+     * [`RoutingPreference`][google.maps.routing.v2.RoutingPreference]
+     * must be set to `TRAFFIC_AWARE_OPTIMAL`.
+     * This field is not supported in ComputeRouteMatrix.
+     * </pre>
+     *
+     * <code>bool avoid_tunnels = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvoidTunnels() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      avoidTunnels_ = false;
       onChanged();
       return this;
     }

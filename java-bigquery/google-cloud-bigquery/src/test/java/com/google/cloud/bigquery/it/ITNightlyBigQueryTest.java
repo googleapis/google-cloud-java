@@ -88,7 +88,20 @@ public class ITNightlyBigQueryTest {
   private static final int MULTI_LIMIT_RECS =
       300000; // Used for multiquery testcase, a lower limit like 300K should be fine
   private static int rowCnt = 0;
+
+  /**
+   * Primary client configured dynamically via RemoteBigQueryHelper. Targets the endpoint under test
+   * (e.g., regional canary endpoint us-east7 in regional CI runs).
+   */
   private static BigQuery bigquery;
+
+  /**
+   * Fallback client explicitly targeting the default global endpoint (bigquery.googleapis.com).
+   * Used for tests accessing global public datasets (bigquery-public-data) or cross-region
+   * resources.
+   */
+  private static BigQuery globalBigQuery;
+
   private static final String BASE_QUERY =
       "select StringField, GeographyField, BooleanField, BigNumericField, IntegerField, NumericField, BytesField,  "
           + "TimestampField, TimeField, DateField, IntegerArrayField,  RecordField.BooleanField, RecordField.StringField ,"
@@ -177,6 +190,12 @@ public class ITNightlyBigQueryTest {
   public static void beforeClass() throws InterruptedException, IOException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
+    globalBigQuery =
+        BigQueryOptions.newBuilder()
+            .setProjectId(bigqueryHelper.getOptions().getProjectId())
+            .setCredentials(bigqueryHelper.getOptions().getCredentials())
+            .build()
+            .getService();
     createDataset(DATASET);
     createTable(DATASET, TABLE, BQ_SCHEMA);
     populateTestRecords(DATASET, TABLE);
@@ -514,7 +533,7 @@ public class ITNightlyBigQueryTest {
     logger.log(Level.INFO, "Query used: {0}", query);
     String dataSet = RemoteBigQueryHelper.generateDatasetName();
     String table = "TAB_" + UUID.randomUUID();
-    createDataset(dataSet);
+    globalBigQuery.create(DatasetInfo.newBuilder(dataSet).build());
     TableId targetTable =
         TableId.of(
             ServiceOptions.getDefaultProjectId(),
@@ -528,8 +547,7 @@ public class ITNightlyBigQueryTest {
             .setAllowLargeResults(true)
             .build();
 
-    Connection connection =
-        BigQueryOptions.getDefaultInstance().getService().createConnection(conSet);
+    Connection connection = globalBigQuery.createConnection(conSet);
     BigQueryResult bigQueryResultSet = connection.executeSelect(query);
     assertNotNull(getResultHashWiki(bigQueryResultSet)); // this iterated through all the rows
     assertTrue(
@@ -539,8 +557,8 @@ public class ITNightlyBigQueryTest {
                     .getTotalRows())); // either job should return the actual count or -1 if the job
     // is still running
     try {
-      deleteTable(dataSet, table);
-      deleteDataset(dataSet);
+      globalBigQuery.delete(TableId.of(dataSet, table));
+      globalBigQuery.delete(DatasetId.of(dataSet));
     } catch (Exception e) {
       logger.log(
           Level.WARNING,

@@ -327,7 +327,7 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
    * @return Whether the credentials field is set.
    */
   @java.lang.Override
@@ -354,7 +354,7 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
    * @return The credentials.
    */
   @java.lang.Override
@@ -969,7 +969,7 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
      * @return Whether the credentials field is set.
      */
     @java.lang.Deprecated
@@ -995,7 +995,7 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is
-     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=436
+     *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
      * @return The credentials.
      */
     @java.lang.Deprecated

@@ -224,7 +224,7 @@ public enum TransformationResultStatusType implements com.google.protobuf.Protoc
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final TransformationResultStatusType[] VALUES = values();

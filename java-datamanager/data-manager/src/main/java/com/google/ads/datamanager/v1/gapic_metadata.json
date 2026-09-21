@@ -19,6 +19,9 @@
             "IngestEvents": {
               "methods": ["ingestEvents", "ingestEventsCallable"]
             },
+            "RemoveAllAudienceMembers": {
+              "methods": ["removeAllAudienceMembers", "removeAllAudienceMembersCallable"]
+            },
             "RemoveAudienceMembers": {
               "methods": ["removeAudienceMembers", "removeAudienceMembersCallable"]
             },

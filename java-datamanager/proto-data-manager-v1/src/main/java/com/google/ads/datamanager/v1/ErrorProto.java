@@ -49,7 +49,7 @@ public final class ErrorProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n%google/ads/datamanager/v1/error.proto\022"
-          + "\031google.ads.datamanager.v1*\373!\n\013ErrorReas"
+          + "\031google.ads.datamanager.v1*\203#\n\013ErrorReas"
           + "on\022\034\n\030ERROR_REASON_UNSPECIFIED\020\000\022\022\n\016INTE"
           + "RNAL_ERROR\020\001\022\025\n\021DEADLINE_EXCEEDED\020\002\022\026\n\022R"
           + "ESOURCE_EXHAUSTED\020\003\022\r\n\tNOT_FOUND\020\004\022\025\n\021PE"
@@ -158,12 +158,16 @@ public final class ErrorProto extends com.google.protobuf.GeneratedFile {
           + "_CUSTOM_VARIABLE_VALUE\020w\022\035\n\031CUSTOM_VARIA"
           + "BLE_NOT_FOUND\020x\022+\n\'BASELINE_LOCATION_AUT"
           + "O_DETECTION_FAILED\020z\022\"\n\036INSIGHTS_MISSING"
-          + "_FOR_DIMENSION\020{B\307\001\n\035com.google.ads.data"
-          + "manager.v1B\nErrorProtoP\001ZAcloud.google.c"
-          + "om/go/datamanager/apiv1/datamanagerpb;da"
-          + "tamanagerpb\252\002\031Google.Ads.DataManager.V1\312"
-          + "\002\031Google\\Ads\\DataManager\\V1\352\002\034Google::Ad"
-          + "s::DataManager::V1b\006proto3"
+          + "_FOR_DIMENSION\020{\022&\n\"REQUIRED_PREREQUISIT"
+          + "E_LINK_MISSING\020|\022\035\n\031INVALID_REMOVE_AS_OF"
+          + "_TIME\020}\022\023\n\017REQUEST_TOO_OLD\020~\022*\n&CONVERSI"
+          + "ON_ACTION_TOO_RECENTLY_CREATED\020\177B\307\001\n\035com"
+          + ".google.ads.datamanager.v1B\nErrorProtoP\001"
+          + "ZAcloud.google.com/go/datamanager/apiv1/"
+          + "datamanagerpb;datamanagerpb\252\002\031Google.Ads"
+          + ".DataManager.V1\312\002\031Google\\Ads\\DataManager"
+          + "\\V1\352\002\034Google::Ads::DataManager::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

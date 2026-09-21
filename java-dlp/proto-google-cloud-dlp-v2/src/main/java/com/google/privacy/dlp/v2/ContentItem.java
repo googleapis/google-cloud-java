@@ -208,7 +208,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *
@@ -226,7 +226,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *
@@ -247,7 +247,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *
@@ -1155,7 +1155,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1173,7 +1173,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1201,7 +1201,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1226,7 +1226,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1248,7 +1248,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1283,7 +1283,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1311,7 +1311,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1326,7 +1326,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *
@@ -1349,7 +1349,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Structured content for inspection. See
-     * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+     * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
      * to learn more.
      * </pre>
      *

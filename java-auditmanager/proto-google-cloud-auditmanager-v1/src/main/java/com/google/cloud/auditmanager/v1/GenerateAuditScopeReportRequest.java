@@ -24,7 +24,8 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * Message for requesting audit scope report.
+ * Request message for
+ * [GenerateAuditScopeReport][google.cloud.auditmanager.v1.AuditManager.GenerateAuditScopeReport].
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest}
@@ -77,7 +78,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The options for the audit scope report format.
+   * Format for the audit scope report.
    * </pre>
    *
    * Protobuf enum {@code
@@ -88,7 +89,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Unspecified. Invalid format.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>AUDIT_SCOPE_REPORT_FORMAT_UNSPECIFIED = 0;</code>
@@ -98,7 +99,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Audit Scope Report creation format is Open Document.
+     * Open Document format.
      * </pre>
      *
      * <code>AUDIT_SCOPE_REPORT_FORMAT_ODF = 1;</code>
@@ -121,7 +122,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Unspecified. Invalid format.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>AUDIT_SCOPE_REPORT_FORMAT_UNSPECIFIED = 0;</code>
@@ -132,7 +133,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Audit Scope Report creation format is Open Document.
+     * Open Document format.
      * </pre>
      *
      * <code>AUDIT_SCOPE_REPORT_FORMAT_ODF = 1;</code>
@@ -234,10 +235,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Project or folder that the audit scope report is generated for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -261,10 +264,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Project or folder that the audit scope report is generated for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -293,15 +298,22 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. The standard (industry or regulatory requirements)
+   * that the audit scope report is run against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The complianceStandard.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getComplianceStandard() {
     java.lang.Object ref = complianceStandard_;
     if (ref instanceof java.lang.String) {
@@ -318,15 +330,22 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. The standard (industry or regulatory requirements)
+   * that the audit scope report is run against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getComplianceStandardBytes() {
     java.lang.Object ref = complianceStandard_;
     if (ref instanceof java.lang.String) {
@@ -346,7 +365,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The format in which the Scope report bytes should be returned.
+   * Required. Format for the audit scope report.
    * </pre>
    *
    * <code>
@@ -364,7 +383,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The format in which the Scope report bytes should be returned.
+   * Required. Format for the audit scope report.
    * </pre>
    *
    * <code>
@@ -394,8 +413,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Scope Report must be
-   * generated.
+   * Required. Framework (set of controls) that the audit scope report is
+   * generated against. For example, `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -419,8 +438,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Scope Report must be
-   * generated.
+   * Required. Framework (set of controls) that the audit scope report is
+   * generated against. For example, `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -438,6 +457,37 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 6;
+  private boolean validateOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validates the request and does not generate the
+   * audit scope report. This executes standard request validation (such as
+   * schema, framework existence, scope, and IAM checks) and skips the apply
+   * phase.
+   *
+   * Use this field for the following purposes:
+   * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+   * dry-run mutations (e.g., `terraform plan`) without creating real
+   * resources or incurring costs.
+   * * **User Interface Validation**: Enable real-time form and permission
+   * validation in custom UIs before submitting requests.
+   * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+   * safely without consuming resource quotas.
+   * </pre>
+   *
+   * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -469,6 +519,9 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(complianceFramework_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, complianceFramework_);
     }
+    if (validateOnly_ != false) {
+      output.writeBool(6, validateOnly_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -493,6 +546,9 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(complianceFramework_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, complianceFramework_);
     }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, validateOnly_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -513,6 +569,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     if (!getComplianceStandard().equals(other.getComplianceStandard())) return false;
     if (reportFormat_ != other.reportFormat_) return false;
     if (!getComplianceFramework().equals(other.getComplianceFramework())) return false;
+    if (getValidateOnly() != other.getValidateOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -532,6 +589,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
     hash = (53 * hash) + reportFormat_;
     hash = (37 * hash) + COMPLIANCE_FRAMEWORK_FIELD_NUMBER;
     hash = (53 * hash) + getComplianceFramework().hashCode();
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -638,7 +697,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Message for requesting audit scope report.
+   * Request message for
+   * [GenerateAuditScopeReport][google.cloud.auditmanager.v1.AuditManager.GenerateAuditScopeReport].
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest}
@@ -677,6 +737,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       complianceStandard_ = "";
       reportFormat_ = 0;
       complianceFramework_ = "";
+      validateOnly_ = false;
       return this;
     }
 
@@ -727,6 +788,9 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.complianceFramework_ = complianceFramework_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.validateOnly_ = validateOnly_;
+      }
     }
 
     @java.lang.Override
@@ -761,6 +825,9 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
         complianceFramework_ = other.complianceFramework_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -812,6 +879,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 48:
+              {
+                validateOnly_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -837,10 +910,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Scope for which the AuditScopeReport is required. Must be of
-     * format resource_type/resource_identifier Eg:
-     * projects/{project}/locations/{location},
-     * folders/{folder}/locations/{location}
+     * Required. Project or folder that the audit scope report is generated for,
+     * in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -863,10 +938,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Scope for which the AuditScopeReport is required. Must be of
-     * format resource_type/resource_identifier Eg:
-     * projects/{project}/locations/{location},
-     * folders/{folder}/locations/{location}
+     * Required. Project or folder that the audit scope report is generated for,
+     * in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -889,10 +966,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Scope for which the AuditScopeReport is required. Must be of
-     * format resource_type/resource_identifier Eg:
-     * projects/{project}/locations/{location},
-     * folders/{folder}/locations/{location}
+     * Required. Project or folder that the audit scope report is generated for,
+     * in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -914,10 +993,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Scope for which the AuditScopeReport is required. Must be of
-     * format resource_type/resource_identifier Eg:
-     * projects/{project}/locations/{location},
-     * folders/{folder}/locations/{location}
+     * Required. Project or folder that the audit scope report is generated for,
+     * in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -935,10 +1016,12 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Scope for which the AuditScopeReport is required. Must be of
-     * format resource_type/resource_identifier Eg:
-     * projects/{project}/locations/{location},
-     * folders/{folder}/locations/{location}
+     * Required. Project or folder that the audit scope report is generated for,
+     * in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -963,14 +1046,21 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance Standard against which the Scope Report must be
-     * generated. Eg: FEDRAMP_MODERATE
+     * Optional. Deprecated. The standard (industry or regulatory requirements)
+     * that the audit scope report is run against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
      * @return The complianceStandard.
      */
+    @java.lang.Deprecated
     public java.lang.String getComplianceStandard() {
       java.lang.Object ref = complianceStandard_;
       if (!(ref instanceof java.lang.String)) {
@@ -987,14 +1077,21 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance Standard against which the Scope Report must be
-     * generated. Eg: FEDRAMP_MODERATE
+     * Optional. Deprecated. The standard (industry or regulatory requirements)
+     * that the audit scope report is run against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
      * @return The bytes for complianceStandard.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getComplianceStandardBytes() {
       java.lang.Object ref = complianceStandard_;
       if (ref instanceof String) {
@@ -1011,15 +1108,22 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance Standard against which the Scope Report must be
-     * generated. Eg: FEDRAMP_MODERATE
+     * Optional. Deprecated. The standard (industry or regulatory requirements)
+     * that the audit scope report is run against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setComplianceStandard(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1034,14 +1138,21 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance Standard against which the Scope Report must be
-     * generated. Eg: FEDRAMP_MODERATE
+     * Optional. Deprecated. The standard (industry or regulatory requirements)
+     * that the audit scope report is run against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearComplianceStandard() {
       complianceStandard_ = getDefaultInstance().getComplianceStandard();
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1053,15 +1164,22 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance Standard against which the Scope Report must be
-     * generated. Eg: FEDRAMP_MODERATE
+     * Optional. Deprecated. The standard (industry or regulatory requirements)
+     * that the audit scope report is run against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard
+     *     is deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setComplianceStandardBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1079,7 +1197,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The format in which the Scope report bytes should be returned.
+     * Required. Format for the audit scope report.
      * </pre>
      *
      * <code>
@@ -1097,7 +1215,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The format in which the Scope report bytes should be returned.
+     * Required. Format for the audit scope report.
      * </pre>
      *
      * <code>
@@ -1118,7 +1236,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The format in which the Scope report bytes should be returned.
+     * Required. Format for the audit scope report.
      * </pre>
      *
      * <code>
@@ -1144,7 +1262,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The format in which the Scope report bytes should be returned.
+     * Required. Format for the audit scope report.
      * </pre>
      *
      * <code>
@@ -1170,7 +1288,7 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The format in which the Scope report bytes should be returned.
+     * Required. Format for the audit scope report.
      * </pre>
      *
      * <code>
@@ -1192,8 +1310,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance framework against which the Scope Report must be
-     * generated.
+     * Required. Framework (set of controls) that the audit scope report is
+     * generated against. For example, `NIST_800_53`.
      * </pre>
      *
      * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1216,8 +1334,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance framework against which the Scope Report must be
-     * generated.
+     * Required. Framework (set of controls) that the audit scope report is
+     * generated against. For example, `NIST_800_53`.
      * </pre>
      *
      * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1240,8 +1358,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance framework against which the Scope Report must be
-     * generated.
+     * Required. Framework (set of controls) that the audit scope report is
+     * generated against. For example, `NIST_800_53`.
      * </pre>
      *
      * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1263,8 +1381,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance framework against which the Scope Report must be
-     * generated.
+     * Required. Framework (set of controls) that the audit scope report is
+     * generated against. For example, `NIST_800_53`.
      * </pre>
      *
      * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1282,8 +1400,8 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. Compliance framework against which the Scope Report must be
-     * generated.
+     * Required. Framework (set of controls) that the audit scope report is
+     * generated against. For example, `NIST_800_53`.
      * </pre>
      *
      * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1298,6 +1416,98 @@ public final class GenerateAuditScopeReportRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       complianceFramework_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean validateOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, only validates the request and does not generate the
+     * audit scope report. This executes standard request validation (such as
+     * schema, framework existence, scope, and IAM checks) and skips the apply
+     * phase.
+     *
+     * Use this field for the following purposes:
+     * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+     * dry-run mutations (e.g., `terraform plan`) without creating real
+     * resources or incurring costs.
+     * * **User Interface Validation**: Enable real-time form and permission
+     * validation in custom UIs before submitting requests.
+     * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+     * safely without consuming resource quotas.
+     * </pre>
+     *
+     * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, only validates the request and does not generate the
+     * audit scope report. This executes standard request validation (such as
+     * schema, framework existence, scope, and IAM checks) and skips the apply
+     * phase.
+     *
+     * Use this field for the following purposes:
+     * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+     * dry-run mutations (e.g., `terraform plan`) without creating real
+     * resources or incurring costs.
+     * * **User Interface Validation**: Enable real-time form and permission
+     * validation in custom UIs before submitting requests.
+     * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+     * safely without consuming resource quotas.
+     * </pre>
+     *
+     * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+
+      validateOnly_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, only validates the request and does not generate the
+     * audit scope report. This executes standard request validation (such as
+     * schema, framework existence, scope, and IAM checks) and skips the apply
+     * phase.
+     *
+     * Use this field for the following purposes:
+     * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+     * dry-run mutations (e.g., `terraform plan`) without creating real
+     * resources or incurring costs.
+     * * **User Interface Validation**: Enable real-time form and permission
+     * validation in custom UIs before submitting requests.
+     * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+     * safely without consuming resource quotas.
+     * </pre>
+     *
+     * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      validateOnly_ = false;
       onChanged();
       return this;
     }

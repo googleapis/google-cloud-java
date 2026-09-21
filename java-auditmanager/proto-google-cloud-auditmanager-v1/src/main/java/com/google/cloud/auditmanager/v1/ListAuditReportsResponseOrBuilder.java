@@ -30,7 +30,7 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The audit reports.
+   * Output only. Audit reports.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The audit reports.
+   * Output only. Audit reports.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The audit reports.
+   * Output only. Audit reports.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The audit reports.
+   * Output only. Audit reports.
    * </pre>
    *
    * <code>
@@ -83,7 +83,7 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The audit reports.
+   * Output only. Audit reports.
    * </pre>
    *
    * <code>
@@ -96,7 +96,9 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The token to retrieve the next page of results.
+   * Output only. A token that you can send as the `page_token` in a subsequent
+   * request to retrieve the next page of results. If this field is empty, there
+   * are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -109,7 +111,9 @@ public interface ListAuditReportsResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. The token to retrieve the next page of results.
+   * Output only. A token that you can send as the `page_token` in a subsequent
+   * request to retrieve the next page of results. If this field is empty, there
+   * are no subsequent pages.
    * </pre>
    *
    * <code>string next_page_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

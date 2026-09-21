@@ -124,7 +124,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2243
+   *     google/container/v1/cluster_service.proto;l=2288
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Deprecated
@@ -145,7 +145,7 @@ public interface AddonsConfigOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2243
+   *     google/container/v1/cluster_service.proto;l=2288
    * @return The kubernetesDashboard.
    */
   @java.lang.Deprecated

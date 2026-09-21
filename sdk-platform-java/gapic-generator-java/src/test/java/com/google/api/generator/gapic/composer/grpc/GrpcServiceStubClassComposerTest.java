@@ -122,4 +122,14 @@ class GrpcServiceStubClassComposerTest {
     Assert.assertGoldenClass(this.getClass(), clazz, "GrpcResourceNameExtractorStub.golden");
     Assert.assertEmptySamples(clazz.samples());
   }
+
+  @Test
+  void generateGrpcServiceStubClass_resumableUpload() {
+    GapicContext context = GrpcTestProtoLoader.instance().parseShowcaseResumableUpload();
+    Service service = context.services().get(0);
+    GapicClass clazz = GrpcServiceStubClassComposer.instance().generate(context, service);
+
+    Assert.assertGoldenClass(this.getClass(), clazz, "GrpcResumableUploadServiceStub.golden");
+    Assert.assertEmptySamples(clazz.samples());
+  }
 }

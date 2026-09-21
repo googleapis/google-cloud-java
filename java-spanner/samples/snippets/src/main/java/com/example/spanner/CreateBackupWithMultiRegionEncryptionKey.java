@@ -95,7 +95,7 @@ public class CreateBackupWithMultiRegionEncryptionKey {
             .build();
     try {
       System.out.println("Waiting for operation to complete...");
-      backup = adminClient.createBackupAsync(request).get(1200, TimeUnit.SECONDS);
+      backup = adminClient.createBackupAsync(request).get(3600, TimeUnit.SECONDS);
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
       throw SpannerExceptionFactory.asSpannerException(e.getCause());

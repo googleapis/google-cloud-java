@@ -156,7 +156,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * Provisioned capacities for each SKU for this Exapool in GiB
    * </pre>
    *
    * <code>
@@ -171,7 +171,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * Provisioned capacities for each SKU for this Exapool in GiB
    * </pre>
    *
    * <code>
@@ -187,7 +187,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Output only. [Output Only] Provisioned capacities for each SKU for this Exapool in GiB
+   * Provisioned capacities for each SKU for this Exapool in GiB
    * </pre>
    *
    * <code>
@@ -741,6 +741,46 @@ public interface StoragePoolOrBuilder
    * @return The bytes for selfLinkWithId.
    */
   com.google.protobuf.ByteString getSelfLinkWithIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Share settings for the storage pool.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolShareSettings share_settings = 266668163;
+   * </code>
+   *
+   * @return Whether the shareSettings field is set.
+   */
+  boolean hasShareSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Share settings for the storage pool.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolShareSettings share_settings = 266668163;
+   * </code>
+   *
+   * @return The shareSettings.
+   */
+  com.google.cloud.compute.v1.StoragePoolShareSettings getShareSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Share settings for the storage pool.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.StoragePoolShareSettings share_settings = 266668163;
+   * </code>
+   */
+  com.google.cloud.compute.v1.StoragePoolShareSettingsOrBuilder getShareSettingsOrBuilder();
 
   /**
    *
