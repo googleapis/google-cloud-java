@@ -78,16 +78,24 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Number of attempts per task.
+   * Number of attempts per task, including the first attempt. (If the
+   * first attempt fails, there will be `max_attempts - 1` retries.)
    *
-   * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
-   * first attempt fails, then there will be `max_attempts - 1` retries). Must
-   * be &gt;= -1.
+   * Must be greater than or equal to -1, which indicates unlimited attempts.
+   *
+   *
+   * Cloud Tasks stops retrying only when `max_attempts` and
+   * `max_retry_duration` are both satisfied, or when the task is successfully
+   * executed. When the task has been attempted
+   * `max_attempts` times and when the `max_retry_duration` time has passed, no
+   * further attempts are made, and the task is deleted. If `max_attempts` is
+   * set to -1 and `max_retry_duration` is set to 0, the task is retried
+   * until the [maximum task
+   * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit is
+   * reached.
    *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   * -1 indicates unlimited attempts.
    *
    * This field has the same meaning as
    * [task_retry_limit in
@@ -115,15 +123,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * attempted. Once `max_retry_duration` time has passed *and* the
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-   * further attempts will be made and the task will be deleted.
+   * further attempts are made and the task is deleted.
    *
-   * If zero, then the task age is unlimited.
+   * A zero (0) indicates an unlimited duration, up to the
+   * [maximum task
+   * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+   *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+   * value or the format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_retry_duration` will be truncated to the nearest second.
    *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_retry_duration` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [task_age_limit in
@@ -148,15 +162,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * attempted. Once `max_retry_duration` time has passed *and* the
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-   * further attempts will be made and the task will be deleted.
+   * further attempts are made and the task is deleted.
    *
-   * If zero, then the task age is unlimited.
+   * A zero (0) indicates an unlimited duration, up to the
+   * [maximum task
+   * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+   *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+   * value or the format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_retry_duration` will be truncated to the nearest second.
    *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_retry_duration` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [task_age_limit in
@@ -183,15 +203,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * attempted. Once `max_retry_duration` time has passed *and* the
    * task has been attempted
    * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-   * further attempts will be made and the task will be deleted.
+   * further attempts are made and the task is deleted.
    *
-   * If zero, then the task age is unlimited.
+   * A zero (0) indicates an unlimited duration, up to the
+   * [maximum task
+   * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+   *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+   * value or the format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_retry_duration` will be truncated to the nearest second.
    *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_retry_duration` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [task_age_limit in
@@ -221,11 +247,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `min_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `min_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [min_backoff_seconds in
@@ -252,11 +282,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `min_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `min_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [min_backoff_seconds in
@@ -283,11 +317,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `min_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `min_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [min_backoff_seconds in
@@ -315,11 +353,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [max_backoff_seconds in
@@ -346,11 +388,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [max_backoff_seconds in
@@ -377,11 +423,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
    * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
    * should be retried.
    *
+   *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+   * `max_backoff` will be truncated to the nearest second.
+   *
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
-   *
-   *
-   * `max_backoff` will be truncated to the nearest second.
    *
    * This field has the same meaning as
    * [max_backoff_seconds in
@@ -888,16 +938,24 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of attempts per task.
+     * Number of attempts per task, including the first attempt. (If the
+     * first attempt fails, there will be `max_attempts - 1` retries.)
      *
-     * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
-     * first attempt fails, then there will be `max_attempts - 1` retries). Must
-     * be &gt;= -1.
+     * Must be greater than or equal to -1, which indicates unlimited attempts.
+     *
+     *
+     * Cloud Tasks stops retrying only when `max_attempts` and
+     * `max_retry_duration` are both satisfied, or when the task is successfully
+     * executed. When the task has been attempted
+     * `max_attempts` times and when the `max_retry_duration` time has passed, no
+     * further attempts are made, and the task is deleted. If `max_attempts` is
+     * set to -1 and `max_retry_duration` is set to 0, the task is retried
+     * until the [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit is
+     * reached.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     * -1 indicates unlimited attempts.
      *
      * This field has the same meaning as
      * [task_retry_limit in
@@ -917,16 +975,24 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of attempts per task.
+     * Number of attempts per task, including the first attempt. (If the
+     * first attempt fails, there will be `max_attempts - 1` retries.)
      *
-     * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
-     * first attempt fails, then there will be `max_attempts - 1` retries). Must
-     * be &gt;= -1.
+     * Must be greater than or equal to -1, which indicates unlimited attempts.
+     *
+     *
+     * Cloud Tasks stops retrying only when `max_attempts` and
+     * `max_retry_duration` are both satisfied, or when the task is successfully
+     * executed. When the task has been attempted
+     * `max_attempts` times and when the `max_retry_duration` time has passed, no
+     * further attempts are made, and the task is deleted. If `max_attempts` is
+     * set to -1 and `max_retry_duration` is set to 0, the task is retried
+     * until the [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit is
+     * reached.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     * -1 indicates unlimited attempts.
      *
      * This field has the same meaning as
      * [task_retry_limit in
@@ -950,16 +1016,24 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Number of attempts per task.
+     * Number of attempts per task, including the first attempt. (If the
+     * first attempt fails, there will be `max_attempts - 1` retries.)
      *
-     * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
-     * first attempt fails, then there will be `max_attempts - 1` retries). Must
-     * be &gt;= -1.
+     * Must be greater than or equal to -1, which indicates unlimited attempts.
+     *
+     *
+     * Cloud Tasks stops retrying only when `max_attempts` and
+     * `max_retry_duration` are both satisfied, or when the task is successfully
+     * executed. When the task has been attempted
+     * `max_attempts` times and when the `max_retry_duration` time has passed, no
+     * further attempts are made, and the task is deleted. If `max_attempts` is
+     * set to -1 and `max_retry_duration` is set to 0, the task is retried
+     * until the [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit is
+     * reached.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     * -1 indicates unlimited attempts.
      *
      * This field has the same meaning as
      * [task_retry_limit in
@@ -993,15 +1067,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1025,15 +1105,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1063,15 +1149,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1103,15 +1195,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1140,15 +1238,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1185,15 +1289,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1222,15 +1332,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1254,15 +1370,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1290,15 +1412,21 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * attempted. Once `max_retry_duration` time has passed *and* the
      * task has been attempted
      * [max_attempts][google.cloud.tasks.v2.RetryConfig.max_attempts] times, no
-     * further attempts will be made and the task will be deleted.
+     * further attempts are made and the task is deleted.
      *
-     * If zero, then the task age is unlimited.
+     * A zero (0) indicates an unlimited duration, up to the
+     * [maximum task
+     * retention](https://docs.cloud.google.com/tasks/docs/quotas#limits) limit.
+     *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For the maximum possible
+     * value or the format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_retry_duration` will be truncated to the nearest second.
      *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_retry_duration` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [task_age_limit in
@@ -1342,11 +1470,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1372,11 +1504,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1408,11 +1544,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1446,11 +1586,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1481,11 +1625,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1524,11 +1672,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1559,11 +1711,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1589,11 +1745,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1623,11 +1783,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `min_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `min_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [min_backoff_seconds in
@@ -1671,11 +1835,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1701,11 +1869,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1737,11 +1909,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1775,11 +1951,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1810,11 +1990,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1853,11 +2037,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1888,11 +2076,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1918,11 +2110,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
@@ -1952,11 +2148,15 @@ public final class RetryConfig extends com.google.protobuf.GeneratedMessage
      * [RetryConfig][google.cloud.tasks.v2.RetryConfig] specifies that the task
      * should be retried.
      *
+     *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
+     * `max_backoff` will be truncated to the nearest second.
+     *
      * If unspecified when the queue is created, Cloud Tasks will pick the
      * default.
-     *
-     *
-     * `max_backoff` will be truncated to the nearest second.
      *
      * This field has the same meaning as
      * [max_backoff_seconds in
