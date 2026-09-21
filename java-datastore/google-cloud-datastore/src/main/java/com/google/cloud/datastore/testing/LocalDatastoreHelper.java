@@ -176,7 +176,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     } else {
       // At most one of --consistency | --use-firestore-in-datastore-mode can be specified.
       // --consistency will be ignored with --use-firestore-in-datastore-mode.
-      gcloudCommand.add(CONSISTENCY_FLAG + builder.consistency);
+      gcloudCommand.add(CONSISTENCY_FLAG + getConsistency());
     }
     if (!builder.storeOnDisk) {
       gcloudCommand.add("--no-store-on-disk");
