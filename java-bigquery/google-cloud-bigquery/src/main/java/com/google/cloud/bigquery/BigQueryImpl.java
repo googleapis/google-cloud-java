@@ -2920,12 +2920,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           if (jobLocation == null) {
             jobLocation = getOptions().getLocation();
           }
-          if (jobLocation != null) {
-            streamName =
-                String.format(
-                    "projects/%s/locations/%s/jobs/%s/streams/_default",
-                    jobProject, jobLocation, actualJobId.getJob());
+          if (jobLocation == null) {
+            jobLocation = "US";
           }
+          streamName =
+              String.format(
+                  "projects/%s/locations/%s/jobs/%s/streams/_default",
+                  jobProject, jobLocation, actualJobId.getJob());
         }
 
         BigQueryReadClient client = null;
