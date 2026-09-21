@@ -283,6 +283,9 @@ public class ITBase extends BigQueryJdbcBaseTest {
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
   public static final BigQuery bigQuery = BigQueryJdbcBaseTest.getBigQuery(connectionUrl);
 
+  public static final String FORCE_READ_API_PROPERTIES =
+      ";EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThroughputMinTableSize=0;";
+
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";
   public static final String dropSchema = "DROP SCHEMA IF EXISTS `%s.%s` CASCADE;";
@@ -457,10 +460,16 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void validateStatement(Statement stmt, int expectedRows) throws SQLException {
+    validateStatement(stmt, expectedRows, "ResultSet");
+  }
+
+  public static <T> void validateStatement(Statement stmt, int expectedRows, String clazz)
+      throws SQLException {
     String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, " + expectedRows + "))";
     assertTrue(stmt.execute(query));
     int count = 0;
     try (ResultSet rs = stmt.getResultSet()) {
+      assertTrue(rs.getClass().getName().contains(clazz));
       while (rs.next()) {
         count++;
       }

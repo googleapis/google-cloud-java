@@ -222,6 +222,33 @@
         }
       }
     },
+    "ResumableUploadService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ResumableUploadServiceClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UploadMedia": {
+              "methods": ["uploadMedia", "uploadMediaCallable"]
+            }
+          }
+        }
+      }
+    },
     "SequenceService": {
       "clients": {
         "grpc": {

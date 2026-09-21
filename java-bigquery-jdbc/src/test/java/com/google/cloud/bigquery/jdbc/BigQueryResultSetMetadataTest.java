@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -30,6 +31,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Array;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.concurrent.Future;
 import java.util.stream.Stream;
@@ -196,7 +198,7 @@ public class BigQueryResultSetMetadataTest {
     assertThat(resultSetMetaData.getColumnDisplaySize(2)).isEqualTo(10);
     assertThat(resultSetMetaData.getColumnDisplaySize(3)).isEqualTo(14);
     assertThat(resultSetMetaData.getColumnDisplaySize(12)).isEqualTo(50);
-    assertThat(resultSetMetaData.getColumnDisplaySize(5)).isEqualTo(16);
+    assertThat(resultSetMetaData.getColumnDisplaySize(5)).isEqualTo(26);
   }
 
   // Nested Types
@@ -294,5 +296,84 @@ public class BigQueryResultSetMetadataTest {
             Schema.of(schemaFields), 1L, null, statement, new Future<?>[] {mock(Future.class)});
     ResultSetMetaData metaData = resultSet.getMetaData();
     assertThat(metaData.isSearchable(1)).isTrue();
+  }
+
+  @Test
+  public void testTimestampPicosecondsMetadata_whenEnabled() throws SQLException {
+    Field picosTimestampField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    Schema schema = Schema.of(FieldList.of(picosTimestampField));
+    when(statement.isEnableTimestampPicos()).thenReturn(true);
+    BigQueryJsonResultSet jsonRs =
+        BigQueryJsonResultSet.of(schema, 1L, null, statement, (Future<?>[]) null);
+    ResultSetMetaData metadata = jsonRs.getMetaData();
+
+    assertThat(metadata.getColumnType(1)).isEqualTo(Types.VARCHAR);
+    assertThat(metadata.getColumnTypeName(1))
+        .isEqualTo(BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME);
+    assertThat(metadata.getColumnClassName(1)).isEqualTo(String.class.getName());
+    assertThat(metadata.getColumnDisplaySize(1)).isEqualTo(32);
+    assertThat(metadata.getPrecision(1)).isEqualTo(32);
+    assertThat(metadata.getScale(1)).isEqualTo(12);
+  }
+
+  @Test
+  public void testTimestampPicosecondsMetadata_whenDisabled() throws SQLException {
+    Field picosTimestampField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    Schema schema = Schema.of(FieldList.of(picosTimestampField));
+    when(statement.isEnableTimestampPicos()).thenReturn(false);
+    BigQueryJsonResultSet jsonRs =
+        BigQueryJsonResultSet.of(schema, 1L, null, statement, (Future<?>[]) null);
+    ResultSetMetaData metadata = jsonRs.getMetaData();
+
+    assertThat(metadata.getColumnType(1)).isEqualTo(Types.TIMESTAMP);
+    assertThat(metadata.getColumnTypeName(1)).isEqualTo("TIMESTAMP");
+    assertThat(metadata.getColumnClassName(1)).isEqualTo(Timestamp.class.getName());
+    assertThat(metadata.getColumnDisplaySize(1)).isEqualTo(26);
+    assertThat(metadata.getPrecision(1)).isEqualTo(26);
+    assertThat(metadata.getScale(1)).isEqualTo(6);
+  }
+
+  @Test
+  public void testRepeatedTimestampPicosecondsMetadata_remainsArray() throws SQLException {
+    Field repeatedPicosTimestampField =
+        Field.newBuilder("picosArray", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    Schema schema = Schema.of(FieldList.of(repeatedPicosTimestampField));
+    when(statement.isEnableTimestampPicos()).thenReturn(true);
+    BigQueryJsonResultSet jsonRs =
+        BigQueryJsonResultSet.of(schema, 1L, null, statement, (Future<?>[]) null);
+    ResultSetMetaData metadata = jsonRs.getMetaData();
+
+    assertThat(metadata.getColumnType(1)).isEqualTo(Types.ARRAY);
+    assertThat(metadata.getColumnTypeName(1)).isEqualTo("ARRAY");
+    assertThat(metadata.getColumnClassName(1)).isEqualTo(Array.class.getName());
+  }
+
+  @Test
+  public void testStandardTimestampMetadata_whenPicosEnabled() throws SQLException {
+    Field standardTimestampField =
+        Field.newBuilder("standardTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(6L)
+            .build();
+    Schema schema = Schema.of(FieldList.of(standardTimestampField));
+    when(statement.isEnableTimestampPicos()).thenReturn(true);
+    BigQueryJsonResultSet jsonRs =
+        BigQueryJsonResultSet.of(schema, 1L, null, statement, (Future<?>[]) null);
+    ResultSetMetaData metadata = jsonRs.getMetaData();
+
+    assertThat(metadata.getColumnType(1)).isEqualTo(Types.TIMESTAMP);
+    assertThat(metadata.getColumnTypeName(1)).isEqualTo("TIMESTAMP");
+    assertThat(metadata.getColumnClassName(1)).isEqualTo(Timestamp.class.getName());
+    assertThat(metadata.getColumnDisplaySize(1)).isEqualTo(26);
+    assertThat(metadata.getPrecision(1)).isEqualTo(26);
+    assertThat(metadata.getScale(1)).isEqualTo(6);
   }
 }

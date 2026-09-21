@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-    <bigquery-jdbc.version>1.2.0-SNAPSHOT</bigquery-jdbc.version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+    <bigquery-jdbc.version>1.5.0-SNAPSHOT</bigquery-jdbc.version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   </properties>
 
   <dependencies>

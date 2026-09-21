@@ -1813,6 +1813,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return new ColumnTypeInfo(Types.ARRAY, "ARRAY", null, null, null);
     }
 
+    if (this.connection.isEnableTimestampPicos()
+        && BigQueryTemporalUtility.isPicosecondTimestamp(field)) {
+      return new ColumnTypeInfo(
+          Types.VARCHAR, BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME, 32, 12, null);
+    }
+
     StandardSQLTypeName bqType = null;
     if (field.getType() != null && field.getType().getStandardType() != null) {
       bqType = field.getType().getStandardType();

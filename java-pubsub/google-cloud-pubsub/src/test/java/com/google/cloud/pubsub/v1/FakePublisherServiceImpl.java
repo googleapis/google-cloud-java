@@ -20,6 +20,7 @@ import com.google.common.base.Optional;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
+import io.grpc.Metadata;
 import io.grpc.stub.StreamObserver;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 class FakePublisherServiceImpl extends PublisherImplBase {
 
   private final LinkedBlockingQueue<PublishRequest> requests = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<Metadata> capturedHeaders = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
@@ -81,7 +83,6 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   @Override
   public void publish(
       PublishRequest request, final StreamObserver<PublishResponse> responseObserver) {
-    requests.add(request);
     Response response;
     try {
       if (autoPublishResponse) {
@@ -97,6 +98,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
       throw new IllegalArgumentException(e);
     }
     if (responseDelay == Duration.ZERO) {
+      requests.add(request);
       sendResponse(response, responseObserver);
     } else {
       final Response responseToSend = response;
@@ -109,6 +111,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
           },
           responseDelay.toMillis(),
           TimeUnit.MILLISECONDS);
+      requests.add(request);
     }
   }
 
@@ -159,5 +162,18 @@ class FakePublisherServiceImpl extends PublisherImplBase {
 
   public List<PublishRequest> getCapturedRequests() {
     return new ArrayList<PublishRequest>(requests);
+  }
+
+  public void recordHeaders(Metadata headers) {
+    capturedHeaders.add(headers);
+  }
+
+  public List<Metadata> getCapturedHeaders() {
+    return new ArrayList<>(capturedHeaders);
+  }
+
+  public void clearRequests() {
+    requests.clear();
+    capturedHeaders.clear();
   }
 }

@@ -213,6 +213,22 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 | :--- | :---: | :--- |
 | `EnableTimestampPicos` | `false` | Enables 12-digit picosecond precision for `TIMESTAMP(12)` data types. When enabled, `TIMESTAMP(12)` columns are retrieved with 12 fractional digits formatted in UTC (`YYYY-MM-DD HH:MM:SS.ffffffffffff`) via `getString()` and `getObject()`, typed as `Types.VARCHAR` (`12`) with type name `"TIMESTAMP_PICOSECONDS"`. Picosecond precision is incompatible with Legacy SQL (`QueryDialect=BIG_QUERY`). |
 
+> [!IMPORTANT]
+> **Writing picosecond values with a `PreparedStatement`.** BigQuery currently truncates
+> `TIMESTAMP`-typed query parameters to microsecond precision, even when the target column is
+> `TIMESTAMP(12)`. Binding a value via `setTimestamp()` or `setObject(..., Types.TIMESTAMP)`
+> therefore silently drops any sub-microsecond digits.
+>
+> To write full picosecond precision, bind the value as a string; it is coerced to `TIMESTAMP(12)`
+> server side with all 12 digits intact:
+>
+> ```java
+> ps.setString(1, "2026-10-05 08:15:30.987654321098");
+> ```
+>
+> Reading picosecond values is unaffected; `getString()` returns all 12 digits on both the REST and
+> Storage Read API paths.
+
 ### High-Throughput Storage & Write API Properties
 
 | Property Name | Default Value | Description |

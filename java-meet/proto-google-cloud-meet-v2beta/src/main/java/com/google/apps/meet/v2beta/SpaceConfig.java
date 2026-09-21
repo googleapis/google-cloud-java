@@ -4134,9 +4134,9 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Configuration related to smart notes in a meeting space. More
-     * details about smart notes
-     * https://support.google.com/meet/answer/14754931?hl=en.
+     * Configuration related to smart notes in a meeting space. For
+     * more information about smart notes, see ["Take notes for me" in Google
+     * Meet](https://support.google.com/meet/answer/14754931).
      * </pre>
      *
      * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig}
@@ -4413,9 +4413,9 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Configuration related to smart notes in a meeting space. More
-       * details about smart notes
-       * https://support.google.com/meet/answer/14754931?hl=en.
+       * Configuration related to smart notes in a meeting space. For
+       * more information about smart notes, see ["Take notes for me" in Google
+       * Meet](https://support.google.com/meet/answer/14754931).
        * </pre>
        *
        * Protobuf type {@code google.apps.meet.v2beta.SpaceConfig.ArtifactConfig.SmartNotesConfig}
@@ -6168,7 +6168,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * The pre-configured moderation mode for the Meeting.
    * Default: Controlled by the user's policies.
    * </pre>
@@ -6186,7 +6185,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * The pre-configured moderation mode for the Meeting.
    * Default: Controlled by the user's policies.
    * </pre>
@@ -6211,7 +6209,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -6230,7 +6227,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -6252,7 +6248,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -6275,7 +6270,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Whether attendance report is enabled for the meeting space.
    * </pre>
    *
@@ -6294,7 +6288,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Whether attendance report is enabled for the meeting space.
    * </pre>
    *
@@ -6322,7 +6315,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>
@@ -6340,7 +6332,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>
@@ -6360,7 +6351,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>
@@ -7067,7 +7057,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * The pre-configured moderation mode for the Meeting.
      * Default: Controlled by the user's policies.
      * </pre>
@@ -7085,7 +7074,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * The pre-configured moderation mode for the Meeting.
      * Default: Controlled by the user's policies.
      * </pre>
@@ -7106,7 +7094,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * The pre-configured moderation mode for the Meeting.
      * Default: Controlled by the user's policies.
      * </pre>
@@ -7128,7 +7115,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * The pre-configured moderation mode for the Meeting.
      * Default: Controlled by the user's policies.
      * </pre>
@@ -7152,7 +7138,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * The pre-configured moderation mode for the Meeting.
      * Default: Controlled by the user's policies.
      * </pre>
@@ -7179,7 +7164,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7198,7 +7182,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7224,7 +7207,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7252,7 +7234,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7277,7 +7258,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7312,7 +7292,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7336,7 +7315,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7356,7 +7334,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7380,7 +7357,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * When moderation.ON, these restrictions go into effect for the meeting.
      * When moderation.OFF, will be reset to default ModerationRestrictions.
      * </pre>
@@ -7412,7 +7388,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Whether attendance report is enabled for the meeting space.
      * </pre>
      *
@@ -7431,7 +7406,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Whether attendance report is enabled for the meeting space.
      * </pre>
      *
@@ -7453,7 +7427,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Whether attendance report is enabled for the meeting space.
      * </pre>
      *
@@ -7478,7 +7451,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Whether attendance report is enabled for the meeting space.
      * </pre>
      *
@@ -7504,7 +7476,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Whether attendance report is enabled for the meeting space.
      * </pre>
      *
@@ -7532,7 +7503,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7549,7 +7519,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7572,7 +7541,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7597,7 +7565,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7620,7 +7587,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7652,7 +7618,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7674,7 +7639,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7692,7 +7656,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>
@@ -7714,7 +7677,6 @@ public final class SpaceConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Developer Preview](https://developers.google.com/workspace/preview):
      * Configuration pertaining to the auto-generated artifacts that the meeting
      * supports.
      * </pre>

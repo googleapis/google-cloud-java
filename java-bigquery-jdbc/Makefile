@@ -93,6 +93,7 @@ run-it-standalone:
 		-e "GOOGLE_APPLICATION_CREDENTIALS=/auth/application_creds.json" \
 		-v $(SRC):/src \
 		-e "SA_EMAIL=$(SA_EMAIL)" \
+		-e "SA_EMAIL_NO_READAPI=$(SA_EMAIL_NO_READAPI)" \
 		-e "KMS_RESOURCE_PATH=$(KMS_RESOURCE_PATH)" \
 		-e "SA_SECRET=/auth/application_creds.json" \
 		-e "SA_SECRET_P12=/auth/application_creds.p12" \

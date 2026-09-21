@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -500,6 +501,44 @@ public class BigQueryStatementTest {
     expectedLabels.put("extraKey1", "extraVal1");
 
     assertTrue(Maps.difference(expectedLabels, jobConfig.getLabels()).areEqual());
+  }
+
+  @Test
+  public void testExecute_legacySqlWithEnableTimestampPicos_throwsException() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+    doReturn(true).when(mockConn).isEnableTimestampPicos();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    BigQueryJdbcException ex =
+        assertThrows(BigQueryJdbcException.class, () -> statement.execute("select 1"));
+    assertTrue(ex.getMessage().contains("Picosecond data is incompatible with Legacy SQL"));
+    assertTrue(ex.getMessage().contains("please set QueryDialect to SQL"));
+  }
+
+  @Test
+  public void testGetJobConfig_standardSql_setsUseLegacySqlFalse() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("SQL").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertFalse(jobConfig.useLegacySql());
+  }
+
+  @Test
+  public void testGetJobConfig_legacySql_setsUseLegacySqlTrue() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertTrue(jobConfig.useLegacySql());
   }
 
   @Test
