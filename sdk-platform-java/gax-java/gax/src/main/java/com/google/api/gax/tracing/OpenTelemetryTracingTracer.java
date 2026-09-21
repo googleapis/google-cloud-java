@@ -59,11 +59,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   @Override
   @SuppressWarnings("deprecation")
   public Scope inScope() {
-    if (attemptSpan == null) {
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
       return NOOP_SCOPE;
     }
     @SuppressWarnings("MustBeClosedChecker")
-    io.opentelemetry.context.Scope otelScope = attemptSpan.makeCurrent();
+    io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
     return otelScope::close;
   }
 
