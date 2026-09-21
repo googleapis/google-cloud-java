@@ -53,20 +53,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private @Nullable volatile Span attemptSpan;
-
-  private static final Scope NOOP_SCOPE = () -> {};
-
-  @Override
-  @SuppressWarnings("deprecation")
-  public Scope inScope() {
-    Span currentSpan = attemptSpan;
-    if (currentSpan == null) {
-      return NOOP_SCOPE;
-    }
-    @SuppressWarnings("MustBeClosedChecker")
-    io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
-    return otelScope::close;
-  }
+  private volatile io.opentelemetry.context.@Nullable Scope scope;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -137,6 +124,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   @Override
+  @SuppressWarnings("MustBeClosedChecker")
   public void attemptStarted(Object request, int attemptNumber) {
     Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
 
@@ -160,6 +148,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+    this.scope = attemptSpan.makeCurrent();
   }
 
   @Override
@@ -252,8 +241,15 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       return;
     }
 
-    attemptSpan.end();
-    attemptSpan = null;
+    try {
+      if (scope != null) {
+        scope.close();
+      }
+    } finally {
+      scope = null;
+      attemptSpan.end();
+      attemptSpan = null;
+    }
   }
 
   @Override

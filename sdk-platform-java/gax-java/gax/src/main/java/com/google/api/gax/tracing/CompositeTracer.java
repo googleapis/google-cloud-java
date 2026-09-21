@@ -136,62 +136,44 @@ class CompositeTracer extends BaseApiTracer {
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptSucceeded() {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptSucceeded();
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptSucceeded();
     }
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptCancelled() {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptCancelled();
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptCancelled();
     }
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptFailed(error, delay);
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailed(error, delay);
     }
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptFailedDuration(error, delay);
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailedDuration(error, delay);
     }
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptFailedRetriesExhausted(Throwable error) {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptFailedRetriesExhausted(error);
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptFailedRetriesExhausted(error);
     }
   }
 
   @Override
-  @SuppressWarnings("deprecation")
   public void attemptPermanentFailure(Throwable error) {
-    try (Scope scope = inScope()) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).attemptPermanentFailure(error);
-      }
+    for (int i = children.size() - 1; i >= 0; i--) {
+      children.get(i).attemptPermanentFailure(error);
     }
   }
 

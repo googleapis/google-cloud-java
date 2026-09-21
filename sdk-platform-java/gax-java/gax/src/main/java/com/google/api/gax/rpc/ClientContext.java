@@ -300,7 +300,7 @@ public abstract class ClientContext {
     if (LoggingUtils.isLoggingEnabled()) {
       apiTracerFactory =
           new CompositeTracerFactory(
-              ImmutableList.of(new LoggingTracerFactory(), apiTracerFactory));
+              ImmutableList.of(apiTracerFactory, new LoggingTracerFactory()));
     }
 
     if (apiTracerFactory.needsContext()) {

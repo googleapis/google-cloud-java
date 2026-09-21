@@ -75,6 +75,7 @@ class OpenTelemetryTracingTracerTest {
     lenient().when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     lenient().when(spanBuilder.startSpan()).thenReturn(span);
+    lenient().when(span.makeCurrent()).thenReturn(scope);
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
   }
@@ -684,23 +685,44 @@ class OpenTelemetryTracingTracerTest {
   }
 
   @Test
-  @SuppressWarnings({"deprecation", "MustBeClosedChecker"})
-  void testInScope_whenAttemptSpanNull_returnsNoopScope() {
-    ApiTracer.Scope noopScope = openTelemetryTracingTracer.inScope();
-    noopScope.close();
-    verify(span, never()).makeCurrent();
+  void testAttemptStarted_makesSpanCurrent() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    verify(span).makeCurrent();
   }
 
   @Test
-  @SuppressWarnings({"deprecation", "MustBeClosedChecker"})
-  void testInScope_makesSpanCurrentAndCloses() {
-    when(span.makeCurrent()).thenReturn(scope);
+  void testAttemptEnded_closesScope_succeeded() {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptSucceeded();
+    verify(scope).close();
+  }
 
-    ApiTracer.Scope tracerScope = openTelemetryTracingTracer.inScope();
-    verify(span).makeCurrent();
+  @Test
+  void testAttemptEnded_closesScope_failed() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptFailedRetriesExhausted(new RuntimeException());
+    verify(scope).close();
+  }
 
-    tracerScope.close();
+  @Test
+  void testAttemptEnded_closesScope_cancelled() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptCancelled();
+    verify(scope).close();
+  }
+
+  @Test
+  void testAttemptEnded_closesScope_failedDuration() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptFailedDuration(
+        new RuntimeException(), java.time.Duration.ZERO);
+    verify(scope).close();
+  }
+
+  @Test
+  void testAttemptEnded_closesScope_permanentFailure() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptPermanentFailure(new RuntimeException());
     verify(scope).close();
   }
 }
