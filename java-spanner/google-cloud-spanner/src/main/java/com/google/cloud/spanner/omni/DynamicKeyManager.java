@@ -27,6 +27,8 @@ import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.Principal;
 import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Signature;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
@@ -140,18 +142,39 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   }
 
   private void reloadMaterial() throws Exception {
-    long certMod = certFile.lastModified();
-    long certLen = certFile.length();
-    long keyMod = keyFile.lastModified();
-    long keyLen = keyFile.length();
-
     byte[] certBytes = Files.readAllBytes(certFile.toPath());
     byte[] keyBytes = Files.readAllBytes(keyFile.toPath());
 
+    long certMod = certFile.lastModified();
+    long certLen = certBytes.length;
+    long keyMod = keyFile.lastModified();
+    long keyLen = keyBytes.length;
+
     X509Certificate[] chain = parseCertificates(certBytes);
     PrivateKey key = parsePrivateKey(keyBytes);
+    verifyKeyMatch(chain[0].getPublicKey(), key);
 
     this.currentMaterial = new KeyMaterial(certMod, certLen, keyMod, keyLen, chain, key);
+  }
+
+  private static void verifyKeyMatch(PublicKey publicKey, PrivateKey privateKey)
+      throws GeneralSecurityException {
+    String algorithm = privateKey.getAlgorithm();
+    String sigAlg =
+        "RSA".equalsIgnoreCase(algorithm)
+            ? "SHA256withRSA"
+            : "EC".equalsIgnoreCase(algorithm) ? "SHA256withECDSA" : null;
+    if (sigAlg != null) {
+      Signature sig = Signature.getInstance(sigAlg);
+      sig.initSign(privateKey);
+      sig.update(new byte[0]);
+      byte[] signature = sig.sign();
+      sig.initVerify(publicKey);
+      sig.update(new byte[0]);
+      if (!sig.verify(signature)) {
+        throw new GeneralSecurityException("Private key does not match the certificate public key");
+      }
+    }
   }
 
   private static X509Certificate[] parseCertificates(byte[] certBytes) throws CertificateException {

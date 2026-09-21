@@ -203,4 +203,57 @@ public class DynamicKeyManagerTest {
       ssc.delete();
     }
   }
+
+  @Test
+  public void testMismatchedCertificateAndKeyFailsInitialization() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.cert1");
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.cert2");
+    try {
+      File certFile = tempFolder.newFile("mismatched-init.crt");
+      File keyFile = tempFolder.newFile("mismatched-init.key");
+
+      // Pair cert from ssc1 with key from ssc2
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+
+      RuntimeException exception =
+          assertThrows(RuntimeException.class, () -> new DynamicKeyManager(certFile, keyFile));
+      assertThat(exception.getCause().getMessage())
+          .contains("Private key does not match the certificate public key");
+    } finally {
+      ssc1.delete();
+      ssc2.delete();
+    }
+  }
+
+  @Test
+  public void testMismatchedRotationFallsBackToPrevious() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.match1");
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.match2");
+    try {
+      File certFile = tempFolder.newFile("mismatched-rotate.crt");
+      File keyFile = tempFolder.newFile("mismatched-rotate.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
+
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 0L);
+      String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals(
+          ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+
+      Thread.sleep(1100);
+
+      // Rotate only cert file (e.g., intermediate state during rotation)
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+
+      // Key manager should detect mismatch and retain ssc1 credentials
+      String aliasAfter = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals(
+          ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(aliasAfter)[0].getSubjectDN());
+    } finally {
+      ssc1.delete();
+      ssc2.delete();
+    }
+  }
 }
