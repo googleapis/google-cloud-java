@@ -37,10 +37,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -52,21 +48,16 @@ import javax.net.ssl.X509ExtendedKeyManager;
  * from disk whenever the underlying files are modified or rotated.
  */
 @InternalApi
-public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoCloseable {
+public class DynamicKeyManager extends X509ExtendedKeyManager {
   private static final Logger logger = Logger.getLogger(DynamicKeyManager.class.getName());
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
-  private static final ThreadFactory DAEMON_THREAD_FACTORY =
-      r -> {
-        Thread t = new Thread(r, "spanner-omni-key-manager-reloader");
-        t.setDaemon(true);
-        return t;
-      };
 
   private final File certFile;
   private final File keyFile;
-  private final ScheduledExecutorService scheduler;
+  private final long checkIntervalMs;
   private final ConcurrentHashMap<String, KeyMaterial> materials = new ConcurrentHashMap<>();
   private final AtomicLong versionCounter = new AtomicLong();
+  private volatile long lastCheckedMs;
 
   private static class CertificateFactoryHolder {
     static final CertificateFactory INSTANCE;
@@ -123,6 +114,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
   DynamicKeyManager(File certFile, File keyFile, long checkIntervalMs) {
     this.certFile = Preconditions.checkNotNull(certFile, "certFile cannot be null");
     this.keyFile = Preconditions.checkNotNull(keyFile, "keyFile cannot be null");
+    this.checkIntervalMs = checkIntervalMs;
     try {
       reloadMaterial();
     } catch (IllegalArgumentException e) {
@@ -130,31 +122,34 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
     } catch (Exception e) {
       throw new RuntimeException("Failed to initialize client certificate/key", e);
     }
-    if (checkIntervalMs > 0) {
-      this.scheduler = Executors.newSingleThreadScheduledExecutor(DAEMON_THREAD_FACTORY);
-      this.scheduler.scheduleWithFixedDelay(
-          this::checkAndReload, checkIntervalMs, checkIntervalMs, TimeUnit.MILLISECONDS);
-    } else {
-      this.scheduler = null;
-    }
+    this.lastCheckedMs = System.currentTimeMillis();
   }
 
   void checkAndReload() {
+    long now = System.currentTimeMillis();
+    if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+      return;
+    }
     KeyMaterial existing = this.currentMaterial;
     if (existing != null
         && certFile.lastModified() == existing.certLastModified
         && certFile.length() == existing.certLength
         && keyFile.lastModified() == existing.keyLastModified
         && keyFile.length() == existing.keyLength) {
+      lastCheckedMs = now;
       return;
     }
     synchronized (this) {
+      if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+        return;
+      }
       existing = this.currentMaterial;
       if (existing != null
           && certFile.lastModified() == existing.certLastModified
           && certFile.length() == existing.certLength
           && keyFile.lastModified() == existing.keyLastModified
           && keyFile.length() == existing.keyLength) {
+        lastCheckedMs = now;
         return;
       }
       try {
@@ -164,6 +159,8 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
             Level.WARNING,
             "Failed to reload rotated client certificate/key from disk, retaining current material",
             e);
+      } finally {
+        lastCheckedMs = now;
       }
     }
   }
@@ -206,7 +203,9 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
     String sigAlg =
         "RSA".equalsIgnoreCase(algorithm)
             ? "SHA256withRSA"
-            : "EC".equalsIgnoreCase(algorithm) ? "SHA256withECDSA" : null;
+            : ("EC".equalsIgnoreCase(algorithm) || "ECDSA".equalsIgnoreCase(algorithm))
+                ? "SHA256withECDSA"
+                : null;
     if (sigAlg != null) {
       Signature sig = Signature.getInstance(sigAlg);
       sig.initSign(privateKey);
@@ -283,12 +282,14 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
 
   @Override
   public String chooseClientAlias(String[] keyType, Principal[] issuers, Socket socket) {
+    checkAndReload();
     KeyMaterial mat = this.currentMaterial;
     return mat != null ? mat.alias : null;
   }
 
   @Override
   public String chooseEngineClientAlias(String[] keyType, Principal[] issuers, SSLEngine engine) {
+    checkAndReload();
     KeyMaterial mat = this.currentMaterial;
     return mat != null ? mat.alias : null;
   }
@@ -313,6 +314,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
 
   @Override
   public String[] getClientAliases(String keyType, Principal[] issuers) {
+    checkAndReload();
     KeyMaterial mat = this.currentMaterial;
     return mat != null ? new String[] {mat.alias} : null;
   }
@@ -330,12 +332,5 @@ public class DynamicKeyManager extends X509ExtendedKeyManager implements AutoClo
   @Override
   public String chooseEngineServerAlias(String keyType, Principal[] issuers, SSLEngine engine) {
     return null;
-  }
-
-  @Override
-  public void close() {
-    if (scheduler != null) {
-      scheduler.shutdown();
-    }
   }
 }
