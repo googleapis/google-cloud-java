@@ -93,7 +93,9 @@ public class ITActionableErrorsLogging {
     if (testAppender != null) {
       testAppender.stop();
       org.slf4j.Logger logger = LoggerFactory.getLogger("com.google.api.gax.tracing.LoggingTracer");
-      ((ch.qos.logback.classic.Logger) logger).detachAppender(testAppender);
+      if (logger instanceof ch.qos.logback.classic.Logger) {
+        ((ch.qos.logback.classic.Logger) logger).detachAppender(testAppender);
+      }
     }
   }
 
