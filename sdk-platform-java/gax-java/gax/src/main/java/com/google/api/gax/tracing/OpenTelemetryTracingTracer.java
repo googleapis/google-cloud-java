@@ -55,6 +55,17 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private @Nullable Span attemptSpan;
 
   @Override
+  @SuppressWarnings("deprecation")
+  public Scope inScope() {
+    if (attemptSpan == null) {
+      return () -> {};
+    }
+    @SuppressWarnings("MustBeClosedChecker")
+    io.opentelemetry.context.Scope otelScope = attemptSpan.makeCurrent();
+    return otelScope::close;
+  }
+
+  @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
     if (attemptSpan != null) {
       io.opentelemetry.context.Context context =

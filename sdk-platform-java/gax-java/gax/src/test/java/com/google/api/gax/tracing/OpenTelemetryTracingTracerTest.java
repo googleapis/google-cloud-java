@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -64,15 +65,16 @@ class OpenTelemetryTracingTracerTest {
   @Mock private Tracer tracer;
   @Mock private SpanBuilder spanBuilder;
   @Mock private Span span;
+  @Mock private io.opentelemetry.context.Scope scope;
   private OpenTelemetryTracingTracer openTelemetryTracingTracer;
   private static final String ATTEMPT_SPAN_NAME = "Service/Method/attempt";
 
   @BeforeEach
   void setUp() {
-    when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
-    when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);
-    when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
-    when(spanBuilder.startSpan()).thenReturn(span);
+    lenient().when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
+    lenient().when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);
+    lenient().when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
+    lenient().when(spanBuilder.startSpan()).thenReturn(span);
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
   }
@@ -679,5 +681,26 @@ class OpenTelemetryTracingTracerTest {
     assertThat(carrier).containsKey("traceparent");
     assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000001");
     assertThat(carrier.get("traceparent")).contains("0000000000000002");
+  }
+
+  @Test
+  @SuppressWarnings({"deprecation", "MustBeClosedChecker"})
+  void testInScope_whenAttemptSpanNull_returnsNoopScope() {
+    ApiTracer.Scope noopScope = openTelemetryTracingTracer.inScope();
+    noopScope.close();
+    verify(span, never()).makeCurrent();
+  }
+
+  @Test
+  @SuppressWarnings({"deprecation", "MustBeClosedChecker"})
+  void testInScope_makesSpanCurrentAndCloses() {
+    when(span.makeCurrent()).thenReturn(scope);
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+
+    ApiTracer.Scope tracerScope = openTelemetryTracingTracer.inScope();
+    verify(span).makeCurrent();
+
+    tracerScope.close();
+    verify(scope).close();
   }
 }

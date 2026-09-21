@@ -221,4 +221,48 @@ class LoggingTracerTest {
       return testLogger.getKeyValuePairsMap();
     }
   }
+
+  @Test
+  void testAttemptFailedDuration_withOpenTelemetryTracingTracer_spanIsActiveDuringLogging() {
+    io.opentelemetry.api.trace.SpanContext spanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span testSpan = io.opentelemetry.api.trace.Span.wrap(spanContext);
+
+    java.util.concurrent.atomic.AtomicReference<String> activeTraceIdDuringLog =
+        new java.util.concurrent.atomic.AtomicReference<>();
+
+    LoggingTracer loggingTracer =
+        new LoggingTracer(ApiTracerContext.empty()) {
+          @Override
+          void recordActionableError(Throwable error) {
+            super.recordActionableError(error);
+            activeTraceIdDuringLog.set(
+                io.opentelemetry.api.trace.Span.current().getSpanContext().getTraceId());
+          }
+        };
+
+    ApiTracer otelTracer =
+        new BaseApiTracer() {
+          @Override
+          @SuppressWarnings("deprecation")
+          public Scope inScope() {
+            io.opentelemetry.context.Scope scope = testSpan.makeCurrent();
+            return scope::close;
+          }
+        };
+
+    CompositeTracer compositeTracer =
+        new CompositeTracer(java.util.Arrays.asList(loggingTracer, otelTracer));
+
+    compositeTracer.attemptFailedDuration(new RuntimeException("error"), java.time.Duration.ZERO);
+
+    assertEquals("00000000000000000000000000000001", activeTraceIdDuringLog.get());
+    assertEquals(
+        io.opentelemetry.api.trace.Span.getInvalid().getSpanContext(),
+        io.opentelemetry.api.trace.Span.current().getSpanContext());
+  }
 }
