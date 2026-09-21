@@ -184,16 +184,17 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     this.currentMaterial = newMaterial;
 
     long oldestToKeep = currentVersion - 10;
-    for (String keyStr : materials.keySet()) {
-      try {
-        long ver = Long.parseLong(keyStr.substring("client-".length()));
-        if (ver < oldestToKeep) {
-          materials.remove(keyStr);
-        }
-      } catch (Exception ignored) {
-        materials.remove(keyStr);
-      }
-    }
+    materials
+        .keySet()
+        .removeIf(
+            keyStr -> {
+              try {
+                long ver = Long.parseLong(keyStr.substring("client-".length()));
+                return ver < oldestToKeep;
+              } catch (Exception e) {
+                return true;
+              }
+            });
   }
 
   private static void verifyKeyMatch(PublicKey publicKey, PrivateKey privateKey)
