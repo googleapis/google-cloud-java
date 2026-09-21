@@ -1706,9 +1706,15 @@ public class SpannerOptionsTest {
               .build();
 
       assertNotNull(options.getChannelConfigurator());
+      assertEquals(certPath, options.getClientCertificate());
+      assertEquals(keyPath, options.getClientCertificateKey());
+      assertEquals(caPath, options.getCaCertificate());
 
       SpannerOptions fromBuilder = options.toBuilder().build();
       assertNotNull(fromBuilder.getChannelConfigurator());
+      assertEquals(certPath, fromBuilder.getClientCertificate());
+      assertEquals(keyPath, fromBuilder.getClientCertificateKey());
+      assertEquals(caPath, fromBuilder.getCaCertificate());
 
       // Test standalone setCaCertificate
       SpannerOptions caOnlyOptions =
@@ -1720,6 +1726,9 @@ public class SpannerOptionsTest {
               .build();
 
       assertNotNull(caOnlyOptions.getChannelConfigurator());
+      assertNull(caOnlyOptions.getClientCertificate());
+      assertNull(caOnlyOptions.getClientCertificateKey());
+      assertEquals(caPath, caOnlyOptions.getCaCertificate());
 
       // Test setCaCertificate combined with login (username/password)
       SpannerOptions loginWithCaOptions =
@@ -1733,10 +1742,12 @@ public class SpannerOptionsTest {
 
       assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
       assertNotNull(loginWithCaOptions.getChannelConfigurator());
+      assertEquals(caPath, loginWithCaOptions.getCaCertificate());
 
       SpannerOptions loginFromBuilder = loginWithCaOptions.toBuilder().build();
       assertTrue(loginFromBuilder.getCredentials() instanceof SpannerOmniCredentials);
       assertNotNull(loginFromBuilder.getChannelConfigurator());
+      assertEquals(caPath, loginFromBuilder.getCaCertificate());
     } finally {
       ssc.delete();
       ca.delete();

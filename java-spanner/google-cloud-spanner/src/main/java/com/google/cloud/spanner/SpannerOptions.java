@@ -359,7 +359,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean autoTaggingEnabled;
   private final List<String> autoTaggingPackages;
   private final int autoTaggingTracerLimit;
-  private final SslContext omniSslContext;
+  private final String clientCertificate;
+  private final String clientCertificateKey;
+  private final String caCertificate;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -945,7 +947,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
-    omniSslContext = builder.omniSslContext;
+    clientCertificate = builder.clientCertificate;
+    clientCertificateKey = builder.clientCertificateKey;
+    caCertificate = builder.caCertificate;
     if (builder.omniSslContext != null) {
       final SslContext sslContext = builder.omniSslContext;
       @SuppressWarnings("rawtypes")
@@ -1301,9 +1305,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
-      if (builder.sslContextBuilder != null) {
+      if (builder.clientCertificate != null || builder.caCertificate != null) {
         try {
-          builder.omniSslContext = builder.sslContextBuilder.build();
+          SslContextBuilder sslContextBuilder = GrpcSslContexts.forClient();
+          if (builder.clientCertificate != null && builder.clientCertificateKey != null) {
+            sslContextBuilder.keyManager(
+                new DynamicKeyManager(
+                    new File(builder.clientCertificate), new File(builder.clientCertificateKey)));
+          }
+          if (builder.caCertificate != null) {
+            sslContextBuilder.trustManager(
+                new DynamicTrustManager(new File(builder.caCertificate)));
+          }
+          builder.omniSslContext = sslContextBuilder.build();
         } catch (Exception e) {
           throw SpannerExceptionFactory.asSpannerException(e);
         }
@@ -1415,7 +1429,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
-    private SslContextBuilder sslContextBuilder = null;
+    private String clientCertificate = null;
+    private String clientCertificateKey = null;
+    private String caCertificate = null;
     private SslContext omniSslContext = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
@@ -1534,7 +1550,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.autoTaggingEnabled = options.autoTaggingEnabled;
       this.autoTaggingPackages = options.autoTaggingPackages;
       this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
-      this.omniSslContext = options.omniSslContext;
+      this.clientCertificate = options.clientCertificate;
+      this.clientCertificateKey = options.clientCertificateKey;
+      this.caCertificate = options.caCertificate;
     }
 
     @Override
@@ -2265,13 +2283,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param clientCertificateKey Path to the client private key file.
      */
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
-      Preconditions.checkNotNull(clientCertificate, "clientCertificate cannot be null");
-      Preconditions.checkNotNull(clientCertificateKey, "clientCertificateKey cannot be null");
-      if (this.sslContextBuilder == null) {
-        this.sslContextBuilder = GrpcSslContexts.forClient();
-      }
-      this.sslContextBuilder.keyManager(
-          new DynamicKeyManager(new File(clientCertificate), new File(clientCertificateKey)));
+      this.clientCertificate =
+          Preconditions.checkNotNull(clientCertificate, "clientCertificate cannot be null");
+      this.clientCertificateKey =
+          Preconditions.checkNotNull(clientCertificateKey, "clientCertificateKey cannot be null");
       return this;
     }
 
@@ -2282,11 +2297,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * @param caCertificate Path to the server root CA certificate file.
      */
     public Builder setCaCertificate(String caCertificate) {
-      Preconditions.checkNotNull(caCertificate, "caCertificate cannot be null");
-      if (this.sslContextBuilder == null) {
-        this.sslContextBuilder = GrpcSslContexts.forClient();
-      }
-      this.sslContextBuilder.trustManager(new DynamicTrustManager(new File(caCertificate)));
+      this.caCertificate =
+          Preconditions.checkNotNull(caCertificate, "caCertificate cannot be null");
       return this;
     }
 
@@ -3205,6 +3217,21 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Override
   protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
     return cachedRpc == null || ((SpannerRpc) cachedRpc).isClosed();
+  }
+
+  @Nullable
+  public String getClientCertificate() {
+    return clientCertificate;
+  }
+
+  @Nullable
+  public String getClientCertificateKey() {
+    return clientCertificateKey;
+  }
+
+  @Nullable
+  public String getCaCertificate() {
+    return caCertificate;
   }
 
   @SuppressWarnings("unchecked")
