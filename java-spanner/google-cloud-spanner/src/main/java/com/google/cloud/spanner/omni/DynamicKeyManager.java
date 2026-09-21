@@ -139,6 +139,15 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
       PrivateKey key = parsePrivateKey(keyBytes);
 
       this.currentMaterial = new KeyMaterial(certMod, certLen, keyMod, keyLen, chain, key);
+    } catch (IllegalArgumentException e) {
+      if (this.currentMaterial != null) {
+        logger.log(
+            Level.WARNING,
+            "Error reloading client certificate or key, falling back to cached credentials",
+            e);
+      } else {
+        throw e;
+      }
     } catch (Exception e) {
       if (this.currentMaterial != null) {
         logger.log(
@@ -162,7 +171,13 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   }
 
   private static PrivateKey parsePrivateKey(byte[] keyBytes) throws Exception {
-    String keyStr = new String(keyBytes, StandardCharsets.US_ASCII);
+    String keyStr = new String(keyBytes, StandardCharsets.UTF_8);
+    if (keyStr.contains("-----BEGIN RSA PRIVATE KEY-----")
+        || keyStr.contains("-----BEGIN EC PRIVATE KEY-----")) {
+      throw new IllegalArgumentException(
+          "PKCS#1 private keys are not supported. Please convert your key to PKCS#8 format using: "
+              + "openssl pkcs8 -topk8 -nocrypt -in <key> -out <key_pkcs8>");
+    }
     byte[] der;
     if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
       der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");

@@ -49,107 +49,124 @@ public class DynamicTrustManagerTest {
   @Test
   public void testCustomTrustManagerAndDynamicRotation() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.1");
-    File caFile = tempFolder.newFile("ca.crt");
-    Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
-
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
-
-    X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
-    assertNotNull(issuers1);
-    assertEquals(1, issuers1.length);
-    assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
-
-    // Validating ca1 cert should succeed
-    trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
-
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.2");
+    try {
+      File caFile = tempFolder.newFile("ca.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
 
-    // Validating ca2 cert with ca1 trusted should fail
-    assertThrows(
-        CertificateException.class,
-        () -> trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA"));
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
 
-    Thread.sleep(1100);
+      X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+      assertNotNull(issuers1);
+      assertEquals(1, issuers1.length);
+      assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
 
-    // Rotate CA file on disk to ca2
-    Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+      // Validating ca1 cert should succeed
+      trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
 
-    // Now ca2 should be accepted and ca1 should be rejected
-    X509Certificate[] issuers2 = trustManager.getAcceptedIssuers();
-    assertNotNull(issuers2);
-    assertEquals(1, issuers2.length);
-    assertEquals(ca2.cert().getSubjectDN(), issuers2[0].getSubjectDN());
+      // Validating ca2 cert with ca1 trusted should fail
+      assertThrows(
+          CertificateException.class,
+          () -> trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA"));
 
-    trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+      Thread.sleep(1100);
 
-    assertThrows(
-        CertificateException.class,
-        () -> trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA"));
+      // Rotate CA file on disk to ca2
+      Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+
+      // Now ca2 should be accepted and ca1 should be rejected
+      X509Certificate[] issuers2 = trustManager.getAcceptedIssuers();
+      assertNotNull(issuers2);
+      assertEquals(1, issuers2.length);
+      assertEquals(ca2.cert().getSubjectDN(), issuers2[0].getSubjectDN());
+
+      trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+
+      assertThrows(
+          CertificateException.class,
+          () -> trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA"));
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
   }
 
   @Test
   public void testFileCheckThrottling() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.throttle1");
-    File caFile = tempFolder.newFile("ca-throttle.crt");
-    Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
-
-    // 60-second check interval
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 60000L);
-
-    X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
-    assertEquals(1, issuers1.length);
-    assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
-
-    // Rotate CA on disk immediately
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.throttle2");
-    Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+    try {
+      File caFile = tempFolder.newFile("ca-throttle.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
 
-    // Within throttle interval, trust manager should retain previous CA
-    assertEquals(ca1.cert().getSubjectDN(), trustManager.getAcceptedIssuers()[0].getSubjectDN());
-    trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+      // 60-second check interval
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 60000L);
+
+      X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+      assertEquals(1, issuers1.length);
+      assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
+
+      // Rotate CA on disk immediately
+      Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+
+      // Within throttle interval, trust manager should retain previous CA
+      assertEquals(ca1.cert().getSubjectDN(), trustManager.getAcceptedIssuers()[0].getSubjectDN());
+      trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
   }
 
   @Test
   public void testMultipleCAsInFile() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.multi.ca.1");
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.multi.ca.2");
+    try {
+      File caFile = tempFolder.newFile("multi-ca.crt");
+      byte[] bundle =
+          (new String(Files.readAllBytes(ca1.certificate().toPath()), StandardCharsets.UTF_8)
+                  + "\n"
+                  + new String(
+                      Files.readAllBytes(ca2.certificate().toPath()), StandardCharsets.UTF_8))
+              .getBytes(StandardCharsets.UTF_8);
+      Files.write(caFile.toPath(), bundle);
 
-    File caFile = tempFolder.newFile("multi-ca.crt");
-    byte[] bundle =
-        (new String(Files.readAllBytes(ca1.certificate().toPath()), StandardCharsets.UTF_8)
-                + "\n"
-                + new String(
-                    Files.readAllBytes(ca2.certificate().toPath()), StandardCharsets.UTF_8))
-            .getBytes(StandardCharsets.UTF_8);
-    Files.write(caFile.toPath(), bundle);
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile);
 
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile);
+      X509Certificate[] issuers = trustManager.getAcceptedIssuers();
+      assertNotNull(issuers);
+      assertEquals(2, issuers.length);
 
-    X509Certificate[] issuers = trustManager.getAcceptedIssuers();
-    assertNotNull(issuers);
-    assertEquals(2, issuers.length);
-
-    trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
-    trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+      trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+      trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
   }
 
   @Test
   public void testCorruptRotationFallsBackToPrevious() throws Exception {
     SelfSignedCertificate ca = new SelfSignedCertificate("spanner.ca.fallback");
-    File caFile = tempFolder.newFile("ca-fallback.crt");
-    Files.write(caFile.toPath(), Files.readAllBytes(ca.certificate().toPath()));
+    try {
+      File caFile = tempFolder.newFile("ca-fallback.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca.certificate().toPath()));
 
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
-    trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
+      trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
 
-    Thread.sleep(1100);
+      Thread.sleep(1100);
 
-    // Corrupt the file
-    Files.write(caFile.toPath(), "CORRUPT CERT DATA".getBytes(StandardCharsets.UTF_8));
+      // Corrupt the file
+      Files.write(caFile.toPath(), "CORRUPT CERT DATA".getBytes(StandardCharsets.UTF_8));
 
-    // Trust manager should retain previous CA
-    trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
-    assertEquals(1, trustManager.getAcceptedIssuers().length);
+      // Trust manager should retain previous CA
+      trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
+      assertEquals(1, trustManager.getAcceptedIssuers().length);
+    } finally {
+      ca.delete();
+    }
   }
 
   @Test

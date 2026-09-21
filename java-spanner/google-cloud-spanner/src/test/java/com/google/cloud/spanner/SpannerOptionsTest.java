@@ -1692,46 +1692,51 @@ public class SpannerOptionsTest {
     io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate ca =
         new io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate("spanner.ca");
 
-    String certPath = ssc.certificate().getAbsolutePath();
-    String keyPath = ssc.privateKey().getAbsolutePath();
-    String caPath = ca.certificate().getAbsolutePath();
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+      String caPath = ca.certificate().getAbsolutePath();
 
-    SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setHost("https://localhost:1234")
-            .useClientCert(certPath, keyPath)
-            .setCaCertificate(caPath)
-            .build();
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setCaCertificate(caPath)
+              .build();
 
-    assertNotNull(options.getChannelConfigurator());
+      assertNotNull(options.getChannelConfigurator());
 
-    SpannerOptions fromBuilder = options.toBuilder().build();
-    assertNotNull(fromBuilder.getChannelConfigurator());
+      SpannerOptions fromBuilder = options.toBuilder().build();
+      assertNotNull(fromBuilder.getChannelConfigurator());
 
-    // Test standalone setCaCertificate
-    SpannerOptions caOnlyOptions =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project")
-            .setCredentials(NoCredentials.getInstance())
-            .setHost("https://localhost:1234")
-            .setCaCertificate(caPath)
-            .build();
+      // Test standalone setCaCertificate
+      SpannerOptions caOnlyOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .build();
 
-    assertNotNull(caOnlyOptions.getChannelConfigurator());
+      assertNotNull(caOnlyOptions.getChannelConfigurator());
 
-    // Test setCaCertificate combined with login (username/password)
-    SpannerOptions loginWithCaOptions =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project")
-            .setType(SpannerOptions.InstanceType.OMNI)
-            .setHost("https://localhost:1234")
-            .setCaCertificate(caPath)
-            .login("test-user", "test-pass".toCharArray())
-            .build();
+      // Test setCaCertificate combined with login (username/password)
+      SpannerOptions loginWithCaOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setType(SpannerOptions.InstanceType.OMNI)
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .login("test-user", "test-pass".toCharArray())
+              .build();
 
-    assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
-    assertNotNull(loginWithCaOptions.getChannelConfigurator());
+      assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginWithCaOptions.getChannelConfigurator());
+    } finally {
+      ssc.delete();
+      ca.delete();
+    }
   }
 }
