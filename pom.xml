@@ -145,8 +145,6 @@
     <module>java-ids</module>
     <module>java-infra-manager</module>
     <module>java-iot</module>
-    <module>java-java-shopping-merchant-issue-resolution</module>
-    <module>java-java-shopping-merchant-order-tracking</module>
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
@@ -236,9 +234,11 @@
     <module>java-shopping-merchant-conversions</module>
     <module>java-shopping-merchant-datasources</module>
     <module>java-shopping-merchant-inventories</module>
+    <module>java-shopping-merchant-issue-resolution</module>
     <module>java-shopping-merchant-lfp</module>
     <module>java-shopping-merchant-loyaltycustomers</module>
     <module>java-shopping-merchant-notifications</module>
+    <module>java-shopping-merchant-order-tracking</module>
     <module>java-shopping-merchant-product-studio</module>
     <module>java-shopping-merchant-products</module>
     <module>java-shopping-merchant-promotions</module>
