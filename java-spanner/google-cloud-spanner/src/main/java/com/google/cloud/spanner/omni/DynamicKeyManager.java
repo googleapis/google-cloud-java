@@ -141,9 +141,12 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
       lastCheckedNs = now;
       return;
     }
-    lock.lock();
+    if (!lock.tryLock()) {
+      return;
+    }
     try {
-      if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
+      long nowInLock = System.nanoTime();
+      if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
         return;
       }
       existing = this.currentMaterial;
@@ -152,7 +155,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
           && certFile.length() == existing.certLength
           && keyFile.lastModified() == existing.keyLastModified
           && keyFile.length() == existing.keyLength) {
-        lastCheckedNs = now;
+        lastCheckedNs = nowInLock;
         return;
       }
       try {
@@ -163,7 +166,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
             "Failed to reload rotated client certificate/key from disk, retaining current material",
             e);
       } finally {
-        lastCheckedNs = now;
+        lastCheckedNs = System.nanoTime();
       }
     } finally {
       lock.unlock();

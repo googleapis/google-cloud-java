@@ -116,16 +116,19 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       lastCheckedNs = now;
       return;
     }
-    lock.lock();
+    if (!lock.tryLock()) {
+      return;
+    }
     try {
-      if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
+      long nowInLock = System.nanoTime();
+      if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
         return;
       }
       existing = this.currentMaterial;
       if (existing != null
           && caCertFile.lastModified() == existing.lastModified
           && caCertFile.length() == existing.length) {
-        lastCheckedNs = now;
+        lastCheckedNs = nowInLock;
         return;
       }
       try {
@@ -136,7 +139,7 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
             "Failed to reload rotated CA certificate from disk, retaining previous material",
             e);
       } finally {
-        lastCheckedNs = now;
+        lastCheckedNs = System.nanoTime();
       }
     } finally {
       lock.unlock();
