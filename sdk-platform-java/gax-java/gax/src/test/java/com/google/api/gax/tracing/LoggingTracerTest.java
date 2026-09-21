@@ -223,6 +223,7 @@ class LoggingTracerTest {
   }
 
   @Test
+  @SuppressWarnings({"deprecation", "MustBeClosedChecker"})
   void testAttemptFailedDuration_withOpenTelemetryTracingTracer_spanIsActiveDuringLogging() {
     io.opentelemetry.api.trace.SpanContext spanContext =
         io.opentelemetry.api.trace.SpanContext.create(
