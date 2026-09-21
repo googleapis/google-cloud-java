@@ -2620,11 +2620,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = (long) firstPageRows.size();
-    if (hasMorePages) {
-      if (content.getMaxResults() != null && initialRowOffset >= content.getMaxResults()) {
-        hasMorePages = false;
-      }
-    }
 
     // Multi-page results: configure ArrowQueryPageFetcher for subsequent tabledata.list calls.
     if (hasMorePages) {
@@ -2634,6 +2629,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
+      Map<BigQueryRpc.Option, Object> fetcherOptions = new java.util.HashMap<>(optionMap(options));
+      if (content.getMaxResults() != null
+          && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+        fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, content.getMaxResults());
+      }
       NextPageFetcher<FieldValueList> pageFetcher =
           new ArrowQueryPageFetcher(
               jobId,
@@ -2642,8 +2642,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               arrowSchemaPojo,
               getOptions(),
               initialRowOffset,
-              content.getMaxResults(),
-              optionMap(options));
+              null,
+              fetcherOptions);
 
       return newTableResultBuilder(results)
           .setSchema(schema)

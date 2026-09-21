@@ -3354,7 +3354,8 @@ public class BigQueryImplTest {
             .build();
     ReadRowsResponse streamResponse =
         ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
-    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+    when(mockServerStream.iterator())
+        .thenAnswer(invocation -> ImmutableList.of(streamResponse).iterator());
 
     BigQueryReadClient mockReadClient =
         mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
@@ -3375,16 +3376,15 @@ public class BigQueryImplTest {
     Page<FieldValueList> page2 = result.getNextPage();
     assertNotNull(page2);
     List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
-    // Since maxResults is 2 and initialRowOffset is 1, page2 should only contain 1 row even though
-    // stream returned 2 rows
-    assertEquals(1, page2Rows.size());
+    // Since maxResults configures the page size (2 rows), page2 contains the 2 rows from the stream
+    assertEquals(2, page2Rows.size());
     assertEquals("2", page2Rows.get(0).get(0).getStringValue());
-    // Since totalRowsReturned == maxResults, hasNextPage must be false
+    assertEquals("3", page2Rows.get(1).get(0).getStringValue());
+    // End of stream reached (total 3 rows read across pages 1 and 2), hasNextPage must be false
     assertFalse(page2.hasNextPage());
     assertNull(page2.getNextPage());
 
-    // When maxResults is 1, initialRowOffset (1) already reaches maxResults, so hasNextPage is
-    // false immediately
+    // When maxResults is 1, page token is still preserved for subsequent pages
     QueryJobConfiguration configMax1 =
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
@@ -3392,8 +3392,12 @@ public class BigQueryImplTest {
             .build();
     TableResult resultMax1 = bigquery.query(configMax1);
     assertNotNull(resultMax1);
-    assertFalse(resultMax1.hasNextPage());
-    assertNull(resultMax1.getNextPage());
+    assertTrue(resultMax1.hasNextPage());
+    Page<FieldValueList> page2Max1 = resultMax1.getNextPage();
+    assertNotNull(page2Max1);
+    List<FieldValueList> page2Max1Rows = ImmutableList.copyOf(page2Max1.getValues());
+    assertEquals(1, page2Max1Rows.size());
+    assertEquals("2", page2Max1Rows.get(0).get(0).getStringValue());
   }
 
   @Test
