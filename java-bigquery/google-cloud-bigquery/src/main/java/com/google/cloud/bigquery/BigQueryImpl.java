@@ -504,6 +504,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private transient ConcurrentHashMap<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
+  private transient volatile boolean closed = false;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -527,6 +528,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * @throws BigQueryException if initializing the storage read client fails
    */
   BigQueryReadClient getBigQueryReadClient(String location) {
+    if (closed) {
+      throw new IllegalStateException("BigQuery service has been closed");
+    }
     String cacheKey = location != null ? location.toLowerCase() : "global";
     if (bqReadClients == null) {
       synchronized (this) {
@@ -543,6 +547,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return client;
     }
     synchronized (this) {
+      if (closed) {
+        throw new IllegalStateException("BigQuery service has been closed");
+      }
       client = bqReadClients.get(cacheKey);
       if (client == null && isGlobalClientUserProvided) {
         client = bqReadClients.get("global");
@@ -552,6 +559,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         configureReadSettings(settingsBuilder, getOptions());
         try {
           client = BigQueryReadClient.create(settingsBuilder.build());
+          if (closed) {
+            client.close();
+            throw new IllegalStateException("BigQuery service has been closed");
+          }
           if (bqReadClients.size() < MAX_CACHED_READ_CLIENTS) {
             bqReadClients.put(cacheKey, client);
           }
@@ -580,6 +591,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     bqReadClients.put(cacheKey, client);
     if ("global".equals(cacheKey)) {
       isGlobalClientUserProvided = true;
+    }
+  }
+
+  /**
+   * Closes any background resources and transport channels held by this {@link BigQueryImpl},
+   * including the underlying {@link BigQueryReadClient} instances used for Arrow query streaming.
+   */
+  @Override
+  public void close() {
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      closed = true;
+    }
+    if (bqReadClients != null) {
+      for (BigQueryReadClient client : bqReadClients.values()) {
+        try {
+          client.close();
+        } catch (Exception e) {
+          // Ignore exceptions during teardown
+        }
+      }
+      bqReadClients.clear();
     }
   }
 

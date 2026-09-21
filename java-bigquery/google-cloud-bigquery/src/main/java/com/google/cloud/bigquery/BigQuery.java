@@ -40,7 +40,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  *
  * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigQuery extends Service<BigQueryOptions> {
+public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
   /**
    * Fields of a BigQuery Dataset resource.
@@ -1821,4 +1821,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * represents the subset of granted permissions.
    */
   List<String> testIamPermissions(TableId table, List<String> permissions, IAMOption... options);
+
+  /**
+   * Closes any background resources and transport channels held by this service.
+   *
+   * <p>The default implementation does nothing. Implementations that manage background resources
+   * (such as gRPC channels or storage clients) should override this method to release them
+   * deterministically.
+   */
+  @Override
+  default void close() {}
 }
