@@ -31,14 +31,12 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.RSAPrivateCrtKeySpec;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLEngine;
 import javax.net.ssl.X509ExtendedKeyManager;
-import org.bouncycastle.asn1.pkcs.RSAPrivateKey;
 
 /**
  * An {@link X509ExtendedKeyManager} that dynamically reloads client certificates and private keys
@@ -48,9 +46,12 @@ import org.bouncycastle.asn1.pkcs.RSAPrivateKey;
 public class DynamicKeyManager extends X509ExtendedKeyManager {
   private static final Logger logger = Logger.getLogger(DynamicKeyManager.class.getName());
   private static final String CLIENT_ALIAS = "client";
+  private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
 
   private final File certFile;
   private final File keyFile;
+  private final long checkIntervalMs;
+  private volatile long lastCheckedMs;
 
   private static class KeyMaterial {
     final long certLastModified;
@@ -79,12 +80,23 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   private volatile KeyMaterial currentMaterial;
 
   public DynamicKeyManager(File certFile, File keyFile) {
+    this(certFile, keyFile, DEFAULT_CHECK_INTERVAL_MS);
+  }
+
+  DynamicKeyManager(File certFile, File keyFile, long checkIntervalMs) {
     this.certFile = Preconditions.checkNotNull(certFile, "certFile cannot be null");
     this.keyFile = Preconditions.checkNotNull(keyFile, "keyFile cannot be null");
+    this.checkIntervalMs = checkIntervalMs;
     reloadMaterial();
+    this.lastCheckedMs = System.currentTimeMillis();
   }
 
   private void checkAndReload() {
+    long now = System.currentTimeMillis();
+    if (now - lastCheckedMs < checkIntervalMs) {
+      return;
+    }
+    lastCheckedMs = now;
     KeyMaterial existing = this.currentMaterial;
     if (existing != null
         && certFile.lastModified() == existing.certLastModified
@@ -151,24 +163,6 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
 
   private static PrivateKey parsePrivateKey(byte[] keyBytes) throws Exception {
     String keyStr = new String(keyBytes, StandardCharsets.US_ASCII);
-    if (keyStr.contains("-----BEGIN RSA PRIVATE KEY-----")) {
-      byte[] der =
-          extractPemContent(
-              keyStr, "-----BEGIN RSA PRIVATE KEY-----", "-----END RSA PRIVATE KEY-----");
-      RSAPrivateKey rsaPrivKey = RSAPrivateKey.getInstance(der);
-      RSAPrivateCrtKeySpec keySpec =
-          new RSAPrivateCrtKeySpec(
-              rsaPrivKey.getModulus(),
-              rsaPrivKey.getPublicExponent(),
-              rsaPrivKey.getPrivateExponent(),
-              rsaPrivKey.getPrime1(),
-              rsaPrivKey.getPrime2(),
-              rsaPrivKey.getExponent1(),
-              rsaPrivKey.getExponent2(),
-              rsaPrivKey.getCoefficient());
-      return KeyFactory.getInstance("RSA").generatePrivate(keySpec);
-    }
-
     byte[] der;
     if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
       der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");

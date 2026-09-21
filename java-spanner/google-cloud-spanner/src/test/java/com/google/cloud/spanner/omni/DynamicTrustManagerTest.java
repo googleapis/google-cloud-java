@@ -52,7 +52,7 @@ public class DynamicTrustManagerTest {
     File caFile = tempFolder.newFile("ca.crt");
     Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
 
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile);
+    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
 
     X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
     assertNotNull(issuers1);
@@ -88,6 +88,28 @@ public class DynamicTrustManagerTest {
   }
 
   @Test
+  public void testFileCheckThrottling() throws Exception {
+    SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.throttle1");
+    File caFile = tempFolder.newFile("ca-throttle.crt");
+    Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
+
+    // 60-second check interval
+    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 60000L);
+
+    X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+    assertEquals(1, issuers1.length);
+    assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
+
+    // Rotate CA on disk immediately
+    SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.throttle2");
+    Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+
+    // Within throttle interval, trust manager should retain previous CA
+    assertEquals(ca1.cert().getSubjectDN(), trustManager.getAcceptedIssuers()[0].getSubjectDN());
+    trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+  }
+
+  @Test
   public void testMultipleCAsInFile() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.multi.ca.1");
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.multi.ca.2");
@@ -117,7 +139,7 @@ public class DynamicTrustManagerTest {
     File caFile = tempFolder.newFile("ca-fallback.crt");
     Files.write(caFile.toPath(), Files.readAllBytes(ca.certificate().toPath()));
 
-    DynamicTrustManager trustManager = new DynamicTrustManager(caFile);
+    DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
     trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
 
     Thread.sleep(1100);

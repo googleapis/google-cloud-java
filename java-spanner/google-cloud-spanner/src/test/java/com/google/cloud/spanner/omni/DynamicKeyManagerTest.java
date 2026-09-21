@@ -47,7 +47,7 @@ public class DynamicKeyManagerTest {
     Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
     Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
 
-    DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
+    DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 0L);
 
     String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
     assertNotNull(alias1);
@@ -86,6 +86,32 @@ public class DynamicKeyManagerTest {
   }
 
   @Test
+  public void testFileCheckThrottling() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.throttle1");
+    File certFile = tempFolder.newFile("client-throttle.crt");
+    File keyFile = tempFolder.newFile("client-throttle.key");
+
+    Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+    Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
+
+    // 60-second check interval
+    DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 60000L);
+
+    String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+    assertEquals(
+        ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+
+    // Rotate files immediately on disk
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.throttle2");
+    Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+    Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+
+    // Within the throttle interval, the manager should retain and return previous certificate
+    assertEquals(
+        ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+  }
+
+  @Test
   public void testCorruptRotationFallsBackToPrevious() throws Exception {
     SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.fallback");
     File certFile = tempFolder.newFile("client-fallback.crt");
@@ -94,7 +120,7 @@ public class DynamicKeyManagerTest {
     Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
     Files.write(keyFile.toPath(), Files.readAllBytes(ssc.privateKey().toPath()));
 
-    DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
+    DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 0L);
     String aliasBefore = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
     assertNotNull(aliasBefore);
 

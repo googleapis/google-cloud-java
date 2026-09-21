@@ -44,8 +44,11 @@ import javax.net.ssl.X509TrustManager;
 @InternalApi
 public class DynamicTrustManager extends X509ExtendedTrustManager {
   private static final Logger logger = Logger.getLogger(DynamicTrustManager.class.getName());
+  private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
 
   private final File caCertFile;
+  private final long checkIntervalMs;
+  private volatile long lastCheckedMs;
 
   private static class TrustMaterial {
     final long lastModified;
@@ -62,14 +65,25 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   private volatile TrustMaterial currentMaterial;
 
   public DynamicTrustManager(@Nullable File caCertFile) {
+    this(caCertFile, DEFAULT_CHECK_INTERVAL_MS);
+  }
+
+  DynamicTrustManager(@Nullable File caCertFile, long checkIntervalMs) {
     this.caCertFile = caCertFile;
+    this.checkIntervalMs = checkIntervalMs;
     reloadMaterial();
+    this.lastCheckedMs = System.currentTimeMillis();
   }
 
   private void checkAndReload() {
     if (this.caCertFile == null) {
       return;
     }
+    long now = System.currentTimeMillis();
+    if (now - lastCheckedMs < checkIntervalMs) {
+      return;
+    }
+    lastCheckedMs = now;
     TrustMaterial existing = this.currentMaterial;
     if (existing != null
         && caCertFile.lastModified() == existing.lastModified
