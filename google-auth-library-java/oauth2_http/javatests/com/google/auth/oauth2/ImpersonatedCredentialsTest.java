@@ -70,7 +70,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -1402,7 +1401,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setQuotaProjectId("test-quota-project")
                 .setTokenUrl("https://sts.googleapis.com/v1/token")) {
           @Override
-          public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
+          AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
             capturedSourceTransport.set(cycleTransportFactory);
             return new AccessToken("intermediate-sts-token-xyz", null);
           }
@@ -1510,6 +1509,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
             .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
             .setSubjectTokenSupplier(context -> "subject-token")
+            .setScopes(
+                Collections.singletonList("https://www.googleapis.com/auth/devstorage.read_only"))
             .setTokenUrl(stsTransport.getStsUrl())
             .setHttpTransportFactory(() -> stsTransport)
             .build();
@@ -1542,7 +1543,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void refreshAccessToken_standaloneExternalAccountSource_retriesOn401FromIam() throws IOException {
+  void refreshAccessToken_withoutCycleTransportFactory_externalAccountSourceRetriesOn401FromIam()
+      throws IOException {
     AtomicInteger sourceRefreshCount = new AtomicInteger(0);
     ExternalAccountCredentials mockExternalAccountCredentials =
         new IdentityPoolCredentials(
@@ -1557,11 +1559,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
           public AccessToken refreshAccessToken() {
             int count = sourceRefreshCount.incrementAndGet();
             return new AccessToken("intermediate-sts-token-" + count, null);
-          }
-
-          @Override
-          public IdentityPoolCredentials createScoped(Collection<String> scopes) {
-            return this;
           }
         };
 

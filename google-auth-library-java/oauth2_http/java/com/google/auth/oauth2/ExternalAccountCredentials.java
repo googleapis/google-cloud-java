@@ -86,6 +86,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   private final @Nullable String tokenInfoUrl;
   private final @Nullable String serviceAccountImpersonationUrl;
+  private transient @Nullable String targetServiceAccountEmail;
   private final @Nullable String clientId;
   private final @Nullable String clientSecret;
 
@@ -96,7 +97,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   protected transient HttpTransportFactory transportFactory;
 
-  protected volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected transient volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -237,6 +238,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.credentialSource = builder.credentialSource;
     this.tokenInfoUrl = builder.tokenInfoUrl;
     this.serviceAccountImpersonationUrl = builder.serviceAccountImpersonationUrl;
+    this.targetServiceAccountEmail = builder.targetServiceAccountEmail;
     this.clientId = builder.clientId;
     this.clientSecret = builder.clientSecret;
 
@@ -311,6 +313,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
     String targetPrincipal =
         ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
+    sourceCredentials.targetServiceAccountEmail = targetPrincipal;
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setHttpTransportFactory(transportFactory)
@@ -549,8 +552,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    * @throws IOException if the token refresh fails
    */
   @InternalExtensionOnly
-  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
-      throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     return refreshAccessToken();
   }
 
@@ -664,7 +666,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    */
   public @Nullable String getServiceAccountEmail() {
     if (serviceAccountImpersonationUrl == null || serviceAccountImpersonationUrl.isEmpty()) {
-      return null;
+      return targetServiceAccountEmail;
     }
     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
   }
@@ -816,6 +818,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     protected @Nullable HttpTransportFactory transportFactory;
 
     protected @Nullable String serviceAccountImpersonationUrl;
+    private @Nullable String targetServiceAccountEmail;
     protected @Nullable String clientId;
     protected @Nullable String clientSecret;
     protected @Nullable Collection<String> scopes;
@@ -840,6 +843,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.tokenUrl = credentials.tokenUrl;
       this.tokenInfoUrl = credentials.tokenInfoUrl;
       this.serviceAccountImpersonationUrl = credentials.serviceAccountImpersonationUrl;
+      this.targetServiceAccountEmail = credentials.targetServiceAccountEmail;
       this.credentialSource = credentials.credentialSource;
       this.clientId = credentials.clientId;
       this.clientSecret = credentials.clientSecret;
@@ -938,6 +942,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       this.serviceAccountImpersonationUrl = serviceAccountImpersonationUrl;
+      this.targetServiceAccountEmail = null;
       return this;
     }
 

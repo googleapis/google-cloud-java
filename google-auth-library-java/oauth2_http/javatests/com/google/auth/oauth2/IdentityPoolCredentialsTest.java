@@ -166,7 +166,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       ROTATED_CERT_AND_KEY_PEM.substring(
           ROTATED_CERT_AND_KEY_PEM.indexOf("-----BEGIN PRIVATE KEY-----"));
 
-  private static KeyStore createPopulatedKeyStore() {
+  static KeyStore createPopulatedKeyStore() {
     try (InputStream certStream =
             new FileInputStream(new File("testresources/mtls/test_cert.pem"));
         InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
@@ -177,7 +177,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     }
   }
 
-  private static KeyStore createRotatedPopulatedKeyStore() {
+  static KeyStore createRotatedPopulatedKeyStore() {
     try (InputStream stream =
         new ByteArrayInputStream(ROTATED_CERT_AND_KEY_PEM.getBytes(StandardCharsets.UTF_8))) {
       return SecurityUtils.createMtlsKeyStore(stream);
@@ -1476,7 +1476,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     assertEquals(
         "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-            + " configuration in the credential source or provide an mTLS-enabled transport.",
+            + " configuration in the credential source or provide an MtlsHttpTransportFactory"
+            + " constructed with a KeyStore.",
         e.getMessage());
   }
 
@@ -2041,10 +2042,13 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
           }
         };
 
-    MockExternalAccountCredentialsTransport transport =
+    MockExternalAccountCredentialsTransport transportA =
         new MockExternalAccountCredentialsTransport();
-    // 1st STS call returns 401 Unauthorized, 2nd STS call returns 200 OK
-    transport.addStsStatusCodeSequence(401, 200);
+    transportA.addStsStatusCodeSequence(401);
+
+    MockExternalAccountCredentialsTransport transportB =
+        new MockExternalAccountCredentialsTransport();
+    transportB.addStsStatusCodeSequence(200);
 
     List<KeyStore> usedKeyStores = new ArrayList<>();
     IdentityPoolCredentials credential =
@@ -2055,11 +2059,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 .setAudience(
                     "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
                 .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
-                .setTokenUrl(transport.getStsUrl())) {
+                .setTokenUrl(transportA.getStsUrl())) {
           @Override
           HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
             usedKeyStores.add(keyStore);
-            return () -> transport;
+            return () -> keyStore == ksA ? transportA : transportB;
           }
         };
 
@@ -2070,8 +2074,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Verify 2 calls to X509Provider: 1st for initial snapshot, 2nd on 401 reload
     assertEquals(2, callCount.get());
 
-    // Verify 2 STS requests were executed over HTTP
-    assertEquals(2, transport.getRequests().size());
+    // Verify 1st STS request executed over transportA (ksA) and 2nd over transportB (ksB)
+    assertEquals(1, transportA.getRequests().size());
+    assertEquals(1, transportB.getRequests().size());
 
     // Verify initial cycle used ksA, and retry used ksB
     assertEquals(Arrays.asList(ksA, ksB), usedKeyStores);
@@ -2439,12 +2444,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       assertNotNull(tokenB);
 
       // Both threads did initial snapshots (2 calls), plus Thread B's retry (1 more)
-      assertTrue(
-          getKeyStoreCount.get() >= 3,
-          "Expected at least 3 getKeyStore calls (2 initial + 1 retry), got "
-              + getKeyStoreCount.get());
+      assertEquals(3, getKeyStoreCount.get());
       // 3 exchange calls total: one 401 + one retry success + one normal success
       assertEquals(3, exchangeCallCount.get());
+      assertSame(mtlsTransport, credential.getTransportFactory());
     } finally {
       executor.shutdownNow();
     }
@@ -4106,8 +4109,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .build();
     IdentityPoolCredentials deserialized = serializeAndDeserialize(regularCredentials);
     assertTrue(
-        deserialized.getTransportFactory() instanceof CustomMtlsHttpTransportFactory,
-        "readObject must preserve custom subclass of MtlsHttpTransportFactory");
+        deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory,
+        "readObject must restore an MtlsHttpTransportFactory");
+    assertTrue(
+        ((MtlsHttpTransportFactory) deserialized.getTransportFactory()).hasKeyStore(),
+        "readObject must restore a KeyStore-backed MtlsHttpTransportFactory");
   }
 
   @Test

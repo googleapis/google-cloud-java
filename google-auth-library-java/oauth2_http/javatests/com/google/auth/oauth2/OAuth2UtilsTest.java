@@ -162,4 +162,14 @@ class OAuth2UtilsTest {
     assertTrue(OAuth2Utils.hasCertificateChanged(null, ks));
     assertTrue(OAuth2Utils.hasCertificateChanged(ks, null));
   }
+
+  @Test
+  void hasCertificateChanged_distinctKeyStoreInstances_comparesCertificates() {
+    KeyStore ks1 = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    KeyStore ks2 = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    KeyStore ksRotated = IdentityPoolCredentialsTest.createRotatedPopulatedKeyStore();
+
+    assertFalse(OAuth2Utils.hasCertificateChanged(ks1, ks2));
+    assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ksRotated));
+  }
 }

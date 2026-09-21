@@ -127,8 +127,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   @InternalExtensionOnly
   @Override
-  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
-      throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
       return impersonated.refreshAccessToken(cycleTransportFactory);

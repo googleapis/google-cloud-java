@@ -225,12 +225,21 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
 
+    final ExecutableOptions[] providedOptions = {null};
     credential =
         PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setExecutableHandler(
+                options -> {
+                  providedOptions[0] = options;
+                  return "pluggableAuthToken";
+                })
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
+
+    assertEquals(
+        credential.getServiceAccountEmail(),
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());

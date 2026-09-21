@@ -694,6 +694,9 @@ public class ImpersonatedCredentials extends GoogleCredentials
     adapter.initialize(request);
     if (cycleTransportFactory != null
         && this.sourceCredentials instanceof ExternalAccountCredentials) {
+      // Disable HttpCredentialsAdapter's default 401 retry so 401 responses propagate to the
+      // caller (e.g. IdentityPoolCredentials) to re-snapshot the certificate and retry the full
+      // cycle with a newly pinned transport.
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);

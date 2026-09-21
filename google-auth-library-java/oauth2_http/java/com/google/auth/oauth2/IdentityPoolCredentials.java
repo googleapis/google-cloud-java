@@ -187,7 +187,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-              + " configuration in the credential source or provide an mTLS-enabled transport.");
+              + " configuration in the credential source or provide an MtlsHttpTransportFactory"
+              + " constructed with a KeyStore.");
     }
 
     if (this.actorTokenSupplier != null) {
@@ -256,8 +257,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   @InternalExtensionOnly
   @Override
-  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
-      throws IOException {
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
     // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
     // and prevent nested retry amplification. Outer callers manage retry coordination.
@@ -462,7 +462,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
       try {
         KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
-        if (shouldUseMtlsTransportFactory()) {
+        if (shouldUseMtlsTransportFactory()
+            || (this.transportFactory instanceof MtlsHttpTransportFactory
+                && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore())) {
           this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
           this.defaultMtlsTransportFactory = this.transportFactory;
         }
