@@ -38,10 +38,7 @@ import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
-import io.opentelemetry.sdk.trace.SpanProcessor;
-import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
@@ -217,13 +214,8 @@ public class AutoPopulateMetadataTests {
 
   @Test
   public void testAutoPopulationWithOpenTelemetryContext() {
-    InMemorySpanExporter testExporter = InMemorySpanExporter.create();
-    SpanProcessor inMemorySpanProcessor = SimpleSpanProcessor.create(testExporter);
     try (OpenTelemetrySdk openTelemetrySdk =
-        OpenTelemetrySdk.builder()
-            .setTracerProvider(
-                SdkTracerProvider.builder().addSpanProcessor(inMemorySpanProcessor).build())
-            .build()) {
+        OpenTelemetrySdk.builder().setTracerProvider(SdkTracerProvider.builder().build()).build()) {
       Tracer tracer = openTelemetrySdk.getTracer("ValidationTest");
       Span otelSpan = tracer.spanBuilder("test-span").startSpan();
 
