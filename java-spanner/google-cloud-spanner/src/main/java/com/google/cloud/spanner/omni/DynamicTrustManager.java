@@ -28,6 +28,7 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Collection;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -47,8 +48,9 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
 
   private final File caCertFile;
-  private final long checkIntervalMs;
-  private volatile long lastCheckedMs;
+  private final long checkIntervalNs;
+  private final ReentrantLock lock = new ReentrantLock();
+  private volatile long lastCheckedNs;
 
   private static class CertificateFactoryHolder {
     static final CertificateFactory INSTANCE;
@@ -90,39 +92,40 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
 
   DynamicTrustManager(@Nullable File caCertFile, long checkIntervalMs) {
     this.caCertFile = caCertFile;
-    this.checkIntervalMs = checkIntervalMs;
+    this.checkIntervalNs = checkIntervalMs * 1_000_000L;
     try {
       reloadMaterial();
     } catch (Exception e) {
       throw new RuntimeException("Failed to initialize CA certificate", e);
     }
-    this.lastCheckedMs = System.currentTimeMillis();
+    this.lastCheckedNs = System.nanoTime();
   }
 
   void checkAndReload() {
     if (this.caCertFile == null) {
       return;
     }
-    long now = System.currentTimeMillis();
-    if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+    long now = System.nanoTime();
+    if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
     TrustMaterial existing = this.currentMaterial;
     if (existing != null
         && caCertFile.lastModified() == existing.lastModified
         && caCertFile.length() == existing.length) {
-      lastCheckedMs = now;
+      lastCheckedNs = now;
       return;
     }
-    synchronized (this) {
-      if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+    lock.lock();
+    try {
+      if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
         return;
       }
       existing = this.currentMaterial;
       if (existing != null
           && caCertFile.lastModified() == existing.lastModified
           && caCertFile.length() == existing.length) {
-        lastCheckedMs = now;
+        lastCheckedNs = now;
         return;
       }
       try {
@@ -133,8 +136,10 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
             "Failed to reload rotated CA certificate from disk, retaining previous material",
             e);
       } finally {
-        lastCheckedMs = now;
+        lastCheckedNs = now;
       }
+    } finally {
+      lock.unlock();
     }
   }
 

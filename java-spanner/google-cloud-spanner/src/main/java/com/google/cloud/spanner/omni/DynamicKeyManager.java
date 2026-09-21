@@ -38,6 +38,7 @@ import java.util.Base64;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLEngine;
@@ -54,10 +55,11 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
 
   private final File certFile;
   private final File keyFile;
-  private final long checkIntervalMs;
+  private final long checkIntervalNs;
   private final ConcurrentHashMap<String, KeyMaterial> materials = new ConcurrentHashMap<>();
   private final AtomicLong versionCounter = new AtomicLong();
-  private volatile long lastCheckedMs;
+  private final ReentrantLock lock = new ReentrantLock();
+  private volatile long lastCheckedNs;
 
   private static class CertificateFactoryHolder {
     static final CertificateFactory INSTANCE;
@@ -114,7 +116,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   DynamicKeyManager(File certFile, File keyFile, long checkIntervalMs) {
     this.certFile = Preconditions.checkNotNull(certFile, "certFile cannot be null");
     this.keyFile = Preconditions.checkNotNull(keyFile, "keyFile cannot be null");
-    this.checkIntervalMs = checkIntervalMs;
+    this.checkIntervalNs = checkIntervalMs * 1_000_000L;
     try {
       reloadMaterial();
     } catch (IllegalArgumentException e) {
@@ -122,12 +124,12 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     } catch (Exception e) {
       throw new RuntimeException("Failed to initialize client certificate/key", e);
     }
-    this.lastCheckedMs = System.currentTimeMillis();
+    this.lastCheckedNs = System.nanoTime();
   }
 
   void checkAndReload() {
-    long now = System.currentTimeMillis();
-    if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+    long now = System.nanoTime();
+    if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
     KeyMaterial existing = this.currentMaterial;
@@ -136,11 +138,12 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
         && certFile.length() == existing.certLength
         && keyFile.lastModified() == existing.keyLastModified
         && keyFile.length() == existing.keyLength) {
-      lastCheckedMs = now;
+      lastCheckedNs = now;
       return;
     }
-    synchronized (this) {
-      if (checkIntervalMs > 0 && now - lastCheckedMs < checkIntervalMs) {
+    lock.lock();
+    try {
+      if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
         return;
       }
       existing = this.currentMaterial;
@@ -149,7 +152,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
           && certFile.length() == existing.certLength
           && keyFile.lastModified() == existing.keyLastModified
           && keyFile.length() == existing.keyLength) {
-        lastCheckedMs = now;
+        lastCheckedNs = now;
         return;
       }
       try {
@@ -160,8 +163,10 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
             "Failed to reload rotated client certificate/key from disk, retaining current material",
             e);
       } finally {
-        lastCheckedMs = now;
+        lastCheckedNs = now;
       }
+    } finally {
+      lock.unlock();
     }
   }
 
