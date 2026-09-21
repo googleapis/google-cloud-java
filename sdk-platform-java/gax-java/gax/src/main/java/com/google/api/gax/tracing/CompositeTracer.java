@@ -54,7 +54,7 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   @Deprecated
-  @ObsoleteApi("Scope management is handled internally by OpenTelemetry tracer implementations")
+  @ObsoleteApi("Scope management is handled internally")
   public Scope inScope() {
     final List<Scope> childScopes = new ArrayList<>(children.size());
 
