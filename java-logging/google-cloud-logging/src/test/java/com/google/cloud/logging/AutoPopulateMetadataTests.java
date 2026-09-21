@@ -219,27 +219,28 @@ public class AutoPopulateMetadataTests {
   public void testAutoPopulationWithOpenTelemetryContext() {
     InMemorySpanExporter testExporter = InMemorySpanExporter.create();
     SpanProcessor inMemorySpanProcessor = SimpleSpanProcessor.create(testExporter);
-    OpenTelemetrySdk openTelemetrySdk =
+    try (OpenTelemetrySdk openTelemetrySdk =
         OpenTelemetrySdk.builder()
             .setTracerProvider(
                 SdkTracerProvider.builder().addSpanProcessor(inMemorySpanProcessor).build())
-            .build();
-    Tracer tracer = openTelemetrySdk.getTracer("ValidationTest");
-    Span otelSpan = tracer.spanBuilder("test-span").startSpan();
+            .build()) {
+      Tracer tracer = openTelemetrySdk.getTracer("ValidationTest");
+      Span otelSpan = tracer.spanBuilder("test-span").startSpan();
 
-    try (Scope scope = otelSpan.makeCurrent()) {
-      SpanContext spanContext = otelSpan.getSpanContext();
-      logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY));
+      try (Scope scope = otelSpan.makeCurrent()) {
+        SpanContext spanContext = otelSpan.getSpanContext();
+        logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY));
 
-      LogEntry actual = LogEntry.fromPb(rpcWriteArgument.getValue().getEntries(0));
-      String expectedTrace =
-          String.format(
-              LoggingImpl.RESOURCE_NAME_FORMAT, RESOURCE_PROJECT_ID, spanContext.getTraceId());
-      assertEquals(expectedTrace, actual.getTrace());
-      assertEquals(spanContext.getSpanId(), actual.getSpanId());
-      assertEquals(spanContext.isSampled(), actual.getTraceSampled());
-    } finally {
-      otelSpan.end();
+        LogEntry actual = LogEntry.fromPb(rpcWriteArgument.getValue().getEntries(0));
+        String expectedTrace =
+            String.format(
+                LoggingImpl.RESOURCE_NAME_FORMAT, RESOURCE_PROJECT_ID, spanContext.getTraceId());
+        assertEquals(expectedTrace, actual.getTrace());
+        assertEquals(spanContext.getSpanId(), actual.getSpanId());
+        assertEquals(spanContext.isSampled(), actual.getTraceSampled());
+      } finally {
+        otelSpan.end();
+      }
     }
   }
 }
