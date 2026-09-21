@@ -30,6 +30,7 @@
 package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +53,8 @@ class CompositeTracer extends BaseApiTracer {
   }
 
   @Override
+  @Deprecated
+  @ObsoleteApi("Scope management is handled internally by OpenTelemetry tracer implementations")
   public Scope inScope() {
     final List<Scope> childScopes = new ArrayList<>(children.size());
 

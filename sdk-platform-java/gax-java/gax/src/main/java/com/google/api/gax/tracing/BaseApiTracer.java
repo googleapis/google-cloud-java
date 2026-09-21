@@ -61,6 +61,8 @@ public class BaseApiTracer implements ApiTracer {
   }
 
   @Override
+  @Deprecated
+  @ObsoleteApi("Scope management is handled internally by OpenTelemetry tracer implementations")
   public Scope inScope() {
     return NOOP_SCOPE;
   }

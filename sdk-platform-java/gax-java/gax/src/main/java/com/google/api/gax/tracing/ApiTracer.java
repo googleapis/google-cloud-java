@@ -52,7 +52,11 @@ public interface ApiTracer {
    * Asks the underlying implementation to install itself as a thread local. This allows for interop
    * between clients using gax and external resources to share the same implementation of the
    * tracing. For example OpenCensus will install a thread local that can read by the GRPC.
+   *
+   * @deprecated Scope management is handled internally by OpenTelemetry tracer implementations.
    */
+  @Deprecated
+  @ObsoleteApi("Scope management is handled internally by OpenTelemetry tracer implementations")
   default Scope inScope() {
     return () -> {
       // noop
