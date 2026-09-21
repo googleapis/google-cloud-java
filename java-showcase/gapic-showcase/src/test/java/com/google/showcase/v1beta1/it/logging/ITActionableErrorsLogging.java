@@ -92,6 +92,8 @@ public class ITActionableErrorsLogging {
   void teardownTestLogger() {
     if (testAppender != null) {
       testAppender.stop();
+      org.slf4j.Logger logger = LoggerFactory.getLogger("com.google.api.gax.tracing.LoggingTracer");
+      ((ch.qos.logback.classic.Logger) logger).detachAppender(testAppender);
     }
   }
 
@@ -264,6 +266,7 @@ public class ITActionableErrorsLogging {
 
   @Test
   void testGrpc_noLogEmittedForSuccess() {
+    testAppender.clearEvents();
     EchoRequest request = EchoRequest.newBuilder().setContent("Success").build();
     grpcClient.echo(request);
     assertThat(testAppender.events.size()).isEqualTo(0);
