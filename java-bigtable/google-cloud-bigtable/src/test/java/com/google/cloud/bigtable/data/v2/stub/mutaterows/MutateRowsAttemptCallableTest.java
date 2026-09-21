@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.Mockito.any;
 
 import com.google.api.core.AbstractApiFuture;
@@ -45,6 +46,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -182,14 +184,10 @@ public class MutateRowsAttemptCallableTest {
     attemptCallable.setExternalFuture(parentFuture);
     attemptCallable.call();
 
-    Throwable actualError = null;
-    try {
-      parentFuture.attemptFuture.get();
-    } catch (Throwable t) {
-      actualError = t.getCause();
-    }
-    assertThat(actualError).isInstanceOf(MutateRowsException.class);
-    MutateRowsException mutateRowsException = (MutateRowsException) actualError;
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> parentFuture.attemptFuture.get());
+    assertThat(exception.getCause()).isInstanceOf(MutateRowsException.class);
+    MutateRowsException mutateRowsException = (MutateRowsException) exception.getCause();
     assertThat(mutateRowsException.isRetryable()).isFalse();
     assertThat(mutateRowsException.getFailedMutations()).hasSize(1);
     FailedMutation failedMutation = mutateRowsException.getFailedMutations().get(0);
