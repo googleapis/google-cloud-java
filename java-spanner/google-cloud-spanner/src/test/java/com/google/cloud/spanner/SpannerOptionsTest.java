@@ -71,6 +71,7 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.grpc.MethodDescriptor;
+import io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -1683,5 +1684,93 @@ public class SpannerOptionsTest {
     SpannerOptions clearedOptions =
         customOptions.toBuilder().setCallContextConfigurator(null).build();
     assertNull(clearedOptions.getCallContextConfigurator());
+  }
+
+  @Test
+  public void testUseClientCertAndTrustCertificate() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test");
+    SelfSignedCertificate ca = new SelfSignedCertificate("spanner.ca");
+
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+      String caPath = ca.certificate().getAbsolutePath();
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setCaCertificate(caPath)
+              .build();
+
+      assertNotNull(options.getChannelConfigurator());
+      assertEquals(certPath, options.getClientCertificate());
+      assertEquals(keyPath, options.getClientCertificateKey());
+      assertEquals(caPath, options.getCaCertificate());
+
+      SpannerOptions fromBuilder = options.toBuilder().build();
+      assertNotNull(fromBuilder.getChannelConfigurator());
+      assertEquals(certPath, fromBuilder.getClientCertificate());
+      assertEquals(keyPath, fromBuilder.getClientCertificateKey());
+      assertEquals(caPath, fromBuilder.getCaCertificate());
+
+      // Test standalone setCaCertificate
+      SpannerOptions caOnlyOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .build();
+
+      assertNotNull(caOnlyOptions.getChannelConfigurator());
+      assertNull(caOnlyOptions.getClientCertificate());
+      assertNull(caOnlyOptions.getClientCertificateKey());
+      assertEquals(caPath, caOnlyOptions.getCaCertificate());
+
+      // Test setCaCertificate combined with login (username/password)
+      SpannerOptions loginWithCaOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setType(SpannerOptions.InstanceType.OMNI)
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .login("test-user", "test-pass".toCharArray())
+              .build();
+
+      assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginWithCaOptions.getChannelConfigurator());
+      assertEquals(caPath, loginWithCaOptions.getCaCertificate());
+
+      SpannerOptions loginFromBuilder = loginWithCaOptions.toBuilder().build();
+      assertTrue(loginFromBuilder.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginFromBuilder.getChannelConfigurator());
+      assertEquals(caPath, loginFromBuilder.getCaCertificate());
+    } finally {
+      ssc.delete();
+      ca.delete();
+    }
+  }
+
+  @Test
+  public void testUseClientCertAndCaCertificateEmptyValidation() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("", "/path/to/key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("/path/to/cert", ""));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert(null, "key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("cert", null));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(""));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(null));
   }
 }
