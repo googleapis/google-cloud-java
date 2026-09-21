@@ -64,6 +64,14 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
 
   private volatile TrustMaterial currentMaterial;
 
+  /**
+   * Creates a {@link DynamicTrustManager} that dynamically reloads the given root CA certificate
+   * file when modified on disk, or delegates to the default JVM trust store if {@code caCertFile}
+   * is null.
+   *
+   * @param caCertFile File containing the X.509 CA certificate(s), or null for the default JVM
+   *     trust store.
+   */
   public DynamicTrustManager(@Nullable File caCertFile) {
     this(caCertFile, DEFAULT_CHECK_INTERVAL_MS);
   }

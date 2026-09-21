@@ -71,6 +71,7 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.grpc.MethodDescriptor;
+import io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -1687,10 +1688,8 @@ public class SpannerOptionsTest {
 
   @Test
   public void testUseClientCertAndTrustCertificate() throws Exception {
-    io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate ssc =
-        new io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate("spanner.test");
-    io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate ca =
-        new io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate("spanner.ca");
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test");
+    SelfSignedCertificate ca = new SelfSignedCertificate("spanner.ca");
 
     try {
       String certPath = ssc.certificate().getAbsolutePath();

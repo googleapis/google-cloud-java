@@ -80,6 +80,13 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
 
   private volatile KeyMaterial currentMaterial;
 
+  /**
+   * Creates a {@link DynamicKeyManager} that dynamically reloads the given certificate and key
+   * files when modified on disk.
+   *
+   * @param certFile File containing the X.509 client certificate chain.
+   * @param keyFile File containing the PKCS#8 private key.
+   */
   public DynamicKeyManager(File certFile, File keyFile) {
     this(certFile, keyFile, DEFAULT_CHECK_INTERVAL_MS);
   }
