@@ -28,6 +28,10 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Collection;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -42,13 +46,30 @@ import javax.net.ssl.X509TrustManager;
  * whenever the certificate file is modified or rotated.
  */
 @InternalApi
-public class DynamicTrustManager extends X509ExtendedTrustManager {
+public class DynamicTrustManager extends X509ExtendedTrustManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(DynamicTrustManager.class.getName());
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
+  private static final ThreadFactory DAEMON_THREAD_FACTORY =
+      r -> {
+        Thread t = new Thread(r, "spanner-omni-trust-manager-reloader");
+        t.setDaemon(true);
+        return t;
+      };
 
   private final File caCertFile;
-  private final long checkIntervalNs;
-  private volatile long lastCheckedNs;
+  private final ScheduledExecutorService scheduler;
+
+  private static class CertificateFactoryHolder {
+    static final CertificateFactory INSTANCE;
+
+    static {
+      try {
+        INSTANCE = CertificateFactory.getInstance("X.509");
+      } catch (CertificateException e) {
+        throw new ExceptionInInitializerError(e);
+      }
+    }
+  }
 
   private static class TrustMaterial {
     final long lastModified;
@@ -78,24 +99,24 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
 
   DynamicTrustManager(@Nullable File caCertFile, long checkIntervalMs) {
     this.caCertFile = caCertFile;
-    this.checkIntervalNs = checkIntervalMs * 1_000_000L;
     try {
       reloadMaterial();
     } catch (Exception e) {
       throw new RuntimeException("Failed to initialize CA certificate", e);
     }
-    this.lastCheckedNs = System.nanoTime();
+    if (caCertFile != null && checkIntervalMs > 0) {
+      this.scheduler = Executors.newSingleThreadScheduledExecutor(DAEMON_THREAD_FACTORY);
+      this.scheduler.scheduleWithFixedDelay(
+          this::checkAndReload, checkIntervalMs, checkIntervalMs, TimeUnit.MILLISECONDS);
+    } else {
+      this.scheduler = null;
+    }
   }
 
-  private void checkAndReload() {
+  void checkAndReload() {
     if (this.caCertFile == null) {
       return;
     }
-    long now = System.nanoTime();
-    if (now - lastCheckedNs < checkIntervalNs) {
-      return;
-    }
-    lastCheckedNs = now;
     TrustMaterial existing = this.currentMaterial;
     if (existing != null
         && caCertFile.lastModified() == existing.lastModified
@@ -133,7 +154,7 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
     long len = caCertFile.length();
     byte[] certBytes = Files.readAllBytes(caCertFile.toPath());
 
-    CertificateFactory cf = CertificateFactory.getInstance("X.509");
+    CertificateFactory cf = CertificateFactoryHolder.INSTANCE;
     Collection<? extends Certificate> certs =
         cf.generateCertificates(new ByteArrayInputStream(certBytes));
     if (certs == null || certs.isEmpty()) {
@@ -214,48 +235,73 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
   @Override
   public void checkClientTrusted(X509Certificate[] chain, String authType, Socket socket)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkClientTrusted(chain, authType, socket);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkClientTrusted(chain, authType, socket);
   }
 
   @Override
   public void checkServerTrusted(X509Certificate[] chain, String authType, Socket socket)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkServerTrusted(chain, authType, socket);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkServerTrusted(chain, authType, socket);
   }
 
   @Override
   public void checkClientTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkClientTrusted(chain, authType, engine);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkClientTrusted(chain, authType, engine);
   }
 
   @Override
   public void checkServerTrusted(X509Certificate[] chain, String authType, SSLEngine engine)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkServerTrusted(chain, authType, engine);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkServerTrusted(chain, authType, engine);
   }
 
   @Override
   public void checkClientTrusted(X509Certificate[] chain, String authType)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkClientTrusted(chain, authType);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkClientTrusted(chain, authType);
   }
 
   @Override
   public void checkServerTrusted(X509Certificate[] chain, String authType)
       throws CertificateException {
-    checkAndReload();
-    this.currentMaterial.delegate.checkServerTrusted(chain, authType);
+    TrustMaterial mat = this.currentMaterial;
+    if (mat == null) {
+      throw new CertificateException("Trust manager is not initialized");
+    }
+    mat.delegate.checkServerTrusted(chain, authType);
   }
 
   @Override
   public X509Certificate[] getAcceptedIssuers() {
-    checkAndReload();
-    return this.currentMaterial.delegate.getAcceptedIssuers();
+    TrustMaterial mat = this.currentMaterial;
+    return mat != null ? mat.delegate.getAcceptedIssuers() : new X509Certificate[0];
+  }
+
+  @Override
+  public void close() {
+    if (scheduler != null) {
+      scheduler.shutdown();
+    }
   }
 }

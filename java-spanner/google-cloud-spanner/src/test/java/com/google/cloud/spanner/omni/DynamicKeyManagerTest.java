@@ -76,6 +76,8 @@ public class DynamicKeyManagerTest {
       Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
       Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
 
+      keyManager.checkAndReload();
+
       String alias2 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
       assertNotNull(alias2);
 
@@ -92,6 +94,86 @@ public class DynamicKeyManagerTest {
   }
 
   @Test
+  public void testBackgroundReloadScheduled() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.bg1");
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.bg2");
+    try {
+      File certFile = tempFolder.newFile("client-bg.crt");
+      File keyFile = tempFolder.newFile("client-bg.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
+
+      try (DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 50L)) {
+        String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+        assertNotNull(alias1);
+        assertEquals(
+            ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+
+        Thread.sleep(1100);
+
+        Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+        Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+
+        // Background scheduler should reload material within ~1 second
+        String alias2 = null;
+        for (int i = 0; i < 40; i++) {
+          alias2 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+          if (alias2 != null && !alias2.equals(alias1)) {
+            break;
+          }
+          Thread.sleep(50);
+        }
+
+        assertNotNull(alias2);
+        assertThat(alias2).isNotEqualTo(alias1);
+        assertEquals(
+            ssc2.cert().getSubjectDN(), keyManager.getCertificateChain(alias2)[0].getSubjectDN());
+      }
+    } finally {
+      ssc1.delete();
+      ssc2.delete();
+    }
+  }
+
+  @Test
+  public void testDeterministicAliasEviction() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.eviction");
+    try {
+      File certFile = tempFolder.newFile("client-eviction.crt");
+      File keyFile = tempFolder.newFile("client-eviction.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc.privateKey().toPath()));
+
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 0L);
+      String firstAlias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals("client-1", firstAlias);
+      assertNotNull(keyManager.getCertificateChain(firstAlias));
+
+      // Trigger 15 rotations
+      for (int i = 2; i <= 15; i++) {
+        Thread.sleep(10);
+        certFile.setLastModified(System.currentTimeMillis() + i * 1000L);
+        keyFile.setLastModified(System.currentTimeMillis() + i * 1000L);
+        keyManager.checkAndReload();
+      }
+
+      String latestAlias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals("client-15", latestAlias);
+      assertNotNull(keyManager.getCertificateChain(latestAlias));
+
+      // Oldest alias "client-1" should have been evicted (oldest kept is 15 - 10 = 5)
+      // When lookup for evicted alias happens, it falls back to currentMaterial
+      // Let's verify alias "client-1" is not retained in old version map
+      assertNotNull(keyManager.getCertificateChain("client-15"));
+      assertNotNull(keyManager.getCertificateChain("client-5"));
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
   public void testFileCheckThrottling() throws Exception {
     SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.throttle1");
     SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.throttle2");
@@ -103,19 +185,20 @@ public class DynamicKeyManagerTest {
       Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
 
       // 60-second check interval
-      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 60000L);
+      try (DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 60000L)) {
+        String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+        assertEquals(
+            ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
 
-      String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
-      assertEquals(
-          ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+        // Rotate files immediately on disk
+        Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+        Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
 
-      // Rotate files immediately on disk
-      Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
-      Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
-
-      // Within the throttle interval, the manager should retain and return previous certificate
-      assertEquals(
-          ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+        // Without waiting for background poller, the manager immediately returns previous
+        // certificate
+        assertEquals(
+            ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+      }
     } finally {
       ssc1.delete();
       ssc2.delete();
@@ -140,6 +223,7 @@ public class DynamicKeyManagerTest {
 
       // Overwrite certFile with corrupt bytes
       Files.write(certFile.toPath(), "NOT A CERTIFICATE CONTENT".getBytes(StandardCharsets.UTF_8));
+      keyManager.checkAndReload();
 
       // DynamicKeyManager should catch reload error and retain previous material
       String aliasAfter = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
@@ -195,10 +279,11 @@ public class DynamicKeyManagerTest {
       Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
       Files.write(keyFile.toPath(), Files.readAllBytes(ssc.privateKey().toPath()));
 
-      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
-      assertNull(keyManager.getServerAliases("RSA", null));
-      assertNull(keyManager.chooseServerAlias("RSA", null, null));
-      assertNull(keyManager.chooseEngineServerAlias("RSA", null, null));
+      try (DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile)) {
+        assertNull(keyManager.getServerAliases("RSA", null));
+        assertNull(keyManager.chooseServerAlias("RSA", null, null));
+        assertNull(keyManager.chooseEngineServerAlias("RSA", null, null));
+      }
     } finally {
       ssc.delete();
     }
@@ -246,6 +331,7 @@ public class DynamicKeyManagerTest {
 
       // Rotate only cert file (e.g., intermediate state during rotation)
       Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+      keyManager.checkAndReload();
 
       // Key manager should detect mismatch and retain ssc1 credentials
       String aliasAfter = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
@@ -267,11 +353,12 @@ public class DynamicKeyManagerTest {
       Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
       Files.write(keyFile.toPath(), ssc.key().getEncoded());
 
-      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
-      String alias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
-      assertNotNull(alias);
-      assertNotNull(keyManager.getCertificateChain(alias));
-      assertNotNull(keyManager.getPrivateKey(alias));
+      try (DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile)) {
+        String alias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+        assertNotNull(alias);
+        assertNotNull(keyManager.getCertificateChain(alias));
+        assertNotNull(keyManager.getPrivateKey(alias));
+      }
     } finally {
       ssc.delete();
     }

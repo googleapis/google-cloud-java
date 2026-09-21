@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.omni;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
@@ -40,10 +41,11 @@ public class DynamicTrustManagerTest {
 
   @Test
   public void testDefaultTrustManagerWithNull() throws Exception {
-    DynamicTrustManager trustManager = new DynamicTrustManager((File) null);
-    X509Certificate[] issuers = trustManager.getAcceptedIssuers();
-    assertNotNull(issuers);
-    assertTrue(issuers.length > 0);
+    try (DynamicTrustManager trustManager = new DynamicTrustManager((File) null)) {
+      X509Certificate[] issuers = trustManager.getAcceptedIssuers();
+      assertNotNull(issuers);
+      assertTrue(issuers.length > 0);
+    }
   }
 
   @Test
@@ -73,6 +75,7 @@ public class DynamicTrustManagerTest {
 
       // Rotate CA file on disk to ca2
       Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+      trustManager.checkAndReload();
 
       // Now ca2 should be accepted and ca1 should be rejected
       X509Certificate[] issuers2 = trustManager.getAcceptedIssuers();
@@ -92,6 +95,47 @@ public class DynamicTrustManagerTest {
   }
 
   @Test
+  public void testBackgroundReloadScheduled() throws Exception {
+    SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.bg1");
+    SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.bg2");
+    try {
+      File caFile = tempFolder.newFile("ca-bg.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
+
+      try (DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 50L)) {
+        X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+        assertNotNull(issuers1);
+        assertEquals(1, issuers1.length);
+        assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
+
+        Thread.sleep(1100);
+
+        Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+
+        // Background scheduler should reload CA material within ~1 second
+        X509Certificate[] issuers2 = null;
+        for (int i = 0; i < 40; i++) {
+          issuers2 = trustManager.getAcceptedIssuers();
+          if (issuers2 != null
+              && issuers2.length > 0
+              && issuers2[0].getSubjectDN().equals(ca2.cert().getSubjectDN())) {
+            break;
+          }
+          Thread.sleep(50);
+        }
+
+        assertNotNull(issuers2);
+        assertThat(issuers2.length).isEqualTo(1);
+        assertEquals(ca2.cert().getSubjectDN(), issuers2[0].getSubjectDN());
+        trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+      }
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
+  }
+
+  @Test
   public void testFileCheckThrottling() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.throttle1");
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.throttle2");
@@ -100,18 +144,19 @@ public class DynamicTrustManagerTest {
       Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
 
       // 60-second check interval
-      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 60000L);
+      try (DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 60000L)) {
+        X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+        assertEquals(1, issuers1.length);
+        assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
 
-      X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
-      assertEquals(1, issuers1.length);
-      assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
+        // Rotate CA on disk immediately
+        Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
 
-      // Rotate CA on disk immediately
-      Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
-
-      // Within throttle interval, trust manager should retain previous CA
-      assertEquals(ca1.cert().getSubjectDN(), trustManager.getAcceptedIssuers()[0].getSubjectDN());
-      trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+        // Without background poller firing, trust manager returns previous CA immediately
+        assertEquals(
+            ca1.cert().getSubjectDN(), trustManager.getAcceptedIssuers()[0].getSubjectDN());
+        trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+      }
     } finally {
       ca1.delete();
       ca2.delete();
@@ -132,14 +177,14 @@ public class DynamicTrustManagerTest {
               .getBytes(StandardCharsets.UTF_8);
       Files.write(caFile.toPath(), bundle);
 
-      DynamicTrustManager trustManager = new DynamicTrustManager(caFile);
+      try (DynamicTrustManager trustManager = new DynamicTrustManager(caFile)) {
+        X509Certificate[] issuers = trustManager.getAcceptedIssuers();
+        assertNotNull(issuers);
+        assertEquals(2, issuers.length);
 
-      X509Certificate[] issuers = trustManager.getAcceptedIssuers();
-      assertNotNull(issuers);
-      assertEquals(2, issuers.length);
-
-      trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
-      trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+        trustManager.checkServerTrusted(new X509Certificate[] {ca1.cert()}, "RSA");
+        trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+      }
     } finally {
       ca1.delete();
       ca2.delete();
@@ -160,6 +205,7 @@ public class DynamicTrustManagerTest {
 
       // Corrupt the file
       Files.write(caFile.toPath(), "CORRUPT CERT DATA".getBytes(StandardCharsets.UTF_8));
+      trustManager.checkAndReload();
 
       // Trust manager should retain previous CA
       trustManager.checkServerTrusted(new X509Certificate[] {ca.cert()}, "RSA");
