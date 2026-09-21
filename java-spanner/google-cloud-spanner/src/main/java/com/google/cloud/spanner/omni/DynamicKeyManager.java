@@ -132,15 +132,6 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    KeyMaterial existing = this.currentMaterial;
-    if (existing != null
-        && certFile.lastModified() == existing.certLastModified
-        && certFile.length() == existing.certLength
-        && keyFile.lastModified() == existing.keyLastModified
-        && keyFile.length() == existing.keyLength) {
-      lastCheckedNs = now;
-      return;
-    }
     if (!lock.tryLock()) {
       return;
     }
@@ -149,7 +140,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
       if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
         return;
       }
-      existing = this.currentMaterial;
+      KeyMaterial existing = this.currentMaterial;
       if (existing != null
           && certFile.lastModified() == existing.certLastModified
           && certFile.length() == existing.certLength

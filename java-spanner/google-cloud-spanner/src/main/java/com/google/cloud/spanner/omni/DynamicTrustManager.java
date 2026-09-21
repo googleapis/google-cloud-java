@@ -109,13 +109,6 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
     if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    TrustMaterial existing = this.currentMaterial;
-    if (existing != null
-        && caCertFile.lastModified() == existing.lastModified
-        && caCertFile.length() == existing.length) {
-      lastCheckedNs = now;
-      return;
-    }
     if (!lock.tryLock()) {
       return;
     }
@@ -124,7 +117,7 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
       if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
         return;
       }
-      existing = this.currentMaterial;
+      TrustMaterial existing = this.currentMaterial;
       if (existing != null
           && caCertFile.lastModified() == existing.lastModified
           && caCertFile.length() == existing.length) {
