@@ -33,6 +33,15 @@ import com.google.cloud.logging.spi.v2.LoggingRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.SpanProcessor;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
@@ -109,6 +118,7 @@ public class AutoPopulateMetadataTests {
   @After
   public void teardown() {
     new ContextHandler().removeCurrentContext();
+    new ContextHandler().removeCurrentContextPriority();
   }
 
   private void mockCurrentContext(
@@ -203,5 +213,33 @@ public class AutoPopulateMetadataTests {
 
     LogEntry actual = LogEntry.fromPb(rpcWriteArgument.getValue().getEntries(0));
     assertEquals(expectedResource, actual.getResource());
+  }
+
+  @Test
+  public void testAutoPopulationWithOpenTelemetryContext() {
+    InMemorySpanExporter testExporter = InMemorySpanExporter.create();
+    SpanProcessor inMemorySpanProcessor = SimpleSpanProcessor.create(testExporter);
+    OpenTelemetrySdk openTelemetrySdk =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder().addSpanProcessor(inMemorySpanProcessor).build())
+            .build();
+    Tracer tracer = openTelemetrySdk.getTracer("ValidationTest");
+    Span otelSpan = tracer.spanBuilder("test-span").startSpan();
+
+    try (Scope scope = otelSpan.makeCurrent()) {
+      SpanContext spanContext = otelSpan.getSpanContext();
+      logging.write(ImmutableList.of(SIMPLE_LOG_ENTRY));
+
+      LogEntry actual = LogEntry.fromPb(rpcWriteArgument.getValue().getEntries(0));
+      String expectedTrace =
+          String.format(
+              LoggingImpl.RESOURCE_NAME_FORMAT, RESOURCE_PROJECT_ID, spanContext.getTraceId());
+      assertEquals(expectedTrace, actual.getTrace());
+      assertEquals(spanContext.getSpanId(), actual.getSpanId());
+      assertEquals(spanContext.isSampled(), actual.getTraceSampled());
+    } finally {
+      otelSpan.end();
+    }
   }
 }
