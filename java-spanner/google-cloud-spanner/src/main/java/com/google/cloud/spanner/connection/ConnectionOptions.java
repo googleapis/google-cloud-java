@@ -682,42 +682,6 @@ public class ConnectionOptions {
     }
 
     /**
-     * Sets the path to the client certificate file to use for mTLS authentication with Spanner
-     * Omni.
-     *
-     * @param clientCertificate The path to the client certificate file.
-     * @return this builder
-     */
-    public Builder setClientCertificate(String clientCertificate) {
-      setConnectionPropertyValue(CLIENT_CERTIFICATE, clientCertificate);
-      return this;
-    }
-
-    /**
-     * Sets the path to the client private key file to use for mTLS authentication with Spanner
-     * Omni.
-     *
-     * @param clientCertificateKey The path to the client private key file.
-     * @return this builder
-     */
-    public Builder setClientCertificateKey(String clientCertificateKey) {
-      setConnectionPropertyValue(CLIENT_KEY, clientCertificateKey);
-      return this;
-    }
-
-    /**
-     * Sets the path to the server root CA certificate file to use for SSL/TLS verification with
-     * Spanner Omni.
-     *
-     * @param caCertificate The path to the root CA certificate file.
-     * @return this builder
-     */
-    public Builder setCaCertificate(String caCertificate) {
-      setConnectionPropertyValue(CA_CERTIFICATE, caCertificate);
-      return this;
-    }
-
-    /**
      * @return the {@link ConnectionOptions}
      */
     public ConnectionOptions build() {

@@ -1650,18 +1650,5 @@ public class ConnectionOptionsTest {
     assertEquals("/path/to/client.crt", optionsFromUri.getClientCertificate());
     assertEquals("/path/to/client.key", optionsFromUri.getClientCertificateKey());
     assertEquals("/path/to/ca.crt", optionsFromUri.getCaCertificate());
-
-    ConnectionOptions optionsFromBuilder =
-        ConnectionOptions.newBuilder()
-            .setUri(
-                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
-            .setClientCertificate("/path/to/builder/client.crt")
-            .setClientCertificateKey("/path/to/builder/client.key")
-            .setCaCertificate("/path/to/builder/ca.crt")
-            .setCredentials(NoCredentials.getInstance())
-            .build();
-    assertEquals("/path/to/builder/client.crt", optionsFromBuilder.getClientCertificate());
-    assertEquals("/path/to/builder/client.key", optionsFromBuilder.getClientCertificateKey());
-    assertEquals("/path/to/builder/ca.crt", optionsFromBuilder.getCaCertificate());
   }
 }
