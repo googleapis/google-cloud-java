@@ -16,10 +16,12 @@
 
 package com.google.cloud.bigquery.storage.v1.it.util;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.core.ApiFutureCallback;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
@@ -38,8 +40,10 @@ import com.google.protobuf.util.Timestamps;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecordBuilder;
@@ -159,7 +163,19 @@ public class Helper {
               ReadSession.TableReadOptions.newBuilder().setRowRestriction(filter).build());
     }
 
-    ReadSession session = client.createReadSession(createSessionRequestBuilder.build());
+    CreateReadSessionRequest request = createSessionRequestBuilder.build();
+    AtomicReference<ReadSession> sessionRef = new AtomicReference<>();
+    await()
+        .atMost(Duration.ofMinutes(1))
+        .pollInterval(Duration.ofSeconds(1))
+        // retry if the newly-created table has not yet fully propagated
+        .ignoreException(NotFoundException.class)
+        .until(
+            () -> {
+              sessionRef.set(client.createReadSession(request));
+              return true;
+            });
+    ReadSession session = sessionRef.get();
     assertEquals(
         1,
         session.getStreamsCount(),

@@ -61,7 +61,7 @@ public interface DataProfileFindingOrBuilder
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *
@@ -76,7 +76,7 @@ public interface DataProfileFindingOrBuilder
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *
@@ -91,7 +91,7 @@ public interface DataProfileFindingOrBuilder
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *

@@ -33,6 +33,7 @@ package com.google.auth.oauth2;
 
 import java.io.IOException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Interface for long term storage of tokens */
 @NullMarked
@@ -45,7 +46,7 @@ public interface TokenStore {
    * @return The loaded token data.
    * @throws IOException An error loading the token data from storage.
    */
-  String load(String id) throws IOException;
+  @Nullable String load(String id) throws IOException;
 
   /**
    * Put the token data into storage for the given ID.

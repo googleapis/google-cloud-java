@@ -29,12 +29,15 @@
  */
 package com.google.api.gax.httpjson;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
+import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.gax.tracing.ApiTracer;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.truth.Truth;
 import com.google.longrunning.ListOperationsRequest;
 import com.google.protobuf.Empty;
@@ -44,6 +47,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -325,5 +329,157 @@ class HttpRequestRunnableTest {
     HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
     Truth.assertThat(httpRequest.getReadTimeout()).isEqualTo(30000L);
     Truth.assertThat(httpRequest.getConnectTimeout()).isEqualTo(30000L);
+  }
+
+  @Test
+  void testResumableUploadChunkRequestFormatter() throws IOException {
+    byte[] rawPayload = "binary \0 raw \1 payload".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadChunkRequestFormatter<Field> binaryRequestFormatter =
+        new ResumableUploadChunkRequestFormatter<Field>() {
+          @Override
+          public Map<String, List<String>> getQueryParamNames(Field apiMessage) {
+            return Collections.emptyMap();
+          }
+
+          @Override
+          public byte[] getBinaryRequestBody(Field apiMessage) {
+            return rawPayload;
+          }
+
+          @Override
+          public String getPath(Field apiMessage) {
+            return "/upload";
+          }
+
+          @Override
+          public PathTemplate getPathTemplate() {
+            return PathTemplate.create("{+path}");
+          }
+        };
+
+    ApiMethodDescriptor<Field, Empty> methodDescriptor =
+        ApiMethodDescriptor.<Field, Empty>newBuilder()
+            .setFullMethodName("upload.binary")
+            .setHttpMethod("POST")
+            .setRequestFormatter(binaryRequestFormatter)
+            .setResponseParser(responseParser)
+            .build();
+
+    HttpRequestRunnable<Field, Empty> httpRequestRunnable =
+        new HttpRequestRunnable<>(
+            requestMessage,
+            methodDescriptor,
+            ENDPOINT,
+            HttpJsonCallOptions.newBuilder().build(),
+            new MockHttpTransport(),
+            HttpJsonMetadata.newBuilder().build(),
+            result -> {});
+
+    HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
+    Truth.assertThat(httpRequest.getContent()).isInstanceOf(ByteArrayContent.class);
+    Truth.assertThat(httpRequest.getContent().getType()).isEqualTo("application/octet-stream");
+    Truth.assertThat(httpRequest.getContent().getLength()).isEqualTo(rawPayload.length);
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      httpRequest.getContent().writeTo(out);
+      Truth.assertThat(out.toByteArray()).isEqualTo(rawPayload);
+    }
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> binaryRequestFormatter.getRequestBody(requestMessage));
+  }
+
+  @Test
+  void testResumableUploadChunkRequestFormatter_emptyPayload() throws IOException {
+    ResumableUploadChunkRequestFormatter<Field> emptyRequestFormatter =
+        new ResumableUploadChunkRequestFormatter<Field>() {
+          @Override
+          public Map<String, List<String>> getQueryParamNames(Field apiMessage) {
+            return Collections.emptyMap();
+          }
+
+          @Override
+          public byte[] getBinaryRequestBody(Field apiMessage) {
+            return new byte[0];
+          }
+
+          @Override
+          public String getPath(Field apiMessage) {
+            return "/upload";
+          }
+
+          @Override
+          public PathTemplate getPathTemplate() {
+            return PathTemplate.create("{+path}");
+          }
+        };
+
+    ApiMethodDescriptor<Field, Empty> methodDescriptor =
+        ApiMethodDescriptor.<Field, Empty>newBuilder()
+            .setFullMethodName("upload.empty")
+            .setHttpMethod("POST")
+            .setRequestFormatter(emptyRequestFormatter)
+            .setResponseParser(responseParser)
+            .build();
+
+    HttpRequestRunnable<Field, Empty> httpRequestRunnable =
+        new HttpRequestRunnable<>(
+            requestMessage,
+            methodDescriptor,
+            ENDPOINT,
+            HttpJsonCallOptions.newBuilder().build(),
+            new MockHttpTransport(),
+            HttpJsonMetadata.newBuilder().build(),
+            result -> {});
+
+    HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
+    Truth.assertThat(httpRequest.getContent()).isInstanceOf(EmptyContent.class);
+  }
+
+  @Test
+  void testAbsoluteUrlSupport() throws IOException {
+    String absoluteUrl = "https://custom-upload-host.googleapis.com/upload/session/123?sid=abc";
+    HttpRequestFormatter<Field> absoluteUrlFormatter =
+        new HttpRequestFormatter<Field>() {
+          @Override
+          public Map<String, List<String>> getQueryParamNames(Field apiMessage) {
+            return Collections.emptyMap();
+          }
+
+          @Override
+          public String getRequestBody(Field apiMessage) {
+            return "";
+          }
+
+          @Override
+          public String getPath(Field apiMessage) {
+            return absoluteUrl;
+          }
+
+          @Override
+          public PathTemplate getPathTemplate() {
+            return PathTemplate.create("{+path}");
+          }
+        };
+
+    ApiMethodDescriptor<Field, Empty> methodDescriptor =
+        ApiMethodDescriptor.<Field, Empty>newBuilder()
+            .setFullMethodName("upload.absolute")
+            .setHttpMethod("POST")
+            .setRequestFormatter(absoluteUrlFormatter)
+            .setResponseParser(responseParser)
+            .build();
+
+    HttpRequestRunnable<Field, Empty> httpRequestRunnable =
+        new HttpRequestRunnable<>(
+            requestMessage,
+            methodDescriptor,
+            ENDPOINT,
+            HttpJsonCallOptions.newBuilder().build(),
+            new MockHttpTransport(),
+            HttpJsonMetadata.newBuilder().build(),
+            result -> {});
+
+    HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
+    Truth.assertThat(httpRequest.getUrl().build()).isEqualTo(absoluteUrl);
   }
 }

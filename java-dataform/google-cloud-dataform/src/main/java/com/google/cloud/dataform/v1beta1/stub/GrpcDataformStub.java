@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -45,6 +46,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
+import com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
@@ -61,6 +63,8 @@ import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
@@ -74,6 +78,8 @@ import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffRequest;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest;
@@ -84,6 +90,8 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -152,6 +160,8 @@ import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
 import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersRequest;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse;
 import com.google.cloud.dataform.v1beta1.TeamFolder;
 import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateFolderRequest;
@@ -587,6 +597,69 @@ public class GrpcDataformStub extends DataformStub {
                   ProtoUtils.marshaller(PullGitCommitsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PullGitCommitsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsMethodDescriptor =
+          MethodDescriptor.<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/SyncWorkspaceRefs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SyncWorkspaceRefsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SyncWorkspaceRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesMethodDescriptor =
+          MethodDescriptor
+              .<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/FetchWorkspaceBranches")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchWorkspaceBranchesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchWorkspaceBranchesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteBranchRequest, DeleteBranchResponse>
+      deleteBranchMethodDescriptor =
+          MethodDescriptor.<DeleteBranchRequest, DeleteBranchResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteBranch")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeleteBranchResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchMethodDescriptor =
+          MethodDescriptor.<CheckoutWorkspaceBranchRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CheckoutWorkspaceBranch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CheckoutWorkspaceBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchMethodDescriptor =
+          MethodDescriptor
+              .<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/FetchCurrentWorkspaceBranch")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchCurrentWorkspaceBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchCurrentWorkspaceBranchResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1155,6 +1228,18 @@ public class GrpcDataformStub extends DataformStub {
   private final UnaryCallable<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesCallable;
   private final UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable;
+  private final UnaryCallable<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsCallable;
+  private final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesCallable;
+  private final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesPagedCallable;
+  private final UnaryCallable<DeleteBranchRequest, DeleteBranchResponse> deleteBranchCallable;
+  private final UnaryCallable<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchCallable;
+  private final UnaryCallable<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchCallable;
   private final UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsCallable;
   private final UnaryCallable<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
       fetchFileGitStatusesCallable;
@@ -1672,6 +1757,68 @@ public class GrpcDataformStub extends DataformStub {
         pullGitCommitsTransportSettings =
             GrpcCallSettings.<PullGitCommitsRequest, PullGitCommitsResponse>newBuilder()
                 .setMethodDescriptor(pullGitCommitsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsTransportSettings =
+            GrpcCallSettings.<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>newBuilder()
+                .setMethodDescriptor(syncWorkspaceRefsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+        fetchWorkspaceBranchesTransportSettings =
+            GrpcCallSettings
+                .<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>newBuilder()
+                .setMethodDescriptor(fetchWorkspaceBranchesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchTransportSettings =
+        GrpcCallSettings.<DeleteBranchRequest, DeleteBranchResponse>newBuilder()
+            .setMethodDescriptor(deleteBranchMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchTransportSettings =
+            GrpcCallSettings.<CheckoutWorkspaceBranchRequest, Empty>newBuilder()
+                .setMethodDescriptor(checkoutWorkspaceBranchMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchTransportSettings =
+            GrpcCallSettings
+                .<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchCurrentWorkspaceBranchMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2370,6 +2517,34 @@ public class GrpcDataformStub extends DataformStub {
     this.pullGitCommitsCallable =
         callableFactory.createUnaryCallable(
             pullGitCommitsTransportSettings, settings.pullGitCommitsSettings(), clientContext);
+    this.syncWorkspaceRefsCallable =
+        callableFactory.createUnaryCallable(
+            syncWorkspaceRefsTransportSettings,
+            settings.syncWorkspaceRefsSettings(),
+            clientContext);
+    this.fetchWorkspaceBranchesCallable =
+        callableFactory.createUnaryCallable(
+            fetchWorkspaceBranchesTransportSettings,
+            settings.fetchWorkspaceBranchesSettings(),
+            clientContext);
+    this.fetchWorkspaceBranchesPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchWorkspaceBranchesTransportSettings,
+            settings.fetchWorkspaceBranchesSettings(),
+            clientContext);
+    this.deleteBranchCallable =
+        callableFactory.createUnaryCallable(
+            deleteBranchTransportSettings, settings.deleteBranchSettings(), clientContext);
+    this.checkoutWorkspaceBranchCallable =
+        callableFactory.createUnaryCallable(
+            checkoutWorkspaceBranchTransportSettings,
+            settings.checkoutWorkspaceBranchSettings(),
+            clientContext);
+    this.fetchCurrentWorkspaceBranchCallable =
+        callableFactory.createUnaryCallable(
+            fetchCurrentWorkspaceBranchTransportSettings,
+            settings.fetchCurrentWorkspaceBranchSettings(),
+            clientContext);
     this.pushGitCommitsCallable =
         callableFactory.createUnaryCallable(
             pushGitCommitsTransportSettings, settings.pushGitCommitsSettings(), clientContext);
@@ -2861,6 +3036,40 @@ public class GrpcDataformStub extends DataformStub {
   @Override
   public UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable() {
     return pullGitCommitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsCallable() {
+    return syncWorkspaceRefsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesCallable() {
+    return fetchWorkspaceBranchesCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesPagedCallable() {
+    return fetchWorkspaceBranchesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBranchRequest, DeleteBranchResponse> deleteBranchCallable() {
+    return deleteBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckoutWorkspaceBranchRequest, Empty> checkoutWorkspaceBranchCallable() {
+    return checkoutWorkspaceBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchCallable() {
+    return fetchCurrentWorkspaceBranchCallable;
   }
 
   @Override

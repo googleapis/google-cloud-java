@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListConfere
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -30,6 +31,7 @@ import com.google.apps.meet.v2.GetConferenceRecordRequest;
 import com.google.apps.meet.v2.GetParticipantRequest;
 import com.google.apps.meet.v2.GetParticipantSessionRequest;
 import com.google.apps.meet.v2.GetRecordingRequest;
+import com.google.apps.meet.v2.GetSmartNoteRequest;
 import com.google.apps.meet.v2.GetTranscriptEntryRequest;
 import com.google.apps.meet.v2.GetTranscriptRequest;
 import com.google.apps.meet.v2.ListConferenceRecordsRequest;
@@ -40,6 +42,8 @@ import com.google.apps.meet.v2.ListParticipantsRequest;
 import com.google.apps.meet.v2.ListParticipantsResponse;
 import com.google.apps.meet.v2.ListRecordingsRequest;
 import com.google.apps.meet.v2.ListRecordingsResponse;
+import com.google.apps.meet.v2.ListSmartNotesRequest;
+import com.google.apps.meet.v2.ListSmartNotesResponse;
 import com.google.apps.meet.v2.ListTranscriptEntriesRequest;
 import com.google.apps.meet.v2.ListTranscriptEntriesResponse;
 import com.google.apps.meet.v2.ListTranscriptsRequest;
@@ -47,6 +51,7 @@ import com.google.apps.meet.v2.ListTranscriptsResponse;
 import com.google.apps.meet.v2.Participant;
 import com.google.apps.meet.v2.ParticipantSession;
 import com.google.apps.meet.v2.Recording;
+import com.google.apps.meet.v2.SmartNote;
 import com.google.apps.meet.v2.Transcript;
 import com.google.apps.meet.v2.TranscriptEntry;
 import javax.annotation.Generated;
@@ -146,6 +151,19 @@ public abstract class ConferenceRecordsServiceStub implements BackgroundResource
   public UnaryCallable<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse>
       listTranscriptEntriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listTranscriptEntriesCallable()");
+  }
+
+  public UnaryCallable<GetSmartNoteRequest, SmartNote> getSmartNoteCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSmartNoteCallable()");
+  }
+
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesPagedResponse>
+      listSmartNotesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSmartNotesPagedCallable()");
+  }
+
+  public UnaryCallable<ListSmartNotesRequest, ListSmartNotesResponse> listSmartNotesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSmartNotesCallable()");
   }
 
   @Override

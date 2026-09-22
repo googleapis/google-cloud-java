@@ -117,11 +117,22 @@ public class OpenTelemetryPubsubTracer {
     }
   }
 
-  void endPublisherSpan(PubsubMessageWrapper message) {
+  void addHedgedPublishStartEvent(PubsubMessageWrapper messageWrapper) {
     if (!enabled) {
       return;
     }
-    message.endPublisherSpan();
+    messageWrapper.addHedgedPublishStartEvent();
+  }
+
+  void endPublisherSpan(PubsubMessageWrapper message) {
+    endPublisherSpan(message, false);
+  }
+
+  void endPublisherSpan(PubsubMessageWrapper message, boolean wasHedged) {
+    if (!enabled) {
+      return;
+    }
+    message.endPublisherSpan(wasHedged);
   }
 
   void setPublisherMessageIdSpanAttribute(PubsubMessageWrapper message, String messageId) {
@@ -177,6 +188,9 @@ public class OpenTelemetryPubsubTracer {
   /**
    * Creates, starts, and returns a publish RPC span for the given message batch. Bi-directional
    * links with the publisher parent span are created for sampled messages in the batch.
+   *
+   * <p>Note: Hedged publish attempts do not create distinct publish RPC spans. Instead, we rely on
+   * the hedged publish start and end events on each message.
    */
   Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages) {
     if (!enabled) {

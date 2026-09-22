@@ -81,6 +81,7 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PROTO_SCHEMA(2),
+    AVRO_SCHEMA(6),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -102,6 +103,8 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 2:
           return PROTO_SCHEMA;
+        case 6:
+          return AVRO_SCHEMA;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -229,6 +232,66 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
     return com.google.bigtable.admin.v2.ProtoSchema.getDefaultInstance();
   }
 
+  public static final int AVRO_SCHEMA_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the avroSchema field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvroSchema() {
+    return typeCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The avroSchema.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AvroSchema getAvroSchema() {
+    if (typeCase_ == 6) {
+      return (com.google.bigtable.admin.v2.AvroSchema) type_;
+    }
+    return com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
+    if (typeCase_ == 6) {
+      return (com.google.bigtable.admin.v2.AvroSchema) type_;
+    }
+    return com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+  }
+
   public static final int ETAG_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -311,6 +374,9 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, etag_);
     }
+    if (typeCase_ == 6) {
+      output.writeMessage(6, (com.google.bigtable.admin.v2.AvroSchema) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -330,6 +396,11 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, etag_);
+    }
+    if (typeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.bigtable.admin.v2.AvroSchema) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -354,6 +425,9 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       case 2:
         if (!getProtoSchema().equals(other.getProtoSchema())) return false;
         break;
+      case 6:
+        if (!getAvroSchema().equals(other.getAvroSchema())) return false;
+        break;
       case 0:
       default:
     }
@@ -376,6 +450,10 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + PROTO_SCHEMA_FIELD_NUMBER;
         hash = (53 * hash) + getProtoSchema().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + AVRO_SCHEMA_FIELD_NUMBER;
+        hash = (53 * hash) + getAvroSchema().hashCode();
         break;
       case 0:
       default:
@@ -524,6 +602,9 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       if (protoSchemaBuilder_ != null) {
         protoSchemaBuilder_.clear();
       }
+      if (avroSchemaBuilder_ != null) {
+        avroSchemaBuilder_.clear();
+      }
       etag_ = "";
       typeCase_ = 0;
       type_ = null;
@@ -567,7 +648,7 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -577,6 +658,9 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       result.type_ = this.type_;
       if (typeCase_ == 2 && protoSchemaBuilder_ != null) {
         result.type_ = protoSchemaBuilder_.build();
+      }
+      if (typeCase_ == 6 && avroSchemaBuilder_ != null) {
+        result.type_ = avroSchemaBuilder_.build();
       }
     }
 
@@ -599,13 +683,18 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       switch (other.getTypeCase()) {
         case PROTO_SCHEMA:
           {
             mergeProtoSchema(other.getProtoSchema());
+            break;
+          }
+        case AVRO_SCHEMA:
+          {
+            mergeAvroSchema(other.getAvroSchema());
             break;
           }
         case TYPE_NOT_SET:
@@ -655,9 +744,16 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
+            case 50:
+              {
+                input.readMessage(
+                    internalGetAvroSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1030,6 +1126,239 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       return protoSchemaBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.AvroSchema,
+            com.google.bigtable.admin.v2.AvroSchema.Builder,
+            com.google.bigtable.admin.v2.AvroSchemaOrBuilder>
+        avroSchemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the avroSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvroSchema() {
+      return typeCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The avroSchema.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AvroSchema getAvroSchema() {
+      if (avroSchemaBuilder_ == null) {
+        if (typeCase_ == 6) {
+          return (com.google.bigtable.admin.v2.AvroSchema) type_;
+        }
+        return com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+      } else {
+        if (typeCase_ == 6) {
+          return avroSchemaBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAvroSchema(com.google.bigtable.admin.v2.AvroSchema value) {
+      if (avroSchemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        avroSchemaBuilder_.setMessage(value);
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAvroSchema(com.google.bigtable.admin.v2.AvroSchema.Builder builderForValue) {
+      if (avroSchemaBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        avroSchemaBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAvroSchema(com.google.bigtable.admin.v2.AvroSchema value) {
+      if (avroSchemaBuilder_ == null) {
+        if (typeCase_ == 6
+            && type_ != com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance()) {
+          type_ =
+              com.google.bigtable.admin.v2.AvroSchema.newBuilder(
+                      (com.google.bigtable.admin.v2.AvroSchema) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 6) {
+          avroSchemaBuilder_.mergeFrom(value);
+        } else {
+          avroSchemaBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAvroSchema() {
+      if (avroSchemaBuilder_ == null) {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 6) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        avroSchemaBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.AvroSchema.Builder getAvroSchemaBuilder() {
+      return internalGetAvroSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AvroSchemaOrBuilder getAvroSchemaOrBuilder() {
+      if ((typeCase_ == 6) && (avroSchemaBuilder_ != null)) {
+        return avroSchemaBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 6) {
+          return (com.google.bigtable.admin.v2.AvroSchema) type_;
+        }
+        return com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Schema for Avros.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.AvroSchema,
+            com.google.bigtable.admin.v2.AvroSchema.Builder,
+            com.google.bigtable.admin.v2.AvroSchemaOrBuilder>
+        internalGetAvroSchemaFieldBuilder() {
+      if (avroSchemaBuilder_ == null) {
+        if (!(typeCase_ == 6)) {
+          type_ = com.google.bigtable.admin.v2.AvroSchema.getDefaultInstance();
+        }
+        avroSchemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.admin.v2.AvroSchema,
+                com.google.bigtable.admin.v2.AvroSchema.Builder,
+                com.google.bigtable.admin.v2.AvroSchemaOrBuilder>(
+                (com.google.bigtable.admin.v2.AvroSchema) type_, getParentForChildren(), isClean());
+        type_ = null;
+      }
+      typeCase_ = 6;
+      onChanged();
+      return avroSchemaBuilder_;
+    }
+
     private java.lang.Object etag_ = "";
 
     /**
@@ -1104,7 +1433,7 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1125,7 +1454,7 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1151,7 +1480,7 @@ public final class SchemaBundle extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

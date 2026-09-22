@@ -187,6 +187,27 @@
         "grpc": {
           "libraryClient": "AudienceSegmentServiceClient",
           "rpcs": {
+            "BatchActivateAudienceSegments": {
+              "methods": ["batchActivateAudienceSegments", "batchActivateAudienceSegments", "batchActivateAudienceSegments", "batchActivateAudienceSegmentsCallable"]
+            },
+            "BatchApproveAudienceSegments": {
+              "methods": ["batchApproveAudienceSegments", "batchApproveAudienceSegments", "batchApproveAudienceSegments", "batchApproveAudienceSegmentsCallable"]
+            },
+            "BatchCreateAudienceSegments": {
+              "methods": ["batchCreateAudienceSegments", "batchCreateAudienceSegments", "batchCreateAudienceSegments", "batchCreateAudienceSegmentsCallable"]
+            },
+            "BatchDeactivateAudienceSegments": {
+              "methods": ["batchDeactivateAudienceSegments", "batchDeactivateAudienceSegments", "batchDeactivateAudienceSegments", "batchDeactivateAudienceSegmentsCallable"]
+            },
+            "BatchPopulateAudienceSegments": {
+              "methods": ["batchPopulateAudienceSegments", "batchPopulateAudienceSegments", "batchPopulateAudienceSegments", "batchPopulateAudienceSegmentsCallable"]
+            },
+            "BatchRejectAudienceSegments": {
+              "methods": ["batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegmentsCallable"]
+            },
+            "CreateAudienceSegment": {
+              "methods": ["createAudienceSegment", "createAudienceSegment", "createAudienceSegment", "createAudienceSegmentCallable"]
+            },
             "GetAudienceSegment": {
               "methods": ["getAudienceSegment", "getAudienceSegment", "getAudienceSegment", "getAudienceSegmentCallable"]
             },
@@ -207,6 +228,33 @@
             },
             "ListBandwidthGroups": {
               "methods": ["listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroupsPagedCallable", "listBandwidthGroupsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BreakTemplateService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BreakTemplateServiceClient",
+          "rpcs": {
+            "BatchCreateBreakTemplates": {
+              "methods": ["batchCreateBreakTemplates", "batchCreateBreakTemplates", "batchCreateBreakTemplates", "batchCreateBreakTemplatesCallable"]
+            },
+            "BatchUpdateBreakTemplates": {
+              "methods": ["batchUpdateBreakTemplates", "batchUpdateBreakTemplates", "batchUpdateBreakTemplates", "batchUpdateBreakTemplatesCallable"]
+            },
+            "CreateBreakTemplate": {
+              "methods": ["createBreakTemplate", "createBreakTemplate", "createBreakTemplate", "createBreakTemplateCallable"]
+            },
+            "GetBreakTemplate": {
+              "methods": ["getBreakTemplate", "getBreakTemplate", "getBreakTemplate", "getBreakTemplateCallable"]
+            },
+            "ListBreakTemplates": {
+              "methods": ["listBreakTemplates", "listBreakTemplates", "listBreakTemplates", "listBreakTemplatesPagedCallable", "listBreakTemplatesCallable"]
+            },
+            "UpdateBreakTemplate": {
+              "methods": ["updateBreakTemplate", "updateBreakTemplate", "updateBreakTemplateCallable"]
             }
           }
         }
@@ -283,8 +331,20 @@
             "BatchCreateChildPublishers": {
               "methods": ["batchCreateChildPublishers", "batchCreateChildPublishers", "batchCreateChildPublishers", "batchCreateChildPublishersCallable"]
             },
+            "BatchRejectChildPublishers": {
+              "methods": ["batchRejectChildPublishers", "batchRejectChildPublishers", "batchRejectChildPublishers", "batchRejectChildPublishersCallable"]
+            },
+            "BatchRenegotiateChildPublisherAgreements": {
+              "methods": ["batchRenegotiateChildPublisherAgreements", "batchRenegotiateChildPublisherAgreements", "batchRenegotiateChildPublisherAgreements", "batchRenegotiateChildPublisherAgreementsCallable"]
+            },
+            "BatchResendChildPublisherInvitationEmails": {
+              "methods": ["batchResendChildPublisherInvitationEmails", "batchResendChildPublisherInvitationEmails", "batchResendChildPublisherInvitationEmails", "batchResendChildPublisherInvitationEmailsCallable"]
+            },
             "BatchUpdateChildPublishers": {
               "methods": ["batchUpdateChildPublishers", "batchUpdateChildPublishers", "batchUpdateChildPublishers", "batchUpdateChildPublishersCallable"]
+            },
+            "BatchWithdrawChildPublishers": {
+              "methods": ["batchWithdrawChildPublishers", "batchWithdrawChildPublishers", "batchWithdrawChildPublishers", "batchWithdrawChildPublishersCallable"]
             },
             "CreateChildPublisher": {
               "methods": ["createChildPublisher", "createChildPublisher", "createChildPublisher", "createChildPublisherCallable"]
@@ -683,6 +743,18 @@
         }
       }
     },
+    "DaiSessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DaiSessionServiceClient",
+          "rpcs": {
+            "GetDaiSession": {
+              "methods": ["getDaiSession", "getDaiSession", "getDaiSession", "getDaiSessionCallable"]
+            }
+          }
+        }
+      }
+    },
     "DeviceCapabilityService": {
       "clients": {
         "grpc": {
@@ -932,16 +1004,55 @@
         }
       }
     },
+    "NativeStyleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NativeStyleServiceClient",
+          "rpcs": {
+            "BatchActivateNativeStyles": {
+              "methods": ["batchActivateNativeStyles", "batchActivateNativeStyles", "batchActivateNativeStyles", "batchActivateNativeStylesCallable"]
+            },
+            "BatchArchiveNativeStyles": {
+              "methods": ["batchArchiveNativeStyles", "batchArchiveNativeStyles", "batchArchiveNativeStyles", "batchArchiveNativeStylesCallable"]
+            },
+            "BatchCreateNativeStyles": {
+              "methods": ["batchCreateNativeStyles", "batchCreateNativeStyles", "batchCreateNativeStyles", "batchCreateNativeStylesCallable"]
+            },
+            "BatchDeactivateNativeStyles": {
+              "methods": ["batchDeactivateNativeStyles", "batchDeactivateNativeStyles", "batchDeactivateNativeStyles", "batchDeactivateNativeStylesCallable"]
+            },
+            "BatchUpdateNativeStyles": {
+              "methods": ["batchUpdateNativeStyles", "batchUpdateNativeStyles", "batchUpdateNativeStyles", "batchUpdateNativeStylesCallable"]
+            },
+            "GetNativeStyle": {
+              "methods": ["getNativeStyle", "getNativeStyle", "getNativeStyle", "getNativeStyleCallable"]
+            },
+            "ListNativeStyles": {
+              "methods": ["listNativeStyles", "listNativeStyles", "listNativeStyles", "listNativeStylesPagedCallable", "listNativeStylesCallable"]
+            }
+          }
+        }
+      }
+    },
     "NetworkService": {
       "clients": {
         "grpc": {
           "libraryClient": "NetworkServiceClient",
           "rpcs": {
+            "GetDefaultThirdPartyDataDeclaration": {
+              "methods": ["getDefaultThirdPartyDataDeclaration", "getDefaultThirdPartyDataDeclaration", "getDefaultThirdPartyDataDeclaration", "getDefaultThirdPartyDataDeclarationCallable"]
+            },
             "GetNetwork": {
               "methods": ["getNetwork", "getNetwork", "getNetwork", "getNetworkCallable"]
             },
             "ListNetworks": {
               "methods": ["listNetworks", "listNetworksPagedCallable", "listNetworksCallable"]
+            },
+            "ProvisionTestNetwork": {
+              "methods": ["provisionTestNetwork", "provisionTestNetworkCallable"]
+            },
+            "UpdateNetwork": {
+              "methods": ["updateNetwork", "updateNetwork", "updateNetworkCallable"]
             }
           }
         }

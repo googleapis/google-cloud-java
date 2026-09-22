@@ -78,6 +78,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.FindingSummary;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
@@ -270,6 +272,10 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
   private final UnaryCallSettings<UpdateRapidCacheRequest, Operation> updateRapidCacheSettings;
   private final OperationCallSettings<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
       updateRapidCacheOperationSettings;
+  private final UnaryCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheSettings;
+  private final OperationCallSettings<
+          DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationSettings;
   private final UnaryCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheSettings;
   private final PagedCallSettings<
           ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
@@ -920,6 +926,17 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     return updateRapidCacheOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to disableRapidCache. */
+  public UnaryCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheSettings() {
+    return disableRapidCacheSettings;
+  }
+
+  /** Returns the object with the settings used for calls to disableRapidCache. */
+  public OperationCallSettings<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationSettings() {
+    return disableRapidCacheOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getRapidCache. */
   public UnaryCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheSettings() {
     return getRapidCacheSettings;
@@ -1172,6 +1189,9 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     createRapidCacheOperationSettings = settingsBuilder.createRapidCacheOperationSettings().build();
     updateRapidCacheSettings = settingsBuilder.updateRapidCacheSettings().build();
     updateRapidCacheOperationSettings = settingsBuilder.updateRapidCacheOperationSettings().build();
+    disableRapidCacheSettings = settingsBuilder.disableRapidCacheSettings().build();
+    disableRapidCacheOperationSettings =
+        settingsBuilder.disableRapidCacheOperationSettings().build();
     getRapidCacheSettings = settingsBuilder.getRapidCacheSettings().build();
     listRapidCachesSettings = settingsBuilder.listRapidCachesSettings().build();
     getProjectIntelligenceConfigSettings =
@@ -1270,6 +1290,11 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     private final OperationCallSettings.Builder<
             UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
         updateRapidCacheOperationSettings;
+    private final UnaryCallSettings.Builder<DisableRapidCacheRequest, Operation>
+        disableRapidCacheSettings;
+    private final OperationCallSettings.Builder<
+            DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+        disableRapidCacheOperationSettings;
     private final UnaryCallSettings.Builder<GetRapidCacheRequest, RapidCache> getRapidCacheSettings;
     private final PagedCallSettings.Builder<
             ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
@@ -1396,6 +1421,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       createRapidCacheOperationSettings = OperationCallSettings.newBuilder();
       updateRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRapidCacheOperationSettings = OperationCallSettings.newBuilder();
+      disableRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      disableRapidCacheOperationSettings = OperationCallSettings.newBuilder();
       getRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRapidCachesSettings = PagedCallSettings.newBuilder(LIST_RAPID_CACHES_PAGE_STR_FACT);
       getProjectIntelligenceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1441,6 +1468,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               listAnywhereCachesSettings,
               createRapidCacheSettings,
               updateRapidCacheSettings,
+              disableRapidCacheSettings,
               getRapidCacheSettings,
               listRapidCachesSettings,
               getProjectIntelligenceConfigSettings,
@@ -1494,6 +1522,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       createRapidCacheOperationSettings = settings.createRapidCacheOperationSettings.toBuilder();
       updateRapidCacheSettings = settings.updateRapidCacheSettings.toBuilder();
       updateRapidCacheOperationSettings = settings.updateRapidCacheOperationSettings.toBuilder();
+      disableRapidCacheSettings = settings.disableRapidCacheSettings.toBuilder();
+      disableRapidCacheOperationSettings = settings.disableRapidCacheOperationSettings.toBuilder();
       getRapidCacheSettings = settings.getRapidCacheSettings.toBuilder();
       listRapidCachesSettings = settings.listRapidCachesSettings.toBuilder();
       getProjectIntelligenceConfigSettings =
@@ -1544,6 +1574,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               listAnywhereCachesSettings,
               createRapidCacheSettings,
               updateRapidCacheSettings,
+              disableRapidCacheSettings,
               getRapidCacheSettings,
               listRapidCachesSettings,
               getProjectIntelligenceConfigSettings,
@@ -1690,6 +1721,11 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
 
       builder
           .updateRapidCacheSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .disableRapidCacheSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1925,6 +1961,31 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .disableRapidCacheOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DisableRapidCacheRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RapidCache.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DisableRapidCacheMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2107,6 +2168,19 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
         updateRapidCacheOperationSettings() {
       return updateRapidCacheOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to disableRapidCache. */
+    public UnaryCallSettings.Builder<DisableRapidCacheRequest, Operation>
+        disableRapidCacheSettings() {
+      return disableRapidCacheSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to disableRapidCache. */
+    public OperationCallSettings.Builder<
+            DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+        disableRapidCacheOperationSettings() {
+      return disableRapidCacheOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getRapidCache. */

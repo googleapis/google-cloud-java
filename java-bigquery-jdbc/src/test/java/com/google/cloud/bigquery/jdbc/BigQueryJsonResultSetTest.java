@@ -19,14 +19,17 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldElementType;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
@@ -195,7 +198,8 @@ public class BigQueryJsonResultSetTest {
             Schema.of(fieldEight),
             bigQueryFieldValueListWrapperNested,
             0,
-            fieldEightValue.getRepeatedValue().size());
+            fieldEightValue.getRepeatedValue().size(),
+            false);
   }
 
   private boolean resetResultSet()
@@ -512,5 +516,188 @@ public class BigQueryJsonResultSetTest {
       rowCount++;
     }
     return rowCount;
+  }
+
+  private BigQueryJsonResultSet createJsonResultSet(
+      FieldList schemaFields, FieldValueList values, boolean enableTimestampPicos) {
+    Schema schema = Schema.of(schemaFields);
+    boolean[] isComplex = BigQueryFieldValueListWrapper.createComplexColumnFlags(schemaFields);
+    BlockingQueue<BigQueryFieldValueListWrapper> picosBuffer = new LinkedBlockingDeque<>(2);
+    picosBuffer.add(BigQueryFieldValueListWrapper.of(schemaFields, values, isComplex));
+    picosBuffer.add(BigQueryFieldValueListWrapper.ofEndOfStream(null));
+    BigQueryStatement stmt = mock(BigQueryStatement.class);
+    doReturn(enableTimestampPicos).when(stmt).isEnableTimestampPicos();
+    return BigQueryJsonResultSet.of(
+        schema, 1L, picosBuffer, stmt, new Future<?>[] {mock(Future.class)});
+  }
+
+  @Test
+  public void testTimestampPicosEnabledWithDecimalEpoch() throws SQLException {
+    Field picosField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldList fields = FieldList.of(picosField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "1680174859.123456789123")),
+            fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTs")).isEqualTo("2023-03-30 11:14:19.123456789123");
+    assertThat(rs.getString(1)).isEqualTo("2023-03-30 11:14:19.123456789123");
+    assertThat(rs.getObject("picosTs")).isEqualTo("2023-03-30 11:14:19.123456789123");
+    assertThat(rs.getObject(1)).isEqualTo("2023-03-30 11:14:19.123456789123");
+    assertThat(rs.getObject("picosTs", String.class)).isEqualTo("2023-03-30 11:14:19.123456789123");
+
+    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
+    assertThat(rs.getTimestamp("picosTs")).isEqualTo(expectedTs);
+    assertThat(rs.getObject("picosTs", Timestamp.class)).isEqualTo(expectedTs);
+  }
+
+  @Test
+  public void testTimestampPicosEnabledWithIsoString() throws SQLException {
+    Field picosField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldList fields = FieldList.of(picosField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(
+                FieldValue.of(Attribute.PRIMITIVE, "2026-04-08T10:00:00.123456789123Z")),
+            fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTs")).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject("picosTs")).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getObject(1)).isEqualTo("2026-04-08 10:00:00.123456789123");
+  }
+
+  @Test
+  public void testTimestampPicosEnabledWithScientificNotation() throws SQLException {
+    Field picosField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldList fields = FieldList.of(picosField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "1.6905474E9")), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTs")).isEqualTo("2023-07-28 12:30:00.000000000000");
+  }
+
+  @Test
+  public void testTimestampPicosEnabledWithNegativeEpoch() throws SQLException {
+    Field picosField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldList fields = FieldList.of(picosField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "-0.123456789123")), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTs")).isEqualTo("1969-12-31 23:59:59.876543210877");
+  }
+
+  @Test
+  public void testTimestampPicosDisabledWith12DigitField() throws SQLException {
+    Field picosField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldList fields = FieldList.of(picosField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "1680174859.123456789123")),
+            fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("picosTs")).isEqualTo("2023-03-30 11:14:19.123456");
+    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
+    assertThat(rs.getObject("picosTs")).isEqualTo(expectedTs);
+    assertThat(rs.getTimestamp("picosTs")).isEqualTo(expectedTs);
+  }
+
+  @Test
+  public void testStandardTimestampWithPicosEnabled() throws SQLException {
+    Field stdField = Field.of("stdTs", StandardSQLTypeName.TIMESTAMP);
+    FieldList fields = FieldList.of(stdField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "1680174859.820000")), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("stdTs")).isEqualTo("2023-03-30 11:14:19.820000");
+    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.820");
+    assertThat(rs.getObject("stdTs")).isEqualTo(expectedTs);
+  }
+
+  @Test
+  public void testRangeTimestampPicosEnabled() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+            .build();
+    FieldList fields = FieldList.of(rangeField);
+    Range range = Range.of("[1680174859.123456789123, 1680174860.123456789123)");
+    FieldValueList row =
+        FieldValueList.of(ImmutableList.of(FieldValue.of(Attribute.RANGE, range)), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("rangeTs"))
+        .isEqualTo("[2023-03-30 11:14:19.123456789123, 2023-03-30 11:14:20.123456789123)");
+    assertThat(rs.getObject("rangeTs"))
+        .isEqualTo("[2023-03-30 11:14:19.123456789123, 2023-03-30 11:14:20.123456789123)");
+  }
+
+  @Test
+  public void testRangeTimestampPicosDisabled() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+            .build();
+    FieldList fields = FieldList.of(rangeField);
+    Range range = Range.of("[1680174859.123456789123, 1680174860.123456789123)");
+    FieldValueList row =
+        FieldValueList.of(ImmutableList.of(FieldValue.of(Attribute.RANGE, range)), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("rangeTs"))
+        .isEqualTo("[1680174859.123456789123, 1680174860.123456789123)");
+  }
+
+  @Test
+  public void testRangeTimestampUnbounded() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+            .build();
+    FieldList fields = FieldList.of(rangeField);
+    Range range = Range.of("[UNBOUNDED, 1680174860.123456789123)");
+    FieldValueList row =
+        FieldValueList.of(ImmutableList.of(FieldValue.of(Attribute.RANGE, range)), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("rangeTs")).isEqualTo("[UNBOUNDED, 2023-03-30 11:14:20.123456789123)");
+  }
+
+  @Test
+  public void testRangeDate() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeDate", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("DATE").build())
+            .build();
+    FieldList fields = FieldList.of(rangeField);
+    Range range = Range.of("[2023-01-01, 2023-01-31)");
+    FieldValueList row =
+        FieldValueList.of(ImmutableList.of(FieldValue.of(Attribute.RANGE, range)), fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("rangeDate")).isEqualTo("[2023-01-01, 2023-01-31)");
   }
 }

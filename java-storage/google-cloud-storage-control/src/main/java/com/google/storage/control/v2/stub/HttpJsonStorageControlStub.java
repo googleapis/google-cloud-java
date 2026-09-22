@@ -58,6 +58,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
@@ -125,6 +127,7 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DisableRapidCacheMetadata.getDescriptor())
           .add(RenameFolderMetadata.getDescriptor())
           .add(CreateRapidCacheMetadata.getDescriptor())
           .add(UpdateRapidCacheMetadata.getDescriptor())
@@ -1718,6 +1721,13 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateRapidCacheCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableRapidCacheCallable(). REST transport is not implemented for this"
             + " method yet.");
   }
 

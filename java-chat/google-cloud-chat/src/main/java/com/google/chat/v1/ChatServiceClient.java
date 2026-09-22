@@ -1696,6 +1696,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   for (Message element : chatServiceClient.listMessages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1752,6 +1753,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   ApiFuture<Message> future = chatServiceClient.listMessagesPagedCallable().futureCall(request);
    *   // Do something.
@@ -1808,6 +1810,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   while (true) {
    *     ListMessagesResponse response = chatServiceClient.listMessagesCallable().call(request);
@@ -2488,6 +2491,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMessageRequest request =
    *       GetMessageRequest.newBuilder()
    *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   Message response = chatServiceClient.getMessage(request);
    * }
@@ -2538,6 +2542,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMessageRequest request =
    *       GetMessageRequest.newBuilder()
    *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   ApiFuture<Message> future = chatServiceClient.getMessageCallable().futureCall(request);
    *   // Do something.
@@ -3199,6 +3204,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   for (SearchMessageResult element : chatServiceClient.searchMessages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -3255,6 +3261,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   ApiFuture<SearchMessageResult> future =
    *       chatServiceClient.searchMessagesPagedCallable().futureCall(request);
@@ -3312,6 +3319,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   while (true) {
    *     SearchMessagesResponse response = chatServiceClient.searchMessagesCallable().call(request);

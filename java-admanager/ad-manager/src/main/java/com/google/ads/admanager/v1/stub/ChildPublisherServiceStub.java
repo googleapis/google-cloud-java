@@ -20,8 +20,16 @@ import static com.google.ads.admanager.v1.ChildPublisherServiceClient.ListChildP
 
 import com.google.ads.admanager.v1.BatchCreateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchCreateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsRequest;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsResponse;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsRequest;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsResponse;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersResponse;
 import com.google.ads.admanager.v1.ChildPublisher;
 import com.google.ads.admanager.v1.CreateChildPublisherRequest;
 import com.google.ads.admanager.v1.GetChildPublisherRequest;
@@ -75,6 +83,34 @@ public abstract class ChildPublisherServiceStub implements BackgroundResource {
       batchUpdateChildPublishersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchUpdateChildPublishersCallable()");
+  }
+
+  public UnaryCallable<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchResendChildPublisherInvitationEmailsCallable()");
+  }
+
+  public UnaryCallable<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchRenegotiateChildPublisherAgreementsCallable()");
+  }
+
+  public UnaryCallable<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchRejectChildPublishersCallable()");
+  }
+
+  public UnaryCallable<BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchWithdrawChildPublishersCallable()");
   }
 
   @Override

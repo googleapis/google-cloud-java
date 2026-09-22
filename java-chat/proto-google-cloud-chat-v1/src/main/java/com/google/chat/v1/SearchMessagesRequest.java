@@ -56,6 +56,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     filter_ = "";
     pageToken_ = "";
     orderBy_ = "";
+    markupSyntax_ = 0;
     view_ = 0;
   }
 
@@ -785,6 +786,47 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int MARKUP_SYNTAX_FIELD_NUMBER = 6;
+  private int markupSyntax_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  @java.lang.Override
+  public int getMarkupSyntaxValue() {
+    return markupSyntax_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+    com.google.chat.v1.MarkupSyntax result =
+        com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+    return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+  }
+
   public static final int VIEW_FIELD_NUMBER = 7;
   private int view_ = 0;
 
@@ -859,6 +901,9 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, orderBy_);
     }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, markupSyntax_);
+    }
     if (view_
         != com.google.chat.v1.SearchMessagesRequest.SearchMessagesView
             .SEARCH_MESSAGES_VIEW_UNSPECIFIED
@@ -889,6 +934,9 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, orderBy_);
     }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, markupSyntax_);
+    }
     if (view_
         != com.google.chat.v1.SearchMessagesRequest.SearchMessagesView
             .SEARCH_MESSAGES_VIEW_UNSPECIFIED
@@ -915,6 +963,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (markupSyntax_ != other.markupSyntax_) return false;
     if (view_ != other.view_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -937,6 +986,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + MARKUP_SYNTAX_FIELD_NUMBER;
+    hash = (53 * hash) + markupSyntax_;
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1084,6 +1135,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
       pageSize_ = 0;
       pageToken_ = "";
       orderBy_ = "";
+      markupSyntax_ = 0;
       view_ = 0;
       return this;
     }
@@ -1137,6 +1189,9 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
         result.orderBy_ = orderBy_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.markupSyntax_ = markupSyntax_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.view_ = view_;
       }
     }
@@ -1175,6 +1230,9 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
         orderBy_ = other.orderBy_;
         bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.markupSyntax_ != 0) {
+        setMarkupSyntaxValue(other.getMarkupSyntaxValue());
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
@@ -1235,10 +1293,16 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                markupSyntax_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             case 56:
               {
                 view_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             default:
@@ -2518,6 +2582,116 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private int markupSyntax_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for markupSyntax.
+     */
+    @java.lang.Override
+    public int getMarkupSyntaxValue() {
+      return markupSyntax_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntaxValue(int value) {
+      markupSyntax_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The markupSyntax.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+      com.google.chat.v1.MarkupSyntax result =
+          com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+      return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntax(com.google.chat.v1.MarkupSyntax value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      markupSyntax_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarkupSyntax() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      markupSyntax_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int view_ = 0;
 
     /**
@@ -2556,7 +2730,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder setViewValue(int value) {
       view_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2603,7 +2777,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       view_ = value.getNumber();
       onChanged();
       return this;
@@ -2624,7 +2798,7 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearView() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       view_ = 0;
       onChanged();
       return this;

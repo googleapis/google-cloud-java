@@ -21,11 +21,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.gson.Gson;
+import com.google.gson.JsonNull;
+import com.google.gson.JsonObject;
 import java.sql.Array;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
@@ -38,6 +46,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
@@ -51,6 +60,7 @@ public class BigQueryPreparedStatementSettersTest {
   @BeforeEach
   public void setUp() throws Exception {
     connection = mock(BigQueryConnection.class);
+    when(connection.getQueryDialect()).thenReturn("SQL");
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
   }
 
@@ -268,5 +278,139 @@ public class BigQueryPreparedStatementSettersTest {
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
+  }
+
+  // Verifies standard DML QueryJobConfiguration creates positional parameters with null values when
+  // setObject is called with null.
+  @Test
+  public void testBatchJobConfigurationWithSetObjectNull() throws Exception {
+    preparedStatement.setObject(1, null);
+    preparedStatement.setInt(2, 42);
+    preparedStatement.setString(3, "test");
+    preparedStatement.setDouble(4, 3.14);
+    preparedStatement.setBoolean(5, true);
+    preparedStatement.addBatch();
+
+    ArrayList<BigQueryJdbcParameter> batchParams =
+        preparedStatement.parameterHandler.parametersList;
+    QueryJobConfiguration config = preparedStatement.getWriteBatchJobConfiguration(batchParams);
+    assertNotNull(config);
+    assertEquals(5, config.getPositionalParameters().size());
+    assertNull(config.getPositionalParameters().get(0).getValue());
+    assertEquals(StandardSQLTypeName.STRING, config.getPositionalParameters().get(0).getType());
+  }
+
+  // Verifies Storage Write API JSON row serialization maps null parameter values to
+  // JsonNull.INSTANCE.
+  @Test
+  public void testCreateJsonRowWithSetObjectNull() throws Exception {
+    preparedStatement.setObject(1, null);
+    preparedStatement.setInt(2, 42);
+    preparedStatement.setString(3, "test");
+    preparedStatement.setDouble(4, 3.14);
+    preparedStatement.setBoolean(5, true);
+
+    FieldList fieldList =
+        FieldList.of(
+            Field.of("col1", StandardSQLTypeName.STRING),
+            Field.of("col2", StandardSQLTypeName.INT64),
+            Field.of("col3", StandardSQLTypeName.STRING),
+            Field.of("col4", StandardSQLTypeName.FLOAT64),
+            Field.of("col5", StandardSQLTypeName.BOOL));
+
+    ArrayList<BigQueryJdbcParameter> params = preparedStatement.parameterHandler.parametersList;
+    JsonObject jsonRow = BigQueryPreparedStatement.createJsonRow(fieldList, params, new Gson());
+
+    assertNotNull(jsonRow);
+    assertEquals(JsonNull.INSTANCE, jsonRow.get("col1"));
+    assertTrue(jsonRow.get("col1").isJsonNull());
+    assertEquals("42", jsonRow.get("col2").getAsString());
+  }
+
+  @Test
+  public void testSetObjectWithTimestampStringAndTypesTimestamp_picosEnabled() throws Exception {
+    BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(true).when(picosConnection).isEnableTimestampPicos();
+    doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
+        .when(picosConnection)
+        .getQueryDialect();
+    BigQueryPreparedStatement ps =
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+
+    ps.setObject(1, "2024-01-01 12:34:56.123456789012", Types.TIMESTAMP);
+    assertEquals(Timestamp.class, ps.parameterHandler.getType(1));
+    assertEquals(StandardSQLTypeName.TIMESTAMP, ps.parameterHandler.getSqlType(1));
+
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
+    ps.parameterHandler.configureParameters(builder);
+    QueryJobConfiguration config = builder.build();
+
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals(
+        "2024-01-01 12:34:56.123456789012", config.getPositionalParameters().get(0).getValue());
+    assertEquals(StandardSQLTypeName.TIMESTAMP, config.getPositionalParameters().get(0).getType());
+  }
+
+  @Test
+  public void testSetTimestamp_picosEnabledPreservesNanoseconds() throws Exception {
+    BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(true).when(picosConnection).isEnableTimestampPicos();
+    doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
+        .when(picosConnection)
+        .getQueryDialect();
+    BigQueryPreparedStatement ps =
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+
+    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    ps.setTimestamp(1, ts);
+
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
+    ps.parameterHandler.configureParameters(builder);
+    QueryJobConfiguration config = builder.build();
+
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals(
+        "2024-01-01 12:34:56.123456789", config.getPositionalParameters().get(0).getValue());
+  }
+
+  @Test
+  public void testSetTimestamp_picosDisabledTruncatesToMicroseconds() throws Exception {
+    BigQueryConnection nonPicosConnection = mock(BigQueryConnection.class);
+    doReturn(false).when(nonPicosConnection).isEnableTimestampPicos();
+    doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
+        .when(nonPicosConnection)
+        .getQueryDialect();
+    BigQueryPreparedStatement ps =
+        new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)");
+
+    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    ps.setTimestamp(1, ts);
+
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
+    ps.parameterHandler.configureParameters(builder);
+    QueryJobConfiguration config = builder.build();
+
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals("2024-01-01 12:34:56.123456", config.getPositionalParameters().get(0).getValue());
+  }
+
+  @Test
+  public void testBatchConfiguration_withEnableTimestampPicos() throws Exception {
+    BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(true).when(picosConnection).isEnableTimestampPicos();
+    doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
+        .when(picosConnection)
+        .getQueryDialect();
+    BigQueryPreparedStatement ps =
+        new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
+
+    ps.setTimestamp(1, Timestamp.valueOf("2024-01-01 12:34:56.123456789"));
+    ps.addBatch();
+
+    QueryJobConfiguration batchConfig =
+        ps.getStandardBatchJobConfiguration("INSERT INTO t (col) VALUES (?)");
+    assertEquals(1, batchConfig.getPositionalParameters().size());
+    assertEquals(
+        "2024-01-01 12:34:56.123456789", batchConfig.getPositionalParameters().get(0).getValue());
   }
 }

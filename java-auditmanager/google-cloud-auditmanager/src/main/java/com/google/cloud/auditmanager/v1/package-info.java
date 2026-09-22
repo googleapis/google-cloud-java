@@ -32,9 +32,12 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (AuditManagerClient auditManagerClient = AuditManagerClient.create()) {
- *   String scope = "scope109264468";
- *   List<EnrollResourceRequest.EligibleDestination> destinations = new ArrayList<>();
- *   Enrollment response = auditManagerClient.enrollResource(scope, destinations);
+ *   EnrollmentStatusScopeName parent =
+ *       EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+ *   AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+ *   String auditScheduleId = "auditScheduleId1594553421";
+ *   AuditSchedule response =
+ *       auditManagerClient.createAuditSchedule(parent, auditSchedule, auditScheduleId);
  * }
  * }</pre>
  */

@@ -300,12 +300,30 @@ public class SessionImpl implements Session, VRpcSessionApi {
             return;
           }
 
-          updateState(SessionState.WAIT_SERVER_CLOSE);
+          SessionState prevState = state;
           this.closeReason = closeReason;
+          VRpcImpl<?, ?, ?> localRpc = currentRpc;
+          currentRpc = null;
+          updateState(SessionState.CLOSED);
+          debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_abnormal_close");
 
           // Not sending the CloseSessionRequest because cancel() will just drop it
-          stream.forceClose(closeReason.getDescription(), null);
-          // Listeners will be notified by dispatchStreamClosed
+          try {
+            stream.forceClose(closeReason.getDescription(), null);
+          } catch (Throwable t) {
+            debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_force_close_failed");
+            logger.log(
+                Level.WARNING,
+                String.format(
+                    "Session error: %s Exception while force-closing stream", info.getLogName()),
+                t);
+          }
+
+          notifyTerminalClose(
+              Status.UNAVAILABLE.withDescription(closeReason.getDescription()),
+              new Metadata(),
+              localRpc,
+              prevState);
         });
   }
 
@@ -778,6 +796,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private void dispatchStreamClosed(Status status, Metadata trailers) {
     sessionSyncContext.throwIfNotInThisSynchronizationContext();
+    if (state == SessionState.CLOSED) {
+      return;
+    }
     SessionState prevState = state;
 
     if (!status.isOk()) {
@@ -800,15 +821,13 @@ public class SessionImpl implements Session, VRpcSessionApi {
               info.getLogName(), state, status);
       logger.warning(msg);
 
-      if (state == SessionState.CLOSED) {
-        return;
+      if (closeReason == null) {
+        closeReason =
+            CloseSessionRequest.newBuilder()
+                .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+                .setDescription("Unexpected session close with status: " + status.getCode())
+                .build();
       }
-
-      closeReason =
-          CloseSessionRequest.newBuilder()
-              .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
-              .setDescription("Unexpected session close with status: " + status.getCode())
-              .build();
     }
 
     VRpcImpl<?, ?, ?> localVRpc = currentRpc;

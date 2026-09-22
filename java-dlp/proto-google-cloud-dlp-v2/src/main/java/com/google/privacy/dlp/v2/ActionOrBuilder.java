@@ -151,7 +151,7 @@ public interface ActionOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4656
+   *     See google/privacy/dlp/v2/dlp.proto;l=4773
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   @java.lang.Deprecated
@@ -171,7 +171,7 @@ public interface ActionOrBuilder
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4656
+   *     See google/privacy/dlp/v2/dlp.proto;l=4773
    * @return The publishFindingsToCloudDataCatalog.
    */
   @java.lang.Deprecated
@@ -283,7 +283,7 @@ public interface ActionOrBuilder
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -298,7 +298,7 @@ public interface ActionOrBuilder
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -313,7 +313,7 @@ public interface ActionOrBuilder
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>

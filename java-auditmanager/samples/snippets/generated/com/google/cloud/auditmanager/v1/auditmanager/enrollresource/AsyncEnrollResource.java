@@ -40,6 +40,7 @@ public class AsyncEnrollResource {
           EnrollResourceRequest.newBuilder()
               .setScope("scope109264468")
               .addAllDestinations(new ArrayList<EnrollResourceRequest.EligibleDestination>())
+              .setValidateOnly(true)
               .build();
       ApiFuture<Enrollment> future =
           auditManagerClient.enrollResourceCallable().futureCall(request);

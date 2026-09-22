@@ -46,6 +46,7 @@ public interface GuestOsFeatureOrBuilder
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -79,6 +80,7 @@ public interface GuestOsFeatureOrBuilder
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see
@@ -112,6 +114,7 @@ public interface GuestOsFeatureOrBuilder
    * - IDPF
    * - SNP_SVSM_CAPABLE
    * - CCA_CAPABLE
+   * - SUSPEND_SAFE_FPR
    *
    *
    * For more information, see

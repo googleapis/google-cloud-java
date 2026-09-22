@@ -299,7 +299,11 @@ public class DeveloperKnowledgeClientHttpJsonTest {
         AnswerQueryResponse.newBuilder().setAnswer(Answer.newBuilder().build()).build();
     mockService.addResponse(expectedResponse);
 
-    AnswerQueryRequest request = AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+    AnswerQueryRequest request =
+        AnswerQueryRequest.newBuilder()
+            .setQuery("query107944136")
+            .setFilter("filter-1274492040")
+            .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -328,7 +332,10 @@ public class DeveloperKnowledgeClientHttpJsonTest {
 
     try {
       AnswerQueryRequest request =
-          AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+          AnswerQueryRequest.newBuilder()
+              .setQuery("query107944136")
+              .setFilter("filter-1274492040")
+              .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

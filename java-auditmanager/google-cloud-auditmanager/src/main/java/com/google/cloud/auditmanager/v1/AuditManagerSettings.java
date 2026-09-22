@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -63,7 +64,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of enrollResource:
+ * of createAuditSchedule:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -73,10 +74,10 @@ import org.jspecify.annotations.Nullable;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * AuditManagerSettings.Builder auditManagerSettingsBuilder = AuditManagerSettings.newBuilder();
  * auditManagerSettingsBuilder
- *     .enrollResourceSettings()
+ *     .createAuditScheduleSettings()
  *     .setRetrySettings(
  *         auditManagerSettingsBuilder
- *             .enrollResourceSettings()
+ *             .createAuditScheduleSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -123,6 +124,30 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AuditManagerSettings extends ClientSettings<AuditManagerSettings> {
+
+  /** Returns the object with the settings used for calls to createAuditSchedule. */
+  public UnaryCallSettings<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleSettings() {
+    return ((AuditManagerStubSettings) getStubSettings()).createAuditScheduleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAuditSchedule. */
+  public UnaryCallSettings<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleSettings() {
+    return ((AuditManagerStubSettings) getStubSettings()).updateAuditScheduleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuditSchedule. */
+  public UnaryCallSettings<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleSettings() {
+    return ((AuditManagerStubSettings) getStubSettings()).getAuditScheduleSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuditSchedules. */
+  public PagedCallSettings<
+          ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesSettings() {
+    return ((AuditManagerStubSettings) getStubSettings()).listAuditSchedulesSettings();
+  }
 
   /** Returns the object with the settings used for calls to enrollResource. */
   public UnaryCallSettings<EnrollResourceRequest, Enrollment> enrollResourceSettings() {
@@ -300,6 +325,31 @@ public class AuditManagerSettings extends ClientSettings<AuditManagerSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to createAuditSchedule. */
+    public UnaryCallSettings.Builder<CreateAuditScheduleRequest, AuditSchedule>
+        createAuditScheduleSettings() {
+      return getStubSettingsBuilder().createAuditScheduleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAuditSchedule. */
+    public UnaryCallSettings.Builder<UpdateAuditScheduleRequest, AuditSchedule>
+        updateAuditScheduleSettings() {
+      return getStubSettingsBuilder().updateAuditScheduleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuditSchedule. */
+    public UnaryCallSettings.Builder<GetAuditScheduleRequest, AuditSchedule>
+        getAuditScheduleSettings() {
+      return getStubSettingsBuilder().getAuditScheduleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuditSchedules. */
+    public PagedCallSettings.Builder<
+            ListAuditSchedulesRequest, ListAuditSchedulesResponse, ListAuditSchedulesPagedResponse>
+        listAuditSchedulesSettings() {
+      return getStubSettingsBuilder().listAuditSchedulesSettings();
     }
 
     /** Returns the builder for the settings used for calls to enrollResource. */

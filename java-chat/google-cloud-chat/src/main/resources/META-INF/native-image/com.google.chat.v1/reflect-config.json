@@ -3024,6 +3024,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.chat.v1.MarkupSyntax",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.chat.v1.MatchedUrl",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

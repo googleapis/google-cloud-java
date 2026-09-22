@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -65,8 +66,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataform.v1beta1.BranchMetadata;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
+import com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest;
 import com.google.cloud.dataform.v1beta1.CommitLogEntry;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
@@ -85,6 +88,8 @@ import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
@@ -99,6 +104,8 @@ import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DirectoryEntry;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffRequest;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest;
@@ -109,6 +116,8 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -178,6 +187,8 @@ import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
 import com.google.cloud.dataform.v1beta1.SearchResult;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersRequest;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse;
 import com.google.cloud.dataform.v1beta1.TeamFolder;
 import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateFolderRequest;
@@ -379,6 +390,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       installNpmPackagesSettings;
   private final UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
       pullGitCommitsSettings;
+  private final UnaryCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsSettings;
+  private final PagedCallSettings<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesSettings;
+  private final UnaryCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchSettings;
+  private final UnaryCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchSettings;
+  private final UnaryCallSettings<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchSettings;
   private final UnaryCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
       pushGitCommitsSettings;
   private final UnaryCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
@@ -801,6 +825,47 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<Workspace> extractResources(ListWorkspacesResponse payload) {
               return payload.getWorkspacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+      FETCH_WORKSPACE_BRANCHES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchWorkspaceBranchesRequest injectToken(
+                FetchWorkspaceBranchesRequest payload, String token) {
+              return FetchWorkspaceBranchesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchWorkspaceBranchesRequest injectPageSize(
+                FetchWorkspaceBranchesRequest payload, int pageSize) {
+              return FetchWorkspaceBranchesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchWorkspaceBranchesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchWorkspaceBranchesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BranchMetadata> extractResources(
+                FetchWorkspaceBranchesResponse payload) {
+              return payload.getBranchesList();
             }
           };
 
@@ -1363,6 +1428,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      FETCH_WORKSPACE_BRANCHES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchWorkspaceBranchesRequest,
+              FetchWorkspaceBranchesResponse,
+              FetchWorkspaceBranchesPagedResponse>() {
+            @Override
+            public ApiFuture<FetchWorkspaceBranchesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+                    callable,
+                FetchWorkspaceBranchesRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchWorkspaceBranchesResponse> futureResponse) {
+              PageContext<
+                      FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_WORKSPACE_BRANCHES_PAGE_STR_DESC, request, context);
+              return FetchWorkspaceBranchesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           QueryDirectoryContentsRequest,
           QueryDirectoryContentsResponse,
           QueryDirectoryContentsPagedResponse>
@@ -1816,6 +1906,38 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return pullGitCommitsSettings;
   }
 
+  /** Returns the object with the settings used for calls to syncWorkspaceRefs. */
+  public UnaryCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsSettings() {
+    return syncWorkspaceRefsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchWorkspaceBranches. */
+  public PagedCallSettings<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesSettings() {
+    return fetchWorkspaceBranchesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranch. */
+  public UnaryCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchSettings() {
+    return deleteBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkoutWorkspaceBranch. */
+  public UnaryCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchSettings() {
+    return checkoutWorkspaceBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchCurrentWorkspaceBranch. */
+  public UnaryCallSettings<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchSettings() {
+    return fetchCurrentWorkspaceBranchSettings;
+  }
+
   /** Returns the object with the settings used for calls to pushGitCommits. */
   public UnaryCallSettings<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsSettings() {
     return pushGitCommitsSettings;
@@ -2221,6 +2343,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     deleteWorkspaceSettings = settingsBuilder.deleteWorkspaceSettings().build();
     installNpmPackagesSettings = settingsBuilder.installNpmPackagesSettings().build();
     pullGitCommitsSettings = settingsBuilder.pullGitCommitsSettings().build();
+    syncWorkspaceRefsSettings = settingsBuilder.syncWorkspaceRefsSettings().build();
+    fetchWorkspaceBranchesSettings = settingsBuilder.fetchWorkspaceBranchesSettings().build();
+    deleteBranchSettings = settingsBuilder.deleteBranchSettings().build();
+    checkoutWorkspaceBranchSettings = settingsBuilder.checkoutWorkspaceBranchSettings().build();
+    fetchCurrentWorkspaceBranchSettings =
+        settingsBuilder.fetchCurrentWorkspaceBranchSettings().build();
     pushGitCommitsSettings = settingsBuilder.pushGitCommitsSettings().build();
     fetchFileGitStatusesSettings = settingsBuilder.fetchFileGitStatusesSettings().build();
     fetchGitAheadBehindSettings = settingsBuilder.fetchGitAheadBehindSettings().build();
@@ -2374,6 +2502,20 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         installNpmPackagesSettings;
     private final UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsSettings;
+    private final UnaryCallSettings.Builder<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsSettings;
+    private final PagedCallSettings.Builder<
+            FetchWorkspaceBranchesRequest,
+            FetchWorkspaceBranchesResponse,
+            FetchWorkspaceBranchesPagedResponse>
+        fetchWorkspaceBranchesSettings;
+    private final UnaryCallSettings.Builder<DeleteBranchRequest, DeleteBranchResponse>
+        deleteBranchSettings;
+    private final UnaryCallSettings.Builder<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchSettings;
+    private final UnaryCallSettings.Builder<
+            FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchSettings;
     private final UnaryCallSettings.Builder<PushGitCommitsRequest, PushGitCommitsResponse>
         pushGitCommitsSettings;
     private final UnaryCallSettings.Builder<
@@ -2546,6 +2688,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       deleteWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       installNpmPackagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pullGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      syncWorkspaceRefsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchWorkspaceBranchesSettings =
+          PagedCallSettings.newBuilder(FETCH_WORKSPACE_BRANCHES_PAGE_STR_FACT);
+      deleteBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      checkoutWorkspaceBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchCurrentWorkspaceBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pushGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchFileGitStatusesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchGitAheadBehindSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2631,6 +2779,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
+              syncWorkspaceRefsSettings,
+              fetchWorkspaceBranchesSettings,
+              deleteBranchSettings,
+              checkoutWorkspaceBranchSettings,
+              fetchCurrentWorkspaceBranchSettings,
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
@@ -2723,6 +2876,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       deleteWorkspaceSettings = settings.deleteWorkspaceSettings.toBuilder();
       installNpmPackagesSettings = settings.installNpmPackagesSettings.toBuilder();
       pullGitCommitsSettings = settings.pullGitCommitsSettings.toBuilder();
+      syncWorkspaceRefsSettings = settings.syncWorkspaceRefsSettings.toBuilder();
+      fetchWorkspaceBranchesSettings = settings.fetchWorkspaceBranchesSettings.toBuilder();
+      deleteBranchSettings = settings.deleteBranchSettings.toBuilder();
+      checkoutWorkspaceBranchSettings = settings.checkoutWorkspaceBranchSettings.toBuilder();
+      fetchCurrentWorkspaceBranchSettings =
+          settings.fetchCurrentWorkspaceBranchSettings.toBuilder();
       pushGitCommitsSettings = settings.pushGitCommitsSettings.toBuilder();
       fetchFileGitStatusesSettings = settings.fetchFileGitStatusesSettings.toBuilder();
       fetchGitAheadBehindSettings = settings.fetchGitAheadBehindSettings.toBuilder();
@@ -2804,6 +2963,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
+              syncWorkspaceRefsSettings,
+              fetchWorkspaceBranchesSettings,
+              deleteBranchSettings,
+              checkoutWorkspaceBranchSettings,
+              fetchCurrentWorkspaceBranchSettings,
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
@@ -3040,6 +3204,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .pullGitCommitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .syncWorkspaceRefsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchWorkspaceBranchesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBranchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .checkoutWorkspaceBranchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchCurrentWorkspaceBranchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3638,6 +3827,40 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     public UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsSettings() {
       return pullGitCommitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncWorkspaceRefs. */
+    public UnaryCallSettings.Builder<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsSettings() {
+      return syncWorkspaceRefsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchWorkspaceBranches. */
+    public PagedCallSettings.Builder<
+            FetchWorkspaceBranchesRequest,
+            FetchWorkspaceBranchesResponse,
+            FetchWorkspaceBranchesPagedResponse>
+        fetchWorkspaceBranchesSettings() {
+      return fetchWorkspaceBranchesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranch. */
+    public UnaryCallSettings.Builder<DeleteBranchRequest, DeleteBranchResponse>
+        deleteBranchSettings() {
+      return deleteBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkoutWorkspaceBranch. */
+    public UnaryCallSettings.Builder<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchSettings() {
+      return checkoutWorkspaceBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchCurrentWorkspaceBranch. */
+    public UnaryCallSettings.Builder<
+            FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchSettings() {
+      return fetchCurrentWorkspaceBranchSettings;
     }
 
     /** Returns the builder for the settings used for calls to pushGitCommits. */

@@ -48,8 +48,16 @@ jobs:
         java-version: ${{matrix.java}}
         cache: maven
     - run: java -version
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
+    - name: Install xmllint
+      timeout-minutes: 5
+      run: |
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
+        # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
+        for i in {1..3}; do
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
+          break || sleep 5
+        done
     - name: Install java-shared-dependencies and common dependencies
       run: |
         .kokoro/build.sh
@@ -74,29 +82,3 @@ jobs:
         mvn install -pl ${TARGET_PATH} -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} dependencies
 
-  flatten-plugin-check:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      with:
-        persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
-      with:
-        distribution: zulu
-        java-version: 11
-        cache: maven
-    - run: java -version
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
-    - name: Install java-shared-dependencies and common dependencies
-      run: |
-        .kokoro/build.sh
-      env:
-        JOB_TYPE: install
-    - name: Pre-build dependencies
-      run: mvn install -pl java-storage/google-cloud-storage -am -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
-    - run: .kokoro/client-library-check.sh java-storage flatten-plugin
-      env:
-        EXPECTED_DEPENDENCIES_LIST: java-storage-expected-flattened-dependencies.txt

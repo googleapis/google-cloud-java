@@ -97,6 +97,49 @@ public interface SchemaBundleOrBuilder
    *
    *
    * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the avroSchema field is set.
+   */
+  boolean hasAvroSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The avroSchema.
+   */
+  com.google.bigtable.admin.v2.AvroSchema getAvroSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Schema for Avros.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.AvroSchema avro_schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.bigtable.admin.v2.AvroSchemaOrBuilder getAvroSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The etag for this schema bundle.
    * This may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding. The server

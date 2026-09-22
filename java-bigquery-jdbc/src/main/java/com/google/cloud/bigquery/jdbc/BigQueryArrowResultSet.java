@@ -31,10 +31,10 @@ import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +42,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
@@ -50,6 +51,7 @@ import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
+import org.apache.arrow.vector.util.Text;
 
 /** {@link ResultSet} Implementation for Arrow datasource (Using Storage Read APIs) */
 class BigQueryArrowResultSet extends BigQueryBaseResultSet {
@@ -84,6 +86,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   private VectorLoader vectorLoader;
   // producer task's reference
   private final Future<?> ownedTask;
+  private final boolean enableTimestampPicos;
 
   private BigQueryArrowResultSet(
       Schema schema,
@@ -97,7 +100,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       int toIndexExclusive,
       Future<?> ownedTask,
       BigQuery bigQuery,
-      Job job)
+      Job job,
+      boolean enableTimestampPicos)
       throws SQLException {
     super(bigQuery, statement, schema, isNested, job);
     LOG.finestTrace("<init>");
@@ -108,6 +112,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
     this.ownedTask = ownedTask;
+    this.enableTimestampPicos = enableTimestampPicos;
     if (!isNested && arrowSchema != null) {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
@@ -157,7 +162,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         -1,
         ownedTask,
         bigQuery,
-        job);
+        job,
+        statement != null && statement.isEnableTimestampPicos());
   }
 
   BigQueryArrowResultSet() throws SQLException {
@@ -171,10 +177,15 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.arrowDeserializer = null;
     this.vectorSchemaRoot = null;
     this.vectorLoader = null;
+    this.enableTimestampPicos = false;
   }
 
   static BigQueryArrowResultSet getNestedResultSet(
-      Schema schema, BigQueryArrowBatchWrapper nestedBatch, int fromIndex, int toIndexExclusive)
+      Schema schema,
+      BigQueryArrowBatchWrapper nestedBatch,
+      int fromIndex,
+      int toIndexExclusive,
+      boolean enableTimestampPicos)
       throws SQLException {
     return new BigQueryArrowResultSet(
         schema,
@@ -188,7 +199,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         toIndexExclusive,
         null,
         null,
-        null);
+        null,
+        enableTimestampPicos);
   }
 
   private class ArrowDeserializer implements AutoCloseable {
@@ -340,6 +352,12 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       FieldVector currentColumn = this.vectorSchemaRoot.getVector(columnIndex - 1);
       // get the current row
       value = currentColumn.getObject(this.currentBatchRowIndex);
+      if (value instanceof Integer && currentColumn instanceof DateDayVector) {
+        value = LocalDate.ofEpochDay(((Integer) value).longValue());
+      }
+    }
+    if (value instanceof Text) {
+      value = value.toString();
     }
     setWasNull(value);
     return value;
@@ -357,7 +375,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, Integer.class);
     }
 
     if (this.isNested && columnIndex == 2) {
@@ -366,12 +384,17 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         return new BigQueryArrowStruct(
             arrayField.getSubFields(),
             (JsonStringHashMap<?, ?>) value,
+            this.enableTimestampPicos,
             this.LOG.getArrowStructLogger());
       }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      if (value instanceof Integer
+          && arrayField.getType().getStandardType() == StandardSQLTypeName.DATE) {
+        value = LocalDate.ofEpochDay(((Integer) value).longValue());
+      }
+      if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
+        return BigQueryTemporalUtility.formatTimestampValue(value, true);
+      }
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -383,64 +406,87 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           || elementTypeName == StandardSQLTypeName.BIGNUMERIC) {
         JsonStringArrayList<BigDecimal> newList = new JsonStringArrayList<>();
         for (Object item : originalList) {
-          if (item != null) {
-            newList.add(((BigDecimal) item).stripTrailingZeros());
-          } else {
+          if (item == null) {
             newList.add(null);
+            continue;
           }
+          newList.add(((BigDecimal) item).stripTrailingZeros());
         }
-        return new BigQueryArrowArray(fieldSchema, newList, this.LOG.getArrowArrayLogger());
-      } else if (elementTypeName == StandardSQLTypeName.RANGE) {
+        return new BigQueryArrowArray(
+            fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
+      }
+      if (elementTypeName == StandardSQLTypeName.RANGE) {
         JsonStringArrayList<String> newList = new JsonStringArrayList<>();
         for (Object item : originalList) {
-          if (item != null) {
-            JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) item;
-            Object start = rangeMap.get("start");
-            Object end = rangeMap.get("end");
-
-            Object representativeElement = (start != null) ? start : end;
-            StandardSQLTypeName rangeElementType = getElementTypeFromValue(representativeElement);
-
-            String formattedStart = formatRangeElement(start, rangeElementType);
-            String formattedEnd = formatRangeElement(end, rangeElementType);
-
-            newList.add(String.format("[%s, %s)", formattedStart, formattedEnd));
-          } else {
+          if (item == null) {
             newList.add(null);
+            continue;
           }
+          JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) item;
+          Object start = rangeMap.get("start");
+          Object end = rangeMap.get("end");
+
+          Object representativeElement = (start != null) ? start : end;
+          StandardSQLTypeName rangeElementType =
+              getRangeElementType(fieldSchema, representativeElement);
+
+          String formattedStart = formatRangeElement(start, rangeElementType);
+          String formattedEnd = formatRangeElement(end, rangeElementType);
+
+          newList.add(String.format("[%s, %s)", formattedStart, formattedEnd));
         }
-        return new BigQueryArrowArray(fieldSchema, newList, this.LOG.getArrowArrayLogger());
+        return new BigQueryArrowArray(
+            fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
       }
-      return new BigQueryArrowArray(fieldSchema, originalList, this.LOG.getArrowArrayLogger());
-    } else if (isStruct(fieldSchema)) {
+      return new BigQueryArrowArray(
+          fieldSchema, originalList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
+    }
+
+    if (isStruct(fieldSchema)) {
       return new BigQueryArrowStruct(
           fieldSchema.getSubFields(),
           (JsonStringHashMap<?, ?>) value,
+          this.enableTimestampPicos,
           this.LOG.getArrowStructLogger());
-    } else if (fieldSchema.getType().getStandardType() == StandardSQLTypeName.RANGE) {
+    }
+
+    if (fieldSchema.getType().getStandardType() == StandardSQLTypeName.RANGE) {
       JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) value;
       Object start = rangeMap.get("start");
       Object end = rangeMap.get("end");
 
       Object representativeElement = (start != null) ? start : end;
-      StandardSQLTypeName elementType = getElementTypeFromValue(representativeElement);
+      StandardSQLTypeName elementType = getRangeElementType(fieldSchema, representativeElement);
 
       String formattedStart = formatRangeElement(start, elementType);
       String formattedEnd = formatRangeElement(end, elementType);
 
       return String.format("[%s, %s)", formattedStart, formattedEnd);
-    } else {
-      if ((fieldSchema.getType().getStandardType() == StandardSQLTypeName.NUMERIC
-              || fieldSchema.getType().getStandardType() == StandardSQLTypeName.BIGNUMERIC)
-          && value instanceof BigDecimal) {
-        // The Arrow DecimalVector may return a BigDecimal with a larger scale than necessary.
-        // Strip trailing zeros to match JSON API and CLI output
-        return ((BigDecimal) value).stripTrailingZeros();
-      }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+    }
+
+    if ((fieldSchema.getType().getStandardType() == StandardSQLTypeName.NUMERIC
+            || fieldSchema.getType().getStandardType() == StandardSQLTypeName.BIGNUMERIC)
+        && value instanceof BigDecimal) {
+      // The Arrow DecimalVector may return a BigDecimal with a larger scale than necessary.
+      // Strip trailing zeros to match JSON API and CLI output
+      return ((BigDecimal) value).stripTrailingZeros();
+    }
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(value, true);
+    }
+    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
+  }
+
+  private StandardSQLTypeName getRangeElementType(Field field, Object representativeElement) {
+    if (field == null
+        || field.getRangeElementType() == null
+        || field.getRangeElementType().getType() == null) {
+      return getElementTypeFromValue(representativeElement);
+    }
+    try {
+      return StandardSQLTypeName.valueOf(field.getRangeElementType().getType());
+    } catch (IllegalArgumentException ignored) {
+      return getElementTypeFromValue(representativeElement);
     }
   }
 
@@ -460,24 +506,24 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     return StandardSQLTypeName.STRING;
   }
 
-  private String formatRangeElement(Object element, StandardSQLTypeName elementType) {
+  private String formatRangeElement(Object element, StandardSQLTypeName elementType)
+      throws SQLException {
     if (element == null) {
       return "UNBOUNDED";
+    }
+    if (element instanceof Text) {
+      element = element.toString();
     }
     switch (elementType) {
       case DATE:
         // Arrow gives DATE as an Integer (days since epoch)
-        Date date = this.bigQueryTypeCoercer.coerceTo(Date.class, (Integer) element, this.LOG);
-        return date.toString();
+        return LocalDate.ofEpochDay(((Integer) element).longValue()).toString();
       case DATETIME:
         // Arrow gives DATETIME as a LocalDateTime
-        Timestamp dtTs =
-            this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (LocalDateTime) element, this.LOG);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, dtTs, this.LOG);
+        Timestamp dtTs = Timestamp.valueOf((LocalDateTime) element);
+        return BigQueryTypeRegistry.convert(dtTs, String.class);
       case TIMESTAMP:
-        // Arrow gives TIMESTAMP as a Long (microseconds since epoch)
-        Timestamp ts = this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (Long) element, this.LOG);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, ts, this.LOG);
+        return BigQueryTemporalUtility.formatTimestampValue(element, this.enableTimestampPicos);
       default:
         // Fallback for any other unexpected type
         return element.toString();

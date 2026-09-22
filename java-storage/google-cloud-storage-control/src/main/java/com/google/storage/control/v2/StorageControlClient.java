@@ -484,6 +484,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> DisableRapidCache</td>
+ *      <td><p> Disables a Rapid Cache instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> disableRapidCacheAsync(DisableRapidCacheRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> disableRapidCacheAsync(RapidCacheName name)
+ *           <li><p> disableRapidCacheAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> disableRapidCacheOperationCallable()
+ *           <li><p> disableRapidCacheCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetRapidCache</td>
  *      <td><p> Gets a Rapid Cache instance.</td>
  *      <td>
@@ -3855,6 +3875,154 @@ public class StorageControlClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
     return stub.updateRapidCacheCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+   *   RapidCache response = storageControlClient.disableRapidCacheAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name field in the request should be:
+   *     `projects/{project}/buckets/{bucket}/rapidCaches/{rapid_cache}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, DisableRapidCacheMetadata> disableRapidCacheAsync(
+      @Nullable RapidCacheName name) {
+    DisableRapidCacheRequest request =
+        DisableRapidCacheRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return disableRapidCacheAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString();
+   *   RapidCache response = storageControlClient.disableRapidCacheAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name field in the request should be:
+   *     `projects/{project}/buckets/{bucket}/rapidCaches/{rapid_cache}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, DisableRapidCacheMetadata> disableRapidCacheAsync(
+      String name) {
+    DisableRapidCacheRequest request = DisableRapidCacheRequest.newBuilder().setName(name).build();
+    return disableRapidCacheAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   DisableRapidCacheRequest request =
+   *       DisableRapidCacheRequest.newBuilder()
+   *           .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   RapidCache response = storageControlClient.disableRapidCacheAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RapidCache, DisableRapidCacheMetadata> disableRapidCacheAsync(
+      DisableRapidCacheRequest request) {
+    return disableRapidCacheOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   DisableRapidCacheRequest request =
+   *       DisableRapidCacheRequest.newBuilder()
+   *           .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<RapidCache, DisableRapidCacheMetadata> future =
+   *       storageControlClient.disableRapidCacheOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RapidCache response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    return stub.disableRapidCacheOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Disables a Rapid Cache instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   DisableRapidCacheRequest request =
+   *       DisableRapidCacheRequest.newBuilder()
+   *           .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       storageControlClient.disableRapidCacheCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    return stub.disableRapidCacheCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

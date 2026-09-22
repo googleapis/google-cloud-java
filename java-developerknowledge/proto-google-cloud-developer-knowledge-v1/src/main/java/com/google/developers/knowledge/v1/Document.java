@@ -24,7 +24,9 @@ package com.google.developers.knowledge.v1;
  *
  *
  * <pre>
- * A Document represents a piece of content from the Developer Knowledge corpus.
+ * A Document represents a page of documentation in the Developer Knowledge
+ * corpus, like the page at
+ * https://docs.cloud.google.com/storage/docs/creating-buckets.
  * </pre>
  *
  * Protobuf type {@code google.developers.knowledge.v1.Document}
@@ -765,7 +767,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A Document represents a piece of content from the Developer Knowledge corpus.
+   * A Document represents a page of documentation in the Developer Knowledge
+   * corpus, like the page at
+   * https://docs.cloud.google.com/storage/docs/creating-buckets.
    * </pre>
    *
    * Protobuf type {@code google.developers.knowledge.v1.Document}

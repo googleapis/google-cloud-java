@@ -73,6 +73,7 @@ public class BulkMutationTest {
             + "      timestamp_micros: 1000"
             + "      value: 'fake-value1'"
             + "    }"
+            + "    timestamp_origin: USER_SPECIFIED"
             + "  }"
             + "  mutations {"
             + "    set_cell {"
@@ -81,6 +82,7 @@ public class BulkMutationTest {
             + "      timestamp_micros: 2000"
             + "      value: 'fake-value2'"
             + "    }"
+            + "    timestamp_origin: USER_SPECIFIED"
             + "  }"
             + "}"
             + "entries {"
@@ -92,6 +94,7 @@ public class BulkMutationTest {
             + "      timestamp_micros: 3000"
             + "      value: 'fake-value3'"
             + "    }"
+            + "    timestamp_origin: USER_SPECIFIED"
             + "  }"
             + "}",
         expected);

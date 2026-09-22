@@ -27,14 +27,18 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.bigtable.v2.CloseSessionRequest;
+import com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.OpenFakeSessionRequest;
+import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
+import com.google.bigtable.v2.OpenFakeSessionRequest.ActionList;
 import com.google.bigtable.v2.OpenFakeSessionRequest.StreamError;
 import com.google.bigtable.v2.OpenSessionRequest;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionRefreshConfig;
 import com.google.bigtable.v2.SessionRequest;
+import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.api.UnaryResponseFuture;
 import com.google.cloud.bigtable.data.v2.internal.api.VRpcException;
@@ -47,6 +51,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcCallContext;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionList.SessionHandle;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeClock;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionService;
@@ -79,6 +84,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -489,6 +495,277 @@ public class SessionPoolImplTest {
 
       testSessionPool.close(CloseSessionRequest.getDefaultInstance());
     }
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void readyIdleSessionAbnormallyClosedIsReplaced() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+    // Wait until sessions are READY
+    long deadline = System.currentTimeMillis() + 5000;
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() > 0) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    poolLock.lock();
+    SessionHandle handle;
+    try {
+      assertThat(sessionPool.sessions.getStats().getReadyCount()).isGreaterThan(0);
+      handle = sessionPool.sessions.getAllSessions().iterator().next();
+    } finally {
+      poolLock.unlock();
+    }
+
+    int requestCountBefore = fakeService.getOpenRequestCount().get();
+
+    // Now simulate heartbeat failure / forceClose on the idle session:
+    // This transitions state -> WAIT_SERVER_CLOSE and cancels stream.
+    handle
+        .getSession()
+        .forceClose(
+            CloseSessionRequest.newBuilder()
+                .setReason(
+                    CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+                .setDescription("missed heartbeat")
+                .build());
+
+    waitForOpenRequestCount(requestCountBefore + 1, Duration.ofSeconds(5));
+
+    // Expected behavior: The pool should recognize that an idle session was lost below
+    // min_session_count
+    // and replace it with a new session.
+    assertThat(fakeService.getOpenRequestCount().get()).isGreaterThan(requestCountBefore);
+  }
+
+  @Test
+  void startingSessionFailedHandshakeIsReplaced() throws Exception {
+    // When a starting session receives GoAway before open, the pool should replace the session
+    // to maintain min_session_count.
+    sessionPool.start(
+        OpenFakeSessionRequest.newBuilder().setGoAwayBeforeOpen(true).build(), new Metadata());
+
+    waitForOpenRequestCount(6, Duration.ofSeconds(5));
+
+    assertThat(fakeService.getOpenRequestCount().get()).isGreaterThan(5);
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void pendingCallOnHotPathCreatesOnlyOneSession() throws Exception {
+    ActionList delayedAction =
+        ActionList.newBuilder()
+            .addActions(
+                Action.newBuilder()
+                    .setDelay(Durations.fromMillis(2000))
+                    .setResponse(VirtualRpcResponse.getDefaultInstance()))
+            .build();
+
+    sessionPool.start(
+        OpenFakeSessionRequest.newBuilder().putVrpcActions(0, delayedAction).build(),
+        new Metadata());
+
+    // Wait until initial 5 sessions are READY
+    long deadline = System.currentTimeMillis() + 5000;
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    int openCountBefore = fakeService.getOpenRequestCount().get();
+    assertThat(openCountBefore).isEqualTo(5);
+
+    // Occupy all 5 sessions with active calls
+    for (int i = 0; i < 5; i++) {
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+      rpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          f);
+    }
+
+    // Now all 5 sessions are in-use. Start an additional call.
+    // On the hot path, only 1 session is created even though scaleDelta > 1.
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> pendingCall =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> pf = new UnaryResponseFuture<>();
+    pendingCall.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        pf);
+
+    waitForOpenRequestCount(openCountBefore + 1, Duration.ofSeconds(5));
+
+    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBefore + 1);
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void abnormalCloseReplacesSession() throws Exception {
+    ActionList delayedAction =
+        ActionList.newBuilder()
+            .addActions(
+                Action.newBuilder()
+                    .setDelay(Durations.fromMillis(2000))
+                    .setResponse(VirtualRpcResponse.getDefaultInstance()))
+            .build();
+
+    sessionPool.start(
+        OpenFakeSessionRequest.newBuilder().putVrpcActions(0, delayedAction).build(),
+        new Metadata());
+
+    // Wait until initial 5 sessions are READY
+    long deadline = System.currentTimeMillis() + 5000;
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    int openCountBefore = fakeService.getOpenRequestCount().get();
+    assertThat(openCountBefore).isEqualTo(5);
+
+    // Occupy 4 of the 5 sessions with active calls
+    for (int i = 0; i < 4; i++) {
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+      rpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          f);
+    }
+
+    // Pick the 1 remaining idle session
+    SessionHandle idleHandle;
+    poolLock.lock();
+    try {
+      idleHandle =
+          sessionPool.sessions.getAfesWithReadySessions().get(0).sessions.iterator().next();
+    } finally {
+      poolLock.unlock();
+    }
+
+    // When the idle session abnormally closes, onSessionClose performs a 1:1 replacement
+    idleHandle
+        .getSession()
+        .forceClose(
+            CloseSessionRequest.newBuilder()
+                .setReason(CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+                .setDescription("missed heartbeat")
+                .build());
+
+    waitForOpenRequestCount(openCountBefore + 1, Duration.ofSeconds(5));
+
+    assertThat(fakeService.getOpenRequestCount().get()).isEqualTo(openCountBefore + 1);
+  }
+
+  @Test
+  @SuppressWarnings("GuardedBy")
+  void readySessionsHeartbeatMissDoesNotIncrementConsecutiveFailures() throws Exception {
+    ActionList delayedAction =
+        ActionList.newBuilder()
+            .addActions(
+                Action.newBuilder()
+                    .setDelay(Durations.fromMillis(500))
+                    .setResponse(VirtualRpcResponse.getDefaultInstance()))
+            .build();
+
+    sessionPool.start(
+        OpenFakeSessionRequest.newBuilder().putVrpcActions(0, delayedAction).build(),
+        new Metadata());
+
+    // Wait until initial 5 sessions are READY
+    long deadline = System.currentTimeMillis() + 5000;
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    while (System.currentTimeMillis() < deadline) {
+      poolLock.lock();
+      try {
+        if (sessionPool.sessions.getStats().getReadyCount() == 5) {
+          break;
+        }
+      } finally {
+        poolLock.unlock();
+      }
+      Thread.sleep(20);
+    }
+
+    // Occupy all 5 sessions with active calls
+    for (int i = 0; i < 5; i++) {
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+      rpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          f);
+    }
+
+    // Capture all 5 ready session handles before starting additional calls
+    List<SessionHandle> handles;
+    poolLock.lock();
+    try {
+      handles = new ArrayList<>(sessionPool.sessions.getAllSessions());
+    } finally {
+      poolLock.unlock();
+    }
+    assertThat(handles).hasSize(5);
+
+    // Start a 6th call that must queue in pendingRpcs because all 5 sessions are occupied
+    UnaryResponseFuture<SessionFakeScriptedResponse> pendingFuture = new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    queuedRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        pendingFuture);
+
+    // Verify the 6th call could not be immediately dispatched and is queued
+    assertThat(pendingFuture.isDone()).isFalse();
+
+    // Force-close all 5 ready sessions (simulating simultaneous missed heartbeat)
+    for (SessionHandle handle : handles) {
+      handle
+          .getSession()
+          .forceClose(
+              CloseSessionRequest.newBuilder()
+                  .setReason(CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+                  .setDescription("missed heartbeat")
+                  .build());
+    }
+
+    // If consecutiveFailures incremented on READY force-closes, consecutiveFailures would hit 5
+    // and popClosableRpcs() would have rejected pendingFuture with REJECTED.
+    // With the fix, consecutiveFailures does NOT increment for READY sessions. The pending vRPC
+    // remains queued, replacement sessions become READY, and it completes successfully.
+    SessionFakeScriptedResponse response = pendingFuture.get(5, TimeUnit.SECONDS);
+    assertThat(response).isNotNull();
   }
 
   @Nested
@@ -1046,6 +1323,16 @@ public class SessionPoolImplTest {
     }
 
     assertPoolServesVRpc(sessionPool, "after an interrupted caller (pool must remain healthy)");
+  }
+
+  private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {
+    long deadline = System.currentTimeMillis() + timeout.toMillis();
+    while (System.currentTimeMillis() < deadline) {
+      if (fakeService.getOpenRequestCount().get() >= minCount) {
+        return;
+      }
+      Thread.sleep(10);
+    }
   }
 
   private static ReentrantLock extractPoolLock(SessionPoolImpl<?> pool) throws Exception {

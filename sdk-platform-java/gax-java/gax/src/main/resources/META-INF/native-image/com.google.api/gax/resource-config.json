@@ -4,6 +4,7 @@
     {"pattern":"\\Qdependencies.properties\\E"},
     {"pattern":"\\Qcom/google/api/client/googleapis/google-api-client.properties\\E"},
     {"pattern":"\\Qcom/google/api/client/googleapis/google.p12\\E"},
-    {"pattern":"\\Qcom/google/api/client/http/google-http-client.properties\\E"}],
+    {"pattern":"\\Qcom/google/api/client/http/google-http-client.properties\\E"},
+    {"pattern":".*conscrypt_openjdk_jni.*"}],
   "bundles":[]
 }

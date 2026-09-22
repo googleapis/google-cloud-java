@@ -169,6 +169,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= BreakTemplateServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `BreakTemplate` objects.
+ *
+ * <p>Sample for BreakTemplateServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BreakTemplateServiceClient breakTemplateServiceClient =
+ *     BreakTemplateServiceClient.create()) {
+ *   BreakTemplateName name = BreakTemplateName.of("[NETWORK_CODE]", "[BREAK_TEMPLATE]");
+ *   BreakTemplate response = breakTemplateServiceClient.getBreakTemplate(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= BrowserLanguageServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `BrowserLanguage` objects.
@@ -530,6 +549,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= DaiSessionServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `DaiSession` objects.
+ *
+ * <p>Sample for DaiSessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DaiSessionServiceClient daiSessionServiceClient = DaiSessionServiceClient.create()) {
+ *   DaiSessionName name = DaiSessionName.of("[NETWORK_CODE]", "[DAI_SESSION]");
+ *   DaiSession response = daiSessionServiceClient.getDaiSession(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= DeviceCapabilityServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `DeviceCapability` objects.
@@ -774,6 +811,24 @@
  *       MobileDeviceSubmodelName.of("[NETWORK_CODE]", "[MOBILE_DEVICE_SUBMODEL]");
  *   MobileDeviceSubmodel response =
  *       mobileDeviceSubmodelServiceClient.getMobileDeviceSubmodel(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= NativeStyleServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `NativeStyle` objects.
+ *
+ * <p>Sample for NativeStyleServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+ *   NativeStyleName name = NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]");
+ *   NativeStyle response = nativeStyleServiceClient.getNativeStyle(name);
  * }
  * }</pre>
  *

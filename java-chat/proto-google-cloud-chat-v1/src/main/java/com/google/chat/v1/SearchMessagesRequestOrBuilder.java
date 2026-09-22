@@ -449,6 +449,36 @@ public interface SearchMessagesRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  int getMarkupSyntaxValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  com.google.chat.v1.MarkupSyntax getMarkupSyntax();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Specifies what kind of search results view to return. The default
    * is `SEARCH_MESSAGES_VIEW_BASIC`.
    * </pre>

@@ -334,7 +334,7 @@ public interface CapacityCommitmentOrBuilder
    * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=972
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1014
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Deprecated

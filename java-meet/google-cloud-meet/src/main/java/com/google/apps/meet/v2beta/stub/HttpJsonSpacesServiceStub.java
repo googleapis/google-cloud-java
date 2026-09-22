@@ -31,6 +31,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.BatchUpdateMembersRequest;
+import com.google.apps.meet.v2beta.BatchUpdateMembersResponse;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
@@ -43,6 +45,7 @@ import com.google.apps.meet.v2beta.ListMembersRequest;
 import com.google.apps.meet.v2beta.ListMembersResponse;
 import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
+import com.google.apps.meet.v2beta.UpdateMemberRequest;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
@@ -386,6 +389,82 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateMemberRequest, Member>
+      updateMemberMethodDescriptor =
+          ApiMethodDescriptor.<UpdateMemberRequest, Member>newBuilder()
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/UpdateMember")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateMemberRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{member.name=spaces/*/members/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMemberRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "member.name", request.getMember().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMemberRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("member", request.getMember(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Member>newBuilder()
+                      .setDefaultInstance(Member.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersMethodDescriptor =
+          ApiMethodDescriptor.<BatchUpdateMembersRequest, BatchUpdateMembersResponse>newBuilder()
+              .setFullMethodName("google.apps.meet.v2beta.SpacesService/BatchUpdateMembers")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateMembersRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{parent=spaces/*}/members:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateMembersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateMembersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateMembersResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateMembersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateSpaceRequest, Space> createSpaceCallable;
   private final UnaryCallable<GetSpaceRequest, Space> getSpaceCallable;
   private final UnaryCallable<UpdateSpaceRequest, Space> updateSpaceCallable;
@@ -398,6 +477,9 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
   private final UnaryCallable<ListMembersRequest, ListMembersPagedResponse>
       listMembersPagedCallable;
   private final UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable;
+  private final UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable;
+  private final UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -543,6 +625,30 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<UpdateMemberRequest, Member> updateMemberTransportSettings =
+        HttpJsonCallSettings.<UpdateMemberRequest, Member>newBuilder()
+            .setMethodDescriptor(updateMemberMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("member.name", String.valueOf(request.getMember().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+        batchUpdateMembersTransportSettings =
+            HttpJsonCallSettings.<BatchUpdateMembersRequest, BatchUpdateMembersResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateMembersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.createSpaceCallable =
         callableFactory.createUnaryCallable(
@@ -578,6 +684,14 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
     this.deleteMemberCallable =
         callableFactory.createUnaryCallable(
             deleteMemberTransportSettings, settings.deleteMemberSettings(), clientContext);
+    this.updateMemberCallable =
+        callableFactory.createUnaryCallable(
+            updateMemberTransportSettings, settings.updateMemberSettings(), clientContext);
+    this.batchUpdateMembersCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateMembersTransportSettings,
+            settings.batchUpdateMembersSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -595,6 +709,8 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
     methodDescriptors.add(getMemberMethodDescriptor);
     methodDescriptors.add(listMembersMethodDescriptor);
     methodDescriptors.add(deleteMemberMethodDescriptor);
+    methodDescriptors.add(updateMemberMethodDescriptor);
+    methodDescriptors.add(batchUpdateMembersMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -647,6 +763,17 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
   @Override
   public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
     return deleteMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable() {
+    return updateMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable() {
+    return batchUpdateMembersCallable;
   }
 
   @Override

@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1.stub;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -38,21 +39,27 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.auditmanager.v1.AuditReport;
+import com.google.cloud.auditmanager.v1.AuditSchedule;
 import com.google.cloud.auditmanager.v1.AuditScopeReport;
+import com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.EnrollResourceRequest;
 import com.google.cloud.auditmanager.v1.Enrollment;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
 import com.google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest;
 import com.google.cloud.auditmanager.v1.GetAuditReportRequest;
+import com.google.cloud.auditmanager.v1.GetAuditScheduleRequest;
 import com.google.cloud.auditmanager.v1.GetResourceEnrollmentStatusRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsRequest;
 import com.google.cloud.auditmanager.v1.ListAuditReportsResponse;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest;
+import com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse;
 import com.google.cloud.auditmanager.v1.ListControlsRequest;
 import com.google.cloud.auditmanager.v1.ListControlsResponse;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesRequest;
 import com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse;
 import com.google.cloud.auditmanager.v1.OperationMetadata;
 import com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus;
+import com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -83,6 +90,170 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
           .add(OperationMetadata.getDescriptor())
           .add(AuditReport.getDescriptor())
           .build();
+
+  private static final ApiMethodDescriptor<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleMethodDescriptor =
+          ApiMethodDescriptor.<CreateAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/CreateAuditSchedule")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAuditScheduleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/auditSchedules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/locations/*}/auditSchedules",
+                          "/v1/{parent=organizations/*/locations/*}/auditSchedules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "auditScheduleId", request.getAuditScheduleId());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("auditSchedule", request.getAuditSchedule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuditSchedule>newBuilder()
+                      .setDefaultInstance(AuditSchedule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/UpdateAuditSchedule")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAuditScheduleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{auditSchedule.name=projects/*/locations/*/auditSchedules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "auditSchedule.name", request.getAuditSchedule().getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{auditSchedule.name=folders/*/locations/*/auditSchedules/*}",
+                          "/v1/{auditSchedule.name=organizations/*/locations/*/auditSchedules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(
+                                fields, "validateOnly", request.getValidateOnly());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("auditSchedule", request.getAuditSchedule(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuditSchedule>newBuilder()
+                      .setDefaultInstance(AuditSchedule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuditScheduleRequest, AuditSchedule>
+      getAuditScheduleMethodDescriptor =
+          ApiMethodDescriptor.<GetAuditScheduleRequest, AuditSchedule>newBuilder()
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/GetAuditSchedule")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuditScheduleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/auditSchedules/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=folders/*/locations/*/auditSchedules/*}",
+                          "/v1/{name=organizations/*/locations/*/auditSchedules/*}")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuditScheduleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuditSchedule>newBuilder()
+                      .setDefaultInstance(AuditSchedule.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesMethodDescriptor =
+          ApiMethodDescriptor.<ListAuditSchedulesRequest, ListAuditSchedulesResponse>newBuilder()
+              .setFullMethodName("google.cloud.auditmanager.v1.AuditManager/ListAuditSchedules")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuditSchedulesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/auditSchedules",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuditSchedulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=folders/*/locations/*}/auditSchedules",
+                          "/v1/{parent=organizations/*/locations/*}/auditSchedules")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuditSchedulesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuditSchedulesResponse>newBuilder()
+                      .setDefaultInstance(ListAuditSchedulesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<EnrollResourceRequest, Enrollment>
       enrollResourceMethodDescriptor =
@@ -474,6 +645,15 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                       .build())
               .build();
 
+  private final UnaryCallable<CreateAuditScheduleRequest, AuditSchedule>
+      createAuditScheduleCallable;
+  private final UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule>
+      updateAuditScheduleCallable;
+  private final UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable;
+  private final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable;
+  private final UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable;
   private final UnaryCallable<EnrollResourceRequest, Enrollment> enrollResourceCallable;
   private final UnaryCallable<GenerateAuditScopeReportRequest, AuditScopeReport>
       generateAuditScopeReportCallable;
@@ -588,6 +768,58 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                         .build())
                 .build());
 
+    HttpJsonCallSettings<CreateAuditScheduleRequest, AuditSchedule>
+        createAuditScheduleTransportSettings =
+            HttpJsonCallSettings.<CreateAuditScheduleRequest, AuditSchedule>newBuilder()
+                .setMethodDescriptor(createAuditScheduleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateAuditScheduleRequest, AuditSchedule>
+        updateAuditScheduleTransportSettings =
+            HttpJsonCallSettings.<UpdateAuditScheduleRequest, AuditSchedule>newBuilder()
+                .setMethodDescriptor(updateAuditScheduleMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "audit_schedule.name",
+                          String.valueOf(request.getAuditSchedule().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleTransportSettings =
+        HttpJsonCallSettings.<GetAuditScheduleRequest, AuditSchedule>newBuilder()
+            .setMethodDescriptor(getAuditScheduleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+        listAuditSchedulesTransportSettings =
+            HttpJsonCallSettings.<ListAuditSchedulesRequest, ListAuditSchedulesResponse>newBuilder()
+                .setMethodDescriptor(listAuditSchedulesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<EnrollResourceRequest, Enrollment> enrollResourceTransportSettings =
         HttpJsonCallSettings.<EnrollResourceRequest, Enrollment>newBuilder()
             .setMethodDescriptor(enrollResourceMethodDescriptor)
@@ -714,6 +946,29 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                 })
             .build();
 
+    this.createAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            createAuditScheduleTransportSettings,
+            settings.createAuditScheduleSettings(),
+            clientContext);
+    this.updateAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            updateAuditScheduleTransportSettings,
+            settings.updateAuditScheduleSettings(),
+            clientContext);
+    this.getAuditScheduleCallable =
+        callableFactory.createUnaryCallable(
+            getAuditScheduleTransportSettings, settings.getAuditScheduleSettings(), clientContext);
+    this.listAuditSchedulesCallable =
+        callableFactory.createUnaryCallable(
+            listAuditSchedulesTransportSettings,
+            settings.listAuditSchedulesSettings(),
+            clientContext);
+    this.listAuditSchedulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuditSchedulesTransportSettings,
+            settings.listAuditSchedulesSettings(),
+            clientContext);
     this.enrollResourceCallable =
         callableFactory.createUnaryCallable(
             enrollResourceTransportSettings, settings.enrollResourceSettings(), clientContext);
@@ -780,6 +1035,10 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(createAuditScheduleMethodDescriptor);
+    methodDescriptors.add(updateAuditScheduleMethodDescriptor);
+    methodDescriptors.add(getAuditScheduleMethodDescriptor);
+    methodDescriptors.add(listAuditSchedulesMethodDescriptor);
     methodDescriptors.add(enrollResourceMethodDescriptor);
     methodDescriptors.add(generateAuditScopeReportMethodDescriptor);
     methodDescriptors.add(generateAuditReportMethodDescriptor);
@@ -795,6 +1054,33 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
 
   public HttpJsonOperationsStub getHttpJsonOperationsStub() {
     return httpJsonOperationsStub;
+  }
+
+  @Override
+  public UnaryCallable<CreateAuditScheduleRequest, AuditSchedule> createAuditScheduleCallable() {
+    return createAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAuditScheduleRequest, AuditSchedule> updateAuditScheduleCallable() {
+    return updateAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuditScheduleRequest, AuditSchedule> getAuditScheduleCallable() {
+    return getAuditScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesResponse>
+      listAuditSchedulesCallable() {
+    return listAuditSchedulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuditSchedulesRequest, ListAuditSchedulesPagedResponse>
+      listAuditSchedulesPagedCallable() {
+    return listAuditSchedulesPagedCallable;
   }
 
   @Override
