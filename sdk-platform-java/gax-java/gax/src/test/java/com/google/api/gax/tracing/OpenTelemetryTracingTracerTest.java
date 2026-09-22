@@ -70,6 +70,7 @@ class OpenTelemetryTracingTracerTest {
   private static final String ATTEMPT_SPAN_NAME = "Service/Method/attempt";
 
   @BeforeEach
+  @SuppressWarnings("MustBeClosedChecker")
   void setUp() {
     lenient().when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);

@@ -39,6 +39,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -53,7 +54,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private volatile @Nullable Span attemptSpan;
-  private volatile io.opentelemetry.context.@Nullable Scope scope;
+  private final AtomicReference<io.opentelemetry.context.@Nullable Scope> scope =
+      new AtomicReference<>();
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -149,7 +151,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
     this.attemptSpan = spanBuilder.startSpan();
     // Make the span active on the current thread so logs can capture the trace ID.
-    this.scope = attemptSpan.makeCurrent();
+    this.scope.set(attemptSpan.makeCurrent());
   }
 
   @Override
@@ -238,19 +240,20 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void endAttempt() {
-    if (attemptSpan == null) {
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
       return;
     }
+    attemptSpan = null;
 
+    io.opentelemetry.context.Scope currentScope = this.scope.getAndSet(null);
     // Remove the span from the current thread before closing the span.
     try {
-      if (scope != null) {
-        scope.close();
+      if (currentScope != null) {
+        currentScope.close();
       }
     } finally {
-      scope = null;
-      attemptSpan.end();
-      attemptSpan = null;
+      currentSpan.end();
     }
   }
 
