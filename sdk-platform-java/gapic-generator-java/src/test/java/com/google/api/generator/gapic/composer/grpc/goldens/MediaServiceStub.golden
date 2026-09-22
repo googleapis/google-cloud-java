@@ -3,6 +3,9 @@ package com.google.showcase.v1beta1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.showcase.v1beta1.GetMediaMetadataRequest;
+import com.google.showcase.v1beta1.GetMediaMetadataResponse;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
 import javax.annotation.Generated;
@@ -10,17 +13,22 @@ import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for the ResumableUploadService service API.
+ * Base stub class for the MediaService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
-public abstract class ResumableUploadServiceStub implements BackgroundResource {
+public abstract class MediaServiceStub implements BackgroundResource {
 
   public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
     throw new UnsupportedOperationException("Not implemented: uploadMediaCallable()");
+  }
+
+  public UnaryCallable<GetMediaMetadataRequest, GetMediaMetadataResponse>
+      getMediaMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMediaMetadataCallable()");
   }
 
   @Override
