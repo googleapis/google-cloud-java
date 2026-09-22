@@ -39,7 +39,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.util.SecurityUtils;
+import com.google.common.primitives.Bytes;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.KeyStore;
 import org.junit.jupiter.api.Test;
 
@@ -175,24 +181,17 @@ class OAuth2UtilsTest {
 
   @Test
   void hasCertificateChanged_sameCertificateDifferentPrivateKey_returnsTrue() throws Exception {
-    byte[] certBytes =
-        java.nio.file.Files.readAllBytes(
-            java.nio.file.Paths.get("testresources/mtls/test_cert.pem"));
-    byte[] key1Bytes =
-        java.nio.file.Files.readAllBytes(
-            java.nio.file.Paths.get("testresources/mtls/test_key.pem"));
-    byte[] key2Bytes =
-        java.nio.file.Files.readAllBytes(
-            java.nio.file.Paths.get("testresources/mtls/test_key_2.pem"));
+    byte[] certBytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert.pem"));
+    byte[] key1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key.pem"));
+    byte[] key2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem"));
+    byte[] newlineBytes = "\n".getBytes(StandardCharsets.UTF_8);
 
     KeyStore ks1 =
-        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
-            new java.io.ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(certBytes, "\n".getBytes(), key1Bytes)));
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(Bytes.concat(certBytes, newlineBytes, key1Bytes)));
     KeyStore ks2 =
-        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
-            new java.io.ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(certBytes, "\n".getBytes(), key2Bytes)));
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(Bytes.concat(certBytes, newlineBytes, key2Bytes)));
 
     assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ks2));
   }

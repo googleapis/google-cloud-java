@@ -46,6 +46,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -552,6 +553,12 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return refreshAccessToken();
   }
 
+  AccessToken refreshAccessToken(
+      HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
+      throws IOException {
+    return refreshAccessToken(cycleTransportFactory);
+  }
+
   /**
    * Exchanges the external credential for a Google Cloud access token.
    *
@@ -580,7 +587,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     // Handle service account impersonation if necessary.
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
-      return impersonated.refreshAccessToken(cycleTransportFactory);
+      return impersonated.refreshAccessToken(
+          cycleTransportFactory == this.transportFactory ? null : cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =

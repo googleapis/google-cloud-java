@@ -68,9 +68,11 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectStreamClass;
 import java.io.SequenceInputStream;
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -89,6 +91,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.net.ssl.SSLHandshakeException;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -3069,10 +3072,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "  \"cert_configs\": {\n"
             + "    \"workload\": {\n"
             + "      \"cert_path\": \""
-            + certFile.toString()
+            + certFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "      \"key_path\": \""
-            + keyFile.toString()
+            + keyFile.toString().replace("\\", "\\\\")
             + "\"\n"
             + "    }\n"
             + "  }\n"
@@ -3088,7 +3091,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "  \"token_url\": \"https://sts.googleapis.com/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -3096,7 +3099,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "    },\n"
             + "    \"certificate\": {\n"
             + "      \"certificate_config_location\": \""
-            + certConfigFile.toString()
+            + certConfigFile.toString().replace("\\", "\\\\")
             + "\"\n"
             + "    }\n"
             + "  }\n"
@@ -3120,12 +3123,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
               throws IOException {
             if (exchangeCount.incrementAndGet() == 1) {
               Files.write(
-                  certFile,
-                  Files.readAllBytes(
-                      java.nio.file.Paths.get("testresources/mtls/test_cert_2.pem")));
+                  certFile, Files.readAllBytes(Paths.get("testresources/mtls/test_cert_2.pem")));
               Files.write(
-                  keyFile,
-                  Files.readAllBytes(java.nio.file.Paths.get("testresources/mtls/test_key_2.pem")));
+                  keyFile, Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem")));
               throw new OAuthException("invalid_client", "Unauthorized", null, 401);
             }
             return new AccessToken("rotatedRetryToken", null);
@@ -4204,47 +4204,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     AtomicInteger stsCallCount = new AtomicInteger(0);
     AtomicInteger iamCallCount = new AtomicInteger(0);
-    HttpTransport mockTransport =
-        new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() throws IOException {
-                if (url.contains("/v1/token")) {
-                  int count = stsCallCount.incrementAndGet();
-                  if (count == 1) {
-                    return new MockLowLevelHttpResponse()
-                        .setStatusCode(401)
-                        .setContentType(Json.MEDIA_TYPE)
-                        .setContent(
-                            "{\"error\":\"invalid_client\",\"error_description\":\"Cert mismatch\"}");
-                  }
-                  GenericJson response = new GenericJson();
-                  response.setFactory(OAuth2Utils.JSON_FACTORY);
-                  response.put("access_token", "intermediate-sts-token-" + count);
-                  response.put("token_type", "Bearer");
-                  response.put("expires_in", 3600);
-                  response.put(
-                      "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
-                  return new MockLowLevelHttpResponse()
-                      .setContentType(Json.MEDIA_TYPE)
-                      .setContent(response.toString());
-                } else if (url.contains(":generateAccessToken")) {
-                  int count = iamCallCount.incrementAndGet();
-                  GenericJson response = new GenericJson();
-                  response.setFactory(OAuth2Utils.JSON_FACTORY);
-                  response.put("accessToken", "final-iam-token-" + count);
-                  response.put("expireTime", "2030-01-01T00:00:00Z");
-                  return new MockLowLevelHttpResponse()
-                      .setContentType(Json.MEDIA_TYPE)
-                      .setContent(response.toString());
-                }
-                return new MockLowLevelHttpResponse().setStatusCode(404);
-              }
-            };
-          }
-        };
+    List<KeyStore> capturedKeyStores = new ArrayList<>();
+    List<KeyStore> requestKeyStores = new ArrayList<>();
 
     IdentityPoolCredentials credential =
         new IdentityPoolCredentials(
@@ -4259,15 +4220,442 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                     "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
           @Override
           HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
-            return () -> mockTransport;
+            capturedKeyStores.add(keyStore);
+            return () ->
+                new MockHttpTransport() {
+                  @Override
+                  public LowLevelHttpRequest buildRequest(String method, String url) {
+                    requestKeyStores.add(keyStore);
+                    return new MockLowLevelHttpRequest(url) {
+                      @Override
+                      public LowLevelHttpResponse execute() {
+                        if (url.contains("/v1/token")) {
+                          int count = stsCallCount.incrementAndGet();
+                          if (keyStore == ks1) {
+                            return new MockLowLevelHttpResponse()
+                                .setStatusCode(401)
+                                .setContentType(Json.MEDIA_TYPE)
+                                .setContent(
+                                    "{\"error\":\"invalid_client\",\"error_description\":\"Cert"
+                                        + " mismatch\"}");
+                          }
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("access_token", "intermediate-sts-token-" + count);
+                          response.put("token_type", "Bearer");
+                          response.put("expires_in", 3600);
+                          response.put(
+                              "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        } else if (url.contains(":generateAccessToken")) {
+                          int count = iamCallCount.incrementAndGet();
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("accessToken", "final-iam-token-" + count);
+                          response.put("expireTime", "2030-01-01T00:00:00Z");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        }
+                        return new MockLowLevelHttpResponse().setStatusCode(404);
+                      }
+                    };
+                  }
+                };
           }
         };
 
     AccessToken token = credential.refreshAccessToken();
     assertEquals("final-iam-token-1", token.getTokenValue());
-    // STS must be called only twice (initial attempt + 1 outer retry), not 4 times.
+    // STS must be called only twice (initial attempt with ks1 + 1 outer retry with ks2).
     assertEquals(2, stsCallCount.get());
     assertEquals(1, iamCallCount.get());
     assertEquals(2, getKeyStoreCallCount.get());
+    assertEquals(Arrays.asList(ks1, ks2), capturedKeyStores);
+    assertEquals(Arrays.asList(ks1, ks2, ks2), requestKeyStores);
+  }
+
+  @Test
+  void
+      refreshAccessToken_certSubjectTokenSupplier_extractsLeafCertFromPinnedKeyStoreEvenWhenDiskRotates(
+          @TempDir Path tempDir) throws Exception {
+    Path certFile1 = tempDir.resolve("cert1.pem");
+    Path keyFile1 = tempDir.resolve("key1.pem");
+    Path certFile2 = tempDir.resolve("cert2.pem");
+    Path keyFile2 = tempDir.resolve("key2.pem");
+    Files.copy(Paths.get("testresources/mtls/test_cert.pem"), certFile1);
+    Files.copy(Paths.get("testresources/mtls/test_key.pem"), keyFile1);
+    Files.copy(Paths.get("testresources/mtls/test_cert_2.pem"), certFile2);
+    Files.copy(Paths.get("testresources/mtls/test_key_2.pem"), keyFile2);
+
+    Path certConfigFile = tempDir.resolve("certificate_config.json");
+    String certConfigJson1 =
+        "{\n"
+            + "  \"cert_configs\": {\n"
+            + "    \"workload\": {\n"
+            + "      \"cert_path\": \""
+            + certFile1.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "      \"key_path\": \""
+            + keyFile1.toString().replace("\\", "\\\\")
+            + "\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+    Files.write(certConfigFile, certConfigJson1.getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("certificate_config_location", certConfigFile.toString());
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks2 = createRotatedPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() throws IOException {
+            int call = getKeyStoreCount.incrementAndGet();
+            if (call <= 2) {
+              // On call 2 (the start of refreshAccessToken), overwrite cert1.pem on disk with
+              // cert2.pem AND update certificate_config.json to point to cert2.pem/key2.pem AFTER
+              // ks1 is loaded. This simulates a mid-cycle cert rotation between getKeyStore() and
+              // getSubjectToken().
+              if (call == 2) {
+                Files.copy(certFile2, certFile1, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                String certConfigJson2 =
+                    "{\n"
+                        + "  \"cert_configs\": {\n"
+                        + "    \"workload\": {\n"
+                        + "      \"cert_path\": \""
+                        + certFile2.toString().replace("\\", "\\\\")
+                        + "\",\n"
+                        + "      \"key_path\": \""
+                        + keyFile2.toString().replace("\\", "\\\\")
+                        + "\"\n"
+                        + "    }\n"
+                        + "  }\n"
+                        + "}";
+                Files.write(certConfigFile, certConfigJson2.getBytes(StandardCharsets.UTF_8));
+              }
+              return ks1;
+            }
+            return ks2;
+          }
+        };
+
+    List<String> capturedSubjectTokens = new ArrayList<>();
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setCredentialSource(credentialSource)
+                .setX509Provider(x509Provider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:mtls")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedSubjectTokens.add(stsTokenExchangeRequest.getSubjectToken());
+            return new AccessToken("mtls-bound-token", null);
+          }
+        };
+
+    // Cycle 1: Even though cert1.pem on disk was overwritten with cert2.pem right after ks1 was
+    // snapshotted, subject_token MUST match ks1 (not cert2.pem on disk).
+    credential.refreshAccessToken();
+    // Cycle 2: Now getKeyStore() returns ks2, so subject_token MUST match ks2.
+    credential.refreshAccessToken();
+
+    String expectedCert1Base64 =
+        Base64.getEncoder()
+            .encodeToString(
+                CertificateIdentityPoolSubjectTokenSupplier.parseCertificate(
+                        Files.readAllBytes(Paths.get("testresources/mtls/test_cert.pem")))
+                    .getEncoded());
+    String expectedCert2Base64 =
+        Base64.getEncoder()
+            .encodeToString(
+                CertificateIdentityPoolSubjectTokenSupplier.parseCertificate(
+                        Files.readAllBytes(Paths.get("testresources/mtls/test_cert_2.pem")))
+                    .getEncoded());
+
+    assertEquals(2, capturedSubjectTokens.size());
+    assertTrue(capturedSubjectTokens.get(0).contains(expectedCert1Base64));
+    assertFalse(capturedSubjectTokens.get(0).contains(expectedCert2Base64));
+    assertTrue(capturedSubjectTokens.get(1).contains(expectedCert2Base64));
+  }
+
+  @Test
+  void
+      refreshAccessToken_impersonation_cachesOneHourStsTokenWhileKeyStoreUnchangedAndInvalidatesOnRotation()
+          throws Exception {
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks2 = createRotatedPopulatedKeyStore();
+    AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            // Calls 1 & 2 return ks1 (unchanged cert); Call 3 returns ks2 (rotated cert).
+            return getKeyStoreCallCount.incrementAndGet() <= 2 ? ks1 : ks2;
+          }
+        };
+
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = new ArrayList<>();
+
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(x509Provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                .setServiceAccountImpersonationUrl(
+                    "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
+          @Override
+          HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            return () ->
+                new MockHttpTransport() {
+                  @Override
+                  public LowLevelHttpRequest buildRequest(String method, String url) {
+                    return new MockLowLevelHttpRequest(url) {
+                      @Override
+                      public LowLevelHttpResponse execute() {
+                        if (url.contains("/v1/token")) {
+                          int count = stsCallCount.incrementAndGet();
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("access_token", "cached-sts-token-" + count);
+                          response.put("token_type", "Bearer");
+                          response.put("expires_in", 3600);
+                          response.put(
+                              "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        } else if (url.contains(":generateAccessToken")) {
+                          int count = iamCallCount.incrementAndGet();
+                          iamBearerHeaders.add(getFirstHeaderValue("Authorization"));
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("accessToken", "final-iam-token-" + count);
+                          response.put("expireTime", "2030-01-01T00:00:00Z");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        }
+                        return new MockLowLevelHttpResponse().setStatusCode(404);
+                      }
+                    };
+                  }
+                };
+          }
+        };
+
+    // Refresh 1 (ks1): mints STS token 1 and IAM token 1.
+    AccessToken token1 = credential.refreshAccessToken();
+    assertEquals("final-iam-token-1", token1.getTokenValue());
+    assertEquals(1, stsCallCount.get());
+    assertEquals(1, iamCallCount.get());
+
+    // Refresh 2 (still ks1, STS token 1 still valid): MUST reuse cached STS token 1 without calling
+    // STS again.
+    AccessToken token2 = credential.refreshAccessToken();
+    assertEquals("final-iam-token-2", token2.getTokenValue());
+    assertEquals(1, stsCallCount.get());
+    assertEquals(2, iamCallCount.get());
+    assertEquals("Bearer cached-sts-token-1", iamBearerHeaders.get(0));
+    assertEquals("Bearer cached-sts-token-1", iamBearerHeaders.get(1));
+
+    // Refresh 3 (ks2 rotated): MUST invalidate cached STS token 1 and mint STS token 2.
+    AccessToken token3 = credential.refreshAccessToken();
+    assertEquals("final-iam-token-3", token3.getTokenValue());
+    assertEquals(2, stsCallCount.get());
+    assertEquals(3, iamCallCount.get());
+    assertEquals("Bearer cached-sts-token-2", iamBearerHeaders.get(2));
+  }
+
+  @Test
+  void refreshAccessToken_sslHandshakeExceptionFromTornRotation_retriesWhenKeyStoreChanges()
+      throws Exception {
+    // Torn KeyStore: cert2 + key1; Completed rotation KeyStore: cert2 + key2.
+    byte[] cert2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert_2.pem"));
+    byte[] key1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key.pem"));
+    byte[] key2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem"));
+    byte[] newline = "\n".getBytes(StandardCharsets.UTF_8);
+
+    KeyStore tornKeyStore =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key1Bytes)));
+    KeyStore validRotatedKeyStore =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key2Bytes)));
+
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            return getKeyStoreCount.incrementAndGet() == 1 ? tornKeyStore : validRotatedKeyStore;
+          }
+        };
+
+    AtomicInteger exchangeCount = new AtomicInteger(0);
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(x509Provider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            if (exchangeCount.incrementAndGet() == 1) {
+              throw new IOException(
+                  "Error writing request body to server",
+                  new SSLHandshakeException("Received fatal alert: decrypt_error"));
+            }
+            return new AccessToken("recovered-after-ssl-handshake-retry", null);
+          }
+        };
+
+    AccessToken token = credential.refreshAccessToken();
+    assertEquals("recovered-after-ssl-handshake-retry", token.getTokenValue());
+    assertEquals(2, getKeyStoreCount.get());
+    assertEquals(2, exchangeCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_initialKeyStoreLoadIOException_retriesOnceAndSucceeds() throws Exception {
+    KeyStore validKeyStore = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() throws IOException {
+            if (getKeyStoreCount.incrementAndGet() == 1) {
+              throw new IOException("X509Provider: Unexpected IOException: mid-write PEM");
+            }
+            return validKeyStore;
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(x509Provider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            return new AccessToken("recovered-after-initial-keystore-ioe", null);
+          }
+        };
+
+    AccessToken token = credential.refreshAccessToken();
+    assertEquals("recovered-after-initial-keystore-ioe", token.getTokenValue());
+    assertEquals(2, getKeyStoreCount.get());
+  }
+
+  public static class SerializableCustomTransportFactory
+      implements HttpTransportFactory, Serializable {
+    private static final long serialVersionUID = 1L;
+    private static final AtomicInteger getKeyStoreCountDuringReadObject = new AtomicInteger(0);
+
+    public SerializableCustomTransportFactory() {}
+
+    @Override
+    public HttpTransport create() {
+      return new MockHttpTransport();
+    }
+  }
+
+  private static class CountingSerializableX509Provider extends X509Provider {
+    private static final long serialVersionUID = 1L;
+
+    CountingSerializableX509Provider() {
+      super(null);
+    }
+
+    @Override
+    public KeyStore getKeyStore() throws IOException {
+      SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.incrementAndGet();
+      try {
+        return createPopulatedKeyStore();
+      } catch (Exception e) {
+        throw new IOException(e);
+      }
+    }
+  }
+
+  @Test
+  void deserialization_respectsUseMtlsTransportFactoryFlag() throws Exception {
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", "credential.json");
+    sourceMap.put("certificate", certMap);
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    // Case 1: No custom HttpTransportFactory set -> useMtlsTransportFactory is true.
+    // Build initializes MtlsHttpTransportFactory, and deserialization restores
+    // MtlsHttpTransportFactory in readObject().
+    SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.set(0);
+    IdentityPoolCredentials defaultMtlsCreds =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setX509Provider(new CountingSerializableX509Provider())
+            .setAudience("audience")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    assertEquals(1, SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.get());
+    assertTrue(defaultMtlsCreds.shouldUseMtlsTransportFactory());
+    assertTrue(defaultMtlsCreds.toBuilder().build().shouldUseMtlsTransportFactory());
+
+    IdentityPoolCredentials deserializedDefault = serializeAndDeserialize(defaultMtlsCreds);
+    assertTrue(deserializedDefault.shouldUseMtlsTransportFactory());
+    assertTrue(deserializedDefault.getTransportFactory() instanceof MtlsHttpTransportFactory);
+
+    // Case 2: Custom HttpTransportFactory explicitly set -> useMtlsTransportFactory is false.
+    // Deserialization must preserve SerializableCustomTransportFactory and NOT overwrite it with
+    // MtlsHttpTransportFactory.
+    IdentityPoolCredentials customTransportCreds =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setX509Provider(new CountingSerializableX509Provider())
+            .setHttpTransportFactory(new SerializableCustomTransportFactory())
+            .setAudience("audience")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    assertFalse(customTransportCreds.shouldUseMtlsTransportFactory());
+    assertFalse(customTransportCreds.toBuilder().build().shouldUseMtlsTransportFactory());
+
+    IdentityPoolCredentials deserializedCustom = serializeAndDeserialize(customTransportCreds);
+    assertFalse(deserializedCustom.shouldUseMtlsTransportFactory());
+    assertTrue(
+        deserializedCustom.getTransportFactory() instanceof SerializableCustomTransportFactory);
   }
 }

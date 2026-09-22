@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.MtlsUtils;
 import com.google.auth.mtls.X509Provider;
@@ -45,6 +46,7 @@ import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import javax.net.ssl.SSLException;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -73,7 +75,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   // Transient: not serialized directly. Reconstructed in readObject() from the credentialSource
   // certificate config so deserialized credentials remain usable for mTLS and refresh.
   private transient volatile @Nullable X509Provider x509Provider;
-  private transient @Nullable HttpTransportFactory defaultMtlsTransportFactory;
+  private final boolean useMtlsTransportFactory;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -99,9 +101,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           "A subjectTokenSupplier or a credentialSource must be provided.");
     }
 
-    // Store the x509Provider and defaultMtlsTransportFactory for per-cycle cert pinning.
+    // Store the x509Provider and useMtlsTransportFactory flag for per-cycle cert pinning and
+    // deserialization recovery.
     this.x509Provider = builder.x509Provider;
-    this.defaultMtlsTransportFactory = builder.defaultMtlsTransportFactory;
+    this.useMtlsTransportFactory =
+        builder.useMtlsTransportFactory != null
+            ? builder.useMtlsTransportFactory
+            : isDefaultOrMtlsTransportFactory(builder.transportFactory);
 
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
@@ -216,47 +222,86 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
-  private boolean shouldUseMtlsTransportFactory() {
-    return this.transportFactory == null
-        || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-        || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || this.transportFactory.getClass() == MtlsHttpTransportFactory.class
+  private static boolean isDefaultOrMtlsTransportFactory(
+      @Nullable HttpTransportFactory transportFactory) {
+    return transportFactory == null
+        || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+        || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+        || transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || (transportFactory instanceof MtlsHttpTransportFactory
+            && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
+  }
+
+  @VisibleForTesting
+  boolean shouldUseMtlsTransportFactory() {
+    return this.useMtlsTransportFactory
         || (this.transportFactory instanceof MtlsHttpTransportFactory
-            && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore())
-        || (this.defaultMtlsTransportFactory != null
-            && this.transportFactory == this.defaultMtlsTransportFactory);
+            && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
+  }
+
+  private static boolean isSslException(@Nullable Throwable throwable) {
+    Throwable current = throwable;
+    while (current != null) {
+      if (current instanceof SSLException) {
+        return true;
+      }
+      current = current.getCause();
+    }
+    return false;
   }
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
-    HttpTransportFactory cycleTransportFactory = this.transportFactory;
-    KeyStore pinnedKeyStore = null;
-    if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
-      pinnedKeyStore = this.x509Provider.getKeyStore();
-      cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
-    }
-    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, /* allowRetry= */ true);
+    // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle inside
+    // refreshWithRetry so transient mid-rotation KeyStore read errors and TLS handshake errors
+    // can be retried once.
+    return refreshWithRetry(
+        /* explicitTransportFactory= */ null, /* pinnedKeyStore= */ null, /* allowRetry= */ true);
   }
 
   @Override
   AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+    KeyStore pinnedKeyStore =
+        cycleTransportFactory instanceof MtlsHttpTransportFactory
+            ? ((MtlsHttpTransportFactory) cycleTransportFactory).getKeyStore()
+            : null;
     // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
     // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
     // and prevent nested retry amplification. Outer callers manage retry coordination.
-    return refreshWithRetry(cycleTransportFactory, null, /* allowRetry= */ false);
+    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, /* allowRetry= */ false);
+  }
+
+  @Override
+  AccessToken refreshAccessToken(
+      HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
+      throws IOException {
+    if (pinnedKeyStore == null) {
+      return refreshAccessToken(cycleTransportFactory);
+    }
+    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, /* allowRetry= */ false);
   }
 
   private AccessToken refreshWithRetry(
-      HttpTransportFactory cycleTransportFactory,
+      @Nullable HttpTransportFactory explicitTransportFactory,
       @Nullable KeyStore pinnedKeyStore,
       boolean allowRetry)
       throws IOException {
     try {
+      HttpTransportFactory cycleTransportFactory =
+          explicitTransportFactory != null ? explicitTransportFactory : this.transportFactory;
+      if (explicitTransportFactory == null
+          && this.x509Provider != null
+          && shouldUseMtlsTransportFactory()) {
+        if (pinnedKeyStore == null) {
+          pinnedKeyStore = this.x509Provider.getKeyStore();
+        }
+        cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
+      }
+
       ImpersonatedCredentials impersonated = getImpersonatedCredentials();
       if (impersonated != null) {
         return impersonated.refreshAccessToken(
-            pinnedKeyStore != null ? cycleTransportFactory : null);
+            pinnedKeyStore != null ? cycleTransportFactory : null, pinnedKeyStore);
       }
 
       // Read subject and actor tokens, atomically if from the same file supplier.
@@ -270,7 +315,14 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         subjectToken = tokens.subject;
         actorToken = tokens.actor;
       } else {
-        subjectToken = retrieveSubjectToken();
+        if (this.subjectTokenSupplier instanceof CertificateIdentityPoolSubjectTokenSupplier
+            && pinnedKeyStore != null) {
+          subjectToken =
+              ((CertificateIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+                  .getSubjectToken(supplierContext, pinnedKeyStore);
+        } else {
+          subjectToken = retrieveSubjectToken();
+        }
         if (this.actorTokenSupplier != null) {
           actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
         }
@@ -292,13 +344,20 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return exchangeExternalCredentialForAccessToken(
           stsTokenExchangeRequest.build(), cycleTransportFactory);
     } catch (IOException | RuntimeException e) {
+      boolean isInitialKeyStoreLoadFailure =
+          pinnedKeyStore == null
+              && e instanceof IOException
+              && !(e instanceof CertificateSourceUnavailableException);
       if (allowRetry
-          && OAuth2Utils.isUnauthorizedException(e)
           && this.x509Provider != null
-          && shouldUseMtlsTransportFactory()) {
+          && shouldUseMtlsTransportFactory()
+          && (OAuth2Utils.isUnauthorizedException(e)
+              || isSslException(e)
+              || isInitialKeyStoreLoadFailure)) {
         KeyStore freshKeyStore;
         try {
-          // On 401, re-read from X509Provider for fresh certs.
+          // On 401, TLS handshake failure, or transient initial KeyStore load failure, re-read
+          // from X509Provider for fresh certs.
           freshKeyStore = this.x509Provider.getKeyStore();
         } catch (IOException reloadException) {
           if (reloadException != e) {
@@ -312,7 +371,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           throw ioException;
         }
 
-        if (!OAuth2Utils.hasCertificateChanged(pinnedKeyStore, freshKeyStore)) {
+        if (!isInitialKeyStoreLoadFailure
+            && !OAuth2Utils.hasCertificateChanged(pinnedKeyStore, freshKeyStore)) {
           throw e;
         }
 
@@ -332,6 +392,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   @Override
   public String retrieveSubjectToken() throws IOException {
+    if (this.subjectTokenSupplier instanceof CertificateIdentityPoolSubjectTokenSupplier
+        && this.x509Provider != null
+        && shouldUseMtlsTransportFactory()) {
+      return ((CertificateIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+          .getSubjectToken(supplierContext, this.x509Provider.getKeyStore());
+    }
     return this.subjectTokenSupplier.getSubjectToken(supplierContext);
   }
 
@@ -394,9 +460,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
     this.x509Provider = x509Provider;
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-    if (builder.transportFactory == null || shouldUseMtlsTransportFactory()) {
+    if (shouldUseMtlsTransportFactory()) {
       this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
-      this.defaultMtlsTransportFactory = this.transportFactory;
     } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
       LOGGER_PROVIDER
           .getLogger()
@@ -442,14 +507,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
       this.x509Provider =
           new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
-      try {
-        KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
-        if (shouldUseMtlsTransportFactory()) {
+      if (shouldUseMtlsTransportFactory()) {
+        try {
+          KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
           this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
-          this.defaultMtlsTransportFactory = this.transportFactory;
+        } catch (Exception e) {
+          // Cert loading failure will be handled on refreshAccessToken()
         }
-      } catch (Exception e) {
-        // Cert loading failure will be handled on refreshAccessToken()
       }
     }
   }
@@ -485,7 +549,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
-    private @Nullable HttpTransportFactory defaultMtlsTransportFactory;
+    private @Nullable Boolean useMtlsTransportFactory;
 
     Builder() {}
 
@@ -503,7 +567,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       // FileIdentityPoolSubjectTokenSupplier instance for atomic token reads.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
-      this.defaultMtlsTransportFactory = credentials.defaultMtlsTransportFactory;
+      this.useMtlsTransportFactory = credentials.useMtlsTransportFactory;
     }
 
     /**
@@ -572,6 +636,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
+      this.useMtlsTransportFactory = isDefaultOrMtlsTransportFactory(transportFactory);
       return this;
     }
 
