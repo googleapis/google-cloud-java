@@ -57,10 +57,7 @@ class CompositeTracer extends BaseApiTracer {
 
     try {
       for (ApiTracer child : children) {
-        Scope childScope = child.inScope();
-        if (childScope != null) {
-          childScopes.add(childScope);
-        }
+        childScopes.add(child.inScope());
       }
     } catch (RuntimeException e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
