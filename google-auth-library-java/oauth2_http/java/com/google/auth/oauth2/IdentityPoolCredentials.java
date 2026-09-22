@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
@@ -46,7 +47,6 @@ import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-import javax.net.ssl.SSLException;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -216,14 +216,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    * positives from a no-arg-constructed MtlsHttpTransportFactory (e.g. after deserialization) that
    * has no actual certificates.
    */
-  private boolean isMtlsConfigured() {
+  boolean isMtlsConfigured() {
     return this.x509Provider != null
         || (this.transportFactory instanceof MtlsHttpTransportFactory
             && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
-  private static boolean isDefaultOrMtlsTransportFactory(
-      @Nullable HttpTransportFactory transportFactory) {
+  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
         || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
@@ -239,15 +238,32 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
-  private static boolean isSslException(@Nullable Throwable throwable) {
+  boolean hasMtlsProviderForImpersonation() {
+    return this.x509Provider != null && shouldUseMtlsTransportFactory();
+  }
+
+  AccessToken refreshImpersonatedAccessTokenWithRetry(ImpersonatedCredentials impersonated)
+      throws IOException {
+    return refreshWithRetry(
+        /* explicitTransportFactory= */ null,
+        /* pinnedKeyStore= */ null,
+        /* targetImpersonated= */ impersonated,
+        /* allowRetry= */ true);
+  }
+
+  private static boolean isRetryableTransportException(@Nullable Throwable throwable) {
+    if (!(throwable instanceof IOException)
+        || throwable instanceof CertificateSourceUnavailableException) {
+      return false;
+    }
     Throwable current = throwable;
     while (current != null) {
-      if (current instanceof SSLException) {
-        return true;
+      if (current instanceof OAuthException || current instanceof HttpResponseException) {
+        return false;
       }
       current = current.getCause();
     }
-    return false;
+    return true;
   }
 
   @Override
@@ -256,7 +272,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // refreshWithRetry so transient mid-rotation KeyStore read errors and TLS handshake errors
     // can be retried once.
     return refreshWithRetry(
-        /* explicitTransportFactory= */ null, /* pinnedKeyStore= */ null, /* allowRetry= */ true);
+        /* explicitTransportFactory= */ null,
+        /* pinnedKeyStore= */ null,
+        getImpersonatedCredentials(),
+        /* allowRetry= */ true);
   }
 
   @Override
@@ -268,7 +287,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Retry is intentionally disabled when an explicit cycleTransportFactory is supplied to
     // ensure transport synchronization across multi-step token exchanges (e.g. STS and IAM)
     // and prevent nested retry amplification. Outer callers manage retry coordination.
-    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, /* allowRetry= */ false);
+    return refreshWithRetry(
+        cycleTransportFactory,
+        pinnedKeyStore,
+        getImpersonatedCredentials(),
+        /* allowRetry= */ false);
   }
 
   @Override
@@ -278,12 +301,17 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (pinnedKeyStore == null) {
       return refreshAccessToken(cycleTransportFactory);
     }
-    return refreshWithRetry(cycleTransportFactory, pinnedKeyStore, /* allowRetry= */ false);
+    return refreshWithRetry(
+        cycleTransportFactory,
+        pinnedKeyStore,
+        getImpersonatedCredentials(),
+        /* allowRetry= */ false);
   }
 
   private AccessToken refreshWithRetry(
       @Nullable HttpTransportFactory explicitTransportFactory,
       @Nullable KeyStore pinnedKeyStore,
+      @Nullable ImpersonatedCredentials targetImpersonated,
       boolean allowRetry)
       throws IOException {
     try {
@@ -298,9 +326,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
       }
 
-      ImpersonatedCredentials impersonated = getImpersonatedCredentials();
-      if (impersonated != null) {
-        return impersonated.refreshAccessToken(
+      if (targetImpersonated != null) {
+        return targetImpersonated.refreshAccessToken(
             pinnedKeyStore != null ? cycleTransportFactory : null, pinnedKeyStore);
       }
 
@@ -352,12 +379,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           && this.x509Provider != null
           && shouldUseMtlsTransportFactory()
           && (OAuth2Utils.isUnauthorizedException(e)
-              || isSslException(e)
+              || isRetryableTransportException(e)
               || isInitialKeyStoreLoadFailure)) {
         KeyStore freshKeyStore;
         try {
-          // On 401, TLS handshake failure, or transient initial KeyStore load failure, re-read
-          // from X509Provider for fresh certs.
+          // On 401, TLS handshake/transport failure, or transient initial KeyStore load failure,
+          // re-read from X509Provider for fresh certs.
           freshKeyStore = this.x509Provider.getKeyStore();
         } catch (IOException reloadException) {
           if (reloadException != e) {
@@ -378,7 +405,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
         try {
           HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
-          return refreshWithRetry(retryTransportFactory, freshKeyStore, /* allowRetry= */ false);
+          return refreshWithRetry(
+              retryTransportFactory, freshKeyStore, targetImpersonated, /* allowRetry= */ false);
         } catch (IOException | RuntimeException retryException) {
           if (retryException != e) {
             retryException.addSuppressed(e);

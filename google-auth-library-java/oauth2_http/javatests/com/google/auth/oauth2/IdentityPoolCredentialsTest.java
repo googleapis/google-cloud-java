@@ -4658,4 +4658,289 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertTrue(
         deserializedCustom.getTransportFactory() instanceof SerializableCustomTransportFactory);
   }
+
+  @Test
+  void refreshAccessToken_bareIoExceptionFromSplitWrite_retriesWhenKeyStoreChanges()
+      throws Exception {
+    // Against live sts.mtls.googleapis.com, a split write (cert2 + key1) fails during the TLS
+    // handshake with a bare `new IOException("Error writing request body to server")` and an
+    // empty cause chain (getCause() == null).
+    byte[] cert2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert_2.pem"));
+    byte[] key1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key.pem"));
+    byte[] key2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem"));
+    byte[] newline = "\n".getBytes(StandardCharsets.UTF_8);
+
+    KeyStore splitWriteKeyStore =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key1Bytes)));
+    KeyStore completedRotationKeyStore =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key2Bytes)));
+
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            return getKeyStoreCount.incrementAndGet() == 1
+                ? splitWriteKeyStore
+                : completedRotationKeyStore;
+          }
+        };
+
+    AtomicInteger exchangeCount = new AtomicInteger(0);
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(x509Provider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            if (exchangeCount.incrementAndGet() == 1) {
+              // Bare IOException with getCause() == null, matching HttpURLConnection behavior
+              throw new IOException("Error writing request body to server");
+            }
+            return new AccessToken("recovered-after-bare-io-exception", null);
+          }
+        };
+
+    AccessToken token = credential.refreshAccessToken();
+    assertEquals("recovered-after-bare-io-exception", token.getTokenValue());
+    assertEquals(2, getKeyStoreCount.get());
+    assertEquals(2, exchangeCount.get());
+  }
+
+  @Test
+  void
+      standaloneImpersonatedCredentials_wrappingMtlsIdentityPoolCredentials_usesMtlsAndRetriesOnRotation()
+          throws Exception {
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks2 = createRotatedPopulatedKeyStore();
+
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            int count = getKeyStoreCount.incrementAndGet();
+            return count == 1 ? ks1 : ks2;
+          }
+        };
+
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<KeyStore> capturedKeyStores = new ArrayList<>();
+
+    IdentityPoolCredentials sourceCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(rotatingProvider)
+                .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            capturedKeyStores.add(keyStore);
+            return () ->
+                new MockHttpTransport() {
+                  @Override
+                  public LowLevelHttpRequest buildRequest(String method, String url) {
+                    return new MockLowLevelHttpRequest(url) {
+                      @Override
+                      public LowLevelHttpResponse execute() throws IOException {
+                        if (url.contains("sts.mtls.googleapis.com")) {
+                          int count = stsCallCount.incrementAndGet();
+                          if (keyStore == ks1) {
+                            // Simulate split write bare IOException on ks1
+                            throw new IOException("Error writing request body to server");
+                          }
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("access_token", "standalone-sts-token-" + count);
+                          response.put(
+                              "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                          response.put("token_type", "Bearer");
+                          response.put("expires_in", 3600);
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        } else if (url.contains("iamcredentials")) {
+                          int count = iamCallCount.incrementAndGet();
+                          GenericJson response = new GenericJson();
+                          response.setFactory(OAuth2Utils.JSON_FACTORY);
+                          response.put("accessToken", "standalone-iam-token-" + count);
+                          response.put("expireTime", "2030-01-01T00:00:00Z");
+                          return new MockLowLevelHttpResponse()
+                              .setContentType(Json.MEDIA_TYPE)
+                              .setContent(response.toString());
+                        }
+                        return new MockLowLevelHttpResponse().setStatusCode(404);
+                      }
+                    };
+                  }
+                };
+          }
+        };
+
+    // Build standalone ImpersonatedCredentials directly without setting HttpTransportFactory.
+    ImpersonatedCredentials standaloneImpersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal("sa@project.iam.gserviceaccount.com")
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .build();
+
+    // Refresh 1: ks1 throws bare IOException -> retries once with ks2 -> both STS and IAM succeed
+    // over the pinned mTLS transport.
+    AccessToken token1 = standaloneImpersonated.refreshAccessToken();
+    assertEquals("standalone-iam-token-1", token1.getTokenValue());
+    assertEquals(2, stsCallCount.get());
+    assertEquals(1, iamCallCount.get());
+    assertEquals(Arrays.asList(ks1, ks2), capturedKeyStores);
+
+    // Refresh 2 (still ks2): reuses the cached 1-hour STS token without calling STS again!
+    AccessToken token2 = standaloneImpersonated.refreshAccessToken();
+    assertEquals("standalone-iam-token-2", token2.getTokenValue());
+    assertEquals(2, stsCallCount.get());
+    assertEquals(2, iamCallCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_bareIoException_doesNotRetryWhenKeyStoreUnchanged() throws Exception {
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks1Same = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider provider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            return getKeyStoreCount.incrementAndGet() == 1 ? ks1 : ks1Same;
+          }
+        };
+
+    AtomicInteger exchangeCount = new AtomicInteger(0);
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(provider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            exchangeCount.incrementAndGet();
+            throw new IOException("Error writing request body to server");
+          }
+        };
+
+    IOException thrown = assertThrows(IOException.class, credential::refreshAccessToken);
+    assertEquals("Error writing request body to server", thrown.getMessage());
+    assertEquals(2, getKeyStoreCount.get());
+    assertEquals(1, exchangeCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_non401OAuthException_doesNotRetryEvenWhenKeyStoreChanges()
+      throws Exception {
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks2 = createRotatedPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider(null) {
+          @Override
+          public KeyStore getKeyStore() {
+            return getKeyStoreCount.incrementAndGet() == 1 ? ks1 : ks2;
+          }
+        };
+
+    AtomicInteger exchangeCount = new AtomicInteger(0);
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(rotatingProvider)
+                .setAudience("audience")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            exchangeCount.incrementAndGet();
+            throw new OAuthException("invalid_request", "Bad Request", null, 400);
+          }
+        };
+
+    OAuthException thrown = assertThrows(OAuthException.class, credential::refreshAccessToken);
+    assertEquals(400, thrown.getHttpStatusCode());
+    assertEquals(1, getKeyStoreCount.get());
+    assertEquals(1, exchangeCount.get());
+  }
+
+  @Test
+  void
+      standaloneImpersonatedCredentials_withFileCertConfig_survivesDeserializationAndAddsCloudPlatformScope()
+          throws Exception {
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", "credential.json");
+    sourceMap.put("certificate", certMap);
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    // Build IdentityPoolCredentials with a custom scope (missing cloud-platform) and file cert
+    // config.
+    IdentityPoolCredentials sourceCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setScopes(Collections.singletonList("https://www.googleapis.com/auth/CustomScope"))
+            .setAudience("audience")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    assertTrue(sourceCredentials.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) sourceCredentials.getTransportFactory()).hasKeyStore());
+
+    // Build standalone ImpersonatedCredentials without setting HttpTransportFactory.
+    ImpersonatedCredentials standaloneImpersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal("sa@project.iam.gserviceaccount.com")
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .build();
+
+    // Verify standaloneImpersonated inherited the populated MtlsHttpTransportFactory at build time
+    assertTrue(
+        standaloneImpersonated.toBuilder().getHttpTransportFactory()
+            instanceof MtlsHttpTransportFactory);
+    assertTrue(
+        ((MtlsHttpTransportFactory) standaloneImpersonated.toBuilder().getHttpTransportFactory())
+            .hasKeyStore());
+
+    // Serialize and deserialize standaloneImpersonated and verify readObject() restores the
+    // populated MtlsHttpTransportFactory from sourceCredentials.
+    ImpersonatedCredentials deserializedImpersonated =
+        serializeAndDeserialize(standaloneImpersonated);
+    assertTrue(
+        deserializedImpersonated.toBuilder().getHttpTransportFactory()
+            instanceof MtlsHttpTransportFactory);
+    assertTrue(
+        ((MtlsHttpTransportFactory) deserializedImpersonated.toBuilder().getHttpTransportFactory())
+            .hasKeyStore());
+  }
 }

@@ -547,9 +547,16 @@ public class ImpersonatedCredentials extends GoogleCredentials
     this.delegates = builder.getDelegates();
     this.scopes = ImmutableList.copyOf(builder.getScopes());
     this.lifetime = builder.getLifetime();
+    HttpTransportFactory builderTransportFactory = builder.getHttpTransportFactory();
+    if (builderTransportFactory == null
+        && this.sourceCredentials instanceof IdentityPoolCredentials
+        && ((IdentityPoolCredentials) this.sourceCredentials).isMtlsConfigured()) {
+      builderTransportFactory =
+          ((IdentityPoolCredentials) this.sourceCredentials).getTransportFactory();
+    }
     this.transportFactory =
         firstNonNull(
-            builder.getHttpTransportFactory(),
+            builderTransportFactory,
             getFromServiceLoader(HttpTransportFactory.class, OAuth2Utils.HTTP_TRANSPORT_FACTORY));
     this.iamEndpointOverride = builder.iamEndpointOverride;
     this.transportFactoryClassName = this.transportFactory.getClass().getName();
@@ -587,8 +594,32 @@ public class ImpersonatedCredentials extends GoogleCredentials
     return this.sourceCredentials.getUniverseDomain();
   }
 
+  private ExternalAccountCredentials ensureExternalSourceScoped() {
+    synchronized (this) {
+      Collection<String> currentScopes =
+          ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
+      if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
+        List<String> updatedScopes =
+            currentScopes != null ? new ArrayList<>(currentScopes) : new ArrayList<>();
+        updatedScopes.add(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
+        this.sourceCredentials = this.sourceCredentials.createScoped(updatedScopes);
+      }
+      return (ExternalAccountCredentials) this.sourceCredentials;
+    }
+  }
+
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      ExternalAccountCredentials externalSource = ensureExternalSourceScoped();
+      if (externalSource instanceof IdentityPoolCredentials) {
+        IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) externalSource;
+        if (identityPoolSource.hasMtlsProviderForImpersonation()
+            && IdentityPoolCredentials.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
+          return identityPoolSource.refreshImpersonatedAccessTokenWithRetry(this);
+        }
+      }
+    }
     return refreshAccessToken(null);
   }
 
@@ -649,18 +680,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     HttpCredentialsAdapter adapter;
     AccessToken intermediateAccessTokenForCache = null;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
-      ExternalAccountCredentials externalSource;
-      synchronized (this) {
-        Collection<String> currentScopes =
-            ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
-        if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
-          List<String> updatedScopes =
-              currentScopes != null ? new ArrayList<>(currentScopes) : new ArrayList<>();
-          updatedScopes.add(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
-          this.sourceCredentials = this.sourceCredentials.createScoped(updatedScopes);
-        }
-        externalSource = (ExternalAccountCredentials) this.sourceCredentials;
-      }
+      ExternalAccountCredentials externalSource = ensureExternalSourceScoped();
       if (cycleTransportFactory == null) {
         try {
           externalSource.refreshIfExpired();
@@ -1073,5 +1093,15 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
     transportFactory = newInstance(transportFactoryClassName);
+    if (this.sourceCredentials instanceof IdentityPoolCredentials
+        && this.transportFactory instanceof MtlsHttpTransportFactory
+        && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()) {
+      HttpTransportFactory sourceTransportFactory =
+          ((IdentityPoolCredentials) this.sourceCredentials).getTransportFactory();
+      if (sourceTransportFactory instanceof MtlsHttpTransportFactory
+          && ((MtlsHttpTransportFactory) sourceTransportFactory).hasKeyStore()) {
+        this.transportFactory = sourceTransportFactory;
+      }
+    }
   }
 }
