@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
@@ -36,6 +37,7 @@ import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
+import com.google.chat.v1.CreateMessagePinRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSectionRequest;
@@ -43,6 +45,7 @@ import com.google.chat.v1.CreateSpaceRequest;
 import com.google.chat.v1.CustomEmoji;
 import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
+import com.google.chat.v1.DeleteMessagePinRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
@@ -64,6 +67,8 @@ import com.google.chat.v1.ListCustomEmojisRequest;
 import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
+import com.google.chat.v1.ListMessagePinsRequest;
+import com.google.chat.v1.ListMessagePinsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
@@ -81,6 +86,7 @@ import com.google.chat.v1.MarkAsAwayRequest;
 import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MessagePin;
 import com.google.chat.v1.MoveSectionItemRequest;
 import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
@@ -256,6 +262,23 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteReactionCallable()");
+  }
+
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMessagePinsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse> listMessagePinsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMessagePinsCallable()");
+  }
+
+  public UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMessagePinCallable()");
+  }
+
+  public UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMessagePinCallable()");
   }
 
   public UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable() {

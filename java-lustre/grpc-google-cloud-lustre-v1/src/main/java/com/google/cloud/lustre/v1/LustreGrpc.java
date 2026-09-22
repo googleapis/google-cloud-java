@@ -245,6 +245,51 @@ public final class LustreGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.RescheduleMaintenanceRequest, com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RescheduleMaintenance",
+      requestType = com.google.cloud.lustre.v1.RescheduleMaintenanceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.RescheduleMaintenanceRequest, com.google.longrunning.Operation>
+      getRescheduleMaintenanceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.RescheduleMaintenanceRequest,
+            com.google.longrunning.Operation>
+        getRescheduleMaintenanceMethod;
+    if ((getRescheduleMaintenanceMethod = LustreGrpc.getRescheduleMaintenanceMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getRescheduleMaintenanceMethod = LustreGrpc.getRescheduleMaintenanceMethod) == null) {
+          LustreGrpc.getRescheduleMaintenanceMethod =
+              getRescheduleMaintenanceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.RescheduleMaintenanceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RescheduleMaintenance"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.RescheduleMaintenanceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LustreMethodDescriptorSupplier("RescheduleMaintenance"))
+                      .build();
+        }
+      }
+    }
+    return getRescheduleMaintenanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.lustre.v1.ImportDataRequest, com.google.longrunning.Operation>
       getImportDataMethod;
 
@@ -324,6 +369,397 @@ public final class LustreGrpc {
       }
     }
     return getExportDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.CreateMirrorRequest, com.google.longrunning.Operation>
+      getCreateMirrorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMirror",
+      requestType = com.google.cloud.lustre.v1.CreateMirrorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.CreateMirrorRequest, com.google.longrunning.Operation>
+      getCreateMirrorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.CreateMirrorRequest, com.google.longrunning.Operation>
+        getCreateMirrorMethod;
+    if ((getCreateMirrorMethod = LustreGrpc.getCreateMirrorMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getCreateMirrorMethod = LustreGrpc.getCreateMirrorMethod) == null) {
+          LustreGrpc.getCreateMirrorMethod =
+              getCreateMirrorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.CreateMirrorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMirror"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.CreateMirrorRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("CreateMirror"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMirrorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.UpdateMirrorRequest, com.google.longrunning.Operation>
+      getUpdateMirrorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateMirror",
+      requestType = com.google.cloud.lustre.v1.UpdateMirrorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.UpdateMirrorRequest, com.google.longrunning.Operation>
+      getUpdateMirrorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.UpdateMirrorRequest, com.google.longrunning.Operation>
+        getUpdateMirrorMethod;
+    if ((getUpdateMirrorMethod = LustreGrpc.getUpdateMirrorMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getUpdateMirrorMethod = LustreGrpc.getUpdateMirrorMethod) == null) {
+          LustreGrpc.getUpdateMirrorMethod =
+              getUpdateMirrorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.UpdateMirrorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateMirror"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.UpdateMirrorRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("UpdateMirror"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateMirrorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.DeleteMirrorRequest, com.google.longrunning.Operation>
+      getDeleteMirrorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMirror",
+      requestType = com.google.cloud.lustre.v1.DeleteMirrorRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.DeleteMirrorRequest, com.google.longrunning.Operation>
+      getDeleteMirrorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.DeleteMirrorRequest, com.google.longrunning.Operation>
+        getDeleteMirrorMethod;
+    if ((getDeleteMirrorMethod = LustreGrpc.getDeleteMirrorMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getDeleteMirrorMethod = LustreGrpc.getDeleteMirrorMethod) == null) {
+          LustreGrpc.getDeleteMirrorMethod =
+              getDeleteMirrorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.DeleteMirrorRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMirror"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.DeleteMirrorRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("DeleteMirror"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMirrorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.GetMirrorRequest, com.google.cloud.lustre.v1.Mirror>
+      getGetMirrorMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMirror",
+      requestType = com.google.cloud.lustre.v1.GetMirrorRequest.class,
+      responseType = com.google.cloud.lustre.v1.Mirror.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.GetMirrorRequest, com.google.cloud.lustre.v1.Mirror>
+      getGetMirrorMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.GetMirrorRequest, com.google.cloud.lustre.v1.Mirror>
+        getGetMirrorMethod;
+    if ((getGetMirrorMethod = LustreGrpc.getGetMirrorMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getGetMirrorMethod = LustreGrpc.getGetMirrorMethod) == null) {
+          LustreGrpc.getGetMirrorMethod =
+              getGetMirrorMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.GetMirrorRequest,
+                          com.google.cloud.lustre.v1.Mirror>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMirror"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.GetMirrorRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.Mirror.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("GetMirror"))
+                      .build();
+        }
+      }
+    }
+    return getGetMirrorMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.ListMirrorsRequest,
+          com.google.cloud.lustre.v1.ListMirrorsResponse>
+      getListMirrorsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMirrors",
+      requestType = com.google.cloud.lustre.v1.ListMirrorsRequest.class,
+      responseType = com.google.cloud.lustre.v1.ListMirrorsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.ListMirrorsRequest,
+          com.google.cloud.lustre.v1.ListMirrorsResponse>
+      getListMirrorsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.ListMirrorsRequest,
+            com.google.cloud.lustre.v1.ListMirrorsResponse>
+        getListMirrorsMethod;
+    if ((getListMirrorsMethod = LustreGrpc.getListMirrorsMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getListMirrorsMethod = LustreGrpc.getListMirrorsMethod) == null) {
+          LustreGrpc.getListMirrorsMethod =
+              getListMirrorsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.ListMirrorsRequest,
+                          com.google.cloud.lustre.v1.ListMirrorsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMirrors"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.ListMirrorsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.ListMirrorsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("ListMirrors"))
+                      .build();
+        }
+      }
+    }
+    return getListMirrorsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest, com.google.longrunning.Operation>
+      getCreateDirectoryPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDirectoryPolicy",
+      requestType = com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest, com.google.longrunning.Operation>
+      getCreateDirectoryPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest,
+            com.google.longrunning.Operation>
+        getCreateDirectoryPolicyMethod;
+    if ((getCreateDirectoryPolicyMethod = LustreGrpc.getCreateDirectoryPolicyMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getCreateDirectoryPolicyMethod = LustreGrpc.getCreateDirectoryPolicyMethod) == null) {
+          LustreGrpc.getCreateDirectoryPolicyMethod =
+              getCreateDirectoryPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDirectoryPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LustreMethodDescriptorSupplier("CreateDirectoryPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDirectoryPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest, com.google.longrunning.Operation>
+      getDeleteDirectoryPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDirectoryPolicy",
+      requestType = com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest, com.google.longrunning.Operation>
+      getDeleteDirectoryPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest,
+            com.google.longrunning.Operation>
+        getDeleteDirectoryPolicyMethod;
+    if ((getDeleteDirectoryPolicyMethod = LustreGrpc.getDeleteDirectoryPolicyMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getDeleteDirectoryPolicyMethod = LustreGrpc.getDeleteDirectoryPolicyMethod) == null) {
+          LustreGrpc.getDeleteDirectoryPolicyMethod =
+              getDeleteDirectoryPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDirectoryPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LustreMethodDescriptorSupplier("DeleteDirectoryPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDirectoryPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.GetDirectoryPolicyRequest,
+          com.google.cloud.lustre.v1.DirectoryPolicy>
+      getGetDirectoryPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDirectoryPolicy",
+      requestType = com.google.cloud.lustre.v1.GetDirectoryPolicyRequest.class,
+      responseType = com.google.cloud.lustre.v1.DirectoryPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.GetDirectoryPolicyRequest,
+          com.google.cloud.lustre.v1.DirectoryPolicy>
+      getGetDirectoryPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.GetDirectoryPolicyRequest,
+            com.google.cloud.lustre.v1.DirectoryPolicy>
+        getGetDirectoryPolicyMethod;
+    if ((getGetDirectoryPolicyMethod = LustreGrpc.getGetDirectoryPolicyMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getGetDirectoryPolicyMethod = LustreGrpc.getGetDirectoryPolicyMethod) == null) {
+          LustreGrpc.getGetDirectoryPolicyMethod =
+              getGetDirectoryPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.GetDirectoryPolicyRequest,
+                          com.google.cloud.lustre.v1.DirectoryPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDirectoryPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.GetDirectoryPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.DirectoryPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(new LustreMethodDescriptorSupplier("GetDirectoryPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetDirectoryPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest,
+          com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+      getListDirectoryPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDirectoryPolicies",
+      requestType = com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest.class,
+      responseType = com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest,
+          com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+      getListDirectoryPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest,
+            com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+        getListDirectoryPoliciesMethod;
+    if ((getListDirectoryPoliciesMethod = LustreGrpc.getListDirectoryPoliciesMethod) == null) {
+      synchronized (LustreGrpc.class) {
+        if ((getListDirectoryPoliciesMethod = LustreGrpc.getListDirectoryPoliciesMethod) == null) {
+          LustreGrpc.getListDirectoryPoliciesMethod =
+              getListDirectoryPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest,
+                          com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDirectoryPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LustreMethodDescriptorSupplier("ListDirectoryPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListDirectoryPoliciesMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -463,6 +899,20 @@ public final class LustreGrpc {
      *
      *
      * <pre>
+     * Reschedules a planned maintenance event for a specific instance.
+     * </pre>
+     */
+    default void rescheduleMaintenance(
+        com.google.cloud.lustre.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRescheduleMaintenanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports data from Cloud Storage to a Managed Lustre instance.
      * </pre>
      */
@@ -483,6 +933,133 @@ public final class LustreGrpc {
         com.google.cloud.lustre.v1.ExportDataRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getExportDataMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mirror in a given instance.
+     * </pre>
+     */
+    default void createMirror(
+        com.google.cloud.lustre.v1.CreateMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMirrorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single mirror.
+     * </pre>
+     */
+    default void updateMirror(
+        com.google.cloud.lustre.v1.UpdateMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateMirrorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mirror.
+     * </pre>
+     */
+    default void deleteMirror(
+        com.google.cloud.lustre.v1.DeleteMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMirrorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single mirror.
+     * </pre>
+     */
+    default void getMirror(
+        com.google.cloud.lustre.v1.GetMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.Mirror> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMirrorMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple mirrors under a given instance.
+     * </pre>
+     */
+    default void listMirrors(
+        com.google.cloud.lustre.v1.ListMirrorsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.ListMirrorsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMirrorsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a directory policy resource.
+     * </pre>
+     */
+    default void createDirectoryPolicy(
+        com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDirectoryPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a directory policy resource.
+     * </pre>
+     */
+    default void deleteDirectoryPolicy(
+        com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDirectoryPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single directory policy.
+     * </pre>
+     */
+    default void getDirectoryPolicy(
+        com.google.cloud.lustre.v1.GetDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.DirectoryPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDirectoryPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple directory policies under a given instance.
+     * </pre>
+     */
+    default void listDirectoryPolicies(
+        com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDirectoryPoliciesMethod(), responseObserver);
     }
   }
 
@@ -603,6 +1180,22 @@ public final class LustreGrpc {
      *
      *
      * <pre>
+     * Reschedules a planned maintenance event for a specific instance.
+     * </pre>
+     */
+    public void rescheduleMaintenance(
+        com.google.cloud.lustre.v1.RescheduleMaintenanceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports data from Cloud Storage to a Managed Lustre instance.
      * </pre>
      */
@@ -625,6 +1218,150 @@ public final class LustreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mirror in a given instance.
+     * </pre>
+     */
+    public void createMirror(
+        com.google.cloud.lustre.v1.CreateMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMirrorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single mirror.
+     * </pre>
+     */
+    public void updateMirror(
+        com.google.cloud.lustre.v1.UpdateMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateMirrorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mirror.
+     * </pre>
+     */
+    public void deleteMirror(
+        com.google.cloud.lustre.v1.DeleteMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMirrorMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single mirror.
+     * </pre>
+     */
+    public void getMirror(
+        com.google.cloud.lustre.v1.GetMirrorRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.Mirror> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMirrorMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple mirrors under a given instance.
+     * </pre>
+     */
+    public void listMirrors(
+        com.google.cloud.lustre.v1.ListMirrorsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.ListMirrorsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMirrorsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a directory policy resource.
+     * </pre>
+     */
+    public void createDirectoryPolicy(
+        com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDirectoryPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a directory policy resource.
+     * </pre>
+     */
+    public void deleteDirectoryPolicy(
+        com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDirectoryPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single directory policy.
+     * </pre>
+     */
+    public void getDirectoryPolicy(
+        com.google.cloud.lustre.v1.GetDirectoryPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.DirectoryPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDirectoryPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple directory policies under a given instance.
+     * </pre>
+     */
+    public void listDirectoryPolicies(
+        com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDirectoryPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -715,6 +1452,20 @@ public final class LustreGrpc {
      *
      *
      * <pre>
+     * Reschedules a planned maintenance event for a specific instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.lustre.v1.RescheduleMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports data from Cloud Storage to a Managed Lustre instance.
      * </pre>
      */
@@ -735,6 +1486,127 @@ public final class LustreGrpc {
         com.google.cloud.lustre.v1.ExportDataRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mirror in a given instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMirror(
+        com.google.cloud.lustre.v1.CreateMirrorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single mirror.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMirror(
+        com.google.cloud.lustre.v1.UpdateMirrorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mirror.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMirror(
+        com.google.cloud.lustre.v1.DeleteMirrorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single mirror.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.Mirror getMirror(
+        com.google.cloud.lustre.v1.GetMirrorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple mirrors under a given instance.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.ListMirrorsResponse listMirrors(
+        com.google.cloud.lustre.v1.ListMirrorsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMirrorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a directory policy resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDirectoryPolicy(
+        com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a directory policy resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDirectoryPolicy(
+        com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single directory policy.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.DirectoryPolicy getDirectoryPolicy(
+        com.google.cloud.lustre.v1.GetDirectoryPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple directory policies under a given instance.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse listDirectoryPolicies(
+        com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDirectoryPoliciesMethod(), getCallOptions(), request);
     }
   }
 
@@ -825,6 +1697,19 @@ public final class LustreGrpc {
      *
      *
      * <pre>
+     * Reschedules a planned maintenance event for a specific instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.lustre.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports data from Cloud Storage to a Managed Lustre instance.
      * </pre>
      */
@@ -845,6 +1730,123 @@ public final class LustreGrpc {
         com.google.cloud.lustre.v1.ExportDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mirror in a given instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMirror(
+        com.google.cloud.lustre.v1.CreateMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single mirror.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMirror(
+        com.google.cloud.lustre.v1.UpdateMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mirror.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMirror(
+        com.google.cloud.lustre.v1.DeleteMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single mirror.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.Mirror getMirror(
+        com.google.cloud.lustre.v1.GetMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMirrorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple mirrors under a given instance.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.ListMirrorsResponse listMirrors(
+        com.google.cloud.lustre.v1.ListMirrorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMirrorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a directory policy resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDirectoryPolicy(
+        com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a directory policy resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDirectoryPolicy(
+        com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single directory policy.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.DirectoryPolicy getDirectoryPolicy(
+        com.google.cloud.lustre.v1.GetDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDirectoryPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple directory policies under a given instance.
+     * </pre>
+     */
+    public com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse listDirectoryPolicies(
+        com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDirectoryPoliciesMethod(), getCallOptions(), request);
     }
   }
 
@@ -936,6 +1938,19 @@ public final class LustreGrpc {
      *
      *
      * <pre>
+     * Reschedules a planned maintenance event for a specific instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rescheduleMaintenance(com.google.cloud.lustre.v1.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRescheduleMaintenanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports data from Cloud Storage to a Managed Lustre instance.
      * </pre>
      */
@@ -957,6 +1972,126 @@ public final class LustreGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExportDataMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mirror in a given instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createMirror(com.google.cloud.lustre.v1.CreateMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMirrorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single mirror.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateMirror(com.google.cloud.lustre.v1.UpdateMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateMirrorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mirror.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteMirror(com.google.cloud.lustre.v1.DeleteMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMirrorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single mirror.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.lustre.v1.Mirror>
+        getMirror(com.google.cloud.lustre.v1.GetMirrorRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMirrorMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple mirrors under a given instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.lustre.v1.ListMirrorsResponse>
+        listMirrors(com.google.cloud.lustre.v1.ListMirrorsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMirrorsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a directory policy resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDirectoryPolicy(com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDirectoryPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a directory policy resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDirectoryPolicy(com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDirectoryPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single directory policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.lustre.v1.DirectoryPolicy>
+        getDirectoryPolicy(com.google.cloud.lustre.v1.GetDirectoryPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDirectoryPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of multiple directory policies under a given instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>
+        listDirectoryPolicies(com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDirectoryPoliciesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INSTANCES = 0;
@@ -964,8 +2099,18 @@ public final class LustreGrpc {
   private static final int METHODID_CREATE_INSTANCE = 2;
   private static final int METHODID_UPDATE_INSTANCE = 3;
   private static final int METHODID_DELETE_INSTANCE = 4;
-  private static final int METHODID_IMPORT_DATA = 5;
-  private static final int METHODID_EXPORT_DATA = 6;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 5;
+  private static final int METHODID_IMPORT_DATA = 6;
+  private static final int METHODID_EXPORT_DATA = 7;
+  private static final int METHODID_CREATE_MIRROR = 8;
+  private static final int METHODID_UPDATE_MIRROR = 9;
+  private static final int METHODID_DELETE_MIRROR = 10;
+  private static final int METHODID_GET_MIRROR = 11;
+  private static final int METHODID_LIST_MIRRORS = 12;
+  private static final int METHODID_CREATE_DIRECTORY_POLICY = 13;
+  private static final int METHODID_DELETE_DIRECTORY_POLICY = 14;
+  private static final int METHODID_GET_DIRECTORY_POLICY = 15;
+  private static final int METHODID_LIST_DIRECTORY_POLICIES = 16;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1010,6 +2155,11 @@ public final class LustreGrpc {
               (com.google.cloud.lustre.v1.DeleteInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_RESCHEDULE_MAINTENANCE:
+          serviceImpl.rescheduleMaintenance(
+              (com.google.cloud.lustre.v1.RescheduleMaintenanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_IMPORT_DATA:
           serviceImpl.importData(
               (com.google.cloud.lustre.v1.ImportDataRequest) request,
@@ -1019,6 +2169,55 @@ public final class LustreGrpc {
           serviceImpl.exportData(
               (com.google.cloud.lustre.v1.ExportDataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_MIRROR:
+          serviceImpl.createMirror(
+              (com.google.cloud.lustre.v1.CreateMirrorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_MIRROR:
+          serviceImpl.updateMirror(
+              (com.google.cloud.lustre.v1.UpdateMirrorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_MIRROR:
+          serviceImpl.deleteMirror(
+              (com.google.cloud.lustre.v1.DeleteMirrorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_MIRROR:
+          serviceImpl.getMirror(
+              (com.google.cloud.lustre.v1.GetMirrorRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.Mirror>) responseObserver);
+          break;
+        case METHODID_LIST_MIRRORS:
+          serviceImpl.listMirrors(
+              (com.google.cloud.lustre.v1.ListMirrorsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.ListMirrorsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DIRECTORY_POLICY:
+          serviceImpl.createDirectoryPolicy(
+              (com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DIRECTORY_POLICY:
+          serviceImpl.deleteDirectoryPolicy(
+              (com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DIRECTORY_POLICY:
+          serviceImpl.getDirectoryPolicy(
+              (com.google.cloud.lustre.v1.GetDirectoryPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.lustre.v1.DirectoryPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DIRECTORY_POLICIES:
+          serviceImpl.listDirectoryPolicies(
+              (com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1070,6 +2269,12 @@ public final class LustreGrpc {
                     com.google.cloud.lustre.v1.DeleteInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_INSTANCE)))
         .addMethod(
+            getRescheduleMaintenanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.RescheduleMaintenanceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESCHEDULE_MAINTENANCE)))
+        .addMethod(
             getImportDataMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1081,6 +2286,63 @@ public final class LustreGrpc {
                 new MethodHandlers<
                     com.google.cloud.lustre.v1.ExportDataRequest, com.google.longrunning.Operation>(
                     service, METHODID_EXPORT_DATA)))
+        .addMethod(
+            getCreateMirrorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.CreateMirrorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_MIRROR)))
+        .addMethod(
+            getUpdateMirrorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.UpdateMirrorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_MIRROR)))
+        .addMethod(
+            getDeleteMirrorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.DeleteMirrorRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_MIRROR)))
+        .addMethod(
+            getGetMirrorMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.GetMirrorRequest, com.google.cloud.lustre.v1.Mirror>(
+                    service, METHODID_GET_MIRROR)))
+        .addMethod(
+            getListMirrorsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.ListMirrorsRequest,
+                    com.google.cloud.lustre.v1.ListMirrorsResponse>(
+                    service, METHODID_LIST_MIRRORS)))
+        .addMethod(
+            getCreateDirectoryPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DIRECTORY_POLICY)))
+        .addMethod(
+            getDeleteDirectoryPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DIRECTORY_POLICY)))
+        .addMethod(
+            getGetDirectoryPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.GetDirectoryPolicyRequest,
+                    com.google.cloud.lustre.v1.DirectoryPolicy>(
+                    service, METHODID_GET_DIRECTORY_POLICY)))
+        .addMethod(
+            getListDirectoryPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest,
+                    com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse>(
+                    service, METHODID_LIST_DIRECTORY_POLICIES)))
         .build();
   }
 
@@ -1135,8 +2397,18 @@ public final class LustreGrpc {
                       .addMethod(getCreateInstanceMethod())
                       .addMethod(getUpdateInstanceMethod())
                       .addMethod(getDeleteInstanceMethod())
+                      .addMethod(getRescheduleMaintenanceMethod())
                       .addMethod(getImportDataMethod())
                       .addMethod(getExportDataMethod())
+                      .addMethod(getCreateMirrorMethod())
+                      .addMethod(getUpdateMirrorMethod())
+                      .addMethod(getDeleteMirrorMethod())
+                      .addMethod(getGetMirrorMethod())
+                      .addMethod(getListMirrorsMethod())
+                      .addMethod(getCreateDirectoryPolicyMethod())
+                      .addMethod(getDeleteDirectoryPolicyMethod())
+                      .addMethod(getGetDirectoryPolicyMethod())
+                      .addMethod(getListDirectoryPoliciesMethod())
                       .build();
         }
       }
