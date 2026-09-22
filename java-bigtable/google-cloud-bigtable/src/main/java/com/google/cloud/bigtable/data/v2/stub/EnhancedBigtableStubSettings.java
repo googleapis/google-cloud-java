@@ -49,13 +49,16 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.sql.BoundStatement;
 import com.google.cloud.bigtable.data.v2.stub.metrics.DefaultMetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import io.opentelemetry.sdk.metrics.export.MetricReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
@@ -147,6 +150,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private final MetricsProvider metricsProvider;
   @Nullable private final String metricsEndpoint;
   private final boolean areInternalMetricsEnabled;
+  private final List<MetricReader> additionalInternalMetricReaders;
   private final String jwtAudience;
 
   @InternalApi
@@ -171,6 +175,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     metricsProvider = builder.metricsProvider;
     metricsEndpoint = builder.metricsEndpoint;
     areInternalMetricsEnabled = builder.areInternalMetricsEnabled;
+    additionalInternalMetricReaders = ImmutableList.copyOf(builder.additionalInternalMetricReaders);
     jwtAudience = builder.jwtAudience;
 
     this.sessionsEnabled = builder.sessionsEnabled;
@@ -264,6 +269,11 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   public boolean areInternalMetricsEnabled() {
     return areInternalMetricsEnabled;
+  }
+
+  @VisibleForTesting
+  public List<MetricReader> getAdditionalInternalMetricReaders() {
+    return additionalInternalMetricReaders;
   }
 
   @InternalApi
@@ -619,6 +629,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private MetricsProvider metricsProvider;
     @Nullable private String metricsEndpoint;
     private boolean areInternalMetricsEnabled;
+    private List<MetricReader> additionalInternalMetricReaders = new ArrayList<>();
 
     /**
      * Initializes a new Builder with sane defaults for all settings.
@@ -673,6 +684,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       metricsProvider = settings.metricsProvider;
       metricsEndpoint = settings.getMetricsEndpoint();
       areInternalMetricsEnabled = settings.areInternalMetricsEnabled;
+      additionalInternalMetricReaders = new ArrayList<>(settings.additionalInternalMetricReaders);
       jwtAudience = settings.jwtAudience;
       this.directPathConfig = settings.getDirectPathConfig();
       sessionsEnabled = settings.sessionsEnabled;
@@ -869,6 +881,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /** Checks if internal metrics are disabled */
     public boolean areInternalMetricsEnabled() {
       return areInternalMetricsEnabled;
+    }
+
+    @VisibleForTesting
+    public Builder addInternalMetricReader(MetricReader reader) {
+      this.additionalInternalMetricReaders.add(reader);
+      return this;
     }
 
     /**

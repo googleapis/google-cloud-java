@@ -39,6 +39,9 @@
     <bigtable.directpath-data-endpoint/>
     <bigtable.directpath-jwt-audience/>
     <bigtable.directpath-admin-endpoint/>
+    <bigtable.session-project/>
+    <bigtable.session-instance/>
+    <bigtable.session-table/>
 
     <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
      RPC bound, so this can be raised well above the core count. Override on the commandline via
@@ -570,6 +573,46 @@
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/prod-it</reportsDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
+      <id>bigtable-session-it</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>session-it</id>
+                <goals>
+                  <goal>integration-test</goal>
+                  <goal>verify</goal>
+                </goals>
+                <configuration>
+                  <skip>false</skip>
+                  <systemPropertyVariables>
+                    <bigtable.env>cloud</bigtable.env>
+                    <bigtable.project>${bigtable.session-project}</bigtable.project>
+                    <bigtable.instance>${bigtable.session-instance}</bigtable.instance>
+                    <bigtable.table>${bigtable.session-table}</bigtable.table>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
+                    <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
+                    <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
+                    <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/session-it</bigtable.grpc-log-dir>
+                    <bigtable.internal.client-config-override>session_configuration { session_load: 1.0 }</bigtable.internal.client-config-override>
+                  </systemPropertyVariables>
+                  <includes>
+                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                  </includes>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-session-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/session-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
