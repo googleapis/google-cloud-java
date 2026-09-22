@@ -11,6 +11,7 @@
  * copyright notice, this list of conditions and the following disclaimer
  * in the documentation and/or other materials provided with the
  * distribution.
+ *
  *    * Neither the name of Google LLC nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
@@ -35,7 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
-import java.io.IOException;
+import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -46,7 +47,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class OAuthException extends GoogleAuthException {
 
-  private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = -7883352585835000817L;
 
   private final String errorCode;
   @Nullable private final String errorDescription;
@@ -97,24 +98,32 @@ class OAuthException extends GoogleAuthException {
     return httpStatusCode;
   }
 
-  static OAuthException createFromHttpResponseException(HttpResponseException e)
-      throws IOException {
+  static OAuthException createFromHttpResponseException(HttpResponseException e) {
     String content = e.getContent();
     if (content == null || content.trim().isEmpty()) {
-      return new OAuthException(
-          "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+      OAuthException oauthException =
+          new OAuthException(
+              "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
     }
     try {
       JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(content);
       GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+      if (errorResponse == null) {
+        OAuthException oauthException =
+            new OAuthException("http_error_" + e.getStatusCode(), null, null, e.getStatusCode());
+        oauthException.initCause(e);
+        return oauthException;
+      }
 
       String errorCode = null;
       String errorDescription = null;
       Object rawError = errorResponse.get("error");
       if (rawError instanceof String) {
         errorCode = (String) rawError;
-      } else if (rawError instanceof java.util.Map) {
-        java.util.Map<?, ?> errorMap = (java.util.Map<?, ?>) rawError;
+      } else if (rawError instanceof Map) {
+        Map<?, ?> errorMap = (Map<?, ?>) rawError;
         if (errorMap.get("status") instanceof String) {
           errorCode = (String) errorMap.get("status");
         }
@@ -132,11 +141,15 @@ class OAuthException extends GoogleAuthException {
       if (errorResponse.get("error_uri") instanceof String) {
         errorUri = (String) errorResponse.get("error_uri");
       }
-      return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
+      OAuthException oauthException =
+          new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
     } catch (Exception parseException) {
-      String fallbackDescription = e.getStatusMessage() != null ? e.getStatusMessage() : content;
-      return new OAuthException(
-          "http_error_" + e.getStatusCode(), fallbackDescription, null, e.getStatusCode());
+      OAuthException oauthException =
+          new OAuthException("http_error_" + e.getStatusCode(), content, null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
     }
   }
 }

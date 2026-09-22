@@ -11,6 +11,7 @@
  * copyright notice, this list of conditions and the following disclaimer
  * in the documentation and/or other materials provided with the
  * distribution.
+ *
  *    * Neither the name of Google LLC nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
@@ -61,6 +62,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
@@ -93,6 +95,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+import org.junit.jupiter.api.parallel.Isolated;
 
 /**
  * Hermetic in-process socket test suite for the mTLS OAuth token exchange pipeline.
@@ -102,6 +105,7 @@ import org.junit.jupiter.api.io.TempDir;
  * payloads across mTLS token exchanges, 401 retry with cert reloading, concurrent refreshes, and
  * atomic token reads.
  */
+@Isolated
 class MtlsPipelineLocalTest {
 
   private static final String TEST_CERT_PATH = "testresources/mtls/test_cert.pem";
@@ -124,6 +128,7 @@ class MtlsPipelineLocalTest {
 
   @BeforeAll
   static void beforeAll() throws Exception {
+    SSLContext.getDefault();
     originalHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
     HttpsURLConnection.setDefaultHostnameVerifier((hostname, session) -> true);
 
@@ -203,12 +208,13 @@ class MtlsPipelineLocalTest {
   }
 
   @AfterEach
-  void tearDown() {
+  void tearDown() throws InterruptedException {
     if (server != null) {
       server.stop(0);
     }
     if (serverExecutor != null) {
       serverExecutor.shutdownNow();
+      serverExecutor.awaitTermination(5, TimeUnit.SECONDS);
     }
   }
 
@@ -446,7 +452,7 @@ class MtlsPipelineLocalTest {
               certsPerRequest.add(session.getPeerCertificates());
 
               // Always read and drain the request body
-              String body = readRequestBody(exchange);
+              readRequestBody(exchange);
 
               int count = requestCount.incrementAndGet();
               if (count == 1) {
@@ -754,6 +760,31 @@ class MtlsPipelineLocalTest {
   @Test
   void testMtlsPipeline_withImpersonation_usesSameCertForStsAndIam(@TempDir Path tempDir)
       throws Exception {
+    Path dynamicCertFile = tempDir.resolve("dynamic_cert.pem");
+    Path dynamicKeyFile = tempDir.resolve("dynamic_key.pem");
+    Path certConfigFile = tempDir.resolve("dynamic_cert_config.json");
+
+    // Write initial cert and key (Cert A) to disk
+    Files.copy(Paths.get(TEST_CERT_PATH), dynamicCertFile);
+    Files.copy(Paths.get(TEST_KEY_PATH), dynamicKeyFile);
+
+    String certConfigContent =
+        "{\n"
+            + "  \"cert_configs\": {\n"
+            + "    \"workload\": {\n"
+            + "      \"cert_path\": \""
+            + dynamicCertFile.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "      \"key_path\": \""
+            + dynamicKeyFile.toString().replace("\\", "\\\\")
+            + "\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(certConfigContent.getBytes(StandardCharsets.UTF_8)),
+        certConfigFile.toString());
+
     AtomicInteger stsCallCount = new AtomicInteger(0);
     AtomicReference<Certificate[]> capturedStsCerts = new AtomicReference<>();
     AtomicReference<Map<String, String>> capturedStsParams = new AtomicReference<>();
@@ -767,6 +798,16 @@ class MtlsPipelineLocalTest {
               HttpsExchange httpsExchange = (HttpsExchange) exchange;
               SSLSession session = httpsExchange.getSSLSession();
               capturedStsCerts.set(session.getPeerCertificates());
+
+              // Rotate certificate on disk (Cert A -> Cert B) immediately after STS reads Cert A
+              // so that if IAM re-read the disk instead of using the pinned transport, it would
+              // present Cert B.
+              Files.copy(
+                  Paths.get(TEST_CERT_2_PATH),
+                  dynamicCertFile,
+                  StandardCopyOption.REPLACE_EXISTING);
+              Files.copy(
+                  Paths.get(TEST_KEY_2_PATH), dynamicKeyFile, StandardCopyOption.REPLACE_EXISTING);
 
               String body = readRequestBody(exchange);
               capturedStsParams.set(parseFormData(body));
@@ -855,8 +896,9 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\":"
-            + " \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\": \""
+            + certConfigFile.toString().replace("\\", "\\\\")
+            + "\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -882,10 +924,12 @@ class MtlsPipelineLocalTest {
     assertTrue(iamCerts.length > 0);
     assertTrue(iamCerts[0] instanceof X509Certificate);
 
-    // Verify both handlers received the exact same client certificate principal
-    assertEquals(
-        ((X509Certificate) stsCerts[0]).getSubjectX500Principal(),
-        ((X509Certificate) iamCerts[0]).getSubjectX500Principal());
+    // Verify both handlers received Cert A (proving IAM stayed on the pinned transport
+    // even though the cert on disk rotated to Cert B inside the STS handler)
+    String stsPrincipal = ((X509Certificate) stsCerts[0]).getSubjectX500Principal().getName();
+    String iamPrincipal = ((X509Certificate) iamCerts[0]).getSubjectX500Principal().getName();
+    assertEquals("CN=1009120726878.apps.googleusercontent.com", stsPrincipal);
+    assertEquals(stsPrincipal, iamPrincipal);
 
     // Asserts IAM handler receives Authorization: Bearer <intermediate_token>
     assertEquals("Bearer intermediate_sts_token_123", capturedIamAuthHeader.get());

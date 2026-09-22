@@ -39,6 +39,7 @@ import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -46,17 +47,15 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.GenericData;
-import com.google.api.client.util.SecurityUtils;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
+import com.google.auth.mtls.X509Provider;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.SequenceInputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.time.Instant;
@@ -296,9 +295,10 @@ final class ITWorkloadIdentityFederationTest {
    * mTLS STS endpoint (https://sts.mtls.googleapis.com/v1/token) and calls GCS.
    */
   @Test
-  void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws IOException {
+  void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws Exception {
     String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
     String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
+    String certConfigPath = getMtlsCertificateConfigPath();
 
     File tokenFile =
         File.createTempFile(
@@ -336,7 +336,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+      certificate.put("certificate_config_location", certConfigPath);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -345,7 +345,12 @@ final class ITWorkloadIdentityFederationTest {
           (IdentityPoolCredentials)
               ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 
-      callGcs(identityPoolCredentials);
+      KeyStore keyStore = new X509Provider(certConfigPath).getKeyStore();
+      HttpTransport mtlsTransport = new MtlsHttpTransportFactory(keyStore).create();
+      callGcs(
+          identityPoolCredentials,
+          mtlsTransport,
+          "https://storage.mtls.googleapis.com/storage/v1/b/");
     } finally {
       tokenFile.delete();
     }
@@ -354,36 +359,16 @@ final class ITWorkloadIdentityFederationTest {
   /**
    * IdentityPoolCredentials (OIDC provider with programmatic mTLS and actor token): Uses the
    * service account to generate Google ID tokens for subject and actor tokens via suppliers.
-   * Configures mTLS transport using MtlsHttpTransportFactory with KeyStore loaded from test
-   * certificate resources. Exchanges the tokens over mTLS STS endpoint and calls GCS.
+   * Configures mTLS transport using MtlsHttpTransportFactory with KeyStore loaded from the mTLS
+   * certificate config. Exchanges the tokens over mTLS STS endpoint and calls GCS.
    */
   @Test
   void identityPoolCredentials_withProgrammaticMtlsAndActorToken() throws Exception {
     IdentityPoolSubjectTokenSupplier tokenSupplier =
-        (ExternalAccountSupplierContext context) -> {
-          try {
-            return generateGoogleIdToken(OIDC_AUDIENCE);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        };
+        context -> generateGoogleIdToken(OIDC_AUDIENCE);
+    IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
 
-    IdentityPoolActorTokenSupplier actorSupplier =
-        (ExternalAccountSupplierContext context) -> {
-          try {
-            return generateGoogleIdToken(OIDC_AUDIENCE);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        };
-
-    KeyStore keyStore;
-    try (InputStream certStream =
-            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
-        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
-        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
-      keyStore = SecurityUtils.createMtlsKeyStore(combined);
-    }
+    KeyStore keyStore = new X509Provider(getMtlsCertificateConfigPath()).getKeyStore();
     HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
     IdentityPoolCredentials credentials =
@@ -401,7 +386,10 @@ final class ITWorkloadIdentityFederationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
 
-    callGcs(credentials);
+    callGcs(
+        credentials,
+        transportFactory.create(),
+        "https://storage.mtls.googleapis.com/storage/v1/b/");
   }
 
   /**
@@ -448,7 +436,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+      certificate.put("certificate_config_location", getMtlsCertificateConfigPath());
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -473,30 +461,10 @@ final class ITWorkloadIdentityFederationTest {
   @Test
   void identityPoolCredentials_directSts_withProgrammaticMtlsAndActorToken() throws Exception {
     IdentityPoolSubjectTokenSupplier tokenSupplier =
-        (ExternalAccountSupplierContext context) -> {
-          try {
-            return generateGoogleIdToken(OIDC_AUDIENCE);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        };
+        context -> generateGoogleIdToken(OIDC_AUDIENCE);
+    IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
 
-    IdentityPoolActorTokenSupplier actorSupplier =
-        (ExternalAccountSupplierContext context) -> {
-          try {
-            return generateGoogleIdToken(OIDC_AUDIENCE);
-          } catch (IOException e) {
-            throw new RuntimeException(e);
-          }
-        };
-
-    KeyStore keyStore;
-    try (InputStream certStream =
-            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
-        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
-        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
-      keyStore = SecurityUtils.createMtlsKeyStore(combined);
-    }
+    KeyStore keyStore = new X509Provider(getMtlsCertificateConfigPath()).getKeyStore();
     HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
     IdentityPoolCredentials credentials =
@@ -616,17 +584,30 @@ final class ITWorkloadIdentityFederationTest {
     return config;
   }
 
+  private String getMtlsCertificateConfigPath() {
+    String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
+    if (certConfigPath != null && !certConfigPath.isEmpty()) {
+      return certConfigPath;
+    }
+    return "testresources/mtls/certificate_config.json";
+  }
+
   private void callGcs(GoogleCredentials credentials) throws IOException {
+    callGcs(credentials, new NetHttpTransport(), "https://storage.googleapis.com/storage/v1/b/");
+  }
+
+  private void callGcs(
+      GoogleCredentials credentials, HttpTransport transport, String storageBaseUrl)
+      throws IOException {
     String bucketName = System.getenv("GCS_BUCKET");
     if (bucketName == null) {
       fail("GCS bucket name not set through GCS_BUCKET env variable.");
     }
 
-    String url = "https://storage.googleapis.com/storage/v1/b/" + bucketName;
+    String url = storageBaseUrl + bucketName;
 
     HttpCredentialsAdapter credentialsAdapter = new HttpCredentialsAdapter(credentials);
-    HttpRequestFactory requestFactory =
-        new NetHttpTransport().createRequestFactory(credentialsAdapter);
+    HttpRequestFactory requestFactory = transport.createRequestFactory(credentialsAdapter);
     HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(url));
 
     JsonObjectParser parser = new JsonObjectParser(GsonFactory.getDefaultInstance());

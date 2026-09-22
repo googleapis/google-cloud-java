@@ -33,11 +33,17 @@ package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
 import com.google.auth.TestUtils;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectStreamClass;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link OAuthException}. */
@@ -146,6 +152,7 @@ final class OAuthExceptionTest {
     assertEquals("Unauthorized", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(401, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
   }
 
   @Test
@@ -162,6 +169,7 @@ final class OAuthExceptionTest {
     assertEquals("Unauthorized", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(401, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
   }
 
   @Test
@@ -175,9 +183,10 @@ final class OAuthExceptionTest {
     OAuthException e = OAuthException.createFromHttpResponseException(httpException);
 
     assertEquals("http_error_502", e.getErrorCode());
-    assertEquals("Bad Gateway", e.getErrorDescription());
+    assertEquals("<html><body>Bad Gateway</body></html>", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(502, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
   }
 
   @Test
@@ -194,6 +203,7 @@ final class OAuthExceptionTest {
     assertEquals("some description", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(400, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
   }
 
   @Test
@@ -212,5 +222,48 @@ final class OAuthExceptionTest {
     assertEquals("Request had invalid authentication credentials.", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(401, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
+  void createFromHttpResponseException_jsonLiteralNull() {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 500,
+                /* statusMessage= */ "Internal Server Error",
+                new HttpHeaders())
+            .setContent("null")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_500", e.getErrorCode());
+    assertNull(e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(500, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
+  void serialVersionUID_matchesReleasedUidAndRoundTrips() throws Exception {
+    assertEquals(
+        -7883352585835000817L,
+        ObjectStreamClass.lookup(OAuthException.class).getSerialVersionUID());
+
+    OAuthException original =
+        new OAuthException("invalid_client", "Certificate mismatch", "https://example.com", 401);
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(original);
+    }
+    OAuthException deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (OAuthException) ois.readObject();
+    }
+    assertEquals("invalid_client", deserialized.getErrorCode());
+    assertEquals("Certificate mismatch", deserialized.getErrorDescription());
+    assertEquals("https://example.com", deserialized.getErrorUri());
+    assertEquals(401, deserialized.getHttpStatusCode());
   }
 }
