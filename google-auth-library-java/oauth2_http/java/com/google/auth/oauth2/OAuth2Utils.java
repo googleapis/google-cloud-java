@@ -58,9 +58,10 @@ import java.io.StringReader;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
+import java.security.Key;
 import java.security.KeyFactory;
 import java.security.KeyStore;
-import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
@@ -335,6 +336,9 @@ public class OAuth2Utils {
    * Returns whether the given throwable or any exception in its causal chain represents a 401
    * Unauthorized error (either an {@link OAuthException} or {@link HttpResponseException} with
    * status code 401).
+   *
+   * @param t the throwable to inspect
+   * @return {@code true} if {@code t} or any cause in its chain is a 401 error
    */
   static boolean isUnauthorizedException(@Nullable Throwable t) {
     while (t != null) {
@@ -355,8 +359,13 @@ public class OAuth2Utils {
   }
 
   /**
-   * Returns whether the certificate chain in {@code newKeyStore} differs from {@code oldKeyStore}.
-   * Used on 401 retry recovery to avoid retrying when the reloaded certificate is unchanged.
+   * Returns whether the certificate chain or private key in {@code newKeyStore} differs from {@code
+   * oldKeyStore}. Used on 401 retry recovery to avoid retrying when the reloaded certificate and
+   * key are unchanged.
+   *
+   * @param oldKeyStore the previously loaded keystore
+   * @param newKeyStore the newly reloaded keystore
+   * @return {@code true} if the certificates or keys differ, or if either keystore cannot be read
    */
   static boolean hasCertificateChanged(
       @Nullable KeyStore oldKeyStore, @Nullable KeyStore newKeyStore) {
@@ -366,13 +375,16 @@ public class OAuth2Utils {
     if (oldKeyStore == null || newKeyStore == null) {
       return true;
     }
-    List<Certificate> oldCerts = getCertificates(oldKeyStore);
-    List<Certificate> newCerts = getCertificates(newKeyStore);
-    return !oldCerts.equals(newCerts);
+    List<Object> oldEntries = getKeyStoreEntries(oldKeyStore);
+    List<Object> newEntries = getKeyStoreEntries(newKeyStore);
+    if (oldEntries == null || newEntries == null) {
+      return true;
+    }
+    return !oldEntries.equals(newEntries);
   }
 
-  private static List<Certificate> getCertificates(KeyStore keyStore) {
-    List<Certificate> certs = new ArrayList<>();
+  private static @Nullable List<Object> getKeyStoreEntries(KeyStore keyStore) {
+    List<Object> entries = new ArrayList<>();
     try {
       Enumeration<String> aliases = keyStore.aliases();
       if (aliases != null) {
@@ -381,19 +393,25 @@ public class OAuth2Utils {
         for (String alias : aliasList) {
           Certificate[] chain = keyStore.getCertificateChain(alias);
           if (chain != null && chain.length > 0) {
-            Collections.addAll(certs, chain);
+            Collections.addAll(entries, chain);
           } else {
             Certificate cert = keyStore.getCertificate(alias);
             if (cert != null) {
-              certs.add(cert);
+              entries.add(cert);
+            }
+          }
+          if (keyStore.isKeyEntry(alias)) {
+            Key key = keyStore.getKey(alias, "".toCharArray());
+            if (key != null) {
+              entries.add(key);
             }
           }
         }
       }
-    } catch (KeyStoreException e) {
-      // If a KeyStore cannot be inspected, treat its certificates as empty
+    } catch (GeneralSecurityException e) {
+      return null;
     }
-    return certs;
+    return entries;
   }
 
   private OAuth2Utils() {}
