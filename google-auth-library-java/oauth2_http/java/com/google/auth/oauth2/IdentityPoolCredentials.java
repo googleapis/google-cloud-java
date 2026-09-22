@@ -392,11 +392,14 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
         this.actorTokenSupplier = credentials.actorTokenSupplier;
+      } else if (credentials.actorTokenSupplier != credentials.subjectTokenSupplier) {
+        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
-      // Note: when credentialSource is present, subjectTokenSupplier and actorTokenSupplier
-      // are intentionally NOT copied here. They will be reconstructed from credentialSource
-      // during build(), which ensures they share the same FileIdentityPoolSubjectTokenSupplier
-      // instance for atomic token reads.
+      // Note: when credentialSource is present and actorTokenSupplier was reconstructed from the
+      // same FileIdentityPoolSubjectTokenSupplier instance as subjectTokenSupplier, neither is
+      // copied here so they can be reconstructed together during build() for atomic token reads.
+      // When a distinct actorTokenSupplier was explicitly provided alongside credentialSource, it
+      // is preserved above so createScoped() / toBuilder() do not drop it.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
     }

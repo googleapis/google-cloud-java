@@ -1377,13 +1377,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void builder_actorTokenWithNonMtlsTransportFactory_succeeds() {
     IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
-    IdentityPoolActorTokenSupplier actorSupplier =
-        new IdentityPoolActorTokenSupplier() {
-          @Override
-          public String getActorToken(ExternalAccountSupplierContext context) {
-            return "token";
-          }
-        };
+    IdentityPoolActorTokenSupplier actorSupplier = context -> "token";
 
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
@@ -1399,6 +1393,12 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertNotNull(credentials);
     assertSame(actorSupplier, credentials.getIdentityPoolActorTokenSupplier());
     assertEquals("actorTokenType", credentials.getActorTokenType());
+
+    IdentityPoolCredentials scoped =
+        credentials.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertSame(actorSupplier, scoped.getIdentityPoolActorTokenSupplier());
+    assertEquals("actorTokenType", scoped.getActorTokenType());
   }
 
   @Test
@@ -1737,7 +1737,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void builder_actorTokenWithNoArgMtlsFactory_succeeds() throws Exception {
+  void builder_actorTokenWithNoArgMtlsFactory_succeeds() {
     MtlsHttpTransportFactory noArgFactory = new MtlsHttpTransportFactory();
     assertFalse(noArgFactory.hasKeyStore());
 
@@ -1752,6 +1752,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setTokenUrl("https://sts.googleapis.com/v1/token")
             .build();
     assertNotNull(credentials);
+    assertSame(noArgFactory, credentials.getTransportFactory());
     assertSame(testActorSupplier, credentials.getIdentityPoolActorTokenSupplier());
     assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
     assertEquals("https://sts.googleapis.com/v1/token", credentials.getTokenUrl());
@@ -1775,30 +1776,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setTokenUrl("https://sts.googleapis.com/v1/token")
             .build();
     assertNotNull(credentials);
+    assertSame(emptyFactory, credentials.getTransportFactory());
     assertSame(testActorSupplier, credentials.getIdentityPoolActorTokenSupplier());
     assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
     assertEquals("https://sts.googleapis.com/v1/token", credentials.getTokenUrl());
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_withPopulatedKeyStore_returnsTrue() throws Exception {
-    KeyStore ks = createPopulatedKeyStore();
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(ks);
-    assertTrue(factory.hasKeyStore());
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_withEmptyKeyStore_returnsFalse() throws Exception {
-    KeyStore emptyKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-    emptyKeyStore.load(null, null);
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(emptyKeyStore);
-    assertFalse(factory.hasKeyStore());
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_noArg_returnsFalse() {
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory();
-    assertFalse(factory.hasKeyStore());
   }
 
   // ==================================================================================
@@ -2729,6 +2710,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertNotNull(cred);
     assertEquals("urn:ietf:params:oauth:token-type:jwt", cred.getActorTokenType());
     assertEquals(MockExternalAccountCredentialsTransport.STS_MTLS_URL, cred.getTokenUrl());
+    assertEquals(
+        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken",
+        cred.getServiceAccountImpersonationUrl());
   }
 
   @Test
@@ -3076,9 +3060,6 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refreshAccessToken_401WithActorTokenAndNonMtlsTransport_bubblesUpWithoutRetry() {
-    MockExternalAccountCredentialsTransportFactory transportFactory =
-        new MockExternalAccountCredentialsTransportFactory();
-
     IdentityPoolCredentials.Builder builder =
         IdentityPoolCredentials.newBuilder()
             .setSubjectTokenSupplier(context -> "testSubjectToken")
@@ -3088,10 +3069,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/p/providers/pr")
             .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
             .setTokenUrl("https://sts.googleapis.com/v1/token")
-            .setHttpTransportFactory(transportFactory);
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 
-    TestableIdentityPoolCredentials testable =
-        new TestableIdentityPoolCredentials(builder, true, false);
+    TestableIdentityPoolCredentials testable = new TestableIdentityPoolCredentials(builder, true);
 
     OAuthException thrown = assertThrows(OAuthException.class, testable::refreshAccessToken);
     assertEquals(401, thrown.getHttpStatusCode());
@@ -3168,6 +3148,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Verify Java serialization/deserialization round-trip preserves actor token config
     IdentityPoolCredentials deserialized = serializeAndDeserialize(idp);
+    assertNull(deserialized.getX509Provider());
+    assertFalse(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
     assertEquals("urn:ietf:params:oauth:token-type:jwt", deserialized.getActorTokenType());
     assertNotNull(deserialized.getIdentityPoolActorTokenSupplier());
     assertSame(
