@@ -87,15 +87,12 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     setCurrentQuery(query);
     this.parameterHandler =
         new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());
-    if (this.parameterCount > 0) {
+    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) != -1) {
       populateInferredParameterTypes();
     }
   }
 
   private void populateInferredParameterTypes() {
-    if (this.currentQuery == null) {
-      return;
-    }
 
     try {
       List<QueryParameter> undeclaredQueryParameters =
@@ -110,17 +107,23 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           }
           index++;
         }
+
+        // populate parameter count
+        this.parameterCount = undeclaredQueryParameters.size();
       }
     } catch (Exception ex) {
       LOG.warning("Could not infer parameter types via dryRun: " + ex.getMessage());
     }
   }
 
-  void setCurrentQuery(String currentQuery) {
+  private void setCurrentQuery(String currentQuery) {
     this.parameterCount = getParameterCount(currentQuery);
     this.currentQuery = currentQuery;
   }
 
+  // Final Parameter count is now getting populated in populateInferredParameterTypes.
+  // This is fallback counter in case the populateInferredParameterTypes counting fails for some
+  // reason.
   private int getParameterCount(String query) {
     LOG.finer("++enter++");
     return (int) query.chars().filter(ch -> ch == POSITIONAL_PARAMETER_CHAR).count();
