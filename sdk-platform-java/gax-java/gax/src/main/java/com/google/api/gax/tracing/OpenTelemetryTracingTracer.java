@@ -52,7 +52,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
-  private @Nullable volatile Span attemptSpan;
+  private volatile @Nullable Span attemptSpan;
   private volatile io.opentelemetry.context.@Nullable Scope scope;
 
   @Override
