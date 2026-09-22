@@ -3155,6 +3155,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
+    Map<BigQueryRpc.Option, Object> fetcherOptions = new java.util.HashMap<>(optionMap(options));
+    if (maxResults != null && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+      fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    }
     ArrowQueryPageFetcher pageFetcher =
         new ArrowQueryPageFetcher(
             completedJob.getJobId(),
@@ -3164,8 +3168,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchemaPojo,
             getOptions(),
             0L,
-            maxResults,
-            optionMap(options));
+            null,
+            fetcherOptions);
 
     Page<FieldValueList> firstPage = pageFetcher.getNextPage();
     List<FieldValueList> firstPageRows =

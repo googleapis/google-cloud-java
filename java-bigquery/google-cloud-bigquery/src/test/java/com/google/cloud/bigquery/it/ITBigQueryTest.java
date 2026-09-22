@@ -7648,6 +7648,62 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testQueryResultsFormatArrowFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+      }
+      assertTrue(batchCount > 1);
+      assertEquals(15000, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
+    long count = 0;
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
+    }
+    assertTrue(pageCount > 1);
+    assertEquals(15000, count);
+  }
+
+  @Test
   void testUniverseDomainWithInvalidUniverseDomain() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
