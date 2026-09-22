@@ -74,6 +74,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -2655,11 +2656,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = (long) firstPageRows.size();
-    if (hasMorePages) {
-      if (content.getMaxResults() != null && initialRowOffset >= content.getMaxResults()) {
-        hasMorePages = false;
-      }
-    }
 
     // Multi-page results: configure ArrowQueryPageFetcher for subsequent tabledata.list calls.
     if (hasMorePages) {
@@ -2669,6 +2665,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
+      Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+      if (content.getMaxResults() != null
+          && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+        fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, content.getMaxResults());
+      }
       NextPageFetcher<FieldValueList> pageFetcher =
           new ArrowQueryPageFetcher(
               jobId,
@@ -2677,8 +2678,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               arrowSchemaPojo,
               getOptions(),
               initialRowOffset,
-              content.getMaxResults(),
-              optionMap(options));
+              null,
+              fetcherOptions);
 
       return newTableResultBuilder(results)
           .setSchema(schema)
@@ -3190,6 +3191,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
+    Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+    if (maxResults != null && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+      fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    }
     ArrowQueryPageFetcher pageFetcher =
         new ArrowQueryPageFetcher(
             completedJob.getJobId(),
@@ -3199,8 +3204,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchemaPojo,
             getOptions(),
             0L,
-            maxResults,
-            optionMap(options));
+            null,
+            fetcherOptions);
 
     Page<FieldValueList> firstPage = pageFetcher.getNextPage();
     List<FieldValueList> firstPageRows =
