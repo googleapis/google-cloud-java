@@ -1650,6 +1650,14 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
    * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
    *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
+   *
    * @param configuration the query configuration
    * @param options query options
    * @return an {@link ArrowQueryResult} streaming Arrow vectors
@@ -1674,6 +1682,14 @@ public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
    *
    * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
    * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
    *
    * @param configuration the query configuration
    * @param jobId the job ID to use
