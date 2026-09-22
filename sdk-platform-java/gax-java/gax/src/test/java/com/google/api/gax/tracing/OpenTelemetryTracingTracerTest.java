@@ -51,6 +51,7 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
 import java.util.Map;
@@ -66,7 +67,7 @@ class OpenTelemetryTracingTracerTest {
   @Mock private Tracer tracer;
   @Mock private SpanBuilder spanBuilder;
   @Mock private Span span;
-  @Mock private io.opentelemetry.context.Scope scope;
+  @Mock private Scope scope;
   private OpenTelemetryTracingTracer openTelemetryTracingTracer;
   private static final String ATTEMPT_SPAN_NAME = "Service/Method/attempt";
 
