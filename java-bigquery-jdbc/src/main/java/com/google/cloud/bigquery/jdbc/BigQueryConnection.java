@@ -686,17 +686,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     try {
 
       if (snapshot.sessionInfo != null) {
-        transactionBeginJobConfig.setConnectionProperties(snapshot.queryProperties);
+        transactionBeginJobConfig.setConnectionProperties(
+            Collections.singletonList(snapshot.sessionInfo));
       } else {
         transactionBeginJobConfig.setCreateSession(true);
         markSessionCreatedByDriver();
       }
       TableResult transactionResult = this.bigQuery.query(transactionBeginJobConfig.build());
-      if (this.sessionState.get().sessionInfo == null
-          && transactionResult != null
-          && transactionResult.getSessionInfo() != null) {
-        initSessionInfo(transactionResult.getSessionInfo().getSessionId());
-      }
+      initSessionInfo(transactionResult.getSessionInfo().getSessionId());
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
@@ -993,7 +990,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     try {
       QueryJobConfiguration transactionRollbackJobConfig =
           QueryJobConfiguration.newBuilder("ROLLBACK TRANSACTION;")
-              .setConnectionProperties(this.sessionState.get().queryProperties)
+              .setConnectionProperties(
+                  Collections.singletonList(this.sessionState.get().sessionInfo))
               .build();
       Job rollbackJob = this.bigQuery.create(JobInfo.of(transactionRollbackJobConfig));
       rollbackJob.waitFor();
@@ -1525,7 +1523,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     try {
       QueryJobConfiguration transactionCommitJobConfig =
           QueryJobConfiguration.newBuilder("COMMIT TRANSACTION;")
-              .setConnectionProperties(this.sessionState.get().queryProperties)
+              .setConnectionProperties(
+                  Collections.singletonList(this.sessionState.get().sessionInfo))
               .build();
       Job commitJob = this.bigQuery.create(JobInfo.of(transactionCommitJobConfig));
       commitJob.waitFor();
@@ -1540,7 +1539,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       LOG.fine("Aborting session on connection close: %s", snapshot.sessionInfo.getValue());
       QueryJobConfiguration abortSessionJobConfig =
           QueryJobConfiguration.newBuilder("CALL BQ.ABORT_SESSION();")
-              .setConnectionProperties(snapshot.queryProperties)
+              .setConnectionProperties(Collections.singletonList(snapshot.sessionInfo))
               .build();
       this.bigQuery.query(abortSessionJobConfig);
     } catch (InterruptedException ex) {
@@ -1694,28 +1693,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     /**
-     * Returns a copy of this state with {@code session_id} set to {@code sessionId}, collapsing any
-     * pre-existing entries that differ only by case.
+     * Returns a copy of this state with {@code session_id} set to {@code sessionId}.
+     *
+     * <p>Only called when no session is active, so {@code queryProperties} cannot already contain a
+     * {@code session_id} entry; duplicate case-variants are rejected at construction by {@code
+     * getSessionPropertyFromQueryProperties}.
      */
     SessionState withSessionId(String sessionId, boolean createdByDriver) {
       ConnectionProperty session =
           ConnectionProperty.newBuilder().setKey(SESSION_ID_KEY).setValue(sessionId).build();
       List<ConnectionProperty> updated = new ArrayList<>(this.queryProperties.size() + 1);
-      boolean replaced = false;
-      for (ConnectionProperty existing : this.queryProperties) {
-        if (isSessionIdKey(existing.getKey())) {
-          if (!replaced) {
-            updated.add(session);
-            replaced = true;
-          }
-          // Any further case-variant duplicates are dropped.
-        } else {
-          updated.add(existing);
-        }
-      }
-      if (!replaced) {
-        updated.add(session);
-      }
+      updated.addAll(this.queryProperties);
+      updated.add(session);
       return new SessionState(session, Collections.unmodifiableList(updated), createdByDriver);
     }
 
