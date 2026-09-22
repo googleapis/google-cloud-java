@@ -46,7 +46,6 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
-import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -601,41 +600,40 @@ public class ImpersonatedCredentials extends GoogleCredentials
   AccessToken refreshAccessToken(@Nullable HttpTransportFactory cycleTransportFactory)
       throws IOException {
     HttpTransportFactory effectiveTransportFactory =
-        cycleTransportFactory != null
-            ? cycleTransportFactory
-            : (this.transportFactory != null
-                ? this.transportFactory
-                : OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+        firstNonNull(cycleTransportFactory, this.transportFactory);
     HttpCredentialsAdapter adapter;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
-      Collection<String> currentScopes =
-          ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
-      if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
-        this.sourceCredentials =
-            this.sourceCredentials.createScoped(
-                Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+      ExternalAccountCredentials externalSource;
+      synchronized (this) {
+        Collection<String> currentScopes =
+            ((ExternalAccountCredentials) this.sourceCredentials).getScopes();
+        if (currentScopes == null || !currentScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE)) {
+          List<String> updatedScopes =
+              currentScopes != null ? new ArrayList<>(currentScopes) : new ArrayList<>();
+          updatedScopes.add(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
+          this.sourceCredentials = this.sourceCredentials.createScoped(updatedScopes);
+        }
+        externalSource = (ExternalAccountCredentials) this.sourceCredentials;
       }
       if (cycleTransportFactory == null) {
         try {
-          this.sourceCredentials.refreshIfExpired();
+          externalSource.refreshIfExpired();
         } catch (IOException e) {
           throw new IOException("Unable to refresh sourceCredentials", e);
         }
-        adapter = new HttpCredentialsAdapter(this.sourceCredentials);
+        adapter = new HttpCredentialsAdapter(externalSource);
       } else {
         AccessToken intermediateAccessToken;
         try {
-          intermediateAccessToken =
-              ((ExternalAccountCredentials) this.sourceCredentials)
-                  .refreshAccessToken(effectiveTransportFactory);
+          intermediateAccessToken = externalSource.refreshAccessToken(effectiveTransportFactory);
         } catch (IOException e) {
           throw new IOException("Unable to refresh sourceCredentials", e);
         }
-        Credentials authCredentials =
+        GoogleCredentials authCredentials =
             new GoogleCredentials(
                 GoogleCredentials.newBuilder()
-                    .setQuotaProjectId(this.sourceCredentials.getQuotaProjectId())
-                    .setUniverseDomain(this.sourceCredentials.getUniverseDomain())) {
+                    .setQuotaProjectId(externalSource.getQuotaProjectId())
+                    .setUniverseDomain(externalSource.getUniverseDomain())) {
               @Override
               public AccessToken refreshAccessToken() {
                 return intermediateAccessToken;
@@ -709,14 +707,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
     try {
       LoggingUtils.logRequest(request, LOGGER_PROVIDER, "Sending request to refresh access token");
       response = request.execute();
-      LoggingUtils.logResponse(
-          response, LOGGER_PROVIDER, "Received response for refresh access token");
     } catch (IOException e) {
       throw new IOException("Error requesting access token", e);
     }
 
     GenericData responseData;
     try {
+      LoggingUtils.logResponse(
+          response, LOGGER_PROVIDER, "Received response for refresh access token");
       responseData = response.parseAs(GenericData.class);
       LoggingUtils.logResponsePayload(
           responseData, LOGGER_PROVIDER, "Response payload for access token");

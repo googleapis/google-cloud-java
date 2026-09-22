@@ -31,7 +31,6 @@
 
 package com.google.auth.oauth2;
 
-import com.google.api.core.InternalExtensionOnly;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExecutableHandler.ExecutableOptions;
 import com.google.common.annotations.VisibleForTesting;
@@ -125,12 +124,11 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     return refreshAccessToken(this.transportFactory);
   }
 
-  @InternalExtensionOnly
   @Override
   AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
-      return impersonated.refreshAccessToken(cycleTransportFactory);
+      return impersonated.refreshAccessToken(null);
     }
 
     String credential = retrieveSubjectToken();

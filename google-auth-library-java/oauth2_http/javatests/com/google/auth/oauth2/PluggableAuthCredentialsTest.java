@@ -226,16 +226,24 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .build();
 
     final ExecutableOptions[] providedOptions = {null};
+    final int[] executableCallCount = {0};
     credential =
         PluggableAuthCredentials.newBuilder(credential)
             .setExecutableHandler(
                 options -> {
+                  executableCallCount[0]++;
                   providedOptions[0] = options;
                   return "pluggableAuthToken";
                 })
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
+    assertEquals(1, executableCallCount[0]);
+
+    // A second refresh while the intermediate STS token is still valid should reuse the cached
+    // sourceCredentials token without re-running the executable.
+    credential.refreshAccessToken();
+    assertEquals(1, executableCallCount[0]);
 
     assertEquals(
         credential.getServiceAccountEmail(),

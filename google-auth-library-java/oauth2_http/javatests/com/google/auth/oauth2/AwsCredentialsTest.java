@@ -165,10 +165,19 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
-    // Validate metrics header is set correctly on the sts request.
+    // Requests 0..2 are the AWS metadata calls from sourceCredentials (no duplicate outer fetch),
+    // request 3 is the STS token exchange, and request 4 is the IAM generateAccessToken call.
+    assertEquals(5, transportFactory.transport.getRequests().size());
+    assertEquals(
+        transportFactory.transport.getStsUrl(),
+        transportFactory.transport.getRequests().get(3).getUrl());
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(3).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, false);
+
+    // A second refresh while the intermediate STS token is still valid should only call IAM.
+    awsCredential.refreshAccessToken();
+    assertEquals(6, transportFactory.transport.getRequests().size());
   }
 
   @Test
@@ -1246,6 +1255,9 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(testCredentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(testCredentials.toString(), deserializedCredentials.toString());
     assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    assertNotNull(deserializedCredentials.getServiceAccountEmail());
+    assertEquals(
+        testCredentials.getServiceAccountEmail(), deserializedCredentials.getServiceAccountEmail());
   }
 
   /**

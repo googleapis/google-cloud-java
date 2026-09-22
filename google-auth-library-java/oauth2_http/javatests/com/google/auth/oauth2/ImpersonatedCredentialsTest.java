@@ -1528,10 +1528,12 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     AccessToken token = impersonated.refreshAccessToken();
     assertEquals("final-iam-token", token.getTokenValue());
 
-    // Verify STS request received cloud-platform scope
+    // Verify STS request preserved existing source scope and added cloud-platform scope
     String stsContent = stsTransport.getRequests().get(0).getContentAsString();
     Map<String, String> stsParams = TestUtils.parseQuery(stsContent);
-    assertEquals(OAuth2Utils.CLOUD_PLATFORM_SCOPE, stsParams.get("scope"));
+    assertEquals(
+        "https://www.googleapis.com/auth/devstorage.read_only " + OAuth2Utils.CLOUD_PLATFORM_SCOPE,
+        stsParams.get("scope"));
 
     // Verify IAM request received the target bigquery scope
     assertTrue(

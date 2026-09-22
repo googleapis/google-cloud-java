@@ -172,4 +172,36 @@ class OAuth2UtilsTest {
     assertFalse(OAuth2Utils.hasCertificateChanged(ks1, ks2));
     assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ksRotated));
   }
+
+  @Test
+  void hasCertificateChanged_sameCertificateDifferentPrivateKey_returnsTrue() throws Exception {
+    byte[] certBytes =
+        java.nio.file.Files.readAllBytes(
+            java.nio.file.Paths.get("testresources/mtls/test_cert.pem"));
+    byte[] key1Bytes =
+        java.nio.file.Files.readAllBytes(
+            java.nio.file.Paths.get("testresources/mtls/test_key.pem"));
+    byte[] key2Bytes =
+        java.nio.file.Files.readAllBytes(
+            java.nio.file.Paths.get("testresources/mtls/test_key_2.pem"));
+
+    KeyStore ks1 =
+        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
+            new java.io.ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(certBytes, "\n".getBytes(), key1Bytes)));
+    KeyStore ks2 =
+        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
+            new java.io.ByteArrayInputStream(
+                com.google.common.primitives.Bytes.concat(certBytes, "\n".getBytes(), key2Bytes)));
+
+    assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ks2));
+  }
+
+  @Test
+  void hasCertificateChanged_uninitializedKeyStore_returnsTrue() throws Exception {
+    KeyStore uninitialized1 = KeyStore.getInstance(KeyStore.getDefaultType());
+    KeyStore uninitialized2 = KeyStore.getInstance(KeyStore.getDefaultType());
+
+    assertTrue(OAuth2Utils.hasCertificateChanged(uninitialized1, uninitialized2));
+  }
 }
