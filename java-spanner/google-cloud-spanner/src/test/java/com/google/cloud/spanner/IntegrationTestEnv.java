@@ -123,10 +123,20 @@ public class IntegrationTestEnv extends ExternalResource {
     config = configClass.newInstance();
   }
 
-  boolean isCloudDevel() {
+  public boolean isCloudDevel() {
     return Objects.equals(
         System.getProperty("spanner.gce.config.server_url"),
         "https://staging-wrenchworks.sandbox.googleapis.com");
+  }
+
+  public boolean isCloudStaging() {
+    return Objects.equals(
+        System.getProperty("spanner.gce.config.server_url"),
+        "https://preprod-spanner.sandbox.googleapis.com");
+  }
+
+  public boolean isCloudDevelOrStaging() {
+    return isCloudDevel() || isCloudStaging();
   }
 
   @Override
