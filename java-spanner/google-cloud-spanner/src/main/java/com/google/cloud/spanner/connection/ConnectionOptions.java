@@ -19,6 +19,7 @@ package com.google.cloud.spanner.connection;
 import static com.google.cloud.spanner.connection.ConnectionProperties.AUTOCOMMIT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.AUTO_CONFIG_EMULATOR;
 import static com.google.cloud.spanner.connection.ConnectionProperties.AUTO_PARTITION_MODE;
+import static com.google.cloud.spanner.connection.ConnectionProperties.CA_CERTIFICATE;
 import static com.google.cloud.spanner.connection.ConnectionProperties.CHANNEL_PROVIDER;
 import static com.google.cloud.spanner.connection.ConnectionProperties.CLIENT_CERTIFICATE;
 import static com.google.cloud.spanner.connection.ConnectionProperties.CLIENT_KEY;
@@ -168,6 +169,7 @@ public class ConnectionOptions {
   static final String DEFAULT_CREDENTIALS = null;
   static final String DEFAULT_CLIENT_CERTIFICATE = null;
   static final String DEFAULT_CLIENT_KEY = null;
+  static final String DEFAULT_CA_CERTIFICATE = null;
   static final String DEFAULT_OAUTH_TOKEN = null;
   static final Integer DEFAULT_MIN_SESSIONS = null;
   static final Integer DEFAULT_MAX_SESSIONS = null;
@@ -241,6 +243,9 @@ public class ConnectionOptions {
 
   /** Client key path to establish mTLS */
   static final String CLIENT_KEY_PROPERTY_NAME = "clientKey";
+
+  /** Server root CA certificate path for SSL/TLS */
+  static final String CA_CERTIFICATE_PROPERTY_NAME = "caCertificate";
 
   /** Name of the 'autocommit' connection property. */
   public static final String AUTOCOMMIT_PROPERTY_NAME = "autocommit";
@@ -1298,6 +1303,10 @@ public class ConnectionOptions {
 
   String getClientCertificateKey() {
     return getInitialConnectionPropertyValue(CLIENT_KEY);
+  }
+
+  String getCaCertificate() {
+    return getInitialConnectionPropertyValue(CA_CERTIFICATE);
   }
 
   /**

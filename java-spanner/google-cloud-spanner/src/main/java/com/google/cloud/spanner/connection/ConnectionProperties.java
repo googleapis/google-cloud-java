@@ -22,6 +22,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.AUTO_BATCH_D
 import static com.google.cloud.spanner.connection.ConnectionOptions.AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.AUTO_PARTITION_MODE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.BATCH_DML_UPDATE_COUNT_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.CA_CERTIFICATE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.CHANNEL_PROVIDER_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.CLIENT_CERTIFICATE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.CLIENT_KEY_PROPERTY_NAME;
@@ -42,6 +43,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTO
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTO_BATCH_DML_UPDATE_COUNT_VERIFICATION;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTO_PARTITION_MODE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_BATCH_DML_UPDATE_COUNT;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CA_CERTIFICATE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CHANNEL_PROVIDER;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CLIENT_CERTIFICATE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CLIENT_KEY;
@@ -327,6 +329,13 @@ public class ConnectionProperties {
           "Specifies the file path to the client private key required for establishing an mTLS"
               + " connection.",
           DEFAULT_CLIENT_KEY,
+          StringValueConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<String> CA_CERTIFICATE =
+      create(
+          CA_CERTIFICATE_PROPERTY_NAME,
+          "Specifies the file path to the server root CA certificate for SSL/TLS validation.",
+          DEFAULT_CA_CERTIFICATE,
           StringValueConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CREDENTIALS_URL =
