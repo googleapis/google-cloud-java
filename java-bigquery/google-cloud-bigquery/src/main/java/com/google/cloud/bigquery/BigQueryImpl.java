@@ -74,6 +74,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -2629,7 +2630,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
-      Map<BigQueryRpc.Option, Object> fetcherOptions = new java.util.HashMap<>(optionMap(options));
+      Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
       if (content.getMaxResults() != null
           && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
         fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, content.getMaxResults());
@@ -3155,7 +3156,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
-    Map<BigQueryRpc.Option, Object> fetcherOptions = new java.util.HashMap<>(optionMap(options));
+    Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
     if (maxResults != null && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
       fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, maxResults);
     }
