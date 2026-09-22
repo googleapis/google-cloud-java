@@ -35,6 +35,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -88,6 +89,32 @@ class OpenTelemetryTracingTracerTest {
 
     verify(tracer).spanBuilder(ATTEMPT_SPAN_NAME);
     verify(spanBuilder).setSpanKind(SpanKind.CLIENT);
+    verify(span).end();
+  }
+
+  @Test
+  void testAttemptSucceeded_withoutAttemptStarted_doesNothing() {
+    openTelemetryTracingTracer.attemptSucceeded();
+    verify(span, never()).end();
+  }
+
+  @Test
+  void testAttemptSucceeded_calledMultipleTimes_endsSpanOnlyOnce() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptSucceeded();
+    openTelemetryTracingTracer.attemptSucceeded();
+
+    verify(span, times(1)).end();
+    verify(scope, times(1)).close();
+  }
+
+  @Test
+  @SuppressWarnings("MustBeClosedChecker")
+  void testAttemptLifecycle_nullScope() {
+    lenient().when(span.makeCurrent()).thenReturn(null);
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptSucceeded();
+
     verify(span).end();
   }
 

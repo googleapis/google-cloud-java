@@ -240,11 +240,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void endAttempt() {
-    Span currentSpan = attemptSpan;
-    if (currentSpan == null) {
-      return;
-    }
-    attemptSpan = null;
+    Span currentSpan = this.attemptSpan;
+    this.attemptSpan = null;
 
     io.opentelemetry.context.Scope currentScope = this.scope.getAndSet(null);
     // Remove the span from the current thread before closing the span.
@@ -253,7 +250,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
         currentScope.close();
       }
     } finally {
-      currentSpan.end();
+      if (currentSpan != null) {
+        currentSpan.end();
+      }
     }
   }
 
