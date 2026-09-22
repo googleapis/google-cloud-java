@@ -41,7 +41,7 @@ class ServiceStubClassComposerTest {
             "",
             1),
         Arguments.of(
-            "ResumableUploadServiceStub",
+            "MediaServiceStub",
             TestProtoLoader.instance().parseShowcaseResumableUpload(),
             "",
             "",

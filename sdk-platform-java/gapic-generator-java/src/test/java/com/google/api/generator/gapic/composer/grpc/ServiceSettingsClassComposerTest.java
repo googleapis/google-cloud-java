@@ -47,7 +47,7 @@ class ServiceSettingsClassComposerTest {
             "v1beta1",
             1),
         Arguments.of(
-            "ResumableUploadServiceSettings",
+            "MediaServiceSettings",
             TestProtoLoader.instance().parseShowcaseResumableUpload(),
             "localhost:7469",
             "v1beta1",
