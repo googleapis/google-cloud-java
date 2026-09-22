@@ -298,6 +298,9 @@ public abstract class ClientContext {
     ApiTracerFactory apiTracerFactory = settings.getTracerFactory();
 
     if (LoggingUtils.isLoggingEnabled()) {
+      // When an attempt ends, CompositeTracer calls tracers in reverse order.
+      // Placing LoggingTracerFactory second ensures logs are written before OpenTelemetry
+      // closes the active trace span.
       apiTracerFactory =
           new CompositeTracerFactory(
               ImmutableList.of(apiTracerFactory, new LoggingTracerFactory()));

@@ -148,6 +148,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+    // Make the span active on the current thread so logs can capture the trace ID.
     this.scope = attemptSpan.makeCurrent();
   }
 
@@ -241,6 +242,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       return;
     }
 
+    // Remove the span from the current thread before closing the span.
     try {
       if (scope != null) {
         scope.close();
