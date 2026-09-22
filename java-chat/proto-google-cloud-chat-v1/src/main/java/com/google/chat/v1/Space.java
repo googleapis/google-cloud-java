@@ -4082,6 +4082,74 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.chat.v1.Space.AccessPermissionSettingOrBuilder getJoinSpaceSettingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the viewSpaceMembershipSetting field is set.
+     */
+    boolean hasViewSpaceMembershipSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The viewSpaceMembershipSetting.
+     */
+    com.google.chat.v1.Space.AccessPermissionSetting getViewSpaceMembershipSetting();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+        getViewSpaceMembershipSettingOrBuilder();
   }
 
   /**
@@ -4252,6 +4320,90 @@ public final class Space extends com.google.protobuf.GeneratedMessage
           : joinSpaceSetting_;
     }
 
+    public static final int VIEW_SPACE_MEMBERSHIP_SETTING_FIELD_NUMBER = 3;
+    private com.google.chat.v1.Space.AccessPermissionSetting viewSpaceMembershipSetting_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the viewSpaceMembershipSetting field is set.
+     */
+    @java.lang.Override
+    public boolean hasViewSpaceMembershipSetting() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The viewSpaceMembershipSetting.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSetting getViewSpaceMembershipSetting() {
+      return viewSpaceMembershipSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : viewSpaceMembershipSetting_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Access permission setting for viewing space membership.
+     * Must be specified together with
+     * `PermissionSettings.view_space_membership` in the update mask and request
+     * body when updating who can view space membership. When granting view
+     * access to a target audience, you must also grant
+     * `PermissionSettings.view_space_membership` to all members in the same
+     * request. To remove an existing target audience (for example, to restrict
+     * view access to space managers or assistant managers only), specify an
+     * empty `AccessPermissionSetting` (with no `principals`).
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+        getViewSpaceMembershipSettingOrBuilder() {
+      return viewSpaceMembershipSetting_ == null
+          ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+          : viewSpaceMembershipSetting_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4272,6 +4424,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getJoinSpaceSetting());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getViewSpaceMembershipSetting());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4287,6 +4442,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getJoinSpaceSetting());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, getViewSpaceMembershipSetting());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4312,6 +4472,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (hasJoinSpaceSetting()) {
         if (!getJoinSpaceSetting().equals(other.getJoinSpaceSetting())) return false;
       }
+      if (hasViewSpaceMembershipSetting() != other.hasViewSpaceMembershipSetting()) return false;
+      if (hasViewSpaceMembershipSetting()) {
+        if (!getViewSpaceMembershipSetting().equals(other.getViewSpaceMembershipSetting()))
+          return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4330,6 +4495,10 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (hasJoinSpaceSetting()) {
         hash = (37 * hash) + JOIN_SPACE_SETTING_FIELD_NUMBER;
         hash = (53 * hash) + getJoinSpaceSetting().hashCode();
+      }
+      if (hasViewSpaceMembershipSetting()) {
+        hash = (37 * hash) + VIEW_SPACE_MEMBERSHIP_SETTING_FIELD_NUMBER;
+        hash = (53 * hash) + getViewSpaceMembershipSetting().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4474,6 +4643,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetDiscoverSpaceSettingFieldBuilder();
           internalGetJoinSpaceSettingFieldBuilder();
+          internalGetViewSpaceMembershipSettingFieldBuilder();
         }
       }
 
@@ -4490,6 +4660,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         if (joinSpaceSettingBuilder_ != null) {
           joinSpaceSettingBuilder_.dispose();
           joinSpaceSettingBuilder_ = null;
+        }
+        viewSpaceMembershipSetting_ = null;
+        if (viewSpaceMembershipSettingBuilder_ != null) {
+          viewSpaceMembershipSettingBuilder_.dispose();
+          viewSpaceMembershipSettingBuilder_ = null;
         }
         return this;
       }
@@ -4542,6 +4717,13 @@ public final class Space extends com.google.protobuf.GeneratedMessage
                   : joinSpaceSettingBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.viewSpaceMembershipSetting_ =
+              viewSpaceMembershipSettingBuilder_ == null
+                  ? viewSpaceMembershipSetting_
+                  : viewSpaceMembershipSettingBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4563,6 +4745,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasJoinSpaceSetting()) {
           mergeJoinSpaceSetting(other.getJoinSpaceSetting());
+        }
+        if (other.hasViewSpaceMembershipSetting()) {
+          mergeViewSpaceMembershipSetting(other.getViewSpaceMembershipSetting());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4605,6 +4790,14 @@ public final class Space extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetViewSpaceMembershipSettingFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5055,6 +5248,296 @@ public final class Space extends com.google.protobuf.GeneratedMessage
           joinSpaceSetting_ = null;
         }
         return joinSpaceSettingBuilder_;
+      }
+
+      private com.google.chat.v1.Space.AccessPermissionSetting viewSpaceMembershipSetting_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          viewSpaceMembershipSettingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the viewSpaceMembershipSetting field is set.
+       */
+      public boolean hasViewSpaceMembershipSetting() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The viewSpaceMembershipSetting.
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting getViewSpaceMembershipSetting() {
+        if (viewSpaceMembershipSettingBuilder_ == null) {
+          return viewSpaceMembershipSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : viewSpaceMembershipSetting_;
+        } else {
+          return viewSpaceMembershipSettingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setViewSpaceMembershipSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (viewSpaceMembershipSettingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          viewSpaceMembershipSetting_ = value;
+        } else {
+          viewSpaceMembershipSettingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setViewSpaceMembershipSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting.Builder builderForValue) {
+        if (viewSpaceMembershipSettingBuilder_ == null) {
+          viewSpaceMembershipSetting_ = builderForValue.build();
+        } else {
+          viewSpaceMembershipSettingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeViewSpaceMembershipSetting(
+          com.google.chat.v1.Space.AccessPermissionSetting value) {
+        if (viewSpaceMembershipSettingBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && viewSpaceMembershipSetting_ != null
+              && viewSpaceMembershipSetting_
+                  != com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()) {
+            getViewSpaceMembershipSettingBuilder().mergeFrom(value);
+          } else {
+            viewSpaceMembershipSetting_ = value;
+          }
+        } else {
+          viewSpaceMembershipSettingBuilder_.mergeFrom(value);
+        }
+        if (viewSpaceMembershipSetting_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearViewSpaceMembershipSetting() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        viewSpaceMembershipSetting_ = null;
+        if (viewSpaceMembershipSettingBuilder_ != null) {
+          viewSpaceMembershipSettingBuilder_.dispose();
+          viewSpaceMembershipSettingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSetting.Builder
+          getViewSpaceMembershipSettingBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetViewSpaceMembershipSettingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.AccessPermissionSettingOrBuilder
+          getViewSpaceMembershipSettingOrBuilder() {
+        if (viewSpaceMembershipSettingBuilder_ != null) {
+          return viewSpaceMembershipSettingBuilder_.getMessageOrBuilder();
+        } else {
+          return viewSpaceMembershipSetting_ == null
+              ? com.google.chat.v1.Space.AccessPermissionSetting.getDefaultInstance()
+              : viewSpaceMembershipSetting_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Access permission setting for viewing space membership.
+       * Must be specified together with
+       * `PermissionSettings.view_space_membership` in the update mask and request
+       * body when updating who can view space membership. When granting view
+       * access to a target audience, you must also grant
+       * `PermissionSettings.view_space_membership` to all members in the same
+       * request. To remove an existing target audience (for example, to restrict
+       * view access to space managers or assistant managers only), specify an
+       * empty `AccessPermissionSetting` (with no `principals`).
+       * </pre>
+       *
+       * <code>
+       * .google.chat.v1.Space.AccessPermissionSetting view_space_membership_setting = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.AccessPermissionSetting,
+              com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+              com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>
+          internalGetViewSpaceMembershipSettingFieldBuilder() {
+        if (viewSpaceMembershipSettingBuilder_ == null) {
+          viewSpaceMembershipSettingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Space.AccessPermissionSetting,
+                  com.google.chat.v1.Space.AccessPermissionSetting.Builder,
+                  com.google.chat.v1.Space.AccessPermissionSettingOrBuilder>(
+                  getViewSpaceMembershipSetting(), getParentForChildren(), isClean());
+          viewSpaceMembershipSetting_ = null;
+        }
+        return viewSpaceMembershipSettingBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.AccessPermissionSettings)
@@ -7289,6 +7772,79 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.chat.v1.Space.PermissionSettingOrBuilder getReplyMessagesOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the viewSpaceMembership field is set.
+     */
+    boolean hasViewSpaceMembership();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The viewSpaceMembership.
+     */
+    com.google.chat.v1.Space.PermissionSetting getViewSpaceMembership();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.chat.v1.Space.PermissionSettingOrBuilder getViewSpaceMembershipOrBuilder();
   }
 
   /**
@@ -7819,6 +8375,95 @@ public final class Space extends com.google.protobuf.GeneratedMessage
           : replyMessages_;
     }
 
+    public static final int VIEW_SPACE_MEMBERSHIP_FIELD_NUMBER = 9;
+    private com.google.chat.v1.Space.PermissionSetting viewSpaceMembership_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the viewSpaceMembership field is set.
+     */
+    @java.lang.Override
+    public boolean hasViewSpaceMembership() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The viewSpaceMembership.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.PermissionSetting getViewSpaceMembership() {
+      return viewSpaceMembership_ == null
+          ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
+          : viewSpaceMembership_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Setting for viewing space membership.
+     * Must be specified together with
+     * `AccessPermissionSettings.view_space_membership_setting` in the update
+     * mask and request body when updating who can view space membership.
+     * When restricting view access to specific roles (for example, space
+     * managers or assistant managers only), specify the desired role
+     * permissions here and provide an empty
+     * `AccessPermissionSettings.view_space_membership_setting` in the same
+     * request. If a target audience is configured in
+     * `AccessPermissionSettings.view_space_membership_setting`, this setting
+     * must be granted to all members.
+     * </pre>
+     *
+     * <code>
+     * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Space.PermissionSettingOrBuilder getViewSpaceMembershipOrBuilder() {
+      return viewSpaceMembership_ == null
+          ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
+          : viewSpaceMembership_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -7857,6 +8502,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000080) != 0)) {
         output.writeMessage(8, getReplyMessages());
       }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        output.writeMessage(9, getViewSpaceMembership());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7892,6 +8540,10 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getReplyMessages());
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(9, getViewSpaceMembership());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7941,6 +8593,10 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (hasReplyMessages()) {
         if (!getReplyMessages().equals(other.getReplyMessages())) return false;
       }
+      if (hasViewSpaceMembership() != other.hasViewSpaceMembership()) return false;
+      if (hasViewSpaceMembership()) {
+        if (!getViewSpaceMembership().equals(other.getViewSpaceMembership())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -7983,6 +8639,10 @@ public final class Space extends com.google.protobuf.GeneratedMessage
       if (hasReplyMessages()) {
         hash = (37 * hash) + REPLY_MESSAGES_FIELD_NUMBER;
         hash = (53 * hash) + getReplyMessages().hashCode();
+      }
+      if (hasViewSpaceMembership()) {
+        hash = (37 * hash) + VIEW_SPACE_MEMBERSHIP_FIELD_NUMBER;
+        hash = (53 * hash) + getViewSpaceMembership().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -8137,6 +8797,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
           internalGetManageWebhooksFieldBuilder();
           internalGetPostMessagesFieldBuilder();
           internalGetReplyMessagesFieldBuilder();
+          internalGetViewSpaceMembershipFieldBuilder();
         }
       }
 
@@ -8183,6 +8844,11 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         if (replyMessagesBuilder_ != null) {
           replyMessagesBuilder_.dispose();
           replyMessagesBuilder_ = null;
+        }
+        viewSpaceMembership_ = null;
+        if (viewSpaceMembershipBuilder_ != null) {
+          viewSpaceMembershipBuilder_.dispose();
+          viewSpaceMembershipBuilder_ = null;
         }
         return this;
       }
@@ -8265,6 +8931,13 @@ public final class Space extends com.google.protobuf.GeneratedMessage
               replyMessagesBuilder_ == null ? replyMessages_ : replyMessagesBuilder_.build();
           to_bitField0_ |= 0x00000080;
         }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.viewSpaceMembership_ =
+              viewSpaceMembershipBuilder_ == null
+                  ? viewSpaceMembership_
+                  : viewSpaceMembershipBuilder_.build();
+          to_bitField0_ |= 0x00000100;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -8303,6 +8976,9 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasReplyMessages()) {
           mergeReplyMessages(other.getReplyMessages());
+        }
+        if (other.hasViewSpaceMembership()) {
+          mergeViewSpaceMembership(other.getViewSpaceMembership());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -8387,6 +9063,13 @@ public final class Space extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000080;
                   break;
                 } // case 66
+              case 74:
+                {
+                  input.readMessage(
+                      internalGetViewSpaceMembershipFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10126,6 +10809,310 @@ public final class Space extends com.google.protobuf.GeneratedMessage
         return replyMessagesBuilder_;
       }
 
+      private com.google.chat.v1.Space.PermissionSetting viewSpaceMembership_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.PermissionSetting,
+              com.google.chat.v1.Space.PermissionSetting.Builder,
+              com.google.chat.v1.Space.PermissionSettingOrBuilder>
+          viewSpaceMembershipBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the viewSpaceMembership field is set.
+       */
+      public boolean hasViewSpaceMembership() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The viewSpaceMembership.
+       */
+      public com.google.chat.v1.Space.PermissionSetting getViewSpaceMembership() {
+        if (viewSpaceMembershipBuilder_ == null) {
+          return viewSpaceMembership_ == null
+              ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
+              : viewSpaceMembership_;
+        } else {
+          return viewSpaceMembershipBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setViewSpaceMembership(com.google.chat.v1.Space.PermissionSetting value) {
+        if (viewSpaceMembershipBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          viewSpaceMembership_ = value;
+        } else {
+          viewSpaceMembershipBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setViewSpaceMembership(
+          com.google.chat.v1.Space.PermissionSetting.Builder builderForValue) {
+        if (viewSpaceMembershipBuilder_ == null) {
+          viewSpaceMembership_ = builderForValue.build();
+        } else {
+          viewSpaceMembershipBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeViewSpaceMembership(com.google.chat.v1.Space.PermissionSetting value) {
+        if (viewSpaceMembershipBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)
+              && viewSpaceMembership_ != null
+              && viewSpaceMembership_
+                  != com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()) {
+            getViewSpaceMembershipBuilder().mergeFrom(value);
+          } else {
+            viewSpaceMembership_ = value;
+          }
+        } else {
+          viewSpaceMembershipBuilder_.mergeFrom(value);
+        }
+        if (viewSpaceMembership_ != null) {
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearViewSpaceMembership() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        viewSpaceMembership_ = null;
+        if (viewSpaceMembershipBuilder_ != null) {
+          viewSpaceMembershipBuilder_.dispose();
+          viewSpaceMembershipBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.PermissionSetting.Builder getViewSpaceMembershipBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return internalGetViewSpaceMembershipFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.chat.v1.Space.PermissionSettingOrBuilder getViewSpaceMembershipOrBuilder() {
+        if (viewSpaceMembershipBuilder_ != null) {
+          return viewSpaceMembershipBuilder_.getMessageOrBuilder();
+        } else {
+          return viewSpaceMembership_ == null
+              ? com.google.chat.v1.Space.PermissionSetting.getDefaultInstance()
+              : viewSpaceMembership_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Setting for viewing space membership.
+       * Must be specified together with
+       * `AccessPermissionSettings.view_space_membership_setting` in the update
+       * mask and request body when updating who can view space membership.
+       * When restricting view access to specific roles (for example, space
+       * managers or assistant managers only), specify the desired role
+       * permissions here and provide an empty
+       * `AccessPermissionSettings.view_space_membership_setting` in the same
+       * request. If a target audience is configured in
+       * `AccessPermissionSettings.view_space_membership_setting`, this setting
+       * must be granted to all members.
+       * </pre>
+       *
+       * <code>
+       * optional .google.chat.v1.Space.PermissionSetting view_space_membership = 9 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.chat.v1.Space.PermissionSetting,
+              com.google.chat.v1.Space.PermissionSetting.Builder,
+              com.google.chat.v1.Space.PermissionSettingOrBuilder>
+          internalGetViewSpaceMembershipFieldBuilder() {
+        if (viewSpaceMembershipBuilder_ == null) {
+          viewSpaceMembershipBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.chat.v1.Space.PermissionSetting,
+                  com.google.chat.v1.Space.PermissionSetting.Builder,
+                  com.google.chat.v1.Space.PermissionSettingOrBuilder>(
+                  getViewSpaceMembership(), getParentForChildren(), isClean());
+          viewSpaceMembership_ = null;
+        }
+        return viewSpaceMembershipBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.chat.v1.Space.PermissionSettings)
     }
 
@@ -11138,7 +12125,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -11159,7 +12146,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
    * @return The type.
    */
   @java.lang.Override
@@ -11245,7 +12232,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=343
    * @return The threaded.
    */
   @java.lang.Override
@@ -13335,7 +14322,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -13356,7 +14343,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -13380,7 +14367,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
      * @return The type.
      */
     @java.lang.Override
@@ -13402,7 +14389,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -13429,7 +14416,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=305
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=331
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13622,7 +14609,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=343
      * @return The threaded.
      */
     @java.lang.Override
@@ -13642,7 +14629,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=343
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -13666,7 +14653,7 @@ public final class Space extends com.google.protobuf.GeneratedMessage
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=317
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=343
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

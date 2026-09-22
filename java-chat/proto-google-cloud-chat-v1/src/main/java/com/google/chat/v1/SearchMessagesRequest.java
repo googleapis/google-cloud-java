@@ -356,6 +356,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * the top five space matches. For example, `space.display_name:Project`
    * searches for messages in the top five spaces that contain the word
    * "Project" in their display names.
+   * - `space.space_type`: The type of the space. Only supports `=`. For
+   * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+   * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+   * and `SPACE`.
    * - `attachment`: Supports the operator `:*` (has any) to check for the
    * presence of attachments. If `attachment:*` is specified, only messages
    * that have at least one attachment are returned.
@@ -375,8 +379,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * - `is_unread()`: Filters out messages that have been read by the calling
    * user.
    *
-   * Using the `space.display_name` filter requires that the calling credentials
-   * include one of the following [authorization
+   * Using the `space.display_name` or the `space.space_type` filters requires
+   * that the calling credentials include one of the following [authorization
    * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
    *
    * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -414,6 +418,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * `space.display_name:Project OR space.display_name:Tasks` returns messages
    * that are in spaces with display names containing either `Project` or
    * `Tasks` or both.
+   * - `space.space_type` supports only the `OR` operator, for example:
+   * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
    * - `annotations.user_mentions.user.name` supports the operators `AND` and
    * `OR`, but not a mix of both. For example:
    * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -503,6 +509,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * the top five space matches. For example, `space.display_name:Project`
    * searches for messages in the top five spaces that contain the word
    * "Project" in their display names.
+   * - `space.space_type`: The type of the space. Only supports `=`. For
+   * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+   * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+   * and `SPACE`.
    * - `attachment`: Supports the operator `:*` (has any) to check for the
    * presence of attachments. If `attachment:*` is specified, only messages
    * that have at least one attachment are returned.
@@ -522,8 +532,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * - `is_unread()`: Filters out messages that have been read by the calling
    * user.
    *
-   * Using the `space.display_name` filter requires that the calling credentials
-   * include one of the following [authorization
+   * Using the `space.display_name` or the `space.space_type` filters requires
+   * that the calling credentials include one of the following [authorization
    * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
    *
    * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -561,6 +571,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
    * `space.display_name:Project OR space.display_name:Tasks` returns messages
    * that are in spaces with display names containing either `Project` or
    * `Tasks` or both.
+   * - `space.space_type` supports only the `OR` operator, for example:
+   * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
    * - `annotations.user_mentions.user.name` supports the operators `AND` and
    * `OR`, but not a mix of both. For example:
    * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -1509,6 +1521,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * the top five space matches. For example, `space.display_name:Project`
      * searches for messages in the top five spaces that contain the word
      * "Project" in their display names.
+     * - `space.space_type`: The type of the space. Only supports `=`. For
+     * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+     * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+     * and `SPACE`.
      * - `attachment`: Supports the operator `:*` (has any) to check for the
      * presence of attachments. If `attachment:*` is specified, only messages
      * that have at least one attachment are returned.
@@ -1528,8 +1544,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * - `is_unread()`: Filters out messages that have been read by the calling
      * user.
      *
-     * Using the `space.display_name` filter requires that the calling credentials
-     * include one of the following [authorization
+     * Using the `space.display_name` or the `space.space_type` filters requires
+     * that the calling credentials include one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *
      * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -1567,6 +1583,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * `space.display_name:Project OR space.display_name:Tasks` returns messages
      * that are in spaces with display names containing either `Project` or
      * `Tasks` or both.
+     * - `space.space_type` supports only the `OR` operator, for example:
+     * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
      * - `annotations.user_mentions.user.name` supports the operators `AND` and
      * `OR`, but not a mix of both. For example:
      * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -1655,6 +1673,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * the top five space matches. For example, `space.display_name:Project`
      * searches for messages in the top five spaces that contain the word
      * "Project" in their display names.
+     * - `space.space_type`: The type of the space. Only supports `=`. For
+     * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+     * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+     * and `SPACE`.
      * - `attachment`: Supports the operator `:*` (has any) to check for the
      * presence of attachments. If `attachment:*` is specified, only messages
      * that have at least one attachment are returned.
@@ -1674,8 +1696,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * - `is_unread()`: Filters out messages that have been read by the calling
      * user.
      *
-     * Using the `space.display_name` filter requires that the calling credentials
-     * include one of the following [authorization
+     * Using the `space.display_name` or the `space.space_type` filters requires
+     * that the calling credentials include one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *
      * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -1713,6 +1735,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * `space.display_name:Project OR space.display_name:Tasks` returns messages
      * that are in spaces with display names containing either `Project` or
      * `Tasks` or both.
+     * - `space.space_type` supports only the `OR` operator, for example:
+     * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
      * - `annotations.user_mentions.user.name` supports the operators `AND` and
      * `OR`, but not a mix of both. For example:
      * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -1801,6 +1825,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * the top five space matches. For example, `space.display_name:Project`
      * searches for messages in the top five spaces that contain the word
      * "Project" in their display names.
+     * - `space.space_type`: The type of the space. Only supports `=`. For
+     * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+     * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+     * and `SPACE`.
      * - `attachment`: Supports the operator `:*` (has any) to check for the
      * presence of attachments. If `attachment:*` is specified, only messages
      * that have at least one attachment are returned.
@@ -1820,8 +1848,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * - `is_unread()`: Filters out messages that have been read by the calling
      * user.
      *
-     * Using the `space.display_name` filter requires that the calling credentials
-     * include one of the following [authorization
+     * Using the `space.display_name` or the `space.space_type` filters requires
+     * that the calling credentials include one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *
      * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -1859,6 +1887,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * `space.display_name:Project OR space.display_name:Tasks` returns messages
      * that are in spaces with display names containing either `Project` or
      * `Tasks` or both.
+     * - `space.space_type` supports only the `OR` operator, for example:
+     * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
      * - `annotations.user_mentions.user.name` supports the operators `AND` and
      * `OR`, but not a mix of both. For example:
      * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -1946,6 +1976,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * the top five space matches. For example, `space.display_name:Project`
      * searches for messages in the top five spaces that contain the word
      * "Project" in their display names.
+     * - `space.space_type`: The type of the space. Only supports `=`. For
+     * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+     * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+     * and `SPACE`.
      * - `attachment`: Supports the operator `:*` (has any) to check for the
      * presence of attachments. If `attachment:*` is specified, only messages
      * that have at least one attachment are returned.
@@ -1965,8 +1999,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * - `is_unread()`: Filters out messages that have been read by the calling
      * user.
      *
-     * Using the `space.display_name` filter requires that the calling credentials
-     * include one of the following [authorization
+     * Using the `space.display_name` or the `space.space_type` filters requires
+     * that the calling credentials include one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *
      * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -2004,6 +2038,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * `space.display_name:Project OR space.display_name:Tasks` returns messages
      * that are in spaces with display names containing either `Project` or
      * `Tasks` or both.
+     * - `space.space_type` supports only the `OR` operator, for example:
+     * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
      * - `annotations.user_mentions.user.name` supports the operators `AND` and
      * `OR`, but not a mix of both. For example:
      * `annotations.user_mentions.user.name:"users/1234567890" AND
@@ -2087,6 +2123,10 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * the top five space matches. For example, `space.display_name:Project`
      * searches for messages in the top five spaces that contain the word
      * "Project" in their display names.
+     * - `space.space_type`: The type of the space. Only supports `=`. For
+     * example, `space.space_type="DIRECT_MESSAGE"` returns only messages from
+     * direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`,
+     * and `SPACE`.
      * - `attachment`: Supports the operator `:*` (has any) to check for the
      * presence of attachments. If `attachment:*` is specified, only messages
      * that have at least one attachment are returned.
@@ -2106,8 +2146,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * - `is_unread()`: Filters out messages that have been read by the calling
      * user.
      *
-     * Using the `space.display_name` filter requires that the calling credentials
-     * include one of the following [authorization
+     * Using the `space.display_name` or the `space.space_type` filters requires
+     * that the calling credentials include one of the following [authorization
      * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
      *
      * - `https://www.googleapis.com/auth/chat.spaces.readonly`
@@ -2145,6 +2185,8 @@ public final class SearchMessagesRequest extends com.google.protobuf.GeneratedMe
      * `space.display_name:Project OR space.display_name:Tasks` returns messages
      * that are in spaces with display names containing either `Project` or
      * `Tasks` or both.
+     * - `space.space_type` supports only the `OR` operator, for example:
+     * `space.space_type = "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`.
      * - `annotations.user_mentions.user.name` supports the operators `AND` and
      * `OR`, but not a mix of both. For example:
      * `annotations.user_mentions.user.name:"users/1234567890" AND

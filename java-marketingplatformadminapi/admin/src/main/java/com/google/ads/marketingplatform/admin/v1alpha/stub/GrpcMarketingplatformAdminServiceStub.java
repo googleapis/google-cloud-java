@@ -16,24 +16,47 @@
 
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAdminAccessBindingsPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupMembersPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupsPagedResponse;
 
+import com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding;
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
 import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UserGroup;
+import com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -171,6 +194,178 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetUserGroupRequest, UserGroup>
+      getUserGroupMethodDescriptor =
+          MethodDescriptor.<GetUserGroupRequest, UserGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/GetUserGroup")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetUserGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListUserGroupsRequest, ListUserGroupsResponse>
+      listUserGroupsMethodDescriptor =
+          MethodDescriptor.<ListUserGroupsRequest, ListUserGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ListUserGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUserGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUserGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateUserGroupRequest, UserGroup>
+      createUserGroupMethodDescriptor =
+          MethodDescriptor.<CreateUserGroupRequest, UserGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/CreateUserGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateUserGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateUserGroupRequest, UserGroup>
+      updateUserGroupMethodDescriptor =
+          MethodDescriptor.<UpdateUserGroupRequest, UserGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/UpdateUserGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateUserGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteUserGroupRequest, Empty>
+      deleteUserGroupMethodDescriptor =
+          MethodDescriptor.<DeleteUserGroupRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/DeleteUserGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUserGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetUserGroupMemberRequest, UserGroupMember>
+      getUserGroupMemberMethodDescriptor =
+          MethodDescriptor.<GetUserGroupMemberRequest, UserGroupMember>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/GetUserGroupMember")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetUserGroupMemberRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroupMember.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListUserGroupMembersRequest, ListUserGroupMembersResponse>
+      listUserGroupMembersMethodDescriptor =
+          MethodDescriptor.<ListUserGroupMembersRequest, ListUserGroupMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ListUserGroupMembers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUserGroupMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUserGroupMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberMethodDescriptor =
+          MethodDescriptor.<CreateUserGroupMemberRequest, UserGroupMember>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/CreateUserGroupMember")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateUserGroupMemberRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroupMember.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberMethodDescriptor =
+          MethodDescriptor.<UpdateUserGroupMemberRequest, UserGroupMember>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/UpdateUserGroupMember")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateUserGroupMemberRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserGroupMember.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteUserGroupMemberRequest, Empty>
+      deleteUserGroupMemberMethodDescriptor =
+          MethodDescriptor.<DeleteUserGroupMemberRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/DeleteUserGroupMember")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUserGroupMemberRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingMethodDescriptor =
+          MethodDescriptor.<GetAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/GetAdminAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAdminAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdminAccessBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>
+      listAdminAccessBindingsMethodDescriptor =
+          MethodDescriptor
+              .<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/ListAdminAccessBindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAdminAccessBindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAdminAccessBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingMethodDescriptor =
+          MethodDescriptor.<CreateAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/CreateAdminAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAdminAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdminAccessBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingMethodDescriptor =
+          MethodDescriptor.<UpdateAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.marketingplatform.admin.v1alpha.MarketingplatformAdminService/UpdateAdminAccessBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAdminAccessBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AdminAccessBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetOrganizationRequest, Organization> getOrganizationCallable;
   private final UnaryCallable<ListOrganizationsRequest, ListOrganizationsResponse>
       listOrganizationsCallable;
@@ -192,6 +387,34 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
       setPropertyServiceLevelCallable;
   private final UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
       reportPropertyUsageCallable;
+  private final UnaryCallable<GetUserGroupRequest, UserGroup> getUserGroupCallable;
+  private final UnaryCallable<ListUserGroupsRequest, ListUserGroupsResponse> listUserGroupsCallable;
+  private final UnaryCallable<ListUserGroupsRequest, ListUserGroupsPagedResponse>
+      listUserGroupsPagedCallable;
+  private final UnaryCallable<CreateUserGroupRequest, UserGroup> createUserGroupCallable;
+  private final UnaryCallable<UpdateUserGroupRequest, UserGroup> updateUserGroupCallable;
+  private final UnaryCallable<DeleteUserGroupRequest, Empty> deleteUserGroupCallable;
+  private final UnaryCallable<GetUserGroupMemberRequest, UserGroupMember>
+      getUserGroupMemberCallable;
+  private final UnaryCallable<ListUserGroupMembersRequest, ListUserGroupMembersResponse>
+      listUserGroupMembersCallable;
+  private final UnaryCallable<ListUserGroupMembersRequest, ListUserGroupMembersPagedResponse>
+      listUserGroupMembersPagedCallable;
+  private final UnaryCallable<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberCallable;
+  private final UnaryCallable<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberCallable;
+  private final UnaryCallable<DeleteUserGroupMemberRequest, Empty> deleteUserGroupMemberCallable;
+  private final UnaryCallable<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingCallable;
+  private final UnaryCallable<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>
+      listAdminAccessBindingsCallable;
+  private final UnaryCallable<ListAdminAccessBindingsRequest, ListAdminAccessBindingsPagedResponse>
+      listAdminAccessBindingsPagedCallable;
+  private final UnaryCallable<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingCallable;
+  private final UnaryCallable<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -333,6 +556,171 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetUserGroupRequest, UserGroup> getUserGroupTransportSettings =
+        GrpcCallSettings.<GetUserGroupRequest, UserGroup>newBuilder()
+            .setMethodDescriptor(getUserGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListUserGroupsRequest, ListUserGroupsResponse>
+        listUserGroupsTransportSettings =
+            GrpcCallSettings.<ListUserGroupsRequest, ListUserGroupsResponse>newBuilder()
+                .setMethodDescriptor(listUserGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateUserGroupRequest, UserGroup> createUserGroupTransportSettings =
+        GrpcCallSettings.<CreateUserGroupRequest, UserGroup>newBuilder()
+            .setMethodDescriptor(createUserGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateUserGroupRequest, UserGroup> updateUserGroupTransportSettings =
+        GrpcCallSettings.<UpdateUserGroupRequest, UserGroup>newBuilder()
+            .setMethodDescriptor(updateUserGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("user_group.name", String.valueOf(request.getUserGroup().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteUserGroupRequest, Empty> deleteUserGroupTransportSettings =
+        GrpcCallSettings.<DeleteUserGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteUserGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetUserGroupMemberRequest, UserGroupMember>
+        getUserGroupMemberTransportSettings =
+            GrpcCallSettings.<GetUserGroupMemberRequest, UserGroupMember>newBuilder()
+                .setMethodDescriptor(getUserGroupMemberMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListUserGroupMembersRequest, ListUserGroupMembersResponse>
+        listUserGroupMembersTransportSettings =
+            GrpcCallSettings.<ListUserGroupMembersRequest, ListUserGroupMembersResponse>newBuilder()
+                .setMethodDescriptor(listUserGroupMembersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateUserGroupMemberRequest, UserGroupMember>
+        createUserGroupMemberTransportSettings =
+            GrpcCallSettings.<CreateUserGroupMemberRequest, UserGroupMember>newBuilder()
+                .setMethodDescriptor(createUserGroupMemberMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateUserGroupMemberRequest, UserGroupMember>
+        updateUserGroupMemberTransportSettings =
+            GrpcCallSettings.<UpdateUserGroupMemberRequest, UserGroupMember>newBuilder()
+                .setMethodDescriptor(updateUserGroupMemberMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "user_group_member.name",
+                          String.valueOf(request.getUserGroupMember().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteUserGroupMemberRequest, Empty> deleteUserGroupMemberTransportSettings =
+        GrpcCallSettings.<DeleteUserGroupMemberRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteUserGroupMemberMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetAdminAccessBindingRequest, AdminAccessBinding>
+        getAdminAccessBindingTransportSettings =
+            GrpcCallSettings.<GetAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+                .setMethodDescriptor(getAdminAccessBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>
+        listAdminAccessBindingsTransportSettings =
+            GrpcCallSettings
+                .<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>newBuilder()
+                .setMethodDescriptor(listAdminAccessBindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateAdminAccessBindingRequest, AdminAccessBinding>
+        createAdminAccessBindingTransportSettings =
+            GrpcCallSettings.<CreateAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+                .setMethodDescriptor(createAdminAccessBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+        updateAdminAccessBindingTransportSettings =
+            GrpcCallSettings.<UpdateAdminAccessBindingRequest, AdminAccessBinding>newBuilder()
+                .setMethodDescriptor(updateAdminAccessBindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "admin_access_binding.name",
+                          String.valueOf(request.getAdminAccessBinding().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getOrganizationCallable =
         callableFactory.createUnaryCallable(
@@ -381,6 +769,79 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
         callableFactory.createUnaryCallable(
             reportPropertyUsageTransportSettings,
             settings.reportPropertyUsageSettings(),
+            clientContext);
+    this.getUserGroupCallable =
+        callableFactory.createUnaryCallable(
+            getUserGroupTransportSettings, settings.getUserGroupSettings(), clientContext);
+    this.listUserGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listUserGroupsTransportSettings, settings.listUserGroupsSettings(), clientContext);
+    this.listUserGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserGroupsTransportSettings, settings.listUserGroupsSettings(), clientContext);
+    this.createUserGroupCallable =
+        callableFactory.createUnaryCallable(
+            createUserGroupTransportSettings, settings.createUserGroupSettings(), clientContext);
+    this.updateUserGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateUserGroupTransportSettings, settings.updateUserGroupSettings(), clientContext);
+    this.deleteUserGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserGroupTransportSettings, settings.deleteUserGroupSettings(), clientContext);
+    this.getUserGroupMemberCallable =
+        callableFactory.createUnaryCallable(
+            getUserGroupMemberTransportSettings,
+            settings.getUserGroupMemberSettings(),
+            clientContext);
+    this.listUserGroupMembersCallable =
+        callableFactory.createUnaryCallable(
+            listUserGroupMembersTransportSettings,
+            settings.listUserGroupMembersSettings(),
+            clientContext);
+    this.listUserGroupMembersPagedCallable =
+        callableFactory.createPagedCallable(
+            listUserGroupMembersTransportSettings,
+            settings.listUserGroupMembersSettings(),
+            clientContext);
+    this.createUserGroupMemberCallable =
+        callableFactory.createUnaryCallable(
+            createUserGroupMemberTransportSettings,
+            settings.createUserGroupMemberSettings(),
+            clientContext);
+    this.updateUserGroupMemberCallable =
+        callableFactory.createUnaryCallable(
+            updateUserGroupMemberTransportSettings,
+            settings.updateUserGroupMemberSettings(),
+            clientContext);
+    this.deleteUserGroupMemberCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserGroupMemberTransportSettings,
+            settings.deleteUserGroupMemberSettings(),
+            clientContext);
+    this.getAdminAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            getAdminAccessBindingTransportSettings,
+            settings.getAdminAccessBindingSettings(),
+            clientContext);
+    this.listAdminAccessBindingsCallable =
+        callableFactory.createUnaryCallable(
+            listAdminAccessBindingsTransportSettings,
+            settings.listAdminAccessBindingsSettings(),
+            clientContext);
+    this.listAdminAccessBindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAdminAccessBindingsTransportSettings,
+            settings.listAdminAccessBindingsSettings(),
+            clientContext);
+    this.createAdminAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            createAdminAccessBindingTransportSettings,
+            settings.createAdminAccessBindingSettings(),
+            clientContext);
+    this.updateAdminAccessBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateAdminAccessBindingTransportSettings,
+            settings.updateAdminAccessBindingSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -449,6 +910,101 @@ public class GrpcMarketingplatformAdminServiceStub extends MarketingplatformAdmi
   public UnaryCallable<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
       reportPropertyUsageCallable() {
     return reportPropertyUsageCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserGroupRequest, UserGroup> getUserGroupCallable() {
+    return getUserGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserGroupsRequest, ListUserGroupsResponse> listUserGroupsCallable() {
+    return listUserGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserGroupsRequest, ListUserGroupsPagedResponse>
+      listUserGroupsPagedCallable() {
+    return listUserGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserGroupRequest, UserGroup> createUserGroupCallable() {
+    return createUserGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserGroupRequest, UserGroup> updateUserGroupCallable() {
+    return updateUserGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserGroupRequest, Empty> deleteUserGroupCallable() {
+    return deleteUserGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserGroupMemberRequest, UserGroupMember> getUserGroupMemberCallable() {
+    return getUserGroupMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserGroupMembersRequest, ListUserGroupMembersResponse>
+      listUserGroupMembersCallable() {
+    return listUserGroupMembersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserGroupMembersRequest, ListUserGroupMembersPagedResponse>
+      listUserGroupMembersPagedCallable() {
+    return listUserGroupMembersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberCallable() {
+    return createUserGroupMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberCallable() {
+    return updateUserGroupMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserGroupMemberRequest, Empty> deleteUserGroupMemberCallable() {
+    return deleteUserGroupMemberCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingCallable() {
+    return getAdminAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>
+      listAdminAccessBindingsCallable() {
+    return listAdminAccessBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAdminAccessBindingsRequest, ListAdminAccessBindingsPagedResponse>
+      listAdminAccessBindingsPagedCallable() {
+    return listAdminAccessBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingCallable() {
+    return createAdminAccessBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingCallable() {
+    return updateAdminAccessBindingCallable;
   }
 
   @Override

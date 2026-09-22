@@ -53,6 +53,10 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1_CreateConversationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_UpdateConversationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_UpdateConversationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_fieldAccessorTable;
@@ -80,58 +84,63 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "6google/cloud/geminidataanalytics/v1/conversation.proto\022#google.cloud.geminidat"
           + "aanalytics.v1\032\037google/api/field_behavior"
-          + ".proto\032\033google/api/field_info.proto\032\031goo"
-          + "gle/api/resource.proto\032\037google/protobuf/timestamp.proto\"\306\004\n"
+          + ".proto\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\247\004\n"
           + "\014Conversation\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\001\340A\010\022\023\n"
           + "\006agents\030\002 \003(\tB\003\340A\002\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0227\n"
           + "\016last_used_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022R\n"
-          + "\006labels\030\t \003"
-          + "(\0132=.google.cloud.geminidataanalytics.v1.Conversation.LabelsEntryB\003\340A\001\022?\n"
+          + "\006labels\030\t \003(\0132=.g"
+          + "oogle.cloud.geminidataanalytics.v1.Conversation.LabelsEntryB\003\340A\001\022\022\n"
+          + "\005title\030\006 \001(\tB\003\340A\001\022?\n"
           + "\007kms_key\030\n"
           + " \001(\tB)\340A\001\372A#\n"
-          + "!cloudkms.googleapis.com/CryptoKeyH\000\210\001\001\022\037\n\r"
-          + "memory_paused\030\013 \001(\010B\003\340A\001H\001\210\001\001\032-\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\000\210\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\230\001\352A\224\001\n"
-          + "/geminidataanalytics.googleapis.com/Conversation\022Dproject"
-          + "s/{project}/locations/{location}/conversations/{conversation}*\r"
+          + "/geminidataanalytics.googleapis.com/Conversation\022Dprojects/{project}/locatio"
+          + "ns/{location}/conversations/{conversation}*\r"
           + "conversations2\014conversationB\n\n"
-          + "\010_kms_keyB\020\n"
-          + "\016_memory_paused\"\361\001\n"
+          + "\010_kms_key\"\361\001\n"
           + "\031CreateConversationRequest\022G\n"
           + "\006parent\030\001 \001("
           + "\tB7\340A\002\372A1\022/geminidataanalytics.googleapis.com/Conversation\022\034\n"
           + "\017conversation_id\030\002 \001(\tB\003\340A\001\022L\n"
-          + "\014conversation\030\003 \001(\01321.go"
-          + "ogle.cloud.geminidataanalytics.v1.ConversationB\003\340A\002\022\037\n\n"
-          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"_\n"
+          + "\014conversation\030\003 \001(\01321"
+          + ".google.cloud.geminidataanalytics.v1.ConversationB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\300\001\n"
+          + "\031UpdateConversationRequest\022L\n"
+          + "\014conversation\030\001"
+          + " \001(\01321.google.cloud.geminidataanalytics.v1.ConversationB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"_\n"
           + "\026GetConversationRequest\022E\n"
           + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
           + "/geminidataanalytics.googleapis.com/Conversation\"\251\001\n"
           + "\030ListConversationsRequest\022G\n"
-          + "\006parent\030\001 \001(\tB7\340A\002\372A1\022/gemi"
-          + "nidataanalytics.googleapis.com/Conversation\022\026\n"
+          + "\006parent\030\001 \001(\tB7\340A\002\372A1\022/gemini"
+          + "dataanalytics.googleapis.com/Conversation\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"~\n"
           + "\031ListConversationsResponse\022H\n\r"
-          + "conversations\030\001"
-          + " \003(\01321.google.cloud.geminidataanalytics.v1.Conversation\022\027\n"
+          + "conversations\030\001 "
+          + "\003(\01321.google.cloud.geminidataanalytics.v1.Conversation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"b\n"
           + "\031DeleteConversationRequest\022E\n"
           + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
           + "/geminidataanalytics.googleapis.com/ConversationB\241\003\n"
-          + "\'com.google.cloud.geminidataanalytics.v1B\021ConversationP"
-          + "rotoP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;gemi"
-          + "nidataanalyticspb\252\002#Google.Cloud.GeminiD"
-          + "ataAnalytics.V1\312\002#Google\\Cloud\\GeminiDat"
-          + "aAnalytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1\352A\217\001\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locati"
-          + "ons/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}*\n"
+          + "\'com.google.cloud.geminidataanalytics.v1B\021ConversationPro"
+          + "toP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;gemini"
+          + "dataanalyticspb\252\002#Google.Cloud.GeminiDat"
+          + "aAnalytics.V1\312\002#Google\\Cloud\\GeminiDataA"
+          + "nalytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1\352A\217\001\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/location"
+          + "s/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}*\n"
           + "cryptoKeys2\tcryptoKeyb\006proto3"
     };
     descriptor =
@@ -141,6 +150,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_geminidataanalytics_v1_Conversation_descriptor =
@@ -149,7 +159,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_Conversation_descriptor,
             new java.lang.String[] {
-              "Name", "Agents", "CreateTime", "LastUsedTime", "Labels", "KmsKey", "MemoryPaused",
+              "Name", "Agents", "CreateTime", "LastUsedTime", "Labels", "Title", "KmsKey",
             });
     internal_static_google_cloud_geminidataanalytics_v1_Conversation_LabelsEntry_descriptor =
         internal_static_google_cloud_geminidataanalytics_v1_Conversation_descriptor.getNestedType(
@@ -168,8 +178,16 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Parent", "ConversationId", "Conversation", "RequestId",
             });
-    internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_descriptor =
+    internal_static_google_cloud_geminidataanalytics_v1_UpdateConversationRequest_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_cloud_geminidataanalytics_v1_UpdateConversationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_UpdateConversationRequest_descriptor,
+            new java.lang.String[] {
+              "Conversation", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_descriptor =
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_GetConversationRequest_descriptor,
@@ -177,7 +195,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_geminidataanalytics_v1_ListConversationsRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_geminidataanalytics_v1_ListConversationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_ListConversationsRequest_descriptor,
@@ -185,7 +203,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_geminidataanalytics_v1_ListConversationsResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_geminidataanalytics_v1_ListConversationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_ListConversationsResponse_descriptor,
@@ -193,7 +211,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
               "Conversations", "NextPageToken",
             });
     internal_static_google_cloud_geminidataanalytics_v1_DeleteConversationRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_geminidataanalytics_v1_DeleteConversationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_DeleteConversationRequest_descriptor,
@@ -204,6 +222,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

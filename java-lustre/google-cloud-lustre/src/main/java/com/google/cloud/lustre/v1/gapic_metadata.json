@@ -10,14 +10,29 @@
         "grpc": {
           "libraryClient": "LustreClient",
           "rpcs": {
+            "CreateDirectoryPolicy": {
+              "methods": ["createDirectoryPolicyAsync", "createDirectoryPolicyAsync", "createDirectoryPolicyAsync", "createDirectoryPolicyOperationCallable", "createDirectoryPolicyCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "CreateMirror": {
+              "methods": ["createMirrorAsync", "createMirrorAsync", "createMirrorAsync", "createMirrorOperationCallable", "createMirrorCallable"]
+            },
+            "DeleteDirectoryPolicy": {
+              "methods": ["deleteDirectoryPolicyAsync", "deleteDirectoryPolicyAsync", "deleteDirectoryPolicyAsync", "deleteDirectoryPolicyOperationCallable", "deleteDirectoryPolicyCallable"]
             },
             "DeleteInstance": {
               "methods": ["deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceAsync", "deleteInstanceOperationCallable", "deleteInstanceCallable"]
             },
+            "DeleteMirror": {
+              "methods": ["deleteMirrorAsync", "deleteMirrorAsync", "deleteMirrorAsync", "deleteMirrorOperationCallable", "deleteMirrorCallable"]
+            },
             "ExportData": {
               "methods": ["exportDataAsync", "exportDataOperationCallable", "exportDataCallable"]
+            },
+            "GetDirectoryPolicy": {
+              "methods": ["getDirectoryPolicy", "getDirectoryPolicy", "getDirectoryPolicy", "getDirectoryPolicyCallable"]
             },
             "GetInstance": {
               "methods": ["getInstance", "getInstance", "getInstance", "getInstanceCallable"]
@@ -25,8 +40,14 @@
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
+            "GetMirror": {
+              "methods": ["getMirror", "getMirror", "getMirror", "getMirrorCallable"]
+            },
             "ImportData": {
               "methods": ["importDataAsync", "importDataAsync", "importDataAsync", "importDataOperationCallable", "importDataCallable"]
+            },
+            "ListDirectoryPolicies": {
+              "methods": ["listDirectoryPolicies", "listDirectoryPolicies", "listDirectoryPolicies", "listDirectoryPoliciesPagedCallable", "listDirectoryPoliciesCallable"]
             },
             "ListInstances": {
               "methods": ["listInstances", "listInstances", "listInstances", "listInstancesPagedCallable", "listInstancesCallable"]
@@ -34,8 +55,17 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "ListMirrors": {
+              "methods": ["listMirrors", "listMirrors", "listMirrors", "listMirrorsPagedCallable", "listMirrorsCallable"]
+            },
+            "RescheduleMaintenance": {
+              "methods": ["rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceAsync", "rescheduleMaintenanceOperationCallable", "rescheduleMaintenanceCallable"]
+            },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]
+            },
+            "UpdateMirror": {
+              "methods": ["updateMirrorAsync", "updateMirrorAsync", "updateMirrorOperationCallable", "updateMirrorCallable"]
             }
           }
         }

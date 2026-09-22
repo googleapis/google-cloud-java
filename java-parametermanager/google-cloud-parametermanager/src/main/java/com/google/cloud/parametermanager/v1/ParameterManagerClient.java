@@ -280,8 +280,219 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListTemplates</td>
+ *      <td><p> Lists Templates in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTemplates(ListTemplatesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTemplates(LocationName parent)
+ *           <li><p> listTemplates(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTemplatesPagedCallable()
+ *           <li><p> listTemplatesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTemplate</td>
+ *      <td><p> Gets details of a single Template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTemplate(GetTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTemplate(TemplateName name)
+ *           <li><p> getTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTemplate</td>
+ *      <td><p> Creates a new Template in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTemplate(CreateTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTemplate(LocationName parent, Template template, String templateId)
+ *           <li><p> createTemplate(String parent, Template template, String templateId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTemplate</td>
+ *      <td><p> Updates a single Template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTemplate(UpdateTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateTemplate(Template template, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTemplate</td>
+ *      <td><p> Deletes a single Template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTemplate(DeleteTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTemplate(TemplateName name)
+ *           <li><p> deleteTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListTemplateVersions</td>
+ *      <td><p> Lists TemplateVersions in a given project, location, and template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTemplateVersions(ListTemplateVersionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTemplateVersions(TemplateName parent)
+ *           <li><p> listTemplateVersions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTemplateVersionsPagedCallable()
+ *           <li><p> listTemplateVersionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTemplateVersion</td>
+ *      <td><p> Gets details of a single TemplateVersion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTemplateVersion(GetTemplateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTemplateVersion(TemplateVersionName name)
+ *           <li><p> getTemplateVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTemplateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateTemplateVersion</td>
+ *      <td><p> Creates a new TemplateVersion in a given project, location, and template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createTemplateVersion(CreateTemplateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createTemplateVersion(TemplateName parent, TemplateVersion templateVersion, String templateVersionId)
+ *           <li><p> createTemplateVersion(String parent, TemplateVersion templateVersion, String templateVersionId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createTemplateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTemplateVersion</td>
+ *      <td><p> Updates a single TemplateVersion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTemplateVersion(UpdateTemplateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateTemplateVersion(TemplateVersion templateVersion, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTemplateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTemplateVersion</td>
+ *      <td><p> Deletes a single TemplateVersion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTemplateVersion(DeleteTemplateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteTemplateVersion(TemplateVersionName name)
+ *           <li><p> deleteTemplateVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTemplateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RenderTemplateVersion</td>
+ *      <td><p> Gets rendered version of a TemplateVersion.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> renderTemplateVersion(RenderTemplateVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> renderTemplateVersion(TemplateVersionName name)
+ *           <li><p> renderTemplateVersion(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> renderTemplateVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1841,7 +2052,1438 @@ public class ParameterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists Templates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Template element : parameterManagerClient.listTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListTemplatesRequest in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplatesPagedResponse listTemplates(@Nullable LocationName parent) {
+    ListTemplatesRequest request =
+        ListTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Templates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Template element : parameterManagerClient.listTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListTemplatesRequest in the format
+   *     `projects/&#42;/locations/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplatesPagedResponse listTemplates(String parent) {
+    ListTemplatesRequest request = ListTemplatesRequest.newBuilder().setParent(parent).build();
+    return listTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Templates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplatesRequest request =
+   *       ListTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Template element : parameterManagerClient.listTemplates(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplatesPagedResponse listTemplates(ListTemplatesRequest request) {
+    return listTemplatesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Templates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplatesRequest request =
+   *       ListTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Template> future =
+   *       parameterManagerClient.listTemplatesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Template element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable() {
+    return stub.listTemplatesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Templates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplatesRequest request =
+   *       ListTemplatesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListTemplatesResponse response =
+   *         parameterManagerClient.listTemplatesCallable().call(request);
+   *     for (Template element : response.getTemplatesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable() {
+    return stub.listTemplatesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+   *   Template response = parameterManagerClient.getTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template getTemplate(@Nullable TemplateName name) {
+    GetTemplateRequest request =
+        GetTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString();
+   *   Template response = parameterManagerClient.getTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template getTemplate(String name) {
+    GetTemplateRequest request = GetTemplateRequest.newBuilder().setName(name).build();
+    return getTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   GetTemplateRequest request =
+   *       GetTemplateRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .build();
+   *   Template response = parameterManagerClient.getTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template getTemplate(GetTemplateRequest request) {
+    return getTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   GetTemplateRequest request =
+   *       GetTemplateRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .build();
+   *   ApiFuture<Template> future = parameterManagerClient.getTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Template response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTemplateRequest, Template> getTemplateCallable() {
+    return stub.getTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Template in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Template template = Template.newBuilder().build();
+   *   String templateId = "templateId1304010549";
+   *   Template response = parameterManagerClient.createTemplate(parent, template, templateId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent in the format `projects/&#42;/locations/&#42;`.
+   * @param template Required. The Template resource being created
+   * @param templateId Required. Id of the Template resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template createTemplate(
+      @Nullable LocationName parent, Template template, String templateId) {
+    CreateTemplateRequest request =
+        CreateTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .setTemplateId(templateId)
+            .build();
+    return createTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Template in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Template template = Template.newBuilder().build();
+   *   String templateId = "templateId1304010549";
+   *   Template response = parameterManagerClient.createTemplate(parent, template, templateId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent in the format `projects/&#42;/locations/&#42;`.
+   * @param template Required. The Template resource being created
+   * @param templateId Required. Id of the Template resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template createTemplate(String parent, Template template, String templateId) {
+    CreateTemplateRequest request =
+        CreateTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setTemplate(template)
+            .setTemplateId(templateId)
+            .build();
+    return createTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Template in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   CreateTemplateRequest request =
+   *       CreateTemplateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTemplateId("templateId1304010549")
+   *           .setTemplate(Template.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Template response = parameterManagerClient.createTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template createTemplate(CreateTemplateRequest request) {
+    return createTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new Template in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   CreateTemplateRequest request =
+   *       CreateTemplateRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTemplateId("templateId1304010549")
+   *           .setTemplate(Template.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Template> future =
+   *       parameterManagerClient.createTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Template response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable() {
+    return stub.createTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   Template template = Template.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Template response = parameterManagerClient.updateTemplate(template, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param template Required. The Template resource being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Template resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A mutable field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all mutable fields present in the request
+   *     will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template updateTemplate(Template template, FieldMask updateMask) {
+    UpdateTemplateRequest request =
+        UpdateTemplateRequest.newBuilder().setTemplate(template).setUpdateMask(updateMask).build();
+    return updateTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   UpdateTemplateRequest request =
+   *       UpdateTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTemplate(Template.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Template response = parameterManagerClient.updateTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Template updateTemplate(UpdateTemplateRequest request) {
+    return updateTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   UpdateTemplateRequest request =
+   *       UpdateTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTemplate(Template.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Template> future =
+   *       parameterManagerClient.updateTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   Template response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable() {
+    return stub.updateTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+   *   parameterManagerClient.deleteTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplate(@Nullable TemplateName name) {
+    DeleteTemplateRequest request =
+        DeleteTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString();
+   *   parameterManagerClient.deleteTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplate(String name) {
+    DeleteTemplateRequest request = DeleteTemplateRequest.newBuilder().setName(name).build();
+    deleteTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   DeleteTemplateRequest request =
+   *       DeleteTemplateRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   parameterManagerClient.deleteTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplate(DeleteTemplateRequest request) {
+    deleteTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   DeleteTemplateRequest request =
+   *       DeleteTemplateRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Empty> future = parameterManagerClient.deleteTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable() {
+    return stub.deleteTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TemplateVersions in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+   *   for (TemplateVersion element :
+   *       parameterManagerClient.listTemplateVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListTemplateVersionsRequest in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplateVersionsPagedResponse listTemplateVersions(
+      @Nullable TemplateName parent) {
+    ListTemplateVersionsRequest request =
+        ListTemplateVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTemplateVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TemplateVersions in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString();
+   *   for (TemplateVersion element :
+   *       parameterManagerClient.listTemplateVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ListTemplateVersionsRequest in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplateVersionsPagedResponse listTemplateVersions(String parent) {
+    ListTemplateVersionsRequest request =
+        ListTemplateVersionsRequest.newBuilder().setParent(parent).build();
+    return listTemplateVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TemplateVersions in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplateVersionsRequest request =
+   *       ListTemplateVersionsRequest.newBuilder()
+   *           .setParent(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (TemplateVersion element :
+   *       parameterManagerClient.listTemplateVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTemplateVersionsPagedResponse listTemplateVersions(
+      ListTemplateVersionsRequest request) {
+    return listTemplateVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TemplateVersions in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplateVersionsRequest request =
+   *       ListTemplateVersionsRequest.newBuilder()
+   *           .setParent(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<TemplateVersion> future =
+   *       parameterManagerClient.listTemplateVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TemplateVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable() {
+    return stub.listTemplateVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists TemplateVersions in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   ListTemplateVersionsRequest request =
+   *       ListTemplateVersionsRequest.newBuilder()
+   *           .setParent(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListTemplateVersionsResponse response =
+   *         parameterManagerClient.listTemplateVersionsCallable().call(request);
+   *     for (TemplateVersion element : response.getTemplateVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable() {
+    return stub.listTemplateVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateVersionName name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+   *   TemplateVersion response = parameterManagerClient.getTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;/versions/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion getTemplateVersion(@Nullable TemplateVersionName name) {
+    GetTemplateVersionRequest request =
+        GetTemplateVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *           .toString();
+   *   TemplateVersion response = parameterManagerClient.getTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;/versions/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion getTemplateVersion(String name) {
+    GetTemplateVersionRequest request =
+        GetTemplateVersionRequest.newBuilder().setName(name).build();
+    return getTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   GetTemplateVersionRequest request =
+   *       GetTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setView(View.forNumber(0))
+   *           .build();
+   *   TemplateVersion response = parameterManagerClient.getTemplateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion getTemplateVersion(GetTemplateVersionRequest request) {
+    return getTemplateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   GetTemplateVersionRequest request =
+   *       GetTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setView(View.forNumber(0))
+   *           .build();
+   *   ApiFuture<TemplateVersion> future =
+   *       parameterManagerClient.getTemplateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   TemplateVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionCallable() {
+    return stub.getTemplateVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TemplateVersion in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+   *   TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+   *   String templateVersionId = "templateVersionId616434873";
+   *   TemplateVersion response =
+   *       parameterManagerClient.createTemplateVersion(parent, templateVersion, templateVersionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @param templateVersion Required. The TemplateVersion resource being created
+   * @param templateVersionId Required. Id of the TemplateVersion resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion createTemplateVersion(
+      @Nullable TemplateName parent, TemplateVersion templateVersion, String templateVersionId) {
+    CreateTemplateVersionRequest request =
+        CreateTemplateVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplateVersion(templateVersion)
+            .setTemplateVersionId(templateVersionId)
+            .build();
+    return createTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TemplateVersion in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString();
+   *   TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+   *   String templateVersionId = "templateVersionId616434873";
+   *   TemplateVersion response =
+   *       parameterManagerClient.createTemplateVersion(parent, templateVersion, templateVersionId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Value for parent in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;`.
+   * @param templateVersion Required. The TemplateVersion resource being created
+   * @param templateVersionId Required. Id of the TemplateVersion resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion createTemplateVersion(
+      String parent, TemplateVersion templateVersion, String templateVersionId) {
+    CreateTemplateVersionRequest request =
+        CreateTemplateVersionRequest.newBuilder()
+            .setParent(parent)
+            .setTemplateVersion(templateVersion)
+            .setTemplateVersionId(templateVersionId)
+            .build();
+    return createTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TemplateVersion in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   CreateTemplateVersionRequest request =
+   *       CreateTemplateVersionRequest.newBuilder()
+   *           .setParent(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setTemplateVersionId("templateVersionId616434873")
+   *           .setTemplateVersion(TemplateVersion.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   TemplateVersion response = parameterManagerClient.createTemplateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion createTemplateVersion(CreateTemplateVersionRequest request) {
+    return createTemplateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new TemplateVersion in a given project, location, and template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   CreateTemplateVersionRequest request =
+   *       CreateTemplateVersionRequest.newBuilder()
+   *           .setParent(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setTemplateVersionId("templateVersionId616434873")
+   *           .setTemplateVersion(TemplateVersion.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<TemplateVersion> future =
+   *       parameterManagerClient.createTemplateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   TemplateVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable() {
+    return stub.createTemplateVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   TemplateVersion response =
+   *       parameterManagerClient.updateTemplateVersion(templateVersion, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param templateVersion Required. The TemplateVersion resource being updated
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     TemplateVersion resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A mutable field will be overwritten if it
+   *     is in the mask. If the user does not provide a mask then all mutable fields present in the
+   *     request will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion updateTemplateVersion(
+      TemplateVersion templateVersion, FieldMask updateMask) {
+    UpdateTemplateVersionRequest request =
+        UpdateTemplateVersionRequest.newBuilder()
+            .setTemplateVersion(templateVersion)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   UpdateTemplateVersionRequest request =
+   *       UpdateTemplateVersionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTemplateVersion(TemplateVersion.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   TemplateVersion response = parameterManagerClient.updateTemplateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TemplateVersion updateTemplateVersion(UpdateTemplateVersionRequest request) {
+    return updateTemplateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   UpdateTemplateVersionRequest request =
+   *       UpdateTemplateVersionRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setTemplateVersion(TemplateVersion.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<TemplateVersion> future =
+   *       parameterManagerClient.updateTemplateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   TemplateVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable() {
+    return stub.updateTemplateVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateVersionName name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+   *   parameterManagerClient.deleteTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;/versions/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplateVersion(@Nullable TemplateVersionName name) {
+    DeleteTemplateVersionRequest request =
+        DeleteTemplateVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *           .toString();
+   *   parameterManagerClient.deleteTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource in the format
+   *     `projects/&#42;/locations/&#42;/templates/&#42;/versions/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplateVersion(String name) {
+    DeleteTemplateVersionRequest request =
+        DeleteTemplateVersionRequest.newBuilder().setName(name).build();
+    deleteTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   DeleteTemplateVersionRequest request =
+   *       DeleteTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   parameterManagerClient.deleteTemplateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteTemplateVersion(DeleteTemplateVersionRequest request) {
+    deleteTemplateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   DeleteTemplateVersionRequest request =
+   *       DeleteTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       parameterManagerClient.deleteTemplateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable() {
+    return stub.deleteTemplateVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets rendered version of a TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   TemplateVersionName name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+   *   RenderTemplateVersionResponse response = parameterManagerClient.renderTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RenderTemplateVersionResponse renderTemplateVersion(
+      @Nullable TemplateVersionName name) {
+    RenderTemplateVersionRequest request =
+        RenderTemplateVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return renderTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets rendered version of a TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   String name =
+   *       TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *           .toString();
+   *   RenderTemplateVersionResponse response = parameterManagerClient.renderTemplateVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Name of the resource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RenderTemplateVersionResponse renderTemplateVersion(String name) {
+    RenderTemplateVersionRequest request =
+        RenderTemplateVersionRequest.newBuilder().setName(name).build();
+    return renderTemplateVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets rendered version of a TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   RenderTemplateVersionRequest request =
+   *       RenderTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setParameterVersion(
+   *               ParameterVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PARAMETER]", "[PARAMETER_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   RenderTemplateVersionResponse response =
+   *       parameterManagerClient.renderTemplateVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RenderTemplateVersionResponse renderTemplateVersion(
+      RenderTemplateVersionRequest request) {
+    return renderTemplateVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets rendered version of a TemplateVersion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParameterManagerClient parameterManagerClient = ParameterManagerClient.create()) {
+   *   RenderTemplateVersionRequest request =
+   *       RenderTemplateVersionRequest.newBuilder()
+   *           .setName(
+   *               TemplateVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+   *                   .toString())
+   *           .setParameterVersion(
+   *               ParameterVersionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[PARAMETER]", "[PARAMETER_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RenderTemplateVersionResponse> future =
+   *       parameterManagerClient.renderTemplateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   RenderTemplateVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable() {
+    return stub.renderTemplateVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1876,6 +3518,18 @@ public class ParameterManagerClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1909,6 +3563,18 @@ public class ParameterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2189,6 +3855,170 @@ public class ParameterManagerClient implements BackgroundResource {
     protected ListParameterVersionsFixedSizeCollection createCollection(
         @Nullable List<ListParameterVersionsPage> pages, int collectionSize) {
       return new ListParameterVersionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTemplatesPagedResponse
+      extends AbstractPagedListResponse<
+          ListTemplatesRequest,
+          ListTemplatesResponse,
+          Template,
+          ListTemplatesPage,
+          ListTemplatesFixedSizeCollection> {
+
+    public static ApiFuture<ListTemplatesPagedResponse> createAsync(
+        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        ApiFuture<ListTemplatesResponse> futureResponse) {
+      ApiFuture<ListTemplatesPage> futurePage =
+          ListTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTemplatesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTemplatesPagedResponse(ListTemplatesPage page) {
+      super(page, ListTemplatesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTemplatesPage
+      extends AbstractPage<
+          ListTemplatesRequest, ListTemplatesResponse, Template, ListTemplatesPage> {
+
+    private ListTemplatesPage(
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
+      super(context, response);
+    }
+
+    private static ListTemplatesPage createEmptyPage() {
+      return new ListTemplatesPage(null, null);
+    }
+
+    @Override
+    protected ListTemplatesPage createPage(
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
+      return new ListTemplatesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTemplatesPage> createPageAsync(
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        ApiFuture<ListTemplatesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTemplatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTemplatesRequest,
+          ListTemplatesResponse,
+          Template,
+          ListTemplatesPage,
+          ListTemplatesFixedSizeCollection> {
+
+    private ListTemplatesFixedSizeCollection(
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTemplatesFixedSizeCollection createEmptyCollection() {
+      return new ListTemplatesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTemplatesFixedSizeCollection createCollection(
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
+      return new ListTemplatesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTemplateVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          TemplateVersion,
+          ListTemplateVersionsPage,
+          ListTemplateVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListTemplateVersionsPagedResponse> createAsync(
+        PageContext<ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+            context,
+        ApiFuture<ListTemplateVersionsResponse> futureResponse) {
+      ApiFuture<ListTemplateVersionsPage> futurePage =
+          ListTemplateVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTemplateVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTemplateVersionsPagedResponse(ListTemplateVersionsPage page) {
+      super(page, ListTemplateVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTemplateVersionsPage
+      extends AbstractPage<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          TemplateVersion,
+          ListTemplateVersionsPage> {
+
+    private ListTemplateVersionsPage(
+        @Nullable
+            PageContext<ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+            context,
+        @Nullable ListTemplateVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListTemplateVersionsPage createEmptyPage() {
+      return new ListTemplateVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListTemplateVersionsPage createPage(
+        @Nullable
+            PageContext<ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+            context,
+        @Nullable ListTemplateVersionsResponse response) {
+      return new ListTemplateVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTemplateVersionsPage> createPageAsync(
+        @Nullable
+            PageContext<ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+            context,
+        ApiFuture<ListTemplateVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTemplateVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          TemplateVersion,
+          ListTemplateVersionsPage,
+          ListTemplateVersionsFixedSizeCollection> {
+
+    private ListTemplateVersionsFixedSizeCollection(
+        @Nullable List<ListTemplateVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTemplateVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListTemplateVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTemplateVersionsFixedSizeCollection createCollection(
+        @Nullable List<ListTemplateVersionsPage> pages, int collectionSize) {
+      return new ListTemplateVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

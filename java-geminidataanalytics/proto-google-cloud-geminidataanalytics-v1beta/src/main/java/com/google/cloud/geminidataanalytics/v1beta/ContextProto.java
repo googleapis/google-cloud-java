@@ -85,6 +85,10 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1beta_LookerGoldenQuery_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1beta_DynamicField_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1beta_DynamicField_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_fieldAccessorTable;
@@ -224,15 +228,51 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
           + "\021LookerGoldenQuery\022\'\n"
           + "\032natural_language_questions\030\004 \003(\tB\003\340A\001\022O\n"
           + "\014looker_query\030\005"
-          + " \001(\01324.google.cloud.geminidataanalytics.v1beta.LookerQueryB\003\340A\001\"\353\002\n"
+          + " \001(\01324.google.cloud.geminidataanalytics.v1beta.LookerQueryB\003\340A\001\"\231\005\n"
+          + "\014DynamicField\022\032\n"
+          + "\010category\030\001 \001(\tB\003\340A\001H\000\210\001\001\022\026\n"
+          + "\004name\030\002 \001(\tB\003\340A\001H\001\210\001\001\022\027\n"
+          + "\005label\030\003 \001(\tB\003\340A\001H\002\210\001\001\022\032\n"
+          + "\010based_on\030\004 \001(\tB\003\340A\001H\003\210\001\001\022\026\n"
+          + "\004type\030\005 \001(\tB\003\340A\001H\004\210\001\001\022\035\n"
+          + "\013description\030\006 \001(\tB\003\340A\001H\005\210\001\001\022\034\n\n"
+          + "expression\030\007 \001(\tB\003\340A\001H\006\210\001\001\022#\n"
+          + "\021filter_expression\030\010 \001(\tB\003\340A\001H\007\210\001\001\022\036\n"
+          + "\014value_format\030\t \001(\tB\003\340A\001H\010\210\001\001\022#\n"
+          + "\021value_format_name\030\n"
+          + " \001(\tB\003\340A\001H\t\210\001\001\022\"\n"
+          + "\020calculation_type\030\013 \001(\tB\003\340A\001H\n"
+          + "\210\001\001\022\021\n"
+          + "\004args\030\014 \003(\tB\003\340A\001\022\033\n"
+          + "\tkind_hint\030\r"
+          + " \001(\tB\003\340A\001H\013\210\001\001\022\033\n"
+          + "\ttype_hint\030\016 \001(\tB\003\340A\001H\014\210\001\001\022\035\n"
+          + "\013is_disabled\030\017 \001(\010B\003\340A\001H\r"
+          + "\210\001\001B\013\n"
+          + "\t_categoryB\007\n"
+          + "\005_nameB\010\n"
+          + "\006_labelB\013\n"
+          + "\t_based_onB\007\n"
+          + "\005_typeB\016\n"
+          + "\014_descriptionB\r\n"
+          + "\013_expressionB\024\n"
+          + "\022_filter_expressionB\017\n\r"
+          + "_value_formatB\024\n"
+          + "\022_value_format_nameB\023\n"
+          + "\021_calculation_typeB\014\n\n"
+          + "_kind_hintB\014\n\n"
+          + "_type_hintB\016\n"
+          + "\014_is_disabled\"\277\003\n"
           + "\013LookerQuery\022\022\n"
           + "\005model\030\001 \001(\tB\003\340A\002\022\024\n"
           + "\007explore\030\002 \001(\tB\003\340A\002\022\023\n"
           + "\006fields\030\003 \003(\tB\003\340A\001\022Q\n"
-          + "\007filters\030\004"
-          + " \003(\0132;.google.cloud.geminidataanalytics.v1beta.LookerQuery.FilterB\003\340A\001\022\022\n"
+          + "\007filters\030\004 \003(\0132;"
+          + ".google.cloud.geminidataanalytics.v1beta.LookerQuery.FilterB\003\340A\001\022\022\n"
           + "\005sorts\030\005 \003(\tB\003\340A\001\022\027\n"
-          + "\005limit\030\006 \001(\tB\003\340A\001H\000\210\001\001\022\032\n"
+          + "\005limit\030\006 \001(\tB\003\340A\001H\000\210\001\001\022R\n"
+          + "\016dynamic_fields\030\t"
+          + " \003(\01325.google.cloud.geminidataanalytics.v1beta.DynamicFieldB\003\340A\001\022\032\n"
           + "\010query_id\030\n"
           + " \001(\tB\003\340A\001H\001\210\001\001\022\033\n"
           + "\tclient_id\030\013 \001(\tB\003\340A\001H\002\210\001\001\032?\n"
@@ -248,14 +288,14 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
           + "\013description\030\002 \001(\tB\003\340A\002\022\023\n"
           + "\006labels\030\003 \003(\tB\003\340A\001\"\242\003\n"
           + "\023ConversationOptions\022I\n"
-          + "\005chart\030\001"
-          + " \001(\01325.google.cloud.geminidataanalytics.v1beta.ChartOptionsB\003\340A\001\022O\n"
-          + "\010analysis\030\002"
-          + " \001(\01328.google.cloud.geminidataanalytics.v1beta.AnalysisOptionsB\003\340A\001\022S\n\n"
-          + "datasource\030\003"
-          + " \001(\0132:.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsB\003\340A\001\022[\n"
-          + "\005model\030\006 \001(\0162B.google.cloud.geminidataanal"
-          + "ytics.v1beta.ConversationOptions.ModelB\003\340A\001H\000\210\001\001\"3\n"
+          + "\005chart\030\001 \001("
+          + "\01325.google.cloud.geminidataanalytics.v1beta.ChartOptionsB\003\340A\001\022O\n"
+          + "\010analysis\030\002 \001(\0132"
+          + "8.google.cloud.geminidataanalytics.v1beta.AnalysisOptionsB\003\340A\001\022S\n\n"
+          + "datasource\030\003 \001"
+          + "(\0132:.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsB\003\340A\001\022[\n"
+          + "\005model\030\006 \001(\0162B.google.cloud.geminidataanalytics.v1"
+          + "beta.ConversationOptions.ModelB\003\340A\001H\000\210\001\001\"3\n"
           + "\005Model\022\025\n"
           + "\021MODEL_UNSPECIFIED\020\000\022\023\n"
           + "\017LATEST_GA_MODEL\020\001B\010\n"
@@ -264,49 +304,51 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
           + "\032big_query_max_billed_bytes\030\001"
           + " \001(\0132\033.google.protobuf.Int64ValueB\003\340A\001\"\326\002\n"
           + "\014ChartOptions\022V\n"
-          + "\005image\030\001 \001(\0132B.goo"
-          + "gle.cloud.geminidataanalytics.v1beta.ChartOptions.ImageOptionsB\003\340A\001\032\355\001\n"
+          + "\005image\030\001 \001(\0132B.google.clou"
+          + "d.geminidataanalytics.v1beta.ChartOptions.ImageOptionsB\003\340A\001\032\355\001\n"
           + "\014ImageOptions\022^\n"
-          + "\010no_image\030\001 \001(\0132J.google.cloud.ge"
-          + "minidataanalytics.v1beta.ChartOptions.ImageOptions.NoImageH\000\022\\\n"
-          + "\003svg\030\002 \001(\0132M.goog"
-          + "le.cloud.geminidataanalytics.v1beta.ChartOptions.ImageOptions.SvgOptionsH\000\032\t\n"
-          + "\007NoImage\032\014\n\n"
+          + "\010no_image\030\001 \001(\0132J.google.cloud.geminidata"
+          + "analytics.v1beta.ChartOptions.ImageOptions.NoImageH\000\022\\\n"
+          + "\003svg\030\002 \001(\0132M.google.cloud"
+          + ".geminidataanalytics.v1beta.ChartOptions.ImageOptions.SvgOptionsH\000\032\t\n"
+          + "\007NoImage\032\014\n"
+          + "\n"
           + "SvgOptionsB\006\n"
           + "\004kind\"\207\001\n"
           + "\017AnalysisOptions\022T\n"
-          + "\006python\030\001 \001(\0132?.google.cloud.g"
-          + "eminidataanalytics.v1beta.AnalysisOptions.PythonB\003\340A\001\032\036\n"
+          + "\006python\030\001 \001(\0132?.google.cloud.geminidat"
+          + "aanalytics.v1beta.AnalysisOptions.PythonB\003\340A\001\032\036\n"
           + "\006Python\022\024\n"
           + "\007enabled\030\001 \001(\010B\003\340A\001\"\250\001\n"
           + "\010Citation\022M\n"
-          + "\007sources\030\001 \003(\01327.go"
-          + "ogle.cloud.geminidataanalytics.v1beta.CitationSourceB\003\340A\003\022M\n"
-          + "\007anchors\030\002 \003(\01327.goo"
-          + "gle.cloud.geminidataanalytics.v1beta.CitationAnchorB\003\340A\003\"\202\002\n"
+          + "\007sources\030\001 \003(\01327.google.clo"
+          + "ud.geminidataanalytics.v1beta.CitationSourceB\003\340A\003\022M\n"
+          + "\007anchors\030\002 \003(\01327.google.clou"
+          + "d.geminidataanalytics.v1beta.CitationAnchorB\003\340A\003\"\202\002\n"
           + "\016CitationSource\022\022\n"
           + "\003uri\030\003 \001(\tB\003\340A\003H\000\022S\n\r"
-          + "example_query\030\004 \001(\01325"
-          + ".google.cloud.geminidataanalytics.v1beta.ExampleQueryB\003\340A\003H\000\022S\n\r"
-          + "glossary_term\030\005 "
-          + "\001(\01325.google.cloud.geminidataanalytics.v1beta.GlossaryTermB\003\340A\003H\000\022\017\n"
+          + "example_query\030\004 \001(\01325.google."
+          + "cloud.geminidataanalytics.v1beta.ExampleQueryB\003\340A\003H\000\022S\n\r"
+          + "glossary_term\030\005 \001(\01325.go"
+          + "ogle.cloud.geminidataanalytics.v1beta.GlossaryTermB\003\340A\003H\000\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\003\022\022\n"
           + "\005title\030\002 \001(\tB\003\340A\003B\r\n"
           + "\013source_type\"\246\002\n"
           + "\016CitationAnchor\022u\n"
-          + "\023text_message_anchor\030\001 \001(\0132Q.google.cloud.geminidataanalytics"
-          + ".v1beta.CitationAnchor.TextMessageCitationAnchorB\003\340A\003H\000\032\215\001\n"
-          + "\031TextMessageCitationAnchor\022\027\n\n"
+          + "\023text_message_anchor\030\001 \001(\0132Q.google.cloud.geminidataanalytics.v1beta."
+          + "CitationAnchor.TextMessageCitationAnchorB\003\340A\003H\000\032\215\001\n"
+          + "\031TextMessageCitationAnchor\022\027\n"
+          + "\n"
           + "part_index\030\001 \001(\005B\003\340A\003\022\037\n"
           + "\022start_offset_bytes\030\002 \001(\005B\003\340A\003\022\035\n"
           + "\020end_offset_bytes\030\003 \001(\005B\003\340A\003\022\027\n\n"
           + "source_ids\030\004 \003(\tB\003\340A\003B\r\n"
           + "\013anchor_typeB\235\002\n"
-          + "+com.google.cloud.geminidataanalytics.v1betaB\014ContextProtoP\001Z]"
-          + "cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;geminida"
-          + "taanalyticspb\252\002\'Google.Cloud.GeminiDataA"
-          + "nalytics.V1Beta\312\002\'Google\\Cloud\\GeminiDat"
-          + "aAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
+          + "+com.google.cloud.geminidataanalytics.v1betaB\014ContextProtoP\001Z]cloud.go"
+          + "ogle.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;geminidataanalyt"
+          + "icspb\252\002\'Google.Cloud.GeminiDataAnalytics"
+          + ".V1Beta\312\002\'Google\\Cloud\\GeminiDataAnalyti"
+          + "cs\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -413,13 +455,43 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "NaturalLanguageQuestions", "LookerQuery",
             });
-    internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_descriptor =
+    internal_static_google_cloud_geminidataanalytics_v1beta_DynamicField_descriptor =
         getDescriptor().getMessageType(9);
+    internal_static_google_cloud_geminidataanalytics_v1beta_DynamicField_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1beta_DynamicField_descriptor,
+            new java.lang.String[] {
+              "Category",
+              "Name",
+              "Label",
+              "BasedOn",
+              "Type",
+              "Description",
+              "Expression",
+              "FilterExpression",
+              "ValueFormat",
+              "ValueFormatName",
+              "CalculationType",
+              "Args",
+              "KindHint",
+              "TypeHint",
+              "IsDisabled",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_descriptor =
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_descriptor,
             new java.lang.String[] {
-              "Model", "Explore", "Fields", "Filters", "Sorts", "Limit", "QueryId", "ClientId",
+              "Model",
+              "Explore",
+              "Fields",
+              "Filters",
+              "Sorts",
+              "Limit",
+              "DynamicFields",
+              "QueryId",
+              "ClientId",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_Filter_descriptor =
         internal_static_google_cloud_geminidataanalytics_v1beta_LookerQuery_descriptor
@@ -431,7 +503,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "Field", "Value",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_GlossaryTerm_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_geminidataanalytics_v1beta_GlossaryTerm_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_GlossaryTerm_descriptor,
@@ -439,7 +511,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "DisplayName", "Description", "Labels",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_ConversationOptions_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_geminidataanalytics_v1beta_ConversationOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_ConversationOptions_descriptor,
@@ -447,7 +519,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "Chart", "Analysis", "Datasource", "Model",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_DatasourceOptions_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_geminidataanalytics_v1beta_DatasourceOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_DatasourceOptions_descriptor,
@@ -455,7 +527,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "BigQueryMaxBilledBytes",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_ChartOptions_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_geminidataanalytics_v1beta_ChartOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_ChartOptions_descriptor,
@@ -486,7 +558,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_geminidataanalytics_v1beta_ChartOptions_ImageOptions_SvgOptions_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_geminidataanalytics_v1beta_AnalysisOptions_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_geminidataanalytics_v1beta_AnalysisOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_AnalysisOptions_descriptor,
@@ -503,7 +575,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "Enabled",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_Citation_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_geminidataanalytics_v1beta_Citation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_Citation_descriptor,
@@ -511,7 +583,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "Sources", "Anchors",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_CitationSource_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_geminidataanalytics_v1beta_CitationSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_CitationSource_descriptor,
@@ -519,7 +591,7 @@ public final class ContextProto extends com.google.protobuf.GeneratedFile {
               "Uri", "ExampleQuery", "GlossaryTerm", "Id", "Title", "SourceType",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_CitationAnchor_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_geminidataanalytics_v1beta_CitationAnchor_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_CitationAnchor_descriptor,
