@@ -30,6 +30,7 @@
 package com.google.api.core;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 
@@ -45,12 +46,27 @@ public interface ApiFuture<V> extends Future<V> {
     CompletableFuture<V> completableFuture = new CompletableFuture<>();
 
     addListener(() -> {
-      try {
-        completableFuture.complete(get());
-      } catch (Exception e) {
-        completableFuture.completeExceptionally(e);
+      if (isCancelled()) {
+        completableFuture.cancel(true);
+      } else {
+        try {
+          completableFuture.complete(get());
+        } catch (ExecutionException e) {
+          completableFuture.completeExceptionally(e.getCause() != null? e.getCause() : e);
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          completableFuture.completeExceptionally(e);
+        } catch (Throwable t) {
+          completableFuture.completeExceptionally(t);
+        }
       }
     }, executor);
+
+    completableFuture.whenComplete((v, t) -> {
+      if (completableFuture.isCancelled()) {
+        cancel(true);
+      }
+    });
 
     return completableFuture;
   }
