@@ -28,12 +28,7 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Collection;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -51,30 +46,11 @@ import javax.net.ssl.X509TrustManager;
 public class DynamicTrustManager extends X509ExtendedTrustManager {
   private static final Logger logger = Logger.getLogger(DynamicTrustManager.class.getName());
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
-  private static final ExecutorService ASYNC_RELOAD_EXECUTOR = createAsyncReloadExecutor();
 
   private final File caCertFile;
   private final long checkIntervalNs;
-  private final AtomicBoolean isReloading = new AtomicBoolean(false);
+  private final ReentrantLock lock = new ReentrantLock();
   private volatile long lastCheckedNs;
-
-  private static ExecutorService createAsyncReloadExecutor() {
-    ThreadPoolExecutor executor =
-        new ThreadPoolExecutor(
-            1,
-            2,
-            60L,
-            TimeUnit.SECONDS,
-            new LinkedBlockingQueue<>(10),
-            runnable -> {
-              Thread t = new Thread(runnable, "spanner-omni-ca-reloader");
-              t.setDaemon(true);
-              return t;
-            },
-            new ThreadPoolExecutor.AbortPolicy());
-    executor.allowCoreThreadTimeOut(true);
-    return executor;
-  }
 
   private static class CertificateFactoryHolder {
     static final CertificateFactory INSTANCE;
@@ -133,37 +109,17 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
     if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    if (!isReloading.compareAndSet(false, true)) {
-      return;
-    }
-    if (checkIntervalNs == 0) {
-      try {
-        doReloadCheck(now);
-      } finally {
-        isReloading.set(false);
-      }
-    } else {
-      try {
-        ASYNC_RELOAD_EXECUTOR.execute(
-            () -> {
-              try {
-                doReloadCheck(System.nanoTime());
-              } finally {
-                isReloading.set(false);
-              }
-            });
-      } catch (RejectedExecutionException e) {
-        isReloading.set(false);
-      }
-    }
-  }
-
-  private void doReloadCheck(long now) {
+    lock.lock();
     try {
+      long nowInLock = System.nanoTime();
+      if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
+        return;
+      }
       TrustMaterial existing = this.currentMaterial;
       if (existing != null
           && caCertFile.lastModified() == existing.lastModified
           && caCertFile.length() == existing.length) {
+        lastCheckedNs = nowInLock;
         return;
       }
       try {
@@ -173,9 +129,11 @@ public class DynamicTrustManager extends X509ExtendedTrustManager {
             Level.WARNING,
             "Failed to reload rotated CA certificate from disk, retaining previous material",
             e);
+      } finally {
+        lastCheckedNs = System.nanoTime();
       }
     } finally {
-      lastCheckedNs = now;
+      lock.unlock();
     }
   }
 

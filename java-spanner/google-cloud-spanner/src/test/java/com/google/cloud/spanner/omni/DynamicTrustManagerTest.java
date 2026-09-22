@@ -117,6 +117,37 @@ public class DynamicTrustManagerTest {
   }
 
   @Test
+  public void testRotationWithNonZeroCheckInterval() throws Exception {
+    SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.nonzero1");
+    SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.nonzero2");
+    try {
+      File caFile = tempFolder.newFile("ca-nonzero.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
+
+      // 50ms check interval
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 50L);
+      X509Certificate[] issuers1 = trustManager.getAcceptedIssuers();
+      assertEquals(1, issuers1.length);
+      assertEquals(ca1.cert().getSubjectDN(), issuers1[0].getSubjectDN());
+
+      // Rotate CA on disk
+      Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+      caFile.setLastModified(System.currentTimeMillis() + 2000L);
+
+      // Wait for check interval to elapse
+      Thread.sleep(100);
+
+      X509Certificate[] issuers2 = trustManager.getAcceptedIssuers();
+      assertEquals(1, issuers2.length);
+      assertEquals(ca2.cert().getSubjectDN(), issuers2[0].getSubjectDN());
+      trustManager.checkServerTrusted(new X509Certificate[] {ca2.cert()}, "RSA");
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
+  }
+
+  @Test
   public void testMultipleCAsInFile() throws Exception {
     SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.multi.ca.1");
     SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.multi.ca.2");
@@ -169,5 +200,55 @@ public class DynamicTrustManagerTest {
   public void testNonExistentFileFailsInitialization() {
     File nonExistent = new File(tempFolder.getRoot(), "missing-ca.crt");
     assertThrows(RuntimeException.class, () -> new DynamicTrustManager(nonExistent));
+  }
+
+  @Test
+  public void testConcurrentValidationDuringRotation() throws Exception {
+    SelfSignedCertificate ca1 = new SelfSignedCertificate("spanner.ca.concurrent1");
+    SelfSignedCertificate ca2 = new SelfSignedCertificate("spanner.ca.concurrent2");
+    try {
+      File caFile = tempFolder.newFile("ca-concurrent.crt");
+      Files.write(caFile.toPath(), Files.readAllBytes(ca1.certificate().toPath()));
+
+      DynamicTrustManager trustManager = new DynamicTrustManager(caFile, 0L);
+
+      int threadCount = 16;
+      java.util.concurrent.ExecutorService executor =
+          java.util.concurrent.Executors.newFixedThreadPool(threadCount);
+      java.util.concurrent.CountDownLatch startLatch = new java.util.concurrent.CountDownLatch(1);
+      java.util.concurrent.CountDownLatch doneLatch =
+          new java.util.concurrent.CountDownLatch(threadCount);
+      java.util.concurrent.atomic.AtomicInteger errors =
+          new java.util.concurrent.atomic.AtomicInteger(0);
+
+      // Rotate file on disk to ca2
+      Files.write(caFile.toPath(), Files.readAllBytes(ca2.certificate().toPath()));
+      caFile.setLastModified(System.currentTimeMillis() + 2000L);
+
+      for (int i = 0; i < threadCount; i++) {
+        executor.submit(
+            () -> {
+              try {
+                startLatch.await();
+                X509Certificate[] issuers = trustManager.getAcceptedIssuers();
+                if (issuers == null || issuers.length == 0) {
+                  errors.incrementAndGet();
+                }
+              } catch (Exception e) {
+                errors.incrementAndGet();
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+      }
+
+      startLatch.countDown();
+      assertTrue(doneLatch.await(10, java.util.concurrent.TimeUnit.SECONDS));
+      assertEquals(0, errors.get());
+      executor.shutdown();
+    } finally {
+      ca1.delete();
+      ca2.delete();
+    }
   }
 }

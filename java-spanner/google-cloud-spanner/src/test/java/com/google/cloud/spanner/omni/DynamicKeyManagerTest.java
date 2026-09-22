@@ -119,16 +119,52 @@ public class DynamicKeyManagerTest {
       assertNotNull(keyManager.getCertificateChain(latestAlias));
 
       // Oldest alias "client-1" should have been evicted (oldest kept is 15 - 10 = 5)
-      assertEquals(0, keyManager.getCertificateChain("client-1").length);
+      assertNull(keyManager.getCertificateChain("client-1"));
       assertNull(keyManager.getPrivateKey("client-1"));
-      assertEquals(0, keyManager.getCertificateChain("client-4").length);
+      assertNull(keyManager.getCertificateChain("client-4"));
       assertNull(keyManager.getPrivateKey("client-4"));
+      assertNotNull(keyManager.getCertificateChain("client-5"));
       assertTrue(keyManager.getCertificateChain("client-5").length > 0);
       assertNotNull(keyManager.getPrivateKey("client-5"));
+      assertNotNull(keyManager.getCertificateChain("client-15"));
       assertTrue(keyManager.getCertificateChain("client-15").length > 0);
       assertNotNull(keyManager.getPrivateKey("client-15"));
     } finally {
       ssc.delete();
+    }
+  }
+
+  @Test
+  public void testRotationWithNonZeroCheckInterval() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.nonzero1");
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.nonzero2");
+    try {
+      File certFile = tempFolder.newFile("client-nonzero.crt");
+      File keyFile = tempFolder.newFile("client-nonzero.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
+
+      // 50ms check interval
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 50L);
+      String alias1 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals(
+          ssc1.cert().getSubjectDN(), keyManager.getCertificateChain(alias1)[0].getSubjectDN());
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+      certFile.setLastModified(System.currentTimeMillis() + 2000L);
+      keyFile.setLastModified(System.currentTimeMillis() + 2000L);
+
+      // Wait for check interval to elapse
+      Thread.sleep(100);
+
+      String alias2 = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertEquals(
+          ssc2.cert().getSubjectDN(), keyManager.getCertificateChain(alias2)[0].getSubjectDN());
+    } finally {
+      ssc1.delete();
+      ssc2.delete();
     }
   }
 
@@ -314,6 +350,88 @@ public class DynamicKeyManagerTest {
       assertNotNull(keyManager.getPrivateKey(alias));
     } finally {
       ssc.delete();
+    }
+  }
+
+  @Test
+  public void testHeaderlessBase64KeySupported() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.base64");
+    try {
+      File certFile = tempFolder.newFile("client-b64.crt");
+      File keyFile = tempFolder.newFile("client-b64.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc.certificate().toPath()));
+      String base64Key = java.util.Base64.getEncoder().encodeToString(ssc.key().getEncoded());
+      Files.write(keyFile.toPath(), base64Key.getBytes(StandardCharsets.UTF_8));
+
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile);
+      String alias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+      assertNotNull(alias);
+      assertNotNull(keyManager.getCertificateChain(alias));
+      assertNotNull(keyManager.getPrivateKey(alias));
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
+  public void testConcurrentHandshakesDuringRotation() throws Exception {
+    SelfSignedCertificate ssc1 = new SelfSignedCertificate("spanner.test.concurrent1");
+    SelfSignedCertificate ssc2 = new SelfSignedCertificate("spanner.test.concurrent2");
+    try {
+      File certFile = tempFolder.newFile("client-concurrent.crt");
+      File keyFile = tempFolder.newFile("client-concurrent.key");
+
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc1.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc1.privateKey().toPath()));
+
+      DynamicKeyManager keyManager = new DynamicKeyManager(certFile, keyFile, 0L);
+
+      int threadCount = 16;
+      java.util.concurrent.ExecutorService executor =
+          java.util.concurrent.Executors.newFixedThreadPool(threadCount);
+      java.util.concurrent.CountDownLatch startLatch = new java.util.concurrent.CountDownLatch(1);
+      java.util.concurrent.CountDownLatch doneLatch =
+          new java.util.concurrent.CountDownLatch(threadCount);
+      java.util.concurrent.atomic.AtomicInteger errors =
+          new java.util.concurrent.atomic.AtomicInteger(0);
+
+      // Rotate file on disk
+      Files.write(certFile.toPath(), Files.readAllBytes(ssc2.certificate().toPath()));
+      Files.write(keyFile.toPath(), Files.readAllBytes(ssc2.privateKey().toPath()));
+      certFile.setLastModified(System.currentTimeMillis() + 2000L);
+      keyFile.setLastModified(System.currentTimeMillis() + 2000L);
+
+      for (int i = 0; i < threadCount; i++) {
+        executor.submit(
+            () -> {
+              try {
+                startLatch.await();
+                String alias = keyManager.chooseClientAlias(new String[] {"RSA"}, null, null);
+                if (alias == null) {
+                  errors.incrementAndGet();
+                  return;
+                }
+                X509Certificate[] chain = keyManager.getCertificateChain(alias);
+                PrivateKey key = keyManager.getPrivateKey(alias);
+                if (chain == null || chain.length == 0 || key == null) {
+                  errors.incrementAndGet();
+                }
+              } catch (Exception e) {
+                errors.incrementAndGet();
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+      }
+
+      startLatch.countDown();
+      assertTrue(doneLatch.await(10, java.util.concurrent.TimeUnit.SECONDS));
+      assertEquals(0, errors.get());
+      executor.shutdown();
+    } finally {
+      ssc1.delete();
+      ssc2.delete();
     }
   }
 }

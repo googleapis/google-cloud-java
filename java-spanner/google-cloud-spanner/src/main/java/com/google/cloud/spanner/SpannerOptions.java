@@ -362,6 +362,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final String clientCertificate;
   private final String clientCertificateKey;
   private final String caCertificate;
+  private final InstanceType instanceType;
+  private final boolean usePlainText;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -950,23 +952,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     clientCertificate = builder.clientCertificate;
     clientCertificateKey = builder.clientCertificateKey;
     caCertificate = builder.caCertificate;
+    instanceType = builder.instanceType;
+    usePlainText = builder.usePlainText;
+    @SuppressWarnings("rawtypes")
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
+        builder.channelConfigurator;
+    while (baseConfigurator instanceof OmniSslChannelConfigurator) {
+      baseConfigurator = ((OmniSslChannelConfigurator) baseConfigurator).getUserConfigurator();
+    }
     if (builder.omniSslContext != null) {
-      final SslContext sslContext = builder.omniSslContext;
-      @SuppressWarnings("rawtypes")
-      final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> parentConfigurator =
-          builder.channelConfigurator;
-      channelConfigurator =
-          channelBuilder -> {
-            if (parentConfigurator != null) {
-              channelBuilder = parentConfigurator.apply(channelBuilder);
-            }
-            if (channelBuilder instanceof NettyChannelBuilder) {
-              ((NettyChannelBuilder) channelBuilder).sslContext(sslContext);
-            }
-            return channelBuilder;
-          };
+      this.channelConfigurator =
+          new OmniSslChannelConfigurator(baseConfigurator, builder.omniSslContext);
     } else {
-      channelConfigurator = builder.channelConfigurator;
+      this.channelConfigurator = baseConfigurator;
     }
     interceptorProvider = builder.interceptorProvider;
     sessionPoolOptions =
@@ -1510,6 +1508,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
+      this.host = options.getHost();
       this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
@@ -1561,6 +1560,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.clientCertificate = options.clientCertificate;
       this.clientCertificateKey = options.clientCertificateKey;
       this.caCertificate = options.caCertificate;
+      this.instanceType = options.instanceType;
+      this.usePlainText = options.usePlainText;
     }
 
     @Override
@@ -2729,6 +2730,35 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return channelConfigurator;
   }
 
+  @SuppressWarnings("rawtypes")
+  private static class OmniSslChannelConfigurator
+      implements ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> {
+    private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator;
+    private final SslContext sslContext;
+
+    OmniSslChannelConfigurator(
+        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator,
+        SslContext sslContext) {
+      this.userConfigurator = userConfigurator;
+      this.sslContext = sslContext;
+    }
+
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getUserConfigurator() {
+      return userConfigurator;
+    }
+
+    @Override
+    public ManagedChannelBuilder apply(ManagedChannelBuilder channelBuilder) {
+      if (userConfigurator != null) {
+        channelBuilder = userConfigurator.apply(channelBuilder);
+      }
+      if (channelBuilder instanceof NettyChannelBuilder) {
+        ((NettyChannelBuilder) channelBuilder).sslContext(sslContext);
+      }
+      return channelBuilder;
+    }
+  }
+
   public GrpcInterceptorProvider getInterceptorProvider() {
     return interceptorProvider;
   }
@@ -3244,6 +3274,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Nullable
   public String getCaCertificate() {
     return caCertificate;
+  }
+
+  public InstanceType getInstanceType() {
+    return instanceType;
+  }
+
+  public boolean isUsePlainText() {
+    return usePlainText;
   }
 
   @SuppressWarnings("unchecked")

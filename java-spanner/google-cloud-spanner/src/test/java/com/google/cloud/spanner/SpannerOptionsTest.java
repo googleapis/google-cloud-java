@@ -30,6 +30,7 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
@@ -70,6 +71,7 @@ import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate;
 import io.opentelemetry.api.GlobalOpenTelemetry;
@@ -1772,5 +1774,100 @@ public class SpannerOptionsTest {
         IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(""));
     assertThrows(
         IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(null));
+  }
+
+  @Test
+  public void testToBuilderPreservesChannelConfiguratorWithoutChaining() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.configurator");
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+
+      final int[] configuratorCallCount = new int[] {0};
+      @SuppressWarnings("rawtypes")
+      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> customConfigurator =
+          builder -> {
+            configuratorCallCount[0]++;
+            return builder;
+          };
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setChannelConfigurator(customConfigurator)
+              .build();
+
+      // Repeated toBuilder().build()
+      SpannerOptions options2 = options.toBuilder().build();
+      SpannerOptions options3 = options2.toBuilder().build();
+
+      ManagedChannelBuilder<?> dummyBuilder = mock(ManagedChannelBuilder.class);
+      options3.getChannelConfigurator().apply(dummyBuilder);
+      // The custom configurator should only be called once, not 3 times due to redundant nesting
+      assertEquals(1, configuratorCallCount[0]);
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
+  public void testUnwrapsOmniSslChannelConfiguratorWhenOmniSslContextNull() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.unwrap");
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+
+      final int[] configuratorCallCount = new int[] {0};
+      @SuppressWarnings("rawtypes")
+      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> customConfigurator =
+          builder -> {
+            configuratorCallCount[0]++;
+            return builder;
+          };
+
+      SpannerOptions optionsWithCert =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setChannelConfigurator(customConfigurator)
+              .build();
+
+      // Create new options without certs but with previous channel configurator
+      SpannerOptions optionsWithoutCert =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .setChannelConfigurator(optionsWithCert.getChannelConfigurator())
+              .build();
+
+      ManagedChannelBuilder<?> dummyBuilder = mock(ManagedChannelBuilder.class);
+      optionsWithoutCert.getChannelConfigurator().apply(dummyBuilder);
+      assertEquals(1, configuratorCallCount[0]);
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
+  public void testToBuilderPreservesInstanceTypeAndUsePlainText() throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setHost("localhost:1234")
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .usePlainText()
+            .build();
+
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isUsePlainText());
+
+    SpannerOptions fromBuilder = options.toBuilder().build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, fromBuilder.getInstanceType());
+    assertTrue(fromBuilder.isUsePlainText());
   }
 }

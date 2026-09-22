@@ -37,13 +37,8 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLEngine;
@@ -57,33 +52,14 @@ import javax.net.ssl.X509ExtendedKeyManager;
 public class DynamicKeyManager extends X509ExtendedKeyManager {
   private static final Logger logger = Logger.getLogger(DynamicKeyManager.class.getName());
   private static final long DEFAULT_CHECK_INTERVAL_MS = 5000L;
-  private static final ExecutorService ASYNC_RELOAD_EXECUTOR = createAsyncReloadExecutor();
 
   private final File certFile;
   private final File keyFile;
   private final long checkIntervalNs;
   private final ConcurrentHashMap<String, KeyMaterial> materials = new ConcurrentHashMap<>();
   private final AtomicLong versionCounter = new AtomicLong();
-  private final AtomicBoolean isReloading = new AtomicBoolean(false);
+  private final ReentrantLock lock = new ReentrantLock();
   private volatile long lastCheckedNs;
-
-  private static ExecutorService createAsyncReloadExecutor() {
-    ThreadPoolExecutor executor =
-        new ThreadPoolExecutor(
-            1,
-            2,
-            60L,
-            TimeUnit.SECONDS,
-            new LinkedBlockingQueue<>(10),
-            runnable -> {
-              Thread t = new Thread(runnable, "spanner-omni-cert-reloader");
-              t.setDaemon(true);
-              return t;
-            },
-            new ThreadPoolExecutor.AbortPolicy());
-    executor.allowCoreThreadTimeOut(true);
-    return executor;
-  }
 
   private static class CertificateFactoryHolder {
     static final CertificateFactory INSTANCE;
@@ -156,39 +132,19 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
     if (checkIntervalNs > 0 && now - lastCheckedNs < checkIntervalNs) {
       return;
     }
-    if (!isReloading.compareAndSet(false, true)) {
-      return;
-    }
-    if (checkIntervalNs == 0) {
-      try {
-        doReloadCheck(now);
-      } finally {
-        isReloading.set(false);
-      }
-    } else {
-      try {
-        ASYNC_RELOAD_EXECUTOR.execute(
-            () -> {
-              try {
-                doReloadCheck(System.nanoTime());
-              } finally {
-                isReloading.set(false);
-              }
-            });
-      } catch (RejectedExecutionException e) {
-        isReloading.set(false);
-      }
-    }
-  }
-
-  private void doReloadCheck(long now) {
+    lock.lock();
     try {
+      long nowInLock = System.nanoTime();
+      if (checkIntervalNs > 0 && nowInLock - lastCheckedNs < checkIntervalNs) {
+        return;
+      }
       KeyMaterial existing = this.currentMaterial;
       if (existing != null
           && certFile.lastModified() == existing.certLastModified
           && certFile.length() == existing.certLength
           && keyFile.lastModified() == existing.keyLastModified
           && keyFile.length() == existing.keyLength) {
+        lastCheckedNs = nowInLock;
         return;
       }
       try {
@@ -198,9 +154,11 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
             Level.WARNING,
             "Failed to reload rotated client certificate/key from disk, retaining current material",
             e);
+      } finally {
+        lastCheckedNs = System.nanoTime();
       }
     } finally {
-      lastCheckedNs = now;
+      lock.unlock();
     }
   }
 
@@ -274,7 +232,7 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
 
   private static PrivateKey parsePrivateKey(byte[] keyBytes) throws Exception {
     byte[] der;
-    if (keyBytes.length > 0 && keyBytes[0] == 0x30) {
+    if (keyBytes.length > 2 && keyBytes[0] == 0x30 && (keyBytes[1] & 0x80) != 0) {
       der = keyBytes;
     } else {
       String keyStr = new String(keyBytes, StandardCharsets.UTF_8);
@@ -342,7 +300,9 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
   @Override
   public X509Certificate[] getCertificateChain(String alias) {
     KeyMaterial mat = (alias != null) ? materials.get(alias) : this.currentMaterial;
-    return mat != null ? mat.certificateChain.clone() : new X509Certificate[0];
+    return (mat != null && mat.certificateChain != null && mat.certificateChain.length > 0)
+        ? mat.certificateChain.clone()
+        : null;
   }
 
   @Override
