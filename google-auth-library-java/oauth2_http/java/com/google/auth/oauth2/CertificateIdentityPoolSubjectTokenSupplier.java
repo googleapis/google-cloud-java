@@ -268,7 +268,8 @@ public class CertificateIdentityPoolSubjectTokenSupplier
       // elsewhere in the chain.
       if (encodedCurrentCert.equals(encodedLeafCert)) {
         throw new IllegalArgumentException(
-            "The leaf certificate should only appear at the beginning of the trust chain file, or be omitted entirely.");
+            "The leaf certificate should only appear at the beginning of the trust chain file, or"
+                + " be omitted entirely.");
       }
 
       // Add the current certificate to the chain.
@@ -287,7 +288,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
    * @throws CertificateException If an error occurs while parsing a certificate.
    */
   @VisibleForTesting
-  static List<X509Certificate> readTrustChain(String trustChainPath)
+  static List<X509Certificate> readTrustChain(@Nullable String trustChainPath)
       throws IOException, CertificateException {
     List<X509Certificate> certificateTrustChain = new ArrayList<>();
 
