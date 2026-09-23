@@ -33,14 +33,11 @@ import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.Duration;
 import java.util.Locale;
 import java.util.Properties;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 public abstract class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
@@ -146,43 +143,6 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     @BetaApi
     public abstract StorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry);
 
-    /**
-     * Enable or disable OpenTelemetry client metrics.
-     *
-     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    public abstract StorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics);
-
-    /**
-     * Enable or disable OpenTelemetry debug client metrics.
-     *
-     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    public abstract StorageOptions.Builder setEnableOtelDebugMetrics(
-        boolean enableOtelDebugMetrics);
-
-    /**
-     * Set a custom {@link SdkMeterProvider} for recording client metrics.
-     *
-     * @param meterProvider custom SdkMeterProvider to use
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    public abstract StorageOptions.Builder setMeterProvider(SdkMeterProvider meterProvider);
-
-    /**
-     * Set the metric export interval for periodic metric reading.
-     *
-     * @param metricInterval interval duration
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    public abstract StorageOptions.Builder setMetricInterval(Duration metricInterval);
-
     @Override
     public abstract StorageOptions build();
   }
@@ -224,38 +184,6 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
    */
   @BetaApi
   public abstract OpenTelemetry getOpenTelemetry();
-
-  /**
-   * Whether OpenTelemetry client metrics are enabled.
-   *
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  public abstract boolean isEnableOtelMetrics();
-
-  /**
-   * Whether OpenTelemetry debug client metrics are enabled.
-   *
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  public abstract boolean isEnableOtelDebugMetrics();
-
-  /**
-   * The {@link SdkMeterProvider} configured for recording client metrics.
-   *
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  public abstract @Nullable SdkMeterProvider getMeterProvider();
-
-  /**
-   * The metric export interval configured for periodic metric reading.
-   *
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  public abstract Duration getMetricInterval();
 
   @SuppressWarnings("unchecked")
   @Override

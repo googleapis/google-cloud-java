@@ -213,6 +213,7 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_GFE_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION,
@@ -221,7 +222,9 @@ final class OpenTelemetryBootstrappingUtils {
   static final ImmutableList<String> CLIENT_SIZE_HISTOGRAMS =
       ImmutableList.of(
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED);
 
   @VisibleForTesting
   static SdkMeterProvider createMeterProvider(
