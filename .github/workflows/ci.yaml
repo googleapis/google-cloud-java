@@ -21,6 +21,11 @@ on:
     branches:
     - main
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 name: ci
 jobs:
   # detect whether or not we should run generated (non-handwritten) unit tests
@@ -292,6 +297,7 @@ jobs:
       run: |
         mvn test \
           -B -ntp \
+          -U \
           -Pquick-build \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
