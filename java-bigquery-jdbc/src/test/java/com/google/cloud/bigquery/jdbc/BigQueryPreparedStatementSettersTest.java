@@ -246,11 +246,10 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testGetMetaData() throws Exception {
-    // Before execution/insertSchema initialization, getMetaData() returns null
+    // Until a dry run describes the query, there are no result columns to report.
     assertNull(preparedStatement.getMetaData());
 
-    // When insertSchema is present, getMetaData() returns ResultSetMetaData
-    preparedStatement.insertSchema =
+    preparedStatement.resultSchema =
         Schema.of(
             Field.of("col1", StandardSQLTypeName.STRING),
             Field.of("col2", StandardSQLTypeName.INT64));
@@ -262,6 +261,15 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
     assertEquals("col2", metaData.getColumnName(2));
     assertEquals(Types.BIGINT, metaData.getColumnType(2));
+  }
+
+  @Test
+  public void testGetMetaDataReturnsNullForInsert() throws Exception {
+    // An INSERT returns no ResultSet, so the columns it writes must not be reported as result
+    // metadata even though the Storage Write API path has captured them.
+    preparedStatement.insertSchema = Schema.of(Field.of("col1", StandardSQLTypeName.STRING));
+
+    assertNull(preparedStatement.getMetaData());
   }
 
   @Test

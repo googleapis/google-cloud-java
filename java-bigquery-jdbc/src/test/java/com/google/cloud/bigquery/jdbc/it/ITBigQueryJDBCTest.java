@@ -1049,6 +1049,43 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  public void testPreparedQueryWithExtraPositionalParameterCharacter() throws SQLException {
+    String TABLE_NAME = "JDBC_PREPARED_EXTRA_PARAM_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+
+    // This query would report an incorrect parameter count if dryRun is not used to infer parameter
+    // count
+    String selectQuery =
+        String.format("SELECT 'Hello, ?World!' AS message, ? FROM %s.%s", DATASET, TABLE_NAME);
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement selectStmt = bigQueryConnection.prepareStatement(selectQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData parameterMetaData = selectStmt.getParameterMetaData();
+    assertNotNull(parameterMetaData);
+    assertEquals(1, parameterMetaData.getParameterCount());
+
+    // Tests that ResultSet Schema is populated before query execution
+    ResultSetMetaData resultSetMetaData = selectStmt.getMetaData();
+    assertEquals("message", resultSetMetaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, resultSetMetaData.getColumnType(1));
+
+    selectStmt.setString(1, "StringField");
+    ResultSet selectResult2 = selectStmt.executeQuery();
+    assertNotNull(selectResult2);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
   public void testPreparedInferredParameterTypes() throws SQLException {
 
     String TABLE_NAME = "JDBC_PREPARED_PARAMETER_INFER_TABLE_" + randomNumber;

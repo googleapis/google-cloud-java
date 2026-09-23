@@ -39,7 +39,7 @@ class BigQueryJdbcParameter {
   private StandardSQLTypeName sqlType;
   // Additional parameters needed for CallableStatement.
   private String paramName;
-  private BigQueryStatementParameterType paramType;
+  private BigQueryStatementParameterType paramType = BigQueryStatementParameterType.UNSPECIFIED;
   private int scale;
   private Binding binding = Binding.UNBOUND;
 
@@ -76,8 +76,12 @@ class BigQueryJdbcParameter {
     return type;
   }
 
-  public void setType(Class type) {
+  void setType(Class type) {
     this.type = type;
+  }
+
+  StandardSQLTypeName getSqlType() {
+    return sqlType;
   }
 
   String getParamName() {
@@ -130,7 +134,9 @@ class BigQueryJdbcParameter {
 
   void clearValue() {
     this.value = null;
-    this.binding = Binding.TYPED;
+    if (binding == Binding.BOUND) {
+      this.binding = Binding.TYPED;
+    }
   }
 
   @Override

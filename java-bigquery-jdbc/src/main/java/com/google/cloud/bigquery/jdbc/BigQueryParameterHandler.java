@@ -150,6 +150,37 @@ class BigQueryParameterHandler {
     return parameter;
   }
 
+  // A null still needs a type, since BigQuery rejects an untyped one. Preference order is the type
+  // the caller named, then the type a dry run inferred for this slot, then STRING.
+  void setNullParameter(int parameterIndex, Class<?> declaredJavaType) {
+    LOG.finest("++enter++");
+    checkValidIndex(parameterIndex);
+
+    BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
+    Class<?> javaType = declaredJavaType;
+    StandardSQLTypeName sqlType;
+    if (javaType != null) {
+      // Keep the caller's class instead of round-tripping it through BigQuery, which would report
+      // an Integer back as a Long.
+      sqlType = BigQueryTypeRegistry.toBigQueryType(javaType);
+    } else {
+      sqlType = parameter.getSqlType();
+      if (sqlType == null) {
+        sqlType = StandardSQLTypeName.STRING;
+      }
+      javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
+    }
+
+    parameter.setIndex(parameterIndex);
+    parameter.setValue(null);
+    parameter.bindType(javaType, sqlType);
+    parameter.setParamName("");
+    parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
+    parameter.setScale(-1);
+
+    LOG.finest("Parameter set { %s }", parameter.toString());
+  }
+
   void setParameter(int parameterIndex, Object value, Class type) {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
