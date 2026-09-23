@@ -7,6 +7,7 @@
 ## Documentation
 
 See the [official guide](https://cloud.google.com/java/docs/setup) to get setup and started with development. 
+For enabling and configuring OpenTelemetry tracing and structured logging, see the [Observability Guide](OBSERVABILITY.md). 
 
 ## Supported APIs
 
