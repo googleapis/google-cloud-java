@@ -159,6 +159,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     private TransportChannelProvider validateChannelProvider(
         TransportChannelProvider channelProvider) {
       Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
+      // Allow any TransportChannelProvider that uses gRPC (e.g., FixedTransportChannelProvider).
       if (!GrpcTransportChannel.getGrpcTransportName().equals(channelProvider.getTransportName())) {
         throw new IllegalArgumentException(
             "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
