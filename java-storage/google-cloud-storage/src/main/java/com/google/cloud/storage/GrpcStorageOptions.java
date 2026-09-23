@@ -211,7 +211,6 @@ public final class GrpcStorageOptions extends StorageOptions
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
-    this.meterProvider = this.openTelemetry.getMeterProvider();
   }
 
   /**
@@ -490,7 +489,7 @@ public final class GrpcStorageOptions extends StorageOptions
         openTelemetry,
         enableOtelMetrics,
         enableOtelDebugMetrics,
-        meterProvider,
+        getMeterProvider(),
         metricInterval,
         baseHashCode());
   }
@@ -513,7 +512,7 @@ public final class GrpcStorageOptions extends StorageOptions
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
-        && Objects.equals(meterProvider, that.meterProvider)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
         && Objects.equals(metricInterval, that.metricInterval)
         && this.baseEquals(that);
   }
@@ -586,7 +585,7 @@ public final class GrpcStorageOptions extends StorageOptions
       this.openTelemetry = gso.openTelemetry;
       this.enableOtelMetrics = gso.isEnableOtelMetrics();
       this.enableOtelDebugMetrics = gso.isEnableOtelDebugMetrics();
-      this.meterProvider = gso.getMeterProvider();
+      this.meterProvider = gso.meterProvider;
       this.metricInterval = gso.getMetricInterval();
     }
 
