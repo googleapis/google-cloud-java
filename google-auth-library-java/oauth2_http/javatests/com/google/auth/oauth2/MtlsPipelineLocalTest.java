@@ -698,7 +698,7 @@ class MtlsPipelineLocalTest {
               }
 
               // Always read and drain the request body
-              String body = readRequestBody(exchange);
+              readRequestBody(exchange);
 
               int count = requestCounter.incrementAndGet();
               GenericJson response = new GenericJson();
