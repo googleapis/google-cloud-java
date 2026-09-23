@@ -2299,7 +2299,7 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/issues?q=status:open%20componentid:310170
       name_pretty_override: Cloud Internet of Things (IoT) Core
       product_documentation_override: https://cloud.google.com/iot
-  - name: java-shopping-merchant-issue-resolution
+  - name: shopping-merchant-issue-resolution
     version: 1.26.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/issueresolution/v1
@@ -2312,7 +2312,7 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant Issue Resolution API
       product_documentation_override: https://developers.google.com/merchant/api
-  - name: java-shopping-merchant-order-tracking
+  - name: shopping-merchant-order-tracking
     version: 1.26.0-SNAPSHOT
     apis:
       - path: google/shopping/merchant/ordertracking/v1
