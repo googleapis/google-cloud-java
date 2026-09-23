@@ -153,10 +153,7 @@ final class BucketInfoShim implements ManagedLifecycle {
         && targetZone != null) {
       String cacheName =
           String.format(
-              Locale.US,
-              "projects/_/buckets/%s/rapidCaches/%s",
-              bucketInfo.getName(),
-              targetZone);
+              Locale.US, "projects/_/buckets/%s/rapidCaches/%s", bucketInfo.getName(), targetZone);
       try {
         ctrl.disableRapidCacheAsync(cacheName).get(30, java.util.concurrent.TimeUnit.SECONDS);
       } catch (Exception e) {

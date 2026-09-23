@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage.it.runner.registry;
 
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.runner.CrossRunIntersection;
@@ -157,7 +156,6 @@ public final class Registry extends RunListener {
   TestBench testBench() {
     return testBench.get();
   }
-
 
   @Nullable
   public Description getCurrentTest() {

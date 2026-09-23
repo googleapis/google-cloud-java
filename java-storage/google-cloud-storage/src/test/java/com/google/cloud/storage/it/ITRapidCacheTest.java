@@ -40,7 +40,6 @@ import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -61,8 +60,7 @@ public class ITRapidCacheTest {
     storageClient =
         StorageOptions.grpc()
             .setAttemptDirectPath(false)
-            .setGrpcInterceptorProvider(
-                GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
+            .setGrpcInterceptorProvider(GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
             .setEnableGrpcClientMetrics(false)
             .build()
             .getService();
@@ -136,7 +134,9 @@ public class ITRapidCacheTest {
     for (int i = 0; i < 5; i++) {
       try {
         created =
-            controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
+            controlClient
+                .createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache)
+                .get();
         break;
       } catch (ExecutionException e) {
         lastException = e;

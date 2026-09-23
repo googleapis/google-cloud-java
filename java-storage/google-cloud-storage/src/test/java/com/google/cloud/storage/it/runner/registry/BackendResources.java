@@ -538,5 +538,4 @@ final class BackendResources implements ManagedLifecycle {
       return shim;
     }
   }
-
 }
