@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.44.0
+version: v0.45.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -146,8 +146,6 @@ libraries:
       api_description_override: is an integrated suite of machine learning tools and services for building and using ML models with AutoML or custom code. It offers both novices and experts the best workbench for the entire machine learning development lifecycle.
       name_pretty_override: Vertex AI
       product_documentation_override: https://cloud.google.com/vertex-ai/docs
-      rest_documentation: https://cloud.google.com/vertex-ai/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/vertex-ai/docs/reference/rpc
   - name: alloydb
     version: 0.87.0-SNAPSHOT
     apis:
@@ -170,7 +168,6 @@ libraries:
       api_description_override: AlloyDB is a fully managed, PostgreSQL-compatible database service with industry-leading performance, availability, and scale.
       name_pretty_override: AlloyDB
       product_documentation_override: https://cloud.google.com/alloydb/
-      rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
   - name: alloydb-connectors
     version: 0.76.0-SNAPSHOT
     apis:
@@ -200,7 +197,6 @@ libraries:
       api_description_override: AlloyDB is a fully-managed, PostgreSQL-compatible database for demanding transactional workloads. It provides enterprise-grade performance and availability while maintaining 100% compatibility with open-source PostgreSQL.
       name_pretty_override: AlloyDB connectors
       product_documentation_override: https://cloud.google.com/alloydb/docs
-      rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
       transport_override: grpc
   - name: analytics-admin
     version: 0.108.0-SNAPSHOT
@@ -242,7 +238,6 @@ libraries:
       api_description_override: enables you to provide secure access to your backend services through a well-defined REST API that is consistent across all of your services, regardless of the service implementation. Clients consume your REST APIS to implement standalone apps for a mobile device or tablet, through apps running in a browser, or through any other type of app that can make a request to an HTTP endpoint.
       name_pretty_override: API Gateway
       product_documentation_override: https://cloud.google.com/api-gateway/docs
-      rest_documentation: https://cloud.google.com/api-gateway/docs/reference/rest
   - name: apigee-connect
     version: 2.98.0-SNAPSHOT
     apis:
@@ -294,7 +289,6 @@ libraries:
       api_description_override: App Hub simplifies the process of building, running, and managing applications on Google Cloud.
       name_pretty_override: App Hub API
       product_documentation_override: https://cloud.google.com/app-hub/docs/overview
-      rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
   - name: appoptimize
     version: 0.8.0-SNAPSHOT
     apis:
@@ -342,8 +336,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Artifact Registry
       product_documentation_override: https://cloud.google.com/artifact-registry
-      rest_documentation: https://cloud.google.com/artifact-registry/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/artifact-registry/docs/reference/rpc
   - name: asset
     version: 3.102.0-SNAPSHOT
     apis:
@@ -370,7 +362,6 @@ libraries:
       api_description_override: allows you to secure your government workloads and accelerate your path to running compliant workloads on Google Cloud with Assured Workloads for Government.
       name_pretty_override: Assured Workloads for Government
       product_documentation_override: https://cloud.google.com/assured-workloads/
-      rest_documentation: https://cloud.google.com/assured-workloads/docs/reference/rest
   - name: auditmanager
     version: 0.16.0-SNAPSHOT
     apis:
@@ -395,8 +386,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559744
       name_pretty_override: Cloud Auto ML
       product_documentation_override: https://cloud.google.com/automl/docs/
-      rest_documentation: https://cloud.google.com/automl/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
   - name: backstory
     version: 0.6.0-SNAPSHOT
     apis:
@@ -445,8 +434,6 @@ libraries:
       api_description_override: Bring your Oracle workloads to Google Cloud with Bare Metal Solution and jumpstart your cloud journey with minimal risk.
       name_pretty_override: Bare Metal Solution
       product_documentation_override: https://cloud.google.com/bare-metal/docs
-      rest_documentation: https://cloud.google.com/bare-metal/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/bare-metal/docs/reference/rpc
   - name: batch
     version: 0.98.0-SNAPSHOT
     apis:
@@ -621,7 +608,6 @@ libraries:
       api_description_override: BigQuery Migration API
       name_pretty_override: BigQuery Migration
       product_documentation_override: https://cloud.google.com/bigquery/docs
-      rest_documentation: https://cloud.google.com/bigquery/docs/reference/rest
   - name: bigqueryreservation
     version: 2.99.0-SNAPSHOT
     apis:
@@ -868,8 +854,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559770
       name_pretty_override: Cloud Billing
       product_documentation_override: https://cloud.google.com/billing/docs
-      rest_documentation: https://cloud.google.com/billing/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/billing/docs/reference/rpc
   - name: billingbudgets
     version: 2.98.0-SNAPSHOT
     apis:
@@ -890,8 +874,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Binary Authorization
       product_documentation_override: https://cloud.google.com/binary-authorization/docs
-      rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
   - name: capacityplanner
     version: 0.21.0-SNAPSHOT
     apis:
@@ -933,7 +915,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Gemini Enterprise for Customer Experience API
       product_documentation_override: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps
-      rpc_documentation: https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc
   - name: channel
     version: 3.102.0-SNAPSHOT
     apis:
@@ -942,8 +923,6 @@ libraries:
       api_description_override: With Channel Services, Google Cloud partners and resellers have a single unified resale platform, with a unified resale catalog, customer management, order management, billing management, policy and authorization management, and cost management.
       name_pretty_override: Channel Services
       product_documentation_override: https://cloud.google.com/channel/docs
-      rest_documentation: https://cloud.google.com/channel/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/channel/docs/reference/rpc
   - name: chat
     version: 0.62.0-SNAPSHOT
     apis:
@@ -952,7 +931,6 @@ libraries:
       api_description_override: The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.
       name_pretty_override: Google Chat API
       product_documentation_override: https://developers.google.com/chat/concepts
-      rest_documentation: https://developers.google.com/chat/api/reference/rest
   - name: chronicle
     version: 0.36.0-SNAPSHOT
     apis:
@@ -1219,7 +1197,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Config Delivery API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
-      rest_documentation: https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
   - name: connectgateway
     version: 0.50.0-SNAPSHOT
     apis:
@@ -1254,7 +1231,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
       name_pretty_override: Kubernetes Engine
       product_documentation_override: https://cloud.google.com/kubernetes-engine/
-      rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
   - name: containeranalysis
     version: 2.99.0-SNAPSHOT
     apis:
@@ -1311,7 +1287,6 @@ libraries:
       api_description_override: is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines.
       name_pretty_override: Cloud Data Fusion
       product_documentation_override: https://cloud.google.com/data-fusion/docs
-      rest_documentation: https://cloud.google.com/data-fusion/docs/reference/rest
   - name: databasecenter
     version: 0.19.0-SNAPSHOT
     apis:
@@ -1331,8 +1306,6 @@ libraries:
       api_description_override: is a managed service for executing a wide variety of data processing patterns.
       name_pretty_override: Dataflow
       product_documentation_override: https://cloud.google.com/dataflow/docs
-      rest_documentation: https://cloud.google.com/dataflow/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dataflow/docs/reference/rpc
   - name: dataform
     version: 0.97.0-SNAPSHOT
     apis:
@@ -1371,7 +1344,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Manager API
       product_documentation_override: https://developers.google.com/data-manager
-      rpc_documentation: https://developers.google.com/data-manager/api/reference/rpc
   - name: dataplex
     version: 1.96.0-SNAPSHOT
     apis:
@@ -1384,8 +1356,6 @@ libraries:
       api_description_override: provides intelligent data fabric that enables organizations to centrally manage, monitor, and govern their data across data lakes, data warehouses, and data marts with consistent controls, providing access to trusted data and powering analytics at scale.
       name_pretty_override: Cloud Dataplex
       product_documentation_override: https://cloud.google.com/dataplex
-      rest_documentation: https://cloud.google.com/dataplex/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dataplex/docs/reference/rpc
   - name: dataproc
     version: 4.95.0-SNAPSHOT
     apis:
@@ -1399,8 +1369,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559745
       name_pretty_override: Dataproc
       product_documentation_override: https://cloud.google.com/dataproc
-      rest_documentation: https://cloud.google.com/dataproc/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dataproc/docs/reference/rpc
   - name: dataproc-metastore
     version: 2.99.0-SNAPSHOT
     apis:
@@ -1423,8 +1391,6 @@ libraries:
       api_description_override: is a fully managed, highly available, autoscaled, autohealing, OSS-native metastore service that greatly simplifies technical metadata management. Dataproc Metastore service is based on Apache Hive metastore and serves as a critical component towards enterprise data lakes.
       name_pretty_override: Dataproc Metastore
       product_documentation_override: https://cloud.google.com/dataproc-metastore/docs
-      rest_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rpc
   - name: datastore
     version: 3.6.0-SNAPSHOT
     apis:
@@ -1461,7 +1427,6 @@ libraries:
       api_description_override: is a serverless and easy-to-use change data capture (CDC) and replication service. It allows you to synchronize data across heterogeneous databases and applications reliably, and with minimal latency and downtime.
       name_pretty_override: Datastream
       product_documentation_override: https://cloud.google.com/datastream/docs
-      rest_documentation: https://cloud.google.com/datastream/docs/reference/rest
   - name: deploy
     version: 1.96.0-SNAPSHOT
     apis:
@@ -1602,8 +1567,6 @@ libraries:
       api_shortname_override: dialogflow-cx
       name_pretty_override: Dialogflow CX
       product_documentation_override: https://cloud.google.com/dialogflow/cx/docs
-      rest_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rpc
   - name: discoveryengine
     version: 0.94.0-SNAPSHOT
     apis:
@@ -1680,8 +1643,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5548083
       name_pretty_override: Cloud Data Loss Prevention
       product_documentation_override: https://cloud.google.com/dlp/docs/
-      rest_documentation: https://cloud.google.com/dlp/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/dlp/docs/reference/rpc
   - name: dms
     version: 2.97.0-SNAPSHOT
     apis:
@@ -1691,7 +1652,6 @@ libraries:
       api_description_override: makes it easier for you to migrate your data to Google Cloud. This service helps you lift and shift your MySQL and PostgreSQL workloads into Cloud SQL.
       name_pretty_override: Database Migration Service
       product_documentation_override: https://cloud.google.com/database-migration/docs
-      rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
   - name: document-ai
     version: 2.102.0-SNAPSHOT
     apis:
@@ -1812,8 +1772,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Eventarc
       product_documentation_override: https://cloud.google.com/eventarc/docs
-      rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
   - name: eventarc-publishing
     version: 0.98.0-SNAPSHOT
     apis:
@@ -1823,8 +1781,6 @@ libraries:
       api_description_override: lets you asynchronously deliver events from Google services, SaaS, and your own apps using loosely coupled services that react to state changes.
       name_pretty_override: Eventarc Publishing
       product_documentation_override: https://cloud.google.com/eventarc/docs
-      rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
   - name: filestore
     version: 1.99.0-SNAPSHOT
     apis:
@@ -1842,7 +1798,6 @@ libraries:
       api_description_override: instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.
       name_pretty_override: Cloud Filestore API
       product_documentation_override: https://cloud.google.com/filestore/docs
-      rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
   - name: financialservices
     version: 0.39.0-SNAPSHOT
     apis:
@@ -1958,8 +1913,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Cloud Functions
       product_documentation_override: https://cloud.google.com/functions
-      rest_documentation: https://cloud.google.com/functions/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/functions/docs/reference/rpc
   - name: gdchardwaremanagement
     version: 0.53.0-SNAPSHOT
     apis:
@@ -1974,7 +1927,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: GDC Hardware Management API
       product_documentation_override: https://cloud.google.com/distributed-cloud/edge/latest/docs
-      rpc_documentation: https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
   - name: geminidataanalytics
     version: 0.26.0-SNAPSHOT
     apis:
@@ -1993,7 +1945,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Data Analytics API with Gemini
       product_documentation_override: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
-      rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
   - name: gke-backup
     version: 0.97.0-SNAPSHOT
     apis:
@@ -2171,7 +2122,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Google Health API
       product_documentation_override: https://developers.google.com/health/api
-      rpc_documentation: https://developers.google.com/health/api/reference/rpc
   - name: hypercomputecluster
     version: 0.18.0-SNAPSHOT
     apis:
@@ -2608,8 +2558,6 @@ libraries:
       api_description_override: KMS Inventory API.
       name_pretty_override: KMS Inventory API
       product_documentation_override: https://cloud.google.com/kms/docs/
-      rest_documentation: https://cloud.google.com/kms/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/kms/docs/reference/rpc
   - name: language
     version: 2.99.0-SNAPSHOT
     apis:
@@ -2621,8 +2569,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559753
       name_pretty_override: Natural Language
       product_documentation_override: https://cloud.google.com/natural-language/docs/
-      rest_documentation: https://cloud.google.com/natural-language/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/natural-language/docs/reference/rpc
   - name: licensemanager
     version: 0.31.0-SNAPSHOT
     apis:
@@ -2648,8 +2594,6 @@ libraries:
       api_description_override: is a suite of services and tools for managing, processing, and transforming life sciences data.
       name_pretty_override: Cloud Life Sciences
       product_documentation_override: https://cloud.google.com/life-sciences/docs
-      rest_documentation: https://cloud.google.com/life-sciences/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/life-sciences/docs/reference/rpc
   - name: locationfinder
     version: 0.23.0-SNAPSHOT
     apis:
@@ -2661,7 +2605,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Cloud Location Finder API
       product_documentation_override: https://cloud.google.com/location-finder/docs/overview
-      rpc_documentation: https://cloud.google.com/locationfinder/docs/reference/rest
   - name: logging
     version: 3.39.0-SNAPSHOT
     apis:
@@ -2858,7 +2801,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Maintenance API
       product_documentation_override: https://cloud.google.com/unified-maintenance/docs/overview
-      rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
   - name: managed-identities
     version: 1.96.0-SNAPSHOT
     apis:
@@ -3010,8 +2952,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Route Optimization API
       product_documentation_override: https://developers.google.com/maps/documentation/route-optimization
-      rest_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rest/
-      rpc_documentation: https://developers.google.com/maps/documentation/route-optimization/reference/rpc
   - name: maps-routing
     version: 1.83.0-SNAPSHOT
     apis:
@@ -3036,7 +2976,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Solar API
       product_documentation_override: https://developers.google.com/maps/documentation/solar/overview
-      rpc_documentation: https://developers.google.com/maps/documentation/solar/reference/rest
   - name: marketingplatformadminapi
     version: 0.47.0-SNAPSHOT
     apis:
@@ -3540,8 +3479,6 @@ libraries:
       api_description_override: is a managed routing service that takes your list of orders, vehicles, constraints, and objectives and returns the most efficient plan for your entire fleet in near real-time.
       name_pretty_override: Cloud Fleet Routing
       product_documentation_override: https://cloud.google.com/optimization/docs
-      rest_documentation: https://cloud.google.com/optimization/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/optimization/docs/reference/rpc
   - name: oracledatabase
     version: 0.47.0-SNAPSHOT
     apis:
@@ -3567,8 +3504,6 @@ libraries:
       api_shortname_override: orchestration-airflow
       name_pretty_override: Cloud Composer
       product_documentation_override: https://cloud.google.com/composer/docs
-      rest_documentation: https://cloud.google.com/composer/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/composer/docs/reference/rpc
   - name: orgpolicy
     version: 2.98.0-SNAPSHOT
     apis:
@@ -3753,7 +3688,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Privileged Access Manager API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
-      rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
   - name: productregistry
     version: 0.4.0-SNAPSHOT
     apis:
@@ -3776,7 +3710,6 @@ libraries:
       api_description_override: The Public Certificate Authority API may be used to create and manage ACME external account binding keys associated with Google Trust Services' publicly trusted certificate authority.
       name_pretty_override: Public Certificate Authority API
       product_documentation_override: https://cloud.google.com/certificate-manager/docs/public-ca
-      rpc_documentation: https://cloud.google.com/certificate-manager/docs/reference/public-ca/rpc
   - name: pubsub
     version: 1.156.0-SNAPSHOT
     apis:
@@ -4963,8 +4896,6 @@ libraries:
       name_pretty_override: reCAPTCHA Enterprise
       product_documentation_override: https://cloud.google.com/recaptcha-enterprise/docs/
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rpc
   - name: recommendations-ai
     version: 0.105.0-SNAPSHOT
     apis:
@@ -5054,8 +4985,6 @@ libraries:
       api_description_override: is a managed compute platform that enables you to run containers that are invocable via requests or events.
       name_pretty_override: Cloud Run
       product_documentation_override: https://cloud.google.com/run/docs
-      rest_documentation: https://cloud.google.com/run/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/run/docs/reference/rpc
   - name: saasservicemgmt
     version: 0.28.0-SNAPSHOT
     apis:
@@ -5070,7 +4999,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: App Lifecycle Manager
       product_documentation_override: https://cloud.google.com/saas-runtime/docs/overview
-      rpc_documentation: https://cloud.google.com/saas-runtime/docs/apis
   - name: scheduler
     version: 2.98.0-SNAPSHOT
     apis:
@@ -5091,8 +5019,6 @@ libraries:
       name_pretty_override: Google Cloud Scheduler
       product_documentation_override: https://cloud.google.com/scheduler/docs
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/scheduler/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/scheduler/docs/reference/rpc
   - name: secretmanager
     version: 2.98.0-SNAPSHOT
     apis:
@@ -5138,8 +5064,6 @@ libraries:
       api_description_override: simplifies the deployment and management of private CAs without managing infrastructure.
       name_pretty_override: Certificate Authority Service
       product_documentation_override: https://cloud.google.com/certificate-authority-service/docs
-      rest_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rpc
   - name: securitycenter
     version: 2.106.0-SNAPSHOT
     apis:
@@ -5159,7 +5083,6 @@ libraries:
       name_pretty_override: Security Command Center
       product_documentation_override: https://cloud.google.com/security-command-center
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   - name: securitycenter-settings
     version: 0.101.0-SNAPSHOT
     apis:
@@ -5170,7 +5093,6 @@ libraries:
       name_pretty_override: Security Command Center Settings API
       product_documentation_override: https://cloud.google.com/security-command-center/
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
   - name: securitycentermanagement
     version: 0.66.0-SNAPSHOT
     apis:
@@ -5241,8 +5163,6 @@ libraries:
       name_pretty_override: Service Directory
       product_documentation_override: https://cloud.google.com/service-directory/
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/service-directory/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/service-directory/docs/reference/rpc
   - name: servicehealth
     version: 0.65.0-SNAPSHOT
     apis:
@@ -5254,7 +5174,6 @@ libraries:
       api_description_override: Personalized Service Health helps you gain visibility into disruptive events impacting Google Cloud products.
       name_pretty_override: Service Health API
       product_documentation_override: https://cloud.google.com/service-health/docs/overview
-      rpc_documentation: https://cloud.google.com/service-health/docs/reference/rpc
   - name: shell
     version: 2.97.0-SNAPSHOT
     apis:
@@ -5264,8 +5183,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Cloud Shell
       product_documentation_override: https://cloud.google.com/shell/docs
-      rest_documentation: https://cloud.google.com/shell/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/shell/docs/reference/rpc
   - name: shopping-css
     version: 0.66.0-SNAPSHOT
     apis:
@@ -5533,8 +5450,6 @@ libraries:
       name_pretty_override: Cloud Speech
       product_documentation_override: https://cloud.google.com/speech-to-text/docs/
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
   - name: sql
     version: 0.4.0-SNAPSHOT
     apis:
@@ -5741,8 +5656,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5433985
       name_pretty_override: Cloud Tasks
       product_documentation_override: https://cloud.google.com/tasks/docs/
-      rest_documentation: https://cloud.google.com/tasks/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/tasks/docs/reference/rpc
   - name: telcoautomation
     version: 0.68.0-SNAPSHOT
     apis:
@@ -5772,8 +5685,6 @@ libraries:
       name_pretty_override: Cloud Text-to-Speech
       product_documentation_override: https://cloud.google.com/text-to-speech
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/text-to-speech/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/text-to-speech/docs/reference/rpc
   - name: tpu
     version: 2.99.0-SNAPSHOT
     apis:
@@ -5793,7 +5704,6 @@ libraries:
       api_description_override: are Google's custom-developed application-specific integrated circuits (ASICs) used to accelerate machine learning workloads.
       name_pretty_override: Cloud TPU
       product_documentation_override: https://cloud.google.com/tpu/docs
-      rest_documentation: https://cloud.google.com/tpu/docs/reference/rest
   - name: trace
     version: 2.98.0-SNAPSHOT
     apis:
@@ -5818,8 +5728,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559749
       name_pretty_override: Cloud Translation
       product_documentation_override: https://cloud.google.com/translate/docs/
-      rest_documentation: https://cloud.google.com/translate/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/translate/docs/reference/rpc
   - name: valkey
     version: 0.44.0-SNAPSHOT
     apis:
@@ -5838,7 +5746,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Memorystore API
       product_documentation_override: https://cloud.google.com/memorystore/docs/valkey
-      rest_documentation: https://cloud.google.com/memorystore/docs/valkey/reference/rest
   - name: vectorsearch
     version: 0.20.0-SNAPSHOT
     apis:
@@ -5870,8 +5777,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5084810
       name_pretty_override: Cloud Video Intelligence
       product_documentation_override: https://cloud.google.com/video-intelligence/docs/
-      rest_documentation: https://cloud.google.com/video-intelligence/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/video-intelligence/docs/reference/rpc
   - name: video-live-stream
     version: 0.100.0-SNAPSHOT
     apis:
@@ -5901,8 +5806,6 @@ libraries:
       api_description_override: allows you to transcode videos into a variety of formats. The Transcoder API benefits broadcasters, production companies, businesses, and individuals looking to transform their video content for use across a variety of user devices.
       name_pretty_override: Video Transcoder
       product_documentation_override: https://cloud.google.com/transcoder/docs
-      rest_documentation: https://cloud.google.com/transcoder/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/transcoder/docs/reference/rpc
   - name: vision
     version: 3.96.0-SNAPSHOT
     apis:
@@ -5926,8 +5829,6 @@ libraries:
       issue_tracker_override: https://issuetracker.google.com/issues?q=status:open%20componentid:187174
       name_pretty_override: Cloud Vision
       product_documentation_override: https://cloud.google.com/vision/docs/
-      rest_documentation: https://cloud.google.com/vision/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/vision/docs/reference/rpc
   - name: visionai
     version: 0.55.0-SNAPSHOT
     apis:
@@ -5943,7 +5844,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Vision AI API
       product_documentation_override: https://cloud.google.com/vision-ai/docs
-      rpc_documentation: https://cloud.google.com/vision-ai/docs/reference/rpc
   - name: vmmigration
     version: 1.98.0-SNAPSHOT
     apis:
@@ -5968,7 +5868,6 @@ libraries:
       api_description_override: Easily lift and shift your VMware-based applications to Google Cloud without changes to your apps, tools, or processes.
       name_pretty_override: Google Cloud VMware Engine
       product_documentation_override: https://cloud.google.com/vmware-engine/
-      rest_documentation: https://cloud.google.com/vmware-engine/docs/reference/rest
   - name: vpcaccess
     version: 2.99.0-SNAPSHOT
     apis:
@@ -5990,8 +5889,6 @@ libraries:
       name_pretty_override: Web Risk
       product_documentation_override: https://cloud.google.com/web-risk/docs/
       billing_not_required: true
-      rest_documentation: https://cloud.google.com/web-risk/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/web-risk/docs/reference/rpc
   - name: websecurityscanner
     version: 2.98.0-SNAPSHOT
     apis:
@@ -6017,7 +5914,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Cloud Workflow Executions
       product_documentation_override: https://cloud.google.com/workflows
-      rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
   - name: workflows
     version: 2.98.0-SNAPSHOT
     apis:
@@ -6034,7 +5930,6 @@ libraries:
       codeowner_team: '@googleapis/aap-dpes'
       name_pretty_override: Cloud Workflows
       product_documentation_override: https://cloud.google.com/workflows
-      rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
   - name: workloadidentity
     version: 0.3.0-SNAPSHOT
     apis:
@@ -6056,7 +5951,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Workload Manager API
       product_documentation_override: https://docs.cloud.google.com/workload-manager/docs
-      rpc_documentation: https://docs.cloud.google.com/workload-manager/docs/reference/rest
   - name: workspaceevents
     version: 0.62.0-SNAPSHOT
     apis:
@@ -6066,7 +5960,6 @@ libraries:
       api_description_override: The Google Workspace Events API lets you subscribe to events and manage change notifications across Google Workspace applications.
       name_pretty_override: Google Workspace Events API
       product_documentation_override: https://developers.google.com/workspace/events
-      rest_documentation: https://developers.google.com/workspace/events/reference/rest
   - name: workstations
     version: 0.86.0-SNAPSHOT
     apis:
@@ -6084,5 +5977,3 @@ libraries:
       api_description_override: Fully managed development environments built to meet the needs of security-sensitive enterprises. It enhances the security of development environments while accelerating developer onboarding and productivity.
       name_pretty_override: Cloud Workstations
       product_documentation_override: https://cloud.google.com/workstations
-      rest_documentation: https://cloud.google.com/workstations/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/workstations/docs/reference/rpc

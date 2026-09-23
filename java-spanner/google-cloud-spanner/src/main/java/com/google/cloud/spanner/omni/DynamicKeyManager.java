@@ -239,8 +239,8 @@ public class DynamicKeyManager extends X509ExtendedKeyManager {
       if (keyStr.contains("-----BEGIN RSA PRIVATE KEY-----")
           || keyStr.contains("-----BEGIN EC PRIVATE KEY-----")) {
         throw new IllegalArgumentException(
-            "PKCS#1 private keys are not supported. Please convert your key to PKCS#8 format using: "
-                + "openssl pkcs8 -topk8 -nocrypt -in <key> -out <key_pkcs8>");
+            "PKCS#1 private keys are not supported. Please convert your key to PKCS#8 format using:"
+                + " openssl pkcs8 -topk8 -nocrypt -in <key> -out <key_pkcs8>");
       }
       if (keyStr.contains("-----BEGIN PRIVATE KEY-----")) {
         der = extractPemContent(keyStr, "-----BEGIN PRIVATE KEY-----", "-----END PRIVATE KEY-----");
