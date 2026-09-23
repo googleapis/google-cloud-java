@@ -171,7 +171,7 @@ public class HttpStorageOptions extends StorageOptions {
         openTelemetry,
         enableOtelMetrics,
         enableOtelDebugMetrics,
-        meterProvider,
+        getMeterProvider(),
         metricInterval,
         baseHashCode());
   }
@@ -190,7 +190,7 @@ public class HttpStorageOptions extends StorageOptions {
         && Objects.equals(openTelemetry, that.openTelemetry)
         && enableOtelMetrics == that.enableOtelMetrics
         && enableOtelDebugMetrics == that.enableOtelDebugMetrics
-        && Objects.equals(meterProvider, that.meterProvider)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
         && Objects.equals(metricInterval, that.metricInterval)
         && this.baseEquals(that);
   }
@@ -199,7 +199,6 @@ public class HttpStorageOptions extends StorageOptions {
     in.defaultReadObject();
     this.retryDepsAdapter = new RetryDependenciesAdapter();
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
-    this.meterProvider = this.openTelemetry.getMeterProvider();
   }
 
   public static HttpStorageOptions.Builder newBuilder() {
@@ -240,7 +239,7 @@ public class HttpStorageOptions extends StorageOptions {
       this.openTelemetry = hso.getOpenTelemetry();
       this.enableOtelMetrics = hso.isEnableOtelMetrics();
       this.enableOtelDebugMetrics = hso.isEnableOtelDebugMetrics();
-      this.meterProvider = hso.getMeterProvider();
+      this.meterProvider = hso.meterProvider;
       this.metricInterval = hso.getMetricInterval();
     }
 
