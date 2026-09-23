@@ -32,7 +32,6 @@ class BigQueryParameterHandler {
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
-  private long highestIndex = 0;
 
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);
@@ -69,8 +68,12 @@ class BigQueryParameterHandler {
       int arrayIndex = i - 1;
       if (this.parametersList.size() <= arrayIndex
           || this.parametersList.get(arrayIndex) == null
-          || !this.parametersList.get(arrayIndex).isUserSet()) {
-        throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.");
+          || !this.parametersList.get(arrayIndex).isBound()) {
+        throw new BigQueryJdbcException(
+            String.format(
+                "One or more parameters missing in Prepared statement. No value was set for"
+                    + " parameter %d of %d.",
+                i, this.parametersArraySize));
       }
 
       Object parameterValue = getParameter(i);
@@ -134,18 +137,17 @@ class BigQueryParameterHandler {
 
   private BigQueryJdbcParameter getOrCreateParameter(int parameterIndex) {
     int arrayIndex = parameterIndex - 1;
+    parametersList.ensureCapacity(parameterIndex);
     while (parametersList.size() < parameterIndex) {
       parametersList.add(null);
     }
-    if (parameterIndex >= this.highestIndex || this.parametersList.get(arrayIndex) == null) {
-      parametersList.ensureCapacity(parameterIndex);
-      while (parametersList.size() < parameterIndex) {
-        parametersList.add(null);
-      }
-      parametersList.set(arrayIndex, new BigQueryJdbcParameter());
+    BigQueryJdbcParameter parameter = parametersList.get(arrayIndex);
+    if (parameter == null) {
+      parameter = new BigQueryJdbcParameter();
+      parameter.setIndex(parameterIndex);
+      parametersList.set(arrayIndex, parameter);
     }
-    this.highestIndex = Math.max(parameterIndex, highestIndex);
-    return parametersList.get(arrayIndex);
+    return parameter;
   }
 
   void setParameter(int parameterIndex, Object value, Class type) {
@@ -156,24 +158,21 @@ class BigQueryParameterHandler {
     BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
-    parameter.setUserSet(true);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
-  void setInferredParameterType(int parameterIndex, StandardSQLTypeName sqlTypeName) {
+  // Records the type BigQuery inferred for a placeholder. Subordinate to the caller: a bound value
+  // keeps its own type.
+  boolean setInferredParameterType(int parameterIndex, StandardSQLTypeName sqlTypeName) {
     checkValidIndex(parameterIndex);
     BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
-
-    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlTypeName);
     parameter.setIndex(parameterIndex);
-    parameter.setType(javaType);
-    parameter.setSqlType(sqlTypeName);
+    return parameter.suggestType(BigQueryTypeRegistry.toJavaClass(sqlTypeName), sqlTypeName);
   }
 
   private void checkValidIndex(int parameterIndex) {
@@ -216,11 +215,9 @@ class BigQueryParameterHandler {
     LOG.finest("++enter++");
     for (BigQueryJdbcParameter param : this.parametersList) {
       if (param != null) {
-        param.setValue(null);
-        param.setUserSet(false);
+        param.clearValue();
       }
     }
-    highestIndex = 0;
   }
 
   // set parameter by name and type
@@ -229,8 +226,7 @@ class BigQueryParameterHandler {
       Object value,
       Class<?> type,
       BigQueryStatementParameterType paramType,
-      int scale)
-      throws BigQueryJdbcSqlFeatureNotSupportedException {
+      int scale) {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
     if (paramName == null || paramName.isEmpty()) {
@@ -252,12 +248,10 @@ class BigQueryParameterHandler {
       parameter.setIndex(-1);
     }
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName(paramName);
     parameter.setParamType(paramType);
     parameter.setScale(scale);
-    parameter.setUserSet(true);
 
     if (parameter.getIndex() == -1) {
       parametersList.add(parameter);
@@ -281,12 +275,10 @@ class BigQueryParameterHandler {
 
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);
-    parameter.setUserSet(true);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
