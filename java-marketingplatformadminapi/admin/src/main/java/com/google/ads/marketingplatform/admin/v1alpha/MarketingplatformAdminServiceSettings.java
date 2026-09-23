@@ -16,8 +16,11 @@
 
 package com.google.ads.marketingplatform.admin.v1alpha;
 
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAdminAccessBindingsPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupMembersPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.stub.MarketingplatformAdminServiceStubSettings;
 import com.google.api.core.ApiFunction;
@@ -155,6 +158,104 @@ public class MarketingplatformAdminServiceSettings
       reportPropertyUsageSettings() {
     return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
         .reportPropertyUsageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserGroup. */
+  public UnaryCallSettings<GetUserGroupRequest, UserGroup> getUserGroupSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings()).getUserGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserGroups. */
+  public PagedCallSettings<
+          ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+      listUserGroupsSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings()).listUserGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUserGroup. */
+  public UnaryCallSettings<CreateUserGroupRequest, UserGroup> createUserGroupSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .createUserGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUserGroup. */
+  public UnaryCallSettings<UpdateUserGroupRequest, UserGroup> updateUserGroupSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .updateUserGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserGroup. */
+  public UnaryCallSettings<DeleteUserGroupRequest, Empty> deleteUserGroupSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .deleteUserGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserGroupMember. */
+  public UnaryCallSettings<GetUserGroupMemberRequest, UserGroupMember>
+      getUserGroupMemberSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .getUserGroupMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserGroupMembers. */
+  public PagedCallSettings<
+          ListUserGroupMembersRequest,
+          ListUserGroupMembersResponse,
+          ListUserGroupMembersPagedResponse>
+      listUserGroupMembersSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .listUserGroupMembersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUserGroupMember. */
+  public UnaryCallSettings<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .createUserGroupMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUserGroupMember. */
+  public UnaryCallSettings<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .updateUserGroupMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserGroupMember. */
+  public UnaryCallSettings<DeleteUserGroupMemberRequest, Empty> deleteUserGroupMemberSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .deleteUserGroupMemberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAdminAccessBinding. */
+  public UnaryCallSettings<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .getAdminAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAdminAccessBindings. */
+  public PagedCallSettings<
+          ListAdminAccessBindingsRequest,
+          ListAdminAccessBindingsResponse,
+          ListAdminAccessBindingsPagedResponse>
+      listAdminAccessBindingsSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .listAdminAccessBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAdminAccessBinding. */
+  public UnaryCallSettings<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .createAdminAccessBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAdminAccessBinding. */
+  public UnaryCallSettings<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingSettings() {
+    return ((MarketingplatformAdminServiceStubSettings) getStubSettings())
+        .updateAdminAccessBindingSettings();
   }
 
   public static final MarketingplatformAdminServiceSettings create(
@@ -322,6 +423,93 @@ public class MarketingplatformAdminServiceSettings
     public UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
         reportPropertyUsageSettings() {
       return getStubSettingsBuilder().reportPropertyUsageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserGroup. */
+    public UnaryCallSettings.Builder<GetUserGroupRequest, UserGroup> getUserGroupSettings() {
+      return getStubSettingsBuilder().getUserGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserGroups. */
+    public PagedCallSettings.Builder<
+            ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+        listUserGroupsSettings() {
+      return getStubSettingsBuilder().listUserGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUserGroup. */
+    public UnaryCallSettings.Builder<CreateUserGroupRequest, UserGroup> createUserGroupSettings() {
+      return getStubSettingsBuilder().createUserGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserGroup. */
+    public UnaryCallSettings.Builder<UpdateUserGroupRequest, UserGroup> updateUserGroupSettings() {
+      return getStubSettingsBuilder().updateUserGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserGroup. */
+    public UnaryCallSettings.Builder<DeleteUserGroupRequest, Empty> deleteUserGroupSettings() {
+      return getStubSettingsBuilder().deleteUserGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserGroupMember. */
+    public UnaryCallSettings.Builder<GetUserGroupMemberRequest, UserGroupMember>
+        getUserGroupMemberSettings() {
+      return getStubSettingsBuilder().getUserGroupMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserGroupMembers. */
+    public PagedCallSettings.Builder<
+            ListUserGroupMembersRequest,
+            ListUserGroupMembersResponse,
+            ListUserGroupMembersPagedResponse>
+        listUserGroupMembersSettings() {
+      return getStubSettingsBuilder().listUserGroupMembersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUserGroupMember. */
+    public UnaryCallSettings.Builder<CreateUserGroupMemberRequest, UserGroupMember>
+        createUserGroupMemberSettings() {
+      return getStubSettingsBuilder().createUserGroupMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserGroupMember. */
+    public UnaryCallSettings.Builder<UpdateUserGroupMemberRequest, UserGroupMember>
+        updateUserGroupMemberSettings() {
+      return getStubSettingsBuilder().updateUserGroupMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserGroupMember. */
+    public UnaryCallSettings.Builder<DeleteUserGroupMemberRequest, Empty>
+        deleteUserGroupMemberSettings() {
+      return getStubSettingsBuilder().deleteUserGroupMemberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAdminAccessBinding. */
+    public UnaryCallSettings.Builder<GetAdminAccessBindingRequest, AdminAccessBinding>
+        getAdminAccessBindingSettings() {
+      return getStubSettingsBuilder().getAdminAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAdminAccessBindings. */
+    public PagedCallSettings.Builder<
+            ListAdminAccessBindingsRequest,
+            ListAdminAccessBindingsResponse,
+            ListAdminAccessBindingsPagedResponse>
+        listAdminAccessBindingsSettings() {
+      return getStubSettingsBuilder().listAdminAccessBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAdminAccessBinding. */
+    public UnaryCallSettings.Builder<CreateAdminAccessBindingRequest, AdminAccessBinding>
+        createAdminAccessBindingSettings() {
+      return getStubSettingsBuilder().createAdminAccessBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAdminAccessBinding. */
+    public UnaryCallSettings.Builder<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+        updateAdminAccessBindingSettings() {
+      return getStubSettingsBuilder().updateAdminAccessBindingSettings();
     }
 
     @Override

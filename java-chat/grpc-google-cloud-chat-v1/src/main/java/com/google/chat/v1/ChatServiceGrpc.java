@@ -1079,6 +1079,129 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListMessagePinsRequest, com.google.chat.v1.ListMessagePinsResponse>
+      getListMessagePinsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMessagePins",
+      requestType = com.google.chat.v1.ListMessagePinsRequest.class,
+      responseType = com.google.chat.v1.ListMessagePinsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ListMessagePinsRequest, com.google.chat.v1.ListMessagePinsResponse>
+      getListMessagePinsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ListMessagePinsRequest, com.google.chat.v1.ListMessagePinsResponse>
+        getListMessagePinsMethod;
+    if ((getListMessagePinsMethod = ChatServiceGrpc.getListMessagePinsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getListMessagePinsMethod = ChatServiceGrpc.getListMessagePinsMethod) == null) {
+          ChatServiceGrpc.getListMessagePinsMethod =
+              getListMessagePinsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ListMessagePinsRequest,
+                          com.google.chat.v1.ListMessagePinsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMessagePins"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListMessagePinsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ListMessagePinsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("ListMessagePins"))
+                      .build();
+        }
+      }
+    }
+    return getListMessagePinsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateMessagePinRequest, com.google.chat.v1.MessagePin>
+      getCreateMessagePinMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMessagePin",
+      requestType = com.google.chat.v1.CreateMessagePinRequest.class,
+      responseType = com.google.chat.v1.MessagePin.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.CreateMessagePinRequest, com.google.chat.v1.MessagePin>
+      getCreateMessagePinMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.CreateMessagePinRequest, com.google.chat.v1.MessagePin>
+        getCreateMessagePinMethod;
+    if ((getCreateMessagePinMethod = ChatServiceGrpc.getCreateMessagePinMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getCreateMessagePinMethod = ChatServiceGrpc.getCreateMessagePinMethod) == null) {
+          ChatServiceGrpc.getCreateMessagePinMethod =
+              getCreateMessagePinMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.CreateMessagePinRequest, com.google.chat.v1.MessagePin>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMessagePin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.CreateMessagePinRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.MessagePin.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("CreateMessagePin"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMessagePinMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteMessagePinRequest, com.google.protobuf.Empty>
+      getDeleteMessagePinMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMessagePin",
+      requestType = com.google.chat.v1.DeleteMessagePinRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.DeleteMessagePinRequest, com.google.protobuf.Empty>
+      getDeleteMessagePinMethod() {
+    io.grpc.MethodDescriptor<com.google.chat.v1.DeleteMessagePinRequest, com.google.protobuf.Empty>
+        getDeleteMessagePinMethod;
+    if ((getDeleteMessagePinMethod = ChatServiceGrpc.getDeleteMessagePinMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getDeleteMessagePinMethod = ChatServiceGrpc.getDeleteMessagePinMethod) == null) {
+          ChatServiceGrpc.getDeleteMessagePinMethod =
+              getDeleteMessagePinMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.DeleteMessagePinRequest, com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMessagePin"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.DeleteMessagePinRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("DeleteMessagePin"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMessagePinMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.CreateCustomEmojiRequest, com.google.chat.v1.CustomEmoji>
       getCreateCustomEmojiMethod;
 
@@ -3030,6 +3153,70 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Lists message pins in a space. Users can pin important messages in spaces
+     * for easy access. For more information, see [Pin or unpin a conversation in
+     * Google Chat](https://support.google.com/chat/answer/15622437).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    default void listMessagePins(
+        com.google.chat.v1.ListMessagePinsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListMessagePinsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMessagePinsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    default void createMessagePin(
+        com.google.chat.v1.CreateMessagePinRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.MessagePin> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMessagePinMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    default void deleteMessagePin(
+        com.google.chat.v1.DeleteMessagePinRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMessagePinMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a custom emoji.
      * Custom emojis are only available for Google Workspace accounts, and the
      * administrator must turn custom emojis on for the organization. For more
@@ -4620,6 +4807,76 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Lists message pins in a space. Users can pin important messages in spaces
+     * for easy access. For more information, see [Pin or unpin a conversation in
+     * Google Chat](https://support.google.com/chat/answer/15622437).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public void listMessagePins(
+        com.google.chat.v1.ListMessagePinsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ListMessagePinsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMessagePinsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public void createMessagePin(
+        com.google.chat.v1.CreateMessagePinRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.MessagePin> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMessagePinMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public void deleteMessagePin(
+        com.google.chat.v1.DeleteMessagePinRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMessagePinMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a custom emoji.
      * Custom emojis are only available for Google Workspace accounts, and the
      * administrator must turn custom emojis on for the organization. For more
@@ -6168,6 +6425,67 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Lists message pins in a space. Users can pin important messages in spaces
+     * for easy access. For more information, see [Pin or unpin a conversation in
+     * Google Chat](https://support.google.com/chat/answer/15622437).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.chat.v1.ListMessagePinsResponse listMessagePins(
+        com.google.chat.v1.ListMessagePinsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListMessagePinsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.chat.v1.MessagePin createMessagePin(
+        com.google.chat.v1.CreateMessagePinRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateMessagePinMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMessagePin(
+        com.google.chat.v1.DeleteMessagePinRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteMessagePinMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a custom emoji.
      * Custom emojis are only available for Google Workspace accounts, and the
      * administrator must turn custom emojis on for the organization. For more
@@ -7639,6 +7957,67 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.DeleteReactionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteReactionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists message pins in a space. Users can pin important messages in spaces
+     * for easy access. For more information, see [Pin or unpin a conversation in
+     * Google Chat](https://support.google.com/chat/answer/15622437).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.chat.v1.ListMessagePinsResponse listMessagePins(
+        com.google.chat.v1.ListMessagePinsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessagePinsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.chat.v1.MessagePin createMessagePin(
+        com.google.chat.v1.CreateMessagePinRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMessagePinMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMessagePin(
+        com.google.chat.v1.DeleteMessagePinRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMessagePinMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9134,6 +9513,68 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Lists message pins in a space. Users can pin important messages in spaces
+     * for easy access. For more information, see [Pin or unpin a conversation in
+     * Google Chat](https://support.google.com/chat/answer/15622437).
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces.readonly`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ListMessagePinsResponse>
+        listMessagePins(com.google.chat.v1.ListMessagePinsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMessagePinsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chat.v1.MessagePin>
+        createMessagePin(com.google.chat.v1.CreateMessagePinRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMessagePinMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a message pin.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.spaces.pins`
+     *   - `https://www.googleapis.com/auth/chat.spaces`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteMessagePin(com.google.chat.v1.DeleteMessagePinRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMessagePinMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a custom emoji.
      * Custom emojis are only available for Google Workspace accounts, and the
      * administrator must turn custom emojis on for the organization. For more
@@ -9728,29 +10169,32 @@ public final class ChatServiceGrpc {
   private static final int METHODID_CREATE_REACTION = 23;
   private static final int METHODID_LIST_REACTIONS = 24;
   private static final int METHODID_DELETE_REACTION = 25;
-  private static final int METHODID_CREATE_CUSTOM_EMOJI = 26;
-  private static final int METHODID_GET_CUSTOM_EMOJI = 27;
-  private static final int METHODID_LIST_CUSTOM_EMOJIS = 28;
-  private static final int METHODID_DELETE_CUSTOM_EMOJI = 29;
-  private static final int METHODID_GET_SPACE_READ_STATE = 30;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 31;
-  private static final int METHODID_GET_THREAD_READ_STATE = 32;
-  private static final int METHODID_GET_AVAILABILITY = 33;
-  private static final int METHODID_MARK_AS_ACTIVE = 34;
-  private static final int METHODID_MARK_AS_AWAY = 35;
-  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 36;
-  private static final int METHODID_UPDATE_AVAILABILITY = 37;
-  private static final int METHODID_GET_SPACE_EVENT = 38;
-  private static final int METHODID_LIST_SPACE_EVENTS = 39;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 40;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 41;
-  private static final int METHODID_CREATE_SECTION = 42;
-  private static final int METHODID_DELETE_SECTION = 43;
-  private static final int METHODID_UPDATE_SECTION = 44;
-  private static final int METHODID_LIST_SECTIONS = 45;
-  private static final int METHODID_POSITION_SECTION = 46;
-  private static final int METHODID_LIST_SECTION_ITEMS = 47;
-  private static final int METHODID_MOVE_SECTION_ITEM = 48;
+  private static final int METHODID_LIST_MESSAGE_PINS = 26;
+  private static final int METHODID_CREATE_MESSAGE_PIN = 27;
+  private static final int METHODID_DELETE_MESSAGE_PIN = 28;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 29;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 30;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 31;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 32;
+  private static final int METHODID_GET_SPACE_READ_STATE = 33;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 34;
+  private static final int METHODID_GET_THREAD_READ_STATE = 35;
+  private static final int METHODID_GET_AVAILABILITY = 36;
+  private static final int METHODID_MARK_AS_ACTIVE = 37;
+  private static final int METHODID_MARK_AS_AWAY = 38;
+  private static final int METHODID_MARK_AS_DO_NOT_DISTURB = 39;
+  private static final int METHODID_UPDATE_AVAILABILITY = 40;
+  private static final int METHODID_GET_SPACE_EVENT = 41;
+  private static final int METHODID_LIST_SPACE_EVENTS = 42;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 43;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 44;
+  private static final int METHODID_CREATE_SECTION = 45;
+  private static final int METHODID_DELETE_SECTION = 46;
+  private static final int METHODID_UPDATE_SECTION = 47;
+  private static final int METHODID_LIST_SECTIONS = 48;
+  private static final int METHODID_POSITION_SECTION = 49;
+  private static final int METHODID_LIST_SECTION_ITEMS = 50;
+  private static final int METHODID_MOVE_SECTION_ITEM = 51;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9906,6 +10350,22 @@ public final class ChatServiceGrpc {
         case METHODID_DELETE_REACTION:
           serviceImpl.deleteReaction(
               (com.google.chat.v1.DeleteReactionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_MESSAGE_PINS:
+          serviceImpl.listMessagePins(
+              (com.google.chat.v1.ListMessagePinsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ListMessagePinsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_MESSAGE_PIN:
+          serviceImpl.createMessagePin(
+              (com.google.chat.v1.CreateMessagePinRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.MessagePin>) responseObserver);
+          break;
+        case METHODID_DELETE_MESSAGE_PIN:
+          serviceImpl.deleteMessagePin(
+              (com.google.chat.v1.DeleteMessagePinRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_CREATE_CUSTOM_EMOJI:
@@ -10205,6 +10665,25 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.DeleteReactionRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_REACTION)))
         .addMethod(
+            getListMessagePinsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ListMessagePinsRequest,
+                    com.google.chat.v1.ListMessagePinsResponse>(
+                    service, METHODID_LIST_MESSAGE_PINS)))
+        .addMethod(
+            getCreateMessagePinMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.CreateMessagePinRequest, com.google.chat.v1.MessagePin>(
+                    service, METHODID_CREATE_MESSAGE_PIN)))
+        .addMethod(
+            getDeleteMessagePinMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.DeleteMessagePinRequest, com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_MESSAGE_PIN)))
+        .addMethod(
             getCreateCustomEmojiMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -10426,6 +10905,9 @@ public final class ChatServiceGrpc {
                       .addMethod(getCreateReactionMethod())
                       .addMethod(getListReactionsMethod())
                       .addMethod(getDeleteReactionMethod())
+                      .addMethod(getListMessagePinsMethod())
+                      .addMethod(getCreateMessagePinMethod())
+                      .addMethod(getDeleteMessagePinMethod())
                       .addMethod(getCreateCustomEmojiMethod())
                       .addMethod(getGetCustomEmojiMethod())
                       .addMethod(getListCustomEmojisMethod())

@@ -84,6 +84,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Natural language questions that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes per question (approx. 2,000 characters).
    * </pre>
    *
    * <code>repeated string natural_language_questions = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -101,6 +103,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Natural language questions that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes per question (approx. 2,000 characters).
    * </pre>
    *
    * <code>repeated string natural_language_questions = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -118,6 +122,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Natural language questions that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes per question (approx. 2,000 characters).
    * </pre>
    *
    * <code>repeated string natural_language_questions = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -136,6 +142,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. Natural language questions that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes per question (approx. 2,000 characters).
    * </pre>
    *
    * <code>repeated string natural_language_questions = 4 [(.google.api.field_behavior) = OPTIONAL];
@@ -601,6 +609,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -620,6 +630,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -638,6 +650,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -657,6 +671,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -676,6 +692,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -703,6 +721,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -729,6 +749,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -752,6 +774,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>
@@ -774,6 +798,8 @@ public final class LookerGoldenQuery extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. Natural language questions that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes per question (approx. 2,000 characters).
      * </pre>
      *
      * <code>

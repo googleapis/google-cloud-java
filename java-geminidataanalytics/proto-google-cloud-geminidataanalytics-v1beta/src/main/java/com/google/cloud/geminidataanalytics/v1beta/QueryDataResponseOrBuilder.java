@@ -276,4 +276,41 @@ public interface QueryDataResponseOrBuilder
    * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
    */
   com.google.protobuf.StructOrBuilder getPipelineDebugInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return Whether the tokenUsage field is set.
+   */
+  boolean hasTokenUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return The tokenUsage.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder getTokenUsageOrBuilder();
 }

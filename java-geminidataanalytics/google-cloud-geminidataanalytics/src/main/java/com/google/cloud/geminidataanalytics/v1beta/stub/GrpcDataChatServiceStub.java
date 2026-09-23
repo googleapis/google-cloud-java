@@ -41,6 +41,7 @@ import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
+import com.google.cloud.geminidataanalytics.v1beta.UpdateConversationRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -94,6 +95,18 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateConversationRequest, Conversation>
+      updateConversationMethodDescriptor =
+          MethodDescriptor.<UpdateConversationRequest, Conversation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataChatService/UpdateConversation")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConversationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -169,6 +182,7 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
   private final ServerStreamingCallable<ChatRequest, Message> chatCallable;
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
   private final UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable;
+  private final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsResponse>
       listConversationsCallable;
@@ -260,6 +274,17 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<UpdateConversationRequest, Conversation> updateConversationTransportSettings =
+        GrpcCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
+            .setMethodDescriptor(updateConversationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "conversation.name", String.valueOf(request.getConversation().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         GrpcCallSettings.<GetConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(getConversationMethodDescriptor)
@@ -339,6 +364,11 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
             deleteConversationTransportSettings,
             settings.deleteConversationSettings(),
             clientContext);
+    this.updateConversationCallable =
+        callableFactory.createUnaryCallable(
+            updateConversationTransportSettings,
+            settings.updateConversationSettings(),
+            clientContext);
     this.getConversationCallable =
         callableFactory.createUnaryCallable(
             getConversationTransportSettings, settings.getConversationSettings(), clientContext);
@@ -392,6 +422,11 @@ public class GrpcDataChatServiceStub extends DataChatServiceStub {
   @Override
   public UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
     return deleteConversationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable() {
+    return updateConversationCallable;
   }
 
   @Override
