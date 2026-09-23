@@ -48,14 +48,22 @@ final class StorageClientMetrics {
   static final String METRIC_GCP_STORAGE_CLIENT_GFE_DURATION = "gcp.storage.client.gfe.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_GFE_HEADER_MISSING =
       "gcp.storage.client.gfe.header_missing";
+  static final String METRIC_GCP_STORAGE_CLIENT_STALL_DURATION =
+      "gcp.storage.client.stall.duration";
+  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT =
+      "gcp.storage.client.network.bytes.sent";
+  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED =
+      "gcp.storage.client.network.bytes.received";
+  static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
+      "gcp.storage.client.auth.credential_refresh.duration";
+
+  // Deferred metrics (Phase 2 placeholders - not currently measurable on Java HTTP/gRPC transports)
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION =
       "gcp.storage.client.network.dns.lookup.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION =
       "gcp.storage.client.network.tcp.connect.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION =
       "gcp.storage.client.network.tls.handshake.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
-      "gcp.storage.client.auth.credential_refresh.duration";
 
   private final DoubleHistogram rpcClientCallDuration;
   private final DoubleHistogram httpClientRequestDuration;
@@ -70,6 +78,9 @@ final class StorageClientMetrics {
   @Nullable private final LongUpDownCounter requestActive;
   @Nullable private final DoubleHistogram gfeDuration;
   @Nullable private final LongCounter gfeHeaderMissing;
+  @Nullable private final DoubleHistogram stallDuration;
+  @Nullable private final LongHistogram networkBytesSent;
+  @Nullable private final LongHistogram networkBytesReceived;
   @Nullable private final DoubleHistogram dnsLookupDuration;
   @Nullable private final DoubleHistogram tcpConnectDuration;
   @Nullable private final DoubleHistogram tlsHandshakeDuration;
@@ -94,7 +105,7 @@ final class StorageClientMetrics {
     this.httpClientRequestDuration =
         meter
             .histogramBuilder(METRIC_HTTP_CLIENT_REQUEST_DURATION)
-            .setDescription("Duration of one HTTP client request. Retried not included (Otel)")
+            .setDescription("Duration of one HTTP client request. Retries not included (Otel)")
             .setUnit("s")
             .build();
     this.gcpClientRequestDuration =
@@ -162,6 +173,26 @@ final class StorageClientMetrics {
                   "Number of GCS requests where the X-Goog-Gfe-Service-Time header was missing")
               .setUnit("1")
               .build();
+      this.stallDuration =
+          meter
+              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_STALL_DURATION)
+              .setDescription("Duration of client stall")
+              .setUnit("s")
+              .build();
+      this.networkBytesSent =
+          meter
+              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT)
+              .ofLongs()
+              .setDescription("Number of wire bytes sent on the network")
+              .setUnit("By")
+              .build();
+      this.networkBytesReceived =
+          meter
+              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED)
+              .ofLongs()
+              .setDescription("Number of wire bytes received from the network")
+              .setUnit("By")
+              .build();
       this.dnsLookupDuration =
           meter
               .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION)
@@ -192,6 +223,9 @@ final class StorageClientMetrics {
       this.requestActive = null;
       this.gfeDuration = null;
       this.gfeHeaderMissing = null;
+      this.stallDuration = null;
+      this.networkBytesSent = null;
+      this.networkBytesReceived = null;
       this.dnsLookupDuration = null;
       this.tcpConnectDuration = null;
       this.tlsHandshakeDuration = null;
@@ -245,6 +279,18 @@ final class StorageClientMetrics {
 
   @Nullable LongCounter getGfeHeaderMissing() {
     return gfeHeaderMissing;
+  }
+
+  @Nullable DoubleHistogram getStallDuration() {
+    return stallDuration;
+  }
+
+  @Nullable LongHistogram getNetworkBytesSent() {
+    return networkBytesSent;
+  }
+
+  @Nullable LongHistogram getNetworkBytesReceived() {
+    return networkBytesReceived;
   }
 
   @Nullable DoubleHistogram getDnsLookupDuration() {

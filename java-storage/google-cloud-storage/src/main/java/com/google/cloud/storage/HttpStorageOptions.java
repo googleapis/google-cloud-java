@@ -42,16 +42,13 @@ import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.time.Clock;
-import java.time.Duration;
 import java.util.Objects;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -69,10 +66,6 @@ public class HttpStorageOptions extends StorageOptions {
   private final BlobWriteSessionConfig blobWriteSessionConfig;
 
   private transient OpenTelemetry openTelemetry;
-  private final boolean enableOtelMetrics;
-  private final boolean enableOtelDebugMetrics;
-  private final transient SdkMeterProvider meterProvider;
-  private final Duration metricInterval;
 
   private HttpStorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -83,16 +76,6 @@ public class HttpStorageOptions extends StorageOptions {
     retryDepsAdapter = new RetryDependenciesAdapter();
     blobWriteSessionConfig = builder.blobWriteSessionConfig;
     openTelemetry = builder.openTelemetry;
-    this.enableOtelMetrics =
-        builder.enableOtelMetrics != null
-            ? builder.enableOtelMetrics
-            : StorageMetricsConfig.isEnableOtelMetrics();
-    this.enableOtelDebugMetrics =
-        builder.enableOtelDebugMetrics != null
-            ? builder.enableOtelDebugMetrics
-            : StorageMetricsConfig.isEnableOtelDebugMetrics();
-    this.meterProvider = builder.meterProvider;
-    this.metricInterval = builder.metricInterval;
   }
 
   @Override
@@ -119,42 +102,6 @@ public class HttpStorageOptions extends StorageOptions {
     return openTelemetry;
   }
 
-  /**
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  @Override
-  public boolean isEnableOtelMetrics() {
-    return enableOtelMetrics;
-  }
-
-  /**
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  @Override
-  public boolean isEnableOtelDebugMetrics() {
-    return enableOtelDebugMetrics;
-  }
-
-  /**
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  @Override
-  public @Nullable SdkMeterProvider getMeterProvider() {
-    return meterProvider;
-  }
-
-  /**
-   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-   */
-  @BetaApi
-  @Override
-  public Duration getMetricInterval() {
-    return metricInterval;
-  }
-
   @Override
   public HttpStorageOptions.Builder toBuilder() {
     return new HttpStorageOptions.Builder(this);
@@ -163,14 +110,7 @@ public class HttpStorageOptions extends StorageOptions {
   @Override
   public int hashCode() {
     return Objects.hash(
-        retryAlgorithmManager,
-        blobWriteSessionConfig,
-        openTelemetry,
-        enableOtelMetrics,
-        enableOtelDebugMetrics,
-        meterProvider,
-        metricInterval,
-        baseHashCode());
+        retryAlgorithmManager, blobWriteSessionConfig, openTelemetry, baseHashCode());
   }
 
   @Override
@@ -185,10 +125,6 @@ public class HttpStorageOptions extends StorageOptions {
     return Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
-        && enableOtelMetrics == that.enableOtelMetrics
-        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
-        && Objects.equals(meterProvider, that.meterProvider)
-        && Objects.equals(metricInterval, that.metricInterval)
         && this.baseEquals(that);
   }
 
@@ -221,10 +157,6 @@ public class HttpStorageOptions extends StorageOptions {
     private BlobWriteSessionConfig blobWriteSessionConfig =
         HttpStorageDefaults.INSTANCE.getDefaultStorageWriterConfig();
     private OpenTelemetry openTelemetry = HttpStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
-    private Boolean enableOtelMetrics = null;
-    private Boolean enableOtelDebugMetrics = null;
-    private SdkMeterProvider meterProvider = null;
-    private Duration metricInterval = Duration.ofSeconds(60);
 
     Builder() {}
 
@@ -234,10 +166,6 @@ public class HttpStorageOptions extends StorageOptions {
       this.storageRetryStrategy = hso.retryAlgorithmManager.retryStrategy;
       this.blobWriteSessionConfig = hso.blobWriteSessionConfig;
       this.openTelemetry = hso.getOpenTelemetry();
-      this.enableOtelMetrics = hso.isEnableOtelMetrics();
-      this.enableOtelDebugMetrics = hso.isEnableOtelDebugMetrics();
-      this.meterProvider = hso.getMeterProvider();
-      this.metricInterval = hso.getMetricInterval();
     }
 
     @Override
@@ -387,58 +315,6 @@ public class HttpStorageOptions extends StorageOptions {
     public HttpStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
-      return this;
-    }
-
-    /**
-     * Enable or disable OpenTelemetry client metrics.
-     *
-     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    @Override
-    public HttpStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
-      this.enableOtelMetrics = enableOtelMetrics;
-      return this;
-    }
-
-    /**
-     * Enable or disable OpenTelemetry debug client metrics.
-     *
-     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    @Override
-    public HttpStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
-      this.enableOtelDebugMetrics = enableOtelDebugMetrics;
-      return this;
-    }
-
-    /**
-     * Set a custom {@link SdkMeterProvider} for recording client metrics.
-     *
-     * @param meterProvider custom SdkMeterProvider to use
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    @Override
-    public HttpStorageOptions.Builder setMeterProvider(SdkMeterProvider meterProvider) {
-      this.meterProvider = meterProvider;
-      return this;
-    }
-
-    /**
-     * Set the metric export interval for periodic metric reading.
-     *
-     * @param metricInterval interval duration
-     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
-     */
-    @BetaApi
-    @Override
-    public HttpStorageOptions.Builder setMetricInterval(Duration metricInterval) {
-      this.metricInterval = requireNonNull(metricInterval, "metricInterval must be non null");
       return this;
     }
   }

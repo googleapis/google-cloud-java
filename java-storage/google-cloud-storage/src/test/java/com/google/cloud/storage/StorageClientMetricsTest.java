@@ -53,6 +53,9 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getRequestActive()).isNull();
     assertThat(metrics.getGfeDuration()).isNull();
     assertThat(metrics.getGfeHeaderMissing()).isNull();
+    assertThat(metrics.getStallDuration()).isNull();
+    assertThat(metrics.getNetworkBytesSent()).isNull();
+    assertThat(metrics.getNetworkBytesReceived()).isNull();
     assertThat(metrics.getDnsLookupDuration()).isNull();
     assertThat(metrics.getTcpConnectDuration()).isNull();
     assertThat(metrics.getTlsHandshakeDuration()).isNull();
@@ -80,6 +83,9 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getRequestActive()).isNotNull();
     assertThat(metrics.getGfeDuration()).isNotNull();
     assertThat(metrics.getGfeHeaderMissing()).isNotNull();
+    assertThat(metrics.getStallDuration()).isNotNull();
+    assertThat(metrics.getNetworkBytesSent()).isNotNull();
+    assertThat(metrics.getNetworkBytesReceived()).isNotNull();
     assertThat(metrics.getDnsLookupDuration()).isNotNull();
     assertThat(metrics.getTcpConnectDuration()).isNotNull();
     assertThat(metrics.getTlsHandshakeDuration()).isNotNull();
@@ -102,6 +108,9 @@ public final class StorageClientMetricsTest {
     metrics.getGcpClientRequestDuration().record(0.345);
     metrics.getOperationTtfb().record(0.045);
     metrics.getGfeDuration().record(0.012);
+    metrics.getStallDuration().record(0.010);
+    metrics.getNetworkBytesSent().record(1024 * 256);
+    metrics.getNetworkBytesReceived().record(1024 * 512);
     metrics.getDnsLookupDuration().record(0.005);
     metrics.getTcpConnectDuration().record(0.015);
     metrics.getTlsHandshakeDuration().record(0.025);
@@ -150,6 +159,10 @@ public final class StorageClientMetricsTest {
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
+        expectedLatencyBoundaries);
+    assertHistogramBoundaries(
+        metricsMap,
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
@@ -173,6 +186,14 @@ public final class StorageClientMetricsTest {
     assertHistogramBoundaries(
         metricsMap,
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
+        expectedSizeBoundaries);
+    assertHistogramBoundaries(
+        metricsMap,
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT,
+        expectedSizeBoundaries);
+    assertHistogramBoundaries(
+        metricsMap,
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED,
         expectedSizeBoundaries);
 
     // Verify counter metrics
