@@ -308,9 +308,7 @@ public class DatastoreOptionsTest {
         assertThrows(
             IllegalArgumentException.class,
             () -> DatastoreOptions.newBuilder().setChannelProvider(channelProvider));
-    assertThat(exception)
-        .hasMessageThat()
-        .contains("Only GRPC channels are allowed for Datastore.");
+    assertTrue(exception.getMessage().contains("Only GRPC channels are allowed for Datastore."));
   }
 
   @Test
