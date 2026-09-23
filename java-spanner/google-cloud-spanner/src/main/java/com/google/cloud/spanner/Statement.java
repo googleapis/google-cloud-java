@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.spanner.ReadContext.QueryAnalyzeMode;
 import com.google.cloud.spanner.connection.AbstractStatementParser;
 import com.google.cloud.spanner.connection.AbstractStatementParser.ParametersInfo;
@@ -62,6 +63,28 @@ public final class Statement implements Serializable {
   private final Map<String, Value> parameters;
   private final String sql;
   private final QueryOptions queryOptions;
+
+  private static final int MAX_PRECOMPUTED_PARAM_NAMES = 950;
+  private static final String[] PRECOMPUTED_P_PARAM_NAMES =
+      new String[MAX_PRECOMPUTED_PARAM_NAMES + 1];
+
+  static {
+    for (int index = 1; index <= MAX_PRECOMPUTED_PARAM_NAMES; index++) {
+      PRECOMPUTED_P_PARAM_NAMES[index] = "p" + index;
+    }
+  }
+
+  /**
+   * Returns the parameter name for the given 1-based index (e.g. "p1", "p2"). Precomputed string
+   * constants are returned for indices 1 to 950.
+   */
+  @InternalApi
+  public static String getParameterName(int index) {
+    if (index > 0 && index <= MAX_PRECOMPUTED_PARAM_NAMES) {
+      return PRECOMPUTED_P_PARAM_NAMES[index];
+    }
+    return "p" + index;
+  }
 
   private Statement(String sql, Map<String, Value> parameters, QueryOptions queryOptions) {
     this.sql = sql;
@@ -347,7 +370,7 @@ public final class Statement implements Serializable {
       Map<String, Value> parameters = new HashMap<>();
       int index = 1;
       for (Object value : values) {
-        parameters.put("p" + (index++), Value.toValue(value));
+        parameters.put(getParameterName(index++), Value.toValue(value));
       }
       return parameters;
     }

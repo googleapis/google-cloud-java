@@ -44,6 +44,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+ *           .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
  *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
  *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
  *           .build();
@@ -388,6 +389,7 @@
  *           .setOffset(-1019779949)
  *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+ *           .setNumResultsPerDataStore(397658288)
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -415,6 +417,9 @@
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+ *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+ *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);

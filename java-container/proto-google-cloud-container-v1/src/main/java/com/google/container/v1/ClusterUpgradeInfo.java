@@ -1137,6 +1137,66 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int ROLLBACK_SAFE_UPGRADE_STATUS_FIELD_NUMBER = 9;
+  private com.google.container.v1.RollbackSafeUpgradeStatus rollbackSafeUpgradeStatus_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rollbackSafeUpgradeStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasRollbackSafeUpgradeStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rollbackSafeUpgradeStatus.
+   */
+  @java.lang.Override
+  public com.google.container.v1.RollbackSafeUpgradeStatus getRollbackSafeUpgradeStatus() {
+    return rollbackSafeUpgradeStatus_ == null
+        ? com.google.container.v1.RollbackSafeUpgradeStatus.getDefaultInstance()
+        : rollbackSafeUpgradeStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The cluster's rollback-safe upgrade status.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder
+      getRollbackSafeUpgradeStatusOrBuilder() {
+    return rollbackSafeUpgradeStatus_ == null
+        ? com.google.container.v1.RollbackSafeUpgradeStatus.getDefaultInstance()
+        : rollbackSafeUpgradeStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1180,6 +1240,9 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, patchTargetVersion_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(9, getRollbackSafeUpgradeStatus());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1234,6 +1297,11 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, patchTargetVersion_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getRollbackSafeUpgradeStatus());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1271,6 +1339,11 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
       return false;
     if (hasEndOfExtendedSupportTimestamp()) {
       if (!getEndOfExtendedSupportTimestamp().equals(other.getEndOfExtendedSupportTimestamp()))
+        return false;
+    }
+    if (hasRollbackSafeUpgradeStatus() != other.hasRollbackSafeUpgradeStatus()) return false;
+    if (hasRollbackSafeUpgradeStatus()) {
+      if (!getRollbackSafeUpgradeStatus().equals(other.getRollbackSafeUpgradeStatus()))
         return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1311,6 +1384,10 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
     if (hasEndOfExtendedSupportTimestamp()) {
       hash = (37 * hash) + END_OF_EXTENDED_SUPPORT_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getEndOfExtendedSupportTimestamp().hashCode();
+    }
+    if (hasRollbackSafeUpgradeStatus()) {
+      hash = (37 * hash) + ROLLBACK_SAFE_UPGRADE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getRollbackSafeUpgradeStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1442,10 +1519,20 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.container.v1.ClusterUpgradeInfo.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUpgradeDetailsFieldBuilder();
+        internalGetRollbackSafeUpgradeStatusFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1465,6 +1552,11 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000010);
       endOfStandardSupportTimestamp_ = "";
       endOfExtendedSupportTimestamp_ = "";
+      rollbackSafeUpgradeStatus_ = null;
+      if (rollbackSafeUpgradeStatusBuilder_ != null) {
+        rollbackSafeUpgradeStatusBuilder_.dispose();
+        rollbackSafeUpgradeStatusBuilder_ = null;
+      }
       return this;
     }
 
@@ -1538,6 +1630,13 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.endOfExtendedSupportTimestamp_ = endOfExtendedSupportTimestamp_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.rollbackSafeUpgradeStatus_ =
+            rollbackSafeUpgradeStatusBuilder_ == null
+                ? rollbackSafeUpgradeStatus_
+                : rollbackSafeUpgradeStatusBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1622,6 +1721,9 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
         endOfExtendedSupportTimestamp_ = other.endOfExtendedSupportTimestamp_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasRollbackSafeUpgradeStatus()) {
+        mergeRollbackSafeUpgradeStatus(other.getRollbackSafeUpgradeStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1722,6 +1824,14 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetRollbackSafeUpgradeStatusFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3141,6 +3251,224 @@ public final class ClusterUpgradeInfo extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.RollbackSafeUpgradeStatus rollbackSafeUpgradeStatus_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RollbackSafeUpgradeStatus,
+            com.google.container.v1.RollbackSafeUpgradeStatus.Builder,
+            com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder>
+        rollbackSafeUpgradeStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rollbackSafeUpgradeStatus field is set.
+     */
+    public boolean hasRollbackSafeUpgradeStatus() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rollbackSafeUpgradeStatus.
+     */
+    public com.google.container.v1.RollbackSafeUpgradeStatus getRollbackSafeUpgradeStatus() {
+      if (rollbackSafeUpgradeStatusBuilder_ == null) {
+        return rollbackSafeUpgradeStatus_ == null
+            ? com.google.container.v1.RollbackSafeUpgradeStatus.getDefaultInstance()
+            : rollbackSafeUpgradeStatus_;
+      } else {
+        return rollbackSafeUpgradeStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRollbackSafeUpgradeStatus(
+        com.google.container.v1.RollbackSafeUpgradeStatus value) {
+      if (rollbackSafeUpgradeStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rollbackSafeUpgradeStatus_ = value;
+      } else {
+        rollbackSafeUpgradeStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRollbackSafeUpgradeStatus(
+        com.google.container.v1.RollbackSafeUpgradeStatus.Builder builderForValue) {
+      if (rollbackSafeUpgradeStatusBuilder_ == null) {
+        rollbackSafeUpgradeStatus_ = builderForValue.build();
+      } else {
+        rollbackSafeUpgradeStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRollbackSafeUpgradeStatus(
+        com.google.container.v1.RollbackSafeUpgradeStatus value) {
+      if (rollbackSafeUpgradeStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && rollbackSafeUpgradeStatus_ != null
+            && rollbackSafeUpgradeStatus_
+                != com.google.container.v1.RollbackSafeUpgradeStatus.getDefaultInstance()) {
+          getRollbackSafeUpgradeStatusBuilder().mergeFrom(value);
+        } else {
+          rollbackSafeUpgradeStatus_ = value;
+        }
+      } else {
+        rollbackSafeUpgradeStatusBuilder_.mergeFrom(value);
+      }
+      if (rollbackSafeUpgradeStatus_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRollbackSafeUpgradeStatus() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      rollbackSafeUpgradeStatus_ = null;
+      if (rollbackSafeUpgradeStatusBuilder_ != null) {
+        rollbackSafeUpgradeStatusBuilder_.dispose();
+        rollbackSafeUpgradeStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.RollbackSafeUpgradeStatus.Builder
+        getRollbackSafeUpgradeStatusBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetRollbackSafeUpgradeStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder
+        getRollbackSafeUpgradeStatusOrBuilder() {
+      if (rollbackSafeUpgradeStatusBuilder_ != null) {
+        return rollbackSafeUpgradeStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return rollbackSafeUpgradeStatus_ == null
+            ? com.google.container.v1.RollbackSafeUpgradeStatus.getDefaultInstance()
+            : rollbackSafeUpgradeStatus_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The cluster's rollback-safe upgrade status.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.RollbackSafeUpgradeStatus rollback_safe_upgrade_status = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.RollbackSafeUpgradeStatus,
+            com.google.container.v1.RollbackSafeUpgradeStatus.Builder,
+            com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder>
+        internalGetRollbackSafeUpgradeStatusFieldBuilder() {
+      if (rollbackSafeUpgradeStatusBuilder_ == null) {
+        rollbackSafeUpgradeStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.RollbackSafeUpgradeStatus,
+                com.google.container.v1.RollbackSafeUpgradeStatus.Builder,
+                com.google.container.v1.RollbackSafeUpgradeStatusOrBuilder>(
+                getRollbackSafeUpgradeStatus(), getParentForChildren(), isClean());
+        rollbackSafeUpgradeStatus_ = null;
+      }
+      return rollbackSafeUpgradeStatusBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.ClusterUpgradeInfo)

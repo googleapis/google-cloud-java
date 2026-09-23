@@ -16,6 +16,7 @@
 
 package com.google.cloud.securesourcemanager.v1;
 
+import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchRefsPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.FetchTreePagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListBranchRulesPagedResponse;
 import static com.google.cloud.securesourcemanager.v1.SecureSourceManagerClient.ListHooksPagedResponse;
@@ -220,6 +221,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -272,6 +275,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -324,6 +329,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -385,6 +392,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setHostConfig(Instance.HostConfig.newBuilder().build())
             .setWorkforceIdentityFederationConfig(
                 Instance.WorkforceIdentityFederationConfig.newBuilder().build())
+            .setSatisfiesPzi(true)
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3370,6 +3379,67 @@ public class SecureSourceManagerClientHttpJsonTest {
               .setSha("sha113836")
               .build();
       client.fetchBlob(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchRefsTest() throws Exception {
+    Ref responsesElement = Ref.newBuilder().build();
+    FetchRefsResponse expectedResponse =
+        FetchRefsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRefs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchRefsRequest request =
+        FetchRefsRequest.newBuilder()
+            .setRepository(RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchRefsPagedResponse pagedListResponse = client.fetchRefs(request);
+
+    List<Ref> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRefsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchRefsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchRefsRequest request =
+          FetchRefsRequest.newBuilder()
+              .setRepository(
+                  RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]").toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchRefs(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

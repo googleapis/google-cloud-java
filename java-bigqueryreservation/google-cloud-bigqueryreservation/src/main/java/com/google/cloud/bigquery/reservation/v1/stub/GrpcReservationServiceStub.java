@@ -67,6 +67,7 @@ import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
 import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -445,6 +446,18 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupMethodDescriptor =
+          MethodDescriptor.<UpdateReservationGroupRequest, ReservationGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/UpdateReservationGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateReservationGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReservationGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable;
@@ -502,6 +515,8 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
       listReservationGroupsCallable;
   private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
       listReservationGroupsPagedCallable;
+  private final UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -886,6 +901,19 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateReservationGroupRequest, ReservationGroup>
+        updateReservationGroupTransportSettings =
+            GrpcCallSettings.<UpdateReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(updateReservationGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reservation_group.name",
+                          String.valueOf(request.getReservationGroup().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createReservationCallable =
         callableFactory.createUnaryCallable(
@@ -1037,6 +1065,11 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
         callableFactory.createPagedCallable(
             listReservationGroupsTransportSettings,
             settings.listReservationGroupsSettings(),
+            clientContext);
+    this.updateReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateReservationGroupTransportSettings,
+            settings.updateReservationGroupSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1238,6 +1271,12 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
       listReservationGroupsPagedCallable() {
     return listReservationGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable() {
+    return updateReservationGroupCallable;
   }
 
   @Override

@@ -44,6 +44,22 @@ public final class AudienceSegmentMessagesProto extends com.google.protobuf.Gene
       internal_static_google_ads_admanager_v1_AudienceSegment_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_AudienceSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudienceSegment_NonRuleBasedFirstPartyAudienceSegment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudienceSegment_NonRuleBasedFirstPartyAudienceSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudienceSegment_RuleBasedFirstPartyAudienceSegment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudienceSegment_RuleBasedFirstPartyAudienceSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudienceSegment_ThirdPartyAudienceSegment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudienceSegment_ThirdPartyAudienceSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudienceSegment_Rule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudienceSegment_Rule_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,28 +69,95 @@ public final class AudienceSegmentMessagesProto extends com.google.protobuf.Gene
 
   static {
     java.lang.String[] descriptorData = {
-      "\n7google/ads/admanager/v1/audience_segme"
-          + "nt_messages.proto\022\027google.ads.admanager."
-          + "v1\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\"\346\001\n\017AudienceSegme"
-          + "nt\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\036\n\014display_name\030\002 "
-          + "\001(\tB\003\340A\002H\000\210\001\001:\216\001\352A\212\001\n(admanager.googleap"
-          + "is.com/AudienceSegment\022;networks/{networ"
-          + "k_code}/audienceSegments/{audience_segme"
-          + "nt}*\020audienceSegments2\017audienceSegmentB\017"
-          + "\n\r_display_nameB\320\001\n\033com.google.ads.adman"
-          + "ager.v1B\034AudienceSegmentMessagesProtoP\001Z"
-          + "@google.golang.org/genproto/googleapis/a"
-          + "ds/admanager/v1;admanager\252\002\027Google.Ads.A"
-          + "dManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032"
-          + "Google::Ads::AdManager::V1b\006proto3"
+      "\n"
+          + "7google/ads/admanager/v1/audience_segment_messages.proto\022\027google.ads.admanager."
+          + "v1\0324google/ads/admanager/v1/audience_seg"
+          + "ment_enums.proto\032\'google/ads/admanager/v"
+          + "1/targeting.proto\032\037google/api/field_beha"
+          + "vior.proto\032\031google/api/resource.proto\032\037g"
+          + "oogle/protobuf/timestamp.proto\032\027google/type/money.proto\"\335\021\n"
+          + "\017AudienceSegment\022\212\001\n"
+          + "+non_rule_based_first_party_audience_segment\030\r"
+          + " \001(\0132N.google.ads.admanager.v1.Audi"
+          + "enceSegment.NonRuleBasedFirstPartyAudienceSegmentB\003\340A\001H\000\022\203\001\n"
+          + "\'rule_based_first_party_audience_segment\030\016 \001(\0132K.google.ads."
+          + "admanager.v1.AudienceSegment.RuleBasedFirstPartyAudienceSegmentB\003\340A\001H\000\022o\n"
+          + "\034third_party_audience_segment\030\020 \001(\0132B.google.ad"
+          + "s.admanager.v1.AudienceSegment.ThirdPartyAudienceSegmentB\003\340A\003H\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
+          + "\tshared_id\030\021 \001(\003B\003\340A\003\022\036\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002H\001\210\001\001\022\034\n"
+          + "\014category_ids\030\003 \003(\003B\006\340A\001\340A\006\022\035\n"
+          + "\013description\030\004 \001(\tB\003\340A\001H\002\210\001\001\022e\n"
+          + "\006status\030\005 \001(\0162H.google.ads.admanager.v"
+          + "1.AudienceSegmentStatusEnum.AudienceSegmentStatusB\006\340A\003\340A\007H\003\210\001\001\022\026\n"
+          + "\004size\030\006 \001(\003B\003\340A\003H\004\210\001\001\022!\n"
+          + "\017mobile_web_size\030\007 \001(\003B\003\340A\003H\005\210\001\001\022\033\n"
+          + "\tidfa_size\030\010 \001(\003B\003\340A\003H\006\210\001\001\022\034\n\n"
+          + "ad_id_size\030\t \001(\003B\003\340A\003H\007\210\001\001\022\033\n"
+          + "\tppid_size\030\n"
+          + " \001(\003B\003\340A\003H\010\210\001\001\022,\n"
+          + "\032data_provider_display_name\030\013 \001(\tB\003\340A\003H\t\210\001\001\022g\n"
+          + "\014segment_type\030\014 \001(\0162D."
+          + "google.ads.admanager.v1.AudienceSegmentTypeEnum.AudienceSegmentTypeB\006\340A\003\340A\007H\n"
+          + "\210\001\001\032t\n"
+          + "%NonRuleBasedFirstPartyAudienceSegment\022,\n"
+          + "\032membership_expiration_days\030\001 \001(\003B\003\340A\002H\000\210\001\001B\035\n"
+          + "\033_membership_expiration_days\032\221\002\n"
+          + "\"RuleBasedFirstPartyAudienceSegment\022\034\n"
+          + "\n"
+          + "page_views\030\001 \001(\003B\003\340A\002H\000\210\001\001\022\036\n"
+          + "\014recency_days\030\002 \001(\003B\003\340A\001H\001\210\001\001\022,\n"
+          + "\032membership_expiration_days\030\003 \001(\003B\003\340A\002H\002\210\001\001\022@\n"
+          + "\004rule\030\004 \001(\0132"
+          + "-.google.ads.admanager.v1.AudienceSegment.RuleB\003\340A\002B\r\n"
+          + "\013_page_viewsB\017\n\r"
+          + "_recency_daysB\035\n"
+          + "\033_membership_expiration_days\032\300\003\n"
+          + "\031ThirdPartyAudienceSegment\022{\n"
+          + "\017approval_status\030\001 \001(\0162X.google.ads.admanager.v1.Audi"
+          + "enceSegmentApprovalStatusEnum.AudienceSegmentApprovalStatusB\003\340A\003H\000\210\001\001\022%\n"
+          + "\004cost\030\002 \001(\0132\022.google.type.MoneyB\003\340A\003\022r\n"
+          + "\014license_type\030\003 \001(\0162R.google.ads.admanager.v1.Aud"
+          + "ienceSegmentLicenseTypeEnum.AudienceSegmentLicenseTypeB\003\340A\003H\001\210\001\001\0223\n\n"
+          + "start_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\022\n"
+          + "\020_approval_statusB\017\n\r"
+          + "_license_type\032\236\001\n"
+          + "\004Rule\022M\n"
+          + "\023inventory_targeting\030\001 "
+          + "\001(\0132+.google.ads.admanager.v1.InventoryTargetingB\003\340A\002\022G\n"
+          + "\020custom_targeting\030\002 \001(\0132"
+          + "(.google.ads.admanager.v1.CustomTargetingB\003\340A\001:\216\001\352A\212\001\n"
+          + "(admanager.googleapis.com/AudienceSegment\022;networks/{network_code}"
+          + "/audienceSegments/{audience_segment}*\020audienceSegments2\017audienceSegmentB\n\n"
+          + "\010sub_typeB\017\n\r"
+          + "_display_nameB\016\n"
+          + "\014_descriptionB\t\n"
+          + "\007_statusB\007\n"
+          + "\005_sizeB\022\n"
+          + "\020_mobile_web_sizeB\014\n\n"
+          + "_idfa_sizeB\r\n"
+          + "\013_ad_id_sizeB\014\n\n"
+          + "_ppid_sizeB\035\n"
+          + "\033_data_provider_display_nameB\017\n\r"
+          + "_segment_typeB\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034AudienceSegmentMessagesProtoP\001Z@google."
+          + "golang.org/genproto/googleapis/ads/adman"
+          + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.AudienceSegmentEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.TargetingProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.MoneyProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_AudienceSegment_descriptor =
         getDescriptor().getMessageType(0);
@@ -82,11 +165,63 @@ public final class AudienceSegmentMessagesProto extends com.google.protobuf.Gene
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_AudienceSegment_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName",
+              "NonRuleBasedFirstPartyAudienceSegment",
+              "RuleBasedFirstPartyAudienceSegment",
+              "ThirdPartyAudienceSegment",
+              "Name",
+              "SharedId",
+              "DisplayName",
+              "CategoryIds",
+              "Description",
+              "Status",
+              "Size",
+              "MobileWebSize",
+              "IdfaSize",
+              "AdIdSize",
+              "PpidSize",
+              "DataProviderDisplayName",
+              "SegmentType",
+              "SubType",
+            });
+    internal_static_google_ads_admanager_v1_AudienceSegment_NonRuleBasedFirstPartyAudienceSegment_descriptor =
+        internal_static_google_ads_admanager_v1_AudienceSegment_descriptor.getNestedType(0);
+    internal_static_google_ads_admanager_v1_AudienceSegment_NonRuleBasedFirstPartyAudienceSegment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudienceSegment_NonRuleBasedFirstPartyAudienceSegment_descriptor,
+            new java.lang.String[] {
+              "MembershipExpirationDays",
+            });
+    internal_static_google_ads_admanager_v1_AudienceSegment_RuleBasedFirstPartyAudienceSegment_descriptor =
+        internal_static_google_ads_admanager_v1_AudienceSegment_descriptor.getNestedType(1);
+    internal_static_google_ads_admanager_v1_AudienceSegment_RuleBasedFirstPartyAudienceSegment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudienceSegment_RuleBasedFirstPartyAudienceSegment_descriptor,
+            new java.lang.String[] {
+              "PageViews", "RecencyDays", "MembershipExpirationDays", "Rule",
+            });
+    internal_static_google_ads_admanager_v1_AudienceSegment_ThirdPartyAudienceSegment_descriptor =
+        internal_static_google_ads_admanager_v1_AudienceSegment_descriptor.getNestedType(2);
+    internal_static_google_ads_admanager_v1_AudienceSegment_ThirdPartyAudienceSegment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudienceSegment_ThirdPartyAudienceSegment_descriptor,
+            new java.lang.String[] {
+              "ApprovalStatus", "Cost", "LicenseType", "StartTime", "EndTime",
+            });
+    internal_static_google_ads_admanager_v1_AudienceSegment_Rule_descriptor =
+        internal_static_google_ads_admanager_v1_AudienceSegment_descriptor.getNestedType(3);
+    internal_static_google_ads_admanager_v1_AudienceSegment_Rule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudienceSegment_Rule_descriptor,
+            new java.lang.String[] {
+              "InventoryTargeting", "CustomTargeting",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.AudienceSegmentEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.TargetingProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.MoneyProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

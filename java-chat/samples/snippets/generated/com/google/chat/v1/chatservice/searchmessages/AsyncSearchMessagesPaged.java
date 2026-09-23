@@ -18,6 +18,7 @@ package com.google.chat.v1.samples;
 
 // [START chat_v1_generated_ChatService_SearchMessages_Paged_async]
 import com.google.chat.v1.ChatServiceClient;
+import com.google.chat.v1.MarkupSyntax;
 import com.google.chat.v1.SearchMessageResult;
 import com.google.chat.v1.SearchMessagesRequest;
 import com.google.chat.v1.SearchMessagesResponse;
@@ -44,6 +45,7 @@ public class AsyncSearchMessagesPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       while (true) {
         SearchMessagesResponse response = chatServiceClient.searchMessagesCallable().call(request);

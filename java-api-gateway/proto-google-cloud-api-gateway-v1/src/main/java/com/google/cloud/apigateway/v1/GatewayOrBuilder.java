@@ -299,8 +299,7 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+   * Output only. The default hostname that serves traffic for this Gateway.
    * </pre>
    *
    * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -313,8 +312,7 @@ public interface GatewayOrBuilder
    *
    *
    * <pre>
-   * Output only. The default API Gateway host name of the form
-   * `{gateway_id}-{hash}.{region_code}.gateway.dev`.
+   * Output only. The default hostname that serves traffic for this Gateway.
    * </pre>
    *
    * <code>string default_hostname = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -322,4 +320,78 @@ public interface GatewayOrBuilder
    * @return The bytes for defaultHostname.
    */
   com.google.protobuf.ByteString getDefaultHostnameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+   * change it on update is rejected. If unset, the service selects the mode.
+   * This field records only what was requested and is never modified by the
+   * service; read `effective_streaming_mode` for the mode the gateway is served
+   * with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for streamingMode.
+   */
+  int getStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Requests streaming for a new gateway. An attempt to
+   * change it on update is rejected. If unset, the service selects the mode.
+   * This field records only what was requested and is never modified by the
+   * service; read `effective_streaming_mode` for the mode the gateway is served
+   * with.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.StreamingMode streaming_mode = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The streamingMode.
+   */
+  com.google.cloud.apigateway.v1.Gateway.StreamingMode getStreamingMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The streaming mode this gateway is actually served with, which
+   * the service resolves at creation from `streaming_mode`, the referenced API
+   * Config, and the platform default at the time. Read this rather than
+   * `streaming_mode` to determine whether a gateway supports streaming.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for effectiveStreamingMode.
+   */
+  int getEffectiveStreamingModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The streaming mode this gateway is actually served with, which
+   * the service resolves at creation from `streaming_mode`, the referenced API
+   * Config, and the platform default at the time. Read this rather than
+   * `streaming_mode` to determine whether a gateway supports streaming.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode effective_streaming_mode = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveStreamingMode.
+   */
+  com.google.cloud.apigateway.v1.Gateway.EffectiveStreamingMode getEffectiveStreamingMode();
 }

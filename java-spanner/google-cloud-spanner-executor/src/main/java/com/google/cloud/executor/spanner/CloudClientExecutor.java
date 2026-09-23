@@ -788,7 +788,8 @@ public class CloudClientExecutor extends CloudExecutor {
               if (finishMode == Mode.COMMIT && rwTxn.runner.getCommitResponse() != null) {
                 com.google.cloud.spanner.CommitResponse commitResponse =
                     rwTxn.runner.getCommitResponse();
-                if (commitResponse.getSnapshotTimestamp() != null) {
+                if ((rwTxn.repeatableRead || rwTxn.optimistic)
+                    && commitResponse.getSnapshotTimestamp() != null) {
                   outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
                       Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
                 }

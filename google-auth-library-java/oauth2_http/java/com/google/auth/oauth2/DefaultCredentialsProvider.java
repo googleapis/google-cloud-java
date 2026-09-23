@@ -130,7 +130,7 @@ class DefaultCredentialsProvider {
     throw new IOException(CLOUDSDK_MISSING_CREDENTIALS);
   }
 
-  private final GoogleCredentials getDefaultCredentialsUnsynchronized(
+  private @Nullable GoogleCredentials getDefaultCredentialsUnsynchronized(
       HttpTransportFactory transportFactory) throws IOException {
 
     // First try the environment variable
@@ -242,7 +242,7 @@ class DefaultCredentialsProvider {
     return credentials;
   }
 
-  private final File getWellKnownCredentialsFile() throws IOException {
+  private File getWellKnownCredentialsFile() throws IOException {
     return GoogleAuthUtils.getWellKnownCredentialsFile(this);
   }
 
@@ -309,7 +309,7 @@ class DefaultCredentialsProvider {
         Collections.<String>emptyList(), Collections.<String>emptyList());
   }
 
-  private final @Nullable GoogleCredentials tryGetComputeCredentials(
+  private @Nullable GoogleCredentials tryGetComputeCredentials(
       HttpTransportFactory transportFactory) {
     // Checking compute engine requires a round-trip, so check only once
     if (checkedComputeEngine) {
@@ -353,11 +353,11 @@ class DefaultCredentialsProvider {
     return Class.forName(className);
   }
 
-  String getEnv(String name) {
+  @Nullable String getEnv(String name) {
     return System.getenv(name);
   }
 
-  String getProperty(String property, String def) {
+  @Nullable String getProperty(String property, @Nullable String def) {
     return System.getProperty(property, def);
   }
 

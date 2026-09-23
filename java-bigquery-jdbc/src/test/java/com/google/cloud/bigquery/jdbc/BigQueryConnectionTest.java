@@ -44,6 +44,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -256,6 +257,24 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals(500, connection.writeAPIAppendRowCount);
     } catch (IOException | SQLException e) {
       throw new BigQueryJdbcException(e);
+    }
+  }
+
+  @Test
+  public void testTimestampPicosControlsDataFormatOptions() throws IOException, SQLException {
+    try (BigQueryConnection connection =
+        new BigQueryConnection(BASE_URL + "EnableTimestampPicos=1;")) {
+      assertEquals(
+          DataFormatOptions.TimestampFormatOptions.ISO8601_STRING,
+          connection.getBigQuery().getOptions().getDataFormatOptions().timestampFormatOptions(),
+          "EnableTimestampPicos=1 must request ISO8601 timestamp serialization");
+    }
+
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertEquals(
+          DataFormatOptions.TimestampFormatOptions.TIMESTAMP_OUTPUT_FORMAT_UNSPECIFIED,
+          connection.getBigQuery().getOptions().getDataFormatOptions().timestampFormatOptions(),
+          "Default connections must not alter the timestamp wire format");
     }
   }
 
@@ -774,6 +793,64 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
               });
       assertTrue(ex.getMessage().contains("Failed to list all accessible projects."));
       assertEquals(exception, ex.getCause());
+    }
+  }
+
+  @Test
+  public void testUpdateSessionInfo() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertNull(connection.getSessionInfoConnectionProperty());
+
+      connection.updateSessionInfo("test_session_id_1");
+      assertNotNull(connection.getSessionInfoConnectionProperty());
+      assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
+      assertEquals("test_session_id_1", connection.getSessionInfoConnectionProperty().getValue());
+
+      // Verify queryProperties contains session_id
+      boolean found =
+          connection.getQueryProperties().stream()
+              .anyMatch(
+                  cp ->
+                      "session_id".equalsIgnoreCase(cp.getKey())
+                          && "test_session_id_1".equals(cp.getValue()));
+      assertTrue(found, "queryProperties should contain session_id property");
+
+      // Update to a new session ID and ensure it updates without creating duplicates
+      connection.updateSessionInfo("test_session_id_2");
+      assertEquals("test_session_id_2", connection.getSessionInfoConnectionProperty().getValue());
+      long count =
+          connection.getQueryProperties().stream()
+              .filter(cp -> "session_id".equalsIgnoreCase(cp.getKey()))
+              .count();
+      assertEquals(1, count, "Should only have 1 session_id property in queryProperties");
+    }
+  }
+
+  @Test
+  public void testUserSuppliedSessionId() throws Exception {
+    String urlWithSessionId =
+        BASE_URL + ";EnableSession=1;QueryProperties=session_id=user_supplied_session_999";
+    try (BigQueryConnection connection = new BigQueryConnection(urlWithSessionId)) {
+      assertTrue(connection.isSessionEnabled());
+      assertNotNull(connection.getSessionInfoConnectionProperty());
+      assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
+      assertEquals(
+          "user_supplied_session_999", connection.getSessionInfoConnectionProperty().getValue());
+    }
+  }
+
+  @Test
+  public void testEnableTimestampPicosDefault() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertFalse(connection.isEnableTimestampPicos());
+    }
+  }
+
+  @Test
+  public void testEnableTimestampPicosConfigured() throws Exception {
+    String url = BASE_URL + "EnableTimestampPicos=1;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertTrue(connection.isEnableTimestampPicos());
     }
   }
 }

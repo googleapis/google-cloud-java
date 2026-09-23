@@ -688,6 +688,24 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> UpdateReservationGroup</td>
+ *      <td><p> Updates an existing reservation group resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateReservationGroup(UpdateReservationGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateReservationGroup(ReservationGroup reservationGroup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateReservationGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -5147,6 +5165,99 @@ public class ReservationServiceClient implements BackgroundResource {
   public final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
       listReservationGroupsCallable() {
     return stub.listReservationGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing reservation group resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationGroup reservationGroup = ReservationGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ReservationGroup response =
+   *       reservationServiceClient.updateReservationGroup(reservationGroup, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param reservationGroup Required. Content of the reservation group to update.
+   * @param updateMask Optional. Standard field mask for the set of fields to be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup updateReservationGroup(
+      ReservationGroup reservationGroup, FieldMask updateMask) {
+    UpdateReservationGroupRequest request =
+        UpdateReservationGroupRequest.newBuilder()
+            .setReservationGroup(reservationGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateReservationGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing reservation group resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   UpdateReservationGroupRequest request =
+   *       UpdateReservationGroupRequest.newBuilder()
+   *           .setReservationGroup(ReservationGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ReservationGroup response = reservationServiceClient.updateReservationGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup updateReservationGroup(UpdateReservationGroupRequest request) {
+    return updateReservationGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing reservation group resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   UpdateReservationGroupRequest request =
+   *       UpdateReservationGroupRequest.newBuilder()
+   *           .setReservationGroup(ReservationGroup.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReservationGroup> future =
+   *       reservationServiceClient.updateReservationGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ReservationGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable() {
+    return stub.updateReservationGroupCallable();
   }
 
   @Override

@@ -44,6 +44,7 @@ import com.google.pubsub.v1.PubsubProto;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
 import com.google.showcase.v1beta1.IdentityOuterClass;
+import com.google.showcase.v1beta1.MediaProto;
 import com.google.showcase.v1beta1.MessagingOuterClass;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.test.callablenamingtype.CallableNameType;
@@ -275,6 +276,28 @@ public class TestProtoLoader {
         .setServices(services)
         .setHelperResourceNames(outputResourceNames)
         .setTransport(transport)
+        .build();
+  }
+
+  public GapicContext parseShowcaseResumableUpload() {
+    FileDescriptor fileDescriptor = MediaProto.getDescriptor();
+    ServiceDescriptor serviceDescriptor = fileDescriptor.getServices().get(0);
+    assertEquals("MediaService", serviceDescriptor.getName());
+
+    Map<String, Message> messageTypes = Parser.parseMessages(fileDescriptor);
+    Map<String, ResourceName> resourceNames = Parser.parseResourceNames(fileDescriptor);
+    Set<ResourceName> outputResourceNames = new HashSet<>();
+    List<Service> services =
+        Parser.parseService(
+            fileDescriptor, messageTypes, resourceNames, Optional.empty(), outputResourceNames);
+
+    return GapicContext.builder()
+        .setMessages(messageTypes)
+        .setResourceNames(resourceNames)
+        .setServices(services)
+        .setHelperResourceNames(outputResourceNames)
+        .setTransport(transport)
+        .setServiceConfig(GapicServiceConfig.create(Optional.empty()))
         .build();
   }
 

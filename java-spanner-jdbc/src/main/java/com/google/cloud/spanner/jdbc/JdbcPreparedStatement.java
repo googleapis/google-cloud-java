@@ -74,7 +74,7 @@ class JdbcPreparedStatement extends AbstractJdbcPreparedStatement
     ParametersInfo paramInfo = getParametersInfo();
     Statement.Builder builder = Statement.newBuilder(paramInfo.sqlWithNamedParameters);
     for (int index = 1; index <= getParameters().getHighestIndex(); index++) {
-      getParameters().bindParameterValue(builder.bind("p" + index), index);
+      getParameters().bindParameterValue(builder.bind(Statement.getParameterName(index)), index);
     }
     return builder.build();
   }

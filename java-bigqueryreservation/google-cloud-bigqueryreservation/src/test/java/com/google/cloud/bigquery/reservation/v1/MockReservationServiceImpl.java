@@ -690,4 +690,26 @@ public class MockReservationServiceImpl extends ReservationServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void updateReservationGroup(
+      UpdateReservationGroupRequest request, StreamObserver<ReservationGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReservationGroup) {
+      requests.add(request);
+      responseObserver.onNext(((ReservationGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateReservationGroup, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReservationGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

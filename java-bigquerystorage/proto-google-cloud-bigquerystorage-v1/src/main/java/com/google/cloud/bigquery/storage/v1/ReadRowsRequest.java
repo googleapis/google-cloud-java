@@ -70,6 +70,53 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.ReadRowsRequest.Builder.class);
   }
 
+  private int outputFormatSerializationOptionsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object outputFormatSerializationOptions_;
+
+  public enum OutputFormatSerializationOptionsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ARROW_SERIALIZATION_OPTIONS(5),
+    OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET(0);
+    private final int value;
+
+    private OutputFormatSerializationOptionsCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OutputFormatSerializationOptionsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OutputFormatSerializationOptionsCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return ARROW_SERIALIZATION_OPTIONS;
+        case 0:
+          return OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public OutputFormatSerializationOptionsCase getOutputFormatSerializationOptionsCase() {
+    return OutputFormatSerializationOptionsCase.forNumber(outputFormatSerializationOptionsCase_);
+  }
+
   public static final int READ_STREAM_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -148,6 +195,76 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
     return offset_;
   }
 
+  public static final int ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the arrowSerializationOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasArrowSerializationOptions() {
+    return outputFormatSerializationOptionsCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The arrowSerializationOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions
+      getArrowSerializationOptions() {
+    if (outputFormatSerializationOptionsCase_ == 5) {
+      return (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+          outputFormatSerializationOptions_;
+    }
+    return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder
+      getArrowSerializationOptionsOrBuilder() {
+    if (outputFormatSerializationOptionsCase_ == 5) {
+      return (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+          outputFormatSerializationOptions_;
+    }
+    return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -168,6 +285,12 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
     if (offset_ != 0L) {
       output.writeInt64(2, offset_);
     }
+    if (outputFormatSerializationOptionsCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+              outputFormatSerializationOptions_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -182,6 +305,13 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
     }
     if (offset_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, offset_);
+    }
+    if (outputFormatSerializationOptionsCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+                  outputFormatSerializationOptions_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -201,6 +331,16 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
 
     if (!getReadStream().equals(other.getReadStream())) return false;
     if (getOffset() != other.getOffset()) return false;
+    if (!getOutputFormatSerializationOptionsCase()
+        .equals(other.getOutputFormatSerializationOptionsCase())) return false;
+    switch (outputFormatSerializationOptionsCase_) {
+      case 5:
+        if (!getArrowSerializationOptions().equals(other.getArrowSerializationOptions()))
+          return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -216,6 +356,14 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getReadStream().hashCode();
     hash = (37 * hash) + OFFSET_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOffset());
+    switch (outputFormatSerializationOptionsCase_) {
+      case 5:
+        hash = (37 * hash) + ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getArrowSerializationOptions().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -358,6 +506,11 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       readStream_ = "";
       offset_ = 0L;
+      if (arrowSerializationOptionsBuilder_ != null) {
+        arrowSerializationOptionsBuilder_.clear();
+      }
+      outputFormatSerializationOptionsCase_ = 0;
+      outputFormatSerializationOptions_ = null;
       return this;
     }
 
@@ -388,6 +541,7 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -399,6 +553,14 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.offset_ = offset_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.bigquery.storage.v1.ReadRowsRequest result) {
+      result.outputFormatSerializationOptionsCase_ = outputFormatSerializationOptionsCase_;
+      result.outputFormatSerializationOptions_ = this.outputFormatSerializationOptions_;
+      if (outputFormatSerializationOptionsCase_ == 5 && arrowSerializationOptionsBuilder_ != null) {
+        result.outputFormatSerializationOptions_ = arrowSerializationOptionsBuilder_.build();
       }
     }
 
@@ -422,6 +584,17 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       }
       if (other.getOffset() != 0L) {
         setOffset(other.getOffset());
+      }
+      switch (other.getOutputFormatSerializationOptionsCase()) {
+        case ARROW_SERIALIZATION_OPTIONS:
+          {
+            mergeArrowSerializationOptions(other.getArrowSerializationOptions());
+            break;
+          }
+        case OUTPUTFORMATSERIALIZATIONOPTIONS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -461,6 +634,14 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 42:
+              {
+                input.readMessage(
+                    internalGetArrowSerializationOptionsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                outputFormatSerializationOptionsCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -475,6 +656,20 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int outputFormatSerializationOptionsCase_ = 0;
+    private java.lang.Object outputFormatSerializationOptions_;
+
+    public OutputFormatSerializationOptionsCase getOutputFormatSerializationOptionsCase() {
+      return OutputFormatSerializationOptionsCase.forNumber(outputFormatSerializationOptionsCase_);
+    }
+
+    public Builder clearOutputFormatSerializationOptions() {
+      outputFormatSerializationOptionsCase_ = 0;
+      outputFormatSerializationOptions_ = null;
+      onChanged();
       return this;
     }
 
@@ -661,6 +856,273 @@ public final class ReadRowsRequest extends com.google.protobuf.GeneratedMessage
       offset_ = 0L;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions,
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder,
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder>
+        arrowSerializationOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the arrowSerializationOptions field is set.
+     */
+    @java.lang.Override
+    public boolean hasArrowSerializationOptions() {
+      return outputFormatSerializationOptionsCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The arrowSerializationOptions.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions
+        getArrowSerializationOptions() {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          return (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+              outputFormatSerializationOptions_;
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+      } else {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          return arrowSerializationOptionsBuilder_.getMessage();
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setArrowSerializationOptions(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions value) {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        outputFormatSerializationOptions_ = value;
+        onChanged();
+      } else {
+        arrowSerializationOptionsBuilder_.setMessage(value);
+      }
+      outputFormatSerializationOptionsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setArrowSerializationOptions(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder builderForValue) {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        outputFormatSerializationOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        arrowSerializationOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      outputFormatSerializationOptionsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeArrowSerializationOptions(
+        com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions value) {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        if (outputFormatSerializationOptionsCase_ == 5
+            && outputFormatSerializationOptions_
+                != com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions
+                    .getDefaultInstance()) {
+          outputFormatSerializationOptions_ =
+              com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.newBuilder(
+                      (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+                          outputFormatSerializationOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          outputFormatSerializationOptions_ = value;
+        }
+        onChanged();
+      } else {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          arrowSerializationOptionsBuilder_.mergeFrom(value);
+        } else {
+          arrowSerializationOptionsBuilder_.setMessage(value);
+        }
+      }
+      outputFormatSerializationOptionsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearArrowSerializationOptions() {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          outputFormatSerializationOptionsCase_ = 0;
+          outputFormatSerializationOptions_ = null;
+          onChanged();
+        }
+      } else {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          outputFormatSerializationOptionsCase_ = 0;
+          outputFormatSerializationOptions_ = null;
+        }
+        arrowSerializationOptionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder
+        getArrowSerializationOptionsBuilder() {
+      return internalGetArrowSerializationOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder
+        getArrowSerializationOptionsOrBuilder() {
+      if ((outputFormatSerializationOptionsCase_ == 5)
+          && (arrowSerializationOptionsBuilder_ != null)) {
+        return arrowSerializationOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        if (outputFormatSerializationOptionsCase_ == 5) {
+          return (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+              outputFormatSerializationOptions_;
+        }
+        return com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options specific to the Apache Arrow output format.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions,
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder,
+            com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder>
+        internalGetArrowSerializationOptionsFieldBuilder() {
+      if (arrowSerializationOptionsBuilder_ == null) {
+        if (!(outputFormatSerializationOptionsCase_ == 5)) {
+          outputFormatSerializationOptions_ =
+              com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.getDefaultInstance();
+        }
+        arrowSerializationOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions,
+                com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions.Builder,
+                com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder>(
+                (com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
+                    outputFormatSerializationOptions_,
+                getParentForChildren(),
+                isClean());
+        outputFormatSerializationOptions_ = null;
+      }
+      outputFormatSerializationOptionsCase_ = 5;
+      onChanged();
+      return arrowSerializationOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1.ReadRowsRequest)

@@ -197,6 +197,7 @@ public class BaseBigQueryReadClientTest {
             .setStats(StreamStats.newBuilder().build())
             .setThrottleState(ThrottleState.newBuilder().build())
             .setUncompressedByteSize(-2094376525)
+            .setTotalEstimatedRowCount(-1623220052)
             .build();
     mockBigQueryRead.addResponse(expectedResponse);
     ReadRowsRequest request =

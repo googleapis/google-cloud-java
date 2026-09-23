@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import javax.annotation.Nullable;
@@ -221,7 +222,29 @@ public interface ReadContext extends AutoCloseable {
    */
   ResultSet analyzeQuery(Statement statement, QueryAnalyzeMode queryMode);
 
-  /** Closes this read context and frees up the underlying resources. */
+  /** Closes this read context. */
   @Override
   void close();
+
+  /**
+   * Closes this read context asynchronously.
+   *
+   * <p>For read contexts with pending asynchronous operations (such as multi-use read-only
+   * transactions with background queries initializing), the returned future will complete once all
+   * pending starts have completed and the read context has been closed.
+   *
+   * <p>Callers must either consume or close all {@link AsyncResultSet} instances created on this
+   * read context; otherwise, unconsumed and unclosed result sets may prevent {@code closeAsync()}
+   * from completing.
+   *
+   * @return an {@link ApiFuture} that is done when the read context has been closed.
+   */
+  default ApiFuture<Void> closeAsync() {
+    try {
+      close();
+      return ApiFutures.immediateFuture(null);
+    } catch (Throwable throwable) {
+      return ApiFutures.immediateFailedFuture(throwable);
+    }
+  }
 }

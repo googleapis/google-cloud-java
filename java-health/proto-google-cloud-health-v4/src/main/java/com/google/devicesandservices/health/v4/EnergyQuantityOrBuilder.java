@@ -30,7 +30,7 @@ public interface EnergyQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the energy in kilocalories.
+   * Required. The energy value in kilocalories.
    * </pre>
    *
    * <code>optional double kcal = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,7 +43,7 @@ public interface EnergyQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the energy in kilocalories.
+   * Required. The energy value in kilocalories.
    * </pre>
    *
    * <code>optional double kcal = 1 [(.google.api.field_behavior) = REQUIRED];</code>

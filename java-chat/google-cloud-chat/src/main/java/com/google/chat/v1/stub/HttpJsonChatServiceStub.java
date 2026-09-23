@@ -207,6 +207,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             ProtoRestSerializer<ListMessagesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(
+                                fields, "markupSyntax", request.getMarkupSyntaxValue());
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
@@ -323,6 +325,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetMessageRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "markupSyntax", request.getMarkupSyntaxValue());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })

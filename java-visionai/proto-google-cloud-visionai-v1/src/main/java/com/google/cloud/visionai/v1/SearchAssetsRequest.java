@@ -191,7 +191,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent corpus to search.
-   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
    * </pre>
    *
    * <code>
@@ -218,7 +218,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent corpus to search.
-   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+   * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
    * </pre>
    *
    * <code>
@@ -1594,7 +1594,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent corpus to search.
-     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
      * </pre>
      *
      * <code>
@@ -1620,7 +1620,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent corpus to search.
-     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
      * </pre>
      *
      * <code>
@@ -1646,7 +1646,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent corpus to search.
-     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
      * </pre>
      *
      * <code>
@@ -1671,7 +1671,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent corpus to search.
-     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
      * </pre>
      *
      * <code>
@@ -1692,7 +1692,7 @@ public final class SearchAssetsRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent corpus to search.
-     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}'
+     * Format: `projects/{project_id}/locations/{location_id}/corpora/{corpus_id}`
      * </pre>
      *
      * <code>

@@ -491,9 +491,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -514,9 +519,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -537,9 +547,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -560,9 +575,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -583,9 +603,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -1518,4 +1543,36 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  int getMarkupSyntaxValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  com.google.chat.v1.MarkupSyntax getMarkupSyntax();
 }
