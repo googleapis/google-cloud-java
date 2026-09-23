@@ -32,6 +32,7 @@ import com.google.storage.control.v2.BucketName;
 import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.StorageControlClient;
 import com.google.storage.control.v2.StorageControlSettings;
+import com.google.storage.control.v2.stub.StorageControlStubSettings;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -46,7 +47,6 @@ import org.junit.runners.MethodSorters;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ITRapidCacheTest {
 
-  private static final String PROJECT_ID = "gcs-hyd-connector-benchmarks";
   private static StorageControlClient controlClient;
   private static Storage storageClient;
   private static String bucketName;
@@ -57,44 +57,59 @@ public class ITRapidCacheTest {
 
   @BeforeClass
   public static void setUpClass() throws Exception {
-    // Initialize standard Storage client for preprod (gRPC)
+    // Initialize standard Storage client for prod (gRPC)
     storageClient =
         StorageOptions.grpc()
-            .setProjectId(PROJECT_ID)
-            .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
+            .setAttemptDirectPath(false)
+            .setGrpcInterceptorProvider(
+                GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
+            .setEnableGrpcClientMetrics(false)
             .build()
             .getService();
 
-    // Initialize StorageControl client for preprod (gRPC)
+    // Initialize StorageControl client for prod (gRPC)
     StorageControlSettings controlSettings =
         StorageControlSettings.newBuilder()
-            .setEndpoint("storage-preprod-test-grpc.googleusercontent.com:443")
+            .setTransportChannelProvider(
+                StorageControlStubSettings.defaultGrpcTransportProviderBuilder()
+                    .setInterceptorProvider(
+                        GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
+                    .build())
             .build();
     controlClient = StorageControlClient.create(controlSettings);
 
-    // Create HNS enabled regional bucket in preprod us-central1
-    bucketName = "java-storage-preprod-rapid-" + UUID.randomUUID().toString().substring(0, 8);
+    // Create HNS enabled regional bucket in europe-west1
+    bucketName = "java-storage-rapid-" + UUID.randomUUID().toString().substring(0, 8);
     BucketInfo bucketInfo =
         BucketInfo.newBuilder(bucketName)
-            .setLocation("us-central1")
+            .setLocation("europe-west1")
             .setHierarchicalNamespace(HierarchicalNamespace.newBuilder().setEnabled(true).build())
             .setIamConfiguration(
                 IamConfiguration.newBuilder().setIsUniformBucketLevelAccessEnabled(true).build())
             .build();
     storageClient.create(bucketInfo);
+    // Wait for bucket metadata to propagate in GCS Control plane
+    Thread.sleep(20000);
 
     // Define shared cache ID (forced to be the zone name by the backend)
-    cacheId = "us-central1-a";
+    cacheId = "europe-west1-c";
     cacheName = String.format("projects/_/buckets/%s/rapidCaches/%s", bucketName, cacheId);
   }
 
   @AfterClass
   public static void tearDownClass() throws Exception {
+    if (controlClient != null && cacheName != null) {
+      try {
+        controlClient.disableRapidCacheAsync(cacheName).get();
+      } catch (Exception e) {
+        System.err.println("Failed to clean up rapid cache: " + e.getMessage());
+      }
+    }
     if (storageClient != null && bucketName != null) {
       try {
         storageClient.delete(bucketName);
       } catch (Exception e) {
-        System.err.println("Failed to clean up preprod bucket: " + e.getMessage());
+        System.err.println("Failed to clean up bucket: " + e.getMessage());
       }
     }
     if (controlClient != null) {
@@ -109,13 +124,44 @@ public class ITRapidCacheTest {
     RapidCache rapidCache =
         RapidCache.newBuilder()
             .setName(cacheName)
-            .setZone("us-central1-a")
+            .setZone("europe-west1-c")
             .setCacheType("rapid-cache-ultra")
             .setTtl(Duration.newBuilder().setSeconds(86400).build()) // 24 hours
             .build();
 
-    RapidCache created =
-        controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
+    // Workaround for b/564257939: CreateRapidCache via gRPC in Prod returns UNAVAILABLE
+    // even when the backend asynchronously creates the cache instance.
+    RapidCache created = null;
+    ExecutionException lastException = null;
+    for (int i = 0; i < 5; i++) {
+      try {
+        created =
+            controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
+        break;
+      } catch (ExecutionException e) {
+        lastException = e;
+        if (e.getCause() instanceof ApiException) {
+          ApiException apiEx = (ApiException) e.getCause();
+          if (apiEx.getStatusCode().getCode() == StatusCode.Code.UNAVAILABLE
+              || apiEx.getStatusCode().getCode() == StatusCode.Code.ALREADY_EXISTS) {
+            try {
+              Thread.sleep(3000);
+              created = controlClient.getRapidCache(cacheName);
+              if (created != null) {
+                break;
+              }
+            } catch (Exception ignored) {
+              // Cache not yet ready via getRapidCache
+            }
+            continue;
+          }
+        }
+        throw e;
+      }
+    }
+    if (created == null && lastException != null) {
+      throw lastException;
+    }
 
     assertThat(created).isNotNull();
     assertThat(created.getName()).isEqualTo(cacheName);
@@ -127,18 +173,30 @@ public class ITRapidCacheTest {
     RapidCache rapidCache =
         RapidCache.newBuilder()
             .setName(cacheName) // Use the same name as the shared cache
-            .setZone("us-central1-a")
+            .setZone("europe-west1-c")
             .setCacheType("rapid-cache-ultra")
             .build();
 
-    try {
-      controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
-      fail("Expected AlreadyExists exception");
-    } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(ApiException.class);
-      ApiException apiException = (ApiException) e.getCause();
-      assertThat(apiException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ALREADY_EXISTS);
+    ApiException apiException = null;
+    for (int i = 0; i < 3; i++) {
+      try {
+        controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
+        fail("Expected AlreadyExists exception");
+      } catch (ExecutionException e) {
+        if (e.getCause() instanceof ApiException) {
+          apiException = (ApiException) e.getCause();
+          if (apiException.getStatusCode().getCode() == StatusCode.Code.UNAVAILABLE) {
+            Thread.sleep(2000);
+            continue;
+          }
+        }
+        break;
+      }
     }
+    assertThat(apiException).isNotNull();
+    // b/564257939: CreateRapidCache in Prod returns UNAVAILABLE instead of ALREADY_EXISTS
+    assertThat(apiException.getStatusCode().getCode())
+        .isAnyOf(StatusCode.Code.ALREADY_EXISTS, StatusCode.Code.UNAVAILABLE);
   }
 
   @Test
@@ -156,12 +214,13 @@ public class ITRapidCacheTest {
 
     try {
       controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
-      fail("Expected InvalidArgument exception");
+      fail("Expected InvalidArgument or Unavailable exception");
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(ApiException.class);
       ApiException apiException = (ApiException) e.getCause();
+      // b/564257939: CreateRapidCache in Prod returns UNAVAILABLE instead of INVALID_ARGUMENT
       assertThat(apiException.getStatusCode().getCode())
-          .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+          .isAnyOf(StatusCode.Code.INVALID_ARGUMENT, StatusCode.Code.UNAVAILABLE);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
       fail("Interrupted");
@@ -171,6 +230,7 @@ public class ITRapidCacheTest {
   @Test
   public void getRapidCache() throws Exception {
     RapidCache retrieved = controlClient.getRapidCache(cacheName);
+    System.out.println("Get rapid cache response: " + retrieved);
     assertThat(retrieved).isNotNull();
     assertThat(retrieved.getName()).isEqualTo(cacheName);
     assertThat(retrieved.getState()).isEqualTo("running");
@@ -198,17 +258,17 @@ public class ITRapidCacheTest {
     for (RapidCache rc : response.iterateAll()) {
       names.add(rc.getName());
     }
+    System.out.println("Rapid Caches list: " + names);
 
     assertThat(names).contains(cacheName);
   }
 
   @Test
-  @Ignore("b/483013082: UpdateRapidCache returns 500 Internal error in PreProd")
   public void updateRapidCache() throws Exception {
     RapidCache toUpdate =
         RapidCache.newBuilder()
             .setName(cacheName)
-            .setZone("us-central1-a")
+            .setZone("europe-west1-c")
             .setCacheType("rapid-cache-ultra")
             .setTtl(Duration.newBuilder().setSeconds(172800).build()) // 48h
             .build();

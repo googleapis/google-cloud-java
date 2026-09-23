@@ -77,15 +77,6 @@ final class BucketInfoShim implements ManagedLifecycle {
   @Override
   public void start() {
     try {
-      if (locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
-        System.out.println(
-            ">>> REUSING static pre-created RCU bucket java-storage-reg-rapid-preprod-3fe2bb58 for REGIONAL_RAPID test!");
-        createdBucket =
-            BucketInfo.newBuilder("java-storage-reg-rapid-preprod-3fe2bb58")
-                .setLocation("US-CENTRAL1")
-                .build();
-        return;
-      }
       System.out.println(
           "Starting resource creation for LocationType: "
               + locationType
@@ -98,7 +89,7 @@ final class BucketInfoShim implements ManagedLifecycle {
               + " (Location: "
               + createdBucket.getLocation()
               + ")");
-      if (locationType == LocationType.REGIONAL_RAPID) {
+      if (locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
         if (ctrl == null) {
           throw new IllegalStateException(
               "StorageControlClient is required for REGIONAL_RAPID but was not provided");
@@ -127,6 +118,7 @@ final class BucketInfoShim implements ManagedLifecycle {
           System.out.println("Successfully created Rapid Cache in zone: " + targetZone);
         } catch (java.util.concurrent.TimeoutException te) {
           System.out.println("WARNING: CreateRapidCache LRO timed out after 30s. Skipping test.");
+          stop();
           assumeTrue(
               "Skipping test because Rapid Cache creation LRO timed out (30s) in zone: "
                   + targetZone,
@@ -134,6 +126,7 @@ final class BucketInfoShim implements ManagedLifecycle {
         } catch (Exception e) {
           System.out.println(
               "WARNING: CreateRapidCache LRO failed: " + e.getMessage() + ". Skipping test.");
+          stop();
           assumeTrue(
               "Skipping test due to failure during Rapid Cache creation: " + e.getMessage(), false);
         }
@@ -154,6 +147,26 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    BucketCleaner.doCleanup(bucketInfo.getName(), s /*, ctrl*/);
+    if (locationType == LocationType.REGIONAL_RAPID
+        && backend != Backend.TEST_BENCH
+        && ctrl != null
+        && targetZone != null) {
+      String cacheName =
+          String.format(
+              Locale.US,
+              "projects/_/buckets/%s/rapidCaches/%s",
+              bucketInfo.getName(),
+              targetZone);
+      try {
+        ctrl.disableRapidCacheAsync(cacheName).get(30, java.util.concurrent.TimeUnit.SECONDS);
+      } catch (Exception e) {
+        System.err.println("Failed to clean up rapid cache: " + e.getMessage());
+      }
+    }
+    if (ctrl != null && backend != Backend.TEST_BENCH) {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s, ctrl);
+    } else {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s);
+    }
   }
 }

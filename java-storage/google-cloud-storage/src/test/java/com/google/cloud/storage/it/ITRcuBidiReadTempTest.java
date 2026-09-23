@@ -41,7 +41,6 @@ import org.junit.Test;
 
 public final class ITRcuBidiReadTempTest {
 
-  private static final String PROJECT_ID = "gcs-hyd-connector-benchmarks";
   private static final String BUCKET_NAME =
       "java-storage-reg-rapid-preprod-3fe2bb58"; // Reusing active bucket with running cache
   private static Storage storage;
@@ -52,7 +51,6 @@ public final class ITRcuBidiReadTempTest {
     storage =
         StorageOptions.grpc()
             .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
-            .setProjectId(PROJECT_ID)
             .build()
             .getService();
   }

@@ -59,25 +59,16 @@ final class BackendResources implements ManagedLifecycle {
   private final Backend backend;
   private final ProtectedBucketNames protectedBucketNames;
   private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
-  private final TestRunScopedInstance<StorageInstance> storageJson;
-  private final TestRunScopedInstance<StorageInstance> storageGrpc;
-  private final TestRunScopedInstance<StorageControlInstance> ctrl;
   private final ImmutableList<RegistryEntry<?>> registryEntries;
 
   private BackendResources(
       Backend backend,
       ProtectedBucketNames protectedBucketNames,
       ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets,
-      TestRunScopedInstance<StorageInstance> storageJson,
-      TestRunScopedInstance<StorageInstance> storageGrpc,
-      TestRunScopedInstance<StorageControlInstance> ctrl,
       ImmutableList<RegistryEntry<?>> registryEntries) {
     this.backend = backend;
     this.protectedBucketNames = protectedBucketNames;
     this.dynamicBuckets = dynamicBuckets;
-    this.storageJson = storageJson;
-    this.storageGrpc = storageGrpc;
-    this.ctrl = ctrl;
     this.registryEntries = registryEntries;
   }
 
@@ -103,16 +94,6 @@ final class BackendResources implements ManagedLifecycle {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this).add("backend", backend).toString();
-  }
-
-  public Storage getStorage(Transport transport) {
-    return transport == Transport.GRPC
-        ? storageGrpc.get().getStorage()
-        : storageJson.get().getStorage();
-  }
-
-  public StorageControlClient getStorageControlClient() {
-    return ctrl.get().getCtrl();
   }
 
   @SuppressWarnings("SwitchStatementWithTooFewBranches")
@@ -141,15 +122,11 @@ final class BackendResources implements ManagedLifecycle {
                       StorageOptions.http()
                           .setHost(
                               "https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/")
-                          .setProjectId(getPreprodProjectId())
                           .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
-                  optionsBuilder =
-                      StorageOptions.http()
-                          .setProjectId(getPreprodProjectId())
-                          .setOpenTelemetry(otelSdk.get().get());
+                  optionsBuilder = StorageOptions.http().setOpenTelemetry(otelSdk.get().get());
                   break;
               }
               HttpStorageOptions built = optionsBuilder.build();
@@ -175,15 +152,11 @@ final class BackendResources implements ManagedLifecycle {
                   optionsBuilder =
                       StorageOptions.grpc()
                           .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
-                          .setProjectId(getPreprodProjectId())
                           .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
-                  optionsBuilder =
-                      StorageOptions.grpc()
-                          .setProjectId(getPreprodProjectId())
-                          .setOpenTelemetry(otelSdk.get().get());
+                  optionsBuilder = StorageOptions.grpc().setOpenTelemetry(otelSdk.get().get());
                   break;
               }
               GrpcStorageOptions built =
@@ -366,9 +339,6 @@ final class BackendResources implements ManagedLifecycle {
         backend,
         protectedBucketNames,
         dynamicBuckets,
-        storageJson,
-        storageGrpc,
-        ctrl,
         ImmutableList.of(
             RegistryEntry.of(
                 40, Storage.class, storageJson, transportAndBackendAre(Transport.HTTP, backend)),
@@ -494,12 +464,12 @@ final class BackendResources implements ManagedLifecycle {
       StorageControlClient controlClientToUse = ctrl.get().getCtrl();
 
       if (key.locationType == LocationType.REGIONAL_RAPID) {
-        targetRegion = "us-central1";
-        targetZone = "us-central1-a";
-        if (backend == Backend.PROD) {
-          BackendResources preprod = Registry.getInstance().getPreProdBackendResources();
-          storageClientToUse = preprod.getStorage(Transport.GRPC);
-          controlClientToUse = preprod.getStorageControlClient();
+        if (backend == Backend.PREPROD) {
+          targetRegion = "us-central1";
+          targetZone = "us-central1-a";
+        } else {
+          targetRegion = "europe-west1";
+          targetZone = "europe-west1-c";
         }
       }
 
@@ -569,14 +539,4 @@ final class BackendResources implements ManagedLifecycle {
     }
   }
 
-  private static String getPreprodProjectId() {
-    String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
-    if (projectId == null || projectId.isEmpty()) {
-      projectId = System.getProperty("google.cloud.project");
-    }
-    if (projectId == null || projectId.isEmpty()) {
-      projectId = "gcs-hyd-connector-benchmarks";
-    }
-    return projectId;
-  }
 }
