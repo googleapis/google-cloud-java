@@ -43,6 +43,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URI;
+import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -242,6 +243,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.x509Provider != null && shouldUseMtlsTransportFactory();
   }
 
+  boolean hasInitializedMtlsTransport() {
+    return this.x509Provider != null
+        && (!shouldUseMtlsTransportFactory()
+            || (this.transportFactory instanceof MtlsHttpTransportFactory
+                && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()));
+  }
+
   AccessToken refreshImpersonatedAccessTokenWithRetry(ImpersonatedCredentials impersonated)
       throws IOException {
     return refreshWithRetry(
@@ -252,18 +260,27 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   private static boolean isRetryableTransportException(@Nullable Throwable throwable) {
-    if (!(throwable instanceof IOException)
-        || throwable instanceof CertificateSourceUnavailableException) {
+    if (throwable == null || throwable instanceof CertificateSourceUnavailableException) {
       return false;
     }
+    boolean hasIoOrSecurityException = throwable instanceof IOException;
     Throwable current = throwable;
     while (current != null) {
-      if (current instanceof OAuthException || current instanceof HttpResponseException) {
+      if (current instanceof CertificateSourceUnavailableException
+          || current instanceof OAuthException
+          || current instanceof HttpResponseException) {
         return false;
       }
-      current = current.getCause();
+      if (current instanceof IOException || current instanceof GeneralSecurityException) {
+        hasIoOrSecurityException = true;
+      }
+      Throwable cause = current.getCause();
+      if (cause == current) {
+        break;
+      }
+      current = cause;
     }
-    return true;
+    return hasIoOrSecurityException;
   }
 
   @Override
@@ -274,7 +291,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return refreshWithRetry(
         /* explicitTransportFactory= */ null,
         /* pinnedKeyStore= */ null,
-        getImpersonatedCredentials(),
+        /* targetImpersonated= */ null,
         /* allowRetry= */ true);
   }
 
@@ -290,7 +307,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return refreshWithRetry(
         cycleTransportFactory,
         pinnedKeyStore,
-        getImpersonatedCredentials(),
+        /* targetImpersonated= */ null,
         /* allowRetry= */ false);
   }
 
@@ -304,7 +321,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return refreshWithRetry(
         cycleTransportFactory,
         pinnedKeyStore,
-        getImpersonatedCredentials(),
+        /* targetImpersonated= */ null,
         /* allowRetry= */ false);
   }
 
@@ -314,6 +331,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       @Nullable ImpersonatedCredentials targetImpersonated,
       boolean allowRetry)
       throws IOException {
+    ImpersonatedCredentials effectiveImpersonated = targetImpersonated;
     try {
       HttpTransportFactory cycleTransportFactory =
           explicitTransportFactory != null ? explicitTransportFactory : this.transportFactory;
@@ -324,10 +342,16 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           pinnedKeyStore = this.x509Provider.getKeyStore();
         }
         cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
+        if (!hasInitializedMtlsTransport()) {
+          this.transportFactory = cycleTransportFactory;
+        }
       }
 
-      if (targetImpersonated != null) {
-        return targetImpersonated.refreshAccessToken(
+      if (effectiveImpersonated == null) {
+        effectiveImpersonated = getImpersonatedCredentials();
+      }
+      if (effectiveImpersonated != null) {
+        return effectiveImpersonated.refreshAccessToken(
             pinnedKeyStore != null ? cycleTransportFactory : null, pinnedKeyStore);
       }
 
@@ -373,18 +397,23 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } catch (IOException | RuntimeException e) {
       boolean isInitialKeyStoreLoadFailure =
           pinnedKeyStore == null
-              && e instanceof IOException
-              && !(e instanceof CertificateSourceUnavailableException);
+              && !(e instanceof CertificateSourceUnavailableException)
+              && isRetryableTransportException(e);
+      boolean reusedCachedStsTokenOn401 =
+          effectiveImpersonated != null
+              && effectiveImpersonated.consumeInvalidatedCachedStsTokenOn401()
+              && OAuth2Utils.isUnauthorizedException(e);
       if (allowRetry
           && this.x509Provider != null
           && shouldUseMtlsTransportFactory()
           && (OAuth2Utils.isUnauthorizedException(e)
+              || OAuth2Utils.isInvalidGrantException(e)
               || isRetryableTransportException(e)
               || isInitialKeyStoreLoadFailure)) {
         KeyStore freshKeyStore;
         try {
-          // On 401, TLS handshake/transport failure, or transient initial KeyStore load failure,
-          // re-read from X509Provider for fresh certs.
+          // On 401, STS invalid_grant, TLS handshake/transport failure, or transient initial
+          // KeyStore load failure, re-read from X509Provider for fresh certs.
           freshKeyStore = this.x509Provider.getKeyStore();
         } catch (IOException reloadException) {
           if (reloadException != e) {
@@ -399,14 +428,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         }
 
         if (!isInitialKeyStoreLoadFailure
+            && !reusedCachedStsTokenOn401
             && !OAuth2Utils.hasCertificateChanged(pinnedKeyStore, freshKeyStore)) {
           throw e;
         }
 
         try {
           HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
+          if (!hasInitializedMtlsTransport()) {
+            this.transportFactory = retryTransportFactory;
+          }
           return refreshWithRetry(
-              retryTransportFactory, freshKeyStore, targetImpersonated, /* allowRetry= */ false);
+              retryTransportFactory, freshKeyStore, effectiveImpersonated, /* allowRetry= */ false);
         } catch (IOException | RuntimeException retryException) {
           if (retryException != e) {
             retryException.addSuppressed(e);
@@ -487,6 +520,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
     this.x509Provider = x509Provider;
+    if (builder.isClonedTransportInitialized) {
+      return;
+    }
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
     if (shouldUseMtlsTransportFactory()) {
       this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
@@ -505,11 +541,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Configure the mTLS transport with the x509 keystore if custom transport was not provided.
     initializeMtlsTransport(builder, credentialSource);
 
-    // Initialize the subject token supplier with the certificate path.
-    String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
-    credentialSource.setCredentialLocation(
-        MtlsUtils.getCertificatePath(
-            getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
+    // Initialize the subject token supplier with the certificate path if not already set.
+    if (credentialSource.getCredentialLocation() == null) {
+      String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
+      credentialSource.setCredentialLocation(
+          MtlsUtils.getCertificatePath(
+              getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
+    }
     return new CertificateIdentityPoolSubjectTokenSupplier(credentialSource);
   }
 
@@ -578,6 +616,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
     private @Nullable Boolean useMtlsTransportFactory;
+    private boolean isClonedTransportInitialized;
 
     Builder() {}
 
@@ -596,6 +635,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
       this.useMtlsTransportFactory = credentials.useMtlsTransportFactory;
+      this.isClonedTransportInitialized = credentials.hasInitializedMtlsTransport();
     }
 
     /**
@@ -611,6 +651,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @VisibleForTesting
     Builder setX509Provider(X509Provider x509Provider) {
       this.x509Provider = x509Provider;
+      this.isClonedTransportInitialized = false;
       return this;
     }
 
@@ -665,6 +706,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       this.useMtlsTransportFactory = isDefaultOrMtlsTransportFactory(transportFactory);
+      this.isClonedTransportInitialized = false;
       return this;
     }
 
@@ -699,6 +741,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
       super.setCredentialSource(credentialSource);
+      this.isClonedTransportInitialized = false;
       return this;
     }
 

@@ -116,6 +116,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private volatile GoogleCredentials sourceCredentials;
   private transient volatile @Nullable AccessToken cachedStsAccessToken;
   private transient volatile @Nullable KeyStore cachedStsKeyStore;
+  private transient volatile boolean invalidatedCachedStsTokenOn401;
   private final String targetPrincipal;
   private List<String> delegates;
   private final List<String> scopes;
@@ -608,17 +609,23 @@ public class ImpersonatedCredentials extends GoogleCredentials
     }
   }
 
+  synchronized boolean consumeInvalidatedCachedStsTokenOn401() {
+    boolean value = this.invalidatedCachedStsTokenOn401;
+    this.invalidatedCachedStsTokenOn401 = false;
+    return value;
+  }
+
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
-      ExternalAccountCredentials externalSource = ensureExternalSourceScoped();
-      if (externalSource instanceof IdentityPoolCredentials) {
-        IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) externalSource;
-        if (identityPoolSource.hasMtlsProviderForImpersonation()
-            && IdentityPoolCredentials.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
-          return identityPoolSource.refreshImpersonatedAccessTokenWithRetry(this);
-        }
+    if (this.sourceCredentials instanceof IdentityPoolCredentials) {
+      IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) this.sourceCredentials;
+      if (identityPoolSource.hasMtlsProviderForImpersonation()
+          && IdentityPoolCredentials.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
+        return identityPoolSource.refreshImpersonatedAccessTokenWithRetry(this);
       }
+    }
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      ensureExternalSourceScoped();
     }
     return refreshAccessToken(null);
   }
@@ -679,6 +686,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
         firstNonNull(cycleTransportFactory, this.transportFactory);
     HttpCredentialsAdapter adapter;
     AccessToken intermediateAccessTokenForCache = null;
+    boolean usedCachedStsToken = false;
+    if (cycleTransportFactory != null) {
+      synchronized (this) {
+        this.invalidatedCachedStsTokenOn401 = false;
+      }
+    }
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
       ExternalAccountCredentials externalSource = ensureExternalSourceScoped();
       if (cycleTransportFactory == null) {
@@ -693,6 +706,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
         synchronized (this) {
           if (isCachedStsTokenReusable(externalSource, pinnedKeyStore)) {
             intermediateAccessToken = this.cachedStsAccessToken;
+            usedCachedStsToken = true;
           }
         }
         if (intermediateAccessToken == null) {
@@ -790,6 +804,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
         synchronized (this) {
           this.cachedStsAccessToken = null;
           this.cachedStsKeyStore = null;
+          this.invalidatedCachedStsTokenOn401 =
+              usedCachedStsToken && OAuth2Utils.isUnauthorizedException(e);
         }
       }
       throw new IOException("Error requesting access token", e);
