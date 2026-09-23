@@ -189,6 +189,9 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void init() {
+    if (this.fallbackChannel != null && this.primaryChannel != null) {
+      fallbackState.setFallbackAvailable(true);
+    }
     if (options.getPrimaryProbingFunction() != null) {
       this.primaryProbeFuture =
           fallbackState.scheduleTask(
@@ -213,9 +216,9 @@ public class GcpFallbackChannel extends ManagedChannel {
   private void processPrimaryStatusCode(Status.Code statusCode) {
     if (!isInFallbackMode()) {
       if (options.getErroneousStates().contains(statusCode)) {
-        fallbackState.getPrimaryFailures().incrementAndGet();
+        fallbackState.getPrimaryFailures().increment();
       } else {
-        fallbackState.getPrimarySuccesses().incrementAndGet();
+        fallbackState.getPrimarySuccesses().increment();
       }
     }
     openTelemetry.getModule().reportStatus(options.getPrimaryChannelName(), statusCode);
@@ -223,9 +226,9 @@ public class GcpFallbackChannel extends ManagedChannel {
 
   private void processFallbackStatusCode(Status.Code statusCode) {
     if (options.getErroneousStates().contains(statusCode)) {
-      fallbackState.getFallbackFailures().incrementAndGet();
+      fallbackState.getFallbackFailures().increment();
     } else {
-      fallbackState.getFallbackSuccesses().incrementAndGet();
+      fallbackState.getFallbackSuccesses().increment();
     }
     openTelemetry.getModule().reportStatus(options.getFallbackChannelName(), statusCode);
   }

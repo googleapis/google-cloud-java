@@ -28,20 +28,22 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAdder;
 
 /**
  * Shared thread-safe state that coordinates failover, recovery, and periodic error evaluation
  * across a pool of GcpFallbackChannel instances.
  */
-public class GcpFallbackState {
-  private final AtomicLong primarySuccesses = new AtomicLong(0);
-  private final AtomicLong primaryFailures = new AtomicLong(0);
-  private final AtomicLong fallbackSuccesses = new AtomicLong(0);
-  private final AtomicLong fallbackFailures = new AtomicLong(0);
+public class GcpFallbackState implements AutoCloseable {
+  private final LongAdder primarySuccesses = new LongAdder();
+  private final LongAdder primaryFailures = new LongAdder();
+  private final LongAdder fallbackSuccesses = new LongAdder();
+  private final LongAdder fallbackFailures = new LongAdder();
   private final AtomicLong primaryProbeSuccesses = new AtomicLong(0);
   private final AtomicLong firstPrimaryProbeSuccessNanos = new AtomicLong(0);
   private final AtomicLong generation = new AtomicLong(0);
   private final AtomicBoolean inFallbackMode = new AtomicBoolean(false);
+  private final AtomicBoolean fallbackAvailable = new AtomicBoolean(false);
   private final AtomicBoolean evaluationStarted = new AtomicBoolean(false);
   private final Set<Runnable> stateChangeCallbacks = ConcurrentHashMap.newKeySet();
 
@@ -80,25 +82,29 @@ public class GcpFallbackState {
     }
   }
 
-  AtomicLong getPrimarySuccesses() {
+  LongAdder getPrimarySuccesses() {
     return primarySuccesses;
   }
 
-  AtomicLong getPrimaryFailures() {
+  LongAdder getPrimaryFailures() {
     return primaryFailures;
   }
 
-  AtomicLong getFallbackSuccesses() {
+  LongAdder getFallbackSuccesses() {
     return fallbackSuccesses;
   }
 
-  AtomicLong getFallbackFailures() {
+  LongAdder getFallbackFailures() {
     return fallbackFailures;
   }
 
   @VisibleForTesting
   AtomicLong getPrimaryProbeSuccesses() {
     return primaryProbeSuccesses;
+  }
+
+  void setFallbackAvailable(boolean available) {
+    this.fallbackAvailable.set(available);
   }
 
   boolean isInFallbackMode() {
@@ -109,49 +115,45 @@ public class GcpFallbackState {
     return generation.get();
   }
 
+  private void enterFallbackMode() {
+    primaryProbeSuccesses.set(0);
+    firstPrimaryProbeSuccessNanos.set(0);
+    generation.incrementAndGet();
+    inFallbackMode.set(true);
+  }
+
+  private void exitFallbackMode() {
+    // Also clears the primary call counters so the post-recovery error window starts fresh.
+    primaryFailures.reset();
+    primarySuccesses.reset();
+    primaryProbeSuccesses.set(0);
+    firstPrimaryProbeSuccessNanos.set(0);
+    generation.incrementAndGet();
+    inFallbackMode.set(false);
+  }
+
+  /** Returns the registered callbacks to be run by the caller <em>outside</em> the monitor. */
+  private List<Runnable> snapshotAndClearCallbacks() {
+    List<Runnable> callbacks = new ArrayList<>(stateChangeCallbacks);
+    stateChangeCallbacks.clear();
+    return callbacks;
+  }
+
   /** Bumps the generation counter and transitions the pool to fallback mode. */
   boolean triggerFallback() {
     boolean fallbackTriggered = false;
     List<Runnable> callbacks = null;
     synchronized (this) {
       if (!inFallbackMode.get()) {
-        primaryProbeSuccesses.set(0);
-        firstPrimaryProbeSuccessNanos.set(0);
-        generation.incrementAndGet();
-        inFallbackMode.set(true);
+        enterFallbackMode();
+        callbacks = snapshotAndClearCallbacks();
         fallbackTriggered = true;
-        callbacks = new ArrayList<>(stateChangeCallbacks);
-        stateChangeCallbacks.clear();
       }
     }
     if (fallbackTriggered) {
       runStateChangeCallbacks(callbacks);
     }
     return fallbackTriggered;
-  }
-
-  /** Bumps the generation counter and transitions the pool out of fallback mode. */
-  boolean triggerRecovery(long expectedGeneration) {
-    boolean recovered = false;
-    List<Runnable> callbacks = null;
-    synchronized (this) {
-      if (generation.get() != expectedGeneration || !inFallbackMode.get()) {
-        return false;
-      }
-      primaryFailures.set(0);
-      primarySuccesses.set(0);
-      primaryProbeSuccesses.set(0);
-      firstPrimaryProbeSuccessNanos.set(0);
-      generation.incrementAndGet();
-      inFallbackMode.set(false);
-      recovered = true;
-      callbacks = new ArrayList<>(stateChangeCallbacks);
-      stateChangeCallbacks.clear();
-    }
-    if (recovered) {
-      runStateChangeCallbacks(callbacks);
-    }
-    return recovered;
   }
 
   /**
@@ -163,7 +165,8 @@ public class GcpFallbackState {
     if (!options.isEnableRecovery()) {
       return;
     }
-    boolean shouldRecover = false;
+    boolean recovered = false;
+    List<Runnable> callbacks = null;
     synchronized (this) {
       if (generation.get() != expectedGeneration || !inFallbackMode.get()) {
         return;
@@ -188,11 +191,13 @@ public class GcpFallbackState {
 
       if (primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
           && durationSatisfied) {
-        shouldRecover = true;
+        exitFallbackMode();
+        callbacks = snapshotAndClearCallbacks();
+        recovered = true;
       }
     }
-    if (shouldRecover) {
-      triggerRecovery(expectedGeneration);
+    if (recovered) {
+      runStateChangeCallbacks(callbacks);
     }
   }
 
@@ -282,26 +287,34 @@ public class GcpFallbackState {
   /** Evaluates error rates across all channels sharing this state and updates fallback mode. */
   void checkErrorRates(GcpFallbackChannelOptions options, GcpFallbackOpenTelemetry openTelemetry) {
     float primaryErrorRate = 0f;
-    boolean shouldTriggerFallback;
+    boolean fallbackTriggered = false;
+    List<Runnable> callbacks = null;
     synchronized (this) {
-      long primarySuccessCount = primarySuccesses.getAndSet(0);
-      long primaryFailureCount = primaryFailures.getAndSet(0);
+      long primarySuccessCount = primarySuccesses.sumThenReset();
+      long primaryFailureCount = primaryFailures.sumThenReset();
       if (primaryFailureCount + primarySuccessCount > 0) {
         primaryErrorRate =
             (float) primaryFailureCount / (primaryFailureCount + primarySuccessCount);
       }
-      shouldTriggerFallback =
-          !inFallbackMode.get()
+      boolean shouldTriggerFallback =
+          fallbackAvailable.get()
+              && !inFallbackMode.get()
               && options.isEnableFallback()
               && primaryFailureCount >= options.getMinFailedCalls()
               && primaryErrorRate >= options.getErrorRateThreshold();
+      if (shouldTriggerFallback) {
+        enterFallbackMode();
+        callbacks = snapshotAndClearCallbacks();
+        fallbackTriggered = true;
+      }
     }
-
-    boolean fallbackTriggered = shouldTriggerFallback && triggerFallback();
+    if (fallbackTriggered) {
+      runStateChangeCallbacks(callbacks);
+    }
     boolean currentInFallback = inFallbackMode.get();
 
-    long fallbackSuccessCount = fallbackSuccesses.getAndSet(0);
-    long fallbackFailureCount = fallbackFailures.getAndSet(0);
+    long fallbackSuccessCount = fallbackSuccesses.sumThenReset();
+    long fallbackFailureCount = fallbackFailures.sumThenReset();
     float fallbackErrorRate = 0f;
     if (fallbackFailureCount + fallbackSuccessCount > 0) {
       fallbackErrorRate =
@@ -356,5 +369,10 @@ public class GcpFallbackState {
     if (ownsExecutor && execService != null && !execService.isShutdown()) {
       execService.shutdownNow();
     }
+  }
+
+  @Override
+  public void close() {
+    shutdown();
   }
 }

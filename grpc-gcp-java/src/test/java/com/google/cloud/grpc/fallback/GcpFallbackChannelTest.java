@@ -1525,6 +1525,7 @@ public class GcpFallbackChannelTest {
             .setSharedState(sharedState)
             .setEnableRecovery(true)
             .setMinPrimaryProbeSuccessCount(1)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
     gcpFallbackChannel =
         new GcpFallbackChannel(options, mockPrimaryDelegateChannel, mockFallbackDelegateChannel);
@@ -1557,5 +1558,90 @@ public class GcpFallbackChannelTest {
     assertEquals(2, callbackCount.get());
     fallbackCallbackCaptor.getValue().run();
     assertEquals(2, callbackCount.get());
+  }
+
+  @Test
+  public void testCheckErrorRates_doesNotTriggerFallbackWhenFallbackChannelIsNull() {
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder().setMinFailedCalls(1).setErrorRateThreshold(0.1f).build();
+    initializeChannelWithInvalidFallbackBuilderAndCaptureTasks(options);
+
+    simulateCall(Status.UNAVAILABLE, false);
+    simulateCall(Status.UNAVAILABLE, false);
+
+    assertNotNull("checkErrorRates must be scheduled.", checkErrorRatesTask);
+    checkErrorRatesTask.run();
+
+    assertFalse(
+        "fallbackState must not transition to fallback mode if fallbackChannel is null",
+        gcpFallbackChannel.getFallbackState().isInFallbackMode());
+  }
+
+  @Test
+  public void testSharedState_probingRequiresMultipleRoundsNotParallelSum() {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    try (GcpFallbackState sharedState = new GcpFallbackState(mockExec)) {
+      GcpFallbackChannelOptions options =
+          getDefaultOptionsBuilder()
+              .setSharedState(sharedState)
+              .setEnableRecovery(true)
+              .setPrimaryProbingFunction(channel -> "")
+              .setMinPrimaryProbeSuccessCount(2)
+              .build();
+      ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
+
+      GcpFallbackChannel channel1 =
+          new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
+      GcpFallbackChannel channel2 =
+          new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
+
+      try {
+        verify(mockExec, atLeast(2))
+            .scheduleAtFixedRate(
+                taskCaptor.capture(),
+                eq(options.getPrimaryProbingInterval().toMillis()),
+                eq(options.getPrimaryProbingInterval().toMillis()),
+                eq(MILLISECONDS));
+        Runnable probeTask1 = taskCaptor.getAllValues().get(0);
+        Runnable probeTask2 = taskCaptor.getAllValues().get(1);
+
+        sharedState.triggerFallback();
+        assertTrue(channel1.isInFallbackMode());
+        assertTrue(channel2.isInFallbackMode());
+
+        // Round 1: Channel 1 and Channel 2 each probe once
+        probeTask1.run();
+        probeTask2.run();
+
+        assertTrue(
+            "Pool should not recover after a single round of probing across channels",
+            channel1.isInFallbackMode());
+      } finally {
+        channel1.shutdownNow();
+        channel2.shutdownNow();
+      }
+    }
+    verify(mockExec).shutdown();
+  }
+
+  @Test
+  public void testGetState_delegatesToActiveChannel() {
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder().setMinFailedCalls(1).setErrorRateThreshold(0.1f).build();
+    initializeChannelAndCaptureTasks(options);
+
+    when(mockPrimaryDelegateChannel.getState(true)).thenReturn(ConnectivityState.READY);
+    when(mockFallbackDelegateChannel.getState(false)).thenReturn(ConnectivityState.IDLE);
+
+    assertEquals(ConnectivityState.READY, gcpFallbackChannel.getState(true));
+    verify(mockPrimaryDelegateChannel).getState(true);
+    verify(mockFallbackDelegateChannel, never()).getState(any(Boolean.class));
+
+    simulateCall(Status.UNAVAILABLE, false);
+    checkErrorRatesTask.run();
+    assertTrue(gcpFallbackChannel.isInFallbackMode());
+
+    assertEquals(ConnectivityState.IDLE, gcpFallbackChannel.getState(false));
+    verify(mockFallbackDelegateChannel).getState(false);
   }
 }

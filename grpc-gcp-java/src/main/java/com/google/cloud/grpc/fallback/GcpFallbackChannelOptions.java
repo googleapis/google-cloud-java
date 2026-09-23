@@ -154,7 +154,7 @@ public class GcpFallbackChannelOptions {
     private Duration fallbackProbingInterval = Duration.ofMinutes(15);
 
     private int minPrimaryProbeSuccessCount = 10;
-    private Duration minPrimaryProbeSuccessDuration = Duration.ZERO;
+    private Duration minPrimaryProbeSuccessDuration = Duration.ofMinutes(3);
     private boolean enableRecovery = false;
 
     private String primaryChannelName = "primary";
@@ -221,6 +221,10 @@ public class GcpFallbackChannelOptions {
       return this;
     }
 
+    /**
+     * Sets the minimum number of successful primary probes before the pool exits fallback mode. All
+     * channels contribute to this threshold.
+     */
     public Builder setMinPrimaryProbeSuccessCount(int minPrimaryProbeSuccessCount) {
       this.minPrimaryProbeSuccessCount = minPrimaryProbeSuccessCount;
       return this;
