@@ -450,6 +450,31 @@ class FileIdentityPoolSubjectTokenSupplierTest {
   }
 
   @Test
+  void readTokens_emptyOrWhitespaceActorField_throwsIOException(@TempDir Path tempDir)
+      throws IOException {
+    Path credentialFile = tempDir.resolve("credential.json");
+    Files.write(
+        credentialFile,
+        "{\"sub_token\": \"my_sub_token\", \"act_token\": \"   \"}"
+            .getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    formatMap.put("actor_token_field_name", "act_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    IOException exception = assertThrows(IOException.class, () -> supplier.readTokens(null));
+    assertTrue(exception.getMessage().contains("Empty token was found for field: act_token"));
+  }
+
+  @Test
   void readTokens_noActorFieldConfigured_returnsNullActor(@TempDir Path tempDir)
       throws IOException {
     Path credentialFile = tempDir.resolve("credential.json");

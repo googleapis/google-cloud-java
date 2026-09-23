@@ -71,7 +71,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final @Nullable String actorTokenType;
   // Transient: not serialized directly. Reconstructed in readObject() from the credentialSource
   // certificate config so deserialized credentials remain usable for mTLS and refresh.
-  private transient @Nullable X509Provider x509Provider;
+  private transient volatile @Nullable X509Provider x509Provider;
+  private final boolean useMtlsTransportFactory;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -97,8 +98,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           "A subjectTokenSupplier or a credentialSource must be provided.");
     }
 
-    // Store the x509Provider for per-cycle cert pinning.
+    // Store the x509Provider and useMtlsTransportFactory flag for per-cycle cert pinning and
+    // deserialization recovery.
     this.x509Provider = builder.x509Provider;
+    this.useMtlsTransportFactory =
+        builder.useMtlsTransportFactory != null
+            ? builder.useMtlsTransportFactory
+            : isDefaultOrMtlsTransportFactory(builder.transportFactory);
 
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
@@ -107,22 +113,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.FILE) {
       if (credentialSource.getCertificateConfig() != null) {
         try {
-          X509Provider x509Provider = getX509Provider(builder, credentialSource);
-          this.x509Provider = x509Provider;
-          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-          if (builder.transportFactory == null
-              || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-              || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-              || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
-            this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-          } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
-            LOGGER_PROVIDER
-                .getLogger()
-                .debug(
-                    "Custom HttpTransportFactory provided with certificate configuration; skipping"
-                        + " automatic MtlsHttpTransportFactory upgrade. Ensure the custom transport"
-                        + " factory is configured for mTLS if required by the token endpoint.");
-          }
+          initializeMtlsTransport(builder, credentialSource);
         } catch (Exception e) {
           throw new RuntimeException(
               "Failed to initialize mTLS transport for file credential source due to certificate"
@@ -179,13 +170,44 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
   }
 
+  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory == null
+        || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+        || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+        || transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || (transportFactory instanceof MtlsHttpTransportFactory
+            && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
+  }
+
+  @VisibleForTesting
+  boolean shouldUseMtlsTransportFactory() {
+    return this.useMtlsTransportFactory
+        || (this.transportFactory instanceof MtlsHttpTransportFactory
+            && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
+  }
+
+  boolean hasInitializedMtlsTransport() {
+    return this.x509Provider != null
+        && (!shouldUseMtlsTransportFactory()
+            || (this.transportFactory instanceof MtlsHttpTransportFactory
+                && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()));
+  }
+
   @Override
   public AccessToken refreshAccessToken() throws IOException {
     // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
     HttpTransportFactory cycleTransportFactory = this.transportFactory;
-    if (this.x509Provider != null && this.transportFactory instanceof MtlsHttpTransportFactory) {
+    if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
       KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
-      cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
+      cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
+      if (!hasInitializedMtlsTransport()) {
+        this.transportFactory = cycleTransportFactory;
+      }
+    }
+
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken();
     }
 
     // Read subject and actor tokens, atomically if from the same file supplier.
@@ -209,8 +231,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
             .setAudience(getAudience());
 
-    if (actorToken != null && this.actorTokenType != null) {
-      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+    if (this.actorTokenSupplier != null) {
+      if (actorToken == null || actorToken.trim().isEmpty()) {
+        throw new IOException("The provided actor token cannot be null or empty.");
+      }
+      if (this.actorTokenType != null) {
+        stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+      }
     }
 
     Collection<String> scopes = getScopes();
@@ -224,11 +251,14 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } catch (OAuthException e) {
       if (e.getHttpStatusCode() == 401
           && this.x509Provider != null
-          && this.transportFactory instanceof MtlsHttpTransportFactory) {
+          && shouldUseMtlsTransportFactory()) {
         try {
           // On 401, re-read from X509Provider for fresh certs and retry once.
           KeyStore freshKeyStore = this.x509Provider.getKeyStore();
-          HttpTransportFactory retryTransportFactory = new MtlsHttpTransportFactory(freshKeyStore);
+          HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
+          if (!hasInitializedMtlsTransport()) {
+            this.transportFactory = retryTransportFactory;
+          }
           return exchangeExternalCredentialForAccessToken(
               stsTokenExchangeRequest.build(), retryTransportFactory);
         } catch (IOException retryException) {
@@ -275,6 +305,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.x509Provider;
   }
 
+  @VisibleForTesting
+  HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+    return new MtlsHttpTransportFactory(keyStore);
+  }
+
   /** Clones the IdentityPoolCredentials with the specified scopes. */
   @Override
   public IdentityPoolCredentials createScoped(Collection<String> newScopes) {
@@ -294,17 +329,16 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return new Builder(this);
   }
 
-  private IdentityPoolSubjectTokenSupplier createCertificateSubjectTokenSupplier(
+  private void initializeMtlsTransport(
       Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
-    // Configure the mTLS transport with the x509 keystore if custom transport was not provided.
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
     this.x509Provider = x509Provider;
+    if (builder.isClonedTransportInitialized) {
+      return;
+    }
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-    if (builder.transportFactory == null
-        || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
-        || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || builder.transportFactory.getClass() == MtlsHttpTransportFactory.class) {
-      this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+    if (shouldUseMtlsTransportFactory()) {
+      this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
     } else if (!(builder.transportFactory instanceof MtlsHttpTransportFactory)) {
       LOGGER_PROVIDER
           .getLogger()
@@ -313,12 +347,20 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
                   + " automatic MtlsHttpTransportFactory upgrade. Ensure the custom transport"
                   + " factory is configured for mTLS if required by the token endpoint.");
     }
+  }
 
-    // Initialize the subject token supplier with the certificate path.
-    String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
-    credentialSource.setCredentialLocation(
-        MtlsUtils.getCertificatePath(
-            getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
+  private IdentityPoolSubjectTokenSupplier createCertificateSubjectTokenSupplier(
+      Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
+    // Configure the mTLS transport with the x509 keystore if custom transport was not provided.
+    initializeMtlsTransport(builder, credentialSource);
+
+    // Initialize the subject token supplier with the certificate path if not already set.
+    if (credentialSource.getCredentialLocation() == null) {
+      String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
+      credentialSource.setCredentialLocation(
+          MtlsUtils.getCertificatePath(
+              getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
+    }
     return new CertificateIdentityPoolSubjectTokenSupplier(credentialSource);
   }
 
@@ -344,11 +386,13 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
       this.x509Provider =
           new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
-      try {
-        KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
-        this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
-      } catch (Exception e) {
-        // Cert loading failure will be handled on refreshAccessToken()
+      if (shouldUseMtlsTransportFactory()) {
+        try {
+          KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
+          this.transportFactory = createMtlsTransportFactory(mtlsKeyStore);
+        } catch (Exception e) {
+          // Cert loading failure will be handled on refreshAccessToken()
+        }
       }
     }
   }
@@ -384,6 +428,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
+    private @Nullable Boolean useMtlsTransportFactory;
+    private boolean isClonedTransportInitialized;
 
     Builder() {}
 
@@ -402,6 +448,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       // is preserved above so createScoped() / toBuilder() do not drop it.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
+      this.useMtlsTransportFactory = credentials.useMtlsTransportFactory;
+      this.isClonedTransportInitialized = credentials.hasInitializedMtlsTransport();
     }
 
     /**
@@ -417,6 +465,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @VisibleForTesting
     Builder setX509Provider(X509Provider x509Provider) {
       this.x509Provider = x509Provider;
+      this.isClonedTransportInitialized = false;
       return this;
     }
 
@@ -469,6 +518,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
+      this.useMtlsTransportFactory = isDefaultOrMtlsTransportFactory(transportFactory);
+      this.isClonedTransportInitialized = false;
       return this;
     }
 
@@ -503,6 +554,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
       super.setCredentialSource(credentialSource);
+      this.isClonedTransportInitialized = false;
       return this;
     }
 
