@@ -495,6 +495,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.maps.solar.v1.AdditionalInsights",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.maps.solar.v1.BuildingInsights",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -505,6 +514,33 @@
   },
   {
     "name": "com.google.maps.solar.v1.BuildingInsights$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.maps.solar.v1.BuildingInsights$DetectedArrays",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.maps.solar.v1.BuildingInsights$DetectedArrays$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.maps.solar.v1.BuildingInsights$DetectedArrays$DetectionStatus",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

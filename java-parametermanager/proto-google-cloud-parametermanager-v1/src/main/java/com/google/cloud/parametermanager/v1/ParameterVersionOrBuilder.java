@@ -253,4 +253,49 @@ public interface ParameterVersionOrBuilder
    * @return The bytes for kmsKeyVersion.
    */
   com.google.protobuf.ByteString getKmsKeyVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The source of the checksum.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.parametermanager.v1.ParameterVersion.ChecksumSource checksum_source = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the checksumSource field is set.
+   */
+  boolean hasChecksumSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The source of the checksum.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.parametermanager.v1.ParameterVersion.ChecksumSource checksum_source = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for checksumSource.
+   */
+  int getChecksumSourceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. [Output only] The source of the checksum.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.parametermanager.v1.ParameterVersion.ChecksumSource checksum_source = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The checksumSource.
+   */
+  com.google.cloud.parametermanager.v1.ParameterVersion.ChecksumSource getChecksumSource();
 }

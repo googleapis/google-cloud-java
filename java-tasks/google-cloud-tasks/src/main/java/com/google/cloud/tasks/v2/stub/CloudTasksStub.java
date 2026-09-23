@@ -21,15 +21,23 @@ import static com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListTasksPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.tasks.v2.BatchCreateTasksMetadata;
+import com.google.cloud.tasks.v2.BatchCreateTasksRequest;
+import com.google.cloud.tasks.v2.BatchCreateTasksResponse;
+import com.google.cloud.tasks.v2.BatchDeleteTasksMetadata;
+import com.google.cloud.tasks.v2.BatchDeleteTasksRequest;
+import com.google.cloud.tasks.v2.CmekConfig;
 import com.google.cloud.tasks.v2.CreateQueueRequest;
 import com.google.cloud.tasks.v2.CreateTaskRequest;
 import com.google.cloud.tasks.v2.DeleteQueueRequest;
 import com.google.cloud.tasks.v2.DeleteTaskRequest;
+import com.google.cloud.tasks.v2.GetCmekConfigRequest;
 import com.google.cloud.tasks.v2.GetQueueRequest;
 import com.google.cloud.tasks.v2.GetTaskRequest;
 import com.google.cloud.tasks.v2.ListQueuesRequest;
@@ -42,15 +50,19 @@ import com.google.cloud.tasks.v2.Queue;
 import com.google.cloud.tasks.v2.ResumeQueueRequest;
 import com.google.cloud.tasks.v2.RunTaskRequest;
 import com.google.cloud.tasks.v2.Task;
+import com.google.cloud.tasks.v2.UpdateCmekConfigRequest;
 import com.google.cloud.tasks.v2.UpdateQueueRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -61,6 +73,15 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public abstract class CloudTasksStub implements BackgroundResource {
+
+  public @Nullable OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listQueuesPagedCallable()");
@@ -127,12 +148,39 @@ public abstract class CloudTasksStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createTaskCallable()");
   }
 
+  public OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateTasksOperationCallable()");
+  }
+
+  public UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateTasksCallable()");
+  }
+
   public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTaskCallable()");
   }
 
+  public OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteTasksOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteTasksCallable()");
+  }
+
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     throw new UnsupportedOperationException("Not implemented: runTaskCallable()");
+  }
+
+  public UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCmekConfigCallable()");
+  }
+
+  public UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getCmekConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

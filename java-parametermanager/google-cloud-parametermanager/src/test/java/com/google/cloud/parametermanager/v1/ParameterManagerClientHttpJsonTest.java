@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -199,6 +201,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -249,6 +252,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -299,6 +303,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -353,6 +358,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -407,6 +413,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -419,6 +426,7 @@ public class ParameterManagerClientHttpJsonTest {
             .setFormat(ParameterFormat.forNumber(0))
             .setPolicyMember(ResourcePolicyMember.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -457,6 +465,7 @@ public class ParameterManagerClientHttpJsonTest {
               .setFormat(ParameterFormat.forNumber(0))
               .setPolicyMember(ResourcePolicyMember.newBuilder().build())
               .setKmsKey("kmsKey-1127483058")
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateParameter(parameter, updateMask);
@@ -1124,6 +1133,1037 @@ public class ParameterManagerClientHttpJsonTest {
       String name =
           "projects/project-3451/locations/location-3451/parameters/parameter-3451/versions/version-3451";
       client.deleteParameterVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTemplatesTest() throws Exception {
+    Template responsesElement = Template.newBuilder().build();
+    ListTemplatesResponse expectedResponse =
+        ListTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListTemplatesPagedResponse pagedListResponse = client.listTemplates(parent);
+
+    List<Template> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTemplatesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTemplatesTest2() throws Exception {
+    Template responsesElement = Template.newBuilder().build();
+    ListTemplatesResponse expectedResponse =
+        ListTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListTemplatesPagedResponse pagedListResponse = client.listTemplates(parent);
+
+    List<Template> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTemplatesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTemplateTest() throws Exception {
+    Template expectedResponse =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+
+    Template actualResponse = client.getTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+      client.getTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTemplateTest2() throws Exception {
+    Template expectedResponse =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-127/locations/location-127/templates/template-127";
+
+    Template actualResponse = client.getTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-127/locations/location-127/templates/template-127";
+      client.getTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTemplateTest() throws Exception {
+    Template expectedResponse =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Template template = Template.newBuilder().build();
+    String templateId = "templateId1304010549";
+
+    Template actualResponse = client.createTemplate(parent, template, templateId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Template template = Template.newBuilder().build();
+      String templateId = "templateId1304010549";
+      client.createTemplate(parent, template, templateId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTemplateTest2() throws Exception {
+    Template expectedResponse =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    Template template = Template.newBuilder().build();
+    String templateId = "templateId1304010549";
+
+    Template actualResponse = client.createTemplate(parent, template, templateId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      Template template = Template.newBuilder().build();
+      String templateId = "templateId1304010549";
+      client.createTemplate(parent, template, templateId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTemplateTest() throws Exception {
+    Template expectedResponse =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Template template =
+        Template.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setFormat(TemplateFormat.forNumber(0))
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Template actualResponse = client.updateTemplate(template, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Template template =
+          Template.newBuilder()
+              .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setFormat(TemplateFormat.forNumber(0))
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTemplate(template, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTemplateTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+
+    client.deleteTemplate(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateName name = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+      client.deleteTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-127/locations/location-127/templates/template-127";
+
+    client.deleteTemplate(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-127/locations/location-127/templates/template-127";
+      client.deleteTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTemplateVersionsTest() throws Exception {
+    TemplateVersion responsesElement = TemplateVersion.newBuilder().build();
+    ListTemplateVersionsResponse expectedResponse =
+        ListTemplateVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTemplateVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+
+    ListTemplateVersionsPagedResponse pagedListResponse = client.listTemplateVersions(parent);
+
+    List<TemplateVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTemplateVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTemplateVersionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+      client.listTemplateVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTemplateVersionsTest2() throws Exception {
+    TemplateVersion responsesElement = TemplateVersion.newBuilder().build();
+    ListTemplateVersionsResponse expectedResponse =
+        ListTemplateVersionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTemplateVersions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4482/locations/location-4482/templates/template-4482";
+
+    ListTemplateVersionsPagedResponse pagedListResponse = client.listTemplateVersions(parent);
+
+    List<TemplateVersion> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTemplateVersionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTemplateVersionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-4482/locations/location-4482/templates/template-4482";
+      client.listTemplateVersions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTemplateVersionTest() throws Exception {
+    TemplateVersion expectedResponse =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateVersionName name =
+        TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+
+    TemplateVersion actualResponse = client.getTemplateVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTemplateVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateVersionName name =
+          TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+      client.getTemplateVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTemplateVersionTest2() throws Exception {
+    TemplateVersion expectedResponse =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+
+    TemplateVersion actualResponse = client.getTemplateVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTemplateVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+      client.getTemplateVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTemplateVersionTest() throws Exception {
+    TemplateVersion expectedResponse =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+    TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+    String templateVersionId = "templateVersionId616434873";
+
+    TemplateVersion actualResponse =
+        client.createTemplateVersion(parent, templateVersion, templateVersionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTemplateVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateName parent = TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]");
+      TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+      String templateVersionId = "templateVersionId616434873";
+      client.createTemplateVersion(parent, templateVersion, templateVersionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createTemplateVersionTest2() throws Exception {
+    TemplateVersion expectedResponse =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4482/locations/location-4482/templates/template-4482";
+    TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+    String templateVersionId = "templateVersionId616434873";
+
+    TemplateVersion actualResponse =
+        client.createTemplateVersion(parent, templateVersion, templateVersionId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createTemplateVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-4482/locations/location-4482/templates/template-4482";
+      TemplateVersion templateVersion = TemplateVersion.newBuilder().build();
+      String templateVersionId = "templateVersionId616434873";
+      client.createTemplateVersion(parent, templateVersion, templateVersionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTemplateVersionTest() throws Exception {
+    TemplateVersion expectedResponse =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateVersion templateVersion =
+        TemplateVersion.newBuilder()
+            .setName(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisabled(true)
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TemplateVersion actualResponse = client.updateTemplateVersion(templateVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateTemplateVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateVersion templateVersion =
+          TemplateVersion.newBuilder()
+              .setName(
+                  TemplateVersionName.of(
+                          "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDisabled(true)
+              .setPayload(TemplateVersionPayload.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTemplateVersion(templateVersion, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTemplateVersionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateVersionName name =
+        TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+
+    client.deleteTemplateVersion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTemplateVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateVersionName name =
+          TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+      client.deleteTemplateVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTemplateVersionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+
+    client.deleteTemplateVersion(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTemplateVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+      client.deleteTemplateVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renderTemplateVersionTest() throws Exception {
+    RenderTemplateVersionResponse expectedResponse =
+        RenderTemplateVersionResponse.newBuilder()
+            .setTemplateVersion(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .setRenderedPayload(ByteString.EMPTY)
+            .setTemplateFormat(TemplateFormat.forNumber(0))
+            .setParameterVersion(
+                ParameterVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PARAMETER]", "[PARAMETER_VERSION]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TemplateVersionName name =
+        TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+
+    RenderTemplateVersionResponse actualResponse = client.renderTemplateVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renderTemplateVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TemplateVersionName name =
+          TemplateVersionName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]");
+      client.renderTemplateVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renderTemplateVersionTest2() throws Exception {
+    RenderTemplateVersionResponse expectedResponse =
+        RenderTemplateVersionResponse.newBuilder()
+            .setTemplateVersion(
+                TemplateVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[TEMPLATE]", "[TEMPLATE_VERSION]")
+                    .toString())
+            .setPayload(TemplateVersionPayload.newBuilder().build())
+            .setRenderedPayload(ByteString.EMPTY)
+            .setTemplateFormat(TemplateFormat.forNumber(0))
+            .setParameterVersion(
+                ParameterVersionName.of(
+                        "[PROJECT]", "[LOCATION]", "[PARAMETER]", "[PARAMETER_VERSION]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+
+    RenderTemplateVersionResponse actualResponse = client.renderTemplateVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renderTemplateVersionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6822/locations/location-6822/templates/template-6822/versions/version-6822";
+      client.renderTemplateVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -47,6 +47,7 @@ import org.jspecify.annotations.Nullable;
  *           .setRequiredQuality(ImageryQuality.forNumber(0))
  *           .setExactQualityRequired(true)
  *           .addAllExperiments(new ArrayList<Experiment>())
+ *           .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
  *           .build();
  *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
  * }
@@ -226,6 +227,7 @@ public class SolarClient implements BackgroundResource {
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setExactQualityRequired(true)
    *           .addAllExperiments(new ArrayList<Experiment>())
+   *           .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
    *           .build();
    *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
    * }
@@ -259,6 +261,7 @@ public class SolarClient implements BackgroundResource {
    *           .setRequiredQuality(ImageryQuality.forNumber(0))
    *           .setExactQualityRequired(true)
    *           .addAllExperiments(new ArrayList<Experiment>())
+   *           .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
    *           .build();
    *   ApiFuture<BuildingInsights> future =
    *       solarClient.findClosestBuildingInsightsCallable().futureCall(request);

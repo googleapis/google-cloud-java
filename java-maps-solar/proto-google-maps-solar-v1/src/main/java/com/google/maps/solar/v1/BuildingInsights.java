@@ -77,6 +77,1138 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             com.google.maps.solar.v1.BuildingInsights.Builder.class);
   }
 
+  public interface DetectedArraysOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.solar.v1.BuildingInsights.DetectedArrays)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the detection status of solar arrays for this building.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for detectionStatus.
+     */
+    int getDetectionStatusValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the detection status of solar arrays for this building.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+     * </code>
+     *
+     * @return The detectionStatus.
+     */
+    com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus getDetectionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     *
+     * @return Whether the latestCaptureDate field is set.
+     */
+    boolean hasLatestCaptureDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     *
+     * @return The latestCaptureDate.
+     */
+    com.google.type.Date getLatestCaptureDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     */
+    com.google.type.DateOrBuilder getLatestCaptureDateOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about solar arrays detected on the building.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.solar.v1.BuildingInsights.DetectedArrays}
+   */
+  public static final class DetectedArrays extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.solar.v1.BuildingInsights.DetectedArrays)
+      DetectedArraysOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "DetectedArrays");
+    }
+
+    // Use DetectedArrays.newBuilder() to construct.
+    private DetectedArrays(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DetectedArrays() {
+      detectionStatus_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.solar.v1.SolarServiceProto
+          .internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.solar.v1.SolarServiceProto
+          .internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.solar.v1.BuildingInsights.DetectedArrays.class,
+              com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the detection status of solar arrays for this building.
+     * </pre>
+     *
+     * Protobuf enum {@code google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus}
+     */
+    public enum DetectionStatus implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified status.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_UNSPECIFIED = 0;</code>
+       */
+      DETECTION_STATUS_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Detected solar array data is unavailable for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_DATA_UNAVAILABLE = 1;</code>
+       */
+      DETECTION_STATUS_DATA_UNAVAILABLE(1),
+      /**
+       *
+       *
+       * <pre>
+       * At least one solar array has been detected for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_ARRAYS_DETECTED = 2;</code>
+       */
+      DETECTION_STATUS_ARRAYS_DETECTED(2),
+      /**
+       *
+       *
+       * <pre>
+       * No solar arrays detected for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_NO_ARRAYS_DETECTED = 3;</code>
+       */
+      DETECTION_STATUS_NO_ARRAYS_DETECTED(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "DetectionStatus");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified status.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_UNSPECIFIED = 0;</code>
+       */
+      public static final int DETECTION_STATUS_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Detected solar array data is unavailable for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_DATA_UNAVAILABLE = 1;</code>
+       */
+      public static final int DETECTION_STATUS_DATA_UNAVAILABLE_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * At least one solar array has been detected for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_ARRAYS_DETECTED = 2;</code>
+       */
+      public static final int DETECTION_STATUS_ARRAYS_DETECTED_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * No solar arrays detected for this building.
+       * </pre>
+       *
+       * <code>DETECTION_STATUS_NO_ARRAYS_DETECTED = 3;</code>
+       */
+      public static final int DETECTION_STATUS_NO_ARRAYS_DETECTED_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DetectionStatus valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DetectionStatus forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DETECTION_STATUS_UNSPECIFIED;
+          case 1:
+            return DETECTION_STATUS_DATA_UNAVAILABLE;
+          case 2:
+            return DETECTION_STATUS_ARRAYS_DETECTED;
+          case 3:
+            return DETECTION_STATUS_NO_ARRAYS_DETECTED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DetectionStatus>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DetectionStatus>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DetectionStatus>() {
+                public DetectionStatus findValueByNumber(int number) {
+                  return DetectionStatus.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DetectionStatus[] VALUES = values();
+
+      public static DetectionStatus valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DetectionStatus(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus)
+    }
+
+    private int bitField0_;
+    public static final int DETECTION_STATUS_FIELD_NUMBER = 1;
+    private int detectionStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the detection status of solar arrays for this building.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for detectionStatus.
+     */
+    @java.lang.Override
+    public int getDetectionStatusValue() {
+      return detectionStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the detection status of solar arrays for this building.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+     * </code>
+     *
+     * @return The detectionStatus.
+     */
+    @java.lang.Override
+    public com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus
+        getDetectionStatus() {
+      com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus result =
+          com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus.forNumber(
+              detectionStatus_);
+      return result == null
+          ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int LATEST_CAPTURE_DATE_FIELD_NUMBER = 3;
+    private com.google.type.Date latestCaptureDate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     *
+     * @return Whether the latestCaptureDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatestCaptureDate() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     *
+     * @return The latestCaptureDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getLatestCaptureDate() {
+      return latestCaptureDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : latestCaptureDate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date indicating when the latest solar array data was captured.
+     * </pre>
+     *
+     * <code>.google.type.Date latest_capture_date = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getLatestCaptureDateOrBuilder() {
+      return latestCaptureDate_ == null
+          ? com.google.type.Date.getDefaultInstance()
+          : latestCaptureDate_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (detectionStatus_
+          != com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus
+              .DETECTION_STATUS_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, detectionStatus_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getLatestCaptureDate());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (detectionStatus_
+          != com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus
+              .DETECTION_STATUS_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, detectionStatus_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLatestCaptureDate());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.solar.v1.BuildingInsights.DetectedArrays)) {
+        return super.equals(obj);
+      }
+      com.google.maps.solar.v1.BuildingInsights.DetectedArrays other =
+          (com.google.maps.solar.v1.BuildingInsights.DetectedArrays) obj;
+
+      if (detectionStatus_ != other.detectionStatus_) return false;
+      if (hasLatestCaptureDate() != other.hasLatestCaptureDate()) return false;
+      if (hasLatestCaptureDate()) {
+        if (!getLatestCaptureDate().equals(other.getLatestCaptureDate())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DETECTION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + detectionStatus_;
+      if (hasLatestCaptureDate()) {
+        hash = (37 * hash) + LATEST_CAPTURE_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getLatestCaptureDate().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Information about solar arrays detected on the building.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.solar.v1.BuildingInsights.DetectedArrays}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.solar.v1.BuildingInsights.DetectedArrays)
+        com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.solar.v1.SolarServiceProto
+            .internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.solar.v1.SolarServiceProto
+            .internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.solar.v1.BuildingInsights.DetectedArrays.class,
+                com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder.class);
+      }
+
+      // Construct using com.google.maps.solar.v1.BuildingInsights.DetectedArrays.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetLatestCaptureDateFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        detectionStatus_ = 0;
+        latestCaptureDate_ = null;
+        if (latestCaptureDateBuilder_ != null) {
+          latestCaptureDateBuilder_.dispose();
+          latestCaptureDateBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.solar.v1.SolarServiceProto
+            .internal_static_google_maps_solar_v1_BuildingInsights_DetectedArrays_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDefaultInstanceForType() {
+        return com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.solar.v1.BuildingInsights.DetectedArrays build() {
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.solar.v1.BuildingInsights.DetectedArrays buildPartial() {
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays result =
+            new com.google.maps.solar.v1.BuildingInsights.DetectedArrays(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.solar.v1.BuildingInsights.DetectedArrays result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.detectionStatus_ = detectionStatus_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.latestCaptureDate_ =
+              latestCaptureDateBuilder_ == null
+                  ? latestCaptureDate_
+                  : latestCaptureDateBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.solar.v1.BuildingInsights.DetectedArrays) {
+          return mergeFrom((com.google.maps.solar.v1.BuildingInsights.DetectedArrays) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.solar.v1.BuildingInsights.DetectedArrays other) {
+        if (other == com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance())
+          return this;
+        if (other.detectionStatus_ != 0) {
+          setDetectionStatusValue(other.getDetectionStatusValue());
+        }
+        if (other.hasLatestCaptureDate()) {
+          mergeLatestCaptureDate(other.getLatestCaptureDate());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  detectionStatus_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetLatestCaptureDateFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int detectionStatus_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the detection status of solar arrays for this building.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for detectionStatus.
+       */
+      @java.lang.Override
+      public int getDetectionStatusValue() {
+        return detectionStatus_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the detection status of solar arrays for this building.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for detectionStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetectionStatusValue(int value) {
+        detectionStatus_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the detection status of solar arrays for this building.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+       * </code>
+       *
+       * @return The detectionStatus.
+       */
+      @java.lang.Override
+      public com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus
+          getDetectionStatus() {
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus result =
+            com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus.forNumber(
+                detectionStatus_);
+        return result == null
+            ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the detection status of solar arrays for this building.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+       * </code>
+       *
+       * @param value The detectionStatus to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetectionStatus(
+          com.google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        detectionStatus_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the detection status of solar arrays for this building.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.solar.v1.BuildingInsights.DetectedArrays.DetectionStatus detection_status = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDetectionStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        detectionStatus_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.type.Date latestCaptureDate_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          latestCaptureDateBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       *
+       * @return Whether the latestCaptureDate field is set.
+       */
+      public boolean hasLatestCaptureDate() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       *
+       * @return The latestCaptureDate.
+       */
+      public com.google.type.Date getLatestCaptureDate() {
+        if (latestCaptureDateBuilder_ == null) {
+          return latestCaptureDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : latestCaptureDate_;
+        } else {
+          return latestCaptureDateBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public Builder setLatestCaptureDate(com.google.type.Date value) {
+        if (latestCaptureDateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          latestCaptureDate_ = value;
+        } else {
+          latestCaptureDateBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public Builder setLatestCaptureDate(com.google.type.Date.Builder builderForValue) {
+        if (latestCaptureDateBuilder_ == null) {
+          latestCaptureDate_ = builderForValue.build();
+        } else {
+          latestCaptureDateBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public Builder mergeLatestCaptureDate(com.google.type.Date value) {
+        if (latestCaptureDateBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && latestCaptureDate_ != null
+              && latestCaptureDate_ != com.google.type.Date.getDefaultInstance()) {
+            getLatestCaptureDateBuilder().mergeFrom(value);
+          } else {
+            latestCaptureDate_ = value;
+          }
+        } else {
+          latestCaptureDateBuilder_.mergeFrom(value);
+        }
+        if (latestCaptureDate_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public Builder clearLatestCaptureDate() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        latestCaptureDate_ = null;
+        if (latestCaptureDateBuilder_ != null) {
+          latestCaptureDateBuilder_.dispose();
+          latestCaptureDateBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public com.google.type.Date.Builder getLatestCaptureDateBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetLatestCaptureDateFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      public com.google.type.DateOrBuilder getLatestCaptureDateOrBuilder() {
+        if (latestCaptureDateBuilder_ != null) {
+          return latestCaptureDateBuilder_.getMessageOrBuilder();
+        } else {
+          return latestCaptureDate_ == null
+              ? com.google.type.Date.getDefaultInstance()
+              : latestCaptureDate_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The date indicating when the latest solar array data was captured.
+       * </pre>
+       *
+       * <code>.google.type.Date latest_capture_date = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+          internalGetLatestCaptureDateFieldBuilder() {
+        if (latestCaptureDateBuilder_ == null) {
+          latestCaptureDateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.type.Date,
+                  com.google.type.Date.Builder,
+                  com.google.type.DateOrBuilder>(
+                  getLatestCaptureDate(), getParentForChildren(), isClean());
+          latestCaptureDate_ = null;
+        }
+        return latestCaptureDateBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.solar.v1.BuildingInsights.DetectedArrays)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.solar.v1.BuildingInsights.DetectedArrays)
+    private static final com.google.maps.solar.v1.BuildingInsights.DetectedArrays DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.solar.v1.BuildingInsights.DetectedArrays();
+    }
+
+    public static com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DetectedArrays> PARSER =
+        new com.google.protobuf.AbstractParser<DetectedArrays>() {
+          @java.lang.Override
+          public DetectedArrays parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DetectedArrays> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DetectedArrays> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -639,6 +1771,66 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.maps.solar.v1.ImageryQuality.UNRECOGNIZED : result;
   }
 
+  public static final int DETECTED_ARRAYS_FIELD_NUMBER = 12;
+  private com.google.maps.solar.v1.BuildingInsights.DetectedArrays detectedArrays_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   *
+   * @return Whether the detectedArrays field is set.
+   */
+  @java.lang.Override
+  public boolean hasDetectedArrays() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   *
+   * @return The detectedArrays.
+   */
+  @java.lang.Override
+  public com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDetectedArrays() {
+    return detectedArrays_ == null
+        ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance()
+        : detectedArrays_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder
+      getDetectedArraysOrBuilder() {
+    return detectedArrays_ == null
+        ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance()
+        : detectedArrays_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -687,6 +1879,9 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getImageryProcessedDate());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(12, getDetectedArrays());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -731,6 +1926,9 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getImageryProcessedDate());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDetectedArrays());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -773,6 +1971,10 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       if (!getSolarPotential().equals(other.getSolarPotential())) return false;
     }
     if (imageryQuality_ != other.imageryQuality_) return false;
+    if (hasDetectedArrays() != other.hasDetectedArrays()) return false;
+    if (hasDetectedArrays()) {
+      if (!getDetectedArrays().equals(other.getDetectedArrays())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -816,6 +2018,10 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IMAGERY_QUALITY_FIELD_NUMBER;
     hash = (53 * hash) + imageryQuality_;
+    if (hasDetectedArrays()) {
+      hash = (37 * hash) + DETECTED_ARRAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getDetectedArrays().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -964,6 +2170,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         internalGetImageryDateFieldBuilder();
         internalGetImageryProcessedDateFieldBuilder();
         internalGetSolarPotentialFieldBuilder();
+        internalGetDetectedArraysFieldBuilder();
       }
     }
 
@@ -1002,6 +2209,11 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         solarPotentialBuilder_ = null;
       }
       imageryQuality_ = 0;
+      detectedArrays_ = null;
+      if (detectedArraysBuilder_ != null) {
+        detectedArraysBuilder_.dispose();
+        detectedArraysBuilder_ = null;
+      }
       return this;
     }
 
@@ -1083,6 +2295,11 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.imageryQuality_ = imageryQuality_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.detectedArrays_ =
+            detectedArraysBuilder_ == null ? detectedArrays_ : detectedArraysBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1140,6 +2357,9 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       if (other.imageryQuality_ != 0) {
         setImageryQualityValue(other.getImageryQualityValue());
+      }
+      if (other.hasDetectedArrays()) {
+        mergeDetectedArrays(other.getDetectedArrays());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1237,6 +2457,13 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetDetectedArraysFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2855,6 +4082,224 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       imageryQuality_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.maps.solar.v1.BuildingInsights.DetectedArrays detectedArrays_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.solar.v1.BuildingInsights.DetectedArrays,
+            com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder,
+            com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder>
+        detectedArraysBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     *
+     * @return Whether the detectedArrays field is set.
+     */
+    public boolean hasDetectedArrays() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     *
+     * @return The detectedArrays.
+     */
+    public com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDetectedArrays() {
+      if (detectedArraysBuilder_ == null) {
+        return detectedArrays_ == null
+            ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance()
+            : detectedArrays_;
+      } else {
+        return detectedArraysBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public Builder setDetectedArrays(
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays value) {
+      if (detectedArraysBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        detectedArrays_ = value;
+      } else {
+        detectedArraysBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public Builder setDetectedArrays(
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder builderForValue) {
+      if (detectedArraysBuilder_ == null) {
+        detectedArrays_ = builderForValue.build();
+      } else {
+        detectedArraysBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public Builder mergeDetectedArrays(
+        com.google.maps.solar.v1.BuildingInsights.DetectedArrays value) {
+      if (detectedArraysBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && detectedArrays_ != null
+            && detectedArrays_
+                != com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance()) {
+          getDetectedArraysBuilder().mergeFrom(value);
+        } else {
+          detectedArrays_ = value;
+        }
+      } else {
+        detectedArraysBuilder_.mergeFrom(value);
+      }
+      if (detectedArrays_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public Builder clearDetectedArrays() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      detectedArrays_ = null;
+      if (detectedArraysBuilder_ != null) {
+        detectedArraysBuilder_.dispose();
+        detectedArraysBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder
+        getDetectedArraysBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetDetectedArraysFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    public com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder
+        getDetectedArraysOrBuilder() {
+      if (detectedArraysBuilder_ != null) {
+        return detectedArraysBuilder_.getMessageOrBuilder();
+      } else {
+        return detectedArrays_ == null
+            ? com.google.maps.solar.v1.BuildingInsights.DetectedArrays.getDefaultInstance()
+            : detectedArrays_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Solar arrays detected on the building. This field is only populated if
+     * DETECTED_ARRAYS is included in the request's
+     * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+     * </pre>
+     *
+     * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.solar.v1.BuildingInsights.DetectedArrays,
+            com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder,
+            com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder>
+        internalGetDetectedArraysFieldBuilder() {
+      if (detectedArraysBuilder_ == null) {
+        detectedArraysBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.maps.solar.v1.BuildingInsights.DetectedArrays,
+                com.google.maps.solar.v1.BuildingInsights.DetectedArrays.Builder,
+                com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder>(
+                getDetectedArrays(), getParentForChildren(), isClean());
+        detectedArrays_ = null;
+      }
+      return detectedArraysBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.maps.solar.v1.BuildingInsights)

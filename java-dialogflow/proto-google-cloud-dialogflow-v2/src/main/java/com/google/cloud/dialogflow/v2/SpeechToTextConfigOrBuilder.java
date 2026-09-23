@@ -311,4 +311,68 @@ public interface SpeechToTextConfigOrBuilder
    * @return The useTimeoutBasedEndpointing.
    */
   boolean getUseTimeoutBasedEndpointing();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiAsrConfig field is set.
+   */
+  boolean hasGeminiAsrConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiAsrConfig.
+   */
+  com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+      getGeminiAsrConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text.
+   * </pre>
+   *
+   * <code>bool use_gemini_asr = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useGeminiAsr.
+   */
+  boolean getUseGeminiAsr();
 }
