@@ -76,6 +76,7 @@ class OpenTelemetryTracingTracerTest {
   void setUp() {
     lenient().when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);
+    lenient().when(spanBuilder.setParent(any())).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     lenient().when(spanBuilder.startSpan()).thenReturn(span);
     lenient().when(span.makeCurrent()).thenReturn(scope);
@@ -753,5 +754,43 @@ class OpenTelemetryTracingTracerTest {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
     openTelemetryTracingTracer.attemptPermanentFailure(new RuntimeException());
     verify(scope).close();
+  }
+
+  @Test
+  void testAttemptStarted_setsParentToParentContext() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    verify(spanBuilder).setParent(any(io.opentelemetry.context.Context.class));
+  }
+
+  @Test
+  void testOperationSucceeded_endsActiveAttemptSpan() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.operationSucceeded();
+
+    verify(span).end();
+  }
+
+  @Test
+  void testOperationFailed_endsActiveAttemptSpanWithErrorAttributes() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.operationFailed(new RuntimeException("operation failed"));
+
+    verify(span).setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "operation failed");
+    verify(span).end();
+  }
+
+  @Test
+  void testOperationCancelled_endsActiveAttemptSpanWithCancellation() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.operationCancelled();
+
+    ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
+    verify(span).setAllAttributes(attrsCaptor.capture());
+    verify(span).end();
+
+    assertThat(attrsCaptor.getValue().asMap())
+        .containsEntry(
+            AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE),
+            "CANCELLED");
   }
 }
