@@ -359,6 +359,30 @@ public class OAuth2Utils {
   }
 
   /**
+   * Returns whether the given throwable or any exception in its causal chain represents an OAuth
+   * {@code invalid_grant} error (for example, HTTP 400 {@code invalid_grant} returned by STS when a
+   * client certificate and {@code subject_token} mismatch during certificate rotation).
+   *
+   * @param t the throwable to inspect
+   * @return {@code true} if {@code t} or any cause in its chain is an {@code invalid_grant} {@link
+   *     OAuthException}
+   */
+  static boolean isInvalidGrantException(@Nullable Throwable t) {
+    while (t != null) {
+      if (t instanceof OAuthException
+          && "invalid_grant".equals(((OAuthException) t).getErrorCode())) {
+        return true;
+      }
+      Throwable cause = t.getCause();
+      if (cause == t) {
+        break;
+      }
+      t = cause;
+    }
+    return false;
+  }
+
+  /**
    * Returns whether the certificate chain or private key in {@code newKeyStore} differs from {@code
    * oldKeyStore}. Used on 401 retry recovery to avoid retrying when the reloaded certificate and
    * key are unchanged.
