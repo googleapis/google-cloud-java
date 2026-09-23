@@ -368,8 +368,9 @@ final class ITWorkloadIdentityFederationTest {
         context -> generateGoogleIdToken(OIDC_AUDIENCE);
     IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
 
-    KeyStore keyStore = new X509Provider(getMtlsCertificateConfigPath()).getKeyStore();
-    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
+    HttpTransportFactory transportFactory =
+        new MtlsHttpTransportFactory(x509Provider.getKeyStore());
 
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
@@ -383,6 +384,7 @@ final class ITWorkloadIdentityFederationTest {
                 String.format(
                     "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
                     clientEmail))
+            .setX509Provider(x509Provider)
             .setHttpTransportFactory(transportFactory)
             .build();
 
@@ -464,8 +466,9 @@ final class ITWorkloadIdentityFederationTest {
         context -> generateGoogleIdToken(OIDC_AUDIENCE);
     IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
 
-    KeyStore keyStore = new X509Provider(getMtlsCertificateConfigPath()).getKeyStore();
-    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
+    HttpTransportFactory transportFactory =
+        new MtlsHttpTransportFactory(x509Provider.getKeyStore());
 
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
@@ -475,6 +478,7 @@ final class ITWorkloadIdentityFederationTest {
             .setAudience(OIDC_AUDIENCE)
             .setSubjectTokenType(SubjectTokenTypes.JWT)
             .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .setX509Provider(x509Provider)
             .setHttpTransportFactory(transportFactory)
             .build();
 
@@ -587,7 +591,13 @@ final class ITWorkloadIdentityFederationTest {
   private String getMtlsCertificateConfigPath() {
     String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
     if (certConfigPath != null && !certConfigPath.isEmpty()) {
-      return certConfigPath;
+      try {
+        if (new X509Provider(certConfigPath).isAvailable()) {
+          return certConfigPath;
+        }
+      } catch (Exception ignored) {
+        // Fall back to testresources/mtls/certificate_config.json if env config is unavailable
+      }
     }
     return "testresources/mtls/certificate_config.json";
   }

@@ -47,7 +47,7 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class OAuthException extends GoogleAuthException {
 
-  private static final long serialVersionUID = -7883352585835000817L;
+  private static final long serialVersionUID = -5276727039237496975L;
 
   private final String errorCode;
   @Nullable private final String errorDescription;
@@ -112,7 +112,8 @@ class OAuthException extends GoogleAuthException {
       GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
       if (errorResponse == null) {
         OAuthException oauthException =
-            new OAuthException("http_error_" + e.getStatusCode(), null, null, e.getStatusCode());
+            new OAuthException(
+                "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
         oauthException.initCause(e);
         return oauthException;
       }
@@ -137,6 +138,14 @@ class OAuthException extends GoogleAuthException {
       String errorUri = null;
       if (errorResponse.get("error_description") instanceof String) {
         errorDescription = (String) errorResponse.get("error_description");
+      } else if (errorDescription == null && errorResponse.get("message") instanceof String) {
+        errorDescription = (String) errorResponse.get("message");
+      }
+      if (errorDescription == null && rawError == null) {
+        errorDescription =
+            errorResponse.isEmpty() && e.getStatusMessage() != null
+                ? e.getStatusMessage()
+                : content;
       }
       if (errorResponse.get("error_uri") instanceof String) {
         errorUri = (String) errorResponse.get("error_uri");

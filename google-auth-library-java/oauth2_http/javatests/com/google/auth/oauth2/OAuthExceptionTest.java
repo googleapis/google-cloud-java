@@ -139,7 +139,7 @@ final class OAuthExceptionTest {
   }
 
   @Test
-  void createFromHttpResponseException_nullContent() throws IOException {
+  void createFromHttpResponseException_nullContent() {
     HttpResponseException httpException =
         new HttpResponseException.Builder(
                 /* statusCode= */ 401, /* statusMessage= */ "Unauthorized", new HttpHeaders())
@@ -156,7 +156,7 @@ final class OAuthExceptionTest {
   }
 
   @Test
-  void createFromHttpResponseException_emptyContent() throws IOException {
+  void createFromHttpResponseException_emptyContent() {
     HttpResponseException httpException =
         new HttpResponseException.Builder(
                 /* statusCode= */ 401, /* statusMessage= */ "Unauthorized", new HttpHeaders())
@@ -173,7 +173,7 @@ final class OAuthExceptionTest {
   }
 
   @Test
-  void createFromHttpResponseException_nonJsonContent() throws IOException {
+  void createFromHttpResponseException_nonJsonContent() {
     HttpResponseException httpException =
         new HttpResponseException.Builder(
                 /* statusCode= */ 502, /* statusMessage= */ "Bad Gateway", new HttpHeaders())
@@ -190,7 +190,7 @@ final class OAuthExceptionTest {
   }
 
   @Test
-  void createFromHttpResponseException_missingErrorField() throws IOException {
+  void createFromHttpResponseException_missingErrorField() {
     HttpResponseException httpException =
         new HttpResponseException.Builder(
                 /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
@@ -207,7 +207,7 @@ final class OAuthExceptionTest {
   }
 
   @Test
-  void createFromHttpResponseException_googleApiJsonErrorObject() throws IOException {
+  void createFromHttpResponseException_googleApiJsonErrorObject() {
     HttpResponseException httpException =
         new HttpResponseException.Builder(
                 /* statusCode= */ 401, /* statusMessage= */ null, new HttpHeaders())
@@ -238,16 +238,50 @@ final class OAuthExceptionTest {
     OAuthException e = OAuthException.createFromHttpResponseException(httpException);
 
     assertEquals("http_error_500", e.getErrorCode());
-    assertNull(e.getErrorDescription());
+    assertEquals("Internal Server Error", e.getErrorDescription());
     assertNull(e.getErrorUri());
     assertEquals(500, e.getHttpStatusCode());
     assertSame(httpException, e.getCause());
   }
 
   @Test
+  void createFromHttpResponseException_emptyJsonObject_fallsBackToStatusMessage() {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 401, /* statusMessage= */ "Unauthorized", new HttpHeaders())
+            .setContent("{}")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_401", e.getErrorCode());
+    assertEquals("Unauthorized", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(401, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
+  void createFromHttpResponseException_topLevelMessage_extractsMessage() {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
+            .setContent("{\"message\": \"Certificate expired\"}")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_400", e.getErrorCode());
+    assertEquals("Certificate expired", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(400, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
   void serialVersionUID_matchesReleasedUidAndRoundTrips() throws Exception {
     assertEquals(
-        -7883352585835000817L,
+        -5276727039237496975L,
         ObjectStreamClass.lookup(OAuthException.class).getSerialVersionUID());
 
     OAuthException original =

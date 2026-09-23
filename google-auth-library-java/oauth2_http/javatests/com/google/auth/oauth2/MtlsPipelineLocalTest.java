@@ -205,6 +205,7 @@ class MtlsPipelineLocalTest {
 
     serverExecutor = Executors.newCachedThreadPool();
     server.setExecutor(serverExecutor);
+    serverPort = server.getAddress().getPort();
   }
 
   @AfterEach
@@ -335,7 +336,6 @@ class MtlsPipelineLocalTest {
           }
         });
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -482,7 +482,6 @@ class MtlsPipelineLocalTest {
           }
         });
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -545,6 +544,136 @@ class MtlsPipelineLocalTest {
   }
 
   /**
+   * Scenario B2: testMtlsPipeline_400InvalidGrantRetry_reReadsCertFromDisk
+   *
+   * <p>Live {@code sts.mtls.googleapis.com/v1/token} returns HTTP 400 with {@code "error":
+   * "invalid_grant"} when the client certificate in the mTLS handshake does not match the leaf
+   * certificate in {@code subject_token}. Verify that {@link IdentityPoolCredentials} catches this
+   * {@code invalid_grant} error, reloads the rotated certificate from disk, and succeeds on retry.
+   */
+  @Test
+  void testMtlsPipeline_400InvalidGrantRetry_reReadsCertFromDisk(@TempDir Path tempDir)
+      throws Exception {
+    Path dynamicCertFile = tempDir.resolve("dynamic_cert.pem");
+    Path dynamicKeyFile = tempDir.resolve("dynamic_key.pem");
+    Files.copy(Paths.get(TEST_CERT_PATH), dynamicCertFile, StandardCopyOption.REPLACE_EXISTING);
+    Files.copy(Paths.get(TEST_KEY_PATH), dynamicKeyFile, StandardCopyOption.REPLACE_EXISTING);
+
+    Path certConfigFile = tempDir.resolve("dynamic_cert_config.json");
+    String certConfigContent =
+        "{\n"
+            + "  \"cert_configs\": {\n"
+            + "    \"workload\": {\n"
+            + "      \"cert_path\": \""
+            + dynamicCertFile.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "      \"key_path\": \""
+            + dynamicKeyFile.toString().replace("\\", "\\\\")
+            + "\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+    Files.write(certConfigFile, certConfigContent.getBytes(StandardCharsets.UTF_8));
+
+    AtomicInteger requestCount = new AtomicInteger(0);
+    List<Certificate[]> certsPerRequest = Collections.synchronizedList(new ArrayList<>());
+
+    server.createContext(
+        "/v1/token",
+        new HttpHandler() {
+          @Override
+          public void handle(HttpExchange exchange) throws IOException {
+            try {
+              HttpsExchange httpsExchange = (HttpsExchange) exchange;
+              SSLSession session = httpsExchange.getSSLSession();
+              certsPerRequest.add(session.getPeerCertificates());
+
+              readRequestBody(exchange);
+
+              int count = requestCount.incrementAndGet();
+              if (count == 1) {
+                // Rotate cert files on disk from Cert A to Cert B before returning 400
+                // invalid_grant
+                Files.write(dynamicCertFile, Files.readAllBytes(Paths.get(TEST_CERT_2_PATH)));
+                Files.write(dynamicKeyFile, Files.readAllBytes(Paths.get(TEST_KEY_2_PATH)));
+
+                GenericJson error = new GenericJson();
+                error.setFactory(OAuth2Utils.JSON_FACTORY);
+                error.put("error", "invalid_grant");
+                error.put(
+                    "error_description", "Client cert does not match the cert in mTLS handshake.");
+                sendJsonResponse(exchange, 400, error.toPrettyString());
+              } else {
+                GenericJson response = new GenericJson();
+                response.setFactory(OAuth2Utils.JSON_FACTORY);
+                response.put("access_token", "retry_success_token_400_invalid_grant_handled");
+                response.put("token_type", "Bearer");
+                response.put("expires_in", 3600);
+                response.put("issued_token_type", ACCESS_TOKEN_TYPE);
+                sendJsonResponse(exchange, 200, response.toPrettyString());
+              }
+            } catch (Exception e) {
+              sendJsonResponse(exchange, 500, "{\"error\": \"" + e.getMessage() + "\"}");
+            }
+          }
+        });
+    server.start();
+
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken400");
+    tokenJson.put("actor_token", "testActorToken400");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    String configJson =
+        "{\n"
+            + "  \"type\": \"external_account\",\n"
+            + "  \"audience\": \""
+            + AUDIENCE
+            + "\",\n"
+            + "  \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"actor_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"token_url\": \"https://localhost:"
+            + serverPort
+            + "/v1/token\",\n"
+            + "  \"credential_source\": {\n"
+            + "    \"file\": \""
+            + tokenFile.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "    \"format\": {\n"
+            + "      \"type\": \"json\",\n"
+            + "      \"subject_token_field_name\": \"subject_token\",\n"
+            + "      \"actor_token_field_name\": \"actor_token\"\n"
+            + "    },\n"
+            + "    \"certificate\": {\n"
+            + "      \"certificate_config_location\": \""
+            + certConfigFile.toString().replace("\\", "\\\\")
+            + "\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+
+    IdentityPoolCredentials credentials =
+        (IdentityPoolCredentials)
+            ExternalAccountCredentials.fromStream(
+                new ByteArrayInputStream(configJson.getBytes(StandardCharsets.UTF_8)));
+
+    AccessToken accessToken = credentials.refreshAccessToken();
+    assertEquals("retry_success_token_400_invalid_grant_handled", accessToken.getTokenValue());
+    assertEquals(2, requestCount.get());
+    assertEquals(2, certsPerRequest.size());
+    assertEquals(
+        "CN=1009120726878.apps.googleusercontent.com",
+        ((X509Certificate) certsPerRequest.get(0)[0]).getSubjectX500Principal().getName());
+    assertEquals(
+        "CN=rotated-client.apps.googleusercontent.com",
+        ((X509Certificate) certsPerRequest.get(1)[0]).getSubjectX500Principal().getName());
+  }
+
+  /**
    * Scenario C: testMtlsPipeline_concurrentRefreshes
    *
    * <p>Multi-threaded refresh verifying independent transport snapshots per thread without
@@ -585,7 +714,6 @@ class MtlsPipelineLocalTest {
           }
         });
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -692,7 +820,6 @@ class MtlsPipelineLocalTest {
           }
         });
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -856,7 +983,6 @@ class MtlsPipelineLocalTest {
         });
 
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -1047,7 +1173,6 @@ class MtlsPipelineLocalTest {
         });
 
     server.start();
-    serverPort = server.getAddress().getPort();
 
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
