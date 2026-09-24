@@ -23,6 +23,7 @@ import java.util.Properties;
 final class TelemetryConfiguration {
 
   static final int DEFAULT_LOG_SOURCE = 3071;
+  static final int DEFAULT_CLIENT_TYPE = 52;
   static final String DEFAULT_ENDPOINT_URL = "https://play.googleapis.com/log";
 
   private final boolean enabled;
