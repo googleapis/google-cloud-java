@@ -44,6 +44,7 @@ import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -179,14 +180,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
   }
 
-  @VisibleForTesting
-  boolean shouldUseMtlsTransportFactory() {
-    return this.useMtlsTransportFactory
-        || (this.transportFactory instanceof MtlsHttpTransportFactory
-            && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
+  private boolean shouldUseMtlsTransportFactory() {
+    return this.useMtlsTransportFactory || isDefaultOrMtlsTransportFactory(this.transportFactory);
   }
 
-  boolean hasInitializedMtlsTransport() {
+  private boolean hasInitializedMtlsTransport() {
     return this.x509Provider != null
         && (!shouldUseMtlsTransportFactory()
             || (this.transportFactory instanceof MtlsHttpTransportFactory
@@ -235,9 +233,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (actorToken == null || actorToken.trim().isEmpty()) {
         throw new IOException("The provided actor token cannot be null or empty.");
       }
-      if (this.actorTokenType != null) {
-        stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
-      }
+      stsTokenExchangeRequest.setActingParty(
+          new ActingParty(actorToken, Objects.requireNonNull(this.actorTokenType)));
     }
 
     Collection<String> scopes = getScopes();
@@ -305,8 +302,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.x509Provider;
   }
 
-  @VisibleForTesting
-  HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+  private HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
     return new MtlsHttpTransportFactory(keyStore);
   }
 
@@ -553,6 +549,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     @CanIgnoreReturnValue
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
+      if (this.credentialSource != null && this.credentialSource != credentialSource) {
+        this.x509Provider = null;
+      }
       super.setCredentialSource(credentialSource);
       this.isClonedTransportInitialized = false;
       return this;

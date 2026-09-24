@@ -3001,7 +3001,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createScoped_withCertificateConfig_refreshesMtlsTransportSnapshot(@TempDir Path tempDir)
+  void createScoped_withCertificateConfig_preservesMtlsTransportSnapshot(@TempDir Path tempDir)
       throws Exception {
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -3064,6 +3064,61 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void toBuilder_setCredentialSource_withNewSource_clearsCopiedX509Provider(@TempDir Path tempDir)
+      throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", tokenFile.toString());
+    credentialSourceMap.put("format", formatMap);
+    credentialSourceMap.put("certificate", certificateMap);
+
+    KeyStore ks = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider trackingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCount.incrementAndGet();
+            return ks;
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
+            .setX509Provider(trackingProvider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    assertSame(trackingProvider, credential.getX509Provider());
+    assertEquals(1, getKeyStoreCount.get());
+
+    IdentityPoolCredentials rebuilt =
+        credential
+            .toBuilder()
+            .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
+            .build();
+
+    assertNotNull(rebuilt.getX509Provider());
+    assertNotSame(trackingProvider, rebuilt.getX509Provider());
+    assertEquals(1, getKeyStoreCount.get());
+  }
+
+  @Test
   void refreshAccessToken_401WithActorTokenAndNonMtlsTransport_bubblesUpWithoutRetry() {
     IdentityPoolCredentials.Builder builder =
         IdentityPoolCredentials.newBuilder()
@@ -3074,7 +3129,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/p/providers/pr")
             .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
             .setTokenUrl("https://sts.googleapis.com/v1/token")
-            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+            .setX509Provider(
+                new TestX509Provider(createPopulatedKeyStore(), "certificate_config_location"))
+            .setHttpTransportFactory(new MockExternalAccountCredentialsTransportFactory());
 
     TestableIdentityPoolCredentials testable = new TestableIdentityPoolCredentials(builder, true);
 
