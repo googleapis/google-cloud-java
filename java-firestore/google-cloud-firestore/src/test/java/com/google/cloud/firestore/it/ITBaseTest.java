@@ -82,7 +82,21 @@ public abstract class ITBaseTest {
   public static FirestoreOptions.Builder getOptionsBuilder() {
     FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
 
-    optionsBuilder = optionsBuilder.setProjectId("java-review");
+    String projectPropertyName = "FIRESTORE_PROJECT_ID";
+    String projectId = System.getProperty(projectPropertyName);
+    if (projectId == null) {
+      projectId = System.getenv(projectPropertyName);
+    }
+    if (projectId == null) {
+      projectId = System.getProperty("GCLOUD_PROJECT");
+    }
+    if (projectId == null) {
+      projectId = System.getenv("GCLOUD_PROJECT");
+    }
+    if (projectId == null) {
+      projectId = "java-review";
+    }
+    optionsBuilder = optionsBuilder.setProjectId(projectId);
     String dbPropertyName = "FIRESTORE_DATABASE_ID";
     String namedDb = System.getProperty(dbPropertyName);
     if (namedDb == null) {
