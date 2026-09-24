@@ -343,7 +343,15 @@ public class StreamingRetryBudgetMockServerTest {
             .singleUse()
             .read("T", KeySet.all(), Collections.singletonList("C"))) {
       SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
-      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+      // When GAX retries with a total timeout, it truncates the per-attempt RPC timeout
+      // to the remaining time in totalTimeout. If that final attempt's deadline expires
+      // before the server responds, gRPC fails with DEADLINE_EXCEEDED. Both UNAVAILABLE
+      // and DEADLINE_EXCEEDED indicate that retries stopped because totalTimeout was exhausted.
+      assertTrue(
+          "Expected UNAVAILABLE or DEADLINE_EXCEEDED upon totalTimeout exhaustion, got: "
+              + exception.getErrorCode(),
+          exception.getErrorCode() == ErrorCode.UNAVAILABLE
+              || exception.getErrorCode() == ErrorCode.DEADLINE_EXCEEDED);
     }
     assertTrue(mockSpanner.countRequestsOfType(ReadRequest.class) > 1);
     assertTrue(stopwatch.elapsed(TimeUnit.MILLISECONDS) < 10000L);
@@ -390,7 +398,15 @@ public class StreamingRetryBudgetMockServerTest {
     Stopwatch stopwatch = Stopwatch.createStarted();
     try (ResultSet resultSet = clientWithTotalTimeout.singleUse().executeQuery(SELECT_QUERY)) {
       SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
-      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+      // When GAX retries with a total timeout, it truncates the per-attempt RPC timeout
+      // to the remaining time in totalTimeout. If that final attempt's deadline expires
+      // before the server responds, gRPC fails with DEADLINE_EXCEEDED. Both UNAVAILABLE
+      // and DEADLINE_EXCEEDED indicate that retries stopped because totalTimeout was exhausted.
+      assertTrue(
+          "Expected UNAVAILABLE or DEADLINE_EXCEEDED upon totalTimeout exhaustion, got: "
+              + exception.getErrorCode(),
+          exception.getErrorCode() == ErrorCode.UNAVAILABLE
+              || exception.getErrorCode() == ErrorCode.DEADLINE_EXCEEDED);
     }
     // The exact number of attempts depends on timing, but the query must have been retried at
     // least once, and must have failed shortly after the total timeout (200ms) elapsed. The
@@ -416,7 +432,15 @@ public class StreamingRetryBudgetMockServerTest {
     Stopwatch stopwatch = Stopwatch.createStarted();
     try (ResultSet resultSet = clientWithTotalTimeout.singleUse().executeQuery(SELECT_QUERY)) {
       SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
-      assertEquals(ErrorCode.RESOURCE_EXHAUSTED, exception.getErrorCode());
+      // When GAX retries with a total timeout, it truncates the per-attempt RPC timeout
+      // to the remaining time in totalTimeout. If that final attempt's deadline expires
+      // before the server responds, gRPC fails with DEADLINE_EXCEEDED. Both RESOURCE_EXHAUSTED
+      // and DEADLINE_EXCEEDED indicate that retries stopped because totalTimeout was exhausted.
+      assertTrue(
+          "Expected RESOURCE_EXHAUSTED or DEADLINE_EXCEEDED upon totalTimeout exhaustion, got: "
+              + exception.getErrorCode(),
+          exception.getErrorCode() == ErrorCode.RESOURCE_EXHAUSTED
+              || exception.getErrorCode() == ErrorCode.DEADLINE_EXCEEDED);
     }
     assertTrue(mockSpanner.countRequestsOfType(ExecuteSqlRequest.class) > 1);
     assertTrue(stopwatch.elapsed(TimeUnit.MILLISECONDS) < 10000L);

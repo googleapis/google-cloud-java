@@ -40,7 +40,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  *
  * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigQuery extends Service<BigQueryOptions> {
+public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
   /**
    * Fields of a BigQuery Dataset resource.
@@ -1650,6 +1650,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
    * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
    *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
+   *
    * @param configuration the query configuration
    * @param options query options
    * @return an {@link ArrowQueryResult} streaming Arrow vectors
@@ -1674,6 +1682,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
    * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
    *
    * @param configuration the query configuration
    * @param jobId the job ID to use
@@ -1821,4 +1837,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * represents the subset of granted permissions.
    */
   List<String> testIamPermissions(TableId table, List<String> permissions, IAMOption... options);
+
+  /**
+   * Closes any background resources and transport channels held by this service.
+   *
+   * <p>The default implementation does nothing. Implementations that manage background resources
+   * (such as gRPC channels or storage clients) should override this method to release them
+   * deterministically.
+   */
+  @Override
+  default void close() {}
 }

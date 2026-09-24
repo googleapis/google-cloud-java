@@ -58,4 +58,39 @@ public class IntegrationTestEnvTest {
                 "Could not create instance. Quota exceeded for quota metric 'Instance create"
                     + " requests' and limit 'Instance create requests per minute'")));
   }
+
+  @Test
+  public void testCloudDevelAndStagingDetection() {
+    IntegrationTestEnv env = new IntegrationTestEnv();
+    String originalServerUrl = System.getProperty("spanner.gce.config.server_url");
+    try {
+      System.clearProperty("spanner.gce.config.server_url");
+      assertFalse(env.isCloudDevel());
+      assertFalse(env.isCloudStaging());
+      assertFalse(env.isCloudDevelOrStaging());
+
+      System.setProperty(
+          "spanner.gce.config.server_url", "https://staging-wrenchworks.sandbox.googleapis.com");
+      assertTrue(env.isCloudDevel());
+      assertFalse(env.isCloudStaging());
+      assertTrue(env.isCloudDevelOrStaging());
+
+      System.setProperty(
+          "spanner.gce.config.server_url", "https://preprod-spanner.sandbox.googleapis.com");
+      assertFalse(env.isCloudDevel());
+      assertTrue(env.isCloudStaging());
+      assertTrue(env.isCloudDevelOrStaging());
+
+      System.setProperty("spanner.gce.config.server_url", "https://spanner.googleapis.com");
+      assertFalse(env.isCloudDevel());
+      assertFalse(env.isCloudStaging());
+      assertFalse(env.isCloudDevelOrStaging());
+    } finally {
+      if (originalServerUrl == null) {
+        System.clearProperty("spanner.gce.config.server_url");
+      } else {
+        System.setProperty("spanner.gce.config.server_url", originalServerUrl);
+      }
+    }
+  }
 }
