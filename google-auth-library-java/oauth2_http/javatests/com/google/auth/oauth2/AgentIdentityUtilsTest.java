@@ -684,7 +684,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void loadAndVerifyCredentials_implicitDiscovery_bundleWithMismatchedKey_throwsIOException()
+  public void getAgentIdentityCertInfo_implicitDiscovery_bundleWithMismatchedKey_throwsIOException()
       throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
