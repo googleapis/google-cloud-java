@@ -53,6 +53,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
+  private final io.opentelemetry.context.Context parentContext;
+  private final java.util.concurrent.locks.ReentrantLock lock =
+      new java.util.concurrent.locks.ReentrantLock();
   private volatile @Nullable Span attemptSpan;
   private final AtomicReference<io.opentelemetry.context.@Nullable Scope> scope =
       new AtomicReference<>();
@@ -85,6 +88,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.apiTracerContext = apiTracerContext;
     this.attemptSpanName = resolveAttemptSpanName(apiTracerContext);
     this.attemptAttributes = new HashMap<>();
+    this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
   }
 
@@ -103,6 +107,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;
     this.attemptAttributes = new HashMap<>();
+    this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
   }
 
@@ -128,30 +133,61 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   @Override
   @SuppressWarnings("MustBeClosedChecker")
   public void attemptStarted(Object request, int attemptNumber) {
-    Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
-
-    if (attemptNumber > 0) {
-      ApiTracerContext.Transport transport = apiTracerContext.transport();
-      if (transport == ApiTracerContext.Transport.GRPC) {
-        currentAttemptAttributes.put(
-            ObservabilityAttributes.GRPC_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
-      } else if (transport == ApiTracerContext.Transport.HTTP) {
-        currentAttemptAttributes.put(
-            ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
+    Span oldSpan = null;
+    lock.lock();
+    try {
+      if (attemptSpan != null) {
+        oldSpan = attemptSpan;
+        attemptSpan = null;
       }
+      Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
+
+      if (attemptNumber > 0) {
+        ApiTracerContext.Transport transport = apiTracerContext.transport();
+        if (transport == ApiTracerContext.Transport.GRPC) {
+          currentAttemptAttributes.put(
+              ObservabilityAttributes.GRPC_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
+        } else if (transport == ApiTracerContext.Transport.HTTP) {
+          currentAttemptAttributes.put(
+              ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
+        }
+      }
+
+      SpanBuilder spanBuilder = tracer.spanBuilder(attemptSpanName);
+
+      // Attempt spans are of the CLIENT kind
+      spanBuilder.setSpanKind(SpanKind.CLIENT);
+
+      // Link attempt span to parent context
+      spanBuilder.setParent(parentContext);
+
+      // Pass the combined attributes to the new SpanBuilder method
+      spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
+
+      this.attemptSpan = spanBuilder.startSpan();
+      // Make the span active on the current thread so logs can capture the trace ID.
+      this.scope.set(attemptSpan.makeCurrent());
+    } finally {
+      lock.unlock();
     }
+    if (oldSpan != null) {
+      endAttemptSpan(oldSpan, null);
+    }
+  }
 
-    SpanBuilder spanBuilder = tracer.spanBuilder(attemptSpanName);
+  @Override
+  public void operationSucceeded() {
+    recordErrorAndEndAttempt(null);
+  }
 
-    // Attempt spans are of the CLIENT kind
-    spanBuilder.setSpanKind(SpanKind.CLIENT);
+  @Override
+  public void operationCancelled() {
+    recordErrorAndEndAttempt(new CancellationException());
+  }
 
-    // Pass the combined attributes to the new SpanBuilder method
-    spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
-
-    this.attemptSpan = spanBuilder.startSpan();
-    // Make the span active on the current thread so logs can capture the trace ID.
-    this.scope.set(attemptSpan.makeCurrent());
+  @Override
+  public void operationFailed(Throwable error) {
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
@@ -161,12 +197,13 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void responseHeadersReceived(java.util.Map<String, Object> headers) {
-    if (attemptSpan == null) {
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
       return;
     }
     long contentLength = extractContentLength(headers);
     if (contentLength >= 0) {
-      attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
+      currentSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
   }
 
@@ -222,49 +259,53 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void recordErrorAndEndAttempt(@Nullable Throwable error) {
-    if (attemptSpan == null) {
-      return;
+    Span localAttemptSpan;
+    lock.lock();
+    try {
+      localAttemptSpan = attemptSpan;
+      if (localAttemptSpan == null) {
+        return;
+      }
+      attemptSpan = null;
+    } finally {
+      lock.unlock();
     }
+
+    endAttemptSpan(localAttemptSpan, error);
+  }
+
+  private void endAttemptSpan(Span localAttemptSpan, @Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
     if (!responseAttributes.isEmpty()) {
-      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
+      localAttemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
     if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
-      attemptSpan.setAttribute(
+      localAttemptSpan.setAttribute(
           ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
     }
 
-    endAttempt();
-  }
-
-  private void endAttempt() {
-    Span currentSpan = this.attemptSpan;
-    this.attemptSpan = null;
-
     io.opentelemetry.context.Scope currentScope = this.scope.getAndSet(null);
-    // Remove the span from the current thread before closing the span.
     try {
       if (currentScope != null) {
         currentScope.close();
       }
     } finally {
-      if (currentSpan != null) {
-        currentSpan.end();
-      }
+      localAttemptSpan.end();
     }
   }
 
   @Override
   public void requestUrlResolved(String url) {
-    if (attemptSpan == null) {
+    Span currentSpan = attemptSpan;
+    if (currentSpan == null) {
       return;
     }
     String sanitizedUrlString = ObservabilityUtils.sanitizeUrlFull(url);
     if (sanitizedUrlString.isEmpty()) {
       return;
     }
-    attemptSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
+    currentSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
   }
 }
