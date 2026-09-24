@@ -162,7 +162,7 @@ public final class TelemetryManager implements AutoCloseable {
   }
 
   // Package-private test helper to reset the global kill switch between test runs
-  static synchronized void resetGlobalDisableForTest() {
+  public static synchronized void resetGlobalDisableForTest() {
     globallyDisabled = false;
   }
 
