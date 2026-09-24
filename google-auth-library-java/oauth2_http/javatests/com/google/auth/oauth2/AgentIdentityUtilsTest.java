@@ -454,47 +454,14 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void verifyKeyPair_ecAndEcdsaAlgorithms_returnsTrue() throws Exception {
+  public void verifyKeyPair_ecKey_returnsTrue() throws Exception {
     KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
     kpg.initialize(256);
     KeyPair kp = kpg.generateKeyPair();
 
-    // Standard "EC" algorithm name
     X509Certificate ecCert = mock(X509Certificate.class);
     when(ecCert.getPublicKey()).thenReturn(kp.getPublic());
     assertTrue(AgentIdentityUtils.verifyKeyPair(ecCert, kp.getPrivate()));
-
-    // JCA provider returning "ECDSA" as the PublicKey algorithm (e.g. BouncyCastle)
-    java.security.PublicKey ecdsaPubKey =
-        new java.security.interfaces.ECPublicKey() {
-          @Override
-          public java.security.spec.ECPoint getW() {
-            return ((java.security.interfaces.ECPublicKey) kp.getPublic()).getW();
-          }
-
-          @Override
-          public java.security.spec.ECParameterSpec getParams() {
-            return ((java.security.interfaces.ECPublicKey) kp.getPublic()).getParams();
-          }
-
-          @Override
-          public String getAlgorithm() {
-            return "ECDSA";
-          }
-
-          @Override
-          public String getFormat() {
-            return kp.getPublic().getFormat();
-          }
-
-          @Override
-          public byte[] getEncoded() {
-            return kp.getPublic().getEncoded();
-          }
-        };
-    X509Certificate ecdsaCert = mock(X509Certificate.class);
-    when(ecdsaCert.getPublicKey()).thenReturn(ecdsaPubKey);
-    assertTrue(AgentIdentityUtils.verifyKeyPair(ecdsaCert, kp.getPrivate()));
   }
 
   @Test
