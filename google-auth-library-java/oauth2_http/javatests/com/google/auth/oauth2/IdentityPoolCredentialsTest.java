@@ -3108,8 +3108,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(1, getKeyStoreCount.get());
 
     IdentityPoolCredentials rebuilt =
-        credential
-            .toBuilder()
+        credential.toBuilder()
             .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
             .build();
 
