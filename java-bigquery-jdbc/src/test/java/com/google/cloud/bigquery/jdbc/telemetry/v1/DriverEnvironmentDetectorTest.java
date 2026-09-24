@@ -29,13 +29,13 @@ import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-public class DriverEnvironmentBuilderTest {
+public class DriverEnvironmentDetectorTest {
 
   @Test
   public void testBuildDriverEnvironment() {
-    DriverEnvironment env = DriverEnvironmentBuilder.build();
+    DriverEnvironment env = DriverEnvironmentDetector.build();
     assertNotNull(env);
-    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertEquals("Google-BigQuery-JDBC-Driver", env.getDriverName());
     assertNotNull(env.getDriverVersion());
     assertEquals("java", env.getClientLanguage());
     assertNotNull(env.getClientLanguageVersion());
@@ -47,68 +47,71 @@ public class DriverEnvironmentBuilderTest {
   @Test
   public void testBuildDriverEnvironmentCustomTagPath(@TempDir Path tempDir) {
     Path tagFile = tempDir.resolve("telemetry-tag");
-    DriverEnvironment env = DriverEnvironmentBuilder.build(tagFile);
+    DriverEnvironment env = DriverEnvironmentDetector.build(tagFile);
     assertNotNull(env);
-    assertEquals("google-bigquery-jdbc-driver", env.getDriverName());
+    assertEquals("Google-BigQuery-JDBC-Driver", env.getDriverName());
     assertNotNull(env.getDriverVersion());
     assertEquals("java", env.getClientLanguage());
     assertNotNull(env.getClientLanguageVersion());
     assertNotNull(env.getOsType());
     assertNotNull(env.getOsVersion());
-    assertEquals(env.getTelemetryTag(), DriverEnvironmentBuilder.getOrCreateTelemetryTag(tagFile));
+    assertEquals(env.getTelemetryTag(), DriverEnvironmentDetector.getOrCreateTelemetryTag(tagFile));
   }
 
   @Test
   public void testGetMajorJavaVersion() {
-    assertEquals("8", DriverEnvironmentBuilder.getMajorJavaVersion("1.8.0_292"));
-    assertEquals("11", DriverEnvironmentBuilder.getMajorJavaVersion("11.0.12"));
-    assertEquals("17", DriverEnvironmentBuilder.getMajorJavaVersion("17.0.1"));
-    assertEquals("21", DriverEnvironmentBuilder.getMajorJavaVersion("21"));
-    assertEquals("unknown", DriverEnvironmentBuilder.getMajorJavaVersion(null));
-    assertEquals("unknown", DriverEnvironmentBuilder.getMajorJavaVersion("   "));
+    assertEquals("8", DriverEnvironmentDetector.getMajorJavaVersion("1.8.0_292"));
+    assertEquals("11", DriverEnvironmentDetector.getMajorJavaVersion("11.0.12"));
+    assertEquals("17", DriverEnvironmentDetector.getMajorJavaVersion("17.0.1"));
+    assertEquals("21", DriverEnvironmentDetector.getMajorJavaVersion("21"));
+    assertEquals("unknown", DriverEnvironmentDetector.getMajorJavaVersion(null));
+    assertEquals("unknown", DriverEnvironmentDetector.getMajorJavaVersion("   "));
   }
 
   @Test
   public void testDetectOsType() {
     assertEquals(
         DriverEnvironment.OsType.OS_TYPE_WINDOWS,
-        DriverEnvironmentBuilder.detectOsType("Windows 11"));
+        DriverEnvironmentDetector.detectOsType("Windows 11"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_MACOS, DriverEnvironmentBuilder.detectOsType("Mac OS X"));
+        DriverEnvironment.OsType.OS_TYPE_MACOS, DriverEnvironmentDetector.detectOsType("Mac OS X"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_MACOS, DriverEnvironmentBuilder.detectOsType("Darwin"));
+        DriverEnvironment.OsType.OS_TYPE_MACOS, DriverEnvironmentDetector.detectOsType("Darwin"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_LINUX, DriverEnvironmentBuilder.detectOsType("Linux"));
+        DriverEnvironment.OsType.OS_TYPE_LINUX, DriverEnvironmentDetector.detectOsType("Linux"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_SOLARIS, DriverEnvironmentBuilder.detectOsType("Solaris"));
+        DriverEnvironment.OsType.OS_TYPE_SOLARIS,
+        DriverEnvironmentDetector.detectOsType("Solaris"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_FREEBSD, DriverEnvironmentBuilder.detectOsType("FreeBSD"));
+        DriverEnvironment.OsType.OS_TYPE_FREEBSD,
+        DriverEnvironmentDetector.detectOsType("FreeBSD"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_OPENBSD, DriverEnvironmentBuilder.detectOsType("OpenBSD"));
+        DriverEnvironment.OsType.OS_TYPE_OPENBSD,
+        DriverEnvironmentDetector.detectOsType("OpenBSD"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_NETBSD, DriverEnvironmentBuilder.detectOsType("NetBSD"));
+        DriverEnvironment.OsType.OS_TYPE_NETBSD, DriverEnvironmentDetector.detectOsType("NetBSD"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_AIX, DriverEnvironmentBuilder.detectOsType("AIX"));
+        DriverEnvironment.OsType.OS_TYPE_AIX, DriverEnvironmentDetector.detectOsType("AIX"));
     assertEquals(
         DriverEnvironment.OsType.OS_TYPE_UNKNOWN,
-        DriverEnvironmentBuilder.detectOsType("UnknownOS"));
+        DriverEnvironmentDetector.detectOsType("UnknownOS"));
     assertEquals(
-        DriverEnvironment.OsType.OS_TYPE_UNKNOWN, DriverEnvironmentBuilder.detectOsType(null));
+        DriverEnvironment.OsType.OS_TYPE_UNKNOWN, DriverEnvironmentDetector.detectOsType(null));
   }
 
   @Test
   public void testGetMajorOsVersion() {
-    assertEquals("10", DriverEnvironmentBuilder.getMajorOsVersion("10.0"));
-    assertEquals("6", DriverEnvironmentBuilder.getMajorOsVersion("6.1.0"));
-    assertEquals("5", DriverEnvironmentBuilder.getMajorOsVersion("5"));
-    assertEquals("unknown", DriverEnvironmentBuilder.getMajorOsVersion(null));
-    assertEquals("unknown", DriverEnvironmentBuilder.getMajorOsVersion("  "));
+    assertEquals("10", DriverEnvironmentDetector.getMajorOsVersion("10.0"));
+    assertEquals("6", DriverEnvironmentDetector.getMajorOsVersion("6.1.0"));
+    assertEquals("5", DriverEnvironmentDetector.getMajorOsVersion("5"));
+    assertEquals("unknown", DriverEnvironmentDetector.getMajorOsVersion(null));
+    assertEquals("unknown", DriverEnvironmentDetector.getMajorOsVersion("  "));
   }
 
   @Test
   public void testGetOrCreateTelemetryTag_CreateNew(@TempDir Path tempDir) {
     Path tagFile = tempDir.resolve("telemetry-tag");
-    String tag = DriverEnvironmentBuilder.getOrCreateTelemetryTag(tagFile);
+    String tag = DriverEnvironmentDetector.getOrCreateTelemetryTag(tagFile);
 
     assertNotNull(tag);
     assertTrue(Files.exists(tagFile));
@@ -122,7 +125,7 @@ public class DriverEnvironmentBuilderTest {
     String existingUuid = UUID.randomUUID().toString();
     Files.write(tagFile, existingUuid.getBytes(StandardCharsets.UTF_8));
 
-    String tag = DriverEnvironmentBuilder.getOrCreateTelemetryTag(tagFile);
+    String tag = DriverEnvironmentDetector.getOrCreateTelemetryTag(tagFile);
     assertEquals(existingUuid, tag);
   }
 
@@ -133,7 +136,7 @@ public class DriverEnvironmentBuilderTest {
     String corruptedContent = "not-a-valid-uuid";
     Files.write(tagFile, corruptedContent.getBytes(StandardCharsets.UTF_8));
 
-    String newTag = DriverEnvironmentBuilder.getOrCreateTelemetryTag(tagFile);
+    String newTag = DriverEnvironmentDetector.getOrCreateTelemetryTag(tagFile);
 
     assertNotNull(newTag);
     assertNotEquals(corruptedContent, newTag);

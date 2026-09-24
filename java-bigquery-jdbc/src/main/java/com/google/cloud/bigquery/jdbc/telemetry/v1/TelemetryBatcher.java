@@ -39,7 +39,10 @@ import java.util.logging.Logger;
 final class TelemetryBatcher implements AutoCloseable {
   private static final Logger logger =
       new BigQueryJdbcCustomLogger(TelemetryBatcher.class.getName());
-  private static final int MAX_UNIQUE_PROFILES = 3000;
+  private static final int PROFILE_CAP_MULTIPLIER = 2;
+
+  /** Cap used when no usable threshold is configured. */
+  private static final int FALLBACK_PROFILE_CAP = 3000;
 
   private final TelemetryConfiguration config;
   private final ClearcutTransport transport;
@@ -49,10 +52,17 @@ final class TelemetryBatcher implements AutoCloseable {
   private final ReentrantLock flushLock = new ReentrantLock();
 
   // Live telemetry accumulator. Lock-free to eliminate object allocation and GC overhead.
-  private ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
+  private volatile ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
       new ConcurrentHashMap<>();
 
+  /** Derived from {@code batchSizeThreshold}; see {@link #PROFILE_CAP_MULTIPLIER}. */
+  private final int maxUniqueProfiles;
+
+  /** Set while the last flush failed, to stop the size trigger hammering a failing endpoint. */
+  private volatile boolean backoffActive;
+
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
+  private final AtomicBoolean flushPending = new AtomicBoolean();
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
   private ScheduledFuture<?> scheduledTask;
 
@@ -75,10 +85,26 @@ final class TelemetryBatcher implements AutoCloseable {
     this.driverEnvironment = config != null ? config.getDriverEnvironment() : null;
     this.executorService = executorService;
     this.ownsExecutor = ownsExecutor;
+    this.maxUniqueProfiles = computeProfileCap(config);
 
     if (this.config != null && this.config.isEnabled()) {
       reschedule(this.config.getUploadIntervalMs());
     }
+  }
+
+  /**
+   * Derives the hard profile cap from the configured queue-size threshold. Package-private so that
+   * the invariant {@code threshold < cap} can be asserted directly in tests.
+   */
+  static int computeProfileCap(TelemetryConfiguration config) {
+    if (config == null) {
+      return FALLBACK_PROFILE_CAP;
+    }
+    int threshold = config.getBatchSizeThreshold();
+    if (threshold <= 0) {
+      return FALLBACK_PROFILE_CAP;
+    }
+    return (int) Math.min((long) threshold * PROFILE_CAP_MULTIPLIER, Integer.MAX_VALUE);
   }
 
   private static ScheduledExecutorService createDefaultExecutor() {
@@ -133,13 +159,42 @@ final class TelemetryBatcher implements AutoCloseable {
     if (acc != null) {
       acc.accumulate(durationMs);
     }
+    maybeFlushOnSize();
+  }
+
+  /**
+   * Flushes out of band once the pending queue reaches {@code batchSizeThreshold} entries, so a
+   * batch is dispatched on size as well as on the scheduled interval. Always dispatched to the
+   * batcher thread so that no JDBC caller thread performs network I/O.
+   */
+  private void maybeFlushOnSize() {
+    if (backoffActive) {
+      return;
+    }
+    int threshold = config != null ? config.getBatchSizeThreshold() : 0;
+    if (threshold <= 0 || metricsMap.size() < threshold) {
+      return;
+    }
+    if (executorService == null || executorService.isShutdown()) {
+      return;
+    }
+    if (flushPending.compareAndSet(false, true)) {
+      executorService.execute(
+          () -> {
+            try {
+              flush();
+            } finally {
+              flushPending.set(false);
+            }
+          });
+    }
   }
 
   private <A extends TelemetryAccumulator> A getOrAddAccumulator(TelemetryKey key) {
     if (isClosed.get() || !isConfigured()) {
       return null;
     }
-    if (metricsMap.size() >= MAX_UNIQUE_PROFILES && !metricsMap.containsKey(key)) {
+    if (metricsMap.size() >= maxUniqueProfiles && !metricsMap.containsKey(key)) {
       return null;
     }
     return (A) metricsMap.computeIfAbsent(key, TelemetryKey::createAccumulator);
@@ -184,8 +239,12 @@ final class TelemetryBatcher implements AutoCloseable {
       }
 
       if (!result.isSuccess()) {
+        // Suppress the size trigger until a flush succeeds; reschedule() below spaces the retries.
+        backoffActive = true;
         // Simple requeue logic for failed requests
         remergeFailedMetrics(snapMetrics);
+      } else {
+        backoffActive = false;
       }
 
       long uploadIntervalMs = config != null ? config.getUploadIntervalMs() : 300_000L;
@@ -350,11 +409,13 @@ final class TelemetryBatcher implements AutoCloseable {
   static final class ErrorKey implements TelemetryKey {
     final int errorCode;
     final int errorXdbcCode;
+    final String errorSqlState;
     final String methodName;
 
     ErrorKey(ErrorMetric errorMetric) {
       this.errorCode = errorMetric.getErrorCode();
       this.errorXdbcCode = errorMetric.getErrorXdbcCode();
+      this.errorSqlState = errorMetric.getErrorSqlState();
       this.methodName = errorMetric.getMethodName();
     }
 
@@ -369,12 +430,13 @@ final class TelemetryBatcher implements AutoCloseable {
       ErrorKey errorKey = (ErrorKey) o;
       return errorCode == errorKey.errorCode
           && errorXdbcCode == errorKey.errorXdbcCode
+          && Objects.equals(errorSqlState, errorKey.errorSqlState)
           && Objects.equals(methodName, errorKey.methodName);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(errorCode, errorXdbcCode, methodName);
+      return Objects.hash(errorCode, errorXdbcCode, errorSqlState, methodName);
     }
 
     @Override
@@ -386,6 +448,7 @@ final class TelemetryBatcher implements AutoCloseable {
       return ErrorMetric.newBuilder()
           .setErrorCode(errorCode)
           .setErrorXdbcCode(errorXdbcCode)
+          .setErrorSqlState(errorSqlState == null ? "" : errorSqlState)
           .setMethodName(methodName);
     }
   }

@@ -64,6 +64,10 @@ final class ClearcutTransport {
     long now = System.currentTimeMillis();
     LogRequest logRequest =
         LogRequest.newBuilder()
+            .setClientInfo(
+                ClientInfo.newBuilder()
+                    .setClientType(TelemetryConfiguration.DEFAULT_CLIENT_TYPE)
+                    .build())
             .setLogSource(config.getLogSource())
             .setRequestTimeMs(now)
             .addLogEvents(

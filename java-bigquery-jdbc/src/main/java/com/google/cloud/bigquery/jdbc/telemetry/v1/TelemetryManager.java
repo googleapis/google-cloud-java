@@ -81,7 +81,10 @@ public final class TelemetryManager implements AutoCloseable {
         return localRef;
       }
       TelemetryConfiguration config =
-          TelemetryConfiguration.builder().resolveProperties(properties).build();
+          TelemetryConfiguration.builder()
+              .resolveProperties(properties)
+              .setDriverEnvironment(DriverEnvironmentDetector.build())
+              .build();
       ClearcutTransport transport = new ClearcutTransport(config);
       TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
       localRef = new TelemetryManager(batcher);
@@ -96,7 +99,7 @@ public final class TelemetryManager implements AutoCloseable {
   /** Package-private lifecycle initialisation method for explicit configuration or unit testing. */
   static synchronized void init(TelemetryConfiguration config, ClearcutTransport transport) {
     closeInstance();
-    if (config == null || !config.isEnabled() || transport == null) {
+    if (globallyDisabled || config == null || !config.isEnabled() || transport == null) {
       return;
     }
     instance = new TelemetryManager(new TelemetryBatcher(config, transport));
@@ -265,7 +268,7 @@ public final class TelemetryManager implements AutoCloseable {
     recordFeatureUsage(feature, null);
   }
 
-  public static void recordError(int errorCode, int errorXdbcCode, String methodName) {
+  public static void recordError(int errorCode, String errorSqlState, String methodName) {
     runSafely(
         () -> {
           TelemetryBatcher activeBatcher = activeBatcher();
@@ -275,7 +278,9 @@ public final class TelemetryManager implements AutoCloseable {
           activeBatcher.offer(
               ErrorMetric.newBuilder()
                   .setErrorCode(errorCode)
-                  .setErrorXdbcCode(errorXdbcCode)
+                  // This value is not actively populated, defaults to 0.
+                  .setErrorXdbcCode(0)
+                  .setErrorSqlState(errorSqlState == null ? "" : errorSqlState)
                   .setMethodName(methodName == null ? "" : methodName)
                   .build());
         });
@@ -304,6 +309,25 @@ public final class TelemetryManager implements AutoCloseable {
       t = t.getCause();
     }
     return 1000;
+  }
+
+  /**
+   * Extracts the SQLState from the throwable chain. SQLStates are five-character strings.
+   *
+   * <p>Returns empty String when no SQLState is present.
+   */
+  public static String extractSqlState(Throwable t) {
+    int depth = 0;
+    while (t != null && depth++ < 20) {
+      if (t instanceof SQLException) {
+        String sqlState = ((SQLException) t).getSQLState();
+        if (sqlState != null && !sqlState.isEmpty()) {
+          return sqlState;
+        }
+      }
+      t = t.getCause();
+    }
+    return "";
   }
 
   /**

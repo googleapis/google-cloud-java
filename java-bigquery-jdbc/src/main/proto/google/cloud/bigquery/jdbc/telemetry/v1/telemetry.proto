@@ -169,6 +169,7 @@ message ErrorMetric {
   int32 error_xdbc_code = 2;
   string method_name = 3;
   int64 count = 4;
+  string error_sql_state = 5;
 }
 
 // High-level driver runtime features and capabilities tracked for telemetry.
