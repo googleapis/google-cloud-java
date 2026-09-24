@@ -398,11 +398,13 @@ final class TelemetryBatcher implements AutoCloseable {
 
   static final class ErrorKey implements TelemetryKey {
     final int errorCode;
+    final int errorXdbcCode;
     final String errorSqlState;
     final String methodName;
 
     ErrorKey(ErrorMetric errorMetric) {
       this.errorCode = errorMetric.getErrorCode();
+      this.errorXdbcCode = errorMetric.getErrorXdbcCode();
       this.errorSqlState = errorMetric.getErrorSqlState();
       this.methodName = errorMetric.getMethodName();
     }
@@ -417,13 +419,14 @@ final class TelemetryBatcher implements AutoCloseable {
       }
       ErrorKey errorKey = (ErrorKey) o;
       return errorCode == errorKey.errorCode
-          && errorSqlState == errorKey.errorSqlState
+          && errorXdbcCode == errorKey.errorXdbcCode
+          && Objects.equals(errorSqlState, errorKey.errorSqlState)
           && Objects.equals(methodName, errorKey.methodName);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(errorCode, errorSqlState, methodName);
+      return Objects.hash(errorCode, errorXdbcCode, errorSqlState, methodName);
     }
 
     @Override
@@ -434,6 +437,7 @@ final class TelemetryBatcher implements AutoCloseable {
     ErrorMetric.Builder toBuilder() {
       return ErrorMetric.newBuilder()
           .setErrorCode(errorCode)
+          .setErrorXdbcCode(errorXdbcCode)
           .setErrorSqlState(errorSqlState == null ? "" : errorSqlState)
           .setMethodName(methodName);
     }

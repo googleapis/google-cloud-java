@@ -268,7 +268,6 @@ public final class TelemetryManager implements AutoCloseable {
     recordFeatureUsage(feature, null);
   }
 
-  // Not setting xdbc_error_code intentionally.
   public static void recordError(int errorCode, String errorSqlState, String methodName) {
     runSafely(
         () -> {
@@ -279,6 +278,8 @@ public final class TelemetryManager implements AutoCloseable {
           activeBatcher.offer(
               ErrorMetric.newBuilder()
                   .setErrorCode(errorCode)
+                  // This value is not actively populated, defaults to 0.
+                  .setErrorXdbcCode(0)
                   .setErrorSqlState(errorSqlState == null ? "" : errorSqlState)
                   .setMethodName(methodName == null ? "" : methodName)
                   .build());
