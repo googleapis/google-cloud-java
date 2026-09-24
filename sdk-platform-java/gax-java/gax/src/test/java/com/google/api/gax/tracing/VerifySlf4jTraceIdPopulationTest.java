@@ -69,6 +69,7 @@ class VerifySlf4jTraceIdPopulationTest {
   private Scope rootScope;
 
   @BeforeEach
+  @SuppressWarnings("MustBeClosedChecker")
   void setUp() {
     // Reset ambient thread context to root before each test to prevent thread leakage
     rootScope = Context.root().makeCurrent();
