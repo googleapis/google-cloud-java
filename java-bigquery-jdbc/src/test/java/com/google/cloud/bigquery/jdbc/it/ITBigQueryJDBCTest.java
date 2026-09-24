@@ -1022,7 +1022,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     insertStmt.setShort(10, (short) 34);
     insertStmt.setBytes(11, new byte[] {0x3, 0x4});
     insertStmt.setObject(12, 6.28d);
-    insertStmt.setObject(13, false);
+    //This should fail without inferred types.
+    insertStmt.setObject(13, null);
     insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
