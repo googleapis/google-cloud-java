@@ -53,6 +53,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Query.ComparisonFilterInternal;
 import com.google.cloud.firestore.Query.FieldOrder;
 import com.google.cloud.firestore.Query.FilterInternal;
+import com.google.cloud.firestore.models.RequestOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.io.BaseEncoding;
 import com.google.firestore.v1.ArrayValue;
@@ -1573,5 +1574,22 @@ public class QueryTest {
     orderFields.add(new FieldOrder(FieldPath.documentId().toProto(), Query.Direction.ASCENDING));
 
     assertEquals(orderFields, query_.createImplicitOrderBy());
+  }
+
+  @Test
+  public void getWithExecutionOptions() throws Exception {
+    doAnswer(queryResponse())
+        .when(firestoreMock)
+        .streamRequest(runQuery.capture(), streamObserverCapture.capture(), any());
+
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("query-tag").build())
+            .build();
+
+    query.get(executionOptions).get();
+
+    assertEquals(
+        Arrays.asList("query-tag"), runQuery.getValue().getRequestOptions().getRequestTagsList());
   }
 }

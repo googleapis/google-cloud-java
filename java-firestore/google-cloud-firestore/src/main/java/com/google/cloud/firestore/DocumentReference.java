@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
@@ -30,6 +31,7 @@ import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreClient.ListCollectionIdsPagedResponse;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.ListCollectionIdsRequest;
+import com.google.firestore.v1.RequestOptions;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -157,6 +159,20 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> create(@Nonnull Map<String, Object> fields) {
+    return create(fields, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Creates a new Document at the DocumentReference's Location with execution options.
+   *
+   * @param fields A map of the fields and values for the document.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> create(
+      @Nonnull Map<String, Object> fields, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
 
     MetricsContext metricsContext =
@@ -164,7 +180,11 @@ public class DocumentReference {
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.create(this, fields).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.create(this, fields).commit(executionOptions)
+                  : writeBatch.create(this, fields).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -184,13 +204,31 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> create(@Nonnull Object pojo) {
+    return create(pojo, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Creates a new Document at the DocumentReference location with execution options.
+   *
+   * @param pojo The POJO that will be used to populate the document contents.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> create(
+      @Nonnull Object pojo, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_CREATE);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.create(this, pojo).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.create(this, pojo).commit(executionOptions)
+                  : writeBatch.create(this, pojo).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -210,13 +248,31 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Map<String, Object> fields) {
+    return set(fields, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Overwrites the document referred to by this DocumentReference with execution options.
+   *
+   * @param fields A map of the fields and values for the document.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> set(
+      @Nonnull Map<String, Object> fields, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, fields).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.set(this, fields).commit(executionOptions)
+                  : writeBatch.set(this, fields).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -239,13 +295,34 @@ public class DocumentReference {
   @Nonnull
   public ApiFuture<WriteResult> set(
       @Nonnull Map<String, Object> fields, @Nonnull SetOptions options) {
+    return set(fields, options, null);
+  }
+
+  /**
+   * Writes to the document referred to by this DocumentReference with execution options.
+   *
+   * @param fields A map of the fields and values for the document.
+   * @param options An object to configure the set behavior.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> set(
+      @Nonnull Map<String, Object> fields,
+      @Nonnull SetOptions options,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, fields, options).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.set(this, fields, options).commit(executionOptions)
+                  : writeBatch.set(this, fields, options).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -265,13 +342,31 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Object pojo) {
+    return set(pojo, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Overwrites the document referred to by this DocumentReference with execution options.
+   *
+   * @param pojo The POJO that will be used to populate the document contents.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> set(
+      @Nonnull Object pojo, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, pojo).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.set(this, pojo).commit(executionOptions)
+                  : writeBatch.set(this, pojo).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -293,13 +388,34 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> set(@Nonnull Object pojo, @Nonnull SetOptions options) {
+    return set(pojo, options, null);
+  }
+
+  /**
+   * Writes to the document referred to by this DocumentReference with execution options.
+   *
+   * @param pojo The POJO that will be used to populate the document contents.
+   * @param options An object to configure the set behavior.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> set(
+      @Nonnull Object pojo,
+      @Nonnull SetOptions options,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_SET);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.set(this, pojo, options).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.set(this, pojo, options).commit(executionOptions)
+                  : writeBatch.set(this, pojo, options).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -319,13 +435,31 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields) {
+    return update(fields, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Updates fields in the document referred to by this DocumentReference with execution options.
+   *
+   * @param fields A Map containing the fields and values with which to update the document.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> update(
+      @Nonnull Map<String, Object> fields, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.update(this, fields).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.update(this, fields).commit(executionOptions)
+                  : writeBatch.update(this, fields).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -346,6 +480,23 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> update(@Nonnull Map<String, Object> fields, Precondition options) {
+    return update(fields, options, null);
+  }
+
+  /**
+   * Updates fields in the document referred to by this DocumentReference with execution options.
+   *
+   * @param fields A map containing the fields and values with which to update the document.
+   * @param options Preconditions to enforce on this update.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved when the write finishes.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> update(
+      @Nonnull Map<String, Object> fields,
+      Precondition options,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_UPDATE);
@@ -353,7 +504,10 @@ public class DocumentReference {
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
       ApiFuture<WriteResult> result =
-          extractFirst(writeBatch.update(this, fields, options).commit());
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.update(this, fields, options).commit(executionOptions)
+                  : writeBatch.update(this, fields, options).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -502,13 +656,24 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> delete(@Nonnull Precondition options) {
+    return delete(options, (FirestoreExecutionOptions) null);
+  }
+
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> delete(
+      @Nonnull Precondition options, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
 
     try (Scope ignored = span.makeCurrent()) {
       WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.delete(this, options).commit());
+      ApiFuture<WriteResult> result =
+          extractFirst(
+              executionOptions != null
+                  ? writeBatch.delete(this, options).commit(executionOptions)
+                  : writeBatch.delete(this, options).commit());
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -526,21 +691,13 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<WriteResult> delete() {
-    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
-    MetricsContext metricsContext =
-        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_DELETE);
+    return delete(Precondition.NONE, (FirestoreExecutionOptions) null);
+  }
 
-    try (Scope ignored = span.makeCurrent()) {
-      WriteBatch writeBatch = rpcContext.getFirestore().batch();
-      ApiFuture<WriteResult> result = extractFirst(writeBatch.delete(this).commit());
-      span.endAtFuture(result);
-      metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
-      return result;
-    } catch (Exception error) {
-      span.end(error);
-      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, error);
-      throw error;
-    }
+  @BetaApi
+  @Nonnull
+  public ApiFuture<WriteResult> delete(@Nullable FirestoreExecutionOptions executionOptions) {
+    return delete(Precondition.NONE, executionOptions);
   }
 
   /**
@@ -552,20 +709,20 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<DocumentSnapshot> get() {
-    TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
-    MetricsContext metricsContext =
-        getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
+    return get((FieldMask) null, null);
+  }
 
-    try (Scope ignored = span.makeCurrent()) {
-      ApiFuture<DocumentSnapshot> result = extractFirst(rpcContext.getFirestore().getAll(this));
-      span.endAtFuture(result);
-      metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
-      return result;
-    } catch (Exception error) {
-      span.end(error);
-      metricsContext.recordLatency(MetricType.END_TO_END_LATENCY, error);
-      throw error;
-    }
+  /**
+   * Reads the document referenced by this DocumentReference with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the contents of the Document at this
+   *     DocumentReference.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<DocumentSnapshot> get(@Nonnull FirestoreExecutionOptions executionOptions) {
+    return get((FieldMask) null, executionOptions);
   }
 
   /**
@@ -578,13 +735,31 @@ public class DocumentReference {
    */
   @Nonnull
   public ApiFuture<DocumentSnapshot> get(FieldMask fieldMask) {
+    return get(fieldMask, null);
+  }
+
+  /**
+   * Reads the document referenced by this DocumentReference with execution options.
+   *
+   * @param fieldMask A FieldMask object to retrieve the field value
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the contents of the Document at this
+   *     DocumentReference, or a failure if the document does not exist
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<DocumentSnapshot> get(
+      @Nullable FieldMask fieldMask, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span = getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
     MetricsContext metricsContext =
         getMetricsUtil().createMetricsContext(TelemetryConstants.METHOD_NAME_DOC_REF_GET);
 
     try (Scope ignored = span.makeCurrent()) {
       ApiFuture<DocumentSnapshot> result =
-          extractFirst(rpcContext.getFirestore().getAll(new DocumentReference[] {this}, fieldMask));
+          extractFirst(
+              rpcContext
+                  .getFirestore()
+                  .getAll(new DocumentReference[] {this}, fieldMask, executionOptions));
       span.endAtFuture(result);
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
       return result;
@@ -603,6 +778,20 @@ public class DocumentReference {
    */
   @Nonnull
   public Iterable<CollectionReference> listCollections() {
+    return listCollections(null);
+  }
+
+  /**
+   * Fetches the subcollections that are direct children of this document with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @throws FirestoreException if the Iterable could not be initialized.
+   * @return An Iterable that can be used to fetch all subcollections.
+   */
+  @BetaApi
+  @Nonnull
+  public Iterable<CollectionReference> listCollections(
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_DOC_REF_LIST_COLLECTIONS);
     MetricsContext metricsContext =
@@ -612,6 +801,12 @@ public class DocumentReference {
     try (Scope ignored = span.makeCurrent()) {
       ListCollectionIdsRequest.Builder request = ListCollectionIdsRequest.newBuilder();
       request.setParent(path.toString());
+      RequestOptions requestOptions =
+          RequestOptionsHelper.createRequestOptions(
+              rpcContext.getFirestore().getOptions(), executionOptions);
+      if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+        request.setRequestOptions(requestOptions);
+      }
       final ListCollectionIdsPagedResponse response;
       response =
           ApiExceptions.callAndTranslateApiException(
