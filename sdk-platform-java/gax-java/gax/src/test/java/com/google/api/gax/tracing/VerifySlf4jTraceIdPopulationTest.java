@@ -42,8 +42,7 @@ import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
-import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -51,6 +50,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -61,8 +61,9 @@ import org.slf4j.LoggerFactory;
  */
 class VerifySlf4jTraceIdPopulationTest {
 
-  private SdkTracerProvider tracerProvider;
-  private OpenTelemetrySdk openTelemetry;
+  @RegisterExtension
+  static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
+
   private Tracer tracer;
   private TestLogger testLogger;
   private Scope rootScope;
@@ -72,9 +73,7 @@ class VerifySlf4jTraceIdPopulationTest {
     // Reset ambient thread context to root before each test to prevent thread leakage
     rootScope = Context.root().makeCurrent();
 
-    tracerProvider = SdkTracerProvider.builder().build();
-    openTelemetry = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
-    tracer = openTelemetry.getTracer("com.google.api.gax.test");
+    tracer = otelTesting.getOpenTelemetry().getTracer("com.google.api.gax.test");
 
     testLogger = (TestLogger) LoggerFactory.getLogger(LoggingTracer.class);
     testLogger.getMessageList().clear();
@@ -87,7 +86,6 @@ class VerifySlf4jTraceIdPopulationTest {
     if (rootScope != null) {
       rootScope.close();
     }
-    tracerProvider.close();
   }
 
   @Test
