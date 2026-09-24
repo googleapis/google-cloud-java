@@ -99,9 +99,7 @@ class AgentIdentityUtilsTest {
 
   @AfterEach
   void tearDown() throws IOException {
-    AgentIdentityUtils.resetTimeService();
-    AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
-    AgentIdentityUtils.resetEnvironmentProvider();
+    AgentIdentityUtils.resetForTest();
   }
 
   @Test
@@ -280,6 +278,7 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void getAgentIdentityCertInfo_noConfigEnvVar_returnsNull() throws IOException {
+    AgentIdentityUtils.setWellKnownDir(tempDir.resolve("non_existent").toString());
     AgentIdentityUtils.setTimeService(new FakeTimeService());
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
@@ -452,6 +451,62 @@ class AgentIdentityUtilsTest {
     when(mockCert.getPublicKey()).thenReturn(kp.getPublic());
 
     assertTrue(AgentIdentityUtils.verifyKeyPair(mockCert, kp.getPrivate()));
+  }
+
+  @Test
+  public void verifyKeyPair_ecAndEcdsaAlgorithms_returnsTrue() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
+    kpg.initialize(256);
+    KeyPair kp = kpg.generateKeyPair();
+
+    // Standard "EC" algorithm name
+    X509Certificate ecCert = mock(X509Certificate.class);
+    when(ecCert.getPublicKey()).thenReturn(kp.getPublic());
+    assertTrue(AgentIdentityUtils.verifyKeyPair(ecCert, kp.getPrivate()));
+
+    // JCA provider returning "ECDSA" as the PublicKey algorithm (e.g. BouncyCastle)
+    java.security.PublicKey ecdsaPubKey =
+        new java.security.interfaces.ECPublicKey() {
+          @Override
+          public java.security.spec.ECPoint getW() {
+            return ((java.security.interfaces.ECPublicKey) kp.getPublic()).getW();
+          }
+
+          @Override
+          public java.security.spec.ECParameterSpec getParams() {
+            return ((java.security.interfaces.ECPublicKey) kp.getPublic()).getParams();
+          }
+
+          @Override
+          public String getAlgorithm() {
+            return "ECDSA";
+          }
+
+          @Override
+          public String getFormat() {
+            return kp.getPublic().getFormat();
+          }
+
+          @Override
+          public byte[] getEncoded() {
+            return kp.getPublic().getEncoded();
+          }
+        };
+    X509Certificate ecdsaCert = mock(X509Certificate.class);
+    when(ecdsaCert.getPublicKey()).thenReturn(ecdsaPubKey);
+    assertTrue(AgentIdentityUtils.verifyKeyPair(ecdsaCert, kp.getPrivate()));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_uppercaseSpiffeSchemeAndTrustDomain_returnsTrue()
+      throws Exception {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    Collection<List<?>> sans =
+        Collections.singletonList(
+            Arrays.asList(6, "SPIFFE://AGENTS.GLOBAL.ORG-12345.SYSTEM.ID.GOOG/ns/default/sa/test"));
+    when(mockCert.getSubjectAlternativeNames()).thenReturn(sans);
+
+    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
   }
 
   @Test
@@ -664,6 +719,7 @@ class AgentIdentityUtilsTest {
   @Test
   public void loadAndVerifyCredentials_implicitDiscovery_bundleWithMismatchedKey_throwsIOException()
       throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
     String certPem =
@@ -685,11 +741,9 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
     AgentIdentityUtils.setTimeService(new FakeTimeService());
 
-    assertThrows(
-        IOException.class,
-        () ->
-            AgentIdentityUtils.loadAndVerifyCredentials(
-                bundleFile.toString(), bundleFile.toString()));
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertNotNull(e.getCause());
+    assertTrue(e.getCause().getMessage().contains("Certificate and private key do not match"));
   }
 
   @Test
@@ -1046,14 +1100,18 @@ class AgentIdentityUtilsTest {
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
     Files.copy(Paths.get(certUrl.toURI()), tempDir.resolve("certificates.pem"));
-    // Intentionally do NOT copy private_key.pem
-
+    // Without private_key.pem, implicit well-known discovery does not consider certOnlyPath ready
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    // Once an Agent Identity certificate is detected on disk, missing private key fails closed
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+
+    // Once credentialbundle.pem (or private_key.pem) exists without a valid private key, fails
+    // closed
+    Files.copy(Paths.get(certUrl.toURI()), tempDir.resolve("credentialbundle.pem"));
     assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(2, fakeTime.getSleepCount());
   }
@@ -1069,14 +1127,13 @@ class AgentIdentityUtilsTest {
 
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
-    AgentIdentityUtils.setTimeService(new FakeTimeService());
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
 
     IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(
-        e.getMessage()
-            .contains(
-                "Agent Identity certificate and private key mismatch or read failure after 3"
-                    + " retries."));
+        e.getMessage().contains("Unable to find well-known Agent Identity certificate file"));
+    assertEquals(99, fakeTime.getSleepCount());
   }
 
   @Test
@@ -1107,8 +1164,8 @@ class AgentIdentityUtilsTest {
     assertTrue(
         e.getMessage()
             .contains(
-                "Private key is required for Agent Identity bound token request, but key path is"
-                    + " missing."));
+                "Unable to find Agent Identity certificate config or file for bound token"
+                    + " request"));
     assertEquals(0, fakeTime.getSleepCount());
   }
 
@@ -1119,6 +1176,9 @@ class AgentIdentityUtilsTest {
     assertNotNull(certUrl);
     String certPath = Paths.get(certUrl.toURI()).toAbsolutePath().toString();
 
+    Path invalidKeyFile = tempDir.resolve("invalid_key.pem");
+    Files.write(invalidKeyFile, "not-a-valid-private-key".getBytes(StandardCharsets.UTF_8));
+
     File configFile = tempDir.resolve("config.json").toFile();
     String configJson =
         "{"
@@ -1127,7 +1187,9 @@ class AgentIdentityUtilsTest {
             + " \"cert_path\": \""
             + certPath.replace("\\", "\\\\")
             + "\","
-            + " \"key_path\": \"/non/existent/private_key.pem\""
+            + " \"key_path\": \""
+            + invalidKeyFile.toAbsolutePath().toString().replace("\\", "\\\\")
+            + "\""
             + " }"
             + " }"
             + "}";
@@ -1137,7 +1199,7 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    // Should return null without attempting to read the missing private key or sleeping
+    // Should return null without attempting to parse the invalid private key or sleeping
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
     assertEquals(0, fakeTime.getSleepCount());
     assertNull(AgentIdentityUtils.getBoundTokenPayload());
@@ -1337,9 +1399,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void
-      getAgentIdentityCertInfo_steadyStatePermanentKeyMismatch_throwsIOExceptionInsteadOfReturningStaleCache()
-          throws Exception {
+  public void getAgentIdentityCertInfo_steadyStateKeyMismatch_fallsBackToCache() throws Exception {
     setupValidAgentCredentialsInTempDir();
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
@@ -1362,10 +1422,10 @@ class AgentIdentityUtilsTest {
     Files.setLastModifiedTime(
         keyPath, java.nio.file.attribute.FileTime.fromMillis(System.currentTimeMillis() + 10000));
 
-    // 3. Subsequent call must throw IOException after retries rather than returning stale cached
-    // credentials
-    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertTrue(e.getMessage().contains("mismatch or read failure"));
+    // 3. With steady-state cache populated, lastException is set on verifyKeyPair failure so it
+    // falls back to cached credentials during rotation mismatch
+    AgentIdentityUtils.CertInfo fallbackInfo = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertSame(initialInfo, fallbackInfo);
   }
 
   @Test

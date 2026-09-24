@@ -99,7 +99,7 @@ class LoggingTest {
 
   @AfterEach
   void tearDown() {
-    AgentIdentityUtils.resetEnvironmentProvider();
+    AgentIdentityUtils.resetForTest();
     for (int i = 0; i < modifiedLoggers.size(); i++) {
       modifiedLoggers.get(i).detachAppender(addedAppenders.get(i));
     }

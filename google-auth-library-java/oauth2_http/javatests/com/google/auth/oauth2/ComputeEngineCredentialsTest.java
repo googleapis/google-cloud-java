@@ -110,9 +110,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   @AfterEach
   void tearDown() {
     // Reset the mocks
-    AgentIdentityUtils.resetTimeService();
-    AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
-    AgentIdentityUtils.resetEnvironmentProvider();
+    AgentIdentityUtils.resetForTest();
   }
 
   private static final String TOKEN_URL =
@@ -1379,12 +1377,43 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     assertEquals("application/json", request.getContentType());
     assertTrue(request.getUrl().contains("audience=https://foo.bar"));
+    assertTrue(request.getUrl().contains("format=full"));
     String body = request.getContentAsString();
     GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
     String expectedCert =
         new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
             .trim();
     assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
+  }
+
+  @Test
+  void refreshAccessToken_boundToken404_throwsEndpointDoesNotSupportBoundTokensMessage()
+      throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IOException e = assertThrows(IOException.class, credentials::refreshAccessToken);
+    assertTrue(e.getMessage().contains("does not support bound tokens"));
+  }
+
+  @Test
+  void idTokenWithAudience_boundToken404_throwsEndpointDoesNotSupportBoundTokensMessage()
+      throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setStatusCode(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IOException e =
+        assertThrows(
+            IOException.class, () -> credentials.idTokenWithAudience("https://foo.bar", null));
+    assertTrue(e.getMessage().contains("does not support bound tokens"));
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {

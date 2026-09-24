@@ -428,10 +428,20 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public AccessToken refreshAccessToken() throws IOException {
     String tokenUrl = createTokenUrlWithScopes();
+    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     HttpResponse response =
-        getMetadataResponseForToken(tokenUrl, RequestType.ACCESS_TOKEN_REQUEST, true);
+        getMetadataResponseForToken(
+            tokenUrl, boundTokenPayload, RequestType.ACCESS_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
+      if (boundTokenPayload != null) {
+        throw new IOException(
+            String.format(
+                "Error code %s trying to get bound security access token from Compute Engine"
+                    + " metadata for the default service account. The Compute Engine metadata"
+                    + " server endpoint does not support bound tokens.",
+                statusCode));
+      }
       throw new IOException(
           String.format(
               "Error code %s trying to get security access token from Compute Engine metadata for"
@@ -484,7 +494,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
       throws IOException {
+    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
+    if (boundTokenPayload != null) {
+      documentUrl.set("format", "full");
+    }
     if (options != null) {
       if (options.contains(IdTokenProvider.Option.FORMAT_FULL)) {
         documentUrl.set("format", "full");
@@ -497,9 +511,18 @@ public class ComputeEngineCredentials extends GoogleCredentials
     }
     documentUrl.set("audience", targetAudience);
     HttpResponse response =
-        getMetadataResponseForToken(documentUrl.toString(), RequestType.ID_TOKEN_REQUEST, true);
+        getMetadataResponseForToken(
+            documentUrl.toString(), boundTokenPayload, RequestType.ID_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
+      if (boundTokenPayload != null) {
+        throw new IOException(
+            String.format(
+                "Error code %s trying to get bound identity token from Compute Engine metadata."
+                    + " The Compute Engine metadata server endpoint does not support bound"
+                    + " tokens.",
+                statusCode));
+      }
       throw new IOException(
           String.format(
               "Error code %s trying to get identity token from"
@@ -527,8 +550,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   private HttpResponse getMetadataResponseForToken(
-      String url, RequestType requestType, boolean shouldSendMetricsHeader) throws IOException {
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+      String url,
+      @Nullable String boundTokenPayload,
+      RequestType requestType,
+      boolean shouldSendMetricsHeader)
+      throws IOException {
     if (boundTokenPayload != null) {
       Map<String, String> payload =
           Collections.singletonMap("certificate_chain", boundTokenPayload);

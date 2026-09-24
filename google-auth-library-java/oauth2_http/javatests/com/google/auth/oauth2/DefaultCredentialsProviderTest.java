@@ -89,7 +89,7 @@ class DefaultCredentialsProviderTest {
   @AfterEach
   void tearDown() {
     // Reset to default behavior.
-    AgentIdentityUtils.resetEnvironmentProvider();
+    AgentIdentityUtils.resetForTest();
   }
 
   private static final String USER_CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";

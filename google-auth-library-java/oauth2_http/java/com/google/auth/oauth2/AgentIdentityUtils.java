@@ -32,7 +32,6 @@ package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
@@ -47,14 +46,18 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -62,8 +65,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /** Utility class for Agent Identity runtime certificate discovery and token binding. */
-@InternalApi
-public final class AgentIdentityUtils {
+final class AgentIdentityUtils {
 
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(AgentIdentityUtils.class);
@@ -74,20 +76,20 @@ public final class AgentIdentityUtils {
    * <p>If set, certificate and key paths are resolved from the configuration file specified by this
    * variable.
    */
-  public static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
+  static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
 
   /**
    * Environment variable to explicitly enable or disable runtime token binding. Defaults to true if
    * unset.
    */
-  public static final String GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN =
+  static final String GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN =
       "GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN";
 
   /**
    * Legacy Cloud Run environment variable to prevent agent token sharing for GCP services. Used as
    * a fallback if {@link #GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN} is unset.
    */
-  public static final String GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES =
+  static final String GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES =
       "GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES";
 
   /**
@@ -96,8 +98,7 @@ public final class AgentIdentityUtils {
    * <p>When set to {@code "true"}, mTLS is enforced. When set to {@code "false"}, mTLS and token
    * binding are disabled.
    */
-  public static final String GOOGLE_API_USE_CLIENT_CERTIFICATE =
-      "GOOGLE_API_USE_CLIENT_CERTIFICATE";
+  static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
 
   // Allowed SPIFFE trust domain patterns for agentic identities.
   private static final List<Pattern> AGENT_IDENTITY_SPIFFE_PATTERNS =
@@ -139,6 +140,23 @@ public final class AgentIdentityUtils {
   private static volatile EnvironmentProvider environmentProvider =
       SystemEnvironmentProvider.getInstance();
 
+  private static volatile TimeService timeService = Thread::sleep;
+
+  // Tracks whether initial container credential discovery (and startup polling, if applicable)
+  // has completed. The 30-second polling loop (TOTAL_POLL_CYCLES) is strictly limited to initial
+  // discovery so subsequent token refreshes never block for 30 seconds.
+  private static volatile boolean initialDiscoveryCompleted = false;
+
+  // Tracks whether the warning for explicitly disabled mTLS when certificates are present
+  // has already been logged in this process to prevent log spam on repeated token refreshes.
+  private static volatile boolean mtlsDisabledLogged = false;
+
+  // In-memory cache of verified credentials to avoid redundant disk reads, X.509/PKCS#8 parsing,
+  // and cryptographic signature verification on every token refresh when files are unchanged.
+  private static volatile CachedCredentials cachedCredentials;
+
+  private AgentIdentityUtils() {}
+
   @VisibleForTesting
   @FunctionalInterface
   interface TimeService {
@@ -150,21 +168,6 @@ public final class AgentIdentityUtils {
      */
     void sleep(final long millis) throws InterruptedException;
   }
-
-  private static volatile TimeService timeService = Thread::sleep;
-
-  // Tracks whether initial container startup discovery has completed. The 30-second
-  // polling loop (TOTAL_POLL_CYCLES) is strictly limited to initial startup so subsequent
-  // token refreshes never block for 30 seconds.
-  private static volatile boolean initialStartupCompleted = false;
-
-  // Tracks whether the warning for explicitly disabled mTLS when certificates are present
-  // has already been logged in this process to prevent log spam on repeated token refreshes.
-  private static volatile boolean mtlsDisabledLogged = false;
-
-  // In-memory cache of verified credentials to avoid redundant disk reads, X.509/PKCS#8 parsing,
-  // and cryptographic signature verification on every token refresh when files are unchanged.
-  private static volatile CachedCredentials cachedCredentials;
 
   /**
    * Captures filesystem metadata (path, modification time, size, and OS file key/inode) for a
@@ -213,32 +216,24 @@ public final class AgentIdentityUtils {
    * refreshes.
    */
   private static final class CachedCredentials {
+    private final FileMetadata configMetadata;
     private final FileMetadata certMetadata;
     private final FileMetadata keyMetadata;
     private final boolean shouldRequestBoundToken;
     private final CertInfo certInfo;
 
     CachedCredentials(
+        final FileMetadata configMetadata,
         final FileMetadata certMetadata,
         final FileMetadata keyMetadata,
         final boolean shouldRequestBoundToken,
         final CertInfo certInfo) {
+      this.configMetadata = configMetadata;
       this.certMetadata = certMetadata;
       this.keyMetadata = keyMetadata;
       this.shouldRequestBoundToken = shouldRequestBoundToken;
       this.certInfo = certInfo;
     }
-  }
-
-  private AgentIdentityUtils() {}
-
-  private static long getSleepIntervalMs(final int cycle) {
-    return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
-  }
-
-  private static String getTrimmedEnv(final String name) {
-    String val = environmentProvider.getEnv(name);
-    return val != null ? val.trim() : null;
   }
 
   /**
@@ -269,16 +264,26 @@ public final class AgentIdentityUtils {
   }
 
   /** Holds the resolved filesystem paths for the certificate and private key. */
-  static class ResolvedCertAndKeyPaths {
+  private static final class ResolvedCertAndKeyPaths {
     private final String certPath;
     private final String keyPath;
     private final boolean hasWorkloadConfig;
+    private final FileMetadata configMetadata;
 
     ResolvedCertAndKeyPaths(
         final String certPath, final String keyPath, final boolean hasWorkloadConfig) {
+      this(certPath, keyPath, hasWorkloadConfig, null);
+    }
+
+    ResolvedCertAndKeyPaths(
+        final String certPath,
+        final String keyPath,
+        final boolean hasWorkloadConfig,
+        final FileMetadata configMetadata) {
       this.certPath = certPath;
       this.keyPath = keyPath;
       this.hasWorkloadConfig = hasWorkloadConfig;
+      this.configMetadata = configMetadata;
     }
 
     /** Returns the path to the certificate or bundle file. */
@@ -295,10 +300,24 @@ public final class AgentIdentityUtils {
     boolean hasWorkloadConfig() {
       return hasWorkloadConfig;
     }
+
+    /** Returns the filesystem metadata of the config file when it was parsed, or null. */
+    FileMetadata getConfigMetadata() {
+      return configMetadata;
+    }
+  }
+
+  private static long getSleepIntervalMs(final int cycle) {
+    return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
+  }
+
+  private static String getTrimmedEnv(final String name) {
+    String val = environmentProvider.getEnv(name);
+    return val != null ? val.trim() : null;
   }
 
   /** Checks whether the given path resides within the well-known certificate directory. */
-  static boolean isPathInWellKnownDir(final String pathStr) {
+  private static boolean isPathInWellKnownDir(final String pathStr) {
     if (Strings.isNullOrEmpty(pathStr) || Strings.isNullOrEmpty(wellKnownDir)) {
       return false;
     }
@@ -333,6 +352,16 @@ public final class AgentIdentityUtils {
     }
     CachedCredentials initialCached = cachedCredentials;
     String certConfigPath = getTrimmedEnv(GOOGLE_API_CERTIFICATE_CONFIG);
+
+    // Fast-path: check cached credentials and file metadata before parsing JSON config or paths
+    if (isCachedCredentialsValid(initialCached, certConfigPath)) {
+      if (!shouldEnableMtls(
+          /* certsPresent= */ true, /* configExists= */ initialCached.configMetadata != null)) {
+        return null;
+      }
+      return initialCached.shouldRequestBoundToken ? initialCached.certInfo : null;
+    }
+
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
     boolean configExists = paths != null && paths.hasWorkloadConfig();
     CachedCredentials latestCached = cachedCredentials;
@@ -347,13 +376,65 @@ public final class AgentIdentityUtils {
       return null;
     }
 
-    return loadAndVerifyCredentials(paths.getCertPath(), paths.getKeyPath(), initialCached);
+    return loadAndVerifyCredentials(
+        paths.getCertPath(), paths.getKeyPath(), paths.getConfigMetadata(), initialCached);
+  }
+
+  private static boolean isCachedCredentialsValid(
+      final CachedCredentials cached, final String certConfigPath) {
+    if (cached == null || cached.certMetadata == null) {
+      return false;
+    }
+    boolean hasConfigEnv = !Strings.isNullOrEmpty(certConfigPath);
+    if (hasConfigEnv != (cached.configMetadata != null)) {
+      return false;
+    }
+    try {
+      if (hasConfigEnv) {
+        FileMetadata currentConfigMeta = FileMetadata.of(certConfigPath);
+        if (currentConfigMeta == null || !currentConfigMeta.matches(cached.configMetadata)) {
+          return false;
+        }
+      } else {
+        if (!isPathInWellKnownDir(cached.certMetadata.path)) {
+          return false;
+        }
+        if (cached.certMetadata.path.endsWith("certificates.pem")
+            && Files.exists(Paths.get(wellKnownDir, "credentialbundle.pem"))) {
+          // credentialbundle.pem takes precedence if added after certificates.pem was cached
+          return false;
+        }
+      }
+      FileMetadata currentCertMeta = FileMetadata.of(cached.certMetadata.path);
+      if (currentCertMeta == null || !currentCertMeta.matches(cached.certMetadata)) {
+        return false;
+      }
+      if (!cached.shouldRequestBoundToken) {
+        return true;
+      }
+      if (cached.keyMetadata == null) {
+        return false;
+      }
+      FileMetadata currentKeyMeta =
+          cached.keyMetadata.path.equals(cached.certMetadata.path)
+              ? currentCertMeta
+              : FileMetadata.of(cached.keyMetadata.path);
+      return currentKeyMeta != null && currentKeyMeta.matches(cached.keyMetadata);
+    } catch (IOException ignored) {
+      return false;
+    }
+  }
+
+  private static boolean hasValidBoundTokenCache(final CachedCredentials cached) {
+    return cached != null
+        && cached.shouldRequestBoundToken
+        && cached.certInfo != null
+        && cached.certMetadata != null
+        && cached.keyMetadata != null;
   }
 
   private static boolean matchesCachedPath(final String certPath, final CachedCredentials cached) {
-    return cached != null
-        && cached.certMetadata != null
-        && certPath.equals(cached.certMetadata.path);
+    return hasValidBoundTokenCache(cached) && certPath.equals(cached.certMetadata.path);
   }
 
   private static CachedCredentials getLatestOrInitialCache(final CachedCredentials initialCached) {
@@ -365,43 +446,47 @@ public final class AgentIdentityUtils {
    * Resolves the paths for the certificate and private key based on the config path or well-known
    * locations.
    */
-  static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(
+  private static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(
       final String certConfigPath, final CachedCredentials cached) throws IOException {
-    try {
-      if (!Strings.isNullOrEmpty(certConfigPath)) {
-        // Read cert and key paths from config file. We use retry with backoff to handle
-        // startup delivery (when in well-known directory) and transient rotation race conditions.
-        return getPathsFromConfigWithRetry(certConfigPath, cached);
-      } else {
-        if (!Files.exists(Paths.get(wellKnownDir))) {
-          // Fail-fast if well-known dir doesn't exist (e.g. workstation)
-          return new ResolvedCertAndKeyPaths(null, null, false);
-        }
-        // Fallback to well-known locations. We use retry with backoff here as well to handle
-        // race conditions during file replacement by a rotation process.
-        String certPath = getWellKnownCertificatePathWithRetry(cached);
-        String keyPath = null;
-        if (certPath != null) {
-          if (certPath.endsWith("credentialbundle.pem")) {
-            keyPath = certPath; // Bundle contains both
-          } else if (certPath.endsWith("certificates.pem")) {
-            keyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
-          }
-          return new ResolvedCertAndKeyPaths(certPath, keyPath, false);
-        }
+    if (!Strings.isNullOrEmpty(certConfigPath)) {
+      // Read cert and key paths from config file. We use retry with backoff to handle
+      // startup delivery (when in well-known directory) and transient rotation race conditions.
+      return getPathsFromConfigWithRetry(certConfigPath, cached);
+    } else {
+      boolean explicitMtls =
+          "true".equalsIgnoreCase(getTrimmedEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE));
+      if (!explicitMtls
+          && !hasValidBoundTokenCache(cached)
+          && !Files.exists(Paths.get(wellKnownDir))) {
+        // Fail-fast if well-known dir doesn't exist and explicit mTLS is not enabled (e.g.
+        // workstation)
+        initialDiscoveryCompleted = true;
         return new ResolvedCertAndKeyPaths(null, null, false);
       }
-    } finally {
-      initialStartupCompleted = true;
+      // Fallback to well-known locations. We use retry with backoff here as well to handle
+      // startup delivery (when explicit mTLS is enabled) and race conditions during file
+      // replacement by a rotation process.
+      String certPath = getWellKnownCertificatePathWithRetry(cached);
+      String keyPath = null;
+      if (certPath != null) {
+        if (certPath.endsWith("credentialbundle.pem")) {
+          keyPath = certPath; // Bundle contains both
+        } else if (certPath.endsWith("certificates.pem")) {
+          keyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
+        }
+        return new ResolvedCertAndKeyPaths(certPath, keyPath, false);
+      }
+      return new ResolvedCertAndKeyPaths(null, null, false);
     }
   }
 
   /**
    * Safely updates the in-memory credential cache only if file metadata remained stable across the
-   * read/verify operation. Re-statting is intentionally performed outside the main retry exception
-   * handler so a transient unlink after verification never discards an already-verified result.
+   * read/verify operation. Returns {@code true} if the post-read metadata matched the pre-read
+   * metadata and the cache was updated, or {@code false} if a file changed or disappeared mid-read.
    */
-  private static void tryUpdateCache(
+  private static boolean tryUpdateCache(
+      final FileMetadata configMetaBefore,
       final FileMetadata certMetaBefore,
       final FileMetadata keyMetaBefore,
       final String certPath,
@@ -410,24 +495,37 @@ public final class AgentIdentityUtils {
       final CertInfo certInfo) {
     try {
       if (certMetaBefore == null) {
-        return;
+        return false;
+      }
+      if (configMetaBefore != null) {
+        FileMetadata configMetaAfter = FileMetadata.of(configMetaBefore.path);
+        if (!configMetaBefore.matches(configMetaAfter)) {
+          return false;
+        }
       }
       FileMetadata certMetaAfter = FileMetadata.of(certPath);
       if (!certMetaBefore.matches(certMetaAfter)) {
-        return;
+        return false;
       }
       if (!shouldRequestBoundToken) {
-        cachedCredentials = new CachedCredentials(certMetaBefore, null, false, null);
-        return;
+        cachedCredentials =
+            new CachedCredentials(configMetaBefore, certMetaBefore, null, false, null);
+        return true;
       }
       if (keyMetaBefore != null && !Strings.isNullOrEmpty(keyPath)) {
-        FileMetadata keyMetaAfter = FileMetadata.of(keyPath);
+        FileMetadata keyMetaAfter =
+            keyPath.equals(certPath) ? certMetaAfter : FileMetadata.of(keyPath);
         if (keyMetaBefore.matches(keyMetaAfter)) {
-          cachedCredentials = new CachedCredentials(certMetaBefore, keyMetaBefore, true, certInfo);
+          cachedCredentials =
+              new CachedCredentials(
+                  configMetaBefore, certMetaBefore, keyMetaBefore, true, certInfo);
+          return true;
         }
       }
+      return false;
     } catch (IOException ignored) {
-      // Ignore re-stat failures; return verified result without caching.
+      // File was unlinked or unreadable during re-stat; indicate unstable read so caller can retry.
+      return false;
     }
   }
 
@@ -449,11 +547,14 @@ public final class AgentIdentityUtils {
    */
   static CertInfo loadAndVerifyCredentials(final String certPath, final String keyPath)
       throws IOException {
-    return loadAndVerifyCredentials(certPath, keyPath, cachedCredentials);
+    return loadAndVerifyCredentials(certPath, keyPath, null, cachedCredentials);
   }
 
   static CertInfo loadAndVerifyCredentials(
-      final String certPath, final String keyPath, final CachedCredentials initialCached)
+      final String certPath,
+      final String keyPath,
+      final FileMetadata configMetaBefore,
+      final CachedCredentials initialCached)
       throws IOException {
     if (Strings.isNullOrEmpty(certPath)) {
       return null;
@@ -463,13 +564,20 @@ public final class AgentIdentityUtils {
     CachedCredentials cached = getLatestOrInitialCache(initialCached);
     if (cached != null) {
       try {
+        boolean configMatches =
+            configMetaBefore == null
+                ? cached.configMetadata == null
+                : configMetaBefore.matches(cached.configMetadata);
         FileMetadata currentCertMeta = FileMetadata.of(certPath);
-        if (currentCertMeta != null && currentCertMeta.matches(cached.certMetadata)) {
+        if (configMatches
+            && currentCertMeta != null
+            && currentCertMeta.matches(cached.certMetadata)) {
           if (!cached.shouldRequestBoundToken) {
             return null;
           }
           if (!Strings.isNullOrEmpty(keyPath)) {
-            FileMetadata currentKeyMeta = FileMetadata.of(keyPath);
+            FileMetadata currentKeyMeta =
+                keyPath.equals(certPath) ? currentCertMeta : FileMetadata.of(keyPath);
             if (currentKeyMeta != null && currentKeyMeta.matches(cached.keyMetadata)) {
               return cached.certInfo;
             }
@@ -481,45 +589,49 @@ public final class AgentIdentityUtils {
     }
 
     Exception lastException = null;
+    CertInfo lastVerifiedCertInfo = null;
     int retries = 0;
     while (retries < CERT_KEY_MATCH_RETRIES) {
       try {
-        lastException = null;
         FileMetadata certMeta = FileMetadata.of(certPath);
         String certContent = readCertificateChain(certPath);
         X509Certificate cert = parseCertificateContent(certContent);
 
         if (!shouldRequestBoundToken(cert)) {
-          tryUpdateCache(certMeta, null, certPath, null, false, null);
-          return null;
-        }
+          if (tryUpdateCache(configMetaBefore, certMeta, null, certPath, null, false, null)) {
+            return null;
+          }
+          lastException = new IOException("Certificate file modified during read.");
+        } else {
+          FileMetadata keyMeta = certPath.equals(keyPath) ? certMeta : FileMetadata.of(keyPath);
+          PrivateKey privateKey = readPrivateKey(keyPath, cert.getPublicKey().getAlgorithm());
 
-        if (Strings.isNullOrEmpty(keyPath)) {
-          throw new IOException(
-              "Private key is required for Agent Identity bound token request, but key path is"
-                  + " missing.");
+          if (verifyKeyPair(cert, privateKey)) {
+            CertInfo info = new CertInfo(cert, certContent);
+            lastVerifiedCertInfo = info;
+            if (tryUpdateCache(
+                configMetaBefore, certMeta, keyMeta, certPath, keyPath, true, info)) {
+              return info;
+            }
+            lastException = new IOException("Certificate or key file modified during read.");
+            LoggingUtils.log(
+                LOGGER_PROVIDER,
+                Level.WARNING,
+                Collections.emptyMap(),
+                "Cert or key file modified during read, retrying...");
+          } else {
+            lastException = new IOException("Certificate and private key do not match.");
+            LoggingUtils.log(
+                LOGGER_PROVIDER,
+                Level.WARNING,
+                Collections.emptyMap(),
+                "Cert and key mismatch, retrying...");
+          }
         }
-
-        FileMetadata keyMeta = FileMetadata.of(keyPath);
-        PrivateKey privateKey = readPrivateKey(keyPath, cert.getPublicKey().getAlgorithm());
-
-        if (verifyKeyPair(cert, privateKey)) {
-          CertInfo info = new CertInfo(cert, certContent);
-          tryUpdateCache(certMeta, keyMeta, certPath, keyPath, true, info);
-          return info;
-        }
-        LoggingUtils.log(
-            LOGGER_PROVIDER,
-            Level.WARNING,
-            Collections.emptyMap(),
-            "Cert and key mismatch, retrying...");
       } catch (AccessDeniedException e) {
         throw new IOException(
             "Permission denied reading certificate or key files for Agent Identity.", e);
       } catch (Exception e) {
-        if (Strings.isNullOrEmpty(keyPath) && e instanceof IOException) {
-          throw (IOException) e;
-        }
         lastException = e;
         LoggingUtils.log(
             LOGGER_PROVIDER,
@@ -539,23 +651,14 @@ public final class AgentIdentityUtils {
       }
     }
 
-    // If files were transiently missing or unreadable during steady-state rotation (lastException
-    // != null)
+    // If files were transiently missing, unreadable, or mid-rotation (lastException != null)
     // and we already have a verified credential cached in memory, fall back to cached credentials
     // rather than failing or caching an unbound token. Re-read cachedCredentials in case another
-    // thread
-    // completed rotation while this thread was sleeping.
+    // thread completed rotation while this thread was sleeping.
     CachedCredentials latestCached = cachedCredentials;
     CachedCredentials fallbackCached =
-        (latestCached != null
-                && latestCached.shouldRequestBoundToken
-                && latestCached.certInfo != null)
-            ? latestCached
-            : initialCached;
-    if (lastException != null
-        && fallbackCached != null
-        && fallbackCached.shouldRequestBoundToken
-        && fallbackCached.certInfo != null) {
+        hasValidBoundTokenCache(latestCached) ? latestCached : initialCached;
+    if (lastException != null && hasValidBoundTokenCache(fallbackCached)) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
           Level.WARNING,
@@ -563,6 +666,10 @@ public final class AgentIdentityUtils {
           "Agent Identity certificate/key files transiently unavailable during rotation; falling"
               + " back to cached credentials.");
       return fallbackCached.certInfo;
+    }
+
+    if (lastVerifiedCertInfo != null) {
+      return lastVerifiedCertInfo;
     }
 
     throw new IOException(
@@ -623,7 +730,7 @@ public final class AgentIdentityUtils {
     }
 
     boolean inWellKnownDir = isPathInWellKnownDir(certConfigPath);
-    boolean shouldPoll = !initialStartupCompleted && inWellKnownDir;
+    boolean shouldPoll = !initialDiscoveryCompleted && inWellKnownDir;
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
     boolean warned = false;
     IOException lastParseException = null;
@@ -634,10 +741,13 @@ public final class AgentIdentityUtils {
           ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
           if (!paths.hasWorkloadConfig()) {
             // Valid non-workload config (e.g. enterprise certs) - exit early without polling!
+            initialDiscoveryCompleted = true;
             return paths;
           }
-          if (!initialStartupCompleted
+          if (!initialDiscoveryCompleted
               && !shouldPoll
+              && !Strings.isNullOrEmpty(paths.getCertPath())
+              && !Strings.isNullOrEmpty(paths.getKeyPath())
               && (isPathInWellKnownDir(paths.getCertPath())
                   || isPathInWellKnownDir(paths.getKeyPath()))) {
             shouldPoll = true;
@@ -649,7 +759,8 @@ public final class AgentIdentityUtils {
           boolean keyReady =
               !Strings.isNullOrEmpty(paths.getKeyPath())
                   && checkExistsOrAccessDenied(Paths.get(paths.getKeyPath()));
-          if (certReady && (keyReady || !shouldPoll || cycle + 1 >= maxCycles)) {
+          if (certReady && keyReady) {
+            initialDiscoveryCompleted = true;
             return paths;
           }
         }
@@ -660,6 +771,7 @@ public final class AgentIdentityUtils {
       } catch (IOException e) {
         CachedCredentials latestCached = getLatestOrInitialCache(initialCached);
         if (!shouldPoll && cycle + 1 >= maxCycles && latestCached == null) {
+          initialDiscoveryCompleted = true;
           throw e; // Fail fast on malformed JSON syntax errors when not polling
         }
         lastParseException = e;
@@ -688,13 +800,15 @@ public final class AgentIdentityUtils {
         }
       }
     }
+    initialDiscoveryCompleted = true;
 
     CachedCredentials fallbackCached = getLatestOrInitialCache(initialCached);
-    if (fallbackCached != null
-        && fallbackCached.certMetadata != null
-        && fallbackCached.keyMetadata != null) {
+    if (hasValidBoundTokenCache(fallbackCached)) {
       return new ResolvedCertAndKeyPaths(
-          fallbackCached.certMetadata.path, fallbackCached.keyMetadata.path, true);
+          fallbackCached.certMetadata.path,
+          fallbackCached.keyMetadata.path,
+          true,
+          fallbackCached.configMetadata);
     }
 
     throw new IOException(
@@ -711,19 +825,23 @@ public final class AgentIdentityUtils {
       throws IOException {
     String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
+    String keyOnlyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
 
     String useClientCert = getTrimmedEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE);
     boolean explicitMtls = "true".equalsIgnoreCase(useClientCert);
-    boolean shouldPoll = explicitMtls && !initialStartupCompleted;
+    boolean shouldPoll = explicitMtls && !initialDiscoveryCompleted;
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
 
     boolean warned = false;
     for (int cycle = 0; cycle < maxCycles; cycle++) {
       try {
         if (checkExistsOrAccessDenied(Paths.get(bundlePath))) {
+          initialDiscoveryCompleted = true;
           return bundlePath;
         }
-        if (checkExistsOrAccessDenied(Paths.get(certOnlyPath))) {
+        if (checkExistsOrAccessDenied(Paths.get(certOnlyPath))
+            && checkExistsOrAccessDenied(Paths.get(keyOnlyPath))) {
+          initialDiscoveryCompleted = true;
           return certOnlyPath;
         }
       } catch (AccessDeniedException e) {
@@ -760,9 +878,10 @@ public final class AgentIdentityUtils {
         }
       }
     }
+    initialDiscoveryCompleted = true;
 
     CachedCredentials fallbackCached = getLatestOrInitialCache(initialCached);
-    if (fallbackCached != null && fallbackCached.certMetadata != null) {
+    if (hasValidBoundTokenCache(fallbackCached)) {
       return fallbackCached.certMetadata.path;
     }
 
@@ -780,12 +899,12 @@ public final class AgentIdentityUtils {
         Level.FINE,
         Collections.emptyMap(),
         String.format(
-            "Well-known certificate file not found at %s (%s=%s, initialStartupCompleted=%s);"
+            "Well-known certificate file not found at %s (%s=%s, initialDiscoveryCompleted=%s);"
                 + " falling back to unbound token.",
             wellKnownDir,
             GOOGLE_API_USE_CLIENT_CERTIFICATE,
             useClientCert,
-            initialStartupCompleted));
+            initialDiscoveryCompleted));
     return null;
   }
 
@@ -793,13 +912,13 @@ public final class AgentIdentityUtils {
    * Reads the full certificate chain from the specified path as a PEM string.
    *
    * <p>Extracts only the {@code -----BEGIN CERTIFICATE-----} blocks using {@link
-   * CertificateIdentityPoolSubjectTokenSupplier#PEM_CERT_PATTERN}, stripping any private keys or
-   * non-certificate data that may be present in a combined bundle file.
+   * OAuth2Utils#PEM_CERT_PATTERN}, stripping any private keys or non-certificate data that may be
+   * present in a combined bundle file.
    */
   static String readCertificateChain(final String certPath) throws IOException {
     byte[] certData = Files.readAllBytes(Paths.get(certPath));
     String content = new String(certData, StandardCharsets.UTF_8);
-    Matcher matcher = CertificateIdentityPoolSubjectTokenSupplier.PEM_CERT_PATTERN.matcher(content);
+    Matcher matcher = OAuth2Utils.PEM_CERT_PATTERN.matcher(content);
     StringBuilder certChain = new StringBuilder();
     while (matcher.find()) {
       certChain.append(matcher.group(0)).append("\n");
@@ -818,12 +937,18 @@ public final class AgentIdentityUtils {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
 
-      String keyAlgorithm = cert.getPublicKey().getAlgorithm();
+      PublicKey publicKey = cert.getPublicKey();
+      String keyAlgorithm = publicKey.getAlgorithm();
       String sigAlg;
-      if ("RSA".equals(keyAlgorithm)) {
+      if ("RSA".equalsIgnoreCase(keyAlgorithm)) {
         sigAlg = "SHA256withRSA";
-      } else if ("EC".equals(keyAlgorithm)) {
+      } else if ("EC".equalsIgnoreCase(keyAlgorithm) || "ECDSA".equalsIgnoreCase(keyAlgorithm)) {
         sigAlg = "SHA256withECDSA";
+        if ("ECDSA".equalsIgnoreCase(keyAlgorithm) && publicKey.getEncoded() != null) {
+          publicKey =
+              KeyFactory.getInstance("EC")
+                  .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
+        }
       } else {
         throw new IllegalArgumentException("Unsupported key algorithm: " + keyAlgorithm);
       }
@@ -834,7 +959,7 @@ public final class AgentIdentityUtils {
       byte[] signature = signer.sign();
 
       Signature verifier = Signature.getInstance(sigAlg);
-      verifier.initVerify(cert.getPublicKey());
+      verifier.initVerify(publicKey);
       verifier.update(data);
 
       return verifier.verify(signature);
@@ -849,11 +974,17 @@ public final class AgentIdentityUtils {
   }
 
   /** Reads the private key from the specified path using PKCS8 format. */
-  static PrivateKey readPrivateKey(final String keyPath, final String algorithm)
+  private static PrivateKey readPrivateKey(final String keyPath, final String algorithm)
       throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
-    OAuth2Utils.Pkcs8Algorithm pkcs8Alg =
-        "EC".equals(algorithm) ? OAuth2Utils.Pkcs8Algorithm.EC : OAuth2Utils.Pkcs8Algorithm.RSA;
+    OAuth2Utils.Pkcs8Algorithm pkcs8Alg;
+    if ("EC".equalsIgnoreCase(algorithm) || "ECDSA".equalsIgnoreCase(algorithm)) {
+      pkcs8Alg = OAuth2Utils.Pkcs8Algorithm.EC;
+    } else if ("RSA".equalsIgnoreCase(algorithm)) {
+      pkcs8Alg = OAuth2Utils.Pkcs8Algorithm.RSA;
+    } else {
+      throw new IOException("Unsupported key algorithm: " + algorithm);
+    }
     return OAuth2Utils.privateKeyFromPkcs8(keyPem, pkcs8Alg);
   }
 
@@ -917,29 +1048,31 @@ public final class AgentIdentityUtils {
   /** Extracts the certificate and private key paths from the JSON configuration file. */
   private static ResolvedCertAndKeyPaths extractPathsFromConfig(final String certConfigPath)
       throws IOException {
-    try (InputStream stream = Files.newInputStream(Paths.get(certConfigPath))) {
-      JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-      GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
-      Object certConfigsObj = config.get("cert_configs");
-      if (certConfigsObj instanceof Map<?, ?>) {
-        Map<?, ?> certConfigs = (Map<?, ?>) certConfigsObj;
-        Object workloadObj = certConfigs.get("workload");
-        if (workloadObj instanceof Map<?, ?>) {
-          Map<?, ?> workload = (Map<?, ?>) workloadObj;
-          String certPath = null;
-          String keyPath = null;
-          if (workload.get("cert_path") instanceof String) {
-            certPath = (String) workload.get("cert_path");
+    try {
+      FileMetadata configMetadata = FileMetadata.of(certConfigPath);
+      try (InputStream stream = Files.newInputStream(Paths.get(certConfigPath))) {
+        JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
+        GenericJson config =
+            parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
+        Object certConfigsObj = config.get("cert_configs");
+        if (certConfigsObj instanceof Map<?, ?>) {
+          Map<?, ?> certConfigs = (Map<?, ?>) certConfigsObj;
+          Object workloadObj = certConfigs.get("workload");
+          if (workloadObj instanceof Map<?, ?>) {
+            Map<?, ?> workload = (Map<?, ?>) workloadObj;
+            String certPath = null;
+            String keyPath = null;
+            if (workload.get("cert_path") instanceof String) {
+              certPath = (String) workload.get("cert_path");
+            }
+            if (workload.get("key_path") instanceof String) {
+              keyPath = (String) workload.get("key_path");
+            }
+            return new ResolvedCertAndKeyPaths(certPath, keyPath, true, configMetadata);
           }
-          if (workload.get("key_path") instanceof String) {
-            keyPath = (String) workload.get("key_path");
-          }
-          return new ResolvedCertAndKeyPaths(certPath, keyPath, true);
         }
-        // Valid cert_configs object but not a workload config (e.g. enterprise certificates)
-        return new ResolvedCertAndKeyPaths(null, null, false);
+        return new ResolvedCertAndKeyPaths(null, null, false, configMetadata);
       }
-      return new ResolvedCertAndKeyPaths(null, null, false);
     } catch (AccessDeniedException e) {
       throw e;
     } catch (Exception e) {
@@ -978,7 +1111,7 @@ public final class AgentIdentityUtils {
             && (Integer) san.get(0) == SAN_URI_TYPE) {
           Object value = san.get(1);
           if (value instanceof String) {
-            String uri = (String) value;
+            String uri = ((String) value).toLowerCase(Locale.US);
             // Check if the URI starts with "spiffe://"
             if (uri.startsWith(SPIFFE_SCHEME_PREFIX)) {
               String withoutScheme = uri.substring(SPIFFE_SCHEME_PREFIX.length());
@@ -1006,49 +1139,40 @@ public final class AgentIdentityUtils {
     return false;
   }
 
+  /** Resets all static state and overrides for testing. */
+  @VisibleForTesting
+  static void resetForTest() {
+    wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+    environmentProvider = SystemEnvironmentProvider.getInstance();
+    timeService = Thread::sleep;
+    resetCachedState();
+  }
+
+  private static void resetCachedState() {
+    cachedCredentials = null;
+    initialDiscoveryCompleted = false;
+    mtlsDisabledLogged = false;
+  }
+
   /** Sets the well-known certificate directory path for testing. */
   @VisibleForTesting
   static void setWellKnownDir(final String dir) {
     wellKnownDir = dir;
-    cachedCredentials = null;
-    initialStartupCompleted = false;
-    mtlsDisabledLogged = false;
+    resetCachedState();
   }
 
   /** Sets the environment variable provider for testing. */
   @VisibleForTesting
   static void setEnvironmentProvider(final EnvironmentProvider provider) {
     environmentProvider = provider;
-    cachedCredentials = null;
-    initialStartupCompleted = false;
-    mtlsDisabledLogged = false;
-  }
-
-  /** Resets the environment variable provider back to default system implementation. */
-  @VisibleForTesting
-  static void resetEnvironmentProvider() {
-    environmentProvider = SystemEnvironmentProvider.getInstance();
-    cachedCredentials = null;
-    initialStartupCompleted = false;
-    mtlsDisabledLogged = false;
+    resetCachedState();
   }
 
   /** Sets the time and sleep service for testing. */
   @VisibleForTesting
   static void setTimeService(final TimeService service) {
     timeService = service;
-    cachedCredentials = null;
-    initialStartupCompleted = false;
-    mtlsDisabledLogged = false;
-  }
-
-  /** Resets the time and sleep service back to default system implementation. */
-  @VisibleForTesting
-  static void resetTimeService() {
-    timeService = Thread::sleep;
-    cachedCredentials = null;
-    initialStartupCompleted = false;
-    mtlsDisabledLogged = false;
+    resetCachedState();
   }
 
   /** Clears only the in-memory cached credentials for testing concurrent invalidation. */

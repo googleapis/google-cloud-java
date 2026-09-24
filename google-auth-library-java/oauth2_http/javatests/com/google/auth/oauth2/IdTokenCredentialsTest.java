@@ -52,7 +52,7 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
 
   @AfterEach
   void tearDown() {
-    AgentIdentityUtils.resetEnvironmentProvider();
+    AgentIdentityUtils.resetForTest();
   }
 
   @Test
