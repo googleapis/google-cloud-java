@@ -81,6 +81,8 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     FAQ_ANSWER(6),
     DIALOGFLOW_ASSIST_ANSWER(7),
     GENERATOR_SUGGESTION(8),
+    COMPANION_SUGGESTION(9),
+    REACTIVE_COMPANION_SUGGESTION(10),
     ANSWER_NOT_SET(0);
     private final int value;
 
@@ -108,6 +110,10 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
           return DIALOGFLOW_ASSIST_ANSWER;
         case 8:
           return GENERATOR_SUGGESTION;
+        case 9:
+          return COMPANION_SUGGESTION;
+        case 10:
+          return REACTIVE_COMPANION_SUGGESTION;
         case 0:
           return ANSWER_NOT_SET;
         default:
@@ -367,6 +373,137 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     return com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance();
   }
 
+  public static final int COMPANION_SUGGESTION_FIELD_NUMBER = 9;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the companionSuggestion field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompanionSuggestion() {
+    return answerCase_ == 9;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The companionSuggestion.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CompanionSuggestion getCompanionSuggestion() {
+    if (answerCase_ == 9) {
+      return (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_;
+    }
+    return com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder
+      getCompanionSuggestionOrBuilder() {
+    if (answerCase_ == 9) {
+      return (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_;
+    }
+    return com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+  }
+
+  public static final int REACTIVE_COMPANION_SUGGESTION_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reactiveCompanionSuggestion field is set.
+   */
+  @java.lang.Override
+  public boolean hasReactiveCompanionSuggestion() {
+    return answerCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The reactiveCompanionSuggestion.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+          .ReactiveModeResponse
+      getReactiveCompanionSuggestion() {
+    if (answerCase_ == 10) {
+      return (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+              .ReactiveModeResponse)
+          answer_;
+    }
+    return com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+        .ReactiveModeResponse.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+          .ReactiveModeResponseOrBuilder
+      getReactiveCompanionSuggestionOrBuilder() {
+    if (answerCase_ == 10) {
+      return (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+              .ReactiveModeResponse)
+          answer_;
+    }
+    return com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+        .ReactiveModeResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -392,6 +529,16 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
     }
     if (answerCase_ == 8) {
       output.writeMessage(8, (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_);
+    }
+    if (answerCase_ == 9) {
+      output.writeMessage(9, (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_);
+    }
+    if (answerCase_ == 10) {
+      output.writeMessage(
+          10,
+          (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                  .ReactiveModeResponse)
+              answer_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -421,6 +568,19 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.dialogflow.v2.GeneratorSuggestion) answer_);
+    }
+    if (answerCase_ == 9) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_);
+    }
+    if (answerCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10,
+              (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                      .ReactiveModeResponse)
+                  answer_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -452,6 +612,13 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 8:
         if (!getGeneratorSuggestion().equals(other.getGeneratorSuggestion())) return false;
         break;
+      case 9:
+        if (!getCompanionSuggestion().equals(other.getCompanionSuggestion())) return false;
+        break;
+      case 10:
+        if (!getReactiveCompanionSuggestion().equals(other.getReactiveCompanionSuggestion()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -482,6 +649,14 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       case 8:
         hash = (37 * hash) + GENERATOR_SUGGESTION_FIELD_NUMBER;
         hash = (53 * hash) + getGeneratorSuggestion().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + COMPANION_SUGGESTION_FIELD_NUMBER;
+        hash = (53 * hash) + getCompanionSuggestion().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + REACTIVE_COMPANION_SUGGESTION_FIELD_NUMBER;
+        hash = (53 * hash) + getReactiveCompanionSuggestion().hashCode();
         break;
       case 0:
       default:
@@ -638,6 +813,12 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       if (generatorSuggestionBuilder_ != null) {
         generatorSuggestionBuilder_.clear();
       }
+      if (companionSuggestionBuilder_ != null) {
+        companionSuggestionBuilder_.clear();
+      }
+      if (reactiveCompanionSuggestionBuilder_ != null) {
+        reactiveCompanionSuggestionBuilder_.clear();
+      }
       answerCase_ = 0;
       answer_ = null;
       return this;
@@ -694,6 +875,12 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       if (answerCase_ == 8 && generatorSuggestionBuilder_ != null) {
         result.answer_ = generatorSuggestionBuilder_.build();
       }
+      if (answerCase_ == 9 && companionSuggestionBuilder_ != null) {
+        result.answer_ = companionSuggestionBuilder_.build();
+      }
+      if (answerCase_ == 10 && reactiveCompanionSuggestionBuilder_ != null) {
+        result.answer_ = reactiveCompanionSuggestionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -728,6 +915,16 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
         case GENERATOR_SUGGESTION:
           {
             mergeGeneratorSuggestion(other.getGeneratorSuggestion());
+            break;
+          }
+        case COMPANION_SUGGESTION:
+          {
+            mergeCompanionSuggestion(other.getCompanionSuggestion());
+            break;
+          }
+        case REACTIVE_COMPANION_SUGGESTION:
+          {
+            mergeReactiveCompanionSuggestion(other.getReactiveCompanionSuggestion());
             break;
           }
         case ANSWER_NOT_SET:
@@ -791,6 +988,21 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
                 answerCase_ = 8;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetCompanionSuggestionFieldBuilder().getBuilder(), extensionRegistry);
+                answerCase_ = 9;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetReactiveCompanionSuggestionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                answerCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1777,6 +1989,521 @@ public final class AgentAssistantRecord extends com.google.protobuf.GeneratedMes
       answerCase_ = 8;
       onChanged();
       return generatorSuggestionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.CompanionSuggestion,
+            com.google.cloud.dialogflow.v2.CompanionSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder>
+        companionSuggestionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the companionSuggestion field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompanionSuggestion() {
+      return answerCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The companionSuggestion.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.CompanionSuggestion getCompanionSuggestion() {
+      if (companionSuggestionBuilder_ == null) {
+        if (answerCase_ == 9) {
+          return (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_;
+        }
+        return com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+      } else {
+        if (answerCase_ == 9) {
+          return companionSuggestionBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.CompanionSuggestion value) {
+      if (companionSuggestionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answer_ = value;
+        onChanged();
+      } else {
+        companionSuggestionBuilder_.setMessage(value);
+      }
+      answerCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.CompanionSuggestion.Builder builderForValue) {
+      if (companionSuggestionBuilder_ == null) {
+        answer_ = builderForValue.build();
+        onChanged();
+      } else {
+        companionSuggestionBuilder_.setMessage(builderForValue.build());
+      }
+      answerCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.CompanionSuggestion value) {
+      if (companionSuggestionBuilder_ == null) {
+        if (answerCase_ == 9
+            && answer_ != com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance()) {
+          answer_ =
+              com.google.cloud.dialogflow.v2.CompanionSuggestion.newBuilder(
+                      (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          answer_ = value;
+        }
+        onChanged();
+      } else {
+        if (answerCase_ == 9) {
+          companionSuggestionBuilder_.mergeFrom(value);
+        } else {
+          companionSuggestionBuilder_.setMessage(value);
+        }
+      }
+      answerCase_ = 9;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCompanionSuggestion() {
+      if (companionSuggestionBuilder_ == null) {
+        if (answerCase_ == 9) {
+          answerCase_ = 0;
+          answer_ = null;
+          onChanged();
+        }
+      } else {
+        if (answerCase_ == 9) {
+          answerCase_ = 0;
+          answer_ = null;
+        }
+        companionSuggestionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.CompanionSuggestion.Builder
+        getCompanionSuggestionBuilder() {
+      return internalGetCompanionSuggestionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder
+        getCompanionSuggestionOrBuilder() {
+      if ((answerCase_ == 9) && (companionSuggestionBuilder_ != null)) {
+        return companionSuggestionBuilder_.getMessageOrBuilder();
+      } else {
+        if (answerCase_ == 9) {
+          return (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_;
+        }
+        return com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.CompanionSuggestion,
+            com.google.cloud.dialogflow.v2.CompanionSuggestion.Builder,
+            com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder>
+        internalGetCompanionSuggestionFieldBuilder() {
+      if (companionSuggestionBuilder_ == null) {
+        if (!(answerCase_ == 9)) {
+          answer_ = com.google.cloud.dialogflow.v2.CompanionSuggestion.getDefaultInstance();
+        }
+        companionSuggestionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.CompanionSuggestion,
+                com.google.cloud.dialogflow.v2.CompanionSuggestion.Builder,
+                com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder>(
+                (com.google.cloud.dialogflow.v2.CompanionSuggestion) answer_,
+                getParentForChildren(),
+                isClean());
+        answer_ = null;
+      }
+      answerCase_ = 9;
+      onChanged();
+      return companionSuggestionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse.Builder,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponseOrBuilder>
+        reactiveCompanionSuggestionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the reactiveCompanionSuggestion field is set.
+     */
+    @java.lang.Override
+    public boolean hasReactiveCompanionSuggestion() {
+      return answerCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reactiveCompanionSuggestion.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponse
+        getReactiveCompanionSuggestion() {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        if (answerCase_ == 10) {
+          return (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                  .ReactiveModeResponse)
+              answer_;
+        }
+        return com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponse.getDefaultInstance();
+      } else {
+        if (answerCase_ == 10) {
+          return reactiveCompanionSuggestionBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponse.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReactiveCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse
+            value) {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answer_ = value;
+        onChanged();
+      } else {
+        reactiveCompanionSuggestionBuilder_.setMessage(value);
+      }
+      answerCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setReactiveCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse.Builder
+            builderForValue) {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        answer_ = builderForValue.build();
+        onChanged();
+      } else {
+        reactiveCompanionSuggestionBuilder_.setMessage(builderForValue.build());
+      }
+      answerCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeReactiveCompanionSuggestion(
+        com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse
+            value) {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        if (answerCase_ == 10
+            && answer_
+                != com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                    .ReactiveModeResponse.getDefaultInstance()) {
+          answer_ =
+              com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                  .ReactiveModeResponse.newBuilder(
+                      (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                              .ReactiveModeResponse)
+                          answer_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          answer_ = value;
+        }
+        onChanged();
+      } else {
+        if (answerCase_ == 10) {
+          reactiveCompanionSuggestionBuilder_.mergeFrom(value);
+        } else {
+          reactiveCompanionSuggestionBuilder_.setMessage(value);
+        }
+      }
+      answerCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearReactiveCompanionSuggestion() {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        if (answerCase_ == 10) {
+          answerCase_ = 0;
+          answer_ = null;
+          onChanged();
+        }
+      } else {
+        if (answerCase_ == 10) {
+          answerCase_ = 0;
+          answer_ = null;
+        }
+        reactiveCompanionSuggestionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponse.Builder
+        getReactiveCompanionSuggestionBuilder() {
+      return internalGetReactiveCompanionSuggestionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponseOrBuilder
+        getReactiveCompanionSuggestionOrBuilder() {
+      if ((answerCase_ == 10) && (reactiveCompanionSuggestionBuilder_ != null)) {
+        return reactiveCompanionSuggestionBuilder_.getMessageOrBuilder();
+      } else {
+        if (answerCase_ == 10) {
+          return (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                  .ReactiveModeResponse)
+              answer_;
+        }
+        return com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+            .ReactiveModeResponse.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reactive companion suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponse.Builder,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                .ReactiveModeResponseOrBuilder>
+        internalGetReactiveCompanionSuggestionFieldBuilder() {
+      if (reactiveCompanionSuggestionBuilder_ == null) {
+        if (!(answerCase_ == 10)) {
+          answer_ =
+              com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                  .ReactiveModeResponse.getDefaultInstance();
+        }
+        reactiveCompanionSuggestionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                    .ReactiveModeResponse,
+                com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                    .ReactiveModeResponse.Builder,
+                com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                    .ReactiveModeResponseOrBuilder>(
+                (com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+                        .ReactiveModeResponse)
+                    answer_,
+                getParentForChildren(),
+                isClean());
+        answer_ = null;
+      }
+      answerCase_ = 10;
+      onChanged();
+      return reactiveCompanionSuggestionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.AgentAssistantRecord)

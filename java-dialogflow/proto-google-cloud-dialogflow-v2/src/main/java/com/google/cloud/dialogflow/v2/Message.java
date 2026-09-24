@@ -141,10 +141,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The message content.
+   * Optional. The message content.
+   * Only one of `content` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -165,10 +166,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The message content.
+   * Optional. The message content.
+   * Only one of `content` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */
@@ -1245,10 +1247,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The message content.
+     * Optional. The message content.
+     * Only one of `content` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The content.
      */
@@ -1268,10 +1271,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The message content.
+     * Optional. The message content.
+     * Only one of `content` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for content.
      */
@@ -1291,10 +1295,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The message content.
+     * Optional. The message content.
+     * Only one of `content` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -1313,10 +1318,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The message content.
+     * Optional. The message content.
+     * Only one of `content` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1331,10 +1337,11 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The message content.
+     * Optional. The message content.
+     * Only one of `content` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.

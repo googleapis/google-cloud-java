@@ -4819,14 +4819,61 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If true, enable asynchronous execution of tools.
+     * Optional. Deprecated: This field is not consulted for tool execution.
+     * Configure asynchronous execution per tool using
+     * [CesToolSpec.async_execution][google.cloud.dialogflow.v2.CesToolSpec.async_execution]
+     * or
+     * [ToolsetTool.async_execution][google.cloud.dialogflow.v2.ToolsetTool.async_execution]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool enable_async_tool_call = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.enable_async_tool_call
+     *     is deprecated. See google/cloud/dialogflow/v2/conversation_profile.proto;l=564
      * @return The enableAsyncToolCall.
      */
+    @java.lang.Deprecated
     boolean getEnableAsyncToolCall();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the companion agent to link.
+     * This is only supported for `human_agent_suggestion_config`.
+     * Format:
+     * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+     * </pre>
+     *
+     * <code>
+     * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The companionAgent.
+     */
+    java.lang.String getCompanionAgent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the companion agent to link.
+     * This is only supported for `human_agent_suggestion_config`.
+     * Format:
+     * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+     * </pre>
+     *
+     * <code>
+     * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for companionAgent.
+     */
+    com.google.protobuf.ByteString getCompanionAgentBytes();
   }
 
   /**
@@ -4862,6 +4909,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     private SuggestionConfig() {
       featureConfigs_ = java.util.Collections.emptyList();
       generators_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      companionAgent_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5170,16 +5218,90 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Optional. If true, enable asynchronous execution of tools.
+     * Optional. Deprecated: This field is not consulted for tool execution.
+     * Configure asynchronous execution per tool using
+     * [CesToolSpec.async_execution][google.cloud.dialogflow.v2.CesToolSpec.async_execution]
+     * or
+     * [ToolsetTool.async_execution][google.cloud.dialogflow.v2.ToolsetTool.async_execution]
+     * instead.
      * </pre>
      *
-     * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool enable_async_tool_call = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.enable_async_tool_call
+     *     is deprecated. See google/cloud/dialogflow/v2/conversation_profile.proto;l=564
      * @return The enableAsyncToolCall.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getEnableAsyncToolCall() {
       return enableAsyncToolCall_;
+    }
+
+    public static final int COMPANION_AGENT_FIELD_NUMBER = 11;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object companionAgent_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the companion agent to link.
+     * This is only supported for `human_agent_suggestion_config`.
+     * Format:
+     * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+     * </pre>
+     *
+     * <code>
+     * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The companionAgent.
+     */
+    @java.lang.Override
+    public java.lang.String getCompanionAgent() {
+      java.lang.Object ref = companionAgent_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        companionAgent_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the companion agent to link.
+     * This is only supported for `human_agent_suggestion_config`.
+     * Format:
+     * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+     * </pre>
+     *
+     * <code>
+     * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for companionAgent.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCompanionAgentBytes() {
+      java.lang.Object ref = companionAgent_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        companionAgent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5216,6 +5338,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       }
       if (enableAsyncToolCall_ != false) {
         output.writeBool(9, enableAsyncToolCall_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(companionAgent_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, companionAgent_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5258,6 +5383,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (enableAsyncToolCall_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, enableAsyncToolCall_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(companionAgent_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, companionAgent_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -5285,6 +5413,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (getUseUnredactedConversationData() != other.getUseUnredactedConversationData())
         return false;
       if (getEnableAsyncToolCall() != other.getEnableAsyncToolCall()) return false;
+      if (!getCompanionAgent().equals(other.getCompanionAgent())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5321,6 +5450,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               + com.google.protobuf.Internal.hashBoolean(getUseUnredactedConversationData());
       hash = (37 * hash) + ENABLE_ASYNC_TOOL_CALL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAsyncToolCall());
+      hash = (37 * hash) + COMPANION_AGENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanionAgent().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5483,6 +5614,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         skipEmptyEventBasedSuggestion_ = false;
         useUnredactedConversationData_ = false;
         enableAsyncToolCall_ = false;
+        companionAgent_ = "";
         return this;
       }
 
@@ -5557,6 +5689,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.enableAsyncToolCall_ = enableAsyncToolCall_;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.companionAgent_ = companionAgent_;
+        }
       }
 
       @java.lang.Override
@@ -5628,6 +5763,11 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         }
         if (other.getEnableAsyncToolCall() != false) {
           setEnableAsyncToolCall(other.getEnableAsyncToolCall());
+        }
+        if (!other.getCompanionAgent().isEmpty()) {
+          companionAgent_ = other.companionAgent_;
+          bitField0_ |= 0x00000080;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -5708,6 +5848,12 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 72
+              case 90:
+                {
+                  companionAgent_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6717,14 +6863,25 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Optional. If true, enable asynchronous execution of tools.
+       * Optional. Deprecated: This field is not consulted for tool execution.
+       * Configure asynchronous execution per tool using
+       * [CesToolSpec.async_execution][google.cloud.dialogflow.v2.CesToolSpec.async_execution]
+       * or
+       * [ToolsetTool.async_execution][google.cloud.dialogflow.v2.ToolsetTool.async_execution]
+       * instead.
        * </pre>
        *
-       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool enable_async_tool_call = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.enable_async_tool_call
+       *     is deprecated. See google/cloud/dialogflow/v2/conversation_profile.proto;l=564
        * @return The enableAsyncToolCall.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getEnableAsyncToolCall() {
         return enableAsyncToolCall_;
       }
@@ -6733,14 +6890,25 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Optional. If true, enable asynchronous execution of tools.
+       * Optional. Deprecated: This field is not consulted for tool execution.
+       * Configure asynchronous execution per tool using
+       * [CesToolSpec.async_execution][google.cloud.dialogflow.v2.CesToolSpec.async_execution]
+       * or
+       * [ToolsetTool.async_execution][google.cloud.dialogflow.v2.ToolsetTool.async_execution]
+       * instead.
        * </pre>
        *
-       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool enable_async_tool_call = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.enable_async_tool_call
+       *     is deprecated. See google/cloud/dialogflow/v2/conversation_profile.proto;l=564
        * @param value The enableAsyncToolCall to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setEnableAsyncToolCall(boolean value) {
 
         enableAsyncToolCall_ = value;
@@ -6753,16 +6921,163 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        *
        *
        * <pre>
-       * Optional. If true, enable asynchronous execution of tools.
+       * Optional. Deprecated: This field is not consulted for tool execution.
+       * Configure asynchronous execution per tool using
+       * [CesToolSpec.async_execution][google.cloud.dialogflow.v2.CesToolSpec.async_execution]
+       * or
+       * [ToolsetTool.async_execution][google.cloud.dialogflow.v2.ToolsetTool.async_execution]
+       * instead.
        * </pre>
        *
-       * <code>bool enable_async_tool_call = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool enable_async_tool_call = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.dialogflow.v2.HumanAgentAssistantConfig.SuggestionConfig.enable_async_tool_call
+       *     is deprecated. See google/cloud/dialogflow/v2/conversation_profile.proto;l=564
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearEnableAsyncToolCall() {
         bitField0_ = (bitField0_ & ~0x00000040);
         enableAsyncToolCall_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object companionAgent_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the companion agent to link.
+       * This is only supported for `human_agent_suggestion_config`.
+       * Format:
+       * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+       * </pre>
+       *
+       * <code>
+       * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The companionAgent.
+       */
+      public java.lang.String getCompanionAgent() {
+        java.lang.Object ref = companionAgent_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          companionAgent_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the companion agent to link.
+       * This is only supported for `human_agent_suggestion_config`.
+       * Format:
+       * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+       * </pre>
+       *
+       * <code>
+       * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for companionAgent.
+       */
+      public com.google.protobuf.ByteString getCompanionAgentBytes() {
+        java.lang.Object ref = companionAgent_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          companionAgent_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the companion agent to link.
+       * This is only supported for `human_agent_suggestion_config`.
+       * Format:
+       * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+       * </pre>
+       *
+       * <code>
+       * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The companionAgent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanionAgent(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        companionAgent_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the companion agent to link.
+       * This is only supported for `human_agent_suggestion_config`.
+       * Format:
+       * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+       * </pre>
+       *
+       * <code>
+       * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCompanionAgent() {
+        companionAgent_ = getDefaultInstance().getCompanionAgent();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the companion agent to link.
+       * This is only supported for `human_agent_suggestion_config`.
+       * Format:
+       * `projects/{project}/locations/{location}/companionAgents/{companion_agent}`
+       * </pre>
+       *
+       * <code>
+       * string companion_agent = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for companionAgent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCompanionAgentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        companionAgent_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }

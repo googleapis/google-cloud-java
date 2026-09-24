@@ -35,7 +35,7 @@ public interface RateLimitsOrBuilder
    * If unspecified when the queue is created, Cloud Tasks will pick the
    * default.
    *
-   * * The maximum allowed value is 500.
+   * The maximum allowed value is 500.
    *
    *
    * This field has the same meaning as
@@ -68,11 +68,13 @@ public interface RateLimitsOrBuilder
    * token is removed from the bucket. Tasks will be dispatched until
    * the queue's bucket runs out of tokens. The bucket will be
    * continuously refilled with new tokens based on
-   * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second].
+   * `max_dispatches_per_second`.
    *
-   * Cloud Tasks will pick the value of `max_burst_size` based on the
-   * value of
-   * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second].
+   * Cloud Tasks automatically sets an appropriate `max_burst_size` based
+   * on the value of `max_dispatches_per_second`. The value is dynamically
+   * optimized to ensure queue stability and throughput. It is generally at
+   * least equal to `max_dispatches_per_second` but might be higher to
+   * accommodate bursts of traffic.
    *
    * For queues that were created or updated using
    * `queue.yaml/xml`, `max_burst_size` is equal to
@@ -80,11 +82,8 @@ public interface RateLimitsOrBuilder
    * Since `max_burst_size` is output only, if
    * [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue] is called on a
    * queue created by `queue.yaml/xml`, `max_burst_size` will be reset based on
-   * the value of
-   * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second],
-   * regardless of whether
-   * [max_dispatches_per_second][google.cloud.tasks.v2.RateLimits.max_dispatches_per_second]
-   * is updated.
+   * the value of `max_dispatches_per_second`, regardless of whether
+   * `max_dispatches_per_second` is updated.
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>
