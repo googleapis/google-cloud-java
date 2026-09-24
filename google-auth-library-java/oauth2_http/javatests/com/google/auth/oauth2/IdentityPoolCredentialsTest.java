@@ -484,7 +484,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(2).getHeaders();
+        transportFactory.transport.getRequests().get(1).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "url", true, false);
   }
 
@@ -525,7 +525,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(2).getHeaders();
+        transportFactory.transport.getRequests().get(1).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "url", true, true);
   }
 
@@ -1375,33 +1375,30 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void builder_actorTokenWithNonMtlsTransportFactory_throws() {
+  void builder_actorTokenWithNonMtlsTransportFactory_succeeds() {
     IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
+    IdentityPoolActorTokenSupplier actorSupplier = context -> "token";
 
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
-                    .setAudience("audience")
-                    .setSubjectTokenType("subjectTokenType")
-                    .setTokenUrl("https://invalid.googleapis.com/")
-                    .setCredentialSource(credentialSource)
-                    .setActorTokenType("actorTokenType")
-                    .setActorTokenSupplier(
-                        new IdentityPoolActorTokenSupplier() {
-                          @Override
-                          public String getActorToken(ExternalAccountSupplierContext context) {
-                            return "token";
-                          }
-                        })
-                    .build());
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setCredentialSource(credentialSource)
+            .setActorTokenType("actorTokenType")
+            .setActorTokenSupplier(actorSupplier)
+            .build();
 
-    assertEquals(
-        "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-            + " source or MtlsHttpTransportFactory.",
-        e.getMessage());
+    assertNotNull(credentials);
+    assertSame(actorSupplier, credentials.getIdentityPoolActorTokenSupplier());
+    assertEquals("actorTokenType", credentials.getActorTokenType());
+
+    IdentityPoolCredentials scoped =
+        credentials.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertSame(actorSupplier, scoped.getIdentityPoolActorTokenSupplier());
+    assertEquals("actorTokenType", scoped.getActorTokenType());
   }
 
   @Test
@@ -1723,91 +1720,66 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void builder_actorTokenWithoutMtls_throws() {
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setSubjectTokenSupplier(testProvider)
-                    .setActorTokenSupplier(testActorSupplier)
-                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
-                    .setAudience("audience")
-                    .setSubjectTokenType("subjectTokenType")
-                    .setTokenUrl("https://sts.googleapis.com/v1/token")
-                    .build());
-    assertTrue(
-        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
+  void builder_actorTokenWithoutMtls_succeeds() {
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+    assertNotNull(credentials);
+    assertSame(testActorSupplier, credentials.getIdentityPoolActorTokenSupplier());
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
   }
 
   @Test
-  void builder_actorTokenWithNoArgMtlsFactory_throws() throws Exception {
-    // A no-arg MtlsHttpTransportFactory (e.g. from deserialization) has no KeyStore,
-    // so isMtlsConfigured() should return false and building should fail.
+  void builder_actorTokenWithNoArgMtlsFactory_succeeds() {
     MtlsHttpTransportFactory noArgFactory = new MtlsHttpTransportFactory();
     assertFalse(noArgFactory.hasKeyStore());
 
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setSubjectTokenSupplier(testProvider)
-                    .setActorTokenSupplier(testActorSupplier)
-                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setHttpTransportFactory(noArgFactory)
-                    .setAudience("audience")
-                    .setSubjectTokenType("subjectTokenType")
-                    .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
-                    .build());
-    assertTrue(
-        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setHttpTransportFactory(noArgFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+    assertNotNull(credentials);
+    assertSame(noArgFactory, credentials.getTransportFactory());
+    assertSame(testActorSupplier, credentials.getIdentityPoolActorTokenSupplier());
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
+    assertEquals("https://sts.googleapis.com/v1/token", credentials.getTokenUrl());
   }
 
   @Test
-  void builder_actorTokenWithEmptyMtlsFactory_throws() throws Exception {
+  void builder_actorTokenWithEmptyMtlsFactory_succeeds() throws Exception {
     KeyStore emptyKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
     emptyKeyStore.load(null, null);
     MtlsHttpTransportFactory emptyFactory = new MtlsHttpTransportFactory(emptyKeyStore);
     assertFalse(emptyFactory.hasKeyStore());
 
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setSubjectTokenSupplier(testProvider)
-                    .setActorTokenSupplier(testActorSupplier)
-                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setHttpTransportFactory(emptyFactory)
-                    .setAudience("audience")
-                    .setSubjectTokenType("subjectTokenType")
-                    .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
-                    .build());
-    assertTrue(
-        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_withPopulatedKeyStore_returnsTrue() throws Exception {
-    KeyStore ks = createPopulatedKeyStore();
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(ks);
-    assertTrue(factory.hasKeyStore());
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_withEmptyKeyStore_returnsFalse() throws Exception {
-    KeyStore emptyKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-    emptyKeyStore.load(null, null);
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(emptyKeyStore);
-    assertFalse(factory.hasKeyStore());
-  }
-
-  @Test
-  void mtlsHttpTransportFactory_hasKeyStore_noArg_returnsFalse() {
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory();
-    assertFalse(factory.hasKeyStore());
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setHttpTransportFactory(emptyFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+    assertNotNull(credentials);
+    assertSame(emptyFactory, credentials.getTransportFactory());
+    assertSame(testActorSupplier, credentials.getIdentityPoolActorTokenSupplier());
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
+    assertEquals("https://sts.googleapis.com/v1/token", credentials.getTokenUrl());
   }
 
   // ==================================================================================
@@ -2697,52 +2669,50 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void builder_actorTokenWithPlainPublicTokenUrl_throwsIllegalArgumentException() throws Exception {
+  void builder_actorTokenWithPlainPublicTokenUrl_succeeds() throws Exception {
     KeyStore keyStore = createPopulatedKeyStore();
     HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setSubjectTokenSupplier(context -> "testSubjectToken")
-                    .setActorTokenSupplier(context -> "testActorToken")
-                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setAudience(
-                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
-                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setTokenUrl("https://sts.googleapis.com/v1/token")
-                    .setHttpTransportFactory(transportFactory)
-                    .build());
-    assertTrue(e.getMessage().contains("tokenUrl"));
-    assertTrue(e.getMessage().contains("plain public Google API endpoint"));
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", cred.getActorTokenType());
+    assertEquals("https://sts.googleapis.com/v1/token", cred.getTokenUrl());
   }
 
   @Test
-  void builder_actorTokenWithPlainPublicImpersonationUrl_throwsIllegalArgumentException()
-      throws Exception {
+  void builder_actorTokenWithPlainPublicImpersonationUrl_succeeds() throws Exception {
     KeyStore keyStore = createPopulatedKeyStore();
     HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
-    IllegalArgumentException e =
-        assertThrows(
-            IllegalArgumentException.class,
-            () ->
-                IdentityPoolCredentials.newBuilder()
-                    .setSubjectTokenSupplier(context -> "testSubjectToken")
-                    .setActorTokenSupplier(context -> "testActorToken")
-                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setAudience(
-                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
-                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
-                    .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
-                    .setServiceAccountImpersonationUrl(
-                        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
-                    .setHttpTransportFactory(transportFactory)
-                    .build());
-    assertTrue(e.getMessage().contains("serviceAccountImpersonationUrl"));
-    assertTrue(e.getMessage().contains("plain public Google API endpoint"));
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
+            .setServiceAccountImpersonationUrl(
+                "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", cred.getActorTokenType());
+    assertEquals(MockExternalAccountCredentialsTransport.STS_MTLS_URL, cred.getTokenUrl());
+    assertEquals(
+        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken",
+        cred.getServiceAccountImpersonationUrl());
   }
 
   @Test
@@ -3031,7 +3001,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createScoped_withCertificateConfig_refreshesMtlsTransportSnapshot(@TempDir Path tempDir)
+  void createScoped_withCertificateConfig_preservesMtlsTransportSnapshot(@TempDir Path tempDir)
       throws Exception {
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -3083,9 +3053,273 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         credential.createScoped(
             Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
 
-    assertEquals(2, getKeyStoreCount.get());
+    assertEquals(1, getKeyStoreCount.get());
     assertTrue(scoped.getTransportFactory() instanceof MtlsHttpTransportFactory);
-    assertNotSame(originalTransportFactory, scoped.getTransportFactory());
+    assertSame(originalTransportFactory, scoped.getTransportFactory());
+
+    IdentityPoolCredentials rebuiltWithProvider =
+        credential.toBuilder().setX509Provider(trackingProvider).build();
+    assertEquals(2, getKeyStoreCount.get());
+    assertNotSame(originalTransportFactory, rebuiltWithProvider.getTransportFactory());
+  }
+
+  @Test
+  void toBuilder_setCredentialSource_withNewSource_clearsCopiedX509Provider(@TempDir Path tempDir)
+      throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", tokenFile.toString());
+    credentialSourceMap.put("format", formatMap);
+    credentialSourceMap.put("certificate", certificateMap);
+
+    KeyStore ks = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider trackingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCount.incrementAndGet();
+            return ks;
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
+            .setX509Provider(trackingProvider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    assertSame(trackingProvider, credential.getX509Provider());
+    assertEquals(1, getKeyStoreCount.get());
+
+    IdentityPoolCredentials rebuilt =
+        credential.toBuilder()
+            .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
+            .build();
+
+    assertNotNull(rebuilt.getX509Provider());
+    assertNotSame(trackingProvider, rebuilt.getX509Provider());
+    assertEquals(1, getKeyStoreCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_401WithActorTokenAndNonMtlsTransport_bubblesUpWithoutRetry() {
+    IdentityPoolCredentials.Builder builder =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/p/providers/pr")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setX509Provider(
+                new TestX509Provider(createPopulatedKeyStore(), "certificate_config_location"))
+            .setHttpTransportFactory(new MockExternalAccountCredentialsTransportFactory());
+
+    TestableIdentityPoolCredentials testable = new TestableIdentityPoolCredentials(builder, true);
+
+    OAuthException thrown = assertThrows(OAuthException.class, testable::refreshAccessToken);
+    assertEquals(401, thrown.getHttpStatusCode());
+    assertEquals(0, thrown.getSuppressed().length);
+    assertEquals(1, testable.getExchangeCallCount());
+  }
+
+  @Test
+  void
+      fromStream_fileCredentialSource_withoutCertificateConfig_andActorToken_withNonMtlsUrl_refreshesSuccessfully(
+          @TempDir Path tempDir) throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    Path tokenFile = tempDir.resolve("credential_non_mtls.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "nonMtlsSubjectToken");
+    tokenJson.put("actor_token", "nonMtlsActorToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    String configJson =
+        "{\n"
+            + "  \"type\": \"external_account\",\n"
+            + "  \"audience\":"
+            + " \"//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider\",\n"
+            + "  \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"actor_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"token_url\": \""
+            + transportFactory.transport.getStsUrl()
+            + "\",\n"
+            + "  \"credential_source\": {\n"
+            + "    \"file\": \""
+            + tokenFile.toString().replace("\\", "\\\\")
+            + "\",\n"
+            + "    \"format\": {\n"
+            + "      \"type\": \"json\",\n"
+            + "      \"subject_token_field_name\": \"subject_token\",\n"
+            + "      \"actor_token_field_name\": \"actor_token\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+
+    ExternalAccountCredentials credentials =
+        ExternalAccountCredentials.fromStream(
+            new ByteArrayInputStream(configJson.getBytes(StandardCharsets.UTF_8)),
+            transportFactory);
+
+    assertTrue(credentials instanceof IdentityPoolCredentials);
+    IdentityPoolCredentials idp = (IdentityPoolCredentials) credentials;
+    assertNull(idp.getX509Provider());
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", idp.getActorTokenType());
+    assertFalse(idp.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertSame(idp.getIdentityPoolSubjectTokenSupplier(), idp.getIdentityPoolActorTokenSupplier());
+
+    AccessToken token = idp.refreshAccessToken();
+    assertNotNull(token);
+    Map<String, String> query =
+        TestUtils.parseQuery(transportFactory.transport.getLastRequest().getContentAsString());
+    assertEquals("nonMtlsSubjectToken", query.get("subject_token"));
+    assertEquals("nonMtlsActorToken", query.get("actor_token"));
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", query.get("actor_token_type"));
+
+    // Verify createScoped preserves actor token config and atomic supplier sharing
+    IdentityPoolCredentials scoped =
+        idp.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", scoped.getActorTokenType());
+    assertNotNull(scoped.getIdentityPoolActorTokenSupplier());
+    assertSame(
+        scoped.getIdentityPoolSubjectTokenSupplier(), scoped.getIdentityPoolActorTokenSupplier());
+
+    // Verify Java serialization/deserialization round-trip preserves actor token config
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(idp);
+    assertNull(deserialized.getX509Provider());
+    assertFalse(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", deserialized.getActorTokenType());
+    assertNotNull(deserialized.getIdentityPoolActorTokenSupplier());
+    assertSame(
+        deserialized.getIdentityPoolSubjectTokenSupplier(),
+        deserialized.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void refreshAccessToken_withImpersonationAndActorToken_fetchesTokensOnceAndCachesStsToken()
+      throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+    AtomicInteger subjectTokenCount = new AtomicInteger(0);
+    AtomicInteger actorTokenCount = new AtomicInteger(0);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(
+                context -> "subjectToken-" + subjectTokenCount.incrementAndGet())
+            .setActorTokenSupplier(context -> "actorToken-" + actorTokenCount.incrementAndGet())
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    AccessToken firstToken = credentials.refreshAccessToken();
+    assertNotNull(firstToken);
+    assertEquals(1, subjectTokenCount.get());
+    assertEquals(1, actorTokenCount.get());
+
+    // Second refresh while intermediate STS token is still cached should not re-fetch subject or
+    // actor tokens.
+    AccessToken secondToken = credentials.refreshAccessToken();
+    assertNotNull(secondToken);
+    assertEquals(1, subjectTokenCount.get());
+    assertEquals(1, actorTokenCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_withNullOrWhitespaceActorToken_throwsIOException() {
+    IdentityPoolCredentials nullActorCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> null)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .build();
+
+    IOException nullException =
+        assertThrows(IOException.class, nullActorCredentials::refreshAccessToken);
+    assertEquals("The provided actor token cannot be null or empty.", nullException.getMessage());
+
+    IdentityPoolCredentials blankActorCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "   ")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .build();
+
+    IOException blankException =
+        assertThrows(IOException.class, blankActorCredentials::refreshAccessToken);
+    assertEquals("The provided actor token cannot be null or empty.", blankException.getMessage());
+  }
+
+  @Test
+  void serialize_deserialize_withCustomTransportFactoryAndCertConfig_preservesCustomFactory()
+      throws Exception {
+    MockExternalAccountCredentialsTransportFactory customFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("use_default_certificate_config", true);
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", "credential.json");
+    sourceMap.put("certificate", certMap);
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    KeyStore ks = createPopulatedKeyStore();
+    X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setX509Provider(x509Provider)
+            .setHttpTransportFactory(customFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertFalse(credentials.getTransportFactory() instanceof MtlsHttpTransportFactory);
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertNotNull(deserialized.getX509Provider());
+    assertFalse(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertEquals(customFactory.getClass(), deserialized.getTransportFactory().getClass());
   }
 
   // ==================================================================================

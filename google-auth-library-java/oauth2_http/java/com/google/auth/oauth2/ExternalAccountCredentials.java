@@ -95,7 +95,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   protected transient HttpTransportFactory transportFactory;
 
-  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -522,8 +522,21 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         && ((String) credentialSource.get("environment_id")).startsWith("aws");
   }
 
-  private boolean shouldBuildImpersonatedCredential() {
-    return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
+  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
+    if (this.serviceAccountImpersonationUrl == null) {
+      return null;
+    }
+    ImpersonatedCredentials local = this.impersonatedCredentials;
+    if (local == null) {
+      synchronized (this) {
+        local = this.impersonatedCredentials;
+        if (local == null) {
+          local = this.buildImpersonatedCredentials();
+          this.impersonatedCredentials = local;
+        }
+      }
+    }
+    return local;
   }
 
   /**
@@ -552,11 +565,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
       throws IOException {
     // Handle service account impersonation if necessary.
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken();
     }
 
     StsRequestHandler.Builder requestHandler =
