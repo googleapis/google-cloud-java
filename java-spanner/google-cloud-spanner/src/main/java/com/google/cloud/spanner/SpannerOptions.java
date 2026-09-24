@@ -1258,8 +1258,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public boolean isEnableGcpFallbackRecovery() {
-      return Boolean.parseBoolean(
-          System.getenv(GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY));
+      return Boolean.parseBoolean(System.getenv(GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY));
     }
 
     @Override

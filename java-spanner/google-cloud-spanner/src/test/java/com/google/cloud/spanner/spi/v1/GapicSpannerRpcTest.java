@@ -2879,7 +2879,7 @@ public class GapicSpannerRpcTest {
     GcpFallbackChannelOptions createFallbackChannelOptions(
         GcpFallbackOpenTelemetry fallbackTelemetry,
         int minFailedCalls,
-        GcpFallbackState fallbackState) {
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
           .setSharedState(fallbackState)
@@ -2959,7 +2959,7 @@ public class GapicSpannerRpcTest {
     GcpFallbackChannelOptions createFallbackChannelOptions(
         GcpFallbackOpenTelemetry fallbackTelemetry,
         int minFailedCalls,
-        GcpFallbackState fallbackState) {
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
           .setSharedState(fallbackState)
