@@ -173,7 +173,7 @@ public enum SolarPanelOrientation implements com.google.protobuf.ProtocolMessage
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final SolarPanelOrientation[] VALUES = values();

@@ -122,6 +122,27 @@ public class MockDataChatServiceImpl extends DataChatServiceImplBase {
   }
 
   @Override
+  public void updateConversation(
+      UpdateConversationRequest request, StreamObserver<Conversation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Conversation) {
+      requests.add(request);
+      responseObserver.onNext(((Conversation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConversation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Conversation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getConversation(
       GetConversationRequest request, StreamObserver<Conversation> responseObserver) {
     Object response = responses.poll();

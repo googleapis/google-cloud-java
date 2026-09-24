@@ -1187,6 +1187,61 @@ public class AlphaAnalyticsDataClientTest {
   }
 
   @Test
+  public void chatTest() throws Exception {
+    ChatResponse expectedResponse =
+        ChatResponse.newBuilder()
+            .setSessionId("sessionId607796817")
+            .addAllBlocks(new ArrayList<ResponseBlock>())
+            .setPropertyQuota(PropertyChatQuota.newBuilder().build())
+            .build();
+    mockAlphaAnalyticsData.addResponse(expectedResponse);
+
+    ChatRequest request =
+        ChatRequest.newBuilder()
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .setUserQuery("userQuery326624189")
+            .setSessionId("sessionId607796817")
+            .setReturnPropertyQuota(true)
+            .build();
+
+    ChatResponse actualResponse = client.chat(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlphaAnalyticsData.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ChatRequest actualRequest = ((ChatRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getProperty(), actualRequest.getProperty());
+    Assert.assertEquals(request.getUserQuery(), actualRequest.getUserQuery());
+    Assert.assertEquals(request.getSessionId(), actualRequest.getSessionId());
+    Assert.assertEquals(request.getReturnPropertyQuota(), actualRequest.getReturnPropertyQuota());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void chatExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlphaAnalyticsData.addException(exception);
+
+    try {
+      ChatRequest request =
+          ChatRequest.newBuilder()
+              .setProperty(PropertyName.of("[PROPERTY]").toString())
+              .setUserQuery("userQuery326624189")
+              .setSessionId("sessionId607796817")
+              .setReturnPropertyQuota(true)
+              .build();
+      client.chat(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void runReportTest() throws Exception {
     RunReportResponse expectedResponse =
         RunReportResponse.newBuilder()

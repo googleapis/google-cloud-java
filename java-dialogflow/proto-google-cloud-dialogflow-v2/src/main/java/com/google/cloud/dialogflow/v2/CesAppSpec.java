@@ -24,12 +24,14 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
+ * Deprecated: Use `CesToolSpec` instead.
  * Spec of CES app that the generator can choose from.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.CesAppSpec}
  */
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.CesAppSpec)
@@ -464,6 +466,7 @@ public final class CesAppSpec extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Deprecated: Use `CesToolSpec` instead.
    * Spec of CES app that the generator can choose from.
    * </pre>
    *

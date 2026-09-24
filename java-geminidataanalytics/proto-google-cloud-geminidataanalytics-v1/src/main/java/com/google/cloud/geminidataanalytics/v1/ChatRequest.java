@@ -87,7 +87,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * Unspecified thinking mode, agent will use THINKING mode by default except
+     * for BigQuery user defaulting to FAST mode by default.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -130,7 +131,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * Unspecified thinking mode, agent will use THINKING mode by default except
+     * for BigQuery user defaulting to FAST mode by default.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -248,7 +250,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Model selection for the agent.
+   * Model selection for the agent for BigQuery users.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.geminidataanalytics.v1.ChatRequest.Model}
@@ -258,8 +260,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No model specified. The default model will be used. Currently, this is
-     * `gemini-3.0-flash-preview`.
+     * No model specified. Either preview or non preview model can be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -269,10 +270,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Use the most up-to-date non-preview model. Currently, this is
-     * `gemini-2.5-flash`. This constrains the request level settings. The
-     * default will change to `gemini-2.5-flash`, and setting `thinking_mode`
-     * will not be supported.
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
      * </pre>
      *
      * <code>LATEST_GA_MODEL = 1;</code>
@@ -295,8 +294,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No model specified. The default model will be used. Currently, this is
-     * `gemini-3.0-flash-preview`.
+     * No model specified. Either preview or non preview model can be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -307,10 +305,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Use the most up-to-date non-preview model. Currently, this is
-     * `gemini-2.5-flash`. This constrains the request level settings. The
-     * default will change to `gemini-2.5-flash`, and setting `thinking_mode`
-     * will not be supported.
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
      * </pre>
      *
      * <code>LATEST_GA_MODEL = 1;</code>
