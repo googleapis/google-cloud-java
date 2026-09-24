@@ -1022,7 +1022,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     insertStmt.setShort(10, (short) 34);
     insertStmt.setBytes(11, new byte[] {0x3, 0x4});
     insertStmt.setObject(12, 6.28d);
-    insertStmt.setObject(13, false);
+    // calling setObject with null value without Type should now work with inferred Types.
+    insertStmt.setObject(13, null);
     insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
@@ -1054,6 +1055,10 @@ public class ITBigQueryJDBCTest extends ITBase {
     String createQuery =
         String.format(
             "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
             DATASET, TABLE_NAME);
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
 
