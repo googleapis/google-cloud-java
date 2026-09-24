@@ -180,7 +180,7 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
       TelemetryManager.recordError(
           TelemetryManager.extractErrorCode(cause),
-          TelemetryManager.extractXdbcCode(cause),
+          TelemetryManager.extractSqlState(cause),
           methodName);
 
       throw cause;

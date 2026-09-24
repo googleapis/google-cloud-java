@@ -238,7 +238,7 @@ public class ClearcutTransportTest {
                 DriverEnvironment.newBuilder().setDriverName("SimulatedDriver").build())
             .build();
     TelemetryManager.init(config, new ClearcutTransport(mockTransport, config));
-    TelemetryManager.recordError(404, 42000, "executeQuery");
+    TelemetryManager.recordError(404, "42000", "executeQuery");
     TelemetryManager.getInstance().getBatcher().flush();
     LogRequest request = LogRequest.parseFrom(captured.get());
     TelemetryPayload payload =
@@ -246,7 +246,7 @@ public class ClearcutTransportTest {
     assertEquals(1, payload.getErrorsCount());
     ErrorMetric error = payload.getErrors(0);
     assertEquals(404, error.getErrorCode());
-    assertEquals(42000, error.getErrorXdbcCode());
+    assertEquals("42000", error.getErrorSqlState());
     assertEquals("executeQuery", error.getMethodName());
     assertEquals(1, error.getCount());
   }

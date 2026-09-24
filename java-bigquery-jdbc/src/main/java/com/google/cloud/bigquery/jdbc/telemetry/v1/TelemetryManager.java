@@ -268,7 +268,8 @@ public final class TelemetryManager implements AutoCloseable {
     recordFeatureUsage(feature, null);
   }
 
-  public static void recordError(int errorCode, int errorXdbcCode, String methodName) {
+  // Not setting xdbc_error_code intentionally.
+  public static void recordError(int errorCode, String errorSqlState, String methodName) {
     runSafely(
         () -> {
           TelemetryBatcher activeBatcher = activeBatcher();
@@ -278,7 +279,7 @@ public final class TelemetryManager implements AutoCloseable {
           activeBatcher.offer(
               ErrorMetric.newBuilder()
                   .setErrorCode(errorCode)
-                  .setErrorXdbcCode(errorXdbcCode)
+                  .setErrorSqlState(errorSqlState == null ? "" : errorSqlState)
                   .setMethodName(methodName == null ? "" : methodName)
                   .build());
         });
@@ -317,22 +318,18 @@ public final class TelemetryManager implements AutoCloseable {
    * <p>Returns {@code 0} when no SQLState is present or none is numeric, matching the proto default
    * for {@code error_xdbc_code} so that unset and unmappable are indistinguishable downstream.
    */
-  public static int extractXdbcCode(Throwable t) {
+  public static String extractSqlState(Throwable t) {
     int depth = 0;
     while (t != null && depth++ < 20) {
       if (t instanceof SQLException) {
         String sqlState = ((SQLException) t).getSQLState();
         if (sqlState != null && !sqlState.isEmpty()) {
-          try {
-            return Integer.parseInt(sqlState);
-          } catch (NumberFormatException ignored) {
-            // Alphabetic SQLState such as HY000 — no numeric form, keep walking the chain.
-          }
+          return sqlState;
         }
       }
       t = t.getCause();
     }
-    return 0;
+    return "";
   }
 
   /**

@@ -229,33 +229,23 @@ public class TelemetryManagerTest {
   }
 
   @Test
-  public void testExtractXdbcCode_numericSqlState() {
-    assertEquals(42000, TelemetryManager.extractXdbcCode(new SQLException("bad syntax", "42000")));
+  public void testExtractSqlState() {
+    assertEquals(
+        "42000", TelemetryManager.extractSqlState(new SQLException("bad syntax", "42000")));
+    assertEquals("HY000", TelemetryManager.extractSqlState(new SQLException("general", "HY000")));
   }
 
   @Test
-  public void testExtractXdbcCode_alphabeticSqlStateIsUnmappable() {
-    assertEquals(0, TelemetryManager.extractXdbcCode(new SQLException("general", "HY000")));
-  }
-
-  @Test
-  public void testExtractXdbcCode_walksCauseChain() {
+  public void testExtractSqlState_walksCauseChain() {
     SQLException root = new SQLException("overflow", "22003");
     Throwable wrapped = new RuntimeException(new IllegalStateException(root));
-    assertEquals(22003, TelemetryManager.extractXdbcCode(wrapped));
+    assertEquals("22003", TelemetryManager.extractSqlState(wrapped));
   }
 
   @Test
-  public void testExtractXdbcCode_skipsUnmappableAndKeepsWalking() {
-    SQLException numeric = new SQLException("overflow", "22003");
-    SQLException outer = new SQLException("general", "HY000", numeric);
-    assertEquals(22003, TelemetryManager.extractXdbcCode(outer));
-  }
-
-  @Test
-  public void testExtractXdbcCode_noSqlStateReturnsZero() {
-    assertEquals(0, TelemetryManager.extractXdbcCode(null));
-    assertEquals(0, TelemetryManager.extractXdbcCode(new RuntimeException("no state")));
-    assertEquals(0, TelemetryManager.extractXdbcCode(new SQLException("none", (String) null)));
+  public void testExtractXdbcCode_noSqlStateReturnsEmptyString() {
+    assertEquals("", TelemetryManager.extractSqlState(null));
+    assertEquals("", TelemetryManager.extractSqlState(new RuntimeException("no state")));
+    assertEquals("", TelemetryManager.extractSqlState(new SQLException("none", (String) null)));
   }
 }

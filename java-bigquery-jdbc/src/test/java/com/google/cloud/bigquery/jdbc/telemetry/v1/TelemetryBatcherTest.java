@@ -104,7 +104,7 @@ public class TelemetryBatcherTest {
       batcher.offer(
           ErrorMetric.newBuilder()
               .setErrorCode(1)
-              .setErrorXdbcCode(100)
+              .setErrorSqlState("HY000")
               .setMethodName("executeQuery")
               .build());
       batcher.offer(
@@ -301,7 +301,7 @@ public class TelemetryBatcherTest {
     ErrorMetric errorProto =
         ErrorMetric.newBuilder()
             .setErrorCode(101)
-            .setErrorXdbcCode(202)
+            .setErrorSqlState("42000")
             .setMethodName("executeQuery")
             .build();
     FeatureUsage featureProto =
@@ -370,8 +370,7 @@ public class TelemetryBatcherTest {
 
     assertEquals(1, payloadBuilder.getErrorsCount());
     ErrorMetric err = payloadBuilder.getErrors(0);
-    assertEquals(101, err.getErrorCode());
-    assertEquals(202, err.getErrorXdbcCode());
+    assertEquals("42000", err.getErrorSqlState());
     assertEquals("executeQuery", err.getMethodName());
     assertEquals(2, err.getCount());
 
