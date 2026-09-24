@@ -52,7 +52,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final ReentrantLock flushLock = new ReentrantLock();
 
   // Live telemetry accumulator. Lock-free to eliminate object allocation and GC overhead.
-  private ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
+  private volatile ConcurrentHashMap<TelemetryKey, TelemetryAccumulator> metricsMap =
       new ConcurrentHashMap<>();
 
   /** Derived from {@code batchSizeThreshold}; see {@link #PROFILE_CAP_MULTIPLIER}. */
@@ -62,6 +62,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private volatile boolean backoffActive;
 
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
+  private final AtomicBoolean flushPending = new AtomicBoolean();
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
   private ScheduledFuture<?> scheduledTask;
 
@@ -177,7 +178,16 @@ final class TelemetryBatcher implements AutoCloseable {
     if (executorService == null || executorService.isShutdown()) {
       return;
     }
-    executorService.execute(this::flush);
+    if (flushPending.compareAndSet(false, true)) {
+      executorService.execute(
+          () -> {
+            try {
+              flush();
+            } finally {
+              flushPending.set(false);
+            }
+          });
+    }
   }
 
   private <A extends TelemetryAccumulator> A getOrAddAccumulator(TelemetryKey key) {

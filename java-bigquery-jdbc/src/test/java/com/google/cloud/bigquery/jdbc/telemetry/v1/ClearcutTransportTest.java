@@ -252,7 +252,8 @@ public class ClearcutTransportTest {
     TelemetryPayload payload =
         TelemetryPayload.parseFrom(request.getLogEvents(0).getSourceExtension());
     assertEquals(1, payload.getErrorsCount());
-    assertEquals(TelemetryConfiguration.CLIENT_TYPE, request.getClientInfo().getClientType());
+    assertEquals(
+        TelemetryConfiguration.DEFAULT_CLIENT_TYPE, request.getClientInfo().getClientType());
     ErrorMetric error = payload.getErrors(0);
     assertEquals(404, error.getErrorCode());
     assertEquals("42000", error.getErrorSqlState());
