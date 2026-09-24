@@ -768,7 +768,8 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   /**
    * Returns a builder for one grpc-gcp pool of fallback channels. All fallback channels of the pool
-   * share one fallback state. Without the grpc-gcp extension, this builds plain fallback channels.
+   * share one fallback state. Without the grpc-gcp extension there is no pool, so this builds plain
+   * fallback channels that each own their state.
    */
   private ManagedChannelBuilder<?> wrapFallbackChannelsInGrpcGcpPool(
       SpannerOptions options,
@@ -776,12 +777,14 @@ public class GapicSpannerRpc implements SpannerRpc {
       ManagedChannelBuilder<?> cloudPathBuilder,
       GcpFallbackOpenTelemetry fallbackTelemetry,
       @Nullable DynamicChannelPoolPrimer channelPrimer) {
+    boolean usePool = options.isGrpcGcpExtensionEnabled();
     ManagedChannelBuilder<?> fallbackChannelBuilder =
         new FallbackChannelBuilder(
             directPathBuilder,
             cloudPathBuilder,
-            createFallbackChannelOptions(fallbackTelemetry, 1, newFallbackState()));
-    return options.isGrpcGcpExtensionEnabled()
+            createFallbackChannelOptions(
+                fallbackTelemetry, 1, usePool ? newFallbackState() : null));
+    return usePool
         ? wrapInGrpcGcpPool(fallbackChannelBuilder, options, channelPrimer)
         : fallbackChannelBuilder;
   }
