@@ -36,8 +36,7 @@ public class TelemetryManagerTest {
   @BeforeEach
   @AfterEach
   public void cleanUp() {
-    TelemetryManager.closeInstance();
-    TelemetryManager.resetGlobalDisableForTest();
+    TelemetryTestUtils.reset();
   }
 
   @Test

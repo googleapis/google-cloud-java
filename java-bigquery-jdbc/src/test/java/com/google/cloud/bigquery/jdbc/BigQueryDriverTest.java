@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
@@ -39,8 +40,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
   @BeforeEach
   @AfterEach
   public void resetTelemetry() {
-    TelemetryManager.closeInstance();
-    TelemetryManager.resetGlobalDisableForTest();
+    TelemetryTestUtils.reset();
   }
 
   @BeforeEach

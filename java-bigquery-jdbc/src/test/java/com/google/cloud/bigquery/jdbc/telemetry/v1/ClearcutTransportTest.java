@@ -38,8 +38,7 @@ public class ClearcutTransportTest {
   @BeforeEach
   @AfterEach
   public void resetTelemetry() {
-    TelemetryManager.closeInstance();
-    TelemetryManager.resetGlobalDisableForTest();
+    TelemetryTestUtils.reset();
   }
 
   @Test

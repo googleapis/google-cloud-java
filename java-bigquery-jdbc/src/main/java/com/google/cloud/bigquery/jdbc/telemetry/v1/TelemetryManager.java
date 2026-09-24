@@ -99,7 +99,7 @@ public final class TelemetryManager implements AutoCloseable {
   /** Package-private lifecycle initialisation method for explicit configuration or unit testing. */
   static synchronized void init(TelemetryConfiguration config, ClearcutTransport transport) {
     closeInstance();
-    if (config == null || !config.isEnabled() || transport == null) {
+    if (globallyDisabled || config == null || !config.isEnabled() || transport == null) {
       return;
     }
     instance = new TelemetryManager(new TelemetryBatcher(config, transport));
@@ -162,7 +162,7 @@ public final class TelemetryManager implements AutoCloseable {
   }
 
   // Package-private test helper to reset the global kill switch between test runs
-  public static synchronized void resetGlobalDisableForTest() {
+  static synchronized void resetGlobalDisableForTest() {
     globallyDisabled = false;
   }
 
@@ -312,12 +312,9 @@ public final class TelemetryManager implements AutoCloseable {
   }
 
   /**
-   * Extracts a numeric form of the SQLState from the throwable chain. SQLStates are five-character
-   * strings; the digits-only ones (for example {@code 42000}) carry directly, while states
-   * containing letters (for example {@code HY000}) have no numeric form and yield {@code 0}.
+   * Extracts the SQLState from the throwable chain. SQLStates are five-character strings.
    *
-   * <p>Returns {@code 0} when no SQLState is present or none is numeric, matching the proto default
-   * for {@code error_xdbc_code} so that unset and unmappable are indistinguishable downstream.
+   * <p>Returns empty String when no SQLState is present.
    */
   public static String extractSqlState(Throwable t) {
     int depth = 0;
