@@ -98,6 +98,18 @@ class LoggingTracerTest {
   }
 
   @Test
+  void testOperationFailed_LogsError() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("generic operation failure");
+    tracer.operationFailed(error);
+
+    assertEquals(1, testLogger.getMessageList().size());
+    assertEquals("generic operation failure", testLogger.getMessageList().get(0));
+  }
+
+  @Test
   void testRecordActionableError_logsErrorMessage() {
     ApiTracerContext context = ApiTracerContext.empty();
     LoggingTracer tracer = new LoggingTracer(context);
