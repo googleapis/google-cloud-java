@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPropertyUtility;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
@@ -388,6 +389,6 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
     DataSource defaultDs = DataSource.fromUrl(urlWithoutTelemetry);
     assertThat(defaultDs.getEnableDiagnosticTelemetry())
-        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE);
+        .isEqualTo(TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE);
   }
 }

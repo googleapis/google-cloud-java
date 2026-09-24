@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPropertyUtility;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -1590,7 +1591,7 @@ public class DataSource implements javax.sql.DataSource {
     if (this.enableDiagnosticTelemetry != null) {
       return this.enableDiagnosticTelemetry;
     }
-    return BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
+    return TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE;
   }
 
   public void setEnableDiagnosticTelemetry(Boolean enableDiagnosticTelemetry) {
