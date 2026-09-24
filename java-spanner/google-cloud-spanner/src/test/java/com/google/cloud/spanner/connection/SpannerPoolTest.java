@@ -19,6 +19,7 @@ package com.google.cloud.spanner.connection;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -847,5 +848,78 @@ public class SpannerPoolTest {
                 .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=false")
                 .setCredentials(NoCredentials.getInstance())
                 .build()));
+  }
+
+  @Test
+  public void testCertificateAndTrustSettings() {
+    SpannerPoolKey keyDefault =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithTrustCert1 =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithTrustCert2 =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca2.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithClientCert =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?clientCertificate=/path/to/client.crt;clientKey=/path/to/client.key;caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    assertNotEquals(keyDefault, keyWithTrustCert1);
+    assertNotEquals(keyWithTrustCert1, keyWithTrustCert2);
+    assertNotEquals(keyWithTrustCert1, keyWithClientCert);
+
+    assertEquals(
+        keyWithTrustCert1,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d?caCertificate=/path/to/ca1.crt")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
+
+  @Test
+  public void testPartialClientCertThrowsException() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/p/instances/i/databases/d"
+                    + "?clientCertificate=/path/to/client.crt")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerPool.INSTANCE.createSpanner(key, options));
+  }
+
+  @Test
+  public void testPartialClientKeyThrowsException() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/p/instances/i/databases/d"
+                    + "?clientKey=/path/to/client.key")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    SpannerPoolKey key = SpannerPoolKey.of(options);
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerPool.INSTANCE.createSpanner(key, options));
   }
 }

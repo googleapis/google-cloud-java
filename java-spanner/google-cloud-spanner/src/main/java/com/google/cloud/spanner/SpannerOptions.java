@@ -53,6 +53,8 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.DynamicKeyManager;
+import com.google.cloud.spanner.omni.DynamicTrustManager;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
@@ -85,6 +87,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
 import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
@@ -356,6 +359,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean autoTaggingEnabled;
   private final List<String> autoTaggingPackages;
   private final int autoTaggingTracerLimit;
+  private final String clientCertificate;
+  private final String clientCertificateKey;
+  private final String caCertificate;
+  private final InstanceType instanceType;
+  private final boolean usePlainText;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -941,19 +949,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
-    if (builder.mTLSContext != null) {
-      channelConfigurator =
-          channelBuilder -> {
-            if (builder.channelConfigurator != null) {
-              channelBuilder = builder.channelConfigurator.apply(channelBuilder);
-            }
-            if (channelBuilder instanceof NettyChannelBuilder) {
-              ((NettyChannelBuilder) channelBuilder).sslContext(builder.mTLSContext);
-            }
-            return channelBuilder;
-          };
+    clientCertificate = builder.clientCertificate;
+    clientCertificateKey = builder.clientCertificateKey;
+    caCertificate = builder.caCertificate;
+    instanceType = builder.instanceType;
+    usePlainText = builder.usePlainText;
+    @SuppressWarnings("rawtypes")
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
+        builder.channelConfigurator;
+    while (baseConfigurator instanceof OmniSslChannelConfigurator) {
+      baseConfigurator = ((OmniSslChannelConfigurator) baseConfigurator).getUserConfigurator();
+    }
+    if (builder.omniSslContext != null) {
+      this.channelConfigurator =
+          new OmniSslChannelConfigurator(baseConfigurator, builder.omniSslContext);
     } else {
-      channelConfigurator = builder.channelConfigurator;
+      this.channelConfigurator = baseConfigurator;
     }
     interceptorProvider = builder.interceptorProvider;
     sessionPoolOptions =
@@ -1292,6 +1303,31 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
+      boolean hasClientCert = !Strings.isNullOrEmpty(builder.clientCertificate);
+      boolean hasClientKey = !Strings.isNullOrEmpty(builder.clientCertificateKey);
+      boolean hasCaCert = !Strings.isNullOrEmpty(builder.caCertificate);
+
+      if (hasClientCert || hasClientKey || hasCaCert) {
+        if (hasClientCert != hasClientKey) {
+          throw new IllegalArgumentException(
+              "Both clientCertificate and clientCertificateKey must be provided together");
+        }
+        try {
+          SslContextBuilder sslContextBuilder = GrpcSslContexts.forClient();
+          if (hasClientCert) {
+            sslContextBuilder.keyManager(
+                new DynamicKeyManager(
+                    new File(builder.clientCertificate), new File(builder.clientCertificateKey)));
+          }
+          if (hasCaCert) {
+            sslContextBuilder.trustManager(
+                new DynamicTrustManager(new File(builder.caCertificate)));
+          }
+          builder.omniSslContext = sslContextBuilder.build();
+        } catch (Exception e) {
+          throw SpannerExceptionFactory.asSpannerException(e);
+        }
+      }
       if (builder.instanceType == InstanceType.OMNI) {
         builder.enableBuiltInMetrics = false;
         builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
@@ -1314,7 +1350,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         }
         if (builder.credentials instanceof SpannerOmniCredentials) {
           ((SpannerOmniCredentials) builder.credentials)
-              .initChannel(builder.usePlainText, builder.mTLSContext);
+              .initChannel(builder.usePlainText, builder.omniSslContext);
         }
       } else {
         if (builder.username != null || builder.secretBytes != null) {
@@ -1399,7 +1435,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
-    private SslContext mTLSContext = null;
+    private String clientCertificate = null;
+    private String clientCertificateKey = null;
+    private String caCertificate = null;
+    private SslContext omniSslContext = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
@@ -1469,6 +1508,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
+      this.host = options.getHost();
       this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
@@ -1517,6 +1557,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.autoTaggingEnabled = options.autoTaggingEnabled;
       this.autoTaggingPackages = options.autoTaggingPackages;
       this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
+      this.clientCertificate = options.clientCertificate;
+      this.clientCertificateKey = options.clientCertificateKey;
+      this.caCertificate = options.caCertificate;
+      this.instanceType = options.instanceType;
+      this.usePlainText = options.usePlainText;
     }
 
     @Override
@@ -2240,21 +2285,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Configures mTLS authentication using the provided client certificate and key files. mTLS via
-     * useClientCert is only supported for Spanner Omni instances.
+     * useClientCert is only supported for Spanner Omni instances. Certificates and keys are loaded
+     * dynamically and reloaded automatically when rotated on disk.
      *
      * @param clientCertificate Path to the client certificate file.
      * @param clientCertificateKey Path to the client private key file.
-     * @throws SpannerException If an error occurs while configuring the mTLS context
      */
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
-      try {
-        this.mTLSContext =
-            GrpcSslContexts.forClient()
-                .keyManager(new File(clientCertificate), new File(clientCertificateKey))
-                .build();
-      } catch (Exception e) {
-        throw SpannerExceptionFactory.asSpannerException(e);
-      }
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificate), "clientCertificate cannot be null or empty");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificateKey),
+          "clientCertificateKey cannot be null or empty");
+      this.clientCertificate = clientCertificate;
+      this.clientCertificateKey = clientCertificateKey;
+      return this;
+    }
+
+    /**
+     * Configures the server root CA certificate for SSL/TLS authentication. The CA certificate is
+     * loaded dynamically and reloaded automatically when rotated on disk.
+     *
+     * @param caCertificate Path to the server root CA certificate file.
+     */
+    public Builder setCaCertificate(String caCertificate) {
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(caCertificate), "caCertificate cannot be null or empty");
+      this.caCertificate = caCertificate;
       return this;
     }
 
@@ -2671,6 +2728,35 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @SuppressWarnings("rawtypes")
   public ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
     return channelConfigurator;
+  }
+
+  @SuppressWarnings("rawtypes")
+  private static class OmniSslChannelConfigurator
+      implements ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> {
+    private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator;
+    private final SslContext sslContext;
+
+    OmniSslChannelConfigurator(
+        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator,
+        SslContext sslContext) {
+      this.userConfigurator = userConfigurator;
+      this.sslContext = sslContext;
+    }
+
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getUserConfigurator() {
+      return userConfigurator;
+    }
+
+    @Override
+    public ManagedChannelBuilder apply(ManagedChannelBuilder channelBuilder) {
+      if (userConfigurator != null) {
+        channelBuilder = userConfigurator.apply(channelBuilder);
+      }
+      if (channelBuilder instanceof NettyChannelBuilder) {
+        ((NettyChannelBuilder) channelBuilder).sslContext(sslContext);
+      }
+      return channelBuilder;
+    }
   }
 
   public GrpcInterceptorProvider getInterceptorProvider() {
@@ -3173,6 +3259,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Override
   protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
     return cachedRpc == null || ((SpannerRpc) cachedRpc).isClosed();
+  }
+
+  @Nullable
+  public String getClientCertificate() {
+    return clientCertificate;
+  }
+
+  @Nullable
+  public String getClientCertificateKey() {
+    return clientCertificateKey;
+  }
+
+  @Nullable
+  public String getCaCertificate() {
+    return caCertificate;
+  }
+
+  public InstanceType getInstanceType() {
+    return instanceType;
+  }
+
+  public boolean isUsePlainText() {
+    return usePlainText;
   }
 
   @SuppressWarnings("unchecked")
