@@ -129,6 +129,9 @@ import com.google.cloud.firestore.PipelineResult;
 import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Field;
+import com.google.cloud.firestore.pipeline.expressions.Ordering;
+import com.google.cloud.firestore.pipeline.expressions.WindowFunction;
+import com.google.cloud.firestore.pipeline.expressions.WindowSpec;
 import com.google.cloud.firestore.pipeline.stages.Aggregate;
 import com.google.cloud.firestore.pipeline.stages.AggregateHints;
 import com.google.cloud.firestore.pipeline.stages.AggregateOptions;
@@ -145,6 +148,9 @@ import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import java.util.AbstractMap;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -154,6 +160,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -4764,5 +4771,1446 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(results).hasSize(1);
     assertThat(results.get(0).getData().get("base")).isEqualTo(10L);
     assertThat(results.get(0).getData().get("doubled")).isEqualTo(20L);
+  }
+
+  private static <K, V> Map.Entry<K, V> entry(K key, V value) {
+    return new AbstractMap.SimpleImmutableEntry<>(key, value);
+  }
+
+  @SafeVarargs
+  private static <K, V> Map<K, V> mapOfEntries(Map.Entry<K, V>... entries) {
+    Map<K, V> res = new HashMap<>();
+    for (Map.Entry<K, V> entry : entries) {
+      res.put(entry.getKey(), entry.getValue());
+    }
+    return Collections.unmodifiableMap(res);
+  }
+
+  private static Ordering ascending(String fieldName) {
+    return field(fieldName).ascending();
+  }
+
+  private static Ordering descending(String fieldName) {
+    return field(fieldName).descending();
+  }
+
+  // -----------------------------------------------------------------------------------------
+  // addWindowFields
+  // -----------------------------------------------------------------------------------------
+
+  /**
+   * Shared fixture for the window tests.
+   *
+   * <p>The sales are deliberately constructed so that:
+   *
+   * <ul>
+   *   <li>{@code product} and {@code region} give overlapping, non-nested partitions,
+   *   <li>{@code salesPrice} has ties (30 and 60 both appear twice), which exercises {@code range}
+   *       framing and ranking peers, and
+   *   <li>{@code date} is strictly increasing and has an 11 day gap before the final sale, which
+   *       exercises time based {@code range} framing.
+   * </ul>
+   *
+   * <p>Sorted by {@code date} the document order is always sale1, sale2, sale3, sale4, sale5.
+   */
+  private static Map<String, Map<String, Object>> windowTestDocs() {
+    return mapOfEntries(
+        // 2026-07-01T12:00:00Z
+        entry(
+            "sale1",
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("region", "east"),
+                entry("salesPrice", 12),
+                entry("quantity", 1),
+                entry("date", Timestamp.ofTimeSecondsAndNanos(1782907200L, 0)))),
+        // 2026-07-02T12:00:00Z
+        entry(
+            "sale2",
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("region", "west"),
+                entry("salesPrice", 30),
+                entry("quantity", 2),
+                entry("date", Timestamp.ofTimeSecondsAndNanos(1782993600L, 0)))),
+        // 2026-07-02T18:00:00Z
+        entry(
+            "sale3",
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "east"),
+                entry("salesPrice", 30),
+                entry("quantity", 3),
+                entry("date", Timestamp.ofTimeSecondsAndNanos(1783015200L, 0)))),
+        // 2026-07-04T12:00:00Z
+        entry(
+            "sale4",
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "west"),
+                entry("salesPrice", 60),
+                entry("quantity", 4),
+                entry("date", Timestamp.ofTimeSecondsAndNanos(1783166400L, 0)))),
+        // 2026-07-15T12:00:00Z
+        entry(
+            "sale5",
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "east"),
+                entry("salesPrice", 60),
+                entry("quantity", 5),
+                entry("date", Timestamp.ofTimeSecondsAndNanos(1784116800L, 0)))));
+  }
+
+  private CollectionReference windowTestCollection()
+      throws ExecutionException, InterruptedException, TimeoutException {
+    return testCollectionWithDocs(windowTestDocs());
+  }
+
+  /**
+   * Asserts that {@code results} contains exactly {@code expected}, in order, comparing whole
+   * documents.
+   */
+  private static void expectResults(
+      List<PipelineResult> results, List<Map<String, Object>> expected) {
+    assertThat(results).hasSize(expected.size());
+    for (int i = 0; i < expected.size(); i++) {
+      assertThat(results.get(i).getData()).isEqualTo(expected.get(i));
+    }
+  }
+
+  // --- partitioning --------------------------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsEmptySpecIsASingleGlobalWindow() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec(), AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsOmittedSpecIsASingleGlobalWindow() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsPartitionsBySingleFieldName() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsPartitionsByMultipleFields() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product", "region"),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "region", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("region", "east"), entry("windowCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("region", "west"), entry("windowCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("region", "east"), entry("windowCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("region", "west"), entry("windowCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("region", "east"), entry("windowCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsPartitionsByExpression() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition(Expression.toUpper("region")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("region", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("region", "east"), entry("windowCount", 3L)),
+            mapOfEntries(entry("region", "west"), entry("windowCount", 2L)),
+            mapOfEntries(entry("region", "east"), entry("windowCount", 3L)),
+            mapOfEntries(entry("region", "west"), entry("windowCount", 2L)),
+            mapOfEntries(entry("region", "east"), entry("windowCount", 3L))));
+  }
+
+  // --- sorting and default framing -----------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsRunningCountWithTheDefaultFrame() throws Exception {
+    // The implicit default frame is a `range` frame, so the sort key must be numeric. `quantity`
+    // is 1..5 in the same order as `date`, and has no ties, so the running count is unambiguous.
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.sort(ascending("quantity")),
+                AggregateFunction.count("quantity").as("runningCount"))
+            .sort(ascending("date"))
+            .select("product", "runningCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsRunningCountWithinEachPartition() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product").withSort(ascending("quantity")),
+                AggregateFunction.count("quantity").as("runningCount"))
+            .sort(ascending("date"))
+            .select("product", "runningCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsHonorsADescendingSort() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.sort(descending("date"))
+                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                AggregateFunction.count("quantity").as("runningCount"))
+            .sort(ascending("date"))
+            .select("product", "runningCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 5L)),
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 1L))));
+  }
+
+  @Test
+  public void testWindowFieldsHonorsMultipleSortOrderings() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.sort(ascending("product"), ascending("date"))
+                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                AggregateFunction.count("quantity").as("runningCount"))
+            .sort(ascending("date"))
+            .select("product", "runningCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("runningCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningCount", 5L))));
+  }
+
+  // --- documents framing ---------------------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsDocumentsUnboundedToCurrent() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT)
+                    .withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsDocumentsUnboundedToUnbounded() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
+                    .withPartition("product")
+                    .withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsDocumentsCurrentToCurrent() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.CURRENT, WindowSpec.CURRENT)
+                    .withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
+  }
+
+  // --- range framing -------------------------------------------------------------------------
+  //
+  // In a `range` frame the CURRENT bound resolves to the current document only. A numeric `0`
+  // offset is what widens the frame to every document with an equal sort value (the SQL "peer
+  // group"). The two tests below are the executable proof that CURRENT and 0 are different
+  // boundaries, which is why WindowBound exists.
+
+  @Test
+  public void testWindowFieldsRangeCurrentToCurrentCountsOnlyTheCurrentDocument() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(WindowSpec.CURRENT, WindowSpec.CURRENT)
+                    .withPartition("product")
+                    .withSort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("samePriceCount"))
+            .sort(ascending("date"))
+            .select("product", "salesPrice", "samePriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 12L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 60L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("salesPrice", 60L),
+                entry("samePriceCount", 1L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeZeroOffsetCountsTiedPeers() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(0, 0).withPartition("product").withSort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("samePriceCount"))
+            .sort(ascending("date"))
+            .select("product", "salesPrice", "samePriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 12L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 60L), entry("samePriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("salesPrice", 60L),
+                entry("samePriceCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeUnboundedToZeroOffsetIncludesTiedPeers() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(WindowSpec.UNBOUNDED, 0).withSort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("cumulativeCount"))
+            .sort(ascending("date"))
+            .select("salesPrice", "cumulativeCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("cumulativeCount", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("cumulativeCount", 3L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("cumulativeCount", 3L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("cumulativeCount", 5L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("cumulativeCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeUnboundedToUnbounded() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
+                    .withPartition("product")
+                    .withSort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeWithATimeUnitOnADateSort() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT, "day")
+                    .withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("cumulativeCount"))
+            .sort(ascending("date"))
+            .select("product", "cumulativeCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 5L))));
+  }
+
+  // --- accumulator level framing ---------------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsEvaluatesEachAccumulatorOverItsOwnFrame() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product").withSort(ascending("date")),
+                AggregateFunction.count("quantity")
+                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                    .as("runningCount"),
+                AggregateFunction.count("quantity")
+                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED))
+                    .as("partitionCount"))
+            .sort(ascending("date"))
+            .select("product", "runningCount", "partitionCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("runningCount", 1L), entry("partitionCount", 2L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("runningCount", 2L), entry("partitionCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("runningCount", 1L), entry("partitionCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("runningCount", 2L), entry("partitionCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("runningCount", 3L),
+                entry("partitionCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsSupportsARangeFrameInOver() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product").withSort(ascending("salesPrice")),
+                AggregateFunction.count("quantity")
+                    .over(WindowSpec.range(0, 0))
+                    .as("samePriceCount"))
+            .sort(ascending("date"))
+            .select("product", "salesPrice", "samePriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 12L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 60L), entry("samePriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("salesPrice", 60L),
+                entry("samePriceCount", 2L))));
+  }
+
+  // --- output fields and composition -----------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsSupportsMultipleOutputFieldsInASingleStage() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("productCount"),
+                AggregateFunction.count("quantity").as("productCountCopy"))
+            .sort(ascending("date"))
+            .select("product", "productCount", "productCountCopy")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("productCount", 2L),
+                entry("productCountCopy", 2L)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("productCount", 2L),
+                entry("productCountCopy", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("productCount", 3L),
+                entry("productCountCopy", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("productCount", 3L),
+                entry("productCountCopy", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("productCount", 3L),
+                entry("productCountCopy", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsSupportsNestedOutputFieldPaths() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("stats.productCount"))
+            .sort(ascending("date"))
+            .select("product", "stats")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("stats", mapOfEntries(entry("productCount", 2L)))),
+            mapOfEntries(
+                entry("product", "phone"), entry("stats", mapOfEntries(entry("productCount", 2L)))),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("productCount", 3L)))),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("productCount", 3L)))),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("productCount", 3L))))));
+  }
+
+  @Test
+  public void testWindowFieldsSupportsChainingMultipleStages() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("productCount"))
+            .addWindowFields(
+                WindowSpec.partition("region"),
+                AggregateFunction.count("quantity").as("regionCount"))
+            .sort(ascending("date"))
+            .select("product", "region", "productCount", "regionCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("region", "east"),
+                entry("productCount", 2L),
+                entry("regionCount", 3L)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("region", "west"),
+                entry("productCount", 2L),
+                entry("regionCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "east"),
+                entry("productCount", 3L),
+                entry("regionCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "west"),
+                entry("productCount", 3L),
+                entry("regionCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "east"),
+                entry("productCount", 3L),
+                entry("regionCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsSupportsFilteringOnAWindowFieldInALaterStage() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("productCount"))
+            .where(field("productCount").greaterThan(2))
+            .sort(ascending("date"))
+            .select("product", "productCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsSupportsSortingOnAWindowFieldInALaterStage() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.count("quantity").as("productCount"))
+            .sort(ascending("productCount"), ascending("date"))
+            .select("product", "productCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("productCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("productCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("productCount", 3L))));
+  }
+
+  // --- error handling ----------------------------------------------------------------------------
+
+  @Test
+  public void testWindowFieldsRejectsARangeFrameWithoutASort() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .collection(salesCol)
+                    .addWindowFields(
+                        WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                        AggregateFunction.count("quantity").as("windowCount"))
+                    .execute()
+                    .get());
+    assertThat(exception.getMessage().toLowerCase()).contains("range");
+  }
+
+  @Test
+  public void testWindowFieldsRejectsMixingStageAndAccumulatorFraming() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    assertThrows(
+        ExecutionException.class,
+        () ->
+            firestore
+                .pipeline()
+                .collection(salesCol)
+                .addWindowFields(
+                    WindowSpec.sort(ascending("date"))
+                        .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                    AggregateFunction.count("quantity")
+                        .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED))
+                        .as("windowCount"))
+                .execute()
+                .get());
+  }
+
+  @Test
+  public void testWindowFieldsRejectsPartiallySpecifiedAccumulatorFraming() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    assertThrows(
+        ExecutionException.class,
+        () ->
+            firestore
+                .pipeline()
+                .collection(salesCol)
+                .addWindowFields(
+                    WindowSpec.sort(ascending("date")),
+                    AggregateFunction.count("quantity")
+                        .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                        .as("framed"),
+                    AggregateFunction.count("quantity").as("unframed"))
+                .execute()
+                .get());
+  }
+
+  @Test
+  public void testWindowFieldsRejectsAnUnrecognizedFrameBound() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    assertThrows(
+        ExecutionException.class,
+        () ->
+            firestore
+                .pipeline()
+                .collection(salesCol)
+                .addWindowFields(
+                    WindowSpec.documents("infinite", WindowSpec.CURRENT)
+                        .withSort(ascending("quantity")),
+                    AggregateFunction.count("quantity").as("windowCount"))
+                .execute()
+                .get());
+  }
+
+  @Test
+  public void testWindowFieldsRejectsAPartitionSuppliedToAnAccumulatorLevelOver() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .collection(salesCol)
+                    .addWindowFields(
+                        WindowSpec.sort(ascending("quantity")),
+                        AggregateFunction.count("quantity")
+                            .over(
+                                WindowSpec.partition("product")
+                                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                            .as("windowCount"))
+                    .execute()
+                    .get());
+    assertThat(exception.getMessage().toLowerCase()).contains("unexpected field");
+  }
+
+  @Test
+  public void testWindowFieldsComputesSumAverageMinimumAndMaximum() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.sum("salesPrice").as("total"),
+                AggregateFunction.average("salesPrice").as("averagePrice"),
+                AggregateFunction.minimum("salesPrice").as("minimumPrice"),
+                AggregateFunction.maximum("salesPrice").as("maximumPrice"))
+            .sort(ascending("date"))
+            .select("product", "total", "averagePrice", "minimumPrice", "maximumPrice")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("total")).isEqualTo(42L);
+    assertThat(results.get(0).getData().get("averagePrice")).isEqualTo(21.0);
+    assertThat(results.get(0).getData().get("minimumPrice")).isEqualTo(12L);
+    assertThat(results.get(0).getData().get("maximumPrice")).isEqualTo(30L);
+
+    assertThat(results.get(2).getData().get("total")).isEqualTo(150L);
+    assertThat(results.get(2).getData().get("averagePrice")).isEqualTo(50.0);
+    assertThat(results.get(2).getData().get("minimumPrice")).isEqualTo(30L);
+    assertThat(results.get(2).getData().get("maximumPrice")).isEqualTo(60L);
+  }
+
+  @Test
+  @Ignore("Pending backend support for count_if and count_distinct in add_window_fields")
+  public void testWindowFieldsComputesCountIfAndCountDistinct() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.countIf(field("salesPrice").greaterThan(20)).as("expensiveCount"),
+                AggregateFunction.countDistinct("salesPrice").as("distinctPriceCount"))
+            .sort(ascending("date"))
+            .select("product", "expensiveCount", "distinctPriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("expensiveCount", 1L),
+                entry("distinctPriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("expensiveCount", 1L),
+                entry("distinctPriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("expensiveCount", 3L),
+                entry("distinctPriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("expensiveCount", 3L),
+                entry("distinctPriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("expensiveCount", 3L),
+                entry("distinctPriceCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsAggregatesOverAComputedExpression() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"),
+                AggregateFunction.sum(multiply(field("salesPrice"), field("quantity")))
+                    .as("totalRevenue"))
+            .sort(ascending("date"))
+            .select("product", "totalRevenue")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("totalRevenue", 72L)),
+            mapOfEntries(entry("product", "phone"), entry("totalRevenue", 72L)),
+            mapOfEntries(entry("product", "tablet"), entry("totalRevenue", 630L)),
+            mapOfEntries(entry("product", "tablet"), entry("totalRevenue", 630L)),
+            mapOfEntries(entry("product", "tablet"), entry("totalRevenue", 630L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesFirstAndLastOverThePartition() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
+                    .withPartition("product")
+                    .withSort(ascending("date")),
+                AggregateFunction.first("salesPrice").as("firstPrice"),
+                AggregateFunction.last("salesPrice").as("lastPrice"))
+            .sort(ascending("date"))
+            .select("product", "firstPrice", "lastPrice")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("firstPrice", 12L), entry("lastPrice", 30L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("firstPrice", 12L), entry("lastPrice", 30L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("firstPrice", 30L), entry("lastPrice", 60L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("firstPrice", 30L), entry("lastPrice", 60L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("firstPrice", 30L), entry("lastPrice", 60L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesArrayAgg() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
+                    .withPartition("product")
+                    .withSort(ascending("date")),
+                AggregateFunction.arrayAgg("salesPrice").as("allPrices"))
+            .sort(ascending("date"))
+            .select("product", "allPrices")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("allPrices")).isEqualTo(Arrays.asList(12L, 30L));
+    assertThat(results.get(2).getData().get("allPrices")).isEqualTo(Arrays.asList(30L, 60L, 60L));
+  }
+
+  @Test
+  public void testWindowFieldsComputesArrayAggDistinct() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
+                    .withPartition("product")
+                    .withSort(ascending("date")),
+                AggregateFunction.arrayAggDistinct("salesPrice").as("distinctPrices"))
+            .sort(ascending("date"))
+            .select("product", "distinctPrices")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("distinctPrices")).isEqualTo(Arrays.asList(12L, 30L));
+    assertThat(results.get(2).getData().get("distinctPrices")).isEqualTo(Arrays.asList(60L, 30L));
+  }
+
+  @Test
+  public void testWindowFieldsComputesARunningTotal() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT)
+                    .withSort(ascending("date")),
+                AggregateFunction.sum("salesPrice").as("runningTotal"))
+            .sort(ascending("date"))
+            .select("product", "runningTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("runningTotal", 12L)),
+            mapOfEntries(entry("product", "phone"), entry("runningTotal", 42L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningTotal", 72L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningTotal", 132L)),
+            mapOfEntries(entry("product", "tablet"), entry("runningTotal", 192L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesACenteredMovingAverage() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(1, 1).withSort(ascending("date")),
+                AggregateFunction.average("salesPrice").as("movingAverage"),
+                AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "movingAverage", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("movingAverage", 21.0), entry("windowCount", 2L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("movingAverage", 24.0), entry("windowCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("movingAverage", 40.0), entry("windowCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("movingAverage", 50.0), entry("windowCount", 3L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("movingAverage", 60.0),
+                entry("windowCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesATrailingSum() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(2, 0).withSort(ascending("date")),
+                AggregateFunction.sum("salesPrice").as("trailingTotal"))
+            .sort(ascending("date"))
+            .select("product", "trailingTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("trailingTotal", 12L)),
+            mapOfEntries(entry("product", "phone"), entry("trailingTotal", 42L)),
+            mapOfEntries(entry("product", "tablet"), entry("trailingTotal", 72L)),
+            mapOfEntries(entry("product", "tablet"), entry("trailingTotal", 120L)),
+            mapOfEntries(entry("product", "tablet"), entry("trailingTotal", 150L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesALookAheadAverageWithANegativePrecedingBound()
+      throws Exception {
+    // Equivalent to "documents between 1 following and 2 following": the window is
+    // [index - preceding, index + following].
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(-1, 2).withSort(ascending("date")),
+                AggregateFunction.average("salesPrice").as("lookAheadAverage"),
+                AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "lookAheadAverage", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("lookAheadAverage")).isEqualTo(30.0);
+    assertThat(results.get(0).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(1).getData().get("lookAheadAverage")).isEqualTo(45.0);
+    assertThat(results.get(1).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(2).getData().get("lookAheadAverage")).isEqualTo(60.0);
+    assertThat(results.get(2).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(3).getData().get("lookAheadAverage")).isEqualTo(60.0);
+    assertThat(results.get(3).getData().get("windowCount")).isEqualTo(1L);
+
+    // The last document has an empty window.
+    assertThat(results.get(4).getData().get("lookAheadAverage")).isNull();
+    assertThat(results.get(4).getData().get("windowCount")).isEqualTo(0L);
+  }
+
+  @Test
+  public void testWindowFieldsComputesAValueBasedRangeWindow() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(20, 0).withSort(ascending("salesPrice")),
+                AggregateFunction.sum("salesPrice").as("nearbyTotal"))
+            .sort(ascending("date"))
+            .select("salesPrice", "nearbyTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("nearbyTotal", 12L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 72L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 72L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesATrailingThreeDayTotal() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(3, WindowSpec.CURRENT, "day").withSort(ascending("date")),
+                AggregateFunction.sum("salesPrice").as("threeDayTotal"))
+            .sort(ascending("date"))
+            .select("product", "threeDayTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("threeDayTotal", 12L)),
+            mapOfEntries(entry("product", "phone"), entry("threeDayTotal", 42L)),
+            mapOfEntries(entry("product", "tablet"), entry("threeDayTotal", 72L)),
+            mapOfEntries(entry("product", "tablet"), entry("threeDayTotal", 132L)),
+            mapOfEntries(entry("product", "tablet"), entry("threeDayTotal", 60L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesACumulativeTotalWithAnUnboundedDateRange() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT, "day")
+                    .withSort(ascending("date")),
+                AggregateFunction.sum("salesPrice").as("cumulativeTotal"))
+            .sort(ascending("date"))
+            .select("product", "cumulativeTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("cumulativeTotal", 12L)),
+            mapOfEntries(entry("product", "phone"), entry("cumulativeTotal", 42L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 72L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 132L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 192L))));
+  }
+
+  @Test
+  public void testWindowFieldsEvaluatesEachAggregateOverADifferentFrame() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.sort(ascending("date")),
+                AggregateFunction.sum("salesPrice")
+                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                    .as("runningTotal"),
+                AggregateFunction.average("salesPrice")
+                    .over(WindowSpec.documents(1, 1))
+                    .as("movingAverage"))
+            .sort(ascending("date"))
+            .select("product", "runningTotal", "movingAverage")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("runningTotal", 12L),
+                entry("movingAverage", 21.0)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("runningTotal", 42L),
+                entry("movingAverage", 24.0)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("runningTotal", 72L),
+                entry("movingAverage", 40.0)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("runningTotal", 132L),
+                entry("movingAverage", 50.0)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("runningTotal", 192L),
+                entry("movingAverage", 60.0))));
+  }
+
+  @Test
+  public void testWindowFieldsCountAllCountsEveryDocumentInTheWindow() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.partition("product"), AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L))));
+  }
+
+  @Test
+  public void testWindowFieldsDocumentsZeroPrecedingAndZeroFollowing() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(0, 0).withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
+  }
+
+  @Test
+  public void testWindowFieldsDocumentsZeroPrecedingToUnboundedFollowing() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(0, WindowSpec.UNBOUNDED).withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 5L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
+  }
+
+  @Test
+  public void testWindowFieldsDocumentsSymmetricMovingWindow() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.documents(1, 1).withSort(ascending("date")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L))));
+  }
+
+  @Test
+  @Ignore("Pending backend support for rank, dense_rank, and row_number")
+  public void testWindowFieldsComputesRankDenseRankAndRowNumber() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                WindowSpec.sort(ascending("salesPrice"), ascending("date")),
+                WindowFunction.rank().as("priceRank"),
+                WindowFunction.denseRank().as("priceDenseRank"),
+                WindowFunction.rowNumber().as("priceRowNumber"))
+            .sort(ascending("date"))
+            .select("salesPrice", "priceRank", "priceDenseRank", "priceRowNumber")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("salesPrice", 12L),
+                entry("priceRank", 1L),
+                entry("priceDenseRank", 1L),
+                entry("priceRowNumber", 1L)),
+            mapOfEntries(
+                entry("salesPrice", 30L),
+                entry("priceRank", 2L),
+                entry("priceDenseRank", 2L),
+                entry("priceRowNumber", 2L)),
+            mapOfEntries(
+                entry("salesPrice", 30L),
+                entry("priceRank", 2L),
+                entry("priceDenseRank", 2L),
+                entry("priceRowNumber", 3L)),
+            mapOfEntries(
+                entry("salesPrice", 60L),
+                entry("priceRank", 4L),
+                entry("priceDenseRank", 3L),
+                entry("priceRowNumber", 4L)),
+            mapOfEntries(
+                entry("salesPrice", 60L),
+                entry("priceRank", 4L),
+                entry("priceDenseRank", 3L),
+                entry("priceRowNumber", 5L))));
   }
 }

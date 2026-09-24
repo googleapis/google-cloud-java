@@ -22,8 +22,8 @@ import java.util.stream.Collectors;
 
 /** A class that represents an aggregate function. */
 public class AggregateFunction {
-  private final String name;
-  private final ImmutableList<Expression> params;
+  final String name;
+  final ImmutableList<Expression> params;
 
   private AggregateFunction(String name, Expression... params) {
     this.name = name;
@@ -303,6 +303,19 @@ public class AggregateFunction {
    */
   public AliasedAggregate as(String alias) {
     return new AliasedAggregate(alias, this);
+  }
+
+  /**
+   * Applies a window frame to this aggregate, turning it into a window function.
+   *
+   * <p>Use this to give a single accumulator its own framing, independent of the frame declared on
+   * the enclosing {@code addWindowFields} stage.
+   *
+   * @param window The window specification to evaluate this aggregate over.
+   * @return A new {@link WindowFunction} wrapping this aggregate.
+   */
+  public WindowFunction over(WindowSpec window) {
+    return WindowFunction.fromAggregate(this, window);
   }
 
   Value toProto() {

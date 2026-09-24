@@ -32,6 +32,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
 import com.google.cloud.firestore.pipeline.expressions.AliasedAggregate;
 import com.google.cloud.firestore.pipeline.expressions.AliasedExpression;
+import com.google.cloud.firestore.pipeline.expressions.AliasedWindowFunction;
 import com.google.cloud.firestore.pipeline.expressions.BooleanExpression;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Field;
@@ -39,7 +40,9 @@ import com.google.cloud.firestore.pipeline.expressions.FunctionExpression;
 import com.google.cloud.firestore.pipeline.expressions.Ordering;
 import com.google.cloud.firestore.pipeline.expressions.PipelineValueExpression;
 import com.google.cloud.firestore.pipeline.expressions.Selectable;
+import com.google.cloud.firestore.pipeline.expressions.WindowSpec;
 import com.google.cloud.firestore.pipeline.stages.AddFields;
+import com.google.cloud.firestore.pipeline.stages.AddWindowFields;
 import com.google.cloud.firestore.pipeline.stages.Aggregate;
 import com.google.cloud.firestore.pipeline.stages.AggregateOptions;
 import com.google.cloud.firestore.pipeline.stages.Define;
@@ -276,6 +279,57 @@ public final class Pipeline {
                     .add(additionalFields)
                     .build()
                     .toArray(new Selectable[0]))));
+  }
+
+  /**
+   * Adds window function results to the output documents of the pipeline.
+   *
+   * @param window The specification defining how documents are partitioned, ordered, and bounded.
+   * @param field The first window field to add, specified as an {@link AliasedWindowFunction}.
+   * @param additionalFields Optional additional window fields to add to the documents.
+   * @return A new {@link Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline addWindowFields(
+      WindowSpec window, AliasedWindowFunction field, Object... additionalFields) {
+    return append(AddWindowFields.of(window, field, additionalFields));
+  }
+
+  /**
+   * Adds aggregate results to the output documents of the pipeline, evaluated over the given {@link
+   * WindowSpec}.
+   *
+   * @param window The specification defining how documents are partitioned, ordered, and bounded.
+   * @param field The first window field to add, specified as an {@link AliasedAggregate}.
+   * @param additionalFields Optional additional window fields to add to the documents.
+   * @return A new {@link Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline addWindowFields(
+      WindowSpec window, AliasedAggregate field, Object... additionalFields) {
+    return append(AddWindowFields.of(window, field, additionalFields));
+  }
+
+  /**
+   * Adds window function results to the output documents of the pipeline, over a single global
+   * window covering the entire result set.
+   *
+   * @param field The first window field to add, specified as an {@link AliasedWindowFunction}.
+   * @param additionalFields Optional additional window fields to add to the documents.
+   * @return A new {@link Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline addWindowFields(AliasedWindowFunction field, Object... additionalFields) {
+    return append(AddWindowFields.of(new WindowSpec(), field, additionalFields));
+  }
+
+  /**
+   * Adds aggregate results to the output documents of the pipeline, over a single global window
+   * covering the entire result set.
+   *
+   * @param field The first window field to add, specified as an {@link AliasedAggregate}.
+   * @param additionalFields Optional additional window fields to add to the documents.
+   * @return A new {@link Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline addWindowFields(AliasedAggregate field, Object... additionalFields) {
+    return append(AddWindowFields.of(new WindowSpec(), field, additionalFields));
   }
 
   /**
