@@ -200,6 +200,13 @@ class ResumableUploadChunkCallable<ResponseT>
             chunkResponseBuilder.setResponse(responseParser.parse(stream));
           }
           future.set(chunkResponseBuilder.build());
+        } else if (uploadStatus == ResumableUploadStatus.FINAL) {
+          future.setException(
+              HttpJsonApiExceptionFactory.createResumableUploadRejection(
+                  "Server terminated upload session with HTTP status: " + statusCode,
+                  statusCode,
+                  trailers.getException(),
+                  uploadStatus));
         } else {
           Throwable cause = trailers.getException();
           future.setException(

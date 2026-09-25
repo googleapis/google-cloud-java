@@ -30,6 +30,8 @@
 package com.google.api.gax.httpjson;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ErrorDetails;
@@ -40,6 +42,7 @@ import com.google.rpc.Status;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @NullMarked
 class HttpJsonApiExceptionFactory {
@@ -85,6 +88,35 @@ class HttpJsonApiExceptionFactory {
       return ApiExceptionFactory.createException(
           throwable, HttpJsonStatusCode.of(StatusCode.Code.UNKNOWN), false);
     }
+  }
+
+  /**
+   * Creates a non-retryable {@link ApiException} for a resumable upload command that the server
+   * rejected (a non-2xx response with {@code X-Goog-Upload-Status: final}).
+   *
+   * <p>The cause is converted with {@link #create(Throwable)}, so the server's message and {@link
+   * ErrorDetails} are preserved the same way as for other HTTP/JSON errors. The status code is then
+   * wrapped in a {@link ResumableUploadStatusCode} so the resumable upload logic treats the
+   * rejection as terminal.
+   */
+  static ApiException createResumableUploadRejection(
+      String messagePrefix,
+      int httpStatusCode,
+      @Nullable Throwable cause,
+      ResumableUploadStatus uploadStatus) {
+    StatusCode statusCode =
+        ResumableUploadStatusCode.of(HttpJsonStatusCode.of(httpStatusCode), uploadStatus);
+    String message = messagePrefix;
+    @Nullable ErrorDetails errorDetails = null;
+    if (cause != null) {
+      ApiException parsed = new HttpJsonApiExceptionFactory(ImmutableSet.of()).create(cause);
+      if (parsed.getMessage() != null) {
+        message = message + ": " + parsed.getMessage();
+      }
+      errorDetails = parsed.getErrorDetails();
+    }
+    return ApiExceptionFactory.createException(
+        message, cause, statusCode, /* retryable= */ false, errorDetails);
   }
 
   private ApiException createApiException(

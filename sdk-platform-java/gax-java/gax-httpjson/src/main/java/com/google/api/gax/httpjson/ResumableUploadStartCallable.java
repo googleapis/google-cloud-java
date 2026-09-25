@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ClientContext;
@@ -55,6 +56,7 @@ class ResumableUploadStartCallable<RequestT>
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
   private static final String UPLOAD_URL_HEADER = "X-Goog-Upload-URL";
   private static final String UPLOAD_GRANULARITY_HEADER = "X-Goog-Upload-Chunk-Granularity";
+  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
 
   private static final Map<String, List<String>> START_UPLOAD_HEADERS =
       ImmutableMap.of(
@@ -108,6 +110,7 @@ class ResumableUploadStartCallable<RequestT>
   private static class StartUploadResponseListener extends HttpJsonClientCall.Listener<String> {
     private final ResumableUploadHttpJsonFuture<ResumableUploadSession> future;
     private long chunkGranularity = 1L;
+    private ResumableUploadStatus uploadStatus = ResumableUploadStatus.UNKNOWN;
     @Nullable private String uploadUrl;
     @Nullable private Throwable headerParsingException;
 
@@ -119,6 +122,9 @@ class ResumableUploadStartCallable<RequestT>
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
       Map<String, Object> headers = responseHeaders.getHeaders();
+      this.uploadStatus =
+          ResumableUploadStatus.fromHeader(
+              HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER));
 
       String url = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_URL_HEADER);
       if (!Strings.isNullOrEmpty(url)) {
@@ -181,6 +187,13 @@ class ResumableUploadStartCallable<RequestT>
                     HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
                     /* retryable= */ false));
           }
+        } else if (uploadStatus == ResumableUploadStatus.FINAL) {
+          future.setException(
+              HttpJsonApiExceptionFactory.createResumableUploadRejection(
+                  "Server rejected upload start with HTTP status: " + statusCode,
+                  statusCode,
+                  trailers.getException(),
+                  uploadStatus));
         } else {
           Throwable cause = trailers.getException();
           future.setException(

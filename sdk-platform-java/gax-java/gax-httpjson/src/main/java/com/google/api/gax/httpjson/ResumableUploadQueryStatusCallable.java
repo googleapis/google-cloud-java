@@ -246,6 +246,13 @@ class ResumableUploadQueryStatusCallable<ResponseT>
                     HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
                     /* retryable= */ false));
           }
+        } else if (uploadStatus == ResumableUploadStatus.FINAL) {
+          future.setException(
+              HttpJsonApiExceptionFactory.createResumableUploadRejection(
+                  "Server terminated upload session with HTTP status: " + statusCode,
+                  statusCode,
+                  trailers.getException(),
+                  uploadStatus));
         } else {
           Throwable cause = trailers.getException();
           future.setException(
