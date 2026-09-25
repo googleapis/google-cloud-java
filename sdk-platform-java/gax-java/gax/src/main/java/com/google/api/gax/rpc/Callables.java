@@ -288,7 +288,7 @@ public class Callables {
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
     ResumableUploadOptions.Builder defaultOptionsBuilder = ResumableUploadOptions.newBuilder();
-    java.time.Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
+    Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
     if (totalTimeout != null && !totalTimeout.isZero() && !totalTimeout.isNegative()) {
       defaultOptionsBuilder.setGlobalTimeout(totalTimeout);
     }
