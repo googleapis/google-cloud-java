@@ -127,7 +127,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
   AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
-      return impersonated.refreshAccessToken(null);
+      return impersonated.refreshAccessToken(
+          cycleTransportFactory == this.transportFactory ? null : cycleTransportFactory);
     }
 
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =

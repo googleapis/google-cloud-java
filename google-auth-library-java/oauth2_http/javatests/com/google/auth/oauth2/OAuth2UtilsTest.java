@@ -160,6 +160,35 @@ class OAuth2UtilsTest {
   }
 
   @Test
+  void isInvalidGrantException_null_returnsFalse() {
+    assertFalse(OAuth2Utils.isInvalidGrantException(null));
+  }
+
+  @Test
+  void isInvalidGrantException_genericIOException_returnsFalse() {
+    assertFalse(OAuth2Utils.isInvalidGrantException(new IOException("Network error")));
+  }
+
+  @Test
+  void isInvalidGrantException_oauthExceptionInvalidGrant_returnsTrue() {
+    OAuthException ex = new OAuthException("invalid_grant", "Invalid grant", null, 400);
+    assertTrue(OAuth2Utils.isInvalidGrantException(ex));
+  }
+
+  @Test
+  void isInvalidGrantException_oauthExceptionOtherErrorCode_returnsFalse() {
+    OAuthException ex = new OAuthException("invalid_request", "Bad Request", null, 400);
+    assertFalse(OAuth2Utils.isInvalidGrantException(ex));
+  }
+
+  @Test
+  void isInvalidGrantException_nestedInExceptionChain_returnsTrue() {
+    OAuthException oauthEx = new OAuthException("invalid_grant", "Invalid grant", null, 400);
+    IOException wrapped = new IOException("Outer", new IOException("Inner", oauthEx));
+    assertTrue(OAuth2Utils.isInvalidGrantException(wrapped));
+  }
+
+  @Test
   void hasCertificateChanged_nullOrSameReference_returnsFalse() throws Exception {
     assertFalse(OAuth2Utils.hasCertificateChanged(null, null));
     KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());

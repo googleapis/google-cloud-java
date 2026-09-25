@@ -360,8 +360,9 @@ public class OAuth2Utils {
 
   /**
    * Returns whether the given throwable or any exception in its causal chain represents an OAuth
-   * {@code invalid_grant} error (for example, HTTP 400 {@code invalid_grant} returned by STS when a
-   * client certificate and {@code subject_token} mismatch during certificate rotation).
+   * {@code invalid_grant} error (for example, HTTP 400 {@code invalid_grant} returned by STS when
+   * {@code trust_chain_path} is rotated before {@code cert_path} and {@code key_path}, so the
+   * pinned leaf certificate does not match the trust chain read from disk).
    *
    * @param t the throwable to inspect
    * @return {@code true} if {@code t} or any cause in its chain is an {@code invalid_grant} {@link
@@ -384,8 +385,9 @@ public class OAuth2Utils {
 
   /**
    * Returns whether the certificate chain or private key in {@code newKeyStore} differs from {@code
-   * oldKeyStore}. Used on 401 retry recovery to avoid retrying when the reloaded certificate and
-   * key are unchanged.
+   * oldKeyStore}. Used to avoid retrying 401, STS {@code invalid_grant}, and transport failures
+   * when the reloaded certificate and key are unchanged, and to decide whether a cached STS token
+   * can be reused.
    *
    * @param oldKeyStore the previously loaded keystore
    * @param newKeyStore the newly reloaded keystore

@@ -60,6 +60,7 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
+import com.google.common.primitives.Bytes;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -80,6 +81,7 @@ import java.security.cert.CertificateException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -3187,7 +3189,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createScoped_withCertificateConfig_refreshesMtlsTransportSnapshot(@TempDir Path tempDir)
+  void createScoped_withCertificateConfig_preservesMtlsTransportSnapshot(@TempDir Path tempDir)
       throws Exception {
     Path tokenFile = tempDir.resolve("credential.json");
     GenericJson tokenJson = new GenericJson();
@@ -4503,12 +4505,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     KeyStore tornKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key1Bytes)));
+            new ByteArrayInputStream(Bytes.concat(cert2Bytes, newline, key1Bytes)));
     KeyStore validRotatedKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key2Bytes)));
+            new ByteArrayInputStream(Bytes.concat(cert2Bytes, newline, key2Bytes)));
 
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
     X509Provider x509Provider =
@@ -4678,12 +4678,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     KeyStore splitWriteKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key1Bytes)));
+            new ByteArrayInputStream(Bytes.concat(cert2Bytes, newline, key1Bytes)));
     KeyStore completedRotationKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key2Bytes)));
+            new ByteArrayInputStream(Bytes.concat(cert2Bytes, newline, key2Bytes)));
 
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
     X509Provider x509Provider =
@@ -4948,35 +4946,43 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertTrue(
         ((MtlsHttpTransportFactory) deserializedImpersonated.toBuilder().getHttpTransportFactory())
             .hasKeyStore());
+
+    // refreshAccessToken() adds cloud-platform to the source scopes before refreshing. The
+    // refresh itself then fails because the subject token file does not exist.
+    assertThrows(IOException.class, deserializedImpersonated::refreshAccessToken);
+    Collection<String> sourceScopes =
+        ((IdentityPoolCredentials) deserializedImpersonated.getSourceCredentials()).getScopes();
+    assertTrue(sourceScopes.contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+    assertTrue(sourceScopes.contains("https://www.googleapis.com/auth/CustomScope"));
   }
 
   @Test
-  void refreshAccessToken_invalidGrantFromMidRotationCertKeyMismatch_retriesWhenKeyStoreChanges()
-      throws Exception {
+  void
+      refreshAccessToken_invalidGrantFromTrustChainRotatedAheadOfLeafCert_retriesWhenKeyStoreChanges()
+          throws Exception {
+    byte[] cert1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert.pem"));
     byte[] cert2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert_2.pem"));
     byte[] key1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key.pem"));
     byte[] key2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem"));
     byte[] newline = "\n".getBytes(StandardCharsets.UTF_8);
 
-    // Mid-rotation state: cert_path updated to cert2, key_path still has key1.
-    KeyStore midRotationKeyStore =
+    // trust_chain_path has already rotated, but cert_path and key_path still hold the old leaf
+    // (cert1 + key1). The TLS handshake succeeds, but STS rejects the old leaf with invalid_grant
+    // because it no longer chains to the rotated trust chain.
+    KeyStore oldLeafKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key1Bytes)));
-    // Completed rotation state: both cert_path and key_path updated to cert2 + key2.
-    KeyStore completedRotationKeyStore =
+            new ByteArrayInputStream(Bytes.concat(cert1Bytes, newline, key1Bytes)));
+    // cert_path and key_path have caught up to the new leaf (cert2 + key2).
+    KeyStore newLeafKeyStore =
         SecurityUtils.createMtlsKeyStore(
-            new ByteArrayInputStream(
-                com.google.common.primitives.Bytes.concat(cert2Bytes, newline, key2Bytes)));
+            new ByteArrayInputStream(Bytes.concat(cert2Bytes, newline, key2Bytes)));
 
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
     X509Provider rotatingProvider =
         new X509Provider(null) {
           @Override
           public KeyStore getKeyStore() {
-            return getKeyStoreCount.incrementAndGet() == 1
-                ? midRotationKeyStore
-                : completedRotationKeyStore;
+            return getKeyStoreCount.incrementAndGet() == 1 ? oldLeafKeyStore : newLeafKeyStore;
           }
         };
 
@@ -4997,7 +5003,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             if (exchangeCount.incrementAndGet() == 1) {
               throw new OAuthException(
                   "invalid_grant",
-                  "The subject_token does not match the client certificate.",
+                  "The client certificate does not chain to the configured trust chain.",
                   null,
                   400);
             }
@@ -5133,6 +5139,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals("final-iam-token-1", token1.getTokenValue());
     assertEquals(1, stsCallCount.get());
     assertEquals(1, iamCallCount.get());
+    assertEquals(1, getKeyStoreCallCount.get());
 
     // Refresh 2: reuses cached-sts-token-1 -> IAM returns 401 -> clears cachedStsAccessToken and
     // retries once even though ks1 is unchanged -> mints cached-sts-token-2 -> IAM succeeds!
@@ -5140,6 +5147,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals("final-iam-token-3", token2.getTokenValue());
     assertEquals(2, stsCallCount.get());
     assertEquals(3, iamCallCount.get());
+    // Cumulative: refresh 2 adds one KeyStore pin for the initial attempt and one reload for the
+    // retry.
+    assertEquals(3, getKeyStoreCallCount.get());
     assertEquals(
         Arrays.asList(
             "Bearer cached-sts-token-1", "Bearer cached-sts-token-1", "Bearer cached-sts-token-2"),
@@ -5149,6 +5159,14 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_firstImpersonatedRefresh_readsKeyStoreOnlyOncePerRefreshCycle()
       throws Exception {
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+
     KeyStore ks1 = createPopulatedKeyStore();
     AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
     X509Provider singleReadPerRefreshProvider =
@@ -5164,18 +5182,23 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
           }
         };
 
+    AtomicInteger createMtlsTransportFactoryCount = new AtomicInteger(0);
     IdentityPoolCredentials credential =
         new IdentityPoolCredentials(
             IdentityPoolCredentials.newBuilder()
-                .setSubjectTokenSupplier(testProvider)
+                .setCredentialSource(credentialSource)
                 .setX509Provider(singleReadPerRefreshProvider)
                 .setAudience("audience")
-                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:mtls")
                 .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
                 .setServiceAccountImpersonationUrl(
                     "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
           @Override
           HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            if (createMtlsTransportFactoryCount.incrementAndGet() == 1) {
+              // Build time: store a KeyStore-backed MtlsHttpTransportFactory.
+              return super.createMtlsTransportFactory(keyStore);
+            }
             return () ->
                 new MockHttpTransport() {
                   @Override
@@ -5211,10 +5234,439 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
           }
         };
 
-    // First impersonated refresh calls getImpersonatedCredentials() -> createScoped() ->
-    // toBuilder().build(). This MUST NOT call getKeyStore() a second time!
+    assertTrue(credential.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) credential.getTransportFactory()).hasKeyStore());
+    // Only count KeyStore reads made during the refresh cycle.
+    getKeyStoreCallCount.set(0);
+
+    // The first impersonated refresh calls getImpersonatedCredentials() ->
+    // buildImpersonatedCredentials(), which copies the source via
+    // IdentityPoolCredentials.newBuilder(this) and sets the cloud-platform scope directly.
+    // This must not call getKeyStore() a second time.
     AccessToken token = credential.refreshAccessToken();
     assertEquals("iam-token-1", token.getTokenValue());
     assertEquals(1, getKeyStoreCallCount.get());
+  }
+
+  @Test
+  void standaloneImpersonatedCredentials_401OnIamWithCachedStsToken_retriesAndMintsFreshStsToken()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = Collections.synchronizedList(new ArrayList<>());
+    // Only the 2nd IAM call (which reuses cached sts-token-1) returns 401.
+    HttpTransportFactory transportFactory =
+        createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, iamBearerHeaders, iamCall -> iamCall == 2);
+    ImpersonatedCredentials impersonated =
+        createStandaloneImpersonatedCredentials(transportFactory);
+
+    AccessToken token1 = impersonated.refreshAccessToken();
+    assertEquals("iam-token-1", token1.getTokenValue());
+
+    AccessToken token2 = impersonated.refreshAccessToken();
+    assertEquals("iam-token-3", token2.getTokenValue());
+    assertEquals(2, stsCallCount.get());
+    assertEquals(3, iamCallCount.get());
+    assertEquals(
+        Arrays.asList("Bearer sts-token-1", "Bearer sts-token-1", "Bearer sts-token-2"),
+        iamBearerHeaders);
+  }
+
+  @Test
+  void
+      standaloneImpersonatedCredentials_second401OnRetryAfterCachedStsTokenRejected_throwsWithSuppressed()
+          throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = Collections.synchronizedList(new ArrayList<>());
+    // Every IAM call after the first returns 401, including the retry with a fresh STS token.
+    HttpTransportFactory transportFactory =
+        createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, iamBearerHeaders, iamCall -> iamCall >= 2);
+    ImpersonatedCredentials impersonated =
+        createStandaloneImpersonatedCredentials(transportFactory);
+
+    impersonated.refreshAccessToken();
+
+    IOException thrown = assertThrows(IOException.class, impersonated::refreshAccessToken);
+    assertFalse(thrown instanceof ImpersonatedCredentials.CachedStsTokenRejectedException);
+    assertTrue(OAuth2Utils.isUnauthorizedException(thrown));
+    assertEquals(1, thrown.getSuppressed().length);
+    assertTrue(
+        thrown.getSuppressed()[0]
+            instanceof ImpersonatedCredentials.CachedStsTokenRejectedException);
+    // Exactly one retry: the rejected cached token is not reused and no further retry happens.
+    assertEquals(2, stsCallCount.get());
+    assertEquals(3, iamCallCount.get());
+    assertEquals(
+        Arrays.asList("Bearer sts-token-1", "Bearer sts-token-1", "Bearer sts-token-2"),
+        iamBearerHeaders);
+  }
+
+  @Test
+  void refreshAccessToken_concurrentRefreshReusingRejectedCachedStsToken_doesNotRecacheIt()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = Collections.synchronizedList(new ArrayList<>());
+    AtomicReference<IdentityPoolCredentials> credentialRef = new AtomicReference<>();
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      HttpTransportFactory mockTransportFactory =
+          createStsAndIamTransportFactory(
+              stsCallCount,
+              iamCallCount,
+              iamBearerHeaders,
+              iamCall -> {
+                if (iamCall == 2) {
+                  // Refresh A is using cached sts-token-1. Before its IAM call completes, refresh B
+                  // on another thread also reuses sts-token-1, gets a 401 that clears the cache,
+                  // and fails its retry with another 401.
+                  Future<?> refreshB =
+                      executor.submit(
+                          () ->
+                              assertThrows(
+                                  IOException.class,
+                                  () -> credentialRef.get().refreshAccessToken()));
+                  refreshB.get(10, TimeUnit.SECONDS);
+                  return false;
+                }
+                return iamCall == 3 || iamCall == 4;
+              });
+      IdentityPoolCredentials credential =
+          new IdentityPoolCredentials(
+              IdentityPoolCredentials.newBuilder()
+                  .setSubjectTokenSupplier(testProvider)
+                  .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
+                  .setAudience(
+                      "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                  .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                  .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                  .setServiceAccountImpersonationUrl(
+                      "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
+            @Override
+            HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+              return mockTransportFactory;
+            }
+          };
+      credentialRef.set(credential);
+
+      // Initial refresh mints and caches sts-token-1.
+      assertEquals("iam-token-1", credential.refreshAccessToken().getTokenValue());
+
+      // Refresh A reuses sts-token-1 and succeeds after refresh B has rejected it.
+      assertEquals("iam-token-2", credential.refreshAccessToken().getTokenValue());
+      assertEquals(2, stsCallCount.get());
+      assertEquals(4, iamCallCount.get());
+
+      // Refresh A must not have re-cached the rejected sts-token-1, so this refresh mints a new
+      // STS token.
+      assertEquals("iam-token-5", credential.refreshAccessToken().getTokenValue());
+      assertEquals(3, stsCallCount.get());
+      assertEquals(
+          Arrays.asList(
+              "Bearer sts-token-1",
+              "Bearer sts-token-1",
+              "Bearer sts-token-1",
+              "Bearer sts-token-2",
+              "Bearer sts-token-3"),
+          iamBearerHeaders);
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  void refreshAccessToken_iamFailureWithFreshStsToken_doesNotClearConcurrentlyCachedStsToken()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = Collections.synchronizedList(new ArrayList<>());
+    AtomicReference<IdentityPoolCredentials> credentialRef = new AtomicReference<>();
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      HttpTransportFactory mockTransportFactory =
+          createStsAndIamTransportFactory(
+              stsCallCount,
+              iamCallCount,
+              iamBearerHeaders,
+              iamCall -> {
+                if (iamCall == 1) {
+                  // Refresh A has freshly minted sts-token-1. Before its IAM call completes,
+                  // refresh B on another thread mints sts-token-2, succeeds, and caches it.
+                  Future<AccessToken> refreshB =
+                      executor.submit(() -> credentialRef.get().refreshAccessToken());
+                  assertEquals("iam-token-2", refreshB.get(10, TimeUnit.SECONDS).getTokenValue());
+                  // Refresh A's IAM call then fails with a non-401 error.
+                  throw new IOException("IAM unavailable");
+                }
+                return false;
+              });
+      IdentityPoolCredentials credential =
+          new IdentityPoolCredentials(
+              IdentityPoolCredentials.newBuilder()
+                  .setSubjectTokenSupplier(testProvider)
+                  .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
+                  .setAudience(
+                      "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                  .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                  .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                  .setServiceAccountImpersonationUrl(
+                      "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")) {
+            @Override
+            HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+              return mockTransportFactory;
+            }
+          };
+      credentialRef.set(credential);
+
+      // Refresh A fails on IAM after refresh B has cached sts-token-2.
+      assertThrows(IOException.class, credential::refreshAccessToken);
+      assertEquals(2, stsCallCount.get());
+
+      // Refresh A must not have cleared sts-token-2, so this refresh reuses it without minting.
+      assertEquals("iam-token-3", credential.refreshAccessToken().getTokenValue());
+      assertEquals(2, stsCallCount.get());
+      assertEquals(
+          Arrays.asList("Bearer sts-token-1", "Bearer sts-token-2", "Bearer sts-token-2"),
+          iamBearerHeaders);
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  void refreshAccessToken_withCycleTransportFactory_upgradesKeylessMtlsTransportFactory()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    HttpTransportFactory cycleTransportFactory =
+        createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, new ArrayList<>(), iamCall -> false);
+    IdentityPoolCredentials sourceCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+    // A keyless MtlsHttpTransportFactory is the state readObject() leaves behind when it defers
+    // the certificate load.
+    ImpersonatedCredentials impersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setHttpTransportFactory(new MtlsHttpTransportFactory())
+            .setTargetPrincipal("test@project.iam.gserviceaccount.com")
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .build();
+
+    impersonated.refreshAccessToken(cycleTransportFactory, createPopulatedKeyStore());
+
+    // The pinned factory replaces the keyless one so sign() and idTokenWithAudience() use mTLS.
+    assertSame(cycleTransportFactory, impersonated.toBuilder().getHttpTransportFactory());
+  }
+
+  @Test
+  void refreshAccessToken_sourceWithUnscopedAccessToken_mintsCloudPlatformScopedStsToken()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = Collections.synchronizedList(new ArrayList<>());
+    HttpTransportFactory mockTransportFactory =
+        createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, iamBearerHeaders, iamCall -> false);
+    IdentityPoolCredentials.Builder sourceBuilder =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setHttpTransportFactory(mockTransportFactory)
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl(STS_URL)
+            .setScopes(Collections.singletonList("https://www.googleapis.com/auth/CustomScope"));
+    // A non-expiring token minted earlier without cloud-platform.
+    sourceBuilder.setAccessToken(new AccessToken("unscoped-token", null));
+    IdentityPoolCredentials sourceCredentials = sourceBuilder.build();
+    assertEquals("unscoped-token", sourceCredentials.getAccessToken().getTokenValue());
+    ImpersonatedCredentials impersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setHttpTransportFactory(mockTransportFactory)
+            .setTargetPrincipal("test@project.iam.gserviceaccount.com")
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .build();
+
+    assertEquals("iam-token-1", impersonated.refreshAccessToken().getTokenValue());
+
+    // The unscoped token copied by createScoped() is dropped, so IAM is called with a newly
+    // minted STS token instead.
+    assertEquals(1, stsCallCount.get());
+    assertEquals(Collections.singletonList("Bearer sts-token-1"), iamBearerHeaders);
+  }
+
+  @Test
+  void standaloneImpersonatedCredentials_unscopedMtlsSource_pinnedRefreshRunsOnScopedSource()
+      throws Exception {
+    List<IdentityPoolCredentials> pinningInstances =
+        Collections.synchronizedList(new ArrayList<>());
+    HttpTransportFactory mockTransportFactory =
+        createStsAndIamTransportFactory(
+            new AtomicInteger(0), new AtomicInteger(0), new ArrayList<>(), iamCall -> false);
+    IdentityPoolCredentials sourceCredentials =
+        new PinningInstanceRecordingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                .setScopes(
+                    Collections.singletonList("https://www.googleapis.com/auth/CustomScope")),
+            mockTransportFactory,
+            pinningInstances);
+    ImpersonatedCredentials impersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal("test@project.iam.gserviceaccount.com")
+            .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+            .build();
+
+    assertEquals("iam-token-1", impersonated.refreshAccessToken().getTokenValue());
+
+    // The source is scoped before the pinned refresh starts, so the KeyStore is pinned on the
+    // scoped source that ImpersonatedCredentials keeps, not on the discarded unscoped one.
+    GoogleCredentials scopedSource = impersonated.getSourceCredentials();
+    assertNotSame(sourceCredentials, scopedSource);
+    assertTrue(
+        ((IdentityPoolCredentials) scopedSource)
+            .getScopes()
+            .contains(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+    assertEquals(1, pinningInstances.size());
+    assertSame(scopedSource, pinningInstances.get(0));
+  }
+
+  /**
+   * Records which instance creates the pinned mTLS transport factory, and keeps doing so on copies
+   * made by {@link #createScoped(Collection)}.
+   */
+  private static class PinningInstanceRecordingCredentials extends IdentityPoolCredentials {
+    private final HttpTransportFactory mockTransportFactory;
+    private final List<IdentityPoolCredentials> pinningInstances;
+
+    PinningInstanceRecordingCredentials(
+        IdentityPoolCredentials.Builder builder,
+        HttpTransportFactory mockTransportFactory,
+        List<IdentityPoolCredentials> pinningInstances) {
+      super(builder);
+      this.mockTransportFactory = mockTransportFactory;
+      this.pinningInstances = pinningInstances;
+    }
+
+    @Override
+    HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+      pinningInstances.add(this);
+      return mockTransportFactory;
+    }
+
+    @Override
+    public IdentityPoolCredentials createScoped(Collection<String> newScopes) {
+      return new PinningInstanceRecordingCredentials(
+          IdentityPoolCredentials.newBuilder(this).setScopes(newScopes),
+          mockTransportFactory,
+          pinningInstances);
+    }
+  }
+
+  /** Decides, for the Nth IAM call, whether the mock IAM endpoint returns 401. */
+  interface IamUnauthorizedDecider {
+    boolean returnsUnauthorized(int iamCall) throws Exception;
+  }
+
+  /**
+   * Returns a transport factory whose STS endpoint mints {@code sts-token-N} on the Nth call and
+   * whose IAM endpoint returns either 401 or {@code iam-token-N} on the Nth call.
+   */
+  static HttpTransportFactory createStsAndIamTransportFactory(
+      AtomicInteger stsCallCount,
+      AtomicInteger iamCallCount,
+      List<String> iamBearerHeaders,
+      IamUnauthorizedDecider iamUnauthorizedDecider) {
+    return () ->
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                if (url.contains("/v1/token")) {
+                  int count = stsCallCount.incrementAndGet();
+                  GenericJson response = new GenericJson();
+                  response.setFactory(OAuth2Utils.JSON_FACTORY);
+                  response.put("access_token", "sts-token-" + count);
+                  response.put("token_type", "Bearer");
+                  response.put("expires_in", 3600);
+                  response.put(
+                      "issued_token_type", "urn:ietf:params:oauth:token-type:access_token");
+                  return new MockLowLevelHttpResponse()
+                      .setContentType(Json.MEDIA_TYPE)
+                      .setContent(response.toString());
+                } else if (url.contains(":generateAccessToken")) {
+                  int count = iamCallCount.incrementAndGet();
+                  iamBearerHeaders.add(getFirstHeaderValue("Authorization"));
+                  boolean unauthorized;
+                  try {
+                    unauthorized = iamUnauthorizedDecider.returnsUnauthorized(count);
+                  } catch (Exception e) {
+                    throw new IOException(e);
+                  }
+                  if (unauthorized) {
+                    return new MockLowLevelHttpResponse()
+                        .setStatusCode(401)
+                        .setContentType(Json.MEDIA_TYPE)
+                        .setContent("{\"error\":{\"code\":401,\"status\":\"UNAUTHENTICATED\"}}");
+                  }
+                  GenericJson response = new GenericJson();
+                  response.setFactory(OAuth2Utils.JSON_FACTORY);
+                  response.put("accessToken", "iam-token-" + count);
+                  response.put("expireTime", "2030-01-01T00:00:00Z");
+                  return new MockLowLevelHttpResponse()
+                      .setContentType(Json.MEDIA_TYPE)
+                      .setContent(response.toString());
+                }
+                return new MockLowLevelHttpResponse().setStatusCode(404);
+              }
+            };
+          }
+        };
+  }
+
+  private static ImpersonatedCredentials createStandaloneImpersonatedCredentials(
+      HttpTransportFactory mockTransportFactory) throws IOException {
+    IdentityPoolCredentials sourceCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                // Already includes cloud-platform, so ImpersonatedCredentials does not replace
+                // this source (and its createMtlsTransportFactory override) via createScoped().
+                .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))) {
+          @Override
+          HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            return mockTransportFactory;
+          }
+        };
+    return ImpersonatedCredentials.newBuilder()
+        .setSourceCredentials(sourceCredentials)
+        .setTargetPrincipal("test@project.iam.gserviceaccount.com")
+        .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+        .build();
   }
 }
