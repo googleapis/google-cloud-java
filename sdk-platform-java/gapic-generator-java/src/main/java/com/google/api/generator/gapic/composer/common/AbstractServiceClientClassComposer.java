@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.InputStreamSupplier;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
@@ -91,7 +92,6 @@ import com.google.gapic.metadata.GapicMetadata;
 import com.google.longrunning.Operation;
 import com.google.rpc.Status;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -959,7 +959,10 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     VariableExpr payloadArgVarExpr =
         VariableExpr.builder()
             .setVariable(
-                Variable.builder().setName("payload").setType(typeStore.get("InputStream")).build())
+                Variable.builder()
+                    .setName("payload")
+                    .setType(typeStore.get("InputStreamSupplier"))
+                    .build())
             .setIsDecl(true)
             .build();
     VariableExpr callSettingsArgVarExpr =
@@ -1906,7 +1909,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             BidiStreamingCallable.class,
             ClientStreamingCallable.class,
             Generated.class,
-            InputStream.class,
+            InputStreamSupplier.class,
             InterruptedException.class,
             IOException.class,
             MoreExecutors.class,

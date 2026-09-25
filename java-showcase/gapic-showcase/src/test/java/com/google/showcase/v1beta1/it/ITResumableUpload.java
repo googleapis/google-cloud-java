@@ -35,7 +35,6 @@ import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -86,11 +85,10 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-client-sync.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, null);
-      assertThat(response.getName()).isEqualTo("it-client-sync.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    UploadMediaResponse response =
+        client.uploadMedia(request, () -> Files.newInputStream(file), null);
+    assertThat(response.getName()).isEqualTo("it-client-sync.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -104,18 +102,16 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-client-callable.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, null);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client.uploadMediaCallable().futureCall(request, () -> Files.newInputStream(file), null);
 
-      UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
-      assertThat(future.isDone()).isTrue();
-      assertThat(future.isCancelled()).isFalse();
-      assertThat(future.getUploadSessionUrl()).isNotNull();
-      assertThat(future.getUploadSessionUrl()).contains("/resumable/upload");
-      assertThat(response.getName()).isEqualTo("it-client-callable.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
+    assertThat(future.isDone()).isTrue();
+    assertThat(future.isCancelled()).isFalse();
+    assertThat(future.getUploadSessionUrl()).isNotNull();
+    assertThat(future.getUploadSessionUrl()).contains("/resumable/upload");
+    assertThat(response.getName()).isEqualTo("it-client-callable.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -126,11 +122,10 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-client-multi-chunk.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, null);
-      assertThat(response.getName()).isEqualTo("it-client-multi-chunk.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    UploadMediaResponse response =
+        client.uploadMedia(request, () -> Files.newInputStream(file), null);
+    assertThat(response.getName()).isEqualTo("it-client-multi-chunk.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -146,23 +141,22 @@ class ITResumableUpload {
 
     try (ResumableUploadServiceClient grpcClient =
         TestClientInitializer.createGrpcResumableUploadClient(SHOWCASE_CHUNK_SIZE)) {
-      try (InputStream stream = Files.newInputStream(file)) {
-        UploadMediaResponse response = grpcClient.uploadMedia(request, stream, null);
-        assertThat(response.getName()).isEqualTo("it-grpc-delegation.txt");
-        assertThat(response.getSize()).isEqualTo(Files.size(file));
-      }
+      UploadMediaResponse syncResponse =
+          grpcClient.uploadMedia(request, () -> Files.newInputStream(file), null);
+      assertThat(syncResponse.getName()).isEqualTo("it-grpc-delegation.txt");
+      assertThat(syncResponse.getSize()).isEqualTo(Files.size(file));
 
-      try (InputStream stream = Files.newInputStream(file)) {
-        ResumableUploadFuture<UploadMediaResponse> future =
-            grpcClient.uploadMediaCallable().futureCall(request, stream, null);
-        UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
-        assertThat(future.isDone()).isTrue();
-        assertThat(future.isCancelled()).isFalse();
-        assertThat(future.getUploadSessionUrl()).isNotNull();
-        assertThat(future.getUploadSessionUrl()).contains("/resumable/upload");
-        assertThat(response.getName()).isEqualTo("it-grpc-delegation.txt");
-        assertThat(response.getSize()).isEqualTo(Files.size(file));
-      }
+      ResumableUploadFuture<UploadMediaResponse> future =
+          grpcClient
+              .uploadMediaCallable()
+              .futureCall(request, () -> Files.newInputStream(file), null);
+      UploadMediaResponse asyncResponse = future.get(10, TimeUnit.SECONDS);
+      assertThat(future.isDone()).isTrue();
+      assertThat(future.isCancelled()).isFalse();
+      assertThat(future.getUploadSessionUrl()).isNotNull();
+      assertThat(future.getUploadSessionUrl()).contains("/resumable/upload");
+      assertThat(asyncResponse.getName()).isEqualTo("it-grpc-delegation.txt");
+      assertThat(asyncResponse.getSize()).isEqualTo(Files.size(file));
     }
   }
 
@@ -176,11 +170,10 @@ class ITResumableUpload {
     ResumableUploadCallSettings callSettings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(512 * 1024).build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, callSettings);
-      assertThat(response.getName()).isEqualTo("it-client-custom-call-settings.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    UploadMediaResponse response =
+        client.uploadMedia(request, () -> Files.newInputStream(file), callSettings);
+    assertThat(response.getName()).isEqualTo("it-client-custom-call-settings.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -203,15 +196,15 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-chunk-retry.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, callContext, null);
-      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, null);
+    UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
 
-      assertThat(future.getUploadSessionUrl()).isNotNull();
-      assertThat(response.getName()).isEqualTo("it-chunk-retry.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    assertThat(future.getUploadSessionUrl()).isNotNull();
+    assertThat(response.getName()).isEqualTo("it-chunk-retry.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -235,15 +228,15 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-chunk-recovery.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, callContext, null);
-      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, null);
+    UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
 
-      assertThat(future.getUploadSessionUrl()).isNotNull();
-      assertThat(response.getName()).isEqualTo("it-chunk-recovery.txt");
-      assertThat(response.getSize()).isEqualTo(Files.size(file));
-    }
+    assertThat(future.getUploadSessionUrl()).isNotNull();
+    assertThat(response.getName()).isEqualTo("it-chunk-recovery.txt");
+    assertThat(response.getSize()).isEqualTo(Files.size(file));
   }
 
   @Test
@@ -267,16 +260,16 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-chunk-fatal.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, callContext, null);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, null);
 
-      ExecutionException exception =
-          assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
-      assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
-      NotFoundException notFoundException = (NotFoundException) exception.getCause();
-      assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
-    }
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
+    NotFoundException notFoundException = (NotFoundException) exception.getCause();
+    assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
   }
 
   @Test
@@ -299,25 +292,23 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-global-timeout.txt").build();
 
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client
-              .uploadMediaCallable()
-              .futureCall(
-                  request,
-                  stream,
-                  callContext,
-                  ResumableUploadCallSettings.newBuilder()
-                      .setChunkSize(SHOWCASE_CHUNK_SIZE)
-                      .setGlobalTimeout(Duration.ofMillis(200))
-                      .build());
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(
+                request,
+                () -> Files.newInputStream(file),
+                callContext,
+                ResumableUploadCallSettings.newBuilder()
+                    .setChunkSize(SHOWCASE_CHUNK_SIZE)
+                    .setGlobalTimeout(Duration.ofMillis(200))
+                    .build());
 
-      ExecutionException exception =
-          assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
-      assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
-      DeadlineExceededException cause = (DeadlineExceededException) exception.getCause();
-      assertThat(cause.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
-    }
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    DeadlineExceededException cause = (DeadlineExceededException) exception.getCause();
+    assertThat(cause.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
   }
 
   @Test
@@ -340,25 +331,25 @@ class ITResumableUpload {
     UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("it-cancel.txt").build();
 
     CountDownLatch uploadingLatch = new CountDownLatch(1);
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, callContext, null);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client
+            .uploadMediaCallable()
+            .futureCall(request, () -> Files.newInputStream(file), callContext, null);
 
-      // Wait for the upload to be started before cancelling
-      future.addProgressListener(
-          status -> {
-            if ("STARTED".equals(status.getState()) || "UPLOADING".equals(status.getState())) {
-              uploadingLatch.countDown();
-            }
-          },
-          MoreExecutors.directExecutor());
-      assertThat(uploadingLatch.await(10, TimeUnit.SECONDS)).isTrue();
+    // Wait for the upload to be started before cancelling
+    future.addProgressListener(
+        status -> {
+          if ("STARTED".equals(status.getState()) || "UPLOADING".equals(status.getState())) {
+            uploadingLatch.countDown();
+          }
+        },
+        MoreExecutors.directExecutor());
+    assertThat(uploadingLatch.await(10, TimeUnit.SECONDS)).isTrue();
 
-      future.cancel(true);
+    future.cancel(true);
 
-      assertThat(future.isCancelled()).isTrue();
-      assertThrows(CancellationException.class, () -> future.get(10, TimeUnit.SECONDS));
-    }
+    assertThat(future.isCancelled()).isTrue();
+    assertThrows(CancellationException.class, () -> future.get(10, TimeUnit.SECONDS));
   }
 
   @Test
@@ -368,31 +359,29 @@ class ITResumableUpload {
     UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("it-progress.txt").build();
 
     List<ResumableUploadProgress> reportedStatuses = new CopyOnWriteArrayList<>();
-    try (InputStream stream = Files.newInputStream(file)) {
-      ResumableUploadFuture<UploadMediaResponse> future =
-          client.uploadMediaCallable().futureCall(request, stream, null);
-      future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
-      UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
+    ResumableUploadFuture<UploadMediaResponse> future =
+        client.uploadMediaCallable().futureCall(request, () -> Files.newInputStream(file), null);
+    future.addProgressListener(reportedStatuses::add, MoreExecutors.directExecutor());
+    UploadMediaResponse response = future.get(30, TimeUnit.SECONDS);
 
-      assertThat(response.getName()).isEqualTo("it-progress.txt");
-      assertThat(response.getSize()).isEqualTo(totalBytes);
-      assertThat(reportedStatuses).isNotEmpty();
+    assertThat(response.getName()).isEqualTo("it-progress.txt");
+    assertThat(response.getSize()).isEqualTo(totalBytes);
+    assertThat(reportedStatuses).isNotEmpty();
 
-      long previousBytes = 0L;
-      List<Long> uploadedOffsets = new ArrayList<>();
-      for (ResumableUploadProgress status : reportedStatuses) {
-        assertThat(status.getBytesUploaded()).isAtLeast(previousBytes);
-        previousBytes = status.getBytesUploaded();
-        if (status.getBytesUploaded() > 0 && !uploadedOffsets.contains(status.getBytesUploaded())) {
-          uploadedOffsets.add(status.getBytesUploaded());
-        }
+    long previousBytes = 0L;
+    List<Long> uploadedOffsets = new ArrayList<>();
+    for (ResumableUploadProgress status : reportedStatuses) {
+      assertThat(status.getBytesUploaded()).isAtLeast(previousBytes);
+      previousBytes = status.getBytesUploaded();
+      if (status.getBytesUploaded() > 0 && !uploadedOffsets.contains(status.getBytesUploaded())) {
+        uploadedOffsets.add(status.getBytesUploaded());
       }
-      assertThat(uploadedOffsets).containsExactly(262144L, 524288L, 614400L).inOrder();
-
-      ResumableUploadProgress finalStatus = reportedStatuses.get(reportedStatuses.size() - 1);
-      assertThat(finalStatus.getState()).isEqualTo("FINALIZED");
-      assertThat(finalStatus.getBytesUploaded()).isEqualTo(totalBytes);
     }
+    assertThat(uploadedOffsets).containsExactly(262144L, 524288L, 614400L).inOrder();
+
+    ResumableUploadProgress finalStatus = reportedStatuses.get(reportedStatuses.size() - 1);
+    assertThat(finalStatus.getState()).isEqualTo("FINALIZED");
+    assertThat(finalStatus.getBytesUploaded()).isEqualTo(totalBytes);
   }
 
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {

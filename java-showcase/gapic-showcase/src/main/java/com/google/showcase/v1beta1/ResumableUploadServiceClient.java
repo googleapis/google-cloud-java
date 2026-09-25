@@ -24,6 +24,7 @@ import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.InputStreamSupplier;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
@@ -41,7 +42,6 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.showcase.v1beta1.stub.ResumableUploadServiceStub;
 import com.google.showcase.v1beta1.stub.ResumableUploadServiceStubSettings;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> uploadMedia(UploadMediaRequest request, InputStream payload, ResumableUploadCallSettings callSettings)
+ *           <li><p> uploadMedia(UploadMediaRequest request, InputStreamSupplier payload, ResumableUploadCallSettings callSettings)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -282,13 +282,14 @@ public class ResumableUploadServiceClient implements BackgroundResource {
    * A method with media_upload annotation enabled.
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @param payload The payload data stream to upload.
+   * @param payload Supplies the payload data stream to upload. The stream is closed automatically
+   *     when the upload succeeds, fails, times out, or is cancelled.
    * @param callSettings The call settings to apply to this upload, or null to use defaults.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadMediaResponse uploadMedia(
       UploadMediaRequest request,
-      InputStream payload,
+      InputStreamSupplier payload,
       @Nullable ResumableUploadCallSettings callSettings) {
     return ApiExceptions.callAndTranslateApiException(
         uploadMediaCallable().futureCall(request, payload, callSettings));
