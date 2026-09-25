@@ -39,6 +39,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -53,8 +54,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private final io.opentelemetry.context.Context parentContext;
-  private final java.util.concurrent.locks.ReentrantLock lock =
-      new java.util.concurrent.locks.ReentrantLock();
+  private final ReentrantLock lock = new ReentrantLock();
   private boolean operationCompleted;
   private volatile @Nullable Span attemptSpan;
 
