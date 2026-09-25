@@ -1286,6 +1286,33 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     }
   }
 
+  @Test
+  void
+      serialize_deserialize_withServiceAccountImpersonation_rebuildsTransientImpersonatedCredentials()
+          throws Exception {
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(new OAuth2Utils.DefaultHttpTransportFactory())
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl(STS_URL)
+            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
+            .setCredentialSource(new IdentityPoolCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
+            .build();
+
+    assertNotNull(credential.getImpersonatedCredentials());
+    assertNotNull(credential.impersonatedCredentials);
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credential);
+    assertNull(deserialized.impersonatedCredentials);
+
+    ImpersonatedCredentials rebuilt = deserialized.getImpersonatedCredentials();
+    assertNotNull(rebuilt);
+    assertEquals(
+        credential.getServiceAccountEmail(),
+        ((ExternalAccountCredentials) rebuilt.getSourceCredentials()).getServiceAccountEmail());
+  }
+
   private GenericJson buildJsonIdentityPoolCredential() {
     GenericJson json = new GenericJson();
     json.put(

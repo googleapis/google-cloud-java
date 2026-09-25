@@ -96,6 +96,11 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, Serializa
     return this.hasKeyStore;
   }
 
+  /** Returns the {@link KeyStore} used by this factory, or {@code null} if none was configured. */
+  public @Nullable KeyStore getKeyStore() {
+    return this.mtlsKeyStore;
+  }
+
   private static boolean checkHasKeyStore(@Nullable KeyStore keyStore) {
     if (keyStore == null) {
       return false;

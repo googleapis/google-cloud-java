@@ -42,6 +42,8 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Paths;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.CertificateException;
@@ -49,10 +51,12 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Provider for retrieving the subject tokens for {@link IdentityPoolCredentials} by reading an
@@ -96,6 +100,35 @@ public class CertificateIdentityPoolSubjectTokenSupplier
     }
   }
 
+  private static @Nullable String extractAndEncodeLeafCertificate(@Nullable KeyStore keyStore)
+      throws IOException {
+    if (keyStore == null) {
+      return null;
+    }
+    try {
+      Enumeration<String> aliases = keyStore.aliases();
+      if (aliases == null) {
+        return null;
+      }
+      while (aliases.hasMoreElements()) {
+        String alias = aliases.nextElement();
+        if (keyStore.isKeyEntry(alias)) {
+          Certificate[] chain = keyStore.getCertificateChain(alias);
+          if (chain != null && chain.length > 0 && chain[0] instanceof X509Certificate) {
+            return encodeCert((X509Certificate) chain[0]);
+          }
+          Certificate cert = keyStore.getCertificate(alias);
+          if (cert instanceof X509Certificate) {
+            return encodeCert((X509Certificate) cert);
+          }
+        }
+      }
+      return null;
+    } catch (KeyStoreException | CertificateEncodingException e) {
+      throw new IOException("Failed to extract leaf certificate from pinned KeyStore", e);
+    }
+  }
+
   @VisibleForTesting
   static X509Certificate parseCertificate(byte[] certData) throws CertificateException {
     if (certData == null || certData.length == 0) {
@@ -135,14 +168,27 @@ public class CertificateIdentityPoolSubjectTokenSupplier
    */
   @Override
   public String getSubjectToken(ExternalAccountSupplierContext context) throws IOException {
-    String leafCertPath = credentialSource.getCredentialLocation();
+    return getSubjectToken(context, null);
+  }
+
+  /**
+   * Retrieves the X509 subject token, extracting the leaf certificate directly from {@code
+   * pinnedKeyStore} when provided so that the TLS client certificate and {@code subject_token} are
+   * pinned to the exact same certificate snapshot.
+   */
+  String getSubjectToken(ExternalAccountSupplierContext context, @Nullable KeyStore pinnedKeyStore)
+      throws IOException {
     String trustChainPath = null;
     if (credentialSource.getCertificateConfig() != null) {
       trustChainPath = credentialSource.getCertificateConfig().getTrustChainPath();
     }
 
-    // Load and encode the leaf certificate.
-    String encodedLeafCert = loadAndEncodeLeafCertificate(leafCertPath);
+    // Extract the leaf certificate from the pinned KeyStore if present; otherwise read from disk.
+    String encodedLeafCert = extractAndEncodeLeafCertificate(pinnedKeyStore);
+    if (encodedLeafCert == null) {
+      String leafCertPath = credentialSource.getCredentialLocation();
+      encodedLeafCert = loadAndEncodeLeafCertificate(leafCertPath);
+    }
 
     // Initialize the certificate chain for the subject token. The Security Token Service (STS)
     // requires that the leaf certificate (the one used for authenticating this workload) must be
@@ -222,7 +268,8 @@ public class CertificateIdentityPoolSubjectTokenSupplier
       // elsewhere in the chain.
       if (encodedCurrentCert.equals(encodedLeafCert)) {
         throw new IllegalArgumentException(
-            "The leaf certificate should only appear at the beginning of the trust chain file, or be omitted entirely.");
+            "The leaf certificate should only appear at the beginning of the trust chain file, or"
+                + " be omitted entirely.");
       }
 
       // Add the current certificate to the chain.
@@ -241,7 +288,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
    * @throws CertificateException If an error occurs while parsing a certificate.
    */
   @VisibleForTesting
-  static List<X509Certificate> readTrustChain(String trustChainPath)
+  static List<X509Certificate> readTrustChain(@Nullable String trustChainPath)
       throws IOException, CertificateException {
     List<X509Certificate> certificateTrustChain = new ArrayList<>();
 
