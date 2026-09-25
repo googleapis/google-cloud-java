@@ -696,7 +696,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -744,7 +745,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String nextPageToken = result.x();
       Iterable<Project> projects =
           Iterables.transform(
@@ -809,7 +811,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -865,7 +868,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -967,7 +971,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                       ? getBigQueryRetryConfig(optionsMap)
                       : DEFAULT_RETRY_CONFIG,
                   getOptions().isOpenTelemetryTracingEnabled(),
-                  getOptions().getOpenTelemetryTracer()));
+                  getOptions().getOpenTelemetryTracer(),
+                  getOptions().getApiTracerFactory()));
         } catch (BigQueryRetryHelperException e) {
           throw BigQueryException.translateAndThrow(e);
         }
@@ -1061,7 +1066,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return Dataset.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1127,7 +1133,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.x();
       return new PageImpl<>(
           new DatasetPageFetcher(projectId, serviceOptions, cursor, optionsMap),
@@ -1179,7 +1186,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -1230,7 +1238,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -1276,7 +1285,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -1322,7 +1332,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -1366,7 +1377,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1407,7 +1419,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1454,7 +1467,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1500,7 +1514,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1546,7 +1561,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -1600,7 +1616,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return Table.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1659,7 +1676,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return Model.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1718,7 +1736,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return Routine.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -1936,7 +1955,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.x();
       Iterable<Table> tables =
           Iterables.transform(
@@ -1977,7 +1997,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.x();
       Iterable<Model> models =
           Iterables.transform(
@@ -2018,7 +2039,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.x();
       Iterable<Routine> routines =
           Iterables.transform(
@@ -2104,7 +2126,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   getOptions().getClock(),
                   EMPTY_RETRY_CONFIG,
                   getOptions().isOpenTelemetryTracingEnabled(),
-                  getOptions().getOpenTelemetryTracer());
+                  getOptions().getOpenTelemetryTracer(),
+                  getOptions().getApiTracerFactory());
         } catch (BigQueryRetryHelperException e) {
           throw BigQueryException.translateAndThrow(e);
         }
@@ -2199,7 +2222,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.getPageToken();
       Map<BigQueryRpc.Option, ?> pageOptionMap =
           Strings.isNullOrEmpty(cursor) ? optionsMap : optionMap(TableDataListOption.startIndex(0));
@@ -2276,7 +2300,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return Job.fromPb(this, answer);
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
@@ -2333,7 +2358,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
       String cursor = result.x();
       Iterable<Job> jobs =
           Iterables.transform(
@@ -2388,7 +2414,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
-          getOptions().getOpenTelemetryTracer());
+          getOptions().getOpenTelemetryTracer(),
+          getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (isRetryErrorCodeHttpNotFound(e)) {
         return false;
@@ -2437,7 +2464,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               DEFAULT_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -3315,7 +3343,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               serviceOptions.getClock(),
               DEFAULT_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
-              serviceOptions.getOpenTelemetryTracer());
+              serviceOptions.getOpenTelemetryTracer(),
+              serviceOptions.getApiTracerFactory());
 
       TableSchema schemaPb = results.getSchema();
 
@@ -3386,7 +3415,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -3432,7 +3462,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer()));
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory()));
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
@@ -3480,7 +3511,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       return response.getPermissions() == null
           ? ImmutableList.of()
           : ImmutableList.copyOf(response.getPermissions());
