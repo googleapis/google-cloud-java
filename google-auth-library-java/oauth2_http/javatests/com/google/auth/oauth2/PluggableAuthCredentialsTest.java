@@ -36,6 +36,7 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -47,10 +48,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.NotSerializableException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 
@@ -225,12 +228,29 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
 
+    final ExecutableOptions[] providedOptions = {null};
+    final int[] executableCallCount = {0};
     credential =
         PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setExecutableHandler(
+                options -> {
+                  executableCallCount[0]++;
+                  providedOptions[0] = options;
+                  return "pluggableAuthToken";
+                })
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
+    assertEquals(1, executableCallCount[0]);
+
+    // A second refresh while the intermediate STS token is still valid should reuse the cached
+    // sourceCredentials token without re-running the executable.
+    credential.refreshAccessToken();
+    assertEquals(1, executableCallCount[0]);
+
+    assertEquals(
+        credential.getServiceAccountEmail(),
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
 
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
@@ -619,6 +639,35 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     }
 
     return new PluggableAuthCredentialSource(source);
+  }
+
+  @Test
+  void refreshAccessToken_withServiceAccountImpersonationAndCustomCycleTransportFactory_usesIt()
+      throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    HttpTransportFactory cycleTransportFactory =
+        IdentityPoolCredentialsTest.createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, new ArrayList<>(), iamCall -> false);
+
+    PluggableAuthCredentials credential =
+        PluggableAuthCredentials.newBuilder(CREDENTIAL)
+            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    AccessToken accessToken = credential.refreshAccessToken(cycleTransportFactory);
+
+    // Both the STS exchange and the IAM call go through the caller-supplied cycle factory.
+    assertEquals("iam-token-1", accessToken.getTokenValue());
+    assertEquals(1, stsCallCount.get());
+    assertEquals(1, iamCallCount.get());
+    assertTrue(transportFactory.transport.getRequests().isEmpty());
   }
 
   static InputStream writeCredentialsStream(String tokenUrl) throws IOException {

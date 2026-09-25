@@ -46,6 +46,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -85,6 +86,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   private final @Nullable String tokenInfoUrl;
   private final @Nullable String serviceAccountImpersonationUrl;
+  private final @Nullable String targetServiceAccountEmail;
   private final @Nullable String clientId;
   private final @Nullable String clientSecret;
 
@@ -93,9 +95,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   // Service.
   private final @Nullable String workforcePoolUserProject;
 
-  protected transient HttpTransportFactory transportFactory;
+  protected transient volatile HttpTransportFactory transportFactory;
 
-  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
+  protected transient volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private final EnvironmentProvider environmentProvider;
   private final PropertyProvider propertyProvider;
@@ -196,6 +198,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.credentialSource = checkNotNull(credentialSource);
     this.tokenInfoUrl = tokenInfoUrl;
     this.serviceAccountImpersonationUrl = serviceAccountImpersonationUrl;
+    this.targetServiceAccountEmail = null;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
     this.scopes =
@@ -236,6 +239,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.credentialSource = builder.credentialSource;
     this.tokenInfoUrl = builder.tokenInfoUrl;
     this.serviceAccountImpersonationUrl = builder.serviceAccountImpersonationUrl;
+    this.targetServiceAccountEmail = builder.targetServiceAccountEmail;
     this.clientId = builder.clientId;
     this.clientSecret = builder.clientSecret;
 
@@ -286,27 +290,22 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     if (serviceAccountImpersonationUrl == null) {
       return null;
     }
-    // Create a copy of this instance without service account impersonation.
-    ExternalAccountCredentials sourceCredentials;
-    if (this instanceof AwsCredentials) {
-      sourceCredentials =
-          AwsCredentials.newBuilder((AwsCredentials) this)
-              .setServiceAccountImpersonationUrl(null)
-              .build();
-    } else if (this instanceof PluggableAuthCredentials) {
-      sourceCredentials =
-          PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this)
-              .setServiceAccountImpersonationUrl(null)
-              .build();
-    } else {
-      sourceCredentials =
-          IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this)
-              .setServiceAccountImpersonationUrl(null)
-              .build();
-    }
-
     String targetPrincipal =
         ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
+    // Create a copy of this instance without service account impersonation.
+    ExternalAccountCredentials.Builder sourceBuilder;
+    if (this instanceof AwsCredentials) {
+      sourceBuilder = AwsCredentials.newBuilder((AwsCredentials) this);
+    } else if (this instanceof PluggableAuthCredentials) {
+      sourceBuilder = PluggableAuthCredentials.newBuilder((PluggableAuthCredentials) this);
+    } else {
+      sourceBuilder = IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this);
+    }
+    sourceBuilder
+        .setServiceAccountImpersonationUrl(null)
+        .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
+    sourceBuilder.targetServiceAccountEmail = targetPrincipal;
+    ExternalAccountCredentials sourceCredentials = sourceBuilder.build();
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setHttpTransportFactory(transportFactory)
@@ -522,8 +521,42 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         && ((String) credentialSource.get("environment_id")).startsWith("aws");
   }
 
-  private boolean shouldBuildImpersonatedCredential() {
-    return this.serviceAccountImpersonationUrl != null && this.impersonatedCredentials == null;
+  @Nullable ImpersonatedCredentials getImpersonatedCredentials() {
+    if (this.serviceAccountImpersonationUrl == null) {
+      return null;
+    }
+    ImpersonatedCredentials local = this.impersonatedCredentials;
+    if (local == null) {
+      synchronized (this) {
+        local = this.impersonatedCredentials;
+        if (local == null) {
+          local = this.buildImpersonatedCredentials();
+          this.impersonatedCredentials = local;
+        }
+      }
+    }
+    return local;
+  }
+
+  /**
+   * Refreshes the access token using the specified transport factory for per-cycle transport
+   * pinning. {@link AwsCredentials} and {@link PluggableAuthCredentials} delegate {@link
+   * #refreshAccessToken()} into this method, while {@link IdentityPoolCredentials} coordinates
+   * per-cycle transport pinning and retries directly. This default implementation delegates back to
+   * {@link #refreshAccessToken()} for any custom subclasses that do not override this method.
+   *
+   * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
+   * @return the refreshed access token
+   * @throws IOException if the token refresh fails
+   */
+  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
+    return refreshAccessToken();
+  }
+
+  AccessToken refreshAccessToken(
+      HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
+      throws IOException {
+    return refreshAccessToken(cycleTransportFactory);
   }
 
   /**
@@ -552,11 +585,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
       throws IOException {
     // Handle service account impersonation if necessary.
-    if (this.shouldBuildImpersonatedCredential()) {
-      this.impersonatedCredentials = this.buildImpersonatedCredentials();
-    }
-    if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+    ImpersonatedCredentials impersonated = getImpersonatedCredentials();
+    if (impersonated != null) {
+      return impersonated.refreshAccessToken(
+          cycleTransportFactory == this.transportFactory ? null : cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =
@@ -637,7 +669,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    */
   public @Nullable String getServiceAccountEmail() {
     if (serviceAccountImpersonationUrl == null || serviceAccountImpersonationUrl.isEmpty()) {
-      return null;
+      return targetServiceAccountEmail;
     }
     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
   }
@@ -789,6 +821,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     protected @Nullable HttpTransportFactory transportFactory;
 
     protected @Nullable String serviceAccountImpersonationUrl;
+    private @Nullable String targetServiceAccountEmail;
     protected @Nullable String clientId;
     protected @Nullable String clientSecret;
     protected @Nullable Collection<String> scopes;
@@ -813,6 +846,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.tokenUrl = credentials.tokenUrl;
       this.tokenInfoUrl = credentials.tokenInfoUrl;
       this.serviceAccountImpersonationUrl = credentials.serviceAccountImpersonationUrl;
+      this.targetServiceAccountEmail = credentials.targetServiceAccountEmail;
       this.credentialSource = credentials.credentialSource;
       this.clientId = credentials.clientId;
       this.clientSecret = credentials.clientSecret;
@@ -911,6 +945,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       this.serviceAccountImpersonationUrl = serviceAccountImpersonationUrl;
+      this.targetServiceAccountEmail = null;
       return this;
     }
 

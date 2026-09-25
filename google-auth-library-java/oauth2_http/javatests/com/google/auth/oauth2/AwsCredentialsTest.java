@@ -45,17 +45,20 @@ import com.google.api.client.json.JsonParser;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.MockExternalAccountCredentialsTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link AwsCredentials}. */
@@ -165,10 +168,19 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
-    // Validate metrics header is set correctly on the sts request.
+    // Requests 0..2 are the AWS metadata calls from sourceCredentials (no duplicate outer fetch),
+    // request 3 is the STS token exchange, and request 4 is the IAM generateAccessToken call.
+    assertEquals(5, transportFactory.transport.getRequests().size());
+    assertEquals(
+        transportFactory.transport.getStsUrl(),
+        transportFactory.transport.getRequests().get(3).getUrl());
     Map<String, List<String>> headers =
-        transportFactory.transport.getRequests().get(6).getHeaders();
+        transportFactory.transport.getRequests().get(3).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, false);
+
+    // A second refresh while the intermediate STS token is still valid should only call IAM.
+    awsCredential.refreshAccessToken();
+    assertEquals(6, transportFactory.transport.getRequests().size());
   }
 
   @Test
@@ -206,7 +218,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
       // Validate metrics header is set correctly on the sts request.
       Map<String, List<String>> headers =
-          transportFactory.transport.getRequests().get(6).getHeaders();
+          transportFactory.transport.getRequests().get(3).getHeaders();
       ExternalAccountCredentialsTest.validateMetricsHeader(headers, "aws", true, true);
     }
   }
@@ -269,6 +281,40 @@ class AwsCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "programmatic", true, false);
+  }
+
+  @Test
+  void refreshAccessToken_withServiceAccountImpersonationAndCustomCycleTransportFactory_usesIt()
+      throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    HttpTransportFactory cycleTransportFactory =
+        IdentityPoolCredentialsTest.createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, new ArrayList<>(), iamCall -> false);
+
+    AwsSecurityCredentialsSupplier supplier =
+        new TestAwsSecurityCredentialsSupplier("test", programmaticAwsCreds, null, null);
+
+    AwsCredentials awsCredential =
+        AwsCredentials.newBuilder()
+            .setAwsSecurityCredentialsSupplier(supplier)
+            .setHttpTransportFactory(transportFactory)
+            .setAudience("audience")
+            .setTokenUrl(STS_URL)
+            .setSubjectTokenType("subjectTokenType")
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .build();
+
+    AccessToken accessToken = awsCredential.refreshAccessToken(cycleTransportFactory);
+
+    // Both the STS exchange and the IAM call go through the caller-supplied cycle factory.
+    assertEquals("iam-token-1", accessToken.getTokenValue());
+    assertEquals(1, stsCallCount.get());
+    assertEquals(1, iamCallCount.get());
+    assertTrue(transportFactory.transport.getRequests().isEmpty());
   }
 
   @Test
@@ -1246,6 +1292,15 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(testCredentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(testCredentials.toString(), deserializedCredentials.toString());
     assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    assertNotNull(deserializedCredentials.getServiceAccountEmail());
+    assertEquals(
+        testCredentials.getServiceAccountEmail(), deserializedCredentials.getServiceAccountEmail());
+    AwsCredentials deserializedInnerSource =
+        serializeAndDeserialize(
+            (AwsCredentials) testCredentials.getImpersonatedCredentials().getSourceCredentials());
+    assertNull(deserializedInnerSource.getServiceAccountImpersonationUrl());
+    assertEquals(
+        testCredentials.getServiceAccountEmail(), deserializedInnerSource.getServiceAccountEmail());
   }
 
   /**
