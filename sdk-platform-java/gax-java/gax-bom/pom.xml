@@ -120,6 +120,21 @@
           </execution>
         </executions>
       </plugin>
+      <!-- This POM-only module inherits a released version of google-cloud-shared-config from Central
+           which does not define the enforce-banned-duplicate-classes execution. Skip it here to prevent
+           "No rules are configured" errors when invoking enforcer:enforce@enforce-banned-duplicate-classes. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-banned-duplicate-classes</id>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
