@@ -48,8 +48,7 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   protected ResumableUploadCallable() {}
 
   /**
-   * Performs a new resumable upload asynchronously with settings overrides and default call
-   * context.
+   * Performs a new resumable upload asynchronously with options overrides and default call context.
    *
    * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
    * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
@@ -57,16 +56,16 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    *
    * @param request the request message
    * @param payload the data payload input stream to upload and close
-   * @param settings request-level call settings overrides; may be {@code null}
+   * @param options request-level upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
-    return futureCall(request, payload, null, settings);
+      RequestT request, InputStream payload, @Nullable ResumableUploadOptions options) {
+    return futureCall(request, payload, null, options);
   }
 
   /**
-   * Performs a new resumable upload asynchronously with call context and settings overrides.
+   * Performs a new resumable upload asynchronously with call context and options overrides.
    *
    * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
    * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
@@ -75,14 +74,14 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    * @param request the request message
    * @param payload the data payload input stream to upload and close
    * @param context call context overrides; may be {@code null}
-   * @param settings request-level call settings overrides; may be {@code null}
+   * @param options request-level upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
       InputStream payload,
       @Nullable ApiCallContext context,
-      @Nullable ResumableUploadCallSettings settings);
+      @Nullable ResumableUploadOptions options);
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
@@ -93,9 +92,9 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    *
    * @param sessionUrl the upload session URL
    * @param payload the data payload input stream to upload and close
-   * @param settings call settings overrides; may be {@code null}
+   * @param options upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings);
+      String sessionUrl, InputStream payload, @Nullable ResumableUploadOptions options);
 }

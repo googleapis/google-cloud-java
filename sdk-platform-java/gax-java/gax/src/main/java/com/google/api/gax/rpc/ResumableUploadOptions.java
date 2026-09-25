@@ -37,13 +37,13 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * A settings class to configure a {@link ResumableUploadCallable} for executing resumable uploads.
+ * Options to configure a resumable upload invocation on a {@link ResumableUploadCallable}.
  * Encapsulates protocol options such as payload chunk size and global upload timeout.
  */
 @BetaApi
 @AutoValue
 @NullMarked
-public abstract class ResumableUploadCallSettings {
+public abstract class ResumableUploadOptions {
   private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
 
   /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
@@ -56,13 +56,13 @@ public abstract class ResumableUploadCallSettings {
   public abstract @Nullable Duration getGlobalTimeout();
 
   /**
-   * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields set in {@code
+   * Merges another {@code ResumableUploadOptions} instance with this one. Fields set in {@code
    * other} override fields in this instance.
    *
-   * @param other settings to overlay; may be {@code null}
-   * @return a new, resolved {@code ResumableUploadCallSettings} instance
+   * @param other options to overlay; may be {@code null}
+   * @return a new, resolved {@code ResumableUploadOptions} instance
    */
-  public ResumableUploadCallSettings merge(@Nullable ResumableUploadCallSettings other) {
+  public ResumableUploadOptions merge(@Nullable ResumableUploadOptions other) {
     if (other == null) {
       return this;
     }
@@ -79,10 +79,10 @@ public abstract class ResumableUploadCallSettings {
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadCallSettings.Builder().setChunkSize(DEFAULT_CHUNK_SIZE);
+    return new AutoValue_ResumableUploadOptions.Builder().setChunkSize(DEFAULT_CHUNK_SIZE);
   }
 
-  /** Builder for {@link ResumableUploadCallSettings}. */
+  /** Builder for {@link ResumableUploadOptions}. */
   @AutoValue.Builder
   public abstract static class Builder {
     public abstract Builder setChunkSize(int chunkSize);
@@ -93,9 +93,9 @@ public abstract class ResumableUploadCallSettings {
 
     public abstract @Nullable Duration getGlobalTimeout();
 
-    abstract ResumableUploadCallSettings autoBuild();
+    abstract ResumableUploadOptions autoBuild();
 
-    public ResumableUploadCallSettings build() {
+    public ResumableUploadOptions build() {
       Preconditions.checkArgument(getChunkSize() > 0, "chunkSize must be > 0");
       if (getGlobalTimeout() != null) {
         Preconditions.checkArgument(

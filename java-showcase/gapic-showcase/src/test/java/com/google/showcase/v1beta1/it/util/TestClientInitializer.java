@@ -553,7 +553,6 @@ public class TestClientInitializer {
                 .setHttpTransport(new NetHttpTransport.Builder().doNotValidateCertificate().build())
                 .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
                 .build());
-    settingsBuilder.uploadMediaSettings().setChunkSize(chunkSize);
     return ResumableUploadServiceClient.create(settingsBuilder.build());
   }
 
@@ -568,7 +567,6 @@ public class TestClientInitializer {
                     .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
                     .build())
             .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT);
-    settingsBuilder.uploadMediaSettings().setChunkSize(chunkSize);
     return ResumableUploadServiceClient.create(settingsBuilder.build());
   }
 }
