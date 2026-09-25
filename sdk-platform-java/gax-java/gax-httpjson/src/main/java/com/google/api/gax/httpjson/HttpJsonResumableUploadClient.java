@@ -39,6 +39,7 @@ import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
 import org.jspecify.annotations.NullMarked;
@@ -64,14 +65,19 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
       queryStatusCallable;
 
   public static <RequestT, ResponseT> HttpJsonResumableUploadClient<RequestT, ResponseT> create(
-      ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
-    return new HttpJsonResumableUploadClient<>(clientContext, methodDescriptor);
+      ClientContext clientContext,
+      ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,
+      UnaryCallSettings<RequestT, ?> callSettings) {
+    return new HttpJsonResumableUploadClient<>(clientContext, methodDescriptor, callSettings);
   }
 
   private HttpJsonResumableUploadClient(
-      ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
+      ClientContext clientContext,
+      ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,
+      UnaryCallSettings<RequestT, ?> callSettings) {
     Preconditions.checkNotNull(clientContext);
     Preconditions.checkNotNull(methodDescriptor);
+    Preconditions.checkNotNull(callSettings);
     HttpResponseParser<ResponseT> responseParser =
         Preconditions.checkNotNull(methodDescriptor.getResponseParser());
 
@@ -84,7 +90,7 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
             .setResponseParser(ResumableUploadResponseParser.create())
             .build();
     this.startUploadCallable =
-        ResumableUploadStartCallable.create(clientContext, startUploadDescriptor);
+        ResumableUploadStartCallable.create(clientContext, startUploadDescriptor, callSettings);
     this.uploadChunkCallable = ResumableUploadChunkCallable.create(clientContext, responseParser);
     this.queryStatusCallable =
         ResumableUploadQueryStatusCallable.create(clientContext, responseParser);

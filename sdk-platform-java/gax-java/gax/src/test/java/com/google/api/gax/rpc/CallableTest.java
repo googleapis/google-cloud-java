@@ -214,8 +214,8 @@ class CallableTest {
   void testResumableUploadCallable() {
     ResumableUploadClient<String, String> uploadClient =
         mock(ResumableUploadClient.class, Mockito.withSettings().withoutAnnotations());
-    ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(1024).build();
+    UnaryCallSettings<String, String> settings =
+        UnaryCallSettings.<String, String>newUnaryCallSettingsBuilder().build();
 
     ResumableUploadCallable<String, String> callable =
         Callables.resumableUpload(uploadClient, settings, clientContext);

@@ -66,7 +66,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
   private final InputStream payload;
-  private final ResumableUploadCallSettings settings;
+  private final ResumableUploadOptions options;
   private final ApiCallContext callContext;
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
@@ -86,11 +86,11 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
+      ResumableUploadOptions options,
       ApiCallContext callContext) {
     ResumableUploadFutureImpl<ResponseT> future =
         new ResumableUploadFutureImpl<>(
-            startFuture, uploadChunkCallable, payload, settings, callContext);
+            startFuture, uploadChunkCallable, payload, options, callContext);
     try {
       future.start();
     } catch (Throwable t) {
@@ -103,14 +103,14 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
+      ResumableUploadOptions options,
       ApiCallContext callContext) {
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
-    this.settings = checkNotNull(settings, "settings must not be null");
-    checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
+    this.options = checkNotNull(options, "options must not be null");
+    checkArgument(options.getChunkSize() > 0, "chunkSize must be > 0");
     this.callContext = checkNotNull(callContext, "callContext must not be null");
     this.inFlightFuture = startFuture;
   }
@@ -130,7 +130,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
                     uploadChunkCallable,
                     session.getUploadUrl(),
                     payload,
-                    settings.getChunkSize(),
+                    options.getChunkSize(),
                     callContext,
                     ResumableUploadFutureImpl.this);
             try {

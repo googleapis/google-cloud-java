@@ -55,16 +55,15 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     extends ResumableUploadCallable<RequestT, ResponseT> {
 
   private final ResumableUploadClient<RequestT, ResponseT> client;
-  private final ResumableUploadCallSettings defaultCallSettings;
+  private final ResumableUploadOptions defaultOptions;
   private final ClientContext clientContext;
 
   public ResumableUploadCallableImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
-      ResumableUploadCallSettings defaultCallSettings,
+      ResumableUploadOptions defaultOptions,
       ClientContext clientContext) {
     this.client = checkNotNull(client, "client must not be null");
-    this.defaultCallSettings =
-        checkNotNull(defaultCallSettings, "defaultCallSettings must not be null");
+    this.defaultOptions = checkNotNull(defaultOptions, "defaultOptions must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
   }
 
@@ -73,10 +72,10 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
       RequestT request,
       InputStream payload,
       @Nullable ApiCallContext context,
-      @Nullable ResumableUploadCallSettings settings) {
+      @Nullable ResumableUploadOptions options) {
     checkNotNull(request, "request must not be null");
     checkNotNull(payload, "payload must not be null");
-    ResumableUploadCallSettings effectiveSettings = defaultCallSettings.merge(settings);
+    ResumableUploadOptions effectiveOptions = defaultOptions.merge(options);
     ApiCallContext effectiveCallContext = clientContext.getDefaultCallContext().merge(context);
 
     ApiFuture<ResumableUploadSession> startFuture;
@@ -90,13 +89,13 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
         startFuture,
         client.uploadChunkCallable(),
         payload,
-        effectiveSettings,
+        effectiveOptions,
         clientContext.getDefaultCallContext());
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
+      String sessionUrl, InputStream payload, @Nullable ResumableUploadOptions options) {
     throw new UnsupportedOperationException("Session resumption is not yet implemented.");
   }
 }

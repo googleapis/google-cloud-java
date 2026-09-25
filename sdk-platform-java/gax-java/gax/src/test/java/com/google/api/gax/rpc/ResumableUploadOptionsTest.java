@@ -36,67 +36,64 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.time.Duration;
 import org.junit.jupiter.api.Test;
 
-public class ResumableUploadCallSettingsTest {
+public class ResumableUploadOptionsTest {
 
   @Test
-  public void testCustomSettingsAndToBuilder() {
-    ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder()
+  public void testCustomOptionsAndToBuilder() {
+    ResumableUploadOptions options =
+        ResumableUploadOptions.newBuilder()
             .setChunkSize(16 * 1024 * 1024)
             .setGlobalTimeout(Duration.ofMinutes(15))
             .build();
 
-    assertEquals(16 * 1024 * 1024, settings.getChunkSize());
-    assertEquals(Duration.ofMinutes(15), settings.getGlobalTimeout());
-    assertEquals(settings, settings.toBuilder().build());
+    assertEquals(16 * 1024 * 1024, options.getChunkSize());
+    assertEquals(Duration.ofMinutes(15), options.getGlobalTimeout());
+    assertEquals(options, options.toBuilder().build());
   }
 
   @Test
   public void testInvalidChunkSize_throwsIllegalArgumentException() {
     assertThrows(
         IllegalArgumentException.class,
-        () -> ResumableUploadCallSettings.newBuilder().setChunkSize(0).build());
+        () -> ResumableUploadOptions.newBuilder().setChunkSize(0).build());
     assertThrows(
         IllegalArgumentException.class,
-        () -> ResumableUploadCallSettings.newBuilder().setChunkSize(-1).build());
+        () -> ResumableUploadOptions.newBuilder().setChunkSize(-1).build());
   }
 
   @Test
   public void testInvalidGlobalTimeout_throwsIllegalArgumentException() {
     assertThrows(
         IllegalArgumentException.class,
-        () -> ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ZERO).build());
+        () -> ResumableUploadOptions.newBuilder().setGlobalTimeout(Duration.ZERO).build());
     assertThrows(
         IllegalArgumentException.class,
-        () ->
-            ResumableUploadCallSettings.newBuilder()
-                .setGlobalTimeout(Duration.ofSeconds(-5))
-                .build());
+        () -> ResumableUploadOptions.newBuilder().setGlobalTimeout(Duration.ofSeconds(-5)).build());
   }
 
   @Test
-  public void testMerge_nullSettings_returnsSameInstance() {
-    ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
+  public void testMerge_nullOptions_returnsSameInstance() {
+    ResumableUploadOptions options =
+        ResumableUploadOptions.newBuilder().setChunkSize(4 * 1024 * 1024).build();
 
-    assertSame(settings, settings.merge(null));
+    assertSame(options, options.merge(null));
   }
 
   @Test
   public void testMerge_overridesChunkSizeAndGlobalTimeout() {
-    ResumableUploadCallSettings stubSettings =
-        ResumableUploadCallSettings.newBuilder()
+    ResumableUploadOptions defaultOptions =
+        ResumableUploadOptions.newBuilder()
             .setChunkSize(4 * 1024 * 1024)
             .setGlobalTimeout(Duration.ofMinutes(10))
             .build();
 
-    ResumableUploadCallSettings perRequestSettings =
-        ResumableUploadCallSettings.newBuilder()
+    ResumableUploadOptions perRequestOptions =
+        ResumableUploadOptions.newBuilder()
             .setChunkSize(32 * 1024 * 1024)
             .setGlobalTimeout(Duration.ofMinutes(30))
             .build();
 
-    ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
+    ResumableUploadOptions merged = defaultOptions.merge(perRequestOptions);
 
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
     assertEquals(Duration.ofMinutes(30), merged.getGlobalTimeout());
@@ -104,13 +101,13 @@ public class ResumableUploadCallSettingsTest {
 
   @Test
   public void testMerge_nullGlobalTimeoutDoesNotOverride() {
-    ResumableUploadCallSettings stubSettings =
-        ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ofMinutes(10)).build();
+    ResumableUploadOptions defaultOptions =
+        ResumableUploadOptions.newBuilder().setGlobalTimeout(Duration.ofMinutes(10)).build();
 
-    ResumableUploadCallSettings perRequestSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
+    ResumableUploadOptions perRequestOptions =
+        ResumableUploadOptions.newBuilder().setChunkSize(32 * 1024 * 1024).build();
 
-    ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
+    ResumableUploadOptions merged = defaultOptions.merge(perRequestOptions);
 
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
     assertEquals(Duration.ofMinutes(10), merged.getGlobalTimeout());
