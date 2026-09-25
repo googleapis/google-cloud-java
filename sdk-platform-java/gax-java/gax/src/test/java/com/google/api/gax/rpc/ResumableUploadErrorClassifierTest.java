@@ -40,6 +40,8 @@ import static com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category.TRA
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.io.IOException;
 import java.net.SocketException;
@@ -73,6 +75,27 @@ class ResumableUploadErrorClassifierTest {
       @Nullable Integer httpStatus, Code code, @Nullable Throwable cause) {
     return ApiExceptionFactory.createException(
         "HTTP " + httpStatus, cause, statusCode(httpStatus, code), false);
+  }
+
+  @Test
+  void testServerRejectionStatusCode_isFatalEvenWithRetryableOrRecoverableHttpCode() {
+    ApiException final503 =
+        ApiExceptionFactory.createException(
+            "HTTP 503",
+            null,
+            ResumableUploadStatusCode.of(
+                statusCode(503, Code.UNAVAILABLE), ResumableUploadStatus.FINAL),
+            false);
+    assertThat(ResumableUploadErrorClassifier.classify(final503, UPLOAD)).isEqualTo(FATAL);
+
+    ApiException final400 =
+        ApiExceptionFactory.createException(
+            "HTTP 400",
+            null,
+            ResumableUploadStatusCode.of(
+                statusCode(400, Code.INVALID_ARGUMENT), ResumableUploadStatus.FINAL),
+            false);
+    assertThat(ResumableUploadErrorClassifier.classify(final400, UPLOAD)).isEqualTo(FATAL);
   }
 
   @Test

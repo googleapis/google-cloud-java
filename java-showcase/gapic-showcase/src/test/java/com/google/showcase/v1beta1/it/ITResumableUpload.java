@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
 import com.google.api.gax.rpc.ResumableUploadProgress;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnavailableException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -276,6 +277,39 @@ class ITResumableUpload {
       assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
       NotFoundException notFoundException = (NotFoundException) exception.getCause();
       assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
+    }
+  }
+
+  @Test
+  void testChunkServerRejection(@TempDir Path tempDir) throws Exception {
+    String clientUuid = UUID.randomUUID().toString();
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of(
+                String.format(
+                    "{\"client_uuid\":\"%s\",\"error_code\":503,\"failure_count\":1,"
+                        + "\"after_offset\":0,\"error_status\":\"final\"}",
+                    clientUuid)));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    int totalBytes = 600 * 1024;
+    Path file = createTempFile(tempDir, "it-chunk-rejection.txt", totalBytes);
+    UploadMediaRequest request =
+        UploadMediaRequest.newBuilder().setName("it-chunk-rejection.txt").build();
+
+    try (InputStream stream = Files.newInputStream(file)) {
+      ResumableUploadFuture<UploadMediaResponse> future =
+          client.uploadMediaCallable().futureCall(request, stream, callContext, null);
+
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(15, TimeUnit.SECONDS));
+      assertThat(exception.getCause()).isInstanceOf(UnavailableException.class);
+      assertThat(exception.getCause())
+          .hasMessageThat()
+          .contains("Server terminated upload session with HTTP status: 503");
     }
   }
 

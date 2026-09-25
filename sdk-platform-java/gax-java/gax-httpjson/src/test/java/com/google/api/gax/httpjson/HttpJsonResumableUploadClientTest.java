@@ -46,12 +46,15 @@ import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.InternalException;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Strings;
 import java.io.IOException;
@@ -220,6 +223,24 @@ class HttpJsonResumableUploadClientTest {
   }
 
   @Test
+  void startUpload_serverReturnsFinalStatusOnNon200_marksExceptionNonRetryable() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(503);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    TestRequest request = new TestRequest("upload/v1/resources");
+
+    UnavailableException ex =
+        assertThrows(UnavailableException.class, () -> client.startUploadCallable().call(request));
+    assertThat(ex.isRetryable()).isFalse();
+    assertThat(ex).hasMessageThat().contains("Server rejected upload start with HTTP status: 503");
+    assertThat(ex.getStatusCode()).isInstanceOf(ResumableUploadStatusCode.class);
+    assertThat(((ResumableUploadStatusCode) ex.getStatusCode()).getUploadStatus())
+        .isEqualTo(ResumableUploadStatus.FINAL);
+  }
+
+  @Test
   void startUpload_withCustomExtraHeaders_preservesHeaders() {
     MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
     response.setStatusCode(200);
@@ -356,6 +377,61 @@ class HttpJsonResumableUploadClientTest {
   }
 
   @Test
+  void uploadChunk_serverReturnsFinalStatusOnNon200_marksExceptionNonRetryable() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(503);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .setFinal(true)
+            .build();
+
+    UnavailableException ex =
+        assertThrows(UnavailableException.class, () -> client.uploadChunkCallable().call(request));
+    assertThat(ex.isRetryable()).isFalse();
+    assertThat(ex.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
+    assertThat(ex.getStatusCode().getTransportCode()).isEqualTo(503);
+    assertThat(ex.getStatusCode()).isInstanceOf(ResumableUploadStatusCode.class);
+    assertThat(((ResumableUploadStatusCode) ex.getStatusCode()).getUploadStatus())
+        .isEqualTo(ResumableUploadStatus.FINAL);
+  }
+
+  @Test
+  void uploadChunk_serverReturnsFinalStatusOn400_throwsInvalidArgumentException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(400);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .setFinal(false)
+            .build();
+
+    InvalidArgumentException ex =
+        assertThrows(
+            InvalidArgumentException.class, () -> client.uploadChunkCallable().call(request));
+    assertThat(ex.isRetryable()).isFalse();
+    assertThat(ex.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+    assertThat(ex.getStatusCode().getTransportCode()).isEqualTo(400);
+    assertThat(ex.getStatusCode()).isInstanceOf(ResumableUploadStatusCode.class);
+    assertThat(((ResumableUploadStatusCode) ex.getStatusCode()).getUploadStatus())
+        .isEqualTo(ResumableUploadStatus.FINAL);
+  }
+
+  @Test
   void uploadChunk_serverReturnsConflictOrError_throwsException() {
     MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
     httpResponse.setStatusCode(409);
@@ -476,6 +552,24 @@ class HttpJsonResumableUploadClientTest {
     assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
     NotFoundException notFoundException = (NotFoundException) exception.getCause();
     assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
+  }
+
+  @Test
+  void queryStatus_serverReturnsFinalStatusOnNon200_marksExceptionNonRetryable() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(503);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    QueryStatusRequest request = QueryStatusRequest.create(TEST_UPLOAD_URL);
+
+    UnavailableException ex =
+        assertThrows(UnavailableException.class, () -> client.queryStatusCallable().call(request));
+    assertThat(ex.isRetryable()).isFalse();
+    assertThat(ex).hasMessageThat().contains("Server terminated upload session with HTTP status: 503");
+    assertThat(ex.getStatusCode()).isInstanceOf(ResumableUploadStatusCode.class);
+    assertThat(((ResumableUploadStatusCode) ex.getStatusCode()).getUploadStatus())
+        .isEqualTo(ResumableUploadStatus.FINAL);
   }
 
   @Test

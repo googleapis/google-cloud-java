@@ -53,6 +53,7 @@ import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -1236,6 +1237,30 @@ class ResumableUploadCallableImplTest {
     assertThat(future.get()).isEqualTo("done");
     assertThat(future.getProgress().getState()).isEqualTo(ResumableUploadProgress.State.FINALIZED);
     assertThat(future.getProgress().getBytesUploaded()).isEqualTo(5L);
+  }
+
+  @Test
+  void testRecovery_serverRejectionWithFinalStatus_failsFatalWithoutRetryOrRecovery() {
+    String sessionUrl = "https://upload.url/server-rejection-test";
+    stubStartSession(sessionUrl);
+    StatusCode rejectionStatusCode =
+        ResumableUploadStatusCode.of(
+            new HttpStatusStatusCode(400, StatusCode.Code.INVALID_ARGUMENT),
+            ResumableUploadStatus.FINAL);
+    ApiException rejectionException =
+        ApiExceptionFactory.createException("Invalid chunk", null, rejectionStatusCode, false);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFailedFuture(rejectionException));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), null);
+
+    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
+    assertThat(ex.getCause()).isInstanceOf(InvalidArgumentException.class);
+    ApiException cause = (ApiException) ex.getCause();
+    assertThat(cause.getStatusCode().getTransportCode()).isEqualTo(400);
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+    verifyNoInteractions(mockQueryCallable);
   }
 
   private static class HttpStatusStatusCode implements StatusCode {

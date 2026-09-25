@@ -34,7 +34,10 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
@@ -200,6 +203,9 @@ class ResumableUploadChunkCallable<ResponseT>
             chunkResponseBuilder.setResponse(responseParser.parse(stream));
           }
           future.set(chunkResponseBuilder.build());
+        } else if (uploadStatus == ResumableUploadStatus.FINAL) {
+          future.setException(
+              createServerRejectionException(statusCode, trailers.getException(), uploadStatus));
         } else {
           Throwable cause = trailers.getException();
           future.setException(
@@ -211,6 +217,19 @@ class ResumableUploadChunkCallable<ResponseT>
       } catch (Throwable t) {
         future.setException(t);
       }
+    }
+
+    private static ApiException createServerRejectionException(
+        int statusCode, @Nullable Throwable cause, ResumableUploadStatus uploadStatus) {
+      String message = "Server terminated upload session with HTTP status: " + statusCode;
+      if (cause != null && cause.getMessage() != null) {
+        message = message + ": " + cause.getMessage();
+      }
+      return ApiExceptionFactory.createException(
+          message,
+          cause,
+          ResumableUploadStatusCode.of(HttpJsonStatusCode.of(statusCode), uploadStatus),
+          false);
     }
   }
 }
