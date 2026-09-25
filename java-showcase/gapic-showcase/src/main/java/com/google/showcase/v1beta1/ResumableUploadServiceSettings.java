@@ -28,7 +28,6 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.location.GetLocationRequest;
@@ -104,7 +103,7 @@ import org.jspecify.annotations.Nullable;
 public class ResumableUploadServiceSettings extends ClientSettings<ResumableUploadServiceSettings> {
 
   /** Returns the object with the settings used for calls to uploadMedia. */
-  public ResumableUploadCallSettings uploadMediaSettings() {
+  public UnaryCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaSettings() {
     return ((ResumableUploadServiceStubSettings) getStubSettings()).uploadMediaSettings();
   }
 
@@ -249,7 +248,8 @@ public class ResumableUploadServiceSettings extends ClientSettings<ResumableUplo
     }
 
     /** Returns the builder for the settings used for calls to uploadMedia. */
-    public ResumableUploadCallSettings.Builder uploadMediaSettings() {
+    public UnaryCallSettings.Builder<UploadMediaRequest, UploadMediaResponse>
+        uploadMediaSettings() {
       return getStubSettingsBuilder().uploadMediaSettings();
     }
 

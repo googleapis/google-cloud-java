@@ -46,9 +46,9 @@ public class ServiceClientCommentComposer {
       "The request object containing all of the parameters for the API call.";
   private static final String PAYLOAD_PARAM_NAME = "payload";
   private static final String PAYLOAD_PARAM_DESCRIPTION = "The payload data stream to upload.";
-  private static final String CALL_SETTINGS_PARAM_NAME = "callSettings";
-  private static final String CALL_SETTINGS_PARAM_DESCRIPTION =
-      "The call settings to apply to this upload, or null to use defaults.";
+  private static final String OPTIONS_PARAM_NAME = "options";
+  private static final String OPTIONS_PARAM_DESCRIPTION =
+      "The options to apply to this upload, or null to use defaults.";
 
   // Constants.
   private static final String SERVICE_DESCRIPTION_INTRO_STRING =
@@ -214,7 +214,7 @@ public class ServiceClientCommentComposer {
 
     if (method.isResumableUpload()) {
       methodJavadocBuilder.addParam(PAYLOAD_PARAM_NAME, PAYLOAD_PARAM_DESCRIPTION);
-      methodJavadocBuilder.addParam(CALL_SETTINGS_PARAM_NAME, CALL_SETTINGS_PARAM_DESCRIPTION);
+      methodJavadocBuilder.addParam(OPTIONS_PARAM_NAME, OPTIONS_PARAM_DESCRIPTION);
     }
 
     methodJavadocBuilder.setThrows(API_EXCEPTION_TYPE_NAME, EXCEPTION_CONDITION);

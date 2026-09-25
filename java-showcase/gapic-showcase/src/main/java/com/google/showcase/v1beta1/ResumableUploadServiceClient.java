@@ -25,8 +25,8 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadOptions;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
- *           <li><p> uploadMedia(UploadMediaRequest request, InputStream payload, ResumableUploadCallSettings callSettings)
+ *           <li><p> uploadMedia(UploadMediaRequest request, InputStream payload, ResumableUploadOptions options)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -283,15 +283,13 @@ public class ResumableUploadServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @param payload The payload data stream to upload.
-   * @param callSettings The call settings to apply to this upload, or null to use defaults.
+   * @param options The options to apply to this upload, or null to use defaults.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UploadMediaResponse uploadMedia(
-      UploadMediaRequest request,
-      InputStream payload,
-      @Nullable ResumableUploadCallSettings callSettings) {
+      UploadMediaRequest request, InputStream payload, @Nullable ResumableUploadOptions options) {
     return ApiExceptions.callAndTranslateApiException(
-        uploadMediaCallable().futureCall(request, payload, callSettings));
+        uploadMediaCallable().futureCall(request, payload, options));
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
