@@ -141,7 +141,7 @@ class OAuthException extends GoogleAuthException {
       } else if (errorDescription == null && errorResponse.get("message") instanceof String) {
         errorDescription = (String) errorResponse.get("message");
       }
-      if (errorDescription == null && rawError == null) {
+      if (errorDescription == null && !(rawError instanceof String)) {
         errorDescription =
             errorResponse.isEmpty() && e.getStatusMessage() != null
                 ? e.getStatusMessage()

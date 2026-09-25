@@ -279,6 +279,57 @@ final class OAuthExceptionTest {
   }
 
   @Test
+  void createFromHttpResponseException_nullErrorField_fallsBackToContent() {
+    String content = "{\"error\": null}";
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
+            .setContent(content)
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_400", e.getErrorCode());
+    assertEquals(content, e.getErrorDescription());
+    assertEquals(400, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
+  void createFromHttpResponseException_arrayErrorField_fallsBackToContent() {
+    String content = "{\"error\": []}";
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
+            .setContent(content)
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_400", e.getErrorCode());
+    assertEquals(content, e.getErrorDescription());
+    assertEquals(400, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
+  void createFromHttpResponseException_errorObjectWithoutMessage_fallsBackToContent() {
+    String content = "{\"error\": {\"code\": 400}}";
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
+            .setContent(content)
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_400", e.getErrorCode());
+    assertEquals(content, e.getErrorDescription());
+    assertEquals(400, e.getHttpStatusCode());
+    assertSame(httpException, e.getCause());
+  }
+
+  @Test
   void serialVersionUID_matchesReleasedUidAndRoundTrips() throws Exception {
     assertEquals(
         -5276727039237496975L,
