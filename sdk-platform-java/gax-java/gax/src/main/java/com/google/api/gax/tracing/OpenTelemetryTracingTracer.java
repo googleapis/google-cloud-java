@@ -55,6 +55,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final io.opentelemetry.context.Context parentContext;
   private final java.util.concurrent.locks.ReentrantLock lock =
       new java.util.concurrent.locks.ReentrantLock();
+  private boolean operationCompleted;
   private volatile @Nullable Span attemptSpan;
 
   @Override
@@ -132,6 +133,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     Span oldSpan = null;
     lock.lock();
     try {
+      if (operationCompleted) {
+        return;
+      }
       if (attemptSpan != null) {
         oldSpan = attemptSpan;
         attemptSpan = null;
@@ -171,17 +175,17 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void operationSucceeded() {
-    recordErrorAndEndAttempt(null);
+    recordErrorAndEndAttempt(null, true);
   }
 
   @Override
   public void operationCancelled() {
-    recordErrorAndEndAttempt(new CancellationException());
+    recordErrorAndEndAttempt(new CancellationException(), true);
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    recordErrorAndEndAttempt(error);
+    recordErrorAndEndAttempt(error, true);
   }
 
   @Override
@@ -253,9 +257,16 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void recordErrorAndEndAttempt(@Nullable Throwable error) {
+    recordErrorAndEndAttempt(error, false);
+  }
+
+  private void recordErrorAndEndAttempt(@Nullable Throwable error, boolean isOperationComplete) {
     Span localAttemptSpan;
     lock.lock();
     try {
+      if (isOperationComplete) {
+        operationCompleted = true;
+      }
       localAttemptSpan = attemptSpan;
       if (localAttemptSpan == null) {
         return;
