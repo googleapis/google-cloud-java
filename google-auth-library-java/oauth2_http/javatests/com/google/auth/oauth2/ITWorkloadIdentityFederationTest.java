@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -296,9 +297,9 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws Exception {
+    String certConfigPath = getMtlsCertificateConfigPath();
     String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
     String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
-    String certConfigPath = getMtlsCertificateConfigPath();
 
     File tokenFile =
         File.createTempFile(
@@ -402,6 +403,7 @@ final class ITWorkloadIdentityFederationTest {
   @Test
   void identityPoolCredentials_directSts_withCertificateBoundWorkloadAndActorToken()
       throws IOException {
+    String certConfigPath = getMtlsCertificateConfigPath();
     String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
     String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
 
@@ -438,7 +440,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", getMtlsCertificateConfigPath());
+      certificate.put("certificate_config_location", certConfigPath);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -590,9 +592,9 @@ final class ITWorkloadIdentityFederationTest {
 
   private String getMtlsCertificateConfigPath() {
     String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    if (certConfigPath == null || certConfigPath.isEmpty()) {
-      fail("mTLS certificate config not set through GOOGLE_API_CERTIFICATE_CONFIG env variable.");
-    }
+    assumeTrue(
+        certConfigPath != null && !certConfigPath.isEmpty(),
+        "Skipping mTLS test: GOOGLE_API_CERTIFICATE_CONFIG env variable is not set.");
     return certConfigPath;
   }
 
