@@ -107,6 +107,15 @@ public interface VRpc<ReqT, RespT> {
      */
     public abstract OpExecutor getExecutor();
 
+    /**
+     * Whether the operation drives demand-gated flow control, i.e. the layer above ({@link
+     * VOperationImpl}) pulls each response via {@code requestNext}. True for streaming ops, false
+     * for unary. The session-side {@code VRpcImpl} gates on this: it runs the prefetch/pump
+     * machinery only when true, and takes the untouched unary fast path when false, so a bug in the
+     * streaming code can never affect unary calls.
+     */
+    public abstract boolean getAutoFlowControl();
+
     // TODO: csm
     // Clientside metrics instrument
     // public abstract BigtableTracer getTracer();
@@ -122,8 +131,18 @@ public interface VRpc<ReqT, RespT> {
           deadline, isIdempotent, tracer, new OpExecutor(MoreExecutors.directExecutor(), t -> {}));
     }
 
+    /** Defaults {@code autoFlowControl} to false (unary). */
     public static VRpcCallContext create(
         Deadline deadline, boolean isIdempotent, VRpcTracer tracer, OpExecutor executor) {
+      return create(deadline, isIdempotent, tracer, executor, false);
+    }
+
+    public static VRpcCallContext create(
+        Deadline deadline,
+        boolean isIdempotent,
+        VRpcTracer tracer,
+        OpExecutor executor,
+        boolean autoFlowControl) {
 
       Deadline grpcContextDeadline = Context.current().getDeadline();
 
@@ -140,12 +159,20 @@ public interface VRpc<ReqT, RespT> {
       }
 
       return new AutoValue_VRpc_VRpcCallContext(
-          OperationInfo.create(operationTimeout, isIdempotent), "TODO", tracer, executor);
+          OperationInfo.create(operationTimeout, isIdempotent),
+          "TODO",
+          tracer,
+          executor,
+          autoFlowControl);
     }
 
     public VRpcCallContext createForNextAttempt() {
       return new AutoValue_VRpc_VRpcCallContext(
-          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer(), getExecutor());
+          getOperationInfo().createForNextAttempt(),
+          getTraceParent(),
+          getTracer(),
+          getExecutor(),
+          getAutoFlowControl());
     }
   }
 
@@ -313,6 +340,27 @@ public interface VRpc<ReqT, RespT> {
           // TODO: use server retry delay if available
           null,
           true);
+    }
+
+    /**
+     * A locally-synthesized OK terminal. Used when the retry layer determines that a stream is
+     * already fully satisfied (e.g. every requested row range has been delivered) and so should
+     * complete successfully instead of issuing another resume attempt.
+     *
+     * <p>{@code clusterInfo} carries the attribution from the frame that triggered this terminal
+     * (e.g. the error response that arrived once the scan was already complete), so metrics can
+     * still attribute the completion to the serving cluster. Backend latency is always zero: this
+     * terminal corresponds to no server round-trip that reports {@code SessionRequestStats}.
+     */
+    public static VRpcResult createLocalOk(@Nullable ClusterInformation clusterInfo) {
+      return new AutoValue_VRpc_VRpcResult(
+          State.SERVER_RESULT,
+          Status.OK,
+          ImmutableList.of(),
+          clusterInfo,
+          Duration.ZERO,
+          null,
+          false);
     }
 
     /** Wrap an OK from the server. */

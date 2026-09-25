@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.internal.session;
 import com.google.bigtable.v2.AuthorizedViewRequest;
 import com.google.bigtable.v2.AuthorizedViewResponse;
 import com.google.bigtable.v2.BigtableGrpc;
+import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.MaterializedViewRequest;
 import com.google.bigtable.v2.MaterializedViewResponse;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -27,10 +28,14 @@ import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowSet;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
+import com.google.bigtable.v2.SessionReadRowsRequest;
+import com.google.bigtable.v2.SessionReadRowsResponse;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
 import com.google.bigtable.v2.SessionType;
@@ -130,6 +135,18 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .build());
 
   public static final VRpcDescriptor<
+          OpenTableRequest, SessionReadRowsRequest, SessionReadRowsResponse>
+      READ_ROWS =
+          new VRpcDescriptor<>(
+              TABLE_SESSION,
+              MethodInfo.of("Bigtable.ReadRows", true),
+              createTableEncoder(TableRequest.Builder::setReadRows),
+              createTableDecoder(TableResponse::getReadRows),
+              (name, appProfileId, req) ->
+                  readRowsLegacyConverter(
+                      ReadRowsRequest.newBuilder().setTableName(name), appProfileId, req));
+
+  public static final VRpcDescriptor<
           OpenTableRequest, SessionMutateRowRequest, SessionMutateRowResponse>
       MUTATE_ROW =
           new VRpcDescriptor<>(
@@ -144,6 +161,28 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .setRowKey(req.getKey())
                       .addAllMutations(req.getMutationsList())
                       .build());
+
+  public static final VRpcDescriptor<
+          OpenTableRequest, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+      CHECK_AND_MUTATE_ROW =
+          new VRpcDescriptor<>(
+              TABLE_SESSION,
+              MethodInfo.of("Bigtable.CheckAndMutateRow", false),
+              createTableEncoder(TableRequest.Builder::setCheckAndMutateRow),
+              createTableDecoder(TableResponse::getCheckAndMutateRow),
+              (name, appProfileId, req) -> {
+                CheckAndMutateRowRequest.Builder builder =
+                    CheckAndMutateRowRequest.newBuilder()
+                        .setTableName(name)
+                        .setAppProfileId(appProfileId)
+                        .setRowKey(req.getKey())
+                        .addAllTrueMutations(req.getTrueMutationsList())
+                        .addAllFalseMutations(req.getFalseMutationsList());
+                if (req.hasPredicateFilter()) {
+                  builder.setPredicateFilter(req.getPredicateFilter());
+                }
+                return builder.build();
+              });
 
   public static final VRpcDescriptor<
           OpenAuthorizedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
@@ -163,6 +202,18 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .build());
 
   public static final VRpcDescriptor<
+          OpenAuthorizedViewRequest, SessionReadRowsRequest, SessionReadRowsResponse>
+      READ_ROWS_AUTH_VIEW =
+          new VRpcDescriptor<>(
+              AUTHORIZED_VIEW_SESSION,
+              MethodInfo.of("Bigtable.ReadRows", true),
+              createAuthViewEncoder(AuthorizedViewRequest.Builder::setReadRows),
+              createAuthViewDecoder(AuthorizedViewResponse::getReadRows),
+              (name, appProfileId, req) ->
+                  readRowsLegacyConverter(
+                      ReadRowsRequest.newBuilder().setAuthorizedViewName(name), appProfileId, req));
+
+  public static final VRpcDescriptor<
           OpenAuthorizedViewRequest, SessionMutateRowRequest, SessionMutateRowResponse>
       MUTATE_ROW_AUTH_VIEW =
           new VRpcDescriptor<>(
@@ -177,6 +228,30 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .setRowKey(req.getKey())
                       .addAllMutations(req.getMutationsList())
                       .build());
+
+  public static final VRpcDescriptor<
+          OpenAuthorizedViewRequest,
+          SessionCheckAndMutateRowRequest,
+          SessionCheckAndMutateRowResponse>
+      CHECK_AND_MUTATE_ROW_AUTH_VIEW =
+          new VRpcDescriptor<>(
+              AUTHORIZED_VIEW_SESSION,
+              MethodInfo.of("Bigtable.CheckAndMutateRow", false),
+              createAuthViewEncoder(AuthorizedViewRequest.Builder::setCheckAndMutateRow),
+              createAuthViewDecoder(AuthorizedViewResponse::getCheckAndMutateRow),
+              (name, appProfileId, req) -> {
+                CheckAndMutateRowRequest.Builder builder =
+                    CheckAndMutateRowRequest.newBuilder()
+                        .setAuthorizedViewName(name)
+                        .setAppProfileId(appProfileId)
+                        .setRowKey(req.getKey())
+                        .addAllTrueMutations(req.getTrueMutationsList())
+                        .addAllFalseMutations(req.getFalseMutationsList());
+                if (req.hasPredicateFilter()) {
+                  builder.setPredicateFilter(req.getPredicateFilter());
+                }
+                return builder.build();
+              });
 
   public static final VRpcDescriptor<
           OpenMaterializedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
@@ -195,7 +270,38 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .setRowsLimit(1)
                       .build());
 
+  public static final VRpcDescriptor<
+          OpenMaterializedViewRequest, SessionReadRowsRequest, SessionReadRowsResponse>
+      READ_ROWS_MAT_VIEW =
+          new VRpcDescriptor<>(
+              MATERIALIZED_VIEW_SESSION,
+              MethodInfo.of("Bigtable.ReadRows", true),
+              createMatViewEncoder(MaterializedViewRequest.Builder::setReadRows),
+              createMatViewDecoder(MaterializedViewResponse::getReadRows),
+              (name, appProfileId, req) ->
+                  readRowsLegacyConverter(
+                      ReadRowsRequest.newBuilder().setMaterializedViewName(name),
+                      appProfileId,
+                      req));
+
   // endregion
+
+  /**
+   * Shared body for the {@code ReadRows} legacy converters. The caller supplies a builder that
+   * already has the target name set (table, authorized view, or materialized view); this fills in
+   * the remaining fields carried by the session request.
+   */
+  private static ReadRowsRequest readRowsLegacyConverter(
+      ReadRowsRequest.Builder builder, String appProfileId, SessionReadRowsRequest req) {
+    builder.setAppProfileId(appProfileId).setRows(req.getRows()).setReversed(req.getReversed());
+    if (req.hasFilter()) {
+      builder.setFilter(req.getFilter());
+    }
+    if (req.getRowsLimit() > 0) {
+      builder.setRowsLimit(req.getRowsLimit());
+    }
+    return builder.build();
+  }
 
   // region vRPC family encoder/decoder factories
   private static <ReqT> Encoder<ReqT> createTableEncoder(

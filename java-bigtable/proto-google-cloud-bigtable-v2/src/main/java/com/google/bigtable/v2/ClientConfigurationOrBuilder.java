@@ -104,7 +104,7 @@ public interface ClientConfigurationOrBuilder
    * <code>.google.protobuf.Duration polling_interval = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ClientConfiguration.polling_interval is deprecated. See
-   *     google/bigtable/v2/session.proto;l=288
+   *     google/bigtable/v2/session.proto;l=320
    * @return Whether the pollingInterval field is set.
    */
   @java.lang.Deprecated
@@ -123,7 +123,7 @@ public interface ClientConfigurationOrBuilder
    * <code>.google.protobuf.Duration polling_interval = 4 [deprecated = true];</code>
    *
    * @deprecated google.bigtable.v2.ClientConfiguration.polling_interval is deprecated. See
-   *     google/bigtable/v2/session.proto;l=288
+   *     google/bigtable/v2/session.proto;l=320
    * @return The pollingInterval.
    */
   @java.lang.Deprecated

@@ -5889,17 +5889,78 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * What share of requests should operate on a session, [0, 1]. The rest
-   * should operate on the old-style API.
+   * What share of requests should operate on a session, [0, 1]. The rest should
+   * operate on the old-style API. If provided, this should apply to all
+   * methods.
    * </pre>
    *
-   * <code>float session_load = 1;</code>
+   * <code>float session_load = 1 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.SessionClientConfiguration.session_load is deprecated. See
+   *     google/bigtable/v2/session.proto;l=247
    * @return The sessionLoad.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public float getSessionLoad() {
     return sessionLoad_;
+  }
+
+  public static final int SESSION_DIVERSION_CONFIGURATION_FIELD_NUMBER = 5;
+  private com.google.bigtable.v2.SessionDiversionConfiguration sessionDiversionConfiguration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   *
+   * @return Whether the sessionDiversionConfiguration field is set.
+   */
+  @java.lang.Override
+  public boolean hasSessionDiversionConfiguration() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   *
+   * @return The sessionDiversionConfiguration.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.SessionDiversionConfiguration getSessionDiversionConfiguration() {
+    return sessionDiversionConfiguration_ == null
+        ? com.google.bigtable.v2.SessionDiversionConfiguration.getDefaultInstance()
+        : sessionDiversionConfiguration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * How load should be divered to sessions.
+   * </pre>
+   *
+   * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder
+      getSessionDiversionConfigurationOrBuilder() {
+    return sessionDiversionConfiguration_ == null
+        ? com.google.bigtable.v2.SessionDiversionConfiguration.getDefaultInstance()
+        : sessionDiversionConfiguration_;
   }
 
   public static final int LOAD_BALANCING_OPTIONS_FIELD_NUMBER = 2;
@@ -5910,13 +5971,13 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is deprecated.
-   *     See google/bigtable/v2/session.proto;l=220
+   *     See google/bigtable/v2/session.proto;l=252
    * @return Whether the loadBalancingOptions field is set.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean hasLoadBalancingOptions() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -5924,7 +5985,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is deprecated.
-   *     See google/bigtable/v2/session.proto;l=220
+   *     See google/bigtable/v2/session.proto;l=252
    * @return The loadBalancingOptions.
    */
   @java.lang.Override
@@ -5966,7 +6027,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasChannelConfiguration() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -6030,7 +6091,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasSessionPoolConfiguration() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -6092,14 +6153,17 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     if (java.lang.Float.floatToRawIntBits(sessionLoad_) != 0) {
       output.writeFloat(1, sessionLoad_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getLoadBalancingOptions());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getChannelConfiguration());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getSessionPoolConfiguration());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getSessionDiversionConfiguration());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6113,18 +6177,23 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     if (java.lang.Float.floatToRawIntBits(sessionLoad_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, sessionLoad_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLoadBalancingOptions());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getChannelConfiguration());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getSessionPoolConfiguration());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getSessionDiversionConfiguration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6144,6 +6213,12 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
 
     if (java.lang.Float.floatToIntBits(getSessionLoad())
         != java.lang.Float.floatToIntBits(other.getSessionLoad())) return false;
+    if (hasSessionDiversionConfiguration() != other.hasSessionDiversionConfiguration())
+      return false;
+    if (hasSessionDiversionConfiguration()) {
+      if (!getSessionDiversionConfiguration().equals(other.getSessionDiversionConfiguration()))
+        return false;
+    }
     if (hasLoadBalancingOptions() != other.hasLoadBalancingOptions()) return false;
     if (hasLoadBalancingOptions()) {
       if (!getLoadBalancingOptions().equals(other.getLoadBalancingOptions())) return false;
@@ -6169,6 +6244,10 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SESSION_LOAD_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getSessionLoad());
+    if (hasSessionDiversionConfiguration()) {
+      hash = (37 * hash) + SESSION_DIVERSION_CONFIGURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionDiversionConfiguration().hashCode();
+    }
     if (hasLoadBalancingOptions()) {
       hash = (37 * hash) + LOAD_BALANCING_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getLoadBalancingOptions().hashCode();
@@ -6322,6 +6401,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetSessionDiversionConfigurationFieldBuilder();
         internalGetLoadBalancingOptionsFieldBuilder();
         internalGetChannelConfigurationFieldBuilder();
         internalGetSessionPoolConfigurationFieldBuilder();
@@ -6333,6 +6413,11 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       sessionLoad_ = 0F;
+      sessionDiversionConfiguration_ = null;
+      if (sessionDiversionConfigurationBuilder_ != null) {
+        sessionDiversionConfigurationBuilder_.dispose();
+        sessionDiversionConfigurationBuilder_ = null;
+      }
       loadBalancingOptions_ = null;
       if (loadBalancingOptionsBuilder_ != null) {
         loadBalancingOptionsBuilder_.dispose();
@@ -6389,25 +6474,32 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.sessionDiversionConfiguration_ =
+            sessionDiversionConfigurationBuilder_ == null
+                ? sessionDiversionConfiguration_
+                : sessionDiversionConfigurationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.loadBalancingOptions_ =
             loadBalancingOptionsBuilder_ == null
                 ? loadBalancingOptions_
                 : loadBalancingOptionsBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.channelConfiguration_ =
             channelConfigurationBuilder_ == null
                 ? channelConfiguration_
                 : channelConfigurationBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.sessionPoolConfiguration_ =
             sessionPoolConfigurationBuilder_ == null
                 ? sessionPoolConfiguration_
                 : sessionPoolConfigurationBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6427,6 +6519,9 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
         return this;
       if (java.lang.Float.floatToRawIntBits(other.getSessionLoad()) != 0) {
         setSessionLoad(other.getSessionLoad());
+      }
+      if (other.hasSessionDiversionConfiguration()) {
+        mergeSessionDiversionConfiguration(other.getSessionDiversionConfiguration());
       }
       if (other.hasLoadBalancingOptions()) {
         mergeLoadBalancingOptions(other.getLoadBalancingOptions());
@@ -6473,14 +6568,14 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     internalGetLoadBalancingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     internalGetChannelConfigurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
@@ -6488,9 +6583,17 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
                 input.readMessage(
                     internalGetSessionPoolConfigurationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetSessionDiversionConfigurationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6516,15 +6619,19 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * What share of requests should operate on a session, [0, 1]. The rest
-     * should operate on the old-style API.
+     * What share of requests should operate on a session, [0, 1]. The rest should
+     * operate on the old-style API. If provided, this should apply to all
+     * methods.
      * </pre>
      *
-     * <code>float session_load = 1;</code>
+     * <code>float session_load = 1 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.SessionClientConfiguration.session_load is deprecated. See
+     *     google/bigtable/v2/session.proto;l=247
      * @return The sessionLoad.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public float getSessionLoad() {
       return sessionLoad_;
     }
@@ -6533,15 +6640,19 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * What share of requests should operate on a session, [0, 1]. The rest
-     * should operate on the old-style API.
+     * What share of requests should operate on a session, [0, 1]. The rest should
+     * operate on the old-style API. If provided, this should apply to all
+     * methods.
      * </pre>
      *
-     * <code>float session_load = 1;</code>
+     * <code>float session_load = 1 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.SessionClientConfiguration.session_load is deprecated. See
+     *     google/bigtable/v2/session.proto;l=247
      * @param value The sessionLoad to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setSessionLoad(float value) {
 
       sessionLoad_ = value;
@@ -6554,19 +6665,232 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * What share of requests should operate on a session, [0, 1]. The rest
-     * should operate on the old-style API.
+     * What share of requests should operate on a session, [0, 1]. The rest should
+     * operate on the old-style API. If provided, this should apply to all
+     * methods.
      * </pre>
      *
-     * <code>float session_load = 1;</code>
+     * <code>float session_load = 1 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.SessionClientConfiguration.session_load is deprecated. See
+     *     google/bigtable/v2/session.proto;l=247
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearSessionLoad() {
       bitField0_ = (bitField0_ & ~0x00000001);
       sessionLoad_ = 0F;
       onChanged();
       return this;
+    }
+
+    private com.google.bigtable.v2.SessionDiversionConfiguration sessionDiversionConfiguration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.SessionDiversionConfiguration,
+            com.google.bigtable.v2.SessionDiversionConfiguration.Builder,
+            com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder>
+        sessionDiversionConfigurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     *
+     * @return Whether the sessionDiversionConfiguration field is set.
+     */
+    public boolean hasSessionDiversionConfiguration() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     *
+     * @return The sessionDiversionConfiguration.
+     */
+    public com.google.bigtable.v2.SessionDiversionConfiguration getSessionDiversionConfiguration() {
+      if (sessionDiversionConfigurationBuilder_ == null) {
+        return sessionDiversionConfiguration_ == null
+            ? com.google.bigtable.v2.SessionDiversionConfiguration.getDefaultInstance()
+            : sessionDiversionConfiguration_;
+      } else {
+        return sessionDiversionConfigurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public Builder setSessionDiversionConfiguration(
+        com.google.bigtable.v2.SessionDiversionConfiguration value) {
+      if (sessionDiversionConfigurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionDiversionConfiguration_ = value;
+      } else {
+        sessionDiversionConfigurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public Builder setSessionDiversionConfiguration(
+        com.google.bigtable.v2.SessionDiversionConfiguration.Builder builderForValue) {
+      if (sessionDiversionConfigurationBuilder_ == null) {
+        sessionDiversionConfiguration_ = builderForValue.build();
+      } else {
+        sessionDiversionConfigurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public Builder mergeSessionDiversionConfiguration(
+        com.google.bigtable.v2.SessionDiversionConfiguration value) {
+      if (sessionDiversionConfigurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && sessionDiversionConfiguration_ != null
+            && sessionDiversionConfiguration_
+                != com.google.bigtable.v2.SessionDiversionConfiguration.getDefaultInstance()) {
+          getSessionDiversionConfigurationBuilder().mergeFrom(value);
+        } else {
+          sessionDiversionConfiguration_ = value;
+        }
+      } else {
+        sessionDiversionConfigurationBuilder_.mergeFrom(value);
+      }
+      if (sessionDiversionConfiguration_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public Builder clearSessionDiversionConfiguration() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      sessionDiversionConfiguration_ = null;
+      if (sessionDiversionConfigurationBuilder_ != null) {
+        sessionDiversionConfigurationBuilder_.dispose();
+        sessionDiversionConfigurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public com.google.bigtable.v2.SessionDiversionConfiguration.Builder
+        getSessionDiversionConfigurationBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetSessionDiversionConfigurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    public com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder
+        getSessionDiversionConfigurationOrBuilder() {
+      if (sessionDiversionConfigurationBuilder_ != null) {
+        return sessionDiversionConfigurationBuilder_.getMessageOrBuilder();
+      } else {
+        return sessionDiversionConfiguration_ == null
+            ? com.google.bigtable.v2.SessionDiversionConfiguration.getDefaultInstance()
+            : sessionDiversionConfiguration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * How load should be divered to sessions.
+     * </pre>
+     *
+     * <code>.google.bigtable.v2.SessionDiversionConfiguration session_diversion_configuration = 5;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.SessionDiversionConfiguration,
+            com.google.bigtable.v2.SessionDiversionConfiguration.Builder,
+            com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder>
+        internalGetSessionDiversionConfigurationFieldBuilder() {
+      if (sessionDiversionConfigurationBuilder_ == null) {
+        sessionDiversionConfigurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.SessionDiversionConfiguration,
+                com.google.bigtable.v2.SessionDiversionConfiguration.Builder,
+                com.google.bigtable.v2.SessionDiversionConfigurationOrBuilder>(
+                getSessionDiversionConfiguration(), getParentForChildren(), isClean());
+        sessionDiversionConfiguration_ = null;
+      }
+      return sessionDiversionConfigurationBuilder_;
     }
 
     private com.google.bigtable.v2.LoadBalancingOptions loadBalancingOptions_;
@@ -6582,12 +6906,12 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is
-     *     deprecated. See google/bigtable/v2/session.proto;l=220
+     *     deprecated. See google/bigtable/v2/session.proto;l=252
      * @return Whether the loadBalancingOptions field is set.
      */
     @java.lang.Deprecated
     public boolean hasLoadBalancingOptions() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -6596,7 +6920,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.bigtable.v2.SessionClientConfiguration.load_balancing_options is
-     *     deprecated. See google/bigtable/v2/session.proto;l=220
+     *     deprecated. See google/bigtable/v2/session.proto;l=252
      * @return The loadBalancingOptions.
      */
     @java.lang.Deprecated
@@ -6625,7 +6949,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         loadBalancingOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6643,7 +6967,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         loadBalancingOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -6656,7 +6980,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     @java.lang.Deprecated
     public Builder mergeLoadBalancingOptions(com.google.bigtable.v2.LoadBalancingOptions value) {
       if (loadBalancingOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && loadBalancingOptions_ != null
             && loadBalancingOptions_
                 != com.google.bigtable.v2.LoadBalancingOptions.getDefaultInstance()) {
@@ -6668,7 +6992,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
         loadBalancingOptionsBuilder_.mergeFrom(value);
       }
       if (loadBalancingOptions_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -6681,7 +7005,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      */
     @java.lang.Deprecated
     public Builder clearLoadBalancingOptions() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       loadBalancingOptions_ = null;
       if (loadBalancingOptionsBuilder_ != null) {
         loadBalancingOptionsBuilder_.dispose();
@@ -6698,7 +7022,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      */
     @java.lang.Deprecated
     public com.google.bigtable.v2.LoadBalancingOptions.Builder getLoadBalancingOptionsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return internalGetLoadBalancingOptionsFieldBuilder().getBuilder();
     }
@@ -6763,7 +7087,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * @return Whether the channelConfiguration field is set.
      */
     public boolean hasChannelConfiguration() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -6812,7 +7136,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         channelConfigurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6836,7 +7160,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         channelConfigurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -6855,7 +7179,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     public Builder mergeChannelConfiguration(
         com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration value) {
       if (channelConfigurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && channelConfiguration_ != null
             && channelConfiguration_
                 != com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration
@@ -6868,7 +7192,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
         channelConfigurationBuilder_.mergeFrom(value);
       }
       if (channelConfiguration_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -6886,7 +7210,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearChannelConfiguration() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       channelConfiguration_ = null;
       if (channelConfigurationBuilder_ != null) {
         channelConfigurationBuilder_.dispose();
@@ -6909,7 +7233,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      */
     public com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.Builder
         getChannelConfigurationBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetChannelConfigurationFieldBuilder().getBuilder();
     }
@@ -6988,7 +7312,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * @return Whether the sessionPoolConfiguration field is set.
      */
     public boolean hasSessionPoolConfiguration() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -7037,7 +7361,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         sessionPoolConfigurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7061,7 +7385,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
       } else {
         sessionPoolConfigurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -7080,7 +7404,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
     public Builder mergeSessionPoolConfiguration(
         com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration value) {
       if (sessionPoolConfigurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && sessionPoolConfiguration_ != null
             && sessionPoolConfiguration_
                 != com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration
@@ -7093,7 +7417,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
         sessionPoolConfigurationBuilder_.mergeFrom(value);
       }
       if (sessionPoolConfiguration_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -7111,7 +7435,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearSessionPoolConfiguration() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       sessionPoolConfiguration_ = null;
       if (sessionPoolConfigurationBuilder_ != null) {
         sessionPoolConfigurationBuilder_.dispose();
@@ -7134,7 +7458,7 @@ public final class SessionClientConfiguration extends com.google.protobuf.Genera
      */
     public com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration.Builder
         getSessionPoolConfigurationBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetSessionPoolConfigurationFieldBuilder().getBuilder();
     }

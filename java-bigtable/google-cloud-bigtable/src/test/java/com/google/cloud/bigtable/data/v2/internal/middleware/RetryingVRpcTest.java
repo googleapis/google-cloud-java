@@ -138,7 +138,11 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -204,7 +208,11 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -279,7 +287,11 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(requestTag).build(),
@@ -338,7 +350,11 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
@@ -397,7 +413,11 @@ public class RetryingVRpcTest {
         .isInstanceOf(OpenSessionResponse.class);
 
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     retrying.start(
         SessionFakeScriptedRequest.newBuilder().setTag(1).build(),

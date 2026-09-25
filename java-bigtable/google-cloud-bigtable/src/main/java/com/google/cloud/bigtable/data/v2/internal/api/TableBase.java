@@ -17,10 +17,14 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.FeatureFlags;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
+import com.google.bigtable.v2.SessionReadRowsRequest;
+import com.google.bigtable.v2.SessionReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPoolOptions;
 import com.google.cloud.bigtable.data.v2.internal.channels.TenantKey;
@@ -28,8 +32,10 @@ import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VOperation;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpcResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
@@ -49,14 +55,21 @@ class TableBase implements AutoCloseable {
   private final Executor userCallbackExecutor;
   private final Metrics metrics;
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
+  private final VRpcDescriptor<?, SessionReadRowsRequest, SessionReadRowsResponse>
+      readRowsDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
       mutateRowDescriptor;
+  private final VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+      checkAndMutateRowDescriptor;
 
   static <ReqT extends Message> TableBase createAndStart(
       ReqT openReq,
       VRpcDescriptor.SessionDescriptor<ReqT> sessionDescriptor,
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
+      VRpcDescriptor<?, SessionReadRowsRequest, SessionReadRowsResponse> readRowsDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
+      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+          checkAndMutateRowDescriptor,
       FeatureFlags featureFlags,
       ClientInfo clientInfo,
       ClientConfigurationManager configManager,
@@ -90,20 +103,32 @@ class TableBase implements AutoCloseable {
     sessionPool.start(openReq, new Metadata());
 
     return new TableBase(
-        sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer, userCallbackExecutor);
+        sessionPool,
+        readRowDescriptor,
+        readRowsDescriptor,
+        mutateRowDescriptor,
+        checkAndMutateRowDescriptor,
+        metrics,
+        timer,
+        userCallbackExecutor);
   }
 
   @VisibleForTesting
   TableBase(
       SessionPool<?> sessionPool,
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
+      VRpcDescriptor<?, SessionReadRowsRequest, SessionReadRowsResponse> readRowsDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
+      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+          checkAndMutateRowDescriptor,
       Metrics metrics,
       BigtableTimer timer,
       Executor userCallbackExecutor) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
+    this.readRowsDescriptor = readRowsDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
+    this.checkAndMutateRowDescriptor = checkAndMutateRowDescriptor;
     this.metrics = metrics;
     this.timer = timer;
     this.userCallbackExecutor = userCallbackExecutor;
@@ -125,11 +150,42 @@ class TableBase implements AutoCloseable {
   public void readRow(
       SessionReadRowRequest req, VRpcListener<SessionReadRowResponse> listener, Deadline deadline) {
     RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), timer);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(readRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
 
-    new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, true)
+    // Unary: idempotent read, no streaming flow control.
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, true, false)
         .start(req, listener);
+  }
+
+  /**
+   * Starts a streaming ReadRows vRPC. Responses are delivered to {@code listener} in order, and the
+   * stream is pumped internally, so the caller does not manage demand. Returns the operation handle
+   * only so the caller can {@link VOperation#cancel} the stream.
+   */
+  public VOperation<SessionReadRowsRequest, SessionReadRowsResponse> readRows(
+      SessionReadRowsRequest req,
+      VRpcListener<SessionReadRowsResponse> listener,
+      Deadline deadline) {
+    RetryingVRpc<SessionReadRowsRequest, SessionReadRowsResponse> retry =
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(readRowsDescriptor),
+            timer,
+            new SessionReadRowsResumptionStrategy(),
+            metrics.getDebugTagTracer());
+    VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowsDescriptor, deadline);
+    // Reads are idempotent, so a mid-stream failure can be resumed. autoFlowControl=true: the
+    // stream is pumped internally, so the caller never manages demand.
+    VOperationImpl<SessionReadRowsRequest, SessionReadRowsResponse> op =
+        new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, true, true);
+    op.start(req, listener);
+    return op;
   }
 
   public void mutateRow(
@@ -137,13 +193,35 @@ class TableBase implements AutoCloseable {
       VRpcListener<SessionMutateRowResponse> listener,
       Deadline deadline) {
     RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), timer);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(mutateRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
     boolean idempotent = Util.isIdempotent(req.getMutationsList());
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
 
     new VOperationImpl<>(
-            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent, false)
+        .start(req, listener);
+  }
+
+  public void checkAndMutateRow(
+      SessionCheckAndMutateRowRequest req,
+      VRpcListener<SessionCheckAndMutateRowResponse> listener,
+      Deadline deadline) {
+    RetryingVRpc<SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse> retry =
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(checkAndMutateRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
+    VRpcTracer tracer =
+        metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
+    // CheckAndMutateRow is not idempotent and must never be retried.
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, false, false)
         .start(req, listener);
   }
 }

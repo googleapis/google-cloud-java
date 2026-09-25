@@ -36,6 +36,10 @@ public interface BigtableTimer {
    * <p>The returned handle can be used to cancel the task; cancel is O(1) and does not leave the
    * entry in any heap.
    *
+   * <p>After {@link #stop()}, this returns a pre-cancelled handle ({@link Timeout#isCancelled()} is
+   * {@code true}, {@link Timeout#cancel()} is a no-op) and never runs {@code task}, so callers can
+   * schedule without special-casing the stopped state.
+   *
    * <p><b>Warning:</b> passing {@code MoreExecutors.directExecutor()} runs {@code task} inline on
    * the timer's tick thread. The task must be trivial and non-blocking — anything more will stall
    * every other scheduled timeout on the wheel.
@@ -44,7 +48,8 @@ public interface BigtableTimer {
 
   /**
    * Releases the tick thread and discards any pending timeouts. Idempotent. After {@code stop()},
-   * subsequent calls to {@link #newTimeout} or {@link #onStop} throw {@link IllegalStateException}.
+   * {@link #newTimeout} returns a pre-cancelled handle and {@link #onStop} runs the hook
+   * synchronously (see those methods); neither throws.
    *
    * <p>Before releasing the tick thread, invokes every hook registered via {@link #onStop} on the
    * caller thread. Hooks fire in unspecified order; a hook that throws is logged and other hooks
@@ -56,6 +61,10 @@ public interface BigtableTimer {
    * Registers a hook to run during {@link #stop()}. Use this to drive caller-owned state (e.g. a
    * scheduled retry waiting on the timer) to a terminal state before the timer is torn down,
    * instead of letting a pending timeout silently disappear.
+   *
+   * <p>If the timer is already stopped, the hook runs synchronously on the calling thread before
+   * this returns (and the returned {@link Registration} is a no-op), so callers observe the same
+   * teardown regardless of whether they registered before or after {@code stop()}.
    *
    * <p>The returned {@link Registration} unregisters the hook; call it when the hook is no longer
    * needed (e.g. the scheduled work fired normally or was cancelled) so the hook set does not

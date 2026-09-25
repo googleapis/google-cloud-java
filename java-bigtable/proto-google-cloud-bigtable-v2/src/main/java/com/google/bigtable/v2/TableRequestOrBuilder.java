@@ -60,5 +60,39 @@ public interface TableRequestOrBuilder
   /** <code>.google.bigtable.v2.SessionMutateRowRequest mutate_row = 2;</code> */
   com.google.bigtable.v2.SessionMutateRowRequestOrBuilder getMutateRowOrBuilder();
 
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 3;</code>
+   *
+   * @return Whether the readRows field is set.
+   */
+  boolean hasReadRows();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 3;</code>
+   *
+   * @return The readRows.
+   */
+  com.google.bigtable.v2.SessionReadRowsRequest getReadRows();
+
+  /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 3;</code> */
+  com.google.bigtable.v2.SessionReadRowsRequestOrBuilder getReadRowsOrBuilder();
+
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowRequest check_and_mutate_row = 4;</code>
+   *
+   * @return Whether the checkAndMutateRow field is set.
+   */
+  boolean hasCheckAndMutateRow();
+
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowRequest check_and_mutate_row = 4;</code>
+   *
+   * @return The checkAndMutateRow.
+   */
+  com.google.bigtable.v2.SessionCheckAndMutateRowRequest getCheckAndMutateRow();
+
+  /** <code>.google.bigtable.v2.SessionCheckAndMutateRowRequest check_and_mutate_row = 4;</code> */
+  com.google.bigtable.v2.SessionCheckAndMutateRowRequestOrBuilder getCheckAndMutateRowOrBuilder();
+
   com.google.bigtable.v2.TableRequest.PayloadCase getPayloadCase();
 }

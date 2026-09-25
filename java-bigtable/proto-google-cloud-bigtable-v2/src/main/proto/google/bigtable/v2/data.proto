@@ -30,7 +30,6 @@ option php_namespace = "Google\\Cloud\\Bigtable\\V2";
 option ruby_package = "Google::Cloud::Bigtable::V2";
 
 // Specifies the complete (requested) contents of a single row of a table.
-// Rows which exceed 256MiB in size cannot be read in full.
 message Row {
   // The unique key which identifies this row within its table. This is the same
   // key that's used to identify the row in, for example, a MutateRowRequest.
@@ -293,7 +292,6 @@ message ValueBitmask {
 //
 // * Chains and interleaves are described in more detail in the
 // RowFilter.Chain and RowFilter.Interleave documentation.
-//
 // The total serialized size of a RowFilter message must not
 // exceed 20480 bytes, and RowFilters may not be nested within each other
 // (in Chains or Interleaves) to a depth of more than 20.

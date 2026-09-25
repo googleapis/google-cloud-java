@@ -175,6 +175,25 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
     return payload_;
   }
 
+  public static final int HAS_MORE_FIELD_NUMBER = 5;
+  private boolean hasMore_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If there are more responses for this rpc_id coming.
+   * </pre>
+   *
+   * <code>bool has_more = 5;</code>
+   *
+   * @return The hasMore.
+   */
+  @java.lang.Override
+  public boolean getHasMore() {
+    return hasMore_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -201,6 +220,9 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getStats());
     }
+    if (hasMore_ != false) {
+      output.writeBool(5, hasMore_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -221,6 +243,9 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStats());
+    }
+    if (hasMore_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, hasMore_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,6 +273,7 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
       if (!getStats().equals(other.getStats())) return false;
     }
     if (!getPayload().equals(other.getPayload())) return false;
+    if (getHasMore() != other.getHasMore()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -271,6 +297,8 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
     hash = (53 * hash) + getPayload().hashCode();
+    hash = (37 * hash) + HAS_MORE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasMore());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +461,7 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
         statsBuilder_ = null;
       }
       payload_ = com.google.protobuf.ByteString.EMPTY;
+      hasMore_ = false;
       return this;
     }
 
@@ -485,6 +514,9 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.payload_ = payload_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hasMore_ = hasMore_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -511,6 +543,9 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
       }
       if (!other.getPayload().isEmpty()) {
         setPayload(other.getPayload());
+      }
+      if (other.getHasMore() != false) {
+        setHasMore(other.getHasMore());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -563,6 +598,12 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 40:
+              {
+                hasMore_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -945,6 +986,62 @@ public final class VirtualRpcResponse extends com.google.protobuf.GeneratedMessa
     public Builder clearPayload() {
       bitField0_ = (bitField0_ & ~0x00000008);
       payload_ = getDefaultInstance().getPayload();
+      onChanged();
+      return this;
+    }
+
+    private boolean hasMore_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If there are more responses for this rpc_id coming.
+     * </pre>
+     *
+     * <code>bool has_more = 5;</code>
+     *
+     * @return The hasMore.
+     */
+    @java.lang.Override
+    public boolean getHasMore() {
+      return hasMore_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If there are more responses for this rpc_id coming.
+     * </pre>
+     *
+     * <code>bool has_more = 5;</code>
+     *
+     * @param value The hasMore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasMore(boolean value) {
+
+      hasMore_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If there are more responses for this rpc_id coming.
+     * </pre>
+     *
+     * <code>bool has_more = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHasMore() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      hasMore_ = false;
       onChanged();
       return this;
     }

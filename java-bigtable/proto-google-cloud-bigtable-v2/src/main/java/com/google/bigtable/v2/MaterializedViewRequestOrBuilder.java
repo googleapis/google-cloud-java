@@ -43,5 +43,22 @@ public interface MaterializedViewRequestOrBuilder
   /** <code>.google.bigtable.v2.SessionReadRowRequest read_row = 1;</code> */
   com.google.bigtable.v2.SessionReadRowRequestOrBuilder getReadRowOrBuilder();
 
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+   *
+   * @return Whether the readRows field is set.
+   */
+  boolean hasReadRows();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+   *
+   * @return The readRows.
+   */
+  com.google.bigtable.v2.SessionReadRowsRequest getReadRows();
+
+  /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+  com.google.bigtable.v2.SessionReadRowsRequestOrBuilder getReadRowsOrBuilder();
+
   com.google.bigtable.v2.MaterializedViewRequest.PayloadCase getPayloadCase();
 }

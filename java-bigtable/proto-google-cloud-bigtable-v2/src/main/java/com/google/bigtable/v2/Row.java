@@ -25,7 +25,6 @@ package com.google.bigtable.v2;
  *
  * <pre>
  * Specifies the complete (requested) contents of a single row of a table.
- * Rows which exceed 256MiB in size cannot be read in full.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.Row}
@@ -346,7 +345,6 @@ public final class Row extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Specifies the complete (requested) contents of a single row of a table.
-   * Rows which exceed 256MiB in size cannot be read in full.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.Row}

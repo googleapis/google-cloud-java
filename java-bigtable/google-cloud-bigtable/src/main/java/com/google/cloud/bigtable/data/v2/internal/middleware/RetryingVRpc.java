@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigtable.data.v2.internal.middleware;
 
+import com.google.bigtable.v2.TelemetryConfiguration;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.common.base.Stopwatch;
@@ -41,10 +43,21 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   private final io.opentelemetry.context.Context otelContext;
 
   private final Supplier<VRpc<ReqT, RespT>> attemptFactory;
+  private final VRpcResumptionStrategy<ReqT, RespT> resumptionStrategy;
+  private final DebugTagTracer debugTagTracer;
   private ReqT request;
+  // The request to send on the current attempt. Equal to `request` for the first attempt; rewritten
+  // by the resumption strategy on each retry so a resumed stream skips what was already delivered.
+  private ReqT currentRequest;
   private VRpcListener<RespT> listener;
   private VRpcCallContext context;
   private VRpcTracer tracer;
+
+  // Outstanding response demand. start() implicitly requests the first response, and the transport
+  // permits at most one in-flight response at a time, so this is only ever 0 or 1. It gates whether
+  // a retryable failure resumes immediately (demand present) or parks in Idle until the caller
+  // asks for the next response.
+  private int outstanding;
 
   private final BigtableTimer timer;
 
@@ -53,8 +66,14 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
   // Breaks the loop on uncaught exception during cancel.
   private boolean isCancelling;
 
-  public RetryingVRpc(Supplier<VRpc<ReqT, RespT>> supplier, BigtableTimer timer) {
+  public RetryingVRpc(
+      Supplier<VRpc<ReqT, RespT>> supplier,
+      BigtableTimer timer,
+      VRpcResumptionStrategy<ReqT, RespT> resumptionStrategy,
+      DebugTagTracer debugTagTracer) {
     this.attemptFactory = supplier;
+    this.resumptionStrategy = resumptionStrategy;
+    this.debugTagTracer = debugTagTracer;
 
     grpcContext = Context.current();
     otelContext = io.opentelemetry.context.Context.current();
@@ -80,9 +99,12 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     // cancel(), cancel() reads this.context / this.listener — they must be set already, or
     // we trade the original failure for an NPE inside the recovery path.
     this.request = req;
+    this.currentRequest = req;
     this.listener = listener;
     this.context = ctx;
     this.tracer = context.getTracer();
+    // Starting the operation implicitly requests the first response.
+    this.outstanding = 1;
 
     tracer.onOperationStart();
     started = true;
@@ -125,15 +147,12 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   @Override
   public void requestNext() {
-    // Assert the op-executor affinity even though the body is dead today — when streaming lands
-    // and this becomes real, the missing assertion would silently allow off-thread access.
-    // Guarded on context being set so a misuse before start() still throws
-    // UnsupportedOperationException
-    // rather than NPE on the assertion.
-    if (context != null) {
-      context.getExecutor().throwIfNotInThisExecutor();
-    }
-    throw new UnsupportedOperationException("request next is not supported in unary");
+    // Guarded on started so a misuse before start() surfaces a clear error (and a debug tag) rather
+    // than an NPE on the affinity assertion below, which reads this.context.
+    debugTagTracer.checkPrecondition(
+        started, "request_more_before_start", "requestNext called before start");
+    context.getExecutor().throwIfNotInThisExecutor();
+    currentState.onRequestNext();
   }
 
   void onStateChange(State state) {
@@ -154,21 +173,31 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
     public void onCancel(String reason, Throwable throwable) {}
 
+    public void onRequestNext() {}
+
     public boolean isDone() {
       return false;
     }
   }
 
+  // Both the initial request and every retry land here first. An attempt is launched only while the
+  // caller is actually demanding a response: on the initial start() and on a retry that happened
+  // while demand was outstanding, `outstanding` is already 1 and we go straight to Active. On a
+  // retry that happened while parked between responses (a spontaneous transport failure with no
+  // demand), we wait here until requestNext arrives, so we never push an unsolicited response.
   class Idle extends State {
 
     @Override
     public void onStart() {
-      // initial request and retries will all start in idle state.
-      // TODO: When stream is supported we only transition to active state when
-      //  caller is requesting more. And this should be part of the attempt time and app blocking
-      // time.
-      Active active = new Active();
-      onStateChange(active);
+      if (outstanding > 0) {
+        onStateChange(new Active());
+      }
+    }
+
+    @Override
+    public void onRequestNext() {
+      outstanding = 1;
+      onStateChange(new Active());
     }
   }
 
@@ -189,9 +218,9 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     @Override
     public void onStart() {
       attempt = attemptFactory.get();
-      tracer.onAttemptStart(request);
+      tracer.onAttemptStart(currentRequest);
       attempt.start(
-          request,
+          currentRequest,
           context,
           new VRpcListener<RespT>() {
             @Override
@@ -204,6 +233,9 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                     msg);
                 return;
               }
+              // A delivered response is progress: it satisfies the outstanding demand.
+              outstanding = 0;
+              resumptionStrategy.onResponse(msg);
               tracer.onResponseReceived();
               Stopwatch appTimer = Stopwatch.createStarted();
               Throwable userThrow = null;
@@ -240,17 +272,34 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               }
               finishAttempt(result);
               if (shouldRetry(result)) {
+                // Rewrite the request to resume from where the stream left off. A null result
+                // means the scan is already fully satisfied, so complete OK instead of retrying.
+                ReqT resumeRequest = resumptionStrategy.getResumeRequest(request);
+                if (resumeRequest == null) {
+                  // The attempt ended in a (retryable) error, but the scan was already fully
+                  // satisfied, so we complete OK instead of resuming. Flag it: an error at the very
+                  // end of a read is worth surfacing even though the user sees success. Carry the
+                  // error frame's cluster attribution into the synthesized OK.
+                  debugTagTracer.record(TelemetryConfiguration.Level.INFO, "error_at_end_of_read");
+                  onStateChange(new Done(VRpcResult.createLocalOk(result.getClusterInfo())));
+                  return;
+                }
+                currentRequest = resumeRequest;
                 context = context.createForNextAttempt();
+                // Always honor a server-directed delay by scheduling the retry. When the delay
+                // elapses we drop into Idle, which decides whether to actually launch the resumed
+                // attempt: if the caller is waiting (outstanding > 0) it fires immediately;
+                // otherwise it parks until requestNext arrives. With no delay we go straight to
+                // Idle and let it make the same decision now.
                 Duration retryDelay =
                     Optional.ofNullable(result.getRetryInfo())
                         .map(RetryInfo::getRetryDelay)
                         .orElse(Durations.ZERO);
                 if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
-                  Scheduled scheduled = new Scheduled(retryDelay);
-                  onStateChange(scheduled);
-                } else {
-                  onStateChange(new Idle());
+                  onStateChange(new Scheduled(retryDelay));
+                  return;
                 }
+                onStateChange(new Idle());
                 return;
               }
 
@@ -271,6 +320,16 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
       if (attempt != null) {
         attempt.cancel(reason, throwable);
       }
+    }
+
+    @Override
+    public void onRequestNext() {
+      if (outstanding > 0) {
+        throw new IllegalStateException(
+            "requestNext called before the previous response was delivered");
+      }
+      outstanding = 1;
+      attempt.requestNext();
     }
 
     @Override
@@ -341,6 +400,15 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               context.getExecutor(),
               Durations.toMillis(retryDelay),
               TimeUnit.MILLISECONDS);
+    }
+
+    @Override
+    public void onRequestNext() {
+      // A caller can ask for the next response while we are waiting out a server-directed delay
+      // (this happens when the retry fired with no demand outstanding). Record the demand but keep
+      // honoring the delay — when the timer fires we drop into Idle, which sees outstanding > 0 and
+      // launches the resumed attempt.
+      outstanding = 1;
     }
 
     // Invoked from BigtableTimer.stop on the close thread. Trampoline back to the op executor so

@@ -133,6 +133,27 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
     return keepAlive_ == null ? com.google.protobuf.Duration.getDefaultInstance() : keepAlive_;
   }
 
+  public static final int SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE_FIELD_NUMBER = 2;
+  private int softmaxStreamingPrefetchBufferSize_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Client will pull this many bytes at most to make messages for steamed
+   * responses. If the last byte is mid-message, it will continue until a full
+   * message comes.
+   * </pre>
+   *
+   * <code>int32 softmax_streaming_prefetch_buffer_size = 2;</code>
+   *
+   * @return The softmaxStreamingPrefetchBufferSize.
+   */
+  @java.lang.Override
+  public int getSoftmaxStreamingPrefetchBufferSize() {
+    return softmaxStreamingPrefetchBufferSize_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -150,6 +171,9 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getKeepAlive());
     }
+    if (softmaxStreamingPrefetchBufferSize_ != 0) {
+      output.writeInt32(2, softmaxStreamingPrefetchBufferSize_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -161,6 +185,11 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getKeepAlive());
+    }
+    if (softmaxStreamingPrefetchBufferSize_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              2, softmaxStreamingPrefetchBufferSize_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -182,6 +211,8 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
     if (hasKeepAlive()) {
       if (!getKeepAlive().equals(other.getKeepAlive())) return false;
     }
+    if (getSoftmaxStreamingPrefetchBufferSize() != other.getSoftmaxStreamingPrefetchBufferSize())
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -197,6 +228,8 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
       hash = (37 * hash) + KEEP_ALIVE_FIELD_NUMBER;
       hash = (53 * hash) + getKeepAlive().hashCode();
     }
+    hash = (37 * hash) + SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getSoftmaxStreamingPrefetchBufferSize();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -351,6 +384,7 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
         keepAliveBuilder_.dispose();
         keepAliveBuilder_ = null;
       }
+      softmaxStreamingPrefetchBufferSize_ = 0;
       return this;
     }
 
@@ -392,6 +426,9 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
         result.keepAlive_ = keepAliveBuilder_ == null ? keepAlive_ : keepAliveBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.softmaxStreamingPrefetchBufferSize_ = softmaxStreamingPrefetchBufferSize_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -410,6 +447,9 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
         return this;
       if (other.hasKeepAlive()) {
         mergeKeepAlive(other.getKeepAlive());
+      }
+      if (other.getSoftmaxStreamingPrefetchBufferSize() != 0) {
+        setSoftmaxStreamingPrefetchBufferSize(other.getSoftmaxStreamingPrefetchBufferSize());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -444,6 +484,12 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                softmaxStreamingPrefetchBufferSize_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -696,6 +742,68 @@ public final class SessionParametersResponse extends com.google.protobuf.Generat
         keepAlive_ = null;
       }
       return keepAliveBuilder_;
+    }
+
+    private int softmaxStreamingPrefetchBufferSize_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Client will pull this many bytes at most to make messages for steamed
+     * responses. If the last byte is mid-message, it will continue until a full
+     * message comes.
+     * </pre>
+     *
+     * <code>int32 softmax_streaming_prefetch_buffer_size = 2;</code>
+     *
+     * @return The softmaxStreamingPrefetchBufferSize.
+     */
+    @java.lang.Override
+    public int getSoftmaxStreamingPrefetchBufferSize() {
+      return softmaxStreamingPrefetchBufferSize_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Client will pull this many bytes at most to make messages for steamed
+     * responses. If the last byte is mid-message, it will continue until a full
+     * message comes.
+     * </pre>
+     *
+     * <code>int32 softmax_streaming_prefetch_buffer_size = 2;</code>
+     *
+     * @param value The softmaxStreamingPrefetchBufferSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSoftmaxStreamingPrefetchBufferSize(int value) {
+
+      softmaxStreamingPrefetchBufferSize_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Client will pull this many bytes at most to make messages for steamed
+     * responses. If the last byte is mid-message, it will continue until a full
+     * message comes.
+     * </pre>
+     *
+     * <code>int32 softmax_streaming_prefetch_buffer_size = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSoftmaxStreamingPrefetchBufferSize() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      softmaxStreamingPrefetchBufferSize_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.SessionParametersResponse)

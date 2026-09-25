@@ -16,8 +16,10 @@
 
 package com.google.cloud.bigtable.data.v2.internal.session;
 
+import com.google.bigtable.v2.CancelVirtualRpcRequest;
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason;
+import com.google.bigtable.v2.ContinueVirtualRpcRequest;
 import com.google.bigtable.v2.ErrorResponse;
 import com.google.bigtable.v2.GoAwayResponse;
 import com.google.bigtable.v2.HeartbeatResponse;
@@ -62,8 +64,15 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private static final Logger DEFAULT_LOGGER = Logger.getLogger(SessionImpl.class.getName());
   private Logger logger = DEFAULT_LOGGER;
 
+  // Default byte budget the streaming-response assembly layer may prefetch ahead of the caller
+  // before the server has advertised its own value via SessionParametersResponse.
+  private static final int DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE = 1024 * 1024;
+
   private static final SessionParametersResponse DEFAULT_SESSION_PARAMS =
-      SessionParametersResponse.newBuilder().setKeepAlive(Durations.fromMillis(100)).build();
+      SessionParametersResponse.newBuilder()
+          .setKeepAlive(Durations.fromMillis(100))
+          .setSoftmaxStreamingPrefetchBufferSize(DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE)
+          .build();
 
   static final Duration HEARTBEAT_CHECK_INTERVAL =
       Duration.ofMillis(Durations.toMillis(DEFAULT_SESSION_PARAMS.getKeepAlive()));
@@ -134,7 +143,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private VRpcResult currentCancel = null;
 
-  private SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
+  // Volatile because it is written on sessionSyncContext (handleSessionParamsResponse) but its
+  // softmax prefetch budget is read live off that context via getSoftmaxStreamingPrefetchBufferSize
+  // (the streaming-response assembly layer sizes prefetch on its own executor), so a mid-session
+  // update must be visible across threads. The value is an immutable proto, so a volatile read of
+  // the reference is a consistent snapshot.
+  private volatile SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
 
   private Duration heartbeatInterval =
       Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
@@ -273,6 +287,17 @@ public class SessionImpl implements Session, VRpcSessionApi {
   @Override
   public Instant getNextHeartbeat() {
     return nextHeartbeat;
+  }
+
+  /**
+   * The byte budget the streaming-response assembly layer may prefetch ahead of the caller. Seeded
+   * from {@link #DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE} and updated whenever the server
+   * advertises a new value via {@link SessionParametersResponse}. Read live (off the session sync
+   * context) so a mid-session update takes effect on the next prefetch decision.
+   */
+  @Override
+  public int getSoftmaxStreamingPrefetchBufferSize() {
+    return sessionParameters.getSoftmaxStreamingPrefetchBufferSize();
   }
 
   @Override
@@ -488,12 +513,47 @@ public class SessionImpl implements Session, VRpcSessionApi {
   public void cancelRpc(long rpcId, @Nullable String message, @Nullable Throwable cause) {
     sessionSyncContext.execute(
         () -> {
-          if (currentRpc != null && rpcId == currentRpc.rpcId) {
-            currentCancel =
-                VRpcResult.createRejectedError(
-                    Status.CANCELLED.withDescription(message).withCause(cause));
+          // Nothing to cancel if the vRPC already finished (or a different one is now in flight).
+          if (currentRpc == null || rpcId != currentRpc.rpcId) {
+            return;
           }
-          // do nothing if the rpc is already finished
+          currentCancel =
+              VRpcResult.createRejectedError(
+                  Status.CANCELLED.withDescription(message).withCause(cause));
+          // Tell the server to stop the vRPC. It acknowledges with a terminal frame that drives
+          // currentCancel through handleVRpc*Response and completes the vRPC. This matters most for
+          // a streaming vRPC that is idle (buffer full, no pull in flight): without the request the
+          // server would never send another frame, so the cancel could never take effect. A stray
+          // frame that was already in flight when the server processed the cancel is discarded by
+          // handleVRpc*Response once currentRpc is cleared.
+          if (state == SessionState.READY || state == SessionState.CLOSING) {
+            stream.sendMessage(
+                SessionRequest.newBuilder()
+                    .setCancelVirtualRpc(CancelVirtualRpcRequest.newBuilder().setRpcId(rpcId))
+                    .build());
+          }
+        });
+  }
+
+  @Override
+  public void continueRpc(long rpcId) {
+    sessionSyncContext.execute(
+        () -> {
+          // Only the in-flight vRPC may be continued, and only while the session can carry it. A
+          // stale continue (the vRPC already completed/cancelled) is silently dropped.
+          if (currentRpc == null || currentRpc.rpcId != rpcId) {
+            return;
+          }
+          if (state != SessionState.READY && state != SessionState.CLOSING) {
+            return;
+          }
+          stream.sendMessage(
+              SessionRequest.newBuilder()
+                  .setContinueVirtualRpc(ContinueVirtualRpcRequest.newBuilder().setRpcId(rpcId))
+                  .build());
+          // Another response is now expected, so keep the heartbeat check armed.
+          this.nextHeartbeat = clock.instant().plus(heartbeatInterval);
+          scheduleHeartbeatCheck();
         });
   }
 
@@ -623,8 +683,37 @@ public class SessionImpl implements Session, VRpcSessionApi {
       return;
     }
 
-    if (!sessionParameters.equals(resp)) {
-      this.sessionParameters = resp;
+    // Common case: the server re-advertises the params we already hold. Nothing to validate or
+    // merge, so skip the per-field work and the builder allocation.
+    if (sessionParameters.equals(resp)) {
+      return;
+    }
+
+    // The params differ, so merge the update field-by-field, adopting only valid values and
+    // otherwise keeping the last-known-good (the default is always valid). This prevents a malformed
+    // update from wedging the session: a non-positive keep_alive would zero the heartbeat interval
+    // and force-close a healthy stream, and a non-positive softmax budget would deadlock streaming
+    // prefetch (maybeContinue never pulls). Both fields treat 0/unset as "no opinion, keep current"
+    // rather than adopting the zero -- softmax is a presence-less int32 so 0 is indistinguishable
+    // from unset anyway.
+    SessionParametersResponse.Builder merged = sessionParameters.toBuilder();
+
+    if (resp.hasKeepAlive()) {
+      // keep_alive "must be set and positive" (proto contract). A present-but-non-positive value is
+      // a protocol violation; ignore it and flag it.
+      if (Durations.toMillis(resp.getKeepAlive()) > 0) {
+        merged.setKeepAlive(resp.getKeepAlive());
+      } else {
+        debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_params_invalid_discarded");
+      }
+    }
+    if (resp.getSoftmaxStreamingPrefetchBufferSize() > 0) {
+      merged.setSoftmaxStreamingPrefetchBufferSize(resp.getSoftmaxStreamingPrefetchBufferSize());
+    }
+
+    SessionParametersResponse next = merged.build();
+    if (!sessionParameters.equals(next)) {
+      this.sessionParameters = next;
       this.heartbeatInterval =
           Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
       logger.log(
@@ -633,14 +722,14 @@ public class SessionImpl implements Session, VRpcSessionApi {
               String.format(
                   "%s session params changed: %s",
                   info.getLogName(),
-                  TextFormat.printer().emittingSingleLine(true).printToString(resp)));
+                  TextFormat.printer().emittingSingleLine(true).printToString(next)));
     }
   }
 
   private void handleVRpcResponse(VirtualRpcResponse vrpc) {
     sessionSyncContext.throwIfNotInThisSynchronizationContext();
-    // TODO: when stream is supported this should be updated to the next expected time instead of
-    // session life time
+    // Default to no active-vRPC deadline; the has_more branch below re-arms it when the stream
+    // still has responses coming.
     this.nextHeartbeat = clock.instant().plus(FUTURE_TIME);
 
     if (state.phase > SessionState.CLOSING.phase) {
@@ -659,32 +748,51 @@ public class SessionImpl implements Session, VRpcSessionApi {
         "session_vrpc_response_wrong_state",
         "Unexpected vRPC response when session is %s",
         state);
-    debugTagTracer.checkPrecondition(
-        currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
-    debugTagTracer.checkPrecondition(
-        currentRpc.rpcId == vrpc.getRpcId(),
-        "session_vrpc_id_mismatch",
-        "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
-        currentRpc.rpcId,
-        vrpc.getRpcId());
+    if (currentRpc == null || currentRpc.rpcId != vrpc.getRpcId()) {
+      // A late frame for a vRPC that is no longer active: after a client cancel the server may
+      // still flush a response that was already in flight before it processed the
+      // CancelVirtualRpcRequest. With no multiplexing there is no vRPC to deliver it to, so discard
+      // it rather than aborting the session on the precondition.
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_vrpc_stale_response");
+      logger.fine(
+          String.format(
+              "%s Discarding vRPC response with no matching active vRPC, rpcId: %s",
+              info.getLogName(), vrpc.getRpcId()));
+      return;
+    }
 
-    // reset state of the current rpc
     VRpcImpl<?, ?, ?> rpc = currentRpc;
     VRpcResult cancel = currentCancel;
-    // TODO: handle multiplexing
-    currentRpc = null;
-    currentCancel = null;
-    // No active vRPC means no useful heartbeat deadline; drop the in-flight tick.
+
+    // A response satisfies the outstanding request/continue, so the server owes us nothing more
+    // until the client pulls again -- continueRpc() re-arms the check when it sends the next
+    // continue. has_more only tells the client it MAY send another continue; the server does not
+    // push a further frame unbidden, so has_more must not keep the heartbeat armed. Otherwise an
+    // idle stream (client buffer full, not pulling) would be force-closed on the next tick even
+    // though it is healthy. nextHeartbeat was already reset to FUTURE_TIME at the top. Mirrors
+    // handleVRpcErrorResponse, which also always cancels.
     cancelHeartbeatTimeout();
+
+    // A pending cancel or a response without has_more ends the vRPC; has_more keeps the same vRPC
+    // in flight so the client can pull (continue) the remaining responses of a stream.
+    boolean terminal = cancel != null || !vrpc.getHasMore();
+    if (terminal) {
+      // reset state of the current rpc
+      // TODO: handle multiplexing
+      currentRpc = null;
+      currentCancel = null;
+    }
 
     if (cancel != null) {
       tracer.onVRpcClose(cancel.getStatus().getCode());
       rpc.handleError(cancel);
     } else {
-      tracer.onVRpcClose(Status.OK.getCode());
+      if (terminal) {
+        tracer.onVRpcClose(Status.OK.getCode());
+      }
       rpc.handleResponse(vrpc);
     }
-    if (state == SessionState.CLOSING) {
+    if (terminal && state == SessionState.CLOSING) {
       startGracefulClose();
     }
   }
@@ -730,14 +838,16 @@ public class SessionImpl implements Session, VRpcSessionApi {
         "Unexpected vRPC response when session is %s",
         state);
 
-    debugTagTracer.checkPrecondition(
-        currentRpc != null, "session_vrpc_null", "Got vRPC response but current vRPC is unset");
-    debugTagTracer.checkPrecondition(
-        currentRpc.rpcId == error.getRpcId(),
-        "session_vrpc_id_mismatch",
-        "Got vRPC response for the wrong vRPC: expect: %s, actual: %s",
-        currentRpc.rpcId,
-        error.getRpcId());
+    if (currentRpc == null || currentRpc.rpcId != error.getRpcId()) {
+      // A late error frame for a vRPC that is no longer active (see handleVRpcResponse). Discard it
+      // rather than aborting the session on the precondition.
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_vrpc_stale_response");
+      logger.fine(
+          String.format(
+              "%s Discarding vRPC error with no matching active vRPC, rpcId: %s",
+              info.getLogName(), error.getRpcId()));
+      return;
+    }
 
     // reset the state of the current rpc
     VRpcImpl<?, ?, ?> rpc = currentRpc;
