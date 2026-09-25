@@ -49,72 +49,86 @@ public class OptimizeWriteLatencyPool {
     int poolSize = 3;
     String nextObjectName = keyPrefix + "_" + poolSize;
     byte[] payload = "0123456789".getBytes(StandardCharsets.UTF_8);
-    ExecutorService executor = Executors.newSingleThreadExecutor();
 
     try (Storage storage = StorageOptions.grpc().build().getService()) {
       BlobAppendableUploadConfig config =
           BlobAppendableUploadConfig.of().withCloseAction(CloseAction.CLOSE_WITHOUT_FINALIZING);
-
-      // 1. Init pool: Sized to ensure pre-warmed channels are always available.
       Queue<AppendableUploadWriteableByteChannel> pool = new ConcurrentLinkedQueue<>();
-      for (int i = 0; i < poolSize; i++) {
-        BlobInfo info = BlobInfo.newBuilder(bucketName, keyPrefix + "_" + i).build();
-        AppendableUploadWriteableByteChannel ch =
-            storage
-                .blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist())
-                .open(); // Establishes stream and creates 0-byte object in the background.
-        pool.add(ch);
-      }
-
-      // 2. Write: Pop a pre-warmed writer and commit with flush() (~1-2 ms)
-      // instead of blocking on close().
-      AppendableUploadWriteableByteChannel channel = pool.poll();
-      channel.write(ByteBuffer.wrap(payload));
-      channel.flush();
-
-      // 3. Pool maintenance (run asynchronously off the critical write path):
-      // Close the used channel without finalizing and refill the pool.
-      Future<Void> maintenanceFuture =
-          executor.submit(
-              () -> {
-                channel.closeWithoutFinalizing();
-                BlobInfo nextInfo = BlobInfo.newBuilder(bucketName, nextObjectName).build();
-                AppendableUploadWriteableByteChannel replacement =
-                    storage
-                        .blobAppendableUpload(
-                            nextInfo, config, Storage.BlobWriteOption.doesNotExist())
-                        .open();
-                pool.add(replacement);
-                return null;
-              });
-
-      // 4. Read: Unfinalized objects are readable after flush().
-      try (BlobReadSession readSession =
-          storage
-              .blobReadSession(BlobId.of(bucketName, keyPrefix + "_0"))
-              .get(10, TimeUnit.SECONDS)) {
-        byte[] bytes =
-            readSession
-                .readAs(
-                    ReadProjectionConfigs.asFutureBytes()
-                        .withRangeSpec(RangeSpec.of(0, payload.length)))
-                .get();
-        System.out.printf(
-            "Read unfinalized object %s_0: %s%n",
-            keyPrefix, new String(bytes, StandardCharsets.UTF_8));
-      }
-
-      maintenanceFuture.get(10, TimeUnit.SECONDS);
-    } finally {
-      for (AppendableUploadWriteableByteChannel rem : pool) {
-        try {
-          rem.closeWithoutFinalizing();
-        } catch (Exception e) {
-          // Ignore to ensure other channels are closed
+      ExecutorService executor = Executors.newSingleThreadExecutor();
+      try {
+        // 1. Init pool: Sized to ensure pre-warmed channels are always available.
+        for (int i = 0; i < poolSize; i++) {
+          BlobInfo info = BlobInfo.newBuilder(bucketName, keyPrefix + "_" + i).build();
+          // open() establishes the stream and creates the 0-byte object in the background.
+          pool.add(
+              storage
+                  .blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist())
+                  .open());
         }
-      }
-      if (executor != null) {
+
+        // 2. Write: Pop a pre-warmed writer and commit with flush() (~1-2 ms)
+        // instead of blocking on close().
+        AppendableUploadWriteableByteChannel channel = pool.poll();
+        if (channel == null) {
+          throw new IllegalStateException("Writer pool is empty");
+        }
+        try {
+          channel.write(ByteBuffer.wrap(payload));
+          channel.flush();
+        } catch (Exception e) {
+          try {
+            channel.closeWithoutFinalizing();
+          } catch (Exception closeException) {
+            e.addSuppressed(closeException);
+          }
+          throw e;
+        }
+
+        // 3. Pool maintenance (run asynchronously off the critical write path):
+        // Close the used channel without finalizing and refill the pool.
+        Future<Void> maintenanceFuture =
+            executor.submit(
+                () -> {
+                  channel.closeWithoutFinalizing();
+                  BlobInfo nextInfo = BlobInfo.newBuilder(bucketName, nextObjectName).build();
+                  pool.add(
+                      storage
+                          .blobAppendableUpload(
+                              nextInfo, config, Storage.BlobWriteOption.doesNotExist())
+                          .open());
+                  return null;
+                });
+
+        // 4. Read: Unfinalized objects are readable after flush().
+        try (BlobReadSession readSession =
+            storage
+                .blobReadSession(BlobId.of(bucketName, keyPrefix + "_0"))
+                .get(10, TimeUnit.SECONDS)) {
+          byte[] bytes =
+              readSession
+                  .readAs(
+                      ReadProjectionConfigs.asFutureBytes()
+                          .withRangeSpec(RangeSpec.of(0, payload.length)))
+                  .get();
+          System.out.printf(
+              "Read unfinalized object %s_0: %s%n",
+              keyPrefix, new String(bytes, StandardCharsets.UTF_8));
+        }
+
+        maintenanceFuture.get(10, TimeUnit.SECONDS);
+      } finally {
+        // Wait for in-flight maintenance so it can't add a channel after the pool is drained.
         executor.shutdown();
+        executor.awaitTermination(10, TimeUnit.SECONDS);
+        // Runs before the Storage client is closed by the outer try-with-resources.
+        AppendableUploadWriteableByteChannel remaining;
+        while ((remaining = pool.poll()) != null) {
+          try {
+            remaining.closeWithoutFinalizing();
+          } catch (Exception e) {
+            // Ignore so the remaining channels are still closed.
+          }
+        }
       }
     }
   }
