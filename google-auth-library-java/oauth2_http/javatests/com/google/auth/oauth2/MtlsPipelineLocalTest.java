@@ -128,6 +128,8 @@ class MtlsPipelineLocalTest {
 
   @BeforeAll
   static void beforeAll() throws Exception {
+    // Initialize the default SSLContext before overriding javax.net.ssl.trustStore below, so it
+    // keeps the JVM's default trust settings.
     SSLContext.getDefault();
     originalHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
     HttpsURLConnection.setDefaultHostnameVerifier((hostname, session) -> true);
@@ -189,17 +191,13 @@ class MtlsPipelineLocalTest {
         new HttpsConfigurator(sslContext) {
           @Override
           public void configure(HttpsParameters params) {
-            try {
-              SSLContext context = getSSLContext();
-              SSLEngine engine = context.createSSLEngine();
-              SSLParameters sslParams = context.getDefaultSSLParameters();
-              sslParams.setNeedClientAuth(true);
-              sslParams.setCipherSuites(engine.getEnabledCipherSuites());
-              sslParams.setProtocols(engine.getEnabledProtocols());
-              params.setSSLParameters(sslParams);
-            } catch (Exception e) {
-              throw new RuntimeException("Failed to configure HttpsServer mTLS", e);
-            }
+            SSLContext context = getSSLContext();
+            SSLEngine engine = context.createSSLEngine();
+            SSLParameters sslParams = context.getDefaultSSLParameters();
+            sslParams.setNeedClientAuth(true);
+            sslParams.setCipherSuites(engine.getEnabledCipherSuites());
+            sslParams.setProtocols(engine.getEnabledProtocols());
+            params.setSSLParameters(sslParams);
           }
         });
 
@@ -689,14 +687,6 @@ class MtlsPipelineLocalTest {
           @Override
           public void handle(HttpExchange exchange) throws IOException {
             try {
-              HttpsExchange httpsExchange = (HttpsExchange) exchange;
-              SSLSession session = httpsExchange.getSSLSession();
-              Certificate[] certs = session.getPeerCertificates();
-              if (certs == null || certs.length == 0) {
-                sendJsonResponse(exchange, 403, "{\"error\": \"missing_peer_cert\"}");
-                return;
-              }
-
               // Always read and drain the request body
               readRequestBody(exchange);
 
@@ -792,7 +782,9 @@ class MtlsPipelineLocalTest {
   /**
    * Scenario D: testMtlsPipeline_atomicTokenRead
    *
-   * <p>Verify single-pass file read of subject + actor tokens from the same JSON file.
+   * <p>Verifies that subject and actor tokens configured in the same JSON file share one supplier
+   * and are both sent in the STS request over mTLS. The single file read is covered by {@code
+   * IdentityPoolCredentialsTest#refreshAccessToken_subjectAndActorFromSameFileParse}.
    */
   @Test
   void testMtlsPipeline_atomicTokenRead(@TempDir Path tempDir) throws Exception {
@@ -891,9 +883,10 @@ class MtlsPipelineLocalTest {
     Path dynamicKeyFile = tempDir.resolve("dynamic_key.pem");
     Path certConfigFile = tempDir.resolve("dynamic_cert_config.json");
 
-    // Write initial cert and key (Cert A) to disk
-    Files.copy(Paths.get(TEST_CERT_PATH), dynamicCertFile);
-    Files.copy(Paths.get(TEST_KEY_PATH), dynamicKeyFile);
+    // Write Cert B to disk so the transport stored by fromStream() holds Cert B. Cert A is written
+    // right before refreshAccessToken(), so the per-cycle pinned transport holds a different cert.
+    Files.copy(Paths.get(TEST_CERT_2_PATH), dynamicCertFile);
+    Files.copy(Paths.get(TEST_KEY_2_PATH), dynamicKeyFile);
 
     String certConfigContent =
         "{\n"
@@ -1034,6 +1027,11 @@ class MtlsPipelineLocalTest {
             ExternalAccountCredentials.fromStream(
                 new ByteArrayInputStream(configJson.getBytes(StandardCharsets.UTF_8)));
 
+    // Overwrite with Cert A so this refresh cycle pins Cert A while the stored transport holds
+    // Cert B.
+    Files.copy(Paths.get(TEST_CERT_PATH), dynamicCertFile, StandardCopyOption.REPLACE_EXISTING);
+    Files.copy(Paths.get(TEST_KEY_PATH), dynamicKeyFile, StandardCopyOption.REPLACE_EXISTING);
+
     AccessToken accessToken = credentials.refreshAccessToken();
     assertEquals("final_target_sa_access_token_456", accessToken.getTokenValue());
     assertEquals(1, stsCallCount.get());
@@ -1050,12 +1048,13 @@ class MtlsPipelineLocalTest {
     assertTrue(iamCerts.length > 0);
     assertTrue(iamCerts[0] instanceof X509Certificate);
 
-    // Verify both handlers received Cert A (proving IAM stayed on the pinned transport
-    // even though the cert on disk rotated to Cert B inside the STS handler)
+    // Verify both handlers received Cert A (the pinned cert). The stored transport holds Cert B and
+    // the cert on disk rotates to Cert B inside the STS handler, so IAM would present Cert B if it
+    // used either of those instead of the pinned transport.
     String stsPrincipal = ((X509Certificate) stsCerts[0]).getSubjectX500Principal().getName();
     String iamPrincipal = ((X509Certificate) iamCerts[0]).getSubjectX500Principal().getName();
     assertEquals("CN=1009120726878.apps.googleusercontent.com", stsPrincipal);
-    assertEquals(stsPrincipal, iamPrincipal);
+    assertEquals("CN=1009120726878.apps.googleusercontent.com", iamPrincipal);
 
     // Asserts IAM handler receives Authorization: Bearer <intermediate_token>
     assertEquals("Bearer intermediate_sts_token_123", capturedIamAuthHeader.get());

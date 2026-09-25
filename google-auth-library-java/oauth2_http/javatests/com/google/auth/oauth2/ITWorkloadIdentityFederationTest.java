@@ -590,16 +590,10 @@ final class ITWorkloadIdentityFederationTest {
 
   private String getMtlsCertificateConfigPath() {
     String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    if (certConfigPath != null && !certConfigPath.isEmpty()) {
-      try {
-        if (new X509Provider(certConfigPath).isAvailable()) {
-          return certConfigPath;
-        }
-      } catch (Exception ignored) {
-        // Fall back to testresources/mtls/certificate_config.json if env config is unavailable
-      }
+    if (certConfigPath == null || certConfigPath.isEmpty()) {
+      fail("mTLS certificate config not set through GOOGLE_API_CERTIFICATE_CONFIG env variable.");
     }
-    return "testresources/mtls/certificate_config.json";
+    return certConfigPath;
   }
 
   private void callGcs(GoogleCredentials credentials) throws IOException {
