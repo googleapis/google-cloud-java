@@ -77,9 +77,38 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
     return new ClientStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ApiStreamObserver<RequestT> clientStreamingCall(
-          ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
+          final ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
+        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
+        ApiStreamObserver<ResponseT> refreshingObserver = responseObserver;
+
+        if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))) {
+          refreshingObserver =
+              new ApiStreamObserver<ResponseT>() {
+                @Override
+                public void onNext(ResponseT response) {
+                  responseObserver.onNext(response);
+                }
+
+                @Override
+                public void onError(Throwable t) {
+                  if (t instanceof UnauthenticatedException) {
+                    TransportChannel transportChannel = mergedContext.getTransportChannel();
+                    if (transportChannel != null) {
+                      transportChannel.refresh();
+                    }
+                  }
+                  responseObserver.onError(t);
+                }
+
+                @Override
+                public void onCompleted() {
+                  responseObserver.onCompleted();
+                }
+              };
+        }
+
         return ClientStreamingCallable.this.clientStreamingCall(
-            responseObserver, defaultCallContext.merge(thisCallContext));
+            refreshingObserver, mergedContext);
       }
     };
   }

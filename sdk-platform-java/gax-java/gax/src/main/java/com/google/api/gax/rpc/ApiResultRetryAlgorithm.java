@@ -40,6 +40,10 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */
   @Override
   public boolean shouldRetry(Throwable previousThrowable, ResponseT previousResponse) {
+    if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))
+        && previousThrowable instanceof UnauthenticatedException) {
+      return true;
+    }
     return (previousThrowable instanceof ApiException)
         && ((ApiException) previousThrowable).isRetryable();
   }
@@ -53,6 +57,10 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   @Override
   public boolean shouldRetry(
       RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+    if ("true".equalsIgnoreCase(System.getenv("isMwlidEnvironment"))
+        && previousThrowable instanceof UnauthenticatedException) {
+      return true;
+    }
     if (context.getRetryableCodes() != null) {
       // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list
       // of codes that should be retried.
