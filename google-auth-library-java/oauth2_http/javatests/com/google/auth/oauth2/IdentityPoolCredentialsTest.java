@@ -2489,6 +2489,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         firstCycleFactory,
         secondCycleFactory,
         "Each refresh cycle should create a distinct transport factory from its cert snapshot");
+    // A new factory is created every cycle, so also check each one holds the expected KeyStore.
+    assertSame(ksOriginal, ((MtlsHttpTransportFactory) firstCycleFactory).getKeyStore());
+    assertSame(ksRotated, ((MtlsHttpTransportFactory) secondCycleFactory).getKeyStore());
   }
 
   // ==================================================================================
