@@ -385,7 +385,6 @@ final class ITWorkloadIdentityFederationTest {
                 String.format(
                     "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
                     clientEmail))
-            .setX509Provider(x509Provider)
             .setHttpTransportFactory(transportFactory)
             .build();
 
@@ -480,7 +479,6 @@ final class ITWorkloadIdentityFederationTest {
             .setAudience(OIDC_AUDIENCE)
             .setSubjectTokenType(SubjectTokenTypes.JWT)
             .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
-            .setX509Provider(x509Provider)
             .setHttpTransportFactory(transportFactory)
             .build();
 

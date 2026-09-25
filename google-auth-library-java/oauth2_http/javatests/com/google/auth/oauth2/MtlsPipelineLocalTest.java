@@ -1263,4 +1263,104 @@ class MtlsPipelineLocalTest {
     assertEquals("Bearer intermediate_sts_token_1", iamAuthHeaders.get(0));
     assertEquals("Bearer intermediate_sts_token_2", iamAuthHeaders.get(1));
   }
+
+  /**
+   * Scenario G: testMtlsPipeline_programmaticMtlsTransportFactory_usedForStsAndIam
+   *
+   * <p>Builds credentials through the public programmatic path only: subject and actor token
+   * suppliers plus a caller-supplied {@link MtlsHttpTransportFactory}, with no certificate config.
+   * Verifies the caller-supplied client certificate is presented to both STS and IAM.
+   */
+  @Test
+  void testMtlsPipeline_programmaticMtlsTransportFactory_usedForStsAndIam() throws Exception {
+    AtomicReference<Certificate[]> capturedStsCerts = new AtomicReference<>();
+    AtomicReference<Map<String, String>> capturedStsParams = new AtomicReference<>();
+
+    server.createContext(
+        "/v1/token",
+        new HttpHandler() {
+          @Override
+          public void handle(HttpExchange exchange) throws IOException {
+            try {
+              HttpsExchange httpsExchange = (HttpsExchange) exchange;
+              capturedStsCerts.set(httpsExchange.getSSLSession().getPeerCertificates());
+              capturedStsParams.set(parseFormData(readRequestBody(exchange)));
+
+              GenericJson response = new GenericJson();
+              response.setFactory(OAuth2Utils.JSON_FACTORY);
+              response.put("access_token", "intermediate_sts_token_programmatic");
+              response.put("token_type", "Bearer");
+              response.put("expires_in", 3600);
+              response.put("issued_token_type", ACCESS_TOKEN_TYPE);
+              sendJsonResponse(exchange, 200, response.toPrettyString());
+            } catch (Exception e) {
+              sendJsonResponse(exchange, 500, "{\"error\": \"" + e.getMessage() + "\"}");
+            }
+          }
+        });
+
+    AtomicReference<Certificate[]> capturedIamCerts = new AtomicReference<>();
+    AtomicReference<String> capturedIamAuthHeader = new AtomicReference<>();
+
+    server.createContext(
+        "/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken",
+        new HttpHandler() {
+          @Override
+          public void handle(HttpExchange exchange) throws IOException {
+            try {
+              HttpsExchange httpsExchange = (HttpsExchange) exchange;
+              capturedIamCerts.set(httpsExchange.getSSLSession().getPeerCertificates());
+              capturedIamAuthHeader.set(exchange.getRequestHeaders().getFirst("Authorization"));
+              readRequestBody(exchange);
+
+              GenericJson response = new GenericJson();
+              response.setFactory(OAuth2Utils.JSON_FACTORY);
+              response.put("accessToken", "final_target_sa_access_token_programmatic");
+              response.put("expireTime", "2030-01-01T00:00:00Z");
+              sendJsonResponse(exchange, 200, response.toPrettyString());
+            } catch (Exception e) {
+              sendJsonResponse(exchange, 500, "{\"error\": \"" + e.getMessage() + "\"}");
+            }
+          }
+        });
+
+    server.start();
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectTokenProgrammatic")
+            .setActorTokenSupplier(context -> "testActorTokenProgrammatic")
+            .setActorTokenType(SubjectTokenTypes.JWT.value)
+            .setAudience(AUDIENCE)
+            .setSubjectTokenType(SubjectTokenTypes.JWT)
+            .setTokenUrl("https://localhost:" + serverPort + "/v1/token")
+            .setServiceAccountImpersonationUrl(
+                "https://localhost:"
+                    + serverPort
+                    + "/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+            .setHttpTransportFactory(new MtlsHttpTransportFactory(createClientKeyStore()))
+            .build();
+
+    AccessToken accessToken = credentials.refreshAccessToken();
+    assertEquals("final_target_sa_access_token_programmatic", accessToken.getTokenValue());
+
+    // The caller-supplied KeyStore holds Cert A, and no certificate config exists, so both STS and
+    // IAM must present Cert A from the supplied transport factory.
+    Certificate[] stsCerts = capturedStsCerts.get();
+    assertNotNull(stsCerts);
+    assertEquals(
+        "CN=1009120726878.apps.googleusercontent.com",
+        ((X509Certificate) stsCerts[0]).getSubjectX500Principal().getName());
+    Certificate[] iamCerts = capturedIamCerts.get();
+    assertNotNull(iamCerts);
+    assertEquals(
+        "CN=1009120726878.apps.googleusercontent.com",
+        ((X509Certificate) iamCerts[0]).getSubjectX500Principal().getName());
+
+    assertEquals("Bearer intermediate_sts_token_programmatic", capturedIamAuthHeader.get());
+    Map<String, String> stsParams = capturedStsParams.get();
+    assertNotNull(stsParams);
+    assertEquals("testSubjectTokenProgrammatic", stsParams.get("subject_token"));
+    assertEquals("testActorTokenProgrammatic", stsParams.get("actor_token"));
+  }
 }
