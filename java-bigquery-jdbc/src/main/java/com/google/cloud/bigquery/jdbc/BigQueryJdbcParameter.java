@@ -20,14 +20,28 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
 
 class BigQueryJdbcParameter {
+
+  // The parameter can be inferred from the user via setter methods along with values and
+  // just the parameter types from dryRuns. Keeping track of this metadata avoids repeated dryRuns.
+  enum Binding {
+    // Type and value unknown
+    UNBOUND,
+    // Parameter Type is known; inferred from dryRun or left behind by a cleared value. No value
+    // known.
+    TYPED,
+    // Parameter type and value set by user; its type outranks anything a dry run reports.
+    BOUND
+  }
+
   private int index;
   private Object value;
   private Class type;
   private StandardSQLTypeName sqlType;
   // Additional parameters needed for CallableStatement.
   private String paramName;
-  private BigQueryStatementParameterType paramType;
+  private BigQueryStatementParameterType paramType = BigQueryStatementParameterType.UNSPECIFIED;
   private int scale;
+  private Binding binding = Binding.UNBOUND;
 
   BigQueryJdbcParameter() {}
 
@@ -36,6 +50,10 @@ class BigQueryJdbcParameter {
     this.value = parameter.value;
     this.type = parameter.type;
     this.sqlType = parameter.sqlType;
+    this.paramName = parameter.paramName;
+    this.paramType = parameter.paramType;
+    this.scale = parameter.scale;
+    this.binding = parameter.binding;
   }
 
   int getIndex() {
@@ -58,16 +76,12 @@ class BigQueryJdbcParameter {
     return type;
   }
 
-  public void setType(Class type) {
+  void setType(Class type) {
     this.type = type;
   }
 
   StandardSQLTypeName getSqlType() {
     return sqlType;
-  }
-
-  void setSqlType(StandardSQLTypeName sqlType) {
-    this.sqlType = sqlType;
   }
 
   String getParamName() {
@@ -94,6 +108,37 @@ class BigQueryJdbcParameter {
     this.scale = scale;
   }
 
+  boolean isBound() {
+    return binding == Binding.BOUND;
+  }
+
+  Binding getBinding() {
+    return binding;
+  }
+
+  boolean suggestType(Class<?> javaType, StandardSQLTypeName bqType) {
+    if (binding == Binding.BOUND) {
+      return false;
+    }
+    this.type = javaType;
+    this.sqlType = bqType;
+    this.binding = Binding.TYPED;
+    return true;
+  }
+
+  void bindType(Class<?> javaType, StandardSQLTypeName bqType) {
+    this.type = javaType;
+    this.sqlType = bqType;
+    this.binding = Binding.BOUND;
+  }
+
+  void clearValue() {
+    this.value = null;
+    if (binding == Binding.BOUND) {
+      this.binding = Binding.TYPED;
+    }
+  }
+
   @Override
   public String toString() {
     return "BigQueryJdbcParameter{"
@@ -112,6 +157,8 @@ class BigQueryJdbcParameter {
         + paramType.name()
         + ", scale="
         + scale
+        + ", binding="
+        + binding
         + '}';
   }
 }

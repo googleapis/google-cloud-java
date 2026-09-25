@@ -17,6 +17,9 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
@@ -37,8 +40,7 @@ public class BigQueryJdbcParameterTest {
     BigQueryJdbcParameter parameter = new BigQueryJdbcParameter();
     parameter.setIndex(3);
     parameter.setValue("String Object");
-    parameter.setType(String.class);
-    parameter.setSqlType(StandardSQLTypeName.STRING);
+    parameter.bindType(String.class, StandardSQLTypeName.STRING);
     parameter.setParamName("StringParameter");
     parameter.setParamType(BigQueryStatementParameterType.IN);
     parameter.setScale(-1);
@@ -50,6 +52,7 @@ public class BigQueryJdbcParameterTest {
     assertEquals(expectedParamName, parameter.getParamName());
     assertEquals(expectedParamType, parameter.getParamType());
     assertEquals(expectedScale, parameter.getScale());
+    assertTrue(parameter.isBound());
   }
 
   @Test
@@ -62,8 +65,7 @@ public class BigQueryJdbcParameterTest {
     BigQueryJdbcParameter parameter = new BigQueryJdbcParameter();
     parameter.setIndex(3);
     parameter.setValue("String Object");
-    parameter.setType(String.class);
-    parameter.setSqlType(StandardSQLTypeName.STRING);
+    parameter.bindType(String.class, StandardSQLTypeName.STRING);
 
     BigQueryJdbcParameter copiedParameter = new BigQueryJdbcParameter(parameter);
 
@@ -71,5 +73,42 @@ public class BigQueryJdbcParameterTest {
     assertEquals(expectedValue, copiedParameter.getValue());
     assertEquals(expectedType, copiedParameter.getType());
     assertEquals(expectedSqlType, copiedParameter.getSqlType());
+    // A batched copy must carry its provenance, or inference could overwrite a caller's value.
+    assertTrue(copiedParameter.isBound());
+  }
+
+  @Test
+  public void testSuggestTypeYieldsToABoundParameter() {
+    BigQueryJdbcParameter parameter = new BigQueryJdbcParameter();
+    parameter.bindType(String.class, StandardSQLTypeName.STRING);
+
+    assertFalse(parameter.suggestType(Long.class, StandardSQLTypeName.INT64));
+    assertEquals(String.class, parameter.getType());
+    assertEquals(StandardSQLTypeName.STRING, parameter.getSqlType());
+  }
+
+  @Test
+  public void testSuggestTypeAppliesToAnUnboundParameter() {
+    BigQueryJdbcParameter parameter = new BigQueryJdbcParameter();
+
+    assertTrue(parameter.suggestType(Long.class, StandardSQLTypeName.INT64));
+    assertEquals(Long.class, parameter.getType());
+    assertEquals(StandardSQLTypeName.INT64, parameter.getSqlType());
+    assertFalse(parameter.isBound());
+  }
+
+  @Test
+  public void testClearValueKeepsTheTypeAndDemotesTheBinding() {
+    BigQueryJdbcParameter parameter = new BigQueryJdbcParameter();
+    parameter.setValue("String Object");
+    parameter.bindType(String.class, StandardSQLTypeName.STRING);
+
+    parameter.clearValue();
+
+    // The type survives so a later setNull on the same slot stays typed, but the slot is no longer
+    // bound, so the caller must supply a value again before execution.
+    assertNull(parameter.getValue());
+    assertEquals(StandardSQLTypeName.STRING, parameter.getSqlType());
+    assertFalse(parameter.isBound());
   }
 }
