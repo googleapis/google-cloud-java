@@ -24,11 +24,14 @@ import com.google.cloud.logging.HttpRequest;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
+import com.google.cloud.logging.Payload.JsonPayload;
 import com.google.cloud.logging.Payload.StringPayload;
+import com.google.cloud.logging.Severity;
 import com.google.cloud.logging.Synchronicity;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Collections;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -152,6 +155,27 @@ public class LoggingIT {
 
   @Test(timeout = 60000)
   public void testWriteLogEntrySample() throws Exception {
+    List<LogEntry> entries = WriteLogEntry.createLogEntries(TEST_LOG);
+    assertThat(entries).hasSize(2);
+
+    LogEntry textEntry = entries.get(0);
+    assertThat(textEntry.getLogName()).isEqualTo(TEST_LOG);
+    assertThat(textEntry.getResource().getType()).isEqualTo("global");
+    assertThat(textEntry.getSeverity()).isEqualTo(Severity.INFO);
+    assertThat(textEntry.getLabels()).containsEntry("sample", "write-log-entry");
+    assertThat(textEntry.getPayload()).isInstanceOf(StringPayload.class);
+    assertThat(((StringPayload) textEntry.getPayload()).getData())
+        .isEqualTo("Text log entry written from Java.");
+
+    LogEntry structEntry = entries.get(1);
+    assertThat(structEntry.getLogName()).isEqualTo(TEST_LOG);
+    assertThat(structEntry.getResource().getType()).isEqualTo("global");
+    assertThat(structEntry.getSeverity()).isEqualTo(Severity.WARNING);
+    assertThat(structEntry.getLabels()).containsEntry("sample", "write-log-entry");
+    assertThat(structEntry.getPayload()).isInstanceOf(JsonPayload.class);
+    assertThat(((JsonPayload) structEntry.getPayload()).getData())
+        .containsEntry("message", "Structured log entry written from Java.");
+
     WriteLogEntry.main(new String[] {TEST_LOG});
     String got = bout.toString();
     assertThat(got).contains(String.format("Wrote to %s", TEST_LOG));
