@@ -1075,6 +1075,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("jwtAudience", jwtAudience)
         .add("directPathConfig", getDirectPathConfig().toString())
         .add("sessionsEnabled", sessionsEnabled)
+        .add("additionalInternalMetricReaders", additionalInternalMetricReaders)
         .add("parent", super.toString())
         .toString();
   }
