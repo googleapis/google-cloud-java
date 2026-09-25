@@ -43,7 +43,6 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URI;
-import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -243,6 +242,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.x509Provider != null && shouldUseMtlsTransportFactory();
   }
 
+  /**
+   * Returns whether a clone of this credential can skip reading the KeyStore because the transport
+   * factory is already initialized (an mTLS factory with a KeyStore, or a custom non-mTLS factory).
+   */
   boolean hasInitializedMtlsTransport() {
     return this.x509Provider != null
         && (!shouldUseMtlsTransportFactory()
@@ -260,27 +263,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   private static boolean isRetryableTransportException(@Nullable Throwable throwable) {
-    if (throwable == null || throwable instanceof CertificateSourceUnavailableException) {
+    if (!(throwable instanceof IOException)
+        || throwable instanceof CertificateSourceUnavailableException) {
       return false;
     }
-    boolean hasIoOrSecurityException = throwable instanceof IOException;
     Throwable current = throwable;
     while (current != null) {
-      if (current instanceof CertificateSourceUnavailableException
-          || current instanceof OAuthException
-          || current instanceof HttpResponseException) {
+      if (current instanceof OAuthException || current instanceof HttpResponseException) {
         return false;
       }
-      if (current instanceof IOException || current instanceof GeneralSecurityException) {
-        hasIoOrSecurityException = true;
-      }
-      Throwable cause = current.getCause();
-      if (cause == current) {
-        break;
-      }
-      current = cause;
+      current = current.getCause();
     }
-    return hasIoOrSecurityException;
+    return true;
   }
 
   @Override
@@ -396,24 +390,20 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           stsTokenExchangeRequest.build(), cycleTransportFactory);
     } catch (IOException | RuntimeException e) {
       boolean isInitialKeyStoreLoadFailure =
-          pinnedKeyStore == null
-              && !(e instanceof CertificateSourceUnavailableException)
-              && isRetryableTransportException(e);
+          pinnedKeyStore == null && isRetryableTransportException(e);
       boolean reusedCachedStsTokenOn401 =
-          effectiveImpersonated != null
-              && effectiveImpersonated.consumeInvalidatedCachedStsTokenOn401()
-              && OAuth2Utils.isUnauthorizedException(e);
+          e instanceof ImpersonatedCredentials.CachedStsTokenRejectedException;
       if (allowRetry
           && this.x509Provider != null
           && shouldUseMtlsTransportFactory()
           && (OAuth2Utils.isUnauthorizedException(e)
               || OAuth2Utils.isInvalidGrantException(e)
-              || isRetryableTransportException(e)
-              || isInitialKeyStoreLoadFailure)) {
+              || isRetryableTransportException(e))) {
         KeyStore freshKeyStore;
         try {
-          // On 401, STS invalid_grant, TLS handshake/transport failure, or transient initial
-          // KeyStore load failure, re-read from X509Provider for fresh certs.
+          // On 401, STS invalid_grant (e.g. trust_chain_path rotated ahead of cert_path), TLS
+          // handshake/transport failure, or transient initial KeyStore load failure, re-read from
+          // X509Provider for fresh certs.
           freshKeyStore = this.x509Provider.getKeyStore();
         } catch (IOException reloadException) {
           if (reloadException != e) {

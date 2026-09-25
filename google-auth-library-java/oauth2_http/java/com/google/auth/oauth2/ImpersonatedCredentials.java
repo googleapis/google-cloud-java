@@ -116,8 +116,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private volatile GoogleCredentials sourceCredentials;
   private transient volatile @Nullable AccessToken cachedStsAccessToken;
   private transient volatile @Nullable KeyStore cachedStsKeyStore;
-  private static final ThreadLocal<Boolean> INVALIDATED_CACHED_STS_TOKEN_ON_401 =
-      new ThreadLocal<>();
   private final String targetPrincipal;
   private List<String> delegates;
   private final List<String> scopes;
@@ -604,29 +602,42 @@ public class ImpersonatedCredentials extends GoogleCredentials
         List<String> updatedScopes =
             currentScopes != null ? new ArrayList<>(currentScopes) : new ArrayList<>();
         updatedScopes.add(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
-        this.sourceCredentials = this.sourceCredentials.createScoped(updatedScopes);
+        GoogleCredentials scoped = this.sourceCredentials.createScoped(updatedScopes);
+        if (scoped.getAccessToken() != null) {
+          // createScoped() copies any existing access token, which was minted without
+          // CLOUD_PLATFORM_SCOPE. Clear it so refreshIfExpired() mints a correctly scoped token.
+          scoped = scoped.toBuilder().setAccessToken(null).build();
+        }
+        this.sourceCredentials = scoped;
       }
       return (ExternalAccountCredentials) this.sourceCredentials;
     }
   }
 
-  boolean consumeInvalidatedCachedStsTokenOn401() {
-    boolean value = Boolean.TRUE.equals(INVALIDATED_CACHED_STS_TOKEN_ON_401.get());
-    INVALIDATED_CACHED_STS_TOKEN_ON_401.remove();
-    return value;
+  /**
+   * Thrown when IAM rejects a cached STS token with a 401, signaling to {@link
+   * IdentityPoolCredentials} that a retry should mint a fresh STS token even if the certificate has
+   * not changed.
+   */
+  static final class CachedStsTokenRejectedException extends IOException {
+    private static final long serialVersionUID = 1L;
+
+    CachedStsTokenRejectedException(String message, Throwable cause) {
+      super(message, cause);
+    }
   }
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      ensureExternalSourceScoped();
+    }
     if (this.sourceCredentials instanceof IdentityPoolCredentials) {
       IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) this.sourceCredentials;
       if (identityPoolSource.hasMtlsProviderForImpersonation()
           && IdentityPoolCredentials.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
         return identityPoolSource.refreshImpersonatedAccessTokenWithRetry(this);
       }
-    }
-    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
-      ensureExternalSourceScoped();
     }
     return refreshAccessToken(null);
   }
@@ -684,7 +695,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
       @Nullable HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
       throws IOException {
     if (cycleTransportFactory != null) {
-      INVALIDATED_CACHED_STS_TOKEN_ON_401.remove();
+      // readObject() defers the certificate load, leaving a keyless MtlsHttpTransportFactory.
+      // Upgrade it to the pinned factory so sign() and idTokenWithAudience() can use mTLS.
       if (this.transportFactory instanceof MtlsHttpTransportFactory
           && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()) {
         this.transportFactory = cycleTransportFactory;
@@ -715,9 +727,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
         if (intermediateAccessToken == null) {
           try {
             intermediateAccessToken =
-                pinnedKeyStore != null
-                    ? externalSource.refreshAccessToken(effectiveTransportFactory, pinnedKeyStore)
-                    : externalSource.refreshAccessToken(effectiveTransportFactory);
+                externalSource.refreshAccessToken(effectiveTransportFactory, pinnedKeyStore);
           } catch (IOException e) {
             throw new IOException("Unable to refresh sourceCredentials", e);
           }
@@ -805,13 +815,13 @@ public class ImpersonatedCredentials extends GoogleCredentials
     } catch (IOException e) {
       if (cycleTransportFactory != null) {
         synchronized (this) {
-          if (!usedCachedStsToken || this.cachedStsAccessToken == intermediateAccessTokenForCache) {
+          if (usedCachedStsToken && this.cachedStsAccessToken == intermediateAccessTokenForCache) {
             this.cachedStsAccessToken = null;
             this.cachedStsKeyStore = null;
           }
         }
         if (usedCachedStsToken && OAuth2Utils.isUnauthorizedException(e)) {
-          INVALIDATED_CACHED_STS_TOKEN_ON_401.set(Boolean.TRUE);
+          throw new CachedStsTokenRejectedException("Error requesting access token", e);
         }
       }
       throw new IOException("Error requesting access token", e);
