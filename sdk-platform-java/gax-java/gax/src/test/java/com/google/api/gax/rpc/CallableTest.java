@@ -218,8 +218,8 @@ class CallableTest {
         .thenReturn(mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()));
     when(uploadClient.queryStatusCallable())
         .thenReturn(mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations()));
-    ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(1024).build();
+    UnaryCallSettings<String, String> settings =
+        UnaryCallSettings.<String, String>newUnaryCallSettingsBuilder().build();
 
     ResumableUploadCallable<String, String> callable =
         Callables.resumableUpload(uploadClient, settings, clientContext);
