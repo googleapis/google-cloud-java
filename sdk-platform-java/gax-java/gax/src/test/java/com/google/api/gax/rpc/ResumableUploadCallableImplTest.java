@@ -42,6 +42,8 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.ForwardingApiFuture;
@@ -796,6 +798,34 @@ class ResumableUploadCallableImplTest {
     assertThat(future.get()).isEqualTo("query-retry-ok");
     verify(mockQueryCallable, times(2)).futureCall(any(), any());
     verify(mockChunkCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_serverRejectionWithFinalStatus_failsFatalWithoutRetryOrRecovery() {
+    String sessionUrl = "https://upload.url/server-rejection-test";
+    stubStartSession(sessionUrl);
+    HttpResponseException rejection =
+        new HttpResponseException.Builder(
+                400, null, new HttpHeaders().set("X-Goog-Upload-Status", "final"))
+            .build();
+    ApiException rejectionException =
+        ApiExceptionFactory.createException(
+            "Invalid chunk",
+            rejection,
+            new HttpStatusStatusCode(400, StatusCode.Code.INVALID_ARGUMENT),
+            false);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFailedFuture(rejectionException));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("hello"), null);
+
+    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
+    assertThat(ex.getCause()).isInstanceOf(InvalidArgumentException.class);
+    ApiException cause = (ApiException) ex.getCause();
+    assertThat(cause.getStatusCode().getTransportCode()).isEqualTo(400);
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+    verifyNoInteractions(mockQueryCallable);
   }
 
   @Test
