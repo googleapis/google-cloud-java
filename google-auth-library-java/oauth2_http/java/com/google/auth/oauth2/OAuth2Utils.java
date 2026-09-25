@@ -349,11 +349,7 @@ public class OAuth2Utils {
           && ((HttpResponseException) t).getStatusCode() == 401) {
         return true;
       }
-      Throwable cause = t.getCause();
-      if (cause == t) {
-        break;
-      }
-      t = cause;
+      t = t.getCause();
     }
     return false;
   }
@@ -374,11 +370,7 @@ public class OAuth2Utils {
           && "invalid_grant".equals(((OAuthException) t).getErrorCode())) {
         return true;
       }
-      Throwable cause = t.getCause();
-      if (cause == t) {
-        break;
-      }
-      t = cause;
+      t = t.getCause();
     }
     return false;
   }

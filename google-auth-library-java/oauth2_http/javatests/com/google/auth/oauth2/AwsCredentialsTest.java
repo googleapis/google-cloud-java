@@ -1296,8 +1296,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
     assertEquals(
         testCredentials.getServiceAccountEmail(), deserializedCredentials.getServiceAccountEmail());
     AwsCredentials deserializedInnerSource =
-        (AwsCredentials)
-            deserializedCredentials.getImpersonatedCredentials().getSourceCredentials();
+        serializeAndDeserialize(
+            (AwsCredentials) testCredentials.getImpersonatedCredentials().getSourceCredentials());
     assertNull(deserializedInnerSource.getServiceAccountImpersonationUrl());
     assertEquals(
         testCredentials.getServiceAccountEmail(), deserializedInnerSource.getServiceAccountEmail());

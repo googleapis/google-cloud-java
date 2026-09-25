@@ -95,7 +95,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   // Service.
   private final @Nullable String workforcePoolUserProject;
 
-  protected transient HttpTransportFactory transportFactory;
+  protected transient volatile HttpTransportFactory transportFactory;
 
   protected transient volatile @Nullable ImpersonatedCredentials impersonatedCredentials;
 
