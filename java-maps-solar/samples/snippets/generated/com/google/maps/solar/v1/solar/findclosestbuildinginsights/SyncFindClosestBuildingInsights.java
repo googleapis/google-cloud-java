@@ -17,6 +17,7 @@
 package com.google.maps.solar.v1.samples;
 
 // [START solar_v1_generated_Solar_FindClosestBuildingInsights_sync]
+import com.google.maps.solar.v1.AdditionalInsights;
 import com.google.maps.solar.v1.BuildingInsights;
 import com.google.maps.solar.v1.Experiment;
 import com.google.maps.solar.v1.FindClosestBuildingInsightsRequest;
@@ -44,6 +45,7 @@ public class SyncFindClosestBuildingInsights {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setExactQualityRequired(true)
               .addAllExperiments(new ArrayList<Experiment>())
+              .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
               .build();
       BuildingInsights response = solarClient.findClosestBuildingInsights(request);
     }

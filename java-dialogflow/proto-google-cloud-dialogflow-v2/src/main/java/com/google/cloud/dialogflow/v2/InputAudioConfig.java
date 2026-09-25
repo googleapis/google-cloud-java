@@ -76,6 +76,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.v2.InputAudioConfig.Builder.class);
   }
 
+  private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_ = 0;
 
@@ -719,6 +720,108 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return optOutConformerModelMigration_;
   }
 
+  public static final int GEMINI_ASR_CONFIG_FIELD_NUMBER = 30;
+  private com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig geminiAsrConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiAsrConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeminiAsrConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiAsrConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig() {
+    return geminiAsrConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+        : geminiAsrConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+      getGeminiAsrConfigOrBuilder() {
+    return geminiAsrConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+        : geminiAsrConfig_;
+  }
+
+  public static final int USE_GEMINI_ASR_FIELD_NUMBER = 31;
+  private boolean useGeminiAsr_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+   * If unset, this setting is inherited from the ConversationProfile.
+   * </pre>
+   *
+   * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the useGeminiAsr field is set.
+   */
+  @java.lang.Override
+  public boolean hasUseGeminiAsr() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+   * If unset, this setting is inherited from the ConversationProfile.
+   * </pre>
+   *
+   * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useGeminiAsr.
+   */
+  @java.lang.Override
+  public boolean getUseGeminiAsr() {
+    return useGeminiAsr_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -777,6 +880,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (enableVoiceActivityEvents_ != false) {
       output.writeBool(27, enableVoiceActivityEvents_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(30, getGeminiAsrConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(31, useGeminiAsr_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -846,6 +955,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (enableVoiceActivityEvents_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, enableVoiceActivityEvents_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getGeminiAsrConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, useGeminiAsr_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -878,6 +993,14 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getPhraseSetsList().equals(other.getPhraseSetsList())) return false;
     if (getOptOutConformerModelMigration() != other.getOptOutConformerModelMigration())
       return false;
+    if (hasGeminiAsrConfig() != other.hasGeminiAsrConfig()) return false;
+    if (hasGeminiAsrConfig()) {
+      if (!getGeminiAsrConfig().equals(other.getGeminiAsrConfig())) return false;
+    }
+    if (hasUseGeminiAsr() != other.hasUseGeminiAsr()) return false;
+    if (hasUseGeminiAsr()) {
+      if (getUseGeminiAsr() != other.getUseGeminiAsr()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -925,6 +1048,14 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (37 * hash) + OPT_OUT_CONFORMER_MODEL_MIGRATION_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOptOutConformerModelMigration());
+    if (hasGeminiAsrConfig()) {
+      hash = (37 * hash) + GEMINI_ASR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGeminiAsrConfig().hashCode();
+    }
+    if (hasUseGeminiAsr()) {
+      hash = (37 * hash) + USE_GEMINI_ASR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseGeminiAsr());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1055,10 +1186,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dialogflow.v2.InputAudioConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetSpeechContextsFieldBuilder();
+        internalGetGeminiAsrConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1085,6 +1226,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       enableAutomaticPunctuation_ = false;
       phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       optOutConformerModelMigration_ = false;
+      geminiAsrConfig_ = null;
+      if (geminiAsrConfigBuilder_ != null) {
+        geminiAsrConfigBuilder_.dispose();
+        geminiAsrConfigBuilder_ = null;
+      }
+      useGeminiAsr_ = false;
       return this;
     }
 
@@ -1176,6 +1323,17 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.optOutConformerModelMigration_ = optOutConformerModelMigration_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.geminiAsrConfig_ =
+            geminiAsrConfigBuilder_ == null ? geminiAsrConfig_ : geminiAsrConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.useGeminiAsr_ = useGeminiAsr_;
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1274,6 +1432,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.getOptOutConformerModelMigration() != false) {
         setOptOutConformerModelMigration(other.getOptOutConformerModelMigration());
+      }
+      if (other.hasGeminiAsrConfig()) {
+        mergeGeminiAsrConfig(other.getGeminiAsrConfig());
+      }
+      if (other.hasUseGeminiAsr()) {
+        setUseGeminiAsr(other.getUseGeminiAsr());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1394,6 +1558,19 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 216
+            case 242:
+              {
+                input.readMessage(
+                    internalGetGeminiAsrConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 242
+            case 248:
+              {
+                useGeminiAsr_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 248
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3276,6 +3453,314 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearOptOutConformerModelMigration() {
       bitField0_ = (bitField0_ & ~0x00002000);
       optOutConformerModelMigration_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig geminiAsrConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+        geminiAsrConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the geminiAsrConfig field is set.
+     */
+    public boolean hasGeminiAsrConfig() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The geminiAsrConfig.
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig() {
+      if (geminiAsrConfigBuilder_ == null) {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+            : geminiAsrConfig_;
+      } else {
+        return geminiAsrConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig value) {
+      if (geminiAsrConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geminiAsrConfig_ = value;
+      } else {
+        geminiAsrConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder builderForValue) {
+      if (geminiAsrConfigBuilder_ == null) {
+        geminiAsrConfig_ = builderForValue.build();
+      } else {
+        geminiAsrConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig value) {
+      if (geminiAsrConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && geminiAsrConfig_ != null
+            && geminiAsrConfig_
+                != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+                    .getDefaultInstance()) {
+          getGeminiAsrConfigBuilder().mergeFrom(value);
+        } else {
+          geminiAsrConfig_ = value;
+        }
+      } else {
+        geminiAsrConfigBuilder_.mergeFrom(value);
+      }
+      if (geminiAsrConfig_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGeminiAsrConfig() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      geminiAsrConfig_ = null;
+      if (geminiAsrConfigBuilder_ != null) {
+        geminiAsrConfigBuilder_.dispose();
+        geminiAsrConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder
+        getGeminiAsrConfigBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return internalGetGeminiAsrConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+        getGeminiAsrConfigOrBuilder() {
+      if (geminiAsrConfigBuilder_ != null) {
+        return geminiAsrConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+            : geminiAsrConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+     * This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+        internalGetGeminiAsrConfigFieldBuilder() {
+      if (geminiAsrConfigBuilder_ == null) {
+        geminiAsrConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>(
+                getGeminiAsrConfig(), getParentForChildren(), isClean());
+        geminiAsrConfig_ = null;
+      }
+      return geminiAsrConfigBuilder_;
+    }
+
+    private boolean useGeminiAsr_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+     * If unset, this setting is inherited from the ConversationProfile.
+     * </pre>
+     *
+     * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the useGeminiAsr field is set.
+     */
+    @java.lang.Override
+    public boolean hasUseGeminiAsr() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+     * If unset, this setting is inherited from the ConversationProfile.
+     * </pre>
+     *
+     * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useGeminiAsr.
+     */
+    @java.lang.Override
+    public boolean getUseGeminiAsr() {
+      return useGeminiAsr_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+     * If unset, this setting is inherited from the ConversationProfile.
+     * </pre>
+     *
+     * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useGeminiAsr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseGeminiAsr(boolean value) {
+
+      useGeminiAsr_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+     * If unset, this setting is inherited from the ConversationProfile.
+     * </pre>
+     *
+     * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseGeminiAsr() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      useGeminiAsr_ = false;
       onChanged();
       return this;
     }

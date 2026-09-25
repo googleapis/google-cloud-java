@@ -90,7 +90,7 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
           + "\021STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tTRIGGERED\020\001\022\026\n"
           + "\022NEEDS_CONFIRMATION\020\002B\010\n"
-          + "\006source\"\201\004\n"
+          + "\006source\"\231\004\n"
           + "\016ToolCallResult\0226\n"
           + "\004tool\030\001 \001(\tB&\340A\001\372A \n"
           + "\036dialogflow.googleapis.com/ToolH\000\0229\n"
@@ -108,15 +108,15 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
           + "\007content\030\006 \001(\tB\003\340A\001H\001\0224\n"
           + "\013create_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
-          + "answer_record\030\t \001(\tB\003\340A\001\032\035\n"
+          + "answer_record\030\t \001(\tB\003\340A\001\0325\n"
           + "\005Error\022\024\n"
-          + "\007message\030\001 \001(\tB\003\340A\001B\010\n"
+          + "\007message\030\001 \001(\tB\003\340A\001\022\026\n"
+          + "\tretryable\030\002 \001(\010B\003\340A\001B\010\n"
           + "\006sourceB\010\n"
           + "\006resultB\223\001\n"
           + "\036com.google.cloud.dialogflow.v2B\r"
-          + "ToolCallProtoP\001Z>cloud.google.com/go/dialogflow/a"
-          + "piv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002\032Go"
-          + "ogle.Cloud.Dialogflow.V2b\006proto3"
+          + "ToolCallProtoP\001Z>cloud.google.com/go/dialogflow/apiv2/dialogflowp"
+          + "b;dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -171,7 +171,7 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_ToolCallResult_Error_descriptor,
             new java.lang.String[] {
-              "Message",
+              "Message", "Retryable",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

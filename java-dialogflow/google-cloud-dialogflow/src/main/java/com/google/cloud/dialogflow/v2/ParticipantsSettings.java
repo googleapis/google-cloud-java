@@ -129,6 +129,24 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).streamingAnalyzeContentSettings();
   }
 
+  /** Returns the object with the settings used for calls to bidiStreamingAnalyzeContent. */
+  public StreamingCallSettings<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentSettings() {
+    return ((ParticipantsStubSettings) getStubSettings()).bidiStreamingAnalyzeContentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to streamingReactiveCompanionSuggestions.
+   */
+  public StreamingCallSettings<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsSettings() {
+    return ((ParticipantsStubSettings) getStubSettings())
+        .streamingReactiveCompanionSuggestionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to suggestArticles. */
   public UnaryCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesSettings() {
@@ -311,6 +329,23 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
             StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentSettings() {
       return getStubSettingsBuilder().streamingAnalyzeContentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bidiStreamingAnalyzeContent. */
+    public StreamingCallSettings.Builder<
+            BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentSettings() {
+      return getStubSettingsBuilder().bidiStreamingAnalyzeContentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to streamingReactiveCompanionSuggestions.
+     */
+    public StreamingCallSettings.Builder<
+            StreamingReactiveCompanionSuggestionsRequest,
+            StreamingReactiveCompanionSuggestionsResponse>
+        streamingReactiveCompanionSuggestionsSettings() {
+      return getStubSettingsBuilder().streamingReactiveCompanionSuggestionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to suggestArticles. */

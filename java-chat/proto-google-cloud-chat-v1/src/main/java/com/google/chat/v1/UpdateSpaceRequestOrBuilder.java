@@ -137,6 +137,7 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * - `access_settings.access_permission_settings.discoverSpaceSetting`
    * - `access_settings.access_permission_settings.joinSpaceSetting`
+   * - `access_settings.access_permission_settings.viewSpaceMembershipSetting`
    *
    * `permission_settings`: Supports changing the
    * [permission settings](https://support.google.com/chat/answer/13340792)
@@ -153,6 +154,7 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.manageApps`
    * - `permission_settings.manageWebhooks`
    * - `permission_settings.replyMessages`
+   * - `permission_settings.viewSpaceMembership`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -230,6 +232,7 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * - `access_settings.access_permission_settings.discoverSpaceSetting`
    * - `access_settings.access_permission_settings.joinSpaceSetting`
+   * - `access_settings.access_permission_settings.viewSpaceMembershipSetting`
    *
    * `permission_settings`: Supports changing the
    * [permission settings](https://support.google.com/chat/answer/13340792)
@@ -246,6 +249,7 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.manageApps`
    * - `permission_settings.manageWebhooks`
    * - `permission_settings.replyMessages`
+   * - `permission_settings.viewSpaceMembership`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -323,6 +327,7 @@ public interface UpdateSpaceRequestOrBuilder
    *
    * - `access_settings.access_permission_settings.discoverSpaceSetting`
    * - `access_settings.access_permission_settings.joinSpaceSetting`
+   * - `access_settings.access_permission_settings.viewSpaceMembershipSetting`
    *
    * `permission_settings`: Supports changing the
    * [permission settings](https://support.google.com/chat/answer/13340792)
@@ -339,6 +344,7 @@ public interface UpdateSpaceRequestOrBuilder
    * - `permission_settings.manageApps`
    * - `permission_settings.manageWebhooks`
    * - `permission_settings.replyMessages`
+   * - `permission_settings.viewSpaceMembership`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];

@@ -413,4 +413,75 @@ public interface ResponseMetaDataOrBuilder
    * @return The section.
    */
   com.google.analytics.data.v1alpha.Section getSection();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason data_truncation_reasons = 11;
+   * </code>
+   */
+  java.util.List<com.google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason>
+      getDataTruncationReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason data_truncation_reasons = 11;
+   * </code>
+   */
+  com.google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason getDataTruncationReasons(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason data_truncation_reasons = 11;
+   * </code>
+   */
+  int getDataTruncationReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason data_truncation_reasons = 11;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReasonOrBuilder>
+      getDataTruncationReasonsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReason data_truncation_reasons = 11;
+   * </code>
+   */
+  com.google.analytics.data.v1alpha.ResponseMetaData.DataTruncationReasonOrBuilder
+      getDataTruncationReasonsOrBuilder(int index);
 }

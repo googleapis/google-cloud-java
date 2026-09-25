@@ -37,6 +37,11 @@ import com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1.ListDataAgentsRequest;
 import com.google.cloud.geminidataanalytics.v1.ListDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1.OperationMetadata;
+import com.google.cloud.geminidataanalytics.v1.RetrieveAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1.RetrieveAgentOpsObservabilityResponse;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityMetadata;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityResponse;
 import com.google.cloud.geminidataanalytics.v1.UpdateDataAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -193,6 +198,34 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityMethodDescriptor =
+          MethodDescriptor.<SetAgentOpsObservabilityRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1.DataAgentService/SetAgentOpsObservability")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SetAgentOpsObservabilityRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityMethodDescriptor =
+          MethodDescriptor
+              .<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1.DataAgentService/RetrieveAgentOpsObservability")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RetrieveAgentOpsObservabilityRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RetrieveAgentOpsObservabilityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -237,6 +270,16 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   private final UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable;
+  private final OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable;
+  private final UnaryCallable<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -408,6 +451,32 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getResource())
             .build();
+    GrpcCallSettings<SetAgentOpsObservabilityRequest, Operation>
+        setAgentOpsObservabilityTransportSettings =
+            GrpcCallSettings.<SetAgentOpsObservabilityRequest, Operation>newBuilder()
+                .setMethodDescriptor(setAgentOpsObservabilityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservabilityTransportSettings =
+            GrpcCallSettings
+                .<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+                    newBuilder()
+                .setMethodDescriptor(retrieveAgentOpsObservabilityMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -496,6 +565,22 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.setAgentOpsObservabilityCallable =
+        callableFactory.createUnaryCallable(
+            setAgentOpsObservabilityTransportSettings,
+            settings.setAgentOpsObservabilitySettings(),
+            clientContext);
+    this.setAgentOpsObservabilityOperationCallable =
+        callableFactory.createOperationCallable(
+            setAgentOpsObservabilityTransportSettings,
+            settings.setAgentOpsObservabilityOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.retrieveAgentOpsObservabilityCallable =
+        callableFactory.createUnaryCallable(
+            retrieveAgentOpsObservabilityTransportSettings,
+            settings.retrieveAgentOpsObservabilitySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -598,6 +683,27 @@ public class GrpcDataAgentServiceStub extends DataAgentServiceStub {
   @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable() {
+    return setAgentOpsObservabilityCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable() {
+    return setAgentOpsObservabilityOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable() {
+    return retrieveAgentOpsObservabilityCallable;
   }
 
   @Override

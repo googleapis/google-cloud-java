@@ -41,6 +41,30 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_PathOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_PathOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_QueryOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_QueryOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_UriOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_UriOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_HttpTarget_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_HttpTarget_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_HttpTarget_Header_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_HttpTarget_Header_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2_HttpTarget_HeaderOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2_HttpTarget_HeaderOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_tasks_v2_HttpRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_tasks_v2_HttpRequest_fieldAccessorTable;
@@ -79,12 +103,50 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "\"google/cloud/tasks/v2/target.proto\022\025go"
-          + "ogle.cloud.tasks.v2\032\037google/api/field_behavior.proto\"\341\002\n"
+          + "ogle.cloud.tasks.v2\032\037google/api/field_behavior.proto\"\034\n"
+          + "\014PathOverride\022\014\n"
+          + "\004path\030\001 \001(\t\"%\n\r"
+          + "QueryOverride\022\024\n"
+          + "\014query_params\030\001 \001(\t\"\203\004\n"
+          + "\013UriOverride\022>\n"
+          + "\006scheme\030\001 \001(\0162).goog"
+          + "le.cloud.tasks.v2.UriOverride.SchemeH\000\210\001\001\022\021\n"
+          + "\004host\030\002 \001(\tH\001\210\001\001\022\021\n"
+          + "\004port\030\003 \001(\003H\002\210\001\001\022:\n\r"
+          + "path_override\030\004 \001(\0132#.google.cloud.tasks.v2.PathOverride\022<\n"
+          + "\016query_override\030\005 \001(\0132$.google.cloud.tasks.v2.QueryOverride\022\\\n"
+          + "\031uri_override_enforce_mode\030\006 \001(\01629.g"
+          + "oogle.cloud.tasks.v2.UriOverride.UriOverrideEnforceMode\"5\n"
+          + "\006Scheme\022\026\n"
+          + "\022SCHEME_UNSPECIFIED\020\000\022\010\n"
+          + "\004HTTP\020\001\022\t\n"
+          + "\005HTTPS\020\002\"b\n"
+          + "\026UriOverrideEnforceMode\022)\n"
+          + "%URI_OVERRIDE_ENFORCE_MODE_UNSPECIFIED\020\000\022\021\n\r"
+          + "IF_NOT_EXISTS\020\001\022\n"
+          + "\n"
+          + "\006ALWAYS\020\002B\t\n"
+          + "\007_schemeB\007\n"
+          + "\005_hostB\007\n"
+          + "\005_port\"\306\003\n\n"
+          + "HttpTarget\0228\n"
+          + "\014uri_override\030\001 \001(\0132\".google.cloud.tasks.v2.UriOverride\0226\n"
+          + "\013http_method\030\002 \001(\0162!.google.cloud.tasks.v2.HttpMethod\022J\n"
+          + "\020header_overrides\030\003 \003(\01320.goo"
+          + "gle.cloud.tasks.v2.HttpTarget.HeaderOverride\0228\n"
+          + "\013oauth_token\030\005 \001(\0132!.google.cloud.tasks.v2.OAuthTokenH\000\0226\n\n"
+          + "oidc_token\030\006 \001(\0132 .google.cloud.tasks.v2.OidcTokenH\000\032$\n"
+          + "\006Header\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t\032J\n"
+          + "\016HeaderOverride\0228\n"
+          + "\006header\030\001 \001(\0132(.google.cloud.tasks.v2.HttpTarget.HeaderB\026\n"
+          + "\024authorization_header\"\341\002\n"
           + "\013HttpRequest\022\020\n"
           + "\003url\030\001 \001(\tB\003\340A\002\0226\n"
           + "\013http_method\030\002 \001(\0162!.google.cloud.tasks.v2.HttpMethod\022@\n"
-          + "\007headers\030\003 \003(\0132"
-          + "/.google.cloud.tasks.v2.HttpRequest.HeadersEntry\022\014\n"
+          + "\007headers\030\003 "
+          + "\003(\0132/.google.cloud.tasks.v2.HttpRequest.HeadersEntry\022\014\n"
           + "\004body\030\004 \001(\014\0228\n"
           + "\013oauth_token\030\005 \001(\0132!.google.cloud.tasks.v2.OAuthTokenH\000\0226\n\n"
           + "oidc_token\030\006 \001(\0132 .google.cloud.tasks.v2.OidcTokenH\000\032.\n"
@@ -94,11 +156,11 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
           + "\024authorization_header\"\262\002\n"
           + "\024AppEngineHttpRequest\0226\n"
           + "\013http_method\030\001 \001(\0162!.google.cloud.tasks.v2.HttpMethod\022C\n"
-          + "\022app_engine_routing\030\002 \001(\0132\'."
-          + "google.cloud.tasks.v2.AppEngineRouting\022\024\n"
+          + "\022app_engine_routing\030\002 \001("
+          + "\0132\'.google.cloud.tasks.v2.AppEngineRouting\022\024\n"
           + "\014relative_uri\030\003 \001(\t\022I\n"
-          + "\007headers\030\004 \003(\01328."
-          + "google.cloud.tasks.v2.AppEngineHttpRequest.HeadersEntry\022\014\n"
+          + "\007headers\030\004 \003("
+          + "\01328.google.cloud.tasks.v2.AppEngineHttpRequest.HeadersEntry\022\014\n"
           + "\004body\030\005 \001(\014\032.\n"
           + "\014HeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -123,8 +185,8 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
           + "\006DELETE\020\005\022\t\n"
           + "\005PATCH\020\006\022\013\n"
           + "\007OPTIONS\020\007Bj\n"
-          + "\031com.google.cloud.tasks.v2B\013TargetProtoP\001Z>cloud.google.com/go/cloudtasks/a"
-          + "piv2/cloudtaskspb;cloudtaskspbb\006proto3"
+          + "\031com.google.cloud.tasks.v2B\013TargetProtoP\001Z>cloud.google.com/go/cloudtas"
+          + "ks/apiv2/cloudtaskspb;cloudtaskspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -132,8 +194,60 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
             });
-    internal_static_google_cloud_tasks_v2_HttpRequest_descriptor =
+    internal_static_google_cloud_tasks_v2_PathOverride_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_tasks_v2_PathOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_PathOverride_descriptor,
+            new java.lang.String[] {
+              "Path",
+            });
+    internal_static_google_cloud_tasks_v2_QueryOverride_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_tasks_v2_QueryOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_QueryOverride_descriptor,
+            new java.lang.String[] {
+              "QueryParams",
+            });
+    internal_static_google_cloud_tasks_v2_UriOverride_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_tasks_v2_UriOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_UriOverride_descriptor,
+            new java.lang.String[] {
+              "Scheme", "Host", "Port", "PathOverride", "QueryOverride", "UriOverrideEnforceMode",
+            });
+    internal_static_google_cloud_tasks_v2_HttpTarget_descriptor = getDescriptor().getMessageType(3);
+    internal_static_google_cloud_tasks_v2_HttpTarget_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_HttpTarget_descriptor,
+            new java.lang.String[] {
+              "UriOverride",
+              "HttpMethod",
+              "HeaderOverrides",
+              "OauthToken",
+              "OidcToken",
+              "AuthorizationHeader",
+            });
+    internal_static_google_cloud_tasks_v2_HttpTarget_Header_descriptor =
+        internal_static_google_cloud_tasks_v2_HttpTarget_descriptor.getNestedType(0);
+    internal_static_google_cloud_tasks_v2_HttpTarget_Header_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_HttpTarget_Header_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_tasks_v2_HttpTarget_HeaderOverride_descriptor =
+        internal_static_google_cloud_tasks_v2_HttpTarget_descriptor.getNestedType(1);
+    internal_static_google_cloud_tasks_v2_HttpTarget_HeaderOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2_HttpTarget_HeaderOverride_descriptor,
+            new java.lang.String[] {
+              "Header",
+            });
+    internal_static_google_cloud_tasks_v2_HttpRequest_descriptor =
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_tasks_v2_HttpRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2_HttpRequest_descriptor,
@@ -155,7 +269,7 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_tasks_v2_AppEngineHttpRequest_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_tasks_v2_AppEngineHttpRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2_AppEngineHttpRequest_descriptor,
@@ -171,21 +285,21 @@ public final class TargetProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_tasks_v2_AppEngineRouting_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_tasks_v2_AppEngineRouting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2_AppEngineRouting_descriptor,
             new java.lang.String[] {
               "Service", "Version", "Instance", "Host",
             });
-    internal_static_google_cloud_tasks_v2_OAuthToken_descriptor = getDescriptor().getMessageType(3);
+    internal_static_google_cloud_tasks_v2_OAuthToken_descriptor = getDescriptor().getMessageType(7);
     internal_static_google_cloud_tasks_v2_OAuthToken_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2_OAuthToken_descriptor,
             new java.lang.String[] {
               "ServiceAccountEmail", "Scope",
             });
-    internal_static_google_cloud_tasks_v2_OidcToken_descriptor = getDescriptor().getMessageType(4);
+    internal_static_google_cloud_tasks_v2_OidcToken_descriptor = getDescriptor().getMessageType(8);
     internal_static_google_cloud_tasks_v2_OidcToken_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2_OidcToken_descriptor,

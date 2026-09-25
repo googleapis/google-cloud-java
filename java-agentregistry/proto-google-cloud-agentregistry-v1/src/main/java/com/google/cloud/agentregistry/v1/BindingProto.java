@@ -77,7 +77,7 @@ public final class BindingProto extends com.google.protobuf.GeneratedFile {
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022B\n"
           + "\006source\030\004"
-          + " \001(\0132-.google.cloud.agentregistry.v1.Binding.SourceB\003\340A\002\022B\n"
+          + " \001(\0132-.google.cloud.agentregistry.v1.Binding.SourceB\003\340A\001\022B\n"
           + "\006target\030\005 \001(\0132-.goog"
           + "le.cloud.agentregistry.v1.Binding.TargetB\003\340A\002\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"

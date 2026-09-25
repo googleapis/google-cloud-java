@@ -412,6 +412,59 @@ public interface TableOrBuilder
    *
    *
    * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveAutomatedBackupPolicy field is set.
+   */
+  boolean hasEffectiveAutomatedBackupPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveAutomatedBackupPolicy.
+   */
+  com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy getEffectiveAutomatedBackupPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder
+      getEffectiveAutomatedBackupPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Rules to specify what data is stored in each storage tier.
    * Different tiers store data differently, providing different trade-offs
    * between cost and performance. Different parts of a table can be stored

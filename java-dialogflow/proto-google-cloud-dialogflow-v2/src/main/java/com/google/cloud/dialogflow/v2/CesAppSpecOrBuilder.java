@@ -21,6 +21,7 @@
 package com.google.cloud.dialogflow.v2;
 
 @com.google.protobuf.Generated
+@java.lang.Deprecated
 public interface CesAppSpecOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.CesAppSpec)

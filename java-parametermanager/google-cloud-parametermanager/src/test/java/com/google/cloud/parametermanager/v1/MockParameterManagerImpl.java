@@ -296,4 +296,241 @@ public class MockParameterManagerImpl extends ParameterManagerImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listTemplates(
+      ListTemplatesRequest request, StreamObserver<ListTemplatesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTemplatesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTemplatesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTemplates, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTemplatesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTemplate(GetTemplateRequest request, StreamObserver<Template> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Template) {
+      requests.add(request);
+      responseObserver.onNext(((Template) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Template.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createTemplate(
+      CreateTemplateRequest request, StreamObserver<Template> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Template) {
+      requests.add(request);
+      responseObserver.onNext(((Template) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Template.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateTemplate(
+      UpdateTemplateRequest request, StreamObserver<Template> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Template) {
+      requests.add(request);
+      responseObserver.onNext(((Template) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Template.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTemplate(
+      DeleteTemplateRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTemplate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listTemplateVersions(
+      ListTemplateVersionsRequest request,
+      StreamObserver<ListTemplateVersionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTemplateVersionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTemplateVersionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTemplateVersions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTemplateVersionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTemplateVersion(
+      GetTemplateVersionRequest request, StreamObserver<TemplateVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TemplateVersion) {
+      requests.add(request);
+      responseObserver.onNext(((TemplateVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTemplateVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TemplateVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createTemplateVersion(
+      CreateTemplateVersionRequest request, StreamObserver<TemplateVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TemplateVersion) {
+      requests.add(request);
+      responseObserver.onNext(((TemplateVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTemplateVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TemplateVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateTemplateVersion(
+      UpdateTemplateVersionRequest request, StreamObserver<TemplateVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TemplateVersion) {
+      requests.add(request);
+      responseObserver.onNext(((TemplateVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTemplateVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TemplateVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTemplateVersion(
+      DeleteTemplateVersionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTemplateVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void renderTemplateVersion(
+      RenderTemplateVersionRequest request,
+      StreamObserver<RenderTemplateVersionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RenderTemplateVersionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RenderTemplateVersionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenderTemplateVersion, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RenderTemplateVersionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

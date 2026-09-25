@@ -34,6 +34,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2.CreateParticipantRequest;
 import com.google.cloud.dialogflow.v2.GetParticipantRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsRequest;
@@ -41,6 +43,8 @@ import com.google.cloud.dialogflow.v2.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2.Participant;
 import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
@@ -847,6 +851,25 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     throw new UnsupportedOperationException(
         "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
             + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: bidiStreamingAnalyzeContentCallable(). REST transport is not implemented"
+            + " for this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingReactiveCompanionSuggestionsCallable(). REST transport is not"
+            + " implemented for this method yet.");
   }
 
   @Override

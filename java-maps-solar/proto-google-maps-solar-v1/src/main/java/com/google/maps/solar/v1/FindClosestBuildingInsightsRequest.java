@@ -55,6 +55,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   private FindClosestBuildingInsightsRequest() {
     requiredQuality_ = 0;
     experiments_ = emptyIntList();
+    additionalInsights_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -215,7 +216,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -234,7 +241,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -252,7 +265,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -271,7 +290,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -289,7 +314,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -305,6 +336,131 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
   }
 
   private int experimentsMemoizedSerializedSize;
+
+  public static final int ADDITIONAL_INSIGHTS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList additionalInsights_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.maps.solar.v1.AdditionalInsights>
+      additionalInsights_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.maps.solar.v1.AdditionalInsights>() {
+            public com.google.maps.solar.v1.AdditionalInsights convert(int from) {
+              com.google.maps.solar.v1.AdditionalInsights result =
+                  com.google.maps.solar.v1.AdditionalInsights.forNumber(from);
+              return result == null
+                  ? com.google.maps.solar.v1.AdditionalInsights.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the additionalInsights.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.maps.solar.v1.AdditionalInsights> getAdditionalInsightsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.maps.solar.v1.AdditionalInsights>(
+        additionalInsights_, additionalInsights_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of additionalInsights.
+   */
+  @java.lang.Override
+  public int getAdditionalInsightsCount() {
+    return additionalInsights_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalInsights at the given index.
+   */
+  @java.lang.Override
+  public com.google.maps.solar.v1.AdditionalInsights getAdditionalInsights(int index) {
+    return additionalInsights_converter_.convert(additionalInsights_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for additionalInsights.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAdditionalInsightsValueList() {
+    return additionalInsights_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of additionalInsights at the given index.
+   */
+  @java.lang.Override
+  public int getAdditionalInsightsValue(int index) {
+    return additionalInsights_.getInt(index);
+  }
+
+  private int additionalInsightsMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
 
@@ -338,6 +494,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     for (int i = 0; i < experiments_.size(); i++) {
       output.writeEnumNoTag(experiments_.getInt(i));
     }
+    if (getAdditionalInsightsList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(additionalInsightsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < additionalInsights_.size(); i++) {
+      output.writeEnumNoTag(additionalInsights_.getInt(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -370,6 +533,20 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       }
       experimentsMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalInsights_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                additionalInsights_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAdditionalInsightsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      additionalInsightsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -393,6 +570,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     if (requiredQuality_ != other.requiredQuality_) return false;
     if (getExactQualityRequired() != other.getExactQualityRequired()) return false;
     if (!experiments_.equals(other.experiments_)) return false;
+    if (!additionalInsights_.equals(other.additionalInsights_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -415,6 +593,10 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
     if (getExperimentsCount() > 0) {
       hash = (37 * hash) + EXPERIMENTS_FIELD_NUMBER;
       hash = (53 * hash) + experiments_.hashCode();
+    }
+    if (getAdditionalInsightsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_INSIGHTS_FIELD_NUMBER;
+      hash = (53 * hash) + additionalInsights_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -574,6 +756,7 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       requiredQuality_ = 0;
       exactQualityRequired_ = false;
       experiments_ = emptyIntList();
+      additionalInsights_ = emptyIntList();
       return this;
     }
 
@@ -625,6 +808,10 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
         experiments_.makeImmutable();
         result.experiments_ = experiments_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        additionalInsights_.makeImmutable();
+        result.additionalInsights_ = additionalInsights_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -658,6 +845,17 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
         } else {
           ensureExperimentsIsMutable();
           experiments_.addAll(other.experiments_);
+        }
+        onChanged();
+      }
+      if (!other.additionalInsights_.isEmpty()) {
+        if (additionalInsights_.isEmpty()) {
+          additionalInsights_ = other.additionalInsights_;
+          additionalInsights_.makeImmutable();
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureAdditionalInsightsIsMutable();
+          additionalInsights_.addAll(other.additionalInsights_);
         }
         onChanged();
       }
@@ -724,6 +922,24 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
                 input.popLimit(limit);
                 break;
               } // case 42
+            case 48:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAdditionalInsightsIsMutable();
+                additionalInsights_.addInt(tmpRaw);
+                break;
+              } // case 48
+            case 50:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAdditionalInsightsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  additionalInsights_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1136,7 +1352,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1154,7 +1376,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1171,7 +1399,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1189,7 +1423,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1214,7 +1454,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1238,7 +1484,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1262,7 +1514,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1282,7 +1540,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1300,7 +1564,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1318,7 +1588,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1340,7 +1616,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1361,7 +1643,13 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA features to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage
+     * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+     * for more details.
      * </pre>
      *
      * <code>
@@ -1375,6 +1663,289 @@ public final class FindClosestBuildingInsightsRequest extends com.google.protobu
       ensureExperimentsIsMutable();
       for (int value : values) {
         experiments_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList additionalInsights_ = emptyIntList();
+
+    private void ensureAdditionalInsightsIsMutable() {
+      if (!additionalInsights_.isModifiable()) {
+        additionalInsights_ = makeMutableCopy(additionalInsights_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the additionalInsights.
+     */
+    public java.util.List<com.google.maps.solar.v1.AdditionalInsights> getAdditionalInsightsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.maps.solar.v1.AdditionalInsights>(
+          additionalInsights_, additionalInsights_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of additionalInsights.
+     */
+    public int getAdditionalInsightsCount() {
+      return additionalInsights_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalInsights at the given index.
+     */
+    public com.google.maps.solar.v1.AdditionalInsights getAdditionalInsights(int index) {
+      return additionalInsights_converter_.convert(additionalInsights_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalInsights to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalInsights(
+        int index, com.google.maps.solar.v1.AdditionalInsights value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalInsightsIsMutable();
+      additionalInsights_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The additionalInsights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalInsights(com.google.maps.solar.v1.AdditionalInsights value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalInsightsIsMutable();
+      additionalInsights_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The additionalInsights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalInsights(
+        java.lang.Iterable<? extends com.google.maps.solar.v1.AdditionalInsights> values) {
+      ensureAdditionalInsightsIsMutable();
+      for (com.google.maps.solar.v1.AdditionalInsights value : values) {
+        additionalInsights_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalInsights() {
+      additionalInsights_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for additionalInsights.
+     */
+    public java.util.List<java.lang.Integer> getAdditionalInsightsValueList() {
+      additionalInsights_.makeImmutable();
+      return additionalInsights_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of additionalInsights at the given index.
+     */
+    public int getAdditionalInsightsValue(int index) {
+      return additionalInsights_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for additionalInsights to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalInsightsValue(int index, int value) {
+      ensureAdditionalInsightsIsMutable();
+      additionalInsights_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for additionalInsights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalInsightsValue(int value) {
+      ensureAdditionalInsightsIsMutable();
+      additionalInsights_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of
+     * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+     * to be included in the response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for additionalInsights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalInsightsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAdditionalInsightsIsMutable();
+      for (int value : values) {
+        additionalInsights_.addInt(value);
       }
       onChanged();
       return this;

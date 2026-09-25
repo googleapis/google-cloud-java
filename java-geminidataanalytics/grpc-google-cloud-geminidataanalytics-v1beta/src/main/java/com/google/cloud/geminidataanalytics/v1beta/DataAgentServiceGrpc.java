@@ -546,6 +546,114 @@ public final class DataAgentServiceGrpc {
     return getSetIamPolicyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest,
+          com.google.longrunning.Operation>
+      getSetAgentOpsObservabilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetAgentOpsObservability",
+      requestType =
+          com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest,
+          com.google.longrunning.Operation>
+      getSetAgentOpsObservabilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest,
+            com.google.longrunning.Operation>
+        getSetAgentOpsObservabilityMethod;
+    if ((getSetAgentOpsObservabilityMethod = DataAgentServiceGrpc.getSetAgentOpsObservabilityMethod)
+        == null) {
+      synchronized (DataAgentServiceGrpc.class) {
+        if ((getSetAgentOpsObservabilityMethod =
+                DataAgentServiceGrpc.getSetAgentOpsObservabilityMethod)
+            == null) {
+          DataAgentServiceGrpc.getSetAgentOpsObservabilityMethod =
+              getSetAgentOpsObservabilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SetAgentOpsObservability"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta
+                                  .SetAgentOpsObservabilityRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataAgentServiceMethodDescriptorSupplier("SetAgentOpsObservability"))
+                      .build();
+        }
+      }
+    }
+    return getSetAgentOpsObservabilityMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest,
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+      getRetrieveAgentOpsObservabilityMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RetrieveAgentOpsObservability",
+      requestType =
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest.class,
+      responseType =
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest,
+          com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+      getRetrieveAgentOpsObservabilityMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest,
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+        getRetrieveAgentOpsObservabilityMethod;
+    if ((getRetrieveAgentOpsObservabilityMethod =
+            DataAgentServiceGrpc.getRetrieveAgentOpsObservabilityMethod)
+        == null) {
+      synchronized (DataAgentServiceGrpc.class) {
+        if ((getRetrieveAgentOpsObservabilityMethod =
+                DataAgentServiceGrpc.getRetrieveAgentOpsObservabilityMethod)
+            == null) {
+          DataAgentServiceGrpc.getRetrieveAgentOpsObservabilityMethod =
+              getRetrieveAgentOpsObservabilityMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.geminidataanalytics.v1beta
+                              .RetrieveAgentOpsObservabilityRequest,
+                          com.google.cloud.geminidataanalytics.v1beta
+                              .RetrieveAgentOpsObservabilityResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RetrieveAgentOpsObservability"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta
+                                  .RetrieveAgentOpsObservabilityRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.geminidataanalytics.v1beta
+                                  .RetrieveAgentOpsObservabilityResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataAgentServiceMethodDescriptorSupplier(
+                              "RetrieveAgentOpsObservability"))
+                      .build();
+        }
+      }
+    }
+    return getRetrieveAgentOpsObservabilityMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataAgentServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataAgentServiceStub> factory =
@@ -770,6 +878,38 @@ public final class DataAgentServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSetIamPolicyMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables/Disables required GCP services and configures AgentOps
+     * observability settings calling the Admin Settings executable node to
+     * update the AgentOps Observability feature.
+     * </pre>
+     */
+    default void setAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetAgentOpsObservabilityMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AgentOps observability settings and status of required services.
+     * </pre>
+     */
+    default void retrieveAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRetrieveAgentOpsObservabilityMethod(), responseObserver);
+    }
   }
 
   /**
@@ -989,6 +1129,42 @@ public final class DataAgentServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables/Disables required GCP services and configures AgentOps
+     * observability settings calling the Admin Settings executable node to
+     * update the AgentOps Observability feature.
+     * </pre>
+     */
+    public void setAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetAgentOpsObservabilityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AgentOps observability settings and status of required services.
+     * </pre>
+     */
+    public void retrieveAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRetrieveAgentOpsObservabilityMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1164,6 +1340,38 @@ public final class DataAgentServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables/Disables required GCP services and configures AgentOps
+     * observability settings calling the Admin Settings executable node to
+     * update the AgentOps Observability feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetAgentOpsObservabilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AgentOps observability settings and status of required services.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse
+        retrieveAgentOpsObservability(
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRetrieveAgentOpsObservabilityMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1326,6 +1534,36 @@ public final class DataAgentServiceGrpc {
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables/Disables required GCP services and configures AgentOps
+     * observability settings calling the Admin Settings executable node to
+     * update the AgentOps Observability feature.
+     * </pre>
+     */
+    public com.google.longrunning.Operation setAgentOpsObservability(
+        com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAgentOpsObservabilityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AgentOps observability settings and status of required services.
+     * </pre>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse
+        retrieveAgentOpsObservability(
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveAgentOpsObservabilityMethod(), getCallOptions(), request);
     }
   }
 
@@ -1503,6 +1741,39 @@ public final class DataAgentServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables/Disables required GCP services and configures AgentOps
+     * observability settings calling the Admin Settings executable node to
+     * update the AgentOps Observability feature.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        setAgentOpsObservability(
+            com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetAgentOpsObservabilityMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AgentOps observability settings and status of required services.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservability(
+            com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRetrieveAgentOpsObservabilityMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_LIST_DATA_AGENTS = 0;
@@ -1516,6 +1787,8 @@ public final class DataAgentServiceGrpc {
   private static final int METHODID_DELETE_DATA_AGENT_SYNC = 8;
   private static final int METHODID_GET_IAM_POLICY = 9;
   private static final int METHODID_SET_IAM_POLICY = 10;
+  private static final int METHODID_SET_AGENT_OPS_OBSERVABILITY = 11;
+  private static final int METHODID_RETRIEVE_AGENT_OPS_OBSERVABILITY = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1595,6 +1868,20 @@ public final class DataAgentServiceGrpc {
           serviceImpl.setIamPolicy(
               (com.google.iam.v1.SetIamPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_AGENT_OPS_OBSERVABILITY:
+          serviceImpl.setAgentOpsObservability(
+              (com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RETRIEVE_AGENT_OPS_OBSERVABILITY:
+          serviceImpl.retrieveAgentOpsObservability(
+              (com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.geminidataanalytics.v1beta
+                          .RetrieveAgentOpsObservabilityResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1683,6 +1970,22 @@ public final class DataAgentServiceGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                     service, METHODID_SET_IAM_POLICY)))
+        .addMethod(
+            getSetAgentOpsObservabilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_SET_AGENT_OPS_OBSERVABILITY)))
+        .addMethod(
+            getRetrieveAgentOpsObservabilityMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.geminidataanalytics.v1beta
+                        .RetrieveAgentOpsObservabilityRequest,
+                    com.google.cloud.geminidataanalytics.v1beta
+                        .RetrieveAgentOpsObservabilityResponse>(
+                    service, METHODID_RETRIEVE_AGENT_OPS_OBSERVABILITY)))
         .build();
   }
 
@@ -1745,6 +2048,8 @@ public final class DataAgentServiceGrpc {
                       .addMethod(getDeleteDataAgentSyncMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
+                      .addMethod(getSetAgentOpsObservabilityMethod())
+                      .addMethod(getRetrieveAgentOpsObservabilityMethod())
                       .build();
         }
       }

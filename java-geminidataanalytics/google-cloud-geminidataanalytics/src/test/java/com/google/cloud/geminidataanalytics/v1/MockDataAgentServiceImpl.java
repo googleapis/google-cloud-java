@@ -293,4 +293,49 @@ public class MockDataAgentServiceImpl extends DataAgentServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void setAgentOpsObservability(
+      SetAgentOpsObservabilityRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetAgentOpsObservability, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void retrieveAgentOpsObservability(
+      RetrieveAgentOpsObservabilityRequest request,
+      StreamObserver<RetrieveAgentOpsObservabilityResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RetrieveAgentOpsObservabilityResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RetrieveAgentOpsObservabilityResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RetrieveAgentOpsObservability, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RetrieveAgentOpsObservabilityResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

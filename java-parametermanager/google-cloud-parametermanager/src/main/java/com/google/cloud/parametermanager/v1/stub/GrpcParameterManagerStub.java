@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1.stub;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -33,20 +35,36 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parametermanager.v1.CreateParameterRequest;
 import com.google.cloud.parametermanager.v1.CreateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.GetParameterRequest;
 import com.google.cloud.parametermanager.v1.GetParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsResponse;
 import com.google.cloud.parametermanager.v1.ListParametersRequest;
 import com.google.cloud.parametermanager.v1.ListParametersResponse;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse;
+import com.google.cloud.parametermanager.v1.ListTemplatesRequest;
+import com.google.cloud.parametermanager.v1.ListTemplatesResponse;
 import com.google.cloud.parametermanager.v1.Parameter;
 import com.google.cloud.parametermanager.v1.ParameterVersion;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionRequest;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionResponse;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse;
+import com.google.cloud.parametermanager.v1.Template;
+import com.google.cloud.parametermanager.v1.TemplateVersion;
 import com.google.cloud.parametermanager.v1.UpdateParameterRequest;
 import com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -199,6 +217,134 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListTemplatesRequest, ListTemplatesResponse>
+      listTemplatesMethodDescriptor =
+          MethodDescriptor.<ListTemplatesRequest, ListTemplatesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/ListTemplates")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTemplatesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetTemplateRequest, Template> getTemplateMethodDescriptor =
+      MethodDescriptor.<GetTemplateRequest, Template>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/GetTemplate")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetTemplateRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CreateTemplateRequest, Template>
+      createTemplateMethodDescriptor =
+          MethodDescriptor.<CreateTemplateRequest, Template>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/CreateTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateTemplateRequest, Template>
+      updateTemplateMethodDescriptor =
+          MethodDescriptor.<UpdateTemplateRequest, Template>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/UpdateTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Template.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTemplateRequest, Empty>
+      deleteTemplateMethodDescriptor =
+          MethodDescriptor.<DeleteTemplateRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/DeleteTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsMethodDescriptor =
+          MethodDescriptor.<ListTemplateVersionsRequest, ListTemplateVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/ListTemplateVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTemplateVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTemplateVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionMethodDescriptor =
+          MethodDescriptor.<GetTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/GetTemplateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTemplateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TemplateVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionMethodDescriptor =
+          MethodDescriptor.<CreateTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/CreateTemplateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateTemplateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TemplateVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionMethodDescriptor =
+          MethodDescriptor.<UpdateTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/UpdateTemplateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateTemplateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TemplateVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTemplateVersionRequest, Empty>
+      deleteTemplateVersionMethodDescriptor =
+          MethodDescriptor.<DeleteTemplateVersionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/DeleteTemplateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTemplateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionMethodDescriptor =
+          MethodDescriptor.<RenderTemplateVersionRequest, RenderTemplateVersionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/RenderTemplateVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RenderTemplateVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RenderTemplateVersionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -240,6 +386,26 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
   private final UnaryCallable<UpdateParameterVersionRequest, ParameterVersion>
       updateParameterVersionCallable;
   private final UnaryCallable<DeleteParameterVersionRequest, Empty> deleteParameterVersionCallable;
+  private final UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable;
+  private final UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable;
+  private final UnaryCallable<GetTemplateRequest, Template> getTemplateCallable;
+  private final UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable;
+  private final UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable;
+  private final UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable;
+  private final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable;
+  private final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable;
+  private final UnaryCallable<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionCallable;
+  private final UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable;
+  private final UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable;
+  private final UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable;
+  private final UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -418,6 +584,133 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ListTemplatesRequest, ListTemplatesResponse> listTemplatesTransportSettings =
+        GrpcCallSettings.<ListTemplatesRequest, ListTemplatesResponse>newBuilder()
+            .setMethodDescriptor(listTemplatesMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetTemplateRequest, Template> getTemplateTransportSettings =
+        GrpcCallSettings.<GetTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(getTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<CreateTemplateRequest, Template> createTemplateTransportSettings =
+        GrpcCallSettings.<CreateTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(createTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateTemplateRequest, Template> updateTemplateTransportSettings =
+        GrpcCallSettings.<UpdateTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(updateTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("template.name", String.valueOf(request.getTemplate().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteTemplateRequest, Empty> deleteTemplateTransportSettings =
+        GrpcCallSettings.<DeleteTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+        listTemplateVersionsTransportSettings =
+            GrpcCallSettings.<ListTemplateVersionsRequest, ListTemplateVersionsResponse>newBuilder()
+                .setMethodDescriptor(listTemplateVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetTemplateVersionRequest, TemplateVersion>
+        getTemplateVersionTransportSettings =
+            GrpcCallSettings.<GetTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(getTemplateVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateTemplateVersionRequest, TemplateVersion>
+        createTemplateVersionTransportSettings =
+            GrpcCallSettings.<CreateTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(createTemplateVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateTemplateVersionRequest, TemplateVersion>
+        updateTemplateVersionTransportSettings =
+            GrpcCallSettings.<UpdateTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(updateTemplateVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "template_version.name",
+                          String.valueOf(request.getTemplateVersion().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionTransportSettings =
+        GrpcCallSettings.<DeleteTemplateVersionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTemplateVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+        renderTemplateVersionTransportSettings =
+            GrpcCallSettings
+                .<RenderTemplateVersionRequest, RenderTemplateVersionResponse>newBuilder()
+                .setMethodDescriptor(renderTemplateVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -491,6 +784,59 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
         callableFactory.createUnaryCallable(
             deleteParameterVersionTransportSettings,
             settings.deleteParameterVersionSettings(),
+            clientContext);
+    this.listTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listTemplatesTransportSettings, settings.listTemplatesSettings(), clientContext);
+    this.listTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listTemplatesTransportSettings, settings.listTemplatesSettings(), clientContext);
+    this.getTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getTemplateTransportSettings, settings.getTemplateSettings(), clientContext);
+    this.createTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createTemplateTransportSettings, settings.createTemplateSettings(), clientContext);
+    this.updateTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateTemplateTransportSettings, settings.updateTemplateSettings(), clientContext);
+    this.deleteTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteTemplateTransportSettings, settings.deleteTemplateSettings(), clientContext);
+    this.listTemplateVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listTemplateVersionsTransportSettings,
+            settings.listTemplateVersionsSettings(),
+            clientContext);
+    this.listTemplateVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTemplateVersionsTransportSettings,
+            settings.listTemplateVersionsSettings(),
+            clientContext);
+    this.getTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            getTemplateVersionTransportSettings,
+            settings.getTemplateVersionSettings(),
+            clientContext);
+    this.createTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            createTemplateVersionTransportSettings,
+            settings.createTemplateVersionSettings(),
+            clientContext);
+    this.updateTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateTemplateVersionTransportSettings,
+            settings.updateTemplateVersionSettings(),
+            clientContext);
+    this.deleteTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteTemplateVersionTransportSettings,
+            settings.deleteTemplateVersionSettings(),
+            clientContext);
+    this.renderTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            renderTemplateVersionTransportSettings,
+            settings.renderTemplateVersionSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -579,6 +925,77 @@ public class GrpcParameterManagerStub extends ParameterManagerStub {
   @Override
   public UnaryCallable<DeleteParameterVersionRequest, Empty> deleteParameterVersionCallable() {
     return deleteParameterVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable() {
+    return listTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable() {
+    return listTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTemplateRequest, Template> getTemplateCallable() {
+    return getTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable() {
+    return createTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable() {
+    return updateTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable() {
+    return deleteTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable() {
+    return listTemplateVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable() {
+    return listTemplateVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTemplateVersionRequest, TemplateVersion> getTemplateVersionCallable() {
+    return getTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable() {
+    return createTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable() {
+    return updateTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable() {
+    return deleteTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable() {
+    return renderTemplateVersionCallable;
   }
 
   @Override

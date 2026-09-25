@@ -560,6 +560,531 @@ public final class ParameterManagerGrpc {
     return getDeleteParameterVersionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.ListTemplatesRequest,
+          com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+      getListTemplatesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTemplates",
+      requestType = com.google.cloud.parametermanager.v1.ListTemplatesRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.ListTemplatesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.ListTemplatesRequest,
+          com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+      getListTemplatesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.ListTemplatesRequest,
+            com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+        getListTemplatesMethod;
+    if ((getListTemplatesMethod = ParameterManagerGrpc.getListTemplatesMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getListTemplatesMethod = ParameterManagerGrpc.getListTemplatesMethod) == null) {
+          ParameterManagerGrpc.getListTemplatesMethod =
+              getListTemplatesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.ListTemplatesRequest,
+                          com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTemplates"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.ListTemplatesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.ListTemplatesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("ListTemplates"))
+                      .build();
+        }
+      }
+    }
+    return getListTemplatesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.GetTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getGetTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTemplate",
+      requestType = com.google.cloud.parametermanager.v1.GetTemplateRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.Template.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.GetTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getGetTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.GetTemplateRequest,
+            com.google.cloud.parametermanager.v1.Template>
+        getGetTemplateMethod;
+    if ((getGetTemplateMethod = ParameterManagerGrpc.getGetTemplateMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getGetTemplateMethod = ParameterManagerGrpc.getGetTemplateMethod) == null) {
+          ParameterManagerGrpc.getGetTemplateMethod =
+              getGetTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.GetTemplateRequest,
+                          com.google.cloud.parametermanager.v1.Template>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.GetTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.Template.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("GetTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getGetTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.CreateTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getCreateTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTemplate",
+      requestType = com.google.cloud.parametermanager.v1.CreateTemplateRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.Template.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.CreateTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getCreateTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.CreateTemplateRequest,
+            com.google.cloud.parametermanager.v1.Template>
+        getCreateTemplateMethod;
+    if ((getCreateTemplateMethod = ParameterManagerGrpc.getCreateTemplateMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getCreateTemplateMethod = ParameterManagerGrpc.getCreateTemplateMethod) == null) {
+          ParameterManagerGrpc.getCreateTemplateMethod =
+              getCreateTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.CreateTemplateRequest,
+                          com.google.cloud.parametermanager.v1.Template>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.CreateTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.Template.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("CreateTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getCreateTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.UpdateTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getUpdateTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTemplate",
+      requestType = com.google.cloud.parametermanager.v1.UpdateTemplateRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.Template.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.UpdateTemplateRequest,
+          com.google.cloud.parametermanager.v1.Template>
+      getUpdateTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.UpdateTemplateRequest,
+            com.google.cloud.parametermanager.v1.Template>
+        getUpdateTemplateMethod;
+    if ((getUpdateTemplateMethod = ParameterManagerGrpc.getUpdateTemplateMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getUpdateTemplateMethod = ParameterManagerGrpc.getUpdateTemplateMethod) == null) {
+          ParameterManagerGrpc.getUpdateTemplateMethod =
+              getUpdateTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.UpdateTemplateRequest,
+                          com.google.cloud.parametermanager.v1.Template>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.UpdateTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.Template.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("UpdateTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.DeleteTemplateRequest, com.google.protobuf.Empty>
+      getDeleteTemplateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTemplate",
+      requestType = com.google.cloud.parametermanager.v1.DeleteTemplateRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.DeleteTemplateRequest, com.google.protobuf.Empty>
+      getDeleteTemplateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.DeleteTemplateRequest, com.google.protobuf.Empty>
+        getDeleteTemplateMethod;
+    if ((getDeleteTemplateMethod = ParameterManagerGrpc.getDeleteTemplateMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getDeleteTemplateMethod = ParameterManagerGrpc.getDeleteTemplateMethod) == null) {
+          ParameterManagerGrpc.getDeleteTemplateMethod =
+              getDeleteTemplateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.DeleteTemplateRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteTemplate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.DeleteTemplateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("DeleteTemplate"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTemplateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest,
+          com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+      getListTemplateVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTemplateVersions",
+      requestType = com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest,
+          com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+      getListTemplateVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest,
+            com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+        getListTemplateVersionsMethod;
+    if ((getListTemplateVersionsMethod = ParameterManagerGrpc.getListTemplateVersionsMethod)
+        == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getListTemplateVersionsMethod = ParameterManagerGrpc.getListTemplateVersionsMethod)
+            == null) {
+          ParameterManagerGrpc.getListTemplateVersionsMethod =
+              getListTemplateVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest,
+                          com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListTemplateVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("ListTemplateVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListTemplateVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.GetTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getGetTemplateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTemplateVersion",
+      requestType = com.google.cloud.parametermanager.v1.GetTemplateVersionRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.TemplateVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.GetTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getGetTemplateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.GetTemplateVersionRequest,
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        getGetTemplateVersionMethod;
+    if ((getGetTemplateVersionMethod = ParameterManagerGrpc.getGetTemplateVersionMethod) == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getGetTemplateVersionMethod = ParameterManagerGrpc.getGetTemplateVersionMethod)
+            == null) {
+          ParameterManagerGrpc.getGetTemplateVersionMethod =
+              getGetTemplateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.GetTemplateVersionRequest,
+                          com.google.cloud.parametermanager.v1.TemplateVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTemplateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.GetTemplateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.TemplateVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("GetTemplateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getGetTemplateVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getCreateTemplateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateTemplateVersion",
+      requestType = com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.TemplateVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getCreateTemplateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest,
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        getCreateTemplateVersionMethod;
+    if ((getCreateTemplateVersionMethod = ParameterManagerGrpc.getCreateTemplateVersionMethod)
+        == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getCreateTemplateVersionMethod = ParameterManagerGrpc.getCreateTemplateVersionMethod)
+            == null) {
+          ParameterManagerGrpc.getCreateTemplateVersionMethod =
+              getCreateTemplateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest,
+                          com.google.cloud.parametermanager.v1.TemplateVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateTemplateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.TemplateVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("CreateTemplateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getCreateTemplateVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getUpdateTemplateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateTemplateVersion",
+      requestType = com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.TemplateVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.TemplateVersion>
+      getUpdateTemplateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest,
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        getUpdateTemplateVersionMethod;
+    if ((getUpdateTemplateVersionMethod = ParameterManagerGrpc.getUpdateTemplateVersionMethod)
+        == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getUpdateTemplateVersionMethod = ParameterManagerGrpc.getUpdateTemplateVersionMethod)
+            == null) {
+          ParameterManagerGrpc.getUpdateTemplateVersionMethod =
+              getUpdateTemplateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest,
+                          com.google.cloud.parametermanager.v1.TemplateVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateTemplateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.TemplateVersion
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("UpdateTemplateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateTemplateVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest,
+          com.google.protobuf.Empty>
+      getDeleteTemplateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTemplateVersion",
+      requestType = com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest,
+          com.google.protobuf.Empty>
+      getDeleteTemplateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest,
+            com.google.protobuf.Empty>
+        getDeleteTemplateVersionMethod;
+    if ((getDeleteTemplateVersionMethod = ParameterManagerGrpc.getDeleteTemplateVersionMethod)
+        == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getDeleteTemplateVersionMethod = ParameterManagerGrpc.getDeleteTemplateVersionMethod)
+            == null) {
+          ParameterManagerGrpc.getDeleteTemplateVersionMethod =
+              getDeleteTemplateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTemplateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("DeleteTemplateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTemplateVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+      getRenderTemplateVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RenderTemplateVersion",
+      requestType = com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest.class,
+      responseType = com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest,
+          com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+      getRenderTemplateVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest,
+            com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+        getRenderTemplateVersionMethod;
+    if ((getRenderTemplateVersionMethod = ParameterManagerGrpc.getRenderTemplateVersionMethod)
+        == null) {
+      synchronized (ParameterManagerGrpc.class) {
+        if ((getRenderTemplateVersionMethod = ParameterManagerGrpc.getRenderTemplateVersionMethod)
+            == null) {
+          ParameterManagerGrpc.getRenderTemplateVersionMethod =
+              getRenderTemplateVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest,
+                          com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RenderTemplateVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParameterManagerMethodDescriptorSupplier("RenderTemplateVersion"))
+                      .build();
+        }
+      }
+    }
+    return getRenderTemplateVersionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ParameterManagerStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ParameterManagerStub> factory =
@@ -787,6 +1312,171 @@ public final class ParameterManagerGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteParameterVersionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Templates in a given project and location.
+     * </pre>
+     */
+    default void listTemplates(
+        com.google.cloud.parametermanager.v1.ListTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTemplatesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Template.
+     * </pre>
+     */
+    default void getTemplate(
+        com.google.cloud.parametermanager.v1.GetTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Template in a given project and location.
+     * </pre>
+     */
+    default void createTemplate(
+        com.google.cloud.parametermanager.v1.CreateTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Template.
+     * </pre>
+     */
+    default void updateTemplate(
+        com.google.cloud.parametermanager.v1.UpdateTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Template.
+     * </pre>
+     */
+    default void deleteTemplate(
+        com.google.cloud.parametermanager.v1.DeleteTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTemplateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TemplateVersions in a given project, location, and template.
+     * </pre>
+     */
+    default void listTemplateVersions(
+        com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTemplateVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TemplateVersion.
+     * </pre>
+     */
+    default void getTemplateVersion(
+        com.google.cloud.parametermanager.v1.GetTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTemplateVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TemplateVersion in a given project, location, and template.
+     * </pre>
+     */
+    default void createTemplateVersion(
+        com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateTemplateVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single TemplateVersion.
+     * </pre>
+     */
+    default void updateTemplateVersion(
+        com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateTemplateVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TemplateVersion.
+     * </pre>
+     */
+    default void deleteTemplateVersion(
+        com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTemplateVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a TemplateVersion.
+     * </pre>
+     */
+    default void renderTemplateVersion(
+        com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRenderTemplateVersionMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1009,6 +1699,193 @@ public final class ParameterManagerGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Templates in a given project and location.
+     * </pre>
+     */
+    public void listTemplates(
+        com.google.cloud.parametermanager.v1.ListTemplatesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTemplatesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Template.
+     * </pre>
+     */
+    public void getTemplate(
+        com.google.cloud.parametermanager.v1.GetTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Template in a given project and location.
+     * </pre>
+     */
+    public void createTemplate(
+        com.google.cloud.parametermanager.v1.CreateTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Template.
+     * </pre>
+     */
+    public void updateTemplate(
+        com.google.cloud.parametermanager.v1.UpdateTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Template.
+     * </pre>
+     */
+    public void deleteTemplate(
+        com.google.cloud.parametermanager.v1.DeleteTemplateRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTemplateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TemplateVersions in a given project, location, and template.
+     * </pre>
+     */
+    public void listTemplateVersions(
+        com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTemplateVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TemplateVersion.
+     * </pre>
+     */
+    public void getTemplateVersion(
+        com.google.cloud.parametermanager.v1.GetTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTemplateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TemplateVersion in a given project, location, and template.
+     * </pre>
+     */
+    public void createTemplateVersion(
+        com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateTemplateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single TemplateVersion.
+     * </pre>
+     */
+    public void updateTemplateVersion(
+        com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateTemplateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TemplateVersion.
+     * </pre>
+     */
+    public void deleteTemplateVersion(
+        com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTemplateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a TemplateVersion.
+     * </pre>
+     */
+    public void renderTemplateVersion(
+        com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRenderTemplateVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1185,6 +2062,160 @@ public final class ParameterManagerGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteParameterVersionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Templates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListTemplatesResponse listTemplates(
+        com.google.cloud.parametermanager.v1.ListTemplatesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template getTemplate(
+        com.google.cloud.parametermanager.v1.GetTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Template in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template createTemplate(
+        com.google.cloud.parametermanager.v1.CreateTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template updateTemplate(
+        com.google.cloud.parametermanager.v1.UpdateTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Template.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTemplate(
+        com.google.cloud.parametermanager.v1.DeleteTemplateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TemplateVersions in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse listTemplateVersions(
+        com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTemplateVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion getTemplateVersion(
+        com.google.cloud.parametermanager.v1.GetTemplateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TemplateVersion in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion createTemplateVersion(
+        com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion updateTemplateVersion(
+        com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTemplateVersion(
+        com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse renderTemplateVersion(
+        com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRenderTemplateVersionMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1348,6 +2379,149 @@ public final class ParameterManagerGrpc {
         com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteParameterVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Templates in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListTemplatesResponse listTemplates(
+        com.google.cloud.parametermanager.v1.ListTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTemplatesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template getTemplate(
+        com.google.cloud.parametermanager.v1.GetTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Template in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template createTemplate(
+        com.google.cloud.parametermanager.v1.CreateTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.Template updateTemplate(
+        com.google.cloud.parametermanager.v1.UpdateTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Template.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTemplate(
+        com.google.cloud.parametermanager.v1.DeleteTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTemplateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TemplateVersions in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse listTemplateVersions(
+        com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTemplateVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion getTemplateVersion(
+        com.google.cloud.parametermanager.v1.GetTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TemplateVersion in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion createTemplateVersion(
+        com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.TemplateVersion updateTemplateVersion(
+        com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTemplateVersion(
+        com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTemplateVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a TemplateVersion.
+     * </pre>
+     */
+    public com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse renderTemplateVersion(
+        com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRenderTemplateVersionMethod(), getCallOptions(), request);
     }
   }
 
@@ -1527,6 +2701,163 @@ public final class ParameterManagerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteParameterVersionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Templates in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.ListTemplatesResponse>
+        listTemplates(com.google.cloud.parametermanager.v1.ListTemplatesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTemplatesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.Template>
+        getTemplate(com.google.cloud.parametermanager.v1.GetTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Template in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.Template>
+        createTemplate(com.google.cloud.parametermanager.v1.CreateTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.Template>
+        updateTemplate(com.google.cloud.parametermanager.v1.UpdateTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteTemplate(com.google.cloud.parametermanager.v1.DeleteTemplateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTemplateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists TemplateVersions in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>
+        listTemplateVersions(
+            com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTemplateVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        getTemplateVersion(com.google.cloud.parametermanager.v1.GetTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTemplateVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new TemplateVersion in a given project, location, and template.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        createTemplateVersion(
+            com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateTemplateVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.TemplateVersion>
+        updateTemplateVersion(
+            com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateTemplateVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single TemplateVersion.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteTemplateVersion(
+            com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTemplateVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets rendered version of a TemplateVersion.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>
+        renderTemplateVersion(
+            com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRenderTemplateVersionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_PARAMETERS = 0;
@@ -1540,6 +2871,17 @@ public final class ParameterManagerGrpc {
   private static final int METHODID_CREATE_PARAMETER_VERSION = 8;
   private static final int METHODID_UPDATE_PARAMETER_VERSION = 9;
   private static final int METHODID_DELETE_PARAMETER_VERSION = 10;
+  private static final int METHODID_LIST_TEMPLATES = 11;
+  private static final int METHODID_GET_TEMPLATE = 12;
+  private static final int METHODID_CREATE_TEMPLATE = 13;
+  private static final int METHODID_UPDATE_TEMPLATE = 14;
+  private static final int METHODID_DELETE_TEMPLATE = 15;
+  private static final int METHODID_LIST_TEMPLATE_VERSIONS = 16;
+  private static final int METHODID_GET_TEMPLATE_VERSION = 17;
+  private static final int METHODID_CREATE_TEMPLATE_VERSION = 18;
+  private static final int METHODID_UPDATE_TEMPLATE_VERSION = 19;
+  private static final int METHODID_DELETE_TEMPLATE_VERSION = 20;
+  private static final int METHODID_RENDER_TEMPLATE_VERSION = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1624,6 +2966,73 @@ public final class ParameterManagerGrpc {
           serviceImpl.deleteParameterVersion(
               (com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_TEMPLATES:
+          serviceImpl.listTemplates(
+              (com.google.cloud.parametermanager.v1.ListTemplatesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.parametermanager.v1.ListTemplatesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TEMPLATE:
+          serviceImpl.getTemplate(
+              (com.google.cloud.parametermanager.v1.GetTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_TEMPLATE:
+          serviceImpl.createTemplate(
+              (com.google.cloud.parametermanager.v1.CreateTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_TEMPLATE:
+          serviceImpl.updateTemplate(
+              (com.google.cloud.parametermanager.v1.UpdateTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.Template>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_TEMPLATE:
+          serviceImpl.deleteTemplate(
+              (com.google.cloud.parametermanager.v1.DeleteTemplateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_TEMPLATE_VERSIONS:
+          serviceImpl.listTemplateVersions(
+              (com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TEMPLATE_VERSION:
+          serviceImpl.getTemplateVersion(
+              (com.google.cloud.parametermanager.v1.GetTemplateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_TEMPLATE_VERSION:
+          serviceImpl.createTemplateVersion(
+              (com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_TEMPLATE_VERSION:
+          serviceImpl.updateTemplateVersion(
+              (com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.parametermanager.v1.TemplateVersion>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_TEMPLATE_VERSION:
+          serviceImpl.deleteTemplateVersion(
+              (com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_RENDER_TEMPLATE_VERSION:
+          serviceImpl.renderTemplateVersion(
+              (com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1718,6 +3127,80 @@ public final class ParameterManagerGrpc {
                 new MethodHandlers<
                     com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_PARAMETER_VERSION)))
+        .addMethod(
+            getListTemplatesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.ListTemplatesRequest,
+                    com.google.cloud.parametermanager.v1.ListTemplatesResponse>(
+                    service, METHODID_LIST_TEMPLATES)))
+        .addMethod(
+            getGetTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.GetTemplateRequest,
+                    com.google.cloud.parametermanager.v1.Template>(service, METHODID_GET_TEMPLATE)))
+        .addMethod(
+            getCreateTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.CreateTemplateRequest,
+                    com.google.cloud.parametermanager.v1.Template>(
+                    service, METHODID_CREATE_TEMPLATE)))
+        .addMethod(
+            getUpdateTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.UpdateTemplateRequest,
+                    com.google.cloud.parametermanager.v1.Template>(
+                    service, METHODID_UPDATE_TEMPLATE)))
+        .addMethod(
+            getDeleteTemplateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.DeleteTemplateRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TEMPLATE)))
+        .addMethod(
+            getListTemplateVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest,
+                    com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse>(
+                    service, METHODID_LIST_TEMPLATE_VERSIONS)))
+        .addMethod(
+            getGetTemplateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.GetTemplateVersionRequest,
+                    com.google.cloud.parametermanager.v1.TemplateVersion>(
+                    service, METHODID_GET_TEMPLATE_VERSION)))
+        .addMethod(
+            getCreateTemplateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest,
+                    com.google.cloud.parametermanager.v1.TemplateVersion>(
+                    service, METHODID_CREATE_TEMPLATE_VERSION)))
+        .addMethod(
+            getUpdateTemplateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest,
+                    com.google.cloud.parametermanager.v1.TemplateVersion>(
+                    service, METHODID_UPDATE_TEMPLATE_VERSION)))
+        .addMethod(
+            getDeleteTemplateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_TEMPLATE_VERSION)))
+        .addMethod(
+            getRenderTemplateVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest,
+                    com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse>(
+                    service, METHODID_RENDER_TEMPLATE_VERSION)))
         .build();
   }
 
@@ -1780,6 +3263,17 @@ public final class ParameterManagerGrpc {
                       .addMethod(getCreateParameterVersionMethod())
                       .addMethod(getUpdateParameterVersionMethod())
                       .addMethod(getDeleteParameterVersionMethod())
+                      .addMethod(getListTemplatesMethod())
+                      .addMethod(getGetTemplateMethod())
+                      .addMethod(getCreateTemplateMethod())
+                      .addMethod(getUpdateTemplateMethod())
+                      .addMethod(getDeleteTemplateMethod())
+                      .addMethod(getListTemplateVersionsMethod())
+                      .addMethod(getGetTemplateVersionMethod())
+                      .addMethod(getCreateTemplateVersionMethod())
+                      .addMethod(getUpdateTemplateVersionMethod())
+                      .addMethod(getDeleteTemplateVersionMethod())
+                      .addMethod(getRenderTemplateVersionMethod())
                       .build();
         }
       }

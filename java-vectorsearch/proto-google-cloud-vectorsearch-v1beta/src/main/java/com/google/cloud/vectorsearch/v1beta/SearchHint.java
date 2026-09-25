@@ -217,6 +217,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. Dense ANN param overrides to control recall and latency.
        * The percentage of leaves to search, in the range [0, 100].
+       * Not supported for `STORAGE_OPTIMIZED` indexes.
+       * Cannot be set together with `target_recall`.
        * </pre>
        *
        * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -230,7 +232,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The number of initial candidates. Must be a positive integer
-       * (&gt; 0).
+       * (&gt; 0). Not supported for `STORAGE_OPTIMIZED` indexes. Cannot be set
+       * together with `target_recall`.
        * </pre>
        *
        * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -238,6 +241,36 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * @return The initialCandidateCount.
        */
       int getInitialCandidateCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target recall for the search. Must be a double in the
+       * range [0, 1]. While the search aims to achieve this level of recall, it
+       * is not guaranteed.
+       * </pre>
+       *
+       * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the targetRecall field is set.
+       */
+      boolean hasTargetRecall();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target recall for the search. Must be a double in the
+       * range [0, 1]. While the search aims to achieve this level of recall, it
+       * is not guaranteed.
+       * </pre>
+       *
+       * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The targetRecall.
+       */
+      double getTargetRecall();
     }
 
     /**
@@ -288,6 +321,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
                     .class);
       }
 
+      private int bitField0_;
       public static final int SEARCH_LEAVES_PCT_FIELD_NUMBER = 1;
       private int searchLeavesPct_ = 0;
 
@@ -297,6 +331,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Optional. Dense ANN param overrides to control recall and latency.
        * The percentage of leaves to search, in the range [0, 100].
+       * Not supported for `STORAGE_OPTIMIZED` indexes.
+       * Cannot be set together with `target_recall`.
        * </pre>
        *
        * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -316,7 +352,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. The number of initial candidates. Must be a positive integer
-       * (&gt; 0).
+       * (&gt; 0). Not supported for `STORAGE_OPTIMIZED` indexes. Cannot be set
+       * together with `target_recall`.
        * </pre>
        *
        * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -326,6 +363,45 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
       @java.lang.Override
       public int getInitialCandidateCount() {
         return initialCandidateCount_;
+      }
+
+      public static final int TARGET_RECALL_FIELD_NUMBER = 3;
+      private double targetRecall_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target recall for the search. Must be a double in the
+       * range [0, 1]. While the search aims to achieve this level of recall, it
+       * is not guaranteed.
+       * </pre>
+       *
+       * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the targetRecall field is set.
+       */
+      @java.lang.Override
+      public boolean hasTargetRecall() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The target recall for the search. Must be a double in the
+       * range [0, 1]. While the search aims to achieve this level of recall, it
+       * is not guaranteed.
+       * </pre>
+       *
+       * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The targetRecall.
+       */
+      @java.lang.Override
+      public double getTargetRecall() {
+        return targetRecall_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -348,6 +424,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         if (initialCandidateCount_ != 0) {
           output.writeInt32(2, initialCandidateCount_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeDouble(3, targetRecall_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -362,6 +441,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         }
         if (initialCandidateCount_ != 0) {
           size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, initialCandidateCount_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, targetRecall_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -383,6 +465,11 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
 
         if (getSearchLeavesPct() != other.getSearchLeavesPct()) return false;
         if (getInitialCandidateCount() != other.getInitialCandidateCount()) return false;
+        if (hasTargetRecall() != other.hasTargetRecall()) return false;
+        if (hasTargetRecall()) {
+          if (java.lang.Double.doubleToLongBits(getTargetRecall())
+              != java.lang.Double.doubleToLongBits(other.getTargetRecall())) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -398,6 +485,13 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         hash = (53 * hash) + getSearchLeavesPct();
         hash = (37 * hash) + INITIAL_CANDIDATE_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getInitialCandidateCount();
+        if (hasTargetRecall()) {
+          hash = (37 * hash) + TARGET_RECALL_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getTargetRecall()));
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -554,6 +648,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           bitField0_ = 0;
           searchLeavesPct_ = 0;
           initialCandidateCount_ = 0;
+          targetRecall_ = 0D;
           return this;
         }
 
@@ -601,6 +696,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.initialCandidateCount_ = initialCandidateCount_;
           }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.targetRecall_ = targetRecall_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -626,6 +727,9 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
           }
           if (other.getInitialCandidateCount() != 0) {
             setInitialCandidateCount(other.getInitialCandidateCount());
+          }
+          if (other.hasTargetRecall()) {
+            setTargetRecall(other.getTargetRecall());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -665,6 +769,12 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 25:
+                  {
+                    targetRecall_ = input.readDouble();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 25
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -692,6 +802,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. Dense ANN param overrides to control recall and latency.
          * The percentage of leaves to search, in the range [0, 100].
+         * Not supported for `STORAGE_OPTIMIZED` indexes.
+         * Cannot be set together with `target_recall`.
          * </pre>
          *
          * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -709,6 +821,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. Dense ANN param overrides to control recall and latency.
          * The percentage of leaves to search, in the range [0, 100].
+         * Not supported for `STORAGE_OPTIMIZED` indexes.
+         * Cannot be set together with `target_recall`.
          * </pre>
          *
          * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -730,6 +844,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Optional. Dense ANN param overrides to control recall and latency.
          * The percentage of leaves to search, in the range [0, 100].
+         * Not supported for `STORAGE_OPTIMIZED` indexes.
+         * Cannot be set together with `target_recall`.
          * </pre>
          *
          * <code>int32 search_leaves_pct = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -750,7 +866,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Optional. The number of initial candidates. Must be a positive integer
-         * (&gt; 0).
+         * (&gt; 0). Not supported for `STORAGE_OPTIMIZED` indexes. Cannot be set
+         * together with `target_recall`.
          * </pre>
          *
          * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -767,7 +884,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Optional. The number of initial candidates. Must be a positive integer
-         * (&gt; 0).
+         * (&gt; 0). Not supported for `STORAGE_OPTIMIZED` indexes. Cannot be set
+         * together with `target_recall`.
          * </pre>
          *
          * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -788,7 +906,8 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * Optional. The number of initial candidates. Must be a positive integer
-         * (&gt; 0).
+         * (&gt; 0). Not supported for `STORAGE_OPTIMIZED` indexes. Cannot be set
+         * together with `target_recall`.
          * </pre>
          *
          * <code>int32 initial_candidate_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -798,6 +917,86 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
         public Builder clearInitialCandidateCount() {
           bitField0_ = (bitField0_ & ~0x00000002);
           initialCandidateCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double targetRecall_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The target recall for the search. Must be a double in the
+         * range [0, 1]. While the search aims to achieve this level of recall, it
+         * is not guaranteed.
+         * </pre>
+         *
+         * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the targetRecall field is set.
+         */
+        @java.lang.Override
+        public boolean hasTargetRecall() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The target recall for the search. Must be a double in the
+         * range [0, 1]. While the search aims to achieve this level of recall, it
+         * is not guaranteed.
+         * </pre>
+         *
+         * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The targetRecall.
+         */
+        @java.lang.Override
+        public double getTargetRecall() {
+          return targetRecall_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The target recall for the search. Must be a double in the
+         * range [0, 1]. While the search aims to achieve this level of recall, it
+         * is not guaranteed.
+         * </pre>
+         *
+         * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The targetRecall to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTargetRecall(double value) {
+
+          targetRecall_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The target recall for the search. Must be a double in the
+         * range [0, 1]. While the search aims to achieve this level of recall, it
+         * is not guaranteed.
+         * </pre>
+         *
+         * <code>optional double target_recall = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTargetRecall() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          targetRecall_ = 0D;
           onChanged();
           return this;
         }
@@ -2319,7 +2518,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=152
    * @return Whether the useIndex field is set.
    */
   @java.lang.Override
@@ -2341,7 +2540,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=152
    * @return The useIndex.
    */
   @java.lang.Override
@@ -2388,7 +2587,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
    * @return Whether the useKnn field is set.
    */
   @java.lang.Override
@@ -2409,7 +2608,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
    * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+   *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
    * @return The useKnn.
    */
   @java.lang.Override
@@ -3013,7 +3212,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=152
      * @return Whether the useIndex field is set.
      */
     @java.lang.Override
@@ -3035,7 +3234,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_index is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=143
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=152
      * @return The useIndex.
      */
     @java.lang.Override
@@ -3266,7 +3465,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
      * @return Whether the useKnn field is set.
      */
     @java.lang.Deprecated
@@ -3286,7 +3485,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
      * @return The useKnn.
      */
     @java.lang.Deprecated
@@ -3309,7 +3508,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
      * @param value The useKnn to set.
      * @return This builder for chaining.
      */
@@ -3334,7 +3533,7 @@ public final class SearchHint extends com.google.protobuf.GeneratedMessage
      * <code>bool use_knn = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.SearchHint.use_knn is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=149
+     *     google/cloud/vectorsearch/v1beta/data_object_search_service.proto;l=158
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

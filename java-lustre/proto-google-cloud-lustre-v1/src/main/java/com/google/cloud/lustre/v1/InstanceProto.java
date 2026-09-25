@@ -49,6 +49,18 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_lustre_v1_Instance_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_DynamicTierOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_DynamicTierOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_AccessRulesOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_AccessRulesOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_AccessRulesOptions_AccessRule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_AccessRulesOptions_AccessRule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_lustre_v1_ListInstancesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_lustre_v1_ListInstancesRequest_fieldAccessorTable;
@@ -76,6 +88,30 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_lustre_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_lustre_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_WeeklyMaintenanceWindow_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_WeeklyMaintenanceWindow_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_MaintenanceExclusionWindow_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_MaintenancePolicy_MaintenanceExclusionWindow_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_MaintenanceSchedule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_MaintenanceSchedule_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_Reschedule_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_Reschedule_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -89,7 +125,9 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "%google/cloud/lustre/v1/instance.proto\022"
           + "\026google.cloud.lustre.v1\032\037google/api/fiel"
           + "d_behavior.proto\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\245\006\n"
+          + " google/protobuf/field_mask.proto\032\037google/proto"
+          + "buf/timestamp.proto\032\026google/type/date.pr"
+          + "oto\032\033google/type/dayofweek.proto\032\033google/type/timeofday.proto\"\347\013\n"
           + "\010Instance\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\032\n\n"
           + "filesystem\030\n"
@@ -104,13 +142,31 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
           + "\013description\030\010 \001(\tB\003\340A\001\022A\n"
-          + "\006labels\030\t \003"
-          + "(\0132,.google.cloud.lustre.v1.Instance.LabelsEntryB\003\340A\001\022(\n"
-          + "\033per_unit_storage_throughput\030\013 \001(\003B\003\340A\002\022\"\n"
-          + "\023gke_support_enabled\030\014 \001(\010B\005\030\001\340A\001\032-\n"
+          + "\006labels\030\t"
+          + " \003(\0132,.google.cloud.lustre.v1.Instance.LabelsEntryB\003\340A\001\022(\n"
+          + "\033per_unit_storage_throughput\030\013 \001(\003B\003\340A\001\022\"\n"
+          + "\023gke_support_enabled\030\014 \001(\010B\005\030\001\340A\001\022=\n"
+          + "\007kms_key\030\r"
+          + " \001(\tB,\340A\001\340A\005\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022\031\n"
+          + "\014state_reason\030\016 \001(\tB\003\340A\003\022G\n"
+          + "\020placement_policy\030\021 \001(\tB-\340A\001\372A\'\n"
+          + "%compute.googleapis.com/ResourcePolicy\022M\n"
+          + "\024access_rules_options\030\022"
+          + " \001(\0132*.google.cloud.lustre.v1.AccessRulesOptionsB\003\340A\001\022\030\n"
+          + "\003uid\030\023 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022J\n"
+          + "\022maintenance_policy\030\024"
+          + " \001(\0132).google.cloud.lustre.v1.MaintenancePolicyB\003\340A\001\022W\n"
+          + "\035upcoming_maintenance_schedule\030\025 \001(\0132+.g"
+          + "oogle.cloud.lustre.v1.MaintenanceScheduleB\003\340A\003\022P\n"
+          + "\024dynamic_tier_options\030\030 \001(\0132*.g"
+          + "oogle.cloud.lustre.v1.DynamicTierOptionsB\006\340A\005\340A\001\022#\n"
+          + "\021available_version\030! \001(\tB\003\340A\003H\000\210\001\001\022 \n"
+          + "\016target_version\030\" \001(\tB\003\340A\001H\001\210\001\001\022#\n"
+          + "\021effective_version\030# \001(\tB\003\340A\003H\002\210\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\177\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\222\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\014\n"
@@ -118,10 +174,37 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\010DELETING\020\003\022\r\n"
           + "\tUPGRADING\020\004\022\r\n"
           + "\tREPAIRING\020\005\022\013\n"
-          + "\007STOPPED\020\006\022\014\n"
-          + "\010UPDATING\020\007:v\352As\n"
-          + "\036lustre.googleapis.com/Instance\022<projects/{proj"
-          + "ect}/locations/{location}/instances/{instance}*\tinstances2\010instance\"\253\001\n"
+          + "\007STOPPED\020\006\022\020\n"
+          + "\010UPDATING\020\007\032\002\010\001\022\r\n"
+          + "\tSUSPENDED\020\010:v\352As\n"
+          + "\036lustre.googleapis.com/Instance\022<projects/"
+          + "{project}/locations/{location}/instances/{instance}*\tinstances2\010instanceB\024\n"
+          + "\022_available_versionB\021\n"
+          + "\017_target_versionB\024\n"
+          + "\022_effective_version\"\232\001\n"
+          + "\022DynamicTierOptions\022E\n"
+          + "\004mode\030\001"
+          + " \001(\0162/.google.cloud.lustre.v1.DynamicTierOptions.ModeB\006\340A\005\340A\002\"=\n"
+          + "\004Mode\022\024\n"
+          + "\020MODE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DISABLED\020\001\022\021\n\r"
+          + "DEFAULT_CACHE\020\002\"\337\003\n"
+          + "\022AccessRulesOptions\022P\n"
+          + "\014access_rules\030\001"
+          + " \003(\01325.google.cloud.lustre.v1.AccessRulesOptions.AccessRuleB\003\340A\001\022W\n"
+          + "\023default_squash_mode\030\002 \001(\01625.google.clou"
+          + "d.lustre.v1.AccessRulesOptions.SquashModeB\003\340A\002\022\037\n"
+          + "\022default_squash_uid\030\003 \001(\005B\003\340A\001\022\037\n"
+          + "\022default_squash_gid\030\004 \001(\005B\003\340A\001\032\220\001\n\n"
+          + "AccessRule\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\036\n"
+          + "\021ip_address_ranges\030\002 \003(\tB\003\340A\002\022O\n"
+          + "\013squash_mode\030\006 \001(\0162"
+          + "5.google.cloud.lustre.v1.AccessRulesOptions.SquashModeB\003\340A\002\"I\n\n"
+          + "SquashMode\022\033\n"
+          + "\027SQUASH_MODE_UNSPECIFIED\020\000\022\r\n"
+          + "\tNO_SQUASH\020\001\022\017\n"
+          + "\013ROOT_SQUASH\020\002\"\253\001\n"
           + "\024ListInstancesRequest\0226\n"
           + "\006parent\030\001 \001(\tB&\340A\002\372A"
           + " \022\036lustre.googleapis.com/Instance\022\026\n"
@@ -147,11 +230,12 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0227\n"
           + "\010instance\030\002 \001(\0132"
           + " .google.cloud.lustre.v1.InstanceB\003\340A\002\022\037\n\n"
-          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\202\001\n"
           + "\025DeleteInstanceRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036lustre.googleapis.com/Instance\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\200\002\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\200\002\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
@@ -159,7 +243,39 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\003Ba\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003\"\216\004\n"
+          + "\021MaintenancePolicy\022j\n"
+          + "\032weekly_maintenance_windows\030\003 \003(\0132A.google.cloud.lustre.v1.Mai"
+          + "ntenancePolicy.WeeklyMaintenanceWindowB\003\340A\002\022o\n"
+          + "\034maintenance_exclusion_window\030\004 \003("
+          + "\0132D.google.cloud.lustre.v1.MaintenancePolicy.MaintenanceExclusionWindowB\003\340A\001\032|\n"
+          + "\027WeeklyMaintenanceWindow\0220\n"
+          + "\013day_of_week\030\001 \001(\0162\026.google.type.DayOfWeekB\003\340A\002\022/\n\n"
+          + "start_time\030\002 \001(\0132\026.google.type.TimeOfDayB\003\340A\002\032\235\001\n"
+          + "\032MaintenanceExclusionWindow\022*\n\n"
+          + "start_date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022(\n"
+          + "\010end_date\030\002 \001(\0132\021.google.type.DateB\003\340A\002\022)\n"
+          + "\004time\030\003 \001(\0132\026.google.type.TimeOfDayB\003\340A\002\"}\n"
+          + "\023MaintenanceSchedule\0223\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\343\003\n"
+          + "\034RescheduleMaintenanceRequest\0224\n"
+          + "\004name\030\001 \001(\tB&\340A\002\372A \n"
+          + "\036lustre.googleapis.com/Instance\022X\n\n"
+          + "reschedule\030\002 \001(\0132?.g"
+          + "oogle.cloud.lustre.v1.RescheduleMaintenanceRequest.RescheduleB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001("
+          + "\tB\013\340A\001\342\214\317\327\010\002\010\001\032\247\001\n\n"
+          + "Reschedule\022a\n"
+          + "\017reschedule_type\030\001 \001(\0162C.google.cloud.lustr"
+          + "e.v1.RescheduleMaintenanceRequest.RescheduleTypeB\003\340A\002\0226\n\r"
+          + "schedule_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"h\n"
+          + "\016RescheduleType\022\037\n"
+          + "\033RESCHEDULE_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tIMMEDIATE\020\001\022\031\n"
+          + "\025NEXT_AVAILABLE_WINDOW\020\002\022\013\n"
+          + "\007BY_TIME\020\003Ba\n"
           + "\032com.google.cloud.lustre.v1B\r"
           + "InstanceProtoP\001Z2cloud.google.com/go/lustre/apiv1/lustrepb;lustrepbb\006proto3"
     };
@@ -172,6 +288,9 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
+              com.google.type.DayOfWeekProto.getDescriptor(),
+              com.google.type.TimeOfDayProto.getDescriptor(),
             });
     internal_static_google_cloud_lustre_v1_Instance_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_cloud_lustre_v1_Instance_fieldAccessorTable =
@@ -190,6 +309,17 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Labels",
               "PerUnitStorageThroughput",
               "GkeSupportEnabled",
+              "KmsKey",
+              "StateReason",
+              "PlacementPolicy",
+              "AccessRulesOptions",
+              "Uid",
+              "MaintenancePolicy",
+              "UpcomingMaintenanceSchedule",
+              "DynamicTierOptions",
+              "AvailableVersion",
+              "TargetVersion",
+              "EffectiveVersion",
             });
     internal_static_google_cloud_lustre_v1_Instance_LabelsEntry_descriptor =
         internal_static_google_cloud_lustre_v1_Instance_descriptor.getNestedType(0);
@@ -199,8 +329,32 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_lustre_v1_ListInstancesRequest_descriptor =
+    internal_static_google_cloud_lustre_v1_DynamicTierOptions_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_cloud_lustre_v1_DynamicTierOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_DynamicTierOptions_descriptor,
+            new java.lang.String[] {
+              "Mode",
+            });
+    internal_static_google_cloud_lustre_v1_AccessRulesOptions_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_lustre_v1_AccessRulesOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_AccessRulesOptions_descriptor,
+            new java.lang.String[] {
+              "AccessRules", "DefaultSquashMode", "DefaultSquashUid", "DefaultSquashGid",
+            });
+    internal_static_google_cloud_lustre_v1_AccessRulesOptions_AccessRule_descriptor =
+        internal_static_google_cloud_lustre_v1_AccessRulesOptions_descriptor.getNestedType(0);
+    internal_static_google_cloud_lustre_v1_AccessRulesOptions_AccessRule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_AccessRulesOptions_AccessRule_descriptor,
+            new java.lang.String[] {
+              "Name", "IpAddressRanges", "SquashMode",
+            });
+    internal_static_google_cloud_lustre_v1_ListInstancesRequest_descriptor =
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_lustre_v1_ListInstancesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_ListInstancesRequest_descriptor,
@@ -208,7 +362,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_lustre_v1_ListInstancesResponse_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_lustre_v1_ListInstancesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_ListInstancesResponse_descriptor,
@@ -216,7 +370,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Instances", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_lustre_v1_GetInstanceRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_lustre_v1_GetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_GetInstanceRequest_descriptor,
@@ -224,7 +378,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_lustre_v1_CreateInstanceRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_lustre_v1_CreateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_CreateInstanceRequest_descriptor,
@@ -232,7 +386,7 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "InstanceId", "Instance", "RequestId",
             });
     internal_static_google_cloud_lustre_v1_UpdateInstanceRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_lustre_v1_UpdateInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_UpdateInstanceRequest_descriptor,
@@ -240,15 +394,15 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "Instance", "RequestId",
             });
     internal_static_google_cloud_lustre_v1_DeleteInstanceRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_lustre_v1_DeleteInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_DeleteInstanceRequest_descriptor,
             new java.lang.String[] {
-              "Name", "RequestId",
+              "Name", "RequestId", "Force",
             });
     internal_static_google_cloud_lustre_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_lustre_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_lustre_v1_OperationMetadata_descriptor,
@@ -261,12 +415,64 @@ public final class InstanceProto extends com.google.protobuf.GeneratedFile {
               "RequestedCancellation",
               "ApiVersion",
             });
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_MaintenancePolicy_descriptor,
+            new java.lang.String[] {
+              "WeeklyMaintenanceWindows", "MaintenanceExclusionWindow",
+            });
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_WeeklyMaintenanceWindow_descriptor =
+        internal_static_google_cloud_lustre_v1_MaintenancePolicy_descriptor.getNestedType(0);
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_WeeklyMaintenanceWindow_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_MaintenancePolicy_WeeklyMaintenanceWindow_descriptor,
+            new java.lang.String[] {
+              "DayOfWeek", "StartTime",
+            });
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_MaintenanceExclusionWindow_descriptor =
+        internal_static_google_cloud_lustre_v1_MaintenancePolicy_descriptor.getNestedType(1);
+    internal_static_google_cloud_lustre_v1_MaintenancePolicy_MaintenanceExclusionWindow_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_MaintenancePolicy_MaintenanceExclusionWindow_descriptor,
+            new java.lang.String[] {
+              "StartDate", "EndDate", "Time",
+            });
+    internal_static_google_cloud_lustre_v1_MaintenanceSchedule_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_lustre_v1_MaintenanceSchedule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_MaintenanceSchedule_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime",
+            });
+    internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Reschedule", "RequestId",
+            });
+    internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_Reschedule_descriptor =
+        internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_Reschedule_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_lustre_v1_RescheduleMaintenanceRequest_Reschedule_descriptor,
+            new java.lang.String[] {
+              "RescheduleType", "ScheduleTime",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
+    com.google.type.DayOfWeekProto.getDescriptor();
+    com.google.type.TimeOfDayProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -82,11 +82,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed.
+   * Optional. The UTF-8 encoded natural language text to be processed.
    * Text length must not exceed 256 characters for virtual agent interactions.
+   * Only one of `text` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The text.
    */
@@ -107,11 +108,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The UTF-8 encoded natural language text to be processed.
+   * Optional. The UTF-8 encoded natural language text to be processed.
    * Text length must not exceed 256 characters for virtual agent interactions.
+   * Only one of `text` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for text.
    */
@@ -527,11 +529,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed.
+     * Optional. The UTF-8 encoded natural language text to be processed.
      * Text length must not exceed 256 characters for virtual agent interactions.
+     * Only one of `text` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The text.
      */
@@ -551,11 +554,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed.
+     * Optional. The UTF-8 encoded natural language text to be processed.
      * Text length must not exceed 256 characters for virtual agent interactions.
+     * Only one of `text` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for text.
      */
@@ -575,11 +579,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed.
+     * Optional. The UTF-8 encoded natural language text to be processed.
      * Text length must not exceed 256 characters for virtual agent interactions.
+     * Only one of `text` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The text to set.
      * @return This builder for chaining.
@@ -598,11 +603,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed.
+     * Optional. The UTF-8 encoded natural language text to be processed.
      * Text length must not exceed 256 characters for virtual agent interactions.
+     * Only one of `text` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -617,11 +623,12 @@ public final class TextInput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The UTF-8 encoded natural language text to be processed.
+     * Optional. The UTF-8 encoded natural language text to be processed.
      * Text length must not exceed 256 characters for virtual agent interactions.
+     * Only one of `text` and `companion_query` should be set - not both.
      * </pre>
      *
-     * <code>string text = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string text = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for text to set.
      * @return This builder for chaining.

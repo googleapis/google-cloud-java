@@ -38,6 +38,7 @@
  *           .setRequiredQuality(ImageryQuality.forNumber(0))
  *           .setExactQualityRequired(true)
  *           .addAllExperiments(new ArrayList<Experiment>())
+ *           .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
  *           .build();
  *   BuildingInsights response = solarClient.findClosestBuildingInsights(request);
  * }

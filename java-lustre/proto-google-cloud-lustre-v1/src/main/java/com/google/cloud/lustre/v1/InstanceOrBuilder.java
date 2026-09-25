@@ -91,7 +91,9 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-   * values are from `18000` to `954000`, in increments of 9000.
+   * values depend on the `perUnitStorageThroughput`. See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for specific minimums, maximums, and step sizes for each performance tier.
    * </pre>
    *
    * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -365,11 +367,16 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Required. The throughput of the instance in MB/s/TiB.
-   * Valid values are 125, 250, 500, 1000.
+   * Optional. The throughput of the instance in MBps per TiB. Valid values are
+   * 0, 125, 250, 500, 1000. See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   *
+   * If the instance is using the Dynamic tier, this field must not be set or
+   * must be set to zero.
    * </pre>
    *
-   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The perUnitStorageThroughput.
    */
@@ -379,9 +386,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. Indicates whether you want to enable support for GKE clients. By
-   * default, GKE clients are not supported. Deprecated. No longer required for
-   * GKE instance creation.
+   * Optional. Deprecated: No longer required for GKE instance creation.
+   * Indicates whether you want to enable support for GKE clients. By default,
+   * GKE clients are not supported.
    * </pre>
    *
    * <code>
@@ -389,9 +396,465 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
-   *     google/cloud/lustre/v1/instance.proto;l=118
+   *     google/cloud/lustre/v1/instance.proto;l=133
    * @return The gkeSupportEnabled.
    */
   @java.lang.Deprecated
   boolean getGkeSupportEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+   * If not set, the instance will use Google-managed encryption keys.
+   * If set, the instance will use customer-managed encryption keys.
+   * The key must be in the same region as the instance.
+   * The key format is:
+   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+   * </pre>
+   *
+   * <code>
+   * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+   * If not set, the instance will use Google-managed encryption keys.
+   * If set, the instance will use customer-managed encryption keys.
+   * The key must be in the same region as the instance.
+   * The key format is:
+   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+   * </pre>
+   *
+   * <code>
+   * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason why the instance is in a certain state (e.g.
+   * SUSPENDED).
+   * </pre>
+   *
+   * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  java.lang.String getStateReason();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason why the instance is in a certain state (e.g.
+   * SUSPENDED).
+   * </pre>
+   *
+   * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  com.google.protobuf.ByteString getStateReasonBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The placement policy name for the instance in the format of
+   * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+   * </pre>
+   *
+   * <code>
+   * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The placementPolicy.
+   */
+  java.lang.String getPlacementPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The placement policy name for the instance in the format of
+   * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+   * </pre>
+   *
+   * <code>
+   * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for placementPolicy.
+   */
+  com.google.protobuf.ByteString getPlacementPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessRulesOptions field is set.
+   */
+  boolean hasAccessRulesOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessRulesOptions.
+   */
+  com.google.cloud.lustre.v1.AccessRulesOptions getAccessRulesOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder getAccessRulesOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique ID of the resource.
+   * This is unrelated to the access rules which allow specifying the root
+   * squash uid.
+   * </pre>
+   *
+   * <code>
+   * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique ID of the resource.
+   * This is unrelated to the access rules which allow specifying the root
+   * squash uid.
+   * </pre>
+   *
+   * <code>
+   * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  boolean hasMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  com.google.cloud.lustre.v1.MaintenancePolicy getMaintenancePolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upcomingMaintenanceSchedule field is set.
+   */
+  boolean hasUpcomingMaintenanceSchedule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upcomingMaintenanceSchedule.
+   */
+  com.google.cloud.lustre.v1.MaintenanceSchedule getUpcomingMaintenanceSchedule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder getUpcomingMaintenanceScheduleOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dynamicTierOptions field is set.
+   */
+  boolean hasDynamicTierOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dynamicTierOptions.
+   */
+  com.google.cloud.lustre.v1.DynamicTierOptions getDynamicTierOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder getDynamicTierOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the availableVersion field is set.
+   */
+  boolean hasAvailableVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableVersion.
+   */
+  java.lang.String getAvailableVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for availableVersion.
+   */
+  com.google.protobuf.ByteString getAvailableVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the targetVersion field is set.
+   */
+  boolean hasTargetVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The targetVersion.
+   */
+  java.lang.String getTargetVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for targetVersion.
+   */
+  com.google.protobuf.ByteString getTargetVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveVersion field is set.
+   */
+  boolean hasEffectiveVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveVersion.
+   */
+  java.lang.String getEffectiveVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveVersion.
+   */
+  com.google.protobuf.ByteString getEffectiveVersionBytes();
 }

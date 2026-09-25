@@ -167,6 +167,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -218,6 +219,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -269,6 +271,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -332,6 +335,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -393,6 +397,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -456,6 +461,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -605,6 +611,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -650,6 +657,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -695,6 +703,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -819,6 +828,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -872,6 +882,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -1342,6 +1353,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -1391,6 +1403,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();
@@ -2548,6 +2561,7 @@ public class BaseBigtableTableAdminClientTest {
             .setRestoreInfo(RestoreInfo.newBuilder().build())
             .setChangeStreamConfig(ChangeStreamConfig.newBuilder().build())
             .setDeletionProtection(true)
+            .setEffectiveAutomatedBackupPolicy(Table.AutomatedBackupPolicy.newBuilder().build())
             .setTieredStorageConfig(TieredStorageConfig.newBuilder().build())
             .setRowKeySchema(Type.Struct.newBuilder().build())
             .build();

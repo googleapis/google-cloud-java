@@ -279,7 +279,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
    * @return The project.
    */
   @java.lang.Deprecated
@@ -298,7 +298,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
    * @return The bytes for project.
    */
   @java.lang.Deprecated

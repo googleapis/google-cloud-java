@@ -25,7 +25,7 @@ package com.google.cloud.parametermanager.v1;
  *
  * <pre>
  * Option for requesting only metadata, or user provided payload
- * of a ParameterVersion resource.
+ * of a ParameterVersion or TemplateVersion resource.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.parametermanager.v1.View}
@@ -37,7 +37,7 @@ public enum View implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * The default / unset value.
-   * The API will default to the FULL view..
+   * The API will default to the FULL view.
    * </pre>
    *
    * <code>VIEW_UNSPECIFIED = 0;</code>
@@ -82,7 +82,7 @@ public enum View implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * The default / unset value.
-   * The API will default to the FULL view..
+   * The API will default to the FULL view.
    * </pre>
    *
    * <code>VIEW_UNSPECIFIED = 0;</code>
@@ -171,7 +171,7 @@ public enum View implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.parametermanager.v1.V1mainProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.cloud.parametermanager.v1.V1mainProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final View[] VALUES = values();

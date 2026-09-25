@@ -276,6 +276,8 @@ public class DataObjectSearchServiceClientTest {
             .setParent(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
             .addAllSearches(new ArrayList<Search>())
             .setCombine(BatchSearchDataObjectsRequest.CombineResultsOptions.newBuilder().build())
+            .setMetadataOptions(
+                BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder().build())
             .build();
 
     BatchSearchDataObjectsResponse actualResponse = client.batchSearchDataObjects(request);
@@ -289,6 +291,7 @@ public class DataObjectSearchServiceClientTest {
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getSearchesList(), actualRequest.getSearchesList());
     Assert.assertEquals(request.getCombine(), actualRequest.getCombine());
+    Assert.assertEquals(request.getMetadataOptions(), actualRequest.getMetadataOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -306,6 +309,8 @@ public class DataObjectSearchServiceClientTest {
               .setParent(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
               .addAllSearches(new ArrayList<Search>())
               .setCombine(BatchSearchDataObjectsRequest.CombineResultsOptions.newBuilder().build())
+              .setMetadataOptions(
+                  BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder().build())
               .build();
       client.batchSearchDataObjects(request);
       Assert.fail("No exception raised");

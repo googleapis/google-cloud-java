@@ -56,6 +56,7 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     pageToken_ = "";
     filter_ = "";
     orderBy_ = "";
+    creatorFilter_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -341,6 +342,52 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     return showDeleted_;
   }
 
+  public static final int CREATOR_FILTER_FIELD_NUMBER = 8;
+  private int creatorFilter_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the creator of the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for creatorFilter.
+   */
+  @java.lang.Override
+  public int getCreatorFilterValue() {
+    return creatorFilter_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the creator of the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The creatorFilter.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+      getCreatorFilter() {
+    com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter result =
+        com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+            .forNumber(creatorFilter_);
+    return result == null
+        ? com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -373,6 +420,12 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     if (showDeleted_ != false) {
       output.writeBool(6, showDeleted_);
     }
+    if (creatorFilter_
+        != com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+            .CREATOR_FILTER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(8, creatorFilter_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -400,6 +453,12 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     if (showDeleted_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, showDeleted_);
     }
+    if (creatorFilter_
+        != com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+            .CREATOR_FILTER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, creatorFilter_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -422,6 +481,7 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (getShowDeleted() != other.getShowDeleted()) return false;
+    if (creatorFilter_ != other.creatorFilter_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -445,6 +505,8 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + SHOW_DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowDeleted());
+    hash = (37 * hash) + CREATOR_FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + creatorFilter_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -592,6 +654,7 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
       filter_ = "";
       orderBy_ = "";
       showDeleted_ = false;
+      creatorFilter_ = 0;
       return this;
     }
 
@@ -648,6 +711,9 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.showDeleted_ = showDeleted_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.creatorFilter_ = creatorFilter_;
+      }
     }
 
     @java.lang.Override
@@ -689,6 +755,9 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.getShowDeleted() != false) {
         setShowDeleted(other.getShowDeleted());
+      }
+      if (other.creatorFilter_ != 0) {
+        setCreatorFilterValue(other.getCreatorFilterValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -752,6 +821,12 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 64:
+              {
+                creatorFilter_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1369,6 +1444,118 @@ public final class ListDataAgentsRequest extends com.google.protobuf.GeneratedMe
     public Builder clearShowDeleted() {
       bitField0_ = (bitField0_ & ~0x00000020);
       showDeleted_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int creatorFilter_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the creator of the agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for creatorFilter.
+     */
+    @java.lang.Override
+    public int getCreatorFilterValue() {
+      return creatorFilter_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the creator of the agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for creatorFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorFilterValue(int value) {
+      creatorFilter_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the creator of the agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The creatorFilter.
+     */
+    @java.lang.Override
+    public com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+        getCreatorFilter() {
+      com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter result =
+          com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+              .forNumber(creatorFilter_);
+      return result == null
+          ? com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the creator of the agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The creatorFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreatorFilter(
+        com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      creatorFilter_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Filter for the creator of the agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreatorFilter() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      creatorFilter_ = 0;
       onChanged();
       return this;
     }

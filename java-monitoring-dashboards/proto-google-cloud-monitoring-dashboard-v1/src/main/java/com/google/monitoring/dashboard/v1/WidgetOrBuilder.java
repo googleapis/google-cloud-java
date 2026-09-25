@@ -355,7 +355,7 @@ public interface WidgetOrBuilder
    *
    *
    * <pre>
-   * A widget that shows list of incidents.
+   * A widget that shows list of alerts.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>
@@ -368,7 +368,7 @@ public interface WidgetOrBuilder
    *
    *
    * <pre>
-   * A widget that shows list of incidents.
+   * A widget that shows list of alerts.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>
@@ -381,7 +381,7 @@ public interface WidgetOrBuilder
    *
    *
    * <pre>
-   * A widget that shows list of incidents.
+   * A widget that shows list of alerts.
    * </pre>
    *
    * <code>.google.monitoring.dashboard.v1.IncidentList incident_list = 12;</code>

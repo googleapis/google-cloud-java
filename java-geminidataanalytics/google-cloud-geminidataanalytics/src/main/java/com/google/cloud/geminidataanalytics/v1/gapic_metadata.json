@@ -40,6 +40,12 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "RetrieveAgentOpsObservability": {
+              "methods": ["retrieveAgentOpsObservability", "retrieveAgentOpsObservability", "retrieveAgentOpsObservability", "retrieveAgentOpsObservabilityCallable"]
+            },
+            "SetAgentOpsObservability": {
+              "methods": ["setAgentOpsObservabilityAsync", "setAgentOpsObservabilityAsync", "setAgentOpsObservabilityAsync", "setAgentOpsObservabilityOperationCallable", "setAgentOpsObservabilityCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
@@ -81,6 +87,9 @@
             },
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            },
+            "UpdateConversation": {
+              "methods": ["updateConversation", "updateConversation", "updateConversationCallable"]
             }
           }
         }

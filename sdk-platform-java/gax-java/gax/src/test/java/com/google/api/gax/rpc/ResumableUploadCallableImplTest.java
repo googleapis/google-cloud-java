@@ -46,6 +46,7 @@ import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -95,7 +96,8 @@ class ResumableUploadCallableImplTest {
     stubStartSession("https://upload.url/single");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
         .thenReturn(
-            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "response-single")));
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-single")));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("hello"), null);
@@ -117,9 +119,15 @@ class ResumableUploadCallableImplTest {
     stubStartSession("https://upload.url/multi");
     // 20 bytes with chunkSize = 8 -> 8 + 8 + 4 bytes
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "response-multi")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-multi")));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("01234567890123456789"), null);
@@ -139,7 +147,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_zeroByteUpload_finalizesSuccessfully() throws Exception {
     stubStartSession("https://upload.url/zero");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "response-zero")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-zero")));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", new ByteArrayInputStream(new byte[0]), null);
@@ -157,9 +167,12 @@ class ResumableUploadCallableImplTest {
     stubStartSession("https://upload.url/exact-single");
     // Exactly 8 bytes with chunkSize = 8 -> 8 bytes (non-final) then 0 bytes (final)
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(false, null)))
         .thenReturn(
-            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "response-exact-single")));
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-exact-single")));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("12345678"), null);
@@ -177,7 +190,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_nullResponse_completesSuccessfully() throws Exception {
     stubStartSession("https://upload.url/null-response");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, null)));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, null)));
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("data"), null);
@@ -260,7 +275,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_closesPayloadOnSuccess() throws Exception {
     stubStartSession("https://upload.url/close-success");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done")));
 
     TrackableStream stream = new TrackableStream("data");
     callable.futureCall("resource-path", stream, null).get();
@@ -317,7 +334,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_withApiCallContext_mergesAndPassesContext() throws Exception {
     stubStartSession("https://upload.url/context");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-ctx")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-ctx")));
 
     ApiCallContext customContext =
         FakeCallContext.createDefault()
@@ -347,7 +366,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_withSettings_mergesAndAppliesSettings() throws Exception {
     stubStartSession("https://upload.url/settings");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-settings")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-settings")));
 
     ResumableUploadCallSettings customSettings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
@@ -362,7 +383,8 @@ class ResumableUploadCallableImplTest {
     stubStartSession("https://upload.url/settings-convenience");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
         .thenReturn(
-            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-settings-conv")));
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-settings-conv")));
 
     ResumableUploadCallSettings customSettings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
@@ -376,7 +398,9 @@ class ResumableUploadCallableImplTest {
   void testUploadCallable_withContextAndSettings_appliesBoth() throws Exception {
     stubStartSession("https://upload.url/ctx-settings");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
-        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-both")));
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-both")));
 
     FakeCallContext customContext = FakeCallContext.createDefault();
     ResumableUploadCallSettings customSettings =

@@ -247,7 +247,7 @@ public interface KnowledgeAssistDebugInfoOrBuilder
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>
@@ -262,7 +262,7 @@ public interface KnowledgeAssistDebugInfoOrBuilder
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>
@@ -278,7 +278,7 @@ public interface KnowledgeAssistDebugInfoOrBuilder
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>

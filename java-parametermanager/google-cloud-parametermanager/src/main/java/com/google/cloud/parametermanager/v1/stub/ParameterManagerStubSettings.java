@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1.stub;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -53,20 +55,36 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parametermanager.v1.CreateParameterRequest;
 import com.google.cloud.parametermanager.v1.CreateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.GetParameterRequest;
 import com.google.cloud.parametermanager.v1.GetParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsResponse;
 import com.google.cloud.parametermanager.v1.ListParametersRequest;
 import com.google.cloud.parametermanager.v1.ListParametersResponse;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse;
+import com.google.cloud.parametermanager.v1.ListTemplatesRequest;
+import com.google.cloud.parametermanager.v1.ListTemplatesResponse;
 import com.google.cloud.parametermanager.v1.Parameter;
 import com.google.cloud.parametermanager.v1.ParameterVersion;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionRequest;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionResponse;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse;
+import com.google.cloud.parametermanager.v1.Template;
+import com.google.cloud.parametermanager.v1.TemplateVersion;
 import com.google.cloud.parametermanager.v1.UpdateParameterRequest;
 import com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -161,6 +179,28 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
   private final UnaryCallSettings<DeleteParameterVersionRequest, Empty>
       deleteParameterVersionSettings;
   private final PagedCallSettings<
+          ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+      listTemplatesSettings;
+  private final UnaryCallSettings<GetTemplateRequest, Template> getTemplateSettings;
+  private final UnaryCallSettings<CreateTemplateRequest, Template> createTemplateSettings;
+  private final UnaryCallSettings<UpdateTemplateRequest, Template> updateTemplateSettings;
+  private final UnaryCallSettings<DeleteTemplateRequest, Empty> deleteTemplateSettings;
+  private final PagedCallSettings<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          ListTemplateVersionsPagedResponse>
+      listTemplateVersionsSettings;
+  private final UnaryCallSettings<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionSettings;
+  private final UnaryCallSettings<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionSettings;
+  private final UnaryCallSettings<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionSettings;
+  private final UnaryCallSettings<DeleteTemplateVersionRequest, Empty>
+      deleteTemplateVersionSettings;
+  private final UnaryCallSettings<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -239,6 +279,79 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
             }
           };
 
+  private static final PagedListDescriptor<ListTemplatesRequest, ListTemplatesResponse, Template>
+      LIST_TEMPLATES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListTemplatesRequest, ListTemplatesResponse, Template>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTemplatesRequest injectToken(ListTemplatesRequest payload, String token) {
+              return ListTemplatesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTemplatesRequest injectPageSize(ListTemplatesRequest payload, int pageSize) {
+              return ListTemplatesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTemplatesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTemplatesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Template> extractResources(ListTemplatesResponse payload) {
+              return payload.getTemplatesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+      LIST_TEMPLATE_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTemplateVersionsRequest injectToken(
+                ListTemplateVersionsRequest payload, String token) {
+              return ListTemplateVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTemplateVersionsRequest injectPageSize(
+                ListTemplateVersionsRequest payload, int pageSize) {
+              return ListTemplateVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTemplateVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTemplateVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TemplateVersion> extractResources(
+                ListTemplateVersionsResponse payload) {
+              return payload.getTemplateVersionsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -311,6 +424,47 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
                       PageContext.create(
                           callable, LIST_PARAMETER_VERSIONS_PAGE_STR_DESC, request, context);
               return ListParameterVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+      LIST_TEMPLATES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>() {
+            @Override
+            public ApiFuture<ListTemplatesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> callable,
+                ListTemplatesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTemplatesResponse> futureResponse) {
+              PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> pageContext =
+                  PageContext.create(callable, LIST_TEMPLATES_PAGE_STR_DESC, request, context);
+              return ListTemplatesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          ListTemplateVersionsPagedResponse>
+      LIST_TEMPLATE_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTemplateVersionsRequest,
+              ListTemplateVersionsResponse,
+              ListTemplateVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTemplateVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse> callable,
+                ListTemplateVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTemplateVersionsResponse> futureResponse) {
+              PageContext<
+                      ListTemplateVersionsRequest, ListTemplateVersionsResponse, TemplateVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TEMPLATE_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListTemplateVersionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -394,6 +548,70 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
   /** Returns the object with the settings used for calls to deleteParameterVersion. */
   public UnaryCallSettings<DeleteParameterVersionRequest, Empty> deleteParameterVersionSettings() {
     return deleteParameterVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTemplates. */
+  public PagedCallSettings<ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+      listTemplatesSettings() {
+    return listTemplatesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTemplate. */
+  public UnaryCallSettings<GetTemplateRequest, Template> getTemplateSettings() {
+    return getTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTemplate. */
+  public UnaryCallSettings<CreateTemplateRequest, Template> createTemplateSettings() {
+    return createTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTemplate. */
+  public UnaryCallSettings<UpdateTemplateRequest, Template> updateTemplateSettings() {
+    return updateTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTemplate. */
+  public UnaryCallSettings<DeleteTemplateRequest, Empty> deleteTemplateSettings() {
+    return deleteTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTemplateVersions. */
+  public PagedCallSettings<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          ListTemplateVersionsPagedResponse>
+      listTemplateVersionsSettings() {
+    return listTemplateVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTemplateVersion. */
+  public UnaryCallSettings<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionSettings() {
+    return getTemplateVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createTemplateVersion. */
+  public UnaryCallSettings<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionSettings() {
+    return createTemplateVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTemplateVersion. */
+  public UnaryCallSettings<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionSettings() {
+    return updateTemplateVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTemplateVersion. */
+  public UnaryCallSettings<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionSettings() {
+    return deleteTemplateVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to renderTemplateVersion. */
+  public UnaryCallSettings<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionSettings() {
+    return renderTemplateVersionSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -529,6 +747,17 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
     createParameterVersionSettings = settingsBuilder.createParameterVersionSettings().build();
     updateParameterVersionSettings = settingsBuilder.updateParameterVersionSettings().build();
     deleteParameterVersionSettings = settingsBuilder.deleteParameterVersionSettings().build();
+    listTemplatesSettings = settingsBuilder.listTemplatesSettings().build();
+    getTemplateSettings = settingsBuilder.getTemplateSettings().build();
+    createTemplateSettings = settingsBuilder.createTemplateSettings().build();
+    updateTemplateSettings = settingsBuilder.updateTemplateSettings().build();
+    deleteTemplateSettings = settingsBuilder.deleteTemplateSettings().build();
+    listTemplateVersionsSettings = settingsBuilder.listTemplateVersionsSettings().build();
+    getTemplateVersionSettings = settingsBuilder.getTemplateVersionSettings().build();
+    createTemplateVersionSettings = settingsBuilder.createTemplateVersionSettings().build();
+    updateTemplateVersionSettings = settingsBuilder.updateTemplateVersionSettings().build();
+    deleteTemplateVersionSettings = settingsBuilder.deleteTemplateVersionSettings().build();
+    renderTemplateVersionSettings = settingsBuilder.renderTemplateVersionSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -570,6 +799,29 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
         updateParameterVersionSettings;
     private final UnaryCallSettings.Builder<DeleteParameterVersionRequest, Empty>
         deleteParameterVersionSettings;
+    private final PagedCallSettings.Builder<
+            ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+        listTemplatesSettings;
+    private final UnaryCallSettings.Builder<GetTemplateRequest, Template> getTemplateSettings;
+    private final UnaryCallSettings.Builder<CreateTemplateRequest, Template> createTemplateSettings;
+    private final UnaryCallSettings.Builder<UpdateTemplateRequest, Template> updateTemplateSettings;
+    private final UnaryCallSettings.Builder<DeleteTemplateRequest, Empty> deleteTemplateSettings;
+    private final PagedCallSettings.Builder<
+            ListTemplateVersionsRequest,
+            ListTemplateVersionsResponse,
+            ListTemplateVersionsPagedResponse>
+        listTemplateVersionsSettings;
+    private final UnaryCallSettings.Builder<GetTemplateVersionRequest, TemplateVersion>
+        getTemplateVersionSettings;
+    private final UnaryCallSettings.Builder<CreateTemplateVersionRequest, TemplateVersion>
+        createTemplateVersionSettings;
+    private final UnaryCallSettings.Builder<UpdateTemplateVersionRequest, TemplateVersion>
+        updateTemplateVersionSettings;
+    private final UnaryCallSettings.Builder<DeleteTemplateVersionRequest, Empty>
+        deleteTemplateVersionSettings;
+    private final UnaryCallSettings.Builder<
+            RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+        renderTemplateVersionSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -637,6 +889,18 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
       createParameterVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateParameterVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteParameterVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listTemplatesSettings = PagedCallSettings.newBuilder(LIST_TEMPLATES_PAGE_STR_FACT);
+      getTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listTemplateVersionsSettings =
+          PagedCallSettings.newBuilder(LIST_TEMPLATE_VERSIONS_PAGE_STR_FACT);
+      getTemplateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createTemplateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTemplateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTemplateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      renderTemplateVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -653,6 +917,17 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
               createParameterVersionSettings,
               updateParameterVersionSettings,
               deleteParameterVersionSettings,
+              listTemplatesSettings,
+              getTemplateSettings,
+              createTemplateSettings,
+              updateTemplateSettings,
+              deleteTemplateSettings,
+              listTemplateVersionsSettings,
+              getTemplateVersionSettings,
+              createTemplateVersionSettings,
+              updateTemplateVersionSettings,
+              deleteTemplateVersionSettings,
+              renderTemplateVersionSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -672,6 +947,17 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
       createParameterVersionSettings = settings.createParameterVersionSettings.toBuilder();
       updateParameterVersionSettings = settings.updateParameterVersionSettings.toBuilder();
       deleteParameterVersionSettings = settings.deleteParameterVersionSettings.toBuilder();
+      listTemplatesSettings = settings.listTemplatesSettings.toBuilder();
+      getTemplateSettings = settings.getTemplateSettings.toBuilder();
+      createTemplateSettings = settings.createTemplateSettings.toBuilder();
+      updateTemplateSettings = settings.updateTemplateSettings.toBuilder();
+      deleteTemplateSettings = settings.deleteTemplateSettings.toBuilder();
+      listTemplateVersionsSettings = settings.listTemplateVersionsSettings.toBuilder();
+      getTemplateVersionSettings = settings.getTemplateVersionSettings.toBuilder();
+      createTemplateVersionSettings = settings.createTemplateVersionSettings.toBuilder();
+      updateTemplateVersionSettings = settings.updateTemplateVersionSettings.toBuilder();
+      deleteTemplateVersionSettings = settings.deleteTemplateVersionSettings.toBuilder();
+      renderTemplateVersionSettings = settings.renderTemplateVersionSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -688,6 +974,17 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
               createParameterVersionSettings,
               updateParameterVersionSettings,
               deleteParameterVersionSettings,
+              listTemplatesSettings,
+              getTemplateSettings,
+              createTemplateSettings,
+              updateTemplateSettings,
+              deleteTemplateSettings,
+              listTemplateVersionsSettings,
+              getTemplateVersionSettings,
+              createTemplateVersionSettings,
+              updateTemplateVersionSettings,
+              deleteTemplateVersionSettings,
+              renderTemplateVersionSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -771,6 +1068,61 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
           .deleteParameterVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listTemplatesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listTemplateVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTemplateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createTemplateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTemplateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTemplateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .renderTemplateVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -864,6 +1216,72 @@ public class ParameterManagerStubSettings extends StubSettings<ParameterManagerS
     public UnaryCallSettings.Builder<DeleteParameterVersionRequest, Empty>
         deleteParameterVersionSettings() {
       return deleteParameterVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTemplates. */
+    public PagedCallSettings.Builder<
+            ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+        listTemplatesSettings() {
+      return listTemplatesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTemplate. */
+    public UnaryCallSettings.Builder<GetTemplateRequest, Template> getTemplateSettings() {
+      return getTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTemplate. */
+    public UnaryCallSettings.Builder<CreateTemplateRequest, Template> createTemplateSettings() {
+      return createTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTemplate. */
+    public UnaryCallSettings.Builder<UpdateTemplateRequest, Template> updateTemplateSettings() {
+      return updateTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTemplate. */
+    public UnaryCallSettings.Builder<DeleteTemplateRequest, Empty> deleteTemplateSettings() {
+      return deleteTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTemplateVersions. */
+    public PagedCallSettings.Builder<
+            ListTemplateVersionsRequest,
+            ListTemplateVersionsResponse,
+            ListTemplateVersionsPagedResponse>
+        listTemplateVersionsSettings() {
+      return listTemplateVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTemplateVersion. */
+    public UnaryCallSettings.Builder<GetTemplateVersionRequest, TemplateVersion>
+        getTemplateVersionSettings() {
+      return getTemplateVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createTemplateVersion. */
+    public UnaryCallSettings.Builder<CreateTemplateVersionRequest, TemplateVersion>
+        createTemplateVersionSettings() {
+      return createTemplateVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTemplateVersion. */
+    public UnaryCallSettings.Builder<UpdateTemplateVersionRequest, TemplateVersion>
+        updateTemplateVersionSettings() {
+      return updateTemplateVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTemplateVersion. */
+    public UnaryCallSettings.Builder<DeleteTemplateVersionRequest, Empty>
+        deleteTemplateVersionSettings() {
+      return deleteTemplateVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to renderTemplateVersion. */
+    public UnaryCallSettings.Builder<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+        renderTemplateVersionSettings() {
+      return renderTemplateVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

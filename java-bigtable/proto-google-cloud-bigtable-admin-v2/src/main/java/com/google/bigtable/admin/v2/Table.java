@@ -2281,6 +2281,84 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * @return The bytes of the locations at the given index.
      */
     com.google.protobuf.ByteString getLocationsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the keepHotDuration field is set.
+     */
+    boolean hasKeepHotDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keepHotDuration.
+     */
+    com.google.protobuf.Duration getKeepHotDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getKeepHotDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, automated backups are explicitly disabled on this
+     * table. This allows users to opt out of default enablement.
+     * </pre>
+     *
+     * <code>bool disabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    boolean getDisabled();
   }
 
   /**
@@ -2539,6 +2617,106 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       return locations_.getByteString(index);
     }
 
+    public static final int KEEP_HOT_DURATION_FIELD_NUMBER = 4;
+    private com.google.protobuf.Duration keepHotDuration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the keepHotDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasKeepHotDuration() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The keepHotDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getKeepHotDuration() {
+      return keepHotDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : keepHotDuration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time that the automated backups remain hot.
+     * If specified, the backups created by this policy are `HOT` backups.
+     * If not specified, the backups are `STANDARD` backups.
+     *
+     * The value must be at least 24 hours and at most 10 days, and can't
+     * exceed the policy's `retention_period`.
+     *
+     * Only SSD instances support `HOT` automated backups.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getKeepHotDurationOrBuilder() {
+      return keepHotDuration_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : keepHotDuration_;
+    }
+
+    public static final int DISABLED_FIELD_NUMBER = 5;
+    private boolean disabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, automated backups are explicitly disabled on this
+     * table. This allows users to opt out of default enablement.
+     * </pre>
+     *
+     * <code>bool disabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disabled.
+     */
+    @java.lang.Override
+    public boolean getDisabled() {
+      return disabled_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2562,6 +2740,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < locations_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, locations_.getRaw(i));
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(4, getKeepHotDuration());
+      }
+      if (disabled_ != false) {
+        output.writeBool(5, disabled_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2584,6 +2768,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         }
         size += dataSize;
         size += 1 * getLocationsList().size();
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getKeepHotDuration());
+      }
+      if (disabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, disabled_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2610,6 +2800,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         if (!getFrequency().equals(other.getFrequency())) return false;
       }
       if (!getLocationsList().equals(other.getLocationsList())) return false;
+      if (hasKeepHotDuration() != other.hasKeepHotDuration()) return false;
+      if (hasKeepHotDuration()) {
+        if (!getKeepHotDuration().equals(other.getKeepHotDuration())) return false;
+      }
+      if (getDisabled() != other.getDisabled()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2633,6 +2828,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
         hash = (53 * hash) + getLocationsList().hashCode();
       }
+      if (hasKeepHotDuration()) {
+        hash = (37 * hash) + KEEP_HOT_DURATION_FIELD_NUMBER;
+        hash = (53 * hash) + getKeepHotDuration().hashCode();
+      }
+      hash = (37 * hash) + DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisabled());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2777,6 +2978,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetRetentionPeriodFieldBuilder();
           internalGetFrequencyFieldBuilder();
+          internalGetKeepHotDurationFieldBuilder();
         }
       }
 
@@ -2795,6 +2997,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           frequencyBuilder_ = null;
         }
         locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        keepHotDuration_ = null;
+        if (keepHotDurationBuilder_ != null) {
+          keepHotDurationBuilder_.dispose();
+          keepHotDurationBuilder_ = null;
+        }
+        disabled_ = false;
         return this;
       }
 
@@ -2845,6 +3053,14 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           locations_.makeImmutable();
           result.locations_ = locations_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.keepHotDuration_ =
+              keepHotDurationBuilder_ == null ? keepHotDuration_ : keepHotDurationBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.disabled_ = disabled_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2876,6 +3092,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
             locations_.addAll(other.locations_);
           }
           onChanged();
+        }
+        if (other.hasKeepHotDuration()) {
+          mergeKeepHotDuration(other.getKeepHotDuration());
+        }
+        if (other.getDisabled() != false) {
+          setDisabled(other.getDisabled());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2924,6 +3146,19 @@ public final class Table extends com.google.protobuf.GeneratedMessage
                   locations_.add(s);
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetKeepHotDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 40:
+                {
+                  disabled_ = input.readBool();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3600,6 +3835,340 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         ensureLocationsIsMutable();
         locations_.add(value);
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Duration keepHotDuration_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          keepHotDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the keepHotDuration field is set.
+       */
+      public boolean hasKeepHotDuration() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The keepHotDuration.
+       */
+      public com.google.protobuf.Duration getKeepHotDuration() {
+        if (keepHotDurationBuilder_ == null) {
+          return keepHotDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : keepHotDuration_;
+        } else {
+          return keepHotDurationBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setKeepHotDuration(com.google.protobuf.Duration value) {
+        if (keepHotDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keepHotDuration_ = value;
+        } else {
+          keepHotDurationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setKeepHotDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (keepHotDurationBuilder_ == null) {
+          keepHotDuration_ = builderForValue.build();
+        } else {
+          keepHotDurationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeKeepHotDuration(com.google.protobuf.Duration value) {
+        if (keepHotDurationBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && keepHotDuration_ != null
+              && keepHotDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getKeepHotDurationBuilder().mergeFrom(value);
+          } else {
+            keepHotDuration_ = value;
+          }
+        } else {
+          keepHotDurationBuilder_.mergeFrom(value);
+        }
+        if (keepHotDuration_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearKeepHotDuration() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        keepHotDuration_ = null;
+        if (keepHotDurationBuilder_ != null) {
+          keepHotDurationBuilder_.dispose();
+          keepHotDurationBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getKeepHotDurationBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetKeepHotDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getKeepHotDurationOrBuilder() {
+        if (keepHotDurationBuilder_ != null) {
+          return keepHotDurationBuilder_.getMessageOrBuilder();
+        } else {
+          return keepHotDuration_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : keepHotDuration_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time that the automated backups remain hot.
+       * If specified, the backups created by this policy are `HOT` backups.
+       * If not specified, the backups are `STANDARD` backups.
+       *
+       * The value must be at least 24 hours and at most 10 days, and can't
+       * exceed the policy's `retention_period`.
+       *
+       * Only SSD instances support `HOT` automated backups.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration keep_hot_duration = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetKeepHotDurationFieldBuilder() {
+        if (keepHotDurationBuilder_ == null) {
+          keepHotDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getKeepHotDuration(), getParentForChildren(), isClean());
+          keepHotDuration_ = null;
+        }
+        return keepHotDurationBuilder_;
+      }
+
+      private boolean disabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, automated backups are explicitly disabled on this
+       * table. This allows users to opt out of default enablement.
+       * </pre>
+       *
+       * <code>bool disabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disabled.
+       */
+      @java.lang.Override
+      public boolean getDisabled() {
+        return disabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, automated backups are explicitly disabled on this
+       * table. This allows users to opt out of default enablement.
+       * </pre>
+       *
+       * <code>bool disabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The disabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisabled(boolean value) {
+
+        disabled_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If `true`, automated backups are explicitly disabled on this
+       * table. This allows users to opt out of default enablement.
+       * </pre>
+       *
+       * <code>bool disabled = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisabled() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        disabled_ = false;
         onChanged();
         return this;
       }
@@ -4284,6 +4853,76 @@ public final class Table extends com.google.protobuf.GeneratedMessage
     return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
   }
 
+  public static final int EFFECTIVE_AUTOMATED_BACKUP_POLICY_FIELD_NUMBER = 19;
+  private com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy effectiveAutomatedBackupPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveAutomatedBackupPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveAutomatedBackupPolicy() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveAutomatedBackupPolicy.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy
+      getEffectiveAutomatedBackupPolicy() {
+    return effectiveAutomatedBackupPolicy_ == null
+        ? com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance()
+        : effectiveAutomatedBackupPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective automated backup policy applied to the table.
+   * This represents the policy actually in effect, which may be a
+   * system-default policy if the user has not explicitly configured one.
+   * Views: `SCHEMA_VIEW`, `FULL`.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder
+      getEffectiveAutomatedBackupPolicyOrBuilder() {
+    return effectiveAutomatedBackupPolicy_ == null
+        ? com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance()
+        : effectiveAutomatedBackupPolicy_;
+  }
+
   public static final int TIERED_STORAGE_CONFIG_FIELD_NUMBER = 14;
   private com.google.bigtable.admin.v2.TieredStorageConfig tieredStorageConfig_;
 
@@ -4306,7 +4945,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTieredStorageConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -4427,7 +5066,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRowKeySchema() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -4613,11 +5252,14 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           13, (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(14, getTieredStorageConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(15, getRowKeySchema());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(19, getEffectiveAutomatedBackupPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -4674,12 +5316,17 @@ public final class Table extends com.google.protobuf.GeneratedMessage
               13,
               (com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy) automatedBackupConfig_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(14, getTieredStorageConfig());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getRowKeySchema());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getEffectiveAutomatedBackupPolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4709,6 +5356,12 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (!getChangeStreamConfig().equals(other.getChangeStreamConfig())) return false;
     }
     if (getDeletionProtection() != other.getDeletionProtection()) return false;
+    if (hasEffectiveAutomatedBackupPolicy() != other.hasEffectiveAutomatedBackupPolicy())
+      return false;
+    if (hasEffectiveAutomatedBackupPolicy()) {
+      if (!getEffectiveAutomatedBackupPolicy().equals(other.getEffectiveAutomatedBackupPolicy()))
+        return false;
+    }
     if (hasTieredStorageConfig() != other.hasTieredStorageConfig()) return false;
     if (hasTieredStorageConfig()) {
       if (!getTieredStorageConfig().equals(other.getTieredStorageConfig())) return false;
@@ -4758,6 +5411,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
+    if (hasEffectiveAutomatedBackupPolicy()) {
+      hash = (37 * hash) + EFFECTIVE_AUTOMATED_BACKUP_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveAutomatedBackupPolicy().hashCode();
+    }
     if (hasTieredStorageConfig()) {
       hash = (37 * hash) + TIERED_STORAGE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTieredStorageConfig().hashCode();
@@ -4943,6 +5600,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetRestoreInfoFieldBuilder();
         internalGetChangeStreamConfigFieldBuilder();
+        internalGetEffectiveAutomatedBackupPolicyFieldBuilder();
         internalGetTieredStorageConfigFieldBuilder();
         internalGetRowKeySchemaFieldBuilder();
       }
@@ -4969,6 +5627,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       deletionProtection_ = false;
       if (automatedBackupPolicyBuilder_ != null) {
         automatedBackupPolicyBuilder_.clear();
+      }
+      effectiveAutomatedBackupPolicy_ = null;
+      if (effectiveAutomatedBackupPolicyBuilder_ != null) {
+        effectiveAutomatedBackupPolicyBuilder_.dispose();
+        effectiveAutomatedBackupPolicyBuilder_ = null;
       }
       tieredStorageConfig_ = null;
       if (tieredStorageConfigBuilder_ != null) {
@@ -5049,16 +5712,23 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         result.deletionProtection_ = deletionProtection_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.effectiveAutomatedBackupPolicy_ =
+            effectiveAutomatedBackupPolicyBuilder_ == null
+                ? effectiveAutomatedBackupPolicy_
+                : effectiveAutomatedBackupPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.tieredStorageConfig_ =
             tieredStorageConfigBuilder_ == null
                 ? tieredStorageConfig_
                 : tieredStorageConfigBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.rowKeySchema_ =
             rowKeySchemaBuilder_ == null ? rowKeySchema_ : rowKeySchemaBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5103,6 +5773,9 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       }
       if (other.getDeletionProtection() != false) {
         setDeletionProtection(other.getDeletionProtection());
+      }
+      if (other.hasEffectiveAutomatedBackupPolicy()) {
+        mergeEffectiveAutomatedBackupPolicy(other.getEffectiveAutomatedBackupPolicy());
       }
       if (other.hasTieredStorageConfig()) {
         mergeTieredStorageConfig(other.getTieredStorageConfig());
@@ -5218,16 +5891,24 @@ public final class Table extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetTieredStorageConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetRowKeySchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
+            case 154:
+              {
+                input.readMessage(
+                    internalGetEffectiveAutomatedBackupPolicyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6813,6 +7494,253 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       return automatedBackupPolicyBuilder_;
     }
 
+    private com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy
+        effectiveAutomatedBackupPolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy,
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder,
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder>
+        effectiveAutomatedBackupPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveAutomatedBackupPolicy field is set.
+     */
+    public boolean hasEffectiveAutomatedBackupPolicy() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveAutomatedBackupPolicy.
+     */
+    public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy
+        getEffectiveAutomatedBackupPolicy() {
+      if (effectiveAutomatedBackupPolicyBuilder_ == null) {
+        return effectiveAutomatedBackupPolicy_ == null
+            ? com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance()
+            : effectiveAutomatedBackupPolicy_;
+      } else {
+        return effectiveAutomatedBackupPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEffectiveAutomatedBackupPolicy(
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy value) {
+      if (effectiveAutomatedBackupPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        effectiveAutomatedBackupPolicy_ = value;
+      } else {
+        effectiveAutomatedBackupPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEffectiveAutomatedBackupPolicy(
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder builderForValue) {
+      if (effectiveAutomatedBackupPolicyBuilder_ == null) {
+        effectiveAutomatedBackupPolicy_ = builderForValue.build();
+      } else {
+        effectiveAutomatedBackupPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEffectiveAutomatedBackupPolicy(
+        com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy value) {
+      if (effectiveAutomatedBackupPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && effectiveAutomatedBackupPolicy_ != null
+            && effectiveAutomatedBackupPolicy_
+                != com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance()) {
+          getEffectiveAutomatedBackupPolicyBuilder().mergeFrom(value);
+        } else {
+          effectiveAutomatedBackupPolicy_ = value;
+        }
+      } else {
+        effectiveAutomatedBackupPolicyBuilder_.mergeFrom(value);
+      }
+      if (effectiveAutomatedBackupPolicy_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEffectiveAutomatedBackupPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      effectiveAutomatedBackupPolicy_ = null;
+      if (effectiveAutomatedBackupPolicyBuilder_ != null) {
+        effectiveAutomatedBackupPolicyBuilder_.dispose();
+        effectiveAutomatedBackupPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder
+        getEffectiveAutomatedBackupPolicyBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetEffectiveAutomatedBackupPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder
+        getEffectiveAutomatedBackupPolicyOrBuilder() {
+      if (effectiveAutomatedBackupPolicyBuilder_ != null) {
+        return effectiveAutomatedBackupPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return effectiveAutomatedBackupPolicy_ == null
+            ? com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance()
+            : effectiveAutomatedBackupPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective automated backup policy applied to the table.
+     * This represents the policy actually in effect, which may be a
+     * system-default policy if the user has not explicitly configured one.
+     * Views: `SCHEMA_VIEW`, `FULL`.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Table.AutomatedBackupPolicy effective_automated_backup_policy = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy,
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder,
+            com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder>
+        internalGetEffectiveAutomatedBackupPolicyFieldBuilder() {
+      if (effectiveAutomatedBackupPolicyBuilder_ == null) {
+        effectiveAutomatedBackupPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy,
+                com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder,
+                com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder>(
+                getEffectiveAutomatedBackupPolicy(), getParentForChildren(), isClean());
+        effectiveAutomatedBackupPolicy_ = null;
+      }
+      return effectiveAutomatedBackupPolicyBuilder_;
+    }
+
     private com.google.bigtable.admin.v2.TieredStorageConfig tieredStorageConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.bigtable.admin.v2.TieredStorageConfig,
@@ -6838,7 +7766,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * @return Whether the tieredStorageConfig field is set.
      */
     public boolean hasTieredStorageConfig() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -6892,7 +7820,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         tieredStorageConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6919,7 +7847,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         tieredStorageConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6942,7 +7870,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
     public Builder mergeTieredStorageConfig(
         com.google.bigtable.admin.v2.TieredStorageConfig value) {
       if (tieredStorageConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && tieredStorageConfig_ != null
             && tieredStorageConfig_
                 != com.google.bigtable.admin.v2.TieredStorageConfig.getDefaultInstance()) {
@@ -6954,7 +7882,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         tieredStorageConfigBuilder_.mergeFrom(value);
       }
       if (tieredStorageConfig_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -6976,7 +7904,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.TieredStorageConfig tiered_storage_config = 14;</code>
      */
     public Builder clearTieredStorageConfig() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       tieredStorageConfig_ = null;
       if (tieredStorageConfigBuilder_ != null) {
         tieredStorageConfigBuilder_.dispose();
@@ -7003,7 +7931,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      */
     public com.google.bigtable.admin.v2.TieredStorageConfig.Builder
         getTieredStorageConfigBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetTieredStorageConfigFieldBuilder().getBuilder();
     }
@@ -7140,7 +8068,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * @return Whether the rowKeySchema field is set.
      */
     public boolean hasRowKeySchema() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -7292,7 +8220,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         rowKeySchemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7368,7 +8296,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       } else {
         rowKeySchemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -7439,7 +8367,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRowKeySchema(com.google.bigtable.admin.v2.Type.Struct value) {
       if (rowKeySchemaBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && rowKeySchema_ != null
             && rowKeySchema_ != com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()) {
           getRowKeySchemaBuilder().mergeFrom(value);
@@ -7450,7 +8378,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         rowKeySchemaBuilder_.mergeFrom(value);
       }
       if (rowKeySchema_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -7521,7 +8449,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
      */
     public Builder clearRowKeySchema() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       rowKeySchema_ = null;
       if (rowKeySchemaBuilder_ != null) {
         rowKeySchemaBuilder_.dispose();
@@ -7596,7 +8524,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      * <code>.google.bigtable.admin.v2.Type.Struct row_key_schema = 15;</code>
      */
     public com.google.bigtable.admin.v2.Type.Struct.Builder getRowKeySchemaBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetRowKeySchemaFieldBuilder().getBuilder();
     }

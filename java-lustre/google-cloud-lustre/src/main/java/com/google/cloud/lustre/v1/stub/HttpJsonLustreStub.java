@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1.stub;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -39,20 +41,35 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.CreateInstanceRequest;
+import com.google.cloud.lustre.v1.CreateMirrorMetadata;
+import com.google.cloud.lustre.v1.CreateMirrorRequest;
+import com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.DeleteInstanceRequest;
+import com.google.cloud.lustre.v1.DeleteMirrorRequest;
+import com.google.cloud.lustre.v1.DirectoryPolicy;
 import com.google.cloud.lustre.v1.ExportDataMetadata;
 import com.google.cloud.lustre.v1.ExportDataRequest;
 import com.google.cloud.lustre.v1.ExportDataResponse;
+import com.google.cloud.lustre.v1.GetDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.GetInstanceRequest;
+import com.google.cloud.lustre.v1.GetMirrorRequest;
 import com.google.cloud.lustre.v1.ImportDataMetadata;
 import com.google.cloud.lustre.v1.ImportDataRequest;
 import com.google.cloud.lustre.v1.ImportDataResponse;
 import com.google.cloud.lustre.v1.Instance;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse;
 import com.google.cloud.lustre.v1.ListInstancesRequest;
 import com.google.cloud.lustre.v1.ListInstancesResponse;
+import com.google.cloud.lustre.v1.ListMirrorsRequest;
+import com.google.cloud.lustre.v1.ListMirrorsResponse;
+import com.google.cloud.lustre.v1.Mirror;
 import com.google.cloud.lustre.v1.OperationMetadata;
+import com.google.cloud.lustre.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.lustre.v1.UpdateInstanceRequest;
+import com.google.cloud.lustre.v1.UpdateMirrorRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -81,7 +98,10 @@ public class HttpJsonLustreStub extends LustreStub {
           .add(Instance.getDescriptor())
           .add(ImportDataMetadata.getDescriptor())
           .add(ExportDataResponse.getDescriptor())
+          .add(CreateMirrorMetadata.getDescriptor())
           .add(ExportDataMetadata.getDescriptor())
+          .add(DirectoryPolicy.getDescriptor())
+          .add(Mirror.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(ImportDataResponse.getDescriptor())
           .build();
@@ -265,6 +285,7 @@ public class HttpJsonLustreStub extends LustreStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -278,6 +299,46 @@ public class HttpJsonLustreStub extends LustreStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceMethodDescriptor =
+          ApiMethodDescriptor.<RescheduleMaintenanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/RescheduleMaintenance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RescheduleMaintenanceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*}:rescheduleMaintenance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RescheduleMaintenanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RescheduleMaintenanceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -361,6 +422,351 @@ public class HttpJsonLustreStub extends LustreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<CreateMirrorRequest, Operation>
+      createMirrorMethodDescriptor =
+          ApiMethodDescriptor.<CreateMirrorRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/CreateMirror")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateMirrorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*}/mirrors",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "mirrorId", request.getMirrorId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("mirror", request.getMirror(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateMirrorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateMirrorRequest, Operation>
+      updateMirrorMethodDescriptor =
+          ApiMethodDescriptor.<UpdateMirrorRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/UpdateMirror")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateMirrorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{mirror.name=projects/*/locations/*/instances/*/mirrors/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "mirror.name", request.getMirror().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("mirror", request.getMirror(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateMirrorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteMirrorRequest, Operation>
+      deleteMirrorMethodDescriptor =
+          ApiMethodDescriptor.<DeleteMirrorRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/DeleteMirror")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteMirrorRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/mirrors/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMirrorRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteMirrorRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetMirrorRequest, Mirror> getMirrorMethodDescriptor =
+      ApiMethodDescriptor.<GetMirrorRequest, Mirror>newBuilder()
+          .setFullMethodName("google.cloud.lustre.v1.Lustre/GetMirror")
+          .setHttpMethod("GET")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<GetMirrorRequest>newBuilder()
+                  .setPath(
+                      "/v1/{name=projects/*/locations/*/instances/*/mirrors/*}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<GetMirrorRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<GetMirrorRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Mirror>newBuilder()
+                  .setDefaultInstance(Mirror.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
+  private static final ApiMethodDescriptor<ListMirrorsRequest, ListMirrorsResponse>
+      listMirrorsMethodDescriptor =
+          ApiMethodDescriptor.<ListMirrorsRequest, ListMirrorsResponse>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/ListMirrors")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMirrorsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*}/mirrors",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMirrorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMirrorsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMirrorsResponse>newBuilder()
+                      .setDefaultInstance(ListMirrorsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateDirectoryPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/CreateDirectoryPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateDirectoryPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*}/directoryPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "directoryPolicyId", request.getDirectoryPolicyId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("directoryPolicy", request.getDirectoryPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateDirectoryPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteDirectoryPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/DeleteDirectoryPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteDirectoryPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/directoryPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteDirectoryPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetDirectoryPolicyRequest, DirectoryPolicy>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/GetDirectoryPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetDirectoryPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/directoryPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDirectoryPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DirectoryPolicy>newBuilder()
+                      .setDefaultInstance(DirectoryPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/ListDirectoryPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDirectoryPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*}/directoryPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDirectoryPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDirectoryPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDirectoryPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListDirectoryPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -442,12 +848,43 @@ public class HttpJsonLustreStub extends LustreStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable;
+  private final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable;
   private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
   private final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
       importDataOperationCallable;
   private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
   private final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationCallable;
+  private final UnaryCallable<CreateMirrorRequest, Operation> createMirrorCallable;
+  private final OperationCallable<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationCallable;
+  private final UnaryCallable<UpdateMirrorRequest, Operation> updateMirrorCallable;
+  private final OperationCallable<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationCallable;
+  private final UnaryCallable<DeleteMirrorRequest, Operation> deleteMirrorCallable;
+  private final OperationCallable<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationCallable;
+  private final UnaryCallable<GetMirrorRequest, Mirror> getMirrorCallable;
+  private final UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> listMirrorsCallable;
+  private final UnaryCallable<ListMirrorsRequest, ListMirrorsPagedResponse>
+      listMirrorsPagedCallable;
+  private final UnaryCallable<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicyCallable;
+  private final OperationCallable<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationCallable;
+  private final UnaryCallable<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicyCallable;
+  private final OperationCallable<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationCallable;
+  private final UnaryCallable<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicyCallable;
+  private final UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesCallable;
+  private final UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -580,6 +1017,19 @@ public class HttpJsonLustreStub extends LustreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceTransportSettings =
+            HttpJsonCallSettings.<RescheduleMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleMaintenanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         HttpJsonCallSettings.<ImportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(importDataMethodDescriptor)
@@ -604,6 +1054,118 @@ public class HttpJsonLustreStub extends LustreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<CreateMirrorRequest, Operation> createMirrorTransportSettings =
+        HttpJsonCallSettings.<CreateMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMirrorMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateMirrorRequest, Operation> updateMirrorTransportSettings =
+        HttpJsonCallSettings.<UpdateMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMirrorMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("mirror.name", String.valueOf(request.getMirror().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteMirrorRequest, Operation> deleteMirrorTransportSettings =
+        HttpJsonCallSettings.<DeleteMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteMirrorMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetMirrorRequest, Mirror> getMirrorTransportSettings =
+        HttpJsonCallSettings.<GetMirrorRequest, Mirror>newBuilder()
+            .setMethodDescriptor(getMirrorMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListMirrorsRequest, ListMirrorsResponse> listMirrorsTransportSettings =
+        HttpJsonCallSettings.<ListMirrorsRequest, ListMirrorsResponse>newBuilder()
+            .setMethodDescriptor(listMirrorsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<CreateDirectoryPolicyRequest, Operation>
+        createDirectoryPolicyTransportSettings =
+            HttpJsonCallSettings.<CreateDirectoryPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDirectoryPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteDirectoryPolicyRequest, Operation>
+        deleteDirectoryPolicyTransportSettings =
+            HttpJsonCallSettings.<DeleteDirectoryPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDirectoryPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetDirectoryPolicyRequest, DirectoryPolicy>
+        getDirectoryPolicyTransportSettings =
+            HttpJsonCallSettings.<GetDirectoryPolicyRequest, DirectoryPolicy>newBuilder()
+                .setMethodDescriptor(getDirectoryPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+        listDirectoryPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listDirectoryPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -664,6 +1226,17 @@ public class HttpJsonLustreStub extends LustreStub {
             settings.deleteInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.rescheduleMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceSettings(),
+            clientContext);
+    this.rescheduleMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -682,6 +1255,79 @@ public class HttpJsonLustreStub extends LustreStub {
             settings.exportDataOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createMirrorCallable =
+        callableFactory.createUnaryCallable(
+            createMirrorTransportSettings, settings.createMirrorSettings(), clientContext);
+    this.createMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            createMirrorTransportSettings,
+            settings.createMirrorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateMirrorCallable =
+        callableFactory.createUnaryCallable(
+            updateMirrorTransportSettings, settings.updateMirrorSettings(), clientContext);
+    this.updateMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMirrorTransportSettings,
+            settings.updateMirrorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteMirrorCallable =
+        callableFactory.createUnaryCallable(
+            deleteMirrorTransportSettings, settings.deleteMirrorSettings(), clientContext);
+    this.deleteMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteMirrorTransportSettings,
+            settings.deleteMirrorOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getMirrorCallable =
+        callableFactory.createUnaryCallable(
+            getMirrorTransportSettings, settings.getMirrorSettings(), clientContext);
+    this.listMirrorsCallable =
+        callableFactory.createUnaryCallable(
+            listMirrorsTransportSettings, settings.listMirrorsSettings(), clientContext);
+    this.listMirrorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMirrorsTransportSettings, settings.listMirrorsSettings(), clientContext);
+    this.createDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createDirectoryPolicyTransportSettings,
+            settings.createDirectoryPolicySettings(),
+            clientContext);
+    this.createDirectoryPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createDirectoryPolicyTransportSettings,
+            settings.createDirectoryPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteDirectoryPolicyTransportSettings,
+            settings.deleteDirectoryPolicySettings(),
+            clientContext);
+    this.deleteDirectoryPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDirectoryPolicyTransportSettings,
+            settings.deleteDirectoryPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getDirectoryPolicyTransportSettings,
+            settings.getDirectoryPolicySettings(),
+            clientContext);
+    this.listDirectoryPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listDirectoryPoliciesTransportSettings,
+            settings.listDirectoryPoliciesSettings(),
+            clientContext);
+    this.listDirectoryPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDirectoryPoliciesTransportSettings,
+            settings.listDirectoryPoliciesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -704,8 +1350,18 @@ public class HttpJsonLustreStub extends LustreStub {
     methodDescriptors.add(createInstanceMethodDescriptor);
     methodDescriptors.add(updateInstanceMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
+    methodDescriptors.add(rescheduleMaintenanceMethodDescriptor);
     methodDescriptors.add(importDataMethodDescriptor);
     methodDescriptors.add(exportDataMethodDescriptor);
+    methodDescriptors.add(createMirrorMethodDescriptor);
+    methodDescriptors.add(updateMirrorMethodDescriptor);
+    methodDescriptors.add(deleteMirrorMethodDescriptor);
+    methodDescriptors.add(getMirrorMethodDescriptor);
+    methodDescriptors.add(listMirrorsMethodDescriptor);
+    methodDescriptors.add(createDirectoryPolicyMethodDescriptor);
+    methodDescriptors.add(deleteDirectoryPolicyMethodDescriptor);
+    methodDescriptors.add(getDirectoryPolicyMethodDescriptor);
+    methodDescriptors.add(listDirectoryPoliciesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -765,6 +1421,17 @@ public class HttpJsonLustreStub extends LustreStub {
   }
 
   @Override
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    return rescheduleMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return rescheduleMaintenanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
@@ -784,6 +1451,93 @@ public class HttpJsonLustreStub extends LustreStub {
   public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMirrorRequest, Operation> createMirrorCallable() {
+    return createMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationCallable() {
+    return createMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMirrorRequest, Operation> updateMirrorCallable() {
+    return updateMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationCallable() {
+    return updateMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMirrorRequest, Operation> deleteMirrorCallable() {
+    return deleteMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationCallable() {
+    return deleteMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMirrorRequest, Mirror> getMirrorCallable() {
+    return getMirrorCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> listMirrorsCallable() {
+    return listMirrorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsPagedResponse> listMirrorsPagedCallable() {
+    return listMirrorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDirectoryPolicyRequest, Operation> createDirectoryPolicyCallable() {
+    return createDirectoryPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationCallable() {
+    return createDirectoryPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDirectoryPolicyRequest, Operation> deleteDirectoryPolicyCallable() {
+    return deleteDirectoryPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationCallable() {
+    return deleteDirectoryPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDirectoryPolicyRequest, DirectoryPolicy> getDirectoryPolicyCallable() {
+    return getDirectoryPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesCallable() {
+    return listDirectoryPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesPagedCallable() {
+    return listDirectoryPoliciesPagedCallable;
   }
 
   @Override

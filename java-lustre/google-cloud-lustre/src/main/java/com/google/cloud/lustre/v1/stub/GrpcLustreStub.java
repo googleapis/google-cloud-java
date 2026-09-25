@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1.stub;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -31,20 +33,35 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.CreateInstanceRequest;
+import com.google.cloud.lustre.v1.CreateMirrorMetadata;
+import com.google.cloud.lustre.v1.CreateMirrorRequest;
+import com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.DeleteInstanceRequest;
+import com.google.cloud.lustre.v1.DeleteMirrorRequest;
+import com.google.cloud.lustre.v1.DirectoryPolicy;
 import com.google.cloud.lustre.v1.ExportDataMetadata;
 import com.google.cloud.lustre.v1.ExportDataRequest;
 import com.google.cloud.lustre.v1.ExportDataResponse;
+import com.google.cloud.lustre.v1.GetDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.GetInstanceRequest;
+import com.google.cloud.lustre.v1.GetMirrorRequest;
 import com.google.cloud.lustre.v1.ImportDataMetadata;
 import com.google.cloud.lustre.v1.ImportDataRequest;
 import com.google.cloud.lustre.v1.ImportDataResponse;
 import com.google.cloud.lustre.v1.Instance;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse;
 import com.google.cloud.lustre.v1.ListInstancesRequest;
 import com.google.cloud.lustre.v1.ListInstancesResponse;
+import com.google.cloud.lustre.v1.ListMirrorsRequest;
+import com.google.cloud.lustre.v1.ListMirrorsResponse;
+import com.google.cloud.lustre.v1.Mirror;
 import com.google.cloud.lustre.v1.OperationMetadata;
+import com.google.cloud.lustre.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.lustre.v1.UpdateInstanceRequest;
+import com.google.cloud.lustre.v1.UpdateMirrorRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -118,6 +135,17 @@ public class GrpcLustreStub extends LustreStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceMethodDescriptor =
+          MethodDescriptor.<RescheduleMaintenanceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/RescheduleMaintenance")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RescheduleMaintenanceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
       MethodDescriptor.<ImportDataRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -135,6 +163,101 @@ public class GrpcLustreStub extends LustreStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<CreateMirrorRequest, Operation>
+      createMirrorMethodDescriptor =
+          MethodDescriptor.<CreateMirrorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/CreateMirror")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateMirrorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateMirrorRequest, Operation>
+      updateMirrorMethodDescriptor =
+          MethodDescriptor.<UpdateMirrorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/UpdateMirror")
+              .setRequestMarshaller(ProtoUtils.marshaller(UpdateMirrorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteMirrorRequest, Operation>
+      deleteMirrorMethodDescriptor =
+          MethodDescriptor.<DeleteMirrorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/DeleteMirror")
+              .setRequestMarshaller(ProtoUtils.marshaller(DeleteMirrorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetMirrorRequest, Mirror> getMirrorMethodDescriptor =
+      MethodDescriptor.<GetMirrorRequest, Mirror>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.lustre.v1.Lustre/GetMirror")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetMirrorRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Mirror.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListMirrorsRequest, ListMirrorsResponse>
+      listMirrorsMethodDescriptor =
+          MethodDescriptor.<ListMirrorsRequest, ListMirrorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/ListMirrors")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListMirrorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMirrorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicyMethodDescriptor =
+          MethodDescriptor.<CreateDirectoryPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/CreateDirectoryPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDirectoryPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteDirectoryPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/DeleteDirectoryPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDirectoryPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicyMethodDescriptor =
+          MethodDescriptor.<GetDirectoryPolicyRequest, DirectoryPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/GetDirectoryPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDirectoryPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DirectoryPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesMethodDescriptor =
+          MethodDescriptor.<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.lustre.v1.Lustre/ListDirectoryPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDirectoryPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDirectoryPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -170,12 +293,43 @@ public class GrpcLustreStub extends LustreStub {
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
+  private final UnaryCallable<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceCallable;
+  private final OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable;
   private final UnaryCallable<ImportDataRequest, Operation> importDataCallable;
   private final OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
       importDataOperationCallable;
   private final UnaryCallable<ExportDataRequest, Operation> exportDataCallable;
   private final OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationCallable;
+  private final UnaryCallable<CreateMirrorRequest, Operation> createMirrorCallable;
+  private final OperationCallable<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationCallable;
+  private final UnaryCallable<UpdateMirrorRequest, Operation> updateMirrorCallable;
+  private final OperationCallable<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationCallable;
+  private final UnaryCallable<DeleteMirrorRequest, Operation> deleteMirrorCallable;
+  private final OperationCallable<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationCallable;
+  private final UnaryCallable<GetMirrorRequest, Mirror> getMirrorCallable;
+  private final UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> listMirrorsCallable;
+  private final UnaryCallable<ListMirrorsRequest, ListMirrorsPagedResponse>
+      listMirrorsPagedCallable;
+  private final UnaryCallable<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicyCallable;
+  private final OperationCallable<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationCallable;
+  private final UnaryCallable<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicyCallable;
+  private final OperationCallable<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationCallable;
+  private final UnaryCallable<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicyCallable;
+  private final UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesCallable;
+  private final UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -274,6 +428,18 @@ public class GrpcLustreStub extends LustreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceTransportSettings =
+            GrpcCallSettings.<RescheduleMaintenanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(rescheduleMaintenanceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
             .setMethodDescriptor(importDataMethodDescriptor)
@@ -296,6 +462,109 @@ public class GrpcLustreStub extends LustreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateMirrorRequest, Operation> createMirrorTransportSettings =
+        GrpcCallSettings.<CreateMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(createMirrorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateMirrorRequest, Operation> updateMirrorTransportSettings =
+        GrpcCallSettings.<UpdateMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMirrorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("mirror.name", String.valueOf(request.getMirror().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteMirrorRequest, Operation> deleteMirrorTransportSettings =
+        GrpcCallSettings.<DeleteMirrorRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteMirrorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetMirrorRequest, Mirror> getMirrorTransportSettings =
+        GrpcCallSettings.<GetMirrorRequest, Mirror>newBuilder()
+            .setMethodDescriptor(getMirrorMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListMirrorsRequest, ListMirrorsResponse> listMirrorsTransportSettings =
+        GrpcCallSettings.<ListMirrorsRequest, ListMirrorsResponse>newBuilder()
+            .setMethodDescriptor(listMirrorsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CreateDirectoryPolicyRequest, Operation>
+        createDirectoryPolicyTransportSettings =
+            GrpcCallSettings.<CreateDirectoryPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDirectoryPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<DeleteDirectoryPolicyRequest, Operation>
+        deleteDirectoryPolicyTransportSettings =
+            GrpcCallSettings.<DeleteDirectoryPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDirectoryPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetDirectoryPolicyRequest, DirectoryPolicy>
+        getDirectoryPolicyTransportSettings =
+            GrpcCallSettings.<GetDirectoryPolicyRequest, DirectoryPolicy>newBuilder()
+                .setMethodDescriptor(getDirectoryPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+        listDirectoryPoliciesTransportSettings =
+            GrpcCallSettings
+                .<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listDirectoryPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -353,6 +622,17 @@ public class GrpcLustreStub extends LustreStub {
             settings.deleteInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.rescheduleMaintenanceCallable =
+        callableFactory.createUnaryCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceSettings(),
+            clientContext);
+    this.rescheduleMaintenanceOperationCallable =
+        callableFactory.createOperationCallable(
+            rescheduleMaintenanceTransportSettings,
+            settings.rescheduleMaintenanceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.importDataCallable =
         callableFactory.createUnaryCallable(
             importDataTransportSettings, settings.importDataSettings(), clientContext);
@@ -371,6 +651,79 @@ public class GrpcLustreStub extends LustreStub {
             settings.exportDataOperationSettings(),
             clientContext,
             operationsStub);
+    this.createMirrorCallable =
+        callableFactory.createUnaryCallable(
+            createMirrorTransportSettings, settings.createMirrorSettings(), clientContext);
+    this.createMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            createMirrorTransportSettings,
+            settings.createMirrorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateMirrorCallable =
+        callableFactory.createUnaryCallable(
+            updateMirrorTransportSettings, settings.updateMirrorSettings(), clientContext);
+    this.updateMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMirrorTransportSettings,
+            settings.updateMirrorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteMirrorCallable =
+        callableFactory.createUnaryCallable(
+            deleteMirrorTransportSettings, settings.deleteMirrorSettings(), clientContext);
+    this.deleteMirrorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteMirrorTransportSettings,
+            settings.deleteMirrorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getMirrorCallable =
+        callableFactory.createUnaryCallable(
+            getMirrorTransportSettings, settings.getMirrorSettings(), clientContext);
+    this.listMirrorsCallable =
+        callableFactory.createUnaryCallable(
+            listMirrorsTransportSettings, settings.listMirrorsSettings(), clientContext);
+    this.listMirrorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMirrorsTransportSettings, settings.listMirrorsSettings(), clientContext);
+    this.createDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createDirectoryPolicyTransportSettings,
+            settings.createDirectoryPolicySettings(),
+            clientContext);
+    this.createDirectoryPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createDirectoryPolicyTransportSettings,
+            settings.createDirectoryPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteDirectoryPolicyTransportSettings,
+            settings.deleteDirectoryPolicySettings(),
+            clientContext);
+    this.deleteDirectoryPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDirectoryPolicyTransportSettings,
+            settings.deleteDirectoryPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getDirectoryPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getDirectoryPolicyTransportSettings,
+            settings.getDirectoryPolicySettings(),
+            clientContext);
+    this.listDirectoryPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listDirectoryPoliciesTransportSettings,
+            settings.listDirectoryPoliciesSettings(),
+            clientContext);
+    this.listDirectoryPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDirectoryPoliciesTransportSettings,
+            settings.listDirectoryPoliciesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -439,6 +792,17 @@ public class GrpcLustreStub extends LustreStub {
   }
 
   @Override
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    return rescheduleMaintenanceCallable;
+  }
+
+  @Override
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    return rescheduleMaintenanceOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
@@ -458,6 +822,93 @@ public class GrpcLustreStub extends LustreStub {
   public OperationCallable<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMirrorRequest, Operation> createMirrorCallable() {
+    return createMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationCallable() {
+    return createMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMirrorRequest, Operation> updateMirrorCallable() {
+    return updateMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationCallable() {
+    return updateMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMirrorRequest, Operation> deleteMirrorCallable() {
+    return deleteMirrorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationCallable() {
+    return deleteMirrorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMirrorRequest, Mirror> getMirrorCallable() {
+    return getMirrorCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> listMirrorsCallable() {
+    return listMirrorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsPagedResponse> listMirrorsPagedCallable() {
+    return listMirrorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDirectoryPolicyRequest, Operation> createDirectoryPolicyCallable() {
+    return createDirectoryPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationCallable() {
+    return createDirectoryPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDirectoryPolicyRequest, Operation> deleteDirectoryPolicyCallable() {
+    return deleteDirectoryPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationCallable() {
+    return deleteDirectoryPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDirectoryPolicyRequest, DirectoryPolicy> getDirectoryPolicyCallable() {
+    return getDirectoryPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesCallable() {
+    return listDirectoryPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesPagedCallable() {
+    return listDirectoryPoliciesPagedCallable;
   }
 
   @Override

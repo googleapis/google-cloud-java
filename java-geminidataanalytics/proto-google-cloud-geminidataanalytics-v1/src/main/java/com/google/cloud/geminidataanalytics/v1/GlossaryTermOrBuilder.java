@@ -32,6 +32,8 @@ public interface GlossaryTermOrBuilder
    * <pre>
    * Required. User friendly display name of the glossary term being defined.
    * For example: "CTR", "conversion rate", "pending"
+   *
+   * Must be at most 256 bytes.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,6 +48,8 @@ public interface GlossaryTermOrBuilder
    * <pre>
    * Required. User friendly display name of the glossary term being defined.
    * For example: "CTR", "conversion rate", "pending"
+   *
+   * Must be at most 256 bytes.
    * </pre>
    *
    * <code>string display_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -61,6 +65,8 @@ public interface GlossaryTermOrBuilder
    * Required. The description or meaning of the term.
    * For example: "Click-through rate", "The percentage of users who complete a
    * desired action", "An order that is waiting to be processed."
+   *
+   * Must be at most 5,000 bytes (approx. 5,000 characters).
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,6 +82,8 @@ public interface GlossaryTermOrBuilder
    * Required. The description or meaning of the term.
    * For example: "Click-through rate", "The percentage of users who complete a
    * desired action", "An order that is waiting to be processed."
+   *
+   * Must be at most 5,000 bytes (approx. 5,000 characters).
    * </pre>
    *
    * <code>string description = 2 [(.google.api.field_behavior) = REQUIRED];</code>

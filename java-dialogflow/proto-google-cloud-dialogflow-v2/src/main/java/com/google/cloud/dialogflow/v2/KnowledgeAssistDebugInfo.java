@@ -3055,13 +3055,80 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      * @return The totalTokenCount.
      */
     int getTotalTokenCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking level configured for the Gemini model.
+     * </pre>
+     *
+     * <code>string thinking_level = 4;</code>
+     *
+     * @return The thinkingLevel.
+     */
+    java.lang.String getThinkingLevel();
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking level configured for the Gemini model.
+     * </pre>
+     *
+     * <code>string thinking_level = 4;</code>
+     *
+     * @return The bytes for thinkingLevel.
+     */
+    com.google.protobuf.ByteString getThinkingLevelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking budget (in number of tokens) configured for the Gemini
+     * model.
+     * </pre>
+     *
+     * <code>int32 thinking_budget_tokens = 5;</code>
+     *
+     * @return The thinkingBudgetTokens.
+     */
+    int getThinkingBudgetTokens();
+
+    /**
+     *
+     *
+     * <pre>
+     * The similarity score of the suggested query to the last suggested query.
+     * </pre>
+     *
+     * <code>float similarity_to_last_query = 6;</code>
+     *
+     * @return The similarityToLastQuery.
+     */
+    float getSimilarityToLastQuery();
+
+    /**
+     *
+     *
+     * <pre>
+     * The similarity threshold used to filter out queries similar to the last
+     * suggestion.
+     * </pre>
+     *
+     * <code>float similarity_to_last_query_threshold = 7;</code>
+     *
+     * @return The similarityToLastQueryThreshold.
+     */
+    float getSimilarityToLastQueryThreshold();
   }
 
   /**
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * Protobuf type {@code
@@ -3088,7 +3155,9 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       super(builder);
     }
 
-    private QueryGenerationDebugInfo() {}
+    private QueryGenerationDebugInfo() {
+      thinkingLevel_ = "";
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2.ParticipantProto
@@ -3164,6 +3233,118 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       return totalTokenCount_;
     }
 
+    public static final int THINKING_LEVEL_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object thinkingLevel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking level configured for the Gemini model.
+     * </pre>
+     *
+     * <code>string thinking_level = 4;</code>
+     *
+     * @return The thinkingLevel.
+     */
+    @java.lang.Override
+    public java.lang.String getThinkingLevel() {
+      java.lang.Object ref = thinkingLevel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        thinkingLevel_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking level configured for the Gemini model.
+     * </pre>
+     *
+     * <code>string thinking_level = 4;</code>
+     *
+     * @return The bytes for thinkingLevel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getThinkingLevelBytes() {
+      java.lang.Object ref = thinkingLevel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        thinkingLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int THINKING_BUDGET_TOKENS_FIELD_NUMBER = 5;
+    private int thinkingBudgetTokens_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The thinking budget (in number of tokens) configured for the Gemini
+     * model.
+     * </pre>
+     *
+     * <code>int32 thinking_budget_tokens = 5;</code>
+     *
+     * @return The thinkingBudgetTokens.
+     */
+    @java.lang.Override
+    public int getThinkingBudgetTokens() {
+      return thinkingBudgetTokens_;
+    }
+
+    public static final int SIMILARITY_TO_LAST_QUERY_FIELD_NUMBER = 6;
+    private float similarityToLastQuery_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * The similarity score of the suggested query to the last suggested query.
+     * </pre>
+     *
+     * <code>float similarity_to_last_query = 6;</code>
+     *
+     * @return The similarityToLastQuery.
+     */
+    @java.lang.Override
+    public float getSimilarityToLastQuery() {
+      return similarityToLastQuery_;
+    }
+
+    public static final int SIMILARITY_TO_LAST_QUERY_THRESHOLD_FIELD_NUMBER = 7;
+    private float similarityToLastQueryThreshold_ = 0F;
+
+    /**
+     *
+     *
+     * <pre>
+     * The similarity threshold used to filter out queries similar to the last
+     * suggestion.
+     * </pre>
+     *
+     * <code>float similarity_to_last_query_threshold = 7;</code>
+     *
+     * @return The similarityToLastQueryThreshold.
+     */
+    @java.lang.Override
+    public float getSimilarityToLastQueryThreshold() {
+      return similarityToLastQueryThreshold_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3187,6 +3368,18 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       if (totalTokenCount_ != 0) {
         output.writeInt32(3, totalTokenCount_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thinkingLevel_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, thinkingLevel_);
+      }
+      if (thinkingBudgetTokens_ != 0) {
+        output.writeInt32(5, thinkingBudgetTokens_);
+      }
+      if (java.lang.Float.floatToRawIntBits(similarityToLastQuery_) != 0) {
+        output.writeFloat(6, similarityToLastQuery_);
+      }
+      if (java.lang.Float.floatToRawIntBits(similarityToLastQueryThreshold_) != 0) {
+        output.writeFloat(7, similarityToLastQueryThreshold_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3204,6 +3397,20 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       }
       if (totalTokenCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalTokenCount_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(thinkingLevel_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, thinkingLevel_);
+      }
+      if (thinkingBudgetTokens_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, thinkingBudgetTokens_);
+      }
+      if (java.lang.Float.floatToRawIntBits(similarityToLastQuery_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, similarityToLastQuery_);
+      }
+      if (java.lang.Float.floatToRawIntBits(similarityToLastQueryThreshold_) != 0) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeFloatSize(
+                7, similarityToLastQueryThreshold_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3226,6 +3433,13 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       if (getPromptTokenCount() != other.getPromptTokenCount()) return false;
       if (getCandidatesTokenCount() != other.getCandidatesTokenCount()) return false;
       if (getTotalTokenCount() != other.getTotalTokenCount()) return false;
+      if (!getThinkingLevel().equals(other.getThinkingLevel())) return false;
+      if (getThinkingBudgetTokens() != other.getThinkingBudgetTokens()) return false;
+      if (java.lang.Float.floatToIntBits(getSimilarityToLastQuery())
+          != java.lang.Float.floatToIntBits(other.getSimilarityToLastQuery())) return false;
+      if (java.lang.Float.floatToIntBits(getSimilarityToLastQueryThreshold())
+          != java.lang.Float.floatToIntBits(other.getSimilarityToLastQueryThreshold()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3243,6 +3457,14 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       hash = (53 * hash) + getCandidatesTokenCount();
       hash = (37 * hash) + TOTAL_TOKEN_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalTokenCount();
+      hash = (37 * hash) + THINKING_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getThinkingLevel().hashCode();
+      hash = (37 * hash) + THINKING_BUDGET_TOKENS_FIELD_NUMBER;
+      hash = (53 * hash) + getThinkingBudgetTokens();
+      hash = (37 * hash) + SIMILARITY_TO_LAST_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getSimilarityToLastQuery());
+      hash = (37 * hash) + SIMILARITY_TO_LAST_QUERY_THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getSimilarityToLastQueryThreshold());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3356,7 +3578,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * Protobuf type {@code
@@ -3398,6 +3620,10 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         promptTokenCount_ = 0;
         candidatesTokenCount_ = 0;
         totalTokenCount_ = 0;
+        thinkingLevel_ = "";
+        thinkingBudgetTokens_ = 0;
+        similarityToLastQuery_ = 0F;
+        similarityToLastQueryThreshold_ = 0F;
         return this;
       }
 
@@ -3450,6 +3676,18 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.totalTokenCount_ = totalTokenCount_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.thinkingLevel_ = thinkingLevel_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.thinkingBudgetTokens_ = thinkingBudgetTokens_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.similarityToLastQuery_ = similarityToLastQuery_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.similarityToLastQueryThreshold_ = similarityToLastQueryThreshold_;
+        }
       }
 
       @java.lang.Override
@@ -3479,6 +3717,20 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
         }
         if (other.getTotalTokenCount() != 0) {
           setTotalTokenCount(other.getTotalTokenCount());
+        }
+        if (!other.getThinkingLevel().isEmpty()) {
+          thinkingLevel_ = other.thinkingLevel_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getThinkingBudgetTokens() != 0) {
+          setThinkingBudgetTokens(other.getThinkingBudgetTokens());
+        }
+        if (java.lang.Float.floatToRawIntBits(other.getSimilarityToLastQuery()) != 0) {
+          setSimilarityToLastQuery(other.getSimilarityToLastQuery());
+        }
+        if (java.lang.Float.floatToRawIntBits(other.getSimilarityToLastQueryThreshold()) != 0) {
+          setSimilarityToLastQueryThreshold(other.getSimilarityToLastQueryThreshold());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3524,6 +3776,30 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 34:
+                {
+                  thinkingLevel_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 40:
+                {
+                  thinkingBudgetTokens_ = input.readInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              case 53:
+                {
+                  similarityToLastQuery_ = input.readFloat();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 53
+              case 61:
+                {
+                  similarityToLastQueryThreshold_ = input.readFloat();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 61
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3707,6 +3983,291 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
       public Builder clearTotalTokenCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
         totalTokenCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object thinkingLevel_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking level configured for the Gemini model.
+       * </pre>
+       *
+       * <code>string thinking_level = 4;</code>
+       *
+       * @return The thinkingLevel.
+       */
+      public java.lang.String getThinkingLevel() {
+        java.lang.Object ref = thinkingLevel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          thinkingLevel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking level configured for the Gemini model.
+       * </pre>
+       *
+       * <code>string thinking_level = 4;</code>
+       *
+       * @return The bytes for thinkingLevel.
+       */
+      public com.google.protobuf.ByteString getThinkingLevelBytes() {
+        java.lang.Object ref = thinkingLevel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          thinkingLevel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking level configured for the Gemini model.
+       * </pre>
+       *
+       * <code>string thinking_level = 4;</code>
+       *
+       * @param value The thinkingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingLevel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thinkingLevel_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking level configured for the Gemini model.
+       * </pre>
+       *
+       * <code>string thinking_level = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThinkingLevel() {
+        thinkingLevel_ = getDefaultInstance().getThinkingLevel();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking level configured for the Gemini model.
+       * </pre>
+       *
+       * <code>string thinking_level = 4;</code>
+       *
+       * @param value The bytes for thinkingLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingLevelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        thinkingLevel_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private int thinkingBudgetTokens_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking budget (in number of tokens) configured for the Gemini
+       * model.
+       * </pre>
+       *
+       * <code>int32 thinking_budget_tokens = 5;</code>
+       *
+       * @return The thinkingBudgetTokens.
+       */
+      @java.lang.Override
+      public int getThinkingBudgetTokens() {
+        return thinkingBudgetTokens_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking budget (in number of tokens) configured for the Gemini
+       * model.
+       * </pre>
+       *
+       * <code>int32 thinking_budget_tokens = 5;</code>
+       *
+       * @param value The thinkingBudgetTokens to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThinkingBudgetTokens(int value) {
+
+        thinkingBudgetTokens_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The thinking budget (in number of tokens) configured for the Gemini
+       * model.
+       * </pre>
+       *
+       * <code>int32 thinking_budget_tokens = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThinkingBudgetTokens() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        thinkingBudgetTokens_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float similarityToLastQuery_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity score of the suggested query to the last suggested query.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query = 6;</code>
+       *
+       * @return The similarityToLastQuery.
+       */
+      @java.lang.Override
+      public float getSimilarityToLastQuery() {
+        return similarityToLastQuery_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity score of the suggested query to the last suggested query.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query = 6;</code>
+       *
+       * @param value The similarityToLastQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSimilarityToLastQuery(float value) {
+
+        similarityToLastQuery_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity score of the suggested query to the last suggested query.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query = 6;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSimilarityToLastQuery() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        similarityToLastQuery_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float similarityToLastQueryThreshold_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity threshold used to filter out queries similar to the last
+       * suggestion.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query_threshold = 7;</code>
+       *
+       * @return The similarityToLastQueryThreshold.
+       */
+      @java.lang.Override
+      public float getSimilarityToLastQueryThreshold() {
+        return similarityToLastQueryThreshold_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity threshold used to filter out queries similar to the last
+       * suggestion.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query_threshold = 7;</code>
+       *
+       * @param value The similarityToLastQueryThreshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSimilarityToLastQueryThreshold(float value) {
+
+        similarityToLastQueryThreshold_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The similarity threshold used to filter out queries similar to the last
+       * suggestion.
+       * </pre>
+       *
+       * <code>float similarity_to_last_query_threshold = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSimilarityToLastQueryThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        similarityToLastQueryThreshold_ = 0F;
         onChanged();
         return this;
       }
@@ -4090,7 +4651,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>
@@ -4108,7 +4669,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>
@@ -4130,7 +4691,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Token usage metadata for query generation.
+   * Debug information and model metadata for query generation.
    * </pre>
    *
    * <code>
@@ -5763,7 +6324,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5780,7 +6341,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5805,7 +6366,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5831,7 +6392,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5855,7 +6416,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5888,7 +6449,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5910,7 +6471,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5928,7 +6489,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>
@@ -5951,7 +6512,7 @@ public final class KnowledgeAssistDebugInfo extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Token usage metadata for query generation.
+     * Debug information and model metadata for query generation.
      * </pre>
      *
      * <code>

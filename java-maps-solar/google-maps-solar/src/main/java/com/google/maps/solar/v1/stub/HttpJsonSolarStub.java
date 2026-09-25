@@ -76,6 +76,8 @@ public class HttpJsonSolarStub extends SolarStub {
                             ProtoRestSerializer<FindClosestBuildingInsightsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
+                                fields, "additionalInsights", request.getAdditionalInsightsList());
+                            serializer.putQueryParam(
                                 fields, "exactQualityRequired", request.getExactQualityRequired());
                             serializer.putQueryParam(
                                 fields, "experiments", request.getExperimentsList());

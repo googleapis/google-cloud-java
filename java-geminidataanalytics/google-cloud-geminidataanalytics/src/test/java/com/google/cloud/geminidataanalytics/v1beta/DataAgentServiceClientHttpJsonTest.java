@@ -309,6 +309,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -361,6 +363,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -413,6 +417,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -474,6 +480,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -535,6 +543,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -591,6 +601,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -647,6 +659,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -667,6 +681,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -707,6 +723,8 @@ public class DataAgentServiceClientHttpJsonTest {
               .setDeleteTime(Timestamp.newBuilder().build())
               .setPurgeTime(Timestamp.newBuilder().build())
               .setKmsKey("kmsKey-1127483058")
+              .setBigqueryAgentAnalyticsEnabled(true)
+              .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataAgentAsync(dataAgent, updateMask).get();
@@ -728,6 +746,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -742,6 +762,8 @@ public class DataAgentServiceClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
             .setKmsKey("kmsKey-1127483058")
+            .setBigqueryAgentAnalyticsEnabled(true)
+            .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -782,6 +804,8 @@ public class DataAgentServiceClientHttpJsonTest {
               .setDeleteTime(Timestamp.newBuilder().build())
               .setPurgeTime(Timestamp.newBuilder().build())
               .setKmsKey("kmsKey-1127483058")
+              .setBigqueryAgentAnalyticsEnabled(true)
+              .setBigqueryAgentAnalyticsTable(BigQueryTableReference.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataAgentSync(dataAgent, updateMask);
@@ -1143,6 +1167,214 @@ public class DataAgentServiceClientHttpJsonTest {
     try {
       String resource = "projects/project-3285/locations/location-3285/dataAgents/dataAgent-3285";
       client.setIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setAgentOpsObservabilityTest() throws Exception {
+    SetAgentOpsObservabilityResponse expectedResponse =
+        SetAgentOpsObservabilityResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setAgentOpsObservabilityTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    boolean telemetryEnabled = true;
+    String dataSourceType = "dataSourceType-1241406145";
+
+    SetAgentOpsObservabilityResponse actualResponse =
+        client.setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setAgentOpsObservabilityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      boolean telemetryEnabled = true;
+      String dataSourceType = "dataSourceType-1241406145";
+      client.setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void setAgentOpsObservabilityTest2() throws Exception {
+    SetAgentOpsObservabilityResponse expectedResponse =
+        SetAgentOpsObservabilityResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("setAgentOpsObservabilityTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    boolean telemetryEnabled = true;
+    String dataSourceType = "dataSourceType-1241406145";
+
+    SetAgentOpsObservabilityResponse actualResponse =
+        client.setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setAgentOpsObservabilityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      boolean telemetryEnabled = true;
+      String dataSourceType = "dataSourceType-1241406145";
+      client.setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void retrieveAgentOpsObservabilityTest() throws Exception {
+    RetrieveAgentOpsObservabilityResponse expectedResponse =
+        RetrieveAgentOpsObservabilityResponse.newBuilder()
+            .setTelemetryEnabled(true)
+            .setBigqueryEnabled(true)
+            .setCloudTraceEnabled(true)
+            .setCloudMonitoringEnabled(true)
+            .setCloudLoggingEnabled(true)
+            .setBqaaEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String dataSourceType = "dataSourceType-1241406145";
+
+    RetrieveAgentOpsObservabilityResponse actualResponse =
+        client.retrieveAgentOpsObservability(parent, dataSourceType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retrieveAgentOpsObservabilityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String dataSourceType = "dataSourceType-1241406145";
+      client.retrieveAgentOpsObservability(parent, dataSourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void retrieveAgentOpsObservabilityTest2() throws Exception {
+    RetrieveAgentOpsObservabilityResponse expectedResponse =
+        RetrieveAgentOpsObservabilityResponse.newBuilder()
+            .setTelemetryEnabled(true)
+            .setBigqueryEnabled(true)
+            .setCloudTraceEnabled(true)
+            .setCloudMonitoringEnabled(true)
+            .setCloudLoggingEnabled(true)
+            .setBqaaEnabled(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String dataSourceType = "dataSourceType-1241406145";
+
+    RetrieveAgentOpsObservabilityResponse actualResponse =
+        client.retrieveAgentOpsObservability(parent, dataSourceType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void retrieveAgentOpsObservabilityExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String dataSourceType = "dataSourceType-1241406145";
+      client.retrieveAgentOpsObservability(parent, dataSourceType);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

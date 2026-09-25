@@ -315,6 +315,117 @@ public final class ParticipantsGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BidiStreamingAnalyzeContent",
+      requestType = com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest.class,
+      responseType = com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+      getBidiStreamingAnalyzeContentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+        getBidiStreamingAnalyzeContentMethod;
+    if ((getBidiStreamingAnalyzeContentMethod =
+            ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+        == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getBidiStreamingAnalyzeContentMethod =
+                ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod)
+            == null) {
+          ParticipantsGrpc.getBidiStreamingAnalyzeContentMethod =
+              getBidiStreamingAnalyzeContentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+                          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BidiStreamingAnalyzeContent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier("BidiStreamingAnalyzeContent"))
+                      .build();
+        }
+      }
+    }
+    return getBidiStreamingAnalyzeContentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+      getStreamingReactiveCompanionSuggestionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamingReactiveCompanionSuggestions",
+      requestType =
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest.class,
+      responseType =
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+          com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+      getStreamingReactiveCompanionSuggestionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+        getStreamingReactiveCompanionSuggestionsMethod;
+    if ((getStreamingReactiveCompanionSuggestionsMethod =
+            ParticipantsGrpc.getStreamingReactiveCompanionSuggestionsMethod)
+        == null) {
+      synchronized (ParticipantsGrpc.class) {
+        if ((getStreamingReactiveCompanionSuggestionsMethod =
+                ParticipantsGrpc.getStreamingReactiveCompanionSuggestionsMethod)
+            == null) {
+          ParticipantsGrpc.getStreamingReactiveCompanionSuggestionsMethod =
+              getStreamingReactiveCompanionSuggestionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+                          com.google.cloud.dialogflow.v2
+                              .StreamingReactiveCompanionSuggestionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "StreamingReactiveCompanionSuggestions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2
+                                  .StreamingReactiveCompanionSuggestionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2
+                                  .StreamingReactiveCompanionSuggestionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ParticipantsMethodDescriptorSupplier(
+                              "StreamingReactiveCompanionSuggestions"))
+                      .build();
+        }
+      }
+    }
+    return getStreamingReactiveCompanionSuggestionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.dialogflow.v2.SuggestArticlesRequest,
           com.google.cloud.dialogflow.v2.SuggestArticlesResponse>
       getSuggestArticlesMethod;
@@ -679,6 +790,41 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getBidiStreamingAnalyzeContentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External streaming API for direct human-agent-to-bot chats.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest>
+        streamingReactiveCompanionSuggestions(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamingReactiveCompanionSuggestionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * </pre>
@@ -893,6 +1039,43 @@ public final class ParticipantsGrpc {
      *
      *
      * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest>
+        bidiStreamingAnalyzeContent(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getBidiStreamingAnalyzeContentMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External streaming API for direct human-agent-to-bot chats.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest>
+        streamingReactiveCompanionSuggestions(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamingReactiveCompanionSuggestionsMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets suggested articles for a participant based on specific historical
      * messages.
      * </pre>
@@ -1080,6 +1263,39 @@ public final class ParticipantsGrpc {
         streamingAnalyzeContent() {
       return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
           getChannel(), getStreamingAnalyzeContentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bidirectional endless streaming version of
+     * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent].
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+            com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContent() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getBidiStreamingAnalyzeContentMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * External streaming API for direct human-agent-to-bot chats.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+            com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>
+        streamingReactiveCompanionSuggestions() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingReactiveCompanionSuggestionsMethod(), getCallOptions());
     }
 
     /**
@@ -1450,6 +1666,8 @@ public final class ParticipantsGrpc {
   private static final int METHODID_SUGGEST_SMART_REPLIES = 7;
   private static final int METHODID_SUGGEST_KNOWLEDGE_ASSIST = 8;
   private static final int METHODID_STREAMING_ANALYZE_CONTENT = 9;
+  private static final int METHODID_BIDI_STREAMING_ANALYZE_CONTENT = 10;
+  private static final int METHODID_STREAMING_REACTIVE_COMPANION_SUGGESTIONS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1541,6 +1759,19 @@ public final class ParticipantsGrpc {
                   (io.grpc.stub.StreamObserver<
                           com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse>)
                       responseObserver);
+        case METHODID_BIDI_STREAMING_ANALYZE_CONTENT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.bidiStreamingAnalyzeContent(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>)
+                      responseObserver);
+        case METHODID_STREAMING_REACTIVE_COMPANION_SUGGESTIONS:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamingReactiveCompanionSuggestions(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.dialogflow.v2
+                              .StreamingReactiveCompanionSuggestionsResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -1590,6 +1821,20 @@ public final class ParticipantsGrpc {
                     com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest,
                     com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse>(
                     service, METHODID_STREAMING_ANALYZE_CONTENT)))
+        .addMethod(
+            getBidiStreamingAnalyzeContentMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest,
+                    com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse>(
+                    service, METHODID_BIDI_STREAMING_ANALYZE_CONTENT)))
+        .addMethod(
+            getStreamingReactiveCompanionSuggestionsMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest,
+                    com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse>(
+                    service, METHODID_STREAMING_REACTIVE_COMPANION_SUGGESTIONS)))
         .addMethod(
             getSuggestArticlesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1675,6 +1920,8 @@ public final class ParticipantsGrpc {
                       .addMethod(getUpdateParticipantMethod())
                       .addMethod(getAnalyzeContentMethod())
                       .addMethod(getStreamingAnalyzeContentMethod())
+                      .addMethod(getBidiStreamingAnalyzeContentMethod())
+                      .addMethod(getStreamingReactiveCompanionSuggestionsMethod())
                       .addMethod(getSuggestArticlesMethod())
                       .addMethod(getSuggestFaqAnswersMethod())
                       .addMethod(getSuggestSmartRepliesMethod())

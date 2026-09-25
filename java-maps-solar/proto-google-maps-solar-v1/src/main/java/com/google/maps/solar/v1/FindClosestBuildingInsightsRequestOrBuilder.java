@@ -122,7 +122,13 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -137,7 +143,13 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -152,7 +164,13 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -168,7 +186,13 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -183,7 +207,13 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA features to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage
+   * descriptions](https://cloud.google.com/maps-platform/terms/launch-stages)
+   * for more details.
    * </pre>
    *
    * <code>
@@ -194,4 +224,91 @@ public interface FindClosestBuildingInsightsRequestOrBuilder
    * @return The enum numeric value on the wire of experiments at the given index.
    */
   int getExperimentsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the additionalInsights.
+   */
+  java.util.List<com.google.maps.solar.v1.AdditionalInsights> getAdditionalInsightsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of additionalInsights.
+   */
+  int getAdditionalInsightsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalInsights at the given index.
+   */
+  com.google.maps.solar.v1.AdditionalInsights getAdditionalInsights(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for additionalInsights.
+   */
+  java.util.List<java.lang.Integer> getAdditionalInsightsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of
+   * [additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights]
+   * to be included in the response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.maps.solar.v1.AdditionalInsights additional_insights = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of additionalInsights at the given index.
+   */
+  int getAdditionalInsightsValue(int index);
 }

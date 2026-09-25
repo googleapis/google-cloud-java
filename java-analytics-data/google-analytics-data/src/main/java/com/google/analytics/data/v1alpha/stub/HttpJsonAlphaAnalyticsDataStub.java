@@ -22,6 +22,8 @@ import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRep
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
+import com.google.analytics.data.v1alpha.ChatRequest;
+import com.google.analytics.data.v1alpha.ChatResponse;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
@@ -581,6 +583,40 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ChatRequest, ChatResponse> chatMethodDescriptor =
+      ApiMethodDescriptor.<ChatRequest, ChatResponse>newBuilder()
+          .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/Chat")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<ChatRequest>newBuilder()
+                  .setPath(
+                      "/v1alpha/{property=properties/*}:chat",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ChatRequest> serializer = ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "property", request.getProperty());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ChatRequest> serializer = ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearProperty().build(), true))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<ChatResponse>newBuilder()
+                  .setDefaultInstance(ChatResponse.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .build();
+
   private static final ApiMethodDescriptor<RunReportRequest, RunReportResponse>
       runReportMethodDescriptor =
           ApiMethodDescriptor.<RunReportRequest, RunReportResponse>newBuilder()
@@ -685,6 +721,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       listReportTasksCallable;
   private final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable;
+  private final UnaryCallable<ChatRequest, ChatResponse> chatCallable;
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
 
@@ -901,6 +938,18 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<ChatRequest, ChatResponse> chatTransportSettings =
+        HttpJsonCallSettings.<ChatRequest, ChatResponse>newBuilder()
+            .setMethodDescriptor(chatMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property", String.valueOf(request.getProperty()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getProperty())
+            .build();
     HttpJsonCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
         HttpJsonCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
             .setMethodDescriptor(runReportMethodDescriptor)
@@ -1003,6 +1052,9 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     this.listReportTasksPagedCallable =
         callableFactory.createPagedCallable(
             listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.chatCallable =
+        callableFactory.createUnaryCallable(
+            chatTransportSettings, settings.chatSettings(), clientContext);
     this.runReportCallable =
         callableFactory.createUnaryCallable(
             runReportTransportSettings, settings.runReportSettings(), clientContext);
@@ -1030,6 +1082,7 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     methodDescriptors.add(queryReportTaskMethodDescriptor);
     methodDescriptors.add(getReportTaskMethodDescriptor);
     methodDescriptors.add(listReportTasksMethodDescriptor);
+    methodDescriptors.add(chatMethodDescriptor);
     methodDescriptors.add(runReportMethodDescriptor);
     methodDescriptors.add(getMetadataMethodDescriptor);
     return methodDescriptors;
@@ -1138,6 +1191,11 @@ public class HttpJsonAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable() {
     return listReportTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ChatRequest, ChatResponse> chatCallable() {
+    return chatCallable;
   }
 
   @Override

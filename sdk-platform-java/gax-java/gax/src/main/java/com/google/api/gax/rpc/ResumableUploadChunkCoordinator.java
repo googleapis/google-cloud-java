@@ -37,6 +37,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.common.io.ByteStreams;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
@@ -137,7 +138,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
                 return;
               }
               long nextOffset = currentOffset + chunkLength;
-              if (response.isComplete()) {
+              if (response.getUploadStatus() == ResumableUploadStatus.FINAL) {
                 sessionFuture.succeed(response.getResponse());
               } else if (isFinal) {
                 sessionFuture.fail(

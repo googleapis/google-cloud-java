@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1.stub;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -26,20 +28,35 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.CreateInstanceRequest;
+import com.google.cloud.lustre.v1.CreateMirrorMetadata;
+import com.google.cloud.lustre.v1.CreateMirrorRequest;
+import com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.DeleteInstanceRequest;
+import com.google.cloud.lustre.v1.DeleteMirrorRequest;
+import com.google.cloud.lustre.v1.DirectoryPolicy;
 import com.google.cloud.lustre.v1.ExportDataMetadata;
 import com.google.cloud.lustre.v1.ExportDataRequest;
 import com.google.cloud.lustre.v1.ExportDataResponse;
+import com.google.cloud.lustre.v1.GetDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.GetInstanceRequest;
+import com.google.cloud.lustre.v1.GetMirrorRequest;
 import com.google.cloud.lustre.v1.ImportDataMetadata;
 import com.google.cloud.lustre.v1.ImportDataRequest;
 import com.google.cloud.lustre.v1.ImportDataResponse;
 import com.google.cloud.lustre.v1.Instance;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse;
 import com.google.cloud.lustre.v1.ListInstancesRequest;
 import com.google.cloud.lustre.v1.ListInstancesResponse;
+import com.google.cloud.lustre.v1.ListMirrorsRequest;
+import com.google.cloud.lustre.v1.ListMirrorsResponse;
+import com.google.cloud.lustre.v1.Mirror;
 import com.google.cloud.lustre.v1.OperationMetadata;
+import com.google.cloud.lustre.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.lustre.v1.UpdateInstanceRequest;
+import com.google.cloud.lustre.v1.UpdateMirrorRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -106,6 +123,16 @@ public abstract class LustreStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteInstanceCallable()");
   }
 
+  public OperationCallable<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: rescheduleMaintenanceOperationCallable()");
+  }
+
+  public UnaryCallable<RescheduleMaintenanceRequest, Operation> rescheduleMaintenanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: rescheduleMaintenanceCallable()");
+  }
+
   public OperationCallable<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
       importDataOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: importDataOperationCallable()");
@@ -122,6 +149,80 @@ public abstract class LustreStub implements BackgroundResource {
 
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
+  }
+
+  public OperationCallable<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMirrorOperationCallable()");
+  }
+
+  public UnaryCallable<CreateMirrorRequest, Operation> createMirrorCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMirrorCallable()");
+  }
+
+  public OperationCallable<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMirrorOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateMirrorRequest, Operation> updateMirrorCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMirrorCallable()");
+  }
+
+  public OperationCallable<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMirrorOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteMirrorRequest, Operation> deleteMirrorCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMirrorCallable()");
+  }
+
+  public UnaryCallable<GetMirrorRequest, Mirror> getMirrorCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMirrorCallable()");
+  }
+
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsPagedResponse> listMirrorsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMirrorsPagedCallable()");
+  }
+
+  public UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> listMirrorsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMirrorsCallable()");
+  }
+
+  public OperationCallable<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDirectoryPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDirectoryPolicyRequest, Operation> createDirectoryPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDirectoryPolicyCallable()");
+  }
+
+  public OperationCallable<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDirectoryPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDirectoryPolicyRequest, Operation> deleteDirectoryPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDirectoryPolicyCallable()");
+  }
+
+  public UnaryCallable<GetDirectoryPolicyRequest, DirectoryPolicy> getDirectoryPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDirectoryPolicyCallable()");
+  }
+
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDirectoryPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse>
+      listDirectoryPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDirectoryPoliciesCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

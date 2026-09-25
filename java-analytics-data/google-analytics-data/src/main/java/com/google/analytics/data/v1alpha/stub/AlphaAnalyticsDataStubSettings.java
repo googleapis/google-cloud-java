@@ -22,6 +22,8 @@ import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRep
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
+import com.google.analytics.data.v1alpha.ChatRequest;
+import com.google.analytics.data.v1alpha.ChatResponse;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
@@ -178,6 +180,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/analytics")
+          .add("https://www.googleapis.com/auth/analytics.chatbot.read")
           .add("https://www.googleapis.com/auth/analytics.readonly")
           .build();
 
@@ -212,6 +215,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
   private final PagedCallSettings<
           ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
       listReportTasksSettings;
+  private final UnaryCallSettings<ChatRequest, ChatResponse> chatSettings;
   private final UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings;
   private final UnaryCallSettings<GetMetadataRequest, Metadata> getMetadataSettings;
 
@@ -494,6 +498,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return listReportTasksSettings;
   }
 
+  /** Returns the object with the settings used for calls to chat. */
+  public UnaryCallSettings<ChatRequest, ChatResponse> chatSettings() {
+    return chatSettings;
+  }
+
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
     return runReportSettings;
@@ -633,6 +642,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     queryReportTaskSettings = settingsBuilder.queryReportTaskSettings().build();
     getReportTaskSettings = settingsBuilder.getReportTaskSettings().build();
     listReportTasksSettings = settingsBuilder.listReportTasksSettings().build();
+    chatSettings = settingsBuilder.chatSettings().build();
     runReportSettings = settingsBuilder.runReportSettings().build();
     getMetadataSettings = settingsBuilder.getMetadataSettings().build();
   }
@@ -688,6 +698,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     private final PagedCallSettings.Builder<
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings;
+    private final UnaryCallSettings.Builder<ChatRequest, ChatResponse> chatSettings;
     private final UnaryCallSettings.Builder<RunReportRequest, RunReportResponse> runReportSettings;
     private final UnaryCallSettings.Builder<GetMetadataRequest, Metadata> getMetadataSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
@@ -754,6 +765,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       queryReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getReportTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReportTasksSettings = PagedCallSettings.newBuilder(LIST_REPORT_TASKS_PAGE_STR_FACT);
+      chatSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       runReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMetadataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -772,6 +784,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               queryReportTaskSettings,
               getReportTaskSettings,
               listReportTasksSettings,
+              chatSettings,
               runReportSettings,
               getMetadataSettings);
       initDefaults(this);
@@ -797,6 +810,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
       queryReportTaskSettings = settings.queryReportTaskSettings.toBuilder();
       getReportTaskSettings = settings.getReportTaskSettings.toBuilder();
       listReportTasksSettings = settings.listReportTasksSettings.toBuilder();
+      chatSettings = settings.chatSettings.toBuilder();
       runReportSettings = settings.runReportSettings.toBuilder();
       getMetadataSettings = settings.getMetadataSettings.toBuilder();
 
@@ -815,6 +829,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
               queryReportTaskSettings,
               getReportTaskSettings,
               listReportTasksSettings,
+              chatSettings,
               runReportSettings,
               getMetadataSettings);
     }
@@ -906,6 +921,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
 
       builder
           .listReportTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .chatSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1078,6 +1098,11 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings() {
       return listReportTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to chat. */
+    public UnaryCallSettings.Builder<ChatRequest, ChatResponse> chatSettings() {
+      return chatSettings;
     }
 
     /** Returns the builder for the settings used for calls to runReport. */

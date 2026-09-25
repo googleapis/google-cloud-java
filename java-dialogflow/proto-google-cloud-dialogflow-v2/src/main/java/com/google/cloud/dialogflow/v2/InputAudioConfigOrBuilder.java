@@ -501,4 +501,81 @@ public interface InputAudioConfigOrBuilder
    * @return The optOutConformerModelMigration.
    */
   boolean getOptOutConformerModelMigration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiAsrConfig field is set.
+   */
+  boolean hasGeminiAsrConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiAsrConfig.
+   */
+  com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI.
+   * This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+      getGeminiAsrConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+   * If unset, this setting is inherited from the ConversationProfile.
+   * </pre>
+   *
+   * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the useGeminiAsr field is set.
+   */
+  boolean hasUseGeminiAsr();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+   * If unset, this setting is inherited from the ConversationProfile.
+   * </pre>
+   *
+   * <code>optional bool use_gemini_asr = 31 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useGeminiAsr.
+   */
+  boolean getUseGeminiAsr();
 }

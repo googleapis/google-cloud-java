@@ -217,6 +217,11 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).listReportTasksSettings();
   }
 
+  /** Returns the object with the settings used for calls to chat. */
+  public UnaryCallSettings<ChatRequest, ChatResponse> chatSettings() {
+    return ((AlphaAnalyticsDataStubSettings) getStubSettings()).chatSettings();
+  }
+
   /** Returns the object with the settings used for calls to runReport. */
   public UnaryCallSettings<RunReportRequest, RunReportResponse> runReportSettings() {
     return ((AlphaAnalyticsDataStubSettings) getStubSettings()).runReportSettings();
@@ -432,6 +437,11 @@ public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDat
             ListReportTasksRequest, ListReportTasksResponse, ListReportTasksPagedResponse>
         listReportTasksSettings() {
       return getStubSettingsBuilder().listReportTasksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to chat. */
+    public UnaryCallSettings.Builder<ChatRequest, ChatResponse> chatSettings() {
+      return getStubSettingsBuilder().chatSettings();
     }
 
     /** Returns the builder for the settings used for calls to runReport. */

@@ -58,6 +58,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     state_ = 0;
     mountPoint_ = "";
     description_ = "";
+    kmsKey_ = "";
+    stateReason_ = "";
+    placementPolicy_ = "";
+    uid_ = "";
+    availableVersion_ = "";
+    targetVersion_ = "";
+    effectiveVersion_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -174,9 +181,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * The instance is being updated.
      * </pre>
      *
-     * <code>UPDATING = 7;</code>
+     * <code>UPDATING = 7 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     UPDATING(7),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended due to an issue related to Cloud KMS. The
+     * details are available in
+     * [state_reason][google.cloud.lustre.v1.Instance.state_reason].
+     * </pre>
+     *
+     * <code>SUSPENDED = 8;</code>
+     */
+    SUSPENDED(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -274,9 +294,22 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * The instance is being updated.
      * </pre>
      *
-     * <code>UPDATING = 7;</code>
+     * <code>UPDATING = 7 [deprecated = true];</code>
      */
-    public static final int UPDATING_VALUE = 7;
+    @java.lang.Deprecated public static final int UPDATING_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance is suspended due to an issue related to Cloud KMS. The
+     * details are available in
+     * [state_reason][google.cloud.lustre.v1.Instance.state_reason].
+     * </pre>
+     *
+     * <code>SUSPENDED = 8;</code>
+     */
+    public static final int SUSPENDED_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -318,6 +351,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           return STOPPED;
         case 7:
           return UPDATING;
+        case 8:
+          return SUSPENDED;
         default:
           return null;
       }
@@ -494,7 +529,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-   * values are from `18000` to `954000`, in increments of 9000.
+   * values depend on the `perUnitStorageThroughput`. See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for specific minimums, maximums, and step sizes for each performance tier.
    * </pre>
    *
    * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -934,11 +971,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The throughput of the instance in MB/s/TiB.
-   * Valid values are 125, 250, 500, 1000.
+   * Optional. The throughput of the instance in MBps per TiB. Valid values are
+   * 0, 125, 250, 500, 1000. See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   *
+   * If the instance is using the Dynamic tier, this field must not be set or
+   * must be set to zero.
    * </pre>
    *
-   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The perUnitStorageThroughput.
    */
@@ -954,9 +996,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Indicates whether you want to enable support for GKE clients. By
-   * default, GKE clients are not supported. Deprecated. No longer required for
-   * GKE instance creation.
+   * Optional. Deprecated: No longer required for GKE instance creation.
+   * Indicates whether you want to enable support for GKE clients. By default,
+   * GKE clients are not supported.
    * </pre>
    *
    * <code>
@@ -964,13 +1006,732 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
-   *     google/cloud/lustre/v1/instance.proto;l=118
+   *     google/cloud/lustre/v1/instance.proto;l=133
    * @return The gkeSupportEnabled.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean getGkeSupportEnabled() {
     return gkeSupportEnabled_;
+  }
+
+  public static final int KMS_KEY_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object kmsKey_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+   * If not set, the instance will use Google-managed encryption keys.
+   * If set, the instance will use customer-managed encryption keys.
+   * The key must be in the same region as the instance.
+   * The key format is:
+   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+   * </pre>
+   *
+   * <code>
+   * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  @java.lang.Override
+  public java.lang.String getKmsKey() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      kmsKey_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+   * If not set, the instance will use Google-managed encryption keys.
+   * If set, the instance will use customer-managed encryption keys.
+   * The key must be in the same region as the instance.
+   * The key format is:
+   * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+   * </pre>
+   *
+   * <code>
+   * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getKmsKeyBytes() {
+    java.lang.Object ref = kmsKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      kmsKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATE_REASON_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object stateReason_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason why the instance is in a certain state (e.g.
+   * SUSPENDED).
+   * </pre>
+   *
+   * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The stateReason.
+   */
+  @java.lang.Override
+  public java.lang.String getStateReason() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stateReason_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reason why the instance is in a certain state (e.g.
+   * SUSPENDED).
+   * </pre>
+   *
+   * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for stateReason.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getStateReasonBytes() {
+    java.lang.Object ref = stateReason_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      stateReason_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PLACEMENT_POLICY_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object placementPolicy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The placement policy name for the instance in the format of
+   * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+   * </pre>
+   *
+   * <code>
+   * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The placementPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getPlacementPolicy() {
+    java.lang.Object ref = placementPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      placementPolicy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The placement policy name for the instance in the format of
+   * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+   * </pre>
+   *
+   * <code>
+   * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for placementPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPlacementPolicyBytes() {
+    java.lang.Object ref = placementPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      placementPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACCESS_RULES_OPTIONS_FIELD_NUMBER = 18;
+  private com.google.cloud.lustre.v1.AccessRulesOptions accessRulesOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessRulesOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessRulesOptions() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessRulesOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.AccessRulesOptions getAccessRulesOptions() {
+    return accessRulesOptions_ == null
+        ? com.google.cloud.lustre.v1.AccessRulesOptions.getDefaultInstance()
+        : accessRulesOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The access rules options for the instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder getAccessRulesOptionsOrBuilder() {
+    return accessRulesOptions_ == null
+        ? com.google.cloud.lustre.v1.AccessRulesOptions.getDefaultInstance()
+        : accessRulesOptions_;
+  }
+
+  public static final int UID_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique ID of the resource.
+   * This is unrelated to the access rules which allow specifying the root
+   * squash uid.
+   * </pre>
+   *
+   * <code>
+   * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique ID of the resource.
+   * This is unrelated to the access rules which allow specifying the root
+   * squash uid.
+   * </pre>
+   *
+   * <code>
+   * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 20;
+  private com.google.cloud.lustre.v1.MaintenancePolicy maintenancePolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.MaintenancePolicy getMaintenancePolicy() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.lustre.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The maintenance policy for the instance to determine when to
+   * allow or exclude the instance from maintenance updates.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+    return maintenancePolicy_ == null
+        ? com.google.cloud.lustre.v1.MaintenancePolicy.getDefaultInstance()
+        : maintenancePolicy_;
+  }
+
+  public static final int UPCOMING_MAINTENANCE_SCHEDULE_FIELD_NUMBER = 21;
+  private com.google.cloud.lustre.v1.MaintenanceSchedule upcomingMaintenanceSchedule_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upcomingMaintenanceSchedule field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpcomingMaintenanceSchedule() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upcomingMaintenanceSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.MaintenanceSchedule getUpcomingMaintenanceSchedule() {
+    return upcomingMaintenanceSchedule_ == null
+        ? com.google.cloud.lustre.v1.MaintenanceSchedule.getDefaultInstance()
+        : upcomingMaintenanceSchedule_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Date and time of upcoming maintenance for the instance, if a
+   * maintenance policy is set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder
+      getUpcomingMaintenanceScheduleOrBuilder() {
+    return upcomingMaintenanceSchedule_ == null
+        ? com.google.cloud.lustre.v1.MaintenanceSchedule.getDefaultInstance()
+        : upcomingMaintenanceSchedule_;
+  }
+
+  public static final int DYNAMIC_TIER_OPTIONS_FIELD_NUMBER = 24;
+  private com.google.cloud.lustre.v1.DynamicTierOptions dynamicTierOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dynamicTierOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasDynamicTierOptions() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dynamicTierOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.DynamicTierOptions getDynamicTierOptions() {
+    return dynamicTierOptions_ == null
+        ? com.google.cloud.lustre.v1.DynamicTierOptions.getDefaultInstance()
+        : dynamicTierOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+   * See [Performance
+   * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+   * for more information.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder getDynamicTierOptionsOrBuilder() {
+    return dynamicTierOptions_ == null
+        ? com.google.cloud.lustre.v1.DynamicTierOptions.getDefaultInstance()
+        : dynamicTierOptions_;
+  }
+
+  public static final int AVAILABLE_VERSION_FIELD_NUMBER = 33;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object availableVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the availableVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasAvailableVersion() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getAvailableVersion() {
+    java.lang.Object ref = availableVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      availableVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The available version that this instance can be upgraded to.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for availableVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAvailableVersionBytes() {
+    java.lang.Object ref = availableVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      availableVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TARGET_VERSION_FIELD_NUMBER = 34;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the targetVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetVersion() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The targetVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetVersion() {
+    java.lang.Object ref = targetVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target version of the instance. Setting this field triggers a
+   * self-service update to the specified version.
+   * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+   * </pre>
+   *
+   * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for targetVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetVersionBytes() {
+    java.lang.Object ref = targetVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EFFECTIVE_VERSION_FIELD_NUMBER = 35;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object effectiveVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveVersion() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getEffectiveVersion() {
+    java.lang.Object ref = effectiveVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      effectiveVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The effective version of the instance.
+   * Format: `Lustre_YYYYMMDD.NN_pXX`
+   * </pre>
+   *
+   * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEffectiveVersionBytes() {
+    java.lang.Object ref = effectiveVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      effectiveVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1021,6 +1782,39 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (gkeSupportEnabled_ != false) {
       output.writeBool(12, gkeSupportEnabled_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKey_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, kmsKey_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(stateReason_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, stateReason_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(placementPolicy_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, placementPolicy_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(18, getAccessRulesOptions());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 19, uid_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(20, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(21, getUpcomingMaintenanceSchedule());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(24, getDynamicTierOptions());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 33, availableVersion_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 34, targetVersion_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 35, effectiveVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1074,6 +1868,41 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (gkeSupportEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, gkeSupportEnabled_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kmsKey_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, kmsKey_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(stateReason_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(14, stateReason_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(placementPolicy_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, placementPolicy_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getAccessRulesOptions());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(19, uid_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, getUpcomingMaintenanceSchedule());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getDynamicTierOptions());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(33, availableVersion_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(34, targetVersion_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(35, effectiveVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1107,6 +1936,39 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getPerUnitStorageThroughput() != other.getPerUnitStorageThroughput()) return false;
     if (getGkeSupportEnabled() != other.getGkeSupportEnabled()) return false;
+    if (!getKmsKey().equals(other.getKmsKey())) return false;
+    if (!getStateReason().equals(other.getStateReason())) return false;
+    if (!getPlacementPolicy().equals(other.getPlacementPolicy())) return false;
+    if (hasAccessRulesOptions() != other.hasAccessRulesOptions()) return false;
+    if (hasAccessRulesOptions()) {
+      if (!getAccessRulesOptions().equals(other.getAccessRulesOptions())) return false;
+    }
+    if (!getUid().equals(other.getUid())) return false;
+    if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
+    if (hasMaintenancePolicy()) {
+      if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasUpcomingMaintenanceSchedule() != other.hasUpcomingMaintenanceSchedule()) return false;
+    if (hasUpcomingMaintenanceSchedule()) {
+      if (!getUpcomingMaintenanceSchedule().equals(other.getUpcomingMaintenanceSchedule()))
+        return false;
+    }
+    if (hasDynamicTierOptions() != other.hasDynamicTierOptions()) return false;
+    if (hasDynamicTierOptions()) {
+      if (!getDynamicTierOptions().equals(other.getDynamicTierOptions())) return false;
+    }
+    if (hasAvailableVersion() != other.hasAvailableVersion()) return false;
+    if (hasAvailableVersion()) {
+      if (!getAvailableVersion().equals(other.getAvailableVersion())) return false;
+    }
+    if (hasTargetVersion() != other.hasTargetVersion()) return false;
+    if (hasTargetVersion()) {
+      if (!getTargetVersion().equals(other.getTargetVersion())) return false;
+    }
+    if (hasEffectiveVersion() != other.hasEffectiveVersion()) return false;
+    if (hasEffectiveVersion()) {
+      if (!getEffectiveVersion().equals(other.getEffectiveVersion())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1148,6 +2010,42 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPerUnitStorageThroughput());
     hash = (37 * hash) + GKE_SUPPORT_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGkeSupportEnabled());
+    hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getKmsKey().hashCode();
+    hash = (37 * hash) + STATE_REASON_FIELD_NUMBER;
+    hash = (53 * hash) + getStateReason().hashCode();
+    hash = (37 * hash) + PLACEMENT_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getPlacementPolicy().hashCode();
+    if (hasAccessRulesOptions()) {
+      hash = (37 * hash) + ACCESS_RULES_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessRulesOptions().hashCode();
+    }
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
+    if (hasMaintenancePolicy()) {
+      hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasUpcomingMaintenanceSchedule()) {
+      hash = (37 * hash) + UPCOMING_MAINTENANCE_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpcomingMaintenanceSchedule().hashCode();
+    }
+    if (hasDynamicTierOptions()) {
+      hash = (37 * hash) + DYNAMIC_TIER_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDynamicTierOptions().hashCode();
+    }
+    if (hasAvailableVersion()) {
+      hash = (37 * hash) + AVAILABLE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getAvailableVersion().hashCode();
+    }
+    if (hasTargetVersion()) {
+      hash = (37 * hash) + TARGET_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetVersion().hashCode();
+    }
+    if (hasEffectiveVersion()) {
+      hash = (37 * hash) + EFFECTIVE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveVersion().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1312,6 +2210,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetAccessRulesOptionsFieldBuilder();
+        internalGetMaintenancePolicyFieldBuilder();
+        internalGetUpcomingMaintenanceScheduleFieldBuilder();
+        internalGetDynamicTierOptionsFieldBuilder();
       }
     }
 
@@ -1339,6 +2241,33 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().clear();
       perUnitStorageThroughput_ = 0L;
       gkeSupportEnabled_ = false;
+      kmsKey_ = "";
+      stateReason_ = "";
+      placementPolicy_ = "";
+      accessRulesOptions_ = null;
+      if (accessRulesOptionsBuilder_ != null) {
+        accessRulesOptionsBuilder_.dispose();
+        accessRulesOptionsBuilder_ = null;
+      }
+      uid_ = "";
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      upcomingMaintenanceSchedule_ = null;
+      if (upcomingMaintenanceScheduleBuilder_ != null) {
+        upcomingMaintenanceScheduleBuilder_.dispose();
+        upcomingMaintenanceScheduleBuilder_ = null;
+      }
+      dynamicTierOptions_ = null;
+      if (dynamicTierOptionsBuilder_ != null) {
+        dynamicTierOptionsBuilder_.dispose();
+        dynamicTierOptionsBuilder_ = null;
+      }
+      availableVersion_ = "";
+      targetVersion_ = "";
+      effectiveVersion_ = "";
       return this;
     }
 
@@ -1414,6 +2343,58 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.gkeSupportEnabled_ = gkeSupportEnabled_;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.kmsKey_ = kmsKey_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.stateReason_ = stateReason_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.placementPolicy_ = placementPolicy_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.accessRulesOptions_ =
+            accessRulesOptionsBuilder_ == null
+                ? accessRulesOptions_
+                : accessRulesOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.uid_ = uid_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.maintenancePolicy_ =
+            maintenancePolicyBuilder_ == null
+                ? maintenancePolicy_
+                : maintenancePolicyBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.upcomingMaintenanceSchedule_ =
+            upcomingMaintenanceScheduleBuilder_ == null
+                ? upcomingMaintenanceSchedule_
+                : upcomingMaintenanceScheduleBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.dynamicTierOptions_ =
+            dynamicTierOptionsBuilder_ == null
+                ? dynamicTierOptions_
+                : dynamicTierOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.availableVersion_ = availableVersion_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.targetVersion_ = targetVersion_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.effectiveVersion_ = effectiveVersion_;
+        to_bitField0_ |= 0x00000100;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1473,6 +2454,53 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (other.getGkeSupportEnabled() != false) {
         setGkeSupportEnabled(other.getGkeSupportEnabled());
+      }
+      if (!other.getKmsKey().isEmpty()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getStateReason().isEmpty()) {
+        stateReason_ = other.stateReason_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      if (!other.getPlacementPolicy().isEmpty()) {
+        placementPolicy_ = other.placementPolicy_;
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      if (other.hasAccessRulesOptions()) {
+        mergeAccessRulesOptions(other.getAccessRulesOptions());
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (other.hasMaintenancePolicy()) {
+        mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasUpcomingMaintenanceSchedule()) {
+        mergeUpcomingMaintenanceSchedule(other.getUpcomingMaintenanceSchedule());
+      }
+      if (other.hasDynamicTierOptions()) {
+        mergeDynamicTierOptions(other.getDynamicTierOptions());
+      }
+      if (other.hasAvailableVersion()) {
+        availableVersion_ = other.availableVersion_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      if (other.hasTargetVersion()) {
+        targetVersion_ = other.targetVersion_;
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      if (other.hasEffectiveVersion()) {
+        effectiveVersion_ = other.effectiveVersion_;
+        bitField0_ |= 0x00400000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1580,6 +2608,77 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 106:
+              {
+                kmsKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+            case 114:
+              {
+                stateReason_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+            case 138:
+              {
+                placementPolicy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    internalGetAccessRulesOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 146
+            case 154:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetUpcomingMaintenanceScheduleFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 170
+            case 194:
+              {
+                input.readMessage(
+                    internalGetDynamicTierOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 194
+            case 266:
+              {
+                availableVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 266
+            case 274:
+              {
+                targetVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 274
+            case 282:
+              {
+                effectiveVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 282
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1848,7 +2947,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `954000`, in increments of 9000.
+     * values depend on the `perUnitStorageThroughput`. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for specific minimums, maximums, and step sizes for each performance tier.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1865,7 +2966,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `954000`, in increments of 9000.
+     * values depend on the `perUnitStorageThroughput`. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for specific minimums, maximums, and step sizes for each performance tier.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1886,7 +2989,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The storage capacity of the instance in gibibytes (GiB). Allowed
-     * values are from `18000` to `954000`, in increments of 9000.
+     * values depend on the `perUnitStorageThroughput`. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for specific minimums, maximums, and step sizes for each performance tier.
      * </pre>
      *
      * <code>int64 capacity_gib = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2965,11 +4070,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The throughput of the instance in MB/s/TiB.
-     * Valid values are 125, 250, 500, 1000.
+     * Optional. The throughput of the instance in MBps per TiB. Valid values are
+     * 0, 125, 250, 500, 1000. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     *
+     * If the instance is using the Dynamic tier, this field must not be set or
+     * must be set to zero.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The perUnitStorageThroughput.
@@ -2983,11 +4093,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The throughput of the instance in MB/s/TiB.
-     * Valid values are 125, 250, 500, 1000.
+     * Optional. The throughput of the instance in MBps per TiB. Valid values are
+     * 0, 125, 250, 500, 1000. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     *
+     * If the instance is using the Dynamic tier, this field must not be set or
+     * must be set to zero.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The perUnitStorageThroughput to set.
@@ -3005,11 +4120,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The throughput of the instance in MB/s/TiB.
-     * Valid values are 125, 250, 500, 1000.
+     * Optional. The throughput of the instance in MBps per TiB. Valid values are
+     * 0, 125, 250, 500, 1000. See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     *
+     * If the instance is using the Dynamic tier, this field must not be set or
+     * must be set to zero.
      * </pre>
      *
-     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = REQUIRED];
+     * <code>int64 per_unit_storage_throughput = 11 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3027,9 +4147,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported. Deprecated. No longer required for
-     * GKE instance creation.
+     * Optional. Deprecated: No longer required for GKE instance creation.
+     * Indicates whether you want to enable support for GKE clients. By default,
+     * GKE clients are not supported.
      * </pre>
      *
      * <code>
@@ -3037,7 +4157,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
-     *     google/cloud/lustre/v1/instance.proto;l=118
+     *     google/cloud/lustre/v1/instance.proto;l=133
      * @return The gkeSupportEnabled.
      */
     @java.lang.Override
@@ -3050,9 +4170,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported. Deprecated. No longer required for
-     * GKE instance creation.
+     * Optional. Deprecated: No longer required for GKE instance creation.
+     * Indicates whether you want to enable support for GKE clients. By default,
+     * GKE clients are not supported.
      * </pre>
      *
      * <code>
@@ -3060,7 +4180,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
-     *     google/cloud/lustre/v1/instance.proto;l=118
+     *     google/cloud/lustre/v1/instance.proto;l=133
      * @param value The gkeSupportEnabled to set.
      * @return This builder for chaining.
      */
@@ -3077,9 +4197,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Indicates whether you want to enable support for GKE clients. By
-     * default, GKE clients are not supported. Deprecated. No longer required for
-     * GKE instance creation.
+     * Optional. Deprecated: No longer required for GKE instance creation.
+     * Indicates whether you want to enable support for GKE clients. By default,
+     * GKE clients are not supported.
      * </pre>
      *
      * <code>
@@ -3087,13 +4207,1851 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.lustre.v1.Instance.gke_support_enabled is deprecated. See
-     *     google/cloud/lustre/v1/instance.proto;l=118
+     *     google/cloud/lustre/v1/instance.proto;l=133
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearGkeSupportEnabled() {
       bitField0_ = (bitField0_ & ~0x00000800);
       gkeSupportEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object kmsKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+     * If not set, the instance will use Google-managed encryption keys.
+     * If set, the instance will use customer-managed encryption keys.
+     * The key must be in the same region as the instance.
+     * The key format is:
+     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+     * </pre>
+     *
+     * <code>
+     * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The kmsKey.
+     */
+    public java.lang.String getKmsKey() {
+      java.lang.Object ref = kmsKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kmsKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+     * If not set, the instance will use Google-managed encryption keys.
+     * If set, the instance will use customer-managed encryption keys.
+     * The key must be in the same region as the instance.
+     * The key format is:
+     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+     * </pre>
+     *
+     * <code>
+     * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for kmsKey.
+     */
+    public com.google.protobuf.ByteString getKmsKeyBytes() {
+      java.lang.Object ref = kmsKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        kmsKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+     * If not set, the instance will use Google-managed encryption keys.
+     * If set, the instance will use customer-managed encryption keys.
+     * The key must be in the same region as the instance.
+     * The key format is:
+     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+     * </pre>
+     *
+     * <code>
+     * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      kmsKey_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+     * If not set, the instance will use Google-managed encryption keys.
+     * If set, the instance will use customer-managed encryption keys.
+     * The key must be in the same region as the instance.
+     * The key format is:
+     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+     * </pre>
+     *
+     * <code>
+     * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKey() {
+      kmsKey_ = getDefaultInstance().getKmsKey();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Cloud KMS key name to use for data encryption.
+     * If not set, the instance will use Google-managed encryption keys.
+     * If set, the instance will use customer-managed encryption keys.
+     * The key must be in the same region as the instance.
+     * The key format is:
+     * projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{key}
+     * </pre>
+     *
+     * <code>
+     * string kms_key = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for kmsKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      kmsKey_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object stateReason_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason why the instance is in a certain state (e.g.
+     * SUSPENDED).
+     * </pre>
+     *
+     * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The stateReason.
+     */
+    public java.lang.String getStateReason() {
+      java.lang.Object ref = stateReason_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stateReason_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason why the instance is in a certain state (e.g.
+     * SUSPENDED).
+     * </pre>
+     *
+     * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for stateReason.
+     */
+    public com.google.protobuf.ByteString getStateReasonBytes() {
+      java.lang.Object ref = stateReason_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        stateReason_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason why the instance is in a certain state (e.g.
+     * SUSPENDED).
+     * </pre>
+     *
+     * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReason(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      stateReason_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason why the instance is in a certain state (e.g.
+     * SUSPENDED).
+     * </pre>
+     *
+     * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStateReason() {
+      stateReason_ = getDefaultInstance().getStateReason();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reason why the instance is in a certain state (e.g.
+     * SUSPENDED).
+     * </pre>
+     *
+     * <code>string state_reason = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for stateReason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateReasonBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      stateReason_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object placementPolicy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The placement policy name for the instance in the format of
+     * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+     * </pre>
+     *
+     * <code>
+     * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The placementPolicy.
+     */
+    public java.lang.String getPlacementPolicy() {
+      java.lang.Object ref = placementPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        placementPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The placement policy name for the instance in the format of
+     * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+     * </pre>
+     *
+     * <code>
+     * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for placementPolicy.
+     */
+    public com.google.protobuf.ByteString getPlacementPolicyBytes() {
+      java.lang.Object ref = placementPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        placementPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The placement policy name for the instance in the format of
+     * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+     * </pre>
+     *
+     * <code>
+     * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The placementPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlacementPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      placementPolicy_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The placement policy name for the instance in the format of
+     * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+     * </pre>
+     *
+     * <code>
+     * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPlacementPolicy() {
+      placementPolicy_ = getDefaultInstance().getPlacementPolicy();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The placement policy name for the instance in the format of
+     * projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
+     * </pre>
+     *
+     * <code>
+     * string placement_policy = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for placementPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPlacementPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      placementPolicy_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.lustre.v1.AccessRulesOptions accessRulesOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.AccessRulesOptions,
+            com.google.cloud.lustre.v1.AccessRulesOptions.Builder,
+            com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder>
+        accessRulesOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accessRulesOptions field is set.
+     */
+    public boolean hasAccessRulesOptions() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accessRulesOptions.
+     */
+    public com.google.cloud.lustre.v1.AccessRulesOptions getAccessRulesOptions() {
+      if (accessRulesOptionsBuilder_ == null) {
+        return accessRulesOptions_ == null
+            ? com.google.cloud.lustre.v1.AccessRulesOptions.getDefaultInstance()
+            : accessRulesOptions_;
+      } else {
+        return accessRulesOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccessRulesOptions(com.google.cloud.lustre.v1.AccessRulesOptions value) {
+      if (accessRulesOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        accessRulesOptions_ = value;
+      } else {
+        accessRulesOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAccessRulesOptions(
+        com.google.cloud.lustre.v1.AccessRulesOptions.Builder builderForValue) {
+      if (accessRulesOptionsBuilder_ == null) {
+        accessRulesOptions_ = builderForValue.build();
+      } else {
+        accessRulesOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAccessRulesOptions(com.google.cloud.lustre.v1.AccessRulesOptions value) {
+      if (accessRulesOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && accessRulesOptions_ != null
+            && accessRulesOptions_
+                != com.google.cloud.lustre.v1.AccessRulesOptions.getDefaultInstance()) {
+          getAccessRulesOptionsBuilder().mergeFrom(value);
+        } else {
+          accessRulesOptions_ = value;
+        }
+      } else {
+        accessRulesOptionsBuilder_.mergeFrom(value);
+      }
+      if (accessRulesOptions_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAccessRulesOptions() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      accessRulesOptions_ = null;
+      if (accessRulesOptionsBuilder_ != null) {
+        accessRulesOptionsBuilder_.dispose();
+        accessRulesOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.AccessRulesOptions.Builder getAccessRulesOptionsBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetAccessRulesOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder getAccessRulesOptionsOrBuilder() {
+      if (accessRulesOptionsBuilder_ != null) {
+        return accessRulesOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return accessRulesOptions_ == null
+            ? com.google.cloud.lustre.v1.AccessRulesOptions.getDefaultInstance()
+            : accessRulesOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The access rules options for the instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.AccessRulesOptions access_rules_options = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.AccessRulesOptions,
+            com.google.cloud.lustre.v1.AccessRulesOptions.Builder,
+            com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder>
+        internalGetAccessRulesOptionsFieldBuilder() {
+      if (accessRulesOptionsBuilder_ == null) {
+        accessRulesOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.lustre.v1.AccessRulesOptions,
+                com.google.cloud.lustre.v1.AccessRulesOptions.Builder,
+                com.google.cloud.lustre.v1.AccessRulesOptionsOrBuilder>(
+                getAccessRulesOptions(), getParentForChildren(), isClean());
+        accessRulesOptions_ = null;
+      }
+      return accessRulesOptionsBuilder_;
+    }
+
+    private java.lang.Object uid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the resource.
+     * This is unrelated to the access rules which allow specifying the root
+     * squash uid.
+     * </pre>
+     *
+     * <code>
+     * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the resource.
+     * This is unrelated to the access rules which allow specifying the root
+     * squash uid.
+     * </pre>
+     *
+     * <code>
+     * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the resource.
+     * This is unrelated to the access rules which allow specifying the root
+     * squash uid.
+     * </pre>
+     *
+     * <code>
+     * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the resource.
+     * This is unrelated to the access rules which allow specifying the root
+     * squash uid.
+     * </pre>
+     *
+     * <code>
+     * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique ID of the resource.
+     * This is unrelated to the access rules which allow specifying the root
+     * squash uid.
+     * </pre>
+     *
+     * <code>
+     * string uid = 19 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.lustre.v1.MaintenancePolicy maintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.MaintenancePolicy,
+            com.google.cloud.lustre.v1.MaintenancePolicy.Builder,
+            com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder>
+        maintenancePolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maintenancePolicy field is set.
+     */
+    public boolean hasMaintenancePolicy() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maintenancePolicy.
+     */
+    public com.google.cloud.lustre.v1.MaintenancePolicy getMaintenancePolicy() {
+      if (maintenancePolicyBuilder_ == null) {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.lustre.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      } else {
+        return maintenancePolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(com.google.cloud.lustre.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenancePolicy_ = value;
+      } else {
+        maintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaintenancePolicy(
+        com.google.cloud.lustre.v1.MaintenancePolicy.Builder builderForValue) {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicy_ = builderForValue.build();
+      } else {
+        maintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaintenancePolicy(com.google.cloud.lustre.v1.MaintenancePolicy value) {
+      if (maintenancePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && maintenancePolicy_ != null
+            && maintenancePolicy_
+                != com.google.cloud.lustre.v1.MaintenancePolicy.getDefaultInstance()) {
+          getMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          maintenancePolicy_ = value;
+        }
+      } else {
+        maintenancePolicyBuilder_.mergeFrom(value);
+      }
+      if (maintenancePolicy_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      maintenancePolicy_ = null;
+      if (maintenancePolicyBuilder_ != null) {
+        maintenancePolicyBuilder_.dispose();
+        maintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.MaintenancePolicy.Builder getMaintenancePolicyBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return internalGetMaintenancePolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
+      if (maintenancePolicyBuilder_ != null) {
+        return maintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenancePolicy_ == null
+            ? com.google.cloud.lustre.v1.MaintenancePolicy.getDefaultInstance()
+            : maintenancePolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maintenance policy for the instance to determine when to
+     * allow or exclude the instance from maintenance updates.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenancePolicy maintenance_policy = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.MaintenancePolicy,
+            com.google.cloud.lustre.v1.MaintenancePolicy.Builder,
+            com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder>
+        internalGetMaintenancePolicyFieldBuilder() {
+      if (maintenancePolicyBuilder_ == null) {
+        maintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.lustre.v1.MaintenancePolicy,
+                com.google.cloud.lustre.v1.MaintenancePolicy.Builder,
+                com.google.cloud.lustre.v1.MaintenancePolicyOrBuilder>(
+                getMaintenancePolicy(), getParentForChildren(), isClean());
+        maintenancePolicy_ = null;
+      }
+      return maintenancePolicyBuilder_;
+    }
+
+    private com.google.cloud.lustre.v1.MaintenanceSchedule upcomingMaintenanceSchedule_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.MaintenanceSchedule,
+            com.google.cloud.lustre.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder>
+        upcomingMaintenanceScheduleBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the upcomingMaintenanceSchedule field is set.
+     */
+    public boolean hasUpcomingMaintenanceSchedule() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The upcomingMaintenanceSchedule.
+     */
+    public com.google.cloud.lustre.v1.MaintenanceSchedule getUpcomingMaintenanceSchedule() {
+      if (upcomingMaintenanceScheduleBuilder_ == null) {
+        return upcomingMaintenanceSchedule_ == null
+            ? com.google.cloud.lustre.v1.MaintenanceSchedule.getDefaultInstance()
+            : upcomingMaintenanceSchedule_;
+      } else {
+        return upcomingMaintenanceScheduleBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpcomingMaintenanceSchedule(
+        com.google.cloud.lustre.v1.MaintenanceSchedule value) {
+      if (upcomingMaintenanceScheduleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upcomingMaintenanceSchedule_ = value;
+      } else {
+        upcomingMaintenanceScheduleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpcomingMaintenanceSchedule(
+        com.google.cloud.lustre.v1.MaintenanceSchedule.Builder builderForValue) {
+      if (upcomingMaintenanceScheduleBuilder_ == null) {
+        upcomingMaintenanceSchedule_ = builderForValue.build();
+      } else {
+        upcomingMaintenanceScheduleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpcomingMaintenanceSchedule(
+        com.google.cloud.lustre.v1.MaintenanceSchedule value) {
+      if (upcomingMaintenanceScheduleBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && upcomingMaintenanceSchedule_ != null
+            && upcomingMaintenanceSchedule_
+                != com.google.cloud.lustre.v1.MaintenanceSchedule.getDefaultInstance()) {
+          getUpcomingMaintenanceScheduleBuilder().mergeFrom(value);
+        } else {
+          upcomingMaintenanceSchedule_ = value;
+        }
+      } else {
+        upcomingMaintenanceScheduleBuilder_.mergeFrom(value);
+      }
+      if (upcomingMaintenanceSchedule_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpcomingMaintenanceSchedule() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      upcomingMaintenanceSchedule_ = null;
+      if (upcomingMaintenanceScheduleBuilder_ != null) {
+        upcomingMaintenanceScheduleBuilder_.dispose();
+        upcomingMaintenanceScheduleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.MaintenanceSchedule.Builder
+        getUpcomingMaintenanceScheduleBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return internalGetUpcomingMaintenanceScheduleFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder
+        getUpcomingMaintenanceScheduleOrBuilder() {
+      if (upcomingMaintenanceScheduleBuilder_ != null) {
+        return upcomingMaintenanceScheduleBuilder_.getMessageOrBuilder();
+      } else {
+        return upcomingMaintenanceSchedule_ == null
+            ? com.google.cloud.lustre.v1.MaintenanceSchedule.getDefaultInstance()
+            : upcomingMaintenanceSchedule_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Date and time of upcoming maintenance for the instance, if a
+     * maintenance policy is set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.MaintenanceSchedule upcoming_maintenance_schedule = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.MaintenanceSchedule,
+            com.google.cloud.lustre.v1.MaintenanceSchedule.Builder,
+            com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder>
+        internalGetUpcomingMaintenanceScheduleFieldBuilder() {
+      if (upcomingMaintenanceScheduleBuilder_ == null) {
+        upcomingMaintenanceScheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.lustre.v1.MaintenanceSchedule,
+                com.google.cloud.lustre.v1.MaintenanceSchedule.Builder,
+                com.google.cloud.lustre.v1.MaintenanceScheduleOrBuilder>(
+                getUpcomingMaintenanceSchedule(), getParentForChildren(), isClean());
+        upcomingMaintenanceSchedule_ = null;
+      }
+      return upcomingMaintenanceScheduleBuilder_;
+    }
+
+    private com.google.cloud.lustre.v1.DynamicTierOptions dynamicTierOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.DynamicTierOptions,
+            com.google.cloud.lustre.v1.DynamicTierOptions.Builder,
+            com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder>
+        dynamicTierOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dynamicTierOptions field is set.
+     */
+    public boolean hasDynamicTierOptions() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dynamicTierOptions.
+     */
+    public com.google.cloud.lustre.v1.DynamicTierOptions getDynamicTierOptions() {
+      if (dynamicTierOptionsBuilder_ == null) {
+        return dynamicTierOptions_ == null
+            ? com.google.cloud.lustre.v1.DynamicTierOptions.getDefaultInstance()
+            : dynamicTierOptions_;
+      } else {
+        return dynamicTierOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDynamicTierOptions(com.google.cloud.lustre.v1.DynamicTierOptions value) {
+      if (dynamicTierOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dynamicTierOptions_ = value;
+      } else {
+        dynamicTierOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDynamicTierOptions(
+        com.google.cloud.lustre.v1.DynamicTierOptions.Builder builderForValue) {
+      if (dynamicTierOptionsBuilder_ == null) {
+        dynamicTierOptions_ = builderForValue.build();
+      } else {
+        dynamicTierOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDynamicTierOptions(com.google.cloud.lustre.v1.DynamicTierOptions value) {
+      if (dynamicTierOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && dynamicTierOptions_ != null
+            && dynamicTierOptions_
+                != com.google.cloud.lustre.v1.DynamicTierOptions.getDefaultInstance()) {
+          getDynamicTierOptionsBuilder().mergeFrom(value);
+        } else {
+          dynamicTierOptions_ = value;
+        }
+      } else {
+        dynamicTierOptionsBuilder_.mergeFrom(value);
+      }
+      if (dynamicTierOptions_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDynamicTierOptions() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      dynamicTierOptions_ = null;
+      if (dynamicTierOptionsBuilder_ != null) {
+        dynamicTierOptionsBuilder_.dispose();
+        dynamicTierOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.DynamicTierOptions.Builder getDynamicTierOptionsBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetDynamicTierOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder getDynamicTierOptionsOrBuilder() {
+      if (dynamicTierOptionsBuilder_ != null) {
+        return dynamicTierOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return dynamicTierOptions_ == null
+            ? com.google.cloud.lustre.v1.DynamicTierOptions.getDefaultInstance()
+            : dynamicTierOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies whether the instance is on the Dynamic tier.
+     * See [Performance
+     * tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers)
+     * for more information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.lustre.v1.DynamicTierOptions dynamic_tier_options = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.lustre.v1.DynamicTierOptions,
+            com.google.cloud.lustre.v1.DynamicTierOptions.Builder,
+            com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder>
+        internalGetDynamicTierOptionsFieldBuilder() {
+      if (dynamicTierOptionsBuilder_ == null) {
+        dynamicTierOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.lustre.v1.DynamicTierOptions,
+                com.google.cloud.lustre.v1.DynamicTierOptions.Builder,
+                com.google.cloud.lustre.v1.DynamicTierOptionsOrBuilder>(
+                getDynamicTierOptions(), getParentForChildren(), isClean());
+        dynamicTierOptions_ = null;
+      }
+      return dynamicTierOptionsBuilder_;
+    }
+
+    private java.lang.Object availableVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the availableVersion field is set.
+     */
+    public boolean hasAvailableVersion() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The availableVersion.
+     */
+    public java.lang.String getAvailableVersion() {
+      java.lang.Object ref = availableVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        availableVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for availableVersion.
+     */
+    public com.google.protobuf.ByteString getAvailableVersionBytes() {
+      java.lang.Object ref = availableVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        availableVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The availableVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      availableVersion_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAvailableVersion() {
+      availableVersion_ = getDefaultInstance().getAvailableVersion();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The available version that this instance can be upgraded to.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string available_version = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for availableVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAvailableVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      availableVersion_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object targetVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the targetVersion field is set.
+     */
+    public boolean hasTargetVersion() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The targetVersion.
+     */
+    public java.lang.String getTargetVersion() {
+      java.lang.Object ref = targetVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for targetVersion.
+     */
+    public com.google.protobuf.ByteString getTargetVersionBytes() {
+      java.lang.Object ref = targetVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The targetVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetVersion_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetVersion() {
+      targetVersion_ = getDefaultInstance().getTargetVersion();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target version of the instance. Setting this field triggers a
+     * self-service update to the specified version.
+     * Format: `Lustre_YYYYMMDD.NN_pXX` or `latest`
+     * </pre>
+     *
+     * <code>optional string target_version = 34 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for targetVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetVersion_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object effectiveVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveVersion field is set.
+     */
+    public boolean hasEffectiveVersion() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveVersion.
+     */
+    public java.lang.String getEffectiveVersion() {
+      java.lang.Object ref = effectiveVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        effectiveVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for effectiveVersion.
+     */
+    public com.google.protobuf.ByteString getEffectiveVersionBytes() {
+      java.lang.Object ref = effectiveVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        effectiveVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The effectiveVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      effectiveVersion_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEffectiveVersion() {
+      effectiveVersion_ = getDefaultInstance().getEffectiveVersion();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The effective version of the instance.
+     * Format: `Lustre_YYYYMMDD.NN_pXX`
+     * </pre>
+     *
+     * <code>optional string effective_version = 35 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for effectiveVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEffectiveVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      effectiveVersion_ = value;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

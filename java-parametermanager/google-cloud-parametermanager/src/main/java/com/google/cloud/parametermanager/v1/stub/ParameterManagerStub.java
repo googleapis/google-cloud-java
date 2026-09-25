@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1.stub;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -28,20 +30,36 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parametermanager.v1.CreateParameterRequest;
 import com.google.cloud.parametermanager.v1.CreateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.GetParameterRequest;
 import com.google.cloud.parametermanager.v1.GetParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsResponse;
 import com.google.cloud.parametermanager.v1.ListParametersRequest;
 import com.google.cloud.parametermanager.v1.ListParametersResponse;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse;
+import com.google.cloud.parametermanager.v1.ListTemplatesRequest;
+import com.google.cloud.parametermanager.v1.ListTemplatesResponse;
 import com.google.cloud.parametermanager.v1.Parameter;
 import com.google.cloud.parametermanager.v1.ParameterVersion;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionRequest;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionResponse;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse;
+import com.google.cloud.parametermanager.v1.Template;
+import com.google.cloud.parametermanager.v1.TemplateVersion;
 import com.google.cloud.parametermanager.v1.UpdateParameterRequest;
 import com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
@@ -113,6 +131,64 @@ public abstract class ParameterManagerStub implements BackgroundResource {
 
   public UnaryCallable<DeleteParameterVersionRequest, Empty> deleteParameterVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteParameterVersionCallable()");
+  }
+
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTemplatesPagedCallable()");
+  }
+
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTemplatesCallable()");
+  }
+
+  public UnaryCallable<GetTemplateRequest, Template> getTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTemplateCallable()");
+  }
+
+  public UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: createTemplateCallable()");
+  }
+
+  public UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTemplateCallable()");
+  }
+
+  public UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTemplateCallable()");
+  }
+
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTemplateVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTemplateVersionsCallable()");
+  }
+
+  public UnaryCallable<GetTemplateVersionRequest, TemplateVersion> getTemplateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTemplateVersionCallable()");
+  }
+
+  public UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createTemplateVersionCallable()");
+  }
+
+  public UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTemplateVersionCallable()");
+  }
+
+  public UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTemplateVersionCallable()");
+  }
+
+  public UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: renderTemplateVersionCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

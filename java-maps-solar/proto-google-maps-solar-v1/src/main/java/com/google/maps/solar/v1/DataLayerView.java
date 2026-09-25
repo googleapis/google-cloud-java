@@ -235,7 +235,7 @@ public enum DataLayerView implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final DataLayerView[] VALUES = values();

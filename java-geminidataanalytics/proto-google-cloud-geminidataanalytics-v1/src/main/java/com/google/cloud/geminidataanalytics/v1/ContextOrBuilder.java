@@ -36,6 +36,9 @@ public interface ContextOrBuilder
    * Why: Business jargon (e.g., YTD revenue is calculated as…, Retirement Age
    * is 65 in the USA, etc) and system instructions (e.g., answer like a Pirate)
    * can help the model understand the business context around a user question.
+   *
+   * Must be at most 250,000 bytes (approx. 250,000 characters for English
+   * text).
    * </pre>
    *
    * <code>string system_instruction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -54,6 +57,9 @@ public interface ContextOrBuilder
    * Why: Business jargon (e.g., YTD revenue is calculated as…, Retirement Age
    * is 65 in the USA, etc) and system instructions (e.g., answer like a Pirate)
    * can help the model understand the business context around a user question.
+   *
+   * Must be at most 250,000 bytes (approx. 250,000 characters for English
+   * text).
    * </pre>
    *
    * <code>string system_instruction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -368,4 +368,47 @@ public interface BuildingInsightsOrBuilder
    * @return The imageryQuality.
    */
   com.google.maps.solar.v1.ImageryQuality getImageryQuality();
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   *
+   * @return Whether the detectedArrays field is set.
+   */
+  boolean hasDetectedArrays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   *
+   * @return The detectedArrays.
+   */
+  com.google.maps.solar.v1.BuildingInsights.DetectedArrays getDetectedArrays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Solar arrays detected on the building. This field is only populated if
+   * DETECTED_ARRAYS is included in the request's
+   * [FindClosestBuildingInsightsRequest.additional_insights][google.maps.solar.v1.FindClosestBuildingInsightsRequest.additional_insights].
+   * </pre>
+   *
+   * <code>.google.maps.solar.v1.BuildingInsights.DetectedArrays detected_arrays = 12;</code>
+   */
+  com.google.maps.solar.v1.BuildingInsights.DetectedArraysOrBuilder getDetectedArraysOrBuilder();
 }

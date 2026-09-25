@@ -22,6 +22,8 @@ import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRep
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
+import com.google.analytics.data.v1alpha.ChatRequest;
+import com.google.analytics.data.v1alpha.ChatResponse;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
@@ -239,6 +241,15 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ChatRequest, ChatResponse> chatMethodDescriptor =
+      MethodDescriptor.<ChatRequest, ChatResponse>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.analytics.data.v1alpha.AlphaAnalyticsData/Chat")
+          .setRequestMarshaller(ProtoUtils.marshaller(ChatRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(ChatResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private static final MethodDescriptor<RunReportRequest, RunReportResponse>
       runReportMethodDescriptor =
           MethodDescriptor.<RunReportRequest, RunReportResponse>newBuilder()
@@ -291,6 +302,7 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
       listReportTasksCallable;
   private final UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable;
+  private final UnaryCallable<ChatRequest, ChatResponse> chatCallable;
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;
   private final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable;
 
@@ -488,6 +500,17 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ChatRequest, ChatResponse> chatTransportSettings =
+        GrpcCallSettings.<ChatRequest, ChatResponse>newBuilder()
+            .setMethodDescriptor(chatMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("property", String.valueOf(request.getProperty()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getProperty())
+            .build();
     GrpcCallSettings<RunReportRequest, RunReportResponse> runReportTransportSettings =
         GrpcCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
             .setMethodDescriptor(runReportMethodDescriptor)
@@ -588,6 +611,9 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
     this.listReportTasksPagedCallable =
         callableFactory.createPagedCallable(
             listReportTasksTransportSettings, settings.listReportTasksSettings(), clientContext);
+    this.chatCallable =
+        callableFactory.createUnaryCallable(
+            chatTransportSettings, settings.chatSettings(), clientContext);
     this.runReportCallable =
         callableFactory.createUnaryCallable(
             runReportTransportSettings, settings.runReportSettings(), clientContext);
@@ -702,6 +728,11 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   public UnaryCallable<ListReportTasksRequest, ListReportTasksPagedResponse>
       listReportTasksPagedCallable() {
     return listReportTasksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ChatRequest, ChatResponse> chatCallable() {
+    return chatCallable;
   }
 
   @Override
