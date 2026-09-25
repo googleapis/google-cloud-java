@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -57,6 +58,7 @@ import java.sql.Types;
 import java.time.Instant;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Properties;
@@ -1655,12 +1657,16 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     bigQueryStatement.execute(String.format(createTableQuery, DATASET, TABLE_NAME1));
 
+    Instant moment = Instant.parse("2025-12-03T12:34:56.123Z");
+    Time noon = Time.valueOf(LocalTime.NOON);
+    Date date = Date.valueOf("2025-12-03");
+
     PreparedStatement insertPs = bigQueryConnection.prepareStatement(insertQuery);
     insertPs.setString(1, "dishwasher");
     insertPs.setInt(2, 1);
-    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
-    insertPs.setTime(4, Time.valueOf(LocalTime.NOON));
-    insertPs.setDate(5, Date.valueOf("2025-12-3"));
+    insertPs.setTimestamp(3, Timestamp.from(moment));
+    insertPs.setTime(4, noon);
+    insertPs.setDate(5, date);
 
     int insertStatus = insertPs.executeUpdate();
     assertEquals(1, insertStatus);
@@ -1669,22 +1675,65 @@ public class ITBigQueryJDBCTest extends ITBase {
     Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     insertPs.setString(1, "refrigerator");
     insertPs.setInt(2, 2);
-    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()), utcCal);
-    insertPs.setTime(4, Time.valueOf(LocalTime.NOON), utcCal);
-    insertPs.setDate(5, Date.valueOf("2025-12-03"), utcCal);
+    insertPs.setTimestamp(3, Timestamp.from(moment), utcCal);
+    insertPs.setTime(4, noon, utcCal);
+    insertPs.setDate(5, date, utcCal);
 
     int insertStatus2 = insertPs.executeUpdate();
     assertEquals(1, insertStatus2);
 
+    // Read the stored values server-side so no driver temporal conversion is involved.
     ResultSet rs =
         bigQueryStatement.executeQuery(
-            String.format("SELECT COUNT(*) AS row_count\n" + "FROM %s.%s", DATASET, TABLE_NAME1));
-    rs.next();
-    assertEquals(2, rs.getInt(1));
+            String.format(
+                "SELECT IntegerField, UNIX_MILLIS(TimestampField), CAST(TimeField AS STRING),"
+                    + " CAST(DateField AS STRING) FROM %s.%s ORDER BY IntegerField",
+                DATASET, TABLE_NAME1));
 
+    assertTrue(rs.next());
+    assertEquals(1, rs.getInt(1));
+    long plainTimestamp = rs.getLong(2);
+    String plainTime = rs.getString(3);
+    String plainDate = rs.getString(4);
+    assertTrue(rs.next());
+    assertEquals(2, rs.getInt(1));
+    long calTimestamp = rs.getLong(2);
+    String calTime = rs.getString(3);
+    String calDate = rs.getString(4);
+    assertFalse(rs.next());
+
+    // Drop before asserting so a failure does not leak the table.
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME1);
     int dropStatus = bigQueryStatement.executeUpdate(dropQuery);
     assertEquals(0, dropStatus);
+
+    assertAll(
+        // Row 1: plain setters.
+        () ->
+            assertEquals(
+                moment.toEpochMilli(), plainTimestamp, "setTimestamp must store the moment"),
+        () -> assertEquals("12:00:00", plainTime, "setTime must send its digits"),
+        () -> assertEquals("2025-12-03", plainDate, "setDate must send its digits"),
+        // Row 2: Calendar setters. The Calendar cannot change a TIMESTAMP moment; for TIME and DATE
+        // it is the zone the value is rendered in.
+        () ->
+            assertEquals(
+                moment.toEpochMilli(), calTimestamp, "setTimestamp(ts, cal) must store the moment"),
+        () ->
+            assertEquals(
+                Instant.ofEpochMilli(noon.getTime())
+                    .atZone(ZoneOffset.UTC)
+                    .format(DateTimeFormatter.ofPattern("HH:mm:ss")),
+                calTime,
+                "setTime(t, cal) must send the time of t in the Calendar's zone"),
+        () ->
+            assertEquals(
+                Instant.ofEpochMilli(date.getTime())
+                    .atZone(ZoneOffset.UTC)
+                    .toLocalDate()
+                    .toString(),
+                calDate,
+                "setDate(d, cal) must send the date of d in the Calendar's zone"));
   }
 
   @Test
@@ -2560,12 +2609,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
     String expectedTimestampString =
         timestampFormatter.format(
-            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDateTime());
-    String expectedArrayTimestamp =
-        String.format(
-            "[%s, %s]",
-            Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
-            Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
+            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneOffset.UTC).toLocalDateTime());
 
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
@@ -2593,7 +2637,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayNumeric", "[10.5, 20.5]")
             .put("arrayBignumeric", "[100.1, 200.2]")
             .put("arrayBoolean", "[true, false]")
-            .put("arrayTimestamp", expectedArrayTimestamp)
+            .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
             .put("arrayTime", "[01:00:00, 02:00:00]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")

@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.jdbc.it.ITLocalSslValidationTest;
 import com.google.cloud.bigquery.jdbc.it.ITPcntTest;
 import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
 import com.google.cloud.bigquery.jdbc.it.ITStatementTest;
+import com.google.cloud.bigquery.jdbc.it.ITTimestampTimeZoneTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
@@ -44,6 +45,7 @@ import org.junit.platform.suite.api.Suite;
   ITLocalSslValidationTest.class,
   ITPcntTest.class,
   ITResultSetMetadataTest.class,
-  ITStatementTest.class
+  ITStatementTest.class,
+  ITTimestampTimeZoneTest.class
 })
 public class ITPresubmitTests {}
