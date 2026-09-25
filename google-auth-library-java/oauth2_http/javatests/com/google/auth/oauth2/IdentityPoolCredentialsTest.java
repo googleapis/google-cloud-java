@@ -55,6 +55,7 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.api.client.util.SecurityUtils;
+import com.google.auth.TestClock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
@@ -74,6 +75,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -4338,7 +4340,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
               // ks1 is loaded. This simulates a mid-cycle cert rotation between getKeyStore() and
               // getSubjectToken().
               if (call == 2) {
-                Files.copy(certFile2, certFile1, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(certFile2, certFile1, StandardCopyOption.REPLACE_EXISTING);
                 String certConfigJson2 =
                     "{\n"
                         + "  \"cert_configs\": {\n"
@@ -4590,31 +4592,12 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   public static class SerializableCustomTransportFactory
       implements HttpTransportFactory, Serializable {
     private static final long serialVersionUID = 1L;
-    private static final AtomicInteger getKeyStoreCountDuringReadObject = new AtomicInteger(0);
 
     public SerializableCustomTransportFactory() {}
 
     @Override
     public HttpTransport create() {
       return new MockHttpTransport();
-    }
-  }
-
-  private static class CountingSerializableX509Provider extends X509Provider {
-    private static final long serialVersionUID = 1L;
-
-    CountingSerializableX509Provider() {
-      super(null);
-    }
-
-    @Override
-    public KeyStore getKeyStore() throws IOException {
-      SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.incrementAndGet();
-      try {
-        return createPopulatedKeyStore();
-      } catch (Exception e) {
-        throw new IOException(e);
-      }
     }
   }
 
@@ -4630,22 +4613,22 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Case 1: No custom HttpTransportFactory set -> useMtlsTransportFactory is true.
     // Build initializes MtlsHttpTransportFactory, and deserialization restores
     // MtlsHttpTransportFactory in readObject().
-    SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.set(0);
     IdentityPoolCredentials defaultMtlsCreds =
         IdentityPoolCredentials.newBuilder()
             .setCredentialSource(credentialSource)
-            .setX509Provider(new CountingSerializableX509Provider())
+            .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
             .setAudience("audience")
             .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
             .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
             .build();
-    assertEquals(1, SerializableCustomTransportFactory.getKeyStoreCountDuringReadObject.get());
     assertTrue(defaultMtlsCreds.shouldUseMtlsTransportFactory());
     assertTrue(defaultMtlsCreds.toBuilder().build().shouldUseMtlsTransportFactory());
 
     IdentityPoolCredentials deserializedDefault = serializeAndDeserialize(defaultMtlsCreds);
     assertTrue(deserializedDefault.shouldUseMtlsTransportFactory());
     assertTrue(deserializedDefault.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(
+        ((MtlsHttpTransportFactory) deserializedDefault.getTransportFactory()).hasKeyStore());
 
     // Case 2: Custom HttpTransportFactory explicitly set -> useMtlsTransportFactory is false.
     // Deserialization must preserve SerializableCustomTransportFactory and NOT overwrite it with
@@ -4653,7 +4636,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     IdentityPoolCredentials customTransportCreds =
         IdentityPoolCredentials.newBuilder()
             .setCredentialSource(credentialSource)
-            .setX509Provider(new CountingSerializableX509Provider())
+            .setX509Provider(new TestX509Provider(createPopulatedKeyStore(), "test"))
             .setHttpTransportFactory(new SerializableCustomTransportFactory())
             .setAudience("audience")
             .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
@@ -5302,6 +5285,39 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Exactly one retry: the rejected cached token is not reused and no further retry happens.
     assertEquals(2, stsCallCount.get());
     assertEquals(3, iamCallCount.get());
+    assertEquals(
+        Arrays.asList("Bearer sts-token-1", "Bearer sts-token-1", "Bearer sts-token-2"),
+        iamBearerHeaders);
+  }
+
+  @Test
+  void standaloneImpersonatedCredentials_cachedStsTokenWithinExpirationMargin_mintsFreshStsToken()
+      throws Exception {
+    AtomicInteger stsCallCount = new AtomicInteger(0);
+    AtomicInteger iamCallCount = new AtomicInteger(0);
+    List<String> iamBearerHeaders = new ArrayList<>();
+    HttpTransportFactory mockTransportFactory =
+        createStsAndIamTransportFactory(
+            stsCallCount, iamCallCount, iamBearerHeaders, iamCall -> false);
+    ImpersonatedCredentials impersonated =
+        createStandaloneImpersonatedCredentials(mockTransportFactory);
+    IdentityPoolCredentials source = (IdentityPoolCredentials) impersonated.getSourceCredentials();
+
+    // The first refresh mints and caches sts-token-1, which expires in 3600 seconds. The second
+    // refresh reuses it because it is still outside the expiration margin.
+    assertEquals("iam-token-1", impersonated.refreshAccessToken().getTokenValue());
+    assertEquals("iam-token-2", impersonated.refreshAccessToken().getTokenValue());
+    assertEquals(1, stsCallCount.get());
+
+    // Move the source's clock to 60 seconds before sts-token-1 expires, inside the default
+    // 3-minute expiration margin.
+    TestClock clock = new TestClock();
+    clock.setCurrentTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(3600 - 60));
+    source.clock = clock;
+
+    // The expiring cached token is not reused, so this refresh mints sts-token-2.
+    assertEquals("iam-token-3", impersonated.refreshAccessToken().getTokenValue());
+    assertEquals(2, stsCallCount.get());
     assertEquals(
         Arrays.asList("Bearer sts-token-1", "Bearer sts-token-1", "Bearer sts-token-2"),
         iamBearerHeaders);
