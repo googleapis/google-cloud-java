@@ -91,9 +91,7 @@ class ITResumableUpload {
 
     try (InputStream stream = Files.newInputStream(file)) {
       ResumableUploadFuture<UploadMediaResponse> future =
-          client
-              .uploadMediaCallable()
-              .futureCall(request, stream, (ResumableUploadOptions) null);
+          client.uploadMediaCallable().futureCall(request, stream, (ResumableUploadOptions) null);
 
       UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
       assertThat(future.isDone()).isTrue();
@@ -158,8 +156,7 @@ class ITResumableUpload {
   }
 
   @Test
-  void testGeneratedClient_uploadMedia_withCustomOptions(@TempDir Path tempDir)
-      throws Exception {
+  void testGeneratedClient_uploadMedia_withCustomOptions(@TempDir Path tempDir) throws Exception {
     // 600KB payload with custom per-call 512KB chunk size override (default is 256KB)
     int totalBytes = 600 * 1024;
     Path file = createTempFile(tempDir, "it-client-custom-call-settings.txt", totalBytes);
