@@ -75,6 +75,7 @@ class OpenTelemetryTracingFactoryTest {
     when(openTelemetry.getTracer(anyString())).thenReturn(tracer);
     when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
     when(spanBuilder.setSpanKind(any())).thenReturn(spanBuilder);
+    when(spanBuilder.setParent(any())).thenReturn(spanBuilder);
     when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     when(spanBuilder.startSpan()).thenReturn(span);
 
