@@ -41,6 +41,7 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFutures;
+import com.google.api.core.ForwardingApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
@@ -57,6 +58,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -230,17 +232,54 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
-  void testUploadCallable_setInFlightFutureAfterCancel_immediatelyCancelsFuture() {
+  void testUploadCallable_cancelBeforeStartCompletes_abortsChunkUpload() {
     SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
-    when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
+    // Ignore cancellation on startFuture to simulate start completing concurrently with cancel()
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            new ForwardingApiFuture<ResumableUploadSession>(startFuture) {
+              @Override
+              public boolean cancel(boolean mayInterruptIfRunning) {
+                return false;
+              }
+            });
+
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("data"), null);
     assertThat(future.cancel(true)).isTrue();
     assertThat(future.isCancelled()).isTrue();
 
-    SettableApiFuture<String> lateFuture = SettableApiFuture.create();
-    ((ResumableUploadFutureImpl<String>) future).setInFlightFuture(lateFuture);
-    assertThat(lateFuture.isCancelled()).isTrue();
+    startFuture.set(
+        ResumableUploadSession.newBuilder().setUploadUrl("https://upload.url/late").build());
+    verifyNoInteractions(mockChunkCallable);
+  }
+
+  @Test
+  void testUploadCallable_cancelDuringChunkDispatch_immediatelyCancelsChunkFuture() {
+    stubStartSession("https://upload.url/cancel-dispatch");
+    SettableApiFuture<ChunkUploadResponse<String>> lateChunkFuture = SettableApiFuture.create();
+    AtomicReference<ResumableUploadFuture<String>> futureRef = new AtomicReference<>();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenAnswer(
+            inv -> {
+              futureRef.get().cancel(true);
+              return lateChunkFuture;
+            });
+
+    // Defer startFuture completion until futureRef is populated
+    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
+    when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), null);
+    futureRef.set(future);
+    startFuture.set(
+        ResumableUploadSession.newBuilder()
+            .setUploadUrl("https://upload.url/cancel-dispatch")
+            .build());
+
+    assertThat(future.isCancelled()).isTrue();
+    assertThat(lateChunkFuture.isCancelled()).isTrue();
   }
 
   @Test

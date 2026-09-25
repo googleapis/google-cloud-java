@@ -35,16 +35,17 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.common.io.ByteStreams;
 import com.google.common.util.concurrent.MoreExecutors;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.concurrent.CancellationException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Coordinates chunk transmission steps of a resumable upload session.
@@ -64,84 +65,90 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final byte[] buffer;
   private final int chunkSize;
   private final ApiCallContext callContext;
-  private final ResumableUploadFutureImpl<ResponseT> sessionFuture;
+  private final SettableApiFuture<ResponseT> uploadResultFuture = SettableApiFuture.create();
+  private volatile @Nullable ApiFuture<?> inFlightFuture;
 
   ResumableUploadChunkCoordinator(
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       String uploadUrl,
       InputStream payload,
       int chunkSize,
-      ApiCallContext callContext,
-      ResumableUploadFutureImpl<ResponseT> sessionFuture) {
+      ApiCallContext callContext) {
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
     this.chunkSize = chunkSize;
     this.callContext = checkNotNull(callContext, "callContext must not be null");
-    this.sessionFuture = checkNotNull(sessionFuture, "sessionFuture must not be null");
     this.buffer = new byte[chunkSize];
   }
 
+  ApiFuture<ResponseT> getFuture() {
+    return uploadResultFuture;
+  }
+
   void start() {
+    uploadResultFuture.addListener(
+        () -> {
+          ApiFuture<?> inFlight = inFlightFuture;
+          if (uploadResultFuture.isCancelled() && inFlight != null) {
+            inFlight.cancel(true);
+          }
+        },
+        MoreExecutors.directExecutor());
     transmitChunk(0L);
   }
 
   private void transmitChunk(long currentOffset) {
-    // Abort if the session was already completed or canceled.
-    if (sessionFuture.isDone()) {
-      return;
-    }
-
-    // Read the next chunk slice from the payload stream.
-    int bytesRead;
     try {
-      bytesRead = ByteStreams.read(payload, buffer, 0, chunkSize);
-    } catch (IOException e) {
-      sessionFuture.fail(e);
-      return;
-    }
+      // Abort if the session was already completed or canceled.
+      if (uploadResultFuture.isDone()) {
+        return;
+      }
 
-    // Determine if this is the final chunk and build the chunk request.
-    boolean isFinal = bytesRead < chunkSize;
-    byte[] chunkPayload;
-    if (bytesRead == chunkSize) {
-      chunkPayload = buffer;
-    } else if (bytesRead == 0) {
-      chunkPayload = EMPTY_PAYLOAD;
-    } else {
-      chunkPayload = Arrays.copyOf(buffer, bytesRead);
-    }
+      // Read the next chunk slice from the payload stream.
+      int bytesRead = ByteStreams.read(payload, buffer, 0, chunkSize);
 
-    ChunkUploadRequest chunkRequest =
-        ChunkUploadRequest.newBuilder()
-            .setUploadUrl(uploadUrl)
-            .setPayload(chunkPayload)
-            .setOffset(currentOffset)
-            .setFinal(isFinal)
-            .build();
+      // Determine if this is the final chunk and build the chunk request.
+      boolean isFinal = bytesRead < chunkSize;
+      byte[] chunkPayload;
+      if (bytesRead == chunkSize) {
+        chunkPayload = buffer;
+      } else if (bytesRead == 0) {
+        chunkPayload = EMPTY_PAYLOAD;
+      } else {
+        chunkPayload = Arrays.copyOf(buffer, bytesRead);
+      }
 
-    // Dispatch the chunk upload call and register the in-flight future for cancellation.
-    long chunkLength = chunkPayload.length;
-    try {
+      ChunkUploadRequest chunkRequest =
+          ChunkUploadRequest.newBuilder()
+              .setUploadUrl(uploadUrl)
+              .setPayload(chunkPayload)
+              .setOffset(currentOffset)
+              .setFinal(isFinal)
+              .build();
+
+      // Dispatch the chunk upload call and register the in-flight future for cancellation.
+      long chunkLength = chunkPayload.length;
       ApiFuture<ChunkUploadResponse<ResponseT>> chunkFuture =
           uploadChunkCallable.futureCall(chunkRequest, callContext);
-      sessionFuture.setInFlightFuture(chunkFuture);
+      if (!tryRegisterInFlightFuture(chunkFuture)) {
+        return;
+      }
 
-      // Asynchronously handle the response: complete, fail, or chain the next chunk.
       ApiFutures.addCallback(
           chunkFuture,
           new ApiFutureCallback<ChunkUploadResponse<ResponseT>>() {
             @Override
             public void onSuccess(ChunkUploadResponse<ResponseT> response) {
-              if (sessionFuture.isDone()) {
+              if (uploadResultFuture.isDone()) {
                 return;
               }
               long nextOffset = currentOffset + chunkLength;
               if (response.getUploadStatus() == ResumableUploadStatus.FINAL) {
-                sessionFuture.succeed(response.getResponse());
+                uploadResultFuture.set(response.getResponse());
               } else if (isFinal) {
-                sessionFuture.fail(
+                uploadResultFuture.setException(
                     new IllegalStateException(
                         "Upload stream ended and final chunk was transmitted, but server returned"
                             + " incomplete status"));
@@ -152,15 +159,28 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
             @Override
             public void onFailure(Throwable t) {
-              if (t instanceof CancellationException || sessionFuture.isDone()) {
+              if (t instanceof CancellationException || uploadResultFuture.isDone()) {
                 return;
               }
-              sessionFuture.fail(t);
+              uploadResultFuture.setException(t);
             }
           },
           MoreExecutors.directExecutor());
     } catch (Throwable t) {
-      sessionFuture.fail(t);
+      uploadResultFuture.setException(t);
     }
+  }
+
+  /**
+   * Registers the in-flight future for possible cancellation, returning false if the upload was
+   * already cancelled.
+   */
+  private boolean tryRegisterInFlightFuture(ApiFuture<?> future) {
+    this.inFlightFuture = future;
+    if (uploadResultFuture.isCancelled()) {
+      future.cancel(true);
+      return false;
+    }
+    return true;
   }
 }
