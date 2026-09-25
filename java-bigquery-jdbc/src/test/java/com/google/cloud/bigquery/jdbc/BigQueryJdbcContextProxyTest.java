@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -60,6 +61,8 @@ public class BigQueryJdbcContextProxyTest {
   @Test
   public void testExtractConnectionIdFromStatement() throws SQLException {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
+
     when(mockConn.getBigQuery()).thenReturn(mock(com.google.cloud.bigquery.BigQuery.class));
 
     BigQueryStatement stmt = new BigQueryStatement(mockConn);
@@ -95,6 +98,8 @@ public class BigQueryJdbcContextProxyTest {
   @Test
   public void testExtractConnectionIdFromResultSetMetaData() throws SQLException {
     BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
+
     BigQueryStatement stmt = new BigQueryStatement(mockConn);
     stmt.connectionId = "conn-uuid-999";
 
