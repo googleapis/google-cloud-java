@@ -105,11 +105,17 @@ public class OptimizeWriteLatencyPool {
       }
 
       maintenanceFuture.get(10, TimeUnit.SECONDS);
-      for (AppendableUploadWriteableByteChannel rem : pool) {
-        rem.closeWithoutFinalizing();
-      }
     } finally {
-      executor.shutdown();
+      for (AppendableUploadWriteableByteChannel rem : pool) {
+        try {
+          rem.closeWithoutFinalizing();
+        } catch (Exception e) {
+          // Ignore to ensure other channels are closed
+        }
+      }
+      if (executor != null) {
+        executor.shutdown();
+      }
     }
   }
 }
