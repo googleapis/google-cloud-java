@@ -102,9 +102,12 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
   private final String poolLogId;
 
+  private static final int DEFAULT_MAX_SESSIONS_PER_CHANNEL = 90;
+
   @VisibleForTesting volatile int minGroups;
   @VisibleForTesting volatile int maxGroups;
   @VisibleForTesting volatile int softMaxPerGroup;
+  @VisibleForTesting volatile int maxSessionsPerChannel = DEFAULT_MAX_SESSIONS_PER_CHANNEL;
 
   private final Clock clock;
   private final Supplier<ManagedChannel> channelSupplier;
@@ -281,13 +284,35 @@ public class ChannelPoolDpImpl implements ChannelPool {
               .orElse(null);
 
       if (channelWrapper == null) {
-        log(
-            Level.FINE,
-            "Couldn't find an existing channel with capacity, num outstanding streams: %d,"
-                + " num channels: %d",
-            totalStreams,
-            channels.size());
-        channelWrapper = addChannel();
+        int activeCount =
+            (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
+        if (activeCount < maxGroups) {
+          log(
+              Level.FINE,
+              "Couldn't find an existing channel with capacity, num outstanding streams: %d,"
+                  + " num channels: %d",
+              totalStreams,
+              channels.size());
+          channelWrapper = addChannel();
+        } else {
+          // At or above maxGroups: pack onto least-loaded active channel up to
+          // maxSessionsPerChannel
+          channelWrapper =
+              channels.stream()
+                  .filter(c -> c.state == ChannelWrapper.State.ACTIVE)
+                  .filter(c -> c.numOutstanding < maxSessionsPerChannel)
+                  .min(Comparator.comparingInt(c -> c.numOutstanding))
+                  .orElse(null);
+
+          if (channelWrapper == null) {
+            // Emergency overflow: all active channels are saturated at maxSessionsPerChannel
+            log(
+                Level.FINE,
+                "All channels at maxSessionsPerChannel (%d), adding emergency overflow channel",
+                maxSessionsPerChannel);
+            channelWrapper = addChannel();
+          }
+        }
       }
     }
 
@@ -534,6 +559,16 @@ public class ChannelPoolDpImpl implements ChannelPool {
               .collect(Collectors.joining("\n"));
       log(Level.FINEST, "ChannelPool session distribution:\n%s", afeToSessions);
     }
+  }
+
+  @VisibleForTesting
+  synchronized int getActiveChannelCount() {
+    return (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
+  }
+
+  @VisibleForTesting
+  synchronized int getDrainingChannelCount() {
+    return (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.DRAINING).count();
   }
 
   /**
