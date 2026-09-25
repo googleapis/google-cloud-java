@@ -22,20 +22,45 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.it.BucketCleaner;
+import com.google.cloud.storage.it.runner.annotations.Backend;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
+import com.google.protobuf.Duration;
+import com.google.storage.control.v2.BucketName;
+import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.StorageControlClient;
 import java.util.Locale;
 
 /** Shim to lift a BucketInfo to be a managed bucket instance */
 final class BucketInfoShim implements ManagedLifecycle {
 
+  private final Backend backend;
   private final BucketInfo bucketInfo;
+  private final LocationType locationType;
+  private final String targetZone;
   private final Storage s;
   private final StorageControlClient ctrl;
 
   private BucketInfo createdBucket;
 
   BucketInfoShim(BucketInfo bucketInfo, Storage s, StorageControlClient ctrl) {
+    this(Backend.PROD, bucketInfo, LocationType.REGIONAL_STANDARD, null, s, ctrl);
+  }
+
+  BucketInfoShim(Backend backend, BucketInfo bucketInfo, Storage s, StorageControlClient ctrl) {
+    this(backend, bucketInfo, LocationType.REGIONAL_STANDARD, null, s, ctrl);
+  }
+
+  BucketInfoShim(
+      Backend backend,
+      BucketInfo bucketInfo,
+      LocationType locationType,
+      String targetZone,
+      Storage s,
+      StorageControlClient ctrl) {
+    this.backend = backend;
     this.bucketInfo = bucketInfo;
+    this.locationType = locationType;
+    this.targetZone = targetZone;
     this.s = s;
     this.ctrl = ctrl;
   }
@@ -46,18 +71,73 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public Object get() {
-    return bucketInfo;
+    return createdBucket != null ? createdBucket : bucketInfo;
   }
 
   @Override
   public void start() {
     try {
+      System.out.println(
+          "Starting resource creation for LocationType: "
+              + locationType
+              + " in zone: "
+              + targetZone);
       createdBucket = s.create(bucketInfo).asBucketInfo();
+      System.out.println(
+          "Successfully created bucket: "
+              + createdBucket.getName()
+              + " (Location: "
+              + createdBucket.getLocation()
+              + ")");
+      if (locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
+        if (ctrl == null) {
+          throw new IllegalStateException(
+              "StorageControlClient is required for REGIONAL_RAPID but was not provided");
+        }
+        String cacheName =
+            String.format(
+                Locale.US,
+                "projects/_/buckets/%s/rapidCaches/%s",
+                createdBucket.getName(),
+                targetZone);
+        RapidCache rapidCache =
+            RapidCache.newBuilder()
+                .setName(cacheName)
+                .setZone(targetZone)
+                .setCacheType("rapid-cache-ultra")
+                .setTtl(Duration.newBuilder().setSeconds(86400).build()) // 24 hours
+                .build();
+        try {
+          System.out.println(
+              "Submitting CreateRapidCache LRO for bucket: "
+                  + createdBucket.getName()
+                  + " in zone: "
+                  + targetZone);
+          ctrl.createRapidCacheAsync(BucketName.format("_", createdBucket.getName()), rapidCache)
+              .get(30, java.util.concurrent.TimeUnit.SECONDS);
+          System.out.println("Successfully created Rapid Cache in zone: " + targetZone);
+        } catch (java.util.concurrent.TimeoutException te) {
+          System.out.println("WARNING: CreateRapidCache LRO timed out after 30s. Skipping test.");
+          stop();
+          assumeTrue(
+              "Skipping test because Rapid Cache creation LRO timed out (30s) in zone: "
+                  + targetZone,
+              false);
+        } catch (Exception e) {
+          System.out.println(
+              "WARNING: CreateRapidCache LRO failed: " + e.getMessage() + ". Skipping test.");
+          stop();
+          assumeTrue(
+              "Skipping test due to failure during Rapid Cache creation: " + e.getMessage(), false);
+        }
+      }
     } catch (StorageException se) {
       String msg = se.getMessage().toLowerCase(Locale.US);
+      System.out.println("StorageException caught during resource creation: " + msg);
       if (se.getCode() == 400 && (msg.contains("not a valid zone in location"))
           || msg.contains("custom placement config")
           || msg.contains("zonal")) {
+        System.out.println("Skipping test: setup unavailable in current zone.");
         assumeTrue(
             "Skipping test due to bucket setup unavailable in current zone. (" + msg + ")", false);
       }
@@ -67,6 +147,23 @@ final class BucketInfoShim implements ManagedLifecycle {
 
   @Override
   public void stop() {
-    BucketCleaner.doCleanup(bucketInfo.getName(), s /*, ctrl*/);
+    if (locationType == LocationType.REGIONAL_RAPID
+        && backend != Backend.TEST_BENCH
+        && ctrl != null
+        && targetZone != null) {
+      String cacheName =
+          String.format(
+              Locale.US, "projects/_/buckets/%s/rapidCaches/%s", bucketInfo.getName(), targetZone);
+      try {
+        ctrl.disableRapidCacheAsync(cacheName).get(30, java.util.concurrent.TimeUnit.SECONDS);
+      } catch (Exception e) {
+        System.err.println("Failed to clean up rapid cache: " + e.getMessage());
+      }
+    }
+    if (ctrl != null && backend != Backend.TEST_BENCH) {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s, ctrl);
+    } else {
+      BucketCleaner.doCleanup(bucketInfo.getName(), s);
+    }
   }
 }

@@ -21,10 +21,13 @@ import static java.util.Objects.requireNonNull;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.concurrent.Immutable;
 import javax.annotation.concurrent.ThreadSafe;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -39,10 +42,15 @@ public final class CrossRunIntersection {
 
   private final @Nullable Backend backend;
   private final @Nullable Transport transport;
+  private final @Nullable LocationType locationType;
 
-  private CrossRunIntersection(@Nullable Backend backend, @Nullable Transport transport) {
+  private CrossRunIntersection(
+      @Nullable Backend backend,
+      @Nullable Transport transport,
+      @Nullable LocationType locationType) {
     this.backend = backend;
     this.transport = transport;
+    this.locationType = locationType;
   }
 
   @Nullable
@@ -55,11 +63,16 @@ public final class CrossRunIntersection {
     return transport;
   }
 
+  @Nullable
+  public LocationType getLocationType() {
+    return locationType;
+  }
+
   public CrossRunIntersection clearBackend() {
     if (backend == null) {
       return this;
     } else {
-      return new CrossRunIntersection(null, transport);
+      return new CrossRunIntersection(null, transport, locationType);
     }
   }
 
@@ -67,7 +80,15 @@ public final class CrossRunIntersection {
     if (transport == null) {
       return this;
     } else {
-      return new CrossRunIntersection(backend, null);
+      return new CrossRunIntersection(backend, null, locationType);
+    }
+  }
+
+  public CrossRunIntersection clearLocationType() {
+    if (locationType == null) {
+      return this;
+    } else {
+      return new CrossRunIntersection(backend, transport, null);
     }
   }
 
@@ -76,7 +97,7 @@ public final class CrossRunIntersection {
     if (this.backend == backend) {
       return this;
     } else {
-      return new CrossRunIntersection(backend, transport);
+      return new CrossRunIntersection(backend, transport, locationType);
     }
   }
 
@@ -85,7 +106,16 @@ public final class CrossRunIntersection {
     if (this.transport == transport) {
       return this;
     } else {
-      return new CrossRunIntersection(backend, transport);
+      return new CrossRunIntersection(backend, transport, locationType);
+    }
+  }
+
+  public CrossRunIntersection withLocationType(LocationType locationType) {
+    requireNonNull(locationType, "locationType must be non null");
+    if (this.locationType == locationType) {
+      return this;
+    } else {
+      return new CrossRunIntersection(backend, transport, locationType);
     }
   }
 
@@ -107,6 +137,13 @@ public final class CrossRunIntersection {
       l = l.clearTransport();
     }
 
+    if (l.locationType == null) {
+      r = r.clearLocationType();
+    }
+    if (r.locationType == null) {
+      l = l.clearLocationType();
+    }
+
     return l.equals(r);
   }
 
@@ -119,7 +156,8 @@ public final class CrossRunIntersection {
   public String fmtSuiteName() {
     String t = transport != null ? transport.toString() : "NULL_TRANSPORT";
     String b = backend != null ? backend.toString() : "NULL_BACKEND";
-    return String.format(Locale.US, "[%s][%s]", t, b);
+    String lt = locationType != null ? locationType.toString() : "NULL_LOCATION";
+    return String.format(Locale.US, "[%s][%s][%s]", t, b, lt);
   }
 
   @Override
@@ -131,12 +169,14 @@ public final class CrossRunIntersection {
       return false;
     }
     CrossRunIntersection crossRunIntersection = (CrossRunIntersection) o;
-    return backend == crossRunIntersection.backend && transport == crossRunIntersection.transport;
+    return backend == crossRunIntersection.backend
+        && transport == crossRunIntersection.transport
+        && locationType == crossRunIntersection.locationType;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(backend, transport);
+    return Objects.hash(backend, transport, locationType);
   }
 
   @Override
@@ -144,41 +184,54 @@ public final class CrossRunIntersection {
     return MoreObjects.toStringHelper(this)
         .add("backend", backend)
         .add("transport", transport)
+        .add("locationType", locationType)
         .toString();
   }
 
-  public static CrossRunIntersection of(@Nullable Backend t, @Nullable Transport s) {
-    return new CrossRunIntersection(t, s);
+  public static CrossRunIntersection of(@Nullable Backend b, @Nullable Transport t) {
+    return new CrossRunIntersection(b, t, null);
+  }
+
+  public static CrossRunIntersection of(
+      @Nullable Backend b, @Nullable Transport t, @Nullable LocationType lt) {
+    return new CrossRunIntersection(b, t, lt);
   }
 
   public static ImmutableSet<CrossRunIntersection> expand(CrossRun.Ignore i) {
     ImmutableSet<Backend> backends = ImmutableSet.copyOf(i.backends());
     ImmutableSet<Transport> transports = ImmutableSet.copyOf(i.transports());
-    return expand(backends, transports);
+    ImmutableSet<LocationType> locations = ImmutableSet.copyOf(i.locations());
+    return expand(backends, transports, locations);
   }
 
   public static ImmutableSet<CrossRunIntersection> expand(CrossRun.Exclude i) {
     ImmutableSet<Backend> backends = ImmutableSet.copyOf(i.backends());
     ImmutableSet<Transport> transports = ImmutableSet.copyOf(i.transports());
-    return expand(backends, transports);
+    ImmutableSet<LocationType> locations = ImmutableSet.copyOf(i.locations());
+    return expand(backends, transports, locations);
   }
 
   public static ImmutableSet<CrossRunIntersection> expand(
-      ImmutableSet<Backend> backends, ImmutableSet<@Nullable Transport> transports) {
-    if (backends.isEmpty() && transports.isEmpty()) {
+      ImmutableSet<Backend> backends,
+      ImmutableSet<@Nullable Transport> transports,
+      ImmutableSet<@Nullable LocationType> locations) {
+    if (backends.isEmpty() && transports.isEmpty() && locations.isEmpty()) {
       return ImmutableSet.of();
-    } else if (!backends.isEmpty() && !transports.isEmpty()) {
-      return backends.stream()
-          .flatMap(t -> transports.stream().map(s -> new CrossRunIntersection(t, s)))
-          .collect(ImmutableSet.toImmutableSet());
-    } else if (!backends.isEmpty()) {
-      return backends.stream()
-          .map(t -> new CrossRunIntersection(t, null))
-          .collect(ImmutableSet.toImmutableSet());
-    } else {
-      return transports.stream()
-          .map(s -> new CrossRunIntersection(null, s))
-          .collect(ImmutableSet.toImmutableSet());
     }
+
+    Set<@Nullable Backend> bSet =
+        backends.isEmpty() ? Collections.singleton((Backend) null) : backends;
+    Set<@Nullable Transport> tSet =
+        transports.isEmpty() ? Collections.singleton((Transport) null) : transports;
+    Set<@Nullable LocationType> lSet =
+        locations.isEmpty() ? Collections.singleton((LocationType) null) : locations;
+
+    return bSet.stream()
+        .flatMap(
+            b ->
+                tSet.stream()
+                    .flatMap(t -> lSet.stream().map(l -> new CrossRunIntersection(b, t, l))))
+        .filter(i -> !(i.backend == null && i.transport == null && i.locationType == null))
+        .collect(ImmutableSet.toImmutableSet());
   }
 }
