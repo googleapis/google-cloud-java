@@ -51,6 +51,7 @@ import io.opentelemetry.sdk.resources.Resource;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.net.NoRouteToHostException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -205,12 +206,65 @@ final class OpenTelemetryBootstrappingUtils {
     return metricServiceEndpoint + ":" + endpoint.split(":")[1];
   }
 
+  static final ImmutableList<String> CLIENT_LATENCY_HISTOGRAMS =
+      ImmutableList.of(
+          StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION,
+          StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION,
+          StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_GFE_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION);
+
+  static final ImmutableList<String> CLIENT_SIZE_HISTOGRAMS =
+      ImmutableList.of(
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED);
+
   @VisibleForTesting
   static SdkMeterProvider createMeterProvider(
       String metricServiceEndpoint,
       String projectIdToUse,
       Attributes detectedAttributes,
       boolean shouldSuppressExceptions) {
+    return createClientMeterProvider(
+        metricServiceEndpoint,
+        projectIdToUse,
+        detectedAttributes,
+        Duration.ofSeconds(60),
+        shouldSuppressExceptions,
+        "grpc");
+  }
+
+  @VisibleForTesting
+  static SdkMeterProvider createClientMeterProvider(
+      String metricServiceEndpoint,
+      String projectIdToUse,
+      Attributes detectedAttributes,
+      Duration metricInterval,
+      boolean shouldSuppressExceptions) {
+    return createClientMeterProvider(
+        metricServiceEndpoint,
+        projectIdToUse,
+        detectedAttributes,
+        metricInterval,
+        shouldSuppressExceptions,
+        "storage");
+  }
+
+  @VisibleForTesting
+  static SdkMeterProvider createClientMeterProvider(
+      String metricServiceEndpoint,
+      String projectIdToUse,
+      Attributes detectedAttributes,
+      Duration metricInterval,
+      boolean shouldSuppressExceptions,
+      String api) {
 
     MonitoredResourceDescription monitoredResourceDescription =
         new MonitoredResourceDescription(
@@ -239,6 +293,22 @@ final class OpenTelemetryBootstrappingUtils {
           InstrumentSelector.builder().setName(metric).build(),
           View.builder().setName(metric.replace(".", "/")).build());
     }
+    addHistogramView(
+        providerBuilder, latencyHistogramBoundaries(), "grpc/client/attempt/duration", "s");
+    addHistogramView(
+        providerBuilder,
+        sizeHistogramBoundaries(),
+        "grpc/client/attempt/rcvd_total_compressed_message_size",
+        "By");
+    addHistogramView(
+        providerBuilder,
+        sizeHistogramBoundaries(),
+        "grpc/client/attempt/sent_total_compressed_message_size",
+        "By");
+
+    // Register views for client histograms
+    registerClientViews(providerBuilder);
+
     MetricExporter exporter =
         shouldSuppressExceptions
             ? new PermissionDeniedSingleReportMetricsExporter(cloudMonitoringExporter)
@@ -248,7 +318,7 @@ final class OpenTelemetryBootstrappingUtils {
             .put("gcp.resource_type", "storage.googleapis.com/Client")
             .put("project_id", projectIdToUse)
             .put("instance_id", UUID.randomUUID().toString())
-            .put("api", "grpc");
+            .put("api", api != null ? api : "storage");
     String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
     if (detectedLocation != null) {
       attributesBuilder.put("location", detectedLocation);
@@ -270,24 +340,42 @@ final class OpenTelemetryBootstrappingUtils {
     providerBuilder
         .registerMetricReader(
             PeriodicMetricReader.builder(exporter)
-                .setInterval(java.time.Duration.ofSeconds(60))
+                .setInterval(metricInterval != null ? metricInterval : Duration.ofSeconds(60))
                 .build())
         .setResource(Resource.create(attributesBuilder.build()));
 
-    addHistogramView(
-        providerBuilder, latencyHistogramBoundaries(), "grpc/client/attempt/duration", "s");
-    addHistogramView(
-        providerBuilder,
-        sizeHistogramBoundaries(),
-        "grpc/client/attempt/rcvd_total_compressed_message_size",
-        "By");
-    addHistogramView(
-        providerBuilder,
-        sizeHistogramBoundaries(),
-        "grpc/client/attempt/sent_total_compressed_message_size",
-        "By");
-
     return providerBuilder.build();
+  }
+
+  @VisibleForTesting
+  static SdkMeterProviderBuilder registerClientViews(SdkMeterProviderBuilder providerBuilder) {
+    for (String metric : CLIENT_LATENCY_HISTOGRAMS) {
+      addClientHistogramView(providerBuilder, latencyHistogramBoundaries(), metric, "s");
+    }
+    for (String metric : CLIENT_SIZE_HISTOGRAMS) {
+      addClientHistogramView(providerBuilder, sizeHistogramBoundaries(), metric, "By");
+    }
+    return providerBuilder;
+  }
+
+  private static void addClientHistogramView(
+      SdkMeterProviderBuilder provider, List<Double> boundaries, String name, String unit) {
+    InstrumentSelector instrumentSelector =
+        InstrumentSelector.builder()
+            .setType(InstrumentType.HISTOGRAM)
+            .setUnit(unit)
+            .setName(name)
+            .build();
+    View view =
+        View.builder()
+            .setName(name)
+            .setDescription(
+                "A view of "
+                    + name
+                    + " with histogram boundaries more appropriate for Google Cloud Storage RPCs")
+            .setAggregation(Aggregation.explicitBucketHistogram(boundaries))
+            .build();
+    provider.registerView(instrumentSelector, view);
   }
 
   private static void addHistogramView(
@@ -312,7 +400,8 @@ final class OpenTelemetryBootstrappingUtils {
     provider.registerView(instrumentSelector, view);
   }
 
-  private static List<Double> latencyHistogramBoundaries() {
+  @VisibleForTesting
+  static List<Double> latencyHistogramBoundaries() {
     List<Double> boundaries = new ArrayList<>();
     BigDecimal boundary = new BigDecimal(0, MathContext.UNLIMITED);
     BigDecimal increment = new BigDecimal("0.002", MathContext.UNLIMITED); // 2ms
@@ -337,7 +426,8 @@ final class OpenTelemetryBootstrappingUtils {
     return boundaries;
   }
 
-  private static List<Double> sizeHistogramBoundaries() {
+  @VisibleForTesting
+  static List<Double> sizeHistogramBoundaries() {
     long kb = 1024;
     long mb = 1024 * kb;
     long gb = 1024 * mb;
