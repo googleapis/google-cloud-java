@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.resumable.ResumableUploadStatusCode;
 import com.google.common.collect.ImmutableMap;
 import java.net.SocketTimeoutException;
 import java.util.Objects;
@@ -85,6 +87,13 @@ final class ResumableUploadErrorClassifier {
     }
     ApiException apiException = (ApiException) t;
     StatusCode statusCode = apiException.getStatusCode();
+
+    if (statusCode instanceof ResumableUploadStatusCode) {
+      ResumableUploadStatusCode uploadStatusCode = (ResumableUploadStatusCode) statusCode;
+      if (uploadStatusCode.getUploadStatus() == ResumableUploadStatus.FINAL) {
+        return Category.FATAL;
+      }
+    }
 
     // HttpJsonApiExceptionFactory wraps low-level network timeouts as UNKNOWN.
     if (statusCode.getCode() == StatusCode.Code.UNKNOWN) {
