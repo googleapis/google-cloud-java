@@ -18,6 +18,10 @@ set -eo pipefail
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
+# include common functions
+source ${scriptDir}/common.sh
+setup_maven_mirror
+
 outputFile="$scriptDir/../java-cloud-bom/dashboard/target/tmp/output.txt"
 
 if [[ "${JOB_TYPE}" == "dashboard-units-check" ]]; then
