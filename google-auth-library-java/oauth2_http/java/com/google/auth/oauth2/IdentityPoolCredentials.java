@@ -117,6 +117,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    if (getServiceAccountImpersonationUrl() != null) {
+      if (this.impersonatedCredentials == null) {
+        this.impersonatedCredentials = this.buildImpersonatedCredentials();
+      }
+      return this.impersonatedCredentials.refreshAccessToken();
+    }
     String credential = retrieveSubjectToken();
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
