@@ -752,6 +752,29 @@ public class MetricRegistryExportTest {
   }
 
   @Test
+  void testClientUptime() {
+    registry.clientUptime.record(clientInfo, Duration.ofMinutes(10));
+    metricReader.forceFlush().join(1, TimeUnit.MINUTES);
+
+    TimeSeries timeSeries =
+        metricService.getSingleTimeSeriesByName(
+            "bigtable.googleapis.com/internal/client/uptime");
+
+    assertThat(timeSeries.getResource()).isEqualTo(expectedClientMonitoredResource);
+
+    assertThat(timeSeries.getMetric().getLabelsMap()).isEmpty();
+
+    assertThat(timeSeries.getPointsList())
+        .comparingExpectedFieldsOnly()
+        .containsExactly(
+            Point.newBuilder()
+                .setValue(
+                    TypedValue.newBuilder()
+                        .setInt64Value(Duration.ofMinutes(10).toMillis()))
+                .build());
+  }
+
+  @Test
   void testPacemaker() {
     registry.pacemakerDelay.record(clientInfo, "background", Duration.ofMillis(1));
     metricReader.forceFlush().join(1, TimeUnit.MINUTES);
