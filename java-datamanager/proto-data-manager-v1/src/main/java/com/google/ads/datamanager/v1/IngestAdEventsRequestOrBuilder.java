@@ -152,7 +152,7 @@ public interface IngestAdEventsRequestOrBuilder
    * </code>
    *
    * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-   *     google/ads/datamanager/v1/ingestion_service.proto;l=281
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=363
    * @return The validateOnly.
    */
   @java.lang.Deprecated

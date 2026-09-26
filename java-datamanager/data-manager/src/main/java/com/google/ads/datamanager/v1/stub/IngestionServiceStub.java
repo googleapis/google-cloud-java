@@ -22,10 +22,14 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.IngestUsersRequest;
+import com.google.ads.datamanager.v1.IngestUsersResponse;
 import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
+import com.google.ads.datamanager.v1.RemoveUsersRequest;
+import com.google.ads.datamanager.v1.RemoveUsersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusResponse;
 import com.google.api.gax.core.BackgroundResource;
@@ -60,6 +64,14 @@ public abstract class IngestionServiceStub implements BackgroundResource {
 
   public UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {
     throw new UnsupportedOperationException("Not implemented: ingestEventsCallable()");
+  }
+
+  public UnaryCallable<IngestUsersRequest, IngestUsersResponse> ingestUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: ingestUsersCallable()");
+  }
+
+  public UnaryCallable<RemoveUsersRequest, RemoveUsersResponse> removeUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeUsersCallable()");
   }
 
   public UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable() {
