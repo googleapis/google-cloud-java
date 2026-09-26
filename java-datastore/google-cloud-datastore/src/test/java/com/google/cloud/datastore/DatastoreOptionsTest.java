@@ -21,11 +21,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
+import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.rpc.TransportChannel;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
@@ -267,6 +272,43 @@ public class DatastoreOptionsTest {
             .setHost("http://localhost:" + PORT)
             .build();
     assertEquals(datastoreOptions.getTransportChannelProvider(), channelProvider);
+  }
+
+  @Test
+  public void testCustomFixedChannelProvider() {
+    TransportChannel transportChannel = EasyMock.createMock(TransportChannel.class);
+    EasyMock.expect(transportChannel.getTransportName())
+        .andReturn(GrpcTransportChannel.getGrpcTransportName())
+        .anyTimes();
+    EasyMock.replay(transportChannel);
+    TransportChannelProvider channelProvider =
+        FixedTransportChannelProvider.create(transportChannel);
+
+    DatastoreOptions datastoreOptions =
+        DatastoreOptions.newBuilder()
+            .setServiceRpcFactory(datastoreRpcFactory)
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId(DATABASE_ID)
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setHost("http://localhost:" + PORT)
+            .build();
+    assertEquals(datastoreOptions.getTransportChannelProvider(), channelProvider);
+  }
+
+  @Test
+  public void testNonGrpcChannelProviderThrows() {
+    TransportChannel transportChannel = EasyMock.createMock(TransportChannel.class);
+    EasyMock.expect(transportChannel.getTransportName()).andReturn("httpjson").anyTimes();
+    EasyMock.replay(transportChannel);
+    TransportChannelProvider channelProvider =
+        FixedTransportChannelProvider.create(transportChannel);
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> DatastoreOptions.newBuilder().setChannelProvider(channelProvider));
+    assertTrue(exception.getMessage().contains("Only GRPC channels are allowed for Datastore."));
   }
 
   @Test

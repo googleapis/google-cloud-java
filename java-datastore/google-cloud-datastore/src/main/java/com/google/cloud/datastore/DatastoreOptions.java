@@ -21,6 +21,7 @@ import static com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
+import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
@@ -158,7 +159,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     private TransportChannelProvider validateChannelProvider(
         TransportChannelProvider channelProvider) {
       Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
-      if (!(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
+      // Allow any TransportChannelProvider that uses gRPC (e.g., FixedTransportChannelProvider).
+      if (!GrpcTransportChannel.getGrpcTransportName().equals(channelProvider.getTransportName())) {
         throw new IllegalArgumentException(
             "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
       }
@@ -212,7 +214,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
      *
      * <p>This functionality is experimental and subject to change.
      *
-     * @param channelProvider A InstantiatingGrpcChannelProvider object that defines the transport
+     * @param channelProvider A {@link TransportChannelProvider} object that defines the transport
      *     provider for this client.
      */
     @BetaApi
