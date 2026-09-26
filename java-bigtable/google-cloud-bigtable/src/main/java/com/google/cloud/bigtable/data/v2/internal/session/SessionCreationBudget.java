@@ -22,6 +22,7 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
@@ -63,7 +64,7 @@ class SessionCreationBudget {
       return Instant.now();
     }
 
-    return delayedCreationTokens.get(0);
+    return Collections.min(delayedCreationTokens);
   }
 
   boolean tryReserveSession() {
@@ -96,10 +97,6 @@ class SessionCreationBudget {
       if (iter.next().isBefore(now)) {
         concurrentRequests--;
         iter.remove();
-      } else {
-        // The list should be roughly sorted. Exit early when we encounter
-        // something expires later.
-        break;
       }
     }
   }
