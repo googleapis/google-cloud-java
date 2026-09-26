@@ -111,13 +111,12 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  OperationFuture<WaitResponse, WaitMetadata> future =\n",
-            "      echoClient.waitOperationCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  WaitResponse response = future.get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "OperationFuture<WaitResponse, WaitMetadata> future =\n",
+            "    echoClient.waitOperationCallable().futureCall(request);\n",
+            "// Do something.\n",
+            "WaitResponse response = future.get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -179,13 +178,12 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  OperationFuture<Empty, WaitMetadata> future =\n",
-            "      echoClient.waitOperationCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  future.get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "OperationFuture<Empty, WaitMetadata> future =\n",
+            "    echoClient.waitOperationCallable().futureCall(request);\n",
+            "// Do something.\n",
+            "future.get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -237,19 +235,18 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  PagedExpandRequest request =\n",
-            "      PagedExpandRequest.newBuilder()\n",
-            "          .setContent(\"content951530617\")\n",
-            "          .setPageSize(883849137)\n",
-            "          .setPageToken(\"pageToken873572522\")\n",
-            "          .build();\n",
-            "  ApiFuture<EchoResponse> future ="
+            "EchoClient echoClient = EchoClient.create();\n",
+            "PagedExpandRequest request =\n",
+            "    PagedExpandRequest.newBuilder()\n",
+            "        .setContent(\"content951530617\")\n",
+            "        .setPageSize(883849137)\n",
+            "        .setPageToken(\"pageToken873572522\")\n",
+            "        .build();\n",
+            "ApiFuture<EchoResponse> future ="
                 + " echoClient.pagedExpandPagedCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  for (EchoResponse element : future.get().iterateAll()) {\n",
-            "    // doThingsWith(element);\n",
-            "  }\n",
+            "// Do something.\n",
+            "for (EchoResponse element : future.get().iterateAll()) {\n",
+            "  // doThingsWith(element);\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -460,13 +457,12 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  ExpandRequest request =\n",
-            "      ExpandRequest.newBuilder().setContent(\"content951530617\").setInfo(\"info3237038\").build();\n",
-            "  ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);\n",
-            "  for (EchoResponse response : stream) {\n",
-            "    // Do something when a response is received.\n",
-            "  }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "ExpandRequest request =\n",
+            "    ExpandRequest.newBuilder().setContent(\"content951530617\").setInfo(\"info3237038\").build();\n",
+            "ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);\n",
+            "for (EchoResponse response : stream) {\n",
+            "  // Do something when a response is received.\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -566,22 +562,21 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  BidiStream<EchoRequest, EchoResponse> bidiStream ="
+            "EchoClient echoClient = EchoClient.create();\n",
+            "BidiStream<EchoRequest, EchoResponse> bidiStream ="
                 + " echoClient.chatCallable().call();\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  bidiStream.send(request);\n",
-            "  for (EchoResponse response : bidiStream) {\n",
-            "    // Do something when a response is received.\n",
-            "  }\n",
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "bidiStream.send(request);\n",
+            "for (EchoResponse response : bidiStream) {\n",
+            "  // Do something when a response is received.\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -681,37 +676,36 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  ApiStreamObserver<EchoRequest> responseObserver =\n",
-            "      new ApiStreamObserver<EchoRequest>() {\n",
-            "        {@literal @}Override\n",
-            "        public void onNext(EchoResponse response) {\n",
-            "          // Do something when a response is received.\n",
-            "        }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "ApiStreamObserver<EchoRequest> responseObserver =\n",
+            "    new ApiStreamObserver<EchoRequest>() {\n",
+            "      {@literal @}Override\n",
+            "      public void onNext(EchoResponse response) {\n",
+            "        // Do something when a response is received.\n",
+            "      }\n",
             "\n",
-            "        {@literal @}Override\n",
-            "        public void onError(Throwable t) {\n",
-            "          // Add error-handling\n",
-            "        }\n",
+            "      {@literal @}Override\n",
+            "      public void onError(Throwable t) {\n",
+            "        // Add error-handling\n",
+            "      }\n",
             "\n",
-            "        {@literal @}Override\n",
-            "        public void onCompleted() {\n",
-            "          // Do something when complete.\n",
-            "        }\n",
-            "      };\n",
-            "  ApiStreamObserver<EchoRequest> requestObserver =\n",
-            "      echoClient.collect().clientStreamingCall(responseObserver);\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "      {@literal @}Override\n",
+            "      public void onCompleted() {\n",
+            "        // Do something when complete.\n",
+            "      }\n",
+            "    };\n",
+            "ApiStreamObserver<EchoRequest> requestObserver =\n",
+            "    echoClient.collect().clientStreamingCall(responseObserver);\n",
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  requestObserver.onNext(request);\n",
-            "}");
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "requestObserver.onNext(request);");
     Assert.assertEquals(results, expected);
   }
 
@@ -806,20 +800,19 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "EchoClient echoClient = EchoClient.create();\n",
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  ApiFuture<EchoResponse> future = echoClient.echoCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  EchoResponse response = future.get();\n",
-            "}");
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "ApiFuture<EchoResponse> future = echoClient.echoCallable().futureCall(request);\n",
+            "// Do something.\n",
+            "EchoResponse response = future.get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -884,12 +877,11 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  Operation response = future.get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);\n",
+            "// Do something.\n",
+            "Operation response = future.get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -951,12 +943,11 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);\n",
-            "  // Do something.\n",
-            "  future.get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);\n",
+            "// Do something.\n",
+            "future.get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -1008,24 +999,23 @@ class ServiceClientCallableMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  PagedExpandRequest request =\n",
-            "      PagedExpandRequest.newBuilder()\n",
-            "          .setContent(\"content951530617\")\n",
-            "          .setPageSize(883849137)\n",
-            "          .setPageToken(\"pageToken873572522\")\n",
-            "          .build();\n",
-            "  while (true) {\n",
-            "    PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);\n",
-            "    for (EchoResponse element : response.getResponsesList()) {\n",
-            "      // doThingsWith(element);\n",
-            "    }\n",
-            "    String nextPageToken = response.getNextPageToken();\n",
-            "    if (!Strings.isNullOrEmpty(nextPageToken)) {\n",
-            "      request = request.toBuilder().setPageToken(nextPageToken).build();\n",
-            "    } else {\n",
-            "      break;\n",
-            "    }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "PagedExpandRequest request =\n",
+            "    PagedExpandRequest.newBuilder()\n",
+            "        .setContent(\"content951530617\")\n",
+            "        .setPageSize(883849137)\n",
+            "        .setPageToken(\"pageToken873572522\")\n",
+            "        .build();\n",
+            "while (true) {\n",
+            "  PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);\n",
+            "  for (EchoResponse element : response.getResponsesList()) {\n",
+            "    // doThingsWith(element);\n",
+            "  }\n",
+            "  String nextPageToken = response.getNextPageToken();\n",
+            "  if (!Strings.isNullOrEmpty(nextPageToken)) {\n",
+            "    request = request.toBuilder().setPageToken(nextPageToken).build();\n",
+            "  } else {\n",
+            "    break;\n",
             "  }\n",
             "}");
     Assert.assertEquals(results, expected);

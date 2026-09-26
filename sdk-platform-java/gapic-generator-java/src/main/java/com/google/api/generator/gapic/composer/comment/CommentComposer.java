@@ -19,6 +19,7 @@ import com.google.api.generator.engine.ast.CommentStatement;
 import com.google.api.generator.engine.ast.LineComment;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -65,7 +66,7 @@ public class CommentComposer {
       CommentStatement.withComment(
           LineComment.withComment(AUTO_GENERATED_METHOD_DISCLAIMER_STRING));
 
-  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
+  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT_BASE =
       Arrays.asList(
           CommentStatement.withComment(
               LineComment.withComment(
@@ -81,6 +82,22 @@ public class CommentComposer {
           CommentStatement.withComment(
               LineComment.withComment(
                   "https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library")));
+
+  public static final List<Statement> CLIENT_LIFECYCLE_COMMENT =
+      Arrays.asList(
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "- The samples create a client that can be re-used for multiple requests\n"
+                      + " and are expected to be long-lived.\n"
+                      + " The clients should be resource managed properly and eventually closed.\n"
+                      + "For more information on client lifecycle, see\n"
+                      + "https://docs.cloud.google.com/java/docs/client-lifecycle")));
+
+  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
+      ImmutableList.<Statement>builder()
+          .addAll(AUTO_GENERATED_SAMPLE_COMMENT_BASE)
+          .addAll(CLIENT_LIFECYCLE_COMMENT)
+          .build();
 
   // This environment variable is mainly used to override the current year to a fixed year in tests
   // so we don't have to update golden tests every year.
