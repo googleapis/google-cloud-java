@@ -45,7 +45,9 @@ public class ServiceClientCommentComposer {
   private static final String REQUEST_PARAM_DESCRIPTION =
       "The request object containing all of the parameters for the API call.";
   private static final String PAYLOAD_PARAM_NAME = "payload";
-  private static final String PAYLOAD_PARAM_DESCRIPTION = "The payload data stream to upload.";
+  private static final String PAYLOAD_PARAM_DESCRIPTION =
+      "Supplies the payload data stream to upload. The stream is closed automatically when the"
+          + " upload succeeds, fails, times out, or is cancelled.";
   private static final String CALL_SETTINGS_PARAM_NAME = "callSettings";
   private static final String CALL_SETTINGS_PARAM_DESCRIPTION =
       "The call settings to apply to this upload, or null to use defaults.";
