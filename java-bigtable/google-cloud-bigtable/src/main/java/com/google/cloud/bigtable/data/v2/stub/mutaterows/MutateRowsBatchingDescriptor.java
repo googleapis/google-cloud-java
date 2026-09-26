@@ -20,6 +20,7 @@ import com.google.api.gax.batching.BatchEntry;
 import com.google.api.gax.batching.BatchResource;
 import com.google.api.gax.batching.BatchingDescriptor;
 import com.google.api.gax.batching.BatchingRequestBuilder;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
@@ -101,8 +102,8 @@ public class MutateRowsBatchingDescriptor
 
   @Override
   public BatchResource createResource(RowMutationEntry element) {
-    long byteCount = countBytes(element);
-    return MutateRowsBatchResource.create(1, byteCount, element.toProto().getMutationsCount());
+    MutateRowsRequest.Entry proto = element.toProto();
+    return MutateRowsBatchResource.create(1, proto.getSerializedSize(), proto.getMutationsCount());
   }
 
   @Override
