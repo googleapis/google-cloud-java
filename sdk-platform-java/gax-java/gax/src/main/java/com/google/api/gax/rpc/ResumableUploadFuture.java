@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import java.util.concurrent.Executor;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -48,4 +49,18 @@ public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
 
   /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
   @Nullable String getUploadSessionUrl();
+
+  /**
+   * Registers a listener to receive progress and state transition notifications for this upload.
+   *
+   * <p>A snapshot of the current upload status is dispatched to the listener immediately upon
+   * subscription on the provided executor. Subsequent status updates are delivered in order.
+   *
+   * @param listener callback listener to receive progress notifications
+   * @param executor executor on which the listener callbacks are dispatched
+   */
+  void addProgressListener(ResumableUploadProgressListener listener, Executor executor);
+
+  /** Returns the current progress snapshot of the upload session. */
+  ResumableUploadProgress getProgress();
 }
