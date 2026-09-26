@@ -100,6 +100,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,6 +123,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -140,7 +142,7 @@ public final class GrpcStorageOptions extends StorageOptions
           System.getProperty("com.google.cloud.storage.grpc.bound_token", "false"));
 
   private final GrpcRetryAlgorithmManager retryAlgorithmManager;
-  private final java.time.Duration terminationAwaitDuration;
+  private final Duration terminationAwaitDuration;
   private final boolean attemptDirectPath;
   private final boolean enableGrpcClientMetrics;
 
@@ -148,6 +150,10 @@ public final class GrpcStorageOptions extends StorageOptions
   private final GrpcInterceptorProvider grpcInterceptorProvider;
   private final BlobWriteSessionConfig blobWriteSessionConfig;
   private transient OpenTelemetry openTelemetry;
+  private final boolean enableOtelMetrics;
+  private final boolean enableOtelDebugMetrics;
+  private transient MeterProvider meterProvider;
+  private final Duration metricInterval;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -165,6 +171,16 @@ public final class GrpcStorageOptions extends StorageOptions
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
     this.blobWriteSessionConfig = builder.blobWriteSessionConfig;
     this.openTelemetry = builder.openTelemetry;
+    this.enableOtelMetrics =
+        builder.enableOtelMetrics != null
+            ? builder.enableOtelMetrics
+            : StorageMetricsConfig.isEnableOtelMetrics();
+    this.enableOtelDebugMetrics =
+        builder.enableOtelDebugMetrics != null
+            ? builder.enableOtelDebugMetrics
+            : StorageMetricsConfig.isEnableOtelDebugMetrics();
+    this.meterProvider = builder.meterProvider;
+    this.metricInterval = builder.metricInterval;
   }
 
   @Override
@@ -178,7 +194,7 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   @InternalApi
-  java.time.Duration getTerminationAwaitDuration() {
+  Duration getTerminationAwaitDuration() {
     return terminationAwaitDuration;
   }
 
@@ -363,9 +379,9 @@ public final class GrpcStorageOptions extends StorageOptions
             // seconds.
             // To allow read streams to have longer lifespans, crank up their timeouts, instead rely
             // on idleTimeout below.
-            .setLogicalTimeout(java.time.Duration.ofDays(28))
+            .setLogicalTimeout(Duration.ofDays(28))
             .build();
-    java.time.Duration totalTimeout = baseRetrySettings.getTotalTimeoutDuration();
+    Duration totalTimeout = baseRetrySettings.getTotalTimeoutDuration();
 
     // retries for unary methods are generally handled at a different level, except
     // StartResumableWrite
@@ -415,6 +431,45 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelMetrics() {
+    return enableOtelMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelDebugMetrics() {
+    return enableOtelDebugMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public @Nullable MeterProvider getMeterProvider() {
+    if (meterProvider == null && openTelemetry != null) {
+      return openTelemetry.getMeterProvider();
+    }
+    return meterProvider;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public Duration getMetricInterval() {
+    return metricInterval;
+  }
+
+  /**
    * @since 2.14.0
    */
   @Override
@@ -432,6 +487,10 @@ public final class GrpcStorageOptions extends StorageOptions
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
+        enableOtelMetrics,
+        enableOtelDebugMetrics,
+        getMeterProvider(),
+        metricInterval,
         baseHashCode());
   }
 
@@ -446,11 +505,15 @@ public final class GrpcStorageOptions extends StorageOptions
     GrpcStorageOptions that = (GrpcStorageOptions) o;
     return attemptDirectPath == that.attemptDirectPath
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && enableOtelMetrics == that.enableOtelMetrics
+        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
+        && Objects.equals(metricInterval, that.metricInterval)
         && this.baseEquals(that);
   }
 
@@ -492,7 +555,7 @@ public final class GrpcStorageOptions extends StorageOptions
   public static final class Builder extends StorageOptions.Builder {
 
     private StorageRetryStrategy storageRetryStrategy;
-    private java.time.Duration terminationAwaitDuration;
+    private Duration terminationAwaitDuration;
     private boolean attemptDirectPath = GrpcStorageDefaults.INSTANCE.isAttemptDirectPath();
     private boolean enableGrpcClientMetrics =
         GrpcStorageDefaults.INSTANCE.isEnableGrpcClientMetrics();
@@ -501,6 +564,10 @@ public final class GrpcStorageOptions extends StorageOptions
     private BlobWriteSessionConfig blobWriteSessionConfig =
         GrpcStorageDefaults.INSTANCE.getDefaultStorageWriterConfig();
     private OpenTelemetry openTelemetry = GrpcStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
+    private Boolean enableOtelMetrics = null;
+    private Boolean enableOtelDebugMetrics = null;
+    private MeterProvider meterProvider = null;
+    private Duration metricInterval = Duration.ofSeconds(60);
 
     private boolean grpcMetricsManuallyEnabled = false;
 
@@ -516,13 +583,16 @@ public final class GrpcStorageOptions extends StorageOptions
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
       this.openTelemetry = gso.openTelemetry;
+      this.enableOtelMetrics = gso.isEnableOtelMetrics();
+      this.enableOtelDebugMetrics = gso.isEnableOtelDebugMetrics();
+      this.meterProvider = gso.meterProvider;
+      this.metricInterval = gso.getMetricInterval();
     }
 
     /**
-     * This method is obsolete. Use {@link #setTerminationAwaitJavaTimeDuration(java.time.Duration)}
-     * instead.
+     * This method is obsolete. Use {@link #setTerminationAwaitJavaTimeDuration(Duration)} instead.
      */
-    @ObsoleteApi("Use setTerminationAwaitJavaTimeDuration(java.time.Duration) instead")
+    @ObsoleteApi("Use setTerminationAwaitJavaTimeDuration(Duration) instead")
     public Builder setTerminationAwaitDuration(org.threeten.bp.Duration terminationAwaitDuration) {
       return setTerminationAwaitJavaTimeDuration(toJavaTimeDuration(terminationAwaitDuration));
     }
@@ -535,8 +605,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * @return the builder
      * @since 2.14.0
      */
-    public Builder setTerminationAwaitJavaTimeDuration(
-        java.time.Duration terminationAwaitDuration) {
+    public Builder setTerminationAwaitJavaTimeDuration(Duration terminationAwaitDuration) {
       this.terminationAwaitDuration =
           requireNonNull(terminationAwaitDuration, "terminationAwaitDuration must be non null");
       return this;
@@ -751,6 +820,61 @@ public final class GrpcStorageOptions extends StorageOptions
     }
 
     /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      this.enableOtelMetrics = enableOtelMetrics;
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      this.enableOtelDebugMetrics = enableOtelDebugMetrics;
+      return this;
+    }
+
+    /**
+     * Set a custom {@link MeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom MeterProvider to use
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMeterProvider(MeterProvider meterProvider) {
+      this.meterProvider = meterProvider;
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * @param metricInterval interval duration
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMetricInterval(Duration metricInterval) {
+      checkArgument(
+          metricInterval != null && !metricInterval.isNegative() && !metricInterval.isZero(),
+          "metricInterval must be positive");
+      this.metricInterval = metricInterval;
+      return this;
+    }
+
+    /**
      * @since 2.14.0
      */
     @Override
@@ -817,8 +941,8 @@ public final class GrpcStorageOptions extends StorageOptions
     /**
      * @since 2.14.0
      */
-    public java.time.Duration getTerminationAwaitDurationJavaTime() {
-      return java.time.Duration.ofMinutes(1);
+    public Duration getTerminationAwaitDurationJavaTime() {
+      return Duration.ofMinutes(1);
     }
 
     /**
