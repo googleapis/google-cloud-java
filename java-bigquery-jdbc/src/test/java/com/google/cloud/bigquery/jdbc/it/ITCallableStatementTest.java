@@ -39,9 +39,13 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
+import java.util.TimeZone;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -61,6 +65,10 @@ public class ITCallableStatementTest extends ITBase {
   private static final String CALLABLE_STMT_DML_DELETE_PROC_NAME =
       "IT_CALLABLE_STMT_PROC_DML_DELETE_TEST";
   private static final String CALLABLE_STMT_DML_TABLE_NAME = "IT_CALLABLE_STMT_PROC_DML_TABLE";
+  // The Calendar tests pin the JVM zone so the Calendar always differs from it; otherwise the
+  // driver skips the conversion.
+  private static final ZoneId CALENDAR_TEST_JVM_ZONE = ZoneId.of("America/New_York");
+  private static final ZoneId CALENDAR_ZONE = ZoneId.of("Asia/Tokyo");
 
   static Connection bigQueryConnection;
   static BigQuery bigQuery;
@@ -316,11 +324,18 @@ public class ITCallableStatementTest extends ITBase {
   public void testSetterGetterDateCal() throws SQLException {
     CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
     assertNotNull(callableStatement);
-    Date expected = new Date(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setDate(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Date actual = callableStatement.getDate(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(CALENDAR_ZONE));
+    Date expected =
+        new Date(LocalDate.of(2025, 1, 1).atStartOfDay(CALENDAR_ZONE).toInstant().toEpochMilli());
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone(CALENDAR_TEST_JVM_ZONE));
+    try {
+      callableStatement.setDate(CALLABLE_STMT_PARAM_KEY, expected, cal);
+      Date actual = callableStatement.getDate(CALLABLE_STMT_PARAM_KEY, cal);
+      assertEquals(expected, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   @Test
@@ -427,11 +442,22 @@ public class ITCallableStatementTest extends ITBase {
   public void testSetterGetterTimeCal() throws SQLException {
     CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
     assertNotNull(callableStatement);
-    Time expected = new Time(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setTime(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Time actual = callableStatement.getTime(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(CALENDAR_ZONE));
+    Time expected =
+        new Time(
+            LocalDateTime.of(1970, 1, 1, 12, 34, 56)
+                .atZone(CALENDAR_ZONE)
+                .toInstant()
+                .toEpochMilli());
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone(CALENDAR_TEST_JVM_ZONE));
+    try {
+      callableStatement.setTime(CALLABLE_STMT_PARAM_KEY, expected, cal);
+      Time actual = callableStatement.getTime(CALLABLE_STMT_PARAM_KEY, cal);
+      assertEquals(expected, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   @Test
@@ -448,11 +474,17 @@ public class ITCallableStatementTest extends ITBase {
   public void testSetterGetterTimestampCal() throws SQLException {
     CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
     assertNotNull(callableStatement);
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(CALENDAR_ZONE));
     Timestamp expected = new Timestamp(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone(CALENDAR_TEST_JVM_ZONE));
+    try {
+      callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
+      Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
+      assertEquals(expected, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   // Block B Tests
