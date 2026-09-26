@@ -131,11 +131,34 @@ public final class ITNestedUpdateMaskTest {
   }
 
   @Test
+  public void testBucketLabels_updateBaseOnNewInfoInsteadOfResolvedInfo() throws Exception {
+    BucketInfo bucket = newBucketInfo(param.initial);
+    try (TemporaryBucket tempB =
+        TemporaryBucket.newBuilder().setBucketInfo(bucket).setStorage(storage).build()) {
+      BucketInfo gen1 = tempB.getBucket();
+      BucketInfo modified = BucketInfo.newBuilder(gen1.getName()).setLabels(param.update).build();
+      Bucket gen2 = storage.update(modified);
+      assertThat(gen2.getLabels()).isEqualTo(param.expected);
+    }
+  }
+
+  @Test
   public void testBlobMetadata() {
     BlobInfo blob = newBlobInfo(param.initial);
     Blob gen1 = storage.create(blob, BlobTargetOption.doesNotExist());
     BlobInfo modified = gen1.toBuilder().setMetadata(param.update).build();
     Blob gen2 = storage.update(modified, BlobTargetOption.metagenerationMatch());
+    assertThat(gen2.getMetadata()).isEqualTo(param.expected);
+  }
+
+  @Test
+  public void testBlobMetadata_updateBaseOnNewInfoInsteadOfResolvedInfo() {
+    BlobInfo blob = newBlobInfo(param.initial);
+    Blob gen1 = storage.create(blob, BlobTargetOption.doesNotExist());
+    BlobInfo modified =
+        BlobInfo.newBuilder(bucket, gen1.getName()).setMetadata(param.update).build();
+    Blob gen2 =
+        storage.update(modified, BlobTargetOption.metagenerationMatch(gen1.getMetageneration()));
     assertThat(gen2.getMetadata()).isEqualTo(param.expected);
   }
 
@@ -159,6 +182,26 @@ public final class ITNestedUpdateMaskTest {
   }
 
   @Test
+  public void testBlobContexts_updateBaseOnNewInfoInsteadOfResolvedInfo() {
+    ObjectContexts initial = contextsFromMap(param.initial);
+    ObjectContexts update = contextsFromMap(param.update);
+    ObjectContexts expected = contextsFromMap(param.expected);
+
+    String blobName = generator.randomObjectName();
+    BlobInfo.Builder builder = BlobInfo.newBuilder(bucket, blobName);
+    if (initial != null) {
+      builder.setContexts(initial);
+    }
+    BlobInfo info = builder.build();
+    Blob gen1 = storage.create(info, BlobTargetOption.doesNotExist());
+
+    BlobInfo modified = BlobInfo.newBuilder(bucket, gen1.getName()).setContexts(update).build();
+    Blob gen2 =
+        storage.update(modified, BlobTargetOption.metagenerationMatch(gen1.getMetageneration()));
+    assertContextsWithEqualValues(gen2.getContexts(), expected);
+  }
+
+  @Test
   public void testBlob_metadataAndContext() {
     ObjectContexts initial = contextsFromMap(param.initial);
     ObjectContexts update = contextsFromMap(param.update);
@@ -178,6 +221,35 @@ public final class ITNestedUpdateMaskTest {
 
     BlobInfo modified = gen1.toBuilder().setContexts(update).setMetadata(param.update).build();
     Blob gen2 = storage.update(modified, BlobTargetOption.metagenerationMatch());
+    assertContextsWithEqualValues(gen2.getContexts(), expected);
+    assertThat(gen2.getMetadata()).isEqualTo(param.expected);
+  }
+
+  @Test
+  public void testBlob_metadataAndContext_updateBaseOnNewInfoInsteadOfResolvedInfo() {
+    ObjectContexts initial = contextsFromMap(param.initial);
+    ObjectContexts update = contextsFromMap(param.update);
+    ObjectContexts expected = contextsFromMap(param.expected);
+
+    String blobName = generator.randomObjectName();
+    BlobInfo.Builder builder = BlobInfo.newBuilder(bucket, blobName);
+    if (initial != null) {
+      builder.setContexts(initial);
+    }
+    if (param.initial != null) {
+      builder.setMetadata(param.initial);
+    }
+
+    BlobInfo info = builder.build();
+    Blob gen1 = storage.create(info, BlobTargetOption.doesNotExist());
+
+    BlobInfo modified =
+        BlobInfo.newBuilder(bucket, gen1.getName())
+            .setContexts(update)
+            .setMetadata(param.update)
+            .build();
+    Blob gen2 =
+        storage.update(modified, BlobTargetOption.metagenerationMatch(gen1.getMetageneration()));
     assertContextsWithEqualValues(gen2.getContexts(), expected);
     assertThat(gen2.getMetadata()).isEqualTo(param.expected);
   }
