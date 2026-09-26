@@ -277,7 +277,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.metricsHandler =
         builder.metricsHandler == null
             ? new ExternalAccountMetricsHandler(this)
-            : builder.metricsHandler;
+            : new ExternalAccountMetricsHandler(
+                this,
+                builder.metricsHandler.saImpersonation,
+                builder.metricsHandler.configLifetime);
 
     this.name = GoogleCredentialsInfo.EXTERNAL_ACCOUNT_CREDENTIALS.getCredentialName();
   }
@@ -304,6 +307,11 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
               .setServiceAccountImpersonationUrl(null)
               .build();
     }
+    sourceCredentials.metricsHandler =
+        new ExternalAccountMetricsHandler(
+            sourceCredentials,
+            this.metricsHandler.saImpersonation,
+            this.metricsHandler.configLifetime);
 
     String targetPrincipal =
         ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
@@ -782,6 +790,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     @Deprecated protected @Nullable String universeDomain;
 
     protected @Nullable ExternalAccountMetricsHandler metricsHandler;
+    private boolean accessTokenExplicitlySet;
 
     protected Builder() {}
 
@@ -802,6 +811,14 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.workforcePoolUserProject = credentials.workforcePoolUserProject;
       this.serviceAccountImpersonationOptions = credentials.serviceAccountImpersonationOptions;
       this.metricsHandler = credentials.metricsHandler;
+    }
+
+    @Override
+    @CanIgnoreReturnValue
+    public Builder setAccessToken(@Nullable AccessToken token) {
+      this.accessTokenExplicitlySet = true;
+      super.setAccessToken(token);
+      return this;
     }
 
     /**
@@ -891,6 +908,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     public Builder setServiceAccountImpersonationUrl(
         @Nullable String serviceAccountImpersonationUrl) {
       this.serviceAccountImpersonationUrl = serviceAccountImpersonationUrl;
+      if (!this.accessTokenExplicitlySet) {
+        super.setAccessToken(null);
+      }
+      this.metricsHandler = null;
       return this;
     }
 
@@ -980,6 +1001,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     public Builder setServiceAccountImpersonationOptions(@Nullable Map<String, Object> optionsMap) {
       this.serviceAccountImpersonationOptions =
           optionsMap == null ? null : new ServiceAccountImpersonationOptions(optionsMap);
+      if (!this.accessTokenExplicitlySet) {
+        super.setAccessToken(null);
+      }
+      this.metricsHandler = null;
       return this;
     }
 
