@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.JdbcDataTypeConverter;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Statement;
@@ -31,6 +32,9 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Duration;
+import java.time.Period;
+import java.util.UUID;
 
 /** {@link ParameterMetaData} implementation for Cloud Spanner */
 class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMetaData {
@@ -156,6 +160,12 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
       return Types.NVARCHAR;
     } else if (byte[].class.isAssignableFrom(value.getClass())) {
       return Types.BINARY;
+    } else if (Interval.class.isAssignableFrom(value.getClass())
+        || Duration.class.isAssignableFrom(value.getClass())
+        || Period.class.isAssignableFrom(value.getClass())) {
+      return IntervalType.VENDOR_TYPE_NUMBER;
+    } else if (UUID.class.isAssignableFrom(value.getClass())) {
+      return UuidType.VENDOR_TYPE_NUMBER;
     } else {
       return Types.OTHER;
     }

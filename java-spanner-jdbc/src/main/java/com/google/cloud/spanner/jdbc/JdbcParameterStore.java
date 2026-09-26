@@ -16,8 +16,11 @@
 
 package com.google.cloud.spanner.jdbc;
 
+import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.toInterval;
+
 import com.google.cloud.ByteArray;
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.Statement.Builder;
 import com.google.cloud.spanner.Type;
@@ -52,8 +55,10 @@ import java.sql.SQLType;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -291,6 +296,8 @@ class JdbcParameterStore {
       case ProtoMessageType.SHORT_VENDOR_TYPE_NUMBER:
       case ProtoEnumType.VENDOR_TYPE_NUMBER:
       case ProtoEnumType.SHORT_VENDOR_TYPE_NUMBER:
+      case IntervalType.VENDOR_TYPE_NUMBER:
+      case IntervalType.SHORT_VENDOR_TYPE_NUMBER:
         return true;
     }
     return false;
@@ -370,6 +377,14 @@ class JdbcParameterStore {
       case ProtoEnumType.VENDOR_TYPE_NUMBER:
       case ProtoEnumType.SHORT_VENDOR_TYPE_NUMBER:
         return value instanceof ProtocolMessageEnum || value instanceof Number;
+      case IntervalType.VENDOR_TYPE_NUMBER:
+      case IntervalType.SHORT_VENDOR_TYPE_NUMBER:
+        return value instanceof Interval
+            || value instanceof Duration
+            || value instanceof Period
+            || value instanceof String
+            || (value instanceof Value
+                && ((Value) value).getType().getCode() == Type.Code.INTERVAL);
     }
     return false;
   }
@@ -665,6 +680,28 @@ class JdbcParameterStore {
         }
         throw JdbcSqlExceptionFactory.of(
             value + " is not a valid ENUM value", Code.INVALID_ARGUMENT);
+      case IntervalType.VENDOR_TYPE_NUMBER:
+      case IntervalType.SHORT_VENDOR_TYPE_NUMBER:
+        if (value instanceof Value) {
+          return binder.to((Value) value);
+        } else if (value instanceof Interval) {
+          return binder.to((Interval) value);
+        } else if (value instanceof Duration) {
+          return binder.to(toInterval((Duration) value));
+        } else if (value instanceof Period) {
+          return binder.to(toInterval((Period) value));
+        } else if (value instanceof String) {
+          try {
+            return binder.to(Interval.parseFromString((String) value));
+          } catch (Exception e) {
+            throw JdbcSqlExceptionFactory.of(
+                value + " is not a valid INTERVAL string: " + e.getMessage(),
+                Code.INVALID_ARGUMENT,
+                e);
+          }
+        }
+        throw JdbcSqlExceptionFactory.of(
+            value + " is not a valid INTERVAL value", Code.INVALID_ARGUMENT);
     }
     return null;
   }
@@ -729,6 +766,14 @@ class JdbcParameterStore {
     } else if (Time.class.isAssignableFrom(value.getClass())) {
       Time timeValue = (Time) value;
       return binder.to(JdbcTypeConverter.toGoogleTimestamp(new Timestamp(timeValue.getTime())));
+    } else if (Interval.class.isAssignableFrom(value.getClass())) {
+      return binder.to((Interval) value);
+    } else if (Duration.class.isAssignableFrom(value.getClass())) {
+      // Consistent with pgjdbc: bind java.time.Duration as a Spanner INTERVAL.
+      return binder.to(toInterval((Duration) value));
+    } else if (Period.class.isAssignableFrom(value.getClass())) {
+      // Consistent with pgjdbc: bind java.time.Period as a Spanner INTERVAL.
+      return binder.to(toInterval((Period) value));
     } else if (UUID.class.isAssignableFrom(value.getClass())) {
       // Bind UUID values as untyped strings to allow them to be used with all types that support
       // string values (e.g. STRING, UUID).
@@ -862,6 +907,9 @@ class JdbcParameterStore {
         case UuidType.VENDOR_TYPE_NUMBER:
         case UuidType.SHORT_VENDOR_TYPE_NUMBER:
           return binder.toUuidArray(null);
+        case IntervalType.VENDOR_TYPE_NUMBER:
+        case IntervalType.SHORT_VENDOR_TYPE_NUMBER:
+          return binder.toIntervalArray((List<Interval>) null);
         default:
           return binder.to(
               Value.untyped(
@@ -920,6 +968,22 @@ class JdbcParameterStore {
       return binder.toTimestampArray(JdbcTypeConverter.toGoogleTimestamps((Timestamp[]) value));
     } else if (UUID[].class.isAssignableFrom(value.getClass())) {
       return binder.toUuidArray(Arrays.asList((UUID[]) value));
+    } else if (Interval[].class.isAssignableFrom(value.getClass())) {
+      return binder.toIntervalArray(Arrays.asList((Interval[]) value));
+    } else if (Duration[].class.isAssignableFrom(value.getClass())) {
+      Duration[] durations = (Duration[]) value;
+      List<Interval> intervals = new ArrayList<>(durations.length);
+      for (Duration duration : durations) {
+        intervals.add(duration == null ? null : toInterval(duration));
+      }
+      return binder.toIntervalArray(intervals);
+    } else if (Period[].class.isAssignableFrom(value.getClass())) {
+      Period[] periods = (Period[]) value;
+      List<Interval> intervals = new ArrayList<>(periods.length);
+      for (Period period : periods) {
+        intervals.add(period == null ? null : toInterval(period));
+      }
+      return binder.toIntervalArray(intervals);
     } else if (String[].class.isAssignableFrom(value.getClass())) {
       if (type == JsonType.VENDOR_TYPE_NUMBER || type == JsonType.SHORT_VENDOR_TYPE_NUMBER) {
         return binder.toJsonArray(Arrays.asList((String[]) value));
@@ -1096,6 +1160,9 @@ class JdbcParameterStore {
       case PgJsonbType.VENDOR_TYPE_NUMBER:
       case PgJsonbType.SHORT_VENDOR_TYPE_NUMBER:
         return binder.to(Value.pgJsonb(null));
+      case IntervalType.VENDOR_TYPE_NUMBER:
+      case IntervalType.SHORT_VENDOR_TYPE_NUMBER:
+        return binder.to((Interval) null);
       default:
         return binder.to(
             Value.untyped(

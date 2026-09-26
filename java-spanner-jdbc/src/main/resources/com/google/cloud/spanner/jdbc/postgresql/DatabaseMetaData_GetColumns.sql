@@ -27,6 +27,7 @@ SELECT TABLE_CATALOG AS "TABLE_CAT", TABLE_SCHEMA AS "TABLE_SCHEM", TABLE_NAME A
            WHEN DATA_TYPE LIKE 'character varying' THEN -9
            WHEN DATA_TYPE = 'jsonb' THEN -9
            WHEN DATA_TYPE = 'timestamp with time zone' THEN 93
+           WHEN DATA_TYPE = 'interval' THEN 1111
            END AS "DATA_TYPE",
        CASE
            WHEN DATA_TYPE LIKE 'ARRAY' THEN
