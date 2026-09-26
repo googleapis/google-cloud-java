@@ -60,5 +60,22 @@ public interface TableResponseOrBuilder
   /** <code>.google.bigtable.v2.SessionMutateRowResponse mutate_row = 2;</code> */
   com.google.bigtable.v2.SessionMutateRowResponseOrBuilder getMutateRowOrBuilder();
 
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code>
+   *
+   * @return Whether the checkAndMutateRow field is set.
+   */
+  boolean hasCheckAndMutateRow();
+
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code>
+   *
+   * @return The checkAndMutateRow.
+   */
+  com.google.bigtable.v2.SessionCheckAndMutateRowResponse getCheckAndMutateRow();
+
+  /** <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code> */
+  com.google.bigtable.v2.SessionCheckAndMutateRowResponseOrBuilder getCheckAndMutateRowOrBuilder();
+
   com.google.bigtable.v2.TableResponse.PayloadCase getPayloadCase();
 }

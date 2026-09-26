@@ -22,10 +22,14 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.IngestUsersRequest;
+import com.google.ads.datamanager.v1.IngestUsersResponse;
 import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
+import com.google.ads.datamanager.v1.RemoveUsersRequest;
+import com.google.ads.datamanager.v1.RemoveUsersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusResponse;
 import com.google.api.core.ApiFunction;
@@ -124,6 +128,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   private final UnaryCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
       removeAllAudienceMembersSettings;
   private final UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings;
+  private final UnaryCallSettings<IngestUsersRequest, IngestUsersResponse> ingestUsersSettings;
+  private final UnaryCallSettings<RemoveUsersRequest, RemoveUsersResponse> removeUsersSettings;
   private final UnaryCallSettings<IngestAdEventsRequest, IngestAdEventsResponse>
       ingestAdEventsSettings;
   private final UnaryCallSettings<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
@@ -150,6 +156,16 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
   /** Returns the object with the settings used for calls to ingestEvents. */
   public UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings() {
     return ingestEventsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to ingestUsers. */
+  public UnaryCallSettings<IngestUsersRequest, IngestUsersResponse> ingestUsersSettings() {
+    return ingestUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeUsers. */
+  public UnaryCallSettings<RemoveUsersRequest, RemoveUsersResponse> removeUsersSettings() {
+    return removeUsersSettings;
   }
 
   /** Returns the object with the settings used for calls to ingestAdEvents. */
@@ -278,6 +294,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
     removeAudienceMembersSettings = settingsBuilder.removeAudienceMembersSettings().build();
     removeAllAudienceMembersSettings = settingsBuilder.removeAllAudienceMembersSettings().build();
     ingestEventsSettings = settingsBuilder.ingestEventsSettings().build();
+    ingestUsersSettings = settingsBuilder.ingestUsersSettings().build();
+    removeUsersSettings = settingsBuilder.removeUsersSettings().build();
     ingestAdEventsSettings = settingsBuilder.ingestAdEventsSettings().build();
     retrieveRequestStatusSettings = settingsBuilder.retrieveRequestStatusSettings().build();
   }
@@ -305,6 +323,10 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
         removeAllAudienceMembersSettings;
     private final UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings;
+    private final UnaryCallSettings.Builder<IngestUsersRequest, IngestUsersResponse>
+        ingestUsersSettings;
+    private final UnaryCallSettings.Builder<RemoveUsersRequest, RemoveUsersResponse>
+        removeUsersSettings;
     private final UnaryCallSettings.Builder<IngestAdEventsRequest, IngestAdEventsResponse>
         ingestAdEventsSettings;
     private final UnaryCallSettings.Builder<
@@ -373,6 +395,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
       removeAudienceMembersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       removeAllAudienceMembersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       ingestEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      ingestUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       ingestAdEventsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       retrieveRequestStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -382,6 +406,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
               removeAudienceMembersSettings,
               removeAllAudienceMembersSettings,
               ingestEventsSettings,
+              ingestUsersSettings,
+              removeUsersSettings,
               ingestAdEventsSettings,
               retrieveRequestStatusSettings);
       initDefaults(this);
@@ -394,6 +420,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
       removeAudienceMembersSettings = settings.removeAudienceMembersSettings.toBuilder();
       removeAllAudienceMembersSettings = settings.removeAllAudienceMembersSettings.toBuilder();
       ingestEventsSettings = settings.ingestEventsSettings.toBuilder();
+      ingestUsersSettings = settings.ingestUsersSettings.toBuilder();
+      removeUsersSettings = settings.removeUsersSettings.toBuilder();
       ingestAdEventsSettings = settings.ingestAdEventsSettings.toBuilder();
       retrieveRequestStatusSettings = settings.retrieveRequestStatusSettings.toBuilder();
 
@@ -403,6 +431,8 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
               removeAudienceMembersSettings,
               removeAllAudienceMembersSettings,
               ingestEventsSettings,
+              ingestUsersSettings,
+              removeUsersSettings,
               ingestAdEventsSettings,
               retrieveRequestStatusSettings);
     }
@@ -449,6 +479,16 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
 
       builder
           .ingestEventsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .ingestUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .removeUsersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -503,6 +543,18 @@ public class IngestionServiceStubSettings extends StubSettings<IngestionServiceS
     public UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings() {
       return ingestEventsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to ingestUsers. */
+    public UnaryCallSettings.Builder<IngestUsersRequest, IngestUsersResponse>
+        ingestUsersSettings() {
+      return ingestUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to removeUsers. */
+    public UnaryCallSettings.Builder<RemoveUsersRequest, RemoveUsersResponse>
+        removeUsersSettings() {
+      return removeUsersSettings;
     }
 
     /** Returns the builder for the settings used for calls to ingestAdEvents. */

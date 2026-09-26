@@ -19,11 +19,17 @@
             "IngestEvents": {
               "methods": ["ingestEvents", "ingestEventsCallable"]
             },
+            "IngestUsers": {
+              "methods": ["ingestUsers", "ingestUsersCallable"]
+            },
             "RemoveAllAudienceMembers": {
               "methods": ["removeAllAudienceMembers", "removeAllAudienceMembersCallable"]
             },
             "RemoveAudienceMembers": {
               "methods": ["removeAudienceMembers", "removeAudienceMembersCallable"]
+            },
+            "RemoveUsers": {
+              "methods": ["removeUsers", "removeUsersCallable"]
             },
             "RetrieveRequestStatus": {
               "methods": ["retrieveRequestStatus", "retrieveRequestStatusCallable"]
