@@ -42,7 +42,7 @@
     <flogger.version>0.8</flogger.version>
     <arrow.version>17.0.0</arrow.version>
     <dev.cel.version>0.6.0</dev.cel.version>
-    <bouncycastle.version>1.80</bouncycastle.version>
+    <bouncycastle.version>1.84</bouncycastle.version>
     <com.google.crypto.tink.version>1.16.0</com.google.crypto.tink.version>
     <io.opentelemetry.contrib.opentelemetry-gcp-resources.version>1.45.0-alpha</io.opentelemetry.contrib.opentelemetry-gcp-resources.version>
     <json.version>20250517</json.version>
