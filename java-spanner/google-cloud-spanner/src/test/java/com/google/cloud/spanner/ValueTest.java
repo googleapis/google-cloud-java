@@ -2347,6 +2347,8 @@ public class ValueTest {
         Value.boolArray(new boolean[] {true, false, true, false}, 1, 2),
         Value.boolArray(plainIterable(false, true)));
     tester.addEqualityGroup(Value.boolArray(Collections.singletonList(false)));
+    tester.addEqualityGroup(
+        Value.boolArray(Arrays.asList(null, true)), Value.boolArray(Arrays.asList(null, true)));
     tester.addEqualityGroup(Value.boolArray((Iterable<Boolean>) null));
 
     tester.addEqualityGroup(
@@ -2355,6 +2357,9 @@ public class ValueTest {
         Value.int64Array(new long[] {0L, 1L, 2L, 3L}, 1, 2),
         Value.int64Array(plainIterable(1L, 2L)));
     tester.addEqualityGroup(Value.int64Array(Collections.singletonList(3L)));
+    tester.addEqualityGroup(
+        Value.int64Array(Arrays.asList(null, 2L)), Value.int64Array(Arrays.asList(null, 2L)));
+    tester.addEqualityGroup(Value.int64Array(Arrays.asList(0L, 2L)));
     tester.addEqualityGroup(Value.int64Array((Iterable<Long>) null));
 
     tester.addEqualityGroup(
@@ -2363,6 +2368,9 @@ public class ValueTest {
         Value.float32Array(new float[] {.0f, .1f, .2f, .3f}, 1, 2),
         Value.float32Array(plainIterable(.1f, .2f)));
     tester.addEqualityGroup(Value.float32Array(Collections.singletonList(.3f)));
+    tester.addEqualityGroup(
+        Value.float32Array(Arrays.asList(null, .2f)), Value.float32Array(Arrays.asList(null, .2f)));
+    tester.addEqualityGroup(Value.float32Array(Arrays.asList(.0f, .2f)));
     tester.addEqualityGroup(Value.float32Array((Iterable<Float>) null));
 
     tester.addEqualityGroup(
@@ -2371,6 +2379,9 @@ public class ValueTest {
         Value.float64Array(new double[] {.0, .1, .2, .3}, 1, 2),
         Value.float64Array(plainIterable(.1, .2)));
     tester.addEqualityGroup(Value.float64Array(Collections.singletonList(.3)));
+    tester.addEqualityGroup(
+        Value.float64Array(Arrays.asList(null, .2)), Value.float64Array(Arrays.asList(null, .2)));
+    tester.addEqualityGroup(Value.float64Array(Arrays.asList(.0, .2)));
     tester.addEqualityGroup(Value.float64Array((Iterable<Double>) null));
 
     tester.addEqualityGroup(
@@ -2392,6 +2403,10 @@ public class ValueTest {
         Value.pgOidArray(plainIterable(1L, 2L)));
     tester.addEqualityGroup(Value.pgOidArray(Collections.singletonList(3L)));
     tester.addEqualityGroup(Value.pgOidArray(Collections.singletonList(null)));
+    tester.addEqualityGroup(Value.pgOidArray(Collections.singletonList(0L)));
+    tester.addEqualityGroup(
+        Value.pgOidArray(Arrays.asList(null, 2L)), Value.pgOidArray(Arrays.asList(null, 2L)));
+    tester.addEqualityGroup(Value.pgOidArray(Arrays.asList(0L, 2L)));
     tester.addEqualityGroup(Value.pgOidArray((Iterable<Long>) null));
 
     tester.addEqualityGroup(
