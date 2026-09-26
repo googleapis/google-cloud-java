@@ -106,7 +106,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private static final long serialVersionUID = -2133257318957488431L;
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
   private static final int DEFAULT_LIFETIME_IN_SECONDS = 3600;
-  private GoogleCredentials sourceCredentials;
+  private final GoogleCredentials sourceCredentials;
   private final String targetPrincipal;
   private List<String> delegates;
   private final List<String> scopes;
@@ -533,7 +533,18 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   private ImpersonatedCredentials(Builder builder) throws IOException {
     super(builder);
-    this.sourceCredentials = builder.getSourceCredentials();
+    GoogleCredentials sourceCredentials = builder.getSourceCredentials();
+    if (sourceCredentials != null
+        && !builder.sourceCredentialsScoped
+        && sourceCredentials.getAccessToken() == null) {
+      // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
+      sourceCredentials =
+          firstNonNull(
+              sourceCredentials.createScoped(
+                  Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE)),
+              sourceCredentials);
+    }
+    this.sourceCredentials = sourceCredentials;
     this.targetPrincipal = builder.getTargetPrincipal();
     this.delegates = builder.getDelegates();
     this.scopes = ImmutableList.copyOf(builder.getScopes());
@@ -580,12 +591,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    if (this.sourceCredentials.getAccessToken() == null) {
-      // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
-      this.sourceCredentials =
-          this.sourceCredentials.createScoped(
-              Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
-    }
 
     // skip for SA with SSJ flow because it uses self-signed JWT
     // and will get refreshed at initialize request step
@@ -764,6 +769,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static class Builder extends GoogleCredentials.Builder {
 
     private @Nullable GoogleCredentials sourceCredentials;
+    private boolean sourceCredentialsScoped;
     private @Nullable String targetPrincipal;
     private @Nullable List<String> delegates;
     private @Nullable List<String> scopes;
@@ -789,6 +795,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     protected Builder(ImpersonatedCredentials credentials) {
       super(credentials);
       this.sourceCredentials = credentials.sourceCredentials;
+      this.sourceCredentialsScoped = true;
       this.targetPrincipal = credentials.targetPrincipal;
       this.delegates = credentials.delegates;
       this.scopes = credentials.scopes;
@@ -800,6 +807,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     @CanIgnoreReturnValue
     public Builder setSourceCredentials(GoogleCredentials sourceCredentials) {
       this.sourceCredentials = sourceCredentials;
+      this.sourceCredentialsScoped = false;
       return this;
     }
 
