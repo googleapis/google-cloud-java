@@ -32,6 +32,8 @@ package com.google.api.gax.rpc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -56,10 +58,13 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.Nullable;
@@ -79,6 +84,7 @@ class ResumableUploadCallableImplTest {
 
   private ResumableUploadCallSettings defaultSettings;
   private FakeCallContext callContext;
+  private ClientContext clientContext;
   private ResumableUploadCallableImpl<String, String> callable;
 
   @BeforeEach
@@ -95,8 +101,7 @@ class ResumableUploadCallableImplTest {
 
     defaultSettings = ResumableUploadCallSettings.newBuilder().setChunkSize(8).build();
     callContext = FakeCallContext.createDefault();
-    ClientContext clientContext =
-        ClientContext.newBuilder().setDefaultCallContext(callContext).build();
+    clientContext = ClientContext.newBuilder().setDefaultCallContext(callContext).build();
     callable = new ResumableUploadCallableImpl<>(mockClient, defaultSettings, clientContext);
   }
 
@@ -858,6 +863,210 @@ class ResumableUploadCallableImplTest {
     assertThat(future.get()).isEqualTo("reset-ok");
     verify(mockQueryCallable, times(5)).futureCall(any(), any());
     verify(mockChunkCallable, times(10)).futureCall(any(), any());
+  }
+
+  @Test
+  void testGlobalTimeout_firesAndFailsSessionWithDeadlineExceeded() throws Exception {
+    stubStartSession("https://upload.url/timeout-fire");
+    SettableApiFuture<ChunkUploadResponse<String>> hungChunk = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any())).thenReturn(hungChunk);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMillis(100)).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    DeadlineExceededException cause = (DeadlineExceededException) exception.getCause();
+    assertThat(cause.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
+    assertThat(cause.getMessage()).contains("https://upload.url/timeout-fire");
+    assertThat(future.isDone()).isTrue();
+    assertThat(future.isCancelled()).isFalse();
+  }
+
+  @Test
+  void testGlobalTimeout_cancelledCleanlyOnSuccess() throws Exception {
+    stubStartSession("https://upload.url/timeout-success");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "ok")));
+
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+    ScheduledFuture<?> mockScheduledFuture = mock(ScheduledFuture.class);
+    when(mockExecutor.schedule(any(Runnable.class), anyLong(), any()))
+        .thenAnswer(inv -> mockScheduledFuture);
+
+    ClientContext customClientContext = clientContext.toBuilder().setExecutor(mockExecutor).build();
+    ResumableUploadCallableImpl<String, String> customCallable =
+        new ResumableUploadCallableImpl<>(mockClient, defaultSettings, customClientContext);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
+
+    ResumableUploadFuture<String> future =
+        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+
+    assertThat(future.get()).isEqualTo("ok");
+    verify(mockScheduledFuture).cancel(false);
+  }
+
+  @Test
+  void testGlobalTimeout_cancelledCleanlyOnFailure() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(401, StatusCode.Code.UNAUTHENTICATED)));
+
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+    ScheduledFuture<?> mockScheduledFuture = mock(ScheduledFuture.class);
+    when(mockExecutor.schedule(any(Runnable.class), anyLong(), any()))
+        .thenAnswer(inv -> mockScheduledFuture);
+
+    ClientContext customClientContext = clientContext.toBuilder().setExecutor(mockExecutor).build();
+    ResumableUploadCallableImpl<String, String> customCallable =
+        new ResumableUploadCallableImpl<>(mockClient, defaultSettings, customClientContext);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
+
+    ResumableUploadFuture<String> future =
+        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+
+    assertThrows(ExecutionException.class, future::get);
+    verify(mockScheduledFuture).cancel(false);
+  }
+
+  @Test
+  void testGlobalTimeout_cancelledCleanlyOnUserCancel() throws Exception {
+    stubStartSession("https://upload.url/timeout-cancel");
+    SettableApiFuture<ChunkUploadResponse<String>> hungChunk = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any())).thenReturn(hungChunk);
+
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+    ScheduledFuture<?> mockScheduledFuture = mock(ScheduledFuture.class);
+    when(mockExecutor.schedule(any(Runnable.class), anyLong(), any()))
+        .thenAnswer(inv -> mockScheduledFuture);
+
+    ClientContext customClientContext = clientContext.toBuilder().setExecutor(mockExecutor).build();
+    ResumableUploadCallableImpl<String, String> customCallable =
+        new ResumableUploadCallableImpl<>(mockClient, defaultSettings, customClientContext);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
+
+    ResumableUploadFuture<String> future =
+        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+
+    assertThat(future.cancel(true)).isTrue();
+    verify(mockScheduledFuture).cancel(false);
+  }
+
+  @Test
+  void testGlobalTimeout_usesDefaultWhenUnset() throws Exception {
+    stubStartSession("https://upload.url/default-timeout");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "ok")));
+
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+    ScheduledFuture<?> mockScheduledFuture = mock(ScheduledFuture.class);
+    when(mockExecutor.schedule(any(Runnable.class), anyLong(), any()))
+        .thenAnswer(inv -> mockScheduledFuture);
+
+    ClientContext customClientContext = clientContext.toBuilder().setExecutor(mockExecutor).build();
+
+    // 1. Unset on both stub and per-request -> falls back to GAX default (15m)
+    ResumableUploadCallableImpl<String, String> unsetStubCallable =
+        new ResumableUploadCallableImpl<>(mockClient, defaultSettings, customClientContext);
+    assertThat(unsetStubCallable.futureCall("resource-path", streamOf("hello"), null).get())
+        .isEqualTo("ok");
+    verify(mockExecutor)
+        .schedule(
+            any(Runnable.class), eq(Duration.ofMinutes(15).toMillis()), eq(TimeUnit.MILLISECONDS));
+
+    // 2. Stub-level timeout (30m, e.g. from generator/client settings) + null per-request -> 30m
+    ResumableUploadCallSettings stubWith30m =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMinutes(30)).build();
+    ResumableUploadCallableImpl<String, String> configuredStubCallable =
+        new ResumableUploadCallableImpl<>(mockClient, stubWith30m, customClientContext);
+    assertThat(configuredStubCallable.futureCall("resource-path", streamOf("hello"), null).get())
+        .isEqualTo("ok");
+    verify(mockExecutor)
+        .schedule(
+            any(Runnable.class), eq(Duration.ofMinutes(30).toMillis()), eq(TimeUnit.MILLISECONDS));
+
+    // 3. Stub-level timeout (30m) + per-request with only chunkSize set -> preserves 30m
+    ResumableUploadCallSettings perRequestChunkSizeOnly =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+    assertThat(
+            configuredStubCallable
+                .futureCall("resource-path", streamOf("hello"), perRequestChunkSizeOnly)
+                .get())
+        .isEqualTo("ok");
+    verify(mockExecutor, times(2))
+        .schedule(
+            any(Runnable.class), eq(Duration.ofMinutes(30).toMillis()), eq(TimeUnit.MILLISECONDS));
+
+    // 4. Stub-level timeout (30m) + per-request globalTimeout (5m) -> per-request wins (5m)
+    ResumableUploadCallSettings perRequestWith5m =
+        ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ofMinutes(5)).build();
+    assertThat(
+            configuredStubCallable
+                .futureCall("resource-path", streamOf("hello"), perRequestWith5m)
+                .get())
+        .isEqualTo("ok");
+    verify(mockExecutor)
+        .schedule(
+            any(Runnable.class), eq(Duration.ofMinutes(5).toMillis()), eq(TimeUnit.MILLISECONDS));
+  }
+
+  @Test
+  void testGlobalTimeout_timeoutWhileAttemptInFlight_cancelsInFlightFutureAndDoesNotCorruptBuffer()
+      throws Exception {
+    stubStartSession("https://upload.url/in-flight-timeout");
+    SettableApiFuture<ChunkUploadResponse<String>> inFlightFuture = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(inFlightFuture);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMillis(80)).build();
+
+    TrackableStream stream = new TrackableStream("01234567890123456789");
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", stream, timeoutSettings);
+
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    // In-flight attempt future must be cancelled
+    assertThat(inFlightFuture.isCancelled()).isTrue();
+
+    // Stream should have been read only up to the first chunk (chunkSize = 8), not refilled or
+    // advanced
+    assertThat(stream.totalBytesRead).isEqualTo(8);
+  }
+
+  @Test
+  void testGlobalTimeout_coversStartSessionTimeout() throws Exception {
+    SettableApiFuture<ResumableUploadSession> hungStartFuture = SettableApiFuture.create();
+    when(mockStartCallable.futureCall(any(), any())).thenReturn(hungStartFuture);
+
+    ResumableUploadCallSettings timeoutSettings =
+        defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMillis(80)).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
+    assertThat(exception.getCause().getMessage()).contains("before session initiation completed");
+    assertThat(hungStartFuture.isCancelled()).isTrue();
   }
 
   private static class HttpStatusStatusCode implements StatusCode {
