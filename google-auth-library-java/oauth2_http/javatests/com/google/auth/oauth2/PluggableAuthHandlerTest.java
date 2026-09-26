@@ -92,9 +92,8 @@ class PluggableAuthHandlerTest {
           return 30000;
         }
 
-        @Nullable
         @Override
-        public String getOutputFilePath() {
+        public @Nullable String getOutputFilePath() {
           return null;
         }
       };

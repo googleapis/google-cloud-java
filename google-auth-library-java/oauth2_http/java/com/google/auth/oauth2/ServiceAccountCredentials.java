@@ -512,7 +512,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
   /** Returns true if credential is configured domain wide delegation */
   @VisibleForTesting
   boolean isConfiguredForDomainWideDelegation() {
-    return serviceAccountUser != null && serviceAccountUser.length() > 0;
+    return serviceAccountUser != null && !serviceAccountUser.isEmpty();
   }
 
   private GenericData parseResponseAs(HttpResponse response) throws IOException {
