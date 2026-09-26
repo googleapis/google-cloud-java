@@ -120,6 +120,12 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    if (getServiceAccountImpersonationUrl() != null) {
+      if (this.impersonatedCredentials == null) {
+        this.impersonatedCredentials = this.buildImpersonatedCredentials();
+      }
+      return this.impersonatedCredentials.refreshAccessToken();
+    }
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(retrieveSubjectToken(), getSubjectTokenType())
             .setAudience(getAudience());
