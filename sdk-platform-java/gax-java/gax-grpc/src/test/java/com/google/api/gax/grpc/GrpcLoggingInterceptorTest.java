@@ -32,7 +32,6 @@ package com.google.api.gax.grpc;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -83,7 +82,7 @@ class GrpcLoggingInterceptorTest {
   void testInterceptor_responseListener() {
     when(channel.newCall(Mockito.<MethodDescriptor<String, Integer>>any(), any(CallOptions.class)))
         .thenReturn(call);
-    GrpcLoggingInterceptor interceptor = spy(new GrpcLoggingInterceptor());
+    GrpcLoggingInterceptor interceptor = new GrpcLoggingInterceptor();
     Channel intercepted = ClientInterceptors.intercept(channel, interceptor);
     @SuppressWarnings("unchecked")
     ClientCall.Listener<Integer> listener = mock(ClientCall.Listener.class);

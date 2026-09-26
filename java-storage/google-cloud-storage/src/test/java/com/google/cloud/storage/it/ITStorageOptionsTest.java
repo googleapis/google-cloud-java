@@ -85,6 +85,17 @@ public final class ITStorageOptionsTest {
   }
 
   @Test
+  public void clientShouldConstructCleanly_directPathXdsOverInterconnect() throws Exception {
+    StorageOptions options =
+        StorageOptions.grpc()
+            .setCredentials(credentials)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setEnableGrpcClientMetrics(false)
+            .build();
+    doTest(options);
+  }
+
+  @Test
   public void lackOfProjectIdDoesNotPreventConstruction_http() throws Exception {
     StorageOptions options = StorageOptions.http().setCredentials(credentials).build();
     doTest(options);
