@@ -44,17 +44,24 @@ import static org.mockito.Mockito.when;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.attribute.FileTime;
+import java.nio.file.attribute.PosixFilePermissions;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.PrivateKey;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.security.interfaces.ECPublicKey;
+import java.security.spec.ECParameterSpec;
+import java.security.spec.ECPoint;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -537,7 +544,7 @@ class AgentIdentityUtilsTest {
         e.getMessage()
             .contains(
                 "Agent Identity certificate and private key mismatch or read failure after 3"
-                    + " retries."));
+                    + " attempts."));
     assertEquals(200, fakeTime.currentTimeMillis()); // 2 retries * 100ms
   }
 
@@ -680,7 +687,7 @@ class AgentIdentityUtilsTest {
         e.getMessage()
             .contains(
                 "Agent Identity certificate and private key mismatch or read failure after 3"
-                    + " retries."));
+                    + " attempts."));
   }
 
   @Test
@@ -1061,8 +1068,9 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_implicitDiscovery_missingPrivateKey_throwsIOException()
-      throws Exception {
+  public void
+      getAgentIdentityCertInfo_implicitDiscovery_certificatesPemWithoutPrivateKey_returnsNull()
+          throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
@@ -1075,10 +1083,21 @@ class AgentIdentityUtilsTest {
 
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
     assertEquals(0, fakeTime.getSleepCount());
+  }
 
-    // Once credentialbundle.pem (or private_key.pem) exists without a valid private key, fails
-    // closed
+  @Test
+  public void getAgentIdentityCertInfo_implicitDiscovery_bundleWithoutPrivateKey_throwsIOException()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl);
+    // credentialbundle.pem exists without a valid private key, so discovery fails closed
     Files.copy(Paths.get(certUrl.toURI()), tempDir.resolve("credentialbundle.pem"));
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
     assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(2, fakeTime.getSleepCount());
   }
@@ -1393,6 +1412,7 @@ class AgentIdentityUtilsTest {
     // falls back to cached credentials during rotation mismatch
     AgentIdentityUtils.CertInfo fallbackInfo = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertSame(initialInfo, fallbackInfo);
+    assertEquals(2, fakeTime.getSleepCount());
   }
 
   @Test
@@ -1408,6 +1428,368 @@ class AgentIdentityUtilsTest {
     // Subsequent calls return null without re-triggering log message
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
     assertTrue(AgentIdentityUtils.isMtlsDisabledLogged());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configRemovedAfterCaching_fallsBackToCachedCert()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    Files.delete(configFile);
+
+    assertSame(info1, AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_wellKnownCacheThenMissingConfig_doesNotUseWellKnownCache(
+      @TempDir Path outsideDir) throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
+        outsideDir.resolve("missing.json").toString());
+
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.getMessage().contains("Unable to find Agent Identity certificate config or file"));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configCacheThenConfigUnset_doesNotUseConfigCache()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    Path wellKnown = Files.createDirectory(tempDir.resolve("well-known"));
+    AgentIdentityUtils.setWellKnownDir(wellKnown.toString() + "/");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    // Environment variables can't change in a running JVM; this only exercises the guard.
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_nonAgentCachedDuringRetry_fallsBackToInitialBoundCert()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+
+    // A mismatched key on disk makes every retry fail.
+    Path keyPath = tempDir.resolve("private_key.pem");
+    Files.write(keyPath, mismatchedRsaKeyPem().getBytes(StandardCharsets.UTF_8));
+    Files.setLastModifiedTime(keyPath, FileTime.fromMillis(System.currentTimeMillis() + 10000));
+
+    // While this call sleeps between retries, another caller caches a non-agent certificate.
+    String nonAgentCertPath = resourcePath("x509_leaf_certificate.pem");
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 1) {
+            try {
+              assertNull(AgentIdentityUtils.loadAndVerifyCredentials(nonAgentCertPath, null));
+            } catch (IOException e) {
+              throw new UncheckedIOException(e);
+            }
+          }
+        });
+
+    assertSame(info1, AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(2, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configModifiedMidRead_returnsVerifiedCertWithoutCaching()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = tempDir.resolve("key.pem");
+    // The first attempt fails verification so the config change lands between attempts.
+    Files.write(keyPath, mismatchedRsaKeyPem().getBytes(StandardCharsets.UTF_8));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+
+    FakeTimeService fakeTime = new FakeTimeService();
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 1) {
+            try {
+              copyResource("agent/agent_spiffe_key.pem", keyPath);
+              Files.setLastModifiedTime(
+                  configFile, FileTime.fromMillis(System.currentTimeMillis() + 10000));
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info1);
+    assertEquals(1, fakeTime.getSleepCount());
+
+    // Not cached, so the next refresh re-resolves from the new config and caches that result.
+    AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info2);
+    assertNotSame(info1, info2);
+    assertSame(info2, AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configDeletedMidRead_returnsVerifiedCertWithoutCaching()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = tempDir.resolve("key.pem");
+    Files.write(keyPath, mismatchedRsaKeyPem().getBytes(StandardCharsets.UTF_8));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+
+    FakeTimeService fakeTime = new FakeTimeService();
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 1) {
+            try {
+              copyResource("agent/agent_spiffe_key.pem", keyPath);
+              Files.delete(configFile);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(1, fakeTime.getSleepCount());
+
+    // Nothing was cached, so there is no cached credential to fall back to.
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_implicitDiscovery_unreadablePrivateKey_returnsNull()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    makeUnreadable(tempDir.resolve("private_key.pem"));
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_explicitMtls_unreadableWellKnownCert_throwsIOException()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+    makeUnreadable(tempDir.resolve("certificates.pem"));
+
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.getMessage().contains("Permission denied reading well-known certificate files"));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configCertPathUnreadable_throwsIOExceptionNamingFile()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    makeUnreadable(certPath);
+
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.getMessage().contains(certPath.toAbsolutePath().toString()));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configInWellKnownDirMissingKeyPath_failsWithoutPolling()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    Path certPath =
+        copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("certificates.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, null);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configInWellKnownDirMissingCertPath_failsWithoutPolling()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("private_key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, null, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void verifyKeyPair_ecdsaLabelledEcPublicKey_returnsTrue() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
+    kpg.initialize(256);
+    KeyPair keyPair = kpg.generateKeyPair();
+    X509Certificate cert = mock(X509Certificate.class);
+    when(cert.getPublicKey())
+        .thenReturn(new EcdsaLabelledPublicKey((ECPublicKey) keyPair.getPublic()));
+
+    assertTrue(AgentIdentityUtils.verifyKeyPair(cert, keyPair.getPrivate()));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_unsupportedKeyAlgorithm_failsWithoutRetry()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_dsa_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_dsa_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.getMessage().contains("Unsupported key algorithm: DSA"));
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_mtlsDisabled_doesNotReReadConfigOnLaterRefreshes()
+      throws Exception {
+    Path certPath = copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("cert.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
+    AtomicInteger configLookups = new AtomicInteger();
+    AgentIdentityUtils.setEnvironmentProvider(
+        name -> {
+          if (AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG.equals(name)) {
+            configLookups.incrementAndGet();
+          }
+          return envProvider.getEnv(name);
+        });
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertTrue(configLookups.get() > 0);
+    assertTrue(AgentIdentityUtils.isMtlsDisabledLogged());
+
+    configLookups.set(0);
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, configLookups.get());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_mtlsDisabledWithCachedNonAgentCert_doesNotLogDisabled()
+      throws Exception {
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
+    assertNull(
+        AgentIdentityUtils.loadAndVerifyCredentials(
+            resourcePath("x509_leaf_certificate.pem"), null));
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertFalse(AgentIdentityUtils.isMtlsDisabledLogged());
+  }
+
+  private String resourcePath(String resource) throws Exception {
+    URL url = getClass().getClassLoader().getResource(resource);
+    assertNotNull(url, "Test resource " + resource + " not found");
+    return Paths.get(url.toURI()).toAbsolutePath().toString();
+  }
+
+  private Path copyResource(String resource, Path target) throws Exception {
+    Files.copy(Paths.get(resourcePath(resource)), target, StandardCopyOption.REPLACE_EXISTING);
+    return target;
+  }
+
+  /** Writes a workload certificate config; a null path omits that field. */
+  private static void writeWorkloadConfig(Path configFile, Path certPath, Path keyPath)
+      throws IOException {
+    List<String> fields = new ArrayList<>();
+    if (certPath != null) {
+      fields.add("\"cert_path\": \"" + jsonPath(certPath) + "\"");
+    }
+    if (keyPath != null) {
+      fields.add("\"key_path\": \"" + jsonPath(keyPath) + "\"");
+    }
+    String json = "{ \"cert_configs\": { \"workload\": { " + String.join(", ", fields) + " } } }";
+    Files.write(configFile, json.getBytes(StandardCharsets.UTF_8));
+  }
+
+  private static String jsonPath(Path path) {
+    return path.toAbsolutePath().toString().replace("\\", "\\\\");
+  }
+
+  private static String mismatchedRsaKeyPem() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(2048);
+    PrivateKey key = kpg.generateKeyPair().getPrivate();
+    return "-----BEGIN PRIVATE KEY-----\n"
+        + java.util.Base64.getEncoder().encodeToString(key.getEncoded())
+        + "\n-----END PRIVATE KEY-----\n";
+  }
+
+  /** Removes all permissions; skips the test where that can't make the file unreadable. */
+  private static void makeUnreadable(Path path) throws IOException {
+    Assumptions.assumeTrue(
+        FileSystems.getDefault().supportedFileAttributeViews().contains("posix"),
+        "POSIX file permissions are required");
+    Files.setPosixFilePermissions(path, PosixFilePermissions.fromString("---------"));
+    Assumptions.assumeFalse(Files.isReadable(path), "Current user can read any file (e.g. root)");
+  }
+
+  /** An EC public key that reports "ECDSA" as its algorithm, as some providers do. */
+  private static final class EcdsaLabelledPublicKey implements ECPublicKey {
+    private static final long serialVersionUID = 1L;
+    private final ECPublicKey delegate;
+
+    EcdsaLabelledPublicKey(ECPublicKey delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public String getAlgorithm() {
+      return "ECDSA";
+    }
+
+    @Override
+    public String getFormat() {
+      return delegate.getFormat();
+    }
+
+    @Override
+    public byte[] getEncoded() {
+      return delegate.getEncoded();
+    }
+
+    @Override
+    public ECPoint getW() {
+      return delegate.getW();
+    }
+
+    @Override
+    public ECParameterSpec getParams() {
+      return delegate.getParams();
+    }
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {

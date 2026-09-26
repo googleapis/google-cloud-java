@@ -46,11 +46,14 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -144,9 +147,14 @@ final class AgentIdentityUtils {
   // token refreshes never block for 30 seconds.
   private static volatile boolean initialStartupCompleted = false;
 
-  // Tracks whether the warning for explicitly disabled mTLS when certificates are present
+  // Tracks whether the FINE-level message for explicitly disabled mTLS when certificates are
+  // present
   // has already been logged in this process to prevent log spam on repeated token refreshes.
   private static volatile boolean mtlsDisabledLogged = false;
+
+  // Tracks whether mTLS has already been evaluated as explicitly disabled via
+  // GOOGLE_API_USE_CLIENT_CERTIFICATE, so later refreshes skip re-reading the config from disk.
+  private static volatile boolean mtlsDisabledEvaluated = false;
 
   // In-memory cache of verified credentials to avoid redundant disk reads, X.509/PKCS#8 parsing,
   // and cryptographic signature verification on every token refresh when files are unchanged.
@@ -347,16 +355,23 @@ final class AgentIdentityUtils {
     if (!isTokenBindingEnabled()) {
       return null;
     }
+    if (mtlsDisabledEvaluated
+        && "false".equalsIgnoreCase(getTrimmedEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE))) {
+      return null;
+    }
     CachedCredentials initialCached = cachedCredentials;
     String certConfigPath = getTrimmedEnv(GOOGLE_API_CERTIFICATE_CONFIG);
 
     // Fast-path: check cached credentials and file metadata before parsing JSON config or paths
     if (isCachedCredentialsValid(initialCached, certConfigPath)) {
+      if (!initialCached.shouldRequestBoundToken) {
+        return null;
+      }
       if (!shouldEnableMtls(
           /* certsPresent= */ true, /* configExists= */ initialCached.configMetadata != null)) {
         return null;
       }
-      return initialCached.shouldRequestBoundToken ? initialCached.certInfo : null;
+      return initialCached.certInfo;
     }
 
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
@@ -370,6 +385,9 @@ final class AgentIdentityUtils {
                 || matchesCachedPath(paths.getCertPath(), latestCached));
 
     if (!shouldEnableMtls(certsPresent, configExists)) {
+      if ("false".equalsIgnoreCase(getTrimmedEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE))) {
+        mtlsDisabledEvaluated = true;
+      }
       return null;
     }
 
@@ -423,7 +441,9 @@ final class AgentIdentityUtils {
 
   private static CachedCredentials getLatestOrInitialCache(final CachedCredentials initialCached) {
     CachedCredentials latest = cachedCredentials;
-    return latest != null ? latest : initialCached;
+    return (latest != null && latest.shouldRequestBoundToken && latest.certInfo != null)
+        ? latest
+        : initialCached;
   }
 
   /**
@@ -464,8 +484,10 @@ final class AgentIdentityUtils {
 
   /**
    * Safely updates the in-memory credential cache only if file metadata remained stable across the
-   * read/verify operation. Returns {@code true} if the post-read metadata matched the pre-read
-   * metadata and the cache was updated, or {@code false} if a file changed or disappeared mid-read.
+   * read/verify operation. Returns {@code true} if the post-read cert/key metadata matched the
+   * pre-read metadata, or {@code false} if the cert or key changed or disappeared mid-read. If only
+   * the config file changed, returns {@code true} without updating the cache, so the next refresh
+   * re-resolves paths from the new config.
    */
   private static boolean tryUpdateCache(
       final FileMetadata configMetaBefore,
@@ -475,31 +497,37 @@ final class AgentIdentityUtils {
       final String keyPath,
       final boolean shouldRequestBoundToken,
       final CertInfo certInfo) {
+    boolean configStable = true;
+    if (configMetaBefore != null) {
+      try {
+        configStable = configMetaBefore.matches(FileMetadata.of(configMetaBefore.path));
+      } catch (IOException e) {
+        configStable = false; // Config was removed or unreadable mid-read.
+      }
+    }
     try {
       if (certMetaBefore == null) {
         return false;
-      }
-      if (configMetaBefore != null) {
-        FileMetadata configMetaAfter = FileMetadata.of(configMetaBefore.path);
-        if (!configMetaBefore.matches(configMetaAfter)) {
-          return false;
-        }
       }
       FileMetadata certMetaAfter = FileMetadata.of(certPath);
       if (!certMetaBefore.matches(certMetaAfter)) {
         return false;
       }
       if (!shouldRequestBoundToken) {
-        cachedCredentials =
-            new CachedCredentials(configMetaBefore, certMetaBefore, null, false, null);
+        if (configStable) {
+          cachedCredentials =
+              new CachedCredentials(configMetaBefore, certMetaBefore, null, false, null);
+        }
         return true;
       }
       if (keyMetaBefore != null && !Strings.isNullOrEmpty(keyPath)) {
         FileMetadata keyMetaAfter = FileMetadata.of(keyPath);
         if (keyMetaBefore.matches(keyMetaAfter)) {
-          cachedCredentials =
-              new CachedCredentials(
-                  configMetaBefore, certMetaBefore, keyMetaBefore, true, certInfo);
+          if (configStable) {
+            cachedCredentials =
+                new CachedCredentials(
+                    configMetaBefore, certMetaBefore, keyMetaBefore, true, certInfo);
+          }
           return true;
         }
       }
@@ -615,6 +643,8 @@ final class AgentIdentityUtils {
       } catch (AccessDeniedException e) {
         throw new IOException(
             "Permission denied reading certificate or key files for Agent Identity.", e);
+      } catch (UnsupportedKeyAlgorithmException e) {
+        throw e;
       } catch (Exception e) {
         if (Strings.isNullOrEmpty(keyPath) && e instanceof IOException) {
           throw (IOException) e;
@@ -642,13 +672,7 @@ final class AgentIdentityUtils {
     // and we already have a verified credential cached in memory, fall back to cached credentials
     // rather than failing or caching an unbound token. Re-read cachedCredentials in case another
     // thread completed rotation while this thread was sleeping.
-    CachedCredentials latestCached = cachedCredentials;
-    CachedCredentials fallbackCached =
-        (latestCached != null
-                && latestCached.shouldRequestBoundToken
-                && latestCached.certInfo != null)
-            ? latestCached
-            : initialCached;
+    CachedCredentials fallbackCached = getLatestOrInitialCache(initialCached);
     if (lastException != null
         && fallbackCached != null
         && fallbackCached.shouldRequestBoundToken
@@ -665,15 +689,24 @@ final class AgentIdentityUtils {
     throw new IOException(
         String.format(
             "Agent Identity certificate and private key mismatch or read"
-                + " failure after %d retries.",
+                + " failure after %d attempts.",
             CERT_KEY_MATCH_RETRIES),
         lastException);
   }
 
-  /** Checks if a file exists, throwing AccessDeniedException if permission is denied. */
+  /**
+   * Checks if a file exists and is readable, throwing AccessDeniedException if permission is
+   * denied.
+   */
   private static boolean checkExistsOrAccessDenied(final Path path) throws AccessDeniedException {
     try {
       Files.readAttributes(path, BasicFileAttributes.class);
+      if (!Files.isReadable(path)) {
+        if (!Files.exists(path)) {
+          return false; // Deleted mid-rotation; let the caller retry.
+        }
+        throw new AccessDeniedException(path.toString());
+      }
       return true;
     } catch (AccessDeniedException e) {
       throw e;
@@ -733,6 +766,11 @@ final class AgentIdentityUtils {
             // Valid non-workload config (e.g. enterprise certs) - exit early without polling!
             initialStartupCompleted = true;
             return paths;
+          }
+          if (Strings.isNullOrEmpty(paths.getCertPath())
+              || Strings.isNullOrEmpty(paths.getKeyPath())) {
+            // Incomplete workload config will never become ready; don't poll.
+            break;
           }
           if (!initialStartupCompleted
               && !shouldPoll
@@ -794,8 +832,17 @@ final class AgentIdentityUtils {
 
     CachedCredentials fallbackCached = getLatestOrInitialCache(initialCached);
     if (fallbackCached != null
+        && fallbackCached.configMetadata != null
         && fallbackCached.certMetadata != null
         && fallbackCached.keyMetadata != null) {
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.WARNING,
+          Collections.emptyMap(),
+          String.format(
+              "Agent Identity certificate config at %s is unavailable; falling back to cached"
+                  + " certificate and key paths.",
+              certConfigPath));
       return new ResolvedCertAndKeyPaths(
           fallbackCached.certMetadata.path,
           fallbackCached.keyMetadata.path,
@@ -874,6 +921,7 @@ final class AgentIdentityUtils {
 
     CachedCredentials fallbackCached = getLatestOrInitialCache(initialCached);
     if (fallbackCached != null
+        && fallbackCached.configMetadata == null
         && fallbackCached.certMetadata != null
         && fallbackCached.keyMetadata != null) {
       return fallbackCached.certMetadata.path;
@@ -931,12 +979,19 @@ final class AgentIdentityUtils {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
 
-      String keyAlgorithm = cert.getPublicKey().getAlgorithm();
+      PublicKey publicKey = cert.getPublicKey();
+      String keyAlgorithm = publicKey.getAlgorithm();
       String sigAlg;
       if ("RSA".equals(keyAlgorithm)) {
         sigAlg = "SHA256withRSA";
       } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
         sigAlg = "SHA256withECDSA";
+        if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
+          // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
+          publicKey =
+              KeyFactory.getInstance("EC")
+                  .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
+        }
       } else {
         throw new IllegalArgumentException("Unsupported key algorithm: " + keyAlgorithm);
       }
@@ -947,7 +1002,7 @@ final class AgentIdentityUtils {
       byte[] signature = signer.sign();
 
       Signature verifier = Signature.getInstance(sigAlg);
-      verifier.initVerify(cert.getPublicKey());
+      verifier.initVerify(publicKey);
       verifier.update(data);
 
       return verifier.verify(signature);
@@ -965,11 +1020,24 @@ final class AgentIdentityUtils {
   private static PrivateKey readPrivateKey(final String keyPath, final String algorithm)
       throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
-    OAuth2Utils.Pkcs8Algorithm pkcs8Alg =
-        ("EC".equals(algorithm) || "ECDSA".equals(algorithm))
-            ? OAuth2Utils.Pkcs8Algorithm.EC
-            : OAuth2Utils.Pkcs8Algorithm.RSA;
+    OAuth2Utils.Pkcs8Algorithm pkcs8Alg;
+    if ("EC".equals(algorithm) || "ECDSA".equals(algorithm)) {
+      pkcs8Alg = OAuth2Utils.Pkcs8Algorithm.EC;
+    } else if ("RSA".equals(algorithm)) {
+      pkcs8Alg = OAuth2Utils.Pkcs8Algorithm.RSA;
+    } else {
+      throw new UnsupportedKeyAlgorithmException(algorithm);
+    }
     return OAuth2Utils.privateKeyFromPkcs8(keyPem, pkcs8Alg);
+  }
+
+  /** Thrown for key algorithms that can never be verified, so callers fail without retrying. */
+  private static final class UnsupportedKeyAlgorithmException extends IOException {
+    private static final long serialVersionUID = 1L;
+
+    UnsupportedKeyAlgorithmException(final String algorithm) {
+      super("Unsupported key algorithm: " + algorithm);
+    }
   }
 
   /**
@@ -1136,6 +1204,7 @@ final class AgentIdentityUtils {
     cachedCredentials = null;
     initialStartupCompleted = false;
     mtlsDisabledLogged = false;
+    mtlsDisabledEvaluated = false;
   }
 
   /** Sets the well-known certificate directory path for testing. */

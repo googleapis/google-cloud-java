@@ -447,7 +447,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
               "Error code %s trying to get security access token from Compute Engine metadata for"
                   + " the default service account. This may be because the virtual machine instance"
                   + " does not have permission scopes specified. It is possible to skip checking"
-                  + " for Compute Engine metadata by specifying the environment  variable "
+                  + " for Compute Engine metadata by specifying the environment variable "
                   + DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR
                   + "=true.",
               statusCode));
