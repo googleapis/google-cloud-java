@@ -955,6 +955,26 @@ class AwsCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void createScoped_existingAccessTokenInvalidatedAndRefreshed() throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    AwsCredentials credentials =
+        AwsCredentials.newBuilder(AWS_CREDENTIAL)
+            .setHttpTransportFactory(transportFactory)
+            .setCredentialSource(buildAwsCredentialSource(transportFactory))
+            .build();
+
+    credentials.refreshIfExpired();
+    AwsCredentials scoped =
+        (AwsCredentials) credentials.createScoped(Arrays.asList("scope1", "scope2"));
+    assertNull(scoped.getAccessToken());
+    scoped.refreshIfExpired();
+    assertEquals(
+        "scope1 scope2",
+        TestUtils.parseQuery(transportFactory.transport.getStsContent()).get("scope"));
+  }
+
+  @Test
   void credentialSource_invalidAwsEnvironmentId() {
     Map<String, Object> credentialSource = new HashMap<>();
     credentialSource.put("regional_cred_verification_url", GET_CALLER_IDENTITY_URL);

@@ -37,6 +37,7 @@ import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -104,6 +105,27 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials.getClientSecret(), newCredentials.getClientSecret());
     assertEquals(credentials.getUniverseDomain(), newCredentials.getUniverseDomain());
     assertEquals("universeDomain", newCredentials.getUniverseDomain());
+  }
+
+  @Test
+  void createScoped_existingAccessTokenInvalidatedAndRefreshed() throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setHttpTransportFactory(transportFactory)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .build();
+
+    credentials.refreshIfExpired();
+    IdentityPoolCredentials scoped = credentials.createScoped(Arrays.asList("scope1", "scope2"));
+    assertNull(scoped.getAccessToken());
+    scoped.refreshIfExpired();
+    assertEquals(
+        "scope1 scope2",
+        TestUtils.parseQuery(transportFactory.transport.getStsContent()).get("scope"));
   }
 
   @Test
