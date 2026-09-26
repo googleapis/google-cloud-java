@@ -324,11 +324,12 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
     SpannerOptions.Builder builder = createSpannerOptionsBuilder();
     builder.setSessionPoolOption(
         SessionPoolOptions.newBuilder().setUseMultiplexedSession(true).build());
-    mockSpanner.setExecuteStreamingSqlExecutionTime(
-        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
-
     try (Spanner spanner = builder.build().getService()) {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      client.getDialect();
+      ACTUAL_CHANNEL_IDS.clear();
+      mockSpanner.setExecuteStreamingSqlExecutionTime(
+          SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
       try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1_STATEMENT)) {
         assertTrue(resultSet.next());
         assertEquals(1L, resultSet.getLong(0));
