@@ -182,16 +182,35 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
   }
 
+  /**
+   * Signals that the overall logical operation succeeded.
+   *
+   * <p>Marks the operation as complete and closes any remaining in-flight attempt span.
+   */
   @Override
   public void operationSucceeded() {
     recordErrorAndEndAttempt(null, true);
   }
 
+  /**
+   * Signals that the overall logical operation was cancelled.
+   *
+   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with a
+   * {@link CancellationException}.
+   */
   @Override
   public void operationCancelled() {
     recordErrorAndEndAttempt(new CancellationException(), true);
   }
 
+  /**
+   * Signals that the overall logical operation failed permanently.
+   *
+   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with the
+   * provided error details.
+   *
+   * @param error the cause of the operation failure
+   */
   @Override
   public void operationFailed(Throwable error) {
     recordErrorAndEndAttempt(error, true);
@@ -271,6 +290,13 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(error, false);
   }
 
+  /**
+   * Records error details and ends the current attempt span in a thread-safe manner.
+   *
+   * @param error the exception associated with the attempt failure, or {@code null} if successful
+   * @param isOperationComplete {@code true} if this call marks the end of the entire logical
+   *     operation, preventing subsequent retry attempts from starting
+   */
   private void recordErrorAndEndAttempt(@Nullable Throwable error, boolean isOperationComplete) {
     Span localAttemptSpan;
     lock.lock();
@@ -290,6 +316,15 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     endAttemptSpan(localAttemptSpan, error);
   }
 
+  /**
+   * Attaches response status attributes and error messages to the attempt span and ends it.
+   *
+   * <p>This method runs outside of synchronization locks to avoid blocking threads during
+   * OpenTelemetry span completion callbacks.
+   *
+   * @param localAttemptSpan the attempt span to finish
+   * @param error the exception that caused the attempt to end, or {@code null} if successful
+   */
   private void endAttemptSpan(Span localAttemptSpan, @Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
