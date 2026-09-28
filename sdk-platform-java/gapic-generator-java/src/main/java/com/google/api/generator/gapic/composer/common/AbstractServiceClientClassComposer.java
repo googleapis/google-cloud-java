@@ -29,8 +29,8 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadOptions;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
@@ -962,15 +962,15 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                 Variable.builder().setName("payload").setType(typeStore.get("InputStream")).build())
             .setIsDecl(true)
             .build();
-    VariableExpr callSettingsArgVarExpr =
+    VariableExpr optionsArgVarExpr =
         VariableExpr.builder()
             .setVariable(
                 Variable.builder()
-                    .setName("callSettings")
+                    .setName("options")
                     .setType(
                         TypeNode.withReference(
                             typeStore
-                                .get("ResumableUploadCallSettings")
+                                .get("ResumableUploadOptions")
                                 .reference()
                                 .copyAndSetNullable(true)))
                     .build())
@@ -988,7 +988,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                 Arrays.asList(
                     requestArgVarExpr.toBuilder().setIsDecl(false).build(),
                     payloadArgVarExpr.toBuilder().setIsDecl(false).build(),
-                    callSettingsArgVarExpr.toBuilder().setIsDecl(false).build()))
+                    optionsArgVarExpr.toBuilder().setIsDecl(false).build()))
             .build();
 
     MethodInvocationExpr callAndTranslateExpr =
@@ -1006,8 +1006,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             .setScope(ScopeNode.PUBLIC)
             .setIsFinal(true)
             .setName(methodName)
-            .setArguments(
-                Arrays.asList(requestArgVarExpr, payloadArgVarExpr, callSettingsArgVarExpr));
+            .setArguments(Arrays.asList(requestArgVarExpr, payloadArgVarExpr, optionsArgVarExpr));
 
     if (isProtoEmptyType(methodOutputType)) {
       methodBuilder =
@@ -1915,8 +1914,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             Operation.class,
             OperationFuture.class,
             OperationCallable.class,
-            ResumableUploadCallSettings.class,
             ResumableUploadCallable.class,
+            ResumableUploadOptions.class,
             ServerStreamingCallable.class,
             Status.class,
             Strings.class,

@@ -72,7 +72,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       queryStatusCallable;
   private final InputStream payload;
-  private final ResumableUploadCallSettings settings;
+  private final ResumableUploadOptions options;
   private final ApiCallContext callContext;
   private final ScheduledExecutorService executor;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
@@ -96,7 +96,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
+      ResumableUploadOptions options,
       ClientContext clientContext,
       ExponentialRetryAlgorithm recoveryAlgorithm) {
     ResumableUploadFutureImpl<ResponseT> future =
@@ -105,7 +105,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             uploadChunkCallable,
             queryStatusCallable,
             payload,
-            settings,
+            options,
             clientContext,
             recoveryAlgorithm);
     try {
@@ -121,7 +121,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
+      ResumableUploadOptions options,
       ClientContext clientContext,
       ExponentialRetryAlgorithm recoveryAlgorithm) {
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
@@ -130,8 +130,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     this.queryStatusCallable =
         checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
-    this.settings = checkNotNull(settings, "settings must not be null");
-    checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
+    this.options = checkNotNull(options, "options must not be null");
+    checkArgument(options.getChunkSize() > 0, "chunkSize must be > 0");
     checkNotNull(clientContext, "clientContext must not be null");
     this.callContext = clientContext.getDefaultCallContext();
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
@@ -152,7 +152,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
                     queryStatusCallable,
                     sessionUrl,
                     payload,
-                    settings.getChunkSize(),
+                    options.getChunkSize(),
                     callContext,
                     recoveryAlgorithm,
                     executor);

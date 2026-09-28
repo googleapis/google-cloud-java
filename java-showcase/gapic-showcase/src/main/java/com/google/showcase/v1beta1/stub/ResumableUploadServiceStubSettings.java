@@ -42,7 +42,6 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -61,6 +60,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.showcase.v1beta1.UploadMediaRequest;
+import com.google.showcase.v1beta1.UploadMediaResponse;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -129,7 +130,7 @@ public class ResumableUploadServiceStubSettings
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().build();
 
-  private final ResumableUploadCallSettings uploadMediaSettings;
+  private final UnaryCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -191,7 +192,7 @@ public class ResumableUploadServiceStubSettings
           };
 
   /** Returns the object with the settings used for calls to uploadMedia. */
-  public ResumableUploadCallSettings uploadMediaSettings() {
+  public UnaryCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaSettings() {
     return uploadMediaSettings;
   }
 
@@ -348,7 +349,8 @@ public class ResumableUploadServiceStubSettings
   public static class Builder
       extends StubSettings.Builder<ResumableUploadServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-    private final ResumableUploadCallSettings.Builder uploadMediaSettings;
+    private final UnaryCallSettings.Builder<UploadMediaRequest, UploadMediaResponse>
+        uploadMediaSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -391,7 +393,7 @@ public class ResumableUploadServiceStubSettings
     protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
-      uploadMediaSettings = ResumableUploadCallSettings.newBuilder();
+      uploadMediaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -400,6 +402,7 @@ public class ResumableUploadServiceStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              uploadMediaSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -420,6 +423,7 @@ public class ResumableUploadServiceStubSettings
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              uploadMediaSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -452,7 +456,10 @@ public class ResumableUploadServiceStubSettings
     }
 
     private static Builder initDefaults(Builder builder) {
-      builder.uploadMediaSettings().setGlobalTimeout(Duration.ofMillis(5000L));
+      builder
+          .uploadMediaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .listLocationsSettings()
@@ -505,7 +512,8 @@ public class ResumableUploadServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to uploadMedia. */
-    public ResumableUploadCallSettings.Builder uploadMediaSettings() {
+    public UnaryCallSettings.Builder<UploadMediaRequest, UploadMediaResponse>
+        uploadMediaSettings() {
       return uploadMediaSettings;
     }
 

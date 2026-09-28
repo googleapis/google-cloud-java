@@ -77,7 +77,7 @@ class ResumableUploadCallableImplTest {
   private UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<String>> mockChunkCallable;
   private UnaryCallable<QueryStatusRequest, QueryStatusResponse<String>> mockQueryCallable;
 
-  private ResumableUploadCallSettings defaultSettings;
+  private ResumableUploadOptions defaultSettings;
   private FakeCallContext callContext;
   private ResumableUploadCallableImpl<String, String> callable;
 
@@ -93,7 +93,7 @@ class ResumableUploadCallableImplTest {
     lenient().when(mockClient.uploadChunkCallable()).thenReturn(mockChunkCallable);
     lenient().when(mockClient.queryStatusCallable()).thenReturn(mockQueryCallable);
 
-    defaultSettings = ResumableUploadCallSettings.newBuilder().setChunkSize(8).build();
+    defaultSettings = ResumableUploadOptions.newBuilder().setChunkSize(8).build();
     callContext = FakeCallContext.createDefault();
     ClientContext clientContext =
         ClientContext.newBuilder().setDefaultCallContext(callContext).build();
@@ -416,8 +416,8 @@ class ResumableUploadCallableImplTest {
             ApiFutures.immediateFuture(
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-settings")));
 
-    ResumableUploadCallSettings customSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+    ResumableUploadOptions customSettings =
+        ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("data"), null, customSettings);
@@ -432,8 +432,8 @@ class ResumableUploadCallableImplTest {
             ApiFutures.immediateFuture(
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-settings-conv")));
 
-    ResumableUploadCallSettings customSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+    ResumableUploadOptions customSettings =
+        ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("data"), customSettings);
@@ -449,8 +449,8 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done-both")));
 
     FakeCallContext customContext = FakeCallContext.createDefault();
-    ResumableUploadCallSettings customSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+    ResumableUploadOptions customSettings =
+        ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", streamOf("data"), customContext, customSettings);
