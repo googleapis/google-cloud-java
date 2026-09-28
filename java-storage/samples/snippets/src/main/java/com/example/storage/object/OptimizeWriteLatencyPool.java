@@ -39,6 +39,25 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public class OptimizeWriteLatencyPool {
+  private static AppendableUploadWriteableByteChannel newPrewarmedChannel(
+      Storage storage, BlobInfo info, BlobAppendableUploadConfig config) throws IOException {
+    AppendableUploadWriteableByteChannel channel =
+        storage.blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist()).open();
+    // open() is lazy. flush() creates the 0-byte object.
+    try {
+      channel.flush();
+    } catch (IOException e) {
+      // Close the channel; attach any close error to the flush error.
+      try {
+        channel.closeWithoutFinalizing();
+      } catch (IOException closeException) {
+        e.addSuppressed(closeException);
+      }
+      throw e;
+    }
+    return channel;
+  }
+
   public static void optimizeWriteLatencyPool(String bucketName, String keyPrefix)
       throws Exception {
     // The ID of your GCS zonal bucket
@@ -124,24 +143,6 @@ public class OptimizeWriteLatencyPool {
         }
       }
     }
-  }
-
-  private static AppendableUploadWriteableByteChannel newPrewarmedChannel(
-      Storage storage, BlobInfo info, BlobAppendableUploadConfig config) throws IOException {
-    AppendableUploadWriteableByteChannel channel =
-        storage.blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist()).open();
-    // open() is lazy. flush() creates the 0-byte object.
-    try {
-      channel.flush();
-    } catch (IOException e) {
-      try {
-        channel.closeWithoutFinalizing();
-      } catch (IOException closeException) {
-        e.addSuppressed(closeException);
-      }
-      throw e;
-    }
-    return channel;
   }
 }
 
