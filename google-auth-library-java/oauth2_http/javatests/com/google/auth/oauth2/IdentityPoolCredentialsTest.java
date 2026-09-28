@@ -85,6 +85,7 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -512,6 +513,72 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(1).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "url", true, false);
+  }
+
+  @Test
+  void getImpersonatedCredentials_outerHasCachedToken_sourceDoesNotCopyIt() {
+    IdentityPoolCredentials.Builder builder =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setHttpTransportFactory(new MockExternalAccountCredentialsTransportFactory());
+    builder.setAccessToken(new AccessToken("serviceAccountToken", new Date(Long.MAX_VALUE)));
+    IdentityPoolCredentials credential = builder.build();
+
+    assertEquals("serviceAccountToken", credential.getAccessToken().getTokenValue());
+    assertNull(credential.getImpersonatedCredentials().getSourceCredentials().getAccessToken());
+  }
+
+  @Test
+  void refreshAccessToken_withImpersonationAfterDeserialization_sendsStsTokenToIam()
+      throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    credential.refresh();
+    assertEquals(
+        transportFactory.transport.getServiceAccountAccessToken(),
+        credential.getAccessToken().getTokenValue());
+
+    // The cached service account token is serialized, but the impersonated credentials are
+    // rebuilt after deserialization.
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credential);
+    MockExternalAccountCredentialsTransport deserializedTransport =
+        ((MockExternalAccountCredentialsTransportFactory) deserialized.getTransportFactory())
+            .transport;
+    deserializedTransport.setExpireTime(TestUtils.getDefaultExpireTime());
+    deserialized.refresh();
+
+    List<String> stsRequests = new ArrayList<>();
+    List<String> iamAuthHeaders = new ArrayList<>();
+    for (MockLowLevelHttpRequest request : deserializedTransport.getRequests()) {
+      if (request.getUrl().equals(deserializedTransport.getStsUrl())) {
+        stsRequests.add(request.getUrl());
+      } else if (request
+          .getUrl()
+          .equals(deserializedTransport.getServiceAccountImpersonationUrl())) {
+        iamAuthHeaders.add(request.getFirstHeaderValue("Authorization"));
+      }
+    }
+    assertEquals(1, stsRequests.size());
+    assertEquals(
+        Collections.singletonList("Bearer " + deserializedTransport.getAccessToken()),
+        iamAuthHeaders);
   }
 
   @Test

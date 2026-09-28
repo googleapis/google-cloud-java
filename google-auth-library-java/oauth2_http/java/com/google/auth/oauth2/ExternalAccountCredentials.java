@@ -305,6 +305,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         .setServiceAccountImpersonationUrl(null)
         .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
     sourceBuilder.targetServiceAccountEmail = targetPrincipal;
+    sourceBuilder.setAccessToken(null);
     ExternalAccountCredentials sourceCredentials = sourceBuilder.build();
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
