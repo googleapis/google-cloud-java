@@ -137,6 +137,8 @@ public final class ITObjectReadSessionFakeTest {
       Correspondence.transforming(UUID::fromString, "is a UUID");
 
   /**
+   *
+   *
    * <ol>
    *   <li>Open blob descriptor
    *   <li>attempt to read bytes 10-20
@@ -239,6 +241,8 @@ public final class ITObjectReadSessionFakeTest {
   }
 
   /**
+   *
+   *
    * <ol>
    *   <li>Attempt to open blob descriptor
    *   <li>server responds with a redirect
