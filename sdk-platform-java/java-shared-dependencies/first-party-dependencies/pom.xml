@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.22.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <version>1.23.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
     <relativePath>../../../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
