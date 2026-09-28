@@ -22,6 +22,7 @@ import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.TestInitializer;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.Inject;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.annotations.StorageFixture;
 import com.google.common.base.Joiner;
@@ -91,6 +92,8 @@ public final class Registry extends RunListener {
 
   private final BackendResources prodBackendResources =
       BackendResources.of(Backend.PROD, otelSdk, zone);
+  private final BackendResources preProdBackendResources =
+      BackendResources.of(Backend.PREPROD, otelSdk, zone);
   private final BackendResources testBenchBackendResource =
       BackendResources.of(Backend.TEST_BENCH, otelSdk, zone);
 
@@ -102,8 +105,10 @@ public final class Registry extends RunListener {
               RegistryEntry.of(1, TestBench.class, testBench),
               RegistryEntry.of(2, Generator.class, generator),
               registryEntry(3, Backend.class, CrossRunIntersection::getBackend),
-              registryEntry(4, Transport.class, CrossRunIntersection::getTransport))
+              registryEntry(4, Transport.class, CrossRunIntersection::getTransport),
+              registryEntry(5, LocationType.class, CrossRunIntersection::getLocationType))
           .addAll(prodBackendResources.getRegistryEntries())
+          .addAll(preProdBackendResources.getRegistryEntries())
           .addAll(testBenchBackendResource.getRegistryEntries())
           .build();
 
@@ -281,7 +286,7 @@ public final class Registry extends RunListener {
   }
 
   @FunctionalInterface
-  private interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
+  interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
     T resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection);
 
     @Override

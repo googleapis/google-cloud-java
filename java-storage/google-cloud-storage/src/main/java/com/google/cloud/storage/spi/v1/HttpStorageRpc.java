@@ -103,6 +103,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.FileNameMap;
+import java.net.URI;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -158,11 +159,26 @@ public class HttpStorageRpc implements StorageRpc {
     initializer = censusHttpModule.getHttpRequestInitializer(initializer);
     initializer = new InvocationIdInitializer(initializer, applicationName, tm);
     batchRequestInitializer = censusHttpModule.getHttpRequestInitializer(null);
-    storage =
+    String host = options.getHost();
+    Storage.Builder storageBuilder =
         new Storage.Builder(transport, jsonFactory, initializer)
-            .setRootUrl(options.getHost())
-            .setApplicationName(applicationName)
-            .build();
+            .setApplicationName(applicationName);
+    if (host != null) {
+      URI uri = URI.create(host);
+      String path = uri.getPath();
+      if (path != null && !path.isEmpty() && !"/".equals(path)) {
+        String rootUrl = host.substring(0, host.indexOf(path));
+        String servicePath = path.startsWith("/") ? path.substring(1) : path;
+        if (!servicePath.endsWith("/")) {
+          servicePath += "/";
+        }
+        storageBuilder.setRootUrl(rootUrl);
+        storageBuilder.setServicePath(servicePath);
+      } else {
+        storageBuilder.setRootUrl(host);
+      }
+    }
+    storage = storageBuilder.build();
   }
 
   public Storage getStorage() {
