@@ -27,11 +27,18 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.protobuf.Message;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -502,7 +509,97 @@ public class TelemetryBatcherTest {
     assertTrue(TelemetryBatcher.computeProfileCap(huge) > 0);
   }
 
-  private static FeatureUsage featureNamed(String name) {
+  @Test
+  public void testClose_doesNotWaitForUnresponsiveEndpoint() throws IOException {
+    try (ServerSocket unresponsive = new ServerSocket(0); ) {
+      TelemetryConfiguration configuration =
+          TelemetryConfiguration.newBuilder()
+              .setEnabled(true)
+              .setEndpointUrl("http://127.0.0.1:" + unresponsive.getLocalPort())
+              .setDriverEnvironment(driverEnvironment)
+              .build();
+      TelemetryBatcher batcher =
+          new TelemetryBatcher(
+              configuration, new ClearcutTransport(configuration), executorService, true);
+      batcher.offer(featureNamed("testFeature"));
+
+      long start = System.currentTimeMillis();
+      batcher.close();
+      long end = System.currentTimeMillis();
+      long elapsedMs = end - start;
+
+      assertTrue(elapsedMs < 5000, "close took " + elapsedMs + " ms");
+      assertTrue(executorService.isShutdown());
+    }
+  }
+
+  @Test
+  public void testFailedFlush_requeueRespectsProfileCap() throws Exception {
+    AtomicReference<TelemetryBatcher> batcherRef = new AtomicReference<>();
+    AtomicInteger requestCount = new AtomicInteger();
+    AtomicReference<byte[]> retriedBody = new AtomicReference<>();
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                if (requestCount.incrementAndGet() == 1) {
+                  // While the first send is in flight, fill the live map up to the cap (4).
+                  TelemetryBatcher batcher = batcherRef.get();
+                  batcher.offer(featureNamed("a"));
+                  batcher.offer(featureNamed("x"));
+                  batcher.offer(featureNamed("y"));
+                  batcher.offer(featureNamed("z"));
+                  response.setStatusCode(500);
+                  return response;
+                }
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                getStreamingContent().writeTo(out);
+                retriedBody.set(out.toByteArray());
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+    // Threshold 2 gives a profile cap of 4.
+    TelemetryConfiguration config =
+        TelemetryConfiguration.newBuilder()
+            .setEnabled(true)
+            .setBatchSizeThreshold(2)
+            .setDriverEnvironment(driverEnvironment)
+            .build();
+
+    // No executor: flushes run on the test thread, so the ordering is deterministic.
+    try (TelemetryBatcher batcher =
+        new TelemetryBatcher(config, new ClearcutTransport(mockTransport, config), null, false)) {
+      batcherRef.set(batcher);
+      batcher.offer(featureNamed("a"));
+      batcher.offer(featureNamed("b"));
+      batcher.offer(featureNamed("c"));
+
+      assertFalse(batcher.flush().isSuccess());
+      assertTrue(batcher.flush().isSuccess());
+    }
+
+    TelemetryPayload payload =
+        TelemetryPayload.parseFrom(
+            LogRequest.parseFrom(retriedBody.get()).getLogEvents(0).getSourceExtension());
+    Map<String, Long> counts =
+        payload.getFeatureUsagesList().stream()
+            .collect(
+                Collectors.toMap(FeatureUsage::getCustomFeatureName, f -> (long) f.getCount()));
+
+    assertEquals(4, counts.size());
+    assertEquals(2L, counts.get("a")); // existing key: the failed count is merged in
+    assertFalse(counts.containsKey("b")); // new keys are dropped once the live map is at the cap
+    assertFalse(counts.containsKey("c"));
+  }
+
+  private static Message featureNamed(String name) {
     return FeatureUsage.newBuilder()
         .setDriverFeature(DriverFeature.DRIVER_FEATURE_CUSTOM)
         .setCustomFeatureName(name)
