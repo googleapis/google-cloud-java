@@ -64,7 +64,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicBoolean flushPending = new AtomicBoolean();
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
-  private ScheduledFuture<?> scheduledTask;
+  private volatile ScheduledFuture<?> scheduledTask;
 
   // Constructors & Lifecycle
   TelemetryBatcher(TelemetryConfiguration config, ClearcutTransport transport) {
