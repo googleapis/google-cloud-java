@@ -28,6 +28,7 @@ import com.google.cloud.storage.RangeSpec;
 import com.google.cloud.storage.ReadProjectionConfigs;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Queue;
@@ -56,14 +57,10 @@ public class OptimizeWriteLatencyPool {
       Queue<AppendableUploadWriteableByteChannel> pool = new ConcurrentLinkedQueue<>();
       ExecutorService executor = Executors.newSingleThreadExecutor();
       try {
-        // 1. Init pool: Sized to ensure pre-warmed channels are always available.
+        // 1. Init pool: Flushing incurs operation charges, so size the pool carefully.
         for (int i = 0; i < poolSize; i++) {
           BlobInfo info = BlobInfo.newBuilder(bucketName, keyPrefix + "_" + i).build();
-          // open() establishes the stream and creates the 0-byte object in the background.
-          pool.add(
-              storage
-                  .blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist())
-                  .open());
+          pool.add(newPrewarmedChannel(storage, info, config));
         }
 
         // 2. Write: Pop a pre-warmed writer and commit with flush() (~1-2 ms)
@@ -91,11 +88,7 @@ public class OptimizeWriteLatencyPool {
                 () -> {
                   channel.closeWithoutFinalizing();
                   BlobInfo nextInfo = BlobInfo.newBuilder(bucketName, nextObjectName).build();
-                  pool.add(
-                      storage
-                          .blobAppendableUpload(
-                              nextInfo, config, Storage.BlobWriteOption.doesNotExist())
-                          .open());
+                  pool.add(newPrewarmedChannel(storage, nextInfo, config));
                   return null;
                 });
 
@@ -131,6 +124,24 @@ public class OptimizeWriteLatencyPool {
         }
       }
     }
+  }
+
+  private static AppendableUploadWriteableByteChannel newPrewarmedChannel(
+      Storage storage, BlobInfo info, BlobAppendableUploadConfig config) throws IOException {
+    AppendableUploadWriteableByteChannel channel =
+        storage.blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist()).open();
+    // open() is lazy: an empty flush() opens the stream and creates the 0-byte object.
+    try {
+      channel.flush();
+    } catch (IOException e) {
+      try {
+        channel.closeWithoutFinalizing();
+      } catch (IOException closeException) {
+        e.addSuppressed(closeException);
+      }
+      throw e;
+    }
+    return channel;
   }
 }
 
