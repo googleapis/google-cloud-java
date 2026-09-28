@@ -291,6 +291,216 @@ public class ITAppendableUploadFakeTest {
     }
   }
 
+  @Test
+  public void bidiWriteObjectRedirectedError_redirectCounterResetOnResponse() throws Exception {
+    String routingToken1 = "routingToken1";
+    String routingToken2 = "routingToken2";
+    String routingToken3 = "routingToken3";
+    String routingToken4 = "routingToken4";
+    String routingToken5 = "routingToken5";
+
+    BidiWriteHandle writeHandle1 =
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-1")).build();
+    BidiWriteHandle writeHandle2 =
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-2")).build();
+    BidiWriteHandle writeHandle3 =
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
+
+    // 1. First write of "ABC".
+    BidiWriteObjectRequest req_open_abc = BidiUploadTestUtils.withFlushAndStateLookup(open_abc);
+    BidiWriteObjectResponse res_abc_h1 = res_abc.toBuilder().setWriteHandle(writeHandle1).build();
+
+    // 2. Second write of "DEF".
+    BidiWriteObjectRequest req_def = BidiUploadTestUtils.withFlushAndStateLookup(def);
+    BidiWriteObjectResponse res_def_success =
+        BidiWriteObjectResponse.newBuilder()
+            .setWriteHandle(writeHandle1)
+            .setPersistedSize(6)
+            .build();
+
+    // 3. Reconnect to routingToken1
+    BidiWriteObjectRequest reconnect_token1 =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .setWriteHandle(writeHandle1)
+                    .setRoutingToken(routingToken1)
+                    .build())
+            .setStateLookup(true)
+            .build();
+    BidiWriteObjectResponse res_lookup_token1 =
+        BidiWriteObjectResponse.newBuilder()
+            .setWriteHandle(writeHandle1)
+            .setPersistedSize(3)
+            .build();
+
+    // 5. Third write of "GHI".
+    BidiWriteObjectRequest req_ghi = BidiUploadTestUtils.withFlushAndStateLookup(ghi);
+    BidiWriteObjectResponse res_ghi_success =
+        BidiWriteObjectResponse.newBuilder()
+            .setWriteHandle(writeHandle2)
+            .setPersistedSize(9)
+            .build();
+
+    // 6. Reconnect to routingToken2
+    BidiWriteObjectRequest reconnect_token2 =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .setWriteHandle(writeHandle1)
+                    .setRoutingToken(routingToken2)
+                    .build())
+            .setStateLookup(true)
+            .build();
+    BidiWriteObjectResponse res_lookup_token2 =
+        BidiWriteObjectResponse.newBuilder()
+            .setWriteHandle(writeHandle2)
+            .setPersistedSize(6)
+            .build();
+
+    // 8. Fourth write of "J" (finalize/finish write)
+    BidiWriteObjectRequest req_j_finish = j_finish;
+    BidiWriteObjectResponse res_j_final =
+        resource_10.toBuilder().setWriteHandle(writeHandle3).build();
+
+    // 9. Reconnect to routingToken3
+    BidiWriteObjectRequest reconnect_token3 =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .setWriteHandle(writeHandle2)
+                    .setRoutingToken(routingToken3)
+                    .build())
+            .setStateLookup(true)
+            .build();
+
+    // 10. Reconnect to routingToken4
+    BidiWriteObjectRequest reconnect_token4 =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .setWriteHandle(writeHandle2)
+                    .setRoutingToken(routingToken4)
+                    .build())
+            .setStateLookup(true)
+            .build();
+
+    // 11. Reconnect to routingToken5
+    BidiWriteObjectRequest reconnect_token5 =
+        BidiWriteObjectRequest.newBuilder()
+            .setAppendObjectSpec(
+                AppendObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .setWriteHandle(writeHandle2)
+                    .setRoutingToken(routingToken5)
+                    .build())
+            .setStateLookup(true)
+            .build();
+    BidiWriteObjectResponse res_lookup_token5 =
+        BidiWriteObjectResponse.newBuilder()
+            .setWriteHandle(writeHandle3)
+            .setPersistedSize(9)
+            .build();
+
+    AtomicInteger defCounter = new AtomicInteger();
+    Consumer<StreamObserver<BidiWriteObjectResponse>> defHandler =
+        respond -> {
+          if (defCounter.getAndIncrement() == 0) {
+            respond.onError(packRedirectIntoAbortedException(makeRedirect(routingToken1)));
+          } else {
+            respond.onNext(res_def_success);
+          }
+        };
+
+    AtomicInteger ghiCounter = new AtomicInteger();
+    Consumer<StreamObserver<BidiWriteObjectResponse>> ghiHandler =
+        respond -> {
+          if (ghiCounter.getAndIncrement() == 0) {
+            respond.onError(packRedirectIntoAbortedException(makeRedirect(routingToken2)));
+          } else {
+            respond.onNext(res_ghi_success);
+          }
+        };
+
+    AtomicInteger jCounter = new AtomicInteger();
+    Consumer<StreamObserver<BidiWriteObjectResponse>> jHandler =
+        respond -> {
+          if (jCounter.getAndIncrement() == 0) {
+            respond.onError(packRedirectIntoAbortedException(makeRedirect(routingToken3)));
+          } else {
+            respond.onNext(res_j_final);
+            respond.onCompleted();
+          }
+        };
+
+    FakeStorage fake =
+        FakeStorage.of(
+            ImmutableMap
+                .<BidiWriteObjectRequest, Consumer<StreamObserver<BidiWriteObjectResponse>>>
+                    builder()
+                .put(req_open_abc, respond -> respond.onNext(res_abc_h1))
+                .put(req_def, defHandler)
+                .put(reconnect_token1, respond -> respond.onNext(res_lookup_token1))
+                .put(req_ghi, ghiHandler)
+                .put(reconnect_token2, respond -> respond.onNext(res_lookup_token2))
+                .put(req_j_finish, jHandler)
+                .put(
+                    reconnect_token3,
+                    respond ->
+                        respond.onError(
+                            packRedirectIntoAbortedException(makeRedirect(routingToken4))))
+                .put(
+                    reconnect_token4,
+                    respond ->
+                        respond.onError(
+                            packRedirectIntoAbortedException(makeRedirect(routingToken5))))
+                .put(reconnect_token5, respond -> respond.onNext(res_lookup_token5))
+                .build());
+
+    try (FakeServer fakeServer = FakeServer.of(fake);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(
+                    fakeServer.getGrpcStorageOptions().getRetrySettings().toBuilder()
+                        .setRetryDelayMultiplier(1.0)
+                        .setInitialRetryDelayDuration(Duration.ofMillis(10))
+                        .build())
+                .build()
+                .getService()) {
+
+      BlobId id = BlobId.of("b", "o");
+      BlobAppendableUploadConfig config =
+          BlobAppendableUploadConfig.of()
+              .withFlushPolicy(FlushPolicy.maxFlushSize(3))
+              .withCloseAction(CloseAction.FINALIZE_WHEN_CLOSING);
+      BlobAppendableUpload b =
+          storage.blobAppendableUpload(BlobInfo.newBuilder(id).build(), config);
+      try (AppendableUploadWriteableByteChannel channel = b.open()) {
+        ByteBuffer wrap = ByteBuffer.wrap(content.getBytes());
+        Buffers.emptyTo(wrap, channel);
+      }
+
+      // Verification
+      ApiFuture<BlobInfo> resultFuture = b.getResult();
+      BlobInfo finalMetadata = resultFuture.get(3, TimeUnit.SECONDS);
+      assertThat(finalMetadata.getSize()).isEqualTo(10L);
+    }
+  }
+
   /**
    * We use a small segmenter (3 byte segments) and flush "ABCDEFGHIJ". We make sure that this
    * resolves to segments of "ABC"/"DEF"/"GHI"/"J".
