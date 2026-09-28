@@ -40,6 +40,7 @@ import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
+import java.time.Duration;
 import java.util.Collection;
 import org.jspecify.annotations.NullMarked;
 
@@ -288,7 +289,7 @@ public class Callables {
       UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
     ResumableUploadOptions.Builder defaultOptionsBuilder = ResumableUploadOptions.newBuilder();
-    java.time.Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
+    Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
     if (totalTimeout != null && !totalTimeout.isZero() && !totalTimeout.isNegative()) {
       defaultOptionsBuilder.setGlobalTimeout(totalTimeout);
     }
