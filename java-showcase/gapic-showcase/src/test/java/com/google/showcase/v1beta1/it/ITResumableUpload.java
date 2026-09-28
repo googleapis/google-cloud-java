@@ -18,8 +18,8 @@ package com.google.showcase.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadFuture;
+import com.google.api.gax.rpc.ResumableUploadOptions;
 import com.google.showcase.v1beta1.ResumableUploadServiceClient;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
@@ -41,6 +41,8 @@ import org.junit.jupiter.api.io.TempDir;
 class ITResumableUpload {
 
   private static final int SHOWCASE_CHUNK_SIZE = 256 * 1024; // 256KB
+  private static final ResumableUploadOptions DEFAULT_TEST_OPTIONS =
+      ResumableUploadOptions.newBuilder().setChunkSize(SHOWCASE_CHUNK_SIZE).build();
   private static ResumableUploadServiceClient client;
 
   @BeforeAll
@@ -69,7 +71,7 @@ class ITResumableUpload {
         UploadMediaRequest.newBuilder().setName("it-client-sync.txt").build();
 
     try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, null);
+      UploadMediaResponse response = client.uploadMedia(request, stream, DEFAULT_TEST_OPTIONS);
       assertThat(response.getName()).isEqualTo("it-client-sync.txt");
       assertThat(response.getSize()).isEqualTo(Files.size(file));
     }
@@ -89,9 +91,7 @@ class ITResumableUpload {
 
     try (InputStream stream = Files.newInputStream(file)) {
       ResumableUploadFuture<UploadMediaResponse> future =
-          client
-              .uploadMediaCallable()
-              .futureCall(request, stream, (ResumableUploadCallSettings) null);
+          client.uploadMediaCallable().futureCall(request, stream, (ResumableUploadOptions) null);
 
       UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
       assertThat(future.isDone()).isTrue();
@@ -112,7 +112,7 @@ class ITResumableUpload {
         UploadMediaRequest.newBuilder().setName("it-client-multi-chunk.txt").build();
 
     try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, null);
+      UploadMediaResponse response = client.uploadMedia(request, stream, DEFAULT_TEST_OPTIONS);
       assertThat(response.getName()).isEqualTo("it-client-multi-chunk.txt");
       assertThat(response.getSize()).isEqualTo(Files.size(file));
     }
@@ -133,7 +133,8 @@ class ITResumableUpload {
     try (ResumableUploadServiceClient grpcClient =
         TestClientInitializer.createGrpcResumableUploadClient(SHOWCASE_CHUNK_SIZE)) {
       try (InputStream stream = Files.newInputStream(file)) {
-        UploadMediaResponse response = grpcClient.uploadMedia(request, stream, null);
+        UploadMediaResponse response =
+            grpcClient.uploadMedia(request, stream, DEFAULT_TEST_OPTIONS);
         assertThat(response.getName()).isEqualTo("it-grpc-delegation.txt");
         assertThat(response.getSize()).isEqualTo(Files.size(file));
       }
@@ -142,7 +143,7 @@ class ITResumableUpload {
         ResumableUploadFuture<UploadMediaResponse> future =
             grpcClient
                 .uploadMediaCallable()
-                .futureCall(request, stream, (ResumableUploadCallSettings) null);
+                .futureCall(request, stream, (ResumableUploadOptions) null);
         UploadMediaResponse response = future.get(10, TimeUnit.SECONDS);
         assertThat(future.isDone()).isTrue();
         assertThat(future.isCancelled()).isFalse();
@@ -155,18 +156,17 @@ class ITResumableUpload {
   }
 
   @Test
-  void testGeneratedClient_uploadMedia_withCustomCallSettings(@TempDir Path tempDir)
-      throws Exception {
+  void testGeneratedClient_uploadMedia_withCustomOptions(@TempDir Path tempDir) throws Exception {
     // 600KB payload with custom per-call 512KB chunk size override (default is 256KB)
     int totalBytes = 600 * 1024;
     Path file = createTempFile(tempDir, "it-client-custom-call-settings.txt", totalBytes);
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-client-custom-call-settings.txt").build();
-    ResumableUploadCallSettings callSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(512 * 1024).build();
+    ResumableUploadOptions options =
+        ResumableUploadOptions.newBuilder().setChunkSize(512 * 1024).build();
 
     try (InputStream stream = Files.newInputStream(file)) {
-      UploadMediaResponse response = client.uploadMedia(request, stream, callSettings);
+      UploadMediaResponse response = client.uploadMedia(request, stream, options);
       assertThat(response.getName()).isEqualTo("it-client-custom-call-settings.txt");
       assertThat(response.getSize()).isEqualTo(Files.size(file));
     }

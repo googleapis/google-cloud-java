@@ -296,6 +296,73 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.DynamicField> getDynamicFieldsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DynamicField getDynamicFields(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDynamicFieldsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.DynamicFieldOrBuilder>
+      getDynamicFieldsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DynamicFieldOrBuilder getDynamicFieldsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The primary identifier for the query resource in Looker, used for
    * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
    * resource.

@@ -33,14 +33,15 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
@@ -93,14 +94,14 @@ class ResumableUploadStartCallable<RequestT>
   }
 
   static <RequestT> UnaryCallable<RequestT, ResumableUploadSession> create(
-      ClientContext clientContext, ApiMethodDescriptor<RequestT, String> descriptor) {
+      ClientContext clientContext,
+      ApiMethodDescriptor<RequestT, String> descriptor,
+      UnaryCallSettings<RequestT, ?> callSettings) {
     UnaryCallable<RequestT, ResumableUploadSession> rawCallable =
         new ResumableUploadStartCallable<>(clientContext, descriptor);
     UnaryCallable<RequestT, ResumableUploadSession> callable =
-        new HttpJsonExceptionCallable<>(
-            rawCallable,
-            // Wire calls do not retry directly; retries are managed by ResumableUploadCallable.
-            Collections.emptySet());
+        new HttpJsonExceptionCallable<>(rawCallable, callSettings.getRetryableCodes());
+    callable = Callables.retrying(callable, callSettings, clientContext);
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 

@@ -534,16 +534,18 @@ function generate_graalvm_modules_list() {
 
 function install_modules() {
   if [ -z "$1" ]; then
-    mvn install \
-      -B -ntp \
-      -Pquick-build \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -DskipTests=true \
-      -Dmaven.javadoc.skip=true \
-      -Dgcloud.download.skip=true \
-      -T 1C
+    retry_with_backoff 3 10 \
+      mvn install \
+        -B -ntp \
+        -U \
+        -Pquick-build \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -DskipTests=true \
+        -Dmaven.javadoc.skip=true \
+        -Dgcloud.download.skip=true \
+        -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
     parse_all_submodules "$1"
@@ -610,16 +612,18 @@ function install_modules() {
     #
     #   mvn install --projects java-kms/google-cloud-kms --also-make
     #      Correctly builds dependencies without building dependents.
-    mvn install --projects "$all_submodules,$always_install_deps" --also-make \
-      -B -ntp \
-      -Pquick-build \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -DskipTests=true \
-      -Dmaven.javadoc.skip=true \
-      -Dgcloud.download.skip=true \
-      -T 1C
+    retry_with_backoff 3 10 \
+      mvn install --projects "$all_submodules,$always_install_deps" --also-make \
+        -B -ntp \
+        -U \
+        -Pquick-build \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -DskipTests=true \
+        -Dmaven.javadoc.skip=true \
+        -Dgcloud.download.skip=true \
+        -T 1C
   fi
 }
 
