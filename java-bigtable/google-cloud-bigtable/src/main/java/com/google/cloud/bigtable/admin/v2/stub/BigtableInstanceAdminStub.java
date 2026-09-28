@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMemoryLayersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -45,6 +46,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -58,8 +60,11 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MemoryLayer;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -71,6 +76,8 @@ import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerMetadata;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -170,6 +177,30 @@ public abstract class BigtableInstanceAdminStub implements BackgroundResource {
 
   public UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
+  }
+
+  public OperationCallable<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateMemoryLayerOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateMemoryLayerRequest, Operation> updateMemoryLayerCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMemoryLayerCallable()");
+  }
+
+  public UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersPagedResponse>
+      listMemoryLayersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMemoryLayersPagedCallable()");
+  }
+
+  public UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersResponse>
+      listMemoryLayersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMemoryLayersCallable()");
+  }
+
+  public UnaryCallable<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMemoryLayerCallable()");
   }
 
   public UnaryCallable<CreateAppProfileRequest, AppProfile> createAppProfileCallable() {

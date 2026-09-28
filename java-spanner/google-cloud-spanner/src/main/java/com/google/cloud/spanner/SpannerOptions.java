@@ -53,6 +53,8 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.DynamicKeyManager;
+import com.google.cloud.spanner.omni.DynamicTrustManager;
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
@@ -85,6 +87,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
 import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
@@ -179,6 +182,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL = Duration.ofMinutes(1);
 
   /**
+   * Default maximum time for one attempt to prime a channel that the dynamic channel pool adds
+   * during scale-up. Scaled-up channels are primed by executing {@code SELECT 1} with a multiplexed
+   * session before they are published to the pool.
+   */
+  public static final Duration DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT = Duration.ofSeconds(10);
+
+  /**
+   * Default maximum number of attempts to prime a channel that the dynamic channel pool adds during
+   * scale-up before the channel is discarded.
+   */
+  public static final int DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS = 3;
+
+  /**
    * Creates a {@link GcpChannelPoolOptions} instance with Spanner-specific defaults for dynamic
    * channel pooling. These defaults are optimized for typical Spanner workloads.
    *
@@ -193,7 +209,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    *   <li>Scale down interval: 3 minutes
    *   <li>Affinity key lifetime: 10 minutes
    *   <li>Cleanup interval: 1 minute
+   *   <li>Channel prime timeout: 10 seconds
+   *   <li>Channel prime max attempts: {@value #DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS}
    * </ul>
+   *
+   * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+   * multiplexed session before they are published. The primer is registered by the Spanner client
+   * when dynamic channel pooling is enabled, unless these options already contain a primer. Priming
+   * rotates across available multiplexed sessions owned by live database clients of the {@link
+   * Spanner} instance. Closed or invalid database clients do not supply sessions for priming.
    *
    * @return a new {@link GcpChannelPoolOptions} instance with Spanner defaults
    */
@@ -208,13 +232,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
         .setAffinityKeyLifetime(DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
         .setCleanupInterval(DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
+        .setChannelPrimeTimeout(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT)
+        .setChannelPrimeMaxAttempts(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS)
         .build();
   }
 
   /**
    * Merges user-provided {@link GcpChannelPoolOptions} with Spanner-specific defaults. Any value
    * that the user has not explicitly set (i.e. left at the builder's default of 0 or null) will be
-   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}.
+   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}. A user-provided channel
+   * primer, prime timeout, and prime attempt count are always preserved.
    */
   static GcpChannelPoolOptions mergeWithDefaultChannelPoolOptions(
       GcpChannelPoolOptions userOptions) {
@@ -250,6 +277,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     if (userOptions.getCleanupInterval() == null || userOptions.getCleanupInterval().isZero()) {
       merged.setCleanupInterval(defaults.getCleanupInterval());
+    }
+    if (userOptions.getChannelPrimeTimeout() == null
+        || userOptions.getChannelPrimeTimeout().isZero()) {
+      merged.setChannelPrimeTimeout(defaults.getChannelPrimeTimeout());
+    }
+    if (userOptions.getChannelPrimeMaxAttempts() <= 0) {
+      merged.setChannelPrimeMaxAttempts(defaults.getChannelPrimeMaxAttempts());
     }
     return merged.build();
   }
@@ -301,6 +335,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final Map<DatabaseId, QueryOptions> mergedQueryOptions;
 
   private final CallCredentialsProvider callCredentialsProvider;
+  private final CallContextConfigurator callContextConfigurator;
   private final CloseableExecutorProvider asyncExecutorProvider;
   private final String compressorName;
   private final String emulatorHost;
@@ -324,6 +359,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean autoTaggingEnabled;
   private final List<String> autoTaggingPackages;
   private final int autoTaggingTracerLimit;
+  private final String clientCertificate;
+  private final String clientCertificateKey;
+  private final String caCertificate;
+  private final InstanceType instanceType;
+  private final boolean usePlainText;
 
   enum TracingFramework {
     OPEN_CENSUS,
@@ -355,9 +395,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * {@link CallContextConfigurator} can be used to modify the {@link ApiCallContext} for one or
-   * more specific RPCs. This can be used to set specific timeout value for RPCs or use specific
-   * {@link CallCredentials} for an RPC. The {@link CallContextConfigurator} must be set as a value
-   * on the {@link Context} using the {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
+   * more specific RPCs. This can be used to set specific timeout values for RPCs or use specific
+   * {@link CallCredentials} for an RPC. The {@link CallContextConfigurator} can be configured at
+   * the client level using {@link Builder#setCallContextConfigurator(CallContextConfigurator)}, or
+   * on a per-call basis as a value on the {@link Context} using the {@link
+   * SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
    *
    * <p>This API is meant for advanced users. Most users should instead use the {@link
    * SpannerCallContextTimeoutConfigurator} for setting timeouts per RPC.
@@ -486,8 +528,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Helper class to configure timeouts for specific Spanner RPCs. The {@link
-   * SpannerCallContextTimeoutConfigurator} must be set as a value on the {@link Context} using the
-   * {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
+   * SpannerCallContextTimeoutConfigurator} can be set client-wide via {@link
+   * Builder#setCallContextConfigurator(CallContextConfigurator)} or on individual requests as a
+   * value on the {@link Context} using the {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY}
+   * key.
    *
    * <p>Example usage:
    *
@@ -543,43 +587,40 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       if (spannerMethod == null) {
         return null;
       }
-      switch (SpannerMethod.valueOf(request, method)) {
+      ApiCallContext callContext = context == null ? GrpcCallContext.createDefault() : context;
+      switch (spannerMethod) {
         case BATCH_UPDATE:
           return batchUpdateTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(batchUpdateTimeout);
+              : callContext.withTimeoutDuration(batchUpdateTimeout);
         case COMMIT:
-          return commitTimeout == null
-              ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(commitTimeout);
+          return commitTimeout == null ? null : callContext.withTimeoutDuration(commitTimeout);
         case EXECUTE_QUERY:
           return executeQueryTimeout == null
               ? null
-              : GrpcCallContext.createDefault()
+              : callContext
                   .withTimeoutDuration(executeQueryTimeout)
                   .withStreamWaitTimeoutDuration(executeQueryTimeout);
         case EXECUTE_UPDATE:
           return executeUpdateTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(executeUpdateTimeout);
+              : callContext.withTimeoutDuration(executeUpdateTimeout);
         case PARTITION_QUERY:
           return partitionQueryTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(partitionQueryTimeout);
+              : callContext.withTimeoutDuration(partitionQueryTimeout);
         case PARTITION_READ:
           return partitionReadTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(partitionReadTimeout);
+              : callContext.withTimeoutDuration(partitionReadTimeout);
         case READ:
           return readTimeout == null
               ? null
-              : GrpcCallContext.createDefault()
+              : callContext
                   .withTimeoutDuration(readTimeout)
                   .withStreamWaitTimeoutDuration(readTimeout);
         case ROLLBACK:
-          return rollbackTimeout == null
-              ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(rollbackTimeout);
+          return rollbackTimeout == null ? null : callContext.withTimeoutDuration(rollbackTimeout);
         default:
       }
       return null;
@@ -908,19 +949,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
-    if (builder.mTLSContext != null) {
-      channelConfigurator =
-          channelBuilder -> {
-            if (builder.channelConfigurator != null) {
-              channelBuilder = builder.channelConfigurator.apply(channelBuilder);
-            }
-            if (channelBuilder instanceof NettyChannelBuilder) {
-              ((NettyChannelBuilder) channelBuilder).sslContext(builder.mTLSContext);
-            }
-            return channelBuilder;
-          };
+    clientCertificate = builder.clientCertificate;
+    clientCertificateKey = builder.clientCertificateKey;
+    caCertificate = builder.caCertificate;
+    instanceType = builder.instanceType;
+    usePlainText = builder.usePlainText;
+    @SuppressWarnings("rawtypes")
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
+        builder.channelConfigurator;
+    while (baseConfigurator instanceof OmniSslChannelConfigurator) {
+      baseConfigurator = ((OmniSslChannelConfigurator) baseConfigurator).getUserConfigurator();
+    }
+    if (builder.omniSslContext != null) {
+      this.channelConfigurator =
+          new OmniSslChannelConfigurator(baseConfigurator, builder.omniSslContext);
     } else {
-      channelConfigurator = builder.channelConfigurator;
+      this.channelConfigurator = baseConfigurator;
     }
     interceptorProvider = builder.interceptorProvider;
     sessionPoolOptions =
@@ -999,6 +1043,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.mergedQueryOptions = ImmutableMap.copyOf(merged);
     }
     callCredentialsProvider = builder.callCredentialsProvider;
+    callContextConfigurator = builder.callContextConfigurator;
     asyncExecutorProvider = builder.asyncExecutorProvider;
     compressorName = builder.compressorName;
     emulatorHost = builder.emulatorHost;
@@ -1258,6 +1303,31 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static Builder prepareBuilder(Builder builder) {
+      boolean hasClientCert = !Strings.isNullOrEmpty(builder.clientCertificate);
+      boolean hasClientKey = !Strings.isNullOrEmpty(builder.clientCertificateKey);
+      boolean hasCaCert = !Strings.isNullOrEmpty(builder.caCertificate);
+
+      if (hasClientCert || hasClientKey || hasCaCert) {
+        if (hasClientCert != hasClientKey) {
+          throw new IllegalArgumentException(
+              "Both clientCertificate and clientCertificateKey must be provided together");
+        }
+        try {
+          SslContextBuilder sslContextBuilder = GrpcSslContexts.forClient();
+          if (hasClientCert) {
+            sslContextBuilder.keyManager(
+                new DynamicKeyManager(
+                    new File(builder.clientCertificate), new File(builder.clientCertificateKey)));
+          }
+          if (hasCaCert) {
+            sslContextBuilder.trustManager(
+                new DynamicTrustManager(new File(builder.caCertificate)));
+          }
+          builder.omniSslContext = sslContextBuilder.build();
+        } catch (Exception e) {
+          throw SpannerExceptionFactory.asSpannerException(e);
+        }
+      }
       if (builder.instanceType == InstanceType.OMNI) {
         builder.enableBuiltInMetrics = false;
         builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
@@ -1280,7 +1350,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         }
         if (builder.credentials instanceof SpannerOmniCredentials) {
           ((SpannerOmniCredentials) builder.credentials)
-              .initChannel(builder.usePlainText, builder.mTLSContext);
+              .initChannel(builder.usePlainText, builder.omniSslContext);
         }
       } else {
         if (builder.username != null || builder.secretBytes != null) {
@@ -1348,6 +1418,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private Duration grpcKeepAliveTime = Duration.ofSeconds(120);
     private Duration grpcKeepAliveTimeout = Duration.ofSeconds(20);
     private CallCredentialsProvider callCredentialsProvider;
+    private CallContextConfigurator callContextConfigurator;
     private CloseableExecutorProvider asyncExecutorProvider;
     private String compressorName;
     private String emulatorHost = System.getenv("SPANNER_EMULATOR_HOST");
@@ -1364,7 +1435,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
-    private SslContext mTLSContext = null;
+    private String clientCertificate = null;
+    private String clientCertificateKey = null;
+    private String caCertificate = null;
+    private SslContext omniSslContext = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
@@ -1434,6 +1508,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
+      this.host = options.getHost();
       this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
@@ -1457,6 +1532,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.enableGrpcGcpOtelMetrics = options.enableGrpcGcpOtelMetrics;
       this.defaultQueryOptions = options.defaultQueryOptions;
       this.callCredentialsProvider = options.callCredentialsProvider;
+      this.callContextConfigurator = options.callContextConfigurator;
       this.grpcKeepAliveTime = options.grpcKeepAliveTime;
       this.grpcKeepAliveTimeout = options.grpcKeepAliveTimeout;
       this.asyncExecutorProvider = options.asyncExecutorProvider;
@@ -1481,6 +1557,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.autoTaggingEnabled = options.autoTaggingEnabled;
       this.autoTaggingPackages = options.autoTaggingPackages;
       this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
+      this.clientCertificate = options.clientCertificate;
+      this.clientCertificateKey = options.clientCertificateKey;
+      this.caCertificate = options.caCertificate;
+      this.instanceType = options.instanceType;
+      this.usePlainText = options.usePlainText;
     }
 
     @Override
@@ -1632,6 +1713,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * SpannerSettings}, and are generated from the file <a
      * href="https://github.com/googleapis/googleapis/blob/master/google/spanner/v1/spanner_gapic.yaml">spanner_gapic.yaml</a>.
      * Retries are configured for idempotent methods but not for non-idempotent methods.
+     *
+     * <p>For streaming queries and reads, configure {@code executeStreamingSqlSettings()} and
+     * {@code streamingReadSettings()}, respectively. Set {@code maxAttempts=1} to disable streaming
+     * retries; an empty set of retryable codes does not disable retries for intrinsically retryable
+     * errors. Defaults allow unlimited streaming resumes. When customizing retry settings, set the
+     * total timeout explicitly: calling {@code toBuilder()} on the stub's retry settings copies
+     * GAPIC's generated one-hour {@code totalTimeout}; set it to zero explicitly for unlimited
+     * resumes. Limits apply to consecutive failures and reset when the stream makes progress by
+     * returning a new resume token.
      *
      * <p>You can set the same {@link RetrySettings} for all unary methods by calling this:
      *
@@ -1844,6 +1934,84 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Configures a client-level {@link CallContextConfigurator} to apply custom gRPC options,
+     * timeouts, or credentials to RPCs executed by this Spanner client.
+     *
+     * <p>By default, Spanner clients allow customizing call options on individual requests using
+     * gRPC's thread-local {@link io.grpc.Context} with {@link #CALL_CONTEXT_CONFIGURATOR_KEY}.
+     * While useful for fine-grained per-RPC overrides, managing thread-local context can be
+     * cumbersome or error-prone in asynchronous, reactive, or multi-threaded pipelines where
+     * operations jump across threads. Setting a {@link CallContextConfigurator} here applies
+     * client-wide across all requests executed by this client instance without requiring
+     * thread-local context propagation.
+     *
+     * <p>This configurator applies to all RPCs executed by {@link DatabaseClient}, {@link Spanner},
+     * {@link DatabaseAdminClient}, and {@link InstanceAdminClient} instances obtained from this
+     * client library. Note that raw GAPIC generated clients (such as {@link
+     * Spanner#createDatabaseAdminClient()} and {@link Spanner#createInstanceAdminClient()}) bypass
+     * this configurator and should be configured via {@link #setDatabaseAdminStubSettings} and
+     * {@link #setInstanceAdminStubSettings}.
+     *
+     * <p>Implementations of {@link CallContextConfigurator} configured at the client level must be
+     * thread-safe as they are shared across all concurrent operations executed by this client.
+     *
+     * <p>If both a client-level configurator and a thread-local configurator (via {@link
+     * #CALL_CONTEXT_CONFIGURATOR_KEY}) are present when an RPC is executed:
+     *
+     * <ol>
+     *   <li>The client-level configurator is evaluated first to establish the baseline call
+     *       context.
+     *   <li>The thread-local configurator is evaluated next using that baseline context.
+     *   <li>Any options returned by the thread-local configurator are merged on top of the
+     *       client-level options, allowing per-call configurations to override or extend
+     *       client-level defaults.
+     * </ol>
+     *
+     * <p>Example: Configure a client-level stream wait timeout of 30 seconds for streaming SQL
+     * queries to detect stalled streams faster:
+     *
+     * <pre>{@code
+     * SpannerOptions options =
+     *     SpannerOptions.newBuilder()
+     *         .setProjectId("my-project")
+     *         .setCallContextConfigurator(
+     *             new CallContextConfigurator() {
+     *               @Override
+     *               public <ReqT, RespT> ApiCallContext configure(
+     *                   ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+     *                 if (method == SpannerGrpc.getExecuteStreamingSqlMethod()) {
+     *                   return context.withStreamWaitTimeoutDuration(Duration.ofSeconds(30));
+     *                 }
+     *                 return null;
+     *               }
+     *             })
+     *         .build();
+     * }</pre>
+     *
+     * <p>You can also use {@link SpannerCallContextTimeoutConfigurator} if you only need to adjust
+     * standard timeouts across RPC types:
+     *
+     * <pre>{@code
+     * SpannerOptions options =
+     *     SpannerOptions.newBuilder()
+     *         .setProjectId("my-project")
+     *         .setCallContextConfigurator(
+     *             SpannerCallContextTimeoutConfigurator.create()
+     *                 .withExecuteQueryTimeoutDuration(Duration.ofSeconds(30)))
+     *         .build();
+     * }</pre>
+     *
+     * @param callContextConfigurator the configurator to apply to all RPCs, or {@code null} to
+     *     clear
+     * @return this {@link Builder} instance
+     */
+    public Builder setCallContextConfigurator(
+        @Nullable CallContextConfigurator callContextConfigurator) {
+      this.callContextConfigurator = callContextConfigurator;
+      return this;
+    }
+
+    /**
      * Sets the compression to use for all gRPC calls. The compressor must be a valid name known in
      * the {@link CompressorRegistry}. This will enable compression both from the client to the
      * server and from the server to the client.
@@ -2031,6 +2199,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Enables dynamic channel pooling. When enabled, the client will automatically scale the number
      * of channels based on load. This requires the gRPC-GCP extension to be enabled.
      *
+     * <p>Channels that the pool adds during scale-up are primed before they serve traffic: the
+     * client executes {@code SELECT 1} with a multiplexed session on the new channel, and the pool
+     * only publishes the channel once that succeeds. See {@link
+     * #createDefaultDynamicChannelPoolOptions()} for the prime timeout and attempt defaults, and
+     * {@link #setGcpChannelPoolOptions(GcpChannelPoolOptions)} to customize them.
+     *
      * <p>Dynamic channel pooling is disabled by default. Use this method to explicitly enable it.
      * Note that calling {@link #setNumChannels(int)} will disable dynamic channel pooling even if
      * this method was called.
@@ -2068,7 +2242,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * channel pool behavior when {@link #enableDynamicChannelPool()} is enabled.
      *
      * <p>If not set, Spanner-specific defaults will be used (see {@link
-     * #createDefaultDynamicChannelPoolOptions()}).
+     * #createDefaultDynamicChannelPoolOptions()}). Values that are left unset in the given options
+     * are filled in from those defaults.
+     *
+     * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+     * multiplexed session before they are published. A channel primer, prime timeout, or prime
+     * attempt count that is set in the given options takes precedence over the Spanner primer and
+     * its defaults.
      *
      * <p>Example usage:
      *
@@ -2105,21 +2285,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     /**
      * Configures mTLS authentication using the provided client certificate and key files. mTLS via
-     * useClientCert is only supported for Spanner Omni instances.
+     * useClientCert is only supported for Spanner Omni instances. Certificates and keys are loaded
+     * dynamically and reloaded automatically when rotated on disk.
      *
      * @param clientCertificate Path to the client certificate file.
      * @param clientCertificateKey Path to the client private key file.
-     * @throws SpannerException If an error occurs while configuring the mTLS context
      */
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
-      try {
-        this.mTLSContext =
-            GrpcSslContexts.forClient()
-                .keyManager(new File(clientCertificate), new File(clientCertificateKey))
-                .build();
-      } catch (Exception e) {
-        throw SpannerExceptionFactory.asSpannerException(e);
-      }
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificate), "clientCertificate cannot be null or empty");
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(clientCertificateKey),
+          "clientCertificateKey cannot be null or empty");
+      this.clientCertificate = clientCertificate;
+      this.clientCertificateKey = clientCertificateKey;
+      return this;
+    }
+
+    /**
+     * Configures the server root CA certificate for SSL/TLS authentication. The CA certificate is
+     * loaded dynamically and reloaded automatically when rotated on disk.
+     *
+     * @param caCertificate Path to the server root CA certificate file.
+     */
+    public Builder setCaCertificate(String caCertificate) {
+      Preconditions.checkArgument(
+          !Strings.isNullOrEmpty(caCertificate), "caCertificate cannot be null or empty");
+      this.caCertificate = caCertificate;
       return this;
     }
 
@@ -2538,6 +2730,35 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return channelConfigurator;
   }
 
+  @SuppressWarnings("rawtypes")
+  private static class OmniSslChannelConfigurator
+      implements ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> {
+    private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator;
+    private final SslContext sslContext;
+
+    OmniSslChannelConfigurator(
+        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> userConfigurator,
+        SslContext sslContext) {
+      this.userConfigurator = userConfigurator;
+      this.sslContext = sslContext;
+    }
+
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getUserConfigurator() {
+      return userConfigurator;
+    }
+
+    @Override
+    public ManagedChannelBuilder apply(ManagedChannelBuilder channelBuilder) {
+      if (userConfigurator != null) {
+        channelBuilder = userConfigurator.apply(channelBuilder);
+      }
+      if (channelBuilder instanceof NettyChannelBuilder) {
+        ((NettyChannelBuilder) channelBuilder).sslContext(sslContext);
+      }
+      return channelBuilder;
+    }
+  }
+
   public GrpcInterceptorProvider getInterceptorProvider() {
     return interceptorProvider;
   }
@@ -2636,6 +2857,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public CallCredentialsProvider getCallCredentialsProvider() {
     return callCredentialsProvider;
+  }
+
+  /**
+   * Returns the client-level {@link CallContextConfigurator} configured for this {@link
+   * SpannerOptions}, or {@code null} if none is set.
+   */
+  @Nullable
+  public CallContextConfigurator getCallContextConfigurator() {
+    return callContextConfigurator;
   }
 
   private boolean usesNoCredentials() {
@@ -3029,6 +3259,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   @Override
   protected boolean shouldRefreshRpc(ServiceRpc cachedRpc) {
     return cachedRpc == null || ((SpannerRpc) cachedRpc).isClosed();
+  }
+
+  @Nullable
+  public String getClientCertificate() {
+    return clientCertificate;
+  }
+
+  @Nullable
+  public String getClientCertificateKey() {
+    return clientCertificateKey;
+  }
+
+  @Nullable
+  public String getCaCertificate() {
+    return caCertificate;
+  }
+
+  public InstanceType getInstanceType() {
+    return instanceType;
+  }
+
+  public boolean isUsePlainText() {
+    return usePlainText;
   }
 
   @SuppressWarnings("unchecked")

@@ -117,7 +117,7 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132(.google.ads.datamanager.v1.EventLocationB\003\340A\001\022\034\n"
           + "\017app_instance_id\030\026 \001(\tB\003\340A\001B\023\n"
           + "\021_conversion_valueB\023\n"
-          + "\021_conversion_count\"\357\002\n\r"
+          + "\021_conversion_count\"\235\003\n\r"
           + "AdIdentifiers\022\037\n"
           + "\022session_attributes\030\001 \001(\tB\003\340A\001\022\022\n"
           + "\005gclid\030\002 \001(\tB\003\340A\001\022\023\n"
@@ -130,7 +130,9 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + "impression_id\030\010 \001(\tB\003\340A\001\022\025\n"
           + "\010match_id\030\t \001(\tB\003\340A\001\022K\n"
           + "\022encrypted_user_ids\030\n"
-          + " \003(\0132*.google.ads.datamanager.v1.EncryptedUserIdB\003\340A\001\"`\n"
+          + " \003(\0132*.google.ads.datamanager.v1.EncryptedUserIdB\003\340A\001\022\021\n"
+          + "\004ppid\030\013 \001(\tB\003\340A\001\022\031\n"
+          + "\014visitor_ppid\030\014 \001(\tB\003\340A\001\"`\n"
           + "\016CustomVariable\022\025\n"
           + "\010variable\030\001 \001(\tB\003\340A\001\022\022\n"
           + "\005value\030\002 \001(\tB\003\340A\001\022#\n"
@@ -154,10 +156,9 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
           + "\007MESSAGE\020\006\022\t\n"
           + "\005OTHER\020\005B\307\001\n"
           + "\035com.google.ads.datamanager.v1B\n"
-          + "EventProtoP\001ZAcloud.google.com/go/dataman"
-          + "ager/apiv1/datamanagerpb;datamanagerpb\252\002"
-          + "\031Google.Ads.DataManager.V1\312\002\031Google\\Ads\\"
-          + "DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "EventProtoP\001ZAcloud.google.com/go/datamanager/apiv1/datamanagerpb;datamanag"
+          + "erpb\252\002\031Google.Ads.DataManager.V1\312\002\031Googl"
+          + "e\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -218,6 +219,8 @@ public final class EventProto extends com.google.protobuf.GeneratedFile {
               "ImpressionId",
               "MatchId",
               "EncryptedUserIds",
+              "Ppid",
+              "VisitorPpid",
             });
     internal_static_google_ads_datamanager_v1_CustomVariable_descriptor =
         getDescriptor().getMessageType(2);

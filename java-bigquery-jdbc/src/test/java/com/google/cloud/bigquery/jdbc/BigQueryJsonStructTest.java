@@ -258,4 +258,41 @@ public class BigQueryJsonStructTest {
             () -> structWithPrimitiveValues.getAttributes(emptyMap()));
     assertThat(exception.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
+
+  @Test
+  public void testJsonStructTimestampPicosEnabled() throws SQLException {
+    Field picosField = Field.newBuilder("picosTs", TIMESTAMP).setTimestampPrecision(12L).build();
+    FieldList schema = FieldList.of(picosField);
+    FieldValue val = FieldValue.of(PRIMITIVE, "1680174859.123456789123");
+    FieldValue structValue = FieldValue.of(RECORD, FieldValueList.of(asList(val)));
+
+    BigQueryJsonStruct struct =
+        new BigQueryJsonStruct(
+            schema,
+            structValue,
+            true,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
+
+    Object[] attributes = struct.getAttributes();
+    assertThat(attributes).isEqualTo(new Object[] {"2023-03-30 11:14:19.123456789123"});
+  }
+
+  @Test
+  public void testJsonStructTimestampPicosDisabled() throws SQLException {
+    Field picosField = Field.newBuilder("picosTs", TIMESTAMP).setTimestampPrecision(12L).build();
+    FieldList schema = FieldList.of(picosField);
+    FieldValue val = FieldValue.of(PRIMITIVE, "1680174859.123456789123");
+    FieldValue structValue = FieldValue.of(RECORD, FieldValueList.of(asList(val)));
+
+    BigQueryJsonStruct struct =
+        new BigQueryJsonStruct(
+            schema,
+            structValue,
+            false,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
+
+    Object[] attributes = struct.getAttributes();
+    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
+    assertThat(attributes).isEqualTo(new Object[] {expectedTs});
+  }
 }

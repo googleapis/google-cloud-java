@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> GetSpace</td>
  *      <td><p> Gets details about a meeting space.
- * <p>  For an example, see [Get a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).</td>
+ * <p>  For an example, see [Get a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -107,7 +107,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> UpdateSpace</td>
  *      <td><p> Updates details about a meeting space.
- * <p>  For an example, see [Update a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).</td>
+ * <p>  For an example, see [Update a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -127,7 +127,7 @@ import org.jspecify.annotations.Nullable;
  *      <td><p> ConnectActiveConference</td>
  *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Broker a WebRTC connection to the active conference of a space.
  * <p>  On success, clients must use the resulting SDP (Session Description Protocol) answer to establish a WebRTC connection. Once connected, additional functionality is available across WebRTC data channels.
- * <p>  See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview) for more details about this connection.</td>
+ * <p>  See [Meet Media API overview](https://developers.google.com/workspace/meet/media-api/guides/overview) for more details about this connection.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -147,7 +147,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> EndActiveConference</td>
  *      <td><p> Ends an active conference (if there's one).
- * <p>  For an example, see [End active conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).</td>
+ * <p>  For an example, see [End active conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -166,7 +166,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateMember</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+ *      <td><p> Creates a member.
  * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to "name,email,role,user".</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -186,7 +186,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetMember</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+ *      <td><p> Gets a member.
  * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted, this API response will default to "name,email,role,user".</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -206,7 +206,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListMembers</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): List members.
+ *      <td><p> Lists members.
  * <p>  This API supports the `fields` parameter in [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the `fields` parameter is omitted this API response will default to "name,email,role,user".</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -227,7 +227,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteMember</td>
- *      <td><p> [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was previously assigned roles in the space.</td>
+ *      <td><p> Deletes the member who was previously assigned roles in the space.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -241,6 +241,38 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteMemberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateMember</td>
+ *      <td><p> Updates a member.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateMember(UpdateMemberRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateMember(Member member, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateMemberCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateMembers</td>
+ *      <td><p> Updates members of one space within a batch.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateMembers(BatchUpdateMembersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateMembersCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -434,7 +466,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Gets details about a meeting space.
    *
    * <p>For an example, see [Get a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -461,7 +493,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
    *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
    *     <p>For more information, see [How Meet identifies a meeting
-   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   *     space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(@Nullable SpaceName name) {
@@ -475,7 +507,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Gets details about a meeting space.
    *
    * <p>For an example, see [Get a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -502,7 +534,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     `meetingCode` expires 365 days after last use. For more information, see [Learn about
    *     meeting codes in Google Meet](https://support.google.com/meet/answer/10710509).
    *     <p>For more information, see [How Meet identifies a meeting
-   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   *     space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space getSpace(String name) {
@@ -515,7 +547,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Gets details about a meeting space.
    *
    * <p>For an example, see [Get a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -544,7 +576,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Gets details about a meeting space.
    *
    * <p>For an example, see [Get a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#get-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#get-meeting-space).
    *
    * <p>Sample code:
    *
@@ -572,7 +604,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Updates details about a meeting space.
    *
    * <p>For an example, see [Update a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -607,7 +639,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Updates details about a meeting space.
    *
    * <p>For an example, see [Update a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -639,7 +671,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Updates details about a meeting space.
    *
    * <p>For an example, see [Update a meeting
-   * space](https://developers.google.com/meet/api/guides/meeting-spaces#update-meeting-space).
+   * space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#update-meeting-space).
    *
    * <p>Sample code:
    *
@@ -674,8 +706,9 @@ public class SpacesServiceClient implements BackgroundResource {
    * establish a WebRTC connection. Once connected, additional functionality is available across
    * WebRTC data channels.
    *
-   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
-   * for more details about this connection.
+   * <p>See [Meet Media API
+   * overview](https://developers.google.com/workspace/meet/media-api/guides/overview) for more
+   * details about this connection.
    *
    * <p>Sample code:
    *
@@ -711,8 +744,9 @@ public class SpacesServiceClient implements BackgroundResource {
    * establish a WebRTC connection. Once connected, additional functionality is available across
    * WebRTC data channels.
    *
-   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
-   * for more details about this connection.
+   * <p>See [Meet Media API
+   * overview](https://developers.google.com/workspace/meet/media-api/guides/overview) for more
+   * details about this connection.
    *
    * <p>Sample code:
    *
@@ -746,8 +780,9 @@ public class SpacesServiceClient implements BackgroundResource {
    * establish a WebRTC connection. Once connected, additional functionality is available across
    * WebRTC data channels.
    *
-   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
-   * for more details about this connection.
+   * <p>See [Meet Media API
+   * overview](https://developers.google.com/workspace/meet/media-api/guides/overview) for more
+   * details about this connection.
    *
    * <p>Sample code:
    *
@@ -762,6 +797,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *       ConnectActiveConferenceRequest.newBuilder()
    *           .setName(SpaceName.of("[SPACE]").toString())
    *           .setOffer("offer105650780")
+   *           .setConfig(ConnectActiveConferenceRequest.ConnectionConfig.newBuilder().build())
    *           .build();
    *   ConnectActiveConferenceResponse response =
    *       spacesServiceClient.connectActiveConference(request);
@@ -785,8 +821,9 @@ public class SpacesServiceClient implements BackgroundResource {
    * establish a WebRTC connection. Once connected, additional functionality is available across
    * WebRTC data channels.
    *
-   * <p>See [Meet Media API overview](https://developers.google.com/meet/media-api/guides/overview)
-   * for more details about this connection.
+   * <p>See [Meet Media API
+   * overview](https://developers.google.com/workspace/meet/media-api/guides/overview) for more
+   * details about this connection.
    *
    * <p>Sample code:
    *
@@ -801,6 +838,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *       ConnectActiveConferenceRequest.newBuilder()
    *           .setName(SpaceName.of("[SPACE]").toString())
    *           .setOffer("offer105650780")
+   *           .setConfig(ConnectActiveConferenceRequest.ConnectionConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<ConnectActiveConferenceResponse> future =
    *       spacesServiceClient.connectActiveConferenceCallable().futureCall(request);
@@ -819,7 +857,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Ends an active conference (if there's one).
    *
    * <p>For an example, see [End active
-   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+   * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -840,7 +878,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
    *     and is case sensitive. For example, `jQCFfuBOdN5z`.
    *     <p>For more information, see [How Meet identifies a meeting
-   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   *     space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(@Nullable SpaceName name) {
@@ -856,7 +894,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Ends an active conference (if there's one).
    *
    * <p>For an example, see [End active
-   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+   * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -877,7 +915,7 @@ public class SpacesServiceClient implements BackgroundResource {
    *     <p>`{space}` is the resource identifier for the space. It's a unique, server-generated ID
    *     and is case sensitive. For example, `jQCFfuBOdN5z`.
    *     <p>For more information, see [How Meet identifies a meeting
-   *     space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+   *     space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void endActiveConference(String name) {
@@ -891,7 +929,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Ends an active conference (if there's one).
    *
    * <p>For an example, see [End active
-   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+   * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -922,7 +960,7 @@ public class SpacesServiceClient implements BackgroundResource {
    * Ends an active conference (if there's one).
    *
    * <p>For an example, see [End active
-   * conference](https://developers.google.com/meet/api/guides/meeting-spaces#end-active-conference).
+   * conference](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#end-active-conference).
    *
    * <p>Sample code:
    *
@@ -950,7 +988,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   * Creates a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -986,7 +1024,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   * Creates a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1019,7 +1057,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   * Creates a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1052,7 +1090,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Create a member.
+   * Creates a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1084,7 +1122,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   * Gets a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1115,7 +1153,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   * Gets a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1145,7 +1183,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   * Gets a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1177,7 +1215,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Get a member.
+   * Gets a member.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1208,7 +1246,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   * Lists members.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1243,7 +1281,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   * Lists members.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1275,7 +1313,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   * Lists members.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1311,7 +1349,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   * Lists members.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1347,7 +1385,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): List members.
+   * Lists members.
    *
    * <p>This API supports the `fields` parameter in
    * [SystemParameterContext](https://cloud.google.com/apis/docs/system-parameters). When the
@@ -1389,8 +1427,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
-   * previously assigned roles in the space.
+   * Deletes the member who was previously assigned roles in the space.
    *
    * <p>Sample code:
    *
@@ -1417,8 +1454,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
-   * previously assigned roles in the space.
+   * Deletes the member who was previously assigned roles in the space.
    *
    * <p>Sample code:
    *
@@ -1444,8 +1480,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
-   * previously assigned roles in the space.
+   * Deletes the member who was previously assigned roles in the space.
    *
    * <p>Sample code:
    *
@@ -1473,8 +1508,7 @@ public class SpacesServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * [Developer Preview](https://developers.google.com/workspace/preview): Delete the member who was
-   * previously assigned roles in the space.
+   * Deletes the member who was previously assigned roles in the space.
    *
    * <p>Sample code:
    *
@@ -1497,6 +1531,159 @@ public class SpacesServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
     return stub.deleteMemberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a member.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   Member member = Member.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Member response = spacesServiceClient.updateMember(member, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param member Required. The Member to update. Format: spaces/{space}/members/{member}
+   * @param updateMask Optional. Field mask used to specify the fields to be updated in the member.
+   *     If update_mask isn't provided(not set, set with empty paths, or only has "" as paths), it
+   *     defaults to update all fields provided with values in the request. Using "&#42;" as
+   *     update_mask will update all fields, including deleting fields not set in the request. In
+   *     case of BatchUpdate, it must be absent or the same as the update_mask in
+   *     BatchUpdateMembersRequest when UpdateMemberRequest is built as a child request of
+   *     BatchUpdateMembersRequest.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member updateMember(Member member, FieldMask updateMask) {
+    UpdateMemberRequest request =
+        UpdateMemberRequest.newBuilder().setMember(member).setUpdateMask(updateMask).build();
+    return updateMember(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a member.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   UpdateMemberRequest request =
+   *       UpdateMemberRequest.newBuilder()
+   *           .setMember(Member.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Member response = spacesServiceClient.updateMember(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Member updateMember(UpdateMemberRequest request) {
+    return updateMemberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a member.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   UpdateMemberRequest request =
+   *       UpdateMemberRequest.newBuilder()
+   *           .setMember(Member.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Member> future = spacesServiceClient.updateMemberCallable().futureCall(request);
+   *   // Do something.
+   *   Member response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable() {
+    return stub.updateMemberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates members of one space within a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   BatchUpdateMembersRequest request =
+   *       BatchUpdateMembersRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateMemberRequest>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BatchUpdateMembersResponse response = spacesServiceClient.batchUpdateMembers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateMembersResponse batchUpdateMembers(BatchUpdateMembersRequest request) {
+    return batchUpdateMembersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates members of one space within a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SpacesServiceClient spacesServiceClient = SpacesServiceClient.create()) {
+   *   BatchUpdateMembersRequest request =
+   *       BatchUpdateMembersRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateMemberRequest>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BatchUpdateMembersResponse> future =
+   *       spacesServiceClient.batchUpdateMembersCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateMembersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable() {
+    return stub.batchUpdateMembersCallable();
   }
 
   @Override

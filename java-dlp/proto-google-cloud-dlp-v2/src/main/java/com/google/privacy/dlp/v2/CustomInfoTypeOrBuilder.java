@@ -308,6 +308,44 @@ public interface CustomInfoTypeOrBuilder
    *
    *
    * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   *
+   * @return Whether the fileLabelInfoType field is set.
+   */
+  boolean hasFileLabelInfoType();
+
+  /**
+   *
+   *
+   * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   *
+   * @return The fileLabelInfoType.
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType getFileLabelInfoType();
+
+  /**
+   *
+   *
+   * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   */
+  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder
+      getFileLabelInfoTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in the order that they are specified. Only supported
    * for the `dictionary`, `regex`, and `stored_type` CustomInfoTypes.

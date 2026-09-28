@@ -31,10 +31,15 @@
 
 set -e
 
-VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
+# Extract the project's version from pom.xml:
+# - '/<parent>/,/<\/parent>/d' deletes the <parent> block so we do not mistakenly
+#   extract the parent POM's version (e.g. google-cloud-shared-config) if a <parent>
+#   block appears before or contains a <version> declaration.
+# - '/<version>/...q;' captures the project's own <version> tag and exits immediately.
+VERSION=$(sed -n '/<parent>/,/<\/parent>/d; /<version>/{s:.*<version>[[:space:]]*\([^<[:space:]]*\).*:\1:p; q;}' pom.xml)
 
 if [ -z "$VERSION" ]; then
-    echo "Error updating Javadoc: could not obtain version number from maven-help-plugin."
+    echo "Error updating Javadoc: could not obtain version number from pom.xml."
     exit 1
 fi
 

@@ -17,6 +17,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import static com.google.api.gax.grpc.GrpcCallContext.TRACER_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.UNDEFINED_PROJECT_ID;
+import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.DATABASE_ID;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.INSTANCE_ID;
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.METHOD;
@@ -111,6 +112,9 @@ class HeaderInterceptor implements ClientInterceptor {
     ApiTracer tracer = callOptions.getOption(TRACER_KEY);
     CompositeTracer compositeTracer =
         tracer instanceof CompositeTracer ? (CompositeTracer) tracer : null;
+    // The same request id that RequestIdInterceptor writes to the request header. Reading it from
+    // the call options avoids having to parse the header value back into an object on every RPC.
+    XGoogSpannerRequestId parsedRequestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
@@ -133,7 +137,8 @@ class HeaderInterceptor implements ClientInterceptor {
                 @Override
                 public void onHeaders(Metadata metadata) {
                   try {
-                    recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
+                    recordFirstResponseLatency(
+                        parsedRequestId, startedAtNanos, firstResponseRecorded);
                     String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
                     try {
                       // Get gfe and afe Latency value
@@ -170,7 +175,8 @@ class HeaderInterceptor implements ClientInterceptor {
                           LEVEL, "Unable to get built-in metric attributes {0}", e.getMessage());
                     }
                     if (status.isOk()) {
-                      recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
+                      recordFirstResponseLatency(
+                          parsedRequestId, startedAtNanos, firstResponseRecorded);
                     }
                     recordBuiltInMetrics(
                         compositeTracer,
@@ -183,7 +189,7 @@ class HeaderInterceptor implements ClientInterceptor {
                   } catch (Throwable throwable) {
                     LOGGER.log(Level.WARNING, "Error recording metrics in onClose", throwable);
                   } finally {
-                    RequestIdTargetTracker.remove(requestId);
+                    RequestIdTargetTracker.remove(parsedRequestId);
                     super.onClose(status, trailers);
                   }
                 }
@@ -263,7 +269,9 @@ class HeaderInterceptor implements ClientInterceptor {
   }
 
   private void recordFirstResponseLatency(
-      String requestId, long startedAtNanos, AtomicBoolean firstResponseRecorded) {
+      @Nullable XGoogSpannerRequestId requestId,
+      long startedAtNanos,
+      AtomicBoolean firstResponseRecorded) {
     if (!firstResponseRecorded.compareAndSet(false, true)) {
       return;
     }

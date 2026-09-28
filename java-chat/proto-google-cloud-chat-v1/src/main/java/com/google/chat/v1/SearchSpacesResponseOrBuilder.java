@@ -107,6 +107,8 @@ public interface SearchSpacesResponseOrBuilder
    * <pre>
    * A token that can be used to retrieve the next page. If this field is empty,
    * there are no subsequent pages.
+   *
+   * Only populated when `useAdminAccess` is set to `true`.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -121,6 +123,8 @@ public interface SearchSpacesResponseOrBuilder
    * <pre>
    * A token that can be used to retrieve the next page. If this field is empty,
    * there are no subsequent pages.
+   *
+   * Only populated when `useAdminAccess` is set to `true`.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -135,6 +139,8 @@ public interface SearchSpacesResponseOrBuilder
    * <pre>
    * The total number of spaces that match the query, across all pages. If the
    * result is over 10,000 spaces, this value is an estimate.
+   *
+   * Only populated when `useAdminAccess` is set to `true`.
    * </pre>
    *
    * <code>int32 total_size = 3;</code>

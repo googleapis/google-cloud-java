@@ -234,6 +234,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    *
    * **Filterable fields:**
    *
+   * * `archived`
    * * `auctionPriorityEnabled`
    * * `blockOverrideEnabled`
    * * `buyerAccountId`
@@ -245,6 +246,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    * * `privateAuctionDealId`
    * * `privateAuctionDisplayName`
    * * `privateAuctionId`
+   * * `publisherFloorExempt`
    * * `status`
    * * `updateTime`
    * </pre>
@@ -276,6 +278,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    *
    * **Filterable fields:**
    *
+   * * `archived`
    * * `auctionPriorityEnabled`
    * * `blockOverrideEnabled`
    * * `buyerAccountId`
@@ -287,6 +290,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    * * `privateAuctionDealId`
    * * `privateAuctionDisplayName`
    * * `privateAuctionId`
+   * * `publisherFloorExempt`
    * * `status`
    * * `updateTime`
    * </pre>
@@ -1155,6 +1159,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      *
      * **Filterable fields:**
      *
+     * * `archived`
      * * `auctionPriorityEnabled`
      * * `blockOverrideEnabled`
      * * `buyerAccountId`
@@ -1166,6 +1171,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * * `privateAuctionDealId`
      * * `privateAuctionDisplayName`
      * * `privateAuctionId`
+     * * `publisherFloorExempt`
      * * `status`
      * * `updateTime`
      * </pre>
@@ -1196,6 +1202,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      *
      * **Filterable fields:**
      *
+     * * `archived`
      * * `auctionPriorityEnabled`
      * * `blockOverrideEnabled`
      * * `buyerAccountId`
@@ -1207,6 +1214,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * * `privateAuctionDealId`
      * * `privateAuctionDisplayName`
      * * `privateAuctionId`
+     * * `publisherFloorExempt`
      * * `status`
      * * `updateTime`
      * </pre>
@@ -1237,6 +1245,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      *
      * **Filterable fields:**
      *
+     * * `archived`
      * * `auctionPriorityEnabled`
      * * `blockOverrideEnabled`
      * * `buyerAccountId`
@@ -1248,6 +1257,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * * `privateAuctionDealId`
      * * `privateAuctionDisplayName`
      * * `privateAuctionId`
+     * * `publisherFloorExempt`
      * * `status`
      * * `updateTime`
      * </pre>
@@ -1277,6 +1287,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      *
      * **Filterable fields:**
      *
+     * * `archived`
      * * `auctionPriorityEnabled`
      * * `blockOverrideEnabled`
      * * `buyerAccountId`
@@ -1288,6 +1299,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * * `privateAuctionDealId`
      * * `privateAuctionDisplayName`
      * * `privateAuctionId`
+     * * `publisherFloorExempt`
      * * `status`
      * * `updateTime`
      * </pre>
@@ -1313,6 +1325,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      *
      * **Filterable fields:**
      *
+     * * `archived`
      * * `auctionPriorityEnabled`
      * * `blockOverrideEnabled`
      * * `buyerAccountId`
@@ -1324,6 +1337,7 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * * `privateAuctionDealId`
      * * `privateAuctionDisplayName`
      * * `privateAuctionId`
+     * * `publisherFloorExempt`
      * * `status`
      * * `updateTime`
      * </pre>

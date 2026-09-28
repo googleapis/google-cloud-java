@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -458,6 +459,57 @@ public class ITStatementTest extends ITBase {
         }
         assertEquals(sessionId, bqConnection.getSessionInfoConnectionProperty().getValue());
       }
+    }
+  }
+
+  @Test
+  public void testNonIdempotentCreateTableAndDrop() throws SQLException {
+    String tempTableName = "NON_IDEMPOTENT_TABLE_" + Math.abs(random.nextInt(100000));
+    String createTableQuery =
+        String.format("CREATE TABLE %s.%s (`id` INT64, `name` STRING);", DATASET, tempTableName);
+    String dropTableQuery = String.format("DROP TABLE %s.%s;", DATASET, tempTableName);
+
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        Statement statement = connection.createStatement()) {
+      boolean hasResultSet = statement.execute(createTableQuery);
+      assertFalse(hasResultSet);
+      assertEquals(0, statement.getUpdateCount());
+
+      try (ResultSet rs =
+          statement.executeQuery(
+              String.format("SELECT count(*) FROM %s.%s;", DATASET, tempTableName))) {
+        assertTrue(rs.next());
+        assertEquals(0L, rs.getLong(1));
+        assertFalse(rs.next());
+      }
+    } finally {
+      try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+          Statement statement = connection.createStatement()) {
+        statement.execute(dropTableQuery);
+      } catch (SQLException ignored) {
+        // Ignore cleanup exception if table was not created
+      }
+    }
+  }
+
+  @Test
+  @Tag("advanced")
+  public void testHighThroughputApiFallbackNoReadApi() throws IOException, SQLException {
+    String saNoReadApi = requireEnvVar("SA_EMAIL_NO_READAPI");
+
+    String connectionUri =
+        ITBase.connectionUrl
+            + ";ServiceAccountImpersonationEmail="
+            + saNoReadApi
+            + ";MaxResults=10;"
+            + ITBase.FORCE_READ_API_PROPERTIES;
+
+    try (Connection connection = DriverManager.getConnection(connectionUri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      Statement statement = connection.createStatement();
+      validateStatement(statement, 50, "BigQueryJsonResultSet");
     }
   }
 }

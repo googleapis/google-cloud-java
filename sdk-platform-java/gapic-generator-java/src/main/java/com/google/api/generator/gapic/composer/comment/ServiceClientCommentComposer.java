@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public class ServiceClientCommentComposer {
@@ -40,6 +41,14 @@ public class ServiceClientCommentComposer {
   private static final String EMPTY_STRING = "";
   private static final String API_EXCEPTION_TYPE_NAME = "com.google.api.gax.rpc.ApiException";
   private static final String EXCEPTION_CONDITION = "if the remote call fails";
+  private static final String REQUEST_PARAM_NAME = "request";
+  private static final String REQUEST_PARAM_DESCRIPTION =
+      "The request object containing all of the parameters for the API call.";
+  private static final String PAYLOAD_PARAM_NAME = "payload";
+  private static final String PAYLOAD_PARAM_DESCRIPTION = "The payload data stream to upload.";
+  private static final String CALL_SETTINGS_PARAM_NAME = "callSettings";
+  private static final String CALL_SETTINGS_PARAM_DESCRIPTION =
+      "The call settings to apply to this upload, or null to use defaults.";
 
   // Constants.
   private static final String SERVICE_DESCRIPTION_INTRO_STRING =
@@ -105,9 +114,9 @@ public class ServiceClientCommentComposer {
       String classMethodSampleCode,
       String credentialsSampleCode,
       String endpointSampleCode,
-      String transportSampleCode,
-      String primaryTransport,
-      String secondaryTransport) {
+      @Nullable String transportSampleCode,
+      @Nullable String primaryTransport,
+      @Nullable String secondaryTransport) {
     JavaDocComment.Builder classHeaderJavadocBuilder = JavaDocComment.builder();
     if (service.hasDescription()) {
       String descriptionComment =
@@ -187,14 +196,13 @@ public class ServiceClientCommentComposer {
       methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
     }
 
-    if (sampleCodeOpt.isPresent()) {
+    if (sampleCodeOpt.isPresent() && !method.isResumableUpload()) {
       methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
       methodJavadocBuilder.addSampleCode(sampleCodeOpt.get());
     }
 
     if (methodArguments.isEmpty()) {
-      methodJavadocBuilder.addParam(
-          "request", "The request object containing all of the parameters for the API call.");
+      methodJavadocBuilder.addParam(REQUEST_PARAM_NAME, REQUEST_PARAM_DESCRIPTION);
     } else {
       for (MethodArgument argument : methodArguments) {
         // TODO(miraleung): Remove the newline replacement when we support CommonMark.
@@ -202,6 +210,11 @@ public class ServiceClientCommentComposer {
             argument.field().hasDescription() ? argument.field().description() : EMPTY_STRING;
         methodJavadocBuilder.addParam(JavaStyle.toLowerCamelCase(argument.name()), description);
       }
+    }
+
+    if (method.isResumableUpload()) {
+      methodJavadocBuilder.addParam(PAYLOAD_PARAM_NAME, PAYLOAD_PARAM_DESCRIPTION);
+      methodJavadocBuilder.addParam(CALL_SETTINGS_PARAM_NAME, CALL_SETTINGS_PARAM_DESCRIPTION);
     }
 
     methodJavadocBuilder.setThrows(API_EXCEPTION_TYPE_NAME, EXCEPTION_CONDITION);
@@ -233,13 +246,17 @@ public class ServiceClientCommentComposer {
 
   private static String createTableOfMethods(List<MethodAndVariants> methodAndVariantsList) {
     String FLATTENED_METHODS =
-        "<p>\"Flattened\" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>\n";
+        "<p>\"Flattened\" method variants have converted the fields of the request object into"
+            + " function parameters to enable multiple ways to call the same method.</p>\n";
     String REQUEST_OBJECT_METHODS =
-        "<p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>\n";
+        "<p>Request object method variants only take one parameter, a request object, which must be"
+            + " constructed before the call.</p>\n";
     String CALLABLE_METHODS =
-        "<p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>\n";
+        "<p>Callable method variants take no parameters and return an immutable API callable"
+            + " object, which can be used to initiate calls to the service.</p>\n";
     String ASYNC_METHODS =
-        "<p>Methods that return long-running operations have \"Async\" method variants that return `OperationFuture`, which is used to track polling of the service.</p>\n";
+        "<p>Methods that return long-running operations have \"Async\" method variants that return"
+            + " `OperationFuture`, which is used to track polling of the service.</p>\n";
 
     StringBuilder tableBuilder = new StringBuilder();
     tableBuilder
@@ -348,8 +365,8 @@ public class ServiceClientCommentComposer {
       methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
     }
 
-    methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
-    if (sampleCodeOpt.isPresent()) {
+    if (sampleCodeOpt.isPresent() && !method.isResumableUpload()) {
+      methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
       methodJavadocBuilder.addSampleCode(sampleCodeOpt.get());
     }
 

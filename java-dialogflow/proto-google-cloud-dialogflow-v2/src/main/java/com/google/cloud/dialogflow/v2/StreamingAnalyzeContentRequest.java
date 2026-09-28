@@ -171,6 +171,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     INPUT_AUDIO(5),
     INPUT_TEXT(6),
     INPUT_DTMF(9),
+    SUGGESTION_INPUT(27),
     INPUT_NOT_SET(0);
     private final int value;
 
@@ -196,6 +197,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
           return INPUT_TEXT;
         case 9:
           return INPUT_DTMF;
+        case 27:
+          return SUGGESTION_INPUT;
         case 0:
           return INPUT_NOT_SET;
         default:
@@ -632,6 +635,66 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return com.google.cloud.dialogflow.v2.TelephonyDtmfEvents.getDefaultInstance();
   }
 
+  public static final int SUGGESTION_INPUT_FIELD_NUMBER = 27;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the suggestionInput field is set.
+   */
+  @java.lang.Override
+  public boolean hasSuggestionInput() {
+    return inputCase_ == 27;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The suggestionInput.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestionInput getSuggestionInput() {
+    if (inputCase_ == 27) {
+      return (com.google.cloud.dialogflow.v2.SuggestionInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder getSuggestionInputOrBuilder() {
+    if (inputCase_ == 27) {
+      return (com.google.cloud.dialogflow.v2.SuggestionInput) input_;
+    }
+    return com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+  }
+
   public static final int QUERY_PARAMS_FIELD_NUMBER = 7;
   private com.google.cloud.dialogflow.v2.QueryParameters queryParams_;
 
@@ -961,6 +1024,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (enableDebuggingInfo_ != false) {
       output.writeBool(19, enableDebuggingInfo_);
     }
+    if (inputCase_ == 27) {
+      output.writeMessage(27, (com.google.cloud.dialogflow.v2.SuggestionInput) input_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1022,6 +1088,11 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (enableDebuggingInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, enableDebuggingInfo_);
     }
+    if (inputCase_ == 27) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              27, (com.google.cloud.dialogflow.v2.SuggestionInput) input_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1081,6 +1152,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         break;
       case 9:
         if (!getInputDtmf().equals(other.getInputDtmf())) return false;
+        break;
+      case 27:
+        if (!getSuggestionInput().equals(other.getSuggestionInput())) return false;
         break;
       case 0:
       default:
@@ -1148,6 +1222,10 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       case 9:
         hash = (37 * hash) + INPUT_DTMF_FIELD_NUMBER;
         hash = (53 * hash) + getInputDtmf().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + SUGGESTION_INPUT_FIELD_NUMBER;
+        hash = (53 * hash) + getSuggestionInput().hashCode();
         break;
       case 0:
       default:
@@ -1358,6 +1436,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       if (inputDtmfBuilder_ != null) {
         inputDtmfBuilder_.clear();
       }
+      if (suggestionInputBuilder_ != null) {
+        suggestionInputBuilder_.clear();
+      }
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -1429,33 +1510,33 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             replyAudioConfigBuilder_ == null ? replyAudioConfig_ : replyAudioConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.queryParams_ =
             queryParamsBuilder_ == null ? queryParams_ : queryParamsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.assistQueryParams_ =
             assistQueryParamsBuilder_ == null
                 ? assistQueryParams_
                 : assistQueryParamsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.cxParameters_ =
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.enableExtendedStreaming_ = enableExtendedStreaming_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.outputMultipleUtterances_ = outputMultipleUtterances_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1475,6 +1556,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       result.input_ = this.input_;
       if (inputCase_ == 9 && inputDtmfBuilder_ != null) {
         result.input_ = inputDtmfBuilder_.build();
+      }
+      if (inputCase_ == 27 && suggestionInputBuilder_ != null) {
+        result.input_ = suggestionInputBuilder_.build();
       }
     }
 
@@ -1555,6 +1639,11 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             mergeInputDtmf(other.getInputDtmf());
             break;
           }
+        case SUGGESTION_INPUT:
+          {
+            mergeSuggestionInput(other.getSuggestionInput());
+            break;
+          }
         case INPUT_NOT_SET:
           {
             break;
@@ -1630,14 +1719,14 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
               {
                 input.readMessage(
                     internalGetQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetAssistQueryParamsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
@@ -1650,34 +1739,41 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             case 88:
               {
                 enableExtendedStreaming_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 88
             case 96:
               {
                 enablePartialAutomatedAgentReply_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 96
             case 106:
               {
                 input.readMessage(
                     internalGetCxParametersFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 144:
               {
                 outputMultipleUtterances_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 144
             case 152:
               {
                 enableDebuggingInfo_ = input.readBool();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 152
+            case 218:
+              {
+                input.readMessage(
+                    internalGetSuggestionInputFieldBuilder().getBuilder(), extensionRegistry);
+                inputCase_ = 27;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3010,6 +3106,242 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return inputDtmfBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SuggestionInput,
+            com.google.cloud.dialogflow.v2.SuggestionInput.Builder,
+            com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder>
+        suggestionInputBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the suggestionInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestionInput() {
+      return inputCase_ == 27;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestionInput getSuggestionInput() {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 27) {
+          return (com.google.cloud.dialogflow.v2.SuggestionInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+      } else {
+        if (inputCase_ == 27) {
+          return suggestionInputBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionInput(com.google.cloud.dialogflow.v2.SuggestionInput value) {
+      if (suggestionInputBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        input_ = value;
+        onChanged();
+      } else {
+        suggestionInputBuilder_.setMessage(value);
+      }
+      inputCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSuggestionInput(
+        com.google.cloud.dialogflow.v2.SuggestionInput.Builder builderForValue) {
+      if (suggestionInputBuilder_ == null) {
+        input_ = builderForValue.build();
+        onChanged();
+      } else {
+        suggestionInputBuilder_.setMessage(builderForValue.build());
+      }
+      inputCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSuggestionInput(com.google.cloud.dialogflow.v2.SuggestionInput value) {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 27
+            && input_ != com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance()) {
+          input_ =
+              com.google.cloud.dialogflow.v2.SuggestionInput.newBuilder(
+                      (com.google.cloud.dialogflow.v2.SuggestionInput) input_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          input_ = value;
+        }
+        onChanged();
+      } else {
+        if (inputCase_ == 27) {
+          suggestionInputBuilder_.mergeFrom(value);
+        } else {
+          suggestionInputBuilder_.setMessage(value);
+        }
+      }
+      inputCase_ = 27;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSuggestionInput() {
+      if (suggestionInputBuilder_ == null) {
+        if (inputCase_ == 27) {
+          inputCase_ = 0;
+          input_ = null;
+          onChanged();
+        }
+      } else {
+        if (inputCase_ == 27) {
+          inputCase_ = 0;
+          input_ = null;
+        }
+        suggestionInputBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestionInput.Builder getSuggestionInputBuilder() {
+      return internalGetSuggestionInputFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder getSuggestionInputOrBuilder() {
+      if ((inputCase_ == 27) && (suggestionInputBuilder_ != null)) {
+        return suggestionInputBuilder_.getMessageOrBuilder();
+      } else {
+        if (inputCase_ == 27) {
+          return (com.google.cloud.dialogflow.v2.SuggestionInput) input_;
+        }
+        return com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SuggestionInput,
+            com.google.cloud.dialogflow.v2.SuggestionInput.Builder,
+            com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder>
+        internalGetSuggestionInputFieldBuilder() {
+      if (suggestionInputBuilder_ == null) {
+        if (!(inputCase_ == 27)) {
+          input_ = com.google.cloud.dialogflow.v2.SuggestionInput.getDefaultInstance();
+        }
+        suggestionInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.SuggestionInput,
+                com.google.cloud.dialogflow.v2.SuggestionInput.Builder,
+                com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder>(
+                (com.google.cloud.dialogflow.v2.SuggestionInput) input_,
+                getParentForChildren(),
+                isClean());
+        input_ = null;
+      }
+      inputCase_ = 27;
+      onChanged();
+      return suggestionInputBuilder_;
+    }
+
     private com.google.cloud.dialogflow.v2.QueryParameters queryParams_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dialogflow.v2.QueryParameters,
@@ -3029,7 +3361,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the queryParams field is set.
      */
     public boolean hasQueryParams() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3071,7 +3403,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         queryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3092,7 +3424,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         queryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3108,7 +3440,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public Builder mergeQueryParams(com.google.cloud.dialogflow.v2.QueryParameters value) {
       if (queryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && queryParams_ != null
             && queryParams_
                 != com.google.cloud.dialogflow.v2.QueryParameters.getDefaultInstance()) {
@@ -3120,7 +3452,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         queryParamsBuilder_.mergeFrom(value);
       }
       if (queryParams_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3136,7 +3468,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 7;</code>
      */
     public Builder clearQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       queryParams_ = null;
       if (queryParamsBuilder_ != null) {
         queryParamsBuilder_.dispose();
@@ -3156,7 +3488,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2.QueryParameters query_params = 7;</code>
      */
     public com.google.cloud.dialogflow.v2.QueryParameters.Builder getQueryParamsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetQueryParamsFieldBuilder().getBuilder();
     }
@@ -3225,7 +3557,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the assistQueryParams field is set.
      */
     public boolean hasAssistQueryParams() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3268,7 +3600,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         assistQueryParamsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3289,7 +3621,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         assistQueryParamsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3306,7 +3638,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder mergeAssistQueryParams(
         com.google.cloud.dialogflow.v2.AssistQueryParameters value) {
       if (assistQueryParamsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && assistQueryParams_ != null
             && assistQueryParams_
                 != com.google.cloud.dialogflow.v2.AssistQueryParameters.getDefaultInstance()) {
@@ -3318,7 +3650,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         assistQueryParamsBuilder_.mergeFrom(value);
       }
       if (assistQueryParams_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3334,7 +3666,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.cloud.dialogflow.v2.AssistQueryParameters assist_query_params = 8;</code>
      */
     public Builder clearAssistQueryParams() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       assistQueryParams_ = null;
       if (assistQueryParamsBuilder_ != null) {
         assistQueryParamsBuilder_.dispose();
@@ -3355,7 +3687,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public com.google.cloud.dialogflow.v2.AssistQueryParameters.Builder
         getAssistQueryParamsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetAssistQueryParamsFieldBuilder().getBuilder();
     }
@@ -3430,7 +3762,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return Whether the cxParameters field is set.
      */
     public boolean hasCxParameters() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3482,7 +3814,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         cxParametersBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3507,7 +3839,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       } else {
         cxParametersBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3528,7 +3860,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      */
     public Builder mergeCxParameters(com.google.protobuf.Struct value) {
       if (cxParametersBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && cxParameters_ != null
             && cxParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
           getCxParametersBuilder().mergeFrom(value);
@@ -3539,7 +3871,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         cxParametersBuilder_.mergeFrom(value);
       }
       if (cxParameters_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3560,7 +3892,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Struct cx_parameters = 13;</code>
      */
     public Builder clearCxParameters() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       cxParameters_ = null;
       if (cxParametersBuilder_ != null) {
         cxParametersBuilder_.dispose();
@@ -3585,7 +3917,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <code>.google.protobuf.Struct cx_parameters = 13;</code>
      */
     public com.google.protobuf.Struct.Builder getCxParametersBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetCxParametersFieldBuilder().getBuilder();
     }
@@ -3716,7 +4048,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableExtendedStreaming(boolean value) {
 
       enableExtendedStreaming_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3752,7 +4084,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableExtendedStreaming() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       enableExtendedStreaming_ = false;
       onChanged();
       return this;
@@ -3801,7 +4133,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnablePartialAutomatedAgentReply(boolean value) {
 
       enablePartialAutomatedAgentReply_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3823,7 +4155,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnablePartialAutomatedAgentReply() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enablePartialAutomatedAgentReply_ = false;
       onChanged();
       return this;
@@ -3866,7 +4198,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setOutputMultipleUtterances(boolean value) {
 
       outputMultipleUtterances_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3885,7 +4217,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearOutputMultipleUtterances() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       outputMultipleUtterances_ = false;
       onChanged();
       return this;
@@ -3926,7 +4258,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableDebuggingInfo(boolean value) {
 
       enableDebuggingInfo_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3944,7 +4276,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableDebuggingInfo() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       enableDebuggingInfo_ = false;
       onChanged();
       return this;

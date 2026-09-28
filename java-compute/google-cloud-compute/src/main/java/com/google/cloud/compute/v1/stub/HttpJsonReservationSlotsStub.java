@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.GetHealthReservationSlotRequest;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
 import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
@@ -98,6 +99,59 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       .setDefaultInstance(ReservationSlotsGetResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetHealthReservationSlotRequest, Operation>
+      getHealthMethodDescriptor =
+          ApiMethodDescriptor.<GetHealthReservationSlotRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSlots/GetHealth")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetHealthReservationSlotRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservationSlot}/getHealth",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthReservationSlotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSlot", request.getReservationSlot());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthReservationSlotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (GetHealthReservationSlotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
               .build();
 
   private static final ApiMethodDescriptor<GetVersionReservationSlotRequest, Operation>
@@ -276,6 +330,9 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
               .build();
 
   private final UnaryCallable<GetReservationSlotRequest, ReservationSlotsGetResponse> getCallable;
+  private final UnaryCallable<GetHealthReservationSlotRequest, Operation> getHealthCallable;
+  private final OperationCallable<GetHealthReservationSlotRequest, Operation, Operation>
+      getHealthOperationCallable;
   private final UnaryCallable<GetVersionReservationSlotRequest, Operation> getVersionCallable;
   private final OperationCallable<GetVersionReservationSlotRequest, Operation, Operation>
       getVersionOperationCallable;
@@ -291,6 +348,9 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   private final HttpJsonStubCallableFactory callableFactory;
 
   private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
+  private static final PathTemplate GET_HEALTH_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create(
           "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
   private static final PathTemplate GET_VERSION_RESOURCE_NAME_TEMPLATE =
@@ -370,6 +430,30 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
+    HttpJsonCallSettings<GetHealthReservationSlotRequest, Operation> getHealthTransportSettings =
+        HttpJsonCallSettings.<GetHealthReservationSlotRequest, Operation>newBuilder()
+            .setMethodDescriptor(getHealthMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent_name", String.valueOf(request.getParentName()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("reservation_slot", String.valueOf(request.getReservationSlot()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("parent_name", String.valueOf(request.getParentName()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "reservation_slot", String.valueOf(request.getReservationSlot()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_HEALTH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
     HttpJsonCallSettings<GetVersionReservationSlotRequest, Operation> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionReservationSlotRequest, Operation>newBuilder()
             .setMethodDescriptor(getVersionMethodDescriptor)
@@ -446,6 +530,15 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getHealthCallable =
+        callableFactory.createUnaryCallable(
+            getHealthTransportSettings, settings.getHealthSettings(), clientContext);
+    this.getHealthOperationCallable =
+        callableFactory.createOperationCallable(
+            getHealthTransportSettings,
+            settings.getHealthOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getVersionCallable =
         callableFactory.createUnaryCallable(
             getVersionTransportSettings, settings.getVersionSettings(), clientContext);
@@ -479,6 +572,7 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
     methodDescriptors.add(getVersionMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
@@ -488,6 +582,17 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   @Override
   public UnaryCallable<GetReservationSlotRequest, ReservationSlotsGetResponse> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHealthReservationSlotRequest, Operation> getHealthCallable() {
+    return getHealthCallable;
+  }
+
+  @Override
+  public OperationCallable<GetHealthReservationSlotRequest, Operation, Operation>
+      getHealthOperationCallable() {
+    return getHealthOperationCallable;
   }
 
   @Override

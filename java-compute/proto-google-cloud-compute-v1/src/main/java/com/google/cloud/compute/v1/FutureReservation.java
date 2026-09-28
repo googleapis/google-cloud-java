@@ -107,6 +107,16 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Bare Metal Secure AI.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_COMPUTE_TYPE_BMSAI = 103738250;</code>
+     */
+    CONFIDENTIAL_COMPUTE_TYPE_BMSAI(103738250),
+    /**
+     *
+     *
+     * <pre>
      * Intel Trust Domain Extensions.
      * </pre>
      *
@@ -138,6 +148,17 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_CONFIDENTIAL_COMPUTE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_CONFIDENTIAL_COMPUTE_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bare Metal Secure AI.
+     * </pre>
+     *
+     * <code>CONFIDENTIAL_COMPUTE_TYPE_BMSAI = 103738250;</code>
+     */
+    public static final int CONFIDENTIAL_COMPUTE_TYPE_BMSAI_VALUE = 103738250;
 
     /**
      *
@@ -179,6 +200,8 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_CONFIDENTIAL_COMPUTE_TYPE;
+        case 103738250:
+          return CONFIDENTIAL_COMPUTE_TYPE_BMSAI;
         case 301241954:
           return CONFIDENTIAL_COMPUTE_TYPE_TDX;
         case 42227601:

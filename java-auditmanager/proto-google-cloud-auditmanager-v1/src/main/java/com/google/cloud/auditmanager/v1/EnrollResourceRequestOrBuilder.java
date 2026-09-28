@@ -167,4 +167,28 @@ public interface EnrollResourceRequestOrBuilder
    */
   com.google.cloud.auditmanager.v1.EnrollResourceRequest.EligibleDestinationOrBuilder
       getDestinationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validates the request and does not enroll the
+   * resource. This executes standard request validation (such as schema, IAM,
+   * and destination checks) and skips the apply phase.
+   *
+   * Use this field for the following purposes:
+   * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+   * dry-run mutations (e.g., `terraform plan`) without creating real
+   * resources or incurring costs.
+   * * **User Interface Validation**: Enable real-time form and permission
+   * validation in custom UIs before submitting requests.
+   * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+   * safely without consuming resource quotas.
+   * </pre>
+   *
+   * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

@@ -46,6 +46,8 @@ final class QueryRequestInfo {
   private final DataFormatOptions formatOptions;
   private final String reservation;
   private final Long jobTimeoutMs;
+  private final QueryResultsFormat queryResultsFormat;
+  private final ArrowSerializationOptions arrowSerializationOptions;
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
@@ -63,9 +65,11 @@ final class QueryRequestInfo {
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
     this.jobCreationMode = config.getJobCreationMode();
-    this.formatOptions = dataFormatOptions.toPb();
+    this.formatOptions = dataFormatOptions != null ? dataFormatOptions.toPb() : null;
     this.reservation = config.getReservation();
     this.jobTimeoutMs = config.getJobTimeoutMs();
+    this.queryResultsFormat = config.getQueryResultsFormat();
+    this.arrowSerializationOptions = config.getArrowSerializationOptions();
   }
 
   /**
@@ -142,6 +146,12 @@ final class QueryRequestInfo {
     if (jobTimeoutMs != null) {
       request.setJobTimeoutMs(jobTimeoutMs);
     }
+    if (queryResultsFormat != null) {
+      request.setQueryResultsFormat(queryResultsFormat.toString());
+    }
+    if (arrowSerializationOptions != null) {
+      request.setArrowSerializationOptions(arrowSerializationOptions.toPb());
+    }
     return request;
   }
 
@@ -161,7 +171,7 @@ final class QueryRequestInfo {
         .add("useQueryCache", useQueryCache)
         .add("useLegacySql", useLegacySql)
         .add("jobCreationMode", jobCreationMode)
-        .add("formatOptions", formatOptions.getUseInt64Timestamp())
+        .add("formatOptions", formatOptions != null ? formatOptions.getUseInt64Timestamp() : null)
         .add("reservation", reservation)
         .add("jobTimeoutMs", jobTimeoutMs)
         .toString();

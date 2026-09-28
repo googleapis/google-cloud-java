@@ -129,6 +129,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
    * Optional. The SQL query that should be generated to answer the natural
    * language question. For example: "SELECT COUNT(*) FROM orders WHERE
    * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+   *
+   * Must be at most 50,000 bytes (approx. 50,000 characters).
    * </pre>
    *
    * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,6 +148,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
    * Optional. The SQL query that should be generated to answer the natural
    * language question. For example: "SELECT COUNT(*) FROM orders WHERE
    * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+   *
+   * Must be at most 50,000 bytes (approx. 50,000 characters).
    * </pre>
    *
    * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -176,6 +180,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
    * Optional. The SQL query that should be generated to answer the natural
    * language question. For example: "SELECT COUNT(*) FROM orders WHERE
    * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+   *
+   * Must be at most 50,000 bytes (approx. 50,000 characters).
    * </pre>
    *
    * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -210,6 +216,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A natural language question that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes (approx. 2,000 characters).
    * </pre>
    *
    * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -235,6 +243,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. A natural language question that a user might ask.
    * For example: "How many orders were placed last month?"
+   *
+   * Must be at most 2,000 bytes (approx. 2,000 characters).
    * </pre>
    *
    * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -813,6 +823,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -831,6 +843,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -862,6 +876,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,6 +909,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -917,6 +935,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -939,6 +959,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * Optional. The SQL query that should be generated to answer the natural
      * language question. For example: "SELECT COUNT(*) FROM orders WHERE
      * order_date BETWEEN '2024-01-01' AND '2024-01-31'"
+     *
+     * Must be at most 50,000 bytes (approx. 50,000 characters).
      * </pre>
      *
      * <code>string sql_query = 101 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -965,6 +987,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A natural language question that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes (approx. 2,000 characters).
      * </pre>
      *
      * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -989,6 +1013,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A natural language question that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes (approx. 2,000 characters).
      * </pre>
      *
      * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1013,6 +1039,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A natural language question that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes (approx. 2,000 characters).
      * </pre>
      *
      * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1036,6 +1064,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A natural language question that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes (approx. 2,000 characters).
      * </pre>
      *
      * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1055,6 +1085,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. A natural language question that a user might ask.
      * For example: "How many orders were placed last month?"
+     *
+     * Must be at most 2,000 bytes (approx. 2,000 characters).
      * </pre>
      *
      * <code>string natural_language_question = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

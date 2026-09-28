@@ -25,7 +25,8 @@ package com.google.privacy.dlp.v2;
  *
  * <pre>
  * A task to execute on the completion of a job.
- * See https://cloud.google.com/sensitive-data-protection/docs/concepts-actions
+ * See
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions
  * to learn more.
  * </pre>
  *
@@ -843,7 +844,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
    * message contains a single field, `DlpJobName`, which is equal to the
    * finished job's
-   * [`DlpJob.name`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+   * [`DlpJob.name`](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
    * Compatible with: Inspect, Risk
    * </pre>
    *
@@ -1115,7 +1116,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * Publish a message into a given Pub/Sub topic when DlpJob has completed. The
      * message contains a single field, `DlpJobName`, which is equal to the
      * finished job's
-     * [`DlpJob.name`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
+     * [`DlpJob.name`](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/projects.dlpJobs#DlpJob).
      * Compatible with: Inspect, Risk
      * </pre>
      *
@@ -2274,7 +2275,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * Publish findings of a DlpJob to Dataplex Universal Catalog as a
    * `sensitive-data-protection-job-result` aspect. For more information,
    * see [Send inspection results to Dataplex Universal Catalog as
-   * aspects](https://cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
+   * aspects](https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
    *
    * Aspects are stored in Dataplex Universal Catalog storage and are
    * governed by service-specific policies for Dataplex Universal Catalog. For
@@ -2488,7 +2489,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * Publish findings of a DlpJob to Dataplex Universal Catalog as a
      * `sensitive-data-protection-job-result` aspect. For more information,
      * see [Send inspection results to Dataplex Universal Catalog as
-     * aspects](https://cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
+     * aspects](https://docs.cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
      *
      * Aspects are stored in Dataplex Universal Catalog storage and are
      * governed by service-specific policies for Dataplex Universal Catalog. For
@@ -5722,7 +5723,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project owners
    * and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
@@ -5923,7 +5924,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project owners
      * and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.Action.JobNotificationEmails}
@@ -6731,7 +6732,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4656
+   *     See google/privacy/dlp/v2/dlp.proto;l=4773
    * @return Whether the publishFindingsToCloudDataCatalog field is set.
    */
   @java.lang.Override
@@ -6754,7 +6755,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is deprecated.
-   *     See google/privacy/dlp/v2/dlp.proto;l=4656
+   *     See google/privacy/dlp/v2/dlp.proto;l=4773
    * @return The publishFindingsToCloudDataCatalog.
    */
   @java.lang.Override
@@ -6914,7 +6915,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -6932,7 +6933,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -6953,7 +6954,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Sends an email when the job completes. The email goes to IAM project
    * owners and technical [Essential
-   * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+   * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -7309,7 +7310,8 @@ public final class Action extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A task to execute on the completion of a job.
-   * See https://cloud.google.com/sensitive-data-protection/docs/concepts-actions
+   * See
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-actions
    * to learn more.
    * </pre>
    *
@@ -8291,7 +8293,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
-     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4656
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4773
      * @return Whether the publishFindingsToCloudDataCatalog field is set.
      */
     @java.lang.Override
@@ -8314,7 +8316,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.privacy.dlp.v2.Action.publish_findings_to_cloud_data_catalog is
-     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4656
+     *     deprecated. See google/privacy/dlp/v2/dlp.proto;l=4773
      * @return The publishFindingsToCloudDataCatalog.
      */
     @java.lang.Override
@@ -9028,7 +9030,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9046,7 +9048,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9074,7 +9076,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9100,7 +9102,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9123,7 +9125,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9160,7 +9162,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9188,7 +9190,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9204,7 +9206,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
@@ -9228,7 +9230,7 @@ public final class Action extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Sends an email when the job completes. The email goes to IAM project
      * owners and technical [Essential
-     * Contacts](https://cloud.google.com/resource-manager/docs/managing-notification-contacts).
+     * Contacts](https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts).
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>

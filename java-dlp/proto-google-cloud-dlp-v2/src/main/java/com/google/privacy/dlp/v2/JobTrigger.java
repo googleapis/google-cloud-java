@@ -26,7 +26,7 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Contains a configuration to make API calls on a repeating basis.
  * See
- * https://cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
  * to learn more.
  * </pre>
  *
@@ -1487,12 +1487,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unique resource name for the triggeredJob, assigned by the service when the
-   * triggeredJob is created, for example
+   * Output only. Unique resource name for the triggeredJob, assigned by the
+   * service when the triggeredJob is created, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -1513,12 +1513,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Unique resource name for the triggeredJob, assigned by the service when the
-   * triggeredJob is created, for example
+   * Output only. Unique resource name for the triggeredJob, assigned by the
+   * service when the triggeredJob is created, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -2361,7 +2361,7 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Contains a configuration to make API calls on a repeating basis.
    * See
-   * https://cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-job-triggers
    * to learn more.
    * </pre>
    *
@@ -2789,12 +2789,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unique resource name for the triggeredJob, assigned by the service when the
-     * triggeredJob is created, for example
+     * Output only. Unique resource name for the triggeredJob, assigned by the
+     * service when the triggeredJob is created, for example
      * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -2814,12 +2814,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unique resource name for the triggeredJob, assigned by the service when the
-     * triggeredJob is created, for example
+     * Output only. Unique resource name for the triggeredJob, assigned by the
+     * service when the triggeredJob is created, for example
      * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -2839,12 +2839,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unique resource name for the triggeredJob, assigned by the service when the
-     * triggeredJob is created, for example
+     * Output only. Unique resource name for the triggeredJob, assigned by the
+     * service when the triggeredJob is created, for example
      * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2863,12 +2863,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unique resource name for the triggeredJob, assigned by the service when the
-     * triggeredJob is created, for example
+     * Output only. Unique resource name for the triggeredJob, assigned by the
+     * service when the triggeredJob is created, for example
      * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2883,12 +2883,12 @@ public final class JobTrigger extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unique resource name for the triggeredJob, assigned by the service when the
-     * triggeredJob is created, for example
+     * Output only. Unique resource name for the triggeredJob, assigned by the
+     * service when the triggeredJob is created, for example
      * `projects/dlp-test-project/jobTriggers/53234423`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

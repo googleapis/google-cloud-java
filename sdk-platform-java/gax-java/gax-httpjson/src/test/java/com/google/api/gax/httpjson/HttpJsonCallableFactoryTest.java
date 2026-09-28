@@ -34,6 +34,9 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.pathtemplate.PathTemplate;
@@ -106,5 +109,35 @@ class HttpJsonCallableFactoryTest {
       }
       assertThat(actualError).isNotNull();
     }
+  }
+
+  @Test
+  void testCreateResumableUploadCallable() {
+    @SuppressWarnings("unchecked")
+    ApiMethodDescriptor<String, String> descriptor =
+        ApiMethodDescriptor.<String, String>newBuilder()
+            .setFullMethodName("test/upload")
+            .setHttpMethod(HttpMethods.POST)
+            .setRequestFormatter(createMockRequestFormatter())
+            .setResponseParser(
+                mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    HttpJsonCallSettings<String, String> httpJsonCallSettings =
+        HttpJsonCallSettings.<String, String>newBuilder().setMethodDescriptor(descriptor).build();
+
+    ResumableUploadCallSettings callSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(256 * 1024).build();
+
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setDefaultCallContext(HttpJsonCallContext.createDefault())
+            .build();
+
+    ResumableUploadCallable<String, String> callable =
+        HttpJsonCallableFactory.createResumableUploadCallable(
+            httpJsonCallSettings, callSettings, clientContext);
+
+    assertThat(callable).isNotNull();
   }
 }

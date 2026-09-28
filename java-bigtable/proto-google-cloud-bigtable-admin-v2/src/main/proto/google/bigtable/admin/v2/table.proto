@@ -168,6 +168,21 @@ message Table {
         type: "locations.googleapis.com/Location"
       }
     ];
+
+    // Optional. The amount of time that the automated backups remain hot.
+    // If specified, the backups created by this policy are `HOT` backups.
+    // If not specified, the backups are `STANDARD` backups.
+    //
+    // The value must be at least 24 hours and at most 10 days, and can't
+    // exceed the policy's `retention_period`.
+    //
+    // Only SSD instances support `HOT` automated backups.
+    google.protobuf.Duration keep_hot_duration = 4
+        [(google.api.field_behavior) = OPTIONAL];
+
+    // Optional. If `true`, automated backups are explicitly disabled on this
+    // table. This allows users to opt out of default enablement.
+    bool disabled = 5 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // The unique name of the table. Values are of the form
@@ -218,6 +233,13 @@ message Table {
     // Otherwise, automated backups are disabled.
     AutomatedBackupPolicy automated_backup_policy = 13;
   }
+
+  // Output only. The effective automated backup policy applied to the table.
+  // This represents the policy actually in effect, which may be a
+  // system-default policy if the user has not explicitly configured one.
+  // Views: `SCHEMA_VIEW`, `FULL`.
+  AutomatedBackupPolicy effective_automated_backup_policy = 19
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 
   // Rules to specify what data is stored in each storage tier.
   // Different tiers store data differently, providing different trade-offs
@@ -682,7 +704,7 @@ message TieredStorageRule {
   }
 }
 
-// Represents a protobuf schema.
+// Represents a collection of protobuf schemas.
 message ProtoSchema {
   // Required. Contains a protobuf-serialized
   // [google.protobuf.FileDescriptorSet](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto),
@@ -700,6 +722,16 @@ message ProtoSchema {
   // For more details, see protobuffer [self
   // description](https://developers.google.com/protocol-buffers/docs/techniques#self-description).
   bytes proto_descriptors = 2 [(google.api.field_behavior) = REQUIRED];
+}
+
+// Represents a collection of Avro schemas.
+message AvroSchema {
+  // Required. The Avro schemas in JSON format.
+  // Each element must be the content of a valid, self-contained Avro schema
+  // file (.avsc), as described in https://avro.apache.org/docs/1.8.1/spec.html.
+  // Use repeated elements to include multiple Avro schema files in a single
+  // bundle.
+  repeated string json_schemas = 1 [(google.api.field_behavior) = REQUIRED];
 }
 
 // A named collection of related schemas.
@@ -721,6 +753,9 @@ message SchemaBundle {
   oneof type {
     // Schema for Protobufs.
     ProtoSchema proto_schema = 2;
+
+    // Optional. Schema for Avros.
+    AvroSchema avro_schema = 6 [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Optional. The etag for this schema bundle.

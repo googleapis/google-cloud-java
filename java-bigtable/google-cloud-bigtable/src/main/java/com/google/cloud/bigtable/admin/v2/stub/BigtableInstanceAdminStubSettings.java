@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMemoryLayersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -69,6 +70,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.HotTablet;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
@@ -83,8 +85,11 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MemoryLayer;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -96,6 +101,8 @@ import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerMetadata;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -235,6 +242,14 @@ public class BigtableInstanceAdminStubSettings
           PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
       partialUpdateClusterOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings;
+  private final UnaryCallSettings<UpdateMemoryLayerRequest, Operation> updateMemoryLayerSettings;
+  private final OperationCallSettings<
+          UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationSettings;
+  private final PagedCallSettings<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+      listMemoryLayersSettings;
+  private final UnaryCallSettings<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerSettings;
   private final UnaryCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileSettings;
   private final UnaryCallSettings<GetAppProfileRequest, AppProfile> getAppProfileSettings;
   private final PagedCallSettings<
@@ -283,6 +298,44 @@ public class BigtableInstanceAdminStubSettings
       updateMaterializedViewOperationSettings;
   private final UnaryCallSettings<DeleteMaterializedViewRequest, Empty>
       deleteMaterializedViewSettings;
+
+  private static final PagedListDescriptor<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>
+      LIST_MEMORY_LAYERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMemoryLayersRequest injectToken(
+                ListMemoryLayersRequest payload, String token) {
+              return ListMemoryLayersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMemoryLayersRequest injectPageSize(
+                ListMemoryLayersRequest payload, int pageSize) {
+              return ListMemoryLayersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMemoryLayersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMemoryLayersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MemoryLayer> extractResources(ListMemoryLayersResponse payload) {
+              return payload.getMemoryLayersList();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListAppProfilesRequest, ListAppProfilesResponse, AppProfile>
@@ -430,6 +483,25 @@ public class BigtableInstanceAdminStubSettings
             public Iterable<MaterializedView> extractResources(
                 ListMaterializedViewsResponse payload) {
               return payload.getMaterializedViewsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+      LIST_MEMORY_LAYERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>() {
+            @Override
+            public ApiFuture<ListMemoryLayersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersResponse> callable,
+                ListMemoryLayersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMemoryLayersResponse> futureResponse) {
+              PageContext<ListMemoryLayersRequest, ListMemoryLayersResponse, MemoryLayer>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MEMORY_LAYERS_PAGE_STR_DESC, request, context);
+              return ListMemoryLayersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -599,6 +671,29 @@ public class BigtableInstanceAdminStubSettings
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Empty> deleteClusterSettings() {
     return deleteClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMemoryLayer. */
+  public UnaryCallSettings<UpdateMemoryLayerRequest, Operation> updateMemoryLayerSettings() {
+    return updateMemoryLayerSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMemoryLayer. */
+  public OperationCallSettings<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationSettings() {
+    return updateMemoryLayerOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMemoryLayers. */
+  public PagedCallSettings<
+          ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+      listMemoryLayersSettings() {
+    return listMemoryLayersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMemoryLayer. */
+  public UnaryCallSettings<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerSettings() {
+    return getMemoryLayerSettings;
   }
 
   /** Returns the object with the settings used for calls to createAppProfile. */
@@ -842,6 +937,11 @@ public class BigtableInstanceAdminStubSettings
     partialUpdateClusterOperationSettings =
         settingsBuilder.partialUpdateClusterOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
+    updateMemoryLayerSettings = settingsBuilder.updateMemoryLayerSettings().build();
+    updateMemoryLayerOperationSettings =
+        settingsBuilder.updateMemoryLayerOperationSettings().build();
+    listMemoryLayersSettings = settingsBuilder.listMemoryLayersSettings().build();
+    getMemoryLayerSettings = settingsBuilder.getMemoryLayerSettings().build();
     createAppProfileSettings = settingsBuilder.createAppProfileSettings().build();
     getAppProfileSettings = settingsBuilder.getAppProfileSettings().build();
     listAppProfilesSettings = settingsBuilder.listAppProfilesSettings().build();
@@ -916,6 +1016,16 @@ public class BigtableInstanceAdminStubSettings
             PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
         partialUpdateClusterOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings;
+    private final UnaryCallSettings.Builder<UpdateMemoryLayerRequest, Operation>
+        updateMemoryLayerSettings;
+    private final OperationCallSettings.Builder<
+            UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+        updateMemoryLayerOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+        listMemoryLayersSettings;
+    private final UnaryCallSettings.Builder<GetMemoryLayerRequest, MemoryLayer>
+        getMemoryLayerSettings;
     private final UnaryCallSettings.Builder<CreateAppProfileRequest, AppProfile>
         createAppProfileSettings;
     private final UnaryCallSettings.Builder<GetAppProfileRequest, AppProfile> getAppProfileSettings;
@@ -1052,6 +1162,10 @@ public class BigtableInstanceAdminStubSettings
       partialUpdateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       partialUpdateClusterOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMemoryLayerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMemoryLayerOperationSettings = OperationCallSettings.newBuilder();
+      listMemoryLayersSettings = PagedCallSettings.newBuilder(LIST_MEMORY_LAYERS_PAGE_STR_FACT);
+      getMemoryLayerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAppProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAppProfilesSettings = PagedCallSettings.newBuilder(LIST_APP_PROFILES_PAGE_STR_FACT);
@@ -1092,6 +1206,9 @@ public class BigtableInstanceAdminStubSettings
               updateClusterSettings,
               partialUpdateClusterSettings,
               deleteClusterSettings,
+              updateMemoryLayerSettings,
+              listMemoryLayersSettings,
+              getMemoryLayerSettings,
               createAppProfileSettings,
               getAppProfileSettings,
               listAppProfilesSettings,
@@ -1136,6 +1253,10 @@ public class BigtableInstanceAdminStubSettings
       partialUpdateClusterOperationSettings =
           settings.partialUpdateClusterOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
+      updateMemoryLayerSettings = settings.updateMemoryLayerSettings.toBuilder();
+      updateMemoryLayerOperationSettings = settings.updateMemoryLayerOperationSettings.toBuilder();
+      listMemoryLayersSettings = settings.listMemoryLayersSettings.toBuilder();
+      getMemoryLayerSettings = settings.getMemoryLayerSettings.toBuilder();
       createAppProfileSettings = settings.createAppProfileSettings.toBuilder();
       getAppProfileSettings = settings.getAppProfileSettings.toBuilder();
       listAppProfilesSettings = settings.listAppProfilesSettings.toBuilder();
@@ -1177,6 +1298,9 @@ public class BigtableInstanceAdminStubSettings
               updateClusterSettings,
               partialUpdateClusterSettings,
               deleteClusterSettings,
+              updateMemoryLayerSettings,
+              listMemoryLayersSettings,
+              getMemoryLayerSettings,
               createAppProfileSettings,
               getAppProfileSettings,
               listAppProfilesSettings,
@@ -1270,6 +1394,21 @@ public class BigtableInstanceAdminStubSettings
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_7_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_7_params"));
+
+      builder
+          .updateMemoryLayerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listMemoryLayersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getMemoryLayerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createAppProfileSettings()
@@ -1484,6 +1623,31 @@ public class BigtableInstanceAdminStubSettings
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateMemoryLayerOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateMemoryLayerRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(MemoryLayer.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  UpdateMemoryLayerMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1722,6 +1886,31 @@ public class BigtableInstanceAdminStubSettings
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Empty> deleteClusterSettings() {
       return deleteClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMemoryLayer. */
+    public UnaryCallSettings.Builder<UpdateMemoryLayerRequest, Operation>
+        updateMemoryLayerSettings() {
+      return updateMemoryLayerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMemoryLayer. */
+    public OperationCallSettings.Builder<
+            UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+        updateMemoryLayerOperationSettings() {
+      return updateMemoryLayerOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMemoryLayers. */
+    public PagedCallSettings.Builder<
+            ListMemoryLayersRequest, ListMemoryLayersResponse, ListMemoryLayersPagedResponse>
+        listMemoryLayersSettings() {
+      return listMemoryLayersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMemoryLayer. */
+    public UnaryCallSettings.Builder<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerSettings() {
+      return getMemoryLayerSettings;
     }
 
     /** Returns the builder for the settings used for calls to createAppProfile. */

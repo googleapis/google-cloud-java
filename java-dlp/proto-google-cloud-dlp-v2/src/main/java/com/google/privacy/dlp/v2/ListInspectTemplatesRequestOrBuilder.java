@@ -34,7 +34,7 @@ public interface ListInspectTemplatesRequestOrBuilder
    *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
-   * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
+   * location](https://docs.cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:
    * `projects/{project_id}/locations/{location_id}`
@@ -68,7 +68,7 @@ public interface ListInspectTemplatesRequestOrBuilder
    *
    * The format of this value varies depending on the scope of the request
    * (project or organization) and whether you have [specified a processing
-   * location](https://cloud.google.com/sensitive-data-protection/docs/specifying-location):
+   * location](https://docs.cloud.google.com/sensitive-data-protection/docs/specifying-location):
    *
    * + Projects scope, location specified:
    * `projects/{project_id}/locations/{location_id}`

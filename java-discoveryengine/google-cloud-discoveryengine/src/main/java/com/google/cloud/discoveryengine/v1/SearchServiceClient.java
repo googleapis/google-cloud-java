@@ -66,6 +66,7 @@ import org.jspecify.annotations.Nullable;
  *           .setOffset(-1019779949)
  *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+ *           .setNumResultsPerDataStore(397658288)
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -93,6 +94,9 @@ import org.jspecify.annotations.Nullable;
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+ *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+ *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -279,6 +283,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -306,6 +311,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -351,6 +359,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -378,6 +387,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -423,6 +435,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -450,6 +463,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -511,6 +527,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -538,6 +555,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   for (SearchResponse.SearchResult element :
    *       searchServiceClient.searchLite(request).iterateAll()) {
@@ -594,6 +614,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -621,6 +642,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchLitePagedCallable().futureCall(request);
@@ -676,6 +700,7 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -703,6 +728,9 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);

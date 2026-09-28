@@ -29,12 +29,14 @@
  */
 package com.google.api.gax.resumable;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 
 /** Represents the session metadata returned after starting a resumable upload. */
 @NullMarked
+@BetaApi
 @InternalApi
 @AutoValue
 public abstract class ResumableUploadSession {

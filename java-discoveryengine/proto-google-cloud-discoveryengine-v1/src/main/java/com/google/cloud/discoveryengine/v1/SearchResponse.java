@@ -60,6 +60,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     redirectUri_ = "";
     nextPageToken_ = "";
     correctedQuery_ = "";
+    appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchLinkPromotions_ = java.util.Collections.emptyList();
     semanticState_ = 0;
   }
@@ -487,6 +488,54 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RankSignalsOrBuilder
         getRankSignalsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retrievalSignals field is set.
+     */
+    boolean hasRetrievalSignals();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retrievalSignals.
+     */
+    com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+        getRetrievalSignals();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignalsOrBuilder
+        getRetrievalSignalsOrBuilder();
   }
 
   /**
@@ -832,6 +881,58 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RankSignals
               .CustomSignalOrBuilder
           getCustomSignalsOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the precomputedExpressionValues.
+       */
+      java.util.List<java.lang.Float> getPrecomputedExpressionValuesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of precomputedExpressionValues.
+       */
+      int getPrecomputedExpressionValuesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The precomputedExpressionValues at the given index.
+       */
+      float getPrecomputedExpressionValues(int index);
     }
 
     /**
@@ -866,6 +967,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       private RankSignals() {
         customSignals_ = java.util.Collections.emptyList();
+        precomputedExpressionValues_ = emptyFloatList();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2050,6 +2152,73 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         return customSignals_.get(index);
       }
 
+      public static final int PRECOMPUTED_EXPRESSION_VALUES_FIELD_NUMBER = 34;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.FloatList precomputedExpressionValues_ =
+          emptyFloatList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the precomputedExpressionValues.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Float> getPrecomputedExpressionValuesList() {
+        return precomputedExpressionValues_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of precomputedExpressionValues.
+       */
+      public int getPrecomputedExpressionValuesCount() {
+        return precomputedExpressionValues_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of precomputed expression results for a given
+       * document, in the same order as requested in
+       * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+       * </pre>
+       *
+       * <code>
+       * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The precomputedExpressionValues at the given index.
+       */
+      public float getPrecomputedExpressionValues(int index) {
+        return precomputedExpressionValues_.getFloat(index);
+      }
+
+      private int precomputedExpressionValuesMemoizedSerializedSize = -1;
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -2064,6 +2233,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeFloat(1, keywordSimilarityScore_);
         }
@@ -2090,6 +2260,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         }
         for (int i = 0; i < customSignals_.size(); i++) {
           output.writeMessage(33, customSignals_.get(i));
+        }
+        if (getPrecomputedExpressionValuesList().size() > 0) {
+          output.writeUInt32NoTag(274);
+          output.writeUInt32NoTag(precomputedExpressionValuesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < precomputedExpressionValues_.size(); i++) {
+          output.writeFloatNoTag(precomputedExpressionValues_.getFloat(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -2129,6 +2306,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         for (int i = 0; i < customSignals_.size(); i++) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(33, customSignals_.get(i));
+        }
+        {
+          int dataSize = 0;
+          dataSize = 4 * getPrecomputedExpressionValuesList().size();
+          size += dataSize;
+          if (!getPrecomputedExpressionValuesList().isEmpty()) {
+            size += 2;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          precomputedExpressionValuesMemoizedSerializedSize = dataSize;
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -2186,6 +2373,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (java.lang.Float.floatToIntBits(getDefaultRank())
             != java.lang.Float.floatToIntBits(other.getDefaultRank())) return false;
         if (!getCustomSignalsList().equals(other.getCustomSignalsList())) return false;
+        if (!getPrecomputedExpressionValuesList()
+            .equals(other.getPrecomputedExpressionValuesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -2230,6 +2419,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (getCustomSignalsCount() > 0) {
           hash = (37 * hash) + CUSTOM_SIGNALS_FIELD_NUMBER;
           hash = (53 * hash) + getCustomSignalsList().hashCode();
+        }
+        if (getPrecomputedExpressionValuesCount() > 0) {
+          hash = (37 * hash) + PRECOMPUTED_EXPRESSION_VALUES_FIELD_NUMBER;
+          hash = (53 * hash) + getPrecomputedExpressionValuesList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -2400,6 +2593,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             customSignalsBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000100);
+          precomputedExpressionValues_ = emptyFloatList();
           return this;
         }
 
@@ -2487,6 +2681,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           if (((from_bitField0_ & 0x00000080) != 0)) {
             result.defaultRank_ = defaultRank_;
           }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
+            precomputedExpressionValues_.makeImmutable();
+            result.precomputedExpressionValues_ = precomputedExpressionValues_;
+          }
           result.bitField0_ |= to_bitField0_;
         }
 
@@ -2559,6 +2757,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 customSignalsBuilder_.addAllMessages(other.customSignals_);
               }
             }
+          }
+          if (!other.precomputedExpressionValues_.isEmpty()) {
+            if (precomputedExpressionValues_.isEmpty()) {
+              precomputedExpressionValues_ = other.precomputedExpressionValues_;
+              precomputedExpressionValues_.makeImmutable();
+              bitField0_ |= 0x00000200;
+            } else {
+              ensurePrecomputedExpressionValuesIsMutable();
+              precomputedExpressionValues_.addAll(other.precomputedExpressionValues_);
+            }
+            onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -2651,6 +2860,25 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                     }
                     break;
                   } // case 266
+                case 277:
+                  {
+                    float v = input.readFloat();
+                    ensurePrecomputedExpressionValuesIsMutable();
+                    precomputedExpressionValues_.addFloat(v);
+                    break;
+                  } // case 277
+                case 274:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    int alloc = length > 4096 ? 4096 : length;
+                    ensurePrecomputedExpressionValuesIsMutable(alloc / 4);
+                    while (input.getBytesUntilLimit() > 0) {
+                      precomputedExpressionValues_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 274
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3721,6 +3949,181 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           return customSignalsBuilder_;
         }
 
+        private com.google.protobuf.Internal.FloatList precomputedExpressionValues_ =
+            emptyFloatList();
+
+        private void ensurePrecomputedExpressionValuesIsMutable() {
+          if (!precomputedExpressionValues_.isModifiable()) {
+            precomputedExpressionValues_ = makeMutableCopy(precomputedExpressionValues_);
+          }
+          bitField0_ |= 0x00000200;
+        }
+
+        private void ensurePrecomputedExpressionValuesIsMutable(int capacity) {
+          if (!precomputedExpressionValues_.isModifiable()) {
+            precomputedExpressionValues_ = makeMutableCopy(precomputedExpressionValues_, capacity);
+          }
+          bitField0_ |= 0x00000200;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the precomputedExpressionValues.
+         */
+        public java.util.List<java.lang.Float> getPrecomputedExpressionValuesList() {
+          precomputedExpressionValues_.makeImmutable();
+          return precomputedExpressionValues_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of precomputedExpressionValues.
+         */
+        public int getPrecomputedExpressionValuesCount() {
+          return precomputedExpressionValues_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The precomputedExpressionValues at the given index.
+         */
+        public float getPrecomputedExpressionValues(int index) {
+          return precomputedExpressionValues_.getFloat(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The precomputedExpressionValues to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrecomputedExpressionValues(int index, float value) {
+
+          ensurePrecomputedExpressionValuesIsMutable();
+          precomputedExpressionValues_.setFloat(index, value);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The precomputedExpressionValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPrecomputedExpressionValues(float value) {
+
+          ensurePrecomputedExpressionValuesIsMutable();
+          precomputedExpressionValues_.addFloat(value);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The precomputedExpressionValues to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllPrecomputedExpressionValues(
+            java.lang.Iterable<? extends java.lang.Float> values) {
+          ensurePrecomputedExpressionValuesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, precomputedExpressionValues_);
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. A list of precomputed expression results for a given
+         * document, in the same order as requested in
+         * `SearchRequest.custom_ranking_params.expressions_to_precompute`.
+         * </pre>
+         *
+         * <code>
+         * repeated float precomputed_expression_values = 34 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPrecomputedExpressionValues() {
+          precomputedExpressionValues_ = emptyFloatList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+          return this;
+        }
+
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RankSignals)
       }
 
@@ -3773,6 +4176,1285 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RankSignals
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RetrievalSignalsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the retrievalSources.
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .RetrievalSource>
+          getRetrievalSourcesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of retrievalSources.
+       */
+      int getRetrievalSourcesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The retrievalSources at the given index.
+       */
+      com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .RetrievalSource
+          getRetrievalSources(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for retrievalSources.
+       */
+      java.util.List<java.lang.Integer> getRetrievalSourcesValueList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of retrievalSources at the given index.
+       */
+      int getRetrievalSourcesValue(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance score used by the filter when
+       * semantic_relevance_threshold is set.
+       * </pre>
+       *
+       * <code>float semantic_relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The semanticRelevanceScore.
+       */
+      float getSemanticRelevanceScore();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains a set of signals used by the relevance filter.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals}
+     */
+    public static final class RetrievalSignals extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+        RetrievalSignalsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "RetrievalSignals");
+      }
+
+      // Use RetrievalSignals.newBuilder() to construct.
+      private RetrievalSignals(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RetrievalSignals() {
+        retrievalSources_ = emptyIntList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_RetrievalSignals_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_RetrievalSignals_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                    .class,
+                com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates the source of the retrieval.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource}
+       */
+      public enum RetrievalSource implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified retrieval source.
+         * </pre>
+         *
+         * <code>RETRIEVAL_SOURCE_UNSPECIFIED = 0;</code>
+         */
+        RETRIEVAL_SOURCE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Indicates the result was retrieved by keyword search.
+         * </pre>
+         *
+         * <code>KEYWORD_SEARCH = 1;</code>
+         */
+        KEYWORD_SEARCH(1),
+        /**
+         *
+         *
+         * <pre>
+         * Indicates the result was retrieved by semantic search.
+         * </pre>
+         *
+         * <code>SEMANTIC_SEARCH = 2;</code>
+         */
+        SEMANTIC_SEARCH(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 6,
+              /* suffix= */ "",
+              "RetrievalSource");
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Unspecified retrieval source.
+         * </pre>
+         *
+         * <code>RETRIEVAL_SOURCE_UNSPECIFIED = 0;</code>
+         */
+        public static final int RETRIEVAL_SOURCE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Indicates the result was retrieved by keyword search.
+         * </pre>
+         *
+         * <code>KEYWORD_SEARCH = 1;</code>
+         */
+        public static final int KEYWORD_SEARCH_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * Indicates the result was retrieved by semantic search.
+         * </pre>
+         *
+         * <code>SEMANTIC_SEARCH = 2;</code>
+         */
+        public static final int SEMANTIC_SEARCH_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static RetrievalSource valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static RetrievalSource forNumber(int value) {
+          switch (value) {
+            case 0:
+              return RETRIEVAL_SOURCE_UNSPECIFIED;
+            case 1:
+              return KEYWORD_SEARCH;
+            case 2:
+              return SEMANTIC_SEARCH;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<RetrievalSource>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<RetrievalSource>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<RetrievalSource>() {
+                  public RetrievalSource findValueByNumber(int number) {
+                    return RetrievalSource.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final RetrievalSource[] VALUES = values();
+
+        public static RetrievalSource valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private RetrievalSource(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource)
+      }
+
+      public static final int RETRIEVAL_SOURCES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.IntList retrievalSources_ = emptyIntList();
+
+      private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .RetrievalSource>
+          retrievalSources_converter_ =
+              new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                      .RetrievalSource>() {
+                public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                        .RetrievalSignals.RetrievalSource
+                    convert(int from) {
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                          .RetrievalSource
+                      result =
+                          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                              .RetrievalSignals.RetrievalSource.forNumber(from);
+                  return result == null
+                      ? com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                          .RetrievalSignals.RetrievalSource.UNRECOGNIZED
+                      : result;
+                }
+              };
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the retrievalSources.
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .RetrievalSource>
+          getRetrievalSourcesList() {
+        return new com.google.protobuf.Internal.IntListAdapter<
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                .RetrievalSource>(retrievalSources_, retrievalSources_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of retrievalSources.
+       */
+      @java.lang.Override
+      public int getRetrievalSourcesCount() {
+        return retrievalSources_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The retrievalSources at the given index.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .RetrievalSource
+          getRetrievalSources(int index) {
+        return retrievalSources_converter_.convert(retrievalSources_.getInt(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for retrievalSources.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getRetrievalSourcesValueList() {
+        return retrievalSources_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates how the result was retrieved.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of retrievalSources at the given index.
+       */
+      @java.lang.Override
+      public int getRetrievalSourcesValue(int index) {
+        return retrievalSources_.getInt(index);
+      }
+
+      private int retrievalSourcesMemoizedSerializedSize;
+
+      public static final int SEMANTIC_RELEVANCE_SCORE_FIELD_NUMBER = 2;
+      private float semanticRelevanceScore_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Relevance score used by the filter when
+       * semantic_relevance_threshold is set.
+       * </pre>
+       *
+       * <code>float semantic_relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The semanticRelevanceScore.
+       */
+      @java.lang.Override
+      public float getSemanticRelevanceScore() {
+        return semanticRelevanceScore_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getRetrievalSourcesList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(retrievalSourcesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < retrievalSources_.size(); i++) {
+          output.writeEnumNoTag(retrievalSources_.getInt(i));
+        }
+        if (java.lang.Float.floatToRawIntBits(semanticRelevanceScore_) != 0) {
+          output.writeFloat(2, semanticRelevanceScore_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < retrievalSources_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                    retrievalSources_.getInt(i));
+          }
+          size += dataSize;
+          if (!getRetrievalSourcesList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+          }
+          retrievalSourcesMemoizedSerializedSize = dataSize;
+        }
+        if (java.lang.Float.floatToRawIntBits(semanticRelevanceScore_) != 0) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeFloatSize(2, semanticRelevanceScore_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals other =
+            (com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals) obj;
+
+        if (!retrievalSources_.equals(other.retrievalSources_)) return false;
+        if (java.lang.Float.floatToIntBits(getSemanticRelevanceScore())
+            != java.lang.Float.floatToIntBits(other.getSemanticRelevanceScore())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getRetrievalSourcesCount() > 0) {
+          hash = (37 * hash) + RETRIEVAL_SOURCES_FIELD_NUMBER;
+          hash = (53 * hash) + retrievalSources_.hashCode();
+        }
+        hash = (37 * hash) + SEMANTIC_RELEVANCE_SCORE_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getSemanticRelevanceScore());
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Contains a set of signals used by the relevance filter.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+              .RetrievalSignalsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_RetrievalSignals_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_RetrievalSignals_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                      .class,
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          retrievalSources_ = emptyIntList();
+          semanticRelevanceScore_ = 0F;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_SearchResponse_SearchResult_RetrievalSignals_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+            build() {
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals result =
+              new com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            retrievalSources_.makeImmutable();
+            result.retrievalSources_ = retrievalSources_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.semanticRelevanceScore_ = semanticRelevanceScore_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .getDefaultInstance()) return this;
+          if (!other.retrievalSources_.isEmpty()) {
+            if (retrievalSources_.isEmpty()) {
+              retrievalSources_ = other.retrievalSources_;
+              retrievalSources_.makeImmutable();
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureRetrievalSourcesIsMutable();
+              retrievalSources_.addAll(other.retrievalSources_);
+            }
+            onChanged();
+          }
+          if (java.lang.Float.floatToRawIntBits(other.getSemanticRelevanceScore()) != 0) {
+            setSemanticRelevanceScore(other.getSemanticRelevanceScore());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int tmpRaw = input.readEnum();
+                    ensureRetrievalSourcesIsMutable();
+                    retrievalSources_.addInt(tmpRaw);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureRetrievalSourcesIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      retrievalSources_.addInt(input.readEnum());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    semanticRelevanceScore_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.Internal.IntList retrievalSources_ = emptyIntList();
+
+        private void ensureRetrievalSourcesIsMutable() {
+          if (!retrievalSources_.isModifiable()) {
+            retrievalSources_ = makeMutableCopy(retrievalSources_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the retrievalSources.
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                    .RetrievalSource>
+            getRetrievalSourcesList() {
+          return new com.google.protobuf.Internal.IntListAdapter<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .RetrievalSource>(retrievalSources_, retrievalSources_converter_);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of retrievalSources.
+         */
+        public int getRetrievalSourcesCount() {
+          return retrievalSources_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The retrievalSources at the given index.
+         */
+        public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                .RetrievalSource
+            getRetrievalSources(int index) {
+          return retrievalSources_converter_.convert(retrievalSources_.getInt(index));
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The retrievalSources to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRetrievalSources(
+            int index,
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                    .RetrievalSource
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRetrievalSourcesIsMutable();
+          retrievalSources_.setInt(index, value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The retrievalSources to add.
+         * @return This builder for chaining.
+         */
+        public Builder addRetrievalSources(
+            com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                    .RetrievalSource
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRetrievalSourcesIsMutable();
+          retrievalSources_.addInt(value.getNumber());
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The retrievalSources to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllRetrievalSources(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                            .RetrievalSignals.RetrievalSource>
+                values) {
+          ensureRetrievalSourcesIsMutable();
+          for (com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .RetrievalSource
+              value : values) {
+            retrievalSources_.addInt(value.getNumber());
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRetrievalSources() {
+          retrievalSources_ = emptyIntList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the enum numeric values on the wire for retrievalSources.
+         */
+        public java.util.List<java.lang.Integer> getRetrievalSourcesValueList() {
+          retrievalSources_.makeImmutable();
+          return retrievalSources_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The enum numeric value on the wire of retrievalSources at the given index.
+         */
+        public int getRetrievalSourcesValue(int index) {
+          return retrievalSources_.getInt(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The enum numeric value on the wire for retrievalSources to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRetrievalSourcesValue(int index, int value) {
+          ensureRetrievalSourcesIsMutable();
+          retrievalSources_.setInt(index, value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for retrievalSources to add.
+         * @return This builder for chaining.
+         */
+        public Builder addRetrievalSourcesValue(int value) {
+          ensureRetrievalSourcesIsMutable();
+          retrievalSources_.addInt(value);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Indicates how the result was retrieved.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.RetrievalSource retrieval_sources = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The enum numeric values on the wire for retrievalSources to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllRetrievalSourcesValue(java.lang.Iterable<java.lang.Integer> values) {
+          ensureRetrievalSourcesIsMutable();
+          for (int value : values) {
+            retrievalSources_.addInt(value);
+          }
+          onChanged();
+          return this;
+        }
+
+        private float semanticRelevanceScore_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Relevance score used by the filter when
+         * semantic_relevance_threshold is set.
+         * </pre>
+         *
+         * <code>float semantic_relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The semanticRelevanceScore.
+         */
+        @java.lang.Override
+        public float getSemanticRelevanceScore() {
+          return semanticRelevanceScore_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Relevance score used by the filter when
+         * semantic_relevance_threshold is set.
+         * </pre>
+         *
+         * <code>float semantic_relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The semanticRelevanceScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSemanticRelevanceScore(float value) {
+
+          semanticRelevanceScore_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Relevance score used by the filter when
+         * semantic_relevance_threshold is set.
+         * </pre>
+         *
+         * <code>float semantic_relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSemanticRelevanceScore() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          semanticRelevanceScore_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals)
+      private static final com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+              .RetrievalSignals
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RetrievalSignals> PARSER =
+          new com.google.protobuf.AbstractParser<RetrievalSignals>() {
+            @java.lang.Override
+            public RetrievalSignals parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RetrievalSignals> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RetrievalSignals> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
           getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
@@ -4145,6 +5827,73 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           : rankSignals_;
     }
 
+    public static final int RETRIEVAL_SIGNALS_FIELD_NUMBER = 11;
+    private com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+        retrievalSignals_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retrievalSignals field is set.
+     */
+    @java.lang.Override
+    public boolean hasRetrievalSignals() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retrievalSignals.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+        getRetrievalSignals() {
+      return retrievalSignals_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .getDefaultInstance()
+          : retrievalSignals_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A set of signals used by the relevance filter meant for use to
+     * fine-tune the relevance filter thresholds.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignalsOrBuilder
+        getRetrievalSignalsOrBuilder() {
+      return retrievalSignals_ == null
+          ? com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .getDefaultInstance()
+          : retrievalSignals_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4169,6 +5918,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(7, getRankSignals());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(11, getRetrievalSignals());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(18, getChunk());
@@ -4203,6 +5955,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRankSignals());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getRetrievalSignals());
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
       }
@@ -4236,6 +5991,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (hasRankSignals()) {
         if (!getRankSignals().equals(other.getRankSignals())) return false;
       }
+      if (hasRetrievalSignals() != other.hasRetrievalSignals()) return false;
+      if (hasRetrievalSignals()) {
+        if (!getRetrievalSignals().equals(other.getRetrievalSignals())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4264,6 +6023,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (hasRankSignals()) {
         hash = (37 * hash) + RANK_SIGNALS_FIELD_NUMBER;
         hash = (53 * hash) + getRankSignals().hashCode();
+      }
+      if (hasRetrievalSignals()) {
+        hash = (37 * hash) + RETRIEVAL_SIGNALS_FIELD_NUMBER;
+        hash = (53 * hash) + getRetrievalSignals().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4434,6 +6197,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           internalGetDocumentFieldBuilder();
           internalGetChunkFieldBuilder();
           internalGetRankSignalsFieldBuilder();
+          internalGetRetrievalSignalsFieldBuilder();
         }
       }
 
@@ -4457,6 +6221,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (rankSignalsBuilder_ != null) {
           rankSignalsBuilder_.dispose();
           rankSignalsBuilder_ = null;
+        }
+        retrievalSignals_ = null;
+        if (retrievalSignalsBuilder_ != null) {
+          retrievalSignalsBuilder_.dispose();
+          retrievalSignalsBuilder_ = null;
         }
         return this;
       }
@@ -4517,6 +6286,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
               rankSignalsBuilder_ == null ? rankSignals_ : rankSignalsBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.retrievalSignals_ =
+              retrievalSignalsBuilder_ == null
+                  ? retrievalSignals_
+                  : retrievalSignalsBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4550,6 +6326,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         if (other.hasRankSignals()) {
           mergeRankSignals(other.getRankSignals());
+        }
+        if (other.hasRetrievalSignals()) {
+          mergeRetrievalSignals(other.getRetrievalSignals());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4611,6 +6390,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 58
+              case 90:
+                {
+                  input.readMessage(
+                      internalGetRetrievalSignalsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 90
               case 146:
                 {
                   input.readMessage(internalGetChunkFieldBuilder().getBuilder(), extensionRegistry);
@@ -5663,6 +7449,247 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
           rankSignals_ = null;
         }
         return rankSignalsBuilder_;
+      }
+
+      private com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          retrievalSignals_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals,
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                  .RetrievalSignalsOrBuilder>
+          retrievalSignalsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the retrievalSignals field is set.
+       */
+      public boolean hasRetrievalSignals() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The retrievalSignals.
+       */
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+          getRetrievalSignals() {
+        if (retrievalSignalsBuilder_ == null) {
+          return retrievalSignals_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .getDefaultInstance()
+              : retrievalSignals_;
+        } else {
+          return retrievalSignalsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRetrievalSignals(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals value) {
+        if (retrievalSignalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          retrievalSignals_ = value;
+        } else {
+          retrievalSignalsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRetrievalSignals(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals.Builder
+              builderForValue) {
+        if (retrievalSignalsBuilder_ == null) {
+          retrievalSignals_ = builderForValue.build();
+        } else {
+          retrievalSignalsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRetrievalSignals(
+          com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals value) {
+        if (retrievalSignalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && retrievalSignals_ != null
+              && retrievalSignals_
+                  != com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                      .RetrievalSignals.getDefaultInstance()) {
+            getRetrievalSignalsBuilder().mergeFrom(value);
+          } else {
+            retrievalSignals_ = value;
+          }
+        } else {
+          retrievalSignalsBuilder_.mergeFrom(value);
+        }
+        if (retrievalSignals_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRetrievalSignals() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        retrievalSignals_ = null;
+        if (retrievalSignalsBuilder_ != null) {
+          retrievalSignalsBuilder_.dispose();
+          retrievalSignalsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+              .Builder
+          getRetrievalSignalsBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return internalGetRetrievalSignalsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+              .RetrievalSignalsOrBuilder
+          getRetrievalSignalsOrBuilder() {
+        if (retrievalSignalsBuilder_ != null) {
+          return retrievalSignalsBuilder_.getMessageOrBuilder();
+        } else {
+          return retrievalSignals_ == null
+              ? com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .getDefaultInstance()
+              : retrievalSignals_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A set of signals used by the relevance filter meant for use to
+       * fine-tune the relevance filter thresholds.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals retrieval_signals = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals,
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                  .Builder,
+              com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                  .RetrievalSignalsOrBuilder>
+          internalGetRetrievalSignalsFieldBuilder() {
+        if (retrievalSignalsBuilder_ == null) {
+          retrievalSignalsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals,
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult.RetrievalSignals
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1.SearchResponse.SearchResult
+                      .RetrievalSignalsOrBuilder>(
+                  getRetrievalSignals(), getParentForChildren(), isClean());
+          retrievalSignals_ = null;
+        }
+        return retrievalSignalsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.SearchResponse.SearchResult)
@@ -33193,6 +35220,82 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         : summary_;
   }
 
+  public static final int APPLIED_CONTROLS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList appliedControls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the appliedControls.
+   */
+  public com.google.protobuf.ProtocolStringList getAppliedControlsList() {
+    return appliedControls_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of appliedControls.
+   */
+  public int getAppliedControlsCount() {
+    return appliedControls_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The appliedControls at the given index.
+   */
+  public java.lang.String getAppliedControls(int index) {
+    return appliedControls_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the appliedControls at the given index.
+   */
+  public com.google.protobuf.ByteString getAppliedControlsBytes(int index) {
+    return appliedControls_.getByteString(index);
+  }
+
   public static final int QUERY_EXPANSION_INFO_FIELD_NUMBER = 14;
   private com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo queryExpansionInfo_;
 
@@ -33556,6 +35659,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getSummary());
     }
+    for (int i = 0; i < appliedControls_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, appliedControls_.getRaw(i));
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(redirectUri_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, redirectUri_);
     }
@@ -33606,6 +35712,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSummary());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < appliedControls_.size(); i++) {
+        dataSize += computeStringSizeNoTag(appliedControls_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAppliedControlsList().size();
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(redirectUri_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, redirectUri_);
@@ -33659,6 +35773,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     if (hasSummary()) {
       if (!getSummary().equals(other.getSummary())) return false;
     }
+    if (!getAppliedControlsList().equals(other.getAppliedControlsList())) return false;
     if (hasQueryExpansionInfo() != other.hasQueryExpansionInfo()) return false;
     if (hasQueryExpansionInfo()) {
       if (!getQueryExpansionInfo().equals(other.getQueryExpansionInfo())) return false;
@@ -33707,6 +35822,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     if (hasSummary()) {
       hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getSummary().hashCode();
+    }
+    if (getAppliedControlsCount() > 0) {
+      hash = (37 * hash) + APPLIED_CONTROLS_FIELD_NUMBER;
+      hash = (53 * hash) + getAppliedControlsList().hashCode();
     }
     if (hasQueryExpansionInfo()) {
       hash = (37 * hash) + QUERY_EXPANSION_INFO_FIELD_NUMBER;
@@ -33907,6 +36026,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         summaryBuilder_.dispose();
         summaryBuilder_ = null;
       }
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
       queryExpansionInfo_ = null;
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
@@ -33928,7 +36048,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         searchLinkPromotions_ = null;
         searchLinkPromotionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       semanticState_ = 0;
       return this;
     }
@@ -33986,9 +36106,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         result.facets_ = facetsBuilder_.build();
       }
       if (searchLinkPromotionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           searchLinkPromotions_ = java.util.Collections.unmodifiableList(searchLinkPromotions_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.searchLinkPromotions_ = searchLinkPromotions_;
       } else {
@@ -34019,25 +36139,29 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        appliedControls_.makeImmutable();
+        result.appliedControls_ = appliedControls_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.queryExpansionInfo_ =
             queryExpansionInfoBuilder_ == null
                 ? queryExpansionInfo_
                 : queryExpansionInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.naturalLanguageQueryUnderstandingInfo_ =
             naturalLanguageQueryUnderstandingInfoBuilder_ == null
                 ? naturalLanguageQueryUnderstandingInfo_
                 : naturalLanguageQueryUnderstandingInfoBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.sessionInfo_ =
             sessionInfoBuilder_ == null ? sessionInfo_ : sessionInfoBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.semanticState_ = semanticState_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -34136,6 +36260,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (other.hasSummary()) {
         mergeSummary(other.getSummary());
       }
+      if (!other.appliedControls_.isEmpty()) {
+        if (appliedControls_.isEmpty()) {
+          appliedControls_ = other.appliedControls_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureAppliedControlsIsMutable();
+          appliedControls_.addAll(other.appliedControls_);
+        }
+        onChanged();
+      }
       if (other.hasQueryExpansionInfo()) {
         mergeQueryExpansionInfo(other.getQueryExpansionInfo());
       }
@@ -34150,7 +36284,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         if (!other.searchLinkPromotions_.isEmpty()) {
           if (searchLinkPromotions_.isEmpty()) {
             searchLinkPromotions_ = other.searchLinkPromotions_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureSearchLinkPromotionsIsMutable();
             searchLinkPromotions_.addAll(other.searchLinkPromotions_);
@@ -34163,7 +36297,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             searchLinkPromotionsBuilder_.dispose();
             searchLinkPromotionsBuilder_ = null;
             searchLinkPromotions_ = other.searchLinkPromotions_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             searchLinkPromotionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSearchLinkPromotionsFieldBuilder()
@@ -34260,6 +36394,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAppliedControlsIsMutable();
+                appliedControls_.add(s);
+                break;
+              } // case 82
             case 98:
               {
                 redirectUri_ = input.readStringRequireUtf8();
@@ -34270,7 +36411,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetQueryExpansionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 114
             case 122:
@@ -34278,14 +36419,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 122
             case 154:
               {
                 input.readMessage(
                     internalGetSessionInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 154
             case 186:
@@ -34305,7 +36446,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
             case 288:
               {
                 semanticState_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 288
             default:
@@ -35918,6 +38059,207 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       return summaryBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList appliedControls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAppliedControlsIsMutable() {
+      if (!appliedControls_.isModifiable()) {
+        appliedControls_ = new com.google.protobuf.LazyStringArrayList(appliedControls_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the appliedControls.
+     */
+    public com.google.protobuf.ProtocolStringList getAppliedControlsList() {
+      appliedControls_.makeImmutable();
+      return appliedControls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of appliedControls.
+     */
+    public int getAppliedControlsCount() {
+      return appliedControls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The appliedControls at the given index.
+     */
+    public java.lang.String getAppliedControls(int index) {
+      return appliedControls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the appliedControls at the given index.
+     */
+    public com.google.protobuf.ByteString getAppliedControlsBytes(int index) {
+      return appliedControls_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The appliedControls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAppliedControls(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppliedControlsIsMutable();
+      appliedControls_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppliedControls(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAppliedControlsIsMutable();
+      appliedControls_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAppliedControls(java.lang.Iterable<java.lang.String> values) {
+      ensureAppliedControlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedControls_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAppliedControls() {
+      appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls applied as part of the Control service.
+     * </pre>
+     *
+     * <code>
+     * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the appliedControls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAppliedControlsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAppliedControlsIsMutable();
+      appliedControls_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo
         queryExpansionInfo_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -35940,7 +38282,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the queryExpansionInfo field is set.
      */
     public boolean hasQueryExpansionInfo() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -35989,7 +38331,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         queryExpansionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -36013,7 +38355,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         queryExpansionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -36032,7 +38374,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder mergeQueryExpansionInfo(
         com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo value) {
       if (queryExpansionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && queryExpansionInfo_ != null
             && queryExpansionInfo_
                 != com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo
@@ -36045,7 +38387,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         queryExpansionInfoBuilder_.mergeFrom(value);
       }
       if (queryExpansionInfo_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -36063,7 +38405,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearQueryExpansionInfo() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       queryExpansionInfo_ = null;
       if (queryExpansionInfoBuilder_ != null) {
         queryExpansionInfoBuilder_.dispose();
@@ -36086,7 +38428,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo.Builder
         getQueryExpansionInfoBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetQueryExpansionInfoFieldBuilder().getBuilder();
     }
@@ -36168,7 +38510,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the naturalLanguageQueryUnderstandingInfo field is set.
      */
     public boolean hasNaturalLanguageQueryUnderstandingInfo() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -36220,7 +38562,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -36246,7 +38588,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         naturalLanguageQueryUnderstandingInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -36267,7 +38609,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         com.google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo
             value) {
       if (naturalLanguageQueryUnderstandingInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && naturalLanguageQueryUnderstandingInfo_ != null
             && naturalLanguageQueryUnderstandingInfo_
                 != com.google.cloud.discoveryengine.v1.SearchResponse
@@ -36280,7 +38622,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         naturalLanguageQueryUnderstandingInfoBuilder_.mergeFrom(value);
       }
       if (naturalLanguageQueryUnderstandingInfo_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -36299,7 +38641,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNaturalLanguageQueryUnderstandingInfo() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       naturalLanguageQueryUnderstandingInfo_ = null;
       if (naturalLanguageQueryUnderstandingInfoBuilder_ != null) {
         naturalLanguageQueryUnderstandingInfoBuilder_.dispose();
@@ -36324,7 +38666,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.discoveryengine.v1.SearchResponse.NaturalLanguageQueryUnderstandingInfo
             .Builder
         getNaturalLanguageQueryUnderstandingInfoBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetNaturalLanguageQueryUnderstandingInfoFieldBuilder().getBuilder();
     }
@@ -36412,7 +38754,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return Whether the sessionInfo field is set.
      */
     public boolean hasSessionInfo() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -36463,7 +38805,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         sessionInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -36488,7 +38830,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       } else {
         sessionInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -36509,7 +38851,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder mergeSessionInfo(
         com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo value) {
       if (sessionInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && sessionInfo_ != null
             && sessionInfo_
                 != com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo
@@ -36522,7 +38864,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         sessionInfoBuilder_.mergeFrom(value);
       }
       if (sessionInfo_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -36542,7 +38884,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo session_info = 19;</code>
      */
     public Builder clearSessionInfo() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       sessionInfo_ = null;
       if (sessionInfoBuilder_ != null) {
         sessionInfoBuilder_.dispose();
@@ -36567,7 +38909,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.discoveryengine.v1.SearchResponse.SessionInfo.Builder
         getSessionInfoBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetSessionInfoFieldBuilder().getBuilder();
     }
@@ -36630,11 +38972,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
         searchLinkPromotions_ = java.util.Collections.emptyList();
 
     private void ensureSearchLinkPromotionsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         searchLinkPromotions_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.SearchLinkPromotion>(
                 searchLinkPromotions_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -36890,7 +39232,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearSearchLinkPromotions() {
       if (searchLinkPromotionsBuilder_ == null) {
         searchLinkPromotions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         searchLinkPromotionsBuilder_.clear();
@@ -37040,7 +39382,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1.SearchLinkPromotion.Builder,
                 com.google.cloud.discoveryengine.v1.SearchLinkPromotionOrBuilder>(
                 searchLinkPromotions_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         searchLinkPromotions_ = null;
@@ -37084,7 +39426,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      */
     public Builder setSemanticStateValue(int value) {
       semanticState_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -37131,7 +39473,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       semanticState_ = value.getNumber();
       onChanged();
       return this;
@@ -37151,7 +39493,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSemanticState() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       semanticState_ = 0;
       onChanged();
       return this;

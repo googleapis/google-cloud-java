@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1.stub;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -38,20 +40,36 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.parametermanager.v1.CreateParameterRequest;
 import com.google.cloud.parametermanager.v1.CreateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateRequest;
+import com.google.cloud.parametermanager.v1.CreateTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterRequest;
 import com.google.cloud.parametermanager.v1.DeleteParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateRequest;
+import com.google.cloud.parametermanager.v1.DeleteTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.GetParameterRequest;
 import com.google.cloud.parametermanager.v1.GetParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateRequest;
+import com.google.cloud.parametermanager.v1.GetTemplateVersionRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsRequest;
 import com.google.cloud.parametermanager.v1.ListParameterVersionsResponse;
 import com.google.cloud.parametermanager.v1.ListParametersRequest;
 import com.google.cloud.parametermanager.v1.ListParametersResponse;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsRequest;
+import com.google.cloud.parametermanager.v1.ListTemplateVersionsResponse;
+import com.google.cloud.parametermanager.v1.ListTemplatesRequest;
+import com.google.cloud.parametermanager.v1.ListTemplatesResponse;
 import com.google.cloud.parametermanager.v1.Parameter;
 import com.google.cloud.parametermanager.v1.ParameterVersion;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionRequest;
 import com.google.cloud.parametermanager.v1.RenderParameterVersionResponse;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionRequest;
+import com.google.cloud.parametermanager.v1.RenderTemplateVersionResponse;
+import com.google.cloud.parametermanager.v1.Template;
+import com.google.cloud.parametermanager.v1.TemplateVersion;
 import com.google.cloud.parametermanager.v1.UpdateParameterRequest;
 import com.google.cloud.parametermanager.v1.UpdateParameterVersionRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateRequest;
+import com.google.cloud.parametermanager.v1.UpdateTemplateVersionRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -498,6 +516,428 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListTemplatesRequest, ListTemplatesResponse>
+      listTemplatesMethodDescriptor =
+          ApiMethodDescriptor.<ListTemplatesRequest, ListTemplatesResponse>newBuilder()
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/ListTemplates")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTemplatesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/templates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTemplatesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTemplatesResponse>newBuilder()
+                      .setDefaultInstance(ListTemplatesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTemplateRequest, Template>
+      getTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetTemplateRequest, Template>newBuilder()
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/GetTemplate")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/templates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Template>newBuilder()
+                      .setDefaultInstance(Template.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateTemplateRequest, Template>
+      createTemplateMethodDescriptor =
+          ApiMethodDescriptor.<CreateTemplateRequest, Template>newBuilder()
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/CreateTemplate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/templates",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "templateId", request.getTemplateId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("template", request.getTemplate(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Template>newBuilder()
+                      .setDefaultInstance(Template.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateTemplateRequest, Template>
+      updateTemplateMethodDescriptor =
+          ApiMethodDescriptor.<UpdateTemplateRequest, Template>newBuilder()
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/UpdateTemplate")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{template.name=projects/*/locations/*/templates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "template.name", request.getTemplate().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("template", request.getTemplate(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Template>newBuilder()
+                      .setDefaultInstance(Template.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTemplateRequest, Empty>
+      deleteTemplateMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTemplateRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.parametermanager.v1.ParameterManager/DeleteTemplate")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTemplateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/templates/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTemplateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListTemplateVersionsRequest, ListTemplateVersionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/ListTemplateVersions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTemplateVersionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/templates/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTemplateVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTemplateVersionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTemplateVersionsResponse>newBuilder()
+                      .setDefaultInstance(ListTemplateVersionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionMethodDescriptor =
+          ApiMethodDescriptor.<GetTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/GetTemplateVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTemplateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/templates/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TemplateVersion>newBuilder()
+                      .setDefaultInstance(TemplateVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionMethodDescriptor =
+          ApiMethodDescriptor.<CreateTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/CreateTemplateVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateTemplateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/templates/*}/versions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(
+                                fields, "templateVersionId", request.getTemplateVersionId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("templateVersion", request.getTemplateVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TemplateVersion>newBuilder()
+                      .setDefaultInstance(TemplateVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateTemplateVersionRequest, TemplateVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/UpdateTemplateVersion")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateTemplateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{templateVersion.name=projects/*/locations/*/templates/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "templateVersion.name",
+                                request.getTemplateVersion().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("templateVersion", request.getTemplateVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TemplateVersion>newBuilder()
+                      .setDefaultInstance(TemplateVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTemplateVersionRequest, Empty>
+      deleteTemplateVersionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTemplateVersionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/DeleteTemplateVersion")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTemplateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/templates/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionMethodDescriptor =
+          ApiMethodDescriptor
+              .<RenderTemplateVersionRequest, RenderTemplateVersionResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.parametermanager.v1.ParameterManager/RenderTemplateVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RenderTemplateVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/templates/*/versions/*}:render",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RenderTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RenderTemplateVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "parameterVersion", request.getParameterVersion());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RenderTemplateVersionResponse>newBuilder()
+                      .setDefaultInstance(RenderTemplateVersionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -586,6 +1026,26 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
   private final UnaryCallable<UpdateParameterVersionRequest, ParameterVersion>
       updateParameterVersionCallable;
   private final UnaryCallable<DeleteParameterVersionRequest, Empty> deleteParameterVersionCallable;
+  private final UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable;
+  private final UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable;
+  private final UnaryCallable<GetTemplateRequest, Template> getTemplateCallable;
+  private final UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable;
+  private final UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable;
+  private final UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable;
+  private final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable;
+  private final UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable;
+  private final UnaryCallable<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionCallable;
+  private final UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable;
+  private final UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable;
+  private final UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable;
+  private final UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -774,6 +1234,147 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<ListTemplatesRequest, ListTemplatesResponse>
+        listTemplatesTransportSettings =
+            HttpJsonCallSettings.<ListTemplatesRequest, ListTemplatesResponse>newBuilder()
+                .setMethodDescriptor(listTemplatesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetTemplateRequest, Template> getTemplateTransportSettings =
+        HttpJsonCallSettings.<GetTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(getTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateTemplateRequest, Template> createTemplateTransportSettings =
+        HttpJsonCallSettings.<CreateTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(createTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<UpdateTemplateRequest, Template> updateTemplateTransportSettings =
+        HttpJsonCallSettings.<UpdateTemplateRequest, Template>newBuilder()
+            .setMethodDescriptor(updateTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("template.name", String.valueOf(request.getTemplate().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteTemplateRequest, Empty> deleteTemplateTransportSettings =
+        HttpJsonCallSettings.<DeleteTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteTemplateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+        listTemplateVersionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListTemplateVersionsRequest, ListTemplateVersionsResponse>newBuilder()
+                .setMethodDescriptor(listTemplateVersionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetTemplateVersionRequest, TemplateVersion>
+        getTemplateVersionTransportSettings =
+            HttpJsonCallSettings.<GetTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(getTemplateVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateTemplateVersionRequest, TemplateVersion>
+        createTemplateVersionTransportSettings =
+            HttpJsonCallSettings.<CreateTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(createTemplateVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateTemplateVersionRequest, TemplateVersion>
+        updateTemplateVersionTransportSettings =
+            HttpJsonCallSettings.<UpdateTemplateVersionRequest, TemplateVersion>newBuilder()
+                .setMethodDescriptor(updateTemplateVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "template_version.name",
+                          String.valueOf(request.getTemplateVersion().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteTemplateVersionRequest, Empty>
+        deleteTemplateVersionTransportSettings =
+            HttpJsonCallSettings.<DeleteTemplateVersionRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteTemplateVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+        renderTemplateVersionTransportSettings =
+            HttpJsonCallSettings
+                .<RenderTemplateVersionRequest, RenderTemplateVersionResponse>newBuilder()
+                .setMethodDescriptor(renderTemplateVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -851,6 +1452,59 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
             deleteParameterVersionTransportSettings,
             settings.deleteParameterVersionSettings(),
             clientContext);
+    this.listTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listTemplatesTransportSettings, settings.listTemplatesSettings(), clientContext);
+    this.listTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listTemplatesTransportSettings, settings.listTemplatesSettings(), clientContext);
+    this.getTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getTemplateTransportSettings, settings.getTemplateSettings(), clientContext);
+    this.createTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createTemplateTransportSettings, settings.createTemplateSettings(), clientContext);
+    this.updateTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateTemplateTransportSettings, settings.updateTemplateSettings(), clientContext);
+    this.deleteTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteTemplateTransportSettings, settings.deleteTemplateSettings(), clientContext);
+    this.listTemplateVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listTemplateVersionsTransportSettings,
+            settings.listTemplateVersionsSettings(),
+            clientContext);
+    this.listTemplateVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listTemplateVersionsTransportSettings,
+            settings.listTemplateVersionsSettings(),
+            clientContext);
+    this.getTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            getTemplateVersionTransportSettings,
+            settings.getTemplateVersionSettings(),
+            clientContext);
+    this.createTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            createTemplateVersionTransportSettings,
+            settings.createTemplateVersionSettings(),
+            clientContext);
+    this.updateTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateTemplateVersionTransportSettings,
+            settings.updateTemplateVersionSettings(),
+            clientContext);
+    this.deleteTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteTemplateVersionTransportSettings,
+            settings.deleteTemplateVersionSettings(),
+            clientContext);
+    this.renderTemplateVersionCallable =
+        callableFactory.createUnaryCallable(
+            renderTemplateVersionTransportSettings,
+            settings.renderTemplateVersionSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -879,6 +1533,17 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
     methodDescriptors.add(createParameterVersionMethodDescriptor);
     methodDescriptors.add(updateParameterVersionMethodDescriptor);
     methodDescriptors.add(deleteParameterVersionMethodDescriptor);
+    methodDescriptors.add(listTemplatesMethodDescriptor);
+    methodDescriptors.add(getTemplateMethodDescriptor);
+    methodDescriptors.add(createTemplateMethodDescriptor);
+    methodDescriptors.add(updateTemplateMethodDescriptor);
+    methodDescriptors.add(deleteTemplateMethodDescriptor);
+    methodDescriptors.add(listTemplateVersionsMethodDescriptor);
+    methodDescriptors.add(getTemplateVersionMethodDescriptor);
+    methodDescriptors.add(createTemplateVersionMethodDescriptor);
+    methodDescriptors.add(updateTemplateVersionMethodDescriptor);
+    methodDescriptors.add(deleteTemplateVersionMethodDescriptor);
+    methodDescriptors.add(renderTemplateVersionMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -953,6 +1618,77 @@ public class HttpJsonParameterManagerStub extends ParameterManagerStub {
   @Override
   public UnaryCallable<DeleteParameterVersionRequest, Empty> deleteParameterVersionCallable() {
     return deleteParameterVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesResponse> listTemplatesCallable() {
+    return listTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplatesRequest, ListTemplatesPagedResponse>
+      listTemplatesPagedCallable() {
+    return listTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTemplateRequest, Template> getTemplateCallable() {
+    return getTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTemplateRequest, Template> createTemplateCallable() {
+    return createTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTemplateRequest, Template> updateTemplateCallable() {
+    return updateTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTemplateRequest, Empty> deleteTemplateCallable() {
+    return deleteTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+      listTemplateVersionsCallable() {
+    return listTemplateVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTemplateVersionsRequest, ListTemplateVersionsPagedResponse>
+      listTemplateVersionsPagedCallable() {
+    return listTemplateVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTemplateVersionRequest, TemplateVersion> getTemplateVersionCallable() {
+    return getTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionCallable() {
+    return createTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionCallable() {
+    return updateTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionCallable() {
+    return deleteTemplateVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionCallable() {
+    return renderTemplateVersionCallable;
   }
 
   @Override
