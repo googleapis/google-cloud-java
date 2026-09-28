@@ -84,7 +84,7 @@ public class OtelStorageDecoratorAcoUnitTest {
 
       BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("success-bucket");
       assertNotNull(meta);
-      assertEquals("projects/12345/buckets/success-bucket", meta.resource);
+      assertEquals("//storage.googleapis.com/projects/12345/buckets/success-bucket", meta.resource);
       assertEquals("us-east1", meta.location);
       assertFalse(meta.fetchPending);
     }
@@ -176,7 +176,7 @@ public class OtelStorageDecoratorAcoUnitTest {
       // Forbidden -> Fallback values retained with pending = false (Do Not Retry)
       BucketMetadataCache.BucketMetadata meta = osd.acoContext.getCache().get("forbidden-bucket");
       assertNotNull(meta);
-      assertEquals("projects/_/buckets/forbidden-bucket", meta.resource);
+      assertEquals("//storage.googleapis.com/projects/_/buckets/forbidden-bucket", meta.resource);
       assertEquals("global", meta.location);
       assertFalse(meta.fetchPending);
     }
@@ -232,7 +232,7 @@ public class OtelStorageDecoratorAcoUnitTest {
       // Manually put a pending placeholder entry
       osd.acoContext
           .getCache()
-          .put("pending-bucket", "projects/_/buckets/pending-bucket", "global", true);
+          .put("pending-bucket", "//storage.googleapis.com/projects/_/buckets/pending-bucket", "global", true);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "pending-bucket", osd);
@@ -257,7 +257,7 @@ public class OtelStorageDecoratorAcoUnitTest {
       // Manually put a resolved non-pending entry
       osd.acoContext
           .getCache()
-          .put("resolved-bucket", "projects/123/buckets/resolved-bucket", "us-east1", false);
+          .put("resolved-bucket", "//storage.googleapis.com/projects/123/buckets/resolved-bucket", "us-east1", false);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "resolved-bucket", osd);
@@ -266,7 +266,7 @@ public class OtelStorageDecoratorAcoUnitTest {
 
       // Verify OTel span attributes were set successfully
       Mockito.verify(mockSpan)
-          .setAttribute("gcp.resource.destination.id", "projects/123/buckets/resolved-bucket");
+          .setAttribute("gcp.resource.destination.id", "//storage.googleapis.com/projects/123/buckets/resolved-bucket");
       Mockito.verify(mockSpan).setAttribute("gcp.resource.destination.location", "us-east1");
     }
   }

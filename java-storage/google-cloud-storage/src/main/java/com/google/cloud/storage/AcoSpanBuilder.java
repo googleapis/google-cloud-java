@@ -36,7 +36,7 @@ final class AcoSpanBuilder implements SpanBuilder {
   private static final String MULTI_REGION = "multi-region";
   private static final String DUAL_REGION = "dual-region";
   private static final String PLACEHOLDER_BUCKET_LOCATION = "global";
-  private static final String PLACEHOLDER_RESOURCE_PREFIX = "projects/_/buckets/";
+  private static final String PLACEHOLDER_RESOURCE_PREFIX = "//storage.googleapis.com/projects/_/buckets/";
 
   private final SpanBuilder delegate;
   private final OtelStorageDecorator parent;
@@ -184,7 +184,7 @@ final class AcoSpanBuilder implements SpanBuilder {
     String projectId = bucket.getProject() != null ? bucket.getProject().toString() : null;
     String resource;
     if (projectId != null && !projectId.isEmpty()) {
-      resource = "projects/" + projectId + "/buckets/" + bucketName;
+      resource = "//storage.googleapis.com/projects/" + projectId + "/buckets/" + bucketName;
     } else {
       resource = PLACEHOLDER_RESOURCE_PREFIX + bucketName;
     }
