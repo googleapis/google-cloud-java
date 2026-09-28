@@ -88,7 +88,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * Unspecified thinking mode, agent will use THINKING mode by default except
+     * for BigQuery user defaulting to FAST mode by default.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -131,7 +132,8 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified thinking mode, agent will use THINKING mode by default.
+     * Unspecified thinking mode, agent will use THINKING mode by default except
+     * for BigQuery user defaulting to FAST mode by default.
      * </pre>
      *
      * <code>THINKING_MODE_UNSPECIFIED = 0;</code>
@@ -249,7 +251,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Model selection for the agent.
+   * Model selection for the agent for BigQuery users.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.geminidataanalytics.v1beta.ChatRequest.Model}
@@ -259,7 +261,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No model specified. The default model will be used.
+     * No model specified. Either preview or non preview model can be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -293,7 +295,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No model specified. The default model will be used.
+     * No model specified. Either preview or non preview model can be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -848,7 +850,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
    * @return The project.
    */
   @java.lang.Override
@@ -878,7 +880,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -3276,7 +3278,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
      * @return The project.
      */
     @java.lang.Deprecated
@@ -3305,7 +3307,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -3334,7 +3336,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -3362,7 +3364,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3386,7 +3388,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=385
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=398
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */

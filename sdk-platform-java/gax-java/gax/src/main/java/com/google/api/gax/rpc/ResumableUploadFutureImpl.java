@@ -38,7 +38,10 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.io.IOException;
@@ -46,6 +49,7 @@ import java.io.InputStream;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.jspecify.annotations.NullMarked;
@@ -65,13 +69,18 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final ApiFuture<ResumableUploadSession> startFuture;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      queryStatusCallable;
   private final InputStream payload;
-  private final ResumableUploadCallSettings settings;
+  private final ResumableUploadOptions options;
   private final ApiCallContext callContext;
+  private final ScheduledExecutorService executor;
+  private final ExponentialRetryAlgorithm recoveryAlgorithm;
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable String uploadSessionUrl;
 
+  // Tracks the current operation's Future (start, chunk upload) to propagate cancellation.
   @GuardedBy("lock")
   private @Nullable ApiFuture<?> inFlightFuture;
 
@@ -85,12 +94,20 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   static <ResponseT> ResumableUploadFutureImpl<ResponseT> create(
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
-      ApiCallContext callContext) {
+      ResumableUploadOptions options,
+      ClientContext clientContext,
+      ExponentialRetryAlgorithm recoveryAlgorithm) {
     ResumableUploadFutureImpl<ResponseT> future =
         new ResumableUploadFutureImpl<>(
-            startFuture, uploadChunkCallable, payload, settings, callContext);
+            startFuture,
+            uploadChunkCallable,
+            queryStatusCallable,
+            payload,
+            options,
+            clientContext,
+            recoveryAlgorithm);
     try {
       future.start();
     } catch (Throwable t) {
@@ -102,16 +119,23 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private ResumableUploadFutureImpl(
       ApiFuture<ResumableUploadSession> startFuture,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStream payload,
-      ResumableUploadCallSettings settings,
-      ApiCallContext callContext) {
+      ResumableUploadOptions options,
+      ClientContext clientContext,
+      ExponentialRetryAlgorithm recoveryAlgorithm) {
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
+    this.queryStatusCallable =
+        checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.payload = checkNotNull(payload, "payload must not be null");
-    this.settings = checkNotNull(settings, "settings must not be null");
-    checkArgument(settings.getChunkSize() > 0, "chunkSize must be > 0");
-    this.callContext = checkNotNull(callContext, "callContext must not be null");
+    this.options = checkNotNull(options, "options must not be null");
+    checkArgument(options.getChunkSize() > 0, "chunkSize must be > 0");
+    checkNotNull(clientContext, "clientContext must not be null");
+    this.callContext = clientContext.getDefaultCallContext();
+    this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
+    this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
     this.inFlightFuture = startFuture;
   }
 
@@ -121,23 +145,43 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
         new ApiFutureCallback<ResumableUploadSession>() {
           @Override
           public void onSuccess(ResumableUploadSession session) {
-            if (resultFuture.isDone()) {
-              return;
-            }
-            uploadSessionUrl = session.getUploadUrl();
+            String sessionUrl = session.getUploadUrl();
             ResumableUploadChunkCoordinator<ResponseT> coordinator =
                 new ResumableUploadChunkCoordinator<>(
                     uploadChunkCallable,
-                    session.getUploadUrl(),
+                    queryStatusCallable,
+                    sessionUrl,
                     payload,
-                    settings.getChunkSize(),
+                    options.getChunkSize(),
                     callContext,
-                    ResumableUploadFutureImpl.this);
-            try {
-              coordinator.start();
-            } catch (Throwable t) {
-              fail(t);
+                    recoveryAlgorithm,
+                    executor);
+            ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
+            synchronized (lock) {
+              if (resultFuture.isDone()) {
+                return;
+              }
+              uploadSessionUrl = sessionUrl;
+              inFlightFuture = uploadFuture;
             }
+            ApiFutures.addCallback(
+                uploadFuture,
+                new ApiFutureCallback<ResponseT>() {
+                  @Override
+                  public void onSuccess(ResponseT response) {
+                    succeed(response);
+                  }
+
+                  @Override
+                  public void onFailure(Throwable t) {
+                    if (t instanceof CancellationException) {
+                      return;
+                    }
+                    fail(t);
+                  }
+                },
+                MoreExecutors.directExecutor());
+            coordinator.start();
           }
 
           @Override
@@ -151,25 +195,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
         MoreExecutors.directExecutor());
   }
 
-  /**
-   * Registers the active in-flight future for cancellation. If this session future has already been
-   * canceled, the supplied future is canceled immediately.
-   */
-  void setInFlightFuture(ApiFuture<?> inFlightFuture) {
-    boolean shouldCancel = false;
-    synchronized (lock) {
-      if (resultFuture.isDone()) {
-        shouldCancel = resultFuture.isCancelled();
-      } else {
-        this.inFlightFuture = inFlightFuture;
-      }
-    }
-    if (shouldCancel) {
-      inFlightFuture.cancel(true);
-    }
-  }
-
-  void succeed(@Nullable ResponseT result) {
+  private void succeed(@Nullable ResponseT result) {
     synchronized (lock) {
       inFlightFuture = null;
     }
@@ -177,7 +203,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     resultFuture.set(result);
   }
 
-  void fail(Throwable t) {
+  private void fail(Throwable t) {
     synchronized (lock) {
       inFlightFuture = null;
     }

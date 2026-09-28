@@ -30,14 +30,18 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.grpc.ProtoOperationTransformers;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -51,10 +55,17 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.tasks.v2.BatchCreateTasksMetadata;
+import com.google.cloud.tasks.v2.BatchCreateTasksRequest;
+import com.google.cloud.tasks.v2.BatchCreateTasksResponse;
+import com.google.cloud.tasks.v2.BatchDeleteTasksMetadata;
+import com.google.cloud.tasks.v2.BatchDeleteTasksRequest;
+import com.google.cloud.tasks.v2.CmekConfig;
 import com.google.cloud.tasks.v2.CreateQueueRequest;
 import com.google.cloud.tasks.v2.CreateTaskRequest;
 import com.google.cloud.tasks.v2.DeleteQueueRequest;
 import com.google.cloud.tasks.v2.DeleteTaskRequest;
+import com.google.cloud.tasks.v2.GetCmekConfigRequest;
 import com.google.cloud.tasks.v2.GetQueueRequest;
 import com.google.cloud.tasks.v2.GetTaskRequest;
 import com.google.cloud.tasks.v2.ListQueuesRequest;
@@ -67,6 +78,7 @@ import com.google.cloud.tasks.v2.Queue;
 import com.google.cloud.tasks.v2.ResumeQueueRequest;
 import com.google.cloud.tasks.v2.RunTaskRequest;
 import com.google.cloud.tasks.v2.Task;
+import com.google.cloud.tasks.v2.UpdateCmekConfigRequest;
 import com.google.cloud.tasks.v2.UpdateQueueRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -77,6 +89,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.time.Duration;
@@ -133,6 +146,31 @@ import org.jspecify.annotations.Nullable;
  * Please refer to the [Client Side Retry
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for batchCreateTasks:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * CloudTasksStubSettings.Builder cloudTasksSettingsBuilder = CloudTasksStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * cloudTasksSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @NullMarked
 @Generated("by gapic-generator-java")
@@ -159,8 +197,17 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       listTasksSettings;
   private final UnaryCallSettings<GetTaskRequest, Task> getTaskSettings;
   private final UnaryCallSettings<CreateTaskRequest, Task> createTaskSettings;
+  private final UnaryCallSettings<BatchCreateTasksRequest, Operation> batchCreateTasksSettings;
+  private final OperationCallSettings<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationSettings;
   private final UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings;
+  private final UnaryCallSettings<BatchDeleteTasksRequest, Operation> batchDeleteTasksSettings;
+  private final OperationCallSettings<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationSettings;
   private final UnaryCallSettings<RunTaskRequest, Task> runTaskSettings;
+  private final UnaryCallSettings<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigSettings;
+  private final UnaryCallSettings<GetCmekConfigRequest, CmekConfig> getCmekConfigSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -392,14 +439,47 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     return createTaskSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCreateTasks. */
+  public UnaryCallSettings<BatchCreateTasksRequest, Operation> batchCreateTasksSettings() {
+    return batchCreateTasksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateTasks. */
+  public OperationCallSettings<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationSettings() {
+    return batchCreateTasksOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteTask. */
   public UnaryCallSettings<DeleteTaskRequest, Empty> deleteTaskSettings() {
     return deleteTaskSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchDeleteTasks. */
+  public UnaryCallSettings<BatchDeleteTasksRequest, Operation> batchDeleteTasksSettings() {
+    return batchDeleteTasksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteTasks. */
+  public OperationCallSettings<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationSettings() {
+    return batchDeleteTasksOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to runTask. */
   public UnaryCallSettings<RunTaskRequest, Task> runTaskSettings() {
     return runTaskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCmekConfig. */
+  public UnaryCallSettings<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigSettings() {
+    return updateCmekConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getCmekConfig. */
+  public UnaryCallSettings<GetCmekConfigRequest, CmekConfig> getCmekConfigSettings() {
+    return getCmekConfigSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -538,8 +618,14 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
     listTasksSettings = settingsBuilder.listTasksSettings().build();
     getTaskSettings = settingsBuilder.getTaskSettings().build();
     createTaskSettings = settingsBuilder.createTaskSettings().build();
+    batchCreateTasksSettings = settingsBuilder.batchCreateTasksSettings().build();
+    batchCreateTasksOperationSettings = settingsBuilder.batchCreateTasksOperationSettings().build();
     deleteTaskSettings = settingsBuilder.deleteTaskSettings().build();
+    batchDeleteTasksSettings = settingsBuilder.batchDeleteTasksSettings().build();
+    batchDeleteTasksOperationSettings = settingsBuilder.batchDeleteTasksOperationSettings().build();
     runTaskSettings = settingsBuilder.runTaskSettings().build();
+    updateCmekConfigSettings = settingsBuilder.updateCmekConfigSettings().build();
+    getCmekConfigSettings = settingsBuilder.getCmekConfigSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -575,8 +661,21 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
         listTasksSettings;
     private final UnaryCallSettings.Builder<GetTaskRequest, Task> getTaskSettings;
     private final UnaryCallSettings.Builder<CreateTaskRequest, Task> createTaskSettings;
+    private final UnaryCallSettings.Builder<BatchCreateTasksRequest, Operation>
+        batchCreateTasksSettings;
+    private final OperationCallSettings.Builder<
+            BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+        batchCreateTasksOperationSettings;
     private final UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteTasksRequest, Operation>
+        batchDeleteTasksSettings;
+    private final OperationCallSettings.Builder<
+            BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+        batchDeleteTasksOperationSettings;
     private final UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings;
+    private final UnaryCallSettings.Builder<UpdateCmekConfigRequest, CmekConfig>
+        updateCmekConfigSettings;
+    private final UnaryCallSettings.Builder<GetCmekConfigRequest, CmekConfig> getCmekConfigSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -648,8 +747,14 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       listTasksSettings = PagedCallSettings.newBuilder(LIST_TASKS_PAGE_STR_FACT);
       getTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateTasksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateTasksOperationSettings = OperationCallSettings.newBuilder();
       deleteTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteTasksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteTasksOperationSettings = OperationCallSettings.newBuilder();
       runTaskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCmekConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getCmekConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -669,8 +774,12 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               listTasksSettings,
               getTaskSettings,
               createTaskSettings,
+              batchCreateTasksSettings,
               deleteTaskSettings,
+              batchDeleteTasksSettings,
               runTaskSettings,
+              updateCmekConfigSettings,
+              getCmekConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -693,8 +802,14 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       listTasksSettings = settings.listTasksSettings.toBuilder();
       getTaskSettings = settings.getTaskSettings.toBuilder();
       createTaskSettings = settings.createTaskSettings.toBuilder();
+      batchCreateTasksSettings = settings.batchCreateTasksSettings.toBuilder();
+      batchCreateTasksOperationSettings = settings.batchCreateTasksOperationSettings.toBuilder();
       deleteTaskSettings = settings.deleteTaskSettings.toBuilder();
+      batchDeleteTasksSettings = settings.batchDeleteTasksSettings.toBuilder();
+      batchDeleteTasksOperationSettings = settings.batchDeleteTasksOperationSettings.toBuilder();
       runTaskSettings = settings.runTaskSettings.toBuilder();
+      updateCmekConfigSettings = settings.updateCmekConfigSettings.toBuilder();
+      getCmekConfigSettings = settings.getCmekConfigSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -714,8 +829,12 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
               listTasksSettings,
               getTaskSettings,
               createTaskSettings,
+              batchCreateTasksSettings,
               deleteTaskSettings,
+              batchDeleteTasksSettings,
               runTaskSettings,
+              updateCmekConfigSettings,
+              getCmekConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -816,12 +935,32 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .batchCreateTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteTaskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .batchDeleteTasksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .runTaskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateCmekConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getCmekConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -834,6 +973,54 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
           .getLocationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateTasksOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchCreateTasksRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(BatchCreateTasksResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchCreateTasksMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchDeleteTasksOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteTasksRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(BatchDeleteTasksMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
 
       return builder;
     }
@@ -926,14 +1113,50 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
       return createTaskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateTasks. */
+    public UnaryCallSettings.Builder<BatchCreateTasksRequest, Operation>
+        batchCreateTasksSettings() {
+      return batchCreateTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateTasks. */
+    public OperationCallSettings.Builder<
+            BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+        batchCreateTasksOperationSettings() {
+      return batchCreateTasksOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteTask. */
     public UnaryCallSettings.Builder<DeleteTaskRequest, Empty> deleteTaskSettings() {
       return deleteTaskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchDeleteTasks. */
+    public UnaryCallSettings.Builder<BatchDeleteTasksRequest, Operation>
+        batchDeleteTasksSettings() {
+      return batchDeleteTasksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteTasks. */
+    public OperationCallSettings.Builder<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+        batchDeleteTasksOperationSettings() {
+      return batchDeleteTasksOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return runTaskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCmekConfig. */
+    public UnaryCallSettings.Builder<UpdateCmekConfigRequest, CmekConfig>
+        updateCmekConfigSettings() {
+      return updateCmekConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getCmekConfig. */
+    public UnaryCallSettings.Builder<GetCmekConfigRequest, CmekConfig> getCmekConfigSettings() {
+      return getCmekConfigSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

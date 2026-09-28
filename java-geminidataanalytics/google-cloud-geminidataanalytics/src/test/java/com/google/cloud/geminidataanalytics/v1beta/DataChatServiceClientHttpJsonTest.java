@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
@@ -107,8 +108,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -161,8 +162,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -287,6 +288,76 @@ public class DataChatServiceClientHttpJsonTest {
   }
 
   @Test
+  public void updateConversationTest() throws Exception {
+    Conversation expectedResponse =
+        Conversation.newBuilder()
+            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .addAllAgents(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastUsedTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Conversation conversation =
+        Conversation.newBuilder()
+            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .addAllAgents(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastUsedTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Conversation actualResponse = client.updateConversation(conversation, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateConversationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Conversation conversation =
+          Conversation.newBuilder()
+              .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+              .addAllAgents(new ArrayList<String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setLastUsedTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setTitle("title110371416")
+              .setKmsKey("kmsKey-1127483058")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversation(conversation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
@@ -295,8 +366,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -345,8 +416,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -597,6 +668,7 @@ public class DataChatServiceClientHttpJsonTest {
             .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
             .addAllDisambiguationQuestion(new ArrayList<String>())
             .setPipelineDebugInfo(Struct.newBuilder().build())
+            .setTokenUsage(TokenUsage.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

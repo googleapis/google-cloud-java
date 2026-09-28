@@ -48,6 +48,18 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_marketingplatform_admin_v1alpha_AnalyticsAccountLink_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_marketingplatform_admin_v1alpha_AnalyticsAccountLink_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_UserGroup_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_UserGroup_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_UserGroupMember_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_UserGroupMember_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_AdminAccessBinding_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_AdminAccessBinding_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,46 +69,80 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n6google/marketingplatform/admin/v1alpha"
-          + "/resources.proto\022&google.marketingplatfo"
-          + "rm.admin.v1alpha\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\"\253\001\n"
-          + "\014Organization\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\024\n\014disp"
-          + "lay_name\030\002 \001(\t:r\352Ao\n2marketingplatformad"
-          + "min.googleapis.com/Organization\022\034organiz"
-          + "ations/{organization}*\rorganizations2\014or"
-          + "ganization\"\263\003\n\024AnalyticsAccountLink\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\010\022K\n\021analytics_account\030\002 \001("
-          + "\tB0\340A\002\340A\005\372A\'\n%analyticsadmin.googleapis."
-          + "com/Account\022\031\n\014display_name\030\003 \001(\tB\003\340A\003\022c"
-          + "\n\027link_verification_state\030\004 \001(\0162=.google"
-          + ".marketingplatform.admin.v1alpha.LinkVer"
-          + "ificationStateB\003\340A\003:\272\001\352A\266\001\n:marketingpla"
-          + "tformadmin.googleapis.com/AnalyticsAccou"
-          + "ntLink\022Korganizations/{organization}/ana"
-          + "lyticsAccountLinks/{analytics_account_li"
-          + "nk}*\025analyticsAccountLinks2\024analyticsAcc"
-          + "ountLink*\220\001\n\025LinkVerificationState\022\'\n#LI"
-          + "NK_VERIFICATION_STATE_UNSPECIFIED\020\000\022$\n L"
-          + "INK_VERIFICATION_STATE_VERIFIED\020\001\022(\n$LIN"
-          + "K_VERIFICATION_STATE_NOT_VERIFIED\020\002*\207\001\n\025"
-          + "AnalyticsServiceLevel\022\'\n#ANALYTICS_SERVI"
-          + "CE_LEVEL_UNSPECIFIED\020\000\022$\n ANALYTICS_SERV"
-          + "ICE_LEVEL_STANDARD\020\001\022\037\n\033ANALYTICS_SERVIC"
-          + "E_LEVEL_360\020\002*\263\001\n\025AnalyticsPropertyType\022"
-          + "\'\n#ANALYTICS_PROPERTY_TYPE_UNSPECIFIED\020\000"
-          + "\022$\n ANALYTICS_PROPERTY_TYPE_ORDINARY\020\001\022\'"
-          + "\n#ANALYTICS_PROPERTY_TYPE_SUBPROPERTY\020\002\022"
-          + "\"\n\036ANALYTICS_PROPERTY_TYPE_ROLLUP\020\003B\330\002\n."
-          + "com.google.ads.marketingplatform.admin.v"
-          + "1alphaB\016ResourcesProtoP\001ZKgoogle.golang."
-          + "org/genproto/googleapis/marketingplatfor"
-          + "m/admin/v1alpha;admin\252\002*Google.Ads.Marke"
-          + "tingPlatform.Admin.V1Alpha\312\002*Google\\Ads\\"
-          + "MarketingPlatform\\Admin\\V1alpha\352\002.Google"
-          + "::Ads::MarketingPlatform::Admin::V1alpha"
-          + "\352A;\n%analyticsadmin.googleapis.com/Accou"
-          + "nt\022\022accounts/{account}b\006proto3"
+      "\n"
+          + "6google/marketingplatform/admin/v1alpha/resources.proto\022&google.marketingplatfo"
+          + "rm.admin.v1alpha\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\253\001\n"
+          + "\014Organization\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\024\n"
+          + "\014display_name\030\002 \001(\t:r\352Ao\n"
+          + "2marketingplatformad"
+          + "min.googleapis.com/Organization\022\034organizations/{organization}*\r"
+          + "organizations2\014organization\"\263\003\n"
+          + "\024AnalyticsAccountLink\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022K\n"
+          + "\021analytics_account\030\002 \001(\tB0\340A\002\340A\005\372A\'\n"
+          + "%analyticsadmin.googleapis.com/Account\022\031\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\003\022c\n"
+          + "\027link_verification_state\030\004 \001(\0162=.google"
+          + ".marketingplatform.admin.v1alpha.LinkVerificationStateB\003\340A\003:\272\001\352A\266\001\n"
+          + ":marketingplatformadmin.googleapis.com/AnalyticsAccou"
+          + "ntLink\022Korganizations/{organization}/analyticsAccountLinks/{analytics_account_li"
+          + "nk}*\025analyticsAccountLinks2\024analyticsAccountLink\"\327\001\n"
+          + "\tUserGroup\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
+          + "\013description\030\003 \001(\tB\003\340A\001:\201\001\352A~\n"
+          + "/marketingplatformadmin.googleapis.com/UserGroup\0224organizat"
+          + "ions/{organization}/userGroups/{user_group}*\n"
+          + "userGroups2\tuserGroup\"\322\003\n"
+          + "\017UserGroupMember\022\024\n\n"
+          + "user_email\030\002 \001(\tH\000\022\024\n\n"
+          + "user_group\030\003 \001(\tH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022d\n"
+          + "\017membership_role\030\004 \001(\0162F.google.marketingplatfor"
+          + "m.admin.v1alpha.UserGroupMember.MembershipRoleB\003\340A\001\"h\n"
+          + "\016MembershipRole\022\037\n"
+          + "\033MEMBERSHIP_ROLE_UNSPECIFIED\020\000\022\031\n"
+          + "\025MEMBERSHIP_ROLE_OWNER\020\001\022\032\n"
+          + "\026MEMBERSHIP_ROLE_MEMBER\020\002:\245\001\352A\241\001\n"
+          + "5marketingplatformadmin.googleapis.com/UserGroupMember\022Eorganizations/{orga"
+          + "nization}/userGroups/{user_group}/member"
+          + "s/{member}*\020userGroupMembers2\017userGroupMemberB\010\n"
+          + "\006member\"\362\002\n"
+          + "\022AdminAccessBinding\022\024\n\n"
+          + "user_email\030\002 \001(\tH\000\022\024\n\n"
+          + "user_group\030\003 \001(\tH\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022Y\n"
+          + "\022organization_roles\030\004"
+          + " \003(\01628.google.marketingplatform.admin.v1alpha.OrganizationRoleB\003\340A\001:\260\001\352A\254\001\n"
+          + "8marketingplatformadmin.googleapis.com/AdminAccessBinding\022Gorganizations/{organi"
+          + "zation}/adminAccessBindings/{admin_acces"
+          + "s_binding}*\023adminAccessBindings2\022adminAccessBindingB\017\n\r"
+          + "access_target*\220\001\n"
+          + "\025LinkVerificationState\022\'\n"
+          + "#LINK_VERIFICATION_STATE_UNSPECIFIED\020\000\022$\n"
+          + " LINK_VERIFICATION_STATE_VERIFIED\020\001\022(\n"
+          + "$LINK_VERIFICATION_STATE_NOT_VERIFIED\020\002*\207\001\n"
+          + "\025AnalyticsServiceLevel\022\'\n"
+          + "#ANALYTICS_SERVICE_LEVEL_UNSPECIFIED\020\000\022$\n"
+          + " ANALYTICS_SERVICE_LEVEL_STANDARD\020\001\022\037\n"
+          + "\033ANALYTICS_SERVICE_LEVEL_360\020\002*\263\001\n"
+          + "\025AnalyticsPropertyType\022\'\n"
+          + "#ANALYTICS_PROPERTY_TYPE_UNSPECIFIED\020\000\022$\n"
+          + " ANALYTICS_PROPERTY_TYPE_ORDINARY\020\001\022\'\n"
+          + "#ANALYTICS_PROPERTY_TYPE_SUBPROPERTY\020\002\022\"\n"
+          + "\036ANALYTICS_PROPERTY_TYPE_ROLLUP\020\003*v\n"
+          + "\020OrganizationRole\022!\n"
+          + "\035ORGANIZATION_ROLE_UNSPECIFIED\020\000\022\022\n"
+          + "\016ORG_ADMIN_ROLE\020\001\022\023\n"
+          + "\017USER_ADMIN_ROLE\020\002\022\026\n"
+          + "\022BILLING_ADMIN_ROLE\020\003B\330\002\n"
+          + ".com.google.ads.marketingplatform.admin.v1alphaB\016ResourcesPro"
+          + "toP\001ZKgoogle.golang.org/genproto/googleapis/marketingplatform/admin/v1alpha;admi"
+          + "n\252\002*Google.Ads.MarketingPlatform.Admin.V"
+          + "1Alpha\312\002*Google\\Ads\\MarketingPlatform\\Ad"
+          + "min\\V1alpha\352\002.Google::Ads::MarketingPlatform::Admin::V1alpha\352A;\n"
+          + "%analyticsadmin.googleapis.com/Account\022\022accounts/{account}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,6 +166,30 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_marketingplatform_admin_v1alpha_AnalyticsAccountLink_descriptor,
             new java.lang.String[] {
               "Name", "AnalyticsAccount", "DisplayName", "LinkVerificationState",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_UserGroup_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_marketingplatform_admin_v1alpha_UserGroup_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_UserGroup_descriptor,
+            new java.lang.String[] {
+              "Name", "DisplayName", "Description",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_UserGroupMember_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_marketingplatform_admin_v1alpha_UserGroupMember_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_UserGroupMember_descriptor,
+            new java.lang.String[] {
+              "UserEmail", "UserGroup", "Name", "MembershipRole", "Member",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_AdminAccessBinding_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_marketingplatform_admin_v1alpha_AdminAccessBinding_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_AdminAccessBinding_descriptor,
+            new java.lang.String[] {
+              "UserEmail", "UserGroup", "Name", "OrganizationRoles", "AccessTarget",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
