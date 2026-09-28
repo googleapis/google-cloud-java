@@ -36,7 +36,8 @@ final class AcoSpanBuilder implements SpanBuilder {
   private static final String MULTI_REGION = "multi-region";
   private static final String DUAL_REGION = "dual-region";
   private static final String PLACEHOLDER_BUCKET_LOCATION = "global";
-  private static final String PLACEHOLDER_RESOURCE_PREFIX = "//storage.googleapis.com/projects/_/buckets/";
+  private static final String PLACEHOLDER_RESOURCE_PREFIX =
+      "//storage.googleapis.com/projects/_/buckets/";
 
   private final SpanBuilder delegate;
   private final OtelStorageDecorator parent;

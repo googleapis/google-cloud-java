@@ -232,7 +232,11 @@ public class OtelStorageDecoratorAcoUnitTest {
       // Manually put a pending placeholder entry
       osd.acoContext
           .getCache()
-          .put("pending-bucket", "//storage.googleapis.com/projects/_/buckets/pending-bucket", "global", true);
+          .put(
+              "pending-bucket",
+              "//storage.googleapis.com/projects/_/buckets/pending-bucket",
+              "global",
+              true);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "pending-bucket", osd);
@@ -257,7 +261,11 @@ public class OtelStorageDecoratorAcoUnitTest {
       // Manually put a resolved non-pending entry
       osd.acoContext
           .getCache()
-          .put("resolved-bucket", "//storage.googleapis.com/projects/123/buckets/resolved-bucket", "us-east1", false);
+          .put(
+              "resolved-bucket",
+              "//storage.googleapis.com/projects/123/buckets/resolved-bucket",
+              "us-east1",
+              false);
 
       Span mockSpan = mock(Span.class);
       AcoSpan acoSpan = new AcoSpan(mockSpan, "resolved-bucket", osd);
@@ -266,7 +274,9 @@ public class OtelStorageDecoratorAcoUnitTest {
 
       // Verify OTel span attributes were set successfully
       Mockito.verify(mockSpan)
-          .setAttribute("gcp.resource.destination.id", "//storage.googleapis.com/projects/123/buckets/resolved-bucket");
+          .setAttribute(
+              "gcp.resource.destination.id",
+              "//storage.googleapis.com/projects/123/buckets/resolved-bucket");
       Mockito.verify(mockSpan).setAttribute("gcp.resource.destination.location", "us-east1");
     }
   }
