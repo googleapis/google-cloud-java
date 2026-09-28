@@ -260,17 +260,41 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
+  /**
+   * Re-queues metrics from a failed flush. Counts for profiles already in the live map are always
+   * merged; new profiles are subject to the same {@link #maxUniqueProfiles} cap as {@link
+   * #getOrAddAccumulator}, so a persistently failing endpoint cannot grow the map past the cap.
+   */
   private void remergeFailedMetrics(Map<TelemetryKey, TelemetryAccumulator> snapshot) {
+    int dropped = 0;
     for (Map.Entry<TelemetryKey, TelemetryAccumulator> entry : snapshot.entrySet()) {
-      metricsMap.compute(
-          entry.getKey(),
-          (k, v) -> {
-            if (v == null) {
-              return entry.getValue();
-            }
-            v.merge(entry.getValue());
-            return v;
-          });
+      TelemetryAccumulator failed = entry.getValue();
+
+      TelemetryAccumulator merged =
+          metricsMap.computeIfPresent(
+              entry.getKey(),
+              (k, v) -> {
+                v.merge(failed);
+                return v;
+              });
+      if (merged != null) {
+        continue;
+      }
+
+      if (metricsMap.size() >= maxUniqueProfiles) {
+        dropped++;
+        continue;
+      }
+      // A caller thread may have added the same key since computeIfPresent; merge into theirs.
+      TelemetryAccumulator raced = metricsMap.putIfAbsent(entry.getKey(), failed);
+      if (raced != null) {
+        raced.merge(failed);
+      }
+    }
+    if (dropped > 0) {
+      logger.log(
+          Level.FINE,
+          String.format("Dropped %d telemetry profiles on re-queue; profile cap reached", dropped));
     }
   }
 
