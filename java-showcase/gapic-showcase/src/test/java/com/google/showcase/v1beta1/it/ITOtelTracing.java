@@ -68,7 +68,10 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
@@ -127,6 +130,7 @@ class ITOtelTracing {
 
   private InMemorySpanExporter spanExporter;
   private OpenTelemetrySdk openTelemetrySdk;
+  private Tracer tracer;
 
   @BeforeEach
   void setup() {
@@ -139,6 +143,7 @@ class ITOtelTracing {
 
     openTelemetrySdk =
         OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+    tracer = openTelemetrySdk.getTracer("it-otel-tracing-test");
   }
 
   @AfterEach
@@ -215,6 +220,42 @@ class ITOtelTracing {
                   .get(AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
           .isNull();
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
+    }
+  }
+
+  @Test
+  void testTracing_successfulEcho_grpc_linkedToParentContext() throws Exception {
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings grpcEchoSettings = createEchoSettings(false);
+    EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
+
+    try (EchoClient client = EchoClient.create(stub)) {
+      Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+      try (Scope scope = parentSpan.makeCurrent()) {
+        client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
+      } finally {
+        parentSpan.end();
+      }
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+
+      SpanData attemptSpan =
+          spans.stream()
+              .filter(span -> span.getName().equals(SPAN_NAME_ECHO_GRPC))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Attempt span not found"));
+      SpanData rootSpan =
+          spans.stream()
+              .filter(span -> span.getName().equals("application-parent-operation"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
     }
   }
 
@@ -302,6 +343,42 @@ class ITOtelTracing {
       assertThat(observedMagnitude).isNotNull();
       assertThat(observedMagnitude).isAtLeast((long) (expectedMagnitude * (1 - 0.15)));
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
+    }
+  }
+
+  @Test
+  void testTracing_successfulEcho_httpjson_linkedToParentContext() throws Exception {
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings httpJsonEchoSettings = createEchoSettings(true);
+    EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
+
+    try (EchoClient client = EchoClient.create(stub)) {
+      Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+      try (Scope scope = parentSpan.makeCurrent()) {
+        client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
+      } finally {
+        parentSpan.end();
+      }
+
+      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      assertThat(spans).isNotEmpty();
+
+      SpanData attemptSpan =
+          spans.stream()
+              .filter(span -> span.getName().equals(SPAN_NAME_ECHO_HTTP))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Attempt span not found"));
+      SpanData rootSpan =
+          spans.stream()
+              .filter(span -> span.getName().equals("application-parent-operation"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
     }
   }
 
@@ -442,6 +519,72 @@ class ITOtelTracing {
   }
 
   @Test
+  void testTracing_retry_grpc_linkedToParentContext() throws Exception {
+    final int attempts = 5;
+    final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(attempts)
+            .build();
+
+    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    grpcEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(statusCode);
+    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
+    grpcEchoSettings =
+        grpcEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(EchoSettings.defaultGrpcTransportProviderBuilder().build())
+            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
+            .build();
+
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoStubSettings echoStubSettings =
+        (EchoStubSettings)
+            grpcEchoSettings.getStubSettings().toBuilder().setTracerFactory(tracingFactory).build();
+    EchoStub stub = echoStubSettings.createStub();
+    EchoClient grpcClient = EchoClient.create(stub);
+
+    EchoRequest echoRequest =
+        EchoRequest.newBuilder()
+            .setError(Status.newBuilder().setCode(statusCode.ordinal()).build())
+            .build();
+
+    Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+    try (Scope scope = parentSpan.makeCurrent()) {
+      assertThrows(UnavailableException.class, () -> grpcClient.echo(echoRequest));
+    } finally {
+      parentSpan.end();
+    }
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertThat(spans).hasSize(attempts + 1);
+
+    SpanData rootSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals("application-parent-operation"))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    List<SpanData> attemptSpans =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_ECHO_GRPC))
+            .collect(java.util.stream.Collectors.toList());
+    assertThat(attemptSpans).hasSize(attempts);
+
+    for (SpanData attemptSpan : attemptSpans) {
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
+    }
+  }
+
+  @Test
   void testTracing_retry_httpjson() throws Exception {
     final int attempts = 5;
     final StatusCode.Code statusCode = StatusCode.Code.INVALID_ARGUMENT;
@@ -517,6 +660,78 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  @Test
+  void testTracing_retry_httpjson_linkedToParentContext() throws Exception {
+    final int attempts = 5;
+    final StatusCode.Code statusCode = StatusCode.Code.INVALID_ARGUMENT;
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(attempts)
+            .build();
+
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    httpJsonEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(statusCode);
+    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
+    httpJsonEchoSettings =
+        httpJsonEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoStubSettings echoStubSettings =
+        (EchoStubSettings)
+            httpJsonEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(tracingFactory)
+                .build();
+    EchoStub stub = echoStubSettings.createStub();
+    EchoClient httpClient = EchoClient.create(stub);
+
+    EchoRequest echoRequest =
+        EchoRequest.newBuilder()
+            .setError(Status.newBuilder().setCode(statusCode.ordinal()).build())
+            .build();
+
+    Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+    try (Scope scope = parentSpan.makeCurrent()) {
+      assertThrows(InvalidArgumentException.class, () -> httpClient.echo(echoRequest));
+    } finally {
+      parentSpan.end();
+    }
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertThat(spans).hasSize(attempts + 1);
+
+    SpanData rootSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals("application-parent-operation"))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    List<SpanData> attemptSpans =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_ECHO_HTTP))
+            .collect(java.util.stream.Collectors.toList());
+    assertThat(attemptSpans).hasSize(attempts);
+
+    for (SpanData attemptSpan : attemptSpans) {
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
+    }
   }
 
   private SpanData getErrorSpan() {
