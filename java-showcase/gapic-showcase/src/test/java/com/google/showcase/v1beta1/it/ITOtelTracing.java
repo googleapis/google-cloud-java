@@ -528,25 +528,17 @@ class ITOtelTracing {
             .setMaxAttempts(attempts)
             .build();
 
-    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings grpcEchoSettings = createEchoSettings(false);
+    EchoStubSettings.Builder grpcEchoSettingsBuilder =
+        (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
     grpcEchoSettingsBuilder
         .echoSettings()
         .setRetrySettings(retrySettings)
         .setRetryableCodes(statusCode);
-    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
-    grpcEchoSettings =
-        grpcEchoSettings.toBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(EchoSettings.defaultGrpcTransportProviderBuilder().build())
-            .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
-            .build();
-
-    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
-
-    EchoStubSettings echoStubSettings =
-        (EchoStubSettings)
-            grpcEchoSettings.getStubSettings().toBuilder().setTracerFactory(tracingFactory).build();
-    EchoStub stub = echoStubSettings.createStub();
+    grpcEchoSettingsBuilder.setTracerFactory(tracingFactory);
+    EchoStub stub = new ExtendedEchoStubSettings(grpcEchoSettingsBuilder).createStub();
     EchoClient grpcClient = EchoClient.create(stub);
 
     EchoRequest echoRequest =
@@ -672,31 +664,17 @@ class ITOtelTracing {
             .setMaxAttempts(attempts)
             .build();
 
-    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings httpJsonEchoSettings = createEchoSettings(true);
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder =
+        (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
     httpJsonEchoSettingsBuilder
         .echoSettings()
         .setRetrySettings(retrySettings)
         .setRetryableCodes(statusCode);
-    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
-    httpJsonEchoSettings =
-        httpJsonEchoSettings.toBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(
-                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
-                    .build())
-            .build();
-
-    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
-
-    EchoStubSettings echoStubSettings =
-        (EchoStubSettings)
-            httpJsonEchoSettings.getStubSettings().toBuilder()
-                .setTracerFactory(tracingFactory)
-                .build();
-    EchoStub stub = echoStubSettings.createStub();
+    httpJsonEchoSettingsBuilder.setTracerFactory(tracingFactory);
+    EchoStub stub = new ExtendedEchoStubSettings(httpJsonEchoSettingsBuilder).createStub();
     EchoClient httpClient = EchoClient.create(stub);
 
     EchoRequest echoRequest =
