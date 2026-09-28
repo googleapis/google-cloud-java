@@ -130,7 +130,7 @@ public class OptimizeWriteLatencyPool {
       Storage storage, BlobInfo info, BlobAppendableUploadConfig config) throws IOException {
     AppendableUploadWriteableByteChannel channel =
         storage.blobAppendableUpload(info, config, Storage.BlobWriteOption.doesNotExist()).open();
-    // open() is lazy: an empty flush() opens the stream and creates the 0-byte object.
+    // open() is lazy. flush() creates the 0-byte object.
     try {
       channel.flush();
     } catch (IOException e) {
