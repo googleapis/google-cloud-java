@@ -173,11 +173,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
-        || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || transportFactory.getClass() == MtlsHttpTransportFactory.class
-        || (transportFactory instanceof MtlsHttpTransportFactory
-            && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
+        || transportFactory instanceof MtlsHttpTransportFactory;
   }
 
   private boolean shouldUseMtlsTransportFactory() {
@@ -193,19 +190,28 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
-    HttpTransportFactory cycleTransportFactory = this.transportFactory;
-    if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
-      KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
-      cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
-      if (!hasInitializedMtlsTransport()) {
-        this.transportFactory = cycleTransportFactory;
-      }
+    // Lazily initialize the mTLS transport before building impersonated credentials, which
+    // capture this.transportFactory.
+    HttpTransportFactory cycleTransportFactory = null;
+    if (this.x509Provider != null
+        && shouldUseMtlsTransportFactory()
+        && !hasInitializedMtlsTransport()) {
+      cycleTransportFactory = createMtlsTransportFactory(this.x509Provider.getKeyStore());
+      this.transportFactory = cycleTransportFactory;
     }
 
     ImpersonatedCredentials impersonated = getImpersonatedCredentials();
     if (impersonated != null) {
       return impersonated.refreshAccessToken();
+    }
+
+    // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
+    // Reuse the KeyStore loaded by the lazy initialization above to avoid a second read.
+    if (cycleTransportFactory == null) {
+      cycleTransportFactory = this.transportFactory;
+      if (this.x509Provider != null && shouldUseMtlsTransportFactory()) {
+        cycleTransportFactory = createMtlsTransportFactory(this.x509Provider.getKeyStore());
+      }
     }
 
     // Read subject and actor tokens, atomically if from the same file supplier.

@@ -85,6 +85,7 @@ import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 /** Tests for {@link IdentityPoolCredentials}. */
@@ -3064,16 +3065,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void toBuilder_setCredentialSource_withNewSource_clearsCopiedX509Provider(@TempDir Path tempDir)
-      throws Exception {
-    Path tokenFile = tempDir.resolve("credential.json");
-    GenericJson tokenJson = new GenericJson();
-    tokenJson.setFactory(JSON_FACTORY);
-    tokenJson.put("subject_token", "testSubjectToken");
-    OAuth2Utils.writeInputStreamToFile(
-        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
-        tokenFile.toString());
-
+  void toBuilder_setCredentialSource_withNewSource_clearsCopiedX509Provider() throws Exception {
     Map<String, Object> certificateMap = new HashMap<>();
     certificateMap.put("use_default_certificate_config", false);
     certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
@@ -3081,7 +3073,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     formatMap.put("type", "json");
     formatMap.put("subject_token_field_name", "subject_token");
     Map<String, Object> credentialSourceMap = new HashMap<>();
-    credentialSourceMap.put("file", tokenFile.toString());
+    credentialSourceMap.put("file", "credential.json");
     credentialSourceMap.put("format", formatMap);
     credentialSourceMap.put("certificate", certificateMap);
 
@@ -3115,6 +3107,83 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertNotNull(rebuilt.getX509Provider());
     assertNotSame(trackingProvider, rebuilt.getX509Provider());
     assertEquals(1, getKeyStoreCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_withImpersonation_doesNotReloadKeyStoreAfterLazyInit() throws Exception {
+    KeyStore ks = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider countingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCount.incrementAndGet();
+            return ks;
+          }
+        };
+    ImpersonatedCredentials impersonated = Mockito.mock(ImpersonatedCredentials.class);
+    Mockito.when(impersonated.refreshAccessToken())
+        .thenReturn(new AccessToken("impersonatedAccessToken", null));
+    List<HttpTransportFactory> factoriesSeenByImpersonation = new java.util.ArrayList<>();
+
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(countingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")) {
+          @Override
+          ImpersonatedCredentials getImpersonatedCredentials() {
+            factoriesSeenByImpersonation.add(getTransportFactory());
+            return impersonated;
+          }
+        };
+    assertEquals(0, getKeyStoreCount.get());
+
+    assertEquals("impersonatedAccessToken", credential.refreshAccessToken().getTokenValue());
+    assertEquals(1, getKeyStoreCount.get());
+    assertTrue(factoriesSeenByImpersonation.get(0) instanceof MtlsHttpTransportFactory);
+
+    assertEquals("impersonatedAccessToken", credential.refreshAccessToken().getTokenValue());
+    assertEquals(1, getKeyStoreCount.get());
+  }
+
+  @Test
+  void refreshAccessToken_withoutImpersonation_readsKeyStoreOncePerCycle() throws Exception {
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider countingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCount.incrementAndGet();
+            return createPopulatedKeyStore();
+          }
+        };
+
+    TransportCapturingCredentials credential =
+        new TransportCapturingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(countingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl("https://sts.mtls.googleapis.com/v1/token"));
+    assertEquals(0, getKeyStoreCount.get());
+
+    // First cycle: lazy initialization loads the KeyStore once and the exchange reuses it.
+    credential.refreshAccessToken();
+    assertEquals(1, getKeyStoreCount.get());
+    assertSame(credential.getTransportFactory(), credential.getCapturedFactories().get(0));
+
+    // Later cycles: one fresh per-cycle snapshot each.
+    credential.refreshAccessToken();
+    assertEquals(2, getKeyStoreCount.get());
+    assertNotSame(credential.getTransportFactory(), credential.getCapturedFactories().get(1));
+    assertTrue(credential.getCapturedFactories().get(1) instanceof MtlsHttpTransportFactory);
   }
 
   @Test
@@ -3295,7 +3364,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         new MockExternalAccountCredentialsTransportFactory();
 
     Map<String, Object> certMap = new HashMap<>();
-    certMap.put("use_default_certificate_config", true);
+    certMap.put("use_default_certificate_config", false);
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
     Map<String, Object> sourceMap = new HashMap<>();
     sourceMap.put("file", "credential.json");
     sourceMap.put("certificate", certMap);
