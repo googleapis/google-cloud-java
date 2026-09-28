@@ -609,7 +609,7 @@
                     <bigtable.internal.client-config-override>session_configuration { session_load: 1.0 }</bigtable.internal.client-config-override>
                   </systemPropertyVariables>
                   <includes>
-                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                    <include>com.google.cloud.bigtable.data.v2.it.SessionIT</include>
                   </includes>
                   <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-session-it.xml</summaryFile>
                   <reportsDirectory>${project.build.directory}/failsafe-reports/session-it</reportsDirectory>
