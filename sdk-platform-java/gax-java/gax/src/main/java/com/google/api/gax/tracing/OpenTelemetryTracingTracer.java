@@ -53,9 +53,14 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
+  // Captures the active trace context from the calling thread at RPC initiation.
+  // This allows attempt spans—including retries dispatched on background threads—to
+  // link back to the original parent trace.
   private final io.opentelemetry.context.Context parentContext;
+  // Lock coordinates attempt transitions and operation completion across threads.
   private final ReentrantLock lock = new ReentrantLock();
   private boolean operationCompleted;
+  // attemptSpan is volatile to ensure fresh reads for thread-safe snapshotting.
   private volatile @Nullable Span attemptSpan;
 
   @Override
@@ -133,9 +138,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     Span oldSpan = null;
     lock.lock();
     try {
+      // Prevent creating new attempt spans if the overall operation has already concluded.
       if (operationCompleted) {
         return;
       }
+      // If a previous attempt was not explicitly closed before a retry started,
+      // capture it so it can be ended cleanly outside the lock without blocking.
       if (attemptSpan != null) {
         oldSpan = attemptSpan;
         attemptSpan = null;
@@ -168,6 +176,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     } finally {
       lock.unlock();
     }
+    // End lingering previous attempt outside the lock to avoid holding the lock during callbacks.
     if (oldSpan != null) {
       endAttemptSpan(oldSpan, null);
     }
@@ -195,6 +204,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void responseHeadersReceived(java.util.Map<String, Object> headers) {
+    // Snapshot to a local variable to prevent race conditions if another thread
+    // clears attemptSpan concurrently.
     Span currentSpan = attemptSpan;
     if (currentSpan == null) {
       return;
@@ -296,6 +307,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void requestUrlResolved(String url) {
+    // Snapshot to a local variable to prevent race conditions if another thread
+    // clears attemptSpan concurrently.
     Span currentSpan = attemptSpan;
     if (currentSpan == null) {
       return;
