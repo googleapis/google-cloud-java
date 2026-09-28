@@ -157,7 +157,7 @@ final class DriverEnvironmentDetector {
           return content;
         } catch (Exception e) {
           logger.log(
-              Level.WARNING, "Failed to read or parse telemetry tag from file, regenerating", e);
+              Level.FINE, "Failed to read or parse telemetry tag from file, regenerating", e);
         }
       }
 
@@ -168,7 +168,7 @@ final class DriverEnvironmentDetector {
         }
         Files.write(idFilePath, newId.getBytes(StandardCharsets.UTF_8));
       } catch (IOException e) {
-        logger.log(Level.WARNING, "Failed to persist telemetry tag to file", e);
+        logger.log(Level.FINE, "Failed to persist telemetry tag to file", e);
       }
       return newId;
     } catch (RuntimeException e) {
