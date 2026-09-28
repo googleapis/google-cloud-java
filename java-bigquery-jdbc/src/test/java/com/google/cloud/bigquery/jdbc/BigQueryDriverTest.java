@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
@@ -27,6 +28,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,6 +36,12 @@ import org.junit.jupiter.api.Test;
 public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   static BigQueryDriver bigQueryDriver;
+
+  @BeforeEach
+  @AfterEach
+  public void resetTelemetry() {
+    TelemetryTestUtils.reset();
+  }
 
   @BeforeEach
   public void setUp() {
@@ -191,7 +199,6 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
-    TelemetryManager.closeInstance();
     Connection connection =
         bigQueryDriver.connect(
             "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
@@ -207,7 +214,6 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testConnect_recordsFailedConnectionTelemetry() {
-    TelemetryManager.closeInstance();
     // Malformed URL causing DataSource parsing failure
     Assertions.assertThrows(
         SQLException.class,
@@ -220,7 +226,6 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
-    TelemetryManager.closeInstance();
     Connection connection =
         bigQueryDriver.connect(
             "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"

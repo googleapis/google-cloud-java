@@ -177,7 +177,6 @@ final class BigQueryJdbcUrlUtility {
   static final String USE_GLOBAL_OTEL_PROPERTY_NAME = "useGlobalOpenTelemetry";
   static final boolean DEFAULT_USE_GLOBAL_OTEL_VALUE = false;
   static final String ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME = "EnableDiagnosticTelemetry";
-  static final boolean DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE = true;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =

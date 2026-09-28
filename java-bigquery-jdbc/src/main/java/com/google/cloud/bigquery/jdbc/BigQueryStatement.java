@@ -699,6 +699,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
       }
       throw new BigQueryJdbcException("BigQueryException during runQuery", ex);
+    } catch (SQLException | RuntimeException ex) {
+      errorCode = TelemetryManager.extractErrorCode(ex);
+      throw ex;
     } finally {
       long durationMs = System.currentTimeMillis() - startTime;
 

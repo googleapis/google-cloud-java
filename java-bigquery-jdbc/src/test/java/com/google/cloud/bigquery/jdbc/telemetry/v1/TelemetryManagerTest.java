@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import java.sql.SQLException;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.AfterEach;
@@ -35,8 +36,7 @@ public class TelemetryManagerTest {
   @BeforeEach
   @AfterEach
   public void cleanUp() {
-    TelemetryManager.closeInstance();
-    TelemetryManager.resetGlobalDisableForTest();
+    TelemetryTestUtils.reset();
   }
 
   @Test
@@ -214,5 +214,37 @@ public class TelemetryManagerTest {
     assertNull(mgr2);
     assertNull(TelemetryManager.getInstance());
     assertNull(TelemetryManager.getInstance(props1));
+  }
+
+  @Test
+  public void testGetInstance_populatesDriverEnvironment() {
+    TelemetryManager manager = TelemetryManager.getInstance();
+
+    DriverEnvironment environment = manager.getBatcher().getConfig().getDriverEnvironment();
+    assertNotNull(environment);
+    assertEquals(DriverEnvironmentDetector.DRIVER_NAME, environment.getDriverName());
+    assertEquals(DriverEnvironmentDetector.CLIENT_LANGUAGE, environment.getClientLanguage());
+    assertFalse(environment.getTelemetryTag().isEmpty());
+  }
+
+  @Test
+  public void testExtractSqlState() {
+    assertEquals(
+        "42000", TelemetryManager.extractSqlState(new SQLException("bad syntax", "42000")));
+    assertEquals("HY000", TelemetryManager.extractSqlState(new SQLException("general", "HY000")));
+  }
+
+  @Test
+  public void testExtractSqlState_walksCauseChain() {
+    SQLException root = new SQLException("overflow", "22003");
+    Throwable wrapped = new RuntimeException(new IllegalStateException(root));
+    assertEquals("22003", TelemetryManager.extractSqlState(wrapped));
+  }
+
+  @Test
+  public void testExtractXdbcCode_noSqlStateReturnsEmptyString() {
+    assertEquals("", TelemetryManager.extractSqlState(null));
+    assertEquals("", TelemetryManager.extractSqlState(new RuntimeException("no state")));
+    assertEquals("", TelemetryManager.extractSqlState(new SQLException("none", (String) null)));
   }
 }

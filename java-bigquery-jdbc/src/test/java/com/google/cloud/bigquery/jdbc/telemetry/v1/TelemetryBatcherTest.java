@@ -27,8 +27,10 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -102,7 +104,7 @@ public class TelemetryBatcherTest {
       batcher.offer(
           ErrorMetric.newBuilder()
               .setErrorCode(1)
-              .setErrorXdbcCode(100)
+              .setErrorSqlState("HY000")
               .setMethodName("executeQuery")
               .build());
       batcher.offer(
@@ -299,7 +301,7 @@ public class TelemetryBatcherTest {
     ErrorMetric errorProto =
         ErrorMetric.newBuilder()
             .setErrorCode(101)
-            .setErrorXdbcCode(202)
+            .setErrorSqlState("42000")
             .setMethodName("executeQuery")
             .build();
     FeatureUsage featureProto =
@@ -368,8 +370,7 @@ public class TelemetryBatcherTest {
 
     assertEquals(1, payloadBuilder.getErrorsCount());
     ErrorMetric err = payloadBuilder.getErrors(0);
-    assertEquals(101, err.getErrorCode());
-    assertEquals(202, err.getErrorXdbcCode());
+    assertEquals("42000", err.getErrorSqlState());
     assertEquals("executeQuery", err.getMethodName());
     assertEquals(2, err.getCount());
 
@@ -395,5 +396,116 @@ public class TelemetryBatcherTest {
         TelemetryBatcher.StatementAccumulator.calculateBucket(
             4000000); // Overflow > 3600000 (1 hr), index 17
     assertEquals(17, index4);
+  }
+
+  @Test
+  public void testOffer_flushesWhenQueueSizeThresholdReached() throws Exception {
+    AtomicInteger requestCount = new AtomicInteger(0);
+    CountDownLatch flushed = new CountDownLatch(1);
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestCount.incrementAndGet();
+            flushed.countDown();
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+
+    TelemetryConfiguration config =
+        TelemetryConfiguration.newBuilder()
+            .setEnabled(true)
+            .setBatchSizeThreshold(3)
+            .setDriverEnvironment(driverEnvironment)
+            .build();
+    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
+
+    try (TelemetryBatcher batcher =
+        new TelemetryBatcher(config, transport, executorService, false)) {
+      // Three DISTINCT keys, so the queue reaches the threshold.
+      batcher.offer(featureNamed("a"));
+      batcher.offer(featureNamed("b"));
+      batcher.offer(featureNamed("c"));
+
+      assertTrue(flushed.await(5, TimeUnit.SECONDS));
+      assertEquals(1, requestCount.get());
+    }
+  }
+
+  @Test
+  public void testOffer_repeatedIdenticalMetricDoesNotFlush() throws Exception {
+    AtomicInteger requestCount = new AtomicInteger(0);
+    CountDownLatch flushed = new CountDownLatch(1);
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            requestCount.incrementAndGet();
+            flushed.countDown();
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                return response;
+              }
+            };
+          }
+        };
+
+    TelemetryConfiguration config =
+        TelemetryConfiguration.newBuilder()
+            .setEnabled(true)
+            .setBatchSizeThreshold(3)
+            .setDriverEnvironment(driverEnvironment)
+            .build();
+    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
+
+    try (TelemetryBatcher batcher =
+        new TelemetryBatcher(config, transport, executorService, false)) {
+      // 50 events, but ONE key, so the queue never grows past 1.
+      for (int i = 0; i < 50; i++) {
+        batcher.offer(featureNamed("same"));
+      }
+
+      // Assert inside the try block: close() flushes and would send a request.
+      assertFalse(flushed.await(500, TimeUnit.MILLISECONDS));
+      assertEquals(0, requestCount.get());
+    }
+  }
+
+  @Test
+  public void testComputeProfileCap_staysAboveThreshold() {
+    TelemetryConfiguration config =
+        TelemetryConfiguration.newBuilder().setEnabled(true).setBatchSizeThreshold(10).build();
+    assertEquals(20, TelemetryBatcher.computeProfileCap(config));
+
+    // Degenerate inputs fall back rather than producing a cap at or below the threshold.
+    assertEquals(3000, TelemetryBatcher.computeProfileCap(null));
+    TelemetryConfiguration zero =
+        TelemetryConfiguration.newBuilder().setEnabled(true).setBatchSizeThreshold(0).build();
+    assertEquals(3000, TelemetryBatcher.computeProfileCap(zero));
+
+    // No overflow to a negative cap.
+    TelemetryConfiguration huge =
+        TelemetryConfiguration.newBuilder()
+            .setEnabled(true)
+            .setBatchSizeThreshold(Integer.MAX_VALUE)
+            .build();
+    assertTrue(TelemetryBatcher.computeProfileCap(huge) > 0);
+  }
+
+  private static FeatureUsage featureNamed(String name) {
+    return FeatureUsage.newBuilder()
+        .setDriverFeature(DriverFeature.DRIVER_FEATURE_CUSTOM)
+        .setCustomFeatureName(name)
+        .build();
   }
 }
