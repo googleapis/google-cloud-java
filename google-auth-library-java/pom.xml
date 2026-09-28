@@ -164,6 +164,12 @@
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
         <version>${project.api-common.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>dev.cel</groupId>
@@ -424,7 +430,6 @@
             <ignoredUnusedDeclaredDependency>junit:junit</ignoredUnusedDeclaredDependency>
             <!-- maven-dependency-plugin cannot detect the runtime usage of junit-jupiter-engine for executing JUnit 5+ tests. -->
             <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
-            <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
