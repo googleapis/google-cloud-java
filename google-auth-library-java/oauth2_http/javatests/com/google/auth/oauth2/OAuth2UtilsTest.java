@@ -33,8 +33,20 @@ package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.OAuth2Utils.generateBasicAuthHeader;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.util.SecurityUtils;
+import com.google.common.primitives.Bytes;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyStore;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link OAuth2Utils}. */
@@ -97,5 +109,127 @@ class OAuth2UtilsTest {
         () -> {
           generateBasicAuthHeader(username, password);
         });
+  }
+
+  @Test
+  void isUnauthorizedException_null_returnsFalse() {
+    assertFalse(OAuth2Utils.isUnauthorizedException(null));
+  }
+
+  @Test
+  void isUnauthorizedException_genericIOException_returnsFalse() {
+    assertFalse(OAuth2Utils.isUnauthorizedException(new IOException("Network error")));
+  }
+
+  @Test
+  void isUnauthorizedException_oauthException401_returnsTrue() {
+    OAuthException ex = new OAuthException("invalid_client", "Unauthorized", null, 401);
+    assertTrue(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_oauthExceptionNon401_returnsFalse() {
+    OAuthException ex = new OAuthException("bad_request", "Bad Request", null, 400);
+    assertFalse(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_httpResponseException401_returnsTrue() {
+    HttpResponseException ex =
+        new HttpResponseException.Builder(401, "Unauthorized", new HttpHeaders()).build();
+    assertTrue(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_httpResponseExceptionNon401_returnsFalse() {
+    HttpResponseException ex =
+        new HttpResponseException.Builder(403, "Forbidden", new HttpHeaders()).build();
+    assertFalse(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_wrappedInExceptionChain_returnsTrue() {
+    OAuthException oauthEx = new OAuthException("invalid_client", "Unauthorized", null, 401);
+    IOException wrapped = new IOException("Wrapped failure", oauthEx);
+    assertTrue(OAuth2Utils.isUnauthorizedException(wrapped));
+
+    HttpResponseException httpEx =
+        new HttpResponseException.Builder(401, "Unauthorized", new HttpHeaders()).build();
+    IOException wrappedHttp = new IOException("Outer", new IOException("Inner", httpEx));
+    assertTrue(OAuth2Utils.isUnauthorizedException(wrappedHttp));
+  }
+
+  @Test
+  void isInvalidGrantException_null_returnsFalse() {
+    assertFalse(OAuth2Utils.isInvalidGrantException(null));
+  }
+
+  @Test
+  void isInvalidGrantException_genericIOException_returnsFalse() {
+    assertFalse(OAuth2Utils.isInvalidGrantException(new IOException("Network error")));
+  }
+
+  @Test
+  void isInvalidGrantException_oauthExceptionInvalidGrant_returnsTrue() {
+    OAuthException ex = new OAuthException("invalid_grant", "Invalid grant", null, 400);
+    assertTrue(OAuth2Utils.isInvalidGrantException(ex));
+  }
+
+  @Test
+  void isInvalidGrantException_oauthExceptionOtherErrorCode_returnsFalse() {
+    OAuthException ex = new OAuthException("invalid_request", "Bad Request", null, 400);
+    assertFalse(OAuth2Utils.isInvalidGrantException(ex));
+  }
+
+  @Test
+  void isInvalidGrantException_nestedInExceptionChain_returnsTrue() {
+    OAuthException oauthEx = new OAuthException("invalid_grant", "Invalid grant", null, 400);
+    IOException wrapped = new IOException("Outer", new IOException("Inner", oauthEx));
+    assertTrue(OAuth2Utils.isInvalidGrantException(wrapped));
+  }
+
+  @Test
+  void hasCertificateChanged_nullOrSameReference_returnsFalse() throws Exception {
+    assertFalse(OAuth2Utils.hasCertificateChanged(null, null));
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    assertFalse(OAuth2Utils.hasCertificateChanged(ks, ks));
+    assertTrue(OAuth2Utils.hasCertificateChanged(null, ks));
+    assertTrue(OAuth2Utils.hasCertificateChanged(ks, null));
+  }
+
+  @Test
+  void hasCertificateChanged_distinctKeyStoreInstances_comparesCertificates() {
+    KeyStore ks1 = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    KeyStore ks2 = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    KeyStore ksRotated = IdentityPoolCredentialsTest.createRotatedPopulatedKeyStore();
+
+    assertFalse(OAuth2Utils.hasCertificateChanged(ks1, ks2));
+    assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ksRotated));
+  }
+
+  @Test
+  void hasCertificateChanged_sameCertificateDifferentPrivateKey_returnsTrue() throws Exception {
+    byte[] certBytes = Files.readAllBytes(Paths.get("testresources/mtls/test_cert.pem"));
+    byte[] key1Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key.pem"));
+    byte[] key2Bytes = Files.readAllBytes(Paths.get("testresources/mtls/test_key_2.pem"));
+    byte[] newlineBytes = "\n".getBytes(StandardCharsets.UTF_8);
+
+    KeyStore ks1 =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(Bytes.concat(certBytes, newlineBytes, key1Bytes)));
+    KeyStore ks2 =
+        SecurityUtils.createMtlsKeyStore(
+            new ByteArrayInputStream(Bytes.concat(certBytes, newlineBytes, key2Bytes)));
+
+    assertTrue(OAuth2Utils.hasCertificateChanged(ks1, ks2));
+  }
+
+  @Test
+  void hasCertificateChanged_uninitializedKeyStore_returnsTrue() throws Exception {
+    KeyStore uninitialized1 = KeyStore.getInstance(KeyStore.getDefaultType());
+    KeyStore uninitialized2 = KeyStore.getInstance(KeyStore.getDefaultType());
+
+    assertTrue(OAuth2Utils.hasCertificateChanged(uninitialized1, uninitialized2));
   }
 }

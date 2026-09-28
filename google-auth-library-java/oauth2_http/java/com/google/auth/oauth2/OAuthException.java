@@ -36,7 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
-import java.io.IOException;
+import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -46,6 +46,8 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 class OAuthException extends GoogleAuthException {
+
+  private static final long serialVersionUID = -5276727039237496975L;
 
   private final String errorCode;
   @Nullable private final String errorDescription;
@@ -96,20 +98,67 @@ class OAuthException extends GoogleAuthException {
     return httpStatusCode;
   }
 
-  static OAuthException createFromHttpResponseException(HttpResponseException e)
-      throws IOException {
-    JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser((e).getContent());
-    GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+  static OAuthException createFromHttpResponseException(HttpResponseException e) {
+    String content = e.getContent();
+    if (content == null || content.trim().isEmpty()) {
+      OAuthException oauthException =
+          new OAuthException(
+              "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
+    }
+    try {
+      JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(content);
+      GenericJson errorResponse = parser.parseAndClose(GenericJson.class);
+      if (errorResponse == null) {
+        OAuthException oauthException =
+            new OAuthException(
+                "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
+        oauthException.initCause(e);
+        return oauthException;
+      }
 
-    String errorCode = (String) errorResponse.get("error");
-    String errorDescription = null;
-    String errorUri = null;
-    if (errorResponse.containsKey("error_description")) {
-      errorDescription = (String) errorResponse.get("error_description");
+      String errorCode = null;
+      String errorDescription = null;
+      Object rawError = errorResponse.get("error");
+      if (rawError instanceof String) {
+        errorCode = (String) rawError;
+      } else if (rawError instanceof Map) {
+        Map<?, ?> errorMap = (Map<?, ?>) rawError;
+        if (errorMap.get("status") instanceof String) {
+          errorCode = (String) errorMap.get("status");
+        }
+        if (errorMap.get("message") instanceof String) {
+          errorDescription = (String) errorMap.get("message");
+        }
+      }
+      if (errorCode == null) {
+        errorCode = "http_error_" + e.getStatusCode();
+      }
+      String errorUri = null;
+      if (errorResponse.get("error_description") instanceof String) {
+        errorDescription = (String) errorResponse.get("error_description");
+      } else if (errorDescription == null && errorResponse.get("message") instanceof String) {
+        errorDescription = (String) errorResponse.get("message");
+      }
+      if (errorDescription == null && !(rawError instanceof String)) {
+        errorDescription =
+            errorResponse.isEmpty() && e.getStatusMessage() != null
+                ? e.getStatusMessage()
+                : content;
+      }
+      if (errorResponse.get("error_uri") instanceof String) {
+        errorUri = (String) errorResponse.get("error_uri");
+      }
+      OAuthException oauthException =
+          new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
+    } catch (Exception parseException) {
+      OAuthException oauthException =
+          new OAuthException("http_error_" + e.getStatusCode(), content, null, e.getStatusCode());
+      oauthException.initCause(e);
+      return oauthException;
     }
-    if (errorResponse.containsKey("error_uri")) {
-      errorUri = (String) errorResponse.get("error_uri");
-    }
-    return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
   }
 }
