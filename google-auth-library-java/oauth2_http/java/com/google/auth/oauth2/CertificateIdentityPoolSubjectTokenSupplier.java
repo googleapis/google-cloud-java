@@ -68,6 +68,9 @@ import org.jspecify.annotations.Nullable;
 public class CertificateIdentityPoolSubjectTokenSupplier
     implements IdentityPoolSubjectTokenSupplier {
 
+  // Matches the computed value in released versions so previously serialized instances still load.
+  private static final long serialVersionUID = -7726329500407809830L;
+
   private final IdentityPoolCredentialSource credentialSource;
 
   private static final Pattern PEM_CERT_PATTERN =
