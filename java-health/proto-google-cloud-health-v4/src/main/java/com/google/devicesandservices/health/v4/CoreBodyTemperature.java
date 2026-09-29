@@ -661,6 +661,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The core body temperature in Celsius.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -677,6 +678,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The core body temperature in Celsius.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1429,6 +1431,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The core body temperature in Celsius.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1446,6 +1449,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The core body temperature in Celsius.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1463,6 +1467,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The core body temperature in Celsius.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -1484,6 +1489,7 @@ public final class CoreBodyTemperature extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The core body temperature in Celsius.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double temperature_celsius = 3 [(.google.api.field_behavior) = REQUIRED];

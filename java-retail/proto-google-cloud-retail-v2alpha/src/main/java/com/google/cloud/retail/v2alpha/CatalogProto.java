@@ -191,7 +191,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\005value\030\002 \001(\013"
           + "2-.google.cloud.retail.v2alpha.CatalogAttribute:\0028\001:x\352Au\n"
           + "&retail.googleapis.com/AttributesConfig\022Kprojects/{project}/loc"
-          + "ations/{location}/catalogs/{catalog}/attributesConfig\"\250\005\n"
+          + "ations/{location}/catalogs/{catalog}/attributesConfig\"\313\005\n"
           + "\020CompletionConfig\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\026\n"
           + "\016matching_order\030\002 \001(\t\022\027\n"
@@ -207,9 +207,10 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\026allowlist_input_config\030\t \001(\01326.google.clo"
           + "ud.retail.v2alpha.CompletionDataInputConfigB\003\340A\003\022,\n"
           + "\037last_allowlist_import_operation\030\n"
-          + " \001(\tB\003\340A\003:x\352Au\n"
-          + "&retail.googleapis.com/CompletionConfig\022Kprojects/{project}/"
-          + "locations/{location}/catalogs/{catalog}/completionConfig\"\330\001\n"
+          + " \001(\tB\003\340A\003\022!\n"
+          + "\024enable_agent_prompts\030\020 \001(\010B\003\340A\001:x\352Au\n"
+          + "&retail.googleapis.com/CompletionConfig\022Kprojects/{project}/locat"
+          + "ions/{location}/catalogs/{catalog}/completionConfig\"\330\001\n"
           + "\022MerchantCenterLink\022\'\n"
           + "\032merchant_center_account_id\030\001 \001(\003B\003\340A\002\022\021\n"
           + "\tbranch_id\030\002 \001(\t\022\024\n"
@@ -223,22 +224,22 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
           + "\016data_source_id\030\003 \001(\003\022\031\n"
           + "\021primary_feed_name\030\002 \001(\t\"]\n"
           + "\033MerchantCenterLinkingConfig\022>\n"
-          + "\005links\030\001 \003(\0132/.google.c"
-          + "loud.retail.v2alpha.MerchantCenterLink\"\323\002\n"
+          + "\005links\030\001"
+          + " \003(\0132/.google.cloud.retail.v2alpha.MerchantCenterLink\"\323\002\n"
           + "\007Catalog\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\034\n"
           + "\014display_name\030\002 \001(\tB\006\340A\002\340A\005\022R\n"
           + "\024product_level_config\030\004"
           + " \001(\0132/.google.cloud.retail.v2alpha.ProductLevelConfigB\003\340A\002\022`\n"
-          + "\036merchant_center_linking_config\030\006 \001(\01328.google.clou"
-          + "d.retail.v2alpha.MerchantCenterLinkingConfig:^\352A[\n"
-          + "\035retail.googleapis.com/Catalog"
-          + "\022:projects/{project}/locations/{location}/catalogs/{catalog}B\320\001\n"
-          + "\037com.google.cloud.retail.v2alphaB\014CatalogProtoP\001Z7cloud."
-          + "google.com/go/retail/apiv2alpha/retailpb"
-          + ";retailpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail"
-          + ".V2Alpha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002"
-          + "\036Google::Cloud::Retail::V2alphab\006proto3"
+          + "\036merchant_center_linking_config\030\006 \001(\01328.google.cloud.ret"
+          + "ail.v2alpha.MerchantCenterLinkingConfig:^\352A[\n"
+          + "\035retail.googleapis.com/Catalog\022:pro"
+          + "jects/{project}/locations/{location}/catalogs/{catalog}B\320\001\n"
+          + "\037com.google.cloud.retail.v2alphaB\014CatalogProtoP\001Z7cloud.googl"
+          + "e.com/go/retail/apiv2alpha/retailpb;reta"
+          + "ilpb\242\002\006RETAIL\252\002\033Google.Cloud.Retail.V2Al"
+          + "pha\312\002\033Google\\Cloud\\Retail\\V2alpha\352\002\036Goog"
+          + "le::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -356,6 +357,7 @@ public final class CatalogProto extends com.google.protobuf.GeneratedFile {
               "LastDenylistImportOperation",
               "AllowlistInputConfig",
               "LastAllowlistImportOperation",
+              "EnableAgentPrompts",
             });
     internal_static_google_cloud_retail_v2alpha_MerchantCenterLink_descriptor =
         getDescriptor().getMessageType(4);

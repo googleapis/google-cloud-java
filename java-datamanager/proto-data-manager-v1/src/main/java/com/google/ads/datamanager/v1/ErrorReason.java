@@ -1265,6 +1265,16 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Maximum number of users allowed per request is 10,000.
+   * </pre>
+   *
+   * <code>TOO_MANY_USERS = 121;</code>
+   */
+  TOO_MANY_USERS(121),
+  /**
+   *
+   *
+   * <pre>
    * The
    * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
    * field of the request was set to `true`, but auto detection of baseline
@@ -1327,6 +1337,23 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONVERSION_ACTION_TOO_RECENTLY_CREATED = 127;</code>
    */
   CONVERSION_ACTION_TOO_RECENTLY_CREATED(127),
+  /**
+   *
+   *
+   * <pre>
+   * The ad identifier does not belong to the account.
+   *
+   * For example, the [`gclid`][google.ads.datamanager.v1.AdIdentifiers.gclid]
+   * isn't associated with the
+   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * and
+   * [`product_destination_id`][google.ads.datamanager.v1.Destination.product_destination_id]
+   * of the destination.
+   * </pre>
+   *
+   * <code>INVALID_AD_IDENTIFIER_FOR_ACCOUNT = 128;</code>
+   */
+  INVALID_AD_IDENTIFIER_FOR_ACCOUNT(128),
   UNRECOGNIZED(-1),
   ;
 
@@ -2693,6 +2720,17 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Maximum number of users allowed per request is 10,000.
+   * </pre>
+   *
+   * <code>TOO_MANY_USERS = 121;</code>
+   */
+  public static final int TOO_MANY_USERS_VALUE = 121;
+
+  /**
+   *
+   *
+   * <pre>
    * The
    * [location_auto_detection_enabled][google.ads.datamanager.v1.Baseline.location_auto_detection_enabled]
    * field of the request was set to `true`, but auto detection of baseline
@@ -2760,6 +2798,24 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONVERSION_ACTION_TOO_RECENTLY_CREATED = 127;</code>
    */
   public static final int CONVERSION_ACTION_TOO_RECENTLY_CREATED_VALUE = 127;
+
+  /**
+   *
+   *
+   * <pre>
+   * The ad identifier does not belong to the account.
+   *
+   * For example, the [`gclid`][google.ads.datamanager.v1.AdIdentifiers.gclid]
+   * isn't associated with the
+   * [`operating_account`][google.ads.datamanager.v1.Destination.operating_account]
+   * and
+   * [`product_destination_id`][google.ads.datamanager.v1.Destination.product_destination_id]
+   * of the destination.
+   * </pre>
+   *
+   * <code>INVALID_AD_IDENTIFIER_FOR_ACCOUNT = 128;</code>
+   */
+  public static final int INVALID_AD_IDENTIFIER_FOR_ACCOUNT_VALUE = 128;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -3027,6 +3083,8 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return INVALID_CUSTOM_VARIABLE_VALUE;
       case 120:
         return CUSTOM_VARIABLE_NOT_FOUND;
+      case 121:
+        return TOO_MANY_USERS;
       case 122:
         return BASELINE_LOCATION_AUTO_DETECTION_FAILED;
       case 123:
@@ -3039,6 +3097,8 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return REQUEST_TOO_OLD;
       case 127:
         return CONVERSION_ACTION_TOO_RECENTLY_CREATED;
+      case 128:
+        return INVALID_AD_IDENTIFIER_FOR_ACCOUNT;
       default:
         return null;
     }
