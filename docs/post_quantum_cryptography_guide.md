@@ -23,7 +23,7 @@ Enabling PQC in Google Cloud Java client libraries requires **zero changes to ap
   - Only the initial **TLS 1.3 cryptographic handshake** performed when establishing a connection to Google Cloud service endpoints. The client automatically negotiates hybrid post-quantum key exchange (`X25519MLKEM768`) instead of classical-only key exchange (`X25519`).
 
 ### Supported Key Exchange Algorithms & Negotiation
-Across all supported transports, Google Cloud Java client libraries negotiate TLS 1.3 key exchange by offering a preference-ordered list of post-quantum and classical named groups. Today, the primary algorithms negotiated with Google Cloud endpoints are:
+Across both supported transports (**gRPC** and **HTTP/JSON**), Google Cloud Java client libraries negotiate TLS 1.3 key exchange by offering a preference-ordered list of post-quantum and classical named groups. Today, the primary algorithms negotiated with Google Cloud endpoints are:
 - **Primary Post-Quantum Group (Default Example)**: `X25519MLKEM768` (hybrid combining classical X25519 ECDH and NIST FIPS 203 ML-KEM-768).
 - **Classical Fallback (Default Example)**: `X25519` (classical ECDH; or other mutually supported curves such as `secp256r1`).
 
@@ -48,36 +48,31 @@ Built-in Java Development Kits (Java 8–26) do not support Post-Quantum Cryptog
 
 ---
 
-### 1.1 gRPC Transport (Default)
+### 1.1 Minimum Required Versions
 
-gRPC is the default transport across Google Cloud Java client libraries.
+We **strongly recommend** using Google Cloud's **`libraries-bom` (version `26.88.0+`)** to manage dependency versions across both gRPC and HTTP/JSON transports. Managing individual transport or cryptographic dependencies directly is **discouraged**, as version mismatches can cause dependency conflicts or JNI linkage errors.
 
-#### Minimum Required Versions
-We recommend using Google Cloud's **`libraries-bom` (version `26.88.0+`)** to guarantee that dependencies have compatible, required versions.
+For reference when inspecting your dependency tree, PQC support requires the following minimum component versions:
 
-If managing dependencies directly, ensure the following minimum versions are present:
-
-| Library | Minimum Version | Role |
-| :--- | :--- | :--- |
-| **`gax-grpc`** | `2.85.0+` | Configures and manages gRPC channel providers and client settings. |
-| **`grpc-netty-shaded`** | `1.76.0+` | Upstream transport bundling Google's BoringSSL engine and native TLS 1.3 PQC hybrid named groups. |
+| Transport | Library | Minimum Version | Role |
+| :--- | :--- | :--- | :--- |
+| **gRPC (Default)** | **`gax-grpc`** | `2.85.0+` | Configures and manages gRPC channel providers and client settings. |
+| **gRPC (Default)** | **`grpc-netty-shaded`** | `1.76.0+` | Upstream transport bundling Google's BoringSSL engine and native TLS 1.3 PQC hybrid named groups. |
+| **HTTP/JSON (REST)** | **`gax-httpjson`** | `2.83.0+` | Automatically configures Conscrypt as the TLS security provider and sets PQC named groups. |
+| **HTTP/JSON (REST)** | **`google-http-client`** | `2.2.0+` | Provides transport-level security provider registration on `NetHttpTransport.Builder`. |
+| **HTTP/JSON (REST)** | **`conscrypt-openjdk-uber`** | `2.6.0+` *(2.6.2+ recommended)* | Provides Google's BoringSSL native C engine and TLS 1.3 PQC hybrid named groups. |
 
 ---
 
-### 1.2 HTTP/JSON (REST) Transport
+### 1.2 gRPC Transport (Default)
 
-HTTP/JSON (REST) transport is used by clients configured explicitly for REST communication.
+gRPC is the default transport across Google Cloud Java client libraries. Through `grpc-netty-shaded`, it uses a bundled BoringSSL engine to negotiate hybrid PQC (`X25519MLKEM768`) out of the box with no additional configuration.
 
-#### Minimum Required Versions
-We recommend using Google Cloud's **`libraries-bom` (version `26.86.0+`)** to guarantee that dependencies have compatible, required versions.
+---
 
-If managing dependencies directly, ensure the following minimum versions are present:
+### 1.3 HTTP/JSON (REST) Transport
 
-| Library | Minimum Version | Role |
-| :--- | :--- | :--- |
-| **`gax-httpjson`** | `2.83.0+` | Automatically configures Conscrypt as the TLS security provider and sets PQC named groups. |
-| **`google-http-client`** | `2.2.0+` | Provides transport-level security provider registration on `NetHttpTransport.Builder`. |
-| **`conscrypt-openjdk-uber`** | `2.6.0+` *(2.6.2+ recommended)* | Provides Google's BoringSSL native C engine and TLS 1.3 PQC hybrid named groups. |
+HTTP/JSON (REST) transport is used by clients configured explicitly for REST communication. It uses **Conscrypt** (`conscrypt-openjdk-uber`) as its TLS security provider to negotiate hybrid PQC (`X25519MLKEM768`) automatically.
 
 #### Why Conscrypt?
 Google Cloud Java client libraries use **Conscrypt** (`conscrypt-openjdk-uber`) for HTTP/JSON transport primarily for **high performance and speed**: Conscrypt embeds Google's native BoringSSL engine via JNI, utilizing hardware-accelerated assembly optimizations for modern CPU architectures (x86_64 and ARM64). This provides significantly higher throughput, lower latency, and reduced CPU overhead compared to pure Java security providers (such as Bouncy Castle or standard `SunJSSE`).
@@ -223,12 +218,18 @@ If the negotiated group displays `X25519MLKEM768` (or `0x11ec`), your connection
 
 ## 4. Custom & Alternative Configurations
 
-By default, client libraries automatically negotiate PQC when running in compatible environments without requiring custom code. If you need to customize transport behavior or security providers, configure the transport directly:
+By default, client libraries automatically negotiate PQC when running in compatible environments without requiring custom code. If you need to customize transport behavior or security providers, configure the transport directly.
+
+### Common Reasons to Disable PQC
+While PQC is recommended for all workloads, you may need to explicitly disable post-quantum hybrid groups in scenarios such as:
+- Troubleshooting legacy network middleboxes or firewalls
+- Benchmarking handshake performance against classical key exchange
+- Supporting a staged rollout or internal compliance validation
 
 ### 4.1 Custom gRPC Configurations
 
 #### Option 1: Forcing Classical-Only Key Exchange (Disabling PQC)
-If you need to use Netty's bundled BoringSSL engine for high-performance TLS but want to explicitly disable post-quantum hybrid groups, configure `OpenSslContextOption.GROUPS` on `SslContextBuilder`:
+If you need to use Netty's bundled BoringSSL engine for high-performance TLS but want to explicitly disable post-quantum hybrid groups (see [Common Reasons to Disable PQC](#common-reasons-to-disable-pqc)), configure `OpenSslContextOption.GROUPS` on `SslContextBuilder`:
 
 ```java
 InstantiatingGrpcChannelProvider transportChannelProvider =
@@ -299,7 +300,7 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 ### 4.2 Custom HTTP/JSON Configurations
 
 #### Option 1: Forcing Classical-Only Key Exchange (Disabling PQC)
-If you need to use Conscrypt for high-performance TLS but want to explicitly disable post-quantum hybrid groups:
+If you need to use Conscrypt for high-performance TLS but want to explicitly disable post-quantum hybrid groups (see [Common Reasons to Disable PQC](#common-reasons-to-disable-pqc)):
 
 ```java
 // 1. Build a NetHttpTransport with Conscrypt restricted to classical X25519
