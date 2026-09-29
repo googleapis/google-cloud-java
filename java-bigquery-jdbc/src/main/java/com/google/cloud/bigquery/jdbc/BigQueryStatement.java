@@ -1901,4 +1901,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
   }
+
+  QueryStatistics describePositionalParameterQuery(String query)
+      throws BigQueryJdbcException, BigQueryJdbcSqlSyntaxErrorException {
+    LOG.finer("++enter++");
+    return getQueryStatistics(getJobConfig(query).setParameterMode("POSITIONAL").build());
+  }
 }
