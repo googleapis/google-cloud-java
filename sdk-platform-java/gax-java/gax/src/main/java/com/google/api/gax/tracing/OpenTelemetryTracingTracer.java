@@ -35,6 +35,7 @@ import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,22 +53,27 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Tracer tracer;
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
+  private final String operationSpanName;
   private final ApiTracerContext apiTracerContext;
   // Captures the active trace context from the calling thread at RPC initiation.
-  // This allows attempt spans—including retries dispatched on background threads—to
-  // link back to the original parent trace.
+  // This allows the operation span and attempt spans to link back to the caller's trace.
   private final io.opentelemetry.context.Context parentContext;
+  // Trace context containing the operationSpan, serving as the parent for attempt spans.
+  private final io.opentelemetry.context.Context operationContext;
   // Lock coordinates attempt transitions and operation completion across threads.
   private final ReentrantLock lock = new ReentrantLock();
   private boolean operationCompleted;
-  // attemptSpan is volatile to ensure fresh reads for thread-safe snapshotting.
+  // operationSpan and attemptSpan are volatile to ensure fresh reads for thread-safe snapshotting.
+  private volatile @Nullable Span operationSpan;
   private volatile @Nullable Span attemptSpan;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
-    if (attemptSpan != null) {
+    Span currentAttempt = attemptSpan;
+    Span spanToInject = currentAttempt != null ? currentAttempt : operationSpan;
+    if (spanToInject != null) {
       io.opentelemetry.context.Context context =
-          io.opentelemetry.context.Context.current().with(attemptSpan);
+          io.opentelemetry.context.Context.current().with(spanToInject);
       io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator.getInstance()
           .inject(
               context,
@@ -80,6 +86,17 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
   }
 
+  @Override
+  public Scope inScope() {
+    Span currentAttempt = attemptSpan;
+    Span currentSpan = currentAttempt != null ? currentAttempt : operationSpan;
+    if (currentSpan == null) {
+      return () -> {};
+    }
+    io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
+    return otelScope::close;
+  }
+
   /**
    * Creates a new instance of {@code OpenTelemetryTracingTracer}.
    *
@@ -87,12 +104,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param apiTracerContext the {@link ApiTracerContext} to use for recording spans
    */
   OpenTelemetryTracingTracer(Tracer tracer, ApiTracerContext apiTracerContext) {
-    this.tracer = tracer;
-    this.apiTracerContext = apiTracerContext;
-    this.attemptSpanName = resolveAttemptSpanName(apiTracerContext);
-    this.attemptAttributes = new HashMap<>();
-    this.parentContext = io.opentelemetry.context.Context.current();
-    buildAttributes();
+    this(tracer, apiTracerContext, resolveAttemptSpanName(apiTracerContext));
   }
 
   /**
@@ -106,12 +118,64 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   @InternalApi
   OpenTelemetryTracingTracer(
       Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
+    this(tracer, apiTracerContext, attemptSpanName, resolveOperationSpanName(attemptSpanName));
+  }
+
+  /**
+   * Creates a new instance of {@code OpenTelemetryTracingTracer} with explicitly provided attempt
+   * and operation span names.
+   *
+   * @param tracer the {@link Tracer} to use for recording spans
+   * @param apiTracerContext the {@link ApiTracerContext} to use for recording spans
+   * @param attemptSpanName the name of the individual attempt spans
+   * @param operationSpanName the name of the overall client request operation span
+   */
+  @InternalApi
+  OpenTelemetryTracingTracer(
+      Tracer tracer,
+      ApiTracerContext apiTracerContext,
+      String attemptSpanName,
+      String operationSpanName) {
     this.tracer = tracer;
-    this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;
+    this.attemptSpanName = attemptSpanName;
+    this.operationSpanName = operationSpanName;
     this.attemptAttributes = new HashMap<>();
     this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
+    this.operationSpan = startOperationSpan();
+    this.operationContext = parentContext.with(this.operationSpan);
+  }
+
+  /**
+   * Starts and initializes the operation-level client request span (T3).
+   *
+   * @return the newly started {@link Span} for the overall operation
+   */
+  private Span startOperationSpan() {
+    SpanBuilder operationSpanBuilder = tracer.spanBuilder(operationSpanName);
+    operationSpanBuilder.setSpanKind(SpanKind.INTERNAL);
+    operationSpanBuilder.setParent(parentContext);
+    operationSpanBuilder.setAllAttributes(
+        ObservabilityUtils.toOtelAttributes(this.attemptAttributes));
+    return operationSpanBuilder.startSpan();
+  }
+
+  /**
+   * Derives the operation-level span name from the attempt span name.
+   *
+   * @param attemptSpanName the attempt span name
+   * @return the operation span name
+   */
+  private static String resolveOperationSpanName(String attemptSpanName) {
+    if (!Strings.isNullOrEmpty(attemptSpanName)) {
+      if (attemptSpanName.endsWith("/attempt")) {
+        String name = attemptSpanName.substring(0, attemptSpanName.length() - "/attempt".length());
+        return name.isEmpty() ? "operation" : name;
+      }
+      return "attempt".equals(attemptSpanName) ? "operation" : attemptSpanName;
+    }
+    return "operation";
   }
 
   private static String resolveAttemptSpanName(ApiTracerContext apiTracerContext) {
@@ -139,7 +203,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     lock.lock();
     try {
       // Prevent creating new attempt spans if the overall operation has already concluded.
-      if (operationCompleted) {
+      if (operationCompleted || operationSpan == null) {
         return;
       }
       // If a previous attempt was not explicitly closed before a retry started,
@@ -166,8 +230,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       // Attempt spans are of the CLIENT kind
       spanBuilder.setSpanKind(SpanKind.CLIENT);
 
-      // Link attempt span to parent context
-      spanBuilder.setParent(parentContext);
+      // Link attempt span to operation context (parent T3 span)
+      spanBuilder.setParent(operationContext);
 
       // Pass the combined attributes to the new SpanBuilder method
       spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
@@ -185,35 +249,79 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   /**
    * Signals that the overall logical operation succeeded.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span.
+   * <p>Closes any remaining in-flight attempt span and ends the operation span.
    */
   @Override
   public void operationSucceeded() {
-    recordErrorAndEndAttempt(null, true);
+    recordErrorAndEndOperation(null);
   }
 
   /**
    * Signals that the overall logical operation was cancelled.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with a
-   * {@link CancellationException}.
+   * <p>Closes any remaining in-flight attempt span with a {@link CancellationException} and ends
+   * the operation span with an ERROR status.
    */
   @Override
   public void operationCancelled() {
-    recordErrorAndEndAttempt(new CancellationException(), true);
+    recordErrorAndEndOperation(new CancellationException());
   }
 
   /**
    * Signals that the overall logical operation failed permanently.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with the
-   * provided error details.
+   * <p>Closes any remaining in-flight attempt span and ends the operation span with the provided
+   * error details and an ERROR status.
    *
    * @param error the cause of the operation failure
    */
   @Override
   public void operationFailed(Throwable error) {
-    recordErrorAndEndAttempt(error, true);
+    recordErrorAndEndOperation(error);
+  }
+
+  /**
+   * Records error details and ends both the active attempt span and the operation span in a
+   * thread-safe manner.
+   *
+   * @param error the exception associated with the operation failure, or {@code null} if successful
+   */
+  private void recordErrorAndEndOperation(@Nullable Throwable error) {
+    Span localOperationSpan;
+    Span localAttemptSpan;
+    lock.lock();
+    try {
+      operationCompleted = true;
+      localOperationSpan = operationSpan;
+      if (localOperationSpan == null) {
+        return;
+      }
+      operationSpan = null;
+      localAttemptSpan = attemptSpan;
+      attemptSpan = null;
+    } finally {
+      lock.unlock();
+    }
+
+    if (localAttemptSpan != null) {
+      endAttemptSpan(localAttemptSpan, error);
+    }
+
+    Map<String, Object> responseAttributes =
+        ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
+    if (!responseAttributes.isEmpty()) {
+      localOperationSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
+    }
+
+    if (error != null) {
+      localOperationSpan.setStatus(StatusCode.ERROR);
+      if (!Strings.isNullOrEmpty(error.getMessage())) {
+        localOperationSpan.setAttribute(
+            ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+      }
+    }
+
+    localOperationSpan.end();
   }
 
   @Override
@@ -286,24 +394,15 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(error);
   }
 
-  private void recordErrorAndEndAttempt(@Nullable Throwable error) {
-    recordErrorAndEndAttempt(error, false);
-  }
-
   /**
    * Records error details and ends the current attempt span in a thread-safe manner.
    *
    * @param error the exception associated with the attempt failure, or {@code null} if successful
-   * @param isOperationComplete {@code true} if this call marks the end of the entire logical
-   *     operation, preventing subsequent retry attempts from starting
    */
-  private void recordErrorAndEndAttempt(@Nullable Throwable error, boolean isOperationComplete) {
+  private void recordErrorAndEndAttempt(@Nullable Throwable error) {
     Span localAttemptSpan;
     lock.lock();
     try {
-      if (isOperationComplete) {
-        operationCompleted = true;
-      }
       localAttemptSpan = attemptSpan;
       if (localAttemptSpan == null) {
         return;

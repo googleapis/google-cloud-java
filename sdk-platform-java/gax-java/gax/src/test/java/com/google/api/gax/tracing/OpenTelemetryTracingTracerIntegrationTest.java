@@ -103,13 +103,18 @@ class OpenTelemetryTracingTracerIntegrationTest {
     parentSpan.end();
 
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(2);
+    assertThat(finishedSpans).hasSize(3); // root, operation, attempt
 
     SpanData attemptSpan =
         finishedSpans.stream()
-            .filter(s -> s.getName().equals(FULL_METHOD_NAME))
+            .filter(s -> s.getKind() == SpanKind.CLIENT)
             .findFirst()
             .orElseThrow(() -> new AssertionError("Attempt span not found"));
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
     SpanData rootSpan =
         finishedSpans.stream()
             .filter(s -> s.getName().equals("application-parent-operation"))
@@ -117,8 +122,11 @@ class OpenTelemetryTracingTracerIntegrationTest {
             .orElseThrow(() -> new AssertionError("Parent span not found"));
 
     assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
-    assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+    assertThat(attemptSpan.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
     assertThat(attemptSpan.getSpanContext().getTraceId())
+        .isEqualTo(rootSpan.getSpanContext().getTraceId());
+    assertThat(operationSpan.getSpanContext().getTraceId())
         .isEqualTo(rootSpan.getSpanContext().getTraceId());
   }
 
@@ -131,11 +139,21 @@ class OpenTelemetryTracingTracerIntegrationTest {
     apiTracer.operationSucceeded();
 
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(1);
+    assertThat(finishedSpans).hasSize(2); // operation, attempt
 
-    SpanData attemptSpan = finishedSpans.get(0);
-    assertThat(attemptSpan.getName()).isEqualTo(FULL_METHOD_NAME);
-    assertThat(attemptSpan.getParentSpanContext().isValid()).isFalse();
+    SpanData attemptSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.CLIENT)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Attempt span not found"));
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+
+    assertThat(operationSpan.getParentSpanContext().isValid()).isFalse();
+    assertThat(attemptSpan.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
   }
 
   @Test
@@ -153,7 +171,6 @@ class OpenTelemetryTracingTracerIntegrationTest {
     apiTracer.attemptStarted(new Object(), 1);
     assertThat(spanExporter.getFinishedSpanItems()).hasSize(1);
     SpanData attempt0Span = spanExporter.getFinishedSpanItems().get(0);
-    assertThat(attempt0Span.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
 
     // Complete attempt 1 and operation
     apiTracer.attemptSucceeded();
@@ -161,20 +178,31 @@ class OpenTelemetryTracingTracerIntegrationTest {
     parentSpan.end();
 
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, parent
+    assertThat(finishedSpans).hasSize(4); // attempt 0, attempt 1, operation, parent
+
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+
+    assertThat(attempt0Span.getParentSpanId())
+        .isEqualTo(operationSpan.getSpanContext().getSpanId());
 
     SpanData attempt1Span =
         finishedSpans.stream()
             .filter(
                 s ->
-                    s.getName().equals(FULL_METHOD_NAME)
+                    s.getKind() == SpanKind.CLIENT
                         && !s.getSpanContext()
                             .getSpanId()
                             .equals(attempt0Span.getSpanContext().getSpanId()))
             .findFirst()
             .orElseThrow(() -> new AssertionError("Attempt 1 span not found"));
 
-    assertThat(attempt1Span.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
+    assertThat(attempt1Span.getParentSpanId())
+        .isEqualTo(operationSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
     assertThat(attempt1Span.getSpanContext().getTraceId())
         .isEqualTo(parentSpan.getSpanContext().getTraceId());
   }
@@ -193,15 +221,21 @@ class OpenTelemetryTracingTracerIntegrationTest {
     parentSpan.end();
 
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(2);
+    assertThat(finishedSpans).hasSize(3); // parent, operation, attempt
 
     SpanData attemptSpan =
         finishedSpans.stream()
-            .filter(s -> s.getName().equals(FULL_METHOD_NAME))
+            .filter(s -> s.getKind() == SpanKind.CLIENT)
             .findFirst()
             .orElseThrow(() -> new AssertionError("Attempt span not found"));
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
 
-    assertThat(attemptSpan.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
+    assertThat(attemptSpan.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
     assertThat(
             attemptSpan
                 .getAttributes()
@@ -218,6 +252,9 @@ class OpenTelemetryTracingTracerIntegrationTest {
     // Any attempts started after operation completed must be ignored
     apiTracer.attemptStarted(new Object(), 0);
 
-    assertThat(spanExporter.getFinishedSpanItems()).isEmpty();
+    // Only the operation span was emitted and ended
+    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
+    assertThat(finishedSpans).hasSize(1);
+    assertThat(finishedSpans.get(0).getKind()).isEqualTo(SpanKind.INTERNAL);
   }
 }
