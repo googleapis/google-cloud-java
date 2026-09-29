@@ -45,7 +45,6 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
-import java.io.InputStream;
 import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -104,7 +103,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
-      InputStream payload,
+      InputStreamSupplier payload,
       @Nullable ApiCallContext context,
       @Nullable ResumableUploadOptions options) {
     checkNotNull(request, "request must not be null");
@@ -131,7 +130,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
 
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, @Nullable ResumableUploadOptions options) {
+      String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
     throw new UnsupportedOperationException("Session resumption is not yet implemented.");
   }
 
