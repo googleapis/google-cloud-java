@@ -883,6 +883,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return endpoint;
   }
 
+  /** The header provider explicitly set on this provider, or {@code null} if none was set. */
+  @InternalApi("For use by generated code")
+  public @Nullable HeaderProvider getHeaderProvider() {
+    return headerProvider;
+  }
+
   /** This method is obsolete. Use {@link #getKeepAliveTimeDuration()} instead. */
   @ObsoleteApi("Use getKeepAliveTimeDuration() instead")
   public org.threeten.bp.Duration getKeepAliveTime() {

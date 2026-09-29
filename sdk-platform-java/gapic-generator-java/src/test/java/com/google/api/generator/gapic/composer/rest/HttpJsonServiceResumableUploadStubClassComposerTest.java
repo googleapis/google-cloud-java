@@ -18,6 +18,7 @@ import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.test.framework.Assert;
+import com.google.api.generator.test.protoloader.GrpcTestProtoLoader;
 import com.google.api.generator.test.protoloader.RestTestProtoLoader;
 import org.junit.jupiter.api.Test;
 
@@ -32,6 +33,18 @@ class HttpJsonServiceResumableUploadStubClassComposerTest {
         HttpJsonServiceResumableUploadStubClassComposer.instance().generate(context, service);
     Assert.assertGoldenClass(
         this.getClass(), clazz, "HttpJsonMediaServiceResumableUploadStub.golden");
+    Assert.assertEmptySamples(clazz.samples());
+  }
+
+  @Test
+  void generate_grpcTransport_matchesGolden() {
+    GapicContext context = GrpcTestProtoLoader.instance().parseShowcaseResumableUpload();
+    Service service = context.services().get(0);
+
+    GapicClass clazz =
+        HttpJsonServiceResumableUploadStubClassComposer.instance().generate(context, service);
+    Assert.assertGoldenClass(
+        this.getClass(), clazz, "HttpJsonMediaServiceResumableUploadStubGrpcTransport.golden");
     Assert.assertEmptySamples(clazz.samples());
   }
 }

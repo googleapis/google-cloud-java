@@ -33,6 +33,8 @@ import com.google.showcase.v1beta1.ResumableUploadServiceClient;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -140,8 +142,12 @@ class ITResumableUpload {
     UploadMediaRequest request =
         UploadMediaRequest.newBuilder().setName("it-grpc-delegation.txt").build();
 
+    ManagedChannel channel =
+        ManagedChannelBuilder.forTarget(TestClientInitializer.DEFAULT_GRPC_ENDPOINT)
+            .usePlaintext()
+            .build();
     try (ResumableUploadServiceClient grpcClient =
-        TestClientInitializer.createGrpcResumableUploadClient(SHOWCASE_CHUNK_SIZE)) {
+        TestClientInitializer.createGrpcResumableUploadClient(channel, SHOWCASE_CHUNK_SIZE)) {
       UploadMediaResponse syncResponse =
           grpcClient.uploadMedia(request, () -> Files.newInputStream(file), DEFAULT_TEST_OPTIONS);
       assertThat(syncResponse.getName()).isEqualTo("it-grpc-delegation.txt");
@@ -158,6 +164,8 @@ class ITResumableUpload {
       assertThat(future.getUploadSessionUrl()).contains("/resumable/upload");
       assertThat(asyncResponse.getName()).isEqualTo("it-grpc-delegation.txt");
       assertThat(asyncResponse.getSize()).isEqualTo(Files.size(file));
+    } finally {
+      channel.shutdownNow();
     }
   }
 
