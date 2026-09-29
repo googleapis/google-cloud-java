@@ -92,7 +92,11 @@ public class SessionIT {
 
     InstantiatingGrpcChannelProvider defaultTransportProvider =
         (InstantiatingGrpcChannelProvider)
-            testEnvRule.env().getDataClientSettings().getStubSettings().getTransportChannelProvider();
+            testEnvRule
+                .env()
+                .getDataClientSettings()
+                .getStubSettings()
+                .getTransportChannelProvider();
     InstantiatingGrpcChannelProvider instrumentedTransportProvider =
         defaultTransportProvider.toBuilder()
             .setChannelConfigurator(
@@ -140,12 +144,10 @@ public class SessionIT {
     Stopwatch stopwatch = Stopwatch.createStarted();
     boolean sessionObserved = false;
     while (!sessionObserved && stopwatch.elapsed(TimeUnit.SECONDS) < 60) {
-      stub.readRowCallable()
-          .call(Query.create(testEnvRule.env().getTableId()).rowKey("probe-key"));
+      stub.readRowCallable().call(Query.create(testEnvRule.env().getTableId()).rowKey("probe-key"));
       Thread.sleep(2_000);
       sessionObserved =
-          observedTypes.stream()
-              .anyMatch(t -> t.name().startsWith("TRANSPORT_TYPE_SESSION_"));
+          observedTypes.stream().anyMatch(t -> t.name().startsWith("TRANSPORT_TYPE_SESSION_"));
     }
 
     assertWithMessage(
