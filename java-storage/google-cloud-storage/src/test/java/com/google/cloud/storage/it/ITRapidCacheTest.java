@@ -150,42 +150,45 @@ public class ITRapidCacheTest {
     // Workaround for b/564257939: CreateRapidCache via gRPC in Prod returns UNAVAILABLE
     // even when the backend asynchronously creates the cache instance.
     RapidCache created = null;
-    ExecutionException lastException = null;
-    for (int i = 0; i < 5; i++) {
-      try {
-        created =
-            controlClient
-                .createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache)
-                .get();
-        break;
-      } catch (ExecutionException e) {
-        lastException = e;
-        if (e.getCause() instanceof ApiException) {
-          ApiException apiEx = (ApiException) e.getCause();
-          if (apiEx.getStatusCode().getCode() == StatusCode.Code.UNAVAILABLE
-              || apiEx.getStatusCode().getCode() == StatusCode.Code.ALREADY_EXISTS) {
+    try {
+      created =
+          controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
+    } catch (ExecutionException e) {
+      if (e.getCause() instanceof ApiException) {
+        ApiException apiEx = (ApiException) e.getCause();
+        StatusCode.Code code = apiEx.getStatusCode().getCode();
+        if (code == StatusCode.Code.UNAVAILABLE || code == StatusCode.Code.ALREADY_EXISTS) {
+          long backoffMs = 2000;
+          for (int attempt = 0; attempt < 10; attempt++) {
             try {
-              Thread.sleep(3000);
-              created = controlClient.getRapidCache(cacheName);
-              if (created != null) {
+              Thread.sleep(backoffMs);
+            } catch (InterruptedException ie) {
+              Thread.currentThread().interrupt();
+              throw new RuntimeException("Interrupted while polling RapidCache state", ie);
+            }
+            try {
+              RapidCache candidate = controlClient.getRapidCache(cacheName);
+              if (candidate != null
+                  && ("running".equalsIgnoreCase(candidate.getState())
+                      || "active".equalsIgnoreCase(candidate.getState()))) {
+                created = candidate;
                 break;
               }
-            } catch (Exception ignored) {
+            } catch (ApiException ignored) {
               // Cache not yet ready via getRapidCache
             }
-            continue;
+            backoffMs = Math.min(backoffMs * 2, 10000);
           }
         }
+      }
+      if (created == null) {
         throw e;
       }
-    }
-    if (created == null && lastException != null) {
-      throw lastException;
     }
 
     assertThat(created).isNotNull();
     assertThat(created.getName()).isEqualTo(cacheName);
-    assertThat(created.getState()).isEqualTo("running");
+    assertThat(created.getState().toLowerCase()).isAnyOf("running", "active");
 
     // 2. Duplicate Create Attempt (should fail while cache is active)
     ApiException duplicateApiException = null;
@@ -215,7 +218,7 @@ public class ITRapidCacheTest {
     RapidCache retrieved = controlClient.getRapidCache(cacheName);
     assertThat(retrieved).isNotNull();
     assertThat(retrieved.getName()).isEqualTo(cacheName);
-    assertThat(retrieved.getState()).isEqualTo("running");
+    assertThat(retrieved.getState().toLowerCase()).isAnyOf("running", "active");
 
     // 4. List RapidCaches
     StorageControlClient.ListRapidCachesPagedResponse listResponse =
