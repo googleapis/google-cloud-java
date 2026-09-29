@@ -130,13 +130,16 @@ public final class ITRcuBidiReadTest {
   @AfterClass
   public static void tearDownClass() {
     if (staticStorage != null) {
-      try {
-        if (closeTestBlobId != null) staticStorage.delete(closeTestBlobId);
-        if (zeroCopyTestBlobId != null) staticStorage.delete(zeroCopyTestBlobId);
-        if (multipleRangeTestBlobId != null) staticStorage.delete(multipleRangeTestBlobId);
-        if (outOfRangeTestBlobId != null) staticStorage.delete(outOfRangeTestBlobId);
-      } catch (Exception e) {
-        // Ignored: Best effort cleanup
+      for (BlobId blobId :
+          Arrays.asList(
+              closeTestBlobId, zeroCopyTestBlobId, multipleRangeTestBlobId, outOfRangeTestBlobId)) {
+        if (blobId != null) {
+          try {
+            staticStorage.delete(blobId);
+          } catch (Exception ignored) {
+            // Ignored: Best effort cleanup
+          }
+        }
       }
     }
   }
@@ -252,7 +255,7 @@ public final class ITRcuBidiReadTest {
             ExecutionException.class, () -> futureObjectReadSession.get(10, TimeUnit.SECONDS));
     assertThat(ee).hasCauseThat().isInstanceOf(StorageException.class);
     StorageException se = (StorageException) ee.getCause();
-    assertThat(se.getCode()).isIn(Arrays.asList(404, 403));
+    assertThat(se.getCode()).isAnyOf(404, 403);
   }
 
   @Test

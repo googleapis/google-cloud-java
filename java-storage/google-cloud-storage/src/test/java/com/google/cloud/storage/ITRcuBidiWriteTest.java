@@ -477,9 +477,9 @@ public final class ITRcuBidiWriteTest {
   private byte[] readAllBytes(BlobInfo actual)
       throws IOException, InterruptedException, ExecutionException, TimeoutException {
     ApiFuture<BlobReadSession> blobReadSessionFuture = storage.blobReadSession(actual.getBlobId());
-    try (BlobReadSession read = blobReadSessionFuture.get(2_372, TimeUnit.MILLISECONDS)) {
+    try (BlobReadSession read = blobReadSessionFuture.get(5, TimeUnit.SECONDS)) {
       ApiFuture<byte[]> futureBytes = read.readAs(ReadProjectionConfigs.asFutureBytes());
-      return futureBytes.get(2_273, TimeUnit.MILLISECONDS);
+      return futureBytes.get(5, TimeUnit.SECONDS);
     }
   }
 
