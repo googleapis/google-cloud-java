@@ -469,7 +469,8 @@ final class BackendResources implements ManagedLifecycle {
       Storage storageClientToUse = storageJson.get().getStorage();
       StorageControlClient controlClientToUse = ctrl.get().getCtrl();
 
-      if (key.locationType == LocationType.REGIONAL_RAPID) {
+      if (key.locationType == LocationType.REGIONAL_RAPID
+          || key.locationType == LocationType.ZONAL_RAPID) {
         if (backend == Backend.PREPROD) {
           targetRegion = "us-central1";
           targetZone = "us-central1-a";
