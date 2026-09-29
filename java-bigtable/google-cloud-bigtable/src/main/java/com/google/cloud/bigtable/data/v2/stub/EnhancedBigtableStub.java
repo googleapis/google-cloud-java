@@ -349,7 +349,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
         .getSessionShim()
         .decorateReadRow(classic, rowAdapter, shimSettings)
         .withDefaultCallContext(
-            clientContext.getDefaultCallContext().withRetrySettings(retrySettings));
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(retrySettings));
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
