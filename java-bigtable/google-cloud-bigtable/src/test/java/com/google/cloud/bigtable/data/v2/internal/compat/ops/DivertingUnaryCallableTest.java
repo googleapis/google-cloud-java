@@ -97,7 +97,7 @@ class DivertingUnaryCallableTest {
   void sessionLoadZero_routesToClassicWithoutCredentialsCheck() throws Exception {
     stubSessionLoad(0.0f);
     DivertingUnaryCallable<String, String> callable = callable();
-    GrpcCallContext ctx = GrpcCallContext.createDefault();
+    GrpcCallContext ctx = GrpcCallContext.createDefault().withCredentials(mock(Credentials.class));
 
     ApiFuture<String> result = callable.futureCall("req", ctx);
 
