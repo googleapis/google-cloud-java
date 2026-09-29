@@ -212,29 +212,6 @@ public final class TelemetryManager implements AutoCloseable {
   }
 
   public static void recordStatementExecution(
-      StatementType statementType,
-      QueryApiType apiType,
-      Status status,
-      int errorCode,
-      long durationMs) {
-    runSafely(
-        () -> {
-          TelemetryBatcher activeBatcher = activeBatcher();
-          if (activeBatcher == null) {
-            return;
-          }
-          activeBatcher.offer(
-              StatementExecution.newBuilder()
-                  .setStatementType(statementType)
-                  .setQueryApiType(apiType)
-                  .setStatus(status)
-                  .setErrorCode(errorCode)
-                  .build(),
-              durationMs);
-        });
-  }
-
-  public static void recordStatementExecution(
       StatementExecution.Builder statementExecutionBuilder, long durationMs) {
     if (statementExecutionBuilder == null) {
       return;

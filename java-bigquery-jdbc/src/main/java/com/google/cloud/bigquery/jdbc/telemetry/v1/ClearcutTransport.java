@@ -110,8 +110,7 @@ final class ClearcutTransport {
           logger.log(Level.FINE, "Successfully uploaded telemetry payload to Clearcut");
         } else {
           logger.log(
-              Level.WARNING,
-              String.format("Clearcut upload failed with status code: %d", statusCode));
+              Level.FINE, String.format("Clearcut upload failed with status code: %d", statusCode));
         }
         return new TransportResult(success, nextRequestWaitMillis);
       } finally {
@@ -120,10 +119,10 @@ final class ClearcutTransport {
         }
       }
     } catch (IOException e) {
-      logger.log(Level.WARNING, "IOException sending telemetry payload to Clearcut", e);
+      logger.log(Level.FINE, "IOException sending telemetry payload to Clearcut", e);
       return new TransportResult(false, nextRequestWaitMillis);
     } catch (Throwable t) {
-      logger.log(Level.WARNING, "Unexpected error sending telemetry payload to Clearcut", t);
+      logger.log(Level.FINE, "Unexpected error sending telemetry payload to Clearcut", t);
       return new TransportResult(false, nextRequestWaitMillis);
     }
   }

@@ -24,10 +24,13 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
@@ -43,6 +46,9 @@ final class TelemetryBatcher implements AutoCloseable {
 
   /** Cap used when no usable threshold is configured. */
   private static final int FALLBACK_PROFILE_CAP = 3000;
+
+  /** Maximum time {@link #close()} waits for the final flush. */
+  private static final long CLOSE_TIMEOUT_MS = 2_000;
 
   private final TelemetryConfiguration config;
   private final ClearcutTransport transport;
@@ -64,7 +70,7 @@ final class TelemetryBatcher implements AutoCloseable {
   private final AtomicBoolean isClosed = new AtomicBoolean(false);
   private final AtomicBoolean flushPending = new AtomicBoolean();
   private final AtomicLong currentScheduleDelayMs = new AtomicLong(-1);
-  private ScheduledFuture<?> scheduledTask;
+  private volatile ScheduledFuture<?> scheduledTask;
 
   // Constructors & Lifecycle
   TelemetryBatcher(TelemetryConfiguration config, ClearcutTransport transport) {
@@ -130,16 +136,12 @@ final class TelemetryBatcher implements AutoCloseable {
       if (scheduledTask != null) {
         scheduledTask.cancel(false);
       }
-      flush();
+      boolean flushed = flushOnClose();
       if (ownsExecutor && executorService != null) {
-        executorService.shutdown();
-        try {
-          if (!executorService.awaitTermination(2, TimeUnit.SECONDS)) {
-            executorService.shutdownNow();
-          }
-        } catch (InterruptedException e) {
+        if (flushed) {
+          executorService.shutdown();
+        } else {
           executorService.shutdownNow();
-          Thread.currentThread().interrupt();
         }
       }
     }
@@ -260,17 +262,65 @@ final class TelemetryBatcher implements AutoCloseable {
     }
   }
 
+  /**
+   * Runs the final flush on the batcher thread and waits at most {@link #CLOSE_TIMEOUT_MS}, so a
+   * slow or unreachable endpoint cannot delay close() or JVM shutdown.
+   */
+  private boolean flushOnClose() {
+    if (executorService == null || executorService.isShutdown()) {
+      flush();
+      return true;
+    }
+    Future<?> finalFlush = executorService.submit(this::flush);
+    try {
+      finalFlush.get(CLOSE_TIMEOUT_MS, TimeUnit.MILLISECONDS);
+      return true;
+    } catch (TimeoutException e) {
+      logger.log(Level.FINE, "Final telemetry flush did not complete within the close timeout");
+    } catch (ExecutionException e) {
+      logger.log(Level.FINE, "Final telemetry flush failed", e.getCause());
+      return true;
+    } catch (InterruptedException e) {
+      // No-op
+    }
+    return false;
+  }
+
+  /**
+   * Re-queues metrics from a failed flush. Counts for profiles already in the live map are always
+   * merged; new profiles are subject to the same {@link #maxUniqueProfiles} cap as {@link
+   * #getOrAddAccumulator}, so a persistently failing endpoint cannot grow the map past the cap.
+   */
   private void remergeFailedMetrics(Map<TelemetryKey, TelemetryAccumulator> snapshot) {
+    int dropped = 0;
     for (Map.Entry<TelemetryKey, TelemetryAccumulator> entry : snapshot.entrySet()) {
-      metricsMap.compute(
-          entry.getKey(),
-          (k, v) -> {
-            if (v == null) {
-              return entry.getValue();
-            }
-            v.merge(entry.getValue());
-            return v;
-          });
+      TelemetryAccumulator failed = entry.getValue();
+
+      TelemetryAccumulator merged =
+          metricsMap.computeIfPresent(
+              entry.getKey(),
+              (k, v) -> {
+                v.merge(failed);
+                return v;
+              });
+      if (merged != null) {
+        continue;
+      }
+
+      if (metricsMap.size() >= maxUniqueProfiles) {
+        dropped++;
+        continue;
+      }
+      // A caller thread may have added the same key since computeIfPresent; merge into theirs.
+      TelemetryAccumulator raced = metricsMap.putIfAbsent(entry.getKey(), failed);
+      if (raced != null) {
+        raced.merge(failed);
+      }
+    }
+    if (dropped > 0) {
+      logger.log(
+          Level.FINE,
+          String.format("Dropped %d telemetry profiles on re-queue; profile cap reached", dropped));
     }
   }
 
