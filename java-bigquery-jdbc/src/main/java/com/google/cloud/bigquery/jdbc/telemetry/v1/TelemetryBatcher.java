@@ -277,8 +277,6 @@ final class TelemetryBatcher implements AutoCloseable {
       return true;
     } catch (TimeoutException e) {
       logger.log(Level.FINE, "Final telemetry flush did not complete within the close timeout");
-    } catch (InterruptedException e) {
-      Thread.currentThread().interrupt();
     } catch (ExecutionException e) {
       logger.log(Level.FINE, "Final telemetry flush failed", e.getCause());
       return true;
