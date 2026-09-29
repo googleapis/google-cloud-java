@@ -60,6 +60,13 @@ public class SessionIT {
   @Before
   public void setUp() throws IOException {
     assume()
+        .withMessage(
+            "SessionIT requires the session path to be enabled. "
+                + "Run with the bigtable-session-it Maven profile.")
+        .that(System.getProperty("bigtable.internal.client-config-override"))
+        .isNotNull();
+
+    assume()
         .withMessage("SessionIT requires a cloud environment, not the emulator")
         .that(testEnvRule.env())
         .isInstanceOf(CloudEnv.class);
@@ -71,13 +78,6 @@ public class SessionIT {
             testEnvRule.env().getDataClientSettings().getStubSettings().toBuilder()
                 .addInternalMetricReader(metricReader)
                 .build());
-
-    assume()
-        .withMessage(
-            "SessionIT requires the session path to be enabled. "
-                + "Run with the bigtable-session-it Maven profile.")
-        .that(System.getProperty("bigtable.internal.client-config-override"))
-        .isNotNull();
   }
 
   @After
