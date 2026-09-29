@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFuture;
@@ -34,6 +35,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -160,7 +162,7 @@ class DivertingUnaryCallableTest {
 
     @Override
     public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
-      return Map.of();
+      return Collections.emptyMap();
     }
 
     @Override
