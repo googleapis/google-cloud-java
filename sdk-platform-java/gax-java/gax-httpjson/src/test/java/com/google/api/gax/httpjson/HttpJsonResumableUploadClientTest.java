@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
@@ -49,6 +50,7 @@ import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.NotFoundException;
@@ -444,6 +446,33 @@ class HttpJsonResumableUploadClientTest {
     assertThat(exception.getCause()).isInstanceOf(AbortedException.class);
     AbortedException abortedException = (AbortedException) exception.getCause();
     assertThat(abortedException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+  }
+
+  @Test
+  void uploadChunk_serverRejection_preservesUploadStatusHeaderOnCause() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(400);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"error\":{\"code\":400,\"message\":\"Invalid chunk\"}}");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    ApiException ex =
+        assertThrows(ApiException.class, () -> client.uploadChunkCallable().call(request));
+
+    // ResumableUploadErrorClassifier reads the upload status from the cause's headers.
+    assertThat(ex.getCause()).isInstanceOf(HttpResponseException.class);
+    assertThat(
+            ((HttpResponseException) ex.getCause())
+                .getHeaders()
+                .getFirstHeaderStringValue("X-Goog-Upload-Status"))
+        .isEqualTo("final");
   }
 
   @Test

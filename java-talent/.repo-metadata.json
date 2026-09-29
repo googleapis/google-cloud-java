@@ -11,6 +11,5 @@
   "repo_short": "java-talent",
   "distribution_name": "com.google.cloud:google-cloud-talent",
   "api_id": "jobs.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/559664"
+  "library_type": "GAPIC_AUTO"
 }

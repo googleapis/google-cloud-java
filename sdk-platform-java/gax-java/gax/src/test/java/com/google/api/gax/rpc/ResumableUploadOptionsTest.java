@@ -112,4 +112,30 @@ public class ResumableUploadOptionsTest {
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
     assertEquals(Duration.ofMinutes(10), merged.getGlobalTimeout());
   }
+
+  @Test
+  public void testMerge_overridesProgressListener() {
+    ResumableUploadProgressListener defaultListener = progress -> {};
+    ResumableUploadProgressListener perRequestListener = progress -> {};
+    ResumableUploadOptions defaultOptions =
+        ResumableUploadOptions.newBuilder().setProgressListener(defaultListener).build();
+    ResumableUploadOptions perRequestOptions =
+        ResumableUploadOptions.newBuilder().setProgressListener(perRequestListener).build();
+
+    ResumableUploadOptions merged = defaultOptions.merge(perRequestOptions);
+
+    assertSame(perRequestListener, merged.getProgressListener());
+  }
+
+  @Test
+  public void testMerge_nullProgressListenerDoesNotOverride() {
+    ResumableUploadProgressListener defaultListener = progress -> {};
+    ResumableUploadOptions defaultOptions =
+        ResumableUploadOptions.newBuilder().setProgressListener(defaultListener).build();
+    ResumableUploadOptions perRequestOptions = ResumableUploadOptions.newBuilder().build();
+
+    ResumableUploadOptions merged = defaultOptions.merge(perRequestOptions);
+
+    assertSame(defaultListener, merged.getProgressListener());
+  }
 }

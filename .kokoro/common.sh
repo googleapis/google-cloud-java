@@ -50,7 +50,7 @@ function retry_with_backoff {
   attempts_left=$1
   sleep_seconds=$2
   shift 2
-  command=$@
+  command=("$@")
 
   # store current flag state
   flags=$-
@@ -58,7 +58,7 @@ function retry_with_backoff {
   # allow a failures to continue
   set +e
   unset IFS
-  ${command}
+  "${command[@]}"
   exit_code=$?
 
   # restore "e" flag
@@ -78,7 +78,7 @@ function retry_with_backoff {
     sleep ${sleep_seconds}
     new_attempts=$((${attempts_left} - 1))
     new_sleep=$((${sleep_seconds} * 2))
-    retry_with_backoff ${new_attempts} ${new_sleep} ${command}
+    retry_with_backoff ${new_attempts} ${new_sleep} "${command[@]}"
   fi
 
   return $exit_code
@@ -595,6 +595,7 @@ function install_modules() {
     # Join dependencies into comma-delimited string without subshell:
     local IFS=,
     always_install_deps="${always_install_deps_list[*]}"
+    unset IFS
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,
