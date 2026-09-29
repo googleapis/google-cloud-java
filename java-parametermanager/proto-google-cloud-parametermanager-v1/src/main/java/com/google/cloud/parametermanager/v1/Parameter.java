@@ -69,6 +69,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 8:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -543,6 +545,165 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int TAGS_FIELD_NUMBER = 8;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.parametermanager.v1.V1mainProto
+                .internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -579,6 +740,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, kmsKey_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 8);
     getUnknownFields().writeTo(output);
   }
 
@@ -618,6 +781,16 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, kmsKey_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -653,6 +826,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     if (hasKmsKey()) {
       if (!getKmsKey().equals(other.getKmsKey())) return false;
     }
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -687,6 +861,10 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
     if (hasKmsKey()) {
       hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKmsKey().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -813,6 +991,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 8:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -824,6 +1004,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 8:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -880,6 +1062,7 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
         policyMemberBuilder_ = null;
       }
       kmsKey_ = "";
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -944,6 +1127,10 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
         result.kmsKey_ = kmsKey_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -983,6 +1170,8 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000080;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1060,6 +1249,15 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2278,6 +2476,269 @@ public final class Parameter extends com.google.protobuf.GeneratedMessage
       kmsKey_ = value;
       bitField0_ |= 0x00000040;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000080;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+     * this Parameter. You must represent each item in the map as:
+     * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+     *
+     * For example, a single resource can have the following tags:
+     * ```
+     * "123/environment": "production",
+     * "123/costCenter": "marketing",
+     * ```
+     * Tags are used to organize and group resources.
+     *
+     * Tags can be used to control policy evaluation for the resource.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000080;
       return this;
     }
 

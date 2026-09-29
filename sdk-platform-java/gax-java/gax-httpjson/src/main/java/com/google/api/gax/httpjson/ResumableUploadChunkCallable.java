@@ -33,10 +33,9 @@ import com.google.api.client.http.HttpMethods;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
@@ -59,7 +58,6 @@ class ResumableUploadChunkCallable<ResponseT>
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
   private static final String UPLOAD_OFFSET_HEADER = "X-Goog-Upload-Offset";
   private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
-  private static final String STATUS_FINAL = "final";
 
   private static final String COMMAND_UPLOAD = "upload";
   private static final String COMMAND_FINALIZE = "finalize";
@@ -165,7 +163,7 @@ class ResumableUploadChunkCallable<ResponseT>
 
     private final ResumableUploadHttpJsonFuture<ChunkUploadResponse<ResponseT>> future;
     private final HttpResponseParser<ResponseT> responseParser;
-    @Nullable private String uploadStatus = null;
+    private ResumableUploadStatus uploadStatus = ResumableUploadStatus.UNKNOWN;
     private String responseBody = "";
 
     private ChunkUploadResponseListener(
@@ -178,7 +176,9 @@ class ResumableUploadChunkCallable<ResponseT>
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
       Map<String, Object> headers = responseHeaders.getHeaders();
-      this.uploadStatus = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER);
+      this.uploadStatus =
+          ResumableUploadStatus.fromHeader(
+              HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER));
     }
 
     @Override
@@ -192,21 +192,9 @@ class ResumableUploadChunkCallable<ResponseT>
     public void onClose(int statusCode, HttpJsonMetadata trailers) {
       try {
         if (statusCode >= 200 && statusCode < 300) {
-          if (uploadStatus == null) {
-            future.setException(
-                ApiExceptionFactory.createException(
-                    "Upload chunk response did not contain valid "
-                        + UPLOAD_STATUS_HEADER
-                        + " header",
-                    /* cause= */ null,
-                    HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
-                    /* retryable= */ false));
-            return;
-          }
-          boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
           ChunkUploadResponse.Builder<ResponseT> chunkResponseBuilder =
-              ChunkUploadResponse.<ResponseT>newBuilder().setComplete(isComplete);
-          if (isComplete) {
+              ChunkUploadResponse.<ResponseT>newBuilder().setUploadStatus(uploadStatus);
+          if (uploadStatus == ResumableUploadStatus.FINAL) {
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
             chunkResponseBuilder.setResponse(responseParser.parse(stream));

@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
 import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
@@ -81,6 +82,7 @@ public class ShimImpl implements Shim {
   private final ClientConfigurationManager configManager;
   private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
+  private final DebugTagTracer debugTagTracer;
 
   private final ReadRowShimInner readRowShimInner;
   private final MutateRowShim mutateRowShim;
@@ -182,13 +184,20 @@ public class ShimImpl implements Shim {
             userCallbackExecutor,
             clientChannelProvider);
 
-    return new ShimImpl(Resource.createOwned(configManager, configManager::close), client);
+    return new ShimImpl(
+        Resource.createOwned(configManager, configManager::close),
+        client,
+        metrics.getDebugTagTracer());
   }
 
-  public ShimImpl(Resource<ClientConfigurationManager> configManagerResource, Client client) {
+  public ShimImpl(
+      Resource<ClientConfigurationManager> configManagerResource,
+      Client client,
+      DebugTagTracer debugTagTracer) {
     this.configManagerResource = configManagerResource;
     this.configManager = configManagerResource.get();
     this.client = client;
+    this.debugTagTracer = debugTagTracer;
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
@@ -221,7 +230,8 @@ public class ShimImpl implements Shim {
             Resource.createShared(userCallbackExecutor),
             Resource.createShared(sharedChannelPool));
 
-    return new ShimImpl(Resource.createShared(sharedConfigManager), client);
+    return new ShimImpl(
+        Resource.createShared(sharedConfigManager), client, metrics.getDebugTagTracer());
   }
 
   /** Returns the raw config manager (e.g. for sharing with factory children). */
@@ -355,13 +365,14 @@ public class ShimImpl implements Shim {
         configManager,
         classic,
         new ReadRowShim<>(readRowShimInner, rowAdapter),
-        Util.extractTimeout(settings));
+        Util.extractTimeout(settings),
+        debugTagTracer);
   }
 
   @Override
   public UnaryCallable<RowMutation, Void> decorateMutateRow(
       UnaryCallable<RowMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, mutateRowShim, Util.extractTimeout(settings));
+        configManager, classic, mutateRowShim, Util.extractTimeout(settings), debugTagTracer);
   }
 }

@@ -64,6 +64,8 @@ public class BigQueryPreparedStatementSettersTest {
     connection = mock(BigQueryConnection.class);
     when(connection.getQueryDialect()).thenReturn("SQL");
     when(connection.getConnectionId()).thenReturn("test-connection-id");
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
   }
 
@@ -370,6 +372,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetObjectWithTimestampStringAndTypesTimestamp_picosEnabled() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -394,6 +399,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetTimestamp_picosEnabledPreservesNanoseconds() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -416,6 +424,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetTimestamp_picosDisabledTruncatesToMicroseconds() throws Exception {
     BigQueryConnection nonPicosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(nonPicosConnection)
+        .getSessionStateSnapshot();
     doReturn(false).when(nonPicosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(nonPicosConnection)
@@ -437,6 +448,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testBatchConfiguration_withEnableTimestampPicos() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)

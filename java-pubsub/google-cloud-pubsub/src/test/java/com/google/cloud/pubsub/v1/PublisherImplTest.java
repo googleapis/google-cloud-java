@@ -39,6 +39,8 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Timestamp;
+import com.google.protobuf.util.Timestamps;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -1754,12 +1756,15 @@ public class PublisherImplTest {
     testPublisherServiceImpl.setAutoPublishResponse(true);
     Publisher publisher =
         getTestPublisherBuilder()
+            .setClock(fakeExecutor.getClock())
             .setBatchingSettings(
                 Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
                     .setElementCountThreshold(1L)
                     .build())
             .build();
 
+    fakeExecutor.advanceTime(Duration.ofSeconds(60));
+    Timestamp expectedStartTime = Timestamps.fromMillis(fakeExecutor.getClock().millisTime());
     ApiFuture<String> future = sendTestMessage(publisher, "msg-normal");
     assertEquals("1", future.get(5, TimeUnit.SECONDS));
 
@@ -1769,6 +1774,7 @@ public class PublisherImplTest {
     PubsubClientTelemetry telemetry = extractTelemetryHeader(capturedHeaders.get(0));
     assertThat(telemetry.hasPublishOperation()).isTrue();
     assertThat(telemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
+    assertThat(telemetry.getPublishOperation().getPublishStartTime()).isEqualTo(expectedStartTime);
 
     shutdownTestPublisher(publisher);
   }
@@ -1777,6 +1783,9 @@ public class PublisherImplTest {
   public void testTelemetryHeaderOnHedgedPublish() throws Exception {
     Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
     fillTokenBucket(publisher, 5);
+
+    fakeExecutor.advanceTime(Duration.ofSeconds(60));
+    Timestamp expectedStartTime = Timestamps.fromMillis(fakeExecutor.getClock().millisTime());
 
     // Delay response so hedge fires
     testPublisherServiceImpl.setAutoPublishResponse(false);
@@ -1801,10 +1810,15 @@ public class PublisherImplTest {
     // Verify Attempt 0 (Original)
     PubsubClientTelemetry initialTelemetry = extractTelemetryHeader(capturedHeaders.get(0));
     assertThat(initialTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
+    assertThat(initialTelemetry.getPublishOperation().getPublishStartTime())
+        .isEqualTo(expectedStartTime);
 
     // Verify Attempt 1 (Hedge)
     PubsubClientTelemetry hedgedTelemetry = extractTelemetryHeader(capturedHeaders.get(1));
     assertThat(hedgedTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(1);
+
+    assertThat(hedgedTelemetry.getPublishOperation().getPublishStartTime())
+        .isEqualTo(initialTelemetry.getPublishOperation().getPublishStartTime());
 
     shutdownTestPublisher(publisher);
   }

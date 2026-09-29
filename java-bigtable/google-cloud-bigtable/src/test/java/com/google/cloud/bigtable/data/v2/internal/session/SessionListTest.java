@@ -413,6 +413,54 @@ class SessionListTest {
   }
 
   @Test
+  void testStartingSessionClosedAfterWaitServerClose_decrementsStartingCount() {
+    SessionList list = new SessionList();
+    PoolStats stats = list.getStats();
+
+    fakeSession.state = SessionState.STARTING;
+    SessionHandle handle = list.newHandle(fakeSession);
+
+    assertThat(stats.getStartingCount()).isEqualTo(1);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(1);
+
+    // When a starting session terminates with WAIT_SERVER_CLOSE (e.g. server sent GOAWAY before
+    // open response, or normal close before open), startingCount and expectedCapacity must
+    // decrement cleanly.
+    handle.onSessionClosed(SessionState.WAIT_SERVER_CLOSE);
+
+    assertThat(list.getAllSessions()).isEmpty();
+    assertThat(stats.getStartingCount()).isEqualTo(0);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(0);
+  }
+
+  @Test
+  void testReadyIdleSessionClosedAfterWaitServerClose_cleansUpReadySessionsAndReadyCount() {
+    SessionList list = new SessionList();
+    PoolStats stats = list.getStats();
+
+    fakeSession.state = SessionState.STARTING;
+    SessionHandle handle = list.newHandle(fakeSession);
+
+    fakeSession.state = SessionState.READY;
+    handle.onSessionStarted();
+
+    assertThat(stats.getReadyCount()).isEqualTo(1);
+    assertThat(list.getAfesWithReadySessions()).hasSize(1);
+    assertThat(stats.getStartingCount()).isEqualTo(0);
+
+    // When an idle session terminates with WAIT_SERVER_CLOSE without prior onSessionClosing()
+    // (e.g. session.close() or direct termination), readyCount and AFE handles must be cleaned up
+    // cleanly.
+    handle.onSessionClosed(SessionState.WAIT_SERVER_CLOSE);
+
+    assertThat(list.getAfesWithReadySessions()).isEmpty();
+    assertThat(list.getAllSessions()).isEmpty();
+    assertThat(stats.getStartingCount()).isEqualTo(0);
+    assertThat(stats.getReadyCount()).isEqualTo(0);
+    assertThat(stats.getExpectedCapacity()).isEqualTo(0);
+  }
+
+  @Test
   void testAwaitCloseToSoftClosed() {
     SessionList list = new SessionList();
     PoolStats stats = list.getStats();

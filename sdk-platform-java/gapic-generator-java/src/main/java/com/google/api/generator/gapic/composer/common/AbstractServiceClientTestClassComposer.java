@@ -112,7 +112,13 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
 
   protected GapicClass generate(String className, GapicContext context, Service service) {
     // Do not generate Client Test code for Transport if there are no matching RPCs for a Transport
-    if (!service.hasAnyEnabledMethodsForTransport(getTransportContext().transport())) {
+    boolean hasTestableMethods =
+        service.methods().stream()
+            .anyMatch(
+                m ->
+                    m.isSupportedByTransport(getTransportContext().transport())
+                        && !m.isResumableUpload());
+    if (!hasTestableMethods) {
       return GapicClass.createNonGeneratedGapicClass();
     }
 
@@ -235,6 +241,9 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
     for (Method method : service.methods()) {
       if (!method.isSupportedByTransport(getTransportContext().transport())) {
         javaMethods.add(createUnsupportedTestMethod(method));
+        continue;
+      }
+      if (method.isResumableUpload()) {
         continue;
       }
       Service matchingService = service;

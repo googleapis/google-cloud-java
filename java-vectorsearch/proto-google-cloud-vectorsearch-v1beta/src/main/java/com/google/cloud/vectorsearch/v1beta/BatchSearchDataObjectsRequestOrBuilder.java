@@ -168,4 +168,53 @@ public interface BatchSearchDataObjectsRequestOrBuilder
    */
   com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.CombineResultsOptionsOrBuilder
       getCombineOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadataOptions field is set.
+   */
+  boolean hasMetadataOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadataOptions.
+   */
+  com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions
+      getMetadataOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options controlling which metadata is included in the search
+   * results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions metadata_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest
+          .BatchSearchMetadataOptionsOrBuilder
+      getMetadataOptionsOrBuilder();
 }
