@@ -16,7 +16,6 @@
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFuture;
@@ -100,7 +99,7 @@ class DivertingUnaryCallableTest {
   void sessionLoadZero_routesToClassicWithoutCredentialsCheck() throws Exception {
     stubSessionLoad(0.0f);
     DivertingUnaryCallable<String, String> callable = callable();
-    GrpcCallContext ctx = GrpcCallContext.createDefault().withCredentials(mock(Credentials.class));
+    GrpcCallContext ctx = GrpcCallContext.createDefault();
 
     ApiFuture<String> result = callable.futureCall("req", ctx);
 
