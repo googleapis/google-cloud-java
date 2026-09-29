@@ -909,7 +909,6 @@ public class EnhancedBigtableStubSettingsTest {
     "jwtAudience",
     "directPathConfig",
     "sessionsEnabled",
-    "additionalInternalMetricReaders",
   };
 
   @Test

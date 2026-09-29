@@ -55,7 +55,6 @@ import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.opentelemetry.metric.GoogleCloudMetricExporter;
 import com.google.cloud.opentelemetry.metric.MetricConfiguration;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Suppliers;
@@ -72,7 +71,6 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
-import io.opentelemetry.sdk.metrics.export.MetricReader;
 import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
 import java.io.Closeable;
 import java.io.IOException;
@@ -300,26 +298,6 @@ public class MetricsImpl implements Metrics, Closeable {
       String universeDomain,
       ScheduledExecutorService executor)
       throws IOException {
-    return createBuiltinOtel(
-        metricRegistry,
-        clientInfo,
-        defaultCredentials,
-        metricsEndpoint,
-        universeDomain,
-        executor,
-        ImmutableList.of());
-  }
-
-  @VisibleForTesting
-  public static OpenTelemetrySdk createBuiltinOtel(
-      MetricRegistry metricRegistry,
-      ClientInfo clientInfo,
-      @Nullable Credentials defaultCredentials,
-      @Nullable String metricsEndpoint,
-      String universeDomain,
-      ScheduledExecutorService executor,
-      List<MetricReader> additionalReaders)
-      throws IOException {
 
     Credentials credentials =
         BigtableDataSettings.getMetricsCredentials() != null
@@ -365,9 +343,6 @@ public class MetricsImpl implements Metrics, Closeable {
                       input -> input.getName().startsWith(CUSTOM_METRIC_PREFIX)))
               .setInterval(Duration.ofMinutes(1))
               .build());
-    }
-    for (MetricReader reader : additionalReaders) {
-      meterProvider.registerMetricReader(reader);
     }
     return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }

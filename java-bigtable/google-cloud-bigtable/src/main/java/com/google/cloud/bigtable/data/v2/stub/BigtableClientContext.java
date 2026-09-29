@@ -128,8 +128,7 @@ public class BigtableClientContext {
                 credentials,
                 settings.getMetricsEndpoint(),
                 universeDomain,
-                backgroundExecutor,
-                settings.getAdditionalInternalMetricReaders());
+                backgroundExecutor);
       }
     } catch (Throwable t) {
       logger.log(Level.WARNING, "Failed to get OTEL, will skip exporting client side metrics", t);
