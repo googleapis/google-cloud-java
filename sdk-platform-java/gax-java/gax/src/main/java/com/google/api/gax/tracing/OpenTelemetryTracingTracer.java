@@ -135,18 +135,11 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void attemptStarted(Object request, int attemptNumber) {
-    Span oldSpan = null;
     lock.lock();
     try {
       // Prevent creating new attempt spans if the overall operation has already concluded.
       if (operationCompleted) {
         return;
-      }
-      // If a previous attempt was not explicitly closed before a retry started,
-      // capture it so it can be ended cleanly outside the lock without blocking.
-      if (attemptSpan != null) {
-        oldSpan = attemptSpan;
-        attemptSpan = null;
       }
       Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
 
@@ -175,10 +168,6 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       this.attemptSpan = spanBuilder.startSpan();
     } finally {
       lock.unlock();
-    }
-    // End lingering previous attempt outside the lock to avoid holding the lock during callbacks.
-    if (oldSpan != null) {
-      endAttemptSpan(oldSpan, null);
     }
   }
 

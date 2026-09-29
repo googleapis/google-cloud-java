@@ -34,7 +34,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -720,25 +719,6 @@ class OpenTelemetryTracingTracerTest {
         .containsEntry(
             AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE),
             "CANCELLED");
-  }
-
-  @Test
-  void testAttemptStarted_whenPreviousAttemptActive_closesOldSpan() {
-    Span span1 = mock(Span.class);
-    Span span2 = mock(Span.class);
-
-    when(spanBuilder.startSpan()).thenReturn(span1, span2);
-
-    openTelemetryTracingTracer.attemptStarted(new Object(), 0);
-
-    // Start a second attempt before the first attempt was ended
-    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    verify(span1).end();
-    verify(span2, never()).end();
-
-    // Now complete the second attempt
-    openTelemetryTracingTracer.attemptSucceeded();
-    verify(span2).end();
   }
 
   @Test

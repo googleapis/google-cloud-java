@@ -139,21 +139,24 @@ class OpenTelemetryTracingTracerIntegrationTest {
   }
 
   @Test
-  void testSequentialAttempts_closesPreviousAttemptSpanAndLinksAllToParent() {
+  void testSequentialAttempts_linksAllToParent() {
     Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
     ApiTracer apiTracer;
     try (Scope scope = parentSpan.makeCurrent()) {
       apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
     }
 
-    // Start attempt 0 (e.g. transient failure without explicit endAttempt before retry)
+    // Start and fail attempt 0 with retry delay
     apiTracer.attemptStarted(new Object(), 0);
+    apiTracer.attemptFailedDuration(
+        new RuntimeException("transient error"), java.time.Duration.ofMillis(100));
 
-    // Start attempt 1 - should automatically end attempt 0
-    apiTracer.attemptStarted(new Object(), 1);
     assertThat(spanExporter.getFinishedSpanItems()).hasSize(1);
     SpanData attempt0Span = spanExporter.getFinishedSpanItems().get(0);
     assertThat(attempt0Span.getParentSpanId()).isEqualTo(parentSpan.getSpanContext().getSpanId());
+
+    // Start attempt 1
+    apiTracer.attemptStarted(new Object(), 1);
 
     // Complete attempt 1 and operation
     apiTracer.attemptSucceeded();
