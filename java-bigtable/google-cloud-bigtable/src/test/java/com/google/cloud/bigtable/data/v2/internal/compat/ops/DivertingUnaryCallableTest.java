@@ -31,9 +31,12 @@ import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import io.grpc.Deadline;
+import java.io.IOException;
+import java.net.URI;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -57,7 +60,7 @@ class DivertingUnaryCallableTest {
   @Test
   void perRpcCredentials_fallsBackToClassicAndRecordsTag() throws Exception {
     DivertingUnaryCallable<String, String> callable = callable();
-    GrpcCallContext ctx = GrpcCallContext.createDefault().withCredentials(mock(Credentials.class));
+    GrpcCallContext ctx = GrpcCallContext.createDefault().withCredentials(new FakeCredentials());
 
     ApiFuture<String> result = callable.futureCall("req", ctx);
 
@@ -148,6 +151,31 @@ class DivertingUnaryCallableTest {
 
     @Override
     public void close() {}
+  }
+
+  private static class FakeCredentials extends Credentials {
+    @Override
+    public String getAuthenticationType() {
+      return "fake";
+    }
+
+    @Override
+    public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+      return Map.of();
+    }
+
+    @Override
+    public boolean hasRequestMetadata() {
+      return false;
+    }
+
+    @Override
+    public boolean hasRequestMetadataOnly() {
+      return false;
+    }
+
+    @Override
+    public void refresh() {}
   }
 
   private static class RecordingDebugTagTracer extends DebugTagTracer {
