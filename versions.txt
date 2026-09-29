@@ -67,11 +67,6 @@ grpc-google-cloud-assured-workloads-v1beta1:2.98.0:2.99.0-SNAPSHOT
 grpc-google-cloud-assured-workloads-v1:2.98.0:2.99.0-SNAPSHOT
 proto-google-cloud-assured-workloads-v1beta1:2.98.0:2.99.0-SNAPSHOT
 proto-google-cloud-assured-workloads-v1:2.98.0:2.99.0-SNAPSHOT
-google-cloud-automl:2.98.0:2.99.0-SNAPSHOT
-grpc-google-cloud-automl-v1beta1:2.98.0:2.99.0-SNAPSHOT
-grpc-google-cloud-automl-v1:2.98.0:2.99.0-SNAPSHOT
-proto-google-cloud-automl-v1beta1:2.98.0:2.99.0-SNAPSHOT
-proto-google-cloud-automl-v1:2.98.0:2.99.0-SNAPSHOT
 google-cloud-bare-metal-solution:0.98.0:0.99.0-SNAPSHOT
 proto-google-cloud-bare-metal-solution-v2:0.98.0:0.99.0-SNAPSHOT
 grpc-google-cloud-bare-metal-solution-v2:0.98.0:0.99.0-SNAPSHOT

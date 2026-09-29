@@ -377,15 +377,6 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Audit Manager API
       product_documentation_override: https://cloud.google.com/audit-manager/docs
-  - name: automl
-    version: 2.99.0-SNAPSHOT
-    apis:
-      - path: google/cloud/automl/v1
-      - path: google/cloud/automl/v1beta1
-    java:
-      api_description_override: makes the power of machine learning available to you even if you have limited knowledge of machine learning. You can use AutoML to build on Google's machine learning capabilities to create your own custom machine learning models that are tailored to your business needs, and then integrate those models into your applications and web sites.
-      name_pretty_override: Cloud Auto ML
-      product_documentation_override: https://cloud.google.com/automl/docs/
   - name: backstory
     version: 0.7.0-SNAPSHOT
     apis:
