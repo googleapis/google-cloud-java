@@ -406,7 +406,7 @@ public interface DeviceSessionOrBuilder
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -421,7 +421,7 @@ public interface DeviceSessionOrBuilder
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -436,7 +436,7 @@ public interface DeviceSessionOrBuilder
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -444,6 +444,49 @@ public interface DeviceSessionOrBuilder
    * </code>
    */
   com.google.cloud.devicestreaming.v1.AndroidDeviceOrBuilder getAndroidDeviceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientInfo field is set.
+   */
+  boolean hasClientInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientInfo.
+   */
+  com.google.cloud.devicestreaming.v1.ClientInfo getClientInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder getClientInfoOrBuilder();
 
   com.google.cloud.devicestreaming.v1.DeviceSession.ExpirationCase getExpirationCase();
 }

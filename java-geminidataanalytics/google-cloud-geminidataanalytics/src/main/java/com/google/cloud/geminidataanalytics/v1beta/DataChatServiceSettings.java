@@ -116,6 +116,11 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
     return ((DataChatServiceStubSettings) getStubSettings()).deleteConversationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateConversation. */
+  public UnaryCallSettings<UpdateConversationRequest, Conversation> updateConversationSettings() {
+    return ((DataChatServiceStubSettings) getStubSettings()).updateConversationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getConversation. */
   public UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings() {
     return ((DataChatServiceStubSettings) getStubSettings()).getConversationSettings();
@@ -277,6 +282,12 @@ public class DataChatServiceSettings extends ClientSettings<DataChatServiceSetti
     public UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
         deleteConversationSettings() {
       return getStubSettingsBuilder().deleteConversationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversation. */
+    public UnaryCallSettings.Builder<UpdateConversationRequest, Conversation>
+        updateConversationSettings() {
+      return getStubSettingsBuilder().updateConversationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getConversation. */

@@ -452,6 +452,59 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
         : pipelineDebugInfo_;
   }
 
+  public static final int TOKEN_USAGE_FIELD_NUMBER = 10;
+  private com.google.cloud.geminidataanalytics.v1beta.TokenUsage tokenUsage_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return Whether the tokenUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenUsage() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return The tokenUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage() {
+    return tokenUsage_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+        : tokenUsage_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder getTokenUsageOrBuilder() {
+    return tokenUsage_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+        : tokenUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -485,6 +538,9 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getPipelineDebugInfo());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getTokenUsage());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -517,6 +573,9 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPipelineDebugInfo());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTokenUsage());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -546,6 +605,10 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (hasPipelineDebugInfo()) {
       if (!getPipelineDebugInfo().equals(other.getPipelineDebugInfo())) return false;
     }
+    if (hasTokenUsage() != other.hasTokenUsage()) return false;
+    if (hasTokenUsage()) {
+      if (!getTokenUsage().equals(other.getTokenUsage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -574,6 +637,10 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (hasPipelineDebugInfo()) {
       hash = (37 * hash) + PIPELINE_DEBUG_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getPipelineDebugInfo().hashCode();
+    }
+    if (hasTokenUsage()) {
+      hash = (37 * hash) + TOKEN_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenUsage().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -719,6 +786,7 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetQueryResultFieldBuilder();
         internalGetPipelineDebugInfoFieldBuilder();
+        internalGetTokenUsageFieldBuilder();
       }
     }
 
@@ -739,6 +807,11 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       if (pipelineDebugInfoBuilder_ != null) {
         pipelineDebugInfoBuilder_.dispose();
         pipelineDebugInfoBuilder_ = null;
+      }
+      tokenUsage_ = null;
+      if (tokenUsageBuilder_ != null) {
+        tokenUsageBuilder_.dispose();
+        tokenUsageBuilder_ = null;
       }
       return this;
     }
@@ -804,6 +877,10 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
                 : pipelineDebugInfoBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tokenUsage_ = tokenUsageBuilder_ == null ? tokenUsage_ : tokenUsageBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -851,6 +928,9 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasPipelineDebugInfo()) {
         mergePipelineDebugInfo(other.getPipelineDebugInfo());
+      }
+      if (other.hasTokenUsage()) {
+        mergeTokenUsage(other.getTokenUsage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -917,6 +997,13 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetTokenUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1965,6 +2052,203 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
         pipelineDebugInfo_ = null;
       }
       return pipelineDebugInfoBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.TokenUsage tokenUsage_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>
+        tokenUsageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     *
+     * @return Whether the tokenUsage field is set.
+     */
+    public boolean hasTokenUsage() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     *
+     * @return The tokenUsage.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage() {
+      if (tokenUsageBuilder_ == null) {
+        return tokenUsage_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+            : tokenUsage_;
+      } else {
+        return tokenUsageBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder setTokenUsage(com.google.cloud.geminidataanalytics.v1beta.TokenUsage value) {
+      if (tokenUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenUsage_ = value;
+      } else {
+        tokenUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder setTokenUsage(
+        com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder builderForValue) {
+      if (tokenUsageBuilder_ == null) {
+        tokenUsage_ = builderForValue.build();
+      } else {
+        tokenUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder mergeTokenUsage(com.google.cloud.geminidataanalytics.v1beta.TokenUsage value) {
+      if (tokenUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && tokenUsage_ != null
+            && tokenUsage_
+                != com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()) {
+          getTokenUsageBuilder().mergeFrom(value);
+        } else {
+          tokenUsage_ = value;
+        }
+      } else {
+        tokenUsageBuilder_.mergeFrom(value);
+      }
+      if (tokenUsage_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder clearTokenUsage() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      tokenUsage_ = null;
+      if (tokenUsageBuilder_ != null) {
+        tokenUsageBuilder_.dispose();
+        tokenUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder getTokenUsageBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetTokenUsageFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder
+        getTokenUsageOrBuilder() {
+      if (tokenUsageBuilder_ != null) {
+        return tokenUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenUsage_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+            : tokenUsage_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>
+        internalGetTokenUsageFieldBuilder() {
+      if (tokenUsageBuilder_ == null) {
+        tokenUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>(
+                getTokenUsage(), getParentForChildren(), isClean());
+        tokenUsage_ = null;
+      }
+      return tokenUsageBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.QueryDataResponse)

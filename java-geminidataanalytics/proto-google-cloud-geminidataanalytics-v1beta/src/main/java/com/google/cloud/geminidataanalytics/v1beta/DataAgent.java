@@ -809,6 +809,221 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int BIGQUERY_AGENT_ANALYTICS_ENABLED_FIELD_NUMBER = 18;
+  private boolean bigqueryAgentAnalyticsEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether BigQuery Agent Analytics trace logging is
+   * enabled for the agent.
+   *
+   * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+   * projects only. In a project that is not enrolled this field is accepted
+   * and stored, but no trace rows are written and no error is returned.
+   *
+   * Trace logging is additionally suppressed for the entire turn, without
+   * error, when any table in the agent's datasource carries row-level
+   * security, column-level security or policy tags. It is also suppressed
+   * when that determination cannot be made, for example when the caller
+   * lacks permission to list a table's row access policies.
+   *
+   * Trace rows are written only when this is `true` and
+   * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+   * this without a table has no effect: no table is created for the agent
+   * and no rows are written. On an agent whose datasource is not BigQuery,
+   * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+   *
+   * This setting is independent of the project-level BigQuery Agent Analytics
+   * setting configured through `SetAgentOpsObservability`. An agent does not
+   * inherit that setting.
+   * </pre>
+   *
+   * <code>
+   * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bigqueryAgentAnalyticsEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryAgentAnalyticsEnabled() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls whether BigQuery Agent Analytics trace logging is
+   * enabled for the agent.
+   *
+   * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+   * projects only. In a project that is not enrolled this field is accepted
+   * and stored, but no trace rows are written and no error is returned.
+   *
+   * Trace logging is additionally suppressed for the entire turn, without
+   * error, when any table in the agent's datasource carries row-level
+   * security, column-level security or policy tags. It is also suppressed
+   * when that determination cannot be made, for example when the caller
+   * lacks permission to list a table's row access policies.
+   *
+   * Trace rows are written only when this is `true` and
+   * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+   * this without a table has no effect: no table is created for the agent
+   * and no rows are written. On an agent whose datasource is not BigQuery,
+   * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+   *
+   * This setting is independent of the project-level BigQuery Agent Analytics
+   * setting configured through `SetAgentOpsObservability`. An agent does not
+   * inherit that setting.
+   * </pre>
+   *
+   * <code>
+   * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bigqueryAgentAnalyticsEnabled.
+   */
+  @java.lang.Override
+  public boolean getBigqueryAgentAnalyticsEnabled() {
+    return bigqueryAgentAnalyticsEnabled_;
+  }
+
+  public static final int BIGQUERY_AGENT_ANALYTICS_TABLE_FIELD_NUMBER = 19;
+  private com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+      bigqueryAgentAnalyticsTable_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+   * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+   * `true`. The Preview enrollment described on that field applies here too.
+   *
+   * The trace table is validated when it is set on `CreateDataAgent`, or when
+   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * following are rejected with `INVALID_ARGUMENT`:
+   *
+   * * The table must belong to the same project as the agent.
+   * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+   * supported for Looker, Looker Studio or AlloyDB agents.
+   *
+   * These are validated against the agent as sent in the request. An agent
+   * that carries no datasource is not validated, and an agent switched to a
+   * non-BigQuery datasource is not re-validated; in the latter case no trace
+   * rows are written.
+   *
+   * The destination dataset must already exist and must grant write access to
+   * the project's Gemini Data Analytics service agent, whose address is
+   * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+   * (that grant is not performed on your behalf). Without it the agent answers
+   * normally and no trace rows are written.
+   *
+   * Changing the table on an existing agent affects subsequent turns only. Rows
+   * already written to the previous table are left in place.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bigqueryAgentAnalyticsTable field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigqueryAgentAnalyticsTable() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+   * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+   * `true`. The Preview enrollment described on that field applies here too.
+   *
+   * The trace table is validated when it is set on `CreateDataAgent`, or when
+   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * following are rejected with `INVALID_ARGUMENT`:
+   *
+   * * The table must belong to the same project as the agent.
+   * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+   * supported for Looker, Looker Studio or AlloyDB agents.
+   *
+   * These are validated against the agent as sent in the request. An agent
+   * that carries no datasource is not validated, and an agent switched to a
+   * non-BigQuery datasource is not re-validated; in the latter case no trace
+   * rows are written.
+   *
+   * The destination dataset must already exist and must grant write access to
+   * the project's Gemini Data Analytics service agent, whose address is
+   * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+   * (that grant is not performed on your behalf). Without it the agent answers
+   * normally and no trace rows are written.
+   *
+   * Changing the table on an existing agent affects subsequent turns only. Rows
+   * already written to the previous table are left in place.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bigqueryAgentAnalyticsTable.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+      getBigqueryAgentAnalyticsTable() {
+    return bigqueryAgentAnalyticsTable_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.getDefaultInstance()
+        : bigqueryAgentAnalyticsTable_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+   * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+   * `true`. The Preview enrollment described on that field applies here too.
+   *
+   * The trace table is validated when it is set on `CreateDataAgent`, or when
+   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * following are rejected with `INVALID_ARGUMENT`:
+   *
+   * * The table must belong to the same project as the agent.
+   * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+   * supported for Looker, Looker Studio or AlloyDB agents.
+   *
+   * These are validated against the agent as sent in the request. An agent
+   * that carries no datasource is not validated, and an agent switched to a
+   * non-BigQuery datasource is not re-validated; in the latter case no trace
+   * rows are written.
+   *
+   * The destination dataset must already exist and must grant write access to
+   * the project's Gemini Data Analytics service agent, whose address is
+   * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+   * (that grant is not performed on your behalf). Without it the agent answers
+   * normally and no trace rows are written.
+   *
+   * Changing the table on an existing agent affects subsequent turns only. Rows
+   * already written to the previous table are left in place.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder
+      getBigqueryAgentAnalyticsTableOrBuilder() {
+    return bigqueryAgentAnalyticsTable_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.getDefaultInstance()
+        : bigqueryAgentAnalyticsTable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -848,6 +1063,12 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 14, kmsKey_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(18, bigqueryAgentAnalyticsEnabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(19, getBigqueryAgentAnalyticsTable());
     }
     if (typeCase_ == 101) {
       output.writeMessage(
@@ -896,6 +1117,15 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(14, kmsKey_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(18, bigqueryAgentAnalyticsEnabled_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getBigqueryAgentAnalyticsTable());
+    }
     if (typeCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -940,6 +1170,17 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (hasKmsKey() != other.hasKmsKey()) return false;
     if (hasKmsKey()) {
       if (!getKmsKey().equals(other.getKmsKey())) return false;
+    }
+    if (hasBigqueryAgentAnalyticsEnabled() != other.hasBigqueryAgentAnalyticsEnabled())
+      return false;
+    if (hasBigqueryAgentAnalyticsEnabled()) {
+      if (getBigqueryAgentAnalyticsEnabled() != other.getBigqueryAgentAnalyticsEnabled())
+        return false;
+    }
+    if (hasBigqueryAgentAnalyticsTable() != other.hasBigqueryAgentAnalyticsTable()) return false;
+    if (hasBigqueryAgentAnalyticsTable()) {
+      if (!getBigqueryAgentAnalyticsTable().equals(other.getBigqueryAgentAnalyticsTable()))
+        return false;
     }
     if (!getTypeCase().equals(other.getTypeCase())) return false;
     switch (typeCase_) {
@@ -989,6 +1230,16 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
     if (hasKmsKey()) {
       hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKmsKey().hashCode();
+    }
+    if (hasBigqueryAgentAnalyticsEnabled()) {
+      hash = (37 * hash) + BIGQUERY_AGENT_ANALYTICS_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getBigqueryAgentAnalyticsEnabled());
+    }
+    if (hasBigqueryAgentAnalyticsTable()) {
+      hash = (37 * hash) + BIGQUERY_AGENT_ANALYTICS_TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getBigqueryAgentAnalyticsTable().hashCode();
     }
     switch (typeCase_) {
       case 101:
@@ -1166,6 +1417,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetDeleteTimeFieldBuilder();
         internalGetPurgeTimeFieldBuilder();
+        internalGetBigqueryAgentAnalyticsTableFieldBuilder();
       }
     }
 
@@ -1201,6 +1453,12 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         purgeTimeBuilder_ = null;
       }
       kmsKey_ = "";
+      bigqueryAgentAnalyticsEnabled_ = false;
+      bigqueryAgentAnalyticsTable_ = null;
+      if (bigqueryAgentAnalyticsTableBuilder_ != null) {
+        bigqueryAgentAnalyticsTableBuilder_.dispose();
+        bigqueryAgentAnalyticsTableBuilder_ = null;
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -1274,6 +1532,17 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         result.kmsKey_ = kmsKey_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.bigqueryAgentAnalyticsEnabled_ = bigqueryAgentAnalyticsEnabled_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.bigqueryAgentAnalyticsTable_ =
+            bigqueryAgentAnalyticsTableBuilder_ == null
+                ? bigqueryAgentAnalyticsTable_
+                : bigqueryAgentAnalyticsTableBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1331,6 +1600,12 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
         kmsKey_ = other.kmsKey_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (other.hasBigqueryAgentAnalyticsEnabled()) {
+        setBigqueryAgentAnalyticsEnabled(other.getBigqueryAgentAnalyticsEnabled());
+      }
+      if (other.hasBigqueryAgentAnalyticsTable()) {
+        mergeBigqueryAgentAnalyticsTable(other.getBigqueryAgentAnalyticsTable());
       }
       switch (other.getTypeCase()) {
         case DATA_ANALYTICS_AGENT:
@@ -1433,6 +1708,20 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 114
+            case 144:
+              {
+                bigqueryAgentAnalyticsEnabled_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 144
+            case 154:
+              {
+                input.readMessage(
+                    internalGetBigqueryAgentAnalyticsTableFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 154
             case 810:
               {
                 input.readMessage(
@@ -3348,6 +3637,610 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private boolean bigqueryAgentAnalyticsEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether BigQuery Agent Analytics trace logging is
+     * enabled for the agent.
+     *
+     * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+     * projects only. In a project that is not enrolled this field is accepted
+     * and stored, but no trace rows are written and no error is returned.
+     *
+     * Trace logging is additionally suppressed for the entire turn, without
+     * error, when any table in the agent's datasource carries row-level
+     * security, column-level security or policy tags. It is also suppressed
+     * when that determination cannot be made, for example when the caller
+     * lacks permission to list a table's row access policies.
+     *
+     * Trace rows are written only when this is `true` and
+     * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+     * this without a table has no effect: no table is created for the agent
+     * and no rows are written. On an agent whose datasource is not BigQuery,
+     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     *
+     * This setting is independent of the project-level BigQuery Agent Analytics
+     * setting configured through `SetAgentOpsObservability`. An agent does not
+     * inherit that setting.
+     * </pre>
+     *
+     * <code>
+     * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bigqueryAgentAnalyticsEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryAgentAnalyticsEnabled() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether BigQuery Agent Analytics trace logging is
+     * enabled for the agent.
+     *
+     * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+     * projects only. In a project that is not enrolled this field is accepted
+     * and stored, but no trace rows are written and no error is returned.
+     *
+     * Trace logging is additionally suppressed for the entire turn, without
+     * error, when any table in the agent's datasource carries row-level
+     * security, column-level security or policy tags. It is also suppressed
+     * when that determination cannot be made, for example when the caller
+     * lacks permission to list a table's row access policies.
+     *
+     * Trace rows are written only when this is `true` and
+     * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+     * this without a table has no effect: no table is created for the agent
+     * and no rows are written. On an agent whose datasource is not BigQuery,
+     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     *
+     * This setting is independent of the project-level BigQuery Agent Analytics
+     * setting configured through `SetAgentOpsObservability`. An agent does not
+     * inherit that setting.
+     * </pre>
+     *
+     * <code>
+     * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bigqueryAgentAnalyticsEnabled.
+     */
+    @java.lang.Override
+    public boolean getBigqueryAgentAnalyticsEnabled() {
+      return bigqueryAgentAnalyticsEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether BigQuery Agent Analytics trace logging is
+     * enabled for the agent.
+     *
+     * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+     * projects only. In a project that is not enrolled this field is accepted
+     * and stored, but no trace rows are written and no error is returned.
+     *
+     * Trace logging is additionally suppressed for the entire turn, without
+     * error, when any table in the agent's datasource carries row-level
+     * security, column-level security or policy tags. It is also suppressed
+     * when that determination cannot be made, for example when the caller
+     * lacks permission to list a table's row access policies.
+     *
+     * Trace rows are written only when this is `true` and
+     * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+     * this without a table has no effect: no table is created for the agent
+     * and no rows are written. On an agent whose datasource is not BigQuery,
+     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     *
+     * This setting is independent of the project-level BigQuery Agent Analytics
+     * setting configured through `SetAgentOpsObservability`. An agent does not
+     * inherit that setting.
+     * </pre>
+     *
+     * <code>
+     * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bigqueryAgentAnalyticsEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBigqueryAgentAnalyticsEnabled(boolean value) {
+
+      bigqueryAgentAnalyticsEnabled_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls whether BigQuery Agent Analytics trace logging is
+     * enabled for the agent.
+     *
+     * BigQuery Agent Analytics is in Preview and is delivered to enrolled
+     * projects only. In a project that is not enrolled this field is accepted
+     * and stored, but no trace rows are written and no error is returned.
+     *
+     * Trace logging is additionally suppressed for the entire turn, without
+     * error, when any table in the agent's datasource carries row-level
+     * security, column-level security or policy tags. It is also suppressed
+     * when that determination cannot be made, for example when the caller
+     * lacks permission to list a table's row access policies.
+     *
+     * Trace rows are written only when this is `true` and
+     * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
+     * this without a table has no effect: no table is created for the agent
+     * and no rows are written. On an agent whose datasource is not BigQuery,
+     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     *
+     * This setting is independent of the project-level BigQuery Agent Analytics
+     * setting configured through `SetAgentOpsObservability`. An agent does not
+     * inherit that setting.
+     * </pre>
+     *
+     * <code>
+     * optional bool bigquery_agent_analytics_enabled = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBigqueryAgentAnalyticsEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      bigqueryAgentAnalyticsEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+        bigqueryAgentAnalyticsTable_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder>
+        bigqueryAgentAnalyticsTableBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bigqueryAgentAnalyticsTable field is set.
+     */
+    public boolean hasBigqueryAgentAnalyticsTable() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bigqueryAgentAnalyticsTable.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+        getBigqueryAgentAnalyticsTable() {
+      if (bigqueryAgentAnalyticsTableBuilder_ == null) {
+        return bigqueryAgentAnalyticsTable_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+                .getDefaultInstance()
+            : bigqueryAgentAnalyticsTable_;
+      } else {
+        return bigqueryAgentAnalyticsTableBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBigqueryAgentAnalyticsTable(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference value) {
+      if (bigqueryAgentAnalyticsTableBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bigqueryAgentAnalyticsTable_ = value;
+      } else {
+        bigqueryAgentAnalyticsTableBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBigqueryAgentAnalyticsTable(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder
+            builderForValue) {
+      if (bigqueryAgentAnalyticsTableBuilder_ == null) {
+        bigqueryAgentAnalyticsTable_ = builderForValue.build();
+      } else {
+        bigqueryAgentAnalyticsTableBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBigqueryAgentAnalyticsTable(
+        com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference value) {
+      if (bigqueryAgentAnalyticsTableBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && bigqueryAgentAnalyticsTable_ != null
+            && bigqueryAgentAnalyticsTable_
+                != com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+                    .getDefaultInstance()) {
+          getBigqueryAgentAnalyticsTableBuilder().mergeFrom(value);
+        } else {
+          bigqueryAgentAnalyticsTable_ = value;
+        }
+      } else {
+        bigqueryAgentAnalyticsTableBuilder_.mergeFrom(value);
+      }
+      if (bigqueryAgentAnalyticsTable_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBigqueryAgentAnalyticsTable() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      bigqueryAgentAnalyticsTable_ = null;
+      if (bigqueryAgentAnalyticsTableBuilder_ != null) {
+        bigqueryAgentAnalyticsTableBuilder_.dispose();
+        bigqueryAgentAnalyticsTableBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder
+        getBigqueryAgentAnalyticsTableBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetBigqueryAgentAnalyticsTableFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder
+        getBigqueryAgentAnalyticsTableOrBuilder() {
+      if (bigqueryAgentAnalyticsTableBuilder_ != null) {
+        return bigqueryAgentAnalyticsTableBuilder_.getMessageOrBuilder();
+      } else {
+        return bigqueryAgentAnalyticsTable_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference
+                .getDefaultInstance()
+            : bigqueryAgentAnalyticsTable_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BigQuery table that BigQuery Agent Analytics trace rows are
+     * written to. Has no effect unless `bigquery_agent_analytics_enabled` is
+     * `true`. The Preview enrollment described on that field applies here too.
+     *
+     * The trace table is validated when it is set on `CreateDataAgent`, or when
+     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * following are rejected with `INVALID_ARGUMENT`:
+     *
+     * * The table must belong to the same project as the agent.
+     * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
+     * supported for Looker, Looker Studio or AlloyDB agents.
+     *
+     * These are validated against the agent as sent in the request. An agent
+     * that carries no datasource is not validated, and an agent switched to a
+     * non-BigQuery datasource is not re-validated; in the latter case no trace
+     * rows are written.
+     *
+     * The destination dataset must already exist and must grant write access to
+     * the project's Gemini Data Analytics service agent, whose address is
+     * `service-PROJECT_NUMBER&#64;gcp-sa-geminidataanalytics.iam.gserviceaccount.com`
+     * (that grant is not performed on your behalf). Without it the agent answers
+     * normally and no trace rows are written.
+     *
+     * Changing the table on an existing agent affects subsequent turns only. Rows
+     * already written to the previous table are left in place.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.BigQueryTableReference bigquery_agent_analytics_table = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder>
+        internalGetBigqueryAgentAnalyticsTableFieldBuilder() {
+      if (bigqueryAgentAnalyticsTableBuilder_ == null) {
+        bigqueryAgentAnalyticsTableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference,
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceOrBuilder>(
+                getBigqueryAgentAnalyticsTable(), getParentForChildren(), isClean());
+        bigqueryAgentAnalyticsTable_ = null;
+      }
+      return bigqueryAgentAnalyticsTableBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.DataAgent)

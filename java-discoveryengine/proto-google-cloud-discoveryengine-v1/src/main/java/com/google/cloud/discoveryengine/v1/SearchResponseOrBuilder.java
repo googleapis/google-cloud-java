@@ -338,6 +338,68 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the appliedControls.
+   */
+  java.util.List<java.lang.String> getAppliedControlsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of appliedControls.
+   */
+  int getAppliedControlsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The appliedControls at the given index.
+   */
+  java.lang.String getAppliedControls(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls applied as part of the Control service.
+   * </pre>
+   *
+   * <code>
+   * repeated string applied_controls = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the appliedControls at the given index.
+   */
+  com.google.protobuf.ByteString getAppliedControlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Query expansion information for the returned results.
    * </pre>
    *

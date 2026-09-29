@@ -33,6 +33,11 @@ import com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRespo
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.OperationMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityResponse;
 import com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -137,6 +142,26 @@ public abstract class DataAgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setAgentOpsObservabilityOperationCallable()");
+  }
+
+  public UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable() {
+    throw new UnsupportedOperationException("Not implemented: setAgentOpsObservabilityCallable()");
+  }
+
+  public UnaryCallable<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: retrieveAgentOpsObservabilityCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

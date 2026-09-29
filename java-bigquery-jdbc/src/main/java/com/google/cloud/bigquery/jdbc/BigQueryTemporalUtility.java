@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -47,6 +49,7 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
+  static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
 
@@ -56,7 +59,7 @@ final class BigQueryTemporalUtility {
    */
   public static Timestamp boxDateTime(String val, ZoneId zoneId) {
     ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
-    String isoString = truncateIsoFractionToNanos(val.replace(' ', 'T'));
+    String isoString = truncateFractionalSeconds(val.replace(' ', 'T'), 9);
     return Timestamp.from(LocalDateTime.parse(isoString).atZone(targetZone).toInstant());
   }
 
@@ -77,7 +80,7 @@ final class BigQueryTemporalUtility {
    * perfectly accurate modern conversions.
    */
   public static Time boxTime(String val, ZoneId zoneId) {
-    LocalTime localTime = LocalTime.parse(truncateIsoFractionToNanos(val));
+    LocalTime localTime = LocalTime.parse(truncateFractionalSeconds(val, 9));
 
     if (zoneId == null) {
       // JDBC 4.2 Modern API (no Calendar provided):
@@ -136,7 +139,7 @@ final class BigQueryTemporalUtility {
     }
 
     // Truncate sub-nanosecond fraction (> 9 digits) to prevent Instant.parse failure
-    iso = truncateIsoFractionToNanos(iso);
+    iso = truncateFractionalSeconds(iso, 9);
 
     try {
       return Timestamp.from(Instant.parse(iso));
@@ -306,6 +309,34 @@ final class BigQueryTemporalUtility {
     return sb.toString();
   }
 
+  /**
+   * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
+   * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
+   * string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
+   */
+  static String formatTimestampValue(Object value, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    if (value == null) {
+      return null;
+    }
+    if (value instanceof Long) {
+      return formatTimestampStringFromMicroseconds((Long) value, enableTimestampPicos);
+    }
+    String str = value.toString();
+    if (str.indexOf(':') >= 0) {
+      return formatTimestampStringFromIso(str, enableTimestampPicos);
+    }
+    return formatTimestampStringFromEpochDecimal(str, enableTimestampPicos);
+  }
+
+  static boolean isPicosecondTimestamp(Field field) {
+    return field != null
+        && field.getType() != null
+        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP
+        && field.getTimestampPrecision() != null
+        && field.getTimestampPrecision() > 6;
+  }
+
   private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {
     StringBuilder sb = new StringBuilder(scale == 12 ? 32 : 26);
     BASE_FORMATTER.formatTo(dt, sb);
@@ -313,30 +344,31 @@ final class BigQueryTemporalUtility {
   }
 
   /**
-   * Truncates sub-second fractional digits to at most 9 digits (nanoseconds) so that standard JDK
-   * temporal parsers (which cap at nanosecond precision) can parse the string without throwing
-   * {@link java.time.format.DateTimeParseException}. Any trailing timezone offset or suffix is
-   * preserved intact.
+   * Truncates sub-second fractional digits in a timestamp string to at most {@code maxDigits}. Any
+   * trailing timezone offset or suffix is preserved intact.
    */
-  private static String truncateIsoFractionToNanos(String iso) {
-    int dotIdx = iso.indexOf('.');
+  static String truncateFractionalSeconds(String str, int maxDigits) {
+    if (str == null) {
+      return null;
+    }
+    int dotIdx = str.indexOf('.');
     if (dotIdx < 0) {
-      return iso;
+      return str;
     }
 
     int fractionStart = dotIdx + 1;
     int fractionEnd = fractionStart;
-    while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
+    int len = str.length();
+    while (fractionEnd < len && Character.isDigit(str.charAt(fractionEnd))) {
       fractionEnd++;
     }
 
     int fractionDigits = fractionEnd - fractionStart;
-    if (fractionDigits <= 9) {
-      return iso;
+    if (fractionDigits <= maxDigits) {
+      return str;
     }
 
-    // Retain the first 9 fractional digits and append any trailing suffix (e.g., 'Z' or offset)
-    return iso.substring(0, fractionStart + 9) + iso.substring(fractionEnd);
+    return str.substring(0, fractionStart + maxDigits) + str.substring(fractionEnd);
   }
 
   /**

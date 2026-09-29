@@ -96,12 +96,13 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Information about encryption keys which are used to encrypt the
-   * data.
+   * Optional. Information about encryption keys which are used to encrypt the
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the encryptionInfo field is set.
@@ -112,12 +113,13 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Information about encryption keys which are used to encrypt the
-   * data.
+   * Optional. Information about encryption keys which are used to encrypt the
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The encryptionInfo.
@@ -128,12 +130,13 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Information about encryption keys which are used to encrypt the
-   * data.
+   * Optional. Information about encryption keys which are used to encrypt the
+   * data. This field must be provided when ad events contain
+   * [UserData][google.ads.datamanager.v1.UserData].
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.ads.datamanager.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
@@ -149,7 +152,7 @@ public interface IngestAdEventsRequestOrBuilder
    * </code>
    *
    * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-   *     google/ads/datamanager/v1/ingestion_service.proto;l=278
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=281
    * @return The validateOnly.
    */
   @java.lang.Deprecated

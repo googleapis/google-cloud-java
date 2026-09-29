@@ -1306,6 +1306,27 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INVALID_REMOVE_AS_OF_TIME = 125;</code>
    */
   INVALID_REMOVE_AS_OF_TIME(125),
+  /**
+   *
+   *
+   * <pre>
+   * Request status is only available for approximately 50 days after the API
+   * receives a request.
+   * </pre>
+   *
+   * <code>REQUEST_TOO_OLD = 126;</code>
+   */
+  REQUEST_TOO_OLD(126),
+  /**
+   *
+   *
+   * <pre>
+   * The conversion action was created too recently.
+   * </pre>
+   *
+   * <code>CONVERSION_ACTION_TOO_RECENTLY_CREATED = 127;</code>
+   */
+  CONVERSION_ACTION_TOO_RECENTLY_CREATED(127),
   UNRECOGNIZED(-1),
   ;
 
@@ -2717,6 +2738,29 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int INVALID_REMOVE_AS_OF_TIME_VALUE = 125;
 
+  /**
+   *
+   *
+   * <pre>
+   * Request status is only available for approximately 50 days after the API
+   * receives a request.
+   * </pre>
+   *
+   * <code>REQUEST_TOO_OLD = 126;</code>
+   */
+  public static final int REQUEST_TOO_OLD_VALUE = 126;
+
+  /**
+   *
+   *
+   * <pre>
+   * The conversion action was created too recently.
+   * </pre>
+   *
+   * <code>CONVERSION_ACTION_TOO_RECENTLY_CREATED = 127;</code>
+   */
+  public static final int CONVERSION_ACTION_TOO_RECENTLY_CREATED_VALUE = 127;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2991,6 +3035,10 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return REQUIRED_PREREQUISITE_LINK_MISSING;
       case 125:
         return INVALID_REMOVE_AS_OF_TIME;
+      case 126:
+        return REQUEST_TOO_OLD;
+      case 127:
+        return CONVERSION_ACTION_TOO_RECENTLY_CREATED;
       default:
         return null;
     }

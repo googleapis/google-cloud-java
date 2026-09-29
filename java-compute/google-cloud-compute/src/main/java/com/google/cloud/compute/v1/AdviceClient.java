@@ -77,6 +77,42 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> Capacity</td>
+ *      <td><p> Advice on making real-time decisions (such as choosing zone or machine types) during deployment to maximize your chances of obtaining capacity.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> capacity(CapacityAdviceRpcRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> capacity(String project, String region, CapacityAdviceRequest capacityAdviceRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> capacityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CapacityHistory</td>
+ *      <td><p> Gets the capacity history.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> capacityHistory(CapacityHistoryAdviceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> capacityHistory(String project, String region, CapacityHistoryRequest capacityHistoryRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> capacityHistoryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -269,6 +305,206 @@ public class AdviceClient implements BackgroundResource {
   public final UnaryCallable<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeCallable() {
     return stub.calendarModeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advice on making real-time decisions (such as choosing zone or machine types) during deployment
+   * to maximize your chances of obtaining capacity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   CapacityAdviceRequest capacityAdviceRequestResource =
+   *       CapacityAdviceRequest.newBuilder().build();
+   *   CapacityAdviceResponse response =
+   *       adviceClient.capacity(project, region, capacityAdviceRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param capacityAdviceRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CapacityAdviceResponse capacity(
+      String project, String region, CapacityAdviceRequest capacityAdviceRequestResource) {
+    CapacityAdviceRpcRequest request =
+        CapacityAdviceRpcRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setCapacityAdviceRequestResource(capacityAdviceRequestResource)
+            .build();
+    return capacity(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advice on making real-time decisions (such as choosing zone or machine types) during deployment
+   * to maximize your chances of obtaining capacity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   CapacityAdviceRpcRequest request =
+   *       CapacityAdviceRpcRequest.newBuilder()
+   *           .setCapacityAdviceRequestResource(CapacityAdviceRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   CapacityAdviceResponse response = adviceClient.capacity(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CapacityAdviceResponse capacity(CapacityAdviceRpcRequest request) {
+    return capacityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Advice on making real-time decisions (such as choosing zone or machine types) during deployment
+   * to maximize your chances of obtaining capacity.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   CapacityAdviceRpcRequest request =
+   *       CapacityAdviceRpcRequest.newBuilder()
+   *           .setCapacityAdviceRequestResource(CapacityAdviceRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<CapacityAdviceResponse> future =
+   *       adviceClient.capacityCallable().futureCall(request);
+   *   // Do something.
+   *   CapacityAdviceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacityCallable() {
+    return stub.capacityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the capacity history.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   CapacityHistoryRequest capacityHistoryRequestResource =
+   *       CapacityHistoryRequest.newBuilder().build();
+   *   CapacityHistoryResponse response =
+   *       adviceClient.capacityHistory(project, region, capacityHistoryRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region for this request.
+   * @param capacityHistoryRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CapacityHistoryResponse capacityHistory(
+      String project, String region, CapacityHistoryRequest capacityHistoryRequestResource) {
+    CapacityHistoryAdviceRequest request =
+        CapacityHistoryAdviceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setCapacityHistoryRequestResource(capacityHistoryRequestResource)
+            .build();
+    return capacityHistory(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the capacity history.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   CapacityHistoryAdviceRequest request =
+   *       CapacityHistoryAdviceRequest.newBuilder()
+   *           .setCapacityHistoryRequestResource(CapacityHistoryRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   CapacityHistoryResponse response = adviceClient.capacityHistory(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CapacityHistoryResponse capacityHistory(CapacityHistoryAdviceRequest request) {
+    return capacityHistoryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the capacity history.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdviceClient adviceClient = AdviceClient.create()) {
+   *   CapacityHistoryAdviceRequest request =
+   *       CapacityHistoryAdviceRequest.newBuilder()
+   *           .setCapacityHistoryRequestResource(CapacityHistoryRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<CapacityHistoryResponse> future =
+   *       adviceClient.capacityHistoryCallable().futureCall(request);
+   *   // Do something.
+   *   CapacityHistoryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistoryCallable() {
+    return stub.capacityHistoryCallable();
   }
 
   @Override

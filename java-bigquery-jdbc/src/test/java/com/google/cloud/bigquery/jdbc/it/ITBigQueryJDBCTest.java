@@ -1022,7 +1022,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     insertStmt.setShort(10, (short) 34);
     insertStmt.setBytes(11, new byte[] {0x3, 0x4});
     insertStmt.setObject(12, 6.28d);
-    insertStmt.setObject(13, false);
+    // calling setObject with null value without Type should now work with inferred Types.
+    insertStmt.setObject(13, null);
     insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
@@ -1043,6 +1044,91 @@ public class ITBigQueryJDBCTest extends ITBase {
     updateStmt.setInt(2, 222);
     boolean updateStatus = updateStmt.execute();
     assertFalse(updateStatus);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedQueryWithExtraPositionalParameterCharacter() throws SQLException {
+    String TABLE_NAME = "JDBC_PREPARED_EXTRA_PARAM_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+
+    // This query would report an incorrect parameter count if dryRun is not used to infer parameter
+    // count
+    String selectQuery =
+        String.format("SELECT 'Hello, ?World!' AS message, ? FROM %s.%s", DATASET, TABLE_NAME);
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement selectStmt = bigQueryConnection.prepareStatement(selectQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData parameterMetaData = selectStmt.getParameterMetaData();
+    assertNotNull(parameterMetaData);
+    assertEquals(1, parameterMetaData.getParameterCount());
+
+    // Tests that ResultSet Schema is populated before query execution
+    ResultSetMetaData resultSetMetaData = selectStmt.getMetaData();
+    assertEquals("message", resultSetMetaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, resultSetMetaData.getColumnType(1));
+
+    selectStmt.setString(1, "StringField");
+    ResultSet selectResult2 = selectStmt.executeQuery();
+    assertNotNull(selectResult2);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedInferredParameterTypes() throws SQLException {
+
+    String TABLE_NAME = "JDBC_PREPARED_PARAMETER_INFER_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NumericField` NUMERIC, "
+                + "`BigNumericField` BIGNUMERIC, `DateField` DATE, `TimeField` TIME, `DateTimeField` DATETIME, `TimestampField` TIMESTAMP, `ArrayField` ARRAY<STRING>, `StructField` STRUCT<subField STRING>, "
+                + "`JsonField` JSON, `GeographyField` GEOGRAPHY, `IntervalField` INTERVAL, `RangeField` RANGE<DATE>);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, BytesField, DoubleField, BooleanField, NumericField, BigNumericField, "
+                + "DateField, TimeField, DateTimeField, TimestampField, ArrayField, StructField, JsonField, GeographyField, IntervalField, RangeField) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    int[] expectedValues = {
+      -9, -5, -3, 8, 16, 2, 2, 91, 92, 93, 93, 2003, 2002, 1111, 1111, 1111, 1111
+    };
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    ParameterMetaData parameterMetaData = insertStmt.getParameterMetaData();
+    for (int i = 0; i < parameterMetaData.getParameterCount(); i++) {
+      assertEquals(expectedValues[i], parameterMetaData.getParameterType(i + 1));
+    }
+
+    // Testing an Exception is thrown if not all values are set.
+    insertStmt.setString(1, "String1");
+    insertStmt.setInt(2, 111);
+    insertStmt.setObject(4, 1.5);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    assertThrows(BigQueryJdbcException.class, insertStmt::execute);
 
     boolean dropStatus = bigQueryStatement.execute(dropQuery);
     assertFalse(dropStatus);
@@ -2511,6 +2597,49 @@ public class ITBigQueryJDBCTest extends ITBase {
     }
   }
 
+  private void validateNull(
+      String method,
+      BiFunction<ResultSet, Integer, Object> getter,
+      ImmutableMap<String, Object> expectedResult,
+      Object expectedDefaultValue)
+      throws Exception {
+
+    try (Connection connection = DriverManager.getConnection(connection_uri);
+        Connection connectionHTAPI =
+            DriverManager.getConnection(
+                connection_uri
+                    + ";HighThroughputMinTableSize=0;HighThroughputActivationRatio=0;EnableHighThroughputAPI=1;");
+        Statement statement = connection.createStatement();
+        Statement statementHTAPI = connectionHTAPI.createStatement()) {
+
+      String query =
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null", PROJECT_ID, DATASET);
+      ResultSet resultSetRegular = statement.executeQuery(query);
+      ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
+      resultSetRegular.next();
+      resultSetArrow.next();
+
+      for (int i = 1; i <= resultSetRegular.getMetaData().getColumnCount(); i++) {
+        String columnName = resultSetRegular.getMetaData().getColumnName(i);
+        if (!columnName.contains("array") && expectedResult.containsKey(columnName)) {
+          String regularApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: Regular] [Null Scenario]", method, columnName);
+          String htapiApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: HTAPI] [Null Scenario]", method, columnName);
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetRegular, i), regularApiLabel);
+          assertTrue(resultSetRegular.wasNull(), regularApiLabel + " wasNull should be true");
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetArrow, i), htapiApiLabel);
+          assertTrue(resultSetArrow.wasNull(), htapiApiLabel + " wasNull should be true");
+        }
+      }
+    }
+  }
+
   @Test
   public void validateGetString() throws Exception {
     DateTimeFormatter timestampFormatter =
@@ -2523,6 +2652,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             "[%s, %s]",
             Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
             Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
+
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
             .put("stringField", "StringValue")
@@ -2567,6 +2697,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getString", getter, stringResults);
+    validateNull("getString", getter, stringResults, null);
   }
 
   @Test
@@ -2587,6 +2718,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getInt", getter, result);
+    validateNull("getInt", getter, result, 0);
   }
 
   @Test
@@ -2607,6 +2739,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getLong", getter, result);
+    validateNull("getLong", getter, result, 0L);
   }
 
   @Test
@@ -2629,6 +2762,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getBool", getter, result);
+    validateNull("getBool", getter, result, false);
   }
 
   @Test
@@ -2650,6 +2784,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getFloat", getter, result);
+    validateNull("getFloat", getter, result, 0.0f);
   }
 
   @Test
@@ -2671,6 +2806,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDouble", getter, result);
+    validateNull("getDouble", getter, result, 0.0d);
   }
 
   @Test
@@ -2691,6 +2827,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getShort", getter, result);
+    validateNull("getShort", getter, result, (short) 0);
   }
 
   @Test
@@ -2712,6 +2849,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTime", getter, result);
+    validateNull("getTime", getter, result, null);
   }
 
   @Test
@@ -2731,6 +2869,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDate", getter, result);
+    validateNull("getDate", getter, result, null);
   }
 
   @Test
@@ -2751,6 +2890,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTimestamp", getter, result);
+    validateNull("getTimestamp", getter, result, null);
   }
 
   @Test
@@ -2770,6 +2910,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getByte", getter, result);
+    validateNull("getByte", getter, result, (byte) 0);
   }
 
   @Test
@@ -2877,6 +3018,32 @@ public class ITBigQueryJDBCTest extends ITBase {
         for (File f : remaining) {
           f.delete();
         }
+      }
+    }
+  }
+
+  @Test
+  public void testSessionAbortedOnConnectionClose() throws SQLException {
+    String sessionId;
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      try (Statement statement = connection.createStatement()) {
+        statement.execute("CREATE TEMP TABLE session_temp_table (id INT64);");
+      }
+      BigQueryConnection bqConn = connection.unwrap(BigQueryConnection.class);
+      assertNotNull(bqConn.getSessionInfoConnectionProperty());
+      sessionId = bqConn.getSessionInfoConnectionProperty().getValue();
+      assertNotNull(sessionId);
+    }
+
+    // After connection is closed, the session is aborted on the BigQuery server.
+    // Attaching to the same session_id in a new connection should fail when running a query.
+    String urlWithAbortedSession =
+        connection_uri + "EnableSession=1;QueryProperties=session_id=" + sessionId + ";";
+    try (Connection newConnection = DriverManager.getConnection(urlWithAbortedSession)) {
+      try (Statement statement = newConnection.createStatement()) {
+        SQLException ex =
+            assertThrows(
+                SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
       }
     }
   }

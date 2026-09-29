@@ -146,7 +146,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "t.v1\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\032\035google/chat/v1"
           + "/audience.proto\032\"google/chat/v1/history_state.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\214\032\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\323\033\n"
           + "\005Space\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022/\n"
           + "\004type\030\002"
@@ -196,35 +196,39 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\013AccessState\022\034\n"
           + "\030ACCESS_STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PRIVATE\020\001\022\020\n"
-          + "\014DISCOVERABLE\020\002\032\276\001\n"
+          + "\014DISCOVERABLE\020\002\032\231\002\n"
           + "\030AccessPermissionSettings\022R\n"
           + "\026discover_space_setting\030\001"
           + " \001(\0132-.google.chat.v1.Space.AccessPermissionSettingB\003\340A\001\022N\n"
           + "\022join_space_setting\030\002"
-          + " \001(\0132-.google.chat.v1.Space.AccessPermissionSettingB\003\340A\001\032V\n"
+          + " \001(\0132-.google.chat.v1.Space.AccessPermissionSettingB\003\340A\001\022Y\n"
+          + "\035view_space_membership_setting\030\003 \001(\0132-.g"
+          + "oogle.chat.v1.Space.AccessPermissionSettingB\003\340A\001\032V\n"
           + "\027AccessPermissionSetting\022;\n\n"
           + "principals\030\001"
           + " \003(\0132\037.google.chat.v1.Space.PrincipalB\006\340A\001\340A\006\032K\n"
           + "\tPrincipal\022,\n"
           + "\010audience\030\001 \001(\0132\030.google.chat.v1.AudienceH\000B\020\n"
-          + "\016principal_type\032\250\006\n"
+          + "\016principal_type\032\224\007\n"
           + "\022PermissionSettings\022T\n"
-          + "\031manage_members_and_groups\030\001"
-          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\000\210\001\001\022O\n"
-          + "\024modify_space_details\030\002"
-          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\001\210\001\001\022I\n"
-          + "\016toggle_history\030\003"
-          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\002\210\001\001\022M\n"
+          + "\031manage_members_and_groups\030\001 \001(\0132\'.google"
+          + ".chat.v1.Space.PermissionSettingB\003\340A\001H\000\210\001\001\022O\n"
+          + "\024modify_space_details\030\002 \001(\0132\'.googl"
+          + "e.chat.v1.Space.PermissionSettingB\003\340A\001H\001\210\001\001\022I\n"
+          + "\016toggle_history\030\003 \001(\0132\'.google.cha"
+          + "t.v1.Space.PermissionSettingB\003\340A\001H\002\210\001\001\022M\n"
           + "\022use_at_mention_all\030\004"
           + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\003\210\001\001\022F\n"
           + "\013manage_apps\030\005"
           + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\004\210\001\001\022J\n"
-          + "\017manage_webhooks\030\006 "
-          + "\001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\005\210\001\001\022H\n\r"
-          + "post_messages\030\007 \001(\0132\'."
-          + "google.chat.v1.Space.PermissionSettingB\003\340A\003H\006\210\001\001\022I\n"
-          + "\016reply_messages\030\010 \001(\0132\'.googl"
-          + "e.chat.v1.Space.PermissionSettingB\003\340A\001H\007\210\001\001B\034\n"
+          + "\017manage_webhooks\030\006"
+          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\005\210\001\001\022H\n\r"
+          + "post_messages\030\007"
+          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\003H\006\210\001\001\022I\n"
+          + "\016reply_messages\030\010 "
+          + "\001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\007\210\001\001\022P\n"
+          + "\025view_space_membership\030\t"
+          + " \001(\0132\'.google.chat.v1.Space.PermissionSettingB\003\340A\001H\010\210\001\001B\034\n"
           + "\032_manage_members_and_groupsB\027\n"
           + "\025_modify_space_detailsB\021\n"
           + "\017_toggle_historyB\025\n"
@@ -232,7 +236,8 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\014_manage_appsB\022\n"
           + "\020_manage_webhooksB\020\n"
           + "\016_post_messagesB\021\n"
-          + "\017_reply_messages\032\235\001\n"
+          + "\017_reply_messagesB\030\n"
+          + "\026_view_space_membership\032\235\001\n"
           + "\021PermissionSetting\022\035\n"
           + "\020managers_allowed\030\001 \001(\010B\003\340A\001\022,\n"
           + "\032assistant_managers_allowed\030\003"
@@ -299,8 +304,8 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\006spaces\030\001 \003(\0132\025.google.chat.v1.SpaceB\002\030\001\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
           + "total_size\030\003 \001(\005\022L\n"
-          + "\007results\030\004 \003(\0132"
-          + "6.google.chat.v1.SearchSpacesResponse.SearchSpaceResultB\003\340A\003\032>\n"
+          + "\007results\030\004 \003(\01326"
+          + ".google.chat.v1.SearchSpacesResponse.SearchSpaceResultB\003\340A\003\032>\n"
           + "\021SearchSpaceResult\022)\n"
           + "\005space\030\001 \001(\0132\025.google.chat.v1.SpaceB\003\340A\003\"d\n"
           + "\022DeleteSpaceRequest\022/\n"
@@ -317,9 +322,9 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\035SPACE_VIEW_RESOURCE_NAME_ONLY\020\003\022\027\n"
           + "\023SPACE_VIEW_EXPANDED\020\004B\243\001\n"
           + "\022com.google.chat.v1B\n"
-          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;chatpb\242\002"
-          + "\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023Goo"
-          + "gle\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;chatpb\242\002\013"
+          + "DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023Goog"
+          + "le\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -390,7 +395,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_Space_AccessPermissionSettings_descriptor,
             new java.lang.String[] {
-              "DiscoverSpaceSetting", "JoinSpaceSetting",
+              "DiscoverSpaceSetting", "JoinSpaceSetting", "ViewSpaceMembershipSetting",
             });
     internal_static_google_chat_v1_Space_AccessPermissionSetting_descriptor =
         internal_static_google_chat_v1_Space_descriptor.getNestedType(4);
@@ -422,6 +427,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "ManageWebhooks",
               "PostMessages",
               "ReplyMessages",
+              "ViewSpaceMembership",
             });
     internal_static_google_chat_v1_Space_PermissionSetting_descriptor =
         internal_static_google_chat_v1_Space_descriptor.getNestedType(7);

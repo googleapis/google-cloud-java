@@ -50,12 +50,14 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
@@ -194,7 +196,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseQueryCache(this.connection.isUseQueryCache());
     querySettings.setQueryDialect(this.connection.getQueryDialect());
     querySettings.setKmsKeyName(this.connection.getKmsKeyName());
-    querySettings.setQueryProperties(this.connection.getQueryProperties());
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    querySettings.setQueryProperties(snapshot.queryProperties);
     querySettings.setAllowLargeResults(this.connection.isAllowLargeResults());
     if (this.connection.getJobTimeoutInSeconds() > 0) {
       querySettings.setJobTimeoutMs(this.connection.getJobTimeoutInSeconds() * 1000L);
@@ -210,8 +213,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // only create session if enable session and session info is null
     if (this.connection.isSessionEnabled()) {
       querySettings.setEnableSession(this.connection.isSessionEnabled());
-      querySettings.setSessionInfoConnectionProperty(
-          this.connection.getSessionInfoConnectionProperty());
+      querySettings.setSessionInfoConnectionProperty(snapshot.sessionInfo);
     }
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
@@ -240,7 +242,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeQuery", this.connection, sql, () -> executeQueryImpl(sql));
   }
@@ -265,7 +267,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeLargeUpdate",
         this.connection,
@@ -306,7 +308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.execute", this.connection, sql, () -> executeImpl(sql));
   }
@@ -612,7 +614,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (tableResult.getSessionInfo() != null) {
       String sessionId = tableResult.getSessionInfo().getSessionId();
       if (sessionId != null && !sessionId.isEmpty()) {
-        this.connection.updateSessionInfo(sessionId);
+        this.connection.initSessionInfo(sessionId);
       }
     }
   }
@@ -883,6 +885,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // format
       ReadSession.Builder sessionBuilder =
           ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW);
+      TableReadOptions readOptions = buildTableReadOptions();
+      if (readOptions != null) {
+        sessionBuilder.setReadOptions(readOptions);
+      }
 
       CreateReadSessionRequest.Builder builder =
           CreateReadSessionRequest.newBuilder()
@@ -923,18 +929,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
       }
-      if (ex instanceof RuntimeException) {
-        throw (ex instanceof BigQueryJdbcRuntimeException)
-            ? (BigQueryJdbcRuntimeException) ex
-            : new BigQueryJdbcRuntimeException(ex);
-      }
-      if (ex instanceof SQLException) {
-        throw (ex instanceof BigQueryJdbcException)
-            ? (BigQueryJdbcException) ex
-            : new BigQueryJdbcException(ex);
-      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
+  }
+
+  private TableReadOptions buildTableReadOptions() {
+    if (!isEnableTimestampPicos()) {
+      return null;
+    }
+    return TableReadOptions.newBuilder()
+        .setArrowSerializationOptions(
+            ArrowSerializationOptions.newBuilder()
+                .setPicosTimestampPrecision(
+                    ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS)
+                .build())
+        .build();
   }
 
   /** Asynchronously reads results and populates an arrow record queue */
@@ -1489,30 +1498,26 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
-    ConnectionProperty sessionProperty =
-        this.connection != null
-            ? this.connection.getSessionInfoConnectionProperty()
-            : this.querySettings.getSessionInfoConnectionProperty();
-    boolean isSessionEnabled =
-        this.connection != null
-            ? this.connection.isSessionEnabled()
-            : this.querySettings.isEnableSession();
-    List<ConnectionProperty> queryProperties =
-        this.connection != null
-            ? this.connection.getQueryProperties()
-            : this.querySettings.getQueryProperties();
+    // Only reachable from execute paths, which call checkClosed() first, so this.connection is
+    // non-null here; close() is the only thing that nulls it.
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    ConnectionProperty sessionProperty = snapshot.sessionInfo;
+    boolean isSessionEnabled = this.connection.isSessionEnabled();
+    List<ConnectionProperty> queryProperties = snapshot.queryProperties;
 
     List<ConnectionProperty> props =
         queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
 
     if (sessionProperty != null) {
       boolean hasSessionId =
-          props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
+          props.stream()
+              .anyMatch(cp -> BigQueryConnection.SESSION_ID_KEY.equalsIgnoreCase(cp.getKey()));
       if (!hasSessionId) {
         props.add(sessionProperty);
       }
     } else if (isSessionEnabled) {
       queryConfigBuilder.setCreateSession(true);
+      this.connection.markSessionCreatedByDriver();
     }
 
     if (!props.isEmpty()) {
@@ -1686,6 +1691,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeBatch",
         this.connection,
@@ -1847,6 +1853,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
+  /**
+   * Validates that the statement is open and that execution configuration settings are compatible.
+   *
+   * @throws SQLException if the statement is closed or settings are incompatible
+   */
+  void validateExecution() throws SQLException {
+    checkClosed();
+    if (isEnableTimestampPicos() && getUseLegacySql()) {
+      throw new BigQueryJdbcException(
+          "Picosecond data is incompatible with Legacy SQL. "
+              + "To query your Picosecond data, please set QueryDialect to SQL "
+              + "and restructure your query as a Standard SQL query.");
+    }
+  }
+
   enum SqlType {
     SELECT,
     DML,
@@ -1879,5 +1900,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
+  }
+
+  QueryStatistics describePositionalParameterQuery(String query)
+      throws BigQueryJdbcException, BigQueryJdbcSqlSyntaxErrorException {
+    LOG.finer("++enter++");
+    return getQueryStatistics(getJobConfig(query).setParameterMode("POSITIONAL").build());
   }
 }

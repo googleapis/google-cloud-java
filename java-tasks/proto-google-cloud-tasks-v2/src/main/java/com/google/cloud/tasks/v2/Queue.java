@@ -484,6 +484,59 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         : appEngineRoutingOverride_;
   }
 
+  public static final int HTTP_TARGET_FIELD_NUMBER = 10;
+  private com.google.cloud.tasks.v2.HttpTarget httpTarget_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   *
+   * @return Whether the httpTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasHttpTarget() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   *
+   * @return The httpTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2.HttpTarget getHttpTarget() {
+    return httpTarget_ == null
+        ? com.google.cloud.tasks.v2.HttpTarget.getDefaultInstance()
+        : httpTarget_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2.HttpTargetOrBuilder getHttpTargetOrBuilder() {
+    return httpTarget_ == null
+        ? com.google.cloud.tasks.v2.HttpTarget.getDefaultInstance()
+        : httpTarget_;
+  }
+
   public static final int RATE_LIMITS_FIELD_NUMBER = 3;
   private com.google.cloud.tasks.v2.RateLimits rateLimits_;
 
@@ -504,8 +557,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *
@@ -527,7 +580,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRateLimits() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -547,8 +600,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *
@@ -592,8 +645,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *
@@ -643,7 +696,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRetryConfig() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -776,7 +829,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPurgeTime() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -849,7 +902,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStackdriverLoggingConfig() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -911,20 +964,23 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getAppEngineRoutingOverride());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getRateLimits());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getRetryConfig());
     }
     if (state_ != com.google.cloud.tasks.v2.Queue.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, state_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getPurgeTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(9, getStackdriverLoggingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getHttpTarget());
     }
     getUnknownFields().writeTo(output);
   }
@@ -943,22 +999,25 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getAppEngineRoutingOverride());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRateLimits());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRetryConfig());
     }
     if (state_ != com.google.cloud.tasks.v2.Queue.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, state_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getPurgeTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getStackdriverLoggingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getHttpTarget());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -979,6 +1038,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
     if (hasAppEngineRoutingOverride() != other.hasAppEngineRoutingOverride()) return false;
     if (hasAppEngineRoutingOverride()) {
       if (!getAppEngineRoutingOverride().equals(other.getAppEngineRoutingOverride())) return false;
+    }
+    if (hasHttpTarget() != other.hasHttpTarget()) return false;
+    if (hasHttpTarget()) {
+      if (!getHttpTarget().equals(other.getHttpTarget())) return false;
     }
     if (hasRateLimits() != other.hasRateLimits()) return false;
     if (hasRateLimits()) {
@@ -1013,6 +1076,10 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
     if (hasAppEngineRoutingOverride()) {
       hash = (37 * hash) + APP_ENGINE_ROUTING_OVERRIDE_FIELD_NUMBER;
       hash = (53 * hash) + getAppEngineRoutingOverride().hashCode();
+    }
+    if (hasHttpTarget()) {
+      hash = (37 * hash) + HTTP_TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + getHttpTarget().hashCode();
     }
     if (hasRateLimits()) {
       hash = (37 * hash) + RATE_LIMITS_FIELD_NUMBER;
@@ -1174,6 +1241,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetAppEngineRoutingOverrideFieldBuilder();
+        internalGetHttpTargetFieldBuilder();
         internalGetRateLimitsFieldBuilder();
         internalGetRetryConfigFieldBuilder();
         internalGetPurgeTimeFieldBuilder();
@@ -1190,6 +1258,11 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       if (appEngineRoutingOverrideBuilder_ != null) {
         appEngineRoutingOverrideBuilder_.dispose();
         appEngineRoutingOverrideBuilder_ = null;
+      }
+      httpTarget_ = null;
+      if (httpTargetBuilder_ != null) {
+        httpTargetBuilder_.dispose();
+        httpTargetBuilder_ = null;
       }
       rateLimits_ = null;
       if (rateLimitsBuilder_ != null) {
@@ -1259,27 +1332,31 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.rateLimits_ = rateLimitsBuilder_ == null ? rateLimits_ : rateLimitsBuilder_.build();
+        result.httpTarget_ = httpTargetBuilder_ == null ? httpTarget_ : httpTargetBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.retryConfig_ =
-            retryConfigBuilder_ == null ? retryConfig_ : retryConfigBuilder_.build();
+        result.rateLimits_ = rateLimitsBuilder_ == null ? rateLimits_ : rateLimitsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.state_ = state_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
+        result.retryConfig_ =
+            retryConfigBuilder_ == null ? retryConfig_ : retryConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.purgeTime_ = purgeTimeBuilder_ == null ? purgeTime_ : purgeTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.stackdriverLoggingConfig_ =
             stackdriverLoggingConfigBuilder_ == null
                 ? stackdriverLoggingConfig_
                 : stackdriverLoggingConfigBuilder_.build();
-        to_bitField0_ |= 0x00000010;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1303,6 +1380,9 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAppEngineRoutingOverride()) {
         mergeAppEngineRoutingOverride(other.getAppEngineRoutingOverride());
+      }
+      if (other.hasHttpTarget()) {
+        mergeHttpTarget(other.getHttpTarget());
       }
       if (other.hasRateLimits()) {
         mergeRateLimits(other.getRateLimits());
@@ -1363,27 +1443,27 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetRateLimitsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetRetryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(
                     internalGetPurgeTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 74:
@@ -1391,9 +1471,16 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetStackdriverLoggingConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetHttpTargetFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1906,6 +1993,200 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       return appEngineRoutingOverrideBuilder_;
     }
 
+    private com.google.cloud.tasks.v2.HttpTarget httpTarget_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.tasks.v2.HttpTarget,
+            com.google.cloud.tasks.v2.HttpTarget.Builder,
+            com.google.cloud.tasks.v2.HttpTargetOrBuilder>
+        httpTargetBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     *
+     * @return Whether the httpTarget field is set.
+     */
+    public boolean hasHttpTarget() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     *
+     * @return The httpTarget.
+     */
+    public com.google.cloud.tasks.v2.HttpTarget getHttpTarget() {
+      if (httpTargetBuilder_ == null) {
+        return httpTarget_ == null
+            ? com.google.cloud.tasks.v2.HttpTarget.getDefaultInstance()
+            : httpTarget_;
+      } else {
+        return httpTargetBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public Builder setHttpTarget(com.google.cloud.tasks.v2.HttpTarget value) {
+      if (httpTargetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        httpTarget_ = value;
+      } else {
+        httpTargetBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public Builder setHttpTarget(com.google.cloud.tasks.v2.HttpTarget.Builder builderForValue) {
+      if (httpTargetBuilder_ == null) {
+        httpTarget_ = builderForValue.build();
+      } else {
+        httpTargetBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public Builder mergeHttpTarget(com.google.cloud.tasks.v2.HttpTarget value) {
+      if (httpTargetBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && httpTarget_ != null
+            && httpTarget_ != com.google.cloud.tasks.v2.HttpTarget.getDefaultInstance()) {
+          getHttpTargetBuilder().mergeFrom(value);
+        } else {
+          httpTarget_ = value;
+        }
+      } else {
+        httpTargetBuilder_.mergeFrom(value);
+      }
+      if (httpTarget_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public Builder clearHttpTarget() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      httpTarget_ = null;
+      if (httpTargetBuilder_ != null) {
+        httpTargetBuilder_.dispose();
+        httpTargetBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public com.google.cloud.tasks.v2.HttpTarget.Builder getHttpTargetBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetHttpTargetFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    public com.google.cloud.tasks.v2.HttpTargetOrBuilder getHttpTargetOrBuilder() {
+      if (httpTargetBuilder_ != null) {
+        return httpTargetBuilder_.getMessageOrBuilder();
+      } else {
+        return httpTarget_ == null
+            ? com.google.cloud.tasks.v2.HttpTarget.getDefaultInstance()
+            : httpTarget_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies HTTP target for HTTP tasks.
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.tasks.v2.HttpTarget,
+            com.google.cloud.tasks.v2.HttpTarget.Builder,
+            com.google.cloud.tasks.v2.HttpTargetOrBuilder>
+        internalGetHttpTargetFieldBuilder() {
+      if (httpTargetBuilder_ == null) {
+        httpTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.tasks.v2.HttpTarget,
+                com.google.cloud.tasks.v2.HttpTarget.Builder,
+                com.google.cloud.tasks.v2.HttpTargetOrBuilder>(
+                getHttpTarget(), getParentForChildren(), isClean());
+        httpTarget_ = null;
+      }
+      return httpTargetBuilder_;
+    }
+
     private com.google.cloud.tasks.v2.RateLimits rateLimits_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.tasks.v2.RateLimits,
@@ -1930,8 +2211,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -1952,7 +2233,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * @return Whether the rateLimits field is set.
      */
     public boolean hasRateLimits() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1972,8 +2253,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2020,8 +2301,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2048,7 +2329,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         rateLimitsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2070,8 +2351,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2095,7 +2376,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         rateLimitsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2117,8 +2398,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2138,7 +2419,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRateLimits(com.google.cloud.tasks.v2.RateLimits value) {
       if (rateLimitsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && rateLimits_ != null
             && rateLimits_ != com.google.cloud.tasks.v2.RateLimits.getDefaultInstance()) {
           getRateLimitsBuilder().mergeFrom(value);
@@ -2149,7 +2430,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         rateLimitsBuilder_.mergeFrom(value);
       }
       if (rateLimits_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2172,8 +2453,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2192,7 +2473,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.tasks.v2.RateLimits rate_limits = 3;</code>
      */
     public Builder clearRateLimits() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       rateLimits_ = null;
       if (rateLimitsBuilder_ != null) {
         rateLimitsBuilder_.dispose();
@@ -2219,8 +2500,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2239,7 +2520,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.tasks.v2.RateLimits rate_limits = 3;</code>
      */
     public com.google.cloud.tasks.v2.RateLimits.Builder getRateLimitsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetRateLimitsFieldBuilder().getBuilder();
     }
@@ -2261,8 +2542,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2307,8 +2588,8 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * queue, regardless of whether the dispatch is from a first
      * attempt or a retry).
      * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-     * happens to
-     * particular a task after its first attempt fails. That is,
+     * happens to a
+     * particular task after its first attempt fails. That is,
      * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
      * retries (the second attempt, third attempt, etc).
      *
@@ -2371,7 +2652,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * @return Whether the retryConfig field is set.
      */
     public boolean hasRetryConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2431,7 +2712,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         retryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2460,7 +2741,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         retryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2485,7 +2766,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRetryConfig(com.google.cloud.tasks.v2.RetryConfig value) {
       if (retryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && retryConfig_ != null
             && retryConfig_ != com.google.cloud.tasks.v2.RetryConfig.getDefaultInstance()) {
           getRetryConfigBuilder().mergeFrom(value);
@@ -2496,7 +2777,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         retryConfigBuilder_.mergeFrom(value);
       }
       if (retryConfig_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2521,7 +2802,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.tasks.v2.RetryConfig retry_config = 4;</code>
      */
     public Builder clearRetryConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       retryConfig_ = null;
       if (retryConfigBuilder_ != null) {
         retryConfigBuilder_.dispose();
@@ -2550,7 +2831,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.tasks.v2.RetryConfig retry_config = 4;</code>
      */
     public com.google.cloud.tasks.v2.RetryConfig.Builder getRetryConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetRetryConfigFieldBuilder().getBuilder();
     }
@@ -2664,7 +2945,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2717,7 +2998,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -2742,7 +3023,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;
@@ -2778,7 +3059,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * @return Whether the purgeTime field is set.
      */
     public boolean hasPurgeTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2840,7 +3121,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         purgeTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2871,7 +3152,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         purgeTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2898,7 +3179,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergePurgeTime(com.google.protobuf.Timestamp value) {
       if (purgeTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && purgeTime_ != null
             && purgeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getPurgeTimeBuilder().mergeFrom(value);
@@ -2909,7 +3190,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         purgeTimeBuilder_.mergeFrom(value);
       }
       if (purgeTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2936,7 +3217,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp purge_time = 6;</code>
      */
     public Builder clearPurgeTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       purgeTime_ = null;
       if (purgeTimeBuilder_ != null) {
         purgeTimeBuilder_.dispose();
@@ -2967,7 +3248,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp purge_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetPurgeTimeFieldBuilder().getBuilder();
     }
@@ -3058,7 +3339,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackdriverLoggingConfig field is set.
      */
     public boolean hasStackdriverLoggingConfig() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3105,7 +3386,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         stackdriverLoggingConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3128,7 +3409,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
       } else {
         stackdriverLoggingConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3147,7 +3428,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
     public Builder mergeStackdriverLoggingConfig(
         com.google.cloud.tasks.v2.StackdriverLoggingConfig value) {
       if (stackdriverLoggingConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && stackdriverLoggingConfig_ != null
             && stackdriverLoggingConfig_
                 != com.google.cloud.tasks.v2.StackdriverLoggingConfig.getDefaultInstance()) {
@@ -3159,7 +3440,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
         stackdriverLoggingConfigBuilder_.mergeFrom(value);
       }
       if (stackdriverLoggingConfig_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3177,7 +3458,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.tasks.v2.StackdriverLoggingConfig stackdriver_logging_config = 9;</code>
      */
     public Builder clearStackdriverLoggingConfig() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       stackdriverLoggingConfig_ = null;
       if (stackdriverLoggingConfigBuilder_ != null) {
         stackdriverLoggingConfigBuilder_.dispose();
@@ -3200,7 +3481,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.tasks.v2.StackdriverLoggingConfig.Builder
         getStackdriverLoggingConfigBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetStackdriverLoggingConfigFieldBuilder().getBuilder();
     }

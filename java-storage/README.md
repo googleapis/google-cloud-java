@@ -45,12 +45,12 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>2.73.0</version>
+  <version>2.74.0</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage-control</artifactId>
-  <version>2.73.0</version>
+  <version>2.74.0</version>
 </dependency>
 ```
 
@@ -65,13 +65,13 @@ implementation 'com.google.cloud:google-cloud-storage'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-storage:2.73.0'
+implementation 'com.google.cloud:google-cloud-storage:2.74.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "2.73.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "2.74.0"
 ```
 
 ## Authentication
@@ -310,6 +310,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/
 | Create Folder | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/CreateFolder.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/CreateFolder.java) |
 | Create Hierarchical Namespace Bucket | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/CreateHierarchicalNamespaceBucket.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/CreateHierarchicalNamespaceBucket.java) |
 | Delete Folder | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/DeleteFolder.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/DeleteFolder.java) |
+| Delete Folder Recursive | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/DeleteFolderRecursive.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/DeleteFolderRecursive.java) |
 | Get Folder | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/GetFolder.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/GetFolder.java) |
 | List Folders | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/ListFolders.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/ListFolders.java) |
 | Rename Folder | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/control/v2/RenameFolder.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/control/v2/RenameFolder.java) |
@@ -363,6 +364,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/google-cloud-java/
 | Open Object Multiple Ranged Read | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/OpenObjectMultipleRangedRead.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/OpenObjectMultipleRangedRead.java) |
 | Open Object Read Full Object | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/OpenObjectReadFullObject.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/OpenObjectReadFullObject.java) |
 | Open Object Single Ranged Read | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/OpenObjectSingleRangedRead.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/OpenObjectSingleRangedRead.java) |
+| Optimize Write Latency Pool | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/OptimizeWriteLatencyPool.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/OptimizeWriteLatencyPool.java) |
 | Pause And Resume Appendable Object Upload | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/PauseAndResumeAppendableObjectUpload.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/PauseAndResumeAppendableObjectUpload.java) |
 | Print Blob Acl | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/PrintBlobAcl.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/PrintBlobAcl.java) |
 | Print Blob Acl For User | [source code](https://github.com/googleapis/google-cloud-java/blob/main/samples/snippets/src/main/java/com/example/storage/object/PrintBlobAclForUser.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/google-cloud-java&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/storage/object/PrintBlobAclForUser.java) |
@@ -472,7 +474,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-storage/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-storage.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-storage/2.73.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-storage/2.74.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

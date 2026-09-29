@@ -159,7 +159,6 @@ public interface ExecutedQueryResultOrBuilder
    * <pre>
    * The total number of rows in the full result set, if known.
    * This may be an estimate or an exact count.
-   *
    * Note: if an internal limit (such as LIMIT 1000) was applied during query
    * execution to guard against excessive data transfer, this count reflects the
    * truncated result size rather than the unrestricted table result size.

@@ -1,0 +1,117 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkservices.v1beta1",
+  "libraryPackage": "com.google.cloud.networkservices.v1beta1",
+  "services": {
+    "DepService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DepServiceClient",
+          "rpcs": {
+            "CreateExtensionBinding": {
+              "methods": ["createExtensionBindingAsync", "createExtensionBindingAsync", "createExtensionBindingAsync", "createExtensionBindingOperationCallable", "createExtensionBindingCallable"]
+            },
+            "CreateLbRouteExtension": {
+              "methods": ["createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionAsync", "createLbRouteExtensionOperationCallable", "createLbRouteExtensionCallable"]
+            },
+            "CreateLbTrafficExtension": {
+              "methods": ["createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionAsync", "createLbTrafficExtensionOperationCallable", "createLbTrafficExtensionCallable"]
+            },
+            "DeleteExtensionBinding": {
+              "methods": ["deleteExtensionBindingAsync", "deleteExtensionBindingAsync", "deleteExtensionBindingAsync", "deleteExtensionBindingOperationCallable", "deleteExtensionBindingCallable"]
+            },
+            "DeleteLbRouteExtension": {
+              "methods": ["deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionAsync", "deleteLbRouteExtensionOperationCallable", "deleteLbRouteExtensionCallable"]
+            },
+            "DeleteLbTrafficExtension": {
+              "methods": ["deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionAsync", "deleteLbTrafficExtensionOperationCallable", "deleteLbTrafficExtensionCallable"]
+            },
+            "GetExtensionBinding": {
+              "methods": ["getExtensionBinding", "getExtensionBinding", "getExtensionBinding", "getExtensionBindingCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLbRouteExtension": {
+              "methods": ["getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtension", "getLbRouteExtensionCallable"]
+            },
+            "GetLbTrafficExtension": {
+              "methods": ["getLbTrafficExtension", "getLbTrafficExtension", "getLbTrafficExtension", "getLbTrafficExtensionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListExtensionBindings": {
+              "methods": ["listExtensionBindings", "listExtensionBindings", "listExtensionBindings", "listExtensionBindingsPagedCallable", "listExtensionBindingsCallable"]
+            },
+            "ListLbRouteExtensions": {
+              "methods": ["listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensions", "listLbRouteExtensionsPagedCallable", "listLbRouteExtensionsCallable"]
+            },
+            "ListLbTrafficExtensions": {
+              "methods": ["listLbTrafficExtensions", "listLbTrafficExtensions", "listLbTrafficExtensions", "listLbTrafficExtensionsPagedCallable", "listLbTrafficExtensionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateExtensionBinding": {
+              "methods": ["updateExtensionBindingAsync", "updateExtensionBindingAsync", "updateExtensionBindingOperationCallable", "updateExtensionBindingCallable"]
+            },
+            "UpdateLbRouteExtension": {
+              "methods": ["updateLbRouteExtensionAsync", "updateLbRouteExtensionAsync", "updateLbRouteExtensionOperationCallable", "updateLbRouteExtensionCallable"]
+            },
+            "UpdateLbTrafficExtension": {
+              "methods": ["updateLbTrafficExtensionAsync", "updateLbTrafficExtensionAsync", "updateLbTrafficExtensionOperationCallable", "updateLbTrafficExtensionCallable"]
+            }
+          }
+        }
+      }
+    },
+    "NetworkServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkServicesClient",
+          "rpcs": {
+            "CreateEndpointPolicy": {
+              "methods": ["createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyOperationCallable", "createEndpointPolicyCallable"]
+            },
+            "DeleteEndpointPolicy": {
+              "methods": ["deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyOperationCallable", "deleteEndpointPolicyCallable"]
+            },
+            "GetEndpointPolicy": {
+              "methods": ["getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicyCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListEndpointPolicies": {
+              "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateEndpointPolicy": {
+              "methods": ["updateEndpointPolicyAsync", "updateEndpointPolicyAsync", "updateEndpointPolicyOperationCallable", "updateEndpointPolicyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

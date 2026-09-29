@@ -35,9 +35,17 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.resumable.ChunkUploadRequest;
+import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
-import java.io.InputStream;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -54,46 +62,89 @@ import org.jspecify.annotations.Nullable;
 public class ResumableUploadCallableImpl<RequestT, ResponseT>
     extends ResumableUploadCallable<RequestT, ResponseT> {
 
+  private static final RetrySettings RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+          .setRetryDelayMultiplier(2.0)
+          .setMaxRetryDelayDuration(Duration.ofSeconds(60))
+          .setMaxAttempts(5)
+          .setInitialRpcTimeoutDuration(Duration.ofMinutes(1))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeoutDuration(Duration.ofMinutes(1))
+          .setTotalTimeoutDuration(Duration.ofMinutes(2))
+          .build();
+
   private final ResumableUploadClient<RequestT, ResponseT> client;
-  private final ResumableUploadCallSettings defaultCallSettings;
+  private final ResumableUploadOptions defaultOptions;
   private final ClientContext clientContext;
+  private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
+      retryingUploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      retryingQueryCallable;
+  private final ExponentialRetryAlgorithm recoveryAlgorithm;
 
   public ResumableUploadCallableImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
-      ResumableUploadCallSettings defaultCallSettings,
+      ResumableUploadOptions defaultOptions,
       ClientContext clientContext) {
     this.client = checkNotNull(client, "client must not be null");
-    this.defaultCallSettings =
-        checkNotNull(defaultCallSettings, "defaultCallSettings must not be null");
+    this.defaultOptions = checkNotNull(defaultOptions, "defaultOptions must not be null");
     this.clientContext = checkNotNull(clientContext, "clientContext must not be null");
+    this.retryingUploadChunkCallable =
+        createRetryingCallable(
+            client.uploadChunkCallable(), ResumableUploadCommand.UPLOAD, clientContext);
+    this.retryingQueryCallable =
+        createRetryingCallable(
+            client.queryStatusCallable(), ResumableUploadCommand.QUERY, clientContext);
+    this.recoveryAlgorithm =
+        new ExponentialRetryAlgorithm(RETRY_SETTINGS, clientContext.getClock());
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
+      RequestT request,
+      InputStreamSupplier payload,
+      @Nullable ApiCallContext context,
+      @Nullable ResumableUploadOptions options) {
     checkNotNull(request, "request must not be null");
     checkNotNull(payload, "payload must not be null");
-    ResumableUploadCallSettings effectiveSettings = defaultCallSettings.merge(settings);
+    ResumableUploadOptions effectiveOptions = defaultOptions.merge(options);
+    ApiCallContext effectiveCallContext = clientContext.getDefaultCallContext().merge(context);
 
     ApiFuture<ResumableUploadSession> startFuture;
     try {
-      startFuture =
-          client.startUploadCallable().futureCall(request, clientContext.getDefaultCallContext());
+      startFuture = client.startUploadCallable().futureCall(request, effectiveCallContext);
     } catch (Throwable t) {
       startFuture = ApiFutures.immediateFailedFuture(t);
     }
 
     return ResumableUploadFutureImpl.create(
         startFuture,
-        client.uploadChunkCallable(),
+        retryingUploadChunkCallable,
+        retryingQueryCallable,
         payload,
-        effectiveSettings,
-        clientContext.getDefaultCallContext());
+        effectiveOptions,
+        clientContext,
+        recoveryAlgorithm);
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
+      String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
     throw new UnsupportedOperationException("Session resumption is not yet implemented.");
+  }
+
+  private static <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createRetryingCallable(
+      UnaryCallable<RequestT, ResponseT> callable,
+      ResumableUploadCommand command,
+      ClientContext clientContext) {
+    RetryAlgorithm<ResponseT> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ResumableUploadResultRetryAlgorithm<>(command),
+            new ExponentialRetryAlgorithm(RETRY_SETTINGS, clientContext.getClock()));
+    return new RetryingCallable<>(
+        clientContext.getDefaultCallContext(),
+        checkNotNull(callable, "callable must not be null"),
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor()));
   }
 }

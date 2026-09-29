@@ -112,8 +112,9 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    *
    * If unspecified, at most 100 spaces are returned.
    *
-   * The maximum value is 1000. If you use a value more than 1000, it's
-   * automatically changed to 1000.
+   * The maximum value is 1000 when `useAdminAccess` is set to `true`.
+   * Otherwise, the maximum value is 100. If you use a value more than the
+   * maximum value, it's automatically changed to the maximum value.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -291,6 +292,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
    * "SPACE")
    * ```
+   *
+   * The maximum query length is 1,000 characters.
+   *
+   * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+   * error.
    * </pre>
    *
    * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -408,6 +414,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
    * "SPACE")
    * ```
+   *
+   * The maximum query length is 1,000 characters.
+   *
+   * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+   * error.
    * </pre>
    *
    * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1040,8 +1051,9 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 100 spaces are returned.
      *
-     * The maximum value is 1000. If you use a value more than 1000, it's
-     * automatically changed to 1000.
+     * The maximum value is 1000 when `useAdminAccess` is set to `true`.
+     * Otherwise, the maximum value is 100. If you use a value more than the
+     * maximum value, it's automatically changed to the maximum value.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -1062,8 +1074,9 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 100 spaces are returned.
      *
-     * The maximum value is 1000. If you use a value more than 1000, it's
-     * automatically changed to 1000.
+     * The maximum value is 1000 when `useAdminAccess` is set to `true`.
+     * Otherwise, the maximum value is 100. If you use a value more than the
+     * maximum value, it's automatically changed to the maximum value.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -1088,8 +1101,9 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      *
      * If unspecified, at most 100 spaces are returned.
      *
-     * The maximum value is 1000. If you use a value more than 1000, it's
-     * automatically changed to 1000.
+     * The maximum value is 1000 when `useAdminAccess` is set to `true`.
+     * Otherwise, the maximum value is 100. If you use a value more than the
+     * maximum value, it's automatically changed to the maximum value.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -1339,6 +1353,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
      * "SPACE")
      * ```
+     *
+     * The maximum query length is 1,000 characters.
+     *
+     * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+     * error.
      * </pre>
      *
      * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1455,6 +1474,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
      * "SPACE")
      * ```
+     *
+     * The maximum query length is 1,000 characters.
+     *
+     * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+     * error.
      * </pre>
      *
      * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1571,6 +1595,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
      * "SPACE")
      * ```
+     *
+     * The maximum query length is 1,000 characters.
+     *
+     * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+     * error.
      * </pre>
      *
      * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1686,6 +1715,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
      * "SPACE")
      * ```
+     *
+     * The maximum query length is 1,000 characters.
+     *
+     * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+     * error.
      * </pre>
      *
      * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1797,6 +1831,11 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
      * "SPACE")
      * ```
+     *
+     * The maximum query length is 1,000 characters.
+     *
+     * Invalid queries are rejected by the server with an `INVALID_ARGUMENT`
+     * error.
      * </pre>
      *
      * <code>string query = 4 [(.google.api.field_behavior) = REQUIRED];</code>

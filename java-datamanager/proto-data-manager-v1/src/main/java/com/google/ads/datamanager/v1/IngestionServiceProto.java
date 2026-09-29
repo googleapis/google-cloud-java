@@ -158,7 +158,7 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
           + "\025IngestAdEventsRequest\022:\n\tad_events\030\001 \003("
           + "\0132\".google.ads.datamanager.v1.AdEventB\003\340"
           + "A\002\022G\n\017encryption_info\030\002 \001(\0132).google.ads"
-          + ".datamanager.v1.EncryptionInfoB\003\340A\002\022\034\n\rv"
+          + ".datamanager.v1.EncryptionInfoB\003\340A\001\022\034\n\rv"
           + "alidate_only\030\003 \001(\010B\005\030\001\340A\001\"\030\n\026IngestAdEve"
           + "ntsResponse\"7\n\034RetrieveRequestStatusRequ"
           + "est\022\027\n\nrequest_id\030\001 \001(\tB\003\340A\002\"\177\n\035Retrieve"

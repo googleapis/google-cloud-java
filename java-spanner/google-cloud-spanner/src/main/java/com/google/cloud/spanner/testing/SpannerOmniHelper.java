@@ -26,6 +26,7 @@ public class SpannerOmniHelper {
   private static final String USE_MTLS = "spanner.mtls";
   private static final String CLIENT_CERT_PATH = "spanner.client_cert_path";
   private static final String CLIENT_CERT_KEY_PATH = "spanner.client_cert_key_path";
+  private static final String CA_CERT_PATH = "spanner.ca_cert_path";
   private static final String USERNAME = "spanner.username";
   private static final String PASSWORD = "spanner.password";
 
@@ -56,6 +57,10 @@ public class SpannerOmniHelper {
       uri.append(";clientCertificate=").append(clientCertificate);
       uri.append(";clientKey=").append(clientKey);
     }
+    String caCertPath = System.getProperty(CA_CERT_PATH, "");
+    if (!Strings.isNullOrEmpty(caCertPath)) {
+      uri.append(";caCertificate=").append(caCertPath);
+    }
   }
 
   public static boolean isMtlsSetup() {
@@ -79,10 +84,14 @@ public class SpannerOmniHelper {
     if (usePlainText) {
       builder.usePlainText();
     }
+    String caCertPath = System.getProperty(CA_CERT_PATH, "");
     if (isMtlsSetup()) {
       String clientCertificate = System.getProperty(CLIENT_CERT_PATH, "");
       String clientKey = System.getProperty(CLIENT_CERT_KEY_PATH, "");
       builder.useClientCert(clientCertificate, clientKey);
+    }
+    if (!Strings.isNullOrEmpty(caCertPath)) {
+      builder.setCaCertificate(caCertPath);
     }
   }
 }

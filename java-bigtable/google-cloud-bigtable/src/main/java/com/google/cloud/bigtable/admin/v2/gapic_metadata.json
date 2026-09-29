@@ -58,6 +58,9 @@
             "GetMaterializedView": {
               "methods": ["getMaterializedView", "getMaterializedView", "getMaterializedView", "getMaterializedViewCallable"]
             },
+            "GetMemoryLayer": {
+              "methods": ["getMemoryLayer", "getMemoryLayer", "getMemoryLayer", "getMemoryLayerCallable"]
+            },
             "ListAppProfiles": {
               "methods": ["listAppProfiles", "listAppProfiles", "listAppProfiles", "listAppProfilesPagedCallable", "listAppProfilesCallable"]
             },
@@ -75,6 +78,9 @@
             },
             "ListMaterializedViews": {
               "methods": ["listMaterializedViews", "listMaterializedViews", "listMaterializedViews", "listMaterializedViewsPagedCallable", "listMaterializedViewsCallable"]
+            },
+            "ListMemoryLayers": {
+              "methods": ["listMemoryLayers", "listMemoryLayers", "listMemoryLayers", "listMemoryLayersPagedCallable", "listMemoryLayersCallable"]
             },
             "PartialUpdateCluster": {
               "methods": ["partialUpdateClusterAsync", "partialUpdateClusterAsync", "partialUpdateClusterOperationCallable", "partialUpdateClusterCallable"]
@@ -102,6 +108,9 @@
             },
             "UpdateMaterializedView": {
               "methods": ["updateMaterializedViewAsync", "updateMaterializedViewAsync", "updateMaterializedViewOperationCallable", "updateMaterializedViewCallable"]
+            },
+            "UpdateMemoryLayer": {
+              "methods": ["updateMemoryLayerAsync", "updateMemoryLayerAsync", "updateMemoryLayerOperationCallable", "updateMemoryLayerCallable"]
             }
           }
         }
