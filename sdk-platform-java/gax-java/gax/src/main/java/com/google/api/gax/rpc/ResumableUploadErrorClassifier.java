@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import com.google.api.client.http.HttpResponseException;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.common.collect.ImmutableMap;
 import java.net.SocketTimeoutException;
 import java.util.Objects;
@@ -51,6 +53,8 @@ final class ResumableUploadErrorClassifier {
     /** An errored command that immediately fails the upload operation. */
     FATAL
   }
+
+  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
 
   private static final ImmutableMap<Integer, Category> HTTP_STATUS_MAP =
       ImmutableMap.<Integer, Category>builder()
@@ -85,6 +89,16 @@ final class ResumableUploadErrorClassifier {
     }
     ApiException apiException = (ApiException) t;
     StatusCode statusCode = apiException.getStatusCode();
+
+    // A non-2xx response with "X-Goog-Upload-Status: final" is a server rejection of the upload,
+    // which is terminal regardless of the HTTP status code.
+    if (apiException.getCause() instanceof HttpResponseException) {
+      HttpResponseException cause = (HttpResponseException) apiException.getCause();
+      String uploadStatus = cause.getHeaders().getFirstHeaderStringValue(UPLOAD_STATUS_HEADER);
+      if (ResumableUploadStatus.fromHeader(uploadStatus) == ResumableUploadStatus.FINAL) {
+        return Category.FATAL;
+      }
+    }
 
     // HttpJsonApiExceptionFactory wraps low-level network timeouts as UNKNOWN.
     if (statusCode.getCode() == StatusCode.Code.UNKNOWN) {

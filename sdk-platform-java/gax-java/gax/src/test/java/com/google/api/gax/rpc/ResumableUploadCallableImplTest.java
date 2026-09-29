@@ -42,6 +42,8 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.ForwardingApiFuture;
@@ -56,11 +58,11 @@ import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -114,7 +116,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-single")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     assertThat(future.get()).isEqualTo("response-single");
     assertThat(future.isDone()).isTrue();
@@ -144,7 +146,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-multi")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("01234567890123456789"), null);
+        callable.futureCall("resource-path", payloadOf("01234567890123456789"), null);
 
     assertThat(future.get()).isEqualTo("response-multi");
     assertThat(future.isDone()).isTrue();
@@ -166,7 +168,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-zero")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", new ByteArrayInputStream(new byte[0]), null);
+        callable.futureCall("resource-path", () -> new ByteArrayInputStream(new byte[0]), null);
 
     assertThat(future.get()).isEqualTo("response-zero");
 
@@ -189,7 +191,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-exact-single")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("12345678"), null);
+        callable.futureCall("resource-path", payloadOf("12345678"), null);
 
     assertThat(future.get()).isEqualTo("response-exact-single");
 
@@ -209,7 +211,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, null)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
+        callable.futureCall("resource-path", payloadOf("data"), null);
 
     assertThat(future.get()).isNull();
     assertThat(future.isDone()).isTrue();
@@ -232,7 +234,7 @@ class ResumableUploadCallableImplTest {
             });
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("0123456789ABCDEF"), null);
+        callable.futureCall("resource-path", payloadOf("0123456789ABCDEF"), null);
 
     assertThat(chunkStarted.await(5, TimeUnit.SECONDS)).isTrue();
     assertThat(future.cancel(true)).isTrue();
@@ -257,7 +259,7 @@ class ResumableUploadCallableImplTest {
             });
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
+        callable.futureCall("resource-path", payloadOf("data"), null);
     assertThat(future.cancel(true)).isTrue();
     assertThat(future.isCancelled()).isTrue();
 
@@ -283,7 +285,7 @@ class ResumableUploadCallableImplTest {
     when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
+        callable.futureCall("resource-path", payloadOf("data"), null);
     futureRef.set(future);
     startFuture.set(
         ResumableUploadSession.newBuilder()
@@ -300,7 +302,7 @@ class ResumableUploadCallableImplTest {
         .thenReturn(ApiFutures.immediateFailedFuture(new IllegalStateException("start failed")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
+        callable.futureCall("resource-path", payloadOf("data"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(IllegalStateException.class);
@@ -315,7 +317,7 @@ class ResumableUploadCallableImplTest {
         .thenReturn(ApiFutures.immediateFailedFuture(new IllegalStateException("chunk error")));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null);
+        callable.futureCall("resource-path", payloadOf("data"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(IllegalStateException.class);
@@ -331,7 +333,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done")));
 
     TrackableStream stream = new TrackableStream("data");
-    callable.futureCall("resource-path", stream, null).get();
+    callable.futureCall("resource-path", () -> stream, null).get();
 
     assertThat(stream.closed).isTrue();
   }
@@ -342,7 +344,7 @@ class ResumableUploadCallableImplTest {
         .thenReturn(ApiFutures.immediateFailedFuture(new IllegalStateException("start failed")));
 
     TrackableStream stream = new TrackableStream("data");
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", () -> stream, null);
     assertThrows(ExecutionException.class, future::get);
 
     assertThat(stream.closed).isTrue();
@@ -360,7 +362,7 @@ class ResumableUploadCallableImplTest {
             });
 
     TrackableStream stream = new TrackableStream("data");
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", () -> stream, null);
     assertThat(chunkStarted.await(5, TimeUnit.SECONDS)).isTrue();
     future.cancel(true);
 
@@ -373,7 +375,7 @@ class ResumableUploadCallableImplTest {
         .thenThrow(new RuntimeException("sync start failure"));
 
     TrackableStream stream = new TrackableStream("data");
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", () -> stream, null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(RuntimeException.class);
@@ -395,7 +397,7 @@ class ResumableUploadCallableImplTest {
                 java.util.Collections.singletonMap(
                     "X-Custom", java.util.Collections.singletonList("val")));
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), customContext, null);
+        callable.futureCall("resource-path", payloadOf("data"), customContext, null);
     assertThat(future.get()).isEqualTo("done-ctx");
 
     ArgumentCaptor<ApiCallContext> startContextCaptor =
@@ -425,7 +427,7 @@ class ResumableUploadCallableImplTest {
         ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), null, customSettings);
+        callable.futureCall("resource-path", payloadOf("data"), null, customSettings);
     assertThat(future.get()).isEqualTo("done-settings");
   }
 
@@ -441,7 +443,7 @@ class ResumableUploadCallableImplTest {
         ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), customSettings);
+        callable.futureCall("resource-path", payloadOf("data"), customSettings);
     assertThat(future.get()).isEqualTo("done-settings-conv");
   }
 
@@ -458,7 +460,7 @@ class ResumableUploadCallableImplTest {
         ResumableUploadOptions.newBuilder().setChunkSize(16).build();
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("data"), customContext, customSettings);
+        callable.futureCall("resource-path", payloadOf("data"), customContext, customSettings);
     assertThat(future.get()).isEqualTo("done-both");
   }
 
@@ -466,7 +468,7 @@ class ResumableUploadCallableImplTest {
   void testResumeCall_throwsUnsupportedOperationException() {
     assertThrows(
         UnsupportedOperationException.class,
-        () -> callable.resumeCall("https://upload.url/session", streamOf("data"), null));
+        () -> callable.resumeCall("https://upload.url/session", payloadOf("data"), null));
   }
 
   @Test
@@ -480,7 +482,7 @@ class ResumableUploadCallableImplTest {
             ApiFutures.immediateFuture(
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "chunk-done")));
 
-    ResumableUploadFuture<String> future = callable.futureCall("resource-path", stream, null);
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", () -> stream, null);
 
     assertThat(future.get()).isEqualTo("chunk-done");
     assertThat(future.isDone()).isTrue();
@@ -504,7 +506,7 @@ class ResumableUploadCallableImplTest {
             ApiFutures.immediateFailedFuture(createApiException(503, StatusCode.Code.UNAVAILABLE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(ApiException.class);
@@ -526,7 +528,7 @@ class ResumableUploadCallableImplTest {
                 ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "should-not-reach")));
 
     ResumableUploadFuture<String> sessionFuture =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     // Fail attempt 0 with 503 to schedule backoff
     chunkAttempt0Future.setException(createApiException(503, StatusCode.Code.UNAVAILABLE));
@@ -560,7 +562,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(0L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     assertThat(future.get()).isEqualTo("recovered-response");
     assertThat(future.isDone()).isTrue();
@@ -582,7 +584,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(5L, "server-finalized", ResumableUploadStatus.FINAL)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     assertThat(future.get()).isEqualTo("server-finalized");
     assertThat(future.isDone()).isTrue();
@@ -604,7 +606,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(null, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(IllegalStateException.class);
@@ -635,7 +637,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(4L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("0123456789abcdef"), null);
+        callable.futureCall("resource-path", payloadOf("0123456789abcdef"), null);
 
     assertThat(future.get()).isEqualTo("all-done");
 
@@ -664,7 +666,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(4L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("0123456789abcdef"), null);
+        callable.futureCall("resource-path", payloadOf("0123456789abcdef"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(IllegalStateException.class);
@@ -688,7 +690,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(0L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     assertThat(future.get()).isEqualTo("recovered-ok");
     verify(mockQueryCallable, times(1)).futureCall(any(), any());
@@ -715,7 +717,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(10L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("0123456789ab"), null);
+        callable.futureCall("resource-path", payloadOf("0123456789ab"), null);
 
     assertThat(future.get()).isEqualTo("final-chunk-done");
 
@@ -741,7 +743,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(0L, null, ResumableUploadStatus.UNKNOWN)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(IllegalStateException.class);
@@ -765,7 +767,7 @@ class ResumableUploadCallableImplTest {
                 createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(ApiException.class);
@@ -791,11 +793,39 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(0L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     assertThat(future.get()).isEqualTo("query-retry-ok");
     verify(mockQueryCallable, times(2)).futureCall(any(), any());
     verify(mockChunkCallable, times(2)).futureCall(any(), any());
+  }
+
+  @Test
+  void testRecovery_serverRejectionWithFinalStatus_failsFatalWithoutRetryOrRecovery() {
+    String sessionUrl = "https://upload.url/server-rejection-test";
+    stubStartSession(sessionUrl);
+    HttpResponseException rejection =
+        new HttpResponseException.Builder(
+                400, null, new HttpHeaders().set("X-Goog-Upload-Status", "final"))
+            .build();
+    ApiException rejectionException =
+        ApiExceptionFactory.createException(
+            "Invalid chunk",
+            rejection,
+            new HttpStatusStatusCode(400, StatusCode.Code.INVALID_ARGUMENT),
+            false);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFailedFuture(rejectionException));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("hello"), null);
+
+    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
+    assertThat(ex.getCause()).isInstanceOf(InvalidArgumentException.class);
+    ApiException cause = (ApiException) ex.getCause();
+    assertThat(cause.getStatusCode().getTransportCode()).isEqualTo(400);
+    verify(mockChunkCallable, times(1)).futureCall(any(), any());
+    verifyNoInteractions(mockQueryCallable);
   }
 
   @Test
@@ -812,7 +842,7 @@ class ResumableUploadCallableImplTest {
                 createQueryResponse(0L, null, ResumableUploadStatus.ACTIVE)));
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), null);
+        callable.futureCall("resource-path", payloadOf("hello"), null);
 
     ExecutionException exception = assertThrows(ExecutionException.class, future::get);
     assertThat(exception.getCause()).isInstanceOf(ApiException.class);
@@ -858,7 +888,7 @@ class ResumableUploadCallableImplTest {
 
     ResumableUploadFuture<String> future =
         callable.futureCall(
-            "resource-path", streamOf("0123456789abcdefghijklmnopqrstuvwxyz0123"), null);
+            "resource-path", payloadOf("0123456789abcdefghijklmnopqrstuvwxyz0123"), null);
 
     assertThat(future.get()).isEqualTo("reset-ok");
     verify(mockQueryCallable, times(5)).futureCall(any(), any());
@@ -875,7 +905,7 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMillis(100)).build();
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+        callable.futureCall("resource-path", payloadOf("hello"), timeoutSettings);
 
     ExecutionException exception =
         assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
@@ -908,7 +938,7 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
 
     ResumableUploadFuture<String> future =
-        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+        customCallable.futureCall("resource-path", payloadOf("hello"), timeoutSettings);
 
     assertThat(future.get()).isEqualTo("ok");
     verify(mockScheduledFuture).cancel(false);
@@ -934,7 +964,7 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
 
     ResumableUploadFuture<String> future =
-        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+        customCallable.futureCall("resource-path", payloadOf("hello"), timeoutSettings);
 
     assertThrows(ExecutionException.class, future::get);
     verify(mockScheduledFuture).cancel(false);
@@ -959,7 +989,7 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofSeconds(60)).build();
 
     ResumableUploadFuture<String> future =
-        customCallable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+        customCallable.futureCall("resource-path", payloadOf("hello"), timeoutSettings);
 
     assertThat(future.cancel(true)).isTrue();
     verify(mockScheduledFuture).cancel(false);
@@ -983,7 +1013,7 @@ class ResumableUploadCallableImplTest {
     // 1. Unset on both stub and per-request -> falls back to GAX default (15m)
     ResumableUploadCallableImpl<String, String> unsetStubCallable =
         new ResumableUploadCallableImpl<>(mockClient, defaultSettings, customClientContext);
-    assertThat(unsetStubCallable.futureCall("resource-path", streamOf("hello"), null).get())
+    assertThat(unsetStubCallable.futureCall("resource-path", payloadOf("hello"), null).get())
         .isEqualTo("ok");
     verify(mockExecutor)
         .schedule(
@@ -994,7 +1024,7 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMinutes(30)).build();
     ResumableUploadCallableImpl<String, String> configuredStubCallable =
         new ResumableUploadCallableImpl<>(mockClient, stubWith30m, customClientContext);
-    assertThat(configuredStubCallable.futureCall("resource-path", streamOf("hello"), null).get())
+    assertThat(configuredStubCallable.futureCall("resource-path", payloadOf("hello"), null).get())
         .isEqualTo("ok");
     verify(mockExecutor)
         .schedule(
@@ -1005,7 +1035,7 @@ class ResumableUploadCallableImplTest {
         ResumableUploadOptions.newBuilder().setChunkSize(16).build();
     assertThat(
             configuredStubCallable
-                .futureCall("resource-path", streamOf("hello"), perRequestChunkSizeOnly)
+                .futureCall("resource-path", payloadOf("hello"), perRequestChunkSizeOnly)
                 .get())
         .isEqualTo("ok");
     verify(mockExecutor, times(2))
@@ -1017,7 +1047,7 @@ class ResumableUploadCallableImplTest {
         ResumableUploadOptions.newBuilder().setGlobalTimeout(Duration.ofMinutes(5)).build();
     assertThat(
             configuredStubCallable
-                .futureCall("resource-path", streamOf("hello"), perRequestWith5m)
+                .futureCall("resource-path", payloadOf("hello"), perRequestWith5m)
                 .get())
         .isEqualTo("ok");
     verify(mockExecutor)
@@ -1038,7 +1068,7 @@ class ResumableUploadCallableImplTest {
 
     TrackableStream stream = new TrackableStream("01234567890123456789");
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", stream, timeoutSettings);
+        callable.futureCall("resource-path", () -> stream, timeoutSettings);
 
     ExecutionException exception =
         assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
@@ -1060,13 +1090,173 @@ class ResumableUploadCallableImplTest {
         defaultSettings.toBuilder().setGlobalTimeout(Duration.ofMillis(80)).build();
 
     ResumableUploadFuture<String> future =
-        callable.futureCall("resource-path", streamOf("hello"), timeoutSettings);
+        callable.futureCall("resource-path", payloadOf("hello"), timeoutSettings);
 
     ExecutionException exception =
         assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
     assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
     assertThat(exception.getCause().getMessage()).contains("before session initiation completed");
     assertThat(hungStartFuture.isCancelled()).isTrue();
+  }
+
+  @Test
+  void testProgressListener_prescribedStateTransitions() throws Exception {
+    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
+    when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
+
+    // 20 bytes with chunkSize = 8 -> 3 chunks: [0..8), [8..16), [16..20)
+    // Chunk 1 succeeds -> [0..8)
+    // Chunk 2 fails with recoverable 400
+    // Query succeeds -> committed offset = 8
+    // Chunk 2 resend succeeds -> [8..16)
+    // Chunk 3 succeeds and finalizes -> [16..20)
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done")));
+
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                QueryStatusResponse.<String>newBuilder()
+                    .setCommittedOffset(8L)
+                    .setUploadStatus(ResumableUploadStatus.ACTIVE)
+                    .build()));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("01234567890123456789"), options);
+
+    String url = "https://upload.url/progress-transitions";
+    startFuture.set(ResumableUploadSession.newBuilder().setUploadUrl(url).build());
+
+    assertThat(future.get()).isEqualTo("done");
+
+    assertThat(listener.awaitTerminal())
+        .containsExactly(
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
+            createProgress(ResumableUploadProgress.STATE_STARTED, 0L, url),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_RECOVERING, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_OFFSET_RECEIVED, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 16L, url),
+            createProgress(ResumableUploadProgress.STATE_FINALIZED, 20L, url))
+        .inOrder();
+  }
+
+  @Test
+  void testProgressListener_uploadFailure_transitionsToFailed() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(401, StatusCode.Code.UNAUTHENTICATED)));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("hello"), options);
+    assertThrows(ExecutionException.class, future::get);
+
+    assertThat(listener.awaitTerminal())
+        .containsExactly(
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
+            createProgress(ResumableUploadProgress.STATE_FAILED, 0L, null))
+        .inOrder();
+  }
+
+  @Test
+  void testProgressListener_cancel_transitionsToFailed() throws Exception {
+    stubStartSession("https://upload.url/cancel-progress");
+    SettableApiFuture<ChunkUploadResponse<String>> hungChunk = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any())).thenReturn(hungChunk);
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("hello"), options);
+
+    assertThat(future.cancel(true)).isTrue();
+    assertThat(hungChunk.isCancelled()).isTrue();
+    List<ResumableUploadProgress> receivedStatuses = listener.awaitTerminal();
+    assertThat(receivedStatuses.get(receivedStatuses.size() - 1))
+        .isEqualTo(
+            createProgress(
+                ResumableUploadProgress.STATE_FAILED, 0L, "https://upload.url/cancel-progress"));
+  }
+
+  @Test
+  void testProgressListener_queryFinal_transitionsToFinalized() throws Exception {
+    stubStartSession("https://upload.url/query-final-progress");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(null, "done", ResumableUploadStatus.FINAL)));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("hello"), options);
+
+    assertThat(future.get()).isEqualTo("done");
+    List<ResumableUploadProgress> receivedStatuses = listener.awaitTerminal();
+    assertThat(receivedStatuses.get(receivedStatuses.size() - 1))
+        .isEqualTo(
+            createProgress(
+                ResumableUploadProgress.STATE_FINALIZED,
+                5L,
+                "https://upload.url/query-final-progress"));
+  }
+
+  private static ResumableUploadProgress createProgress(
+      String state, long bytesUploaded, @Nullable String uploadUrl) {
+    return ResumableUploadProgress.newBuilder()
+        .setState(state)
+        .setBytesUploaded(bytesUploaded)
+        .setUploadUrl(uploadUrl)
+        .build();
+  }
+
+  /** Records progress updates delivered asynchronously and signals the terminal update. */
+  private static final class RecordingProgressListener implements ResumableUploadProgressListener {
+    private final List<ResumableUploadProgress> received = new CopyOnWriteArrayList<>();
+    private final CountDownLatch terminal = new CountDownLatch(1);
+
+    @Override
+    public void onProgress(ResumableUploadProgress progress) {
+      received.add(progress);
+      String state = progress.getState();
+      if (ResumableUploadProgress.STATE_FINALIZED.equals(state)
+          || ResumableUploadProgress.STATE_FAILED.equals(state)) {
+        terminal.countDown();
+      }
+    }
+
+    List<ResumableUploadProgress> awaitTerminal() throws InterruptedException {
+      assertThat(terminal.await(5, TimeUnit.SECONDS)).isTrue();
+      return received;
+    }
   }
 
   private static class HttpStatusStatusCode implements StatusCode {
@@ -1112,8 +1302,8 @@ class ResumableUploadCallableImplTest {
                 ResumableUploadSession.newBuilder().setUploadUrl(uploadUrl).build()));
   }
 
-  private static InputStream streamOf(String content) {
-    return new ByteArrayInputStream(content.getBytes(StandardCharsets.UTF_8));
+  private static InputStreamSupplier payloadOf(String content) {
+    return () -> new ByteArrayInputStream(content.getBytes(StandardCharsets.UTF_8));
   }
 
   private static void assertChunk(
