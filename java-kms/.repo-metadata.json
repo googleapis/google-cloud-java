@@ -11,6 +11,5 @@
   "repo_short": "java-kms",
   "distribution_name": "com.google.cloud:google-cloud-kms",
   "api_id": "cloudkms.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/5264932"
+  "library_type": "GAPIC_AUTO"
 }
