@@ -165,7 +165,7 @@ public class HttpStorageRpc implements StorageRpc {
             .setApplicationName(applicationName);
     if (host != null) {
       URI uri = URI.create(host);
-      String path = uri.getPath();
+      String path = uri.getRawPath();
       if (path != null && !path.isEmpty() && !"/".equals(path)) {
         String rootUrl = host.substring(0, host.indexOf(path));
         String servicePath = path.startsWith("/") ? path.substring(1) : path;
