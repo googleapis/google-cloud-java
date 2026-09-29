@@ -66,6 +66,8 @@ class OpenTelemetryTracingTracerTest {
   @Mock private Tracer tracer;
   @Mock private SpanBuilder spanBuilder;
   @Mock private Span span;
+  @Mock private SpanBuilder operationSpanBuilder;
+  @Mock private Span operationSpan;
   private OpenTelemetryTracingTracer openTelemetryTracingTracer;
   private static final String ATTEMPT_SPAN_NAME = "Service/Method/attempt";
 
@@ -76,6 +78,20 @@ class OpenTelemetryTracingTracerTest {
     lenient().when(spanBuilder.setParent(any())).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     lenient().when(spanBuilder.startSpan()).thenReturn(span);
+
+    lenient()
+        .when(operationSpanBuilder.setSpanKind(any(SpanKind.class)))
+        .thenReturn(operationSpanBuilder);
+    lenient().when(operationSpanBuilder.setParent(any())).thenReturn(operationSpanBuilder);
+    lenient()
+        .when(operationSpanBuilder.setAllAttributes(any(Attributes.class)))
+        .thenReturn(operationSpanBuilder);
+    lenient().when(operationSpanBuilder.startSpan()).thenReturn(operationSpan);
+    lenient()
+        .when(operationSpan.storeInContext(any(io.opentelemetry.context.Context.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+    lenient().when(tracer.spanBuilder("Service/Method")).thenReturn(operationSpanBuilder);
+
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
   }
@@ -696,6 +712,7 @@ class OpenTelemetryTracingTracerTest {
     openTelemetryTracingTracer.operationSucceeded();
 
     verify(span).end();
+    verify(operationSpan).end();
   }
 
   @Test
@@ -705,6 +722,8 @@ class OpenTelemetryTracingTracerTest {
 
     verify(span).setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "operation failed");
     verify(span).end();
+    verify(operationSpan).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(operationSpan).end();
   }
 
   @Test
@@ -715,11 +734,58 @@ class OpenTelemetryTracingTracerTest {
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
     verify(span).end();
+    verify(operationSpan).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(operationSpan).end();
 
     assertThat(attrsCaptor.getValue().asMap())
         .containsEntry(
             AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE),
             "CANCELLED");
+  }
+
+  @Test
+  void testInScope_withAttemptSpan() {
+    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
+    when(span.makeCurrent()).thenReturn(mockScope);
+
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      verify(span).makeCurrent();
+    }
+    verify(mockScope).close();
+  }
+
+  @Test
+  void testInScope_withOperationSpanFallback() {
+    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
+    when(operationSpan.makeCurrent()).thenReturn(mockScope);
+
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      verify(operationSpan).makeCurrent();
+    }
+    verify(mockScope).close();
+  }
+
+  @Test
+  void testInjectTraceContext_withOperationSpanFallback() {
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000003",
+            "0000000000000004",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    Span realSpan = Span.wrap(mockSpanContext);
+    when(operationSpanBuilder.startSpan()).thenReturn(realSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+
+    Map<String, String> carrier = new java.util.HashMap<>();
+    openTelemetryTracingTracer.injectTraceContext(carrier);
+
+    assertThat(carrier).containsKey("traceparent");
+    assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000003");
+    assertThat(carrier.get("traceparent")).contains("0000000000000004");
   }
 
   @Test
