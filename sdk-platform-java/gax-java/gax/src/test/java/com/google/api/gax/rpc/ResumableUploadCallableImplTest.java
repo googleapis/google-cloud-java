@@ -61,6 +61,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -1067,6 +1068,166 @@ class ResumableUploadCallableImplTest {
     assertThat(exception.getCause()).isInstanceOf(DeadlineExceededException.class);
     assertThat(exception.getCause().getMessage()).contains("before session initiation completed");
     assertThat(hungStartFuture.isCancelled()).isTrue();
+  }
+
+  @Test
+  void testProgressListener_prescribedStateTransitions() throws Exception {
+    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
+    when(mockStartCallable.futureCall(any(), any())).thenReturn(startFuture);
+
+    // 20 bytes with chunkSize = 8 -> 3 chunks: [0..8), [8..16), [16..20)
+    // Chunk 1 succeeds -> [0..8)
+    // Chunk 2 fails with recoverable 400
+    // Query succeeds -> committed offset = 8
+    // Chunk 2 resend succeeds -> [8..16)
+    // Chunk 3 succeeds and finalizes -> [16..20)
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done")));
+
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                QueryStatusResponse.<String>newBuilder()
+                    .setCommittedOffset(8L)
+                    .setUploadStatus(ResumableUploadStatus.ACTIVE)
+                    .build()));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("01234567890123456789"), options);
+
+    String url = "https://upload.url/progress-transitions";
+    startFuture.set(ResumableUploadSession.newBuilder().setUploadUrl(url).build());
+
+    assertThat(future.get()).isEqualTo("done");
+
+    assertThat(listener.awaitTerminal())
+        .containsExactly(
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
+            createProgress(ResumableUploadProgress.STATE_STARTED, 0L, url),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_RECOVERING, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_OFFSET_RECEIVED, 8L, url),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 16L, url),
+            createProgress(ResumableUploadProgress.STATE_FINALIZED, 20L, url))
+        .inOrder();
+  }
+
+  @Test
+  void testProgressListener_uploadFailure_transitionsToFailed() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(401, StatusCode.Code.UNAUTHENTICATED)));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), options);
+    assertThrows(ExecutionException.class, future::get);
+
+    assertThat(listener.awaitTerminal())
+        .containsExactly(
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
+            createProgress(ResumableUploadProgress.STATE_FAILED, 0L, null))
+        .inOrder();
+  }
+
+  @Test
+  void testProgressListener_cancel_transitionsToFailed() throws Exception {
+    stubStartSession("https://upload.url/cancel-progress");
+    SettableApiFuture<ChunkUploadResponse<String>> hungChunk = SettableApiFuture.create();
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any())).thenReturn(hungChunk);
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), options);
+
+    assertThat(future.cancel(true)).isTrue();
+    assertThat(hungChunk.isCancelled()).isTrue();
+    List<ResumableUploadProgress> receivedStatuses = listener.awaitTerminal();
+    assertThat(receivedStatuses.get(receivedStatuses.size() - 1))
+        .isEqualTo(
+            createProgress(
+                ResumableUploadProgress.STATE_FAILED, 0L, "https://upload.url/cancel-progress"));
+  }
+
+  @Test
+  void testProgressListener_queryFinal_transitionsToFinalized() throws Exception {
+    stubStartSession("https://upload.url/query-final-progress");
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)));
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(null, "done", ResumableUploadStatus.FINAL)));
+
+    RecordingProgressListener listener = new RecordingProgressListener();
+    ResumableUploadOptions options =
+        defaultSettings.toBuilder().setProgressListener(listener).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("hello"), options);
+
+    assertThat(future.get()).isEqualTo("done");
+    List<ResumableUploadProgress> receivedStatuses = listener.awaitTerminal();
+    assertThat(receivedStatuses.get(receivedStatuses.size() - 1))
+        .isEqualTo(
+            createProgress(
+                ResumableUploadProgress.STATE_FINALIZED,
+                5L,
+                "https://upload.url/query-final-progress"));
+  }
+
+  private static ResumableUploadProgress createProgress(
+      String state, long bytesUploaded, @Nullable String uploadUrl) {
+    return ResumableUploadProgress.newBuilder()
+        .setState(state)
+        .setBytesUploaded(bytesUploaded)
+        .setUploadUrl(uploadUrl)
+        .build();
+  }
+
+  /** Records progress updates delivered asynchronously and signals the terminal update. */
+  private static final class RecordingProgressListener implements ResumableUploadProgressListener {
+    private final List<ResumableUploadProgress> received = new CopyOnWriteArrayList<>();
+    private final CountDownLatch terminal = new CountDownLatch(1);
+
+    @Override
+    public void onProgress(ResumableUploadProgress progress) {
+      received.add(progress);
+      String state = progress.getState();
+      if (ResumableUploadProgress.STATE_FINALIZED.equals(state)
+          || ResumableUploadProgress.STATE_FAILED.equals(state)) {
+        terminal.countDown();
+      }
+    }
+
+    List<ResumableUploadProgress> awaitTerminal() throws InterruptedException {
+      assertThat(terminal.await(5, TimeUnit.SECONDS)).isTrue();
+      return received;
+    }
   }
 
   private static class HttpStatusStatusCode implements StatusCode {
