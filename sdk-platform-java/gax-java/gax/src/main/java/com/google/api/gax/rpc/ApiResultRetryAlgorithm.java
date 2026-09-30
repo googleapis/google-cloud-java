@@ -30,16 +30,52 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingContext;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /* Package-private for internal use. */
 @NullMarked
 class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
-  /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */
   @Override
-  public boolean shouldRetry(Throwable previousThrowable, ResponseT previousResponse) {
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
+      TimedAttemptSettings previousSettings) {
+    return createNextAttempt(null, previousThrowable, previousResponse, previousSettings);
+  }
+
+  @Override
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
+      TimedAttemptSettings previousSettings) {
+    if (previousThrowable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) previousThrowable).isRetryable()
+        && previousSettings.getOverallAttemptCount() == previousSettings.getAttemptCount()) {
+      RetrySettings globalSettings = previousSettings.getGlobalSettings();
+      if (globalSettings.getMaxAttempts() == 0
+          && globalSettings.getTotalTimeoutDuration().isZero()) {
+        globalSettings = globalSettings.toBuilder().setMaxAttempts(1).build();
+      }
+      return previousSettings.toBuilder()
+          .setGlobalSettings(globalSettings)
+          .setRetryDelayDuration(java.time.Duration.ZERO)
+          .setRandomizedRetryDelayDuration(java.time.Duration.ZERO)
+          .setAttemptCount(previousSettings.getAttemptCount())
+          .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
+          .build();
+    }
+    return null;
+  }
+
+  @Override
+  public boolean shouldRetry(
+      @Nullable Throwable previousThrowable, @Nullable ResponseT previousResponse) {
     return (previousThrowable instanceof ApiException)
         && ((ApiException) previousThrowable).isRetryable();
   }
@@ -52,7 +88,15 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
    */
   @Override
   public boolean shouldRetry(
-      RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+      RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse) {
+    // Check UnauthenticatedException retryability first to ensure mTLS certificate
+    // rotation retries take precedence over static method retry codes.
+    if (previousThrowable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) previousThrowable).isRetryable()) {
+      return true;
+    }
     if (context.getRetryableCodes() != null) {
       // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list
       // of codes that should be retried.

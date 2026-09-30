@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -42,6 +44,7 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 public abstract class ClientStreamingCallable<RequestT, ResponseT> {
+  private static final Logger LOG = Logger.getLogger(ClientStreamingCallable.class.getName());
 
   protected ClientStreamingCallable() {}
 
@@ -77,9 +80,40 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
     return new ClientStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ApiStreamObserver<RequestT> clientStreamingCall(
-          ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
-        return ClientStreamingCallable.this.clientStreamingCall(
-            responseObserver, defaultCallContext.merge(thisCallContext));
+          final ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
+        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
+        ApiStreamObserver<ResponseT> refreshingObserver =
+            new ApiStreamObserver<ResponseT>() {
+              @Override
+              public void onNext(ResponseT response) {
+                responseObserver.onNext(response);
+              }
+
+              @Override
+              public void onError(Throwable t) {
+                if (t instanceof UnauthenticatedException) {
+                  TransportChannel transportChannel = mergedContext.getTransportChannel();
+                  if (transportChannel != null && transportChannel.shouldRefresh()) {
+                    try {
+                      transportChannel.refresh();
+                    } catch (Exception e) {
+                      LOG.log(
+                          Level.WARNING,
+                          "Failed to refresh transport channel after authentication error",
+                          e);
+                    }
+                  }
+                }
+                responseObserver.onError(t);
+              }
+
+              @Override
+              public void onCompleted() {
+                responseObserver.onCompleted();
+              }
+            };
+
+        return ClientStreamingCallable.this.clientStreamingCall(refreshingObserver, mergedContext);
       }
     };
   }

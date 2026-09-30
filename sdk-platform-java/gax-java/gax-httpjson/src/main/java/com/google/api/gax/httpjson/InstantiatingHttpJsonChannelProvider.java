@@ -53,6 +53,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -195,71 +196,98 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         "InstantiatingHttpJsonChannelProvider doesn't need credentials");
   }
 
-  HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    configureMtls(builder);
-    HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
-    return builder.build();
+  @Nullable HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+    if (mtlsProvider == null) {
+      return null;
+    }
+    if (certificateBasedAccess.useMtlsClientCertificate()) {
+      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+      if (mtlsKeyStore != null) {
+        NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+        builder.trustCertificates(null, mtlsKeyStore, "");
+        Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
+        if (conscryptProvider != null) {
+          SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+          // The TrustManagerFactory must come from the same provider as the SSLContext. On TLS 1.3,
+          // Conscrypt passes authType "GENERIC" to the trust manager, which the JDK (SunJSSE) PKIX
+          // trust manager rejects for CA-issued server certificates that carry a KeyUsage extension
+          // (e.g. Google front ends), failing the handshake with "Unknown authType: GENERIC".
+          // Conscrypt's trust manager loads the same default trust store as the JDK.
+          SslUtils.initSslContext(
+              sslContext,
+              null,
+              TrustManagerFactory.getInstance("PKIX", conscryptProvider),
+              mtlsKeyStore,
+              "",
+              SslUtils.getDefaultKeyManagerFactory());
+          builder.setSslSocketFactory(sslContext.getSocketFactory());
+        }
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+        return builder.build();
+      }
+    }
+    return null;
   }
 
-  private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
+  private ManagedHttpJsonChannel createSingleManagedChannel()
       throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null || !certificateBasedAccess.useMtlsClientCertificate()) {
-      return builder;
-    }
-    KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-    if (mtlsKeyStore == null) {
-      return builder;
-    }
-    builder.trustCertificates(null, mtlsKeyStore, "");
-    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
-    if (conscryptProvider == null) {
-      // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
-      return builder;
-    }
-    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
-    // key managers
-    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
-    // key exchange).
-    SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
-    SslUtils.initSslContext(
-        sslContext,
-        null,
-        SslUtils.getPkixTrustManagerFactory(),
-        mtlsKeyStore,
-        "",
-        SslUtils.getDefaultKeyManagerFactory());
-    builder.setSslSocketFactory(sslContext.getSocketFactory());
-    return builder;
-  }
-
-  private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
     HttpTransport httpTransportToUse = httpTransport;
     if (httpTransportToUse == null) {
       httpTransportToUse = createHttpTransport();
-    }
-
-    // Pass the executor to the ManagedChannel. If no executor was provided (or null),
-    // the channel will use a default executor for the calls.
-    ManagedHttpJsonChannel channel =
-        ManagedHttpJsonChannel.newBuilder()
-            .setEndpoint(endpoint)
-            .setExecutor(executor)
-            .setHttpTransport(httpTransportToUse)
-            .build();
-
-    HttpJsonClientInterceptor headerInterceptor =
-        new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
-
-    channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
-    channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
-    if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
-      for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
-        channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+      if (httpTransportToUse == null
+          && mtlsProvider != null
+          && certificateBasedAccess.useMtlsClientCertificate()) {
+        throw new IOException("Failed to initialize mTLS HttpTransport");
       }
     }
+    return ManagedHttpJsonChannel.newBuilder()
+        .setEndpoint(endpoint)
+        .setExecutor(executor)
+        .setHttpTransport(httpTransportToUse)
+        .setManageHttpTransport(httpTransport == null)
+        .build();
+  }
 
-    return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+  private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
+    boolean isMtlsActive =
+        httpTransport == null
+            && mtlsProvider != null
+            && certificateBasedAccess.useMtlsClientCertificate();
+    String workloadCertPath = isMtlsActive ? certificateBasedAccess.getWorkloadCertPath() : null;
+
+    ManagedHttpJsonChannel initialChannel = createSingleManagedChannel();
+    try {
+      java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory =
+          () -> {
+            try {
+              return createSingleManagedChannel();
+            } catch (Exception e) {
+              throw new java.lang.RuntimeException(
+                  "Failed to create fresh ManagedHttpJsonChannel", e);
+            }
+          };
+
+      ManagedHttpJsonChannel channel =
+          workloadCertPath != null
+              ? new RefreshingHttpJsonChannel(initialChannel, channelFactory, workloadCertPath)
+              : initialChannel;
+
+      HttpJsonClientInterceptor headerInterceptor =
+          new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
+
+      channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
+      channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
+      if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
+        for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
+          channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+        }
+      }
+
+      return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+    } catch (Throwable t) {
+      initialChannel.shutdownNow();
+      throw t;
+    }
   }
 
   /** The endpoint to be used for the channel. */

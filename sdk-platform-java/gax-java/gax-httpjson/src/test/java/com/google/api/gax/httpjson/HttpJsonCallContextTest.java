@@ -334,4 +334,54 @@ class HttpJsonCallContextTest {
     assertEquals(testContext2, mergedContext.getOption(contextKey2));
     assertEquals(testContext3, mergedContext.getOption(contextKey3));
   }
+
+  @Test
+  void testWithChannelClearsStaleTransportChannel() {
+    ManagedHttpJsonChannel channel1 =
+        mock(ManagedHttpJsonChannel.class, Mockito.withSettings().withoutAnnotations());
+    ManagedHttpJsonChannel channel2 =
+        mock(ManagedHttpJsonChannel.class, Mockito.withSettings().withoutAnnotations());
+
+    HttpJsonTransportChannel transportChannel1 =
+        HttpJsonTransportChannel.newBuilder().setManagedChannel(channel1).build();
+
+    HttpJsonCallContext context =
+        HttpJsonCallContext.createDefault().withTransportChannel(transportChannel1);
+    Truth.assertThat(context.getTransportChannel()).isSameInstanceAs(transportChannel1);
+
+    // Retains transportChannel when setting same channel
+    Truth.assertThat(context.withChannel(channel1).getTransportChannel())
+        .isSameInstanceAs(transportChannel1);
+
+    // Clears transportChannel to null when setting null or a different channel
+    HttpJsonCallContext nullChannelContext = context.withChannel(null);
+    Truth.assertThat(nullChannelContext.getChannel()).isNull();
+    Truth.assertThat(nullChannelContext.getTransportChannel()).isNull();
+    Truth.assertThat(context.withChannel(channel2).getTransportChannel()).isNull();
+
+    // Merging a cleared context into default context preserves default context's transportChannel
+    HttpJsonCallContext mergedWithNullChannel = context.merge(nullChannelContext);
+    Truth.assertThat(mergedWithNullChannel.getChannel()).isSameInstanceAs(channel1);
+    Truth.assertThat(mergedWithNullChannel.getTransportChannel())
+        .isSameInstanceAs(transportChannel1);
+  }
+
+  @Test
+  void testMergeClearsStaleTransportChannel() {
+    ManagedHttpJsonChannel channel1 =
+        mock(ManagedHttpJsonChannel.class, Mockito.withSettings().withoutAnnotations());
+    ManagedHttpJsonChannel channel2 =
+        mock(ManagedHttpJsonChannel.class, Mockito.withSettings().withoutAnnotations());
+
+    HttpJsonTransportChannel transportChannel1 =
+        HttpJsonTransportChannel.newBuilder().setManagedChannel(channel1).build();
+
+    HttpJsonCallContext context1 =
+        HttpJsonCallContext.createDefault().withTransportChannel(transportChannel1);
+    HttpJsonCallContext context2 = HttpJsonCallContext.createDefault().withChannel(channel2);
+
+    HttpJsonCallContext merged = context1.merge(context2);
+    Truth.assertThat(merged.getChannel()).isSameInstanceAs(channel2);
+    Truth.assertThat(merged.getTransportChannel()).isNull();
+  }
 }
