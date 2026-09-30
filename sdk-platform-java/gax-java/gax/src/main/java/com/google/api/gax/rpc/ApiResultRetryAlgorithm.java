@@ -70,6 +70,20 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
           .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
           .build();
     }
+    if (previousThrowable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) previousThrowable).isRetryable()) {
+      // The single rotation retry has already been used. Return exhausted settings so the retry
+      // framework stops, rather than returning null and falling back to exponential backoff.
+      int exhaustedAttemptCount = previousSettings.getAttemptCount() + 1;
+      return previousSettings.toBuilder()
+          .setGlobalSettings(
+              previousSettings.getGlobalSettings().toBuilder()
+                  .setMaxAttempts(exhaustedAttemptCount)
+                  .build())
+          .setAttemptCount(exhaustedAttemptCount)
+          .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
+          .build();
+    }
     return null;
   }
 

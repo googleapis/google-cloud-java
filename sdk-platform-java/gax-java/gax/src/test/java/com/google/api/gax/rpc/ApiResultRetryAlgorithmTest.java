@@ -248,4 +248,78 @@ class ApiResultRetryAlgorithmTest {
     assertEquals(3, attempt3.getOverallAttemptCount());
     assertTrue(retryAlgorithm.shouldRetry(context, unavailableEx, null, attempt3));
   }
+
+  @Test
+  void testSecondRotationFailureStopsWithTotalTimeoutAndNoMaxAttempts() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Collections.emptySet());
+
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(0)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+
+    ApiResultRetryAlgorithm<String> resultAlgorithm = new ApiResultRetryAlgorithm<>();
+    ExponentialRetryAlgorithm timedAlgorithm =
+        new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock());
+    RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+
+    TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
+    UnauthenticatedException rotationEx =
+        new UnauthenticatedException(
+            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+
+    TimedAttemptSettings rotationRetry =
+        retryAlgorithm.createNextAttempt(context, rotationEx, null, firstAttempt);
+    assertTrue(retryAlgorithm.shouldRetry(context, rotationEx, null, rotationRetry));
+
+    // A second rotation-marked failure must stop immediately instead of retrying with backoff
+    // until the total timeout expires.
+    TimedAttemptSettings afterSecondFailure =
+        retryAlgorithm.createNextAttempt(context, rotationEx, null, rotationRetry);
+    assertNotNull(afterSecondFailure);
+    assertFalse(retryAlgorithm.shouldRetry(context, rotationEx, null, afterSecondFailure));
+  }
+
+  @Test
+  void testSecondRotationFailureDoesNotConsumeNormalRetryBudget() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));
+
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(5)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+
+    ApiResultRetryAlgorithm<String> resultAlgorithm = new ApiResultRetryAlgorithm<>();
+    ExponentialRetryAlgorithm timedAlgorithm =
+        new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock());
+    RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+
+    TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
+    UnauthenticatedException rotationEx =
+        new UnauthenticatedException(
+            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+
+    TimedAttemptSettings rotationRetry =
+        retryAlgorithm.createNextAttempt(context, rotationEx, null, firstAttempt);
+    assertTrue(retryAlgorithm.shouldRetry(context, rotationEx, null, rotationRetry));
+
+    // UNAUTHENTICATED is not a retryable code, so a second rotation-marked failure must stop
+    // instead of consuming the method's remaining attempts.
+    TimedAttemptSettings afterSecondFailure =
+        retryAlgorithm.createNextAttempt(context, rotationEx, null, rotationRetry);
+    assertNotNull(afterSecondFailure);
+    assertFalse(retryAlgorithm.shouldRetry(context, rotationEx, null, afterSecondFailure));
+  }
 }
