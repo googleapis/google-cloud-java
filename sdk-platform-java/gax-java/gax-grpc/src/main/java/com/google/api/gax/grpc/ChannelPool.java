@@ -50,6 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -516,7 +517,8 @@ class ChannelPool extends ManagedChannel {
         return;
       }
 
-      if (refreshAll()) {
+      // Drop any channel that fails to refresh so that no traffic is routed to the old certificate.
+      if (refreshAll(/* dropUnrefreshedChannels= */ true)) {
         rotationTracker.markRefreshed(currentDiskFingerprint);
       }
     }
@@ -529,6 +531,23 @@ class ChannelPool extends ManagedChannel {
 
   @InternalApi("Visible for testing")
   boolean refreshAll() {
+    return refreshAll(/* dropUnrefreshedChannels= */ false);
+  }
+
+  /**
+   * Replaces the channels in the pool with freshly created ones.
+   *
+   * @param dropUnrefreshedChannels if {@code false}, a channel that fails to be recreated keeps its
+   *     slot in the pool. If {@code true} (used for certificate rotation), only newly created
+   *     channels are kept so no traffic is routed to a channel using the old certificate; a
+   *     statically sized pool is then refilled asynchronously, while a dynamically sized pool is
+   *     refilled by {@link #resize()}.
+   * @return if {@code dropUnrefreshedChannels} is {@code false}, whether every channel was
+   *     recreated; otherwise, whether at least one channel was recreated (i.e. every channel left
+   *     in the pool was newly created)
+   */
+  @InternalApi("Visible for testing")
+  boolean refreshAll(boolean dropUnrefreshedChannels) {
     synchronized (entryWriteLock) {
       if (isShutdown) {
         return false;
@@ -553,7 +572,12 @@ class ChannelPool extends ManagedChannel {
             anyCreated = true;
           } catch (Exception e) {
             allCreated = false;
-            LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
+            LOG.log(
+                Level.WARNING,
+                dropUnrefreshedChannels
+                    ? "Failed to refresh channel, dropping old channel"
+                    : "Failed to refresh channel, leaving old channel",
+                e);
           }
         }
 
@@ -561,23 +585,57 @@ class ChannelPool extends ManagedChannel {
           return false;
         }
 
-        ImmutableList<Entry> replacedEntries = entries.getAndSet(ImmutableList.copyOf(newEntries));
+        ImmutableList<Entry> finalEntries =
+            ImmutableList.copyOf(dropUnrefreshedChannels ? createdEntries : newEntries);
+        ImmutableList<Entry> replacedEntries = entries.getAndSet(finalEntries);
         createdEntries.clear(); // Ownership transferred to pool
 
         // Shutdown the channels that were cycled out.
         for (Entry e : replacedEntries) {
-          if (!newEntries.contains(e)) {
+          if (!finalEntries.contains(e)) {
             e.requestShutdown();
           }
         }
         generation.incrementAndGet();
-        return allCreated;
+        if (dropUnrefreshedChannels && !allCreated && settings.isStaticSize()) {
+          scheduleRefill();
+        }
+        return dropUnrefreshedChannels || allCreated;
       } finally {
         // If an Error aborted before getAndSet, shut down newly created channels so they don't leak
         for (Entry e : createdEntries) {
           e.requestShutdown();
         }
       }
+    }
+  }
+
+  /**
+   * Schedules a one-shot task that restores a statically sized pool to its configured channel count
+   * after a certificate rotation refresh dropped channels that failed to refresh.
+   */
+  private void scheduleRefill() {
+    try {
+      backgroundExecutorProvider.getExecutor().execute(this::refillSafely);
+    } catch (RejectedExecutionException e) {
+      LOG.log(Level.WARNING, "Failed to schedule channel pool refill", e);
+    }
+  }
+
+  @VisibleForTesting
+  void refillSafely() {
+    try {
+      synchronized (entryWriteLock) {
+        if (isShutdown) {
+          return;
+        }
+        int targetSize = settings.getInitialChannelCount();
+        if (entries.get().size() < targetSize) {
+          expand(targetSize);
+        }
+      }
+    } catch (Exception e) {
+      LOG.log(Level.WARNING, "Failed to refill channel pool", e);
     }
   }
 

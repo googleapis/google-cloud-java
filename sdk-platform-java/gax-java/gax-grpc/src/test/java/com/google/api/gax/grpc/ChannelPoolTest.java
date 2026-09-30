@@ -67,6 +67,7 @@ import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -566,66 +567,264 @@ class ChannelPoolTest {
         .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
   }
 
+  private void writeCert(String resourceName) throws IOException {
+    if (tempCert == null) {
+      tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
+    }
+    java.nio.file.Files.copy(
+        java.nio.file.Paths.get("src", "test", "resources", resourceName),
+        tempCert,
+        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+  }
+
+  /** Creates an mTLS pool backed by {@code executor} and then rotates the certificate on disk. */
+  private ChannelPool createMtlsPoolAndRotateCert(
+      ChannelPoolSettings settings,
+      ChannelFactory channelFactory,
+      ScheduledExecutorService executor)
+      throws IOException {
+    writeCert("client_cert.pem");
+    pool =
+        new ChannelPool(
+            settings, channelFactory, FixedExecutorProvider.create(executor), tempCert.toString());
+    pool.invalidateDiskFingerprintCache();
+    writeCert("root_cert.pem");
+    assertThat(pool.shouldRefresh()).isTrue();
+    return pool;
+  }
+
+  private static ScheduledExecutorService mockExecutor() {
+    return Mockito.mock(
+        ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations());
+  }
+
+  private static ChannelFactory mockChannelFactory() {
+    return Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   @Test
-  void
-      channelReactiveMTlsRefresh_partialFailureInMultiChannelPool_retainsShouldRefreshAndCompletesOnSubsequentRefresh()
-          throws IOException {
+  void channelReactiveMTlsRefresh_partialFailureInStaticPool_dropsUnrefreshedChannelsAndRefills()
+      throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
     ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
-    ManagedChannel rotated1SecondPass = Mockito.mock(ManagedChannel.class);
-    ManagedChannel rotated2 = Mockito.mock(ManagedChannel.class);
-    ChannelFactory channelFactory =
-        Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
-
-    // Initial creation: initial1, initial2
-    // Refresh pass 1: rotated1 succeeds, second throws IOException
-    // Refresh pass 2: rotated1SecondPass, rotated2 both succeed
+    ManagedChannel refilled = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
     Mockito.when(channelFactory.createSingleChannel())
         .thenReturn(initial1, initial2)
         .thenReturn(rotated1)
         .thenThrow(new IOException("Transient failure on second sub-channel"))
-        .thenReturn(rotated1SecondPass, rotated2);
+        .thenReturn(refilled);
 
-    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
-    java.nio.file.Path clientCert =
-        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
-    java.nio.file.Files.copy(
-        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-
-    pool =
-        ChannelPool.create(
-            ChannelPoolSettings.staticallySized(2), channelFactory, null, tempCert.toString());
-
-    // Rotate cert on disk
-    pool.invalidateDiskFingerprintCache();
-    java.nio.file.Path rootCert =
-        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
-    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-
-    assertThat(pool.shouldRefresh()).isTrue();
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(2), channelFactory, executor);
     long genBefore = pool.getGeneration();
 
-    // First refresh: partial failure (channel 0 rotates to rotated1, channel 1 fails and keeps
-    // initial2)
     pool.refresh();
 
-    // Generation should still increment since partial progress was committed
-    assertThat(pool.getGeneration()).isGreaterThan(genBefore);
-    // initial1 should have been shut down, initial2 should NOT be shut down yet
+    // Only the newly created channel is kept; both channels on the old certificate are retired.
+    assertThat(pool.entries.get()).hasSize(1);
+    Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2).shutdown();
+    Mockito.verify(rotated1, Mockito.never()).shutdown();
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(rotated1)
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+    assertThat(pool.getGeneration()).isEqualTo(genBefore + 1);
+    // Every channel left in the pool uses the new certificate, so it is recorded as active.
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
+
+    // A one-time refill restores the configured size.
+    ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor).execute(refillTask.capture());
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(2);
+    Mockito.verify(channelFactory, Mockito.times(5)).createSingleChannel();
+
+    // Running the refill again on a full pool creates no channels.
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(2);
+    Mockito.verify(channelFactory, Mockito.times(5)).createSingleChannel();
+    Mockito.verify(refilled, Mockito.never()).shutdown();
+    Mockito.verify(executor, Mockito.times(1)).execute(Mockito.any(Runnable.class));
+  }
+
+  @Test
+  void channelReactiveMTlsRefresh_fullSuccess_doesNotScheduleRefill() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel rotated2 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2, rotated1, rotated2);
+
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(2), channelFactory, executor);
+
+    pool.refresh();
+
+    assertThat(pool.entries.get()).hasSize(2);
+    Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2).shutdown();
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
+    Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
+  }
+
+  @Test
+  void refreshAll_partialFailureWithoutRotation_keepsOldChannelAndDoesNotScheduleRefill()
+      throws IOException {
+    // Non-rotation refreshes (e.g. the preemptive refresh) keep per-slot fallback even for mTLS.
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel refreshed1 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2)
+        .thenReturn(refreshed1)
+        .thenThrow(new IOException("Transient failure on second sub-channel"));
+
+    writeCert("client_cert.pem");
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.staticallySized(2),
+            channelFactory,
+            FixedExecutorProvider.create(executor),
+            tempCert.toString());
+    long genBefore = pool.getGeneration();
+
+    assertThat(pool.refreshAll()).isFalse();
+
+    assertThat(pool.entries.get()).hasSize(2);
     Mockito.verify(initial1).shutdown();
     Mockito.verify(initial2, Mockito.never()).shutdown();
+    assertThat(pool.getGeneration()).isEqualTo(genBefore + 1);
+    Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
+  }
 
-    // Crucial assertion: shouldRefresh() MUST remain true so subsequent 401s on unrotated channel 1
-    // trigger retry/refresh
-    pool.invalidateDiskFingerprintCache();
-    assertThat(pool.shouldRefresh()).isTrue();
+  @Test
+  void channelReactiveMTlsRefresh_partialFailureInDynamicPool_refilledByResize()
+      throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel resized = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2)
+        .thenReturn(rotated1)
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenReturn(resized);
 
-    // Second refresh: both channels succeed
+    createMtlsPoolAndRotateCert(
+        ChannelPoolSettings.builder()
+            .setInitialChannelCount(2)
+            .setMinChannelCount(2)
+            .setMaxChannelCount(4)
+            .setMinRpcsPerChannel(1)
+            .setMaxRpcsPerChannel(2)
+            .build(),
+        channelFactory,
+        executor);
+
     pool.refresh();
 
-    assertThat(pool.shouldRefresh()).isFalse();
+    assertThat(pool.entries.get()).hasSize(1);
+    Mockito.verify(initial1).shutdown();
     Mockito.verify(initial2).shutdown();
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
+    // Dynamic pools rely on the periodic resize instead of a one-time refill.
+    Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
+
+    pool.resize();
+    assertThat(pool.entries.get()).hasSize(2);
+  }
+
+  @Test
+  void refill_afterShutdown_createsNoChannels() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class))
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenReturn(Mockito.mock(ManagedChannel.class));
+
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(2), channelFactory, executor);
+    pool.refresh();
+    ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor).execute(refillTask.capture());
+
+    pool.shutdown();
+    refillTask.getValue().run();
+
+    assertThat(pool.entries.get()).hasSize(1);
+    Mockito.verify(channelFactory, Mockito.times(4)).createSingleChannel();
+  }
+
+  @Test
+  void refill_channelCreationFailure_isLoggedAndDoesNotThrow() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class))
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenThrow(new IOException("Checked failure during refill"))
+        .thenThrow(new RuntimeException("Unchecked failure during refill"))
+        .thenReturn(Mockito.mock(ManagedChannel.class));
+
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(2), channelFactory, executor);
+    pool.refresh();
+    ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor).execute(refillTask.capture());
+
+    // IOException is handled by expand(); the pool stays usable at its reduced size.
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(1);
+
+    // RuntimeException is caught by refillSafely().
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(1);
+
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(2);
+  }
+
+  @Test
+  void channelReactiveMTlsRefresh_refillRejectedByExecutor_stillCompletesRefresh()
+      throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    Mockito.doThrow(new RejectedExecutionException("Executor shut down"))
+        .when(executor)
+        .execute(Mockito.any(Runnable.class));
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2, Mockito.mock(ManagedChannel.class))
+        .thenThrow(new IOException("Transient failure on second sub-channel"));
+
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(2), channelFactory, executor);
+    long genBefore = pool.getGeneration();
+
+    pool.refresh();
+
+    assertThat(pool.entries.get()).hasSize(1);
+    Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2).shutdown();
+    assertThat(pool.getGeneration()).isEqualTo(genBefore + 1);
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
   }
 
   @Test
