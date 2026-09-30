@@ -494,11 +494,9 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
       throws IOException {
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+    // Certificate-bound ID tokens are intentionally not requested yet; only access tokens are
+    // bound for agent identities (see refreshAccessToken). ID tokens are always fetched unbound.
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
-    if (boundTokenPayload != null) {
-      documentUrl.set("format", "full");
-    }
     if (options != null) {
       if (options.contains(IdTokenProvider.Option.FORMAT_FULL)) {
         documentUrl.set("format", "full");
@@ -511,18 +509,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
     }
     documentUrl.set("audience", targetAudience);
     HttpResponse response =
-        getMetadataResponseForToken(
-            documentUrl.toString(), boundTokenPayload, RequestType.ID_TOKEN_REQUEST, true);
+        getMetadataResponse(
+            documentUrl.toString(), "GET", null, RequestType.ID_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
-      if (boundTokenPayload != null) {
-        throw new IOException(
-            String.format(
-                "Error code %s trying to get bound identity token from Compute Engine metadata."
-                    + " The Compute Engine metadata server endpoint does not support bound"
-                    + " tokens.",
-                statusCode));
-      }
       throw new IOException(
           String.format(
               "Error code %s trying to get identity token from"

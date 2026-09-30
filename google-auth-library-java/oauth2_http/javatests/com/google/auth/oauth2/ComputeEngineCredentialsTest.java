@@ -1360,10 +1360,12 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void idTokenWithAudience_withValidCertAndKey_requestsBoundToken() throws IOException {
+  void idTokenWithAudience_withValidCertAndKey_requestsUnboundToken() throws IOException {
+    // Bound ID tokens are deferred: even with an agent identity certificate present and token
+    // binding enabled, ID tokens are requested unbound (GET, no certificate chain, no forced
+    // format=full). Access tokens are still bound (see refreshAccessToken test above).
     setupCertAndKeyConfig();
-    envProvider.setEnv(
-        AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
@@ -1374,16 +1376,10 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     assertNotNull(token);
     MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
-    assertEquals("POST", transportFactory.transport.getRequestMethod());
-    assertEquals("application/json", request.getContentType());
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
     assertTrue(request.getUrl().contains("audience=https://foo.bar"));
-    assertTrue(request.getUrl().contains("format=full"));
-    String body = request.getContentAsString();
-    GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
-    String expectedCert =
-        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
-            .trim();
-    assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
+    assertFalse(request.getUrl().contains("format=full"));
+    assertNull(request.getStreamingContent());
   }
 
   @Test
@@ -1401,8 +1397,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void idTokenWithAudience_boundToken404_throwsEndpointDoesNotSupportBoundTokensMessage()
-      throws IOException {
+  void idTokenWithAudience_withValidCertAndKey404_throwsUnboundIdTokenMessage() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
@@ -1413,7 +1408,8 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     IOException e =
         assertThrows(
             IOException.class, () -> credentials.idTokenWithAudience("https://foo.bar", null));
-    assertTrue(e.getMessage().contains("does not support bound tokens"));
+    assertTrue(e.getMessage().contains("trying to get identity token"));
+    assertFalse(e.getMessage().contains("bound"));
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
