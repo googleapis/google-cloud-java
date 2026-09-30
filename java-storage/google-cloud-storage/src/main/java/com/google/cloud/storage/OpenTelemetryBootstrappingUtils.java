@@ -214,9 +214,6 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_GFE_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION);
 
   static final ImmutableList<String> CLIENT_SIZE_HISTOGRAMS =
@@ -350,29 +347,21 @@ final class OpenTelemetryBootstrappingUtils {
   @VisibleForTesting
   static SdkMeterProviderBuilder registerClientViews(SdkMeterProviderBuilder providerBuilder) {
     for (String metric : CLIENT_LATENCY_HISTOGRAMS) {
-      addClientHistogramView(providerBuilder, latencyHistogramBoundaries(), metric, "s");
+      addClientHistogramView(providerBuilder, latencyHistogramBoundaries(), metric);
     }
     for (String metric : CLIENT_SIZE_HISTOGRAMS) {
-      addClientHistogramView(providerBuilder, sizeHistogramBoundaries(), metric, "By");
+      addClientHistogramView(providerBuilder, sizeHistogramBoundaries(), metric);
     }
     return providerBuilder;
   }
 
   private static void addClientHistogramView(
-      SdkMeterProviderBuilder provider, List<Double> boundaries, String name, String unit) {
+      SdkMeterProviderBuilder provider, List<Double> boundaries, String name) {
     InstrumentSelector instrumentSelector =
-        InstrumentSelector.builder()
-            .setType(InstrumentType.HISTOGRAM)
-            .setUnit(unit)
-            .setName(name)
-            .build();
+        InstrumentSelector.builder().setType(InstrumentType.HISTOGRAM).setName(name).build();
     View view =
         View.builder()
             .setName(name)
-            .setDescription(
-                "A view of "
-                    + name
-                    + " with histogram boundaries more appropriate for Google Cloud Storage RPCs")
             .setAggregation(Aggregation.explicitBucketHistogram(boundaries))
             .build();
     provider.registerView(instrumentSelector, view);

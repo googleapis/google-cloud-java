@@ -57,14 +57,6 @@ final class StorageClientMetrics {
   static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
       "gcp.storage.client.auth.credential_refresh.duration";
 
-  // Deferred metrics (Phase 2 placeholders - not currently measurable on Java HTTP/gRPC transports)
-  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION =
-      "gcp.storage.client.network.dns.lookup.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION =
-      "gcp.storage.client.network.tcp.connect.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION =
-      "gcp.storage.client.network.tls.handshake.duration";
-
   private final DoubleHistogram rpcClientCallDuration;
   private final DoubleHistogram httpClientRequestDuration;
   private final DoubleHistogram gcpClientRequestDuration;
@@ -81,9 +73,6 @@ final class StorageClientMetrics {
   @Nullable private final DoubleHistogram stallDuration;
   @Nullable private final LongHistogram networkBytesSent;
   @Nullable private final LongHistogram networkBytesReceived;
-  @Nullable private final DoubleHistogram dnsLookupDuration;
-  @Nullable private final DoubleHistogram tcpConnectDuration;
-  @Nullable private final DoubleHistogram tlsHandshakeDuration;
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
   static StorageClientMetrics create(MeterProvider meterProvider, boolean enableOtelDebugMetrics) {
@@ -193,24 +182,6 @@ final class StorageClientMetrics {
               .setDescription("Number of wire bytes received from the network")
               .setUnit("By")
               .build();
-      this.dnsLookupDuration =
-          meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION)
-              .setDescription("Time taken for DNS lookup")
-              .setUnit("s")
-              .build();
-      this.tcpConnectDuration =
-          meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION)
-              .setDescription("Time taken for TCP connection")
-              .setUnit("s")
-              .build();
-      this.tlsHandshakeDuration =
-          meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION)
-              .setDescription("Time taken to perform a TLS handshake")
-              .setUnit("s")
-              .build();
       this.credentialRefreshDuration =
           meter
               .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION)
@@ -226,9 +197,6 @@ final class StorageClientMetrics {
       this.stallDuration = null;
       this.networkBytesSent = null;
       this.networkBytesReceived = null;
-      this.dnsLookupDuration = null;
-      this.tcpConnectDuration = null;
-      this.tlsHandshakeDuration = null;
       this.credentialRefreshDuration = null;
     }
   }
@@ -291,18 +259,6 @@ final class StorageClientMetrics {
 
   @Nullable LongHistogram getNetworkBytesReceived() {
     return networkBytesReceived;
-  }
-
-  @Nullable DoubleHistogram getDnsLookupDuration() {
-    return dnsLookupDuration;
-  }
-
-  @Nullable DoubleHistogram getTcpConnectDuration() {
-    return tcpConnectDuration;
-  }
-
-  @Nullable DoubleHistogram getTlsHandshakeDuration() {
-    return tlsHandshakeDuration;
   }
 
   @Nullable DoubleHistogram getCredentialRefreshDuration() {

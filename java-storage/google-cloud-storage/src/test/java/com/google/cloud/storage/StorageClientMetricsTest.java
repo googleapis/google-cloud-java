@@ -56,9 +56,6 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getStallDuration()).isNull();
     assertThat(metrics.getNetworkBytesSent()).isNull();
     assertThat(metrics.getNetworkBytesReceived()).isNull();
-    assertThat(metrics.getDnsLookupDuration()).isNull();
-    assertThat(metrics.getTcpConnectDuration()).isNull();
-    assertThat(metrics.getTlsHandshakeDuration()).isNull();
     assertThat(metrics.getCredentialRefreshDuration()).isNull();
   }
 
@@ -86,9 +83,6 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getStallDuration()).isNotNull();
     assertThat(metrics.getNetworkBytesSent()).isNotNull();
     assertThat(metrics.getNetworkBytesReceived()).isNotNull();
-    assertThat(metrics.getDnsLookupDuration()).isNotNull();
-    assertThat(metrics.getTcpConnectDuration()).isNotNull();
-    assertThat(metrics.getTlsHandshakeDuration()).isNotNull();
     assertThat(metrics.getCredentialRefreshDuration()).isNotNull();
   }
 
@@ -111,9 +105,6 @@ public final class StorageClientMetricsTest {
     metrics.getStallDuration().record(0.010);
     metrics.getNetworkBytesSent().record(1024 * 256);
     metrics.getNetworkBytesReceived().record(1024 * 512);
-    metrics.getDnsLookupDuration().record(0.005);
-    metrics.getTcpConnectDuration().record(0.015);
-    metrics.getTlsHandshakeDuration().record(0.025);
     metrics.getCredentialRefreshDuration().record(0.080);
 
     metrics.getRequestBodySize().record(1024 * 512);
@@ -160,18 +151,6 @@ public final class StorageClientMetricsTest {
     assertHistogramBoundaries(
         metricsMap,
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
-        expectedLatencyBoundaries);
-    assertHistogramBoundaries(
-        metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_DNS_LOOKUP_DURATION,
-        expectedLatencyBoundaries);
-    assertHistogramBoundaries(
-        metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TCP_CONNECT_DURATION,
-        expectedLatencyBoundaries);
-    assertHistogramBoundaries(
-        metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_TLS_HANDSHAKE_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
