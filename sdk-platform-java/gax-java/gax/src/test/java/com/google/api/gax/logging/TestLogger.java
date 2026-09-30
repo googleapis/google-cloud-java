@@ -279,7 +279,7 @@ public class TestLogger implements Logger, LoggingEventAware {
 
   @Override
   public boolean isErrorEnabled() {
-    return false;
+    return true;
   }
 
   @Override
