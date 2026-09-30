@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The PacketMirrorings API.
  *
+ * <p>This client uses PacketMirrorings version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -352,7 +354,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, PacketMirroringsScopedList> element :
@@ -394,7 +395,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, PacketMirroringsScopedList>> future =
@@ -435,7 +435,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -871,7 +870,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (PacketMirroring element : packetMirroringsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -907,7 +905,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<PacketMirroring> future =
    *       packetMirroringsClient.listPagedCallable().futureCall(request);
@@ -943,7 +940,6 @@ public class PacketMirroringsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     PacketMirroringList response = packetMirroringsClient.listCallable().call(request);

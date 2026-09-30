@@ -301,8 +301,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>INTERNAL = 279295677;</code>
      */
     INTERNAL(279295677),
-    /** <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code> */
-    UNSPECIFIED_IPV6_ACCESS_TYPE(313080613),
     UNRECOGNIZED(-1),
     ;
 
@@ -349,9 +347,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public static final int INTERNAL_VALUE = 279295677;
 
-    /** <code>UNSPECIFIED_IPV6_ACCESS_TYPE = 313080613;</code> */
-    public static final int UNSPECIFIED_IPV6_ACCESS_TYPE_VALUE = 313080613;
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -382,8 +377,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return EXTERNAL;
         case 279295677:
           return INTERNAL;
-        case 313080613:
-          return UNSPECIFIED_IPV6_ACCESS_TYPE;
         default:
           return null;
       }
@@ -753,8 +746,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * <code>IPV6_ONLY = 79632100;</code>
      */
     IPV6_ONLY(79632100),
-    /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
-    UNSPECIFIED_STACK_TYPE(298084569),
     UNRECOGNIZED(-1),
     ;
 
@@ -812,9 +803,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public static final int IPV6_ONLY_VALUE = 79632100;
 
-    /** <code>UNSPECIFIED_STACK_TYPE = 298084569;</code> */
-    public static final int UNSPECIFIED_STACK_TYPE_VALUE = 298084569;
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -847,8 +835,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           return IPV4_ONLY;
         case 79632100:
           return IPV6_ONLY;
-        case 298084569:
-          return UNSPECIFIED_STACK_TYPE;
         default:
           return null;
       }

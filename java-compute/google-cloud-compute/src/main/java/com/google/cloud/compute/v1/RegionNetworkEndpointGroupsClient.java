@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionNetworkEndpointGroups API.
  *
+ * <p>This client uses RegionNetworkEndpointGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1112,7 +1114,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (NetworkEndpointGroup element :
    *       regionNetworkEndpointGroupsClient.list(request).iterateAll()) {
@@ -1151,7 +1152,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<NetworkEndpointGroup> future =
    *       regionNetworkEndpointGroupsClient.listPagedCallable().futureCall(request);
@@ -1190,7 +1190,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkEndpointGroupList response =
@@ -1280,7 +1279,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (NetworkEndpointWithHealthStatus element :
    *       regionNetworkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
@@ -1320,7 +1318,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<NetworkEndpointWithHealthStatus> future =
    *       regionNetworkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
@@ -1360,7 +1357,6 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkEndpointGroupsListNetworkEndpoints response =

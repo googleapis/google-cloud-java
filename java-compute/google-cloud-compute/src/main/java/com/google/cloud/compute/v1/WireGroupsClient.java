@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The WireGroups API.
  *
+ * <p>This client uses WireGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -666,7 +668,6 @@ public class WireGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (WireGroup element : wireGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -702,7 +703,6 @@ public class WireGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<WireGroup> future = wireGroupsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -737,7 +737,6 @@ public class WireGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     WireGroupList response = wireGroupsClient.listCallable().call(request);

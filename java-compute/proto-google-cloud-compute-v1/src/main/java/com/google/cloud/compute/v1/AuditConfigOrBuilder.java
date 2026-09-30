@@ -83,36 +83,6 @@ public interface AuditConfigOrBuilder
   com.google.cloud.compute.v1.AuditLogConfigOrBuilder getAuditLogConfigsOrBuilder(int index);
 
   /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @return A list containing the exemptedMembers.
-   */
-  java.util.List<java.lang.String> getExemptedMembersList();
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @return The count of exemptedMembers.
-   */
-  int getExemptedMembersCount();
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The exemptedMembers at the given index.
-   */
-  java.lang.String getExemptedMembers(int index);
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the exemptedMembers at the given index.
-   */
-  com.google.protobuf.ByteString getExemptedMembersBytes(int index);
-
-  /**
    *
    *
    * <pre>

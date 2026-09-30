@@ -44,7 +44,6 @@ public class SyncListManagedInstances {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       for (ManagedInstance element :
           regionInstanceGroupManagersClient.listManagedInstances(request).iterateAll()) {

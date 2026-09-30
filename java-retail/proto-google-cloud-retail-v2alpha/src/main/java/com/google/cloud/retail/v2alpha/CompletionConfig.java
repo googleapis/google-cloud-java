@@ -649,6 +649,26 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ENABLE_AGENT_PROMPTS_FIELD_NUMBER = 16;
+  private boolean enableAgentPrompts_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the conversational shopping agent prompts will be
+   * served. Default value is false.
+   * </pre>
+   *
+   * <code>bool enable_agent_prompts = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAgentPrompts.
+   */
+  @java.lang.Override
+  public boolean getEnableAgentPrompts() {
+    return enableAgentPrompts_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -695,6 +715,9 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
     if (autoLearning_ != false) {
       output.writeBool(11, autoLearning_);
+    }
+    if (enableAgentPrompts_ != false) {
+      output.writeBool(16, enableAgentPrompts_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -744,6 +767,9 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     if (autoLearning_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, autoLearning_);
     }
+    if (enableAgentPrompts_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, enableAgentPrompts_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -783,6 +809,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!getLastAllowlistImportOperation().equals(other.getLastAllowlistImportOperation()))
       return false;
+    if (getEnableAgentPrompts() != other.getEnableAgentPrompts()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -822,6 +849,8 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + LAST_ALLOWLIST_IMPORT_OPERATION_FIELD_NUMBER;
     hash = (53 * hash) + getLastAllowlistImportOperation().hashCode();
+    hash = (37 * hash) + ENABLE_AGENT_PROMPTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAgentPrompts());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -997,6 +1026,7 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         allowlistInputConfigBuilder_ = null;
       }
       lastAllowlistImportOperation_ = "";
+      enableAgentPrompts_ = false;
       return this;
     }
 
@@ -1079,6 +1109,9 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.lastAllowlistImportOperation_ = lastAllowlistImportOperation_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enableAgentPrompts_ = enableAgentPrompts_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1137,6 +1170,9 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
         lastAllowlistImportOperation_ = other.lastAllowlistImportOperation_;
         bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (other.getEnableAgentPrompts() != false) {
+        setEnableAgentPrompts(other.getEnableAgentPrompts());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1234,6 +1270,12 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 88
+            case 128:
+              {
+                enableAgentPrompts_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2819,6 +2861,65 @@ public final class CompletionConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       lastAllowlistImportOperation_ = value;
       bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableAgentPrompts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the conversational shopping agent prompts will be
+     * served. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_agent_prompts = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableAgentPrompts.
+     */
+    @java.lang.Override
+    public boolean getEnableAgentPrompts() {
+      return enableAgentPrompts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the conversational shopping agent prompts will be
+     * served. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_agent_prompts = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableAgentPrompts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableAgentPrompts(boolean value) {
+
+      enableAgentPrompts_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the conversational shopping agent prompts will be
+     * served. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_agent_prompts = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableAgentPrompts() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      enableAgentPrompts_ = false;
       onChanged();
       return this;
     }
