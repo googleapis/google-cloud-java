@@ -13,6 +13,61 @@ to authenticate to Google Cloud and for more information about the Google Auth L
 See the [API Documentation](https://cloud.google.com/java/docs/reference/google-auth-library/latest/overview.html) to see
 the Javadocs for Google Auth Library.
 
+## Certificate-bound tokens for agent identities
+
+When your application runs with an agent identity (for example, a Cloud Run service or job deployed
+with `--identity-type=agent-identity`), `ComputeEngineCredentials` requests **certificate-bound**
+access tokens and ID tokens from the metadata server by default. A bound token is tied to the
+workload's X.509 certificate, so a leaked token can't be used from anywhere else.
+
+A bound token is only accepted when the request that carries it is sent over mutual TLS (mTLS)
+with the same certificate. Google Cloud client libraries for Java that are built on GAX do this
+automatically when a workload certificate is available. If you call Google APIs with your own HTTP
+client, you must configure mTLS with the workload certificate yourself; otherwise the API rejects
+the token with `401 UNAUTHENTICATED`.
+
+The library requests a bound token only when all of the following are true:
+
+* A workload certificate is found, either through the file named by the `GOOGLE_API_CERTIFICATE_CONFIG`
+  environment variable or in the default location
+  (`/var/run/secrets/workload-spiffe-credentials/`).
+* The certificate's SPIFFE ID belongs to an agent identity trust domain.
+* Token binding and mTLS haven't been turned off (see the next section).
+
+In all other environments, `ComputeEngineCredentials` behaves as before and returns unbound tokens.
+
+### Turning off token binding
+
+We strongly discourage turning off token binding, because bound tokens protect your agent against
+credential theft. If you need to (see [Known limitations](#known-limitations)), set the following
+environment variable:
+
+```sh
+GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false
+```
+
+| Environment variable | Effect |
+|---|---|
+| `GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN` | Set to `false` to request unbound tokens. Takes precedence over the legacy variable. |
+| `GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES` | Legacy variable, also read by Google Auth Library for Python. Only used when `GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN` is unset or empty. Set to `false` to request unbound tokens. |
+| `GOOGLE_API_USE_CLIENT_CERTIFICATE` | Setting this to `false` turns off mTLS entirely, which also turns off token binding. Prefer `GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false` if you only need unbound tokens. |
+
+Values are case-insensitive and surrounding whitespace is ignored. Only `false` turns a feature
+off; any other value leaves the default in place.
+
+Environment variables apply to the whole process, so turning off token binding affects every
+library in your application that uses Application Default Credentials, not only the one that needs
+it.
+
+### Known limitations
+
+* **Agent Development Kit (ADK) for Java** doesn't yet use mTLS when it calls Google APIs, such as
+  Gemini on Vertex AI. With bound tokens (the default), those calls fail with
+  `com.google.genai.errors.ClientException: 401 . Request had invalid authentication credentials`.
+  Until ADK for Java supports mTLS, set `GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false` for agents
+  that use ADK for Java. For details, see
+  [Authenticate agents on Cloud Run](https://cloud.google.com/run/docs/ai/authenticate-agents).
+
 ## Versioning
 
 This library follows [Semantic Versioning](http://semver.org/), but with some

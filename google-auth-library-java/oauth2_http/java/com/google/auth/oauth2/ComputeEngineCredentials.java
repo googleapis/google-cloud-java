@@ -34,11 +34,15 @@ package com.google.auth.oauth2;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.auth.CredentialTypeForMetrics;
@@ -68,6 +72,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -80,6 +85,38 @@ import org.jspecify.annotations.Nullable;
  * <p>Fetches access tokens from the Google Compute Engine metadata server.
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
+ *
+ * <p><b>Certificate-bound tokens for agent identities.</b> When a workload certificate for an agent
+ * identity is available (for example, on Cloud Run with an agent identity), {@link
+ * #refreshAccessToken()} and {@link #idTokenWithAudience(String, List)} request tokens that are
+ * bound to that certificate. The certificate is located through the file named by the {@code
+ * GOOGLE_API_CERTIFICATE_CONFIG} environment variable or, if that is unset, in the default workload
+ * credentials directory. A bound token is only requested when the certificate's SPIFFE ID belongs
+ * to an agent identity trust domain; otherwise these credentials return unbound tokens as before.
+ *
+ * <p>A bound token is only accepted when it is sent over mutual TLS (mTLS) using the same
+ * certificate. Google Cloud client libraries that are built on GAX configure mTLS automatically.
+ * Callers that send the token with their own HTTP client must configure mTLS themselves.
+ *
+ * <p>Token binding is on by default. It can be turned off for the whole process with the following
+ * environment variables. Values are case-insensitive, and only {@code false} turns binding off:
+ *
+ * <ul>
+ *   <li>{@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}: request unbound tokens. Takes
+ *       precedence over the legacy variable.
+ *   <li>{@code GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES=false}: legacy variable,
+ *       only read when {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN} is unset or empty.
+ *   <li>{@code GOOGLE_API_USE_CLIENT_CERTIFICATE=false}: turns off mTLS, which also turns off token
+ *       binding.
+ * </ul>
+ *
+ * <p>Turning off token binding is strongly discouraged, because bound tokens protect against
+ * credential theft. One known reason to turn it off is the Agent Development Kit (ADK) for Java,
+ * which doesn't yet use mTLS when it calls Google APIs.
+ *
+ * <p>If a certificate configuration file is present but the certificate files it points to are
+ * missing, or if the metadata server doesn't support bound tokens, token requests fail with an
+ * {@link IOException} rather than silently falling back to unbound tokens.
  */
 @NullMarked
 public class ComputeEngineCredentials extends GoogleCredentials
@@ -320,7 +357,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getUniverseDomainFromMetadata() throws IOException {
     HttpResponse response =
-        getMetadataResponse(getUniverseDomainUrl(), RequestType.UNTRACKED, false);
+        getMetadataResponse(getUniverseDomainUrl(), "GET", null, RequestType.UNTRACKED, false);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       return Credentials.GOOGLE_DEFAULT_UNIVERSE;
@@ -379,7 +416,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getProjectIdFromMetadata() {
     try {
-      HttpResponse response = getMetadataResponse(getProjectIdUrl(), RequestType.UNTRACKED, false);
+      HttpResponse response =
+          getMetadataResponse(getProjectIdUrl(), "GET", null, RequestType.UNTRACKED, false);
       int statusCode = response.getStatusCode();
       if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
         LoggingUtils.log(
@@ -421,17 +459,27 @@ public class ComputeEngineCredentials extends GoogleCredentials
   /** Refresh the access token by getting it from the GCE metadata server */
   @Override
   public AccessToken refreshAccessToken() throws IOException {
+    String tokenUrl = createTokenUrlWithScopes();
+    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     HttpResponse response =
-        getMetadataResponse(createTokenUrlWithScopes(), RequestType.ACCESS_TOKEN_REQUEST, true);
+        getMetadataResponseForToken(
+            tokenUrl, boundTokenPayload, RequestType.ACCESS_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
+      if (boundTokenPayload != null) {
+        throw new IOException(
+            String.format(
+                "Error code %s trying to get bound security access token from Compute Engine"
+                    + " metadata for the default service account. The Compute Engine metadata"
+                    + " server endpoint does not support bound tokens.",
+                statusCode));
+      }
       throw new IOException(
           String.format(
-              "Error code %s trying to get security access token from"
-                  + " Compute Engine metadata for the default service account. This may be because"
-                  + " the virtual machine instance does not have permission scopes specified."
-                  + " It is possible to skip checking for Compute Engine metadata by specifying the environment "
-                  + " variable "
+              "Error code %s trying to get security access token from Compute Engine metadata for"
+                  + " the default service account. This may be because the virtual machine instance"
+                  + " does not have permission scopes specified. It is possible to skip checking"
+                  + " for Compute Engine metadata by specifying the environment variable "
                   + DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR
                   + "=true.",
               statusCode));
@@ -478,7 +526,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
       throws IOException {
+    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
+    if (boundTokenPayload != null) {
+      documentUrl.set("format", "full");
+    }
     if (options != null) {
       if (options.contains(IdTokenProvider.Option.FORMAT_FULL)) {
         documentUrl.set("format", "full");
@@ -491,9 +543,18 @@ public class ComputeEngineCredentials extends GoogleCredentials
     }
     documentUrl.set("audience", targetAudience);
     HttpResponse response =
-        getMetadataResponse(documentUrl.toString(), RequestType.ID_TOKEN_REQUEST, true);
+        getMetadataResponseForToken(
+            documentUrl.toString(), boundTokenPayload, RequestType.ID_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
+      if (boundTokenPayload != null) {
+        throw new IOException(
+            String.format(
+                "Error code %s trying to get bound identity token from Compute Engine metadata."
+                    + " The Compute Engine metadata server endpoint does not support bound"
+                    + " tokens.",
+                statusCode));
+      }
       throw new IOException(
           String.format(
               "Error code %s trying to get identity token from"
@@ -504,7 +565,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
     if (statusCode != HttpStatusCodes.STATUS_CODE_OK) {
       throw new IOException(
           String.format(
-              "Unexpected Error code %s trying to get identity token from Compute Engine metadata: %s",
+              "Unexpected Error code %s trying to get identity token from Compute Engine metadata:"
+                  + " %s",
               statusCode, response.parseAsString()));
     }
     InputStream content = response.getContent();
@@ -519,11 +581,38 @@ public class ComputeEngineCredentials extends GoogleCredentials
     return IdToken.create(rawToken);
   }
 
+  private HttpResponse getMetadataResponseForToken(
+      String url,
+      @Nullable String boundTokenPayload,
+      RequestType requestType,
+      boolean shouldSendMetricsHeader)
+      throws IOException {
+    if (boundTokenPayload != null) {
+      Map<String, String> payload =
+          Collections.singletonMap("certificate_chain", boundTokenPayload);
+      HttpContent content =
+          new JsonHttpContent(OAuth2Utils.JSON_FACTORY, payload)
+              .setMediaType(new HttpMediaType("application/json"));
+      return getMetadataResponse(url, "POST", content, requestType, shouldSendMetricsHeader);
+    }
+    return getMetadataResponse(url, "GET", null, requestType, shouldSendMetricsHeader);
+  }
+
   private HttpResponse getMetadataResponse(
-      String url, RequestType requestType, boolean shouldSendMetricsHeader) throws IOException {
+      String url,
+      String method,
+      @Nullable HttpContent content,
+      RequestType requestType,
+      boolean shouldSendMetricsHeader)
+      throws IOException {
     GenericUrl genericUrl = new GenericUrl(url);
-    HttpRequest request =
-        transportFactory.create().createRequestFactory().buildGetRequest(genericUrl);
+    HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
+    HttpRequest request;
+    if ("POST".equals(method)) {
+      request = requestFactory.buildPostRequest(genericUrl, content);
+    } else {
+      request = requestFactory.buildGetRequest(genericUrl);
+    }
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead where appropriate.
     request.setLoggingEnabled(false);
@@ -840,7 +929,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getDefaultServiceAccount() throws IOException {
     HttpResponse response =
-        getMetadataResponse(getDefaultServiceAccountUrl(), RequestType.UNTRACKED, false);
+        getMetadataResponse(
+            getDefaultServiceAccountUrl(), "GET", null, RequestType.UNTRACKED, false);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(
