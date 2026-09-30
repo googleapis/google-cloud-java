@@ -174,7 +174,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || transportFactory instanceof MtlsHttpTransportFactory;
+        || transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || (transportFactory instanceof MtlsHttpTransportFactory
+            && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
   }
 
   private boolean shouldUseMtlsTransportFactory() {
@@ -259,9 +261,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           // On 401, re-read from X509Provider for fresh certs and retry once.
           KeyStore freshKeyStore = this.x509Provider.getKeyStore();
           HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
-          if (!hasInitializedMtlsTransport()) {
-            this.transportFactory = retryTransportFactory;
-          }
           return exchangeExternalCredentialForAccessToken(
               stsTokenExchangeRequest.build(), retryTransportFactory);
         } catch (IOException retryException) {
@@ -485,7 +484,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     /**
      * Sets the actor token supplier used for OAuth 2.0 token exchanges. The supplier provides an
-     * actor token representing the entity on whose behalf the subject is acting.
+     * actor token representing the acting party that acts on behalf of the subject.
      *
      * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token
      * type}.
