@@ -151,20 +151,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.databaseId = options.databaseId;
       this.requestTags = options.requestTags;
       this.openTelemetryOptions = options.openTelemetryOptions;
-      this.channelProvider = validateChannelProvider(options.channelProvider);
+      this.channelProvider = options.channelProvider;
       this.host = options.getHost();
       this.transportOptions = options.getTransportOptions();
-    }
-
-    private TransportChannelProvider validateChannelProvider(
-        TransportChannelProvider channelProvider) {
-      Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
-      // Allow any TransportChannelProvider that uses gRPC (e.g., FixedTransportChannelProvider).
-      if (!GrpcTransportChannel.getGrpcTransportName().equals(channelProvider.getTransportName())) {
-        throw new IllegalArgumentException(
-            "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
-      }
-      return channelProvider;
     }
 
     /**
@@ -219,7 +208,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
      */
     @BetaApi
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
-      this.channelProvider = validateChannelProvider(channelProvider);
+      this.channelProvider = channelProvider;
       return this;
     }
 
@@ -333,6 +322,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         }
         this.channelProvider = channelProviderBuilder.build();
       } else {
+        // Allow any TransportChannelProvider that uses gRPC (e.g., FixedTransportChannelProvider).
+        if (!GrpcTransportChannel.getGrpcTransportName()
+            .equals(builder.channelProvider.getTransportName())) {
+          throw new IllegalArgumentException(
+              "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
+        }
         this.channelProvider = builder.channelProvider;
       }
     }

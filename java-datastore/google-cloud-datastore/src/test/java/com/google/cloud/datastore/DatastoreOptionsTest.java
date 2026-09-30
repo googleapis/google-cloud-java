@@ -307,8 +307,23 @@ public class DatastoreOptionsTest {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
-            () -> DatastoreOptions.newBuilder().setChannelProvider(channelProvider));
+            () ->
+                DatastoreOptions.newBuilder()
+                    .setProjectId(PROJECT_ID)
+                    .setChannelProvider(channelProvider)
+                    .build());
     assertTrue(exception.getMessage().contains("Only GRPC channels are allowed for Datastore."));
+  }
+
+  @Test
+  public void testToBuilderWithHttpTransportOptions() {
+    DatastoreOptions httpOptions =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .build();
+    DatastoreOptions copy = httpOptions.toBuilder().build();
+    assertEquals(httpOptions, copy);
   }
 
   @Test
