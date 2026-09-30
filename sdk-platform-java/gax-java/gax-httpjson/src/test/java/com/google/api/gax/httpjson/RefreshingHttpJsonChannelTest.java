@@ -212,6 +212,29 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
+  void rotationDuringInitialChannelCreation_isDetectedAndRefreshed() {
+    channelFactory =
+        () -> {
+          if (channelFactoryCount.incrementAndGet() == 1) {
+            // Simulate the certificate rotating on disk while the initial channel loads it.
+            testFingerprint = "fingerprint2";
+          }
+          lastCreatedChannel = new FakeManagedHttpJsonChannel();
+          return lastCreatedChannel;
+        };
+
+    RefreshingHttpJsonChannel channel = createTestChannel();
+
+    // The baseline was recorded before the initial channel was created, so the rotation is seen.
+    assertTrue(channel.shouldRefresh());
+
+    channel.refresh();
+    assertEquals(2, channelFactoryCount.get());
+    assertEquals(1, channel.getGeneration());
+    assertFalse(channel.shouldRefresh());
+  }
+
+  @Test
   void testRefreshSwapsChannel() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
     FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
@@ -322,7 +345,10 @@ class RefreshingHttpJsonChannelTest {
     channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
     testFingerprint = "fingerprint2";
 
-    assertThrows(RuntimeException.class, channel::refresh);
+    // Factory failure is logged and the existing channel is kept
+    channel.refresh();
+    assertEquals(1, channelFactoryCount.get());
+    assertEquals(0, channel.getGeneration());
 
     // Because factory threw, activeCertFingerprint should NOT be updated to fingerprint2
     // Therefore shouldRefresh() should still return true

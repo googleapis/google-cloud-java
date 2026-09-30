@@ -69,27 +69,16 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   public RefreshingHttpJsonChannel(
       Supplier<ManagedHttpJsonChannel> channelFactory, String workloadCertPath) {
-    this(channelFactory.get(), channelFactory, workloadCertPath);
-  }
-
-  public RefreshingHttpJsonChannel(
-      ManagedHttpJsonChannel initialChannel,
-      Supplier<ManagedHttpJsonChannel> channelFactory,
-      String workloadCertPath) {
     super(true);
     this.channelFactory = channelFactory;
     this.workloadCertPath = workloadCertPath;
-    ChannelEntry initial = new ChannelEntry(initialChannel);
+    // Record the baseline fingerprint before the initial channel loads the certificate from disk,
+    // so a rotation between the two steps is detected as a fingerprint change.
+    this.rotationTracker =
+        new CertificateRotationTracker(this::getWorkloadCertPath, this::getCertificateFingerprint);
+    ChannelEntry initial = new ChannelEntry(channelFactory.get());
     this.activeEntry = new AtomicReference<>(initial);
     this.allEntries.add(initial);
-    try {
-      this.rotationTracker =
-          new CertificateRotationTracker(
-              this::getWorkloadCertPath, this::getCertificateFingerprint);
-    } catch (Throwable t) {
-      initialChannel.shutdownNow();
-      throw t;
-    }
   }
 
   // Visible for testing
@@ -128,14 +117,22 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
       LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
 
-      ChannelEntry newEntry = new ChannelEntry(channelFactory.get());
+      ChannelEntry newEntry;
+      try {
+        newEntry = new ChannelEntry(channelFactory.get());
+      } catch (Exception e) {
+        LOG.log(Level.WARNING, "Failed to refresh HTTP/JSON channel, leaving old channel", e);
+        return;
+      }
       allEntries.add(newEntry);
       // Prune terminated entries after adding newEntry to ensure allEntries is never empty
       allEntries.removeIf(entry -> entry != newEntry && entry.channel.isTerminated());
 
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
-      rotationTracker.markRefreshed(currentDiskFingerprint);
+      // Order matters: swap activeEntry, then bump generation, then mark the tracker refreshed, so
+      // any failing RPC that observes the new fingerprint also observes the new generation.
       generation.incrementAndGet();
+      rotationTracker.markRefreshed(currentDiskFingerprint);
 
       if (oldEntry != null) {
         oldEntry.requestShutdown();

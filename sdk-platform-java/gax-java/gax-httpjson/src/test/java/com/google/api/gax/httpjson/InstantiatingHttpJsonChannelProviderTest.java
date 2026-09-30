@@ -317,6 +317,57 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
+  void getTransportChannel_whenKeyStoreUninitialized_causeIsSecurityException() throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    // A KeyStore that was never loaded makes transport creation fail with a KeyStoreException.
+    java.security.KeyStore uninitializedKeyStore = java.security.KeyStore.getInstance("PKCS12");
+    com.google.auth.mtls.MtlsProvider providerWithBadKeyStore =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(uninitializedKeyStore, "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(providerWithBadKeyStore)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    // The GeneralSecurityException must be unwrapped from the factory's RuntimeException, so that
+    // getTransportChannel() surfaces it as the direct cause of its checked IOException.
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasCauseThat().isInstanceOf(GeneralSecurityException.class);
+  }
+
+  @Test
+  void getTransportChannel_whenMtlsKeyStoreThrowsRuntimeException_propagatesUnwrapped()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    IllegalStateException failure = new IllegalStateException("Simulated keystore failure");
+    MtlsProvider failingMtlsProvider =
+        Mockito.mock(MtlsProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(failingMtlsProvider.getKeyStore()).thenThrow(failure);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(failingMtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IllegalStateException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IllegalStateException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).isSameInstanceAs(failure);
+  }
+
+  @Test
   void createHttpTransport_withMtlsAndConscrypt_configuresSecurityProvider()
       throws IOException, GeneralSecurityException {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);

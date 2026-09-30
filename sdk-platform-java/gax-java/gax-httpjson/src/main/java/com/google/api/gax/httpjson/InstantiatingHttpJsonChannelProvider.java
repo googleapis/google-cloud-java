@@ -249,22 +249,36 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
             && certificateBasedAccess.useMtlsClientCertificate();
     String workloadCertPath = isMtlsActive ? certificateBasedAccess.getWorkloadCertPath() : null;
 
-    ManagedHttpJsonChannel initialChannel = createSingleManagedChannel();
-    try {
+    ManagedHttpJsonChannel baseChannel;
+    if (workloadCertPath != null) {
       java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory =
           () -> {
             try {
               return createSingleManagedChannel();
-            } catch (Exception e) {
+            } catch (IOException | GeneralSecurityException e) {
               throw new java.lang.RuntimeException(
                   "Failed to create fresh ManagedHttpJsonChannel", e);
             }
           };
+      // RefreshingHttpJsonChannel records the baseline certificate fingerprint before creating the
+      // initial channel, so a rotation during startup is detected on the next auth failure.
+      try {
+        baseChannel = new RefreshingHttpJsonChannel(channelFactory, workloadCertPath);
+      } catch (RuntimeException e) {
+        if (e.getCause() instanceof IOException) {
+          throw (IOException) e.getCause();
+        }
+        if (e.getCause() instanceof GeneralSecurityException) {
+          throw (GeneralSecurityException) e.getCause();
+        }
+        throw e;
+      }
+    } else {
+      baseChannel = createSingleManagedChannel();
+    }
 
-      ManagedHttpJsonChannel channel =
-          workloadCertPath != null
-              ? new RefreshingHttpJsonChannel(initialChannel, channelFactory, workloadCertPath)
-              : initialChannel;
+    try {
+      ManagedHttpJsonChannel channel = baseChannel;
 
       HttpJsonClientInterceptor headerInterceptor =
           new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
@@ -279,7 +293,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
       return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
     } catch (Throwable t) {
-      initialChannel.shutdownNow();
+      baseChannel.shutdownNow();
       throw t;
     }
   }
