@@ -102,10 +102,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Store the x509Provider and useMtlsTransportFactory flag for per-cycle cert pinning and
     // deserialization recovery.
     this.x509Provider = builder.x509Provider;
-    this.useMtlsTransportFactory =
-        builder.useMtlsTransportFactory != null
-            ? builder.useMtlsTransportFactory
-            : isDefaultOrMtlsTransportFactory(builder.transportFactory);
+    this.useMtlsTransportFactory = builder.useMtlsTransportFactory;
 
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
@@ -171,7 +168,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
   }
 
-  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+  private static boolean isDefaultOrMtlsTransportFactory(
+      @Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
         || transportFactory.getClass() == MtlsHttpTransportFactory.class
@@ -429,7 +427,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
-    private @Nullable Boolean useMtlsTransportFactory;
+    private boolean useMtlsTransportFactory = true;
     private boolean isClonedTransportInitialized;
 
     Builder() {}
@@ -556,6 +554,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
       if (this.credentialSource != null && this.credentialSource != credentialSource) {
         this.x509Provider = null;
+        if (this.useMtlsTransportFactory) {
+          this.transportFactory = null;
+        }
       }
       super.setCredentialSource(credentialSource);
       this.isClonedTransportInitialized = false;

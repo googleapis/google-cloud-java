@@ -3109,6 +3109,17 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertNotSame(trackingProvider, rebuilt.getX509Provider());
     assertNotSame(credential.getTransportFactory(), rebuilt.getTransportFactory());
     assertEquals(1, getKeyStoreCount.get());
+
+    Map<String, Object> sourceMapWithoutCert = new HashMap<>();
+    sourceMapWithoutCert.put("file", "credential.json");
+    sourceMapWithoutCert.put("format", formatMap);
+    IdentityPoolCredentials rebuiltWithoutCert =
+        credential.toBuilder()
+            .setCredentialSource(new IdentityPoolCredentialSource(sourceMapWithoutCert))
+            .build();
+
+    assertNull(rebuiltWithoutCert.getX509Provider());
+    assertFalse(rebuiltWithoutCert.getTransportFactory() instanceof MtlsHttpTransportFactory);
   }
 
   @Test
@@ -3157,7 +3168,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         Mockito.mock(ImpersonatedCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(impersonated.refreshAccessToken())
         .thenReturn(new AccessToken("impersonatedAccessToken", null));
-    List<HttpTransportFactory> factoriesSeenByImpersonation = new java.util.ArrayList<>();
+    List<HttpTransportFactory> factoriesSeenByImpersonation = new ArrayList<>();
 
     IdentityPoolCredentials credential =
         new IdentityPoolCredentials(
