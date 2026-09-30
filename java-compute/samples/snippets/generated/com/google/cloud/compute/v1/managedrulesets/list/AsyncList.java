@@ -16,27 +16,40 @@
 
 package com.google.cloud.compute.v1.samples;
 
-// [START compute_v1_generated_FirewallPolicies_Move_StringString_sync]
-import com.google.cloud.compute.v1.FirewallPoliciesClient;
-import com.google.cloud.compute.v1.Operation;
+// [START compute_v1_generated_ManagedRulesets_List_async]
+import com.google.api.core.ApiFuture;
+import com.google.cloud.compute.v1.ListManagedRulesetsRequest;
+import com.google.cloud.compute.v1.ManagedRuleset;
+import com.google.cloud.compute.v1.ManagedRulesetsClient;
 
-public class SyncMoveStringString {
+public class AsyncList {
 
   public static void main(String[] args) throws Exception {
-    syncMoveStringString();
+    asyncList();
   }
 
-  public static void syncMoveStringString() throws Exception {
+  public static void asyncList() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
-      String firewallPolicy = "firewallPolicy1819692626";
-      String parentId = "parentId1175162725";
-      Operation response = firewallPoliciesClient.moveAsync(firewallPolicy, parentId).get();
+    try (ManagedRulesetsClient managedRulesetsClient = ManagedRulesetsClient.create()) {
+      ListManagedRulesetsRequest request =
+          ListManagedRulesetsRequest.newBuilder()
+              .setFilter("filter-1274492040")
+              .setMaxResults(1128457243)
+              .setOrderBy("orderBy-1207110587")
+              .setPageToken("pageToken873572522")
+              .setProject("project-309310695")
+              .build();
+      ApiFuture<ManagedRuleset> future =
+          managedRulesetsClient.listPagedCallable().futureCall(request);
+      // Do something.
+      for (ManagedRuleset element : future.get().iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }
-// [END compute_v1_generated_FirewallPolicies_Move_StringString_sync]
+// [END compute_v1_generated_ManagedRulesets_List_async]

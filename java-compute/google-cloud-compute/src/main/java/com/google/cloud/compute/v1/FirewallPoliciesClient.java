@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The FirewallPolicies API.
  *
+ * <p>This client uses FirewallPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -224,7 +226,7 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li><p> insertAsync(String parentId, FirewallPolicy firewallPolicyResource)
+ *           <li><p> insertAsync(FirewallPolicy firewallPolicyResource)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -280,7 +282,7 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
- *           <li><p> moveAsync(String firewallPolicy, String parentId)
+ *           <li><p> moveAsync(String firewallPolicy)
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -1340,24 +1342,18 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
-   *   String parentId = "parentId1175162725";
    *   FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-   *   Operation response =
-   *       firewallPoliciesClient.insertAsync(parentId, firewallPolicyResource).get();
+   *   Operation response = firewallPoliciesClient.insertAsync(firewallPolicyResource).get();
    * }
    * }</pre>
    *
-   * @param parentId Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if
-   *     the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an
-   *     organization.
    * @param firewallPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Operation, Operation> insertAsync(
-      String parentId, FirewallPolicy firewallPolicyResource) {
+      FirewallPolicy firewallPolicyResource) {
     InsertFirewallPolicyRequest request =
         InsertFirewallPolicyRequest.newBuilder()
-            .setParentId(parentId)
             .setFirewallPolicyResource(firewallPolicyResource)
             .build();
     return insertAsync(request);
@@ -1501,7 +1497,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (FirewallPolicy element : firewallPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1536,7 +1531,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<FirewallPolicy> future =
    *       firewallPoliciesClient.listPagedCallable().futureCall(request);
@@ -1571,7 +1565,6 @@ public class FirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     FirewallPolicyList response = firewallPoliciesClient.listCallable().call(request);
@@ -1694,24 +1687,16 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
-   *   String parentId = "parentId1175162725";
-   *   Operation response = firewallPoliciesClient.moveAsync(firewallPolicy, parentId).get();
+   *   Operation response = firewallPoliciesClient.moveAsync(firewallPolicy).get();
    * }
    * }</pre>
    *
    * @param firewallPolicy Name of the firewall policy to update.
-   * @param parentId The new parent of the firewall policy. The ID can be either be
-   *     "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the
-   *     parent is an organization.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Operation, Operation> moveAsync(
-      String firewallPolicy, String parentId) {
+  public final OperationFuture<Operation, Operation> moveAsync(String firewallPolicy) {
     MoveFirewallPolicyRequest request =
-        MoveFirewallPolicyRequest.newBuilder()
-            .setFirewallPolicy(firewallPolicy)
-            .setParentId(parentId)
-            .build();
+        MoveFirewallPolicyRequest.newBuilder().setFirewallPolicy(firewallPolicy).build();
     return moveAsync(request);
   }
 

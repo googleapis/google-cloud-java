@@ -46,7 +46,6 @@ public class SyncListBgpRoutes {
               .setPolicyApplied(true)
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .setRouteType("routeType167668003")
               .setRouter("router-925132983")
               .build();

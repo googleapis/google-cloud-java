@@ -42,7 +42,6 @@ public class SyncList {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       for (SecurityPolicy element : organizationSecurityPoliciesClient.list(request).iterateAll()) {
         // doThingsWith(element);

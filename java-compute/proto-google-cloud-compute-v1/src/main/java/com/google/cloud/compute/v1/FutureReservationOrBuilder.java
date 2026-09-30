@@ -214,6 +214,51 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return Whether the colocationResource field is set.
+   */
+  boolean hasColocationResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return The colocationResource.
+   */
+  java.lang.String getColocationResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return The bytes for colocationResource.
+   */
+  com.google.protobuf.ByteString getColocationResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * If not present, then FR will not deliver a new commitment or update an
    * existing commitment.
    * </pre>

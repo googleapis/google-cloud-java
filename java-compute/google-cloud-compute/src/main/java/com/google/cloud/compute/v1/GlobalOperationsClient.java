@@ -39,6 +39,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The GlobalOperations API.
  *
+ * <p>This client uses GlobalOperations version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -312,7 +314,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, OperationsScopedList> element :
@@ -354,7 +355,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, OperationsScopedList>> future =
@@ -395,7 +395,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -645,7 +644,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Operation element : globalOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -680,7 +678,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Operation> future = globalOperationsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -714,7 +711,6 @@ public class GlobalOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     OperationList response = globalOperationsClient.listCallable().call(request);

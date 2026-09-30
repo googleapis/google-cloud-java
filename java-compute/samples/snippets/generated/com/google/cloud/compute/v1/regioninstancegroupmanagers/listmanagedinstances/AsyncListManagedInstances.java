@@ -45,7 +45,6 @@ public class AsyncListManagedInstances {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<ManagedInstance> future =
           regionInstanceGroupManagersClient.listManagedInstancesPagedCallable().futureCall(request);
