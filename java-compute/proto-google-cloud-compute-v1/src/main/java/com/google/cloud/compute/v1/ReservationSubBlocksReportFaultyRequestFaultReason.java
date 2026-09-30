@@ -111,6 +111,36 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
      *
      *
      * <pre>
+     * The subBlock experienced an NVSwitch controller error.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_CONTROLLER_ERROR = 250941637;</code>
+     */
+    NVSWITCH_FAULT_CONTROLLER_ERROR(250941637),
+    /**
+     *
+     *
+     * <pre>
+     * The subBlock experienced NVSwitch degraded bandwidth.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_DEGRADED_BANDWIDTH = 202741248;</code>
+     */
+    NVSWITCH_FAULT_DEGRADED_BANDWIDTH(202741248),
+    /**
+     *
+     *
+     * <pre>
+     * The subBlock experienced an NVSwitch switch error.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_SWITCH_ERROR = 287636061;</code>
+     */
+    NVSWITCH_FAULT_SWITCH_ERROR(287636061),
+    /**
+     *
+     *
+     * <pre>
      * The subBlock experienced performance issues.
      * </pre>
      *
@@ -179,6 +209,39 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
      *
      *
      * <pre>
+     * The subBlock experienced an NVSwitch controller error.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_CONTROLLER_ERROR = 250941637;</code>
+     */
+    public static final int NVSWITCH_FAULT_CONTROLLER_ERROR_VALUE = 250941637;
+
+    /**
+     *
+     *
+     * <pre>
+     * The subBlock experienced NVSwitch degraded bandwidth.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_DEGRADED_BANDWIDTH = 202741248;</code>
+     */
+    public static final int NVSWITCH_FAULT_DEGRADED_BANDWIDTH_VALUE = 202741248;
+
+    /**
+     *
+     *
+     * <pre>
+     * The subBlock experienced an NVSwitch switch error.
+     * </pre>
+     *
+     * <code>NVSWITCH_FAULT_SWITCH_ERROR = 287636061;</code>
+     */
+    public static final int NVSWITCH_FAULT_SWITCH_ERROR_VALUE = 287636061;
+
+    /**
+     *
+     *
+     * <pre>
      * The subBlock experienced performance issues.
      * </pre>
      *
@@ -238,6 +301,12 @@ public final class ReservationSubBlocksReportFaultyRequestFaultReason
           return FAULT_BEHAVIOR_UNSPECIFIED;
         case 198817909:
           return GPU_ERROR;
+        case 250941637:
+          return NVSWITCH_FAULT_CONTROLLER_ERROR;
+        case 202741248:
+          return NVSWITCH_FAULT_DEGRADED_BANDWIDTH;
+        case 287636061:
+          return NVSWITCH_FAULT_SWITCH_ERROR;
         case 135701520:
           return PERFORMANCE;
         case 111360678:

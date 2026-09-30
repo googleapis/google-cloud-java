@@ -30,6 +30,62 @@ public interface ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
    *
    *
    * <pre>
+   * List of disks to be attached to the instance.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.AttachedDisk> getDisksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instance.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  com.google.cloud.compute.v1.AttachedDisk getDisks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instance.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  int getDisksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instance.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.AttachedDiskOrBuilder>
+      getDisksOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instance.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  com.google.cloud.compute.v1.AttachedDiskOrBuilder getDisksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The machine type to be used for this instance.
    * </pre>
    *
@@ -64,4 +120,46 @@ public interface ManagedInstancePropertiesFromFlexibilityPolicyOrBuilder
    * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  boolean hasMinCpuPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The minCpuPlatform.
+   */
+  java.lang.String getMinCpuPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The bytes for minCpuPlatform.
+   */
+  com.google.protobuf.ByteString getMinCpuPlatformBytes();
 }
