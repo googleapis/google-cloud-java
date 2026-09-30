@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -309,11 +310,11 @@ public class BigQueryJdbcProxyUtilityTest {
   }
 
   @Test
-  public void testGetTransportChannelProvider_noProxyNoSsl_returnsDefaultConscryptProvider() {
+  public void testGetTransportChannelProvider_noProxyNoSsl_returnsNull() {
     TransportChannelProvider provider =
         BigQueryJdbcProxyUtility.getTransportChannelProvider(
             Collections.<String, String>emptyMap(), null, null, null, null, "TestClass");
-    assertNotNull(provider);
+    assertNull(provider);
   }
 
   @Test

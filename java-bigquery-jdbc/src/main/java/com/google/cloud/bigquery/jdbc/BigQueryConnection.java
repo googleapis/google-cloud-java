@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -1433,34 +1432,32 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.universeDomain != null) {
       bigQueryReadSettings.setUniverseDomain(this.universeDomain);
     }
-    TransportChannelProvider activeProvider =
-        this.transportChannelProvider != null
-            ? this.transportChannelProvider
-            : BigQueryReadSettings.defaultGrpcTransportProviderBuilder().build();
-
-    if (activeProvider instanceof InstantiatingGrpcChannelProvider) {
+    TransportChannelProvider activeProvider = this.transportChannelProvider;
+    if (activeProvider == null) {
       InstantiatingGrpcChannelProvider.Builder builder =
-          ((InstantiatingGrpcChannelProvider) activeProvider)
-              .toBuilder()
-              .setKeepAliveTimeDuration(java.time.Duration.ofSeconds(10))
-              .setKeepAliveTimeoutDuration(java.time.Duration.ofSeconds(5))
-              .setKeepAliveWithoutCalls(true);
+          BigQueryReadSettings.defaultGrpcTransportProviderBuilder();
       if (this.enableGcpTraceExporter
           || this.customOpenTelemetry != null
           || this.useGlobalOpenTelemetry) {
         GrpcOpenTelemetry grpcOpenTelemetry =
             GrpcOpenTelemetry.newBuilder().sdk(this.openTelemetry).build();
-        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> existingConfigurator =
-            builder.getChannelConfigurator();
         builder.setChannelConfigurator(
             b -> {
-              ManagedChannelBuilder<?> configured =
-                  existingConfigurator != null ? existingConfigurator.apply(b) : b;
-              grpcOpenTelemetry.configureChannelBuilder(configured);
-              return configured;
+              grpcOpenTelemetry.configureChannelBuilder((ManagedChannelBuilder) b);
+              return b;
             });
       }
       activeProvider = builder.build();
+    }
+
+    if (activeProvider instanceof InstantiatingGrpcChannelProvider) {
+      activeProvider =
+          ((InstantiatingGrpcChannelProvider) activeProvider)
+              .toBuilder()
+                  .setKeepAliveTimeDuration(java.time.Duration.ofSeconds(10))
+                  .setKeepAliveTimeoutDuration(java.time.Duration.ofSeconds(5))
+                  .setKeepAliveWithoutCalls(true)
+                  .build();
     }
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);

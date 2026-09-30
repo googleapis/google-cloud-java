@@ -169,6 +169,9 @@
                     <relocation>
                       <pattern>io.grpc</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io.grpc</shadedPattern>
+                      <excludes>
+                        <exclude>io.grpc.netty.shaded.**</exclude>
+                      </excludes>
                     </relocation>
                     <relocation>
                       <pattern>io.netty</pattern>
