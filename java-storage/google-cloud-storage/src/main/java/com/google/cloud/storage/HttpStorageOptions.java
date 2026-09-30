@@ -155,7 +155,7 @@ public class HttpStorageOptions extends StorageOptions {
   @BetaApi
   @Override
   public Duration getMetricInterval() {
-    return metricInterval;
+    return metricInterval != null ? metricInterval : Duration.ofSeconds(60);
   }
 
   @Override
@@ -172,7 +172,7 @@ public class HttpStorageOptions extends StorageOptions {
         enableOtelMetrics,
         enableOtelDebugMetrics,
         getMeterProvider(),
-        metricInterval,
+        getMetricInterval(),
         baseHashCode());
   }
 
@@ -191,7 +191,7 @@ public class HttpStorageOptions extends StorageOptions {
         && enableOtelMetrics == that.enableOtelMetrics
         && enableOtelDebugMetrics == that.enableOtelDebugMetrics
         && Objects.equals(getMeterProvider(), that.getMeterProvider())
-        && Objects.equals(metricInterval, that.metricInterval)
+        && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
   }
 
@@ -422,12 +422,12 @@ public class HttpStorageOptions extends StorageOptions {
     /**
      * Set a custom {@link MeterProvider} for recording client metrics.
      *
-     * @param meterProvider custom MeterProvider to use
+     * @param meterProvider custom MeterProvider to use, or null to use the default
      * @since 2.50.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
-    public HttpStorageOptions.Builder setMeterProvider(MeterProvider meterProvider) {
+    public HttpStorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
       this.meterProvider = meterProvider;
       return this;
     }

@@ -27,8 +27,8 @@ final class StorageMetricsConfig {
   static final String ENV_ENABLE_OTEL_METRICS_FALLBACK = "GCP_STORAGE_ENABLE_OTEL_METRICS";
   static final String ENV_ENABLE_OTEL_DEBUG_METRICS = "GCP_STORAGE_JAVA_ENABLE_OTEL_DEBUG_METRICS";
 
-  private static Function<String, String> sysPropResolver = System::getProperty;
-  private static Function<String, String> envResolver = System::getenv;
+  private static volatile Function<String, String> sysPropResolver = System::getProperty;
+  private static volatile Function<String, String> envResolver = System::getenv;
 
   private StorageMetricsConfig() {}
 
