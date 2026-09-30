@@ -271,6 +271,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
                           unauthenticatedException.getStatusCode(),
                           true,
                           unauthenticatedException.getErrorDetails());
+                  newEx.setStackTrace(unauthenticatedException.getStackTrace());
                   for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
                     newEx.addSuppressed(suppressed);
                   }

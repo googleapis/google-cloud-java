@@ -337,6 +337,7 @@ class ServerStreamingAttemptCallableTest {
     Truth.assertThat(((ServerStreamingAttemptException) outerError).canResume()).isTrue();
     Truth.assertThat(outerError.getCause()).isInstanceOf(UnauthenticatedException.class);
     Truth.assertThat(((UnauthenticatedException) outerError.getCause()).isRetryable()).isTrue();
+    Truth.assertThat(outerError.getCause().getStackTrace()).isEqualTo(initialError.getStackTrace());
 
     // Verify retry call resumes stream
     callable.call();

@@ -211,6 +211,22 @@ class GrpcCallContextTest {
   }
 
   @Test
+  void testWithNullOrZeroTimeoutClearsExistingTimeout() {
+    GrpcCallContext ctxWithTimeout =
+        GrpcCallContext.createDefault().withTimeoutDuration(java.time.Duration.ofSeconds(5));
+
+    // Sanity check
+    Truth.assertThat(ctxWithTimeout.getTimeoutDuration())
+        .isEqualTo(java.time.Duration.ofSeconds(5));
+
+    java.time.Duration nullTimeout = null;
+    Truth.assertThat(ctxWithTimeout.withTimeoutDuration(nullTimeout).getTimeoutDuration()).isNull();
+    Truth.assertThat(
+            ctxWithTimeout.withTimeoutDuration(java.time.Duration.ZERO).getTimeoutDuration())
+        .isNull();
+  }
+
+  @Test
   void testMergeWithNullTimeout() {
     java.time.Duration timeout = java.time.Duration.ofSeconds(10);
     GrpcCallContext baseContext = GrpcCallContext.createDefault().withTimeoutDuration(timeout);

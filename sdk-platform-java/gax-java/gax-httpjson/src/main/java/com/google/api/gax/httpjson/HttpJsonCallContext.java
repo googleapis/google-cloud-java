@@ -316,7 +316,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
     }
 
     // Prevent expanding deadlines
-    if (this.timeout != null && (timeout == null || this.timeout.compareTo(timeout) <= 0)) {
+    if (timeout != null && this.timeout != null && this.timeout.compareTo(timeout) <= 0) {
       return this;
     }
 

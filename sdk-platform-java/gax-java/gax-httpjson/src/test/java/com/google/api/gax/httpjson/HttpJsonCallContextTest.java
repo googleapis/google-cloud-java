@@ -208,6 +208,20 @@ class HttpJsonCallContextTest {
   }
 
   @Test
+  void testWithNullOrZeroTimeoutClearsExistingTimeout() {
+    HttpJsonCallContext ctxWithTimeout =
+        HttpJsonCallContext.createDefault().withTimeoutDuration(java.time.Duration.ofSeconds(5));
+
+    // Sanity check
+    Truth.assertThat(ctxWithTimeout.getTimeoutDuration())
+        .isEqualTo(java.time.Duration.ofSeconds(5));
+
+    java.time.Duration nullTimeout = null;
+    assertNull(ctxWithTimeout.withTimeoutDuration(nullTimeout).getTimeoutDuration());
+    assertNull(ctxWithTimeout.withTimeoutDuration(java.time.Duration.ZERO).getTimeoutDuration());
+  }
+
+  @Test
   void testMergeWithNullTimeout() {
     java.time.Duration timeout = java.time.Duration.ofSeconds(10);
     HttpJsonCallContext baseContext =
