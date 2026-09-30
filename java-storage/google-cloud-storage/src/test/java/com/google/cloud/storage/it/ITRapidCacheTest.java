@@ -147,72 +147,25 @@ public class ITRapidCacheTest {
             .build();
 
     // 1. Create RapidCache
-    // Workaround for b/564257939: CreateRapidCache via gRPC in Prod returns UNAVAILABLE
-    // even when the backend asynchronously creates the cache instance.
-    RapidCache created = null;
-    try {
-      created =
-          controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
-    } catch (ExecutionException e) {
-      if (e.getCause() instanceof ApiException) {
-        ApiException apiEx = (ApiException) e.getCause();
-        StatusCode.Code code = apiEx.getStatusCode().getCode();
-        if (code == StatusCode.Code.UNAVAILABLE || code == StatusCode.Code.ALREADY_EXISTS) {
-          long backoffMs = 2000;
-          for (int attempt = 0; attempt < 10; attempt++) {
-            try {
-              Thread.sleep(backoffMs);
-            } catch (InterruptedException ie) {
-              Thread.currentThread().interrupt();
-              throw new RuntimeException("Interrupted while polling RapidCache state", ie);
-            }
-            try {
-              RapidCache candidate = controlClient.getRapidCache(cacheName);
-              if (candidate != null
-                  && ("running".equalsIgnoreCase(candidate.getState())
-                      || "active".equalsIgnoreCase(candidate.getState()))) {
-                created = candidate;
-                break;
-              }
-            } catch (ApiException ignored) {
-              // Cache not yet ready via getRapidCache
-            }
-            backoffMs = Math.min(backoffMs * 2, 10000);
-          }
-        }
-      }
-      if (created == null) {
-        throw e;
-      }
-    }
+    RapidCache created =
+        controlClient.createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache).get();
 
     assertThat(created).isNotNull();
     assertThat(created.getName()).isEqualTo(cacheName);
     assertThat(created.getState().toLowerCase()).isAnyOf("running", "active");
 
     // 2. Duplicate Create Attempt (should fail while cache is active)
-    ApiException duplicateApiException = null;
-    for (int i = 0; i < 3; i++) {
-      ExecutionException thrown =
-          assertThrows(
-              ExecutionException.class,
-              () ->
-                  controlClient
-                      .createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache)
-                      .get());
-      if (thrown.getCause() instanceof ApiException) {
-        duplicateApiException = (ApiException) thrown.getCause();
-        if (duplicateApiException.getStatusCode().getCode() == StatusCode.Code.UNAVAILABLE) {
-          Thread.sleep(2000);
-          continue;
-        }
-      }
-      break;
-    }
-    assertThat(duplicateApiException).isNotNull();
-    // b/564257939: CreateRapidCache in Prod returns UNAVAILABLE instead of ALREADY_EXISTS
+    ExecutionException duplicateEx =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                controlClient
+                    .createRapidCacheAsync(BucketName.format("_", bucketName), rapidCache)
+                    .get());
+    assertThat(duplicateEx.getCause()).isInstanceOf(ApiException.class);
+    ApiException duplicateApiException = (ApiException) duplicateEx.getCause();
     assertThat(duplicateApiException.getStatusCode().getCode())
-        .isAnyOf(StatusCode.Code.ALREADY_EXISTS, StatusCode.Code.UNAVAILABLE);
+        .isEqualTo(StatusCode.Code.ALREADY_EXISTS);
 
     // 3. Get RapidCache
     RapidCache retrieved = controlClient.getRapidCache(cacheName);
@@ -270,9 +223,7 @@ public class ITRapidCacheTest {
                     .get());
     assertThat(thrown.getCause()).isInstanceOf(ApiException.class);
     ApiException apiException = (ApiException) thrown.getCause();
-    // b/564257939: CreateRapidCache in Prod returns UNAVAILABLE instead of INVALID_ARGUMENT
-    assertThat(apiException.getStatusCode().getCode())
-        .isAnyOf(StatusCode.Code.INVALID_ARGUMENT, StatusCode.Code.UNAVAILABLE);
+    assertThat(apiException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
   }
 
   @Test
