@@ -104,6 +104,7 @@ generate_random_string
 
 pool_id="pool-"${suffix}
 oidc_provider_id="oidc-"${suffix}
+oidc_jwt_provider_id="oidc-jwt-"${suffix}
 aws_provider_id="aws-"${suffix}
 
 # Fill in.
@@ -115,6 +116,7 @@ service_account_email=""
 sub=""; # client_id from service account key file
 
 oidc_aud="//iam.googleapis.com/projects/${project_number}/locations/global/workloadIdentityPools/${pool_id}/providers/${oidc_provider_id}"
+oidc_jwt_aud="//iam.googleapis.com/projects/${project_number}/locations/global/workloadIdentityPools/${pool_id}/providers/${oidc_jwt_provider_id}"
 aws_aud="//iam.googleapis.com/projects/${project_number}/locations/global/workloadIdentityPools/${pool_id}/providers/${aws_provider_id}"
 
 gcloud config set project ${project_id}
@@ -132,6 +134,26 @@ gcloud beta iam workload-identity-pools providers create-oidc ${oidc_provider_id
     --location="global" \
     --attribute-mapping="google.subject=assertion.sub"
 
+# Create the OIDC JWT Provider for mTLS / certificate-bound and actor token tests.
+jwk_file=$(mktemp)
+curl -sS "https://www.googleapis.com/service_accounts/v1/jwk/${service_account_email}" > "${jwk_file}"
+gcloud beta iam workload-identity-pools providers create-oidc ${oidc_jwt_provider_id} \
+    --workload-identity-pool=${pool_id} \
+    --issuer-uri="https://storage.googleapis.com/example-oidc-issuer" \
+    --jwk-json-path="${jwk_file}" \
+    --location="global" \
+    --attribute-mapping="google.subject=assertion.sub"
+rm -f "${jwk_file}"
+
+# Configure actorProviders on the OIDC JWT Provider to allow actor_token delegation.
+oidc_jwt_provider_resource="projects/${project_number}/locations/global/workloadIdentityPools/${pool_id}/providers/${oidc_jwt_provider_id}"
+curl -sS -X PATCH \
+    -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    -H "X-Goog-User-Project: ${project_id}" \
+    -H "Content-Type: application/json" \
+    -d "{\"actorProviders\": [\"${oidc_jwt_provider_resource}\"]}" \
+    "https://iam.googleapis.com/v1/${oidc_jwt_provider_resource}?updateMask=actorProviders"
+
 # Create the AWS Provider.
 gcloud beta iam workload-identity-pools providers create-aws ${aws_provider_id} \
     --workload-identity-pool=${pool_id} \
@@ -148,6 +170,7 @@ gcloud iam service-accounts add-iam-policy-binding ${service_account_email} \
   --member "principalSet://iam.googleapis.com/projects/${project_number}/locations/global/workloadIdentityPools/${pool_id}/attribute.aws_role/arn:aws:sts::${aws_account_id}:assumed-role/${aws_role_name}"
 
 echo "OIDC audience:"${oidc_aud}
+echo "OIDC JWT audience:"${oidc_jwt_aud}
 echo "AWS audience:"${aws_aud}
 echo "AWS role name:"${aws_role_name}
 echo "AWS role ARN: arn:aws:iam::${aws_account_id}:role/${aws_role_name}"

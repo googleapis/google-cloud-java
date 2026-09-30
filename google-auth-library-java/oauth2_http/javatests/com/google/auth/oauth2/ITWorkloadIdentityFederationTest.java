@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -79,7 +80,9 @@ import org.junit.jupiter.api.Test;
  * <p>The only requirements for this test suite to run is to set the environment variable
  * GOOGLE_APPLICATION_CREDENTIALS to point to the same service account keys used in the setup script
  * (workloadidentityfederation-setup). These tests call GCS to get bucket information. The bucket
- * name must be provided through the GCS_BUCKET environment variable.
+ * name must be provided through the GCS_BUCKET environment variable. The mTLS tests use {@code
+ * testresources/mtls/certificate_config.json} by default and can optionally be overridden via the
+ * GOOGLE_API_CERTIFICATE_CONFIG environment variable.
  */
 final class ITWorkloadIdentityFederationTest {
 
@@ -482,6 +485,7 @@ final class ITWorkloadIdentityFederationTest {
       AccessToken accessToken = identityPoolCredentials.refreshAccessToken();
       assertNotNull(accessToken);
       assertNotNull(accessToken.getTokenValue());
+      assertFalse(accessToken.getTokenValue().isEmpty());
     } finally {
       tokenFile.delete();
     }
@@ -520,6 +524,7 @@ final class ITWorkloadIdentityFederationTest {
     AccessToken accessToken = credentials.refreshAccessToken();
     assertNotNull(accessToken);
     assertNotNull(accessToken.getTokenValue());
+    assertFalse(accessToken.getTokenValue().isEmpty());
   }
 
   private GenericJson buildIdentityPoolCredentialConfig() throws IOException {
@@ -636,10 +641,14 @@ final class ITWorkloadIdentityFederationTest {
       Enumeration<String> aliases = keyStore.aliases();
       while (aliases.hasMoreElements()) {
         String alias = aliases.nextElement();
-        Certificate cert = keyStore.getCertificate(alias);
-        if (cert instanceof X509Certificate) {
-          byte[] digest = MessageDigest.getInstance("SHA-256").digest(cert.getEncoded());
-          return Base64.getUrlEncoder().withoutPadding().encodeToString(digest);
+        if (keyStore.isKeyEntry(alias)) {
+          Certificate[] chain = keyStore.getCertificateChain(alias);
+          Certificate cert =
+              (chain != null && chain.length > 0) ? chain[0] : keyStore.getCertificate(alias);
+          if (cert instanceof X509Certificate) {
+            byte[] digest = MessageDigest.getInstance("SHA-256").digest(cert.getEncoded());
+            return Base64.getUrlEncoder().withoutPadding().encodeToString(digest);
+          }
         }
       }
     } catch (GeneralSecurityException e) {
