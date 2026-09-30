@@ -401,10 +401,12 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   }
 
   private TransportChannel createChannel() throws IOException {
+    // Only track the workload certificate for rotation when the pool's channels actually present
+    // it, mirroring the credential selection in createSingleChannel(): DirectPath channels use
+    // GoogleDefaultChannelCredentials (ALTS) rather than the client certificate, and without an
+    // mtlsProvider there is no client certificate KeyStore (S2A or plain TLS is used instead).
     String workloadCertPath =
-        !this.canUseDirectPath()
-                && mtlsProvider != null
-                && certificateBasedAccess.useMtlsClientCertificate()
+        !this.canUseDirectPath() && mtlsProvider != null
             ? certificateBasedAccess.getWorkloadCertPath()
             : null;
     return GrpcTransportChannel.newBuilder()

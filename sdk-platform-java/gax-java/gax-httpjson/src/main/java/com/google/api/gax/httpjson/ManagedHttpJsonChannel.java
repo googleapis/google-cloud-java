@@ -60,7 +60,12 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this(null, true, null, null, true);
   }
 
-  protected ManagedHttpJsonChannel(boolean isDelegatingWrapper) {
+  /**
+   * Constructor for subclasses that delegate all calls to a wrapped channel. The argument is
+   * unused; it only distinguishes this overload from {@link #ManagedHttpJsonChannel()}, which would
+   * otherwise allocate a transport and executor that the wrapper never uses or shuts down.
+   */
+  ManagedHttpJsonChannel(boolean isDelegatingWrapper) {
     this.executor = null;
     this.usingDefaultExecutor = false;
     this.endpoint = null;
@@ -69,6 +74,10 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this.deadlineScheduledExecutorService = null;
   }
 
+  /**
+   * Returns a monotonic generation counter tracking the number of successful refreshes or channel
+   * rotations performed by this channel. Always {@code 0} for channels that do not refresh.
+   */
   public long getGeneration() {
     return 0;
   }
@@ -114,8 +123,18 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         deadlineScheduledExecutorService);
   }
 
-  public void refresh() {}
+  /**
+   * Refreshes or recreates the underlying transport of this channel if a certificate rotation has
+   * been detected. By default, this is a no-op.
+   */
+  public void refresh() {
+    // No-op: this channel has no certificate to rotate. Overridden by RefreshingHttpJsonChannel.
+  }
 
+  /**
+   * Returns true if a certificate rotation has been detected on disk and this channel should be
+   * refreshed, or false otherwise. Always {@code false} for channels that do not refresh.
+   */
   public boolean shouldRefresh() {
     return false;
   }

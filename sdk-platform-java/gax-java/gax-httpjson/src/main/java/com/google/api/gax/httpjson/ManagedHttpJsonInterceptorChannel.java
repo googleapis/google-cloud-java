@@ -48,6 +48,7 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
     this.interceptor = interceptor;
   }
 
+  /** {@inheritDoc} */
   @Override
   public long getGeneration() {
     return channel.getGeneration();
@@ -81,11 +82,13 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
     return interceptor.interceptCall(methodDescriptor, callOptions, channel);
   }
 
+  /** {@inheritDoc} */
   @Override
   public void refresh() {
     channel.refresh();
   }
 
+  /** {@inheritDoc} */
   @Override
   public boolean shouldRefresh() {
     return channel.shouldRefresh();

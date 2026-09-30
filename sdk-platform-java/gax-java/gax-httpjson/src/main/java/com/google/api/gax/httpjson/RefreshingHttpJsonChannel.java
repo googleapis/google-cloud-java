@@ -81,21 +81,23 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     this.allEntries.add(initial);
   }
 
-  // Visible for testing
+  @VisibleForTesting
   String getWorkloadCertPath() {
     return workloadCertPath;
   }
 
-  // Visible for testing
+  @VisibleForTesting
   String getCertificateFingerprint(String certPath) {
     return WorkloadCertificateUtils.getCertificateFingerprint(certPath);
   }
 
+  /** {@inheritDoc} */
   @Override
   public boolean shouldRefresh() {
     return rotationTracker.shouldRefresh();
   }
 
+  /** {@inheritDoc} */
   @Override
   public void refresh() {
     synchronized (refreshLock) {
@@ -140,6 +142,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public long getGeneration() {
     return generation.get();
