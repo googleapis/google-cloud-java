@@ -86,6 +86,7 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadChangeStreamQuery;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.RowMutationEntry;
 import com.google.cloud.bigtable.data.v2.models.TableId;
@@ -138,6 +139,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -775,8 +777,75 @@ public class EnhancedBigtableStubTest {
     }
   }
 
+  // Builds a Shim that wraps the read-row callable and captures the ApiCallContext the wrapper
+  // receives. This simulates what ShimImpl (the session shim) does: it wraps classic in a new
+  // callable (DivertingUnaryCallable) that reads the deadline from the passed context rather than
+  // from classic's own defaultCallContext. The captured context must therefore have retry settings
+  // injected by the outer withDefaultCallContext; without that call, the context would be null.
+  private static com.google.cloud.bigtable.data.v2.internal.compat.Shim capturingReadShim(
+      AtomicReference<com.google.api.gax.rpc.ApiCallContext> capturedCtx) {
+    return new com.google.cloud.bigtable.data.v2.internal.compat.Shim() {
+      @Override
+      public <RowT> com.google.api.gax.rpc.UnaryCallable<Query, RowT> decorateReadRow(
+          com.google.api.gax.rpc.UnaryCallable<Query, RowT> classic,
+          RowAdapter<RowT> rowAdapter,
+          com.google.api.gax.rpc.UnaryCallSettings<?, ?> settings) {
+        return new com.google.api.gax.rpc.UnaryCallable<Query, RowT>() {
+          @Override
+          public com.google.api.core.ApiFuture<RowT> futureCall(
+              Query request, com.google.api.gax.rpc.ApiCallContext context) {
+            capturedCtx.set(context);
+            return classic.futureCall(request, context);
+          }
+        };
+      }
+
+      @Override
+      public com.google.api.gax.rpc.UnaryCallable<RowMutation, Void> decorateMutateRow(
+          com.google.api.gax.rpc.UnaryCallable<RowMutation, Void> classic,
+          com.google.api.gax.rpc.UnaryCallSettings<?, ?> settings) {
+        return classic;
+      }
+
+      @Override
+      public void close() {}
+    };
+  }
+
+  // Builds a Shim that wraps the mutate-row callable and captures the ApiCallContext the wrapper
+  // receives. See capturingReadShim for the design rationale.
+  private static com.google.cloud.bigtable.data.v2.internal.compat.Shim capturingMutateShim(
+      AtomicReference<com.google.api.gax.rpc.ApiCallContext> capturedCtx) {
+    return new com.google.cloud.bigtable.data.v2.internal.compat.Shim() {
+      @Override
+      public <RowT> com.google.api.gax.rpc.UnaryCallable<Query, RowT> decorateReadRow(
+          com.google.api.gax.rpc.UnaryCallable<Query, RowT> classic,
+          RowAdapter<RowT> rowAdapter,
+          com.google.api.gax.rpc.UnaryCallSettings<?, ?> settings) {
+        return classic;
+      }
+
+      @Override
+      public com.google.api.gax.rpc.UnaryCallable<RowMutation, Void> decorateMutateRow(
+          com.google.api.gax.rpc.UnaryCallable<RowMutation, Void> classic,
+          com.google.api.gax.rpc.UnaryCallSettings<?, ?> settings) {
+        return new com.google.api.gax.rpc.UnaryCallable<RowMutation, Void>() {
+          @Override
+          public com.google.api.core.ApiFuture<Void> futureCall(
+              RowMutation request, com.google.api.gax.rpc.ApiCallContext context) {
+            capturedCtx.set(context);
+            return classic.futureCall(request, context);
+          }
+        };
+      }
+
+      @Override
+      public void close() {}
+    };
+  }
+
   @Test
-  public void testRetrySettingsPropagatedForPointRead()
+  public void testRetrySettingsPropagatedThroughSessionShimForPointRead()
       throws IOException, InterruptedException, ExecutionException {
     RetrySettings customRetrySettings =
         RetrySettings.newBuilder()
@@ -788,12 +857,28 @@ public class EnhancedBigtableStubTest {
             .setMaxRetryDelay(Duration.ofMinutes(1))
             .setMaxAttempts(1)
             .build();
-    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
-    settings.readRowSettings().setRetrySettings(customRetrySettings);
 
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+    AtomicReference<com.google.api.gax.rpc.ApiCallContext> capturedCtx = new AtomicReference<>();
+
+    EnhancedBigtableStubSettings.Builder settingsBuilder = defaultSettings.toBuilder();
+    settingsBuilder.readRowSettings().setRetrySettings(customRetrySettings);
+    EnhancedBigtableStubSettings settings = settingsBuilder.build();
+
+    BigtableClientContext realContext = BigtableClientContext.create(settings);
+    BigtableClientContext spyContext = Mockito.spy(realContext);
+    Mockito.when(spyContext.getSessionShim()).thenReturn(capturingReadShim(capturedCtx));
+
+    try (EnhancedBigtableStub stub =
+        new EnhancedBigtableStub(settings.getPerOpSettings(), spyContext)) {
       contextInterceptor.contexts.clear();
       stub.readRowCallable().futureCall(Query.create(TABLE_ID).rowKey("row-key")).get();
+
+      // The shim wrapper must receive a context carrying the configured retry settings.
+      // Without the outer .withDefaultCallContext(ctx.withRetrySettings(...)) added by this fix,
+      // the shim wrapper would receive null and this assertion would fail.
+      com.google.api.gax.rpc.ApiCallContext shimCtx = capturedCtx.get();
+      assertThat(shimCtx).isNotNull();
+      assertThat(shimCtx.getRetrySettings()).isEqualTo(customRetrySettings);
 
       Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
       assertThat(serverCtx).isNotNull();
@@ -802,7 +887,7 @@ public class EnhancedBigtableStubTest {
   }
 
   @Test
-  public void testRetrySettingsPropagatedForPointWrite()
+  public void testRetrySettingsPropagatedThroughSessionShimForPointWrite()
       throws IOException, InterruptedException, ExecutionException {
     RetrySettings customRetrySettings =
         RetrySettings.newBuilder()
@@ -814,14 +899,30 @@ public class EnhancedBigtableStubTest {
             .setMaxRetryDelay(Duration.ofMinutes(1))
             .setMaxAttempts(1)
             .build();
-    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
-    settings.mutateRowSettings().setRetrySettings(customRetrySettings);
 
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+    AtomicReference<com.google.api.gax.rpc.ApiCallContext> capturedCtx = new AtomicReference<>();
+
+    EnhancedBigtableStubSettings.Builder settingsBuilder = defaultSettings.toBuilder();
+    settingsBuilder.mutateRowSettings().setRetrySettings(customRetrySettings);
+    EnhancedBigtableStubSettings settings = settingsBuilder.build();
+
+    BigtableClientContext realContext = BigtableClientContext.create(settings);
+    BigtableClientContext spyContext = Mockito.spy(realContext);
+    Mockito.when(spyContext.getSessionShim()).thenReturn(capturingMutateShim(capturedCtx));
+
+    try (EnhancedBigtableStub stub =
+        new EnhancedBigtableStub(settings.getPerOpSettings(), spyContext)) {
       contextInterceptor.contexts.clear();
       stub.mutateRowCallable()
           .futureCall(RowMutation.create(TABLE_ID, "row-key").deleteRow())
           .get();
+
+      // The shim wrapper must receive a context carrying the configured retry settings.
+      // Without the outer .withDefaultCallContext(ctx.withRetrySettings(...)) added by this fix,
+      // the shim wrapper would receive null and this assertion would fail.
+      com.google.api.gax.rpc.ApiCallContext shimCtx = capturedCtx.get();
+      assertThat(shimCtx).isNotNull();
+      assertThat(shimCtx.getRetrySettings()).isEqualTo(customRetrySettings);
 
       Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getMutateRowMethod());
       assertThat(serverCtx).isNotNull();
@@ -830,7 +931,7 @@ public class EnhancedBigtableStubTest {
   }
 
   @Test
-  public void testRetrySettingsPropagatedForMaybePointRead()
+  public void testRetrySettingsPropagatedThroughSessionShimForMaybePointRead()
       throws IOException, InterruptedException, ExecutionException {
     RetrySettings customRetrySettings =
         RetrySettings.newBuilder()
@@ -842,13 +943,30 @@ public class EnhancedBigtableStubTest {
             .setMaxRetryDelay(Duration.ofMinutes(1))
             .setMaxAttempts(1)
             .build();
-    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
-    settings.readRowsSettings().setRetrySettings(customRetrySettings);
 
-    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+    AtomicReference<com.google.api.gax.rpc.ApiCallContext> capturedCtx = new AtomicReference<>();
+
+    EnhancedBigtableStubSettings.Builder settingsBuilder = defaultSettings.toBuilder();
+    settingsBuilder.readRowsSettings().setRetrySettings(customRetrySettings);
+    EnhancedBigtableStubSettings settings = settingsBuilder.build();
+
+    BigtableClientContext realContext = BigtableClientContext.create(settings);
+    BigtableClientContext spyContext = Mockito.spy(realContext);
+    Mockito.when(spyContext.getSessionShim()).thenReturn(capturingReadShim(capturedCtx));
+
+    try (EnhancedBigtableStub stub =
+        new EnhancedBigtableStub(settings.getPerOpSettings(), spyContext)) {
       contextInterceptor.contexts.clear();
-      // A single-row query is routed through MaybePointReadCallable to the point-read callable
+      // A single-row query is routed through MaybePointReadCallable to the shim-wrapped
+      // point-read callable. The shim wrapper must receive the readRowsSettings retry settings.
       stub.readRowsCallable().call(Query.create(TABLE_ID).rowKey("row-key")).iterator().next();
+
+      // The shim wrapper must receive a context carrying the configured retry settings.
+      // Without the outer .withDefaultCallContext(ctx.withRetrySettings(...)) added by this fix,
+      // the shim wrapper would receive null and this assertion would fail.
+      com.google.api.gax.rpc.ApiCallContext shimCtx = capturedCtx.get();
+      assertThat(shimCtx).isNotNull();
+      assertThat(shimCtx.getRetrySettings()).isEqualTo(customRetrySettings);
 
       Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
       assertThat(serverCtx).isNotNull();
