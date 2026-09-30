@@ -442,29 +442,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int IAM_OWNED_FIELD_NUMBER = 450566203;
-  private boolean iamOwned_ = false;
-
-  /**
-   * <code>optional bool iam_owned = 450566203;</code>
-   *
-   * @return Whether the iamOwned field is set.
-   */
-  @java.lang.Override
-  public boolean hasIamOwned() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-
-  /**
-   * <code>optional bool iam_owned = 450566203;</code>
-   *
-   * @return The iamOwned.
-   */
-  @java.lang.Override
-  public boolean getIamOwned() {
-    return iamOwned_;
-  }
-
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private int version_ = 0;
 
@@ -504,7 +481,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -566,14 +543,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < auditConfigs_.size(); i++) {
       output.writeMessage(328080653, auditConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(351608024, version_);
     }
     for (int i = 0; i < bindings_.size(); i++) {
       output.writeMessage(403251854, bindings_.get(i));
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeBool(450566203, iamOwned_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -591,14 +565,11 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(328080653, auditConfigs_.get(i));
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(351608024, version_);
     }
     for (int i = 0; i < bindings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(403251854, bindings_.get(i));
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(450566203, iamOwned_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -620,10 +591,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     if (hasEtag() != other.hasEtag()) return false;
     if (hasEtag()) {
       if (!getEtag().equals(other.getEtag())) return false;
-    }
-    if (hasIamOwned() != other.hasIamOwned()) return false;
-    if (hasIamOwned()) {
-      if (getIamOwned() != other.getIamOwned()) return false;
     }
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
@@ -651,10 +618,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     if (hasEtag()) {
       hash = (37 * hash) + ETAG_FIELD_NUMBER;
       hash = (53 * hash) + getEtag().hashCode();
-    }
-    if (hasIamOwned()) {
-      hash = (37 * hash) + IAM_OWNED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIamOwned());
     }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -884,7 +847,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       etag_ = "";
-      iamOwned_ = false;
       version_ = 0;
       return this;
     }
@@ -949,12 +911,8 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.iamOwned_ = iamOwned_;
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.version_ = version_;
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1030,9 +988,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.hasIamOwned()) {
-        setIamOwned(other.getIamOwned());
-      }
       if (other.hasVersion()) {
         setVersion(other.getVersion());
       }
@@ -1084,7 +1039,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
             case -1482103104:
               {
                 version_ = input.readInt32();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1482103104
             case -1068952462:
@@ -1100,12 +1055,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case -1068952462
-            case -690437672:
-              {
-                iamOwned_ = input.readBool();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case -690437672
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2212,54 +2161,6 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private boolean iamOwned_;
-
-    /**
-     * <code>optional bool iam_owned = 450566203;</code>
-     *
-     * @return Whether the iamOwned field is set.
-     */
-    @java.lang.Override
-    public boolean hasIamOwned() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-
-    /**
-     * <code>optional bool iam_owned = 450566203;</code>
-     *
-     * @return The iamOwned.
-     */
-    @java.lang.Override
-    public boolean getIamOwned() {
-      return iamOwned_;
-    }
-
-    /**
-     * <code>optional bool iam_owned = 450566203;</code>
-     *
-     * @param value The iamOwned to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIamOwned(boolean value) {
-
-      iamOwned_ = value;
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>optional bool iam_owned = 450566203;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearIamOwned() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      iamOwned_ = false;
-      onChanged();
-      return this;
-    }
-
     private int version_;
 
     /**
@@ -2298,7 +2199,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2378,7 +2279,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
     public Builder setVersion(int value) {
 
       version_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2418,7 +2319,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       version_ = 0;
       onChanged();
       return this;

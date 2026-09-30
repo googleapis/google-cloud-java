@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The PublicDelegatedPrefixes API.
  *
+ * <p>This client uses PublicDelegatedPrefixes version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -377,7 +379,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, PublicDelegatedPrefixesScopedList> element :
@@ -420,7 +421,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, PublicDelegatedPrefixesScopedList>> future =
@@ -464,7 +464,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1066,7 +1065,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (PublicDelegatedPrefix element :
    *       publicDelegatedPrefixesClient.list(request).iterateAll()) {
@@ -1104,7 +1102,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<PublicDelegatedPrefix> future =
    *       publicDelegatedPrefixesClient.listPagedCallable().futureCall(request);
@@ -1142,7 +1139,6 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     PublicDelegatedPrefixList response =

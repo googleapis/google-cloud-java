@@ -415,7 +415,9 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
- *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+ *   MemoryName name =
+ *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+ *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
  *   Memory response = memoryBankServiceClient.getMemory(name);
  * }
  * }</pre>

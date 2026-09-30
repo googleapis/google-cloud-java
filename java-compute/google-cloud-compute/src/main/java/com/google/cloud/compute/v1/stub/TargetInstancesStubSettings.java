@@ -428,7 +428,8 @@ public class TargetInstancesStubSettings extends StubSettings<TargetInstancesStu
             "gapic", GaxProperties.getLibraryVersion(TargetInstancesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

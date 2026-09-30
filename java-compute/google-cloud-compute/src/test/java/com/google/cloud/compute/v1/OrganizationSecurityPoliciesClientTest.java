@@ -663,7 +663,6 @@ public class OrganizationSecurityPoliciesClientTest {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       client.list(request);
       Assert.fail("No exception raised");
@@ -760,7 +759,6 @@ public class OrganizationSecurityPoliciesClientTest {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       client.listPreconfiguredExpressionSets(request);
       Assert.fail("No exception raised");

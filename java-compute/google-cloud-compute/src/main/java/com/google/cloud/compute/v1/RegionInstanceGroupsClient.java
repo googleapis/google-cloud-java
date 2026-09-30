@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionInstanceGroups API.
  *
+ * <p>This client uses RegionInstanceGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -408,7 +410,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceGroup element : regionInstanceGroupsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -445,7 +446,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceGroup> future =
    *       regionInstanceGroupsClient.listPagedCallable().futureCall(request);
@@ -483,7 +483,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupList response = regionInstanceGroupsClient.listCallable().call(request);
@@ -586,7 +585,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupsListInstancesRequestResource(
    *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceWithNamedPorts element :
    *       regionInstanceGroupsClient.listInstances(request).iterateAll()) {
@@ -630,7 +628,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupsListInstancesRequestResource(
    *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceWithNamedPorts> future =
    *       regionInstanceGroupsClient.listInstancesPagedCallable().futureCall(request);
@@ -673,7 +670,6 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupsListInstancesRequestResource(
    *               RegionInstanceGroupsListInstancesRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupsListInstances response =

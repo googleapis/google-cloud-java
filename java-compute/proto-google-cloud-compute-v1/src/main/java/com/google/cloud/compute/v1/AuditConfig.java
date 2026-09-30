@@ -103,7 +103,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
 
   private AuditConfig() {
     auditLogConfigs_ = java.util.Collections.emptyList();
-    exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
     service_ = "";
   }
 
@@ -200,50 +199,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
     return auditLogConfigs_.get(index);
   }
 
-  public static final int EXEMPTED_MEMBERS_FIELD_NUMBER = 232615576;
-
-  @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringArrayList exemptedMembers_ =
-      com.google.protobuf.LazyStringArrayList.emptyList();
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @return A list containing the exemptedMembers.
-   */
-  public com.google.protobuf.ProtocolStringList getExemptedMembersList() {
-    return exemptedMembers_;
-  }
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @return The count of exemptedMembers.
-   */
-  public int getExemptedMembersCount() {
-    return exemptedMembers_.size();
-  }
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @param index The index of the element to return.
-   * @return The exemptedMembers at the given index.
-   */
-  public java.lang.String getExemptedMembers(int index) {
-    return exemptedMembers_.get(index);
-  }
-
-  /**
-   * <code>repeated string exempted_members = 232615576;</code>
-   *
-   * @param index The index of the value to return.
-   * @return The bytes of the exemptedMembers at the given index.
-   */
-  public com.google.protobuf.ByteString getExemptedMembersBytes(int index) {
-    return exemptedMembers_.getByteString(index);
-  }
-
   public static final int SERVICE_FIELD_NUMBER = 373540533;
 
   @SuppressWarnings("serial")
@@ -333,10 +288,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    for (int i = 0; i < exemptedMembers_.size(); i++) {
-      com.google.protobuf.GeneratedMessage.writeString(
-          output, 232615576, exemptedMembers_.getRaw(i));
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 373540533, service_);
     }
@@ -352,14 +303,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    {
-      int dataSize = 0;
-      for (int i = 0; i < exemptedMembers_.size(); i++) {
-        dataSize += computeStringSizeNoTag(exemptedMembers_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getExemptedMembersList().size();
-    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(373540533, service_);
     }
@@ -384,7 +327,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.AuditConfig other = (com.google.cloud.compute.v1.AuditConfig) obj;
 
     if (!getAuditLogConfigsList().equals(other.getAuditLogConfigsList())) return false;
-    if (!getExemptedMembersList().equals(other.getExemptedMembersList())) return false;
     if (hasService() != other.hasService()) return false;
     if (hasService()) {
       if (!getService().equals(other.getService())) return false;
@@ -403,10 +345,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
     if (getAuditLogConfigsCount() > 0) {
       hash = (37 * hash) + AUDIT_LOG_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getAuditLogConfigsList().hashCode();
-    }
-    if (getExemptedMembersCount() > 0) {
-      hash = (37 * hash) + EXEMPTED_MEMBERS_FIELD_NUMBER;
-      hash = (53 * hash) + getExemptedMembersList().hashCode();
     }
     if (hasService()) {
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
@@ -609,7 +547,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
         auditLogConfigsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
       service_ = "";
       return this;
     }
@@ -660,12 +597,8 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.compute.v1.AuditConfig result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        exemptedMembers_.makeImmutable();
-        result.exemptedMembers_ = exemptedMembers_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.service_ = service_;
         to_bitField0_ |= 0x00000001;
       }
@@ -711,19 +644,9 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
           }
         }
       }
-      if (!other.exemptedMembers_.isEmpty()) {
-        if (exemptedMembers_.isEmpty()) {
-          exemptedMembers_ = other.exemptedMembers_;
-          bitField0_ |= 0x00000002;
-        } else {
-          ensureExemptedMembersIsMutable();
-          exemptedMembers_.addAll(other.exemptedMembers_);
-        }
-        onChanged();
-      }
       if (other.hasService()) {
         service_ = other.service_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -752,17 +675,10 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
             case 0:
               done = true;
               break;
-            case 1860924610:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureExemptedMembersIsMutable();
-                exemptedMembers_.add(s);
-                break;
-              } // case 1860924610
             case -1306643030:
               {
                 service_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1306643030
             case -387602286:
@@ -1169,135 +1085,6 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
       return auditLogConfigsBuilder_;
     }
 
-    private com.google.protobuf.LazyStringArrayList exemptedMembers_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-
-    private void ensureExemptedMembersIsMutable() {
-      if (!exemptedMembers_.isModifiable()) {
-        exemptedMembers_ = new com.google.protobuf.LazyStringArrayList(exemptedMembers_);
-      }
-      bitField0_ |= 0x00000002;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @return A list containing the exemptedMembers.
-     */
-    public com.google.protobuf.ProtocolStringList getExemptedMembersList() {
-      exemptedMembers_.makeImmutable();
-      return exemptedMembers_;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @return The count of exemptedMembers.
-     */
-    public int getExemptedMembersCount() {
-      return exemptedMembers_.size();
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param index The index of the element to return.
-     * @return The exemptedMembers at the given index.
-     */
-    public java.lang.String getExemptedMembers(int index) {
-      return exemptedMembers_.get(index);
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param index The index of the value to return.
-     * @return The bytes of the exemptedMembers at the given index.
-     */
-    public com.google.protobuf.ByteString getExemptedMembersBytes(int index) {
-      return exemptedMembers_.getByteString(index);
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param index The index to set the value at.
-     * @param value The exemptedMembers to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExemptedMembers(int index, java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureExemptedMembersIsMutable();
-      exemptedMembers_.set(index, value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param value The exemptedMembers to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExemptedMembers(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureExemptedMembersIsMutable();
-      exemptedMembers_.add(value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param values The exemptedMembers to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllExemptedMembers(java.lang.Iterable<java.lang.String> values) {
-      ensureExemptedMembersIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exemptedMembers_);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearExemptedMembers() {
-      exemptedMembers_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      ;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>repeated string exempted_members = 232615576;</code>
-     *
-     * @param value The bytes of the exemptedMembers to add.
-     * @return This builder for chaining.
-     */
-    public Builder addExemptedMembersBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      ensureExemptedMembersIsMutable();
-      exemptedMembers_.add(value);
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object service_ = "";
 
     /**
@@ -1314,7 +1101,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -1386,7 +1173,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       service_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1406,7 +1193,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearService() {
       service_ = getDefaultInstance().getService();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -1431,7 +1218,7 @@ public final class AuditConfig extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       service_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

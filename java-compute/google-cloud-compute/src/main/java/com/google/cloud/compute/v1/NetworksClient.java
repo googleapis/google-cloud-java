@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Networks API.
  *
+ * <p>This client uses Networks version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1150,7 +1152,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Network element : networksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1185,7 +1186,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Network> future = networksClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -1219,7 +1219,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkList response = networksClient.listCallable().call(request);
@@ -1299,7 +1298,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setPeeringName("peeringName-1170120213")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (ExchangedPeeringRoute element : networksClient.listPeeringRoutes(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1339,7 +1337,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setPeeringName("peeringName-1170120213")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<ExchangedPeeringRoute> future =
    *       networksClient.listPeeringRoutesPagedCallable().futureCall(request);
@@ -1379,7 +1376,6 @@ public class NetworksClient implements BackgroundResource {
    *           .setPeeringName("peeringName-1170120213")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ExchangedPeeringRoutesList response =
