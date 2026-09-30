@@ -160,6 +160,133 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
+  void testChunkGranularity_unalignedChunkSize_roundsDownToMultiple() throws Exception {
+    // chunkSize = 8 with granularity = 3 -> effective chunk size 6: 6 + 6 + 4 bytes
+    stubStartSession("https://upload.url/granularity-unaligned", 3L);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-granularity")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("0123456789abcdef"), null);
+
+    assertThat(future.get()).isEqualTo("response-granularity");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 0, 6, false);
+    assertChunk(chunks.get(1), 6, 6, false);
+    assertChunk(chunks.get(2), 12, 4, true);
+  }
+
+  @Test
+  void testChunkGranularity_alignedChunkSize_isUnchanged() throws Exception {
+    // chunkSize = 8 is already a multiple of granularity = 4: 8 + 8 + 4 bytes
+    stubStartSession("https://upload.url/granularity-aligned", 4L);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "response-aligned")));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("01234567890123456789"), null);
+
+    assertThat(future.get()).isEqualTo("response-aligned");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 0, 8, false);
+    assertChunk(chunks.get(1), 8, 8, false);
+    assertChunk(chunks.get(2), 16, 4, true);
+  }
+
+  @Test
+  void testChunkGranularity_recoveryMidBuffer_topsUpToAlignedChunkSize() throws Exception {
+    // chunkSize = 8 with granularity = 3 -> effective chunk size 6. The first chunk fails
+    // recoverably and the server reports 3 committed bytes, so the resent chunk is [3, 9).
+    stubStartSession("https://upload.url/granularity-recovery", 3L);
+    when(mockChunkCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                createApiException(400, StatusCode.Code.INVALID_ARGUMENT)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "recovered")));
+    when(mockQueryCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                createQueryResponse(3L, null, ResumableUploadStatus.ACTIVE)));
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("0123456789ab"), null);
+
+    assertThat(future.get()).isEqualTo("recovered");
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(3)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> chunks = captor.getAllValues();
+    assertChunk(chunks.get(0), 0, 6, false);
+    assertChunk(chunks.get(1), 3, 6, false);
+    assertChunk(chunks.get(2), 9, 3, true);
+  }
+
+  @Test
+  void testChunkGranularity_chunkSizeSmallerThanGranularity_failsWithoutUploading() {
+    stubStartSession("https://upload.url/granularity-too-large", 16L);
+    TrackableStream stream = new TrackableStream("0123456789abcdef");
+
+    ResumableUploadFuture<String> future = callable.futureCall("resource-path", () -> stream, null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(InvalidArgumentException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("smaller than the server-required chunk granularity of 16 bytes");
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("https://upload.url/granularity-too-large");
+    verifyNoInteractions(mockChunkCallable);
+    assertThat(stream.closed).isTrue();
+  }
+
+  @Test
+  void testAlignChunkSize() {
+    String url = "https://upload.url/align";
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(10, 1L, url)).isEqualTo(10);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(10, 10L, url)).isEqualTo(10);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(10, 4L, url)).isEqualTo(8);
+    int eightMib = 8 * 1024 * 1024;
+    int quarterMib = 256 * 1024;
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(eightMib, quarterMib, url))
+        .isEqualTo(eightMib);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(1_000_000, quarterMib, url))
+        .isEqualTo(3 * quarterMib);
+    assertThrows(
+        InvalidArgumentException.class,
+        () -> ResumableUploadFutureImpl.alignChunkSize(10, 11L, url));
+    assertThrows(
+        InvalidArgumentException.class,
+        () ->
+            ResumableUploadFutureImpl.alignChunkSize(
+                Integer.MAX_VALUE, Integer.MAX_VALUE + 1L, url));
+  }
+
+  @Test
   void testUploadCallable_zeroByteUpload_finalizesSuccessfully() throws Exception {
     stubStartSession("https://upload.url/zero");
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
@@ -1300,6 +1427,16 @@ class ResumableUploadCallableImplTest {
         .thenReturn(
             ApiFutures.immediateFuture(
                 ResumableUploadSession.newBuilder().setUploadUrl(uploadUrl).build()));
+  }
+
+  private void stubStartSession(String uploadUrl, long chunkGranularity) {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl(uploadUrl)
+                    .setChunkGranularity(chunkGranularity)
+                    .build()));
   }
 
   private static InputStreamSupplier payloadOf(String content) {
