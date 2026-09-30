@@ -39,6 +39,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
@@ -768,6 +769,87 @@ public class EnhancedBigtableStubTest {
       }
 
       // Ensure that the server got the overriden deadline
+      Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
+      assertThat(serverCtx).isNotNull();
+      assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
+    }
+  }
+
+  @Test
+  public void testRetrySettingsPropagatedForPointRead()
+      throws IOException, InterruptedException, ExecutionException {
+    RetrySettings customRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofMinutes(10))
+            .setInitialRpcTimeout(Duration.ofMinutes(10))
+            .setMaxRpcTimeout(Duration.ofMinutes(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    settings.readRowSettings().setRetrySettings(customRetrySettings);
+
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      contextInterceptor.contexts.clear();
+      stub.readRowCallable().futureCall(Query.create(TABLE_ID).rowKey("row-key")).get();
+
+      Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
+      assertThat(serverCtx).isNotNull();
+      assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
+    }
+  }
+
+  @Test
+  public void testRetrySettingsPropagatedForPointWrite()
+      throws IOException, InterruptedException, ExecutionException {
+    RetrySettings customRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofMinutes(10))
+            .setInitialRpcTimeout(Duration.ofMinutes(10))
+            .setMaxRpcTimeout(Duration.ofMinutes(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    settings.mutateRowSettings().setRetrySettings(customRetrySettings);
+
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      contextInterceptor.contexts.clear();
+      stub.mutateRowCallable()
+          .futureCall(RowMutation.create(TABLE_ID, "row-key").deleteRow())
+          .get();
+
+      Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getMutateRowMethod());
+      assertThat(serverCtx).isNotNull();
+      assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
+    }
+  }
+
+  @Test
+  public void testRetrySettingsPropagatedForMaybePointRead()
+      throws IOException, InterruptedException, ExecutionException {
+    RetrySettings customRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofMinutes(10))
+            .setInitialRpcTimeout(Duration.ofMinutes(10))
+            .setMaxRpcTimeout(Duration.ofMinutes(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    EnhancedBigtableStubSettings.Builder settings = defaultSettings.toBuilder();
+    settings.readRowsSettings().setRetrySettings(customRetrySettings);
+
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings.build())) {
+      contextInterceptor.contexts.clear();
+      // A single-row query is routed through MaybePointReadCallable to the point-read callable
+      stub.readRowsCallable().call(Query.create(TABLE_ID).rowKey("row-key")).iterator().next();
+
       Context serverCtx = contextInterceptor.pollContext(BigtableGrpc.getReadRowsMethod());
       assertThat(serverCtx).isNotNull();
       assertThat(serverCtx.getDeadline()).isAtLeast(Deadline.after(8, TimeUnit.MINUTES));
