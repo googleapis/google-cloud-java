@@ -54,6 +54,7 @@ import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -223,10 +224,15 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
     // key exchange).
     SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    // The TrustManagerFactory must come from the same provider as the SSLContext. On TLS 1.3,
+    // Conscrypt passes authType "GENERIC" to the trust manager, which the JDK (SunJSSE) PKIX
+    // trust manager rejects for CA-issued server certificates that carry a KeyUsage extension
+    // (e.g. Google front ends), failing the handshake with "Unknown authType: GENERIC".
+    // Conscrypt's trust manager loads the same default trust store as the JDK.
     SslUtils.initSslContext(
         sslContext,
         null,
-        SslUtils.getPkixTrustManagerFactory(),
+        TrustManagerFactory.getInstance("PKIX", conscryptProvider),
         mtlsKeyStore,
         "",
         SslUtils.getDefaultKeyManagerFactory());
