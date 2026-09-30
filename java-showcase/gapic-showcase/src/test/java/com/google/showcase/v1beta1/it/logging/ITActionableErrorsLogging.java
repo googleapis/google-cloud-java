@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
@@ -76,9 +77,9 @@ public class ITActionableErrorsLogging {
   private TestAppender setupTestLogger(String loggerName, Level level) {
     TestAppender appender = new TestAppender();
     appender.start();
-    org.slf4j.Logger logger = LoggerFactory.getLogger(loggerName);
-    ((ch.qos.logback.classic.Logger) logger).setLevel(level);
-    ((ch.qos.logback.classic.Logger) logger).addAppender(appender);
+    Logger logger = (Logger) LoggerFactory.getLogger(loggerName);
+    logger.setLevel(level);
+    logger.addAppender(appender);
     return appender;
   }
 
@@ -92,6 +93,8 @@ public class ITActionableErrorsLogging {
   void teardownTestLogger() {
     if (testAppender != null) {
       testAppender.stop();
+      Logger logger = (Logger) LoggerFactory.getLogger("com.google.api.gax.tracing.LoggingTracer");
+      logger.detachAppender(testAppender);
     }
   }
 
@@ -206,6 +209,7 @@ public class ITActionableErrorsLogging {
 
   @Test
   void testHttpJson_noLogEmittedForSuccess() {
+    testAppender.clearEvents();
     EchoRequest request = EchoRequest.newBuilder().setContent("Success").build();
     httpjsonClient.echo(request);
     assertThat(testAppender.events.size()).isEqualTo(0);
@@ -264,6 +268,7 @@ public class ITActionableErrorsLogging {
 
   @Test
   void testGrpc_noLogEmittedForSuccess() {
+    testAppender.clearEvents();
     EchoRequest request = EchoRequest.newBuilder().setContent("Success").build();
     grpcClient.echo(request);
     assertThat(testAppender.events.size()).isEqualTo(0);
