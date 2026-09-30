@@ -168,11 +168,11 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     /**
      * Set a custom {@link MeterProvider} for recording client metrics.
      *
-     * @param meterProvider custom MeterProvider to use
+     * @param meterProvider custom MeterProvider to use, or null to use the default
      * @since 2.50.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
-    public abstract StorageOptions.Builder setMeterProvider(MeterProvider meterProvider);
+    public abstract StorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider);
 
     /**
      * Set the metric export interval for periodic metric reading.

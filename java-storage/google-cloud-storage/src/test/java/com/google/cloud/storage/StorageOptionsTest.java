@@ -25,6 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
@@ -100,14 +101,28 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void builder_explicitDisablingOverridesGate() {
+  public void builder_explicitOptionsTakePrecedenceOverGate() {
+    // When sysprop and env are set to true, explicit builder false takes precedence
     System.setProperty(StorageMetricsConfig.SYS_PROP_ENABLE_OTEL_METRICS, "true");
+    Map<String, String> env = new HashMap<>();
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
+    StorageMetricsConfig.setResolversForTesting(System::getProperty, env::get);
 
-    HttpStorageOptions httpOptions = HttpStorageOptions.http().setEnableOtelMetrics(false).build();
-    assertThat(httpOptions.isEnableOtelMetrics()).isFalse();
+    HttpStorageOptions httpDisabled = HttpStorageOptions.http().setEnableOtelMetrics(false).build();
+    assertThat(httpDisabled.isEnableOtelMetrics()).isFalse();
 
-    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().setEnableOtelMetrics(false).build();
-    assertThat(grpcOptions.isEnableOtelMetrics()).isFalse();
+    GrpcStorageOptions grpcDisabled = GrpcStorageOptions.grpc().setEnableOtelMetrics(false).build();
+    assertThat(grpcDisabled.isEnableOtelMetrics()).isFalse();
+
+    // When sysprop and env are set to false, explicit builder true takes precedence
+    System.setProperty(StorageMetricsConfig.SYS_PROP_ENABLE_OTEL_METRICS, "false");
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
+
+    HttpStorageOptions httpEnabled = HttpStorageOptions.http().setEnableOtelMetrics(true).build();
+    assertThat(httpEnabled.isEnableOtelMetrics()).isTrue();
+
+    GrpcStorageOptions grpcEnabled = GrpcStorageOptions.grpc().setEnableOtelMetrics(true).build();
+    assertThat(grpcEnabled.isEnableOtelMetrics()).isTrue();
   }
 
   @Test
@@ -238,5 +253,58 @@ public final class StorageOptionsTest {
     assertThat(deserializedGrpc.getMeterProvider()).isNotNull();
     assertThat(deserializedGrpc.getMeterProvider())
         .isEqualTo(deserializedGrpc.getOpenTelemetry().getMeterProvider());
+  }
+
+  @Test
+  public void deserializationWithNullMetricInterval_defaultsToSixtySeconds() throws Exception {
+    Field httpBuilderField = HttpStorageOptions.Builder.class.getDeclaredField("metricInterval");
+    httpBuilderField.setAccessible(true);
+    HttpStorageOptions.Builder httpBuilder = HttpStorageOptions.http();
+    httpBuilderField.set(httpBuilder, null);
+    HttpStorageOptions httpWithNullInterval = httpBuilder.build();
+
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(httpWithNullInterval);
+    }
+
+    HttpStorageOptions deserializedHttp;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserializedHttp = (HttpStorageOptions) ois.readObject();
+    }
+
+    assertThat(deserializedHttp).isNotNull();
+    // Verify NPE guard defaults to 60 seconds
+    assertThat(deserializedHttp.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+    // Verify equals and hashCode match a default instance
+    HttpStorageOptions defaultHttp = HttpStorageOptions.http().build();
+    assertThat(deserializedHttp).isEqualTo(defaultHttp);
+    assertThat(defaultHttp).isEqualTo(deserializedHttp);
+    assertThat(deserializedHttp.hashCode()).isEqualTo(defaultHttp.hashCode());
+
+    Field grpcBuilderField = GrpcStorageOptions.Builder.class.getDeclaredField("metricInterval");
+    grpcBuilderField.setAccessible(true);
+    GrpcStorageOptions.Builder grpcBuilder = GrpcStorageOptions.grpc();
+    grpcBuilderField.set(grpcBuilder, null);
+    GrpcStorageOptions grpcWithNullInterval = grpcBuilder.build();
+
+    baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(grpcWithNullInterval);
+    }
+
+    GrpcStorageOptions deserializedGrpc;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserializedGrpc = (GrpcStorageOptions) ois.readObject();
+    }
+
+    assertThat(deserializedGrpc).isNotNull();
+    assertThat(deserializedGrpc.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+    GrpcStorageOptions defaultGrpc = GrpcStorageOptions.grpc().build();
+    assertThat(deserializedGrpc).isEqualTo(defaultGrpc);
+    assertThat(defaultGrpc).isEqualTo(deserializedGrpc);
+    assertThat(deserializedGrpc.hashCode()).isEqualTo(defaultGrpc.hashCode());
   }
 }

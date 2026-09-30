@@ -466,7 +466,7 @@ public final class GrpcStorageOptions extends StorageOptions
   @BetaApi
   @Override
   public Duration getMetricInterval() {
-    return metricInterval;
+    return metricInterval != null ? metricInterval : Duration.ofSeconds(60);
   }
 
   /**
@@ -490,7 +490,7 @@ public final class GrpcStorageOptions extends StorageOptions
         enableOtelMetrics,
         enableOtelDebugMetrics,
         getMeterProvider(),
-        metricInterval,
+        getMetricInterval(),
         baseHashCode());
   }
 
@@ -513,7 +513,7 @@ public final class GrpcStorageOptions extends StorageOptions
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
         && Objects.equals(getMeterProvider(), that.getMeterProvider())
-        && Objects.equals(metricInterval, that.metricInterval)
+        && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
   }
 
@@ -848,12 +848,12 @@ public final class GrpcStorageOptions extends StorageOptions
     /**
      * Set a custom {@link MeterProvider} for recording client metrics.
      *
-     * @param meterProvider custom MeterProvider to use
+     * @param meterProvider custom MeterProvider to use, or null to use the default
      * @since 2.50.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
-    public GrpcStorageOptions.Builder setMeterProvider(MeterProvider meterProvider) {
+    public GrpcStorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
       this.meterProvider = meterProvider;
       return this;
     }
