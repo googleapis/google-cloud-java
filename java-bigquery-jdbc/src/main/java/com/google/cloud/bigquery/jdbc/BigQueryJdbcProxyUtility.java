@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.storage.v1.stub.BigQueryReadStubSettings
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.v5.Apache5HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -30,16 +31,19 @@ import io.grpc.ProxiedSocketAddress;
 import io.grpc.ProxyDetector;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
+import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLException;
 import javax.net.ssl.TrustManagerFactory;
 import org.apache.hc.client5.http.auth.AuthScope;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
@@ -53,15 +57,66 @@ import org.apache.hc.client5.http.impl.routing.DefaultProxyRoutePlanner;
 import org.apache.hc.client5.http.routing.HttpRoutePlanner;
 import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
 import org.apache.hc.core5.http.HttpHost;
+import org.conscrypt.Conscrypt;
 
 final class BigQueryJdbcProxyUtility {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
-  private static final HttpTransport DEFAULT_TRANSPORT = new NetHttpTransport.Builder().build();
+  private static final Provider CONSCRYPT_PROVIDER = createConscryptProvider();
+  private static final HttpTransport DEFAULT_TRANSPORT =
+      HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+          .build();
+  private static final SslContext DEFAULT_GRPC_SSL_CONTEXT = createDefaultGrpcSslContext();
 
   private BigQueryJdbcProxyUtility() {}
+
+  private static Provider createConscryptProvider() {
+    try {
+      return Conscrypt.newProvider();
+    } catch (SecurityException | LinkageError e) {
+      LOG.fine(
+          "Conscrypt native library unavailable. Falling back to default JDK TLS: "
+              + e.getMessage());
+      return null;
+    }
+  }
+
+  private static SslContext createDefaultGrpcSslContext() {
+    if (CONSCRYPT_PROVIDER == null) {
+      return null;
+    }
+    try {
+      return createGrpcSslContextBuilder(createTrustManagerFactory(null)).build();
+    } catch (SSLException | GeneralSecurityException e) {
+      LOG.fine(
+          "Failed to initialize Conscrypt SslContext for gRPC. Falling back to default gRPC TLS: "
+              + e.getMessage());
+      return null;
+    }
+  }
+
+  private static SslContextBuilder createGrpcSslContextBuilder(
+      TrustManagerFactory trustManagerFactory) {
+    SslContextBuilder builder =
+        CONSCRYPT_PROVIDER != null
+            ? GrpcSslContexts.configure(SslContextBuilder.forClient(), CONSCRYPT_PROVIDER)
+                .protocols("TLSv1.3", "TLSv1.2")
+            : GrpcSslContexts.forClient();
+    return builder.trustManager(trustManagerFactory);
+  }
+
+  private static TrustManagerFactory createTrustManagerFactory(KeyStore trustStore)
+      throws GeneralSecurityException {
+    TrustManagerFactory trustManagerFactory =
+        CONSCRYPT_PROVIDER != null
+            ? TrustManagerFactory.getInstance(
+                TrustManagerFactory.getDefaultAlgorithm(), CONSCRYPT_PROVIDER)
+            : TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    trustManagerFactory.init(trustStore);
+    return trustManagerFactory;
+  }
 
   static Map<String, String> parseProxyProperties(DataSource ds, String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
@@ -196,11 +251,12 @@ final class BigQueryJdbcProxyUtility {
             sslTrustStorePassword != null ? sslTrustStorePassword.toCharArray() : null;
         trustStore.load(trustStoreStream, trustStorePasswordChars);
 
-        TrustManagerFactory trustManagerFactory =
-            TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-        trustManagerFactory.init(trustStore);
+        TrustManagerFactory trustManagerFactory = createTrustManagerFactory(trustStore);
 
-        SSLContext sslContext = SSLContext.getInstance("TLS");
+        SSLContext sslContext =
+            CONSCRYPT_PROVIDER != null
+                ? SSLContext.getInstance("TLS", CONSCRYPT_PROVIDER)
+                : SSLContext.getInstance("TLS");
         sslContext.init(null, trustManagerFactory.getTrustManagers(), null);
 
         SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext);
@@ -211,6 +267,21 @@ final class BigQueryJdbcProxyUtility {
       } catch (IOException | GeneralSecurityException e) {
         throw new BigQueryJdbcRuntimeException(
             "Failed to configure SSL TrustStore for HTTP transport", e);
+      }
+    } else if (CONSCRYPT_PROVIDER != null) {
+      try {
+        SSLContext sslContext = SSLContext.getInstance("TLS", CONSCRYPT_PROVIDER);
+        sslContext.init(null, null, null);
+        SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        httpClientBuilder.setConnectionManager(
+            PoolingHttpClientConnectionManagerBuilder.create()
+                .setSSLSocketFactory(sslSocketFactory)
+                .build());
+      } catch (GeneralSecurityException e) {
+        LOG.fine(
+            "Failed to configure Conscrypt SSLContext for proxy HTTP transport. Falling back to"
+                + " default SSLContext: "
+                + e.getMessage());
       }
     }
     addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
@@ -259,7 +330,7 @@ final class BigQueryJdbcProxyUtility {
     boolean hasProxy = proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME);
     boolean hasSsl = sslTrustStorePath != null;
 
-    if (!hasProxy && !hasSsl) {
+    if (!hasProxy && !hasSsl && DEFAULT_GRPC_SSL_CONTEXT == null) {
       return null;
     }
 
@@ -277,32 +348,35 @@ final class BigQueryJdbcProxyUtility {
                           }
                         });
                   }
-                  if (hasSsl
-                      && managedChannelBuilder
-                          instanceof io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) {
-                    try (FileInputStream trustStoreStream =
-                        new FileInputStream(sslTrustStorePath)) {
-                      KeyStore trustStore = loadKeyStore(sslTrustStoreType, sslTrustStoreProvider);
-                      char[] trustStorePasswordChars =
-                          sslTrustStorePassword != null
-                              ? sslTrustStorePassword.toCharArray()
-                              : null;
-                      trustStore.load(trustStoreStream, trustStorePasswordChars);
+                  if (managedChannelBuilder
+                      instanceof io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) {
+                    io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder nettyChannelBuilder =
+                        (io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder)
+                            managedChannelBuilder;
+                    if (hasSsl) {
+                      try (FileInputStream trustStoreStream =
+                          new FileInputStream(sslTrustStorePath)) {
+                        KeyStore trustStore =
+                            loadKeyStore(sslTrustStoreType, sslTrustStoreProvider);
+                        char[] trustStorePasswordChars =
+                            sslTrustStorePassword != null
+                                ? sslTrustStorePassword.toCharArray()
+                                : null;
+                        trustStore.load(trustStoreStream, trustStorePasswordChars);
 
-                      TrustManagerFactory trustManagerFactory =
-                          TrustManagerFactory.getInstance(
-                              TrustManagerFactory.getDefaultAlgorithm());
-                      trustManagerFactory.init(trustStore);
+                        TrustManagerFactory trustManagerFactory =
+                            createTrustManagerFactory(trustStore);
 
-                      SslContext grpcSslContext =
-                          GrpcSslContexts.forClient().trustManager(trustManagerFactory).build();
-                      ((io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder)
-                              managedChannelBuilder)
-                          .sslContext(grpcSslContext);
+                        SslContext grpcSslContext =
+                            createGrpcSslContextBuilder(trustManagerFactory).build();
+                        nettyChannelBuilder.sslContext(grpcSslContext);
 
-                    } catch (IOException | GeneralSecurityException e) {
-                      throw new BigQueryJdbcRuntimeException(
-                          "Failed to configure SSL TrustStore for GRPC channel", e);
+                      } catch (IOException | GeneralSecurityException e) {
+                        throw new BigQueryJdbcRuntimeException(
+                            "Failed to configure SSL TrustStore for GRPC channel", e);
+                      }
+                    } else if (DEFAULT_GRPC_SSL_CONTEXT != null) {
+                      nettyChannelBuilder.sslContext(DEFAULT_GRPC_SSL_CONTEXT);
                     }
                   }
                   return managedChannelBuilder;
