@@ -31,27 +31,22 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
-import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;
 import com.google.api.gax.rpc.mtls.CertificateRotationTracker;
 import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
 import com.google.common.annotations.VisibleForTesting;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jspecify.annotations.Nullable;
 
 /**
  * An implementation of {@link ManagedHttpJsonChannel} that supports dynamic mTLS certificate
- * rotation by thread-safely hot-swapping the underlying active HTTP/JSON channel while gracefully
- * retiring older connections after all active in-flight requests complete.
+ * rotation. When the workload certificate on disk changes, {@link #refresh()} replaces the {@link
+ * HttpTransport} of the underlying channel. Calls that were already created keep using the
+ * transport they were created with, so in-flight requests are not interrupted.
  */
 @InternalApi
 public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
@@ -59,26 +54,29 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private static final Logger LOG = Logger.getLogger(RefreshingHttpJsonChannel.class.getName());
 
   private final CertificateRotationTracker rotationTracker;
-  private final Supplier<ManagedHttpJsonChannel> channelFactory;
+  private final Supplier<HttpTransport> transportFactory;
   private final String workloadCertPath;
-  private final AtomicReference<ChannelEntry> activeEntry;
-  // Keep track of all entries to properly await their termination
-  private final ConcurrentLinkedQueue<ChannelEntry> allEntries = new ConcurrentLinkedQueue<>();
+  private final ManagedHttpJsonChannel delegate;
   private final Object refreshLock = new Object();
   private final AtomicLong generation = new AtomicLong(0);
 
+  /**
+   * @param transportFactory creates a transport configured with the certificate currently on disk
+   * @param channelFactory creates the underlying channel from the initial transport
+   * @param workloadCertPath path of the workload certificate to monitor for rotation
+   */
   public RefreshingHttpJsonChannel(
-      Supplier<ManagedHttpJsonChannel> channelFactory, String workloadCertPath) {
+      Supplier<HttpTransport> transportFactory,
+      Function<HttpTransport, ManagedHttpJsonChannel> channelFactory,
+      String workloadCertPath) {
     super(true);
-    this.channelFactory = channelFactory;
+    this.transportFactory = transportFactory;
     this.workloadCertPath = workloadCertPath;
-    // Record the baseline fingerprint before the initial channel loads the certificate from disk,
+    // Record the baseline fingerprint before the initial transport loads the certificate from disk,
     // so a rotation between the two steps is detected as a fingerprint change.
     this.rotationTracker =
         new CertificateRotationTracker(this::getWorkloadCertPath, this::getCertificateFingerprint);
-    ChannelEntry initial = new ChannelEntry(channelFactory.get());
-    this.activeEntry = new AtomicReference<>(initial);
-    this.allEntries.add(initial);
+    this.delegate = channelFactory.apply(transportFactory.get());
   }
 
   @VisibleForTesting
@@ -117,28 +115,22 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
         return;
       }
 
-      LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
+      LOG.info("mTLS certificate rotation detected. Refreshing HTTP/JSON transport.");
 
-      ChannelEntry newEntry;
+      HttpTransport newTransport;
       try {
-        newEntry = new ChannelEntry(channelFactory.get());
+        newTransport = transportFactory.get();
       } catch (Exception e) {
-        LOG.log(Level.WARNING, "Failed to refresh HTTP/JSON channel, leaving old channel", e);
+        LOG.log(Level.WARNING, "Failed to refresh HTTP/JSON transport, keeping old transport", e);
         return;
       }
-      allEntries.add(newEntry);
-      // Prune terminated entries after adding newEntry to ensure allEntries is never empty
-      allEntries.removeIf(entry -> entry != newEntry && entry.channel.isTerminated());
-
-      ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
-      // Order matters: swap activeEntry, then bump generation, then mark the tracker refreshed, so
-      // any failing RPC that observes the new fingerprint also observes the new generation.
+      // The previous transport is not shut down: calls created before the swap may still be using
+      // it, and NetHttpTransport holds no pooled resources that need releasing.
+      delegate.setHttpTransport(newTransport);
+      // Order matters: swap the transport, then bump generation, then mark the tracker refreshed,
+      // so any failing RPC that observes the new fingerprint also observes the new generation.
       generation.incrementAndGet();
       rotationTracker.markRefreshed(currentDiskFingerprint);
-
-      if (oldEntry != null) {
-        oldEntry.requestShutdown();
-      }
     }
   }
 
@@ -148,82 +140,26 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     return generation.get();
   }
 
-  private ChannelEntry getRetainedEntry() {
-    while (true) {
-      ChannelEntry entry = activeEntry.get();
-      if (entry.retain()) {
-        return entry;
-      }
-      if (entry == activeEntry.get()) {
-        throw new IllegalStateException("Channel has been shut down");
-      }
-    }
-  }
-
   @Override
   public <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
       ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor, HttpJsonCallOptions callOptions) {
-    ChannelEntry entry = getRetainedEntry();
-    try {
-      HttpJsonClientCall<RequestT, ResponseT> delegateCall =
-          entry.channel.newCall(methodDescriptor, callOptions);
-      return new ReleasingHttpJsonClientCall<>(delegateCall, entry);
-    } catch (Throwable t) {
-      entry.release();
-      throw t;
-    }
+    return delegate.newCall(methodDescriptor, callOptions);
   }
 
   @Override
-  java.util.concurrent.Executor getExecutor() {
-    return activeEntry.get().channel.getExecutor();
+  Executor getExecutor() {
+    return delegate.getExecutor();
   }
 
+  @Override
+  String getEndpoint() {
+    return delegate.getEndpoint();
+  }
+
+  @Override
   @VisibleForTesting
-  ManagedHttpJsonChannel getActiveChannel() {
-    return activeEntry.get().channel;
-  }
-
-  private volatile boolean isShuttingDown = false;
-
-  @Override
-  public void shutdown() {
-    synchronized (refreshLock) {
-      isShuttingDown = true;
-      for (ChannelEntry entry : allEntries) {
-        entry.requestShutdown();
-      }
-    }
-  }
-
-  @Override
-  public boolean isShutdown() {
-    return isShuttingDown;
-  }
-
-  @Override
-  public boolean isTerminated() {
-    if (!isShuttingDown) {
-      return false;
-    }
-    for (ChannelEntry entry : allEntries) {
-      if (!entry.channel.isTerminated()) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  @Override
-  public void shutdownNow() {
-    synchronized (refreshLock) {
-      isShuttingDown = true;
-      for (ChannelEntry entry : allEntries) {
-        entry.shutdownRequested.set(true);
-        entry.shutdownInitiated.set(true);
-        entry.channel.shutdownNow();
-      }
-    }
+  HttpTransport getHttpTransport() {
+    return delegate.getHttpTransport();
   }
 
   @VisibleForTesting
@@ -232,168 +168,32 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   }
 
   @Override
+  public void shutdown() {
+    delegate.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return delegate.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return delegate.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    delegate.shutdownNow();
+  }
+
+  @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    long endNanos = System.nanoTime() + unit.toNanos(duration);
-    for (ChannelEntry entry : allEntries) {
-      if (entry.channel.isTerminated()) {
-        continue;
-      }
-      long remainingNanos = endNanos - System.nanoTime();
-      if (remainingNanos <= 0) {
-        return false;
-      }
-      if (!entry.channel.awaitTermination(remainingNanos, TimeUnit.NANOSECONDS)
-          && !entry.channel.isTerminated()) {
-        return false;
-      }
-    }
-    return true;
+    return delegate.awaitTermination(duration, unit);
   }
 
   @Override
   public void close() {
-    shutdown();
-  }
-
-  @Override
-  String getEndpoint() {
-    return activeEntry.get().channel.getEndpoint();
-  }
-
-  @Override
-  @VisibleForTesting
-  HttpTransport getHttpTransport() {
-    return activeEntry.get().channel.getHttpTransport();
-  }
-
-  /** Internal container to manage request reference-counting and graceful shutdown. */
-  private static class ChannelEntry {
-    private final ManagedHttpJsonChannel channel;
-    private final AtomicInteger outstandingCalls = new AtomicInteger(0);
-    private final AtomicBoolean shutdownRequested = new AtomicBoolean(false);
-    private final AtomicBoolean shutdownInitiated = new AtomicBoolean(false);
-
-    ChannelEntry(ManagedHttpJsonChannel channel) {
-      this.channel = channel;
-    }
-
-    boolean retain() {
-      outstandingCalls.incrementAndGet();
-      if (shutdownRequested.get()) {
-        release();
-        return false;
-      }
-      return true;
-    }
-
-    void release() {
-      int count = outstandingCalls.decrementAndGet();
-      if (count < 0) {
-        LOG.warning("Channel entry reference count dropped below 0");
-      }
-      // Must check outstandingCalls after shutdownRequested (in reverse order of retain()) to
-      // ensure mutual exclusion.
-      if (shutdownRequested.get() && outstandingCalls.get() == 0) {
-        shutdown();
-      }
-    }
-
-    void requestShutdown() {
-      shutdownRequested.set(true);
-      if (outstandingCalls.get() == 0) {
-        shutdown();
-      }
-    }
-
-    private void shutdown() {
-      if (shutdownInitiated.compareAndSet(false, true)) {
-        try {
-          channel.shutdown();
-        } catch (Exception e) {
-          LOG.log(Level.WARNING, "Error shutting down retired HTTP/JSON channel", e);
-        }
-      }
-    }
-  }
-
-  /** A client call decorator that decrements the entry counter upon call completion. */
-  private static class ReleasingHttpJsonClientCall<ReqT, RespT>
-      extends SimpleForwardingHttpJsonClientCall<ReqT, RespT> {
-
-    private final Object callLock = new Object();
-    private volatile @Nullable CancellationException cancellationException;
-    private final ChannelEntry entry;
-    private final AtomicBoolean wasClosed = new AtomicBoolean(false);
-    private final AtomicBoolean wasReleased = new AtomicBoolean(false);
-    private final AtomicBoolean wasStarted = new AtomicBoolean(false);
-
-    ReleasingHttpJsonClientCall(HttpJsonClientCall<ReqT, RespT> delegate, ChannelEntry entry) {
-      super(delegate);
-      this.entry = entry;
-    }
-
-    @Override
-    public void start(Listener<RespT> responseListener, HttpJsonMetadata requestHeaders) {
-      synchronized (callLock) {
-        if (!wasStarted.compareAndSet(false, true)) {
-          throw new IllegalStateException("Call is already started");
-        }
-        if (cancellationException != null) {
-          if (wasReleased.compareAndSet(false, true)) {
-            entry.release();
-          }
-          throw new IllegalStateException("Call is already cancelled", cancellationException);
-        }
-        try {
-          super.start(
-              new SimpleForwardingHttpJsonClientCallListener<RespT>(responseListener) {
-                @Override
-                public void onClose(int statusCode, HttpJsonMetadata trailers) {
-                  if (!wasClosed.compareAndSet(false, true)) {
-                    return;
-                  }
-                  try {
-                    super.onClose(statusCode, trailers);
-                  } finally {
-                    if (wasReleased.compareAndSet(false, true)) {
-                      entry.release();
-                    }
-                  }
-                }
-              },
-              requestHeaders);
-        } catch (Throwable t) {
-          if (wasReleased.compareAndSet(false, true)) {
-            entry.release();
-          }
-          throw t;
-        }
-      }
-    }
-
-    @Override
-    public void cancel(@Nullable String message, @Nullable Throwable cause) {
-      boolean releaseImmediately = false;
-      try {
-        synchronized (callLock) {
-          this.cancellationException = new CancellationException(message);
-          if (!wasStarted.get()) {
-            releaseImmediately = true;
-          }
-          if (delegate() != null) {
-            super.cancel(message, cause);
-          }
-        }
-      } catch (Throwable t) {
-        if (!wasStarted.get()) {
-          releaseImmediately = true;
-        }
-        throw t;
-      } finally {
-        if (releaseImmediately && wasReleased.compareAndSet(false, true)) {
-          entry.release();
-        }
-      }
-    }
+    delegate.close();
   }
 }

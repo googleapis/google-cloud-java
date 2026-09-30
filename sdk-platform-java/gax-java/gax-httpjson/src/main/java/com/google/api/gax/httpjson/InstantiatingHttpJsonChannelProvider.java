@@ -234,6 +234,10 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         throw new IOException("Failed to initialize mTLS HttpTransport");
       }
     }
+    return buildManagedChannel(httpTransportToUse);
+  }
+
+  private ManagedHttpJsonChannel buildManagedChannel(@Nullable HttpTransport httpTransportToUse) {
     return ManagedHttpJsonChannel.newBuilder()
         .setEndpoint(endpoint)
         .setExecutor(executor)
@@ -251,19 +255,24 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
     ManagedHttpJsonChannel baseChannel;
     if (workloadCertPath != null) {
-      java.util.function.Supplier<ManagedHttpJsonChannel> channelFactory =
+      java.util.function.Supplier<HttpTransport> transportFactory =
           () -> {
             try {
-              return createSingleManagedChannel();
+              HttpTransport mtlsTransport = createHttpTransport();
+              if (mtlsTransport == null) {
+                throw new IOException("Failed to initialize mTLS HttpTransport");
+              }
+              return mtlsTransport;
             } catch (IOException | GeneralSecurityException e) {
-              throw new java.lang.RuntimeException(
-                  "Failed to create fresh ManagedHttpJsonChannel", e);
+              throw new java.lang.RuntimeException("Failed to create mTLS HttpTransport", e);
             }
           };
       // RefreshingHttpJsonChannel records the baseline certificate fingerprint before creating the
-      // initial channel, so a rotation during startup is detected on the next auth failure.
+      // initial transport, so a rotation during startup is detected on the next auth failure.
       try {
-        baseChannel = new RefreshingHttpJsonChannel(channelFactory, workloadCertPath);
+        baseChannel =
+            new RefreshingHttpJsonChannel(
+                transportFactory, this::buildManagedChannel, workloadCertPath);
       } catch (RuntimeException e) {
         if (e.getCause() instanceof IOException) {
           throw (IOException) e.getCause();

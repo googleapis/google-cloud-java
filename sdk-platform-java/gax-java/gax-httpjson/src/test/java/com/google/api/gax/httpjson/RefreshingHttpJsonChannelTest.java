@@ -31,14 +31,25 @@ package com.google.api.gax.httpjson;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.gax.httpjson.testing.MockHttpService;
+import com.google.protobuf.Field;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Queue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
@@ -46,14 +57,36 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class RefreshingHttpJsonChannelTest {
+  private static final ApiMethodDescriptor<Field, Field> FAKE_METHOD_DESCRIPTOR =
+      ApiMethodDescriptor.<Field, Field>newBuilder()
+          .setFullMethodName("google.cloud.v1.Fake/FakeMethod")
+          .setHttpMethod("POST")
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<Field>newBuilder()
+                  .setPath(
+                      "/fake/v1/name/{name}",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<Field> serializer = ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "name", request.getName());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(request -> new HashMap<>())
+                  .setRequestBodyExtractor(
+                      request ->
+                          ProtoRestSerializer.create()
+                              .toBody("*", request.toBuilder().clearName().build(), false))
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Field>newBuilder()
+                  .setDefaultInstance(Field.getDefaultInstance())
+                  .build())
+          .build();
+
   private static class FakeHttpJsonClientCall<RequestT, ResponseT>
       extends HttpJsonClientCall<RequestT, ResponseT> {
-    protected Listener<ResponseT> listener;
-
     @Override
-    public void start(Listener<ResponseT> responseListener, HttpJsonMetadata requestHeaders) {
-      this.listener = responseListener;
-    }
+    public void start(Listener<ResponseT> responseListener, HttpJsonMetadata requestHeaders) {}
 
     @Override
     public void request(int numMessages) {}
@@ -116,26 +149,34 @@ class RefreshingHttpJsonChannelTest {
     }
   }
 
-  private AtomicInteger channelFactoryCount;
+  private AtomicInteger transportFactoryCount;
+  private HttpTransport lastCreatedTransport;
   private FakeManagedHttpJsonChannel lastCreatedChannel;
-  private String testCertPath = "/fake/path";
-  private String testFingerprint = "fingerprint1";
-  private boolean shouldThrowOnFactory = false;
+  private String testCertPath;
+  private String testFingerprint;
+  private boolean shouldThrowOnFactory;
   private List<RefreshingHttpJsonChannel> createdChannels;
 
-  private Supplier<ManagedHttpJsonChannel> channelFactory =
+  private Supplier<HttpTransport> transportFactory =
       () -> {
         if (shouldThrowOnFactory) {
           throw new RuntimeException("Simulated factory failure");
         }
-        channelFactoryCount.incrementAndGet();
+        transportFactoryCount.incrementAndGet();
+        lastCreatedTransport = new MockHttpTransport();
+        return lastCreatedTransport;
+      };
+
+  private Function<HttpTransport, ManagedHttpJsonChannel> channelFactory =
+      transport -> {
         lastCreatedChannel = new FakeManagedHttpJsonChannel();
+        lastCreatedChannel.setHttpTransport(transport);
         return lastCreatedChannel;
       };
 
   @BeforeEach
   void setUp() {
-    channelFactoryCount = new AtomicInteger(0);
+    transportFactoryCount = new AtomicInteger(0);
     testCertPath = "/fake/path";
     testFingerprint = "fingerprint1";
     shouldThrowOnFactory = false;
@@ -151,7 +192,10 @@ class RefreshingHttpJsonChannelTest {
 
   private RefreshingHttpJsonChannel createTestChannel() {
     RefreshingHttpJsonChannel ch =
-        new RefreshingHttpJsonChannel(channelFactory, "fake/cert/path.json") {
+        new RefreshingHttpJsonChannel(
+            () -> transportFactory.get(),
+            transport -> channelFactory.apply(transport),
+            "fake/cert/path.json") {
           @Override
           String getWorkloadCertPath() {
             return testCertPath;
@@ -166,6 +210,11 @@ class RefreshingHttpJsonChannelTest {
     return ch;
   }
 
+  private void rotateCertificate(RefreshingHttpJsonChannel channel) {
+    channel.invalidateDiskFingerprintCache();
+    testFingerprint = "fingerprint2";
+  }
+
   @Test
   void testShouldRefreshNullCertPath() {
     testCertPath = null;
@@ -174,7 +223,7 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
-  void testShouldRefreshFalseWhenUnchanged() throws InterruptedException {
+  void testShouldRefreshFalseWhenUnchanged() {
     RefreshingHttpJsonChannel channel = createTestChannel();
 
     channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
@@ -182,13 +231,10 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
-  void testShouldRefreshTrueWhenChanged() throws InterruptedException {
+  void testShouldRefreshTrueWhenChanged() {
     RefreshingHttpJsonChannel channel = createTestChannel();
 
-    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
-
-    // Simulate disk fingerprint changing
-    testFingerprint = "fingerprint2";
+    rotateCertificate(channel);
 
     assertTrue(channel.shouldRefresh());
   }
@@ -212,151 +258,129 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
-  void rotationDuringInitialChannelCreation_isDetectedAndRefreshed() {
-    channelFactory =
+  void rotationDuringInitialTransportCreation_isDetectedAndRefreshed() {
+    transportFactory =
         () -> {
-          if (channelFactoryCount.incrementAndGet() == 1) {
-            // Simulate the certificate rotating on disk while the initial channel loads it.
+          if (transportFactoryCount.incrementAndGet() == 1) {
+            // Simulate the certificate rotating on disk while the initial transport loads it.
             testFingerprint = "fingerprint2";
           }
-          lastCreatedChannel = new FakeManagedHttpJsonChannel();
-          return lastCreatedChannel;
+          lastCreatedTransport = new MockHttpTransport();
+          return lastCreatedTransport;
         };
 
     RefreshingHttpJsonChannel channel = createTestChannel();
 
-    // The baseline was recorded before the initial channel was created, so the rotation is seen.
+    // The baseline was recorded before the initial transport was created, so the rotation is seen.
     assertTrue(channel.shouldRefresh());
 
     channel.refresh();
-    assertEquals(2, channelFactoryCount.get());
+    assertEquals(2, transportFactoryCount.get());
     assertEquals(1, channel.getGeneration());
     assertFalse(channel.shouldRefresh());
   }
 
   @Test
-  void testRefreshSwapsChannel() throws InterruptedException {
+  void refresh_swapsTransportAndKeepsChannel() {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    assertEquals(1, channelFactoryCount.get());
+    FakeManagedHttpJsonChannel underlyingChannel = lastCreatedChannel;
+    HttpTransport initialTransport = channel.getHttpTransport();
+    assertSame(lastCreatedTransport, initialTransport);
 
-    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
-
-    // Change fingerprint
-    testFingerprint = "fingerprint2";
-
-    // Act
+    rotateCertificate(channel);
     channel.refresh();
 
-    // Verify a new channel was created and the old one retired
-    assertEquals(2, channelFactoryCount.get());
-    FakeManagedHttpJsonChannel secondChannel = lastCreatedChannel;
-
-    // The old channel should receive a shutdown request immediately since there are no active calls
-    assertTrue(firstChannel.isShutdown());
-    assertFalse(secondChannel.isShutdown());
+    assertEquals(2, transportFactoryCount.get());
+    assertNotSame(initialTransport, channel.getHttpTransport());
+    assertSame(lastCreatedTransport, channel.getHttpTransport());
+    // The underlying channel (and its executors) is reused rather than replaced or shut down.
+    assertSame(underlyingChannel, lastCreatedChannel);
+    assertFalse(underlyingChannel.isShutdown());
+    assertEquals(1, channel.getGeneration());
+    assertFalse(channel.shouldRefresh());
   }
 
   @Test
-  void testRefreshKeepsInFlightChannelsAlive() throws InterruptedException {
+  void callCreatedBeforeRefresh_usesOriginalTransport() throws Exception {
+    MockHttpService originalService =
+        new MockHttpService(Collections.singletonList(FAKE_METHOD_DESCRIPTOR), "google.com:443");
+    MockHttpService rotatedService =
+        new MockHttpService(Collections.singletonList(FAKE_METHOD_DESCRIPTOR), "google.com:443");
+    Field message = Field.newBuilder().setName("bob").setNumber(1).build();
+    originalService.addResponse(message);
+    rotatedService.addResponse(message);
+    Queue<HttpTransport> transports =
+        new ArrayDeque<>(Arrays.asList(originalService, rotatedService));
+    transportFactory = transports::remove;
+    channelFactory =
+        transport ->
+            ManagedHttpJsonChannel.newBuilder()
+                .setEndpoint("google.com:443")
+                .setHttpTransport(transport)
+                .build();
     RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    HttpJsonCallOptions callOptions = HttpJsonCallOptions.newBuilder().build();
+    HttpJsonCallContext callContext = HttpJsonCallContext.createDefault();
 
-    // Simulate an in-flight API call
-    FakeHttpJsonClientCall<Object, Object> fakeCall = new FakeHttpJsonClientCall<>();
-    firstChannel.nextCall = fakeCall;
+    HttpJsonClientCall<Field, Field> callBeforeRefresh =
+        channel.newCall(FAKE_METHOD_DESCRIPTOR, callOptions);
 
-    HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
-
-    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
-
-    // Change fingerprint & refresh
-    testFingerprint = "fingerprint2";
-
+    rotateCertificate(channel);
     channel.refresh();
+    assertEquals(1, channel.getGeneration());
 
-    // Verify a new channel was created
-    assertEquals(2, channelFactoryCount.get());
+    assertEquals(
+        message,
+        HttpJsonClientCalls.futureUnaryCall(callBeforeRefresh, message, callContext)
+            .get(10, TimeUnit.SECONDS));
+    assertEquals(1, originalService.getRequestPaths().size());
+    assertEquals(0, rotatedService.getRequestPaths().size());
 
-    // IMPORTANT: The first channel should NOT be shut down yet because of the active call!
-    assertFalse(firstChannel.isShutdown());
-
-    // Now start the call
-    activeCall.start(new HttpJsonClientCall.Listener<Object>() {}, null);
-
-    assertNotNull(fakeCall.listener);
-
-    // Fire onClose
-    fakeCall.listener.onClose(0, null);
-
-    // FIRST CHANNEL SHOULD BE SHUT DOWN NOW!
-    assertTrue(firstChannel.isShutdown());
+    HttpJsonClientCall<Field, Field> callAfterRefresh =
+        channel.newCall(FAKE_METHOD_DESCRIPTOR, callOptions);
+    assertEquals(
+        message,
+        HttpJsonClientCalls.futureUnaryCall(callAfterRefresh, message, callContext)
+            .get(10, TimeUnit.SECONDS));
+    assertEquals(1, originalService.getRequestPaths().size());
+    assertEquals(1, rotatedService.getRequestPaths().size());
   }
 
   @Test
-  void testCancelBeforeStartReleasesChannelEntry() {
+  void testRefreshDoesNotCreateTransportWhenShutdown() {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    assertEquals(1, transportFactoryCount.get());
 
-    HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
-
-    channel.invalidateDiskFingerprintCache();
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-
-    // Because activeCall was created, the old channel should NOT be shut down yet
-    assertFalse(firstChannel.isShutdown());
-
-    // Cancel before start() is called
-    activeCall.cancel("Cancelled early", null);
-
-    // Because cancel() safely released the entry, the old channel should now be shut down!
-    assertTrue(firstChannel.isShutdown());
-  }
-
-  @Test
-  void testRefreshDoesNotSpawnChannelWhenShutdown() throws InterruptedException {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    assertEquals(1, channelFactoryCount.get());
-
-    // Simulate that the channel pool is shut down.
     channel.shutdown();
-    firstChannel.shutdown();
-
-    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
-
-    // Change fingerprint
-    testFingerprint = "fingerprint2";
-
-    // Act
+    rotateCertificate(channel);
     channel.refresh();
 
-    // Verify no new channel was spawned
-    assertEquals(1, channelFactoryCount.get());
+    assertEquals(1, transportFactoryCount.get());
+    assertEquals(0, channel.getGeneration());
   }
 
   @Test
-  void testRefreshFactoryExceptionDoesNotWedgeFingerprint() throws InterruptedException {
+  void testRefreshFactoryExceptionDoesNotWedgeFingerprint() {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    assertEquals(1, channelFactoryCount.get());
+    HttpTransport initialTransport = channel.getHttpTransport();
+    assertEquals(1, transportFactoryCount.get());
 
     shouldThrowOnFactory = true;
-    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
-    testFingerprint = "fingerprint2";
+    rotateCertificate(channel);
 
-    // Factory failure is logged and the existing channel is kept
+    // Factory failure is logged and the existing transport is kept
     channel.refresh();
-    assertEquals(1, channelFactoryCount.get());
+    assertEquals(1, transportFactoryCount.get());
     assertEquals(0, channel.getGeneration());
+    assertSame(initialTransport, channel.getHttpTransport());
 
-    // Because factory threw, activeCertFingerprint should NOT be updated to fingerprint2
-    // Therefore shouldRefresh() should still return true
+    // Because the factory threw, the new fingerprint is not recorded as active, so the channel
+    // still reports that it should be refreshed.
     assertTrue(channel.shouldRefresh());
 
     shouldThrowOnFactory = false;
     channel.refresh();
-    assertEquals(2, channelFactoryCount.get());
+    assertEquals(2, transportFactoryCount.get());
     assertFalse(channel.shouldRefresh());
   }
 
@@ -373,8 +397,7 @@ class RefreshingHttpJsonChannelTest {
   @Test
   void testAwaitTerminationZeroTimeoutOnTerminatedChannelReturnsTrue() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    firstChannel.isTerminated = true;
+    lastCreatedChannel.isTerminated = true;
 
     channel.shutdown();
     assertTrue(channel.awaitTermination(0, TimeUnit.MILLISECONDS));
@@ -383,22 +406,24 @@ class RefreshingHttpJsonChannelTest {
   @Test
   void testChannelDelegationMethods() {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+    FakeManagedHttpJsonChannel underlyingChannel = lastCreatedChannel;
+    FakeHttpJsonClientCall<Object, Object> fakeCall = new FakeHttpJsonClientCall<>();
+    underlyingChannel.nextCall = fakeCall;
 
-    assertEquals(firstChannel.getEndpoint(), channel.getEndpoint());
-    assertEquals(firstChannel.getHttpTransport(), channel.getHttpTransport());
-    assertEquals(firstChannel.getExecutor(), channel.getExecutor());
+    assertEquals(underlyingChannel.getEndpoint(), channel.getEndpoint());
+    assertEquals(underlyingChannel.getHttpTransport(), channel.getHttpTransport());
+    assertEquals(underlyingChannel.getExecutor(), channel.getExecutor());
+    assertSame(fakeCall, channel.newCall(null, null));
   }
 
   @Test
-  void testNewCallAfterShutdownNowThrowsIllegalStateException() {
+  void close_shutsDownUnderlyingChannel() {
     RefreshingHttpJsonChannel channel = createTestChannel();
-    channel.shutdownNow();
 
-    assertThrows(
-        IllegalStateException.class,
-        () -> channel.newCall(null, null),
-        "Channel has been shut down");
+    channel.close();
+
+    assertTrue(lastCreatedChannel.isShutdown());
+    assertTrue(channel.isShutdown());
   }
 
   @Test
@@ -409,8 +434,7 @@ class RefreshingHttpJsonChannelTest {
         java.util.concurrent.Executors.newFixedThreadPool(threadCount);
     java.util.concurrent.CountDownLatch latch =
         new java.util.concurrent.CountDownLatch(threadCount);
-    java.util.concurrent.atomic.AtomicInteger successCount =
-        new java.util.concurrent.atomic.AtomicInteger(0);
+    AtomicInteger successCount = new AtomicInteger(0);
 
     for (int i = 0; i < threadCount; i++) {
       executorService.submit(
@@ -424,8 +448,7 @@ class RefreshingHttpJsonChannelTest {
           });
     }
 
-    channel.invalidateDiskFingerprintCache();
-    testFingerprint = "fingerprint2";
+    rotateCertificate(channel);
     channel.refresh();
 
     latch.await(5, TimeUnit.SECONDS);
@@ -439,8 +462,7 @@ class RefreshingHttpJsonChannelTest {
     RefreshingHttpJsonChannel channel = createTestChannel();
     assertEquals(0, channel.getGeneration());
 
-    channel.invalidateDiskFingerprintCache();
-    testFingerprint = "fingerprint2";
+    rotateCertificate(channel);
     channel.refresh();
 
     assertEquals(1, channel.getGeneration());
@@ -453,195 +475,5 @@ class RefreshingHttpJsonChannelTest {
     channel.shutdownNow();
     assertTrue(channel.isTerminated());
     assertTrue(channel.awaitTermination(1, TimeUnit.SECONDS));
-  }
-
-  @Test
-  void testNewCall_whenDelegateThrowsError_releasesEntryAndShutsDownRetiredChannel() {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    firstChannel.nextCall = null;
-    // Configure firstChannel to throw an Error on newCall
-    FakeManagedHttpJsonChannel throwingChannel =
-        new FakeManagedHttpJsonChannel() {
-          @Override
-          public <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
-              ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,
-              HttpJsonCallOptions callOptions) {
-            throw new LinkageError("Simulated native error in newCall");
-          }
-        };
-    channelFactory =
-        () -> {
-          channelFactoryCount.incrementAndGet();
-          lastCreatedChannel = throwingChannel;
-          return throwingChannel;
-        };
-    RefreshingHttpJsonChannel testChannel = createTestChannel();
-
-    assertThrows(LinkageError.class, () -> testChannel.newCall(null, null));
-
-    // Refresh should immediately shut down throwingChannel since ref count returned to 0
-    testFingerprint = "fingerprint2";
-    testChannel.refresh();
-    assertTrue(throwingChannel.isShutdown());
-  }
-
-  @Test
-  void testStart_whenDelegateThrowsError_releasesEntryAndShutsDownRetiredChannel() {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    firstChannel.nextCall =
-        new FakeHttpJsonClientCall<Object, Object>() {
-          @Override
-          public void start(Listener<Object> responseListener, HttpJsonMetadata requestHeaders) {
-            throw new AssertionError("Simulated Error in start");
-          }
-        };
-
-    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-    assertFalse(firstChannel.isShutdown());
-
-    assertThrows(
-        AssertionError.class, () -> call.start(new HttpJsonClientCall.Listener<Object>() {}, null));
-    assertTrue(firstChannel.isShutdown());
-  }
-
-  @Test
-  void testCancel_whenDelegateThrowsException_releasesEntryAndShutsDownRetiredChannel() {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    firstChannel.nextCall =
-        new FakeHttpJsonClientCall<Object, Object>() {
-          @Override
-          public void cancel(String message, Throwable cause) {
-            throw new RuntimeException("Simulated cancel failure");
-          }
-        };
-
-    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-    assertFalse(firstChannel.isShutdown());
-
-    assertThrows(RuntimeException.class, () -> call.cancel("cancel", null));
-    assertTrue(firstChannel.isShutdown());
-  }
-
-  @Test
-  void testConcurrentStartAndCancel_neverLeaksOrDoubleReleasesEntry() throws Exception {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-
-    int iterations = 100;
-    java.util.concurrent.ExecutorService executor =
-        java.util.concurrent.Executors.newFixedThreadPool(2);
-    try {
-      for (int i = 0; i < iterations; i++) {
-        firstChannel.nextCall =
-            new FakeHttpJsonClientCall<Object, Object>() {
-              private boolean closed = false;
-
-              @Override
-              public synchronized void start(
-                  Listener<Object> responseListener, HttpJsonMetadata requestHeaders) {
-                if (closed) {
-                  // Models HttpJsonClientCallImpl returning early when closed
-                  return;
-                }
-                super.start(responseListener, requestHeaders);
-              }
-
-              @Override
-              public synchronized void cancel(String message, Throwable cause) {
-                closed = true;
-                if (listener != null) {
-                  listener.onClose(499, null);
-                }
-              }
-            };
-
-        HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
-        java.util.concurrent.CyclicBarrier barrier = new java.util.concurrent.CyclicBarrier(2);
-        java.util.concurrent.Future<?> f1 =
-            executor.submit(
-                () -> {
-                  try {
-                    barrier.await();
-                    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
-                  } catch (Exception ignored) {
-                  }
-                });
-        java.util.concurrent.Future<?> f2 =
-            executor.submit(
-                () -> {
-                  try {
-                    barrier.await();
-                    call.cancel("cancel", null);
-                  } catch (Exception ignored) {
-                  }
-                });
-        f1.get(5, TimeUnit.SECONDS);
-        f2.get(5, TimeUnit.SECONDS);
-      }
-    } finally {
-      executor.shutdownNow();
-    }
-
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-    assertTrue(firstChannel.isShutdown());
-  }
-
-  @Test
-  void cancel_whenStartedAndSuperCancelThrows_doesNotReleasePrematurelyUntilOnClose() {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    FakeHttpJsonClientCall<Object, Object> delegateCall =
-        new FakeHttpJsonClientCall<Object, Object>() {
-          @Override
-          public void cancel(String message, Throwable cause) {
-            throw new RuntimeException("Simulated cancel failure");
-          }
-        };
-    firstChannel.nextCall = delegateCall;
-
-    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
-    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
-
-    assertThrows(RuntimeException.class, () -> call.cancel("abort", null));
-
-    // Rotate pool while call is still active (onClose hasn't fired yet):
-    // firstChannel must NOT be shut down yet because call is still active
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-    assertFalse(firstChannel.isShutdown());
-
-    // Once onClose fires, entry is released and firstChannel shuts down
-    delegateCall.listener.onClose(200, null);
-    assertTrue(firstChannel.isShutdown());
-  }
-
-  @Test
-  void start_whenCalledTwice_throwsIllegalStateExceptionAndDoesNotReleaseFirstCallEntry() {
-    RefreshingHttpJsonChannel channel = createTestChannel();
-    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
-    FakeHttpJsonClientCall<Object, Object> delegateCall = new FakeHttpJsonClientCall<>();
-    firstChannel.nextCall = delegateCall;
-
-    HttpJsonClientCall<Object, Object> call = channel.newCall(null, null);
-    call.start(new HttpJsonClientCall.Listener<Object>() {}, null);
-
-    assertThrows(
-        IllegalStateException.class,
-        () -> call.start(new HttpJsonClientCall.Listener<Object>() {}, null));
-
-    testFingerprint = "fingerprint2";
-    channel.refresh();
-    assertFalse(firstChannel.isShutdown());
-
-    delegateCall.listener.onClose(200, null);
-    assertTrue(firstChannel.isShutdown());
   }
 }

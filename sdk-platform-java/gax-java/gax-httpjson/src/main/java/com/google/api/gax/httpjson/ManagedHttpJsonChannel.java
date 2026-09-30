@@ -51,7 +51,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   private final Executor executor;
   private final boolean usingDefaultExecutor;
   private final String endpoint;
-  private final HttpTransport httpTransport;
+  private volatile HttpTransport httpTransport;
   private final boolean usingDefaultTransport;
   private final ScheduledExecutorService deadlineScheduledExecutorService;
   private boolean isTransportShutdown;
@@ -89,6 +89,14 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   @VisibleForTesting
   HttpTransport getHttpTransport() {
     return httpTransport;
+  }
+
+  /**
+   * Replaces the transport used by calls created after this method returns. Calls that were already
+   * created keep using the transport they were created with.
+   */
+  void setHttpTransport(HttpTransport httpTransport) {
+    this.httpTransport = httpTransport;
   }
 
   private ManagedHttpJsonChannel(
