@@ -32,6 +32,7 @@ package com.google.api.gax.tracing;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -115,6 +116,7 @@ class TracedCallableTest {
 
     verify(tracerFactory, times(1)).newTracer(parentTracer, TRACER_CONTEXT);
     verify(tracer, times(1)).attemptStarted(anyString(), anyInt());
+    verify(tracer, atLeastOnce()).inScope();
     verify(tracer, times(1)).attemptSucceeded();
     verify(tracer, times(1)).operationSucceeded();
     verifyNoMoreInteractions(tracer);

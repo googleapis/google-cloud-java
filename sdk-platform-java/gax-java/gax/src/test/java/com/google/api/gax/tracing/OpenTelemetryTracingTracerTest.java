@@ -680,4 +680,90 @@ class OpenTelemetryTracingTracerTest {
     assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000001");
     assertThat(carrier.get("traceparent")).contains("0000000000000002");
   }
+
+  @Test
+  void testInScope_withAttemptSpan_activatesSpanInContext() {
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span realSpan =
+        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+    when(spanBuilder.startSpan()).thenReturn(realSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      assertThat(Span.current()).isEqualTo(realSpan);
+      assertThat(Span.current().getSpanContext().getTraceId())
+          .isEqualTo("00000000000000000000000000000001");
+      assertThat(Span.current().getSpanContext().getSpanId()).isEqualTo("0000000000000002");
+    }
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+  }
+
+  @Test
+  void testInScope_afterAttemptEnds_returnsNoopScope() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptSucceeded();
+
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      assertThat(Span.current().getSpanContext().isValid()).isFalse();
+    }
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+  }
+
+  @Test
+  void testInScope_multithreadedExecution_noLeakAcrossThreads() throws Exception {
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span realSpan =
+        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+    when(spanBuilder.startSpan()).thenReturn(realSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+
+    // Thread A initiates the attempt
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+
+    // Thread B runs callback
+    java.util.concurrent.atomic.AtomicBoolean callbackSawValidSpan =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
+    java.util.concurrent.atomic.AtomicBoolean callbackRestoredContext =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
+
+    Thread threadB =
+        new Thread(
+            () -> {
+              try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+                if (Span.current().equals(realSpan)) {
+                  callbackSawValidSpan.set(true);
+                }
+              }
+              if (!Span.current().getSpanContext().isValid()) {
+                callbackRestoredContext.set(true);
+              }
+            });
+    threadB.start();
+    threadB.join();
+
+    assertThat(callbackSawValidSpan.get()).isTrue();
+    assertThat(callbackRestoredContext.get()).isTrue();
+    // Thread A remains clean
+    assertThat(Span.current().getSpanContext().isValid()).isFalse();
+  }
 }

@@ -54,6 +54,20 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final ApiTracerContext apiTracerContext;
   private @Nullable Span attemptSpan;
 
+  /**
+   * Installs the current attempt span as the active OpenTelemetry context on the calling thread.
+   *
+   * @return an {@link ApiTracer.Scope} that restores the previous context when closed
+   */
+  @Override
+  public Scope inScope() {
+    if (attemptSpan == null) {
+      return () -> {};
+    }
+    io.opentelemetry.context.Scope otelScope = attemptSpan.makeCurrent();
+    return otelScope::close;
+  }
+
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
     if (attemptSpan != null) {
