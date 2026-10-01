@@ -1691,7 +1691,7 @@ class AgentIdentityUtilsTest {
   public void getAgentIdentityCertInfo_unsupportedKeyAlgorithm_failsWithoutRetry()
       throws Exception {
     Path certPath = copyResource("agent/agent_spiffe_dsa_cert.pem", tempDir.resolve("cert.pem"));
-    Path keyPath = copyResource("agent/agent_spiffe_dsa_key.pem", tempDir.resolve("key.pem"));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
     Path configFile = tempDir.resolve("config.json");
     writeWorkloadConfig(configFile, certPath, keyPath);
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
