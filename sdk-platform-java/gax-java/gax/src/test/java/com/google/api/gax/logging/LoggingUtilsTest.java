@@ -101,7 +101,10 @@ class LoggingUtilsTest {
         mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
 
     LoggingUtils.logActionableError(
-        Collections.<String, Object>emptyMap(), loggerProvider, "message");
+        Collections.<String, Object>emptyMap(),
+        loggerProvider,
+        "message",
+        org.slf4j.event.Level.DEBUG);
 
     verify(loggerProvider, never()).getLogger();
   }
@@ -119,7 +122,8 @@ class LoggingUtilsTest {
     when(eventBuilder.addKeyValue(anyString(), any())).thenReturn(eventBuilder);
 
     Map<String, Object> context = Collections.singletonMap("key", "value");
-    LoggingUtils.logActionableError(context, loggerProvider, "message");
+    LoggingUtils.logActionableError(
+        context, loggerProvider, "message", org.slf4j.event.Level.DEBUG);
 
     verify(loggerProvider).getLogger();
   }

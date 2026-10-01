@@ -81,16 +81,6 @@ class LoggingTracer extends BaseApiTracer {
   }
 
   /**
-   * Records an actionable error log entry at DEBUG level.
-   *
-   * @param error the exception that occurred
-   */
-  @VisibleForTesting
-  void recordActionableError(Throwable error) {
-    recordActionableError(error, Level.DEBUG);
-  }
-
-  /**
    * Records an actionable error log entry with the specified log level.
    *
    * @param error the exception that occurred

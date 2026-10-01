@@ -117,7 +117,7 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("test error message");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     assertEquals(1, testLogger.getMessageList().size());
     assertEquals("test error message", testLogger.getMessageList().get(0));
@@ -136,7 +136,7 @@ class LoggingTracerTest {
             FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
             false);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -151,7 +151,7 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("generic failure");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -183,7 +183,7 @@ class LoggingTracerTest {
             false,
             errorDetails);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals("TEST_REASON", attributesMap.get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE));
@@ -200,7 +200,7 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("test error message");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -224,7 +224,7 @@ class LoggingTracerTest {
             FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
             false);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
