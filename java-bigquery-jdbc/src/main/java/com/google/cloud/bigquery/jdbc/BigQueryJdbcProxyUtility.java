@@ -37,10 +37,12 @@ import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
 import javax.net.ssl.TrustManagerFactory;
 import org.apache.hc.client5.http.auth.AuthScope;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
@@ -54,17 +56,48 @@ import org.apache.hc.client5.http.impl.routing.DefaultProxyRoutePlanner;
 import org.apache.hc.client5.http.routing.HttpRoutePlanner;
 import org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory;
 import org.apache.hc.core5.http.HttpHost;
+import org.conscrypt.Conscrypt;
 
 final class BigQueryJdbcProxyUtility {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
+  private static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
+      new String[] {"X25519MLKEM768", "MLKEM1024", "X25519", "secp256r1", "secp384r1"};
+  private static final Provider CONSCRYPT_PROVIDER = createConscryptProvider();
   private static final HttpTransport DEFAULT_TRANSPORT =
       HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
           .build();
 
   private BigQueryJdbcProxyUtility() {}
+
+  private static Provider createConscryptProvider() {
+    try {
+      return Conscrypt.newProvider();
+    } catch (SecurityException | LinkageError t) {
+      LOG.fine(
+          "Conscrypt native library unavailable, falling back to default SSL provider: "
+              + t.getMessage());
+      return null;
+    }
+  }
+
+  private static SSLConnectionSocketFactory createSslConnectionSocketFactory(
+      SSLContext sslContext) {
+    return new SSLConnectionSocketFactory(sslContext) {
+      @Override
+      protected void prepareSocket(SSLSocket socket) throws IOException {
+        if (Conscrypt.isConscrypt(socket)) {
+          try {
+            Conscrypt.setNamedGroups(socket, DEFAULT_CONSCRYPT_NAMED_GROUPS);
+          } catch (Exception e) {
+            LOG.fine("Failed to set PQC named groups on Conscrypt socket: " + e.getMessage());
+          }
+        }
+      }
+    };
+  }
 
   static Map<String, String> parseProxyProperties(DataSource ds, String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
@@ -200,13 +233,19 @@ final class BigQueryJdbcProxyUtility {
         trustStore.load(trustStoreStream, trustStorePasswordChars);
 
         TrustManagerFactory trustManagerFactory =
-            TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            CONSCRYPT_PROVIDER != null
+                ? TrustManagerFactory.getInstance(
+                    TrustManagerFactory.getDefaultAlgorithm(), CONSCRYPT_PROVIDER)
+                : TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
         trustManagerFactory.init(trustStore);
 
-        SSLContext sslContext = SSLContext.getInstance("TLS");
+        SSLContext sslContext =
+            CONSCRYPT_PROVIDER != null
+                ? SSLContext.getInstance("TLS", CONSCRYPT_PROVIDER)
+                : SSLContext.getInstance("TLS");
         sslContext.init(null, trustManagerFactory.getTrustManagers(), null);
 
-        SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext);
+        SSLConnectionSocketFactory sslSocketFactory = createSslConnectionSocketFactory(sslContext);
         httpClientBuilder.setConnectionManager(
             PoolingHttpClientConnectionManagerBuilder.create()
                 .setSSLSocketFactory(sslSocketFactory)
@@ -214,6 +253,21 @@ final class BigQueryJdbcProxyUtility {
       } catch (IOException | GeneralSecurityException e) {
         throw new BigQueryJdbcRuntimeException(
             "Failed to configure SSL TrustStore for HTTP transport", e);
+      }
+    } else if (CONSCRYPT_PROVIDER != null) {
+      try {
+        SSLContext sslContext = SSLContext.getInstance("TLS", CONSCRYPT_PROVIDER);
+        sslContext.init(null, null, null);
+        SSLConnectionSocketFactory sslSocketFactory = createSslConnectionSocketFactory(sslContext);
+        httpClientBuilder.setConnectionManager(
+            PoolingHttpClientConnectionManagerBuilder.create()
+                .setSSLSocketFactory(sslSocketFactory)
+                .build());
+      } catch (GeneralSecurityException e) {
+        LOG.fine(
+            "Failed to configure Conscrypt SSLContext for proxy HTTP transport. Falling back to"
+                + " default SSLContext: "
+                + e.getMessage());
       }
     }
     addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
