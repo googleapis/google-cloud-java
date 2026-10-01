@@ -21,6 +21,7 @@ import static com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
+import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.ServiceDefaults;
@@ -150,19 +151,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.databaseId = options.databaseId;
       this.requestTags = options.requestTags;
       this.openTelemetryOptions = options.openTelemetryOptions;
-      this.channelProvider = validateChannelProvider(options.channelProvider);
+      this.channelProvider = options.channelProvider;
       this.host = options.getHost();
       this.transportOptions = options.getTransportOptions();
-    }
-
-    private TransportChannelProvider validateChannelProvider(
-        TransportChannelProvider channelProvider) {
-      Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
-      if (!(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
-        throw new IllegalArgumentException(
-            "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
-      }
-      return channelProvider;
     }
 
     /**
@@ -212,12 +203,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
      *
      * <p>This functionality is experimental and subject to change.
      *
-     * @param channelProvider A InstantiatingGrpcChannelProvider object that defines the transport
+     * @param channelProvider A {@link TransportChannelProvider} object that defines the transport
      *     provider for this client.
      */
     @BetaApi
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
-      this.channelProvider = validateChannelProvider(channelProvider);
+      this.channelProvider = channelProvider;
       return this;
     }
 
@@ -331,6 +322,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         }
         this.channelProvider = channelProviderBuilder.build();
       } else {
+        // Allow any TransportChannelProvider that uses gRPC (e.g., FixedTransportChannelProvider).
+        if (!GrpcTransportChannel.getGrpcTransportName()
+            .equals(builder.channelProvider.getTransportName())) {
+          throw new IllegalArgumentException(
+              "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
+        }
         this.channelProvider = builder.channelProvider;
       }
     }
