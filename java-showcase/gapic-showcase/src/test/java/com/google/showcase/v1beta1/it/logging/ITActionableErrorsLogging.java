@@ -226,11 +226,7 @@ public class ITActionableErrorsLogging {
     stubSettingsBuilder
         .echoSettings()
         .setRetrySettings(
-            com.google.api.gax.retrying.RetrySettings.newBuilder()
-                .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(0))
-                .setTotalTimeoutDuration(java.time.Duration.ofMillis(0))
-                .setMaxAttempts(1)
-                .build());
+            com.google.api.gax.retrying.RetrySettings.newBuilder().setMaxAttempts(1).build());
     stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
     stubSettingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     stubSettingsBuilder.setEndpoint("localhost:1");
@@ -244,8 +240,8 @@ public class ITActionableErrorsLogging {
       Map<String, Object> kvps = getKvps(loggingEvent);
       assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "http");
     } finally {
-      client.close();
-      stub.close();
+      client.shutdownNow();
+      stub.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
       stub.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
@@ -291,11 +287,7 @@ public class ITActionableErrorsLogging {
     stubSettingsBuilder
         .echoSettings()
         .setRetrySettings(
-            com.google.api.gax.retrying.RetrySettings.newBuilder()
-                .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(0))
-                .setTotalTimeoutDuration(java.time.Duration.ofMillis(0))
-                .setMaxAttempts(1)
-                .build());
+            com.google.api.gax.retrying.RetrySettings.newBuilder().setMaxAttempts(1).build());
     stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
     stubSettingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     stubSettingsBuilder.setEndpoint("localhost:1");
@@ -309,8 +301,8 @@ public class ITActionableErrorsLogging {
       Map<String, Object> kvps = getKvps(loggingEvent);
       assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "grpc");
     } finally {
-      client.close();
-      stub.close();
+      client.shutdownNow();
+      stub.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
       stub.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
