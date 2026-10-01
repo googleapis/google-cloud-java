@@ -151,19 +151,6 @@ public class LoggingUtils {
   }
 
   /**
-   * Logs an actionable error message with structured context at DEBUG level.
-   *
-   * @param logContext A map containing the structured logging context (e.g., RPC service, method,
-   *     error details).
-   * @param loggerProvider The provider used to obtain the logger.
-   * @param message The human-readable error message.
-   */
-  public static void logActionableError(
-      Map<String, Object> logContext, LoggerProvider loggerProvider, String message) {
-    logActionableError(logContext, loggerProvider, message, Level.DEBUG);
-  }
-
-  /**
    * Logs an actionable error message with structured context at a specified log level.
    *
    * @param logContext A map containing the structured logging context (e.g., RPC service, method,
