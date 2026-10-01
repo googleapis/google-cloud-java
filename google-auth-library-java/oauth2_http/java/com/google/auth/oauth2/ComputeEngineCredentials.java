@@ -38,7 +38,6 @@ import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpStatusCodes;
@@ -325,7 +324,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private String getUniverseDomainFromMetadata() throws IOException {
     HttpResponse response =
-        getMetadataResponse(getUniverseDomainUrl(), "GET", null, RequestType.UNTRACKED, false);
+        getMetadataResponse(
+            buildMetadataRequest(getUniverseDomainUrl()), RequestType.UNTRACKED, false);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       return Credentials.GOOGLE_DEFAULT_UNIVERSE;
@@ -385,7 +385,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
   private String getProjectIdFromMetadata() {
     try {
       HttpResponse response =
-          getMetadataResponse(getProjectIdUrl(), "GET", null, RequestType.UNTRACKED, false);
+          getMetadataResponse(
+              buildMetadataRequest(getProjectIdUrl()), RequestType.UNTRACKED, false);
       int statusCode = response.getStatusCode();
       if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
         LoggingUtils.log(
@@ -429,9 +430,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
   public AccessToken refreshAccessToken() throws IOException {
     String tokenUrl = createTokenUrlWithScopes();
     String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
-    HttpResponse response =
-        getMetadataResponseForToken(
-            tokenUrl, boundTokenPayload, RequestType.ACCESS_TOKEN_REQUEST, true);
+    HttpRequest request =
+        boundTokenPayload != null
+            ? buildBoundTokenRequest(tokenUrl, boundTokenPayload)
+            : buildMetadataRequest(tokenUrl);
+    HttpResponse response = getMetadataResponse(request, RequestType.ACCESS_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       if (boundTokenPayload != null) {
@@ -510,9 +513,11 @@ public class ComputeEngineCredentials extends GoogleCredentials
       }
     }
     documentUrl.set("audience", targetAudience);
-    HttpResponse response =
-        getMetadataResponseForToken(
-            documentUrl.toString(), boundTokenPayload, RequestType.ID_TOKEN_REQUEST, true);
+    HttpRequest request =
+        boundTokenPayload != null
+            ? buildBoundTokenRequest(documentUrl.toString(), boundTokenPayload)
+            : buildMetadataRequest(documentUrl.toString());
+    HttpResponse response = getMetadataResponse(request, RequestType.ID_TOKEN_REQUEST, true);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       if (boundTokenPayload != null) {
@@ -549,38 +554,25 @@ public class ComputeEngineCredentials extends GoogleCredentials
     return IdToken.create(rawToken);
   }
 
-  private HttpResponse getMetadataResponseForToken(
-      String url,
-      @Nullable String boundTokenPayload,
-      RequestType requestType,
-      boolean shouldSendMetricsHeader)
+  private HttpRequest buildMetadataRequest(String url) throws IOException {
+    return transportFactory.create().createRequestFactory().buildGetRequest(new GenericUrl(url));
+  }
+
+  private HttpRequest buildBoundTokenRequest(String url, String boundTokenPayload)
       throws IOException {
-    if (boundTokenPayload != null) {
-      Map<String, String> payload =
-          Collections.singletonMap("certificate_chain", boundTokenPayload);
-      HttpContent content =
-          new JsonHttpContent(OAuth2Utils.JSON_FACTORY, payload)
-              .setMediaType(new HttpMediaType("application/json"));
-      return getMetadataResponse(url, "POST", content, requestType, shouldSendMetricsHeader);
-    }
-    return getMetadataResponse(url, "GET", null, requestType, shouldSendMetricsHeader);
+    Map<String, String> payload = Collections.singletonMap("certificate_chain", boundTokenPayload);
+    HttpContent content =
+        new JsonHttpContent(OAuth2Utils.JSON_FACTORY, payload)
+            .setMediaType(new HttpMediaType("application/json"));
+    return transportFactory
+        .create()
+        .createRequestFactory()
+        .buildPostRequest(new GenericUrl(url), content);
   }
 
   private HttpResponse getMetadataResponse(
-      String url,
-      String method,
-      @Nullable HttpContent content,
-      RequestType requestType,
-      boolean shouldSendMetricsHeader)
+      HttpRequest request, RequestType requestType, boolean shouldSendMetricsHeader)
       throws IOException {
-    GenericUrl genericUrl = new GenericUrl(url);
-    HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
-    HttpRequest request;
-    if ("POST".equals(method)) {
-      request = requestFactory.buildPostRequest(genericUrl, content);
-    } else {
-      request = requestFactory.buildGetRequest(genericUrl);
-    }
     // Disable automatic logging by google-http-java-client to prevent leakage of sensitive tokens.
     // Client Library Debug Logging via LoggingUtils is used instead where appropriate.
     request.setLoggingEnabled(false);
@@ -898,7 +890,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
   private String getDefaultServiceAccount() throws IOException {
     HttpResponse response =
         getMetadataResponse(
-            getDefaultServiceAccountUrl(), "GET", null, RequestType.UNTRACKED, false);
+            buildMetadataRequest(getDefaultServiceAccountUrl()), RequestType.UNTRACKED, false);
     int statusCode = response.getStatusCode();
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(

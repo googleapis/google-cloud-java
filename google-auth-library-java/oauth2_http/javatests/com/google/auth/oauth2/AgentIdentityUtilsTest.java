@@ -111,38 +111,46 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void shouldRequestBoundToken_validOrgSpiffe_returnsTrue() throws CertificateException {
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_ORG)));
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(VALID_SPIFFE_ORG)));
   }
 
   @Test
   public void shouldRequestBoundToken_validProjSpiffe_returnsTrue() throws CertificateException {
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_PROJ)));
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(VALID_SPIFFE_PROJ)));
   }
 
   @Test
   public void shouldRequestBoundToken_validNonprodOrgSpiffe_returnsTrue()
       throws CertificateException {
     assertTrue(
-        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_NONPROD_ORG)));
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(VALID_SPIFFE_NONPROD_ORG)));
   }
 
   @Test
   public void shouldRequestBoundToken_validNonprodProjSpiffe_returnsTrue()
       throws CertificateException {
     assertTrue(
-        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_NONPROD_PROJ)));
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(VALID_SPIFFE_NONPROD_PROJ)));
   }
 
   @Test
   public void shouldRequestBoundToken_invalidDomain_returnsFalse() throws CertificateException {
     assertFalse(
-        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(INVALID_SPIFFE_DOMAIN)));
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(INVALID_SPIFFE_DOMAIN)));
   }
 
   @Test
   public void shouldRequestBoundToken_invalidFormat_returnsFalse() throws CertificateException {
     assertFalse(
-        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(INVALID_SPIFFE_FORMAT)));
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(
+            mockCertWithSanUri(INVALID_SPIFFE_FORMAT)));
   }
 
   @Test
@@ -151,7 +159,7 @@ class AgentIdentityUtilsTest {
     X509Certificate mockCert = mock(X509Certificate.class);
     when(mockCert.getSubjectAlternativeNames())
         .thenThrow(new java.security.cert.CertificateParsingException());
-    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+    assertFalse(AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(mockCert));
   }
 
   @Test
@@ -160,14 +168,14 @@ class AgentIdentityUtilsTest {
     X509Certificate mockCert = mock(X509Certificate.class);
     List<?> dnsSan = Arrays.asList(2, "www.example.com");
     when(mockCert.getSubjectAlternativeNames()).thenReturn(Collections.<List<?>>singleton(dnsSan));
-    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+    assertFalse(AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(mockCert));
   }
 
   @Test
   public void shouldRequestBoundToken_noSan_returnsFalse() throws CertificateException {
     X509Certificate mockCert = mock(X509Certificate.class);
     when(mockCert.getSubjectAlternativeNames()).thenReturn(null);
-    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+    assertFalse(AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(mockCert));
   }
 
   private X509Certificate mockCertWithSanUri(String uri) throws CertificateException {
@@ -264,23 +272,14 @@ class AgentIdentityUtilsTest {
   private void setupValidAgentCredentialsInTempDir() throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
 
-    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
-    assertNotNull(certUrl, "Test resource agent/agent_spiffe_cert.pem not found");
-    String certPath = Paths.get(certUrl.toURI()).toAbsolutePath().toString();
-    Files.copy(
-        Paths.get(certPath),
-        tempDir.resolve("certificates.pem"),
-        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path targetCertPath =
+        copyResource("agent/agent_spiffe_cert.pem", tempDir.resolve("certificates.pem"));
+    Path targetKeyPath =
+        copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("private_key.pem"));
+    Path configFile = tempDir.resolve("credentials.json");
+    writeWorkloadConfig(configFile, targetCertPath, targetKeyPath);
 
-    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
-    assertNotNull(keyUrl, "Test resource agent/agent_spiffe_key.pem not found");
-    String keyPath = Paths.get(keyUrl.toURI()).toAbsolutePath().toString();
-    Files.copy(
-        Paths.get(keyPath),
-        tempDir.resolve("private_key.pem"),
-        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-
-    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
   }
 
   @Test
@@ -320,7 +319,8 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(info.getCertificate()));
   }
 
   @Test
@@ -396,9 +396,21 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
+  public void shouldEnableMtls_nonTrueValue_certsPresent_returnsFalse() throws IOException {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "invalid");
+    assertFalse(AgentIdentityUtils.shouldEnableMtls(true, true));
+  }
+
+  @Test
   public void shouldEnableMtls_unset_certsPresent_returnsTrue() throws IOException {
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
     assertTrue(AgentIdentityUtils.shouldEnableMtls(true, true));
+  }
+
+  @Test
+  public void shouldEnableMtls_unset_certsPresentNoConfig_returnsFalse() throws IOException {
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    assertFalse(AgentIdentityUtils.shouldEnableMtls(true, false));
   }
 
   @Test
@@ -440,7 +452,10 @@ class AgentIdentityUtilsTest {
     Files.copy(Paths.get(keyPath), tempDir.resolve("private_key.pem"));
 
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
 
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
     assertEquals(
@@ -457,7 +472,7 @@ class AgentIdentityUtilsTest {
     X509Certificate mockCert = mock(X509Certificate.class);
     when(mockCert.getPublicKey()).thenReturn(kp.getPublic());
 
-    assertTrue(AgentIdentityUtils.verifyKeyPair(mockCert, kp.getPrivate()));
+    assertTrue(AgentIdentityCertificateValidationUtils.verifyKeyPair(mockCert, kp.getPrivate()));
   }
 
   @Test
@@ -468,7 +483,7 @@ class AgentIdentityUtilsTest {
 
     X509Certificate ecCert = mock(X509Certificate.class);
     when(ecCert.getPublicKey()).thenReturn(kp.getPublic());
-    assertTrue(AgentIdentityUtils.verifyKeyPair(ecCert, kp.getPrivate()));
+    assertTrue(AgentIdentityCertificateValidationUtils.verifyKeyPair(ecCert, kp.getPrivate()));
   }
 
   @Test
@@ -480,7 +495,7 @@ class AgentIdentityUtilsTest {
             Arrays.asList(6, "SPIFFE://AGENTS.GLOBAL.ORG-12345.SYSTEM.ID.GOOG/ns/default/sa/test"));
     when(mockCert.getSubjectAlternativeNames()).thenReturn(sans);
 
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+    assertTrue(AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(mockCert));
   }
 
   @Test
@@ -493,7 +508,7 @@ class AgentIdentityUtilsTest {
     X509Certificate mockCert = mock(X509Certificate.class);
     when(mockCert.getPublicKey()).thenReturn(kp1.getPublic());
 
-    assertFalse(AgentIdentityUtils.verifyKeyPair(mockCert, kp2.getPrivate()));
+    assertFalse(AgentIdentityCertificateValidationUtils.verifyKeyPair(mockCert, kp2.getPrivate()));
   }
 
   @Test
@@ -539,7 +554,10 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    GoogleAuthException e =
+        assertThrows(GoogleAuthException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.isRetryable());
+    assertEquals(3, e.getRetryCount());
     assertTrue(
         e.getMessage()
             .contains(
@@ -599,7 +617,8 @@ class AgentIdentityUtilsTest {
     Path bundleFile = tempDir.resolve("bundle.pem");
     Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
 
-    String extractedChain = AgentIdentityUtils.readCertificateChain(bundleFile.toString());
+    String extractedChain =
+        AgentIdentityCertificateValidationUtils.readCertificateChain(bundleFile.toString());
 
     // Verify both certificates are retained
     assertTrue(extractedChain.contains(cert1Pem.trim()));
@@ -623,7 +642,9 @@ class AgentIdentityUtilsTest {
     IOException e =
         assertThrows(
             IOException.class,
-            () -> AgentIdentityUtils.readCertificateChain(keyOnlyFile.toString()));
+            () ->
+                AgentIdentityCertificateValidationUtils.readCertificateChain(
+                    keyOnlyFile.toString()));
     assertTrue(e.getMessage().contains("No PEM certificates found in certificate file"));
   }
 
@@ -648,7 +669,8 @@ class AgentIdentityUtilsTest {
         AgentIdentityUtils.loadAndVerifyCredentials(bundleFile.toString(), bundleFile.toString());
     assertNotNull(info);
     assertNotNull(info.getCertificate());
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(info.getCertificate()));
     assertTrue(info.getCertContent().contains("BEGIN CERTIFICATE"));
     assertFalse(info.getCertContent().contains("PRIVATE KEY"));
   }
@@ -677,12 +699,14 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     AgentIdentityUtils.setTimeService(new FakeTimeService());
 
-    IOException e =
+    GoogleAuthException e =
         assertThrows(
-            IOException.class,
+            GoogleAuthException.class,
             () ->
                 AgentIdentityUtils.loadAndVerifyCredentials(
                     bundleFile.toString(), bundleFile.toString()));
+    assertTrue(e.isRetryable());
+    assertEquals(3, e.getRetryCount());
     assertTrue(
         e.getMessage()
             .contains(
@@ -712,10 +736,13 @@ class AgentIdentityUtilsTest {
     Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
 
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     AgentIdentityUtils.setTimeService(new FakeTimeService());
 
-    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    GoogleAuthException e =
+        assertThrows(GoogleAuthException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(e.isRetryable());
+    assertEquals(3, e.getRetryCount());
     assertNotNull(e.getCause());
     assertTrue(e.getCause().getMessage().contains("Certificate and private key do not match"));
   }
@@ -740,11 +767,13 @@ class AgentIdentityUtilsTest {
     Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
 
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
     assertNotNull(info.getCertificate());
-    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(info.getCertificate()));
     assertTrue(info.getCertContent().contains("BEGIN CERTIFICATE"));
     assertFalse(info.getCertContent().contains("PRIVATE KEY"));
   }
@@ -1036,7 +1065,7 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
     AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info1);
@@ -1094,7 +1123,7 @@ class AgentIdentityUtilsTest {
     // credentialbundle.pem exists without a valid private key, so discovery fails closed
     Files.copy(Paths.get(certUrl.toURI()), tempDir.resolve("credentialbundle.pem"));
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
@@ -1251,7 +1280,7 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
     AgentIdentityUtils.CertInfo info1 = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info1);
@@ -1261,7 +1290,7 @@ class AgentIdentityUtilsTest {
 
     // While the thread sleeps in loadAndVerifyCredentials backoff, simulate another thread
     // concurrently clearing/invalidating cachedCredentials
-    fakeTime.setOnSleepCallback(() -> AgentIdentityUtils.clearCachedCredentials());
+    fakeTime.setOnSleepCallback(() -> AgentIdentityCacheUtils.clearCachedAgentIdentityInfo());
 
     AgentIdentityUtils.CertInfo info2 = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertSame(info1, info2);
@@ -1275,7 +1304,7 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
     Path certFile = tempDir.resolve("certificates.pem");
     Path keyFile = tempDir.resolve("private_key.pem");
@@ -1320,7 +1349,7 @@ class AgentIdentityUtilsTest {
       throws Exception {
     setupValidAgentCredentialsInTempDir();
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
     Path certFile = tempDir.resolve("certificates.pem");
     Path keyFile = tempDir.resolve("private_key.pem");
@@ -1352,7 +1381,7 @@ class AgentIdentityUtilsTest {
                 AgentIdentityUtils.loadAndVerifyCredentials(
                     certFile.toString(), keyFile.toString());
               } else {
-                AgentIdentityUtils.clearCachedCredentials();
+                AgentIdentityCacheUtils.clearCachedAgentIdentityInfo();
               }
             }
             Files.write(certFile, agentCertBytes);
@@ -1451,6 +1480,8 @@ class AgentIdentityUtilsTest {
   public void getAgentIdentityCertInfo_wellKnownCacheThenMissingConfig_doesNotUseWellKnownCache(
       @TempDir Path outsideDir) throws Exception {
     setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
     assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
 
     envProvider.setEnv(
@@ -1582,20 +1613,21 @@ class AgentIdentityUtilsTest {
   public void getAgentIdentityCertInfo_implicitDiscovery_unreadablePrivateKey_returnsNull()
       throws Exception {
     setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
     makeUnreadable(tempDir.resolve("private_key.pem"));
 
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
-  public void getAgentIdentityCertInfo_explicitMtls_unreadableWellKnownCert_throwsIOException()
+  public void getAgentIdentityCertInfo_explicitMtls_unreadableWellKnownCert_returnsNull()
       throws Exception {
     setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
     makeUnreadable(tempDir.resolve("certificates.pem"));
 
-    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertTrue(e.getMessage().contains("Permission denied reading well-known certificate files"));
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
@@ -1652,7 +1684,7 @@ class AgentIdentityUtilsTest {
     when(cert.getPublicKey())
         .thenReturn(new EcdsaLabelledPublicKey((ECPublicKey) keyPair.getPublic()));
 
-    assertTrue(AgentIdentityUtils.verifyKeyPair(cert, keyPair.getPrivate()));
+    assertTrue(AgentIdentityCertificateValidationUtils.verifyKeyPair(cert, keyPair.getPrivate()));
   }
 
   @Test
