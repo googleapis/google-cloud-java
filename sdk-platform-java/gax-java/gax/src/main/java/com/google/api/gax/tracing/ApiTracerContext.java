@@ -36,8 +36,10 @@ import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
+import io.opentelemetry.api.trace.Span;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -52,6 +54,36 @@ import org.jspecify.annotations.Nullable;
 @InternalApi
 @AutoValue
 public abstract class ApiTracerContext {
+
+  /**
+   * Holds mutable shared state between sibling {@link ApiTracer} instances belonging to the same
+   * attempt.
+   */
+  public static class SharedContext {
+    private final AtomicReference<Span> attemptSpan = new AtomicReference<>();
+
+    public @Nullable Span getAttemptSpan() {
+      return attemptSpan.get();
+    }
+
+    public void setAttemptSpan(@Nullable Span span) {
+      attemptSpan.set(span);
+    }
+  }
+
+  private @Nullable SharedContext sharedContext;
+
+  /**
+   * Returns the shared context for sibling tracers in an attempt.
+   *
+   * @return the shared context
+   */
+  public SharedContext sharedContext() {
+    if (sharedContext == null) {
+      sharedContext = new SharedContext();
+    }
+    return sharedContext;
+  }
 
   public enum Transport {
     GRPC("grpc"),
@@ -309,7 +341,15 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
-    return builder.build();
+    ApiTracerContext merged = builder.build();
+    if (other.sharedContext != null) {
+      merged.sharedContext = other.sharedContext;
+    } else if (this.sharedContext != null) {
+      merged.sharedContext = this.sharedContext;
+    } else {
+      merged.sharedContext = other.sharedContext();
+    }
+    return merged;
   }
 
   static ApiTracerContext empty() {

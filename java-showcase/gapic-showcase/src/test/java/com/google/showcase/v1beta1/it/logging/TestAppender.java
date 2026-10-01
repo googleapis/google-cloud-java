@@ -24,6 +24,7 @@ import java.util.List;
 /** Logback appender used to set up tests. */
 public class TestAppender extends AppenderBase<ILoggingEvent> {
   public List<ILoggingEvent> events = new ArrayList<>();
+  public List<io.opentelemetry.api.trace.SpanContext> eventSpanContexts = new ArrayList<>();
 
   @Override
   protected void append(ILoggingEvent eventObject) {
@@ -32,9 +33,11 @@ public class TestAppender extends AppenderBase<ILoggingEvent> {
     eventObject.getMDCPropertyMap();
 
     events.add(eventObject);
+    eventSpanContexts.add(io.opentelemetry.api.trace.Span.current().getSpanContext());
   }
 
   public void clearEvents() {
     events.clear();
+    eventSpanContexts.clear();
   }
 }

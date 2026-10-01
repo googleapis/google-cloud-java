@@ -35,6 +35,7 @@ import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.rpc.ErrorInfo;
+import io.opentelemetry.api.trace.Span;
 import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
@@ -98,6 +99,14 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
-    LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
+    ApiTracerContext.SharedContext sharedContext = apiTracerContext.sharedContext();
+    Span attemptSpan = sharedContext != null ? sharedContext.getAttemptSpan() : null;
+    if (attemptSpan != null) {
+      try (io.opentelemetry.context.Scope ignored = attemptSpan.makeCurrent()) {
+        LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
+      }
+    } else {
+      LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
+    }
   }
 }

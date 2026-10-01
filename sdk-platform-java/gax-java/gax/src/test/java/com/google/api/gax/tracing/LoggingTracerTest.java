@@ -214,6 +214,30 @@ class LoggingTracerTest {
     assertEquals(400L, attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
   }
 
+  @Test
+  void testRecordActionableError_withSharedContextAttemptSpan_activatesSpanDuringLogging() {
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span realSpan =
+        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+
+    ApiTracerContext context = ApiTracerContext.empty();
+    context.sharedContext().setAttemptSpan(realSpan);
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    org.junit.jupiter.api.Assertions.assertFalse(
+        io.opentelemetry.api.trace.Span.current().getSpanContext().isValid());
+
+    tracer.recordActionableError(new RuntimeException("test error"));
+
+    org.junit.jupiter.api.Assertions.assertFalse(
+        io.opentelemetry.api.trace.Span.current().getSpanContext().isValid());
+  }
+
   private Map<String, ?> getAttributesMap() {
     if (!testLogger.getMDCMap().isEmpty()) {
       return testLogger.getMDCMap();
