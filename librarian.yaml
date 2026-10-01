@@ -49,7 +49,7 @@ default:
       google/analytics: com.google.analytics
       google/maps: com.google.maps
       google/shopping: com.google.shopping
-    libraries_bom_version: 26.86.0
+    libraries_bom_version: 26.90.0
     min_java_version: 8
 libraries:
   - name: accessapproval
