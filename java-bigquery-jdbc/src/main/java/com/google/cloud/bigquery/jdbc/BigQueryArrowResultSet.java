@@ -25,7 +25,6 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
@@ -280,7 +279,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           try (Scope scope = makeOriginalContextCurrent()) {
             BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
             if (batchWrapper.getException() != null) {
-              throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
+              throw backgroundFetchError(batchWrapper.getException());
             }
             if (batchWrapper.isLast()) {
               /* Marks the end of the records */
@@ -309,9 +308,16 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           this.rowCount++;
           return true;
         }
-      } catch (InterruptedException | SQLException ex) {
+      } catch (BigQueryJdbcException ex) {
+        throw ex; // already wrapped once; don't re-wrap
+      } catch (SQLException ex) {
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
+            ex);
+      } catch (InterruptedException ex) {
+        Thread.currentThread().interrupt();
+        throw new BigQueryJdbcException(
+            "Interrupted while advancing the cursor. This could happen when connection is closed while the next method is being called.",
             ex);
       }
     }
