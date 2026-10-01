@@ -32,6 +32,7 @@ package com.google.api.gax.rpc;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -40,6 +41,8 @@ import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.ServerStreamingAttemptException;
+import com.google.api.gax.retrying.StreamingRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
@@ -321,5 +324,131 @@ class ApiResultRetryAlgorithmTest {
         retryAlgorithm.createNextAttempt(context, rotationEx, null, rotationRetry);
     assertNotNull(afterSecondFailure);
     assertFalse(retryAlgorithm.shouldRetry(context, rotationEx, null, afterSecondFailure));
+  }
+
+  @Test
+  void testStreamRotationRetryIsAvailableAgainAfterProgress() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));
+
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(5)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+
+    StreamingRetryAlgorithm<String> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    ApiException unavailableEx =
+        new ApiException(null, new FakeStatusCode(Code.UNAVAILABLE), /* retryable= */ true);
+    UnauthenticatedException rotationEx =
+        new UnauthenticatedException(
+            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+
+    // The first attempt fails with UNAVAILABLE before receiving any messages: normal retry.
+    TimedAttemptSettings attempt1 =
+        retryAlgorithm.createNextAttempt(
+            context,
+            new ServerStreamingAttemptException(unavailableEx, true, false),
+            null,
+            retryAlgorithm.createFirstAttempt(context));
+    assertEquals(1, attempt1.getAttemptCount());
+    assertEquals(1, attempt1.getOverallAttemptCount());
+
+    // The second attempt receives messages and then fails with a rotation error. The earlier
+    // retry must not prevent the free rotation retry.
+    ServerStreamingAttemptException rotationAfterProgress =
+        new ServerStreamingAttemptException(rotationEx, true, true);
+    TimedAttemptSettings attempt2 =
+        retryAlgorithm.createNextAttempt(context, rotationAfterProgress, null, attempt1);
+    assertNotNull(attempt2);
+    assertEquals(Duration.ZERO, attempt2.getRetryDelayDuration());
+    assertEquals(Duration.ZERO, attempt2.getRandomizedRetryDelayDuration());
+    assertEquals(0, attempt2.getAttemptCount());
+    assertEquals(2, attempt2.getOverallAttemptCount());
+    assertTrue(retryAlgorithm.shouldRetry(context, rotationAfterProgress, null, attempt2));
+
+    // A repeated rotation error without further progress stops the stream.
+    ServerStreamingAttemptException rotationWithoutProgress =
+        new ServerStreamingAttemptException(rotationEx, true, false);
+    TimedAttemptSettings attempt3 =
+        retryAlgorithm.createNextAttempt(context, rotationWithoutProgress, null, attempt2);
+    assertNotNull(attempt3);
+    assertEquals(3, attempt3.getOverallAttemptCount());
+    assertFalse(retryAlgorithm.shouldRetry(context, rotationWithoutProgress, null, attempt3));
+  }
+
+  @Test
+  void testStreamProgressResetKeepsOverallAttemptCountIncreasing() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));
+
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(5)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+
+    StreamingRetryAlgorithm<String> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    ApiException unavailableEx =
+        new ApiException(null, new FakeStatusCode(Code.UNAVAILABLE), /* retryable= */ true);
+    ServerStreamingAttemptException unavailableWithoutProgress =
+        new ServerStreamingAttemptException(unavailableEx, true, false);
+    ServerStreamingAttemptException unavailableAfterProgress =
+        new ServerStreamingAttemptException(unavailableEx, true, true);
+
+    TimedAttemptSettings attempt1 =
+        retryAlgorithm.createNextAttempt(
+            context, unavailableWithoutProgress, null, retryAlgorithm.createFirstAttempt(context));
+    TimedAttemptSettings attempt2 =
+        retryAlgorithm.createNextAttempt(context, unavailableWithoutProgress, null, attempt1);
+    assertEquals(2, attempt2.getAttemptCount());
+    assertEquals(2, attempt2.getOverallAttemptCount());
+
+    // Progress resets the attempt count, but the overall attempt count keeps increasing.
+    TimedAttemptSettings attempt3 =
+        retryAlgorithm.createNextAttempt(context, unavailableAfterProgress, null, attempt2);
+    assertEquals(1, attempt3.getAttemptCount());
+    assertEquals(3, attempt3.getOverallAttemptCount());
+    assertEquals(settings.getInitialRetryDelayDuration(), attempt3.getRetryDelayDuration());
+    assertEquals(
+        attempt2.getFirstAttemptStartTimeNanos(), attempt3.getFirstAttemptStartTimeNanos());
+    assertTrue(retryAlgorithm.shouldRetry(context, unavailableAfterProgress, null, attempt3));
+  }
+
+  @Test
+  void testStreamProgressResetReturnsNullWhenNotRetryable() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Collections.emptySet());
+
+    StreamingRetryAlgorithm<String> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(
+                RetrySettings.newBuilder().setMaxAttempts(5).build(), NanoClock.getDefaultClock()));
+    ApiException unavailableEx =
+        new ApiException(null, new FakeStatusCode(Code.UNAVAILABLE), /* retryable= */ true);
+
+    TimedAttemptSettings next =
+        retryAlgorithm.createNextAttempt(
+            context,
+            new ServerStreamingAttemptException(unavailableEx, true, true),
+            null,
+            retryAlgorithm.createFirstAttempt(context));
+    assertNull(next);
   }
 }
