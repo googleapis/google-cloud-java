@@ -1742,6 +1742,72 @@ class AgentIdentityUtilsTest {
     assertFalse(AgentIdentityUtils.isMtlsDisabledLogged());
   }
 
+  @Test
+  public void loadAndVerifyCredentials_multiCertChainResource_retainsEntireChainAndParsesLeaf()
+      throws Exception {
+    String chainPath = resourcePath("agent/agent_spiffe_cert_chain.pem");
+    String keyPath = resourcePath("agent/agent_spiffe_key.pem");
+    String leafPem =
+        new String(
+            Files.readAllBytes(Paths.get(resourcePath("agent/agent_spiffe_cert.pem"))),
+            StandardCharsets.UTF_8);
+    String intermediatePem =
+        new String(
+            Files.readAllBytes(Paths.get(resourcePath("x509_leaf_certificate.pem"))),
+            StandardCharsets.UTF_8);
+
+    AgentIdentityUtils.CertInfo info =
+        AgentIdentityUtils.loadAndVerifyCredentials(chainPath, keyPath);
+    assertNotNull(info);
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(info.getCertContent().contains(leafPem.trim()));
+    assertTrue(info.getCertContent().contains(intermediatePem.trim()));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_malformedCertificateContent_failsWithoutRetry()
+      throws Exception {
+    Path certPath = tempDir.resolve("malformed_cert.pem");
+    String malformedCertPem =
+        "-----BEGIN CERTIFICATE-----\n"
+            + "bm90LWEtdmFsaWQteDUwOS1jZXJ0aWZpY2F0ZQ==\n"
+            + "-----END CERTIFICATE-----\n";
+    Files.write(certPath, malformedCertPem.getBytes(StandardCharsets.UTF_8));
+    Path keyPath = copyResource("agent/agent_spiffe_key.pem", tempDir.resolve("key.pem"));
+    Path configFile = tempDir.resolve("config.json");
+    writeWorkloadConfig(configFile, certPath, keyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityCertificateValidationUtils.InvalidCertificateException e =
+        assertThrows(
+            AgentIdentityCertificateValidationUtils.InvalidCertificateException.class,
+            AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(
+        e.getMessage()
+            .contains("Failed to parse Agent Identity certificate for bound token request."));
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void verifyKeyPair_unsupportedKeyAlgorithm_throwsUnsupportedKeyAlgorithmException()
+      throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("DSA");
+    kpg.initialize(1024);
+    KeyPair keyPair = kpg.generateKeyPair();
+    X509Certificate cert = mock(X509Certificate.class);
+    when(cert.getPublicKey()).thenReturn(keyPair.getPublic());
+
+    AgentIdentityCertificateValidationUtils.UnsupportedKeyAlgorithmException e =
+        assertThrows(
+            AgentIdentityCertificateValidationUtils.UnsupportedKeyAlgorithmException.class,
+            () ->
+                AgentIdentityCertificateValidationUtils.verifyKeyPair(cert, keyPair.getPrivate()));
+    assertTrue(e.getMessage().contains("Unsupported key algorithm: DSA"));
+  }
+
   private String resourcePath(String resource) throws Exception {
     URL url = getClass().getClassLoader().getResource(resource);
     assertNotNull(url, "Test resource " + resource + " not found");

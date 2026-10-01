@@ -34,6 +34,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.auth.oauth2.AgentIdentityCacheUtils.CachedAgentIdentityInfo;
 import com.google.auth.oauth2.AgentIdentityCacheUtils.FileMetadata;
+import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.InvalidCertificateException;
 import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.UnsupportedKeyAlgorithmException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
@@ -302,10 +303,13 @@ final class AgentIdentityUtils {
     String certConfigPath = getTrimmedEnv(GOOGLE_API_CERTIFICATE_CONFIG);
 
     // Fast-path: check cached info and file metadata before parsing JSON config or paths
-    if (AgentIdentityCacheUtils.isCachedInfoValid(initialCached, certConfigPath, wellKnownDir)) {
+    if (initialCached != null
+        && AgentIdentityCacheUtils.isCachedInfoValid(initialCached, certConfigPath)) {
       if (!initialCached.shouldRequestBoundToken) {
         return null;
       }
+      // isCachedInfoValid() verified that the cached certificate file still exists on disk with
+      // matching metadata, so certsPresent is guaranteed to be true here.
       if (!shouldEnableMtls(
           /* certsPresent= */ true, /* configExists= */ initialCached.configMetadata != null)) {
         return null;
@@ -314,12 +318,11 @@ final class AgentIdentityUtils {
     }
 
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
-    boolean configExists = paths != null && paths.hasWorkloadConfig();
+    boolean configExists = paths.hasWorkloadConfig();
     CachedAgentIdentityInfo effectiveCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
     boolean certsPresent =
-        paths != null
-            && !Strings.isNullOrEmpty(paths.getCertPath())
+        !Strings.isNullOrEmpty(paths.getCertPath())
             && (Files.exists(Paths.get(paths.getCertPath()))
                 || AgentIdentityCacheUtils.matchesCachedPath(paths.getCertPath(), effectiveCached));
 
@@ -344,29 +347,11 @@ final class AgentIdentityUtils {
       // Read cert and key paths from config file. We use retry with backoff to handle
       // startup delivery (when in well-known directory) and transient rotation race conditions.
       return getPathsFromConfigWithRetry(certConfigPath, cached);
-    } else {
-      boolean explicitMtls = isMtlsExplicitlyEnabled();
-      if (!explicitMtls && !Files.exists(Paths.get(wellKnownDir))) {
-        // Fail-fast if well-known dir doesn't exist and explicit mTLS is not enabled (e.g.
-        // workstation)
-        initialStartupCompleted = true;
-        return new ResolvedCertAndKeyPaths(null, null, false);
-      }
-      // Fallback to well-known locations. We use retry with backoff here as well to handle
-      // startup delivery (when explicit mTLS is enabled) and race conditions during file
-      // replacement by a rotation process.
-      String certPath = getWellKnownCertificatePathWithRetry(cached);
-      String keyPath = null;
-      if (certPath != null) {
-        if (certPath.endsWith("credentialbundle.pem")) {
-          keyPath = certPath; // Bundle contains both
-        } else if (certPath.endsWith("certificates.pem")) {
-          keyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
-        }
-        return new ResolvedCertAndKeyPaths(certPath, keyPath, false);
-      }
-      return new ResolvedCertAndKeyPaths(null, null, false);
     }
+    // Fallback to well-known locations. We use retry with backoff here as well to handle
+    // startup delivery (when explicit mTLS is enabled) and race conditions during file
+    // replacement by a rotation process.
+    return getWellKnownCertificatePathWithRetry(cached);
   }
 
   /**
@@ -451,14 +436,14 @@ final class AgentIdentityUtils {
             lastException = new IOException("Certificate or key file modified during read.");
             LoggingUtils.log(
                 LOGGER_PROVIDER,
-                Level.WARNING,
+                Level.FINE,
                 Collections.emptyMap(),
                 "Cert or key file modified during read, retrying...");
           } else {
             lastException = new IOException("Certificate and private key do not match.");
             LoggingUtils.log(
                 LOGGER_PROVIDER,
-                Level.WARNING,
+                Level.FINE,
                 Collections.emptyMap(),
                 "Cert and key mismatch, retrying...");
           }
@@ -466,7 +451,7 @@ final class AgentIdentityUtils {
       } catch (AccessDeniedException e) {
         throw new IOException(
             "Permission denied reading certificate or key files for Agent Identity.", e);
-      } catch (UnsupportedKeyAlgorithmException e) {
+      } catch (UnsupportedKeyAlgorithmException | InvalidCertificateException e) {
         throw e;
       } catch (Exception e) {
         if (Strings.isNullOrEmpty(keyPath) && e instanceof IOException) {
@@ -475,7 +460,7 @@ final class AgentIdentityUtils {
         lastException = e;
         LoggingUtils.log(
             LOGGER_PROVIDER,
-            Level.WARNING,
+            Level.FINE,
             Collections.emptyMap(),
             "Failed to read or verify cert/key, retrying: " + e.getMessage());
       }
@@ -503,7 +488,7 @@ final class AgentIdentityUtils {
         && fallbackCached.certInfo != null) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
-          Level.WARNING,
+          Level.FINE,
           Collections.emptyMap(),
           "Agent Identity certificate/key files transiently unavailable during rotation; falling"
               + " back to cached credentials.");
@@ -611,7 +596,7 @@ final class AgentIdentityUtils {
         if (shouldPoll && !warned) {
           LoggingUtils.log(
               LOGGER_PROVIDER,
-              Level.WARNING,
+              Level.FINE,
               Collections.emptyMap(),
               String.format(
                   "Agent Identity certificate config or referenced credential files not yet ready"
@@ -640,7 +625,7 @@ final class AgentIdentityUtils {
         && fallbackCached.keyMetadata != null) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
-          Level.WARNING,
+          Level.FINE,
           Collections.emptyMap(),
           String.format(
               "Agent Identity certificate config at %s is unavailable; falling back to cached"
@@ -663,14 +648,21 @@ final class AgentIdentityUtils {
   }
 
   /** Searches for certificates at well-known locations with retry logic. */
-  private static String getWellKnownCertificatePathWithRetry(
+  private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final CachedAgentIdentityInfo initialCached) throws IOException {
+    String useClientCert = getUseClientCertificateEnv();
+    boolean explicitMtls = isMtlsExplicitlyEnabled();
+    if (!explicitMtls && !Files.exists(Paths.get(wellKnownDir))) {
+      // Fail-fast if well-known dir doesn't exist and explicit mTLS is not enabled (e.g.
+      // workstation)
+      initialStartupCompleted = true;
+      return new ResolvedCertAndKeyPaths(null, null, false);
+    }
+
     String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
     String keyOnlyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
 
-    String useClientCert = getUseClientCertificateEnv();
-    boolean explicitMtls = "true".equalsIgnoreCase(useClientCert);
     boolean shouldPoll = explicitMtls && !initialStartupCompleted;
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
 
@@ -679,21 +671,22 @@ final class AgentIdentityUtils {
       try {
         if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(bundlePath))) {
           initialStartupCompleted = true;
-          return bundlePath;
+          // Combined bundle file contains both certificate chain and private key
+          return new ResolvedCertAndKeyPaths(bundlePath, bundlePath, false);
         }
         if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certOnlyPath))
             && AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(keyOnlyPath))) {
           initialStartupCompleted = true;
-          return certOnlyPath;
+          return new ResolvedCertAndKeyPaths(certOnlyPath, keyOnlyPath, false);
         }
       } catch (AccessDeniedException e) {
         initialStartupCompleted = true;
         LoggingUtils.log(
             LOGGER_PROVIDER,
-            Level.WARNING,
+            Level.FINE,
             Collections.emptyMap(),
             "Permission denied reading well-known certificates. Falling back to unbound token.");
-        return null;
+        return new ResolvedCertAndKeyPaths(null, null, false);
       } catch (Exception e) {
         // Fall through to retry
       }
@@ -702,7 +695,7 @@ final class AgentIdentityUtils {
         if (shouldPoll && !warned) {
           LoggingUtils.log(
               LOGGER_PROVIDER,
-              Level.WARNING,
+              Level.FINE,
               Collections.emptyMap(),
               String.format(
                   "Well-known certificate file not found at %s. Retrying for up to %d seconds.",
@@ -725,7 +718,8 @@ final class AgentIdentityUtils {
         && fallbackCached.configMetadata == null
         && fallbackCached.certMetadata != null
         && fallbackCached.keyMetadata != null) {
-      return fallbackCached.certMetadata.getPath();
+      return new ResolvedCertAndKeyPaths(
+          fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
 
     if (explicitMtls) {
@@ -748,11 +742,17 @@ final class AgentIdentityUtils {
             GOOGLE_API_USE_CLIENT_CERTIFICATE,
             useClientCert,
             initialStartupCompleted));
-    return null;
+    return new ResolvedCertAndKeyPaths(null, null, false);
   }
 
   /**
    * Determines if mTLS should be enabled based on environment variables and certificate presence.
+   *
+   * <p>Note that {@code configExists} is required even when {@code certsPresent} is {@code true}:
+   * when {@code GOOGLE_API_USE_CLIENT_CERTIFICATE} is unset (Case 3), mTLS is only inferred if a
+   * workload config exists ({@code configExists == true}), whereas when {@code
+   * GOOGLE_API_USE_CLIENT_CERTIFICATE="true"} (Case 1), mTLS is enabled whenever {@code
+   * certsPresent == true} even from the well-known directory ({@code configExists == false}).
    */
   static boolean shouldEnableMtls(final boolean certsPresent, final boolean configExists)
       throws IOException {
@@ -861,6 +861,11 @@ final class AgentIdentityUtils {
     initialStartupCompleted = false;
     mtlsDisabledLogged = false;
     mtlsDisabledEvaluated = false;
+  }
+
+  /** Returns the current well-known certificate directory path. */
+  static String getWellKnownDir() {
+    return wellKnownDir;
   }
 
   /** Sets the well-known certificate directory path for testing. */

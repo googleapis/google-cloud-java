@@ -88,6 +88,18 @@ final class AgentIdentityCertificateValidationUtils {
   }
 
   /**
+   * Thrown when a certificate PEM block contains malformed X.509 data, so callers fail fast without
+   * retrying.
+   */
+  static final class InvalidCertificateException extends IOException {
+    private static final long serialVersionUID = 1L;
+
+    InvalidCertificateException(final String message, final Throwable cause) {
+      super(message, cause);
+    }
+  }
+
+  /**
    * Reads the full certificate chain from the specified path as a PEM string.
    *
    * <p>Extracts only the {@code -----BEGIN CERTIFICATE-----} blocks using {@link
@@ -115,7 +127,7 @@ final class AgentIdentityCertificateValidationUtils {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
       return (X509Certificate) cf.generateCertificate(stream);
     } catch (GeneralSecurityException e) {
-      throw new IOException(
+      throw new InvalidCertificateException(
           "Failed to parse Agent Identity certificate for bound token request.", e);
     }
   }
@@ -139,7 +151,8 @@ final class AgentIdentityCertificateValidationUtils {
    * Verifies that the private key corresponds to the public key in the certificate by performing a
    * test signature and verification.
    */
-  static boolean verifyKeyPair(final X509Certificate cert, final PrivateKey privateKey) {
+  static boolean verifyKeyPair(final X509Certificate cert, final PrivateKey privateKey)
+      throws UnsupportedKeyAlgorithmException {
     try {
       byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
 
@@ -157,7 +170,7 @@ final class AgentIdentityCertificateValidationUtils {
                   .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
         }
       } else {
-        throw new IllegalArgumentException("Unsupported key algorithm: " + keyAlgorithm);
+        throw new UnsupportedKeyAlgorithmException(keyAlgorithm);
       }
 
       Signature signer = Signature.getInstance(sigAlg);
@@ -170,10 +183,12 @@ final class AgentIdentityCertificateValidationUtils {
       verifier.update(data);
 
       return verifier.verify(signature);
+    } catch (UnsupportedKeyAlgorithmException e) {
+      throw e;
     } catch (Exception e) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
-          Level.WARNING,
+          Level.FINE,
           Collections.emptyMap(),
           "Key pair verification failed: " + e.getMessage());
       return false;
@@ -185,43 +200,45 @@ final class AgentIdentityCertificateValidationUtils {
    * Alternative Names (SANs) match allowed SPIFFE patterns.
    */
   static boolean shouldRequestBoundToken(final X509Certificate cert) {
+    Collection<List<?>> sans;
     try {
-      Collection<List<?>> sans = cert.getSubjectAlternativeNames();
-      if (sans == null) {
-        return false;
-      }
-      // Iterate through all Subject Alternative Names
-      for (List<?> san : sans) {
-        // Check if the SAN entry is a URI (type 6)
-        if (san.size() >= 2
-            && san.get(0) instanceof Integer
-            && (Integer) san.get(0) == SAN_URI_TYPE) {
-          Object value = san.get(1);
-          if (value instanceof String) {
-            String uri = ((String) value).toLowerCase(Locale.US);
-            // Check if the URI starts with "spiffe://"
-            if (uri.startsWith(SPIFFE_SCHEME_PREFIX)) {
-              String withoutScheme = uri.substring(SPIFFE_SCHEME_PREFIX.length());
-              int slashIndex = withoutScheme.indexOf('/');
-              // Extract the trust domain (part before the first slash)
-              String trustDomain =
-                  (slashIndex == -1) ? withoutScheme : withoutScheme.substring(0, slashIndex);
-              // Match the trust domain against allowed agent patterns
-              for (Pattern pattern : AGENT_IDENTITY_SPIFFE_PATTERNS) {
-                if (pattern.matcher(trustDomain).matches()) {
-                  return true;
-                }
-              }
-            }
-          }
-        }
-      }
+      sans = cert.getSubjectAlternativeNames();
     } catch (CertificateParsingException e) {
       LoggingUtils.log(
           LOGGER_PROVIDER,
-          Level.WARNING,
+          Level.FINE,
           Collections.emptyMap(),
           "Failed to parse Subject Alternative Names from certificate: " + e.getMessage());
+      return false;
+    }
+    if (sans == null) {
+      return false;
+    }
+    // Iterate through all Subject Alternative Names
+    for (List<?> san : sans) {
+      // Check if the SAN entry is a URI (type 6) with a String value
+      if (san.size() < 2
+          || !(san.get(0) instanceof Integer)
+          || (Integer) san.get(0) != SAN_URI_TYPE
+          || !(san.get(1) instanceof String)) {
+        continue;
+      }
+      String uri = ((String) san.get(1)).toLowerCase(Locale.US);
+      // Check if the URI starts with "spiffe://"
+      if (!uri.startsWith(SPIFFE_SCHEME_PREFIX)) {
+        continue;
+      }
+      String withoutScheme = uri.substring(SPIFFE_SCHEME_PREFIX.length());
+      int slashIndex = withoutScheme.indexOf('/');
+      // Extract the trust domain (part before the first slash)
+      String trustDomain =
+          (slashIndex == -1) ? withoutScheme : withoutScheme.substring(0, slashIndex);
+      // Match the trust domain against allowed agent patterns
+      for (Pattern pattern : AGENT_IDENTITY_SPIFFE_PATTERNS) {
+        if (pattern.matcher(trustDomain).matches()) {
+          return true;
+        }
+      }
     }
     return false;
   }

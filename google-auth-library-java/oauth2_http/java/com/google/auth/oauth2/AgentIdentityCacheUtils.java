@@ -201,25 +201,31 @@ final class AgentIdentityCacheUtils {
    * file metadata still match the current files on disk.
    */
   static boolean isCachedInfoValid(
-      final CachedAgentIdentityInfo cached,
-      final String certConfigPath,
-      final String wellKnownDir) {
+      final CachedAgentIdentityInfo cached, final String certConfigPath) {
     if (cached == null || cached.certMetadata == null) {
       return false;
     }
     boolean hasConfigEnv = !Strings.isNullOrEmpty(certConfigPath);
-    if (hasConfigEnv != (cached.configMetadata != null)) {
-      return false;
-    }
     if (hasConfigEnv) {
-      if (!cached.configMetadata.isUnchangedAtPath(certConfigPath)) {
+      // When GOOGLE_API_CERTIFICATE_CONFIG is set, the cache must have been populated from that
+      // config file (configMetadata != null) and the config file on disk must be unchanged.
+      if (cached.configMetadata == null
+          || !cached.configMetadata.isUnchangedAtPath(certConfigPath)) {
         return false;
       }
-    } else if (cached.certMetadata.path.endsWith("certificates.pem")
-        && !Strings.isNullOrEmpty(wellKnownDir)
-        && Files.exists(Paths.get(wellKnownDir, "credentialbundle.pem"))) {
-      // credentialbundle.pem takes precedence if added after certificates.pem was cached
-      return false;
+    } else {
+      // When GOOGLE_API_CERTIFICATE_CONFIG is unset, the cache must have been populated from the
+      // well-known directory (where configMetadata is null).
+      if (cached.configMetadata != null) {
+        return false;
+      }
+      String wellKnownDir = AgentIdentityUtils.getWellKnownDir();
+      if (cached.certMetadata.path.endsWith("certificates.pem")
+          && !Strings.isNullOrEmpty(wellKnownDir)
+          && Files.exists(Paths.get(wellKnownDir, "credentialbundle.pem"))) {
+        // credentialbundle.pem takes precedence if added after certificates.pem was cached
+        return false;
+      }
     }
     if (!cached.certMetadata.isUnchangedOnDisk()) {
       return false;
