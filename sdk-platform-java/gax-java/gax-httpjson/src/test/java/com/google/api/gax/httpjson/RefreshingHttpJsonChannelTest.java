@@ -47,6 +47,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -357,6 +358,47 @@ class RefreshingHttpJsonChannelTest {
 
     assertEquals(1, transportFactoryCount.get());
     assertEquals(0, channel.getGeneration());
+  }
+
+  @Test
+  void shutdown_waitsForInProgressRefresh() throws Exception {
+    CountDownLatch refreshStarted = new CountDownLatch(1);
+    CountDownLatch releaseRefresh = new CountDownLatch(1);
+    transportFactory =
+        () -> {
+          if (transportFactoryCount.incrementAndGet() > 1) {
+            refreshStarted.countDown();
+            try {
+              releaseRefresh.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          }
+          return new MockHttpTransport();
+        };
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel underlyingChannel = lastCreatedChannel;
+    rotateCertificate(channel);
+
+    Thread refreshThread = new Thread(channel::refresh);
+    Thread shutdownThread = new Thread(channel::shutdown);
+    try {
+      refreshThread.start();
+      assertTrue(refreshStarted.await(5, TimeUnit.SECONDS));
+      shutdownThread.start();
+
+      shutdownThread.join(200);
+      assertTrue(shutdownThread.isAlive());
+      assertFalse(underlyingChannel.isShutdown());
+    } finally {
+      releaseRefresh.countDown();
+    }
+    refreshThread.join(5000);
+    shutdownThread.join(5000);
+    assertFalse(refreshThread.isAlive());
+    assertFalse(shutdownThread.isAlive());
+    assertEquals(1, channel.getGeneration());
+    assertTrue(underlyingChannel.isShutdown());
   }
 
   @Test

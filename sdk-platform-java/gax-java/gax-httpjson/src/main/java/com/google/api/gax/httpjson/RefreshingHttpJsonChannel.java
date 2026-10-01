@@ -125,7 +125,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
         return;
       }
       // The previous transport is not shut down: calls created before the swap may still be using
-      // it, and NetHttpTransport holds no pooled resources that need releasing.
+      // it, and it needs no explicit shutdown because its idle keep-alive connections expire.
       delegate.setHttpTransport(newTransport);
       // Order matters: swap the transport, then bump generation, then mark the tracker refreshed,
       // so any failing RPC that observes the new fingerprint also observes the new generation.
@@ -169,7 +169,10 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public void shutdown() {
-    delegate.shutdown();
+    // Serialized with refresh() so that a transport swap cannot race with shutdown.
+    synchronized (refreshLock) {
+      delegate.shutdown();
+    }
   }
 
   @Override
@@ -184,7 +187,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public void shutdownNow() {
-    delegate.shutdownNow();
+    synchronized (refreshLock) {
+      delegate.shutdownNow();
+    }
   }
 
   @Override
@@ -194,6 +199,6 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public void close() {
-    delegate.close();
+    shutdown();
   }
 }

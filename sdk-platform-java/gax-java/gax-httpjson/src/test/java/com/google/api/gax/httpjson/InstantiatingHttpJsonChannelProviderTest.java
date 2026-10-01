@@ -317,6 +317,28 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
+  void getTransportChannel_whenRotationEnabledAndKeyStoreNull_throwsIOException() {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    com.google.auth.mtls.MtlsProvider providerWithNullKeyStore =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(null, "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(providerWithNullKeyStore)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS HttpTransport");
+  }
+
+  @Test
   void getTransportChannel_whenKeyStoreUninitialized_causeIsSecurityException() throws Exception {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
