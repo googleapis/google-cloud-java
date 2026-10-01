@@ -53,29 +53,8 @@ public final class WindowFunction {
    *
    * @return A new {@link WindowFunction} representing the rank window function.
    */
-  @InternalApi
   public static WindowFunction rank() {
     return new WindowFunction("rank");
-  }
-
-  /**
-   * Creates a window function that assigns a dense rank to each row based on the sort order.
-   *
-   * @return A new {@link WindowFunction} representing the dense_rank window function.
-   */
-  @InternalApi
-  public static WindowFunction denseRank() {
-    return new WindowFunction("dense_rank");
-  }
-
-  /**
-   * Creates a window function that assigns the row number to each row based on the sort order.
-   *
-   * @return A new {@link WindowFunction} representing the row_number window function.
-   */
-  @InternalApi
-  public static WindowFunction rowNumber() {
-    return new WindowFunction("row_number");
   }
 
   /**
@@ -103,10 +82,15 @@ public final class WindowFunction {
    * <p>The returned function carries its own framing, overriding the window declared on the
    * enclosing {@code addWindowFields} stage.
    *
-   * @param window The window specification to evaluate this function over.
+   * <p>Only {@code documents} or {@code range} window frames are supported on individual
+   * accumulators (using {@link WindowSpec#documents} or {@link WindowSpec#range}). Other window
+   * parameters such as {@code partition} or {@code sort} are not supported on accumulator-level
+   * {@code over()} and must be specified on the enclosing {@code addWindowFields} stage.
+   *
+   * @param window The window frame specification to evaluate this function over (must only specify
+   *     {@code documents} or {@code range}).
    * @return A new {@link WindowFunction} with the given framing.
    */
-  @InternalApi
   public WindowFunction over(WindowSpec window) {
     return new WindowFunction(name, params, options, window);
   }

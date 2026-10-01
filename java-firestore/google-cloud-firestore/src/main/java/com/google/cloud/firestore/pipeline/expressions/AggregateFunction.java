@@ -311,7 +311,13 @@ public class AggregateFunction {
    * <p>Use this to give a single accumulator its own framing, independent of the frame declared on
    * the enclosing {@code addWindowFields} stage.
    *
-   * @param window The window specification to evaluate this aggregate over.
+   * <p>Only {@code documents} or {@code range} window frames are supported on individual
+   * accumulators (using {@link WindowSpec#documents} or {@link WindowSpec#range}). Other window
+   * parameters such as {@code partition} or {@code sort} are not supported on accumulator-level
+   * {@code over()} and must be specified on the enclosing {@code addWindowFields} stage.
+   *
+   * @param window The window frame specification to evaluate this aggregate over (must only specify
+   *     {@code documents} or {@code range}).
    * @return A new {@link WindowFunction} wrapping this aggregate.
    */
   public WindowFunction over(WindowSpec window) {

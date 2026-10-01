@@ -32,6 +32,26 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
+/**
+ * Specification for a window in an {@code addWindowFields} stage, defining how documents are
+ * partitioned, ordered, and framed.
+ *
+ * <p><b>Sort and frame interaction:</b>
+ *
+ * <ul>
+ *   <li>For document-based ({@link #documents}) window frames, {@code sort} is optional. If no sort
+ *       expressions are specified, documents are processed in incoming stream (fetch) order.
+ *   <li>For range-based ({@link #range}) window frames whose bounds are only {@link
+ *       WindowBound#CURRENT} or {@link WindowBound#UNBOUNDED} (and without a time {@code unit}),
+ *       one or more {@code sort} expressions are required and may be of any sortable type
+ *       (including strings and booleans). Range frames with numeric or time offsets (or a time
+ *       {@code unit}) require a single numeric or timestamp {@code sort} expression.
+ *   <li>When neither {@code documents} nor {@code range} is specified, omitting {@code sort}
+ *       defaults the frame to {@code documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)} (the
+ *       entire partition), while specifying {@code sort} defaults the frame to {@code
+ *       range(WindowBound.UNBOUNDED, WindowBound.CURRENT)}.
+ * </ul>
+ */
 public final class WindowSpec {
   private final List<Expression> partition;
   private final List<Ordering> sort;
@@ -54,16 +74,6 @@ public final class WindowSpec {
     }
   }
 
-  /**
-   * Alias for {@link WindowBound#CURRENT}: the current document's position as a frame boundary.
-   *
-   * <p>Note this is <i>not</i> the same as a numeric offset of {@code 0} — see {@link WindowBound}.
-   */
-  public static final WindowBound CURRENT = WindowBound.CURRENT;
-
-  /** Alias for {@link WindowBound#UNBOUNDED}: no boundary in this direction. */
-  public static final WindowBound UNBOUNDED = WindowBound.UNBOUNDED;
-
   WindowSpec(
       List<Expression> partition,
       List<Ordering> sort,
@@ -83,39 +93,57 @@ public final class WindowSpec {
     this(Collections.emptyList(), Collections.emptyList(), null, null);
   }
 
-  public List<Expression> getPartition() {
-    return partition;
-  }
-
-  public List<Ordering> getSort() {
-    return sort;
-  }
-
   /** Specify partition group columns. */
-  public WindowSpec withPartition(Expression expression, Object... additionalExpressions) {
+  public WindowSpec partition(Expression expression, Object... additionalExpressions) {
     return new WindowSpec(
         resolveGroups(expression, additionalExpressions), this.sort, documentsFrame, rangeFrame);
   }
 
-  public WindowSpec withPartition(String fieldName, Object... additionalExpressions) {
+  public WindowSpec partition(String fieldName, Object... additionalExpressions) {
     return new WindowSpec(
         resolveGroups(fieldName, additionalExpressions), this.sort, documentsFrame, rangeFrame);
   }
 
-  public WindowSpec withPartition(FieldPath fieldPath, Object... additionalExpressions) {
-    return new WindowSpec(
-        resolveGroups(fieldPath, additionalExpressions), this.sort, documentsFrame, rangeFrame);
-  }
-
-  /** Specify sort order for this window spec. */
-  public WindowSpec withSort(Ordering order, Ordering... additionalOrders) {
+  /**
+   * Specifies the sort order of documents within each partition.
+   *
+   * <p>For document-based ({@link #documents}) window frames, {@code sort} is optional; if no sort
+   * expressions are specified, documents are processed in incoming stream (fetch) order. For
+   * range-based ({@link #range}) window frames whose bounds are only {@link WindowBound#CURRENT} or
+   * {@link WindowBound#UNBOUNDED} (without a time {@code unit}), one or more {@code sort}
+   * expressions are required and may be of any sortable type (including strings and booleans);
+   * range frames with numeric or time offsets require a single numeric or timestamp {@code sort}
+   * expression.
+   *
+   * <p>Setting {@code sort} without an explicit {@code documents} or {@code range} frame changes
+   * the default window frame from {@code documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)}
+   * (when {@code sort} is omitted) to {@code range(WindowBound.UNBOUNDED, WindowBound.CURRENT)}
+   * (when {@code sort} is specified).
+   */
+  public WindowSpec sort(Ordering order, Ordering... additionalOrders) {
     Ordering[] allOrders = new Ordering[additionalOrders.length + 1];
     allOrders[0] = order;
     System.arraycopy(additionalOrders, 0, allOrders, 1, additionalOrders.length);
     return new WindowSpec(partition, Arrays.asList(allOrders), documentsFrame, rangeFrame);
   }
 
-  public WindowSpec withSort(List<Ordering> orders) {
+  /**
+   * Specifies the sort order of documents within each partition.
+   *
+   * <p>For document-based ({@link #documents}) window frames, {@code sort} is optional; if no sort
+   * expressions are specified, documents are processed in incoming stream (fetch) order. For
+   * range-based ({@link #range}) window frames whose bounds are only {@link WindowBound#CURRENT} or
+   * {@link WindowBound#UNBOUNDED} (without a time {@code unit}), one or more {@code sort}
+   * expressions are required and may be of any sortable type (including strings and booleans);
+   * range frames with numeric or time offsets require a single numeric or timestamp {@code sort}
+   * expression.
+   *
+   * <p>Setting {@code sort} without an explicit {@code documents} or {@code range} frame changes
+   * the default window frame from {@code documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)}
+   * (when {@code sort} is omitted) to {@code range(WindowBound.UNBOUNDED, WindowBound.CURRENT)}
+   * (when {@code sort} is specified).
+   */
+  public WindowSpec sort(List<Ordering> orders) {
     return new WindowSpec(partition, orders, documentsFrame, rangeFrame);
   }
 
@@ -140,17 +168,34 @@ public final class WindowSpec {
             unit != null ? Expression.toExprOrConstant(unit) : null));
   }
 
-  /** Specify document-count based window frame. */
-  public WindowSpec withDocuments(int preceding, int following) {
+  /**
+   * Specify a document-count based window frame.
+   *
+   * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
+   * processed in incoming stream (fetch) order.
+   */
+  public WindowSpec documents(int preceding, int following) {
     return withDocumentsFrame(preceding, following);
   }
 
-  /** Specify a document-count frame using symbolic bounds, e.g. {@code (UNBOUNDED, CURRENT)}. */
-  public WindowSpec withDocuments(WindowBound preceding, WindowBound following) {
+  /**
+   * Specify a document-count frame using symbolic bounds, e.g. {@code (WindowBound.UNBOUNDED,
+   * WindowBound.CURRENT)}.
+   *
+   * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
+   * processed in incoming stream (fetch) order.
+   */
+  public WindowSpec documents(WindowBound preceding, WindowBound following) {
     return withDocumentsFrame(preceding, following);
   }
 
-  public WindowSpec withDocuments(Expression preceding, Expression following) {
+  /**
+   * Specify a document-count frame using expression bounds.
+   *
+   * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
+   * processed in incoming stream (fetch) order.
+   */
+  public WindowSpec documents(Expression preceding, Expression following) {
     return withDocumentsFrame(preceding, following);
   }
 
@@ -158,34 +203,76 @@ public final class WindowSpec {
    * Specify a document-count frame with bounds of mixed or heterogeneous types, e.g. {@code (int,
    * Expression)} or {@code (String, String)}. Invalid combinations are encoded and rejected by the
    * backend.
+   *
+   * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
+   * processed in incoming stream (fetch) order.
    */
-  public WindowSpec withDocuments(Object preceding, Object following) {
+  public WindowSpec documents(Object preceding, Object following) {
     return withDocumentsFrame(preceding, following);
   }
 
-  /** Specify range-value based window frame. */
-  public WindowSpec withRange(int preceding, int following) {
+  /**
+   * Specify a range-value based window frame.
+   *
+   * <p>A single numeric {@code sort} expression is required when using numeric range offsets.
+   */
+  public WindowSpec range(int preceding, int following) {
     return withRangeFrame(preceding, following, null);
   }
 
-  public WindowSpec withRange(int preceding, int following, String unit) {
+  /**
+   * Specify a time-range based window frame with a time {@code unit}.
+   *
+   * <p>A single timestamp {@code sort} expression is required when using a time-range window frame.
+   *
+   * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
+   * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
+   * "quarter"}, and {@code "year"}.
+   */
+  public WindowSpec range(int preceding, int following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(int preceding, int following, Expression unit) {
+  /**
+   * Specify a time-range based window frame with a time {@code unit} expression.
+   *
+   * <p>A single timestamp {@code sort} expression is required when using a time-range window frame.
+   */
+  public WindowSpec range(int preceding, int following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  /** Specify a range frame using symbolic bounds, e.g. {@code (UNBOUNDED, CURRENT)}. */
-  public WindowSpec withRange(WindowBound preceding, WindowBound following) {
+  /**
+   * Specify a range frame using symbolic bounds, e.g. {@code (WindowBound.UNBOUNDED,
+   * WindowBound.CURRENT)}.
+   *
+   * <p>One or more {@code sort} expressions are required and may be of any sortable type (including
+   * strings and booleans) when both bounds are symbolic ({@link WindowBound#CURRENT} or {@link
+   * WindowBound#UNBOUNDED}) and no time {@code unit} is specified.
+   */
+  public WindowSpec range(WindowBound preceding, WindowBound following) {
     return withRangeFrame(preceding, following, null);
   }
 
-  public WindowSpec withRange(WindowBound preceding, WindowBound following, String unit) {
+  /**
+   * Specify a time-range frame using symbolic bounds and a time {@code unit}.
+   *
+   * <p>A timestamp {@code sort} expression is required when specifying a time {@code unit}.
+   *
+   * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
+   * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
+   * "quarter"}, and {@code "year"}.
+   */
+  public WindowSpec range(WindowBound preceding, WindowBound following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(WindowBound preceding, WindowBound following, Expression unit) {
+  /**
+   * Specify a time-range frame using symbolic bounds and a time {@code unit} expression.
+   *
+   * <p>A timestamp {@code sort} expression is required when specifying a time {@code unit}.
+   */
+  public WindowSpec range(WindowBound preceding, WindowBound following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
@@ -193,17 +280,25 @@ public final class WindowSpec {
    * Specify a numeric range frame with fractional bounds.
    *
    * <p>Only meaningful for value-based (non-time) range frames, e.g. when sorting by a price or
-   * score. The backend rejects fractional offsets for time-based range frames.
+   * score. The backend rejects fractional offsets for time-based range frames. A single numeric
+   * {@code sort} expression is required when using numeric range offsets.
    */
-  public WindowSpec withRange(double preceding, double following) {
+  public WindowSpec range(double preceding, double following) {
     return withRangeFrame(preceding, following, null);
   }
 
-  public WindowSpec withRange(double preceding, double following, String unit) {
+  /**
+   * Specify a time-range frame with fractional bounds and a time {@code unit}.
+   *
+   * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
+   * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
+   * "quarter"}, and {@code "year"}.
+   */
+  public WindowSpec range(double preceding, double following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(double preceding, double following, Expression unit) {
+  public WindowSpec range(double preceding, double following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
@@ -211,28 +306,57 @@ public final class WindowSpec {
    * Specify a range frame with bounds of mixed or heterogeneous types, e.g. {@code (int,
    * Expression)} or {@code (String, String)}. Invalid combinations are encoded and rejected by the
    * backend.
+   *
+   * <p>One or more {@code sort} expressions are required when both bounds are symbolic ({@link
+   * WindowBound#CURRENT} or {@link WindowBound#UNBOUNDED}); a single numeric {@code sort}
+   * expression is required when either bound is a numeric offset.
    */
-  public WindowSpec withRange(Object preceding, Object following) {
+  public WindowSpec range(Object preceding, Object following) {
     return withRangeFrame(preceding, following, null);
   }
 
-  public WindowSpec withRange(Object preceding, Object following, String unit) {
+  /**
+   * Specify a time-range frame with bounds of mixed or heterogeneous types and a time {@code unit}.
+   *
+   * <p>A single timestamp {@code sort} expression is required when using a time-range window frame.
+   *
+   * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
+   * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
+   * "quarter"}, and {@code "year"}.
+   */
+  public WindowSpec range(Object preceding, Object following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(Object preceding, Object following, Expression unit) {
+  public WindowSpec range(Object preceding, Object following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(Expression preceding, Expression following) {
+  /**
+   * Specify a range frame using expression bounds.
+   *
+   * <p>One or more {@code sort} expressions are required when both bounds are symbolic ({@link
+   * WindowBound#CURRENT} or {@link WindowBound#UNBOUNDED}); a single numeric {@code sort}
+   * expression is required when either bound is a numeric offset.
+   */
+  public WindowSpec range(Expression preceding, Expression following) {
     return withRangeFrame(preceding, following, null);
   }
 
-  public WindowSpec withRange(Expression preceding, Expression following, String unit) {
+  /**
+   * Specify a time-range frame using expression bounds and a time {@code unit}.
+   *
+   * <p>A single timestamp {@code sort} expression is required when using a time-range window frame.
+   *
+   * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
+   * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
+   * "quarter"}, and {@code "year"}.
+   */
+  public WindowSpec range(Expression preceding, Expression following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
-  public WindowSpec withRange(Expression preceding, Expression following, Expression unit) {
+  public WindowSpec range(Expression preceding, Expression following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
@@ -285,105 +409,6 @@ public final class WindowSpec {
     return buildInternal().hashCode();
   }
 
-  public static WindowSpec partition(Expression expression, Object... additionalExpressions) {
-    return new WindowSpec(
-        resolveGroups(expression, additionalExpressions), Collections.emptyList(), null, null);
-  }
-
-  public static WindowSpec partition(String fieldName, Object... additionalExpressions) {
-    return new WindowSpec(
-        resolveGroups(fieldName, additionalExpressions), Collections.emptyList(), null, null);
-  }
-
-  public static WindowSpec partition(FieldPath fieldPath, Object... additionalExpressions) {
-    return new WindowSpec(
-        resolveGroups(fieldPath, additionalExpressions), Collections.emptyList(), null, null);
-  }
-
-  public static WindowSpec documents(int preceding, int following) {
-    return new WindowSpec().withDocuments(preceding, following);
-  }
-
-  public static WindowSpec documents(WindowBound preceding, WindowBound following) {
-    return new WindowSpec().withDocuments(preceding, following);
-  }
-
-  public static WindowSpec documents(Expression preceding, Expression following) {
-    return new WindowSpec().withDocuments(preceding, following);
-  }
-
-  public static WindowSpec documents(Object preceding, Object following) {
-    return new WindowSpec().withDocuments(preceding, following);
-  }
-
-  public static WindowSpec range(int preceding, int following) {
-    return new WindowSpec().withRange(preceding, following);
-  }
-
-  public static WindowSpec range(int preceding, int following, String unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(int preceding, int following, Expression unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(WindowBound preceding, WindowBound following) {
-    return new WindowSpec().withRange(preceding, following);
-  }
-
-  public static WindowSpec range(WindowBound preceding, WindowBound following, String unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(WindowBound preceding, WindowBound following, Expression unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(double preceding, double following) {
-    return new WindowSpec().withRange(preceding, following);
-  }
-
-  public static WindowSpec range(double preceding, double following, String unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(double preceding, double following, Expression unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(Object preceding, Object following) {
-    return new WindowSpec().withRange(preceding, following);
-  }
-
-  public static WindowSpec range(Object preceding, Object following, String unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(Object preceding, Object following, Expression unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(Expression preceding, Expression following) {
-    return new WindowSpec().withRange(preceding, following);
-  }
-
-  public static WindowSpec range(Expression preceding, Expression following, String unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec range(Expression preceding, Expression following, Expression unit) {
-    return new WindowSpec().withRange(preceding, following, unit);
-  }
-
-  public static WindowSpec sort(Ordering order, Ordering... additionalOrders) {
-    return new WindowSpec().withSort(order, additionalOrders);
-  }
-
-  public static WindowSpec sort(List<Ordering> orders) {
-    return new WindowSpec().withSort(orders);
-  }
-
   static List<Expression> resolveGroups(Object first, Object... additional) {
     Object[] groups = new Object[additional.length + 1];
     groups[0] = first;
@@ -407,10 +432,10 @@ public final class WindowSpec {
   /**
    * Converts a frame boundary into an {@link Expression}.
    *
-   * <p>Symbolic bounds are expressed with {@link WindowBound} and encode as the strings {@code
-   * "current"} / {@code "unbounded"}. Other values are converted via {@link
-   * Expression#toExprOrConstant} — in particular {@code 0} is a genuine zero offset and is
-   * <i>not</i> the same boundary as {@link WindowBound#CURRENT}.
+   * <p>Symbolic bounds are expressed with {@link WindowBound} and encode on the wire as the strings
+   * {@code "current"} / {@code "unbounded"}, whereas other values are converted via {@link
+   * Expression#toExprOrConstant} (so a numeric offset of {@code 0} encodes on the wire as the
+   * integer {@code 0} rather than {@code "current"}, even though both are semantically equivalent).
    */
   private static Expression toBoundaryExpr(Object boundary) {
     if (boundary instanceof WindowBound) {

@@ -16,41 +16,65 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
+import java.util.Objects;
+
 /**
  * A symbolic window frame boundary, as opposed to a numeric offset.
  *
- * <p>Use these constants (or the {@link WindowSpec#CURRENT} / {@link WindowSpec#UNBOUNDED} aliases)
- * for symbolic bounds, and plain numbers for offsets:
+ * <p>Use {@link #CURRENT} and {@link #UNBOUNDED} for symbolic bounds, and plain numbers for
+ * offsets:
  *
  * <pre>{@code
- * WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT) // symbolic
- * WindowSpec.range(30, WindowSpec.CURRENT, "day")                // mixed
- * WindowSpec.documents(-1, 2)                                    // numeric offsets
+ * new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT) // symbolic
+ * new WindowSpec().range(30, WindowBound.CURRENT, "day")                 // mixed
+ * new WindowSpec().documents(-1, 2)                                      // numeric offsets
  * }</pre>
  *
- * <p>Note that a numeric offset of {@code 0} is <i>not</i> equivalent to {@link #CURRENT}: in a
- * {@code range} frame, {@link #CURRENT} cuts off strictly at the current document's position, while
- * an offset of {@code 0} includes every document whose sort value ties with the current one. Given
- * documents with sort values {@code [10, 10, 10]}, a frame evaluated at the second document with an
- * unbounded lower bound yields the first two documents under {@link #CURRENT}, but all three under
- * an offset of {@code 0}.
+ * <p>In a {@link WindowSpec#documents documents} frame, {@link #CURRENT} refers strictly to the
+ * current document's position (ties are not included, equivalent to a numeric offset of {@code 0}).
+ * In a {@link WindowSpec#range range} frame, {@link #CURRENT} is peer-inclusive (like SQL {@code
+ * CURRENT ROW} in {@code RANGE} mode): it includes all documents whose sort value(s) tie with the
+ * current document (also semantically equivalent to a numeric offset of {@code 0}, though {@link
+ * #CURRENT} is encoded on the wire as {@code "current"} rather than {@code 0}). Given documents
+ * with sort values {@code [10, 10, 20]} and {@code range(UNBOUNDED, CURRENT)}, the frame for either
+ * {@code 10} document includes both {@code 10} documents (2 documents), and for {@code 20} includes
+ * all 3 documents.
  */
-public enum WindowBound {
-  /** The current document's position in the frame. */
-  CURRENT,
+public final class WindowBound {
+  private final String protoString;
+
+  private WindowBound(String protoString) {
+    this.protoString = protoString;
+  }
+
+  /**
+   * The current document's position in a {@code documents} frame, or the current document and its
+   * tied peers in a {@code range} frame.
+   */
+  public static final WindowBound CURRENT = new WindowBound("current");
 
   /** No boundary in this direction. */
-  UNBOUNDED;
+  public static final WindowBound UNBOUNDED = new WindowBound("unbounded");
 
   /** The wire representation of this boundary. */
   String wireName() {
-    switch (this) {
-      case CURRENT:
-        return "current";
-      case UNBOUNDED:
-        return "unbounded";
-      default:
-        throw new AssertionError("Unreachable: " + this);
-    }
+    return protoString;
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    return this == other
+        || (other instanceof WindowBound
+            && Objects.equals(protoString, ((WindowBound) other).protoString));
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(protoString);
+  }
+
+  @Override
+  public String toString() {
+    return protoString;
   }
 }

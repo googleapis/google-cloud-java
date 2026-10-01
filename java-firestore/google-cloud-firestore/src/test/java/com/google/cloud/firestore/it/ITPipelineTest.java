@@ -130,6 +130,7 @@ import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Field;
 import com.google.cloud.firestore.pipeline.expressions.Ordering;
+import com.google.cloud.firestore.pipeline.expressions.WindowBound;
 import com.google.cloud.firestore.pipeline.expressions.WindowFunction;
 import com.google.cloud.firestore.pipeline.expressions.WindowSpec;
 import com.google.cloud.firestore.pipeline.stages.Aggregate;
@@ -4933,7 +4934,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -4957,7 +4958,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product", "region"),
+                new WindowSpec().partition("product", "region"),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "region", "windowCount")
@@ -4986,7 +4987,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition(Expression.toUpper("region")),
+                new WindowSpec().partition(Expression.toUpper("region")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("region", "windowCount")
@@ -5007,14 +5008,15 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRunningCountWithTheDefaultFrame() throws Exception {
-    // The implicit default frame is a `range` frame, so the sort key must be numeric. `quantity`
-    // is 1..5 in the same order as `date`, and has no ties, so the running count is unambiguous.
+    // The implicit default frame when `sort` is specified is `range(UNBOUNDED, CURRENT)`.
+    // `quantity` is 1..5 in the same order as `date`, and has no ties, so the running count is
+    // unambiguous.
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.sort(ascending("quantity")),
+                new WindowSpec().sort(ascending("quantity")),
                 AggregateFunction.count("quantity").as("runningCount"))
             .sort(ascending("date"))
             .select("product", "runningCount")
@@ -5038,7 +5040,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product").withSort(ascending("quantity")),
+                new WindowSpec().partition("product").sort(ascending("quantity")),
                 AggregateFunction.count("quantity").as("runningCount"))
             .sort(ascending("date"))
             .select("product", "runningCount")
@@ -5062,8 +5064,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.sort(descending("date"))
-                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                new WindowSpec()
+                    .sort(descending("date"))
+                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT),
                 AggregateFunction.count("quantity").as("runningCount"))
             .sort(ascending("date"))
             .select("product", "runningCount")
@@ -5087,8 +5090,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.sort(ascending("product"), ascending("date"))
-                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                new WindowSpec()
+                    .sort(ascending("product"), ascending("date"))
+                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT),
                 AggregateFunction.count("quantity").as("runningCount"))
             .sort(ascending("date"))
             .select("product", "runningCount")
@@ -5114,8 +5118,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT)
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -5139,9 +5144,10 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
-                    .withPartition("product")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)
+                    .partition("product")
+                    .sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -5165,8 +5171,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.CURRENT, WindowSpec.CURRENT)
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.CURRENT, WindowBound.CURRENT)
+                    .sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -5183,54 +5190,52 @@ public class ITPipelineTest extends ITBaseTest {
             mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
   }
 
-  // --- range framing -------------------------------------------------------------------------
-  //
-  // In a `range` frame the CURRENT bound resolves to the current document only. A numeric `0`
-  // offset is what widens the frame to every document with an equal sort value (the SQL "peer
-  // group"). The two tests below are the executable proof that CURRENT and 0 are different
-  // boundaries, which is why WindowBound exists.
-
   @Test
-  public void testWindowFieldsRangeCurrentToCurrentCountsOnlyTheCurrentDocument() throws Exception {
+  public void testWindowFieldsDocumentsUnboundedToCurrentDoesNotIncludeTiedPeers()
+      throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(WindowSpec.CURRENT, WindowSpec.CURRENT)
-                    .withPartition("product")
-                    .withSort(ascending("salesPrice")),
-                AggregateFunction.count("quantity").as("samePriceCount"))
-            .sort(ascending("date"))
-            .select("product", "salesPrice", "samePriceCount")
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("windowCount"))
+            .select("salesPrice", "windowCount")
             .execute()
             .get()
             .getResults();
     expectResults(
         results,
         Arrays.asList(
-            mapOfEntries(
-                entry("product", "phone"), entry("salesPrice", 12L), entry("samePriceCount", 1L)),
-            mapOfEntries(
-                entry("product", "phone"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
-            mapOfEntries(
-                entry("product", "tablet"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
-            mapOfEntries(
-                entry("product", "tablet"), entry("salesPrice", 60L), entry("samePriceCount", 1L)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("salesPrice", 60L),
-                entry("samePriceCount", 1L))));
+            mapOfEntries(entry("salesPrice", 12L), entry("windowCount", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("windowCount", 2L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("windowCount", 3L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("windowCount", 4L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("windowCount", 5L))));
   }
 
+  // --- range framing -------------------------------------------------------------------------
+  //
+  // In a `range` frame, both the symbolic `CURRENT` bound and a numeric `0` offset are
+  // peer-inclusive (like SQL `CURRENT ROW` in `RANGE` mode): the frame includes all documents whose
+  // sort value(s) tie with the current document. Symbolic `range` frames (bounds of only `CURRENT`
+  // or `UNBOUNDED` without a time `unit`) also support multiple sort orderings and non-numeric sort
+  // keys (such as strings or booleans).
+
   @Test
-  public void testWindowFieldsRangeZeroOffsetCountsTiedPeers() throws Exception {
+  public void testWindowFieldsRangeCurrentToCurrentCountsTiedPeers() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(0, 0).withPartition("product").withSort(ascending("salesPrice")),
+                new WindowSpec()
+                    .range(WindowBound.CURRENT, WindowBound.CURRENT)
+                    .partition("product")
+                    .sort(ascending("salesPrice")),
                 AggregateFunction.count("quantity").as("samePriceCount"))
             .sort(ascending("date"))
             .select("product", "salesPrice", "samePriceCount")
@@ -5255,13 +5260,46 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testWindowFieldsRangeUnboundedToZeroOffsetIncludesTiedPeers() throws Exception {
+  public void testWindowFieldsRangeZeroOffsetCountsTiedPeers() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(WindowSpec.UNBOUNDED, 0).withSort(ascending("salesPrice")),
+                new WindowSpec().range(0, 0).partition("product").sort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("samePriceCount"))
+            .sort(ascending("date"))
+            .select("product", "salesPrice", "samePriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 12L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 30L), entry("samePriceCount", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("salesPrice", 60L), entry("samePriceCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("salesPrice", 60L),
+                entry("samePriceCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeUnboundedToCurrentIncludesTiedPeers() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("salesPrice")),
                 AggregateFunction.count("quantity").as("cumulativeCount"))
             .sort(ascending("date"))
             .select("salesPrice", "cumulativeCount")
@@ -5279,15 +5317,99 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testWindowFieldsRangeUnboundedToZeroOffsetIncludesTiedPeers() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().range(WindowBound.UNBOUNDED, 0).sort(ascending("salesPrice")),
+                AggregateFunction.count("quantity").as("cumulativeCount"))
+            .sort(ascending("date"))
+            .select("salesPrice", "cumulativeCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("cumulativeCount", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("cumulativeCount", 3L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("cumulativeCount", 3L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("cumulativeCount", 5L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("cumulativeCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeUnboundedToCurrentWithStringSortKey() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("product")),
+                AggregateFunction.count("quantity").as("cumulativeCount"))
+            .sort(ascending("date"))
+            .select("product", "cumulativeCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 5L)),
+            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsRangeUnboundedToCurrentWithMultipleSortOrderings() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("product"), ascending("region")),
+                AggregateFunction.count("quantity").as("cumulativeCount"))
+            .sort(ascending("date"))
+            .select("product", "region", "cumulativeCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"), entry("region", "east"), entry("cumulativeCount", 1L)),
+            mapOfEntries(
+                entry("product", "phone"), entry("region", "west"), entry("cumulativeCount", 2L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("region", "east"), entry("cumulativeCount", 4L)),
+            mapOfEntries(
+                entry("product", "tablet"), entry("region", "west"), entry("cumulativeCount", 5L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("region", "east"),
+                entry("cumulativeCount", 4L))));
+  }
+
+  @Test
   public void testWindowFieldsRangeUnboundedToUnbounded() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
-                    .withPartition("product")
-                    .withSort(ascending("salesPrice")),
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)
+                    .partition("product")
+                    .sort(ascending("salesPrice")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -5311,8 +5433,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT, "day")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT, "day")
+                    .sort(ascending("date")),
                 AggregateFunction.count("quantity").as("cumulativeCount"))
             .sort(ascending("date"))
             .select("product", "cumulativeCount")
@@ -5338,12 +5461,12 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product").withSort(ascending("date")),
+                new WindowSpec().partition("product").sort(ascending("date")),
                 AggregateFunction.count("quantity")
-                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                    .over(new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
                     .as("runningCount"),
                 AggregateFunction.count("quantity")
-                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED))
+                    .over(new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED))
                     .as("partitionCount"))
             .sort(ascending("date"))
             .select("product", "runningCount", "partitionCount")
@@ -5374,9 +5497,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product").withSort(ascending("salesPrice")),
+                new WindowSpec().partition("product").sort(ascending("salesPrice")),
                 AggregateFunction.count("quantity")
-                    .over(WindowSpec.range(0, 0))
+                    .over(new WindowSpec().range(0, 0))
                     .as("samePriceCount"))
             .sort(ascending("date"))
             .select("product", "salesPrice", "samePriceCount")
@@ -5409,7 +5532,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("productCount"),
                 AggregateFunction.count("quantity").as("productCountCopy"))
             .sort(ascending("date"))
@@ -5449,7 +5572,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("stats.productCount"))
             .sort(ascending("date"))
             .select("product", "stats")
@@ -5481,10 +5604,10 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("productCount"))
             .addWindowFields(
-                WindowSpec.partition("region"),
+                new WindowSpec().partition("region"),
                 AggregateFunction.count("quantity").as("regionCount"))
             .sort(ascending("date"))
             .select("product", "region", "productCount", "regionCount")
@@ -5528,7 +5651,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("productCount"))
             .where(field("productCount").greaterThan(2))
             .sort(ascending("date"))
@@ -5551,7 +5674,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.count("quantity").as("productCount"))
             .sort(ascending("productCount"), ascending("date"))
             .select("product", "productCount")
@@ -5581,7 +5704,7 @@ public class ITPipelineTest extends ITBaseTest {
                     .pipeline()
                     .collection(salesCol)
                     .addWindowFields(
-                        WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                        new WindowSpec().range(WindowBound.UNBOUNDED, WindowBound.CURRENT),
                         AggregateFunction.count("quantity").as("windowCount"))
                     .execute()
                     .get());
@@ -5598,10 +5721,13 @@ public class ITPipelineTest extends ITBaseTest {
                 .pipeline()
                 .collection(salesCol)
                 .addWindowFields(
-                    WindowSpec.sort(ascending("date"))
-                        .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT),
+                    new WindowSpec()
+                        .sort(ascending("date"))
+                        .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT),
                     AggregateFunction.count("quantity")
-                        .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED))
+                        .over(
+                            new WindowSpec()
+                                .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED))
                         .as("windowCount"))
                 .execute()
                 .get());
@@ -5617,9 +5743,10 @@ public class ITPipelineTest extends ITBaseTest {
                 .pipeline()
                 .collection(salesCol)
                 .addWindowFields(
-                    WindowSpec.sort(ascending("date")),
+                    new WindowSpec().sort(ascending("date")),
                     AggregateFunction.count("quantity")
-                        .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                        .over(
+                            new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
                         .as("framed"),
                     AggregateFunction.count("quantity").as("unframed"))
                 .execute()
@@ -5636,8 +5763,9 @@ public class ITPipelineTest extends ITBaseTest {
                 .pipeline()
                 .collection(salesCol)
                 .addWindowFields(
-                    WindowSpec.documents("infinite", WindowSpec.CURRENT)
-                        .withSort(ascending("quantity")),
+                    new WindowSpec()
+                        .documents("infinite", WindowBound.CURRENT)
+                        .sort(ascending("quantity")),
                     AggregateFunction.count("quantity").as("windowCount"))
                 .execute()
                 .get());
@@ -5654,11 +5782,12 @@ public class ITPipelineTest extends ITBaseTest {
                     .pipeline()
                     .collection(salesCol)
                     .addWindowFields(
-                        WindowSpec.sort(ascending("quantity")),
+                        new WindowSpec().sort(ascending("quantity")),
                         AggregateFunction.count("quantity")
                             .over(
-                                WindowSpec.partition("product")
-                                    .withDocuments(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                                new WindowSpec()
+                                    .partition("product")
+                                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
                             .as("windowCount"))
                     .execute()
                     .get());
@@ -5672,7 +5801,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.sum("salesPrice").as("total"),
                 AggregateFunction.average("salesPrice").as("averagePrice"),
                 AggregateFunction.minimum("salesPrice").as("minimumPrice"),
@@ -5703,7 +5832,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.countIf(field("salesPrice").greaterThan(20)).as("expensiveCount"),
                 AggregateFunction.countDistinct("salesPrice").as("distinctPriceCount"))
             .sort(ascending("date"))
@@ -5743,7 +5872,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"),
+                new WindowSpec().partition("product"),
                 AggregateFunction.sum(multiply(field("salesPrice"), field("quantity")))
                     .as("totalRevenue"))
             .sort(ascending("date"))
@@ -5768,9 +5897,10 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
-                    .withPartition("product")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)
+                    .partition("product")
+                    .sort(ascending("date")),
                 AggregateFunction.first("salesPrice").as("firstPrice"),
                 AggregateFunction.last("salesPrice").as("lastPrice"))
             .sort(ascending("date"))
@@ -5800,9 +5930,10 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
-                    .withPartition("product")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)
+                    .partition("product")
+                    .sort(ascending("date")),
                 AggregateFunction.arrayAgg("salesPrice").as("allPrices"))
             .sort(ascending("date"))
             .select("product", "allPrices")
@@ -5822,9 +5953,10 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.UNBOUNDED)
-                    .withPartition("product")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED)
+                    .partition("product")
+                    .sort(ascending("date")),
                 AggregateFunction.arrayAggDistinct("salesPrice").as("distinctPrices"))
             .sort(ascending("date"))
             .select("product", "distinctPrices")
@@ -5844,8 +5976,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT)
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT)
+                    .sort(ascending("date")),
                 AggregateFunction.sum("salesPrice").as("runningTotal"))
             .sort(ascending("date"))
             .select("product", "runningTotal")
@@ -5869,7 +6002,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(1, 1).withSort(ascending("date")),
+                new WindowSpec().documents(1, 1).sort(ascending("date")),
                 AggregateFunction.average("salesPrice").as("movingAverage"),
                 AggregateFunction.countAll().as("windowCount"))
             .sort(ascending("date"))
@@ -5901,7 +6034,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(2, 0).withSort(ascending("date")),
+                new WindowSpec().documents(2, 0).sort(ascending("date")),
                 AggregateFunction.sum("salesPrice").as("trailingTotal"))
             .sort(ascending("date"))
             .select("product", "trailingTotal")
@@ -5928,7 +6061,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(-1, 2).withSort(ascending("date")),
+                new WindowSpec().documents(-1, 2).sort(ascending("date")),
                 AggregateFunction.average("salesPrice").as("lookAheadAverage"),
                 AggregateFunction.countAll().as("windowCount"))
             .sort(ascending("date"))
@@ -5962,7 +6095,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(20, 0).withSort(ascending("salesPrice")),
+                new WindowSpec().range(20, 0).sort(ascending("salesPrice")),
                 AggregateFunction.sum("salesPrice").as("nearbyTotal"))
             .sort(ascending("date"))
             .select("salesPrice", "nearbyTotal")
@@ -5980,13 +6113,37 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testWindowFieldsComputesAValueBasedRangeWindowWithDoubleOffsets() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().range(17.5, 0.5).sort(ascending("salesPrice")),
+                AggregateFunction.sum("salesPrice").as("nearbyTotal"))
+            .sort(ascending("date"))
+            .select("salesPrice", "nearbyTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("nearbyTotal", 12L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 60L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 60L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L))));
+  }
+
+  @Test
   public void testWindowFieldsComputesATrailingThreeDayTotal() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(3, WindowSpec.CURRENT, "day").withSort(ascending("date")),
+                new WindowSpec().range(3, WindowBound.CURRENT, "day").sort(ascending("date")),
                 AggregateFunction.sum("salesPrice").as("threeDayTotal"))
             .sort(ascending("date"))
             .select("product", "threeDayTotal")
@@ -6010,8 +6167,9 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.range(WindowSpec.UNBOUNDED, WindowSpec.CURRENT, "day")
-                    .withSort(ascending("date")),
+                new WindowSpec()
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT, "day")
+                    .sort(ascending("date")),
                 AggregateFunction.sum("salesPrice").as("cumulativeTotal"))
             .sort(ascending("date"))
             .select("product", "cumulativeTotal")
@@ -6035,12 +6193,12 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.sort(ascending("date")),
+                new WindowSpec().sort(ascending("date")),
                 AggregateFunction.sum("salesPrice")
-                    .over(WindowSpec.documents(WindowSpec.UNBOUNDED, WindowSpec.CURRENT))
+                    .over(new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
                     .as("runningTotal"),
                 AggregateFunction.average("salesPrice")
-                    .over(WindowSpec.documents(1, 1))
+                    .over(new WindowSpec().documents(1, 1))
                     .as("movingAverage"))
             .sort(ascending("date"))
             .select("product", "runningTotal", "movingAverage")
@@ -6079,7 +6237,8 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.partition("product"), AggregateFunction.countAll().as("windowCount"))
+                new WindowSpec().partition("product"),
+                AggregateFunction.countAll().as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
             .execute()
@@ -6102,7 +6261,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(0, 0).withSort(ascending("date")),
+                new WindowSpec().documents(0, 0).sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -6126,7 +6285,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(0, WindowSpec.UNBOUNDED).withSort(ascending("date")),
+                new WindowSpec().documents(0, WindowBound.UNBOUNDED).sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -6150,7 +6309,7 @@ public class ITPipelineTest extends ITBaseTest {
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.documents(1, 1).withSort(ascending("date")),
+                new WindowSpec().documents(1, 1).sort(ascending("date")),
                 AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
             .select("product", "windowCount")
@@ -6168,49 +6327,27 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  @Ignore("Pending backend support for rank, dense_rank, and row_number")
-  public void testWindowFieldsComputesRankDenseRankAndRowNumber() throws Exception {
+  @Ignore("Pending backend support for rank")
+  public void testWindowFieldsComputesRank() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                WindowSpec.sort(ascending("salesPrice"), ascending("date")),
-                WindowFunction.rank().as("priceRank"),
-                WindowFunction.denseRank().as("priceDenseRank"),
-                WindowFunction.rowNumber().as("priceRowNumber"))
+                new WindowSpec().sort(ascending("salesPrice"), ascending("date")),
+                WindowFunction.rank().as("priceRank"))
             .sort(ascending("date"))
-            .select("salesPrice", "priceRank", "priceDenseRank", "priceRowNumber")
+            .select("salesPrice", "priceRank")
             .execute()
             .get()
             .getResults();
     expectResults(
         results,
         Arrays.asList(
-            mapOfEntries(
-                entry("salesPrice", 12L),
-                entry("priceRank", 1L),
-                entry("priceDenseRank", 1L),
-                entry("priceRowNumber", 1L)),
-            mapOfEntries(
-                entry("salesPrice", 30L),
-                entry("priceRank", 2L),
-                entry("priceDenseRank", 2L),
-                entry("priceRowNumber", 2L)),
-            mapOfEntries(
-                entry("salesPrice", 30L),
-                entry("priceRank", 2L),
-                entry("priceDenseRank", 2L),
-                entry("priceRowNumber", 3L)),
-            mapOfEntries(
-                entry("salesPrice", 60L),
-                entry("priceRank", 4L),
-                entry("priceDenseRank", 3L),
-                entry("priceRowNumber", 4L)),
-            mapOfEntries(
-                entry("salesPrice", 60L),
-                entry("priceRank", 4L),
-                entry("priceDenseRank", 3L),
-                entry("priceRowNumber", 5L))));
+            mapOfEntries(entry("salesPrice", 12L), entry("priceRank", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L))));
   }
 }

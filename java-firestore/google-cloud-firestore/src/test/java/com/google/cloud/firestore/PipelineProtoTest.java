@@ -21,6 +21,7 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
+import com.google.cloud.firestore.pipeline.expressions.WindowBound;
 import com.google.cloud.firestore.pipeline.expressions.WindowSpec;
 import com.google.cloud.firestore.pipeline.stages.Search;
 import com.google.firestore.v1.ArrayValue;
@@ -124,9 +125,10 @@ public class PipelineProtoTest {
             .pipeline()
             .collection("foo")
             .addWindowFields(
-                WindowSpec.range(30, WindowSpec.CURRENT, "day")
-                    .withSort(field("date").ascending())
-                    .withPartition("department"),
+                new WindowSpec()
+                    .range(30, WindowBound.CURRENT, "day")
+                    .sort(field("date").ascending())
+                    .partition("department"),
                 AggregateFunction.rawAggregate("sum", field("sales")).as("totalSales"));
 
     com.google.firestore.v1.Pipeline protoPipeline = pipeline.toProto();
@@ -181,9 +183,9 @@ public class PipelineProtoTest {
             .pipeline()
             .collection("foo")
             .addWindowFields(
-                WindowSpec.partition("department"),
+                new WindowSpec().partition("department"),
                 AggregateFunction.rawAggregate("sum", field("sales"))
-                    .over(WindowSpec.documents(1, 1).withSort(field("date").ascending()))
+                    .over(new WindowSpec().documents(1, 1).sort(field("date").ascending()))
                     .as("rollingSales"));
 
     Stage windowStage = pipeline.toProto().getStages(1);
