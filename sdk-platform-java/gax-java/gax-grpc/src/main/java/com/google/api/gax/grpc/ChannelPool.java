@@ -50,7 +50,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executors;
-import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -441,7 +440,7 @@ class ChannelPool extends ManagedChannel {
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
       try {
         newEntries.add(new Entry(channelFactory.createSingleChannel()));
-      } catch (IOException e) {
+      } catch (Exception e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
       }
     }
@@ -483,10 +482,14 @@ class ChannelPool extends ManagedChannel {
 
   /**
    * Replace all of the channels in the channel pool with fresh ones. This is meant to mitigate the
-   * hourly GFE disconnects by giving clients the ability to prime the channel on reconnect.
+   * hourly GFE disconnects by giving clients the ability to prime the channel on reconnect, and to
+   * pick up a rotated mTLS workload certificate.
    *
-   * <p>This is done on a best effort basis. If the replacement channel fails to construct, the old
-   * channel will continue to be used.
+   * <p>This is done on a best effort basis. When no workload certificate is configured, a channel
+   * whose replacement fails to construct continues to be used. When a workload certificate is
+   * configured, a channel whose replacement fails to construct is dropped so that no traffic is
+   * routed to a channel using the old certificate; if no replacement can be constructed at all, the
+   * pool is left unchanged.
    */
   @InternalApi("Visible for testing")
   void refresh() {
@@ -617,7 +620,7 @@ class ChannelPool extends ManagedChannel {
   private void scheduleRefill() {
     try {
       backgroundExecutorProvider.getExecutor().execute(this::refillSafely);
-    } catch (RejectedExecutionException e) {
+    } catch (RuntimeException e) {
       LOG.log(Level.WARNING, "Failed to schedule channel pool refill", e);
     }
   }

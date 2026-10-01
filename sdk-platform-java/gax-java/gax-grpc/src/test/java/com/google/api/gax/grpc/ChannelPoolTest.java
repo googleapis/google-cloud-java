@@ -788,16 +788,46 @@ class ChannelPoolTest {
     ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
     Mockito.verify(executor).execute(refillTask.capture());
 
-    // IOException is handled by expand(); the pool stays usable at its reduced size.
+    // Checked and unchecked failures are both handled by expand(); the pool stays usable at its
+    // reduced size.
     refillTask.getValue().run();
     assertThat(pool.entries.get()).hasSize(1);
 
-    // RuntimeException is caught by refillSafely().
     refillTask.getValue().run();
     assertThat(pool.entries.get()).hasSize(1);
 
     refillTask.getValue().run();
     assertThat(pool.entries.get()).hasSize(2);
+  }
+
+  @Test
+  void refill_failureAfterPartialProgress_keepsCreatedChannels() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel refilled = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class))
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenThrow(new IOException("Transient failure on third sub-channel"))
+        .thenReturn(refilled)
+        .thenThrow(new RuntimeException("Unchecked failure during refill"));
+
+    createMtlsPoolAndRotateCert(ChannelPoolSettings.staticallySized(3), channelFactory, executor);
+    pool.refresh();
+    assertThat(pool.entries.get()).hasSize(1);
+    ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor).execute(refillTask.capture());
+
+    refillTask.getValue().run();
+
+    // The channel created before the failure is added to the pool rather than orphaned.
+    assertThat(pool.entries.get()).hasSize(2);
+    Mockito.verify(refilled, Mockito.never()).shutdown();
+    Mockito.verify(channelFactory, Mockito.times(8)).createSingleChannel();
   }
 
   @Test
@@ -819,6 +849,7 @@ class ChannelPoolTest {
 
     pool.refresh();
 
+    Mockito.verify(executor).execute(Mockito.any(Runnable.class));
     assertThat(pool.entries.get()).hasSize(1);
     Mockito.verify(initial1).shutdown();
     Mockito.verify(initial2).shutdown();
