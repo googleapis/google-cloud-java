@@ -18,7 +18,6 @@ package com.google.cloud.spanner.it;
 
 import static com.google.cloud.spanner.SpannerMatchers.isSpannerException;
 import static com.google.cloud.spanner.Type.StructField;
-import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertEquals;
@@ -110,20 +109,18 @@ public class ITReadTest {
                 "CREATE INDEX TestTableByValue ON TestTable(stringvalue)",
                 "CREATE INDEX TestTableByValueDesc ON TestTable(stringvalue DESC)");
     googleStandardSQLClient = env.getTestHelper().getDatabaseClient(googleStandardSQLDatabase);
-    if (!isUsingEmulator()) {
-      Database postgreSQLDatabase =
-          env.getTestHelper()
-              .createTestDatabase(
-                  Dialect.POSTGRESQL,
-                  Arrays.asList(
-                      "CREATE TABLE TestTable ("
-                          + "  Key                VARCHAR PRIMARY KEY,"
-                          + "  StringValue        VARCHAR"
-                          + ")",
-                      "CREATE INDEX TestTableByValue ON TestTable(StringValue)",
-                      "CREATE INDEX TestTableByValueDesc ON TestTable(StringValue DESC)"));
-      postgreSQLClient = env.getTestHelper().getDatabaseClient(postgreSQLDatabase);
-    }
+    Database postgreSQLDatabase =
+        env.getTestHelper()
+            .createTestDatabase(
+                Dialect.POSTGRESQL,
+                Arrays.asList(
+                    "CREATE TABLE TestTable ("
+                        + "  Key                VARCHAR PRIMARY KEY,"
+                        + "  StringValue        VARCHAR"
+                        + ")",
+                    "CREATE INDEX TestTableByValue ON TestTable(StringValue)",
+                    "CREATE INDEX TestTableByValueDesc ON TestTable(StringValue DESC)"));
+    postgreSQLClient = env.getTestHelper().getDatabaseClient(postgreSQLDatabase);
 
     // Includes k0..k14.  Note that strings k{10,14} sort between k1 and k2.
     List<Mutation> mutations = new ArrayList<>();
@@ -137,9 +134,7 @@ public class ITReadTest {
               .build());
     }
     googleStandardSQLClient.write(mutations);
-    if (!isUsingEmulator()) {
-      postgreSQLClient.write(mutations);
-    }
+    postgreSQLClient.write(mutations);
   }
 
   @AfterClass
@@ -151,10 +146,7 @@ public class ITReadTest {
   public static List<DialectTestParameter> data() {
     List<DialectTestParameter> params = new ArrayList<>();
     params.add(new DialectTestParameter(Dialect.GOOGLE_STANDARD_SQL));
-    // "PG dialect tests are not supported by the emulator"
-    if (!isUsingEmulator()) {
-      params.add(new DialectTestParameter(Dialect.POSTGRESQL));
-    }
+    params.add(new DialectTestParameter(Dialect.POSTGRESQL));
     return params;
   }
 
