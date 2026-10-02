@@ -195,49 +195,65 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         "InstantiatingHttpJsonChannelProvider doesn't need credentials");
   }
 
-  @Nullable HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null) {
-      return null;
+  HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    configureMtls(builder);
+    HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+    return builder.build();
+  }
+
+  private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
+      throws IOException, GeneralSecurityException {
+    if (mtlsProvider == null || !certificateBasedAccess.useMtlsClientCertificate()) {
+      return builder;
     }
-    if (certificateBasedAccess.useMtlsClientCertificate()) {
-      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-      if (mtlsKeyStore != null) {
-        NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-        builder.trustCertificates(null, mtlsKeyStore, "");
-        Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
-        if (conscryptProvider != null) {
-          SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
-          SslUtils.initSslContext(
-              sslContext,
-              null,
-              SslUtils.getPkixTrustManagerFactory(),
-              mtlsKeyStore,
-              "",
-              SslUtils.getDefaultKeyManagerFactory());
-          builder.setSslSocketFactory(sslContext.getSocketFactory());
-        }
-        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
-        return builder.build();
-      }
+    KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+    if (mtlsKeyStore == null) {
+      return builder;
     }
-    return null;
+    builder.trustCertificates(null, mtlsKeyStore, "");
+    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
+    if (conscryptProvider == null) {
+      // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
+      return builder;
+    }
+    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
+    // key managers
+    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
+    // key exchange).
+    SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    SslUtils.initSslContext(
+        sslContext,
+        null,
+        SslUtils.getPkixTrustManagerFactory(),
+        mtlsKeyStore,
+        "",
+        SslUtils.getDefaultKeyManagerFactory());
+    builder.setSslSocketFactory(sslContext.getSocketFactory());
+    return builder;
+  }
+
+  private HttpTransport createChannelHttpTransport() throws IOException, GeneralSecurityException {
+    HttpTransport transport = createHttpTransport();
+    if (mtlsProvider != null
+        && certificateBasedAccess.useMtlsClientCertificate()
+        && !((NetHttpTransport) transport).isMtls()) {
+      // mTLS is enabled but the provider returned no client certificate. Fail instead of silently
+      // using a transport without the certificate, matching InstantiatingGrpcChannelProvider.
+      // During certificate rotation, this makes RefreshingHttpJsonChannel keep the current
+      // authenticated transport instead of swapping in one without a client certificate.
+      throw new IOException("Failed to initialize mTLS HttpTransport");
+    }
+    return transport;
   }
 
   private ManagedHttpJsonChannel createSingleManagedChannel()
       throws IOException, GeneralSecurityException {
-    HttpTransport httpTransportToUse = httpTransport;
-    if (httpTransportToUse == null) {
-      httpTransportToUse = createHttpTransport();
-      if (httpTransportToUse == null
-          && mtlsProvider != null
-          && certificateBasedAccess.useMtlsClientCertificate()) {
-        throw new IOException("Failed to initialize mTLS HttpTransport");
-      }
-    }
-    return buildManagedChannel(httpTransportToUse);
+    return buildManagedChannel(
+        httpTransport != null ? httpTransport : createChannelHttpTransport());
   }
 
-  private ManagedHttpJsonChannel buildManagedChannel(@Nullable HttpTransport httpTransportToUse) {
+  private ManagedHttpJsonChannel buildManagedChannel(HttpTransport httpTransportToUse) {
     return ManagedHttpJsonChannel.newBuilder()
         .setEndpoint(endpoint)
         .setExecutor(executor)
@@ -258,11 +274,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
       java.util.function.Supplier<HttpTransport> transportFactory =
           () -> {
             try {
-              HttpTransport mtlsTransport = createHttpTransport();
-              if (mtlsTransport == null) {
-                throw new IOException("Failed to initialize mTLS HttpTransport");
-              }
-              return mtlsTransport;
+              return createChannelHttpTransport();
             } catch (IOException | GeneralSecurityException e) {
               throw new java.lang.RuntimeException("Failed to create mTLS HttpTransport", e);
             }

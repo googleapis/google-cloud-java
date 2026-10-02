@@ -302,6 +302,35 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
+  void refresh_whenCertificateFileEmpty_keepsTransportAndGeneration() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    HttpTransport initialTransport = channel.getHttpTransport();
+
+    // A rotation is detected, but when refresh() re-reads the file the rotator has truncated it
+    // and not yet written the new certificate.
+    rotateCertificate(channel);
+    assertTrue(channel.shouldRefresh());
+    testFingerprint = "";
+    channel.refresh();
+
+    // Nothing is swapped and the generation is unchanged, so the failed call is not retried.
+    assertEquals(1, transportFactoryCount.get());
+    assertSame(initialTransport, channel.getHttpTransport());
+    assertEquals(0, channel.getGeneration());
+    // While the file stays empty, no refresh is requested.
+    channel.invalidateDiskFingerprintCache();
+    assertFalse(channel.shouldRefresh());
+
+    // Once the new certificate is written, the next check refreshes normally.
+    testFingerprint = "fingerprint2";
+    assertTrue(channel.shouldRefresh());
+    channel.refresh();
+    assertEquals(2, transportFactoryCount.get());
+    assertNotSame(initialTransport, channel.getHttpTransport());
+    assertEquals(1, channel.getGeneration());
+  }
+
+  @Test
   void callCreatedBeforeRefresh_usesOriginalTransport() throws Exception {
     MockHttpService originalService =
         new MockHttpService(Collections.singletonList(FAKE_METHOD_DESCRIPTOR), "google.com:443");
