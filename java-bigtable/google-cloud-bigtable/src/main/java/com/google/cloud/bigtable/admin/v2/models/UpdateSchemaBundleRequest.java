@@ -17,6 +17,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.ProtoSchema;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Objects;
@@ -27,6 +28,9 @@ import com.google.protobuf.util.FieldMaskUtil;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -43,6 +47,8 @@ import javax.annotation.Nonnull;
  * @see SchemaBundle for more details.
  */
 public final class UpdateSchemaBundleRequest {
+  private static final Logger LOGGER = Logger.getLogger(UpdateSchemaBundleRequest.class.getName());
+
   private final com.google.bigtable.admin.v2.UpdateSchemaBundleRequest.Builder requestBuilder;
   private final String tableId;
   private final String schemaBundleId;
@@ -78,7 +84,7 @@ public final class UpdateSchemaBundleRequest {
     this.requestBuilder = requestBuilder;
   }
 
-  /** Sets the proto schema for this schema bundle. */
+  /** Updates the proto schema for this schema bundle. */
   public UpdateSchemaBundleRequest setProtoSchemaFile(@Nonnull String protoSchemaFile)
       throws IOException {
     Preconditions.checkNotNull(protoSchemaFile, "protoSchemaFile must be set");
@@ -86,14 +92,40 @@ public final class UpdateSchemaBundleRequest {
     return setProtoSchema(ByteString.copyFrom(content));
   }
 
-  /** Sets the proto schema for this schema bundle. */
+  /** Updates the proto schema for this schema bundle. */
   public UpdateSchemaBundleRequest setProtoSchema(@Nonnull ByteString protoSchema)
       throws IOException {
     Preconditions.checkNotNull(protoSchema, "protoSchema must be set");
-    requestBuilder.setSchemaBundle(
-        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
-            .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema)));
+    if (requestBuilder.getSchemaBundleBuilder().hasAvroSchema()) {
+      LOGGER.warning(
+          "This schema bundle already has an Avro schema set. Setting the proto schema will"
+              + " unset the Avro schema.");
+    }
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setProtoSchema(ProtoSchema.newBuilder().setProtoDescriptors(protoSchema));
     updateFieldMask(com.google.bigtable.admin.v2.SchemaBundle.PROTO_SCHEMA_FIELD_NUMBER);
+    return this;
+  }
+
+  /** Updates the avro schema for this schema bundle. */
+  public UpdateSchemaBundleRequest setAvroSchema(@Nonnull String avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    return setAvroSchema(Collections.singletonList(avroSchema));
+  }
+
+  /** Updates the list of avro schemas for this schema bundle. */
+  public UpdateSchemaBundleRequest setAvroSchema(@Nonnull List<String> avroSchema) {
+    Preconditions.checkNotNull(avroSchema, "avroSchema must be set");
+    if (requestBuilder.getSchemaBundleBuilder().hasProtoSchema()) {
+      LOGGER.warning(
+          "This schema bundle already has a proto schema set. Setting the Avro schema will"
+              + " unset the proto schema.");
+    }
+    requestBuilder
+        .getSchemaBundleBuilder()
+        .setAvroSchema(AvroSchema.newBuilder().addAllJsonSchemas(avroSchema));
+    updateFieldMask(com.google.bigtable.admin.v2.SchemaBundle.AVRO_SCHEMA_FIELD_NUMBER);
     return this;
   }
 
