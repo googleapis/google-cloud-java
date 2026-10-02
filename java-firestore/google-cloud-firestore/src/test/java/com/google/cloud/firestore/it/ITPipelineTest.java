@@ -5965,8 +5965,8 @@ public class ITPipelineTest extends ITBaseTest {
             .getResults();
     assertThat(results).hasSize(5);
 
-    assertThat(results.get(0).getData().get("distinctPrices")).isEqualTo(Arrays.asList(12L, 30L));
-    assertThat(results.get(2).getData().get("distinctPrices")).isEqualTo(Arrays.asList(60L, 30L));
+    assertThat((List<?>) results.get(0).getData().get("distinctPrices")).containsExactly(12L, 30L);
+    assertThat((List<?>) results.get(2).getData().get("distinctPrices")).containsExactly(30L, 60L);
   }
 
   @Test
