@@ -88,6 +88,11 @@ public abstract class ApiTracerContext {
               @Nullable Supplier<Scope> expect, @Nullable Supplier<Scope> update) {
             return false;
           }
+
+          @Override
+          public boolean hasAttemptScope() {
+            return false;
+          }
         };
 
     private final AtomicReference<Supplier<Scope>> attemptScopeProvider = new AtomicReference<>();
