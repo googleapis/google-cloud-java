@@ -353,14 +353,19 @@ public abstract class ApiTracerContext {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     SharedContext shared;
-    if (this.sharedContext() != SharedContext.EMPTY) {
-      shared = this.sharedContext();
-      Span otherSpan = other.sharedContext().getAttemptSpan();
-      if (otherSpan != null) {
-        shared.compareAndSetAttemptSpan(null, otherSpan);
-      }
-    } else {
+    if (this.sharedContext() == SharedContext.EMPTY) {
       shared = other.sharedContext();
+    } else if (other.sharedContext() == SharedContext.EMPTY) {
+      shared = this.sharedContext();
+    } else {
+      shared = new SharedContext();
+      Span thisSpan = this.sharedContext().getAttemptSpan();
+      Span otherSpan = other.sharedContext().getAttemptSpan();
+      if (thisSpan != null) {
+        shared.setAttemptSpan(thisSpan);
+      } else if (otherSpan != null) {
+        shared.setAttemptSpan(otherSpan);
+      }
     }
     builder.setSharedContext(shared);
     return builder.build();
@@ -380,7 +385,15 @@ public abstract class ApiTracerContext {
     return new AutoValue_ApiTracerContext.Builder().setSharedContext(new SharedContext());
   }
 
-  abstract Builder toBuilder();
+  public Builder toBuilder() {
+    Builder builder = autoToBuilder();
+    if (sharedContext() == SharedContext.EMPTY) {
+      builder.setSharedContext(new SharedContext());
+    }
+    return builder;
+  }
+
+  abstract Builder autoToBuilder();
 
   @AutoValue.Builder
   public abstract static class Builder {

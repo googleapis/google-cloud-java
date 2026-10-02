@@ -575,14 +575,16 @@ class ApiTracerContextTest {
             .setSharedContext(inactiveShared)
             .build();
 
-    // Active context in 'this' should be preserved
+    // Active context in 'this' should be preserved in the merged context, without mutating the
+    // original
     ApiTracerContext mergedActive1 = activeContext.merge(inactiveContext);
-    assertThat(mergedActive1.sharedContext()).isSameInstanceAs(activeShared);
     assertThat(mergedActive1.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
+    assertThat(inactiveContext.sharedContext().getAttemptSpan()).isNull();
 
-    // Active context in 'other' should be copied to 'this'
+    // Active context in 'other' should be copied to the merged context, without mutating the
+    // original
     ApiTracerContext mergedActive2 = inactiveContext.merge(activeContext);
-    assertThat(mergedActive2.sharedContext()).isSameInstanceAs(inactiveShared);
     assertThat(mergedActive2.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
+    assertThat(inactiveContext.sharedContext().getAttemptSpan()).isNull();
   }
 }
