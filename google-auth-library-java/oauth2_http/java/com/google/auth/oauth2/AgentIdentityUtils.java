@@ -50,8 +50,11 @@ import java.security.cert.X509Certificate;
 import java.util.Collections;
 import java.util.Map;
 import java.util.logging.Level;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Utility class for Agent Identity runtime certificate discovery and token binding. */
+@NullMarked
 final class AgentIdentityUtils {
 
   private static final LoggerProvider LOGGER_PROVIDER =
@@ -173,21 +176,23 @@ final class AgentIdentityUtils {
 
   /** Holds the resolved filesystem paths for the certificate and private key. */
   private static final class ResolvedCertAndKeyPaths {
-    private final String certPath;
-    private final String keyPath;
+    private final @Nullable String certPath;
+    private final @Nullable String keyPath;
     private final boolean hasWorkloadConfig;
-    private final FileMetadata configMetadata;
+    private final @Nullable FileMetadata configMetadata;
 
     ResolvedCertAndKeyPaths(
-        final String certPath, final String keyPath, final boolean hasWorkloadConfig) {
+        final @Nullable String certPath,
+        final @Nullable String keyPath,
+        final boolean hasWorkloadConfig) {
       this(certPath, keyPath, hasWorkloadConfig, null);
     }
 
     ResolvedCertAndKeyPaths(
-        final String certPath,
-        final String keyPath,
+        final @Nullable String certPath,
+        final @Nullable String keyPath,
         final boolean hasWorkloadConfig,
-        final FileMetadata configMetadata) {
+        final @Nullable FileMetadata configMetadata) {
       this.certPath = certPath;
       this.keyPath = keyPath;
       this.hasWorkloadConfig = hasWorkloadConfig;
@@ -195,12 +200,12 @@ final class AgentIdentityUtils {
     }
 
     /** Returns the path to the certificate or bundle file. */
-    String getCertPath() {
+    @Nullable String getCertPath() {
       return certPath;
     }
 
     /** Returns the path to the private key file, or bundle path if combined. */
-    String getKeyPath() {
+    @Nullable String getKeyPath() {
       return keyPath;
     }
 
@@ -210,7 +215,7 @@ final class AgentIdentityUtils {
     }
 
     /** Returns the filesystem metadata of the config file when it was parsed, or null. */
-    FileMetadata getConfigMetadata() {
+    @Nullable FileMetadata getConfigMetadata() {
       return configMetadata;
     }
   }
@@ -231,7 +236,7 @@ final class AgentIdentityUtils {
     return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
   }
 
-  private static String getTrimmedEnv(final String name) {
+  private static @Nullable String getTrimmedEnv(final String name) {
     String val = environmentProvider.getEnv(name);
     return val != null ? val.trim() : null;
   }
@@ -241,7 +246,7 @@ final class AgentIdentityUtils {
    * #environmentProvider}. Queried via {@code environmentProvider} rather than cached in a {@code
    * static final} field so test overrides via {@link #setEnvironmentProvider} take effect.
    */
-  private static String getUseClientCertificateEnv() {
+  private static @Nullable String getUseClientCertificateEnv() {
     return getTrimmedEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE);
   }
 
@@ -263,7 +268,7 @@ final class AgentIdentityUtils {
   }
 
   /** Checks whether the given path resides within the well-known certificate directory. */
-  private static boolean isPathInWellKnownDir(final String pathStr) {
+  private static boolean isPathInWellKnownDir(final @Nullable String pathStr) {
     if (Strings.isNullOrEmpty(pathStr)) {
       return false;
     }
@@ -284,7 +289,10 @@ final class AgentIdentityUtils {
    * variable. If not set, it falls back to well-known default locations.
    *
    * <p>To handle transient race conditions during certificate rotation on disk, this method employs
-   * a retry mechanism with backoff when reading the configuration and certificate files.
+   * a retry mechanism with backoff when reading the configuration and certificate files. Note that
+   * callers such as {@link ComputeEngineCredentials#refreshAccessToken()} invoke this method via
+   * {@link #getBoundTokenPayload()} under {@link OAuth2Credentials}'s token refresh coalescing,
+   * which already serializes concurrent token refreshes to mitigate thundering herd contention.
    *
    * @return A {@link CertInfo} object containing the parsed {@link X509Certificate} and its raw PEM
    *     chain content, or {@code null} if the agent identity features are disabled, opted out, or
@@ -292,7 +300,7 @@ final class AgentIdentityUtils {
    * @throws IOException If an I/O error occurs while reading the files, or if the key-pair
    *     verification fails after retries.
    */
-  static CertInfo getAgentIdentityCertInfo() throws IOException {
+  static @Nullable CertInfo getAgentIdentityCertInfo() throws IOException {
     if (!isTokenBindingEnabled()) {
       return null;
     }
@@ -337,7 +345,8 @@ final class AgentIdentityUtils {
    * locations.
    */
   private static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(
-      final String certConfigPath, final CachedAgentIdentityInfo cached) throws IOException {
+      final @Nullable String certConfigPath, final @Nullable CachedAgentIdentityInfo cached)
+      throws IOException {
     if (!Strings.isNullOrEmpty(certConfigPath)) {
       // Read cert and key paths from config file. We use retry with backoff to handle
       // startup delivery (when in well-known directory) and transient rotation race conditions.
@@ -366,17 +375,17 @@ final class AgentIdentityUtils {
    * @throws IOException If the files cannot be read or parsed, or if key-pair verification fails
    *     after retries.
    */
-  static CertInfo loadAndVerifyCredentials(final String certPath, final String keyPath)
-      throws IOException {
+  static @Nullable CertInfo loadAndVerifyCredentials(
+      final @Nullable String certPath, final @Nullable String keyPath) throws IOException {
     return loadAndVerifyCredentials(
         certPath, keyPath, null, AgentIdentityCacheUtils.getCachedAgentIdentityInfo());
   }
 
-  private static CertInfo loadAndVerifyCredentials(
-      final String certPath,
-      final String keyPath,
-      final FileMetadata configMetaBefore,
-      final CachedAgentIdentityInfo initialCached)
+  private static @Nullable CertInfo loadAndVerifyCredentials(
+      final @Nullable String certPath,
+      final @Nullable String keyPath,
+      final @Nullable FileMetadata configMetaBefore,
+      final @Nullable CachedAgentIdentityInfo initialCached)
       throws IOException {
     if (Strings.isNullOrEmpty(certPath)) {
       return null;
@@ -516,7 +525,8 @@ final class AgentIdentityUtils {
    * rotation race conditions.
    */
   private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(
-      final String certConfigPath, final CachedAgentIdentityInfo initialCached) throws IOException {
+      final String certConfigPath, final @Nullable CachedAgentIdentityInfo initialCached)
+      throws IOException {
     if (isMtlsExplicitlyDisabled()) {
       try {
         if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
@@ -569,8 +579,9 @@ final class AgentIdentityUtils {
         throw new IOException(
             "Permission denied reading certificate config file: " + failedFile, e);
       } catch (IncompleteWorkloadConfigException e) {
-        // Incomplete workload config (missing cert_path or key_path) will never become ready;
-        // fail fast without polling.
+        // Incomplete workload config (missing cert_path or key_path) will not become ready via
+        // startup polling; break out of the polling loop immediately so initial startup throws
+        // without waiting 30s (or falls back to a previously cached config in steady state).
         lastParseException = e;
         break;
       } catch (IOException e) {
@@ -640,7 +651,7 @@ final class AgentIdentityUtils {
 
   /** Searches for certificates at well-known locations with retry logic. */
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
-      final CachedAgentIdentityInfo initialCached) throws IOException {
+      final @Nullable CachedAgentIdentityInfo initialCached) throws IOException {
     if (!isMtlsExplicitlyEnabled()) {
       // Without a config file (configExists == false), mTLS is only enabled when
       // GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly "true".
@@ -777,7 +788,7 @@ final class AgentIdentityUtils {
   }
 
   /** Retrieves the bound token payload (certificate chain) if applicable. */
-  static String getBoundTokenPayload() throws IOException {
+  static @Nullable String getBoundTokenPayload() throws IOException {
     CertInfo info = getAgentIdentityCertInfo();
     return info != null ? info.getCertContent() : null;
   }

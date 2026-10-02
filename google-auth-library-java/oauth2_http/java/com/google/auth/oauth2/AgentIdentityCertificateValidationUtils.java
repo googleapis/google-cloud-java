@@ -53,11 +53,14 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utility class for parsing, validating, and verifying X.509 certificates, SPIFFE IDs, and PKCS#8
  * private keys for Agent Identity token binding.
  */
+@NullMarked
 final class AgentIdentityCertificateValidationUtils {
 
   private static final LoggerProvider LOGGER_PROVIDER =
@@ -85,7 +88,7 @@ final class AgentIdentityCertificateValidationUtils {
   static final class UnsupportedKeyAlgorithmException extends IOException {
     private static final long serialVersionUID = 1L;
 
-    UnsupportedKeyAlgorithmException(final String algorithm) {
+    UnsupportedKeyAlgorithmException(final @Nullable String algorithm) {
       super("Unsupported key algorithm: " + algorithm);
     }
   }
@@ -136,7 +139,7 @@ final class AgentIdentityCertificateValidationUtils {
   }
 
   /** Reads the private key from the specified path using PKCS8 format. */
-  static PrivateKey readPrivateKey(final String keyPath, final String algorithm)
+  static PrivateKey readPrivateKey(final String keyPath, final @Nullable String algorithm)
       throws IOException {
     String keyPem = new String(Files.readAllBytes(Paths.get(keyPath)), StandardCharsets.UTF_8);
     OAuth2Utils.Pkcs8Algorithm pkcs8Alg;

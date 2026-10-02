@@ -30,6 +30,7 @@
  */
 package com.google.auth.oauth2;
 
+import com.google.auth.oauth2.AgentIdentityUtils.CertInfo;
 import com.google.common.base.Strings;
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
@@ -39,17 +40,20 @@ import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utility class for in-memory caching and filesystem metadata validation of Agent Identity
  * certificates and configuration files.
  */
+@NullMarked
 final class AgentIdentityCacheUtils {
 
   // In-memory cache of verified Agent Identity info to avoid redundant disk reads, X.509/PKCS#8
   // parsing, and cryptographic signature verification on every token refresh when files are
   // unchanged.
-  private static volatile CachedAgentIdentityInfo cachedAgentIdentityInfo;
+  private static volatile @Nullable CachedAgentIdentityInfo cachedAgentIdentityInfo;
 
   private AgentIdentityCacheUtils() {}
 
@@ -62,10 +66,13 @@ final class AgentIdentityCacheUtils {
     private final String path;
     private final FileTime lastModifiedTime;
     private final long size;
-    private final Object fileKey;
+    private final @Nullable Object fileKey;
 
     private FileMetadata(
-        final String path, final FileTime lastModifiedTime, final long size, final Object fileKey) {
+        final String path,
+        final FileTime lastModifiedTime,
+        final long size,
+        final @Nullable Object fileKey) {
       this.path = path;
       this.lastModifiedTime = lastModifiedTime;
       this.size = size;
@@ -78,7 +85,7 @@ final class AgentIdentityCacheUtils {
     }
 
     /** Reads the current filesystem attributes for the given file path. */
-    static FileMetadata of(final String pathStr) throws IOException {
+    static @Nullable FileMetadata of(final @Nullable String pathStr) throws IOException {
       if (Strings.isNullOrEmpty(pathStr)) {
         return null;
       }
@@ -88,7 +95,7 @@ final class AgentIdentityCacheUtils {
     }
 
     /** Returns true if the given metadata matches this file's path, mtime, size, and file key. */
-    boolean matches(final FileMetadata other) {
+    boolean matches(final @Nullable FileMetadata other) {
       if (other == null) {
         return false;
       }
@@ -115,7 +122,7 @@ final class AgentIdentityCacheUtils {
      * Returns {@code true} if {@code expectedPath} equals this snapshot's path and the file on disk
      * is unchanged since this snapshot was captured.
      */
-    boolean isUnchangedAtPath(final String expectedPath) {
+    boolean isUnchangedAtPath(final @Nullable String expectedPath) {
       return Objects.equals(this.path, expectedPath) && isUnchangedOnDisk();
     }
   }
@@ -131,20 +138,20 @@ final class AgentIdentityCacheUtils {
      * GOOGLE_API_CERTIFICATE_CONFIG}) when it was parsed, or {@code null} if the certificate was
      * discovered from the well-known directory.
      */
-    final FileMetadata configMetadata;
+    final @Nullable FileMetadata configMetadata;
 
     /**
      * Filesystem metadata of the X.509 certificate or combined credential bundle file when it was
      * read.
      */
-    final FileMetadata certMetadata;
+    final @Nullable FileMetadata certMetadata;
 
     /**
      * Filesystem metadata of the private key or combined credential bundle file when it was read,
      * or {@code null} when {@link #shouldRequestBoundToken} is {@code false} (for non-agent
      * certificates where the private key is not read).
      */
-    final FileMetadata keyMetadata;
+    final @Nullable FileMetadata keyMetadata;
 
     /**
      * Whether the parsed certificate's Subject Alternative Names matched an allowed Agent Identity
@@ -157,7 +164,7 @@ final class AgentIdentityCacheUtils {
      * certificate chain) when {@link #shouldRequestBoundToken} is {@code true}, or {@code null}
      * when {@link #shouldRequestBoundToken} is {@code false}.
      */
-    final AgentIdentityUtils.CertInfo certInfo;
+    final @Nullable CertInfo certInfo;
 
     /**
      * Constructs a cached snapshot of Agent Identity evaluation state and file metadata.
@@ -173,11 +180,11 @@ final class AgentIdentityCacheUtils {
      *     shouldRequestBoundToken} is {@code true}, or {@code null} otherwise
      */
     CachedAgentIdentityInfo(
-        final FileMetadata configMetadata,
-        final FileMetadata certMetadata,
-        final FileMetadata keyMetadata,
+        final @Nullable FileMetadata configMetadata,
+        final @Nullable FileMetadata certMetadata,
+        final @Nullable FileMetadata keyMetadata,
         final boolean shouldRequestBoundToken,
-        final AgentIdentityUtils.CertInfo certInfo) {
+        final @Nullable CertInfo certInfo) {
       this.configMetadata = configMetadata;
       this.certMetadata = certMetadata;
       this.keyMetadata = keyMetadata;
@@ -187,7 +194,7 @@ final class AgentIdentityCacheUtils {
   }
 
   /** Returns the current in-memory cached Agent Identity info, or {@code null} if none. */
-  static CachedAgentIdentityInfo getCachedAgentIdentityInfo() {
+  static @Nullable CachedAgentIdentityInfo getCachedAgentIdentityInfo() {
     return cachedAgentIdentityInfo;
   }
 
@@ -201,7 +208,7 @@ final class AgentIdentityCacheUtils {
    * file metadata still match the current files on disk.
    */
   static boolean isCachedInfoValid(
-      final CachedAgentIdentityInfo cached, final String certConfigPath) {
+      final @Nullable CachedAgentIdentityInfo cached, final @Nullable String certConfigPath) {
     if (cached == null || cached.certMetadata == null) {
       return false;
     }
@@ -254,10 +261,10 @@ final class AgentIdentityCacheUtils {
    * </ol>
    */
   static boolean isPostResolutionCacheHit(
-      final CachedAgentIdentityInfo cached,
-      final String certPath,
-      final String keyPath,
-      final FileMetadata configMetaBefore) {
+      final @Nullable CachedAgentIdentityInfo cached,
+      final @Nullable String certPath,
+      final @Nullable String keyPath,
+      final @Nullable FileMetadata configMetaBefore) {
     if (cached == null || cached.certMetadata == null) {
       return false;
     }
@@ -285,8 +292,8 @@ final class AgentIdentityCacheUtils {
    * caller still retains the last-known-good bound certificate snapshot, while preferring a fresher
    * bound certificate if another thread completed rotation in the meantime.
    */
-  static CachedAgentIdentityInfo getLatestOrInitialCache(
-      final CachedAgentIdentityInfo initialCached) {
+  static @Nullable CachedAgentIdentityInfo getLatestOrInitialCache(
+      final @Nullable CachedAgentIdentityInfo initialCached) {
     CachedAgentIdentityInfo latest = cachedAgentIdentityInfo;
     return (latest != null && latest.shouldRequestBoundToken && latest.certInfo != null)
         ? latest
@@ -301,11 +308,11 @@ final class AgentIdentityCacheUtils {
    * re-resolves paths from the new config.
    */
   static boolean tryUpdateCache(
-      final FileMetadata configMetaBefore,
-      final FileMetadata certMetaBefore,
-      final FileMetadata keyMetaBefore,
+      final @Nullable FileMetadata configMetaBefore,
+      final @Nullable FileMetadata certMetaBefore,
+      final @Nullable FileMetadata keyMetaBefore,
       final boolean shouldRequestBoundToken,
-      final AgentIdentityUtils.CertInfo certInfo) {
+      final @Nullable CertInfo certInfo) {
     if (certMetaBefore == null || !certMetaBefore.isUnchangedOnDisk()) {
       return false;
     }
