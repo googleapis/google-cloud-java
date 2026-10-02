@@ -66,6 +66,11 @@ public abstract class ApiTracerContext {
           public void setAttemptSpan(@Nullable Span span) {
             // No-op for empty sentinel
           }
+
+          @Override
+          public boolean compareAndSetAttemptSpan(@Nullable Span expect, @Nullable Span update) {
+            return false;
+          }
         };
 
     private final AtomicReference<Span> attemptSpan = new AtomicReference<>();
@@ -76,6 +81,10 @@ public abstract class ApiTracerContext {
 
     public void setAttemptSpan(@Nullable Span span) {
       attemptSpan.set(span);
+    }
+
+    public boolean compareAndSetAttemptSpan(@Nullable Span expect, @Nullable Span update) {
+      return attemptSpan.compareAndSet(expect, update);
     }
   }
 
@@ -344,9 +353,7 @@ public abstract class ApiTracerContext {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     builder.setSharedContext(
-        other.sharedContext() != SharedContext.EMPTY
-            ? other.sharedContext()
-            : this.sharedContext());
+        this.sharedContext() != SharedContext.EMPTY ? this.sharedContext() : other.sharedContext());
     return builder.build();
   }
 

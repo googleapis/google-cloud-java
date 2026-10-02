@@ -177,6 +177,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
   }
 
+  private void clearSharedAttemptSpan(@Nullable Span expectedSpan) {
+    if (apiTracerContext != null && expectedSpan != null) {
+      apiTracerContext.sharedContext().compareAndSetAttemptSpan(expectedSpan, null);
+    }
+  }
+
   @Override
   public void responseHeadersReceived(java.util.Map<String, Object> headers) {
     if (attemptSpan == null) {
@@ -262,9 +268,10 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       return;
     }
 
+    Span spanToClear = attemptSpan;
     attemptSpan.end();
     attemptSpan = null;
-    clearSharedAttemptSpan();
+    clearSharedAttemptSpan(spanToClear);
   }
 
   @Override
