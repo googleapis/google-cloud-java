@@ -39,6 +39,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.function.Supplier;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -53,6 +54,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private @Nullable Span attemptSpan;
+  private @Nullable Supplier<ApiTracerContext.Scope> attemptScopeProvider;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -146,15 +148,14 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
-    if (apiTracerContext != null) {
+    if (apiTracerContext != null && apiTracerContext.sharedContext() != null) {
       Span span = this.attemptSpan;
-      apiTracerContext
-          .sharedContext()
-          .setAttemptScopeProvider(
-              () -> {
-                io.opentelemetry.context.Scope otelScope = span.makeCurrent();
-                return otelScope::close;
-              });
+      this.attemptScopeProvider =
+          () -> {
+            io.opentelemetry.context.Scope otelScope = span.makeCurrent();
+            return otelScope::close;
+          };
+      apiTracerContext.sharedContext().setAttemptScopeProvider(this.attemptScopeProvider);
     }
   }
 
@@ -164,8 +165,13 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void clearSharedAttemptScope() {
-    if (apiTracerContext != null) {
-      apiTracerContext.sharedContext().setAttemptScopeProvider(null);
+    if (apiTracerContext != null
+        && apiTracerContext.sharedContext() != null
+        && this.attemptScopeProvider != null) {
+      apiTracerContext
+          .sharedContext()
+          .compareAndSetAttemptScopeProvider(this.attemptScopeProvider, null);
+      this.attemptScopeProvider = null;
     }
   }
 
