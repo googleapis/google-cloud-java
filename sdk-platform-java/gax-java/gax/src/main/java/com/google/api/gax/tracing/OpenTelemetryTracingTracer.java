@@ -156,15 +156,6 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(null);
   }
 
-  @Override
-  public void operationSucceeded() {}
-
-  @Override
-  public void operationCancelled() {}
-
-  @Override
-  public void operationFailed(Throwable error) {}
-
   private void clearSharedAttemptSpan(@Nullable Span expectedSpan) {
     if (apiTracerContext != null && expectedSpan != null) {
       apiTracerContext.sharedContext().compareAndSetAttemptSpan(expectedSpan, null);

@@ -355,8 +355,9 @@ public abstract class ApiTracerContext {
     SharedContext shared;
     if (this.sharedContext() != SharedContext.EMPTY) {
       shared = this.sharedContext();
-      if (shared.getAttemptSpan() == null && other.sharedContext().getAttemptSpan() != null) {
-        shared.setAttemptSpan(other.sharedContext().getAttemptSpan());
+      Span otherSpan = other.sharedContext().getAttemptSpan();
+      if (otherSpan != null) {
+        shared.compareAndSetAttemptSpan(null, otherSpan);
       }
     } else {
       shared = other.sharedContext();
