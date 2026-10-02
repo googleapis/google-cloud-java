@@ -597,5 +597,26 @@ class ApiTracerContextTest {
             .build();
     ApiTracerContext mergedSame = context2.merge(context3);
     assertThat(mergedSame.sharedContext()).isSameInstanceAs(shared);
+
+    // When both contexts have distinct SharedContext and neither has an active attempt span,
+    // merge prefers 'this' context over 'other'
+    ApiTracerContext inactiveContext2 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(new ApiTracerContext.SharedContext())
+            .build();
+    ApiTracerContext mergedInactive = inactiveContext.merge(inactiveContext2);
+    assertThat(mergedInactive.sharedContext()).isSameInstanceAs(inactiveShared);
+
+    // toBuilder on an empty context creates a fresh non-empty SharedContext
+    ApiTracerContext builtFromEmpty = ApiTracerContext.empty().toBuilder().build();
+    assertThat(builtFromEmpty.sharedContext())
+        .isNotSameInstanceAs(ApiTracerContext.SharedContext.EMPTY);
+    assertThat(builtFromEmpty.sharedContext().getAttemptSpan()).isNull();
+
+    // toBuilder on an initialized context preserves the shared context reference for callable
+    // wrapping
+    ApiTracerContext copied = context2.toBuilder().build();
+    assertThat(copied.sharedContext()).isSameInstanceAs(shared);
   }
 }
