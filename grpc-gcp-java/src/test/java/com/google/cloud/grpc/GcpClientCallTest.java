@@ -22,6 +22,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -66,6 +67,9 @@ public final class GcpClientCallTest {
           .setRequestMarshaller(new FakeMarshaller<>())
           .setResponseMarshaller(new FakeMarshaller<>())
           .build();
+
+  private static final MethodDescriptor<String, String> STREAMING_METHOD_DESCRIPTOR =
+      METHOD_DESCRIPTOR.toBuilder().setType(MethodDescriptor.MethodType.SERVER_STREAMING).build();
 
   @Mock private ManagedChannel delegateChannel;
   @Mock private ClientCall<String, String> delegateCall;
@@ -168,7 +172,7 @@ public final class GcpClientCallTest {
 
   @SuppressWarnings("unchecked")
   @Test
-  public void simpleCallCountsExactlyOnceForWholeLifetime() {
+  public void unaryCallCountsExactlyOnceForWholeLifetime() {
     GcpClientCall.SimpleGcpClientCall<String, String> call =
         new GcpClientCall.SimpleGcpClientCall<>(
             gcpChannel, channelRef, METHOD_DESCRIPTOR, CallOptions.DEFAULT);
@@ -183,6 +187,29 @@ public final class GcpClientCallTest {
     verify(delegateCall).start(listenerCaptor.capture(), any(Metadata.class));
     listenerCaptor.getValue().onClose(Status.OK, new Metadata());
     call.cancel("late cancel", null);
+
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void streamingCallCountsOnceUntilTerminalClose() {
+    when(delegateChannel.newCall(eq(STREAMING_METHOD_DESCRIPTOR), any(CallOptions.class)))
+        .thenReturn(delegateCall);
+    GcpClientCall.SimpleGcpClientCall<String, String> call =
+        new GcpClientCall.SimpleGcpClientCall<>(
+            gcpChannel, channelRef, STREAMING_METHOD_DESCRIPTOR, CallOptions.DEFAULT);
+
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+    call.sendMessage("request");
+    call.request(10);
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(1);
+
+    ArgumentCaptor<ClientCall.Listener<String>> listenerCaptor =
+        (ArgumentCaptor<ClientCall.Listener<String>>)
+            (ArgumentCaptor<?>) ArgumentCaptor.forClass(ClientCall.Listener.class);
+    verify(delegateCall).start(listenerCaptor.capture(), any(Metadata.class));
+    listenerCaptor.getValue().onClose(Status.OK, new Metadata());
 
     assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
   }
@@ -203,7 +230,7 @@ public final class GcpClientCallTest {
 
   @SuppressWarnings("unchecked")
   @Test
-  public void affinityCallCountsExactlyOnceAfterSelection() {
+  public void affinityCallCancelledBeforeFirstMessageDoesNotLeakOrDoubleDecrement() {
     gcpChannel.channelRefs.add(channelRef);
     GcpClientCall<String, String> call =
         new GcpClientCall<>(
@@ -215,17 +242,67 @@ public final class GcpClientCallTest {
                 .setAffinityKey("name")
                 .build());
     call.start(new ClientCall.Listener<String>() {}, new Metadata());
-    call.sendMessage("request");
+    call.cancel("before message", null);
+    call.halfClose();
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
 
-    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(1);
+    call.sendMessage("request");
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
     ArgumentCaptor<ClientCall.Listener<String>> listenerCaptor =
         (ArgumentCaptor<ClientCall.Listener<String>>)
             (ArgumentCaptor<?>) ArgumentCaptor.forClass(ClientCall.Listener.class);
     verify(delegateCall).start(listenerCaptor.capture(), any(Metadata.class));
-    listenerCaptor.getValue().onClose(Status.OK, new Metadata());
-    call.cancel("late cancel", null);
+    verify(delegateCall).cancel("before message", null);
+    verify(delegateCall, never()).halfClose();
+    verify(delegateCall, never()).sendMessage(any());
+    listenerCaptor.getValue().onClose(Status.CANCELLED, new Metadata());
 
     assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void affinityQueuedCallFailureClearsQueueAndReleasesCountOnce() {
+    gcpChannel.channelRefs.add(channelRef);
+    IllegalStateException failure = new IllegalStateException("queued start failed");
+    doThrow(failure).when(delegateCall).start(any(), any(Metadata.class));
+    GcpClientCall<String, String> call =
+        new GcpClientCall<>(
+            gcpChannel,
+            METHOD_DESCRIPTOR,
+            CallOptions.DEFAULT,
+            AffinityConfig.newBuilder().setCommand(AffinityConfig.Command.BOUND).build());
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+    call.request(1);
+    assertThat(call.queuedCallCountForTest()).isEqualTo(2);
+
+    IllegalStateException thrown =
+        assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
+
+    assertThat(thrown).isSameInstanceAs(failure);
+    assertThat(call.queuedCallCountForTest()).isEqualTo(0);
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+    call.sendMessage("ignored after failure");
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+    call.cancel("late cancel", null);
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void affinityCallPropagatesSelectedChannelIdInCallOptions() {
+    gcpChannel.channelRefs.add(channelRef);
+    GcpClientCall<String, String> call =
+        new GcpClientCall<>(
+            gcpChannel,
+            METHOD_DESCRIPTOR,
+            CallOptions.DEFAULT,
+            AffinityConfig.newBuilder().setCommand(AffinityConfig.Command.BOUND).build());
+
+    call.sendMessage("request");
+
+    ArgumentCaptor<CallOptions> optionsCaptor = ArgumentCaptor.forClass(CallOptions.class);
+    verify(delegateChannel).newCall(eq(METHOD_DESCRIPTOR), optionsCaptor.capture());
+    assertThat(optionsCaptor.getValue().getOption(GcpManagedChannel.CHANNEL_ID_KEY))
+        .isEqualTo(channelRef.getId());
   }
 
   @Test
@@ -262,6 +339,39 @@ public final class GcpClientCallTest {
     assertThrows(
         IllegalStateException.class,
         () -> call.start(new ClientCall.Listener<String>() {}, new Metadata()));
+
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void gcpClientCall_exceptionInSendMessage_doesNotLeakActiveStreamCount() {
+    gcpChannel.channelRefs.add(channelRef);
+    doThrow(new IllegalStateException("send failed")).when(delegateCall).sendMessage("request");
+    GcpClientCall<String, String> call =
+        new GcpClientCall<>(
+            gcpChannel,
+            METHOD_DESCRIPTOR,
+            CallOptions.DEFAULT,
+            AffinityConfig.newBuilder()
+                .setCommand(AffinityConfig.Command.BOUND)
+                .setAffinityKey("name")
+                .build());
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+
+    assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
+
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void simpleGcpClientCall_exceptionInSendMessage_doesNotLeakActiveStreamCount() {
+    doThrow(new IllegalStateException("send failed")).when(delegateCall).sendMessage("request");
+    GcpClientCall.SimpleGcpClientCall<String, String> call =
+        new GcpClientCall.SimpleGcpClientCall<>(
+            gcpChannel, channelRef, METHOD_DESCRIPTOR, CallOptions.DEFAULT);
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+
+    assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
 
     assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
   }
