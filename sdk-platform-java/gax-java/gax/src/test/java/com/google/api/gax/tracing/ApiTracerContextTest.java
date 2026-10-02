@@ -607,10 +607,20 @@ class ApiTracerContextTest {
         .isNotSameInstanceAs(ApiTracerContext.SharedContext.EMPTY);
     assertThat(builtFromEmpty.sharedContext().hasAttemptScope()).isFalse();
 
-    // toBuilder instantiates a fresh SharedContext to avoid race conditions across derived
-    // operations or attempts
+    // toBuilder on an initialized context preserves the shared context reference for callable
+    // wrapping
     ApiTracerContext copied = context2.toBuilder().build();
-    assertThat(copied.sharedContext()).isNotSameInstanceAs(shared);
-    assertThat(copied.sharedContext().hasAttemptScope()).isFalse();
+    assertThat(copied.sharedContext()).isSameInstanceAs(shared);
+
+    // withNewSharedContext instantiates a fresh SharedContext to avoid race conditions across
+    // distinct operations or attempts
+    ApiTracerContext freshContext = context2.withNewSharedContext();
+    assertThat(freshContext.sharedContext()).isNotSameInstanceAs(shared);
+    assertThat(freshContext.sharedContext().hasAttemptScope()).isFalse();
+
+    // SharedContext relies on reference equality, so distinct SharedContext instances are not equal
+    assertThat(new ApiTracerContext.SharedContext())
+        .isNotEqualTo(new ApiTracerContext.SharedContext());
+    assertThat(context2).isNotEqualTo(freshContext);
   }
 }
