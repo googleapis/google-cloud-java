@@ -24,6 +24,7 @@ fi
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 cd "${scriptDir}/../.." # git repo root
 source "$scriptDir/common.sh"
+setup_maven_mirror
 
 # Publish this repo's modules to local maven to make them available for downstream libraries
 mvn install --projects '!gapic-generator-java' \
