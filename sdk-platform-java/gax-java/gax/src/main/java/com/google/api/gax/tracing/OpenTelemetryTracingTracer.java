@@ -61,10 +61,11 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    */
   @Override
   public Scope inScope() {
-    if (attemptSpan == null) {
+    Span localSpan = attemptSpan;
+    if (localSpan == null) {
       return () -> {};
     }
-    io.opentelemetry.context.Scope otelScope = attemptSpan.makeCurrent();
+    io.opentelemetry.context.Scope otelScope = localSpan.makeCurrent();
     return otelScope::close;
   }
 

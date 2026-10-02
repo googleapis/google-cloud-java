@@ -45,19 +45,15 @@ class TraceFinisher<T> implements ApiFutureCallback<T> {
 
   @Override
   public void onFailure(Throwable throwable) {
-    try (ApiTracer.Scope ignored = tracer.inScope()) {
-      if (throwable instanceof CancellationException) {
-        tracer.operationCancelled();
-      } else {
-        tracer.operationFailed(throwable);
-      }
+    if (throwable instanceof CancellationException) {
+      tracer.operationCancelled();
+    } else {
+      tracer.operationFailed(throwable);
     }
   }
 
   @Override
   public void onSuccess(T responseT) {
-    try (ApiTracer.Scope ignored = tracer.inScope()) {
-      tracer.operationSucceeded();
-    }
+    tracer.operationSucceeded();
   }
 }
