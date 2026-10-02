@@ -38,6 +38,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * Implements backoff and retry semantics for Firestore transactions.
@@ -57,6 +58,7 @@ final class ServerSideTransactionRunner<T> {
   private final Executor userCallbackExecutor;
   private final ExponentialRetryAlgorithm backoffAlgorithm;
   private final TransactionOptions transactionOptions;
+  @Nullable private final FirestoreExecutionOptions executionOptions;
   private TimedAttemptSettings nextBackoffAttempt;
   private ServerSideTransaction transaction;
   private int attemptsRemaining;
@@ -74,7 +76,16 @@ final class ServerSideTransactionRunner<T> {
       FirestoreImpl firestore,
       Transaction.AsyncFunction<T> userCallback,
       TransactionOptions transactionOptions) {
+    this(firestore, userCallback, transactionOptions, null);
+  }
+
+  ServerSideTransactionRunner(
+      FirestoreImpl firestore,
+      Transaction.AsyncFunction<T> userCallback,
+      TransactionOptions transactionOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     this.transactionOptions = transactionOptions;
+    this.executionOptions = executionOptions;
     this.firestore = firestore;
     this.firestoreExecutor = firestore.getClient().getExecutor();
     this.userCallback = userCallback;
@@ -142,7 +153,8 @@ final class ServerSideTransactionRunner<T> {
       ServerSideTransaction previousTransaction = this.transaction;
       this.transaction = null;
       ApiFuture<ServerSideTransaction> result =
-          ServerSideTransaction.begin(firestore, transactionOptions, previousTransaction);
+          ServerSideTransaction.begin(
+              firestore, transactionOptions, previousTransaction, executionOptions);
       result =
           ApiFutures.transform(
               result,
@@ -159,7 +171,9 @@ final class ServerSideTransactionRunner<T> {
   }
 
   private ApiFuture<Void> maybeRollback() {
-    return hasTransaction() ? transaction.rollback() : ApiFutures.immediateFuture(null);
+    return hasTransaction()
+        ? transaction.rollback(executionOptions)
+        : ApiFutures.immediateFuture(null);
   }
 
   private boolean hasTransaction() {
@@ -234,7 +248,7 @@ final class ServerSideTransactionRunner<T> {
    */
   private ApiFuture<T> userFunctionCallback(T userFunctionResult) {
     return ApiFutures.transform(
-        transaction.commit(),
+        transaction.commit(executionOptions),
         // The callback that is invoked after the Commit RPC returns. It returns the user result.
         input -> userFunctionResult,
         MoreExecutors.directExecutor());
@@ -299,7 +313,7 @@ final class ServerSideTransactionRunner<T> {
       // We use `addListener()` since we want to return the original exception regardless of
       // whether rollback() succeeds.
       transaction
-          .rollback()
+          .rollback(executionOptions)
           .addListener(
               () -> {
                 runTransactionSpan.end(throwable);

@@ -32,6 +32,7 @@ import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.NOT_E
 import static com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.NOT_IN;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiStreamObserver;
@@ -1533,6 +1534,20 @@ public class Query extends StreamableQuery<QuerySnapshot> {
    * @param responseObserver The observer to be notified when results arrive.
    */
   public void stream(@Nonnull final ApiStreamObserver<DocumentSnapshot> responseObserver) {
+    stream(responseObserver, null);
+  }
+
+  /**
+   * Executes the query and streams the results as a StreamObserver of DocumentSnapshots, with
+   * execution options.
+   *
+   * @param responseObserver The observer to be notified when results arrive.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  public void stream(
+      @Nonnull final ApiStreamObserver<DocumentSnapshot> responseObserver,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     Preconditions.checkState(
         !LimitType.Last.equals(Query.this.options.getLimitType()),
         "Query results for queries that include limitToLast() constraints cannot be streamed. "
@@ -1571,6 +1586,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
         /* transactionId= */ null,
         /* readTime= */ null,
         /* explainOptions= */ null,
+        executionOptions,
         /* isRetryRequestWithCursor= */ false);
   }
 
@@ -1650,7 +1666,23 @@ public class Query extends StreamableQuery<QuerySnapshot> {
    * @return the serialized RunQueryRequest
    */
   public RunQueryRequest toProto() {
-    return toRunQueryRequestBuilder(null, null, null).build();
+    return toProto(null, null, null, null);
+  }
+
+  RunQueryRequest toProto(
+      @Nullable final ByteString transactionId,
+      @Nullable final Timestamp readTime,
+      @Nullable ExplainOptions explainOptions) {
+    return toProto(transactionId, readTime, explainOptions, null);
+  }
+
+  RunQueryRequest toProto(
+      @Nullable final ByteString transactionId,
+      @Nullable final Timestamp readTime,
+      @Nullable ExplainOptions explainOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
+    return toRunQueryRequestBuilder(transactionId, readTime, explainOptions, executionOptions)
+        .build();
   }
 
   @Override
@@ -1783,7 +1815,19 @@ public class Query extends StreamableQuery<QuerySnapshot> {
   @Override
   @Nonnull
   public ApiFuture<QuerySnapshot> get() {
-    return get(null, null);
+    return get(null, null, null, null);
+  }
+
+  /**
+   * Executes the query with execution options and returns the results as QuerySnapshot.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the results of the Query.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<QuerySnapshot> get(@Nonnull FirestoreExecutionOptions executionOptions) {
+    return get(null, null, executionOptions.getExplainOptions(), executionOptions);
   }
 
   /**
@@ -1797,7 +1841,36 @@ public class Query extends StreamableQuery<QuerySnapshot> {
   @Override
   @Nonnull
   public ApiFuture<ExplainResults<QuerySnapshot>> explain(ExplainOptions options) {
-    return super.explain(options);
+    return super.explain(options, null);
+  }
+
+  /**
+   * Plans and optionally executes this query with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<QuerySnapshot>> explain(
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return super.explain(executionOptions);
+  }
+
+  /**
+   * Plans and optionally executes this query with explain options and execution options.
+   *
+   * @param options The options for explain.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<QuerySnapshot>> explain(
+      @Nonnull ExplainOptions options, @Nonnull FirestoreExecutionOptions executionOptions) {
+    return super.explain(options, executionOptions);
   }
 
   /**

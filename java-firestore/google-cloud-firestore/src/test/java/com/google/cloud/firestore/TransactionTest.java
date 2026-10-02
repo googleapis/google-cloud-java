@@ -60,13 +60,17 @@ import com.google.cloud.firestore.LocalFirestoreHelper.ResponseStubber;
 import com.google.cloud.firestore.TransactionOptions.ReadOnlyOptionsBuilder;
 import com.google.cloud.firestore.TransactionOptions.ReadWriteOptionsBuilder;
 import com.google.cloud.firestore.TransactionOptions.TransactionOptionsType;
+import com.google.cloud.firestore.models.RequestOptions;
 import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.BeginTransactionRequest;
+import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.DocumentMask;
 import com.google.firestore.v1.Write;
 import com.google.protobuf.Message;
 import io.grpc.Status;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -1024,5 +1028,35 @@ public class TransactionTest {
 
   private ApiException exception(Status.Code code, String message, boolean shouldRetry) {
     return new ApiException(new Exception(message), GrpcStatusCode.of(code), shouldRetry);
+  }
+
+  @Test
+  public void runTransactionWithExecutionOptions() throws Exception {
+    doReturn(beginResponse())
+        .doReturn(commitResponse(0, 0))
+        .when(firestoreMock)
+        .sendRequest(
+            requestCapture.capture(), ArgumentMatchers.<UnaryCallable<Message, Message>>any());
+
+    FirestoreExecutionOptions executionOptions =
+        FirestoreExecutionOptions.options()
+            .withRequestOptions(RequestOptions.newBuilder().addTag("txn-tag").build())
+            .build();
+
+    firestoreMock
+        .runTransaction(
+            transaction -> {
+              return ApiFutures.immediateFuture("result");
+            },
+            TransactionOptions.create(),
+            executionOptions)
+        .get();
+
+    BeginTransactionRequest beginRequest =
+        (BeginTransactionRequest) requestCapture.getAllValues().get(0);
+    assertEquals(Arrays.asList("txn-tag"), beginRequest.getRequestOptions().getRequestTagsList());
+
+    CommitRequest commitRequest = (CommitRequest) requestCapture.getAllValues().get(1);
+    assertEquals(Arrays.asList("txn-tag"), commitRequest.getRequestOptions().getRequestTagsList());
   }
 }

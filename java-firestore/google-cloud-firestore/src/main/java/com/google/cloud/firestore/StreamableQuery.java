@@ -35,6 +35,7 @@ import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.Document;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
@@ -68,6 +69,22 @@ public abstract class StreamableQuery<SnapshotType> {
       @Nullable final ByteString transactionId,
       @Nullable final Timestamp readTime,
       @Nullable ExplainOptions explainOptions);
+
+  RunQueryRequest.Builder toRunQueryRequestBuilder(
+      @Nullable final ByteString transactionId,
+      @Nullable final Timestamp readTime,
+      @Nullable ExplainOptions explainOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
+    RunQueryRequest.Builder builder =
+        toRunQueryRequestBuilder(transactionId, readTime, explainOptions);
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(
+            rpcContext.getFirestore().getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      builder.setRequestOptions(requestOptions);
+    }
+    return builder;
+  }
 
   abstract boolean isRetryableWithCursor();
 
@@ -105,6 +122,14 @@ public abstract class StreamableQuery<SnapshotType> {
    */
   ApiFuture<SnapshotType> get(
       @Nullable ByteString transactionId, @Nullable Timestamp requestReadTime) {
+    return get(transactionId, requestReadTime, null, null);
+  }
+
+  ApiFuture<SnapshotType> get(
+      @Nullable ByteString transactionId,
+      @Nullable Timestamp requestReadTime,
+      @Nullable ExplainOptions explainOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getFirestore()
             .getOptions()
@@ -165,7 +190,8 @@ public abstract class StreamableQuery<SnapshotType> {
           /* startTimeNanos= */ rpcContext.getClock().nanoTime(),
           transactionId,
           /* readTime= */ requestReadTime,
-          /* explainOptions= */ null,
+          explainOptions,
+          executionOptions,
           /* isRetryRequestWithCursor= */ false);
 
       span.endAtFuture(result);
@@ -187,6 +213,19 @@ public abstract class StreamableQuery<SnapshotType> {
    */
   @Nonnull
   public ApiFuture<ExplainResults<SnapshotType>> explain(ExplainOptions options) {
+    return explain(options, null);
+  }
+
+  @Nonnull
+  public ApiFuture<ExplainResults<SnapshotType>> explain(
+      FirestoreExecutionOptions executionOptions) {
+    return explain(
+        executionOptions != null ? executionOptions.getExplainOptions() : null, executionOptions);
+  }
+
+  @Nonnull
+  public ApiFuture<ExplainResults<SnapshotType>> explain(
+      @Nullable ExplainOptions options, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getFirestore()
             .getOptions()
@@ -254,12 +293,18 @@ public abstract class StreamableQuery<SnapshotType> {
             }
           };
 
+      ExplainOptions effectiveExplainOptions =
+          options != null
+              ? options
+              : (executionOptions != null ? executionOptions.getExplainOptions() : null);
+
       internalStream(
           new MonitoredStreamResponseObserver(observer, metricsContext),
           /* startTimeNanos= */ rpcContext.getClock().nanoTime(),
           /* transactionId= */ null,
           /* readTime= */ null,
-          /* explainOptions= */ options,
+          /* explainOptions= */ effectiveExplainOptions,
+          executionOptions,
           /* isRetryRequestWithCursor= */ false);
 
       span.endAtFuture(result);
@@ -311,6 +356,24 @@ public abstract class StreamableQuery<SnapshotType> {
       @Nullable final ByteString transactionId,
       @Nullable final Timestamp readTime,
       @Nullable final ExplainOptions explainOptions,
+      final boolean isRetryRequestWithCursor) {
+    internalStream(
+        streamResponseObserver,
+        startTimeNanos,
+        transactionId,
+        readTime,
+        explainOptions,
+        null,
+        isRetryRequestWithCursor);
+  }
+
+  void internalStream(
+      final MonitoredStreamResponseObserver streamResponseObserver,
+      final long startTimeNanos,
+      @Nullable final ByteString transactionId,
+      @Nullable final Timestamp readTime,
+      @Nullable final ExplainOptions explainOptions,
+      @Nullable final FirestoreExecutionOptions executionOptions,
       final boolean isRetryRequestWithCursor) {
     TraceUtil traceUtil = getFirestore().getOptions().getTraceUtil();
 
@@ -388,6 +451,7 @@ public abstract class StreamableQuery<SnapshotType> {
                       /* transactionId= */ null,
                       options.getRequireConsistency() ? cursor.getReadTime() : null,
                       explainOptions,
+                      executionOptions,
                       /* isRetryRequestWithCursor= */ true);
             } else {
               currentSpan.addEvent(
@@ -428,7 +492,7 @@ public abstract class StreamableQuery<SnapshotType> {
         };
 
     rpcContext.streamRequest(
-        toRunQueryRequestBuilder(transactionId, readTime, explainOptions).build(),
+        toRunQueryRequestBuilder(transactionId, readTime, explainOptions, executionOptions).build(),
         observer,
         rpcContext.getClient().runQueryCallable());
   }
