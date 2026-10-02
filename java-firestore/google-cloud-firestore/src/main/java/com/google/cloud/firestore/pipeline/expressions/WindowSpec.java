@@ -173,6 +173,14 @@ public final class WindowSpec {
    *
    * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
    * processed in incoming stream (fetch) order.
+   *
+   * @param preceding A positive integer (e.g. {@code 2}) includes up to that many documents before
+   *     the current document. A negative integer (e.g. {@code -1}) indicates a boundary following
+   *     the current document, enabling frames that start after the current document.
+   * @param following A positive integer (e.g. {@code 2}) includes up to that many documents after
+   *     the current document. A negative integer (e.g. {@code -1}) indicates a boundary preceding
+   *     the current document, enabling frames that end before the current document (e.g. excluding
+   *     the current document).
    */
   public WindowSpec documents(int preceding, int following) {
     return withDocumentsFrame(preceding, following);
@@ -184,6 +192,11 @@ public final class WindowSpec {
    *
    * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
    * processed in incoming stream (fetch) order.
+   *
+   * @param preceding The symbolic lower bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param following The symbolic upper bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
    */
   public WindowSpec documents(WindowBound preceding, WindowBound following) {
     return withDocumentsFrame(preceding, following);
@@ -194,6 +207,15 @@ public final class WindowSpec {
    *
    * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
    * processed in incoming stream (fetch) order.
+   *
+   * @param preceding An expression evaluating to the lower bound of the frame. A positive integer
+   *     (e.g. {@code 2}) includes up to that many documents before the current document. A negative
+   *     integer (e.g. {@code -1}) indicates a boundary following the current document, enabling
+   *     frames that start after the current document.
+   * @param following An expression evaluating to the upper bound of the frame. A positive integer
+   *     (e.g. {@code 2}) includes up to that many documents after the current document. A negative
+   *     integer (e.g. {@code -1}) indicates a boundary preceding the current document, enabling
+   *     frames that end before the current document (e.g. excluding the current document).
    */
   public WindowSpec documents(Expression preceding, Expression following) {
     return withDocumentsFrame(preceding, following);
@@ -206,6 +228,16 @@ public final class WindowSpec {
    *
    * <p>{@code sort} is optional for document frames; if no {@code sort} is specified, documents are
    * processed in incoming stream (fetch) order.
+   *
+   * @param preceding The lower bound of the frame (an integer offset, {@link WindowBound}, or
+   *     {@link Expression}). A positive integer (e.g. {@code 2}) includes up to that many documents
+   *     before the current document. A negative integer (e.g. {@code -1}) indicates a boundary
+   *     following the current document, enabling frames that start after the current document.
+   * @param following The upper bound of the frame (an integer offset, {@link WindowBound}, or
+   *     {@link Expression}). A positive integer (e.g. {@code 2}) includes up to that many documents
+   *     after the current document. A negative integer (e.g. {@code -1}) indicates a boundary
+   *     preceding the current document, enabling frames that end before the current document (e.g.
+   *     excluding the current document).
    */
   public WindowSpec documents(Object preceding, Object following) {
     return withDocumentsFrame(preceding, following);
@@ -215,6 +247,13 @@ public final class WindowSpec {
    * Specify a range-value based window frame.
    *
    * <p>A single numeric {@code sort} expression is required when using numeric range offsets.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
    */
   public WindowSpec range(int preceding, int following) {
     return withRangeFrame(preceding, following, null);
@@ -228,6 +267,14 @@ public final class WindowSpec {
    * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
    * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
    * "quarter"}, and {@code "year"}.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit The duration unit for the time-range offsets.
    */
   public WindowSpec range(int preceding, int following, String unit) {
     return withRangeFrame(preceding, following, unit);
@@ -237,6 +284,14 @@ public final class WindowSpec {
    * Specify a time-range based window frame with a time {@code unit} expression.
    *
    * <p>A single timestamp {@code sort} expression is required when using a time-range window frame.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit An expression evaluating to the duration unit for the time-range offsets.
    */
   public WindowSpec range(int preceding, int following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
@@ -249,6 +304,11 @@ public final class WindowSpec {
    * <p>One or more {@code sort} expressions are required and may be of any sortable type (including
    * strings and booleans) when both bounds are symbolic ({@link WindowBound#CURRENT} or {@link
    * WindowBound#UNBOUNDED}) and no time {@code unit} is specified.
+   *
+   * @param preceding The symbolic lower bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param following The symbolic upper bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
    */
   public WindowSpec range(WindowBound preceding, WindowBound following) {
     return withRangeFrame(preceding, following, null);
@@ -262,6 +322,12 @@ public final class WindowSpec {
    * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
    * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
    * "quarter"}, and {@code "year"}.
+   *
+   * @param preceding The symbolic lower bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param following The symbolic upper bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param unit The duration unit for the time-range frame.
    */
   public WindowSpec range(WindowBound preceding, WindowBound following, String unit) {
     return withRangeFrame(preceding, following, unit);
@@ -271,6 +337,12 @@ public final class WindowSpec {
    * Specify a time-range frame using symbolic bounds and a time {@code unit} expression.
    *
    * <p>A timestamp {@code sort} expression is required when specifying a time {@code unit}.
+   *
+   * @param preceding The symbolic lower bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param following The symbolic upper bound of the frame ({@link WindowBound#UNBOUNDED} or {@link
+   *     WindowBound#CURRENT}).
+   * @param unit An expression evaluating to the duration unit for the time-range frame.
    */
   public WindowSpec range(WindowBound preceding, WindowBound following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
@@ -282,6 +354,13 @@ public final class WindowSpec {
    * <p>Only meaningful for value-based (non-time) range frames, e.g. when sorting by a price or
    * score. The backend rejects fractional offsets for time-based range frames. A single numeric
    * {@code sort} expression is required when using numeric range offsets.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
    */
   public WindowSpec range(double preceding, double following) {
     return withRangeFrame(preceding, following, null);
@@ -293,11 +372,30 @@ public final class WindowSpec {
    * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
    * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
    * "quarter"}, and {@code "year"}.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit The duration unit for the time-range offsets.
    */
   public WindowSpec range(double preceding, double following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
+  /**
+   * Specify a time-range frame with fractional bounds and a time {@code unit} expression.
+   *
+   * @param preceding A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit An expression evaluating to the duration unit for the time-range offsets.
+   */
   public WindowSpec range(double preceding, double following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
@@ -310,6 +408,15 @@ public final class WindowSpec {
    * <p>One or more {@code sort} expressions are required when both bounds are symbolic ({@link
    * WindowBound#CURRENT} or {@link WindowBound#UNBOUNDED}); a single numeric {@code sort}
    * expression is required when either bound is a numeric offset.
+   *
+   * @param preceding The lower bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following The upper bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
    */
   public WindowSpec range(Object preceding, Object following) {
     return withRangeFrame(preceding, following, null);
@@ -323,11 +430,35 @@ public final class WindowSpec {
    * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
    * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
    * "quarter"}, and {@code "year"}.
+   *
+   * @param preceding The lower bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following The upper bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit The duration unit for the time-range offsets.
    */
   public WindowSpec range(Object preceding, Object following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
+  /**
+   * Specify a time-range frame with bounds of mixed or heterogeneous types and a time {@code unit}
+   * expression.
+   *
+   * @param preceding The lower bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset subtracts from the current document's sort value (looking
+   *     into the past). A negative offset adds to the current document's sort value (shifting the
+   *     lower boundary past the current document).
+   * @param following The upper bound of the frame (a numeric offset, {@link WindowBound}, or {@link
+   *     Expression}). A positive offset adds to the current document's sort value (looking into the
+   *     future). A negative offset subtracts from the current document's sort value (shifting the
+   *     upper boundary before the current document).
+   * @param unit An expression evaluating to the duration unit for the time-range offsets.
+   */
   public WindowSpec range(Object preceding, Object following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }
@@ -338,6 +469,15 @@ public final class WindowSpec {
    * <p>One or more {@code sort} expressions are required when both bounds are symbolic ({@link
    * WindowBound#CURRENT} or {@link WindowBound#UNBOUNDED}); a single numeric {@code sort}
    * expression is required when either bound is a numeric offset.
+   *
+   * @param preceding An expression evaluating to the lower bound of the frame. A positive offset
+   *     subtracts from the current document's sort value (looking into the past). A negative offset
+   *     adds to the current document's sort value (shifting the lower boundary past the current
+   *     document).
+   * @param following An expression evaluating to the upper bound of the frame. A positive offset
+   *     adds to the current document's sort value (looking into the future). A negative offset
+   *     subtracts from the current document's sort value (shifting the upper boundary before the
+   *     current document).
    */
   public WindowSpec range(Expression preceding, Expression following) {
     return withRangeFrame(preceding, following, null);
@@ -351,11 +491,34 @@ public final class WindowSpec {
    * <p>Supported duration units are {@code "microsecond"}, {@code "millisecond"}, {@code "second"},
    * {@code "minute"}, {@code "hour"}, {@code "day"}, {@code "week"}, {@code "month"}, {@code
    * "quarter"}, and {@code "year"}.
+   *
+   * @param preceding An expression evaluating to the lower bound of the frame. A positive offset
+   *     subtracts from the current document's sort value (looking into the past). A negative offset
+   *     adds to the current document's sort value (shifting the lower boundary past the current
+   *     document).
+   * @param following An expression evaluating to the upper bound of the frame. A positive offset
+   *     adds to the current document's sort value (looking into the future). A negative offset
+   *     subtracts from the current document's sort value (shifting the upper boundary before the
+   *     current document).
+   * @param unit The duration unit for the time-range offsets.
    */
   public WindowSpec range(Expression preceding, Expression following, String unit) {
     return withRangeFrame(preceding, following, unit);
   }
 
+  /**
+   * Specify a time-range frame using expression bounds and a time {@code unit} expression.
+   *
+   * @param preceding An expression evaluating to the lower bound of the frame. A positive offset
+   *     subtracts from the current document's sort value (looking into the past). A negative offset
+   *     adds to the current document's sort value (shifting the lower boundary past the current
+   *     document).
+   * @param following An expression evaluating to the upper bound of the frame. A positive offset
+   *     adds to the current document's sort value (looking into the future). A negative offset
+   *     subtracts from the current document's sort value (shifting the upper boundary before the
+   *     current document).
+   * @param unit An expression evaluating to the duration unit for the time-range offsets.
+   */
   public WindowSpec range(Expression preceding, Expression following, Expression unit) {
     return withRangeFrame(preceding, following, unit);
   }

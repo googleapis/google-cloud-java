@@ -6089,6 +6089,111 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testWindowFieldsComputesALookBehindAverageWithANegativeFollowingBound()
+      throws Exception {
+    // Equivalent to "documents between 2 preceding and 1 preceding": the window is
+    // [index - preceding, index + following].
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().documents(2, -1).sort(ascending("date")),
+                AggregateFunction.average("salesPrice").as("lookBehindAverage"),
+                AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "lookBehindAverage", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    // The first document has an empty window.
+    assertThat(results.get(0).getData().get("lookBehindAverage")).isNull();
+    assertThat(results.get(0).getData().get("windowCount")).isEqualTo(0L);
+
+    assertThat(results.get(1).getData().get("lookBehindAverage")).isEqualTo(12.0);
+    assertThat(results.get(1).getData().get("windowCount")).isEqualTo(1L);
+
+    assertThat(results.get(2).getData().get("lookBehindAverage")).isEqualTo(21.0);
+    assertThat(results.get(2).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(3).getData().get("lookBehindAverage")).isEqualTo(30.0);
+    assertThat(results.get(3).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(4).getData().get("lookBehindAverage")).isEqualTo(45.0);
+    assertThat(results.get(4).getData().get("windowCount")).isEqualTo(2L);
+  }
+
+  @Test
+  public void testWindowFieldsComputesARangeLookBehindAverageWithANegativeFollowingBound()
+      throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().range(WindowBound.UNBOUNDED, -1).sort(ascending("salesPrice")),
+                AggregateFunction.average("salesPrice").as("lookBehindAverage"),
+                AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "lookBehindAverage", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("lookBehindAverage")).isNull();
+    assertThat(results.get(0).getData().get("windowCount")).isEqualTo(0L);
+
+    assertThat(results.get(1).getData().get("lookBehindAverage")).isEqualTo(12.0);
+    assertThat(results.get(1).getData().get("windowCount")).isEqualTo(1L);
+
+    assertThat(results.get(2).getData().get("lookBehindAverage")).isEqualTo(12.0);
+    assertThat(results.get(2).getData().get("windowCount")).isEqualTo(1L);
+
+    assertThat(results.get(3).getData().get("lookBehindAverage")).isEqualTo(24.0);
+    assertThat(results.get(3).getData().get("windowCount")).isEqualTo(3L);
+
+    assertThat(results.get(4).getData().get("lookBehindAverage")).isEqualTo(24.0);
+    assertThat(results.get(4).getData().get("windowCount")).isEqualTo(3L);
+  }
+
+  @Test
+  public void testWindowFieldsComputesARangeLookAheadAverageWithANegativePrecedingBound()
+      throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().range(-1, WindowBound.UNBOUNDED).sort(ascending("salesPrice")),
+                AggregateFunction.average("salesPrice").as("lookAheadAverage"),
+                AggregateFunction.countAll().as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "lookAheadAverage", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    assertThat(results).hasSize(5);
+
+    assertThat(results.get(0).getData().get("lookAheadAverage")).isEqualTo(45.0);
+    assertThat(results.get(0).getData().get("windowCount")).isEqualTo(4L);
+
+    assertThat(results.get(1).getData().get("lookAheadAverage")).isEqualTo(60.0);
+    assertThat(results.get(1).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(2).getData().get("lookAheadAverage")).isEqualTo(60.0);
+    assertThat(results.get(2).getData().get("windowCount")).isEqualTo(2L);
+
+    assertThat(results.get(3).getData().get("lookAheadAverage")).isNull();
+    assertThat(results.get(3).getData().get("windowCount")).isEqualTo(0L);
+
+    assertThat(results.get(4).getData().get("lookAheadAverage")).isNull();
+    assertThat(results.get(4).getData().get("windowCount")).isEqualTo(0L);
+  }
+
+  @Test
   public void testWindowFieldsComputesAValueBasedRangeWindow() throws Exception {
     List<PipelineResult> results =
         firestore
