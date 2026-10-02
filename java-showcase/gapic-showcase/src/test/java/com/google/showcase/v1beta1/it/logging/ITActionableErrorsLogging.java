@@ -323,7 +323,8 @@ public class ITActionableErrorsLogging {
                                 response.setStatusCode(409);
                                 response.setContentType("application/json");
                                 response.setContent(
-                                    "{\"error\": {\"code\": 409, \"message\": \"Aborted failure\"}}");
+                                    "{\"error\": {\"code\": 409, \"message\": \"Aborted"
+                                        + " failure\"}}");
                                 return response;
                               }
                             };
