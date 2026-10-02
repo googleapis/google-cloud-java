@@ -63,6 +63,12 @@ public abstract class ApiTracerContext {
   /**
    * Holds mutable shared state between sibling {@link ApiTracer} instances belonging to the same
    * attempt.
+   *
+   * <p>Note: Preserving {@link SharedContext} across {@link #toBuilder()} allows sibling tracers
+   * within an attempt to share scope state, but sharing this context across concurrent attempts
+   * (e.g. hedged requests) could allow attempts to overwrite each other's active scope provider.
+   * Callers managing distinct attempts or operations should ensure a fresh {@link SharedContext} is
+   * supplied via {@link Builder#setSharedContext(SharedContext)}.
    */
   public static class SharedContext {
     static final SharedContext EMPTY =
