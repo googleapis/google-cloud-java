@@ -150,77 +150,88 @@ class BasicRetryingFuture<ResponseT> extends AbstractFuture<ResponseT>
   void handleAttempt(@Nullable Throwable throwable, @Nullable ResponseT response) {
     ApiTracer tracer = retryingContext.getTracer();
 
-    try (ApiTracer.Scope ignored = tracer.inScope()) {
-      synchronized (lock) {
-        try {
-          clearAttemptServiceData();
-          if (throwable instanceof CancellationException) {
-            // An attempt triggered cancellation.
-            // In almost all cases, the operation caller caused the attempt to trigger the
-            // cancellation by invoking cancel() on the CallbackChainRetryingFuture, which cancelled
-            // the current attempt.
-            // In a theoretical scenario, the attempt callable might've thrown the exception on its
-            // own volition. However it's currently impossible to disambiguate the 2 scenarios.
+    synchronized (lock) {
+      try {
+        clearAttemptServiceData();
+        if (throwable instanceof CancellationException) {
+          // An attempt triggered cancellation.
+          // In almost all cases, the operation caller caused the attempt to trigger the
+          // cancellation by invoking cancel() on the CallbackChainRetryingFuture, which cancelled
+          // the current attempt.
+          // In a theoretical scenario, the attempt callable might've thrown the exception on its
+          // own volition. However it's currently impossible to disambiguate the 2 scenarios.
+          try (ApiTracer.Scope ignored = tracer.inScope()) {
             tracer.attemptCancelled();
-            super.cancel(false);
-          } else if (throwable instanceof RejectedExecutionException) {
-            // external executor cannot continue retrying
+          }
+          super.cancel(false);
+        } else if (throwable instanceof RejectedExecutionException) {
+          // external executor cannot continue retrying
+          try (ApiTracer.Scope ignored = tracer.inScope()) {
             tracer.attemptPermanentFailure(throwable);
-            super.setException(throwable);
           }
-          if (isDone()) {
-            return;
-          }
+          super.setException(throwable);
+        }
+        if (isDone()) {
+          return;
+        }
 
-          TimedAttemptSettings nextAttemptSettings =
-              retryAlgorithm.createNextAttempt(
-                  retryingContext, throwable, response, attemptSettings);
-          boolean shouldRetry =
-              retryAlgorithm.shouldRetry(retryingContext, throwable, response, nextAttemptSettings);
-          if (shouldRetry) {
-            // Log retry info
-            if (LOG.isLoggable(Level.FINEST)) {
-              LOG.log(
-                  Level.FINEST,
-                  "Retrying with:\n{0}\n{1}\n{2}\n{3}",
-                  new Object[] {
-                    "enclosingMethod: "
-                        + (callable.getClass().getEnclosingMethod() != null
-                            ? callable.getClass().getEnclosingMethod().getName()
-                            : ""),
-                    "attemptCount: " + attemptSettings.getAttemptCount(),
-                    "delay: " + attemptSettings.getRetryDelayDuration(),
-                    "retriableException: " + throwable
-                  });
-            }
+        TimedAttemptSettings nextAttemptSettings =
+            retryAlgorithm.createNextAttempt(retryingContext, throwable, response, attemptSettings);
+        boolean shouldRetry =
+            retryAlgorithm.shouldRetry(retryingContext, throwable, response, nextAttemptSettings);
+        if (shouldRetry) {
+          // Log retry info
+          if (LOG.isLoggable(Level.FINEST)) {
+            LOG.log(
+                Level.FINEST,
+                "Retrying with:\n{0}\n{1}\n{2}\n{3}",
+                new Object[] {
+                  "enclosingMethod: "
+                      + (callable.getClass().getEnclosingMethod() != null
+                          ? callable.getClass().getEnclosingMethod().getName()
+                          : ""),
+                  "attemptCount: " + attemptSettings.getAttemptCount(),
+                  "delay: " + attemptSettings.getRetryDelayDuration(),
+                  "retriableException: " + throwable
+                });
+          }
+          try (ApiTracer.Scope ignored = tracer.inScope()) {
             tracer.attemptFailedDuration(
                 throwable, nextAttemptSettings.getRandomizedRetryDelayDuration());
-            attemptSettings = nextAttemptSettings;
-            setAttemptResult(throwable, response, true);
-            // a new attempt will be (must be) scheduled by an external executor
-          } else if (throwable != null) {
+          }
+          attemptSettings = nextAttemptSettings;
+          setAttemptResult(throwable, response, true);
+          // a new attempt will be (must be) scheduled by an external executor
+        } else if (throwable != null) {
+          try (ApiTracer.Scope ignored = tracer.inScope()) {
             if (retryAlgorithm.shouldRetryBasedOnResult(retryingContext, throwable, response)) {
               tracer.attemptFailedRetriesExhausted(throwable);
             } else {
               tracer.attemptPermanentFailure(throwable);
             }
-            super.setException(throwable);
-          } else {
-            tracer.attemptSucceeded();
-            super.set(response);
           }
-        } catch (CancellationException e) {
-          // A retry algorithm triggered cancellation.
-          tracer.attemptFailedRetriesExhausted(e);
-          super.cancel(false);
-        } catch (Exception e) {
-          // Should never happen, but still possible in case of buggy retry algorithm
-          // implementation.
-          // Any bugs/exceptions (except CancellationException) in retry algorithms immediately
-          // terminate retrying future and set the result to the thrown exception.
-          tracer.attemptPermanentFailure(e);
-          super.setException(e);
+          super.setException(throwable);
+        } else {
+          try (ApiTracer.Scope ignored = tracer.inScope()) {
+            tracer.attemptSucceeded();
+          }
+          super.set(response);
         }
+      } catch (CancellationException e) {
+        // A retry algorithm triggered cancellation.
+        try (ApiTracer.Scope ignored = tracer.inScope()) {
+          tracer.attemptFailedRetriesExhausted(e);
+        }
+        super.cancel(false);
+      } catch (Exception e) {
+        // Should never happen, but still possible in case of buggy retry algorithm
+        // implementation.
+        // Any bugs/exceptions (except CancellationException) in retry algorithms immediately
+        // terminate retrying future and set the result to the thrown exception.
+        try (ApiTracer.Scope ignored = tracer.inScope()) {
+          tracer.attemptPermanentFailure(e);
+        }
+        super.setException(e);
       }
     }
   }
