@@ -390,6 +390,7 @@ public class OpenTelemetrySpanTest {
             "CloudSpannerOperation.CreateMultiplexedSession",
             "CloudSpannerOperation.ExecuteUpdate",
             "CloudSpannerOperation.Commit",
+            "CloudSpannerOperation.ExecuteStreamingQuery",
             "CloudSpanner.ReadWriteTransaction");
 
     expectedReadWriteTransactionEvents =
@@ -402,6 +403,7 @@ public class OpenTelemetrySpanTest {
     DatabaseClient client = getClient();
     TransactionRunner runner = client.readWriteTransaction();
     runner.run(transaction -> transaction.executeUpdate(UPDATE_STATEMENT));
+    client.getDialect();
     // Wait until the list of spans contains "CloudSpannerOperation.CreateSession", as this is
     // an async operation.
     Stopwatch stopwatch = Stopwatch.createStarted();
@@ -422,6 +424,8 @@ public class OpenTelemetrySpanTest {
                       spanItem,
                       expectedCreateMultiplexedSessionsRequestEvents,
                       expectedCreateMultiplexedSessionsRequestEventsCount);
+                  break;
+                case "CloudSpannerOperation.ExecuteStreamingQuery":
                   break;
                 case "CloudSpannerOperation.Commit":
                 case "CloudSpannerOperation.ExecuteUpdate":
@@ -448,6 +452,7 @@ public class OpenTelemetrySpanTest {
         ImmutableList.of(
             "CloudSpannerOperation.CreateMultiplexedSession",
             "CloudSpannerOperation.ExecuteUpdate",
+            "CloudSpannerOperation.ExecuteStreamingQuery",
             "CloudSpanner.ReadWriteTransaction");
     expectedReadWriteTransactionErrorEvents =
         ImmutableList.of(
@@ -462,6 +467,7 @@ public class OpenTelemetrySpanTest {
             SpannerException.class,
             () -> runner.run(transaction -> transaction.executeUpdate(INVALID_UPDATE_STATEMENT)));
     assertEquals(ErrorCode.INVALID_ARGUMENT, e.getErrorCode());
+    client.getDialect();
 
     List<String> actualSpanItems = new ArrayList<>();
     spanExporter
@@ -482,6 +488,8 @@ public class OpenTelemetrySpanTest {
                       expectedReadWriteTransactionErrorEvents,
                       expectedReadWriteTransactionErrorEventsCount);
                   verifyCommonAttributes(spanItem);
+                  break;
+                case "CloudSpannerOperation.ExecuteStreamingQuery":
                   break;
                 case "CloudSpannerOperation.ExecuteUpdate":
                   assertEquals(0, spanItem.getEvents().size());
@@ -545,17 +553,17 @@ public class OpenTelemetrySpanTest {
         .getFinishedSpanItems()
         .forEach(
             spanItem -> {
-              // Ignore multiplexed sessions, as they are not used by this test and can therefore
-              // best be ignored, as it is not 100% certain that it has already been created.
-              if (!"CloudSpannerOperation.CreateMultiplexedSession".equals(spanItem.getName())) {
+              // Ignore multiplexed sessions and background metadata queries, as they can best be
+              // ignored because it is not 100% certain when they are executed in the background.
+              if (!"CloudSpannerOperation.CreateMultiplexedSession".equals(spanItem.getName())
+                  && !"CloudSpannerOperation.ExecuteStreamingQuery".equals(spanItem.getName())
+                  && !"Spanner.ExecuteStreamingSql".equals(spanItem.getName())) {
                 actualSpanItems.add(spanItem.getName());
               }
               switch (spanItem.getName()) {
                 case "CloudSpannerOperation.CreateMultiplexedSession":
-                  verifyRequestEvents(
-                      spanItem,
-                      expectedCreateMultiplexedSessionsRequestEvents,
-                      expectedCreateMultiplexedSessionsRequestEventsCount);
+                case "CloudSpannerOperation.ExecuteStreamingQuery":
+                case "Spanner.ExecuteStreamingSql":
                   break;
                 case "CloudSpannerOperation.Commit":
                 case "CloudSpannerOperation.BeginTransaction":
@@ -594,9 +602,10 @@ public class OpenTelemetrySpanTest {
               transaction.buffer(Mutation.newInsertBuilder("foo").set("id").to(1L).build());
               return null;
             });
+    clientWithApiTracing.getDialect();
 
     assertEquals(2, mockSpanner.countRequestsOfType(BeginTransactionRequest.class));
-    int numExpectedSpans = 7;
+    int numExpectedSpans = 9;
     waitForFinishedSpans(numExpectedSpans);
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     List<String> finishedSpanNames =
@@ -609,9 +618,12 @@ public class OpenTelemetrySpanTest {
     assertTrue(
         actualSpanNames, finishedSpanNames.contains("CloudSpannerOperation.BeginTransaction"));
     assertTrue(actualSpanNames, finishedSpanNames.contains("CloudSpannerOperation.Commit"));
+    assertTrue(
+        actualSpanNames, finishedSpanNames.contains("CloudSpannerOperation.ExecuteStreamingQuery"));
 
     assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.BeginTransaction"));
     assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.Commit"));
+    assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.ExecuteStreamingSql"));
 
     SpanData beginTransactionSpan =
         finishedSpans.stream()
@@ -638,9 +650,10 @@ public class OpenTelemetrySpanTest {
       assertTrue(resultSet.next());
       assertFalse(resultSet.next());
     }
+    clientWithApiTracing.getDialect();
 
     assertEquals(2, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
-    int numExpectedSpans = 6;
+    int numExpectedSpans = 8;
     waitForFinishedSpans(numExpectedSpans);
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     List<String> finishedSpanNames =
@@ -659,8 +672,13 @@ public class OpenTelemetrySpanTest {
     // means that the retry event is on this span.
     SpanData executeStreamingQuery =
         finishedSpans.stream()
-            .filter(span -> span.getName().equals("CloudSpannerOperation.ExecuteStreamingQuery"))
-            .findAny()
+            .filter(
+                span ->
+                    span.getName().equals("CloudSpannerOperation.ExecuteStreamingQuery")
+                        && span.getEvents().stream()
+                            .anyMatch(
+                                event -> event.getName().contains("Stream broken. Safe to retry")))
+            .findFirst()
             .orElseThrow(IllegalStateException::new);
     assertTrue(
         executeStreamingQuery.toString(),
@@ -681,9 +699,10 @@ public class OpenTelemetrySpanTest {
     clientWithApiTracing
         .readWriteTransaction()
         .run(transaction -> transaction.executeUpdate(UPDATE_STATEMENT));
+    clientWithApiTracing.getDialect();
 
     assertEquals(2, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
-    int numExpectedSpans = 7;
+    int numExpectedSpans = 9;
     waitForFinishedSpans(numExpectedSpans);
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     List<String> finishedSpanNames =
@@ -694,8 +713,11 @@ public class OpenTelemetrySpanTest {
 
     assertTrue(actualSpanNames, finishedSpanNames.contains("CloudSpanner.ReadWriteTransaction"));
     assertTrue(actualSpanNames, finishedSpanNames.contains("CloudSpannerOperation.Commit"));
+    assertTrue(
+        actualSpanNames, finishedSpanNames.contains("CloudSpannerOperation.ExecuteStreamingQuery"));
     assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.ExecuteSql"));
     assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.Commit"));
+    assertTrue(actualSpanNames, finishedSpanNames.contains("Spanner.ExecuteStreamingSql"));
 
     SpanData executeSqlSpan =
         finishedSpans.stream()

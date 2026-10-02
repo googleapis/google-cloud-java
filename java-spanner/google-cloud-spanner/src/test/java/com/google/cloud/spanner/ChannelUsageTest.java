@@ -221,6 +221,9 @@ public class ChannelUsageTest {
 
     try (Spanner spanner = createSpannerOptions().getService()) {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      client.getDialect();
+      allExecuteSqlChannelHints.clear();
+      executeSqlChannelHints.clear();
       ExecutorService executor = Executors.newFixedThreadPool(concurrentTransactions);
       CountDownLatch ready = new CountDownLatch(concurrentTransactions);
       CountDownLatch start = new CountDownLatch(1);
