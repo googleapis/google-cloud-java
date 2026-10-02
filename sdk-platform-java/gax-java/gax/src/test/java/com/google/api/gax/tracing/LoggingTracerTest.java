@@ -31,6 +31,7 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
+import io.opentelemetry.api.trace.Span;
 import java.util.Collections;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -238,13 +240,11 @@ class LoggingTracerTest {
             });
     LoggingTracer tracer = new LoggingTracer(context);
 
-    org.junit.jupiter.api.Assertions.assertFalse(
-        io.opentelemetry.api.trace.Span.current().getSpanContext().isValid());
+    assertFalse(Span.current().getSpanContext().isValid());
 
     tracer.recordActionableError(new RuntimeException("test error"));
 
-    org.junit.jupiter.api.Assertions.assertFalse(
-        io.opentelemetry.api.trace.Span.current().getSpanContext().isValid());
+    assertFalse(Span.current().getSpanContext().isValid());
   }
 
   private Map<String, ?> getAttributesMap() {

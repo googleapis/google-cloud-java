@@ -68,6 +68,11 @@ public abstract class ApiTracerContext {
     static final SharedContext EMPTY =
         new SharedContext() {
           @Override
+          public @Nullable Scope openAttemptScope() {
+            return null;
+          }
+
+          @Override
           public void setAttemptScopeProvider(@Nullable Supplier<Scope> provider) {
             // No-op for empty sentinel
           }
