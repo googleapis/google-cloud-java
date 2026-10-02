@@ -343,13 +343,10 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
-    if (other.sharedContext() != SharedContext.EMPTY) {
-      builder.setSharedContext(other.sharedContext());
-    } else if (this.sharedContext() != SharedContext.EMPTY) {
-      builder.setSharedContext(this.sharedContext());
-    } else {
-      builder.setSharedContext(SharedContext.EMPTY);
-    }
+    builder.setSharedContext(
+        other.sharedContext() != SharedContext.EMPTY
+            ? other.sharedContext()
+            : this.sharedContext());
     return builder.build();
   }
 

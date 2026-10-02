@@ -158,20 +158,20 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void operationSucceeded() {
-    if (apiTracerContext != null) {
-      apiTracerContext.sharedContext().setAttemptSpan(null);
-    }
+    clearSharedAttemptSpan();
   }
 
   @Override
   public void operationCancelled() {
-    if (apiTracerContext != null) {
-      apiTracerContext.sharedContext().setAttemptSpan(null);
-    }
+    clearSharedAttemptSpan();
   }
 
   @Override
   public void operationFailed(Throwable error) {
+    clearSharedAttemptSpan();
+  }
+
+  private void clearSharedAttemptSpan() {
     if (apiTracerContext != null) {
       apiTracerContext.sharedContext().setAttemptSpan(null);
     }
@@ -264,9 +264,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
     attemptSpan.end();
     attemptSpan = null;
-    if (apiTracerContext != null) {
-      apiTracerContext.sharedContext().setAttemptSpan(null);
-    }
+    clearSharedAttemptSpan();
   }
 
   @Override
