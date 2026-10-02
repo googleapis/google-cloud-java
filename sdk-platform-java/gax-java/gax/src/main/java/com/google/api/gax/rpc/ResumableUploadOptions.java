@@ -99,6 +99,10 @@ public abstract class ResumableUploadOptions {
      * Sets the chunk size in bytes. The payload is sent in chunks of this size, and each chunk is
      * buffered in memory so it can be resent if the upload needs to recover. Must be positive;
      * defaults to 8 MB.
+     *
+     * <p>If the server requires a chunk granularity, the chunk size is rounded down to the closest
+     * multiple of that granularity. The upload fails with {@link StatusCode.Code#INVALID_ARGUMENT}
+     * if the chunk size is smaller than the required granularity.
      */
     public abstract Builder setChunkSize(int chunkSize);
 

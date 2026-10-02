@@ -161,17 +161,25 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
           @Override
           public void onSuccess(ResumableUploadSession session) {
             String sessionUrl = session.getUploadUrl();
-            ResumableUploadChunkCoordinator<ResponseT> coordinator =
-                new ResumableUploadChunkCoordinator<>(
-                    uploadChunkCallable,
-                    queryStatusCallable,
-                    sessionUrl,
-                    payload,
-                    options.getChunkSize(),
-                    callContext,
-                    recoveryAlgorithm,
-                    executor,
-                    progressTracker);
+            ResumableUploadChunkCoordinator<ResponseT> coordinator;
+            try {
+              int chunkSize =
+                  alignChunkSize(options.getChunkSize(), session.getChunkGranularity(), sessionUrl);
+              coordinator =
+                  new ResumableUploadChunkCoordinator<>(
+                      uploadChunkCallable,
+                      queryStatusCallable,
+                      sessionUrl,
+                      payload,
+                      chunkSize,
+                      callContext,
+                      recoveryAlgorithm,
+                      executor,
+                      progressTracker);
+            } catch (Throwable t) {
+              fail(t);
+              return;
+            }
             ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
             synchronized (lock) {
               if (inFlightFuture == null) {
@@ -220,6 +228,41 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       message = "Resumable upload timed out before session initiation completed";
     }
     fail(ApiExceptionFactory.createException(message, null, TIMEOUT_STATUS_CODE, false));
+  }
+
+  /**
+   * Returns the chunk size to use for an upload session, adjusted to the server-specified chunk
+   * granularity.
+   *
+   * <p>Per the resumable upload protocol, every non-final chunk must be a multiple of the
+   * granularity returned in the {@code X-Goog-Upload-Chunk-Granularity} header of the {@code start}
+   * response. The requested chunk size is therefore rounded down to the closest multiple of the
+   * granularity. It is never rounded up, since the chunk size bounds the memory used to buffer the
+   * payload.
+   *
+   * @param requestedChunkSize the chunk size from {@link ResumableUploadOptions}, in bytes
+   * @param granularity the server-specified chunk granularity, in bytes
+   * @param uploadUrl the upload session URL, used for error reporting
+   * @return the largest multiple of {@code granularity} not exceeding {@code requestedChunkSize}
+   * @throws ApiException with {@link StatusCode.Code#INVALID_ARGUMENT} if {@code
+   *     requestedChunkSize} is smaller than {@code granularity}
+   */
+  static int alignChunkSize(int requestedChunkSize, long granularity, String uploadUrl) {
+    if (granularity <= 1) {
+      return requestedChunkSize;
+    }
+    if (requestedChunkSize < granularity) {
+      throw ApiExceptionFactory.createException(
+          String.format(
+              "Chunk size of %d bytes is smaller than the server-required chunk granularity of %d"
+                  + " bytes for upload session: %s. Set the chunk size in ResumableUploadOptions to"
+                  + " a multiple of %d bytes.",
+              requestedChunkSize, granularity, uploadUrl, granularity),
+          null,
+          INVALID_ARGUMENT_STATUS_CODE,
+          false);
+    }
+    return (int) (requestedChunkSize - requestedChunkSize % granularity);
   }
 
   private void succeed(@Nullable ResponseT result) {
@@ -309,15 +352,22 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private static final StatusCode TIMEOUT_STATUS_CODE =
-      new StatusCode() {
-        @Override
-        public StatusCode.Code getCode() {
-          return StatusCode.Code.DEADLINE_EXCEEDED;
-        }
+      localStatusCode(StatusCode.Code.DEADLINE_EXCEEDED);
+  private static final StatusCode INVALID_ARGUMENT_STATUS_CODE =
+      localStatusCode(StatusCode.Code.INVALID_ARGUMENT);
 
-        @Override
-        public @Nullable Object getTransportCode() {
-          return null;
-        }
-      };
+  /** Creates a transport-independent status code for errors detected locally by the client. */
+  private static StatusCode localStatusCode(StatusCode.Code code) {
+    return new StatusCode() {
+      @Override
+      public StatusCode.Code getCode() {
+        return code;
+      }
+
+      @Override
+      public @Nullable Object getTransportCode() {
+        return null;
+      }
+    };
+  }
 }
