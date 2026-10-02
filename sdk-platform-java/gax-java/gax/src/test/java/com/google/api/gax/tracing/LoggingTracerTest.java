@@ -225,7 +225,10 @@ class LoggingTracerTest {
     io.opentelemetry.api.trace.Span realSpan =
         io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
 
-    ApiTracerContext context = ApiTracerContext.empty();
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
+            .build();
     context.sharedContext().setAttemptSpan(realSpan);
     LoggingTracer tracer = new LoggingTracer(context);
 

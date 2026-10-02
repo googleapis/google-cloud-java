@@ -546,5 +546,8 @@ class ApiTracerContextTest {
 
     ApiTracerContext merged = context1.merge(context2);
     assertThat(merged.sharedContext()).isSameInstanceAs(shared);
+
+    ApiTracerContext merged2 = context2.merge(context1);
+    assertThat(merged2.sharedContext()).isSameInstanceAs(shared);
   }
 }
