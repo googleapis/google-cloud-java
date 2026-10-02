@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.rpc.mtls.CertificateRotationTracker;
 import com.google.api.gax.util.FakeLogHandler;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
@@ -65,13 +66,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -701,7 +705,7 @@ class ChannelPoolTest {
     assertThat(pool.entries.get()).hasSize(2);
     Mockito.verify(initial1).shutdown();
     Mockito.verify(initial2, Mockito.never()).shutdown();
-    assertThat(pool.getGeneration()).isEqualTo(genBefore + 1);
+    assertThat(pool.getGeneration()).isEqualTo(genBefore);
     Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
   }
 
@@ -911,7 +915,7 @@ class ChannelPoolTest {
   }
 
   @Test
-  void generationCounterIncrementsOnRefresh() throws IOException {
+  void refreshAll_doesNotIncrementGeneration() throws IOException {
     ManagedChannel channel1 = mock(ManagedChannel.class);
     ManagedChannel channel2 = mock(ManagedChannel.class);
     ChannelFactory channelFactory =
@@ -921,8 +925,216 @@ class ChannelPoolTest {
     pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
     assertThat(pool.getGeneration()).isEqualTo(0);
 
-    pool.refreshAll();
+    // Only a switch to a new certificate advances the generation.
+    assertThat(pool.refreshAll()).isTrue();
+    Mockito.verify(channel1).shutdown();
+    assertThat(pool.getGeneration()).isEqualTo(0);
+  }
+
+  /**
+   * Creates an mTLS pool with preemptive refresh enabled and returns the scheduled periodic refresh
+   * task.
+   */
+  private Runnable createPreemptiveRefreshMtlsPool(int size, ChannelFactory channelFactory)
+      throws IOException {
+    List<Runnable> refreshTasks = new ArrayList<>();
+    ScheduledExecutorService executor = mockExecutor();
+    Mockito.doAnswer(
+            invocation -> {
+              refreshTasks.add(invocation.getArgument(0));
+              return Mockito.mock(
+                  ScheduledFuture.class, Mockito.withSettings().withoutAnnotations());
+            })
+        .when(executor)
+        .scheduleAtFixedRate(
+            Mockito.any(Runnable.class), Mockito.anyLong(), Mockito.anyLong(), Mockito.any());
+    writeCert("client_cert.pem");
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.staticallySized(size).toBuilder()
+                .setPreemptiveRefreshEnabled(true)
+                .build(),
+            channelFactory,
+            FixedExecutorProvider.create(executor),
+            tempCert.toString());
+    assertThat(refreshTasks).hasSize(1);
+    return refreshTasks.get(0);
+  }
+
+  private String readCertFingerprint() {
+    return new CertificateRotationTracker(tempCert.toString()).readDiskFingerprint();
+  }
+
+  @Test
+  void preemptiveRefresh_withoutRotation_doesNotIncrementGeneration() throws IOException {
+    ManagedChannel initial = Mockito.mock(ManagedChannel.class);
+    ManagedChannel refreshed = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, refreshed);
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(1, channelFactory);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    Level originalLevel = ChannelPool.LOG.getLevel();
+    ChannelPool.LOG.setLevel(Level.FINE);
+    ChannelPool.LOG.addHandler(logHandler);
+    try {
+      pool.invalidateDiskFingerprintCache();
+      preemptiveRefresh.run();
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+      ChannelPool.LOG.setLevel(originalLevel);
+    }
+
+    // The channels are replaced, but the certificate did not change.
+    Mockito.verify(initial).shutdown();
+    assertThat(pool.getGeneration()).isEqualTo(0);
+    assertThat(logHandler.getAllMessages()).contains("Refreshing all channels");
+    assertThat(String.join("\n", logHandler.getAllMessages()))
+        .doesNotContain("Channel pool switched to certificate");
+  }
+
+  @Test
+  void preemptiveRefresh_pickingUpRotatedCert_incrementsGeneration() throws IOException {
+    ManagedChannel initial = Mockito.mock(ManagedChannel.class);
+    ManagedChannel rotated = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(1, channelFactory);
+
+    pool.invalidateDiskFingerprintCache();
+    writeCert("root_cert.pem");
+    preemptiveRefresh.run();
+
+    Mockito.verify(initial).shutdown();
     assertThat(pool.getGeneration()).isEqualTo(1);
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
+  }
+
+  @Test
+  void preemptiveRefresh_partialFailureDuringRotation_doesNotIncrementOrMarkRefreshed()
+      throws IOException {
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2)
+        .thenReturn(rotated1)
+        .thenThrow(new IOException("Transient failure on second sub-channel"));
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(2, channelFactory);
+
+    pool.invalidateDiskFingerprintCache();
+    writeCert("root_cert.pem");
+    preemptiveRefresh.run();
+
+    // One channel still uses the old certificate, so the switch is not complete.
+    Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2, Mockito.never()).shutdown();
+    assertThat(pool.getGeneration()).isEqualTo(0);
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isTrue();
+  }
+
+  @Test
+  void refresh_whenAlreadyActive_doesNotIncrementGeneration() throws IOException {
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(Mockito.mock(ManagedChannel.class), Mockito.mock(ManagedChannel.class));
+    writeCert("client_cert.pem");
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.staticallySized(1),
+            channelFactory,
+            FixedExecutorProvider.create(mockExecutor()),
+            tempCert.toString());
+
+    pool.invalidateDiskFingerprintCache();
+    pool.refresh();
+
+    assertThat(pool.getGeneration()).isEqualTo(0);
+    Mockito.verify(channelFactory, Mockito.times(1)).createSingleChannel();
+  }
+
+  @Test
+  void refresh_onRotation_logsNewCertificateFingerprint() throws IOException {
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(Mockito.mock(ManagedChannel.class), Mockito.mock(ManagedChannel.class));
+    writeCert("client_cert.pem");
+    String oldFingerprint = readCertFingerprint();
+    createMtlsPoolAndRotateCert(
+        ChannelPoolSettings.staticallySized(1), channelFactory, mockExecutor());
+    String newFingerprint = readCertFingerprint();
+    assertThat(newFingerprint).isNotEqualTo(oldFingerprint);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    Level originalLevel = ChannelPool.LOG.getLevel();
+    ChannelPool.LOG.setLevel(Level.FINE);
+    ChannelPool.LOG.addHandler(logHandler);
+    try {
+      pool.refresh();
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+      ChannelPool.LOG.setLevel(originalLevel);
+    }
+
+    assertThat(pool.getGeneration()).isEqualTo(1);
+    assertThat(logHandler.getAllMessages())
+        .contains("Channel pool switched to certificate with fingerprint: " + newFingerprint);
+    assertThat(String.join("\n", logHandler.getAllMessages())).doesNotContain(oldFingerprint);
+  }
+
+  @Test
+  void shutdown_interruptsInProgressRefresh() throws Exception {
+    CountDownLatch refreshStarted = new CountDownLatch(1);
+    CountDownLatch release = new CountDownLatch(1);
+    AtomicBoolean refreshInterrupted = new AtomicBoolean();
+    AtomicInteger createdChannels = new AtomicInteger();
+    ChannelFactory channelFactory =
+        () -> {
+          if (createdChannels.getAndIncrement() > 0) {
+            // The preemptive refresh blocks while creating its replacement channel.
+            refreshStarted.countDown();
+            try {
+              release.await();
+            } catch (InterruptedException e) {
+              refreshInterrupted.set(true);
+              Thread.currentThread().interrupt();
+              throw new IOException("Interrupted while creating channel", e);
+            }
+          }
+          return Mockito.mock(ManagedChannel.class);
+        };
+    ScheduledExecutorService realExecutor = Executors.newSingleThreadScheduledExecutor();
+    ScheduledExecutorService executor = mockExecutor();
+    Mockito.doAnswer(
+            invocation ->
+                realExecutor.schedule(
+                    (Runnable) invocation.getArgument(0), 0, TimeUnit.MILLISECONDS))
+        .when(executor)
+        .scheduleAtFixedRate(
+            Mockito.any(Runnable.class), Mockito.anyLong(), Mockito.anyLong(), Mockito.any());
+    try {
+      pool =
+          new ChannelPool(
+              ChannelPoolSettings.staticallySized(1).toBuilder()
+                  .setPreemptiveRefreshEnabled(true)
+                  .build(),
+              channelFactory,
+              FixedExecutorProvider.create(executor),
+              null);
+      assertThat(refreshStarted.await(5, TimeUnit.SECONDS)).isTrue();
+
+      // The refresh holds the pool's write lock; shutdown must interrupt it rather than wait.
+      Assertions.assertTimeoutPreemptively(java.time.Duration.ofSeconds(5), () -> pool.shutdown());
+
+      assertThat(refreshInterrupted.get()).isTrue();
+      assertThat(pool.isShutdown()).isTrue();
+    } finally {
+      release.countDown();
+      realExecutor.shutdownNow();
+    }
   }
 
   @Test

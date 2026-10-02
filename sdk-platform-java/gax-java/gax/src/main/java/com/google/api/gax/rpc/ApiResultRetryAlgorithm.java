@@ -54,8 +54,7 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
       @Nullable Throwable previousThrowable,
       @Nullable ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
-    if (previousThrowable instanceof UnauthenticatedException
-        && ((UnauthenticatedException) previousThrowable).isRetryable()
+    if (isChannelRefreshed(previousThrowable)
         && previousSettings.getOverallAttemptCount() == previousSettings.getAttemptCount()) {
       RetrySettings globalSettings = previousSettings.getGlobalSettings();
       if (globalSettings.getMaxAttempts() == 0
@@ -70,8 +69,7 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
           .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
           .build();
     }
-    if (previousThrowable instanceof UnauthenticatedException
-        && ((UnauthenticatedException) previousThrowable).isRetryable()) {
+    if (isChannelRefreshed(previousThrowable)) {
       // The single rotation retry has already been used. Return exhausted settings so the retry
       // framework stops, rather than returning null and falling back to exponential backoff.
       int exhaustedAttemptCount = previousSettings.getAttemptCount() + 1;
@@ -90,6 +88,9 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   @Override
   public boolean shouldRetry(
       @Nullable Throwable previousThrowable, @Nullable ResponseT previousResponse) {
+    if (isChannelRefreshed(previousThrowable)) {
+      return true;
+    }
     return (previousThrowable instanceof ApiException)
         && ((ApiException) previousThrowable).isRetryable();
   }
@@ -105,10 +106,10 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
       RetryingContext context,
       @Nullable Throwable previousThrowable,
       @Nullable ResponseT previousResponse) {
-    // Check UnauthenticatedException retryability first to ensure mTLS certificate
-    // rotation retries take precedence over static method retry codes.
-    if (previousThrowable instanceof UnauthenticatedException
-        && ((UnauthenticatedException) previousThrowable).isRetryable()) {
+    // A failure on a channel that has since been refreshed (e.g. after an mTLS certificate
+    // rotation) is eligible for a retry regardless of the configured retryable codes;
+    // createNextAttempt limits it to a single retry.
+    if (isChannelRefreshed(previousThrowable)) {
       return true;
     }
     if (context.getRetryableCodes() != null) {
@@ -120,5 +121,10 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
               .contains(((ApiException) previousThrowable).getStatusCode().getCode());
     }
     return shouldRetry(previousThrowable, previousResponse);
+  }
+
+  private static boolean isChannelRefreshed(@Nullable Throwable throwable) {
+    return throwable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) throwable).isChannelRefreshed();
   }
 }

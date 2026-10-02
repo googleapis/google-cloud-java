@@ -252,30 +252,24 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
               UnauthenticatedException unauthenticatedException = (UnauthenticatedException) cause;
               TransportChannel transportChannel = finalContext.getTransportChannel();
               if (transportChannel != null) {
-                if (transportChannel.shouldRefresh()) {
+                // If another request already refreshed the channel, retry without checking the
+                // certificate on disk again. Otherwise, check for a rotation and refresh.
+                boolean shouldRetry = transportChannel.getGeneration() > attemptGeneration;
+                if (!shouldRetry) {
                   try {
-                    transportChannel.refresh();
+                    if (transportChannel.shouldRefresh()) {
+                      transportChannel.refresh();
+                    }
                   } catch (Exception e) {
                     LOG.log(
                         Level.WARNING,
                         "Failed to refresh transport channel after authentication error",
                         e);
                   }
+                  shouldRetry = transportChannel.getGeneration() > attemptGeneration;
                 }
-                boolean shouldRetry = transportChannel.getGeneration() > attemptGeneration;
                 if (shouldRetry) {
-                  UnauthenticatedException newEx =
-                      new UnauthenticatedException(
-                          unauthenticatedException.getMessage(),
-                          unauthenticatedException.getCause(),
-                          unauthenticatedException.getStatusCode(),
-                          true,
-                          unauthenticatedException.getErrorDetails());
-                  newEx.setStackTrace(unauthenticatedException.getStackTrace());
-                  for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
-                    newEx.addSuppressed(suppressed);
-                  }
-                  t = newEx;
+                  t = unauthenticatedException.withChannelRefreshed();
                 }
               }
             }

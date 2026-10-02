@@ -143,9 +143,7 @@ class ApiResultRetryAlgorithmTest {
     RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     // First rotation failure: grants immediate free retry without incrementing attemptCount
     TimedAttemptSettings nextAttempt =
@@ -181,9 +179,7 @@ class ApiResultRetryAlgorithmTest {
     RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     TimedAttemptSettings nextAttempt =
         retryAlgorithm.createNextAttempt(context, rotationEx, null, firstAttempt);
@@ -223,9 +219,7 @@ class ApiResultRetryAlgorithmTest {
     TimedAttemptSettings attempt0 = retryAlgorithm.createFirstAttempt(context);
     ApiException unavailableEx =
         new ApiException(null, new FakeStatusCode(Code.UNAVAILABLE), /* retryable= */ true);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     // Attempt 0 fails with UNAVAILABLE -> normal retry (attemptCount = 1, overallAttemptCount = 1)
     TimedAttemptSettings attempt1 =
@@ -273,9 +267,7 @@ class ApiResultRetryAlgorithmTest {
     RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     TimedAttemptSettings rotationRetry =
         retryAlgorithm.createNextAttempt(context, rotationEx, null, firstAttempt);
@@ -310,9 +302,7 @@ class ApiResultRetryAlgorithmTest {
     RetryAlgorithm<String> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
     TimedAttemptSettings firstAttempt = retryAlgorithm.createFirstAttempt(context);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     TimedAttemptSettings rotationRetry =
         retryAlgorithm.createNextAttempt(context, rotationEx, null, firstAttempt);
@@ -347,9 +337,7 @@ class ApiResultRetryAlgorithmTest {
             new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
     ApiException unavailableEx =
         new ApiException(null, new FakeStatusCode(Code.UNAVAILABLE), /* retryable= */ true);
-    UnauthenticatedException rotationEx =
-        new UnauthenticatedException(
-            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = rotationException();
 
     // The first attempt fails with UNAVAILABLE before receiving any messages: normal retry.
     TimedAttemptSettings attempt1 =
@@ -450,5 +438,161 @@ class ApiResultRetryAlgorithmTest {
             null,
             retryAlgorithm.createFirstAttempt(context));
     assertNull(next);
+  }
+
+  @Test
+  void testConfiguredUnauthenticated_notFlagged_usesNormalBackoff() {
+    // No per-call retryable codes: the method's configuration is carried by isRetryable().
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(null);
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(5)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+    RetryAlgorithm<String> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    // UNAUTHENTICATED configured as retryable, not caused by a channel refresh.
+    UnauthenticatedException configuredEx =
+        new UnauthenticatedException(
+            "Invalid token", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+
+    TimedAttemptSettings attempt = retryAlgorithm.createFirstAttempt(context);
+    for (int i = 1; i < 5; i++) {
+      attempt = retryAlgorithm.createNextAttempt(context, configuredEx, null, attempt);
+      assertNotNull(attempt);
+      assertEquals(i, attempt.getAttemptCount());
+      assertEquals(i, attempt.getOverallAttemptCount());
+      assertTrue(attempt.getRetryDelayDuration().compareTo(Duration.ZERO) > 0);
+      assertTrue(retryAlgorithm.shouldRetry(context, configuredEx, null, attempt));
+    }
+    // The fifth failure exhausts maxAttempts = 5.
+    attempt = retryAlgorithm.createNextAttempt(context, configuredEx, null, attempt);
+    assertFalse(retryAlgorithm.shouldRetry(context, configuredEx, null, attempt));
+  }
+
+  @Test
+  void testContextRetryableCodesExcludeUnauthenticated_notFlagged_notRetried() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));
+    // Retryable according to the method's configuration, but the per-call codes exclude it.
+    UnauthenticatedException configuredEx =
+        new UnauthenticatedException(
+            "Invalid token", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+
+    ApiResultRetryAlgorithm<String> algorithm = new ApiResultRetryAlgorithm<>();
+    assertFalse(algorithm.shouldRetry(context, configuredEx, null));
+    assertNull(
+        algorithm.createNextAttempt(
+            context,
+            configuredEx,
+            null,
+            new ExponentialRetryAlgorithm(
+                    RetrySettings.newBuilder().setMaxAttempts(5).build(),
+                    NanoClock.getDefaultClock())
+                .createFirstAttempt()));
+  }
+
+  @Test
+  void testFlagged_nullContext_retriesOnce() {
+    RetrySettings settings = RetrySettings.newBuilder().setMaxAttempts(1).build();
+    RetryAlgorithm<String> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    UnauthenticatedException rotationEx = rotationException();
+
+    TimedAttemptSettings rotationRetry =
+        retryAlgorithm.createNextAttempt(
+            null, rotationEx, null, retryAlgorithm.createFirstAttempt(null));
+    assertNotNull(rotationRetry);
+    assertEquals(Duration.ZERO, rotationRetry.getRetryDelayDuration());
+    assertEquals(0, rotationRetry.getAttemptCount());
+    assertEquals(1, rotationRetry.getOverallAttemptCount());
+    assertTrue(retryAlgorithm.shouldRetry(null, rotationEx, null, rotationRetry));
+
+    TimedAttemptSettings afterSecondFailure =
+        retryAlgorithm.createNextAttempt(null, rotationEx, null, rotationRetry);
+    assertFalse(retryAlgorithm.shouldRetry(null, rotationEx, null, afterSecondFailure));
+  }
+
+  @Test
+  void testFlagged_contextWithoutRetryableCodes_retriesOnce() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(null);
+    RetrySettings settings = RetrySettings.newBuilder().setMaxAttempts(1).build();
+    RetryAlgorithm<String> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    // Not retryable by configuration (isRetryable() == false), but caused by a channel refresh.
+    UnauthenticatedException rotationEx = rotationException();
+
+    TimedAttemptSettings rotationRetry =
+        retryAlgorithm.createNextAttempt(
+            context, rotationEx, null, retryAlgorithm.createFirstAttempt(context));
+    assertNotNull(rotationRetry);
+    assertEquals(Duration.ZERO, rotationRetry.getRetryDelayDuration());
+    assertTrue(retryAlgorithm.shouldRetry(context, rotationEx, null, rotationRetry));
+
+    TimedAttemptSettings afterSecondFailure =
+        retryAlgorithm.createNextAttempt(context, rotationEx, null, rotationRetry);
+    assertFalse(retryAlgorithm.shouldRetry(context, rotationEx, null, afterSecondFailure));
+  }
+
+  @Test
+  void testConfiguredUnauthenticated_afterRotationRetry_continuesWithNormalPolicy() {
+    ApiCallContext context =
+        mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
+    when(context.getRetryableCodes()).thenReturn(null);
+    RetrySettings settings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(3)
+            .setInitialRetryDelayDuration(Duration.ofMillis(100))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelayDuration(Duration.ofSeconds(1))
+            .setTotalTimeoutDuration(Duration.ofMinutes(10))
+            .build();
+    RetryAlgorithm<String> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<String>(),
+            new ExponentialRetryAlgorithm(settings, NanoClock.getDefaultClock()));
+    UnauthenticatedException configuredEx =
+        new UnauthenticatedException(
+            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ true);
+    UnauthenticatedException rotationEx = configuredEx.withChannelRefreshed();
+
+    // A rotation failure gets the free zero-delay retry without consuming an attempt.
+    TimedAttemptSettings rotationRetry =
+        retryAlgorithm.createNextAttempt(
+            context, rotationEx, null, retryAlgorithm.createFirstAttempt(context));
+    assertEquals(Duration.ZERO, rotationRetry.getRetryDelayDuration());
+    assertEquals(0, rotationRetry.getAttemptCount());
+
+    // A later, unrelated failure on the same channel follows the configured policy with backoff.
+    TimedAttemptSettings normalRetry =
+        retryAlgorithm.createNextAttempt(context, configuredEx, null, rotationRetry);
+    assertNotNull(normalRetry);
+    assertEquals(1, normalRetry.getAttemptCount());
+    assertTrue(normalRetry.getRetryDelayDuration().compareTo(Duration.ZERO) > 0);
+    assertTrue(retryAlgorithm.shouldRetry(context, configuredEx, null, normalRetry));
+  }
+
+  /**
+   * An UNAUTHENTICATED failure caused by a channel refresh, where UNAUTHENTICATED is not configured
+   * as retryable (the common case).
+   */
+  private static UnauthenticatedException rotationException() {
+    return new UnauthenticatedException(
+            "Expired cert", null, new FakeStatusCode(Code.UNAUTHENTICATED), /* retryable= */ false)
+        .withChannelRefreshed();
   }
 }

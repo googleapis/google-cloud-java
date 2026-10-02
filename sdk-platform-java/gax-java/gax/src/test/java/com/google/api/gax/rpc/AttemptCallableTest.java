@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -44,6 +45,8 @@ import com.google.api.gax.rpc.testing.FakeChannel;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.api.gax.rpc.testing.FakeTransportChannel;
 import com.google.api.gax.tracing.ApiTracer;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -177,7 +180,11 @@ class AttemptCallableTest {
 
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
-    assertThat(rethrown.isRetryable()).isTrue();
+    assertThat(rethrown.isChannelRefreshed()).isTrue();
+    // The original retryable setting is preserved.
+    assertThat(rethrown.isRetryable()).isFalse();
+    assertThat(rethrown.getMessage()).isEqualTo(originalEx.getMessage());
+    assertThat(rethrown.getStatusCode()).isEqualTo(originalEx.getStatusCode());
     assertThat(rethrown.getCause()).isEqualTo(originalEx.getCause());
     assertThat(rethrown.getStackTrace()).isEqualTo(originalEx.getStackTrace());
     assertThat(rethrown.getSuppressed().length).isEqualTo(1);
@@ -185,7 +192,7 @@ class AttemptCallableTest {
   }
 
   @Test
-  void testSiblingInFlightRequest_channelRotatedInFlight_markedRetryableWithoutDuplicateRefresh() {
+  void testSiblingInFlightRequest_channelRotatedInFlight_flaggedWithoutDuplicateRefresh() {
     FakeChannel innerChannel = new FakeChannel();
     innerChannel.setGeneration(1);
     // Initially shouldRefresh is false because sibling request already completed the refresh
@@ -227,14 +234,14 @@ class AttemptCallableTest {
 
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
-    // Sibling request should be marked retryable to run on the new channel
-    assertThat(rethrown.isRetryable()).isTrue();
+    // Sibling request should be flagged for a retry on the new channel
+    assertThat(rethrown.isChannelRefreshed()).isTrue();
     // But should NOT have triggered a second refresh call
     assertThat(innerChannel.getRefreshCount()).isEqualTo(0);
   }
 
   @Test
-  void testPermanentUnauthenticatedFailure_sameGeneration_notMarkedRetryable() {
+  void testPermanentUnauthenticatedFailure_sameGeneration_notFlagged() {
     FakeChannel innerChannel = new FakeChannel();
     innerChannel.setGeneration(1);
     innerChannel.setShouldRefresh(false);
@@ -271,11 +278,12 @@ class AttemptCallableTest {
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
     // Genuine permanent error on same generation is NOT retryable
     assertThat(rethrown.isRetryable()).isFalse();
+    assertThat(rethrown.isChannelRefreshed()).isFalse();
     assertThat(innerChannel.getRefreshCount()).isEqualTo(0);
   }
 
   @Test
-  void testRefreshThrowsException_notMarkedRetryableWhenGenerationUnchanged() {
+  void testRefreshThrowsException_notFlaggedWhenGenerationUnchanged() {
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -320,10 +328,11 @@ class AttemptCallableTest {
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
     assertThat(rethrown.isRetryable()).isFalse();
+    assertThat(rethrown.isChannelRefreshed()).isFalse();
   }
 
   @Test
-  void testRefreshReturnsWithoutAdvancingGeneration_notMarkedRetryable() {
+  void testRefreshReturnsWithoutAdvancingGeneration_notFlagged() {
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -369,10 +378,11 @@ class AttemptCallableTest {
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
     assertThat(rethrown.isRetryable()).isFalse();
+    assertThat(rethrown.isChannelRefreshed()).isFalse();
   }
 
   @Test
-  void testRefreshThrowsException_markedRetryableIfConcurrentThreadAdvancedGeneration() {
+  void testRefreshThrowsException_flaggedIfConcurrentThreadAdvancedGeneration() {
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -418,6 +428,97 @@ class AttemptCallableTest {
 
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
+    assertThat(rethrown.isChannelRefreshed()).isTrue();
+  }
+
+  @Test
+  void testGenerationAlreadyAdvanced_skipsShouldRefresh() {
+    AtomicInteger shouldRefreshCalls = new AtomicInteger();
+    FakeChannel fakeChannel =
+        new FakeChannel() {
+          @Override
+          public boolean shouldRefresh() {
+            shouldRefreshCalls.incrementAndGet();
+            return true;
+          }
+        };
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Expired cert", null, FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED), false);
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any()))
+        .thenAnswer(
+            invocation -> {
+              // Another request rotated the channel while this one was in flight.
+              fakeChannel.setGeneration(fakeChannel.getGeneration() + 1);
+              return failedFuture;
+            });
+
+    UnauthenticatedException rethrown = callAndGetUnauthenticated(fakeChannel);
+
+    assertThat(rethrown.isChannelRefreshed()).isTrue();
+    // The certificate on disk is not checked again, and no second refresh happens.
+    assertThat(shouldRefreshCalls.get()).isEqualTo(0);
+    assertThat(fakeChannel.getRefreshCount()).isEqualTo(0);
+  }
+
+  @Test
+  void testShouldRefreshThrows_originalUnauthenticatedPreserved() {
+    FakeChannel fakeChannel =
+        new FakeChannel() {
+          @Override
+          public boolean shouldRefresh() {
+            throw new IllegalStateException("Unable to read certificate");
+          }
+        };
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Expired cert", null, FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED), false);
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
+
+    UnauthenticatedException rethrown = callAndGetUnauthenticated(fakeChannel);
+
+    assertThat(rethrown).isSameInstanceAs(originalEx);
+    assertThat(rethrown.isChannelRefreshed()).isFalse();
+    assertThat(fakeChannel.getRefreshCount()).isEqualTo(0);
+  }
+
+  @Test
+  void testConfiguredRetryableUnauthenticated_sameGeneration_notFlagged() {
+    FakeChannel fakeChannel = new FakeChannel().setShouldRefresh(false);
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Token expired", null, FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED), true);
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
+
+    UnauthenticatedException rethrown = callAndGetUnauthenticated(fakeChannel);
+
+    // Left to the normal retry policy: still retryable, but not a rotation retry.
+    assertThat(rethrown).isSameInstanceAs(originalEx);
     assertThat(rethrown.isRetryable()).isTrue();
+    assertThat(rethrown.isChannelRefreshed()).isFalse();
+  }
+
+  private UnauthenticatedException callAndGetUnauthenticated(FakeChannel fakeChannel) {
+    ApiCallContext callContext =
+        FakeCallContext.createDefault()
+            .withTransportChannel(FakeTransportChannel.create(fakeChannel));
+    AttemptCallable<String, String> callable =
+        new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
+    callable.setExternalFuture(mockExternalFuture);
+
+    callable.call();
+
+    ArgumentCaptor<ApiFuture> futureCaptor = ArgumentCaptor.forClass(ApiFuture.class);
+    Mockito.verify(mockExternalFuture, Mockito.times(2)).setAttemptFuture(futureCaptor.capture());
+    ExecutionException e =
+        assertThrows(ExecutionException.class, () -> futureCaptor.getValue().get());
+    assertThat(e.getCause()).isInstanceOf(UnauthenticatedException.class);
+    return (UnauthenticatedException) e.getCause();
   }
 }

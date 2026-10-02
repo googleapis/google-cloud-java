@@ -34,7 +34,6 @@ import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.rpc.mtls.CertificateRotationTracker;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
@@ -203,18 +202,19 @@ class ChannelPool extends ManagedChannel {
   public ManagedChannel shutdown() {
     LOG.fine("Initiating graceful shutdown due to explicit request");
 
+    // Resize and refresh tasks can block on channel priming. We don't need
+    // to wait for the channels to be ready since we're shutting down the
+    // pool. Allowing interrupt to speed it up. This is done before acquiring
+    // entryWriteLock, which a running refresh or resize holds.
+    if (resizeFuture != null) {
+      resizeFuture.cancel(true);
+    }
+    if (refreshFuture != null) {
+      refreshFuture.cancel(true);
+    }
+
     synchronized (entryWriteLock) {
       isShutdown = true;
-      // Resize and refresh tasks can block on channel priming. We don't need
-      // to wait for the channels to be ready since we're shutting down the
-      // pool. Allowing interrupt to speed it up.
-      if (resizeFuture != null) {
-        resizeFuture.cancel(true);
-      }
-      if (refreshFuture != null) {
-        refreshFuture.cancel(true);
-      }
-
       List<Entry> localEntries = entries.get();
       for (Entry entry : localEntries) {
         entry.channel.shutdown();
@@ -262,15 +262,17 @@ class ChannelPool extends ManagedChannel {
   public ManagedChannel shutdownNow() {
     LOG.fine("Initiating immediate shutdown due to explicit request");
 
+    // Cancel before acquiring entryWriteLock, which a running refresh or resize holds, so that
+    // they are interrupted instead of delaying shutdown.
+    if (resizeFuture != null) {
+      resizeFuture.cancel(true);
+    }
+    if (refreshFuture != null) {
+      refreshFuture.cancel(true);
+    }
+
     synchronized (entryWriteLock) {
       isShutdown = true;
-      if (resizeFuture != null) {
-        resizeFuture.cancel(true);
-      }
-      if (refreshFuture != null) {
-        refreshFuture.cancel(true);
-      }
-
       List<Entry> localEntries = entries.get();
       for (Entry entry : localEntries) {
         entry.channel.shutdownNow();
@@ -454,6 +456,10 @@ class ChannelPool extends ManagedChannel {
    * disconnects). This applies to all channels even when {@code workloadCertPath == null}. If
    * {@code workloadCertPath} is configured, also updates the tracked certificate fingerprint on
    * success (or skips if the certificate file is currently unreadable or mid-write on disk).
+   *
+   * <p>The generation is only advanced if this refresh switched every channel to a certificate
+   * different from the active one, so that a periodic refresh without a rotation does not make
+   * in-flight {@code UNAUTHENTICATED} failures eligible for a rotation retry.
    */
   private void refreshSafely() {
     try {
@@ -462,8 +468,15 @@ class ChannelPool extends ManagedChannel {
         if (workloadCertPath != null && currentDiskFingerprint.isEmpty()) {
           return;
         }
+        boolean rotated =
+            !currentDiskFingerprint.isEmpty()
+                && !rotationTracker.isAlreadyActive(currentDiskFingerprint);
         if (refreshAll() && !currentDiskFingerprint.isEmpty()) {
-          rotationTracker.markRefreshed(currentDiskFingerprint);
+          if (rotated) {
+            completeCertificateSwitch(currentDiskFingerprint);
+          } else {
+            rotationTracker.markRefreshed(currentDiskFingerprint);
+          }
         }
       }
     } catch (Exception e) {
@@ -522,9 +535,23 @@ class ChannelPool extends ManagedChannel {
 
       // Drop any channel that fails to refresh so that no traffic is routed to the old certificate.
       if (refreshAll(/* dropUnrefreshedChannels= */ true)) {
-        rotationTracker.markRefreshed(currentDiskFingerprint);
+        completeCertificateSwitch(currentDiskFingerprint);
       }
     }
+  }
+
+  /**
+   * Records that every channel in the pool now uses the certificate with the given fingerprint.
+   * Must be called while holding {@code entryWriteLock}, after the channels have been swapped.
+   *
+   * <p>The generation is incremented before the fingerprint is marked active, so that a concurrent
+   * failing RPC that no longer sees a pending rotation ({@link #shouldRefresh()} is {@code false})
+   * is guaranteed to see the new generation and be retried on the new channels.
+   */
+  private void completeCertificateSwitch(String newFingerprint) {
+    generation.incrementAndGet();
+    rotationTracker.markRefreshed(newFingerprint);
+    LOG.fine("Channel pool switched to certificate with fingerprint: " + newFingerprint);
   }
 
   @InternalApi("Visible for testing")
@@ -555,12 +582,7 @@ class ChannelPool extends ManagedChannel {
       if (isShutdown) {
         return false;
       }
-      String activeFingerprint = rotationTracker.getActiveCertFingerprint();
-      LOG.fine(
-          "Refreshing all channels"
-              + (Strings.isNullOrEmpty(activeFingerprint)
-                  ? ""
-                  : " with certificate fingerprint: " + activeFingerprint));
+      LOG.fine("Refreshing all channels");
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
       boolean anyCreated = false;
       boolean allCreated = !newEntries.isEmpty();
@@ -599,7 +621,6 @@ class ChannelPool extends ManagedChannel {
             e.requestShutdown();
           }
         }
-        generation.incrementAndGet();
         if (dropUnrefreshedChannels && !allCreated && settings.isStaticSize()) {
           scheduleRefill();
         }
@@ -645,11 +666,13 @@ class ChannelPool extends ManagedChannel {
   /**
    * Returns the current channel pool generation counter.
    *
-   * <p>The generation is a monotonically increasing counter incremented each time {@link
-   * #refreshAll()} replaces the channels in the pool. Retry loops ({@code AttemptCallable} and
-   * {@code ServerStreamingAttemptCallable}) snapshot the generation before starting an RPC attempt
-   * and compare it after an {@code UNAUTHENTICATED} failure to determine whether the pool rotated
-   * to a new certificate generation during or after the attempt.
+   * <p>The generation is a monotonically increasing counter incremented each time the pool switches
+   * every channel to a new mTLS certificate (a reactive refresh after a rotation, or a periodic
+   * refresh that picks up a rotated certificate). Periodic refreshes that do not change the
+   * certificate do not increment it. Retry loops ({@code AttemptCallable} and {@code
+   * ServerStreamingAttemptCallable}) snapshot the generation before starting an RPC attempt and
+   * compare it after an {@code UNAUTHENTICATED} failure to determine whether the pool rotated to a
+   * new certificate during or after the attempt.
    */
   long getGeneration() {
     return generation.get();
