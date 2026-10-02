@@ -44,6 +44,7 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
+import org.slf4j.event.Level;
 
 class LoggingTracerTest {
 
@@ -55,6 +56,7 @@ class LoggingTracerTest {
     testLogger.getMessageList().clear();
     testLogger.getMDCMap().clear();
     testLogger.getKeyValuePairsMap().clear();
+    testLogger.setLevel(null);
   }
 
   @Test
@@ -67,6 +69,7 @@ class LoggingTracerTest {
 
     assertEquals(1, testLogger.getMessageList().size());
     assertEquals("generic failure duration", testLogger.getMessageList().get(0));
+    assertEquals(Level.DEBUG, testLogger.getLevel());
   }
 
   @Test
@@ -79,6 +82,7 @@ class LoggingTracerTest {
 
     assertEquals(1, testLogger.getMessageList().size());
     assertEquals("generic failure retries exhausted", testLogger.getMessageList().get(0));
+    assertEquals(Level.DEBUG, testLogger.getLevel());
   }
 
   @Test
@@ -91,6 +95,20 @@ class LoggingTracerTest {
 
     assertEquals(1, testLogger.getMessageList().size());
     assertEquals("generic permanent failure", testLogger.getMessageList().get(0));
+    assertEquals(Level.DEBUG, testLogger.getLevel());
+  }
+
+  @Test
+  void testOperationFailed_LogsError() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("generic operation failure");
+    tracer.operationFailed(error);
+
+    assertEquals(1, testLogger.getMessageList().size());
+    assertEquals("generic operation failure", testLogger.getMessageList().get(0));
+    assertEquals(Level.ERROR, testLogger.getLevel());
   }
 
   @Test
@@ -99,10 +117,11 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("test error message");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     assertEquals(1, testLogger.getMessageList().size());
     assertEquals("test error message", testLogger.getMessageList().get(0));
+    assertEquals(Level.DEBUG, testLogger.getLevel());
   }
 
   @Test
@@ -117,7 +136,7 @@ class LoggingTracerTest {
             FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
             false);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -132,7 +151,7 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("generic failure");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -164,7 +183,7 @@ class LoggingTracerTest {
             false,
             errorDetails);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals("TEST_REASON", attributesMap.get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE));
@@ -181,7 +200,7 @@ class LoggingTracerTest {
     LoggingTracer tracer = new LoggingTracer(context);
 
     Exception error = new RuntimeException("test error message");
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
@@ -205,7 +224,7 @@ class LoggingTracerTest {
             FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
             false);
 
-    tracer.recordActionableError(error);
+    tracer.recordActionableError(error, Level.DEBUG);
 
     Map<String, ?> attributesMap = getAttributesMap();
     assertEquals(
