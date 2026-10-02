@@ -86,16 +86,15 @@ class ServiceClientMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  PagedExpandRequest request =\n",
-            "      PagedExpandRequest.newBuilder()\n",
-            "          .setContent(\"content951530617\")\n",
-            "          .setPageSize(883849137)\n",
-            "          .setPageToken(\"pageToken873572522\")\n",
-            "          .build();\n",
-            "  for (EchoResponse element : echoClient.pagedExpand(request).iterateAll()) {\n",
-            "    // doThingsWith(element);\n",
-            "  }\n",
+            "EchoClient echoClient = EchoClient.create();\n",
+            "PagedExpandRequest request =\n",
+            "    PagedExpandRequest.newBuilder()\n",
+            "        .setContent(\"content951530617\")\n",
+            "        .setPageSize(883849137)\n",
+            "        .setPageToken(\"pageToken873572522\")\n",
+            "        .build();\n",
+            "for (EchoResponse element : echoClient.pagedExpand(request).iterateAll()) {\n",
+            "  // doThingsWith(element);\n",
             "}");
     Assert.assertEquals(results, expected);
   }
@@ -208,10 +207,9 @@ class ServiceClientMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  echoClient.waitAsync(request).get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "echoClient.waitAsync(request).get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -277,10 +275,9 @@ class ServiceClientMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  WaitRequest request = WaitRequest.newBuilder().build();\n",
-            "  WaitResponse response = echoClient.waitAsync(request).get();\n",
-            "}");
+            "EchoClient echoClient = EchoClient.create();\n",
+            "WaitRequest request = WaitRequest.newBuilder().build();\n",
+            "WaitResponse response = echoClient.waitAsync(request).get();");
     Assert.assertEquals(results, expected);
   }
 
@@ -328,18 +325,17 @@ class ServiceClientMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "EchoClient echoClient = EchoClient.create();\n",
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  echoClient.echo(request);\n",
-            "}");
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "echoClient.echo(request);");
     Assert.assertEquals(results, expected);
   }
 
@@ -390,18 +386,17 @@ class ServiceClientMethodSampleComposerTest {
                 method, clientType, resourceNames, messageTypes, service));
     String expected =
         LineFormatter.lines(
-            "try (EchoClient echoClient = EchoClient.create()) {\n",
-            "  EchoRequest request =\n",
-            "      EchoRequest.newBuilder()\n",
-            "          .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "EchoClient echoClient = EchoClient.create();\n",
+            "EchoRequest request =\n",
+            "    EchoRequest.newBuilder()\n",
+            "        .setName(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
+            "        .setParent(FoobarName.ofProjectFoobarName(\"[PROJECT]\","
                 + " \"[FOOBAR]\").toString())\n",
-            "          .setSeverity(Severity.forNumber(0))\n",
-            "          .setFoobar(Foobar.newBuilder().build())\n",
-            "          .build();\n",
-            "  EchoResponse response = echoClient.echo(request);\n",
-            "}");
+            "        .setSeverity(Severity.forNumber(0))\n",
+            "        .setFoobar(Foobar.newBuilder().build())\n",
+            "        .build();\n",
+            "EchoResponse response = echoClient.echo(request);");
     Assert.assertEquals(results, expected);
   }
 
