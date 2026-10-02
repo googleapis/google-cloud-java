@@ -586,5 +586,14 @@ class ApiTracerContextTest {
     ApiTracerContext mergedActive2 = inactiveContext.merge(activeContext);
     assertThat(mergedActive2.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
     assertThat(inactiveContext.sharedContext().getAttemptSpan()).isNull();
+
+    // When both contexts share the same non-empty SharedContext instance, reuse it directly
+    ApiTracerContext context3 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(shared)
+            .build();
+    ApiTracerContext mergedSame = context2.merge(context3);
+    assertThat(mergedSame.sharedContext()).isSameInstanceAs(shared);
   }
 }

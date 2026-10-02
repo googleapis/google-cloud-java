@@ -355,7 +355,8 @@ public abstract class ApiTracerContext {
     SharedContext shared;
     if (this.sharedContext() == SharedContext.EMPTY) {
       shared = other.sharedContext();
-    } else if (other.sharedContext() == SharedContext.EMPTY) {
+    } else if (other.sharedContext() == SharedContext.EMPTY
+        || this.sharedContext() == other.sharedContext()) {
       shared = this.sharedContext();
     } else {
       shared = new SharedContext();
