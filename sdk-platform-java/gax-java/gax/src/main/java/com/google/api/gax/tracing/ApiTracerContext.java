@@ -353,14 +353,13 @@ public abstract class ApiTracerContext {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     SharedContext shared;
-    if (this.sharedContext().getAttemptSpan() != null) {
+    if (this.sharedContext() != SharedContext.EMPTY) {
       shared = this.sharedContext();
-    } else if (other.sharedContext().getAttemptSpan() != null) {
-      shared = other.sharedContext();
-    } else if (other.sharedContext() != SharedContext.EMPTY) {
-      shared = other.sharedContext();
+      if (shared.getAttemptSpan() == null && other.sharedContext().getAttemptSpan() != null) {
+        shared.setAttemptSpan(other.sharedContext().getAttemptSpan());
+      }
     } else {
-      shared = this.sharedContext();
+      shared = other.sharedContext();
     }
     builder.setSharedContext(shared);
     return builder.build();
