@@ -71,7 +71,7 @@ public abstract class ApiTracerContext {
     }
   }
 
-  private @Nullable SharedContext sharedContext;
+  private SharedContext sharedContext = new SharedContext();
 
   /**
    * Returns the shared context for sibling tracers in an attempt.
@@ -79,9 +79,6 @@ public abstract class ApiTracerContext {
    * @return the shared context
    */
   public SharedContext sharedContext() {
-    if (sharedContext == null) {
-      sharedContext = new SharedContext();
-    }
     return sharedContext;
   }
 
@@ -342,13 +339,7 @@ public abstract class ApiTracerContext {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     ApiTracerContext merged = builder.build();
-    if (other.sharedContext != null) {
-      merged.sharedContext = other.sharedContext;
-    } else if (this.sharedContext != null) {
-      merged.sharedContext = this.sharedContext;
-    } else {
-      merged.sharedContext = other.sharedContext();
-    }
+    merged.sharedContext = other.sharedContext;
     return merged;
   }
 
