@@ -31,7 +31,7 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -41,12 +41,9 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.SpanContext;
-import io.opentelemetry.api.trace.TraceFlags;
-import io.opentelemetry.api.trace.TraceState;
 import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -222,13 +219,8 @@ class LoggingTracerTest {
 
   @Test
   void testRecordActionableError_withSharedContextAttemptSpan_activatesSpanDuringLogging() {
-    SpanContext mockSpanContext =
-        SpanContext.create(
-            "00000000000000000000000000000001",
-            "0000000000000002",
-            TraceFlags.getSampled(),
-            TraceState.getDefault());
-    Span realSpan = Span.wrap(mockSpanContext);
+    AtomicBoolean scopeOpened = new AtomicBoolean(false);
+    AtomicBoolean scopeClosed = new AtomicBoolean(false);
 
     ApiTracerContext context =
         ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
@@ -236,16 +228,15 @@ class LoggingTracerTest {
         .sharedContext()
         .setAttemptScopeProvider(
             () -> {
-              io.opentelemetry.context.Scope otelScope = realSpan.makeCurrent();
-              return otelScope::close;
+              scopeOpened.set(true);
+              return () -> scopeClosed.set(true);
             });
     LoggingTracer tracer = new LoggingTracer(context);
 
-    assertFalse(Span.current().getSpanContext().isValid());
-
     tracer.recordActionableError(new RuntimeException("test error"));
 
-    assertFalse(Span.current().getSpanContext().isValid());
+    assertTrue(scopeOpened.get(), "Scope should have been opened");
+    assertTrue(scopeClosed.get(), "Scope should have been closed");
   }
 
   private Map<String, ?> getAttributesMap() {

@@ -98,11 +98,10 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
-    ApiTracerContext.Scope scope =
+    try (ApiTracerContext.Scope scope =
         (apiTracerContext != null && apiTracerContext.sharedContext() != null)
             ? apiTracerContext.sharedContext().openAttemptScope()
-            : null;
-    try (ApiTracerContext.Scope ignored = scope) {
+            : null) {
       LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
     }
   }

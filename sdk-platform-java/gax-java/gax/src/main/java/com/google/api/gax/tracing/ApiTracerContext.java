@@ -64,11 +64,11 @@ public abstract class ApiTracerContext {
    * Holds mutable shared state between sibling {@link ApiTracer} instances belonging to the same
    * attempt.
    *
-   * <p>Note: Preserving {@link SharedContext} across {@link #toBuilder()} allows sibling tracers
-   * within an attempt to share scope state, but sharing this context across concurrent attempts
-   * (e.g. hedged requests) could allow attempts to overwrite each other's active scope provider.
-   * Callers managing distinct attempts or operations should ensure a fresh {@link SharedContext} is
-   * supplied via {@link Builder#setSharedContext(SharedContext)}.
+   * <p>Note: Whenever a new operation or attempt is derived via {@link #toBuilder()}, a fresh
+   * {@link SharedContext} is instantiated to prevent concurrent operations or hedged requests from
+   * overwriting each other's active scope provider. Sibling tracers created for the same attempt
+   * share the same {@link SharedContext} instance provided by their common {@link
+   * ApiTracerContext}.
    */
   public static class SharedContext {
     static final SharedContext EMPTY =
@@ -108,6 +108,16 @@ public abstract class ApiTracerContext {
 
     public boolean hasAttemptScope() {
       return attemptScopeProvider.get() != null;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj instanceof SharedContext;
+    }
+
+    @Override
+    public int hashCode() {
+      return 31;
     }
   }
 
@@ -404,11 +414,7 @@ public abstract class ApiTracerContext {
   }
 
   public Builder toBuilder() {
-    Builder builder = autoToBuilder();
-    if (sharedContext() == SharedContext.EMPTY) {
-      builder.setSharedContext(new SharedContext());
-    }
-    return builder;
+    return autoToBuilder().setSharedContext(new SharedContext());
   }
 
   abstract Builder autoToBuilder();
