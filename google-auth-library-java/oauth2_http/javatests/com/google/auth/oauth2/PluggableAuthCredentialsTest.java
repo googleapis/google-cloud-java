@@ -48,6 +48,7 @@ import java.io.InputStream;
 import java.io.NotSerializableException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -599,6 +600,72 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     // PluggableAuthCredentials are not serializable
     assertThrows(NotSerializableException.class, () -> serializeAndDeserialize(testCredentials));
+  }
+
+  @Test
+  void toBuilder_setServiceAccountImpersonationUrl_clearsAccessTokenAndUpdatesMetrics()
+      throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
+
+    PluggableAuthCredentials impersonatedCreds =
+        (PluggableAuthCredentials)
+            PluggableAuthCredentials.newBuilder(CREDENTIAL)
+                .setExecutableHandler(options -> "pluggableAuthToken")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setAccessToken(new AccessToken("cached-impersonated-token", null))
+                .setServiceAccountImpersonationUrl(
+                    transportFactory.transport.getServiceAccountImpersonationUrl())
+                .setHttpTransportFactory(transportFactory)
+                .build();
+
+    assertEquals("cached-impersonated-token", impersonatedCreds.getAccessToken().getTokenValue());
+    assertNull(
+        impersonatedCreds.buildImpersonatedCredentials().getSourceCredentials().getAccessToken());
+
+    PluggableAuthCredentials nonImpersonatedCreds =
+        impersonatedCreds.toBuilder().setServiceAccountImpersonationUrl(null).build();
+    assertNull(nonImpersonatedCreds.getAccessToken());
+    assertNull(nonImpersonatedCreds.getServiceAccountEmail());
+
+    nonImpersonatedCreds.refresh();
+    ExternalAccountCredentialsTest.validateMetricsHeader(
+        transportFactory.transport.getRequests().get(0).getHeaders(), "executable", false, false);
+
+    PluggableAuthCredentials reImpersonatedCreds =
+        nonImpersonatedCreds.toBuilder()
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .build();
+    assertNull(reImpersonatedCreds.getAccessToken());
+    reImpersonatedCreds.refreshAccessToken();
+    ExternalAccountCredentialsTest.validateMetricsHeader(
+        transportFactory.transport.getRequests().get(1).getHeaders(), "executable", true, false);
+
+    PluggableAuthCredentials customLifetimeCreds =
+        impersonatedCreds.toBuilder()
+            .setServiceAccountImpersonationOptions(
+                Collections.singletonMap("token_lifetime_seconds", 1800))
+            .build();
+    assertNull(customLifetimeCreds.getAccessToken());
+    customLifetimeCreds.refreshAccessToken();
+    ExternalAccountCredentialsTest.validateMetricsHeader(
+        transportFactory.transport.getRequests().get(3).getHeaders(), "executable", true, true);
+
+    PluggableAuthCredentials clearedOptionsCreds =
+        customLifetimeCreds.toBuilder().setServiceAccountImpersonationOptions(null).build();
+    assertNull(clearedOptionsCreds.getAccessToken());
+    clearedOptionsCreds.refreshAccessToken();
+    ExternalAccountCredentialsTest.validateMetricsHeader(
+        transportFactory.transport.getRequests().get(5).getHeaders(), "executable", true, false);
+
+    PluggableAuthCredentials nonImpersonatedFromCustomLifetimeCreds =
+        customLifetimeCreds.toBuilder().setServiceAccountImpersonationUrl(null).build();
+    assertNull(nonImpersonatedFromCustomLifetimeCreds.getAccessToken());
+    nonImpersonatedFromCustomLifetimeCreds.refresh();
+    ExternalAccountCredentialsTest.validateMetricsHeader(
+        transportFactory.transport.getRequests().get(7).getHeaders(), "executable", false, false);
   }
 
   private static PluggableAuthCredentialSource buildCredentialSource() {
