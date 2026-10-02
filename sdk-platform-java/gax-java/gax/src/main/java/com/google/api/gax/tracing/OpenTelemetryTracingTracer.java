@@ -148,7 +148,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
-    if (apiTracerContext != null && apiTracerContext.sharedContext() != null) {
+    if (apiTracerContext != null) {
       Span span = this.attemptSpan;
       this.attemptScopeProvider =
           () -> {
@@ -165,9 +165,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void clearSharedAttemptScope() {
-    if (apiTracerContext != null
-        && apiTracerContext.sharedContext() != null
-        && this.attemptScopeProvider != null) {
+    if (apiTracerContext != null && this.attemptScopeProvider != null) {
       apiTracerContext
           .sharedContext()
           .compareAndSetAttemptScopeProvider(this.attemptScopeProvider, null);

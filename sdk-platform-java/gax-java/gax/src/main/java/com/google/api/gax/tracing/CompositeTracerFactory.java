@@ -58,10 +58,12 @@ public class CompositeTracerFactory extends BaseApiTracerFactory {
 
   @Override
   public ApiTracer newTracer(ApiTracer parent, ApiTracerContext tracerContext) {
+    ApiTracerContext contextToUse =
+        tracerContext != null ? tracerContext.withNewSharedContext() : null;
     List<ApiTracer> children = new ArrayList<>(apiTracerFactories.size());
 
     for (ApiTracerFactory factory : apiTracerFactories) {
-      children.add(factory.newTracer(parent, tracerContext));
+      children.add(factory.newTracer(parent, contextToUse));
     }
     return new CompositeTracer(children);
   }
