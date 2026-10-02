@@ -31,6 +31,10 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -220,5 +224,53 @@ class LoggingTracerTest {
     } else {
       return testLogger.getKeyValuePairsMap();
     }
+  }
+
+  @Test
+  void testAttemptFailedDuration_withOpenTelemetryTracingTracer_spanIsActiveDuringLogging() {
+    io.opentelemetry.api.trace.SpanContext spanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span testSpan = io.opentelemetry.api.trace.Span.wrap(spanContext);
+
+    java.util.concurrent.atomic.AtomicReference<String> activeTraceIdDuringLog =
+        new java.util.concurrent.atomic.AtomicReference<>();
+
+    LoggingTracer loggingTracer =
+        new LoggingTracer(ApiTracerContext.empty()) {
+          @Override
+          void recordActionableError(Throwable error) {
+            super.recordActionableError(error);
+            activeTraceIdDuringLog.set(
+                io.opentelemetry.api.trace.Span.current().getSpanContext().getTraceId());
+          }
+        };
+
+    io.opentelemetry.api.trace.Tracer tracer = mock(io.opentelemetry.api.trace.Tracer.class);
+    io.opentelemetry.api.trace.SpanBuilder spanBuilder =
+        mock(io.opentelemetry.api.trace.SpanBuilder.class);
+    when(tracer.spanBuilder(anyString())).thenReturn(spanBuilder);
+    when(spanBuilder.setSpanKind(any(io.opentelemetry.api.trace.SpanKind.class)))
+        .thenReturn(spanBuilder);
+    when(spanBuilder.setAllAttributes(any(io.opentelemetry.api.common.Attributes.class)))
+        .thenReturn(spanBuilder);
+    when(spanBuilder.startSpan()).thenReturn(testSpan);
+
+    OpenTelemetryTracingTracer otelTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), "Service/Method/attempt");
+
+    CompositeTracer compositeTracer =
+        new CompositeTracer(java.util.Arrays.asList(otelTracer, loggingTracer));
+
+    compositeTracer.attemptStarted(new Object(), 1);
+    compositeTracer.attemptFailedDuration(new RuntimeException("error"), java.time.Duration.ZERO);
+
+    assertEquals("00000000000000000000000000000001", activeTraceIdDuringLog.get());
+    assertEquals(
+        io.opentelemetry.api.trace.Span.getInvalid().getSpanContext(),
+        io.opentelemetry.api.trace.Span.current().getSpanContext());
   }
 }
