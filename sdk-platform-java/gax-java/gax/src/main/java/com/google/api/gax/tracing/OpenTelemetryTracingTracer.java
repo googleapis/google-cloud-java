@@ -54,7 +54,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private @Nullable Span attemptSpan;
-  private @Nullable Supplier<ApiTracerContext.Scope> attemptScopeProvider;
+  private volatile @Nullable Supplier<ApiTracerContext.Scope> attemptScopeProvider;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
