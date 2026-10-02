@@ -147,7 +147,14 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
     this.attemptSpan = spanBuilder.startSpan();
     if (apiTracerContext != null) {
-      apiTracerContext.sharedContext().setAttemptSpan(attemptSpan);
+      Span span = this.attemptSpan;
+      apiTracerContext
+          .sharedContext()
+          .setAttemptScopeProvider(
+              () -> {
+                io.opentelemetry.context.Scope otelScope = span.makeCurrent();
+                return otelScope::close;
+              });
     }
   }
 
@@ -156,9 +163,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(null);
   }
 
-  private void clearSharedAttemptSpan(@Nullable Span expectedSpan) {
-    if (apiTracerContext != null && expectedSpan != null) {
-      apiTracerContext.sharedContext().compareAndSetAttemptSpan(expectedSpan, null);
+  private void clearSharedAttemptScope() {
+    if (apiTracerContext != null) {
+      apiTracerContext.sharedContext().setAttemptScopeProvider(null);
     }
   }
 
@@ -247,10 +254,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       return;
     }
 
-    Span spanToClear = attemptSpan;
     attemptSpan.end();
     attemptSpan = null;
-    clearSharedAttemptSpan(spanToClear);
+    clearSharedAttemptScope();
   }
 
   @Override

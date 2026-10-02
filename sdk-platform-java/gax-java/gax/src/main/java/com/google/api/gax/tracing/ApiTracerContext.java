@@ -36,7 +36,6 @@ import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
-import io.opentelemetry.api.trace.Span;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
@@ -55,6 +54,12 @@ import org.jspecify.annotations.Nullable;
 @AutoValue
 public abstract class ApiTracerContext {
 
+  @FunctionalInterface
+  public interface Scope extends AutoCloseable {
+    @Override
+    void close();
+  }
+
   /**
    * Holds mutable shared state between sibling {@link ApiTracer} instances belonging to the same
    * attempt.
@@ -63,28 +68,35 @@ public abstract class ApiTracerContext {
     static final SharedContext EMPTY =
         new SharedContext() {
           @Override
-          public void setAttemptSpan(@Nullable Span span) {
+          public void setAttemptScopeProvider(@Nullable Supplier<Scope> provider) {
             // No-op for empty sentinel
           }
 
           @Override
-          public boolean compareAndSetAttemptSpan(@Nullable Span expect, @Nullable Span update) {
+          public boolean compareAndSetAttemptScopeProvider(
+              @Nullable Supplier<Scope> expect, @Nullable Supplier<Scope> update) {
             return false;
           }
         };
 
-    private final AtomicReference<Span> attemptSpan = new AtomicReference<>();
+    private final AtomicReference<Supplier<Scope>> attemptScopeProvider = new AtomicReference<>();
 
-    public @Nullable Span getAttemptSpan() {
-      return attemptSpan.get();
+    public @Nullable Scope openAttemptScope() {
+      Supplier<Scope> provider = attemptScopeProvider.get();
+      return provider != null ? provider.get() : null;
     }
 
-    public void setAttemptSpan(@Nullable Span span) {
-      attemptSpan.set(span);
+    public void setAttemptScopeProvider(@Nullable Supplier<Scope> provider) {
+      attemptScopeProvider.set(provider);
     }
 
-    public boolean compareAndSetAttemptSpan(@Nullable Span expect, @Nullable Span update) {
-      return attemptSpan.compareAndSet(expect, update);
+    public boolean compareAndSetAttemptScopeProvider(
+        @Nullable Supplier<Scope> expect, @Nullable Supplier<Scope> update) {
+      return attemptScopeProvider.compareAndSet(expect, update);
+    }
+
+    public boolean hasAttemptScope() {
+      return attemptScopeProvider.get() != null;
     }
   }
 
@@ -360,9 +372,7 @@ public abstract class ApiTracerContext {
       shared = this.sharedContext();
     } else {
       shared =
-          other.sharedContext().getAttemptSpan() != null
-              ? other.sharedContext()
-              : this.sharedContext();
+          other.sharedContext().hasAttemptScope() ? other.sharedContext() : this.sharedContext();
     }
     builder.setSharedContext(shared);
     return builder.build();

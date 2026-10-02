@@ -229,7 +229,13 @@ class LoggingTracerTest {
         ApiTracerContext.newBuilder()
             .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
             .build();
-    context.sharedContext().setAttemptSpan(realSpan);
+    context
+        .sharedContext()
+        .setAttemptScopeProvider(
+            () -> {
+              io.opentelemetry.context.Scope otelScope = realSpan.makeCurrent();
+              return otelScope::close;
+            });
     LoggingTracer tracer = new LoggingTracer(context);
 
     org.junit.jupiter.api.Assertions.assertFalse(

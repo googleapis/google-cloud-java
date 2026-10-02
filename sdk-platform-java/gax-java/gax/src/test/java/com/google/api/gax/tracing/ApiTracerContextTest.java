@@ -534,7 +534,7 @@ class ApiTracerContextTest {
   void testSharedContext_defaultNonNullAndMerge() {
     ApiTracerContext context1 = ApiTracerContext.empty();
     assertThat(context1.sharedContext()).isNotNull();
-    assertThat(context1.sharedContext().getAttemptSpan()).isNull();
+    assertThat(context1.sharedContext().hasAttemptScope()).isFalse();
 
     ApiTracerContext.SharedContext shared = new ApiTracerContext.SharedContext();
     ApiTracerContext context2 =
@@ -550,18 +550,11 @@ class ApiTracerContextTest {
     ApiTracerContext merged2 = context2.merge(context1);
     assertThat(merged2.sharedContext()).isSameInstanceAs(shared);
 
-    // Verify active span preservation during merge
-    io.opentelemetry.api.trace.SpanContext mockSpanContext =
-        io.opentelemetry.api.trace.SpanContext.create(
-            "00000000000000000000000000000001",
-            "0000000000000002",
-            io.opentelemetry.api.trace.TraceFlags.getSampled(),
-            io.opentelemetry.api.trace.TraceState.getDefault());
-    io.opentelemetry.api.trace.Span realSpan =
-        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
-
+    // Verify active scope provider preservation during merge
+    java.util.concurrent.atomic.AtomicBoolean scopeClosed =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
     ApiTracerContext.SharedContext activeShared = new ApiTracerContext.SharedContext();
-    activeShared.setAttemptSpan(realSpan);
+    activeShared.setAttemptScopeProvider(() -> () -> scopeClosed.set(true));
     ApiTracerContext activeContext =
         ApiTracerContext.newBuilder()
             .setLibraryMetadata(LibraryMetadata.empty())
@@ -579,15 +572,15 @@ class ApiTracerContextTest {
     // original
     ApiTracerContext mergedActive1 = activeContext.merge(inactiveContext);
     assertThat(mergedActive1.sharedContext()).isSameInstanceAs(activeShared);
-    assertThat(mergedActive1.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
-    assertThat(inactiveContext.sharedContext().getAttemptSpan()).isNull();
+    assertThat(mergedActive1.sharedContext().hasAttemptScope()).isTrue();
+    assertThat(inactiveContext.sharedContext().hasAttemptScope()).isFalse();
 
     // Active context in 'other' should be reused in the merged context, without mutating the
     // original
     ApiTracerContext mergedActive2 = inactiveContext.merge(activeContext);
     assertThat(mergedActive2.sharedContext()).isSameInstanceAs(activeShared);
-    assertThat(mergedActive2.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
-    assertThat(inactiveContext.sharedContext().getAttemptSpan()).isNull();
+    assertThat(mergedActive2.sharedContext().hasAttemptScope()).isTrue();
+    assertThat(inactiveContext.sharedContext().hasAttemptScope()).isFalse();
 
     // When both contexts share the same non-empty SharedContext instance, reuse it directly
     ApiTracerContext context3 =
@@ -612,7 +605,7 @@ class ApiTracerContextTest {
     ApiTracerContext builtFromEmpty = ApiTracerContext.empty().toBuilder().build();
     assertThat(builtFromEmpty.sharedContext())
         .isNotSameInstanceAs(ApiTracerContext.SharedContext.EMPTY);
-    assertThat(builtFromEmpty.sharedContext().getAttemptSpan()).isNull();
+    assertThat(builtFromEmpty.sharedContext().hasAttemptScope()).isFalse();
 
     // toBuilder on an initialized context preserves the shared context reference for callable
     // wrapping
