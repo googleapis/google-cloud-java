@@ -384,6 +384,10 @@ public class ShimImpl implements Shim {
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, checkAndMutateRowShim, Util.extractTimeout(settings));
+        configManager,
+        classic,
+        checkAndMutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer);
   }
 }
