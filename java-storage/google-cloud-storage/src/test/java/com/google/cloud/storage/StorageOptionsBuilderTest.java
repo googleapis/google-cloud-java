@@ -70,6 +70,132 @@ public final class StorageOptionsBuilderTest {
   }
 
   @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect() throws Exception {
+    com.google.auth.Credentials mockCreds = com.google.cloud.NoCredentials.getInstance();
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setCredentials(mockCreds)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+
+    GrpcStorageOptions rebuilt = options.toBuilder().build();
+    assertAll(
+        () -> assertThat(rebuilt).isEqualTo(options),
+        () -> assertThat(rebuilt.hashCode()).isEqualTo(options.hashCode()));
+
+    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    assertThat(settings.getEndpoint()).isEqualTo("storage-direct.googleapis.com:443");
+
+    com.google.api.gax.rpc.TransportChannelProvider tcp = settings.getTransportChannelProvider();
+    assertThat(tcp).isInstanceOf(com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class);
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
+
+    assertThat(provider.isAttemptDirectPathXdsOverInterconnect()).isTrue();
+    com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
+        configurator = provider.toBuilder().getChannelConfigurator();
+    if (configurator != null) {
+      io.grpc.ManagedChannelBuilder<?> mockBuilder =
+          org.mockito.Mockito.mock(
+              io.grpc.ManagedChannelBuilder.class, org.mockito.Mockito.RETURNS_SELF);
+      configurator.apply(mockBuilder);
+      org.mockito.Mockito.verify(mockBuilder, org.mockito.Mockito.never())
+          .overrideAuthority(org.mockito.Mockito.anyString());
+    }
+  }
+
+  @Test
+  public void grpc_fallbackFromDirectPathXdsOverInterconnect_doesNotOverrideAuthority()
+      throws Exception {
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.my-universe.com")
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .build();
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
+            options.getStorageSettings().getTransportChannelProvider();
+    com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
+        configurator = provider.toBuilder().getChannelConfigurator();
+    if (configurator != null) {
+      io.grpc.ManagedChannelBuilder<?> mockBuilder =
+          org.mockito.Mockito.mock(
+              io.grpc.ManagedChannelBuilder.class, org.mockito.Mockito.RETURNS_SELF);
+      configurator.apply(mockBuilder);
+      org.mockito.Mockito.verify(mockBuilder, org.mockito.Mockito.never())
+          .overrideAuthority(org.mockito.Mockito.anyString());
+    }
+  }
+
+  @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect_hostWithQueryOrFragment() throws Exception {
+    GrpcStorageOptions optionsWithQuery =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.googleapis.com?query=val")
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    assertThat(optionsWithQuery.getStorageSettings().getEndpoint())
+        .isEqualTo("storage-direct.googleapis.com:443");
+
+    GrpcStorageOptions optionsWithFragment =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.googleapis.com#section")
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    assertThat(optionsWithFragment.getStorageSettings().getEndpoint())
+        .isEqualTo("storage-direct.googleapis.com:443");
+  }
+
+  @Test
+  public void grpc_rewriteHost_delimiters() {
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "https://storage.googleapis.com?query=val",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("https://storage-direct.googleapis.com?query=val");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "https://storage.googleapis.com#section",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("https://storage-direct.googleapis.com#section");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com?query=val",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com?query=val");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com#section",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com#section");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com:443",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com:443");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com/path",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage-direct.googleapis.com/path");
+    assertThat(
+            GrpcStorageOptions.rewriteHost(
+                "storage.googleapis.com.evil.com",
+                "storage.googleapis.com",
+                "storage-direct.googleapis.com"))
+        .isEqualTo("storage.googleapis.com.evil.com");
+  }
+
+  @Test
   public void useJwtAccessWithScope_defaultsToFalse() {
     HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
     GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
