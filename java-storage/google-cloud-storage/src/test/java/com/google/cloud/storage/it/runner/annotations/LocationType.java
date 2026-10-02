@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,12 @@
 
 package com.google.cloud.storage.it.runner.annotations;
 
-/** An enum to signify the backends we test against. */
-public enum Backend {
-  /** Use the "Production" GCS endpoints */
-  PROD,
-  /** Use the GCS Pre-prod (Staging) endpoints */
-  PREPROD,
-  /** Use the test bench as a backend */
-  TEST_BENCH
+/** An enum defining the bucket location and topology types used in integration testing. */
+public enum LocationType {
+  /** Standard regional storage bucket */
+  REGIONAL_STANDARD,
+  /** Regional bucket with Rapid Cache enabled */
+  REGIONAL_RAPID,
+  /** Zonal bucket placed in a specific availability zone */
+  ZONAL_RAPID
 }
