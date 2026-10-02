@@ -76,6 +76,9 @@ final class AgentIdentityCertificateValidationUtils {
 
   private static final String SPIFFE_SCHEME_PREFIX = "spiffe://";
 
+  private static final byte[] VERIFICATION_DATA =
+      "verification-data".getBytes(StandardCharsets.UTF_8);
+
   private AgentIdentityCertificateValidationUtils() {}
 
   /** Thrown for key algorithms that can never be verified, so callers fail without retrying. */
@@ -153,38 +156,35 @@ final class AgentIdentityCertificateValidationUtils {
    */
   static boolean verifyKeyPair(final X509Certificate cert, final PrivateKey privateKey)
       throws UnsupportedKeyAlgorithmException {
-    try {
-      byte[] data = "verification-data".getBytes(StandardCharsets.UTF_8);
+    PublicKey publicKey = cert.getPublicKey();
+    String keyAlgorithm = publicKey.getAlgorithm();
+    String sigAlg;
+    if ("RSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withRSA";
+    } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withECDSA";
+    } else {
+      throw new UnsupportedKeyAlgorithmException(keyAlgorithm);
+    }
 
-      PublicKey publicKey = cert.getPublicKey();
-      String keyAlgorithm = publicKey.getAlgorithm();
-      String sigAlg;
-      if ("RSA".equals(keyAlgorithm)) {
-        sigAlg = "SHA256withRSA";
-      } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
-        sigAlg = "SHA256withECDSA";
-        if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
-          // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
-          publicKey =
-              KeyFactory.getInstance("EC")
-                  .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
-        }
-      } else {
-        throw new UnsupportedKeyAlgorithmException(keyAlgorithm);
+    try {
+      if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
+        // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
+        publicKey =
+            KeyFactory.getInstance("EC")
+                .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
       }
 
       Signature signer = Signature.getInstance(sigAlg);
       signer.initSign(privateKey);
-      signer.update(data);
+      signer.update(VERIFICATION_DATA);
       byte[] signature = signer.sign();
 
       Signature verifier = Signature.getInstance(sigAlg);
       verifier.initVerify(publicKey);
-      verifier.update(data);
+      verifier.update(VERIFICATION_DATA);
 
       return verifier.verify(signature);
-    } catch (UnsupportedKeyAlgorithmException e) {
-      throw e;
     } catch (Exception e) {
       LoggingUtils.log(
           LOGGER_PROVIDER,

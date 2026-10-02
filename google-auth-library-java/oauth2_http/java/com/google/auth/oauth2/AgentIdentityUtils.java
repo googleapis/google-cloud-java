@@ -264,7 +264,7 @@ final class AgentIdentityUtils {
 
   /** Checks whether the given path resides within the well-known certificate directory. */
   private static boolean isPathInWellKnownDir(final String pathStr) {
-    if (Strings.isNullOrEmpty(pathStr) || Strings.isNullOrEmpty(wellKnownDir)) {
+    if (Strings.isNullOrEmpty(pathStr)) {
       return false;
     }
     try {
@@ -319,12 +319,7 @@ final class AgentIdentityUtils {
 
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
     boolean configExists = paths.hasWorkloadConfig();
-    CachedAgentIdentityInfo effectiveCached =
-        AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
-    boolean certsPresent =
-        !Strings.isNullOrEmpty(paths.getCertPath())
-            && (Files.exists(Paths.get(paths.getCertPath()))
-                || AgentIdentityCacheUtils.matchesCachedPath(paths.getCertPath(), effectiveCached));
+    boolean certsPresent = !Strings.isNullOrEmpty(paths.getCertPath());
 
     if (!shouldEnableMtls(certsPresent, configExists)) {
       if (isMtlsExplicitlyDisabled()) {
@@ -368,8 +363,8 @@ final class AgentIdentityUtils {
    * @return A {@link CertInfo} object containing the parsed {@link X509Certificate} and the raw PEM
    *     certificate chain (with private keys stripped), or {@code null} if the certificate does not
    *     match agent SPIFFE patterns.
-   * @throws IOException If the files cannot be read or parsed, if the private key is missing for an
-   *     agent certificate, or if key-pair verification fails after retries.
+   * @throws IOException If the files cannot be read or parsed, or if key-pair verification fails
+   *     after retries.
    */
   static CertInfo loadAndVerifyCredentials(final String certPath, final String keyPath)
       throws IOException {
@@ -416,12 +411,6 @@ final class AgentIdentityUtils {
           }
           lastException = new IOException("Certificate file modified during read.");
         } else {
-          if (Strings.isNullOrEmpty(keyPath)) {
-            throw new IOException(
-                "Private key is required for Agent Identity bound token request, but key path is"
-                    + " missing.");
-          }
-
           FileMetadata keyMeta = FileMetadata.of(keyPath);
           PrivateKey privateKey =
               AgentIdentityCertificateValidationUtils.readPrivateKey(
@@ -454,9 +443,6 @@ final class AgentIdentityUtils {
       } catch (UnsupportedKeyAlgorithmException | InvalidCertificateException e) {
         throw e;
       } catch (Exception e) {
-        if (Strings.isNullOrEmpty(keyPath) && e instanceof IOException) {
-          throw (IOException) e;
-        }
         lastException = e;
         LoggingUtils.log(
             LOGGER_PROVIDER,
@@ -534,7 +520,10 @@ final class AgentIdentityUtils {
     if (isMtlsExplicitlyDisabled()) {
       try {
         if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
-          return extractPathsFromConfig(certConfigPath);
+          ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
+          if (paths.hasWorkloadConfig() && Files.exists(Paths.get(paths.getCertPath()))) {
+            return paths;
+          }
         }
       } catch (Exception ignored) {
         // Do not fail when mTLS is explicitly disabled
@@ -557,6 +546,8 @@ final class AgentIdentityUtils {
             initialStartupCompleted = true;
             return paths;
           }
+          // The config file itself may reside outside wellKnownDir while referencing cert_path or
+          // key_path inside wellKnownDir that are still being delivered at startup.
           if (!initialStartupCompleted
               && !shouldPoll
               && (isPathInWellKnownDir(paths.getCertPath())
@@ -650,11 +641,9 @@ final class AgentIdentityUtils {
   /** Searches for certificates at well-known locations with retry logic. */
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final CachedAgentIdentityInfo initialCached) throws IOException {
-    String useClientCert = getUseClientCertificateEnv();
-    boolean explicitMtls = isMtlsExplicitlyEnabled();
-    if (!explicitMtls && !Files.exists(Paths.get(wellKnownDir))) {
-      // Fail-fast if well-known dir doesn't exist and explicit mTLS is not enabled (e.g.
-      // workstation)
+    if (!isMtlsExplicitlyEnabled()) {
+      // Without a config file (configExists == false), mTLS is only enabled when
+      // GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly "true".
       initialStartupCompleted = true;
       return new ResolvedCertAndKeyPaths(null, null, false);
     }
@@ -663,7 +652,7 @@ final class AgentIdentityUtils {
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
     String keyOnlyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
 
-    boolean shouldPoll = explicitMtls && !initialStartupCompleted;
+    boolean shouldPoll = !initialStartupCompleted;
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
 
     boolean warned = false;
@@ -722,27 +711,12 @@ final class AgentIdentityUtils {
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
 
-    if (explicitMtls) {
-      throw new IOException(
-          String.format(
-              "Unable to find well-known Agent Identity certificate file at %s for bound token"
-                  + " request. Token binding protection is failing. You can turn off this"
-                  + " protection by setting %s to false to fall back to unbound tokens.",
-              wellKnownDir, GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN));
-    }
-
-    LoggingUtils.log(
-        LOGGER_PROVIDER,
-        Level.FINE,
-        Collections.emptyMap(),
+    throw new IOException(
         String.format(
-            "Well-known certificate file not found at %s (%s=%s, initialStartupCompleted=%s);"
-                + " falling back to unbound token.",
-            wellKnownDir,
-            GOOGLE_API_USE_CLIENT_CERTIFICATE,
-            useClientCert,
-            initialStartupCompleted));
-    return new ResolvedCertAndKeyPaths(null, null, false);
+            "Unable to find well-known Agent Identity certificate file at %s for bound token"
+                + " request. Token binding protection is failing. You can turn off this"
+                + " protection by setting %s to false to fall back to unbound tokens.",
+            wellKnownDir, GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN));
   }
 
   /**

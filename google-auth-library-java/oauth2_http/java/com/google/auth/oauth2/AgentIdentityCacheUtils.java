@@ -219,10 +219,9 @@ final class AgentIdentityCacheUtils {
       if (cached.configMetadata != null) {
         return false;
       }
-      String wellKnownDir = AgentIdentityUtils.getWellKnownDir();
       if (cached.certMetadata.path.endsWith("certificates.pem")
-          && !Strings.isNullOrEmpty(wellKnownDir)
-          && Files.exists(Paths.get(wellKnownDir, "credentialbundle.pem"))) {
+          && Files.exists(
+              Paths.get(AgentIdentityUtils.getWellKnownDir(), "credentialbundle.pem"))) {
         // credentialbundle.pem takes precedence if added after certificates.pem was cached
         return false;
       }
@@ -275,13 +274,6 @@ final class AgentIdentityCacheUtils {
     return !Strings.isNullOrEmpty(keyPath)
         && cached.keyMetadata != null
         && cached.keyMetadata.isUnchangedAtPath(keyPath);
-  }
-
-  /** Returns {@code true} if {@code certPath} matches the path stored in {@code cached}. */
-  static boolean matchesCachedPath(final String certPath, final CachedAgentIdentityInfo cached) {
-    return cached != null
-        && cached.certMetadata != null
-        && certPath.equals(cached.certMetadata.path);
   }
 
   /**
