@@ -52,7 +52,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
-  private @Nullable Span attemptSpan;
+  private volatile @Nullable Span attemptSpan;
 
   /**
    * Installs the current attempt span as the active OpenTelemetry context on the calling thread.
