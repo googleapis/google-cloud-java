@@ -549,5 +549,40 @@ class ApiTracerContextTest {
 
     ApiTracerContext merged2 = context2.merge(context1);
     assertThat(merged2.sharedContext()).isSameInstanceAs(shared);
+
+    // Verify active span preservation during merge
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000001",
+            "0000000000000002",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    io.opentelemetry.api.trace.Span realSpan =
+        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+
+    ApiTracerContext.SharedContext activeShared = new ApiTracerContext.SharedContext();
+    activeShared.setAttemptSpan(realSpan);
+    ApiTracerContext activeContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(activeShared)
+            .build();
+
+    ApiTracerContext.SharedContext inactiveShared = new ApiTracerContext.SharedContext();
+    ApiTracerContext inactiveContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(inactiveShared)
+            .build();
+
+    // Active context in 'this' should be preserved
+    ApiTracerContext mergedActive1 = activeContext.merge(inactiveContext);
+    assertThat(mergedActive1.sharedContext()).isSameInstanceAs(activeShared);
+    assertThat(mergedActive1.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
+
+    // Active context in 'other' should be preserved
+    ApiTracerContext mergedActive2 = inactiveContext.merge(activeContext);
+    assertThat(mergedActive2.sharedContext()).isSameInstanceAs(activeShared);
+    assertThat(mergedActive2.sharedContext().getAttemptSpan()).isSameInstanceAs(realSpan);
   }
 }
