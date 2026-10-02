@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.storage.v1.stub.BigQueryReadStubSettings
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.v5.Apache5HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -59,7 +60,9 @@ final class BigQueryJdbcProxyUtility {
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
-  private static final HttpTransport DEFAULT_TRANSPORT = new NetHttpTransport.Builder().build();
+  private static final HttpTransport DEFAULT_TRANSPORT =
+      HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+          .build();
 
   private BigQueryJdbcProxyUtility() {}
 
