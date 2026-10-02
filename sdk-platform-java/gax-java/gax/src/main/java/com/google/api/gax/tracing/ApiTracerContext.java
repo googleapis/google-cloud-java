@@ -60,6 +60,14 @@ public abstract class ApiTracerContext {
    * attempt.
    */
   public static class SharedContext {
+    static final SharedContext EMPTY =
+        new SharedContext() {
+          @Override
+          public void setAttemptSpan(@Nullable Span span) {
+            // No-op for empty sentinel
+          }
+        };
+
     private final AtomicReference<Span> attemptSpan = new AtomicReference<>();
 
     public @Nullable Span getAttemptSpan() {
@@ -72,11 +80,12 @@ public abstract class ApiTracerContext {
   }
 
   /**
-   * Returns the shared context for sibling tracers in an attempt.
+   * Returns the shared context for sibling tracers in an attempt. Never returns {@code null};
+   * returns an empty {@link SharedContext} if not explicitly set.
    *
    * @return the shared context
    */
-  public abstract @Nullable SharedContext sharedContext();
+  public abstract SharedContext sharedContext();
 
   public enum Transport {
     GRPC("grpc"),
@@ -334,20 +343,28 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
-    if (other.sharedContext() != null) {
+    if (other.sharedContext() != SharedContext.EMPTY) {
       builder.setSharedContext(other.sharedContext());
-    } else if (this.sharedContext() != null) {
+    } else if (this.sharedContext() != SharedContext.EMPTY) {
       builder.setSharedContext(this.sharedContext());
+    } else {
+      builder.setSharedContext(SharedContext.EMPTY);
     }
     return builder.build();
   }
 
+  private static final ApiTracerContext EMPTY =
+      new AutoValue_ApiTracerContext.Builder()
+          .setLibraryMetadata(LibraryMetadata.empty())
+          .setSharedContext(SharedContext.EMPTY)
+          .build();
+
   static ApiTracerContext empty() {
-    return newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
+    return EMPTY;
   }
 
   public static Builder newBuilder() {
-    return new AutoValue_ApiTracerContext.Builder();
+    return new AutoValue_ApiTracerContext.Builder().setSharedContext(new SharedContext());
   }
 
   abstract Builder toBuilder();
@@ -377,7 +394,7 @@ public abstract class ApiTracerContext {
     abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
 
-    public abstract Builder setSharedContext(@Nullable SharedContext sharedContext);
+    public abstract Builder setSharedContext(SharedContext sharedContext);
 
     public abstract ApiTracerContext build();
   }

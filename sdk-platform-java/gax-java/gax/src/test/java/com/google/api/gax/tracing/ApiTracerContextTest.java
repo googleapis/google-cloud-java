@@ -529,4 +529,22 @@ class ApiTracerContextTest {
     assertThat(result.destinationResourceId()).isEqualTo("extracted-id-2");
     assertThat(counter[0]).isEqualTo(2);
   }
+
+  @Test
+  void testSharedContext_defaultNonNullAndMerge() {
+    ApiTracerContext context1 = ApiTracerContext.empty();
+    assertThat(context1.sharedContext()).isNotNull();
+    assertThat(context1.sharedContext().getAttemptSpan()).isNull();
+
+    ApiTracerContext.SharedContext shared = new ApiTracerContext.SharedContext();
+    ApiTracerContext context2 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(shared)
+            .build();
+    assertThat(context2.sharedContext()).isSameInstanceAs(shared);
+
+    ApiTracerContext merged = context1.merge(context2);
+    assertThat(merged.sharedContext()).isSameInstanceAs(shared);
+  }
 }
