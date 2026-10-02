@@ -359,14 +359,10 @@ public abstract class ApiTracerContext {
         || this.sharedContext() == other.sharedContext()) {
       shared = this.sharedContext();
     } else {
-      shared = new SharedContext();
-      Span thisSpan = this.sharedContext().getAttemptSpan();
-      Span otherSpan = other.sharedContext().getAttemptSpan();
-      if (thisSpan != null) {
-        shared.setAttemptSpan(thisSpan);
-      } else if (otherSpan != null) {
-        shared.setAttemptSpan(otherSpan);
-      }
+      shared =
+          this.sharedContext().getAttemptSpan() != null
+              ? this.sharedContext()
+              : other.sharedContext();
     }
     builder.setSharedContext(shared);
     return builder.build();
