@@ -10,10 +10,10 @@
 # These dependencies are declared: https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/gapic-generator-java-pom-parent/pom.xml
 javax.annotation:javax.annotation-api,javax.annotation-api=1.3.2
 io.grpc:grpc-bom,grpc=1.84.0
-com.google.auth:google-auth-library-bom,google.auth=1.53.0
+com.google.auth:google-auth-library-bom,google.auth=1.54.0
 com.google.http-client:google-http-client,google.http-client=2.2.0
 com.google.code.gson:gson,gson=2.14.0
-com.google.guava:guava,guava=33.7.1-jre
+com.google.guava:guava,guava=33.7.2-jre
 com.google.protobuf:protobuf-java,protobuf=4.36.2
 io.opentelemetry:opentelemetry-bom,opentelemetry=1.66.0
 com.google.errorprone:error_prone_annotations,errorprone=2.50.0
@@ -25,7 +25,7 @@ org.conscrypt:conscrypt-openjdk-uber,conscrypt=2.7.0
 
 # 1P Shared-Deps
 # These dependencies are declared: https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-shared-dependencies/first-party-dependencies/pom.xml
-com.google.cloud:grpc-gcp,grpc-gcp=1.16.0
+com.google.cloud:grpc-gcp,grpc-gcp=1.17.0
 com.google.oauth-client:google-oauth-client,google.oauth-client=1.39.0
 com.google.api-client:google-api-client,google.api-client=2.9.1
 
