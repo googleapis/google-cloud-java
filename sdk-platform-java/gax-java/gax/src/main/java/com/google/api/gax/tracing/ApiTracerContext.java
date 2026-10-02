@@ -69,18 +69,27 @@ public abstract class ApiTracerContext {
     public void setAttemptSpan(@Nullable Span span) {
       attemptSpan.set(span);
     }
-  }
 
-  private SharedContext sharedContext = new SharedContext();
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      return o instanceof SharedContext;
+    }
+
+    @Override
+    public int hashCode() {
+      return SharedContext.class.hashCode();
+    }
+  }
 
   /**
    * Returns the shared context for sibling tracers in an attempt.
    *
    * @return the shared context
    */
-  public SharedContext sharedContext() {
-    return sharedContext;
-  }
+  public abstract @Nullable SharedContext sharedContext();
 
   public enum Transport {
     GRPC("grpc"),
@@ -338,9 +347,12 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
-    ApiTracerContext merged = builder.build();
-    merged.sharedContext = other.sharedContext;
-    return merged;
+    SharedContext targetSharedContext =
+        (other.sharedContext() != null && other.sharedContext().getAttemptSpan() != null)
+            ? other.sharedContext()
+            : this.sharedContext();
+    builder.setSharedContext(targetSharedContext);
+    return builder.build();
   }
 
   static ApiTracerContext empty() {
@@ -378,6 +390,17 @@ public abstract class ApiTracerContext {
     abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
 
-    public abstract ApiTracerContext build();
+    public abstract Builder setSharedContext(SharedContext sharedContext);
+
+    abstract @Nullable SharedContext sharedContext();
+
+    abstract ApiTracerContext autoBuild();
+
+    public ApiTracerContext build() {
+      if (sharedContext() == null) {
+        setSharedContext(new SharedContext());
+      }
+      return autoBuild();
+    }
   }
 }

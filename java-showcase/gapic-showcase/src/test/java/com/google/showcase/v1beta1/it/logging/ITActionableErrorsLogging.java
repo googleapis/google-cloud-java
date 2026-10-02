@@ -313,18 +313,13 @@ public class ITActionableErrorsLogging {
             .setTransportChannelProvider(
                 EchoSettings.defaultHttpJsonTransportProviderBuilder()
                     .setHttpTransport(
-                        new com.google.api.client.http.javanet.NetHttpTransport() {
+                        new MockHttpTransport() {
                           @Override
-                          public com.google.api.client.http.LowLevelHttpRequest buildRequest(
-                              String method, String url) {
-                            return new com.google.api.client.testing.http
-                                .MockLowLevelHttpRequest() {
+                          public LowLevelHttpRequest buildRequest(String method, String url) {
+                            return new MockLowLevelHttpRequest() {
                               @Override
-                              public com.google.api.client.http.LowLevelHttpResponse execute() {
-                                com.google.api.client.testing.http.MockLowLevelHttpResponse
-                                    response =
-                                        new com.google.api.client.testing.http
-                                            .MockLowLevelHttpResponse();
+                              public LowLevelHttpResponse execute() {
+                                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
                                 response.setStatusCode(409);
                                 response.setContentType("application/json");
                                 response.setContent(
