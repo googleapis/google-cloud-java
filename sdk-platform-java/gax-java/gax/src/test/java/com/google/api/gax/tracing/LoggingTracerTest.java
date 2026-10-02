@@ -36,11 +36,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ErrorDetails;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
 import java.util.Collections;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -218,19 +222,16 @@ class LoggingTracerTest {
 
   @Test
   void testRecordActionableError_withSharedContextAttemptSpan_activatesSpanDuringLogging() {
-    io.opentelemetry.api.trace.SpanContext mockSpanContext =
-        io.opentelemetry.api.trace.SpanContext.create(
+    SpanContext mockSpanContext =
+        SpanContext.create(
             "00000000000000000000000000000001",
             "0000000000000002",
-            io.opentelemetry.api.trace.TraceFlags.getSampled(),
-            io.opentelemetry.api.trace.TraceState.getDefault());
-    io.opentelemetry.api.trace.Span realSpan =
-        io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
+            TraceFlags.getSampled(),
+            TraceState.getDefault());
+    Span realSpan = Span.wrap(mockSpanContext);
 
     ApiTracerContext context =
-        ApiTracerContext.newBuilder()
-            .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
-            .build();
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
     context
         .sharedContext()
         .setAttemptScopeProvider(
