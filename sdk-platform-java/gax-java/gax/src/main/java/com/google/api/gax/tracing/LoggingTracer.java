@@ -100,7 +100,7 @@ class LoggingTracer extends BaseApiTracer {
 
     String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
     Span attemptSpan = null;
-    if (apiTracerContext != null) {
+    if (apiTracerContext != null && apiTracerContext.sharedContext() != null) {
       attemptSpan = apiTracerContext.sharedContext().getAttemptSpan();
     }
     if (attemptSpan != null) {

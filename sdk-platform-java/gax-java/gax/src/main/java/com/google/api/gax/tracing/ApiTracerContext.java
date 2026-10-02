@@ -69,19 +69,6 @@ public abstract class ApiTracerContext {
     public void setAttemptSpan(@Nullable Span span) {
       attemptSpan.set(span);
     }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) {
-        return true;
-      }
-      return o instanceof SharedContext;
-    }
-
-    @Override
-    public int hashCode() {
-      return SharedContext.class.hashCode();
-    }
   }
 
   /**
@@ -347,11 +334,11 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
-    SharedContext targetSharedContext =
-        (other.sharedContext() != null && other.sharedContext().getAttemptSpan() != null)
-            ? other.sharedContext()
-            : this.sharedContext();
-    builder.setSharedContext(targetSharedContext);
+    if (other.sharedContext() != null) {
+      builder.setSharedContext(other.sharedContext());
+    } else if (this.sharedContext() != null) {
+      builder.setSharedContext(this.sharedContext());
+    }
     return builder.build();
   }
 
@@ -390,17 +377,8 @@ public abstract class ApiTracerContext {
     abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
 
-    public abstract Builder setSharedContext(SharedContext sharedContext);
+    public abstract Builder setSharedContext(@Nullable SharedContext sharedContext);
 
-    abstract @Nullable SharedContext sharedContext();
-
-    abstract ApiTracerContext autoBuild();
-
-    public ApiTracerContext build() {
-      if (sharedContext() == null) {
-        setSharedContext(new SharedContext());
-      }
-      return autoBuild();
-    }
+    public abstract ApiTracerContext build();
   }
 }
