@@ -99,8 +99,10 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
-    ApiTracerContext.SharedContext sharedContext = apiTracerContext.sharedContext();
-    Span attemptSpan = sharedContext != null ? sharedContext.getAttemptSpan() : null;
+    Span attemptSpan = null;
+    if (apiTracerContext != null) {
+      attemptSpan = apiTracerContext.sharedContext().getAttemptSpan();
+    }
     if (attemptSpan != null) {
       try (io.opentelemetry.context.Scope ignored = attemptSpan.makeCurrent()) {
         LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
