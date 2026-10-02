@@ -133,6 +133,8 @@ public final class Upsert extends Stage {
         encodedMap.put(entry.getKey(), PipelineUtils.encodeValue(entry.getValue()));
       }
       args.add(PipelineUtils.encodeValue(encodedMap));
+    } else {
+      args.add(PipelineUtils.encodeValue(new HashMap<String, Value>()));
     }
     return args;
   }

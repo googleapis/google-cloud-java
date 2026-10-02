@@ -1531,13 +1531,17 @@ public final class Pipeline {
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime) {
+    java.util.Map<String, com.google.firestore.v1.Value> optionsMap =
+        new java.util.HashMap<>(StageUtils.toMap(options));
+    optionsMap.remove("atomic");
+
     ExecutePipelineRequest.Builder request =
         ExecutePipelineRequest.newBuilder()
             .setDatabase(rpcContext != null ? rpcContext.getDatabaseName() : "")
             .setStructuredPipeline(
                 StructuredPipeline.newBuilder()
                     .setPipeline(toProto())
-                    .putAllOptions(StageUtils.toMap(options))
+                    .putAllOptions(optionsMap)
                     .build());
 
     if (transactionId != null) {
