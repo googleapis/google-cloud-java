@@ -38,6 +38,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -52,6 +53,76 @@ import org.jspecify.annotations.Nullable;
 @InternalApi
 @AutoValue
 public abstract class ApiTracerContext {
+
+  @FunctionalInterface
+  public interface Scope extends AutoCloseable {
+    @Override
+    void close();
+  }
+
+  /**
+   * Holds mutable shared state between sibling {@link ApiTracer} instances belonging to the same
+   * attempt.
+   *
+   * <p>Note: Preserving {@link SharedContext} across {@link #toBuilder()} allows sibling tracers
+   * within an attempt or callable chain to share scope state. To prevent concurrent operations or
+   * hedged requests from overwriting each other's active scope provider, callers initiating
+   * distinct operations or attempts can supply a fresh {@link SharedContext} via {@link
+   * #withNewSharedContext()} or {@link Builder#setSharedContext(SharedContext)}.
+   */
+  public static class SharedContext {
+    static final SharedContext EMPTY =
+        new SharedContext() {
+          @Override
+          public @Nullable Scope openAttemptScope() {
+            return null;
+          }
+
+          @Override
+          public void setAttemptScopeProvider(@Nullable Supplier<Scope> provider) {
+            // No-op for empty sentinel
+          }
+
+          @Override
+          public boolean compareAndSetAttemptScopeProvider(
+              @Nullable Supplier<Scope> expect, @Nullable Supplier<Scope> update) {
+            return false;
+          }
+
+          @Override
+          public boolean hasAttemptScope() {
+            return false;
+          }
+        };
+
+    private final AtomicReference<Supplier<Scope>> attemptScopeProvider = new AtomicReference<>();
+
+    public @Nullable Scope openAttemptScope() {
+      Supplier<Scope> provider = attemptScopeProvider.get();
+      return provider != null ? provider.get() : null;
+    }
+
+    public void setAttemptScopeProvider(@Nullable Supplier<Scope> provider) {
+      attemptScopeProvider.set(provider);
+    }
+
+    public boolean compareAndSetAttemptScopeProvider(
+        @Nullable Supplier<Scope> expect, @Nullable Supplier<Scope> update) {
+      return attemptScopeProvider.compareAndSet(expect, update);
+    }
+
+    public boolean hasAttemptScope() {
+      return attemptScopeProvider.get() != null;
+    }
+  }
+
+  /**
+   * Returns the shared context for sibling tracers in an attempt. Never returns {@code null};
+   * returns an empty {@link SharedContext} if not explicitly set.
+   *
+   * @return the shared context
+   */
+  public abstract SharedContext sharedContext();
 
   public enum Transport {
     GRPC("grpc"),
@@ -309,18 +380,47 @@ public abstract class ApiTracerContext {
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
+    SharedContext shared;
+    if (this.sharedContext() == SharedContext.EMPTY) {
+      shared = other.sharedContext();
+    } else if (other.sharedContext() == SharedContext.EMPTY
+        || this.sharedContext() == other.sharedContext()) {
+      shared = this.sharedContext();
+    } else {
+      shared =
+          other.sharedContext().hasAttemptScope() ? other.sharedContext() : this.sharedContext();
+    }
+    builder.setSharedContext(shared);
     return builder.build();
   }
 
+  private static final ApiTracerContext EMPTY =
+      new AutoValue_ApiTracerContext.Builder()
+          .setLibraryMetadata(LibraryMetadata.empty())
+          .setSharedContext(SharedContext.EMPTY)
+          .build();
+
   static ApiTracerContext empty() {
-    return newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
+    return EMPTY;
   }
 
   public static Builder newBuilder() {
-    return new AutoValue_ApiTracerContext.Builder();
+    return new AutoValue_ApiTracerContext.Builder().setSharedContext(new SharedContext());
   }
 
-  abstract Builder toBuilder();
+  public Builder toBuilder() {
+    Builder builder = autoToBuilder();
+    if (sharedContext() == SharedContext.EMPTY) {
+      builder.setSharedContext(new SharedContext());
+    }
+    return builder;
+  }
+
+  public ApiTracerContext withNewSharedContext() {
+    return toBuilder().setSharedContext(new SharedContext()).build();
+  }
+
+  abstract Builder autoToBuilder();
 
   @AutoValue.Builder
   public abstract static class Builder {
@@ -346,6 +446,8 @@ public abstract class ApiTracerContext {
 
     abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
+
+    public abstract Builder setSharedContext(SharedContext sharedContext);
 
     public abstract ApiTracerContext build();
   }

@@ -39,6 +39,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.function.Supplier;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -53,6 +54,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private @Nullable Span attemptSpan;
+  private volatile @Nullable Supplier<ApiTracerContext.Scope> attemptScopeProvider;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -146,11 +148,29 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+    if (apiTracerContext != null) {
+      Span span = this.attemptSpan;
+      this.attemptScopeProvider =
+          () -> {
+            io.opentelemetry.context.Scope otelScope = span.makeCurrent();
+            return otelScope::close;
+          };
+      apiTracerContext.sharedContext().setAttemptScopeProvider(this.attemptScopeProvider);
+    }
   }
 
   @Override
   public void attemptSucceeded() {
     recordErrorAndEndAttempt(null);
+  }
+
+  private void clearSharedAttemptScope() {
+    if (apiTracerContext != null && this.attemptScopeProvider != null) {
+      apiTracerContext
+          .sharedContext()
+          .compareAndSetAttemptScopeProvider(this.attemptScopeProvider, null);
+      this.attemptScopeProvider = null;
+    }
   }
 
   @Override
@@ -240,6 +260,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
     attemptSpan.end();
     attemptSpan = null;
+    clearSharedAttemptScope();
   }
 
   @Override
