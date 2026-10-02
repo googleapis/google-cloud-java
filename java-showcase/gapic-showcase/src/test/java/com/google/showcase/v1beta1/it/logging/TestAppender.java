@@ -18,12 +18,15 @@ package com.google.showcase.v1beta1.it.logging;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
-import java.util.ArrayList;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /** Logback appender used to set up tests. */
 public class TestAppender extends AppenderBase<ILoggingEvent> {
-  public List<ILoggingEvent> events = new ArrayList<>();
+  public final List<ILoggingEvent> events = new CopyOnWriteArrayList<>();
+  public final List<SpanContext> eventSpanContexts = new CopyOnWriteArrayList<>();
 
   @Override
   protected void append(ILoggingEvent eventObject) {
@@ -32,9 +35,11 @@ public class TestAppender extends AppenderBase<ILoggingEvent> {
     eventObject.getMDCPropertyMap();
 
     events.add(eventObject);
+    eventSpanContexts.add(Span.current().getSpanContext());
   }
 
   public void clearEvents() {
     events.clear();
+    eventSpanContexts.clear();
   }
 }

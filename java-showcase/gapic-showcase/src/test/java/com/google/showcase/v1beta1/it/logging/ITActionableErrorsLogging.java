@@ -294,4 +294,113 @@ public class ITActionableErrorsLogging {
       assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "grpc");
     }
   }
+
+  @Test
+  void testHttpJson_spanContextCapturedInScopeDuringErrorLog() throws Exception {
+    io.opentelemetry.sdk.trace.SdkTracerProvider tracerProvider =
+        io.opentelemetry.sdk.trace.SdkTracerProvider.builder().build();
+    io.opentelemetry.api.OpenTelemetry openTelemetry =
+        io.opentelemetry.sdk.OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
+    com.google.api.gax.tracing.OpenTelemetryTracingFactory otelFactory =
+        new com.google.api.gax.tracing.OpenTelemetryTracingFactory(openTelemetry);
+    com.google.api.gax.tracing.CompositeTracerFactory compositeTracerFactory =
+        new com.google.api.gax.tracing.CompositeTracerFactory(
+            com.google.common.collect.ImmutableList.of(otelFactory, new LoggingTracerFactory()));
+
+    EchoSettings httpJsonEchoSettings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new MockHttpTransport() {
+                          @Override
+                          public LowLevelHttpRequest buildRequest(String method, String url) {
+                            return new MockLowLevelHttpRequest() {
+                              @Override
+                              public LowLevelHttpResponse execute() {
+                                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                                response.setStatusCode(409);
+                                response.setContentType("application/json");
+                                response.setContent(
+                                    "{\"error\": {\"code\": 409, \"message\": \"Aborted failure\"}}");
+                                return response;
+                              }
+                            };
+                          }
+                        })
+                    .setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    com.google.showcase.v1beta1.stub.EchoStubSettings echoStubSettings =
+        (com.google.showcase.v1beta1.stub.EchoStubSettings)
+            httpJsonEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(compositeTracerFactory)
+                .build();
+
+    try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
+      assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
+
+      assertThat(testAppender.events.size()).isAtLeast(1);
+      assertThat(testAppender.eventSpanContexts.size()).isAtLeast(1);
+      io.opentelemetry.api.trace.SpanContext capturedContext =
+          testAppender.eventSpanContexts.get(testAppender.eventSpanContexts.size() - 1);
+
+      // Verify that the log was emitted while the attempt span was inScope()
+      assertThat(capturedContext.isValid()).isTrue();
+      assertThat(capturedContext.getTraceId()).isNotEmpty();
+      assertThat(capturedContext.getSpanId()).isNotEmpty();
+
+      // Verify that after the call, the current thread has no active span leak
+      assertThat(io.opentelemetry.api.trace.Span.current().getSpanContext().isValid()).isFalse();
+    }
+  }
+
+  @Test
+  void testGrpc_spanContextCapturedInScopeDuringErrorLog() throws Exception {
+    io.opentelemetry.sdk.trace.SdkTracerProvider tracerProvider =
+        io.opentelemetry.sdk.trace.SdkTracerProvider.builder().build();
+    io.opentelemetry.api.OpenTelemetry openTelemetry =
+        io.opentelemetry.sdk.OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
+    com.google.api.gax.tracing.OpenTelemetryTracingFactory otelFactory =
+        new com.google.api.gax.tracing.OpenTelemetryTracingFactory(openTelemetry);
+    com.google.api.gax.tracing.CompositeTracerFactory compositeTracerFactory =
+        new com.google.api.gax.tracing.CompositeTracerFactory(
+            com.google.common.collect.ImmutableList.of(otelFactory, new LoggingTracerFactory()));
+
+    EchoSettings grpcEchoSettings =
+        EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(io.grpc.ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    com.google.showcase.v1beta1.stub.EchoStubSettings echoStubSettings =
+        (com.google.showcase.v1beta1.stub.EchoStubSettings)
+            grpcEchoSettings.getStubSettings().toBuilder()
+                .setTracerFactory(compositeTracerFactory)
+                .build();
+
+    try (EchoClient client = EchoClient.create(echoStubSettings.createStub())) {
+      EchoRequest request = buildErrorRequest();
+      assertThrows(ApiException.class, () -> client.echo(request));
+
+      assertThat(testAppender.events.size()).isAtLeast(1);
+      assertThat(testAppender.eventSpanContexts.size()).isAtLeast(1);
+      io.opentelemetry.api.trace.SpanContext capturedContext =
+          testAppender.eventSpanContexts.get(testAppender.eventSpanContexts.size() - 1);
+
+      // Verify that the log was emitted while the attempt span was inScope()
+      assertThat(capturedContext.isValid()).isTrue();
+      assertThat(capturedContext.getTraceId()).isNotEmpty();
+      assertThat(capturedContext.getSpanId()).isNotEmpty();
+
+      // Verify that after the call, the current thread has no active span leak
+      assertThat(io.opentelemetry.api.trace.Span.current().getSpanContext().isValid()).isFalse();
+    }
+  }
 }
