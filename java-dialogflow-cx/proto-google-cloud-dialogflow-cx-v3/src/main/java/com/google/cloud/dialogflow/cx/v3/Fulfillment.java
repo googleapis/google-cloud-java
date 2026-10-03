@@ -69,6 +69,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     messages_ = java.util.Collections.emptyList();
     webhook_ = "";
     tag_ = "";
+    codeBlockFunction_ = "";
     setParameterActions_ = java.util.Collections.emptyList();
     conditionalCases_ = java.util.Collections.emptyList();
     generators_ = java.util.Collections.emptyList();
@@ -6372,6 +6373,63 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CODE_BLOCK_FUNCTION_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object codeBlockFunction_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the code block function to execute, if this is a code
+   * block fulfillment. The code block itself is implied by the fulfillment's
+   * parent, e.g. a playbook.
+   * </pre>
+   *
+   * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The codeBlockFunction.
+   */
+  @java.lang.Override
+  public java.lang.String getCodeBlockFunction() {
+    java.lang.Object ref = codeBlockFunction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      codeBlockFunction_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the code block function to execute, if this is a code
+   * block fulfillment. The code block itself is implied by the fulfillment's
+   * parent, e.g. a playbook.
+   * </pre>
+   *
+   * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for codeBlockFunction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCodeBlockFunctionBytes() {
+    java.lang.Object ref = codeBlockFunction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      codeBlockFunction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SET_PARAMETER_ACTIONS_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -6760,6 +6818,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < generators_.size(); i++) {
       output.writeMessage(13, generators_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(codeBlockFunction_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 17, codeBlockFunction_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6797,6 +6858,9 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < generators_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, generators_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(codeBlockFunction_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(17, codeBlockFunction_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6817,6 +6881,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     if (!getWebhook().equals(other.getWebhook())) return false;
     if (getReturnPartialResponses() != other.getReturnPartialResponses()) return false;
     if (!getTag().equals(other.getTag())) return false;
+    if (!getCodeBlockFunction().equals(other.getCodeBlockFunction())) return false;
     if (!getSetParameterActionsList().equals(other.getSetParameterActionsList())) return false;
     if (!getConditionalCasesList().equals(other.getConditionalCasesList())) return false;
     if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
@@ -6846,6 +6911,8 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialResponses());
     hash = (37 * hash) + TAG_FIELD_NUMBER;
     hash = (53 * hash) + getTag().hashCode();
+    hash = (37 * hash) + CODE_BLOCK_FUNCTION_FIELD_NUMBER;
+    hash = (53 * hash) + getCodeBlockFunction().hashCode();
     if (getSetParameterActionsCount() > 0) {
       hash = (37 * hash) + SET_PARAMETER_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSetParameterActionsList().hashCode();
@@ -7041,20 +7108,21 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
       webhook_ = "";
       returnPartialResponses_ = false;
       tag_ = "";
+      codeBlockFunction_ = "";
       if (setParameterActionsBuilder_ == null) {
         setParameterActions_ = java.util.Collections.emptyList();
       } else {
         setParameterActions_ = null;
         setParameterActionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (conditionalCasesBuilder_ == null) {
         conditionalCases_ = java.util.Collections.emptyList();
       } else {
         conditionalCases_ = null;
         conditionalCasesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -7067,7 +7135,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         generators_ = null;
         generatorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -7114,27 +7182,27 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         result.messages_ = messagesBuilder_.build();
       }
       if (setParameterActionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           setParameterActions_ = java.util.Collections.unmodifiableList(setParameterActions_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.setParameterActions_ = setParameterActions_;
       } else {
         result.setParameterActions_ = setParameterActionsBuilder_.build();
       }
       if (conditionalCasesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           conditionalCases_ = java.util.Collections.unmodifiableList(conditionalCases_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.conditionalCases_ = conditionalCases_;
       } else {
         result.conditionalCases_ = conditionalCasesBuilder_.build();
       }
       if (generatorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           generators_ = java.util.Collections.unmodifiableList(generators_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.generators_ = generators_;
       } else {
@@ -7153,13 +7221,16 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.tag_ = tag_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.codeBlockFunction_ = codeBlockFunction_;
+      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.advancedSettings_ =
             advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.enableGenerativeFallback_ = enableGenerativeFallback_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -7217,11 +7288,16 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getCodeBlockFunction().isEmpty()) {
+        codeBlockFunction_ = other.codeBlockFunction_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (setParameterActionsBuilder_ == null) {
         if (!other.setParameterActions_.isEmpty()) {
           if (setParameterActions_.isEmpty()) {
             setParameterActions_ = other.setParameterActions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureSetParameterActionsIsMutable();
             setParameterActions_.addAll(other.setParameterActions_);
@@ -7234,7 +7310,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
             setParameterActionsBuilder_.dispose();
             setParameterActionsBuilder_ = null;
             setParameterActions_ = other.setParameterActions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             setParameterActionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSetParameterActionsFieldBuilder()
@@ -7248,7 +7324,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         if (!other.conditionalCases_.isEmpty()) {
           if (conditionalCases_.isEmpty()) {
             conditionalCases_ = other.conditionalCases_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureConditionalCasesIsMutable();
             conditionalCases_.addAll(other.conditionalCases_);
@@ -7261,7 +7337,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
             conditionalCasesBuilder_.dispose();
             conditionalCasesBuilder_ = null;
             conditionalCases_ = other.conditionalCases_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             conditionalCasesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetConditionalCasesFieldBuilder()
@@ -7281,7 +7357,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         if (!other.generators_.isEmpty()) {
           if (generators_.isEmpty()) {
             generators_ = other.generators_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureGeneratorsIsMutable();
             generators_.addAll(other.generators_);
@@ -7294,7 +7370,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
             generatorsBuilder_.dispose();
             generatorsBuilder_ = null;
             generators_ = other.generators_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             generatorsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetGeneratorsFieldBuilder()
@@ -7388,7 +7464,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 64:
@@ -7400,7 +7476,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
             case 96:
               {
                 enableGenerativeFallback_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 96
             case 106:
@@ -7417,6 +7493,12 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 106
+            case 138:
+              {
+                codeBlockFunction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8148,16 +8230,137 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object codeBlockFunction_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the code block function to execute, if this is a code
+     * block fulfillment. The code block itself is implied by the fulfillment's
+     * parent, e.g. a playbook.
+     * </pre>
+     *
+     * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The codeBlockFunction.
+     */
+    public java.lang.String getCodeBlockFunction() {
+      java.lang.Object ref = codeBlockFunction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        codeBlockFunction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the code block function to execute, if this is a code
+     * block fulfillment. The code block itself is implied by the fulfillment's
+     * parent, e.g. a playbook.
+     * </pre>
+     *
+     * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for codeBlockFunction.
+     */
+    public com.google.protobuf.ByteString getCodeBlockFunctionBytes() {
+      java.lang.Object ref = codeBlockFunction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        codeBlockFunction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the code block function to execute, if this is a code
+     * block fulfillment. The code block itself is implied by the fulfillment's
+     * parent, e.g. a playbook.
+     * </pre>
+     *
+     * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The codeBlockFunction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCodeBlockFunction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      codeBlockFunction_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the code block function to execute, if this is a code
+     * block fulfillment. The code block itself is implied by the fulfillment's
+     * parent, e.g. a playbook.
+     * </pre>
+     *
+     * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCodeBlockFunction() {
+      codeBlockFunction_ = getDefaultInstance().getCodeBlockFunction();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the code block function to execute, if this is a code
+     * block fulfillment. The code block itself is implied by the fulfillment's
+     * parent, e.g. a playbook.
+     * </pre>
+     *
+     * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for codeBlockFunction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCodeBlockFunctionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      codeBlockFunction_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction>
         setParameterActions_ = java.util.Collections.emptyList();
 
     private void ensureSetParameterActionsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         setParameterActions_ =
             new java.util.ArrayList<
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction>(
                 setParameterActions_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -8414,7 +8617,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     public Builder clearSetParameterActions() {
       if (setParameterActionsBuilder_ == null) {
         setParameterActions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         setParameterActionsBuilder_.clear();
@@ -8568,7 +8771,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterAction.Builder,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.SetParameterActionOrBuilder>(
                 setParameterActions_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         setParameterActions_ = null;
@@ -8580,11 +8783,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         conditionalCases_ = java.util.Collections.emptyList();
 
     private void ensureConditionalCasesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         conditionalCases_ =
             new java.util.ArrayList<com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases>(
                 conditionalCases_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -8840,7 +9043,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     public Builder clearConditionalCases() {
       if (conditionalCasesBuilder_ == null) {
         conditionalCases_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         conditionalCasesBuilder_.clear();
@@ -8992,7 +9195,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCases.Builder,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCasesOrBuilder>(
                 conditionalCases_,
-                ((bitField0_ & 0x00000020) != 0),
+                ((bitField0_ & 0x00000040) != 0),
                 getParentForChildren(),
                 isClean());
         conditionalCases_ = null;
@@ -9020,7 +9223,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
      * @return Whether the advancedSettings field is set.
      */
     public boolean hasAdvancedSettings() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -9064,7 +9267,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
       } else {
         advancedSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9086,7 +9289,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
       } else {
         advancedSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -9103,7 +9306,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
       if (advancedSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && advancedSettings_ != null
             && advancedSettings_
                 != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
@@ -9115,7 +9318,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         advancedSettingsBuilder_.mergeFrom(value);
       }
       if (advancedSettings_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -9132,7 +9335,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
      */
     public Builder clearAdvancedSettings() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       advancedSettings_ = null;
       if (advancedSettingsBuilder_ != null) {
         advancedSettingsBuilder_.dispose();
@@ -9153,7 +9356,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
      */
     public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder getAdvancedSettingsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetAdvancedSettingsFieldBuilder().getBuilder();
     }
@@ -9247,7 +9450,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     public Builder setEnableGenerativeFallback(boolean value) {
 
       enableGenerativeFallback_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -9268,7 +9471,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableGenerativeFallback() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       enableGenerativeFallback_ = false;
       onChanged();
       return this;
@@ -9278,11 +9481,11 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
         generators_ = java.util.Collections.emptyList();
 
     private void ensureGeneratorsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         generators_ =
             new java.util.ArrayList<
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings>(generators_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -9528,7 +9731,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
     public Builder clearGenerators() {
       if (generatorsBuilder_ == null) {
         generators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         generatorsBuilder_.clear();
@@ -9672,7 +9875,7 @@ public final class Fulfillment extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettings.Builder,
                 com.google.cloud.dialogflow.cx.v3.Fulfillment.GeneratorSettingsOrBuilder>(
-                generators_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                generators_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         generators_ = null;
       }
       return generatorsBuilder_;
