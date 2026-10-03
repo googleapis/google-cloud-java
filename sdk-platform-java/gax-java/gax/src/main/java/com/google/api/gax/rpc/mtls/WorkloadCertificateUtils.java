@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,41 +27,38 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.rpc.testing;
+package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
+import com.google.auth.mtls.MtlsUtils;
+import java.io.File;
 
-@InternalApi("for testing")
-public class FakeChannel {
-  private volatile boolean shouldRefresh = false;
-  private volatile int refreshCount = 0;
+/** Internal utility class for managing dynamic workload certificates. */
+@InternalApi
+public class WorkloadCertificateUtils {
 
-  public FakeChannel setShouldRefresh(boolean shouldRefresh) {
-    this.shouldRefresh = shouldRefresh;
-    return this;
-  }
+  private static final String EMPTY_FILE_SHA256 =
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
-  public boolean shouldRefresh() {
-    return shouldRefresh;
-  }
+  private WorkloadCertificateUtils() {}
 
-  public void refresh() {
-    refreshCount++;
-    generation++;
-  }
-
-  public int getRefreshCount() {
-    return refreshCount;
-  }
-
-  private volatile long generation = 0;
-
-  public FakeChannel setGeneration(long generation) {
-    this.generation = generation;
-    return this;
-  }
-
-  public long getGeneration() {
-    return generation;
+  /**
+   * Computes the SHA-256 fingerprint of the certificate file at {@code certPath}, returning {@code
+   * ""} if the path is {@code null}, unreadable, empty (e.g., temporarily truncated to 0 bytes
+   * mid-write by an external certificate rotator), or hashes to the empty-byte digest.
+   *
+   * <p>Returning {@code ""} on unreadable or empty files ensures callers ({@code shouldRefresh()}
+   * and {@code refresh()}) safely skip refreshing during transient mid-write states rather than
+   * treating an empty digest as a certificate rotation mismatch.
+   */
+  public static String getCertificateFingerprint(String certPath) {
+    if (certPath == null || new File(certPath).length() == 0) {
+      return "";
+    }
+    String fingerprint = MtlsUtils.getCertificateFingerprint(certPath);
+    if (fingerprint == null || EMPTY_FILE_SHA256.equalsIgnoreCase(fingerprint)) {
+      return "";
+    }
+    return fingerprint;
   }
 }

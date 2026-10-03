@@ -31,13 +31,16 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.mtls.AbstractMtlsTransportChannelTest;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.auth.mtls.MtlsProvider;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.util.Collections;
 import java.util.Map;
@@ -46,6 +49,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChannelTest {
 
@@ -55,9 +59,10 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
 
   @BeforeEach
   public void setup() throws IOException {
-    certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "never" : "false");
+    certificateBasedAccess = org.mockito.Mockito.mock(CertificateBasedAccess.class);
+    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER);
+    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
   }
 
   @Test
@@ -179,20 +184,361 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     instantiatingHttpJsonChannelProvider.getTransportChannel().shutdownNow();
   }
 
-  @Override
-  protected Object getMtlsObjectFromTransportChannel(
-      MtlsProvider provider, CertificateBasedAccess certificateBasedAccess)
+  @Test
+  void managedChannelDoesNotShutdownCustomHttpTransport() throws IOException {
+    com.google.api.client.http.HttpTransport mockHttpTransport =
+        org.mockito.Mockito.mock(com.google.api.client.http.HttpTransport.class);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHttpTransport(mockHttpTransport)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+
+    // Verify custom transport is injected (direct ManagedHttpJsonChannel when workloadCertPath is
+    // null)
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    ManagedHttpJsonInterceptorChannel managedHttpJsonChannel =
+        (ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel();
+    ManagedHttpJsonChannel channel = managedHttpJsonChannel.getChannel();
+
+    assertThat(channel.getHttpTransport()).isEqualTo(mockHttpTransport);
+
+    // Perform a shutdown
+    provider.getTransportChannel().shutdownNow();
+
+    // Verify that shutdown() was NOT called on the custom HttpTransport
+    org.mockito.Mockito.verify(mockHttpTransport, org.mockito.Mockito.never()).shutdown();
+  }
+
+  @Test
+  void channelCreation_withWorkloadCertPath_wrapsWithRefreshingHttpJsonChannel()
       throws IOException, GeneralSecurityException {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    com.google.auth.mtls.MtlsProvider mtlsProvider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(mtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    ManagedHttpJsonInterceptorChannel managedHttpJsonChannel =
+        (ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel();
+    assertThat(managedHttpJsonChannel.getChannel()).isInstanceOf(RefreshingHttpJsonChannel.class);
+
+    provider.getTransportChannel().shutdownNow();
+  }
+
+  @Test
+  void channelCreation_withCustomHttpTransport_ignoresWorkloadCertPathAndDoesNotWrap()
+      throws IOException, GeneralSecurityException {
+    // mTLS is otherwise fully configured, so only the custom transport prevents wrapping. Lenient
+    // because a custom transport is expected to skip these lookups.
+    Mockito.lenient().when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.lenient()
+        .when(certificateBasedAccess.getWorkloadCertPath())
+        .thenReturn("fake/cert/path.json");
+    com.google.auth.mtls.MtlsProvider mtlsProvider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+    com.google.api.client.http.HttpTransport mockHttpTransport =
+        org.mockito.Mockito.mock(com.google.api.client.http.HttpTransport.class);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHttpTransport(mockHttpTransport)
+            .setMtlsProvider(mtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    ManagedHttpJsonInterceptorChannel managedHttpJsonChannel =
+        (ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel();
+    assertThat(managedHttpJsonChannel.getChannel())
+        .isNotInstanceOf(RefreshingHttpJsonChannel.class);
+    Mockito.verify(certificateBasedAccess, Mockito.never()).getWorkloadCertPath();
+
+    httpJsonTransportChannel.shutdownNow();
+  }
+
+  @Test
+  void getTransportChannel_withMtlsKeyStore_usesMtlsTransport() throws IOException {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    com.google.auth.mtls.MtlsProvider mtlsProvider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(mtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    ManagedHttpJsonChannel channel =
+        ((ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel()).getChannel();
+
+    assertThat(channel).isNotInstanceOf(RefreshingHttpJsonChannel.class);
+    assertThat(((NetHttpTransport) channel.getHttpTransport()).isMtls()).isTrue();
+
+    httpJsonTransportChannel.shutdownNow();
+  }
+
+  @Test
+  void refresh_whenKeyStoreUnavailableDuringRotation_keepsCurrentTransport(
+      @org.junit.jupiter.api.io.TempDir java.nio.file.Path tempDir) throws IOException {
+    java.nio.file.Path certPath = tempDir.resolve("cert.pem");
+    java.nio.file.Files.write(certPath, "certificate-v1".getBytes(StandardCharsets.UTF_8));
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn(certPath.toString());
+    java.security.KeyStore keyStore =
+        com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore();
+    java.util.concurrent.atomic.AtomicReference<java.security.KeyStore> currentKeyStore =
+        new java.util.concurrent.atomic.AtomicReference<>(keyStore);
+    com.google.auth.mtls.MtlsProvider mtlsProvider =
+        new com.google.auth.mtls.MtlsProvider() {
+          @Override
+          public java.security.KeyStore getKeyStore() {
+            return currentKeyStore.get();
+          }
+
+          @Override
+          public boolean isAvailable() {
+            return true;
+          }
+        };
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(mtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+    HttpJsonTransportChannel httpJsonTransportChannel = provider.getTransportChannel();
+    ManagedHttpJsonInterceptorChannel interceptorChannel =
+        (ManagedHttpJsonInterceptorChannel) httpJsonTransportChannel.getManagedChannel();
+    RefreshingHttpJsonChannel channel =
+        (RefreshingHttpJsonChannel)
+            ((ManagedHttpJsonInterceptorChannel) interceptorChannel.getChannel()).getChannel();
+    com.google.api.client.http.HttpTransport initialTransport = channel.getHttpTransport();
+    assertThat(((NetHttpTransport) initialTransport).isMtls()).isTrue();
+
+    // The certificate rotates on disk, but the provider cannot return the new key store yet.
+    java.nio.file.Files.write(certPath, "certificate-v2".getBytes(StandardCharsets.UTF_8));
+    currentKeyStore.set(null);
+    assertThat(channel.shouldRefresh()).isTrue();
+    channel.refresh();
+
+    // The current authenticated transport is kept instead of one without a client certificate.
+    assertThat(channel.getHttpTransport()).isSameInstanceAs(initialTransport);
+    assertThat(channel.getGeneration()).isEqualTo(0);
+    assertThat(channel.shouldRefresh()).isTrue();
+
+    // Once the key store is available again, the next refresh swaps in a new mTLS transport.
+    currentKeyStore.set(keyStore);
+    channel.refresh();
+    assertThat(channel.getHttpTransport()).isNotSameInstanceAs(initialTransport);
+    assertThat(((NetHttpTransport) channel.getHttpTransport()).isMtls()).isTrue();
+    assertThat(channel.getGeneration()).isEqualTo(1);
+
+    httpJsonTransportChannel.shutdownNow();
+  }
+
+  @Test
+  void getTransportChannel_whenMtlsKeyStoreThrowsIOException_throwsCheckedIOException()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    MtlsProvider failingMtlsProvider =
+        Mockito.mock(MtlsProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(failingMtlsProvider.getKeyStore())
+        .thenThrow(new IOException("Simulated keystore read failure"));
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(failingMtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    final InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    // Must throw checked IOException directly (not wrapped in RuntimeException)
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasMessageThat().contains("Simulated keystore read failure");
+  }
+
+  @Test
+  void getTransportChannel_whenMtlsActiveAndKeyStoreNull_throwsIOException() {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    com.google.auth.mtls.MtlsProvider providerWithNullKeyStore =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(null, "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(providerWithNullKeyStore)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS HttpTransport");
+  }
+
+  @Test
+  void getTransportChannel_whenRotationEnabledAndKeyStoreNull_throwsIOException() {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    com.google.auth.mtls.MtlsProvider providerWithNullKeyStore =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(null, "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(providerWithNullKeyStore)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS HttpTransport");
+  }
+
+  @Test
+  void getTransportChannel_whenKeyStoreUninitialized_wrapsGeneralSecurityException()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    // A KeyStore that was never loaded makes transport creation fail with a KeyStoreException.
+    java.security.KeyStore uninitializedKeyStore = java.security.KeyStore.getInstance("PKCS12");
+    com.google.auth.mtls.MtlsProvider providerWithBadKeyStore =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(uninitializedKeyStore, "", false);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(providerWithBadKeyStore)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    // The GeneralSecurityException must be unwrapped from the factory's RuntimeException, so that
+    // getTransportChannel() surfaces it as the direct cause of its checked IOException.
+    IOException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).hasCauseThat().isInstanceOf(GeneralSecurityException.class);
+  }
+
+  @Test
+  void getTransportChannel_whenMtlsKeyStoreThrowsRuntimeException_propagatesUnwrapped()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
+    IllegalStateException failure = new IllegalStateException("Simulated keystore failure");
+    MtlsProvider failingMtlsProvider =
+        Mockito.mock(MtlsProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(failingMtlsProvider.getKeyStore()).thenThrow(failure);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(failingMtlsProvider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IllegalStateException thrown =
+        org.junit.jupiter.api.Assertions.assertThrows(
+            IllegalStateException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).isSameInstanceAs(failure);
+  }
+
+  @Test
+  void createHttpTransport_withMtlsKeyStore_returnsMtlsTransport()
+      throws IOException, GeneralSecurityException {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    com.google.auth.mtls.MtlsProvider provider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+
     InstantiatingHttpJsonChannelProvider channelProvider =
         InstantiatingHttpJsonChannelProvider.newBuilder()
-            .setEndpoint("localhost:8080")
+            .setEndpoint(DEFAULT_ENDPOINT)
             .setMtlsProvider(provider)
             .setCertificateBasedAccess(certificateBasedAccess)
-            .setHeaderProvider(Collections::emptyMap)
-            .setExecutor(Runnable::run)
             .build();
-    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
-    return (transport != null && transport.isMtls()) ? transport : null;
+
+    com.google.api.client.http.HttpTransport transport = channelProvider.createHttpTransport();
+    assertThat(transport).isNotNull();
+    assertThat(transport).isInstanceOf(com.google.api.client.http.javanet.NetHttpTransport.class);
+    assertThat(((com.google.api.client.http.javanet.NetHttpTransport) transport).isMtls()).isTrue();
+  }
+
+  @Test
+  void createHttpTransport_whenMtlsProviderNullOrNotUsingClientCert_returnsNonMtlsTransport()
+      throws IOException, GeneralSecurityException {
+    InstantiatingHttpJsonChannelProvider nullMtlsProviderChannelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(null)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    NetHttpTransport nullMtlsProviderTransport =
+        (NetHttpTransport) nullMtlsProviderChannelProvider.createHttpTransport();
+    assertThat(nullMtlsProviderTransport).isNotNull();
+    assertThat(nullMtlsProviderTransport.isMtls()).isFalse();
+
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
+    com.google.auth.mtls.MtlsProvider provider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+    InstantiatingHttpJsonChannelProvider disabledMtlsChannelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setMtlsProvider(provider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    NetHttpTransport disabledMtlsTransport =
+        (NetHttpTransport) disabledMtlsChannelProvider.createHttpTransport();
+    assertThat(disabledMtlsTransport).isNotNull();
+    assertThat(disabledMtlsTransport.isMtls()).isFalse();
   }
 
   @Test
@@ -213,5 +559,22 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     NetHttpTransport.Builder result =
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
     assertThat(result).isSameInstanceAs(builder);
+  }
+
+  @Override
+  protected Object getMtlsObjectFromTransportChannel(
+      MtlsProvider provider, CertificateBasedAccess certificateBasedAccess)
+      throws IOException, GeneralSecurityException {
+    InstantiatingHttpJsonChannelProvider channelProvider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint("localhost:8080")
+            .setMtlsProvider(provider)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .build();
+    NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
+    return (transport != null && transport.isMtls()) ? transport : null;
   }
 }

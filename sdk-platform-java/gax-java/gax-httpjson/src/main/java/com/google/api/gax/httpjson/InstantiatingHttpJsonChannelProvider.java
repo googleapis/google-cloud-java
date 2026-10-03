@@ -233,33 +233,90 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     return builder;
   }
 
+  private HttpTransport createChannelHttpTransport() throws IOException, GeneralSecurityException {
+    HttpTransport transport = createHttpTransport();
+    if (mtlsProvider != null
+        && certificateBasedAccess.useMtlsClientCertificate()
+        && !((NetHttpTransport) transport).isMtls()) {
+      // mTLS is enabled but the provider returned no client certificate. Fail instead of silently
+      // using a transport without the certificate, matching InstantiatingGrpcChannelProvider.
+      // During certificate rotation, this makes RefreshingHttpJsonChannel keep the current
+      // authenticated transport instead of swapping in one without a client certificate.
+      throw new IOException("Failed to initialize mTLS HttpTransport");
+    }
+    return transport;
+  }
+
+  private ManagedHttpJsonChannel createSingleManagedChannel()
+      throws IOException, GeneralSecurityException {
+    return buildManagedChannel(
+        httpTransport != null ? httpTransport : createChannelHttpTransport());
+  }
+
+  private ManagedHttpJsonChannel buildManagedChannel(HttpTransport httpTransportToUse) {
+    return ManagedHttpJsonChannel.newBuilder()
+        .setEndpoint(endpoint)
+        .setExecutor(executor)
+        .setHttpTransport(httpTransportToUse)
+        .setManageHttpTransport(httpTransport == null)
+        .build();
+  }
+
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
-    HttpTransport httpTransportToUse = httpTransport;
-    if (httpTransportToUse == null) {
-      httpTransportToUse = createHttpTransport();
-    }
+    boolean isMtlsActive =
+        httpTransport == null
+            && mtlsProvider != null
+            && certificateBasedAccess.useMtlsClientCertificate();
+    String workloadCertPath = isMtlsActive ? certificateBasedAccess.getWorkloadCertPath() : null;
 
-    // Pass the executor to the ManagedChannel. If no executor was provided (or null),
-    // the channel will use a default executor for the calls.
-    ManagedHttpJsonChannel channel =
-        ManagedHttpJsonChannel.newBuilder()
-            .setEndpoint(endpoint)
-            .setExecutor(executor)
-            .setHttpTransport(httpTransportToUse)
-            .build();
-
-    HttpJsonClientInterceptor headerInterceptor =
-        new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
-
-    channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
-    channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
-    if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
-      for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
-        channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+    ManagedHttpJsonChannel baseChannel;
+    if (workloadCertPath != null) {
+      java.util.function.Supplier<HttpTransport> transportFactory =
+          () -> {
+            try {
+              return createChannelHttpTransport();
+            } catch (IOException | GeneralSecurityException e) {
+              throw new java.lang.RuntimeException("Failed to create mTLS HttpTransport", e);
+            }
+          };
+      // RefreshingHttpJsonChannel records the baseline certificate fingerprint before creating the
+      // initial transport, so a rotation during startup is detected on the next auth failure.
+      try {
+        baseChannel =
+            new RefreshingHttpJsonChannel(
+                transportFactory, this::buildManagedChannel, workloadCertPath);
+      } catch (RuntimeException e) {
+        if (e.getCause() instanceof IOException) {
+          throw (IOException) e.getCause();
+        }
+        if (e.getCause() instanceof GeneralSecurityException) {
+          throw (GeneralSecurityException) e.getCause();
+        }
+        throw e;
       }
+    } else {
+      baseChannel = createSingleManagedChannel();
     }
 
-    return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+    try {
+      ManagedHttpJsonChannel channel = baseChannel;
+
+      HttpJsonClientInterceptor headerInterceptor =
+          new HttpJsonHeaderInterceptor(headerProvider.getHeaders());
+
+      channel = new ManagedHttpJsonInterceptorChannel(channel, new HttpJsonLoggingInterceptor());
+      channel = new ManagedHttpJsonInterceptorChannel(channel, headerInterceptor);
+      if (interceptorProvider != null && interceptorProvider.getInterceptors() != null) {
+        for (HttpJsonClientInterceptor interceptor : interceptorProvider.getInterceptors()) {
+          channel = new ManagedHttpJsonInterceptorChannel(channel, interceptor);
+        }
+      }
+
+      return HttpJsonTransportChannel.newBuilder().setManagedChannel(channel).build();
+    } catch (Throwable t) {
+      baseChannel.shutdownNow();
+      throw t;
+    }
   }
 
   /** The endpoint to be used for the channel. */

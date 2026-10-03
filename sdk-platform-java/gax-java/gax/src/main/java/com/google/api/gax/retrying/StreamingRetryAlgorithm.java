@@ -102,13 +102,26 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
           (ServerStreamingAttemptException) previousThrowable;
       previousThrowable = previousThrowable.getCause();
 
-      // If we have made progress in the last attempt, then reset the delays
+      // If we have made progress in the last attempt, then reset the delays and attempt counts.
+      // The next attempt is computed from a fresh baseline, so that result algorithms comparing
+      // the attempt count with the overall attempt count see the reset stream as a new sequence
+      // of attempts. The previous overall attempt count is then added back so that it keeps
+      // increasing across resets.
       if (attemptException.hasSeenResponses()) {
-        previousSettings =
+        int previousOverallAttemptCount = previousSettings.getOverallAttemptCount();
+        TimedAttemptSettings resetSettings =
             createFirstAttempt(context).toBuilder()
                 .setFirstAttemptStartTimeNanos(previousSettings.getFirstAttemptStartTimeNanos())
-                .setOverallAttemptCount(previousSettings.getOverallAttemptCount())
                 .build();
+        TimedAttemptSettings nextSettings =
+            super.createNextAttempt(context, previousThrowable, previousResponse, resetSettings);
+        if (nextSettings == null) {
+          return null;
+        }
+        return nextSettings.toBuilder()
+            .setOverallAttemptCount(
+                nextSettings.getOverallAttemptCount() + previousOverallAttemptCount)
+            .build();
       }
     }
 

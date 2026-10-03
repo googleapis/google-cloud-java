@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.FixedExecutorProvider;
+import com.google.api.gax.rpc.mtls.CertificateRotationTracker;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -53,9 +54,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.concurrent.GuardedBy;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -72,18 +75,28 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class ChannelPool extends ManagedChannel {
   static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
-      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+ times). See https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md for more information about this behavior.";
+      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+"
+          + " times). See"
+          + " https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md"
+          + " for more information about this behavior.";
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
   private final ChannelPoolSettings settings;
   private final ChannelFactory channelFactory;
   private final FixedExecutorProvider backgroundExecutorProvider;
+  private final String workloadCertPath;
 
   private @Nullable ScheduledFuture<?> refreshFuture = null;
   private @Nullable ScheduledFuture<?> resizeFuture = null;
 
+  private final CertificateRotationTracker rotationTracker;
   private final Object entryWriteLock = new Object();
+
+  @GuardedBy("entryWriteLock")
+  private boolean isShutdown = false;
+
+  private final AtomicLong generation = new AtomicLong(0);
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
@@ -100,14 +113,15 @@ class ChannelPool extends ManagedChannel {
   static ChannelPool create(
       ChannelPoolSettings settings,
       ChannelFactory channelFactory,
-      @Nullable ScheduledExecutorService backgroundExecutor)
+      @Nullable ScheduledExecutorService backgroundExecutor,
+      @Nullable String workloadCertPath)
       throws IOException {
 
     FixedExecutorProvider executorProvider =
         backgroundExecutor == null
             ? FixedExecutorProvider.create(Executors.newSingleThreadScheduledExecutor(), true)
             : FixedExecutorProvider.create(backgroundExecutor, false);
-    return new ChannelPool(settings, channelFactory, executorProvider);
+    return new ChannelPool(settings, channelFactory, executorProvider, workloadCertPath);
   }
 
   /**
@@ -121,11 +135,14 @@ class ChannelPool extends ManagedChannel {
   ChannelPool(
       ChannelPoolSettings settings,
       ChannelFactory channelFactory,
-      FixedExecutorProvider executorProvider)
+      FixedExecutorProvider executorProvider,
+      @Nullable String workloadCertPath)
       throws IOException {
     this.settings = settings;
     this.channelFactory = channelFactory;
     this.backgroundExecutorProvider = executorProvider;
+    this.workloadCertPath = workloadCertPath;
+    this.rotationTracker = new CertificateRotationTracker(workloadCertPath);
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
@@ -187,7 +204,8 @@ class ChannelPool extends ManagedChannel {
 
     // Resize and refresh tasks can block on channel priming. We don't need
     // to wait for the channels to be ready since we're shutting down the
-    // pool. Allowing interrupt to speed it up.
+    // pool. Allowing interrupt to speed it up. This is done before acquiring
+    // entryWriteLock, which a running refresh or resize holds.
     if (resizeFuture != null) {
       resizeFuture.cancel(true);
     }
@@ -195,9 +213,12 @@ class ChannelPool extends ManagedChannel {
       refreshFuture.cancel(true);
     }
 
-    List<Entry> localEntries = entries.get();
-    for (Entry entry : localEntries) {
-      entry.channel.shutdown();
+    synchronized (entryWriteLock) {
+      isShutdown = true;
+      List<Entry> localEntries = entries.get();
+      for (Entry entry : localEntries) {
+        entry.channel.shutdown();
+      }
     }
 
     if (backgroundExecutorProvider.shouldAutoClose()) {
@@ -210,6 +231,11 @@ class ChannelPool extends ManagedChannel {
   /** {@inheritDoc} */
   @Override
   public boolean isShutdown() {
+    synchronized (entryWriteLock) {
+      if (isShutdown) {
+        return true;
+      }
+    }
     List<Entry> localEntries = entries.get();
     for (Entry entry : localEntries) {
       if (!entry.channel.isShutdown()) {
@@ -236,6 +262,8 @@ class ChannelPool extends ManagedChannel {
   public ManagedChannel shutdownNow() {
     LOG.fine("Initiating immediate shutdown due to explicit request");
 
+    // Cancel before acquiring entryWriteLock, which a running refresh or resize holds, so that
+    // they are interrupted instead of delaying shutdown.
     if (resizeFuture != null) {
       resizeFuture.cancel(true);
     }
@@ -243,9 +271,12 @@ class ChannelPool extends ManagedChannel {
       refreshFuture.cancel(true);
     }
 
-    List<Entry> localEntries = entries.get();
-    for (Entry entry : localEntries) {
-      entry.channel.shutdownNow();
+    synchronized (entryWriteLock) {
+      isShutdown = true;
+      List<Entry> localEntries = entries.get();
+      for (Entry entry : localEntries) {
+        entry.channel.shutdownNow();
+      }
     }
 
     if (backgroundExecutorProvider.shouldAutoClose()) {
@@ -411,7 +442,7 @@ class ChannelPool extends ManagedChannel {
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
       try {
         newEntries.add(new Entry(channelFactory.createSingleChannel()));
-      } catch (IOException e) {
+      } catch (Exception e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
       }
     }
@@ -419,20 +450,59 @@ class ChannelPool extends ManagedChannel {
     entries.set(newEntries.build());
   }
 
+  /**
+   * Periodically refreshes all channels when {@link
+   * ChannelPoolSettings#isPreemptiveRefreshEnabled()} is enabled (to mitigate hourly GFE
+   * disconnects). This applies to all channels even when {@code workloadCertPath == null}. If
+   * {@code workloadCertPath} is configured, also updates the tracked certificate fingerprint on
+   * success (or skips if the certificate file is currently unreadable or mid-write on disk).
+   *
+   * <p>The generation is only advanced if this refresh switched every channel to a certificate
+   * different from the active one, so that a periodic refresh without a rotation does not make
+   * in-flight {@code UNAUTHENTICATED} failures eligible for a rotation retry.
+   */
   private void refreshSafely() {
     try {
-      refresh();
+      synchronized (entryWriteLock) {
+        String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
+        if (workloadCertPath != null && currentDiskFingerprint.isEmpty()) {
+          return;
+        }
+        boolean rotated =
+            !currentDiskFingerprint.isEmpty()
+                && !rotationTracker.isAlreadyActive(currentDiskFingerprint);
+        if (refreshAll() && !currentDiskFingerprint.isEmpty()) {
+          if (rotated) {
+            completeCertificateSwitch(currentDiskFingerprint);
+          } else {
+            rotationTracker.markRefreshed(currentDiskFingerprint);
+          }
+        }
+      }
     } catch (Exception e) {
-      LOG.log(Level.WARNING, "Failed to pre-emptively refresh channnels", e);
+      LOG.log(Level.WARNING, "Failed to pre-emptively refresh channels", e);
     }
+  }
+
+  @VisibleForTesting
+  void invalidateDiskFingerprintCache() {
+    rotationTracker.invalidateCache();
+  }
+
+  boolean shouldRefresh() {
+    return rotationTracker.shouldRefresh();
   }
 
   /**
    * Replace all of the channels in the channel pool with fresh ones. This is meant to mitigate the
-   * hourly GFE disconnects by giving clients the ability to prime the channel on reconnect.
+   * hourly GFE disconnects by giving clients the ability to prime the channel on reconnect, and to
+   * pick up a rotated mTLS workload certificate.
    *
-   * <p>This is done on a best effort basis. If the replacement channel fails to construct, the old
-   * channel will continue to be used.
+   * <p>This is done on a best effort basis. When no workload certificate is configured, a channel
+   * whose replacement fails to construct continues to be used. When a workload certificate is
+   * configured, a channel whose replacement fails to construct is dropped so that no traffic is
+   * routed to a channel using the old certificate; if no replacement can be constructed at all, the
+   * pool is left unchanged.
    */
   @InternalApi("Visible for testing")
   void refresh() {
@@ -443,26 +513,169 @@ class ChannelPool extends ManagedChannel {
     // - then thread2 will shut down channel that thread1 will put back into circulation (after it
     //   replaces the list)
     synchronized (entryWriteLock) {
-      LOG.fine("Refreshing all channels");
-      ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
-
-      for (int i = 0; i < newEntries.size(); i++) {
-        try {
-          newEntries.set(i, new Entry(channelFactory.createSingleChannel()));
-        } catch (IOException e) {
-          LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
-        }
+      if (isShutdown) {
+        return;
+      }
+      if (workloadCertPath == null) {
+        refreshAll();
+        return;
+      }
+      String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
+      if (currentDiskFingerprint.isEmpty()) {
+        return;
       }
 
-      ImmutableList<Entry> replacedEntries = entries.getAndSet(ImmutableList.copyOf(newEntries));
+      // Double-check fingerprint inside the lock
+      if (rotationTracker.isAlreadyActive(currentDiskFingerprint)) {
+        LOG.fine(
+            "Channel pool was already refreshed by a concurrent thread, skipping duplicate"
+                + " refresh");
+        return;
+      }
 
-      // Shutdown the channels that were cycled out.
-      for (Entry e : replacedEntries) {
-        if (!newEntries.contains(e)) {
+      // Drop any channel that fails to refresh so that no traffic is routed to the old certificate.
+      if (refreshAll(/* dropUnrefreshedChannels= */ true)) {
+        completeCertificateSwitch(currentDiskFingerprint);
+      }
+    }
+  }
+
+  /**
+   * Records that every channel in the pool now uses the certificate with the given fingerprint.
+   * Must be called while holding {@code entryWriteLock}, after the channels have been swapped.
+   *
+   * <p>The generation is incremented before the fingerprint is marked active, so that a concurrent
+   * failing RPC that no longer sees a pending rotation ({@link #shouldRefresh()} is {@code false})
+   * is guaranteed to see the new generation and be retried on the new channels.
+   */
+  private void completeCertificateSwitch(String newFingerprint) {
+    generation.incrementAndGet();
+    rotationTracker.markRefreshed(newFingerprint);
+    LOG.fine("Channel pool switched to certificate with fingerprint: " + newFingerprint);
+  }
+
+  @InternalApi("Visible for testing")
+  @Nullable String getWorkloadCertPath() {
+    return workloadCertPath;
+  }
+
+  @InternalApi("Visible for testing")
+  boolean refreshAll() {
+    return refreshAll(/* dropUnrefreshedChannels= */ false);
+  }
+
+  /**
+   * Replaces the channels in the pool with freshly created ones.
+   *
+   * @param dropUnrefreshedChannels if {@code false}, a channel that fails to be recreated keeps its
+   *     slot in the pool. If {@code true} (used for certificate rotation), only newly created
+   *     channels are kept so no traffic is routed to a channel using the old certificate; a
+   *     statically sized pool is then refilled asynchronously, while a dynamically sized pool is
+   *     refilled by {@link #resize()}.
+   * @return if {@code dropUnrefreshedChannels} is {@code false}, whether every channel was
+   *     recreated; otherwise, whether at least one channel was recreated (i.e. every channel left
+   *     in the pool was newly created)
+   */
+  @InternalApi("Visible for testing")
+  boolean refreshAll(boolean dropUnrefreshedChannels) {
+    synchronized (entryWriteLock) {
+      if (isShutdown) {
+        return false;
+      }
+      LOG.fine("Refreshing all channels");
+      ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
+      boolean anyCreated = false;
+      boolean allCreated = !newEntries.isEmpty();
+      List<Entry> createdEntries = new ArrayList<>();
+
+      try {
+        for (int i = 0; i < newEntries.size(); i++) {
+          try {
+            Entry newEntry = new Entry(channelFactory.createSingleChannel());
+            createdEntries.add(newEntry);
+            newEntries.set(i, newEntry);
+            anyCreated = true;
+          } catch (Exception e) {
+            allCreated = false;
+            LOG.log(
+                Level.WARNING,
+                dropUnrefreshedChannels
+                    ? "Failed to refresh channel, dropping old channel"
+                    : "Failed to refresh channel, leaving old channel",
+                e);
+          }
+        }
+
+        if (!anyCreated) {
+          return false;
+        }
+
+        ImmutableList<Entry> finalEntries =
+            ImmutableList.copyOf(dropUnrefreshedChannels ? createdEntries : newEntries);
+        ImmutableList<Entry> replacedEntries = entries.getAndSet(finalEntries);
+        createdEntries.clear(); // Ownership transferred to pool
+
+        // Shutdown the channels that were cycled out.
+        for (Entry e : replacedEntries) {
+          if (!finalEntries.contains(e)) {
+            e.requestShutdown();
+          }
+        }
+        if (dropUnrefreshedChannels && !allCreated && settings.isStaticSize()) {
+          scheduleRefill();
+        }
+        return dropUnrefreshedChannels || allCreated;
+      } finally {
+        // If an Error aborted before getAndSet, shut down newly created channels so they don't leak
+        for (Entry e : createdEntries) {
           e.requestShutdown();
         }
       }
     }
+  }
+
+  /**
+   * Schedules a one-shot task that restores a statically sized pool to its configured channel count
+   * after a certificate rotation refresh dropped channels that failed to refresh.
+   */
+  private void scheduleRefill() {
+    try {
+      backgroundExecutorProvider.getExecutor().execute(this::refillSafely);
+    } catch (RuntimeException e) {
+      LOG.log(Level.WARNING, "Failed to schedule channel pool refill", e);
+    }
+  }
+
+  @VisibleForTesting
+  void refillSafely() {
+    try {
+      synchronized (entryWriteLock) {
+        if (isShutdown) {
+          return;
+        }
+        int targetSize = settings.getInitialChannelCount();
+        if (entries.get().size() < targetSize) {
+          expand(targetSize);
+        }
+      }
+    } catch (Exception e) {
+      LOG.log(Level.WARNING, "Failed to refill channel pool", e);
+    }
+  }
+
+  /**
+   * Returns the current channel pool generation counter.
+   *
+   * <p>The generation is a monotonically increasing counter incremented each time the pool switches
+   * every channel to a new mTLS certificate (a reactive refresh after a rotation, or a periodic
+   * refresh that picks up a rotated certificate). Periodic refreshes that do not change the
+   * certificate do not increment it. Retry loops ({@code AttemptCallable} and {@code
+   * ServerStreamingAttemptCallable}) snapshot the generation before starting an RPC attempt and
+   * compare it after an {@code UNAUTHENTICATED} failure to determine whether the pool rotated to a
+   * new certificate during or after the attempt.
+   */
+  long getGeneration() {
+    return generation.get();
   }
 
   /**
@@ -616,17 +829,30 @@ class ChannelPool extends ManagedChannel {
         MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
 
       Entry entry = getRetainedEntry(affinity);
-
-      return new ReleasingClientCall<>(entry.channel.newCall(methodDescriptor, callOptions), entry);
+      try {
+        return new ReleasingClientCall<>(
+            entry.channel.newCall(methodDescriptor, callOptions), entry);
+      } catch (Throwable t) {
+        entry.release();
+        throw t;
+      }
     }
   }
 
-  /** ClientCall wrapper that makes sure to decrement the outstanding RPC count on completion. */
+  /**
+   * ClientCall wrapper that makes sure to decrement the outstanding RPC count on completion.
+   *
+   * <p>Contract: Exactly one call to {@link #start(Listener, Metadata)} is required to balance
+   * reference counts. Early cancellation before {@code start()} is recorded and safely decrements
+   * the reference count when {@code start()} is subsequently invoked.
+   */
   static class ReleasingClientCall<ReqT, RespT> extends SimpleForwardingClientCall<ReqT, RespT> {
-    private @Nullable CancellationException cancellationException;
+    private final Object callLock = new Object();
+    private volatile @Nullable CancellationException cancellationException;
     final Entry entry;
     private final AtomicBoolean wasClosed = new AtomicBoolean();
     private final AtomicBoolean wasReleased = new AtomicBoolean();
+    private final AtomicBoolean wasStarted = new AtomicBoolean();
 
     public ReleasingClientCall(ClientCall<ReqT, RespT> delegate, Entry entry) {
       super(delegate);
@@ -635,51 +861,81 @@ class ChannelPool extends ManagedChannel {
 
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
-      if (cancellationException != null) {
-        throw new IllegalStateException("Call is already cancelled", cancellationException);
-      }
-      try {
-        super.start(
-            new SimpleForwardingClientCallListener<RespT>(responseListener) {
-              @Override
-              public void onClose(Status status, Metadata trailers) {
-                if (!wasClosed.compareAndSet(false, true)) {
-                  LOG.log(
-                      Level.WARNING,
-                      "Call is being closed more than once. Please make sure that onClose() is not being manually called.");
-                  return;
-                }
-                try {
-                  super.onClose(status, trailers);
-                } finally {
-                  if (wasReleased.compareAndSet(false, true)) {
-                    entry.release();
-                  } else {
+      synchronized (callLock) {
+        if (!wasStarted.compareAndSet(false, true)) {
+          throw new IllegalStateException("Call is already started");
+        }
+        if (cancellationException != null) {
+          if (wasReleased.compareAndSet(false, true)) {
+            entry.release();
+          }
+          throw new IllegalStateException("Call is already cancelled", cancellationException);
+        }
+        try {
+          super.start(
+              new SimpleForwardingClientCallListener<RespT>(responseListener) {
+                @Override
+                public void onClose(Status status, Metadata trailers) {
+                  if (!wasClosed.compareAndSet(false, true)) {
                     LOG.log(
                         Level.WARNING,
-                        "Entry was released before the call is closed. This may be due to an exception on start of the call.");
+                        "Call is being closed more than once. Please make sure that onClose() is"
+                            + " not being manually called.");
+                    return;
+                  }
+                  try {
+                    super.onClose(status, trailers);
+                  } finally {
+                    if (wasReleased.compareAndSet(false, true)) {
+                      entry.release();
+                    } else {
+                      LOG.log(
+                          Level.WARNING,
+                          "Entry was released before the call is closed. This may be due to an"
+                              + " exception on start of the call.");
+                    }
                   }
                 }
-              }
-            },
-            headers);
-      } catch (Exception e) {
-        // In case start failed, make sure to release
-        if (wasReleased.compareAndSet(false, true)) {
-          entry.release();
-        } else {
-          LOG.log(
-              Level.WARNING,
-              "The entry is already released. This indicates that onClose() has already been called previously");
+              },
+              headers);
+        } catch (Throwable t) {
+          // In case start failed, make sure to release
+          if (wasReleased.compareAndSet(false, true)) {
+            entry.release();
+          } else {
+            LOG.log(
+                Level.WARNING,
+                "The entry is already released. This indicates that onClose() has already been"
+                    + " called previously");
+          }
+          throw t;
         }
-        throw e;
       }
     }
 
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
-      this.cancellationException = new CancellationException(message);
-      super.cancel(message, cause);
+      boolean releaseImmediately = false;
+      try {
+        synchronized (callLock) {
+          this.cancellationException = new CancellationException(message);
+          if (!wasStarted.get()) {
+            releaseImmediately = true;
+          }
+          if (delegate() != null) {
+            super.cancel(message, cause);
+          }
+        }
+      } catch (Throwable t) {
+        if (!wasStarted.get()) {
+          releaseImmediately = true;
+        }
+        throw t;
+      } finally {
+        if (releaseImmediately && wasReleased.compareAndSet(false, true)) {
+          entry.release();
+        }
+      }
     }
   }
 }
