@@ -217,7 +217,7 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
-  void testShouldRefreshNullCertPath() {
+  void testShouldRefreshFalseWhenCertPathNull() {
     testCertPath = null;
     RefreshingHttpJsonChannel channel = createTestChannel();
     assertFalse(channel.shouldRefresh());
@@ -503,6 +503,7 @@ class RefreshingHttpJsonChannelTest {
     int threadCount = 10;
     java.util.concurrent.ExecutorService executorService =
         java.util.concurrent.Executors.newFixedThreadPool(threadCount);
+    java.util.concurrent.CountDownLatch start = new java.util.concurrent.CountDownLatch(1);
     java.util.concurrent.CountDownLatch latch =
         new java.util.concurrent.CountDownLatch(threadCount);
     AtomicInteger successCount = new AtomicInteger(0);
@@ -511,8 +512,11 @@ class RefreshingHttpJsonChannelTest {
       executorService.submit(
           () -> {
             try {
+              start.await();
               channel.newCall(null, null);
               successCount.incrementAndGet();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
             } finally {
               latch.countDown();
             }
@@ -520,12 +524,16 @@ class RefreshingHttpJsonChannelTest {
     }
 
     rotateCertificate(channel);
+    // Release the workers just before refreshing so their calls overlap the transport swap.
+    start.countDown();
     channel.refresh();
 
-    latch.await(5, TimeUnit.SECONDS);
+    assertTrue(latch.await(5, TimeUnit.SECONDS));
     executorService.shutdown();
+    assertTrue(executorService.awaitTermination(5, TimeUnit.SECONDS));
 
     assertEquals(threadCount, successCount.get());
+    assertEquals(1, channel.getGeneration());
   }
 
   @Test

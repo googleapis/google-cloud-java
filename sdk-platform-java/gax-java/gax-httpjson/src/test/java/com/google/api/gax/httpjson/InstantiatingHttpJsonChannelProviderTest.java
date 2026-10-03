@@ -246,7 +246,16 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
 
   @Test
   void channelCreation_withCustomHttpTransport_ignoresWorkloadCertPathAndDoesNotWrap()
-      throws IOException {
+      throws IOException, GeneralSecurityException {
+    // mTLS is otherwise fully configured, so only the custom transport prevents wrapping. Lenient
+    // because a custom transport is expected to skip these lookups.
+    Mockito.lenient().when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.lenient()
+        .when(certificateBasedAccess.getWorkloadCertPath())
+        .thenReturn("fake/cert/path.json");
+    com.google.auth.mtls.MtlsProvider mtlsProvider =
+        new com.google.api.gax.rpc.testing.FakeMtlsProvider(
+            com.google.api.gax.rpc.testing.FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
     com.google.api.client.http.HttpTransport mockHttpTransport =
         org.mockito.Mockito.mock(com.google.api.client.http.HttpTransport.class);
 
@@ -254,6 +263,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
         InstantiatingHttpJsonChannelProvider.newBuilder()
             .setEndpoint(DEFAULT_ENDPOINT)
             .setHttpTransport(mockHttpTransport)
+            .setMtlsProvider(mtlsProvider)
             .setCertificateBasedAccess(certificateBasedAccess)
             .build();
     provider = (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
@@ -429,7 +439,8 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
-  void getTransportChannel_whenKeyStoreUninitialized_causeIsSecurityException() throws Exception {
+  void getTransportChannel_whenKeyStoreUninitialized_wrapsGeneralSecurityException()
+      throws Exception {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Mockito.when(certificateBasedAccess.getWorkloadCertPath()).thenReturn("fake/cert/path.json");
     // A KeyStore that was never loaded makes transport creation fail with a KeyStoreException.
@@ -480,7 +491,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
-  void createHttpTransport_withMtlsAndConscrypt_configuresSecurityProvider()
+  void createHttpTransport_withMtlsKeyStore_returnsMtlsTransport()
       throws IOException, GeneralSecurityException {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     com.google.auth.mtls.MtlsProvider provider =
@@ -497,6 +508,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     com.google.api.client.http.HttpTransport transport = channelProvider.createHttpTransport();
     assertThat(transport).isNotNull();
     assertThat(transport).isInstanceOf(com.google.api.client.http.javanet.NetHttpTransport.class);
+    assertThat(((com.google.api.client.http.javanet.NetHttpTransport) transport).isMtls()).isTrue();
   }
 
   @Test

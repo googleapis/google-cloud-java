@@ -142,7 +142,7 @@ class AttemptCallableTest {
   }
 
   @Test
-  void testUnauthenticatedExceptionReThrowPreservesContext() {
+  void testRefreshedUnauthenticated_flaggedAndPreservesContext() {
     FakeTransportChannel transportChannel =
         FakeTransportChannel.create(new FakeChannel()).setShouldRefresh(true);
     ApiCallContext callContext =
@@ -276,7 +276,7 @@ class AttemptCallableTest {
 
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
-    // Genuine permanent error on same generation is NOT retryable
+    // Genuine permanent error on same generation is not flagged for a rotation retry
     assertThat(rethrown.isRetryable()).isFalse();
     assertThat(rethrown.isChannelRefreshed()).isFalse();
     assertThat(innerChannel.getRefreshCount()).isEqualTo(0);
@@ -284,6 +284,7 @@ class AttemptCallableTest {
 
   @Test
   void testRefreshThrowsException_notFlaggedWhenGenerationUnchanged() {
+    AtomicInteger refreshCalls = new AtomicInteger();
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -293,6 +294,7 @@ class AttemptCallableTest {
 
           @Override
           public void refresh() {
+            refreshCalls.incrementAndGet();
             throw new RuntimeException("Refresh error");
           }
         };
@@ -329,6 +331,7 @@ class AttemptCallableTest {
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
     assertThat(rethrown.isRetryable()).isFalse();
     assertThat(rethrown.isChannelRefreshed()).isFalse();
+    assertThat(refreshCalls.get()).isEqualTo(1);
   }
 
   @Test
@@ -432,7 +435,7 @@ class AttemptCallableTest {
   }
 
   @Test
-  void testGenerationAlreadyAdvanced_skipsShouldRefresh() {
+  void testGenerationAlreadyAdvanced_flaggedWithoutCheckingShouldRefresh() {
     AtomicInteger shouldRefreshCalls = new AtomicInteger();
     FakeChannel fakeChannel =
         new FakeChannel() {

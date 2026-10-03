@@ -254,7 +254,7 @@ class ServerStreamingAttemptCallableTest {
 
   @Test
   @SuppressWarnings("ConstantConditions")
-  void testUnauthenticatedRefresh() {
+  void testUnauthenticatedRefreshWithoutGenerationAdvance_notFlagged() {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
     Mockito.when(transportChannel.shouldRefresh()).thenReturn(true);
 
@@ -296,7 +296,7 @@ class ServerStreamingAttemptCallableTest {
 
   @Test
   @SuppressWarnings("ConstantConditions")
-  void testUnauthenticatedRefreshWithGenerationAdvanceRetries() {
+  void testUnauthenticatedRefreshWithGenerationAdvance_flagsChannelRefreshed() {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
     java.util.concurrent.atomic.AtomicLong generation =
         new java.util.concurrent.atomic.AtomicLong(0);
@@ -342,6 +342,17 @@ class ServerStreamingAttemptCallableTest {
         .isTrue();
     Truth.assertThat(((UnauthenticatedException) outerError.getCause()).isRetryable()).isFalse();
     Truth.assertThat(outerError.getCause().getStackTrace()).isEqualTo(initialError.getStackTrace());
+    // A fixed clock keeps the fake attempt (started at t=0) within its total timeout.
+    com.google.api.gax.retrying.StreamingRetryAlgorithm<String> retryAlgorithm =
+        new com.google.api.gax.retrying.StreamingRetryAlgorithm<>(
+            new ApiResultRetryAlgorithm<>(),
+            new com.google.api.gax.retrying.ExponentialRetryAlgorithm(
+                RetrySettings.newBuilder().build(), new com.google.api.gax.core.FakeApiClock(0)));
+    // Mirror the retry executor: compute the next attempt, then ask whether to run it.
+    TimedAttemptSettings nextAttempt =
+        retryAlgorithm.createNextAttempt(outerError, null, fakeRetryingFuture.getAttemptSettings());
+    Truth.assertThat(nextAttempt).isNotNull();
+    Truth.assertThat(retryAlgorithm.shouldRetry(outerError, null, nextAttempt)).isTrue();
 
     // Verify retry call resumes stream
     callable.call();
@@ -628,10 +639,13 @@ class ServerStreamingAttemptCallableTest {
 
   @Test
   void testUnauthenticatedException_whenChannelRefreshFails_notFlagged() throws Exception {
+    java.util.concurrent.atomic.AtomicInteger refreshCalls =
+        new java.util.concurrent.atomic.AtomicInteger();
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
           public void refresh() {
+            refreshCalls.incrementAndGet();
             throw new RuntimeException("Refresh failed");
           }
         };
@@ -653,6 +667,7 @@ class ServerStreamingAttemptCallableTest {
         assertThrows(
             ExecutionException.class,
             () -> fakeRetryingFuture.getAttemptResult().get(1, TimeUnit.SECONDS));
+    Truth.assertThat(refreshCalls.get()).isEqualTo(1);
     Truth.assertThat(ex.getCause()).isInstanceOf(ServerStreamingAttemptException.class);
     Throwable cause = ex.getCause().getCause();
     Truth.assertThat(cause).isInstanceOf(UnauthenticatedException.class);
@@ -661,7 +676,8 @@ class ServerStreamingAttemptCallableTest {
   }
 
   @Test
-  void testUnauthenticated_generationAlreadyAdvanced_skipsShouldRefresh() throws Exception {
+  void testUnauthenticated_generationAlreadyAdvanced_flaggedWithoutCheckingShouldRefresh()
+      throws Exception {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
     java.util.concurrent.atomic.AtomicLong generation =
         new java.util.concurrent.atomic.AtomicLong(0);

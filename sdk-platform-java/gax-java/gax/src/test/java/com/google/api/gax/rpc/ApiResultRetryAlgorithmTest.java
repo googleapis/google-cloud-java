@@ -282,7 +282,7 @@ class ApiResultRetryAlgorithmTest {
   }
 
   @Test
-  void testSecondRotationFailureDoesNotConsumeNormalRetryBudget() {
+  void testSecondRotationFailureStopsDespiteRemainingMaxAttempts() {
     ApiCallContext context =
         mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
     when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));
@@ -317,7 +317,7 @@ class ApiResultRetryAlgorithmTest {
   }
 
   @Test
-  void testStreamRotationRetryIsAvailableAgainAfterProgress() {
+  void testStreamRotationRetryAfterProgressNotBlockedByEarlierRetry() {
     ApiCallContext context =
         mock(ApiCallContext.class, Mockito.withSettings().withoutAnnotations());
     when(context.getRetryableCodes()).thenReturn(Sets.newHashSet(Code.UNAVAILABLE));

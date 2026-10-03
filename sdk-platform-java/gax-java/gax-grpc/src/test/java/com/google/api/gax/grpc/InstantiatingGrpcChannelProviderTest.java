@@ -1424,7 +1424,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   @Test
-  void createChannelBuilder_whenMtlsActiveAndCredentialsNull_throwsIOException() {
+  void createChannelBuilder_whenMtlsActiveAndKeyStoreNull_throwsIOException() {
     CertificateBasedAccess mtlsCertificateBasedAccess =
         mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);

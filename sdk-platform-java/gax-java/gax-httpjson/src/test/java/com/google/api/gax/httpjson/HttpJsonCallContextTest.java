@@ -373,7 +373,8 @@ class HttpJsonCallContextTest {
     Truth.assertThat(nullChannelContext.getTransportChannel()).isNull();
     Truth.assertThat(context.withChannel(channel2).getTransportChannel()).isNull();
 
-    // Merging a cleared context into default context preserves default context's transportChannel
+    // Merging a context with a cleared channel into the original context keeps the original
+    // channel and transportChannel
     HttpJsonCallContext mergedWithNullChannel = context.merge(nullChannelContext);
     Truth.assertThat(mergedWithNullChannel.getChannel()).isSameInstanceAs(channel1);
     Truth.assertThat(mergedWithNullChannel.getTransportChannel())

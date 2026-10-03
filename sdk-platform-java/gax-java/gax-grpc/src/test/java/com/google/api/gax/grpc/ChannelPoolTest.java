@@ -461,7 +461,7 @@ class ChannelPoolTest {
   }
 
   @Test
-  void channelReactiveMTlsRefreshShouldConditionallySwapChannels()
+  void channelReactiveMTlsRefresh_swapsChannelsOnlyWhenCertChanges()
       throws IOException, InterruptedException {
     ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel underlyingChannel2 = Mockito.mock(ManagedChannel.class);
@@ -794,11 +794,19 @@ class ChannelPoolTest {
 
     // Checked and unchecked failures are both handled by expand(); the pool stays usable at its
     // reduced size.
-    refillTask.getValue().run();
-    assertThat(pool.entries.get()).hasSize(1);
+    FakeLogHandler logHandler = new FakeLogHandler();
+    ChannelPool.LOG.addHandler(logHandler);
+    try {
+      refillTask.getValue().run();
+      assertThat(pool.entries.get()).hasSize(1);
 
-    refillTask.getValue().run();
-    assertThat(pool.entries.get()).hasSize(1);
+      refillTask.getValue().run();
+      assertThat(pool.entries.get()).hasSize(1);
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+    }
+    assertThat(logHandler.getAllMessages())
+        .containsExactly("Failed to add channel", "Failed to add channel");
 
     refillTask.getValue().run();
     assertThat(pool.entries.get()).hasSize(2);
@@ -1012,8 +1020,7 @@ class ChannelPoolTest {
   }
 
   @Test
-  void preemptiveRefresh_partialFailureDuringRotation_doesNotIncrementOrMarkRefreshed()
-      throws IOException {
+  void preemptiveRefresh_partialFailureDuringRotation_leavesRotationPending() throws IOException {
     ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
@@ -1032,12 +1039,14 @@ class ChannelPoolTest {
     Mockito.verify(initial1).shutdown();
     Mockito.verify(initial2, Mockito.never()).shutdown();
     assertThat(pool.getGeneration()).isEqualTo(0);
+    // The new certificate is not recorded as active, so the rotation stays pending and the next
+    // UNAUTHENTICATED failure triggers a reactive refresh that completes the switch.
     pool.invalidateDiskFingerprintCache();
     assertThat(pool.shouldRefresh()).isTrue();
   }
 
   @Test
-  void refresh_whenAlreadyActive_doesNotIncrementGeneration() throws IOException {
+  void refresh_whenCertUnchanged_noOpsAndDoesNotIncrementGeneration() throws IOException {
     ChannelFactory channelFactory = mockChannelFactory();
     Mockito.when(channelFactory.createSingleChannel())
         .thenReturn(Mockito.mock(ManagedChannel.class), Mockito.mock(ManagedChannel.class));
@@ -1860,6 +1869,10 @@ class ChannelPoolTest {
     } finally {
       executor.shutdownNow();
     }
+
+    // Every start/cancel race must leave the entry with no outstanding RPCs: a leak would leave it
+    // positive and a double release would make it negative.
+    assertThat(pool.entries.get().get(0).outstandingRpcs.get()).isEqualTo(0);
 
     // Rotate pool: initial channel must shut down cleanly, proving outstandingRpcs == 0 (no leaks
     // or negative counts)
