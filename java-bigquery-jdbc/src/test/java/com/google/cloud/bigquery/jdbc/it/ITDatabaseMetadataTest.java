@@ -45,6 +45,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITDatabaseMetadataTest extends ITBase {
@@ -272,6 +273,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testTableConstraints() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     ResultSet primaryKey1 =
@@ -390,6 +392,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testMetadataResultSetsDoNotInterfere() throws SQLException {
     try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
       DatabaseMetaData metaData = connection.getMetaData();
@@ -445,6 +448,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testDatabaseMetadataGetProcedures() throws SQLException {
 
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
@@ -1188,6 +1192,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
 
     String defaultDatasetValue = CONSTRAINTS_DATASET;
@@ -1258,6 +1263,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;

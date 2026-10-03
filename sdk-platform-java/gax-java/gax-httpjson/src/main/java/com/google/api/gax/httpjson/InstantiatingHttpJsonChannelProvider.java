@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.util.SslUtils;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
@@ -45,11 +46,13 @@ import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.SSLContext;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -192,17 +195,42 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         "InstantiatingHttpJsonChannelProvider doesn't need credentials");
   }
 
-  @Nullable HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    if (mtlsProvider == null) {
-      return null;
+  HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    configureMtls(builder);
+    HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+    return builder.build();
+  }
+
+  private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
+      throws IOException, GeneralSecurityException {
+    if (mtlsProvider == null || !certificateBasedAccess.useMtlsClientCertificate()) {
+      return builder;
     }
-    if (certificateBasedAccess.useMtlsClientCertificate()) {
-      KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
-      if (mtlsKeyStore != null) {
-        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
-      }
+    KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
+    if (mtlsKeyStore == null) {
+      return builder;
     }
-    return null;
+    builder.trustCertificates(null, mtlsKeyStore, "");
+    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
+    if (conscryptProvider == null) {
+      // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
+      return builder;
+    }
+    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
+    // key managers
+    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
+    // key exchange).
+    SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    SslUtils.initSslContext(
+        sslContext,
+        null,
+        SslUtils.getPkixTrustManagerFactory(),
+        mtlsKeyStore,
+        "",
+        SslUtils.getDefaultKeyManagerFactory());
+    builder.setSslSocketFactory(sslContext.getSocketFactory());
+    return builder;
   }
 
   private HttpJsonTransportChannel createChannel() throws IOException, GeneralSecurityException {
@@ -366,7 +394,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize."
+                    + " Falling back to non-mTLS channel.");
           }
         }
       }

@@ -67,7 +67,7 @@ class ITBigQueryStorageLongRunningTest {
   static void beforeAll() throws IOException {
     Assumptions.assumeTrue(
         Boolean.getBoolean(LONG_TESTS_ENABLED_PROPERTY), LONG_TESTS_DISABLED_MESSAGE);
-    client = BigQueryReadClient.create();
+    client = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
     parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
     LOG.info(

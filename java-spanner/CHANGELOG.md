@@ -1,5 +1,61 @@
 # Changelog
 
+## [6.120.0](https://github.com/googleapis/google-cloud-java/compare/73c9a0342f9...c2ce8c17fda) (2026-07-30)
+
+### Bug Fixes
+
+* Prevent memory leak and thread blocking in transaction keep-alive ([#13897](https://github.com/googleapis/google-cloud-java/pull/13897)) ([51a75b](https://github.com/googleapis/google-cloud-java/commit/51a75b086f81782a6e89f24024eabd643a1d0f55))
+* Fix the start timestamp > end timestamp issue for change stream initial query. ([#13885](https://github.com/googleapis/google-cloud-java/pull/13885)) ([3f2c7d](https://github.com/googleapis/google-cloud-java/commit/3f2c7ddb5d05750c5d6bde6aa8781fede50834b2))
+* Prevent fastpath tablet routing flaps ([#13803](https://github.com/googleapis/google-cloud-java/pull/13803)) ([4dabda](https://github.com/googleapis/google-cloud-java/commit/4dabdac2bb81502530f30a108cef2ae701c70bd5))
+* Avoid data race on DIRECTPATH_CHANNEL_CREATED by using volatile ([#13727](https://github.com/googleapis/google-cloud-java/pull/13727)) ([1e05ea](https://github.com/googleapis/google-cloud-java/commit/1e05ea5ccaddee11639d5539f0274792872fe88e))
+
+### Dependencies
+
+* Update Protobuf-Java to v4.33.6 ([#13876](https://github.com/googleapis/google-cloud-java/pull/13876)) ([5c6478](https://github.com/googleapis/google-cloud-java/commit/5c6478cfe19f0e6fed142f628f625a978a16f345))
+
+## [6.119.0](https://github.com/googleapis/google-cloud-java/compare/6ce7a4941ef...73c9a0342f9) (2026-07-07)
+
+### Features
+
+* Add settings for gRCP keep-alive ([#13643](https://github.com/googleapis/google-cloud-java/pull/13643)) ([9d7830](https://github.com/googleapis/google-cloud-java/commit/9d783074a6d33fd8821cad4d130ad75e32501dde))
+* Auth login support for Spanner Omni endpoints ([#13470](https://github.com/googleapis/google-cloud-java/pull/13470)) ([55930b](https://github.com/googleapis/google-cloud-java/commit/55930b44ed3a4e9779a5f6fb0553b6642605d84a))
+* Use self-signed JWTs in Spanner MutableCredentials ([#13381](https://github.com/googleapis/google-cloud-java/pull/13381)) ([29543a](https://github.com/googleapis/google-cloud-java/commit/29543a23d7f80d908fc019fa39f612d5eba83b10))
+
+### Bug Fixes
+
+* Update dynamic channel pool default configuration ([#13646](https://github.com/googleapis/google-cloud-java/pull/13646)) ([37b77c](https://github.com/googleapis/google-cloud-java/commit/37b77c3fbd509747ec10bd72e3227e4e7b2b22dc))
+* Remove explicit tink version to resolve dependency convergence conflict ([#13602](https://github.com/googleapis/google-cloud-java/pull/13602)) ([863c26](https://github.com/googleapis/google-cloud-java/commit/863c26e5dd90186899ae92c24024012d3d4492f6))
+* Pin inline read-write transactions to default endpoint ([#13562](https://github.com/googleapis/google-cloud-java/pull/13562)) ([6908de](https://github.com/googleapis/google-cloud-java/commit/6908deefbcb4f1e77b9a73b09a6ea96261a45846))
+* Fail fast when inline-begin DML returns no transaction id ([#13536](https://github.com/googleapis/google-cloud-java/pull/13536)) ([94315c](https://github.com/googleapis/google-cloud-java/commit/94315ce3d80eab06295cceabedb70077e65778da))
+* Fix edge cases with UTF-8 strings in ChecksumResultSet ([#13441](https://github.com/googleapis/google-cloud-java/pull/13441)) ([051aea](https://github.com/googleapis/google-cloud-java/commit/051aea7468c0492104c52f06f5537d6238284965))
+
+## [6.118.0](https://github.com/googleapis/google-cloud-java/compare/4614cae94a1...6ce7a4941ef) (2026-06-03)
+
+### Features
+
+* Add option for inline begin with multi-use read only txn ([#13233](https://github.com/googleapis/google-cloud-java/pull/13233)) ([056abb](https://github.com/googleapis/google-cloud-java/commit/056abb639c87444d236cfe78275240db7f099617))
+* Add option for auto-tagging transactions ([#13214](https://github.com/googleapis/google-cloud-java/pull/13214)) ([c8234c](https://github.com/googleapis/google-cloud-java/commit/c8234cf81b3652e0410cc053dd92eed87c2f544b))
+* Enable SI relate feature in cloud client executor. ([#12790](https://github.com/googleapis/google-cloud-java/pull/12790)) ([e03efe](https://github.com/googleapis/google-cloud-java/commit/e03efe09ae599c50852eb665b80d5e090e5bfbd6))
+* Add getIsolationLevel and getReadLockMode methods to CommitResponse ([#13004](https://github.com/googleapis/google-cloud-java/pull/13004)) ([d5fc50](https://github.com/googleapis/google-cloud-java/commit/d5fc50451370cb058cc29be4221ce2777ac848c3))
+
+### Bug Fixes
+
+* Derive built-in metrics project from database client ([#13262](https://github.com/googleapis/google-cloud-java/pull/13262)) ([a57793](https://github.com/googleapis/google-cloud-java/commit/a577934ff0b9784fdd89ff25e611d7f36e470559))
+* Cache auto-tagging options to avoid system property lock contention ([#13273](https://github.com/googleapis/google-cloud-java/pull/13273)) ([dc2fee](https://github.com/googleapis/google-cloud-java/commit/dc2feed3e4a933878b69336c441379dffe365a3b))
+* Avoid double grpc-gcp wrapping for directpath fallback ([#13155](https://github.com/googleapis/google-cloud-java/pull/13155)) ([fe608f](https://github.com/googleapis/google-cloud-java/commit/fe608fed0a0324b8c6e63e4f96e8a821bda99b6b))
+
+### Dependencies
+
+* Upgrade opentelemetry to 1.62.0 to patch CVE-2026-45292 ([#13304](https://github.com/googleapis/google-cloud-java/pull/13304)) ([67fe72](https://github.com/googleapis/google-cloud-java/commit/67fe7228d1cdf0e3a34c52162e9c800fe348ba00))
+
+## [6.117.0](https://github.com/googleapis/google-cloud-java/compare/cd6048171fc...4614cae94a1) (2026-05-05)
+
+### Features
+
+* Cleanup GcpFallbackChannel creation and enable by default ([#12707](https://github.com/googleapis/google-cloud-java/pull/12707)) ([525121](https://github.com/googleapis/google-cloud-java/commit/5251219a7780189b65dbb639d8d88899377c038c))
+* Add connection properties for min/max RPCs for DCP ([#12951](https://github.com/googleapis/google-cloud-java/pull/12951)) ([dc1216](https://github.com/googleapis/google-cloud-java/commit/dc1216ed25da0ec05f955343d45f7889fb9c7276))
+* Add connection property for enabling/disabling grpc-gcp ([#12898](https://github.com/googleapis/google-cloud-java/pull/12898)) ([1e633d](https://github.com/googleapis/google-cloud-java/commit/1e633d785f8bae4ef3f4eee4c15d3993a0560508))
+
 ## [6.116.1](https://github.com/googleapis/google-cloud-java/compare/966e8a4d99b...cd6048171fc) (2026-04-21)
 
 ### Features

@@ -42,7 +42,7 @@ jobs:
       run: |
         echo "Error: Running this workflow manually on the main branch is not allowed."
         exit 1
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         fetch-depth: 0
         persist-credentials: false
@@ -66,10 +66,6 @@ jobs:
           sudo apt-get update && sudo apt-get install -y maven
         fi
         mvn -version
-    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
-      with:
-        python-version: "3.12"
-        cache: 'pip'
     - name: Run librarian install
       run: |
         librarian install
@@ -105,7 +101,7 @@ jobs:
         fi
     - name: Create issue if previous step fails
       if: ${{ failure() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-      uses: googleapis/librarian/.github/actions/create-issue-on-failure@main # zizmor: ignore[unpinned-uses]
+      uses: googleapis/librarian/.github/actions/create-issue-on-failure@35997441eafc2b02716804f9baba1e3f04f8a44f # v0.31.1
       with:
         title: "Librarian generate diff check failed on main branch"
         body: |

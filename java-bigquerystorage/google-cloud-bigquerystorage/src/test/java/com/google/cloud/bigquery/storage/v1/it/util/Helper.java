@@ -25,6 +25,9 @@ import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.AvroSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
@@ -200,5 +203,45 @@ public class Helper {
               rows.add(new GenericRecordBuilder(record).build());
             });
     return rows;
+  }
+
+  /**
+   * Returns a {@link BigQueryReadSettings.Builder} configured with potential endpoint overrides for
+   * testing.
+   */
+  public static BigQueryReadSettings.Builder createBigQueryReadSettingsBuilder() {
+    BigQueryReadSettings.Builder builder = BigQueryReadSettings.newBuilder();
+    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    if (endpoint != null) {
+      builder.setEndpoint(endpoint);
+    }
+    return builder;
+  }
+
+  /**
+   * Returns a {@link BigQueryReadClient} configured with potential endpoint overrides for testing.
+   */
+  public static BigQueryReadClient createBigQueryReadClient() throws IOException {
+    return BigQueryReadClient.create(createBigQueryReadSettingsBuilder().build());
+  }
+
+  /**
+   * Returns a {@link BigQueryWriteSettings.Builder} configured with potential endpoint overrides
+   * for testing.
+   */
+  public static BigQueryWriteSettings.Builder createBigQueryWriteSettingsBuilder() {
+    BigQueryWriteSettings.Builder builder = BigQueryWriteSettings.newBuilder();
+    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    if (endpoint != null) {
+      builder.setEndpoint(endpoint);
+    }
+    return builder;
+  }
+
+  /**
+   * Returns a {@link BigQueryWriteClient} configured with potential endpoint overrides for testing.
+   */
+  public static BigQueryWriteClient createBigQueryWriteClient() throws IOException {
+    return BigQueryWriteClient.create(createBigQueryWriteSettingsBuilder().build());
   }
 }

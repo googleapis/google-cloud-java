@@ -776,7 +776,9 @@ public class GapicSpannerRpc implements SpannerRpc {
       defaultChannelProviderBuilder.setAttemptDirectPathXds();
     }
 
-    options.enablegRPCMetrics(defaultChannelProviderBuilder);
+    options.enablegRPCMetrics(
+        defaultChannelProviderBuilder,
+        isEmulatorEnabled(options, System.getenv("SPANNER_EMULATOR_HOST")));
 
     if (options.isUseVirtualThreads()) {
       ExecutorService executor =
@@ -925,8 +927,8 @@ public class GapicSpannerRpc implements SpannerRpc {
       CredentialsProvider credentialsProvider,
       String emulatorHost)
       throws IOException {
-    // Only do the check if the emulator environment variable has been set to localhost.
     if (isEmulatorEnabled(options, emulatorHost)) {
+      String resolvedEmulatorHost = emulatorHost != null ? emulatorHost : options.getEndpoint();
       // Do a quick check to see if the emulator is actually running.
       try {
         InstanceAdminStubSettings.Builder testEmulatorSettings =
@@ -948,22 +950,22 @@ public class GapicSpannerRpc implements SpannerRpc {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.UNAVAILABLE,
             String.format(
-                "The environment variable SPANNER_EMULATOR_HOST has been set to %s, but no running"
+                "The Spanner emulator host has been set to %s, but no running"
                     + " emulator could be found at that address.\n"
                     + "Did you forget to start the emulator, or to unset the environment"
-                    + " variable?",
-                emulatorHost));
+                    + " configuration?",
+                resolvedEmulatorHost));
       }
     }
   }
 
   private static boolean isEmulatorEnabled(SpannerOptions options, String emulatorHost) {
-    // Only do the check if the emulator environment variable has been set to localhost.
-    return options.getChannelProvider() == null
-        && emulatorHost != null
-        && options.getHost() != null
-        && options.getHost().startsWith("http://localhost")
-        && options.getHost().endsWith(emulatorHost);
+    return options.isEmulatorEnabled()
+        || (options.getChannelProvider() == null
+            && emulatorHost != null
+            && options.getHost() != null
+            && options.getHost().startsWith("http://localhost")
+            && options.getHost().endsWith(emulatorHost));
   }
 
   public static boolean isEnableAFEServerTiming() {
