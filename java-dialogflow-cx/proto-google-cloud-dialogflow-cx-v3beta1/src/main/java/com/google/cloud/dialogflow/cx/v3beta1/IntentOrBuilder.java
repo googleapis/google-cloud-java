@@ -378,7 +378,7 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Human readable description for better understanding an intent like its
-   * scope, content, result etc. Maximum character limit: 140 characters.
+   * scope, content, result etc. Maximum character limit: 1000 characters.
    * </pre>
    *
    * <code>string description = 8;</code>
@@ -392,7 +392,7 @@ public interface IntentOrBuilder
    *
    * <pre>
    * Human readable description for better understanding an intent like its
-   * scope, content, result etc. Maximum character limit: 140 characters.
+   * scope, content, result etc. Maximum character limit: 1000 characters.
    * </pre>
    *
    * <code>string description = 8;</code>
