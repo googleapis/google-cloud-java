@@ -141,7 +141,7 @@ class ITOtelT3MetricsExemplar {
 
                 Collection<HistogramPointData> points =
                     durationMetric.getHistogramData().getPoints();
-                assertThat(points).isNotEmpty();
+                assertThat(points).hasSize(1);
                 HistogramPointData point = points.iterator().next();
                 List<? extends ExemplarData> exemplars = point.getExemplars();
                 assertThat(exemplars).isNotEmpty();
@@ -184,7 +184,7 @@ class ITOtelT3MetricsExemplar {
 
                 Collection<HistogramPointData> points =
                     durationMetric.getHistogramData().getPoints();
-                assertThat(points).isNotEmpty();
+                assertThat(points).hasSize(1);
                 HistogramPointData point = points.iterator().next();
                 List<? extends ExemplarData> exemplars = point.getExemplars();
                 assertThat(exemplars).isNotEmpty();
