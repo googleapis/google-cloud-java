@@ -44,7 +44,9 @@ import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
+import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -264,5 +266,98 @@ class OpenTelemetryTracingTracerIntegrationTest {
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     assertThat(finishedSpans).hasSize(1);
     assertThat(finishedSpans.get(0).getKind()).isEqualTo(SpanKind.INTERNAL);
+  }
+
+  @Test
+  void testRetrySucceeds_operationAggregatesSuccessAttributes() {
+    ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
+
+    // Attempt 0 fails with transient error
+    apiTracer.attemptStarted(new Object(), 0);
+    apiTracer.attemptFailedDuration(new RuntimeException("transient 503"), Duration.ofMillis(10));
+
+    // Attempt 1 succeeds
+    apiTracer.attemptStarted(new Object(), 1);
+    apiTracer.attemptSucceeded();
+    apiTracer.operationSucceeded();
+
+    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
+    assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
+
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+
+    List<SpanData> attemptSpans =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.CLIENT)
+            .collect(Collectors.toList());
+    assertThat(attemptSpans).hasSize(2);
+
+    for (SpanData attempt : attemptSpans) {
+      assertThat(attempt.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
+    }
+
+    assertThat(operationSpan.getStatus().getStatusCode())
+        .isEqualTo(io.opentelemetry.api.trace.StatusCode.UNSET);
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+        .isEqualTo("OK");
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+        .isNull();
+  }
+
+  @Test
+  void testRetriesExhausted_operationAggregatesFailureAttributes() {
+    ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
+
+    // Attempt 0 fails with transient error
+    apiTracer.attemptStarted(new Object(), 0);
+    apiTracer.attemptFailedDuration(new RuntimeException("transient 503"), Duration.ofMillis(10));
+
+    // Attempt 1 fails and exhausts retries
+    apiTracer.attemptStarted(new Object(), 1);
+    RuntimeException finalError = new RuntimeException("unavailable: retries exhausted");
+    apiTracer.attemptFailedRetriesExhausted(finalError);
+    apiTracer.operationFailed(finalError);
+
+    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
+    assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
+
+    SpanData operationSpan =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.INTERNAL)
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+
+    List<SpanData> attemptSpans =
+        finishedSpans.stream()
+            .filter(s -> s.getKind() == SpanKind.CLIENT)
+            .collect(Collectors.toList());
+    assertThat(attemptSpans).hasSize(2);
+
+    for (SpanData attempt : attemptSpans) {
+      assertThat(attempt.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
+    }
+
+    assertThat(operationSpan.getStatus().getStatusCode())
+        .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+        .isEqualTo("unavailable: retries exhausted");
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+        .isNotNull();
   }
 }
