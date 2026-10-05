@@ -91,6 +91,8 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testAttemptSpan_linkedToParentContextFromCallingThread() {
+    // Verifies that when an application trace parent exists, the operation span (T3)
+    // links to the application parent, and the attempt span (T4) links to the operation span.
     Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
     ApiTracer apiTracer;
     try (Scope scope = parentSpan.makeCurrent()) {
@@ -132,6 +134,8 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testAttemptSpan_withoutParentContext_hasNoParent() {
+    // Verifies that without an external parent context, the operation span acts as root
+    // and the attempt span is a child of the operation span.
     ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
 
     apiTracer.attemptStarted(new Object(), 0);
@@ -209,6 +213,8 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testOperationFailed_endsActiveAttemptSpanWithErrorAttributes() {
+    // Verifies that when the operation fails permanently while an attempt is in-flight,
+    // both the attempt span and the operation span end with the error status and message.
     Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
     ApiTracer apiTracer;
     try (Scope scope = parentSpan.makeCurrent()) {
@@ -245,6 +251,8 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testAttemptStarted_afterOperationCompleted_doesNotEmitNewSpan() {
+    // Verifies that after operation completion, subsequent attemptStarted calls
+    // do not create orphan attempt spans.
     ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
 
     apiTracer.operationSucceeded();

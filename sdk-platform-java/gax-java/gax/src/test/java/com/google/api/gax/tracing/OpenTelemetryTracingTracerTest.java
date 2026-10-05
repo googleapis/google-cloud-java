@@ -747,6 +747,7 @@ class OpenTelemetryTracingTracerTest {
 
   @Test
   void testInScope_withAttemptSpan() {
+    // Verifies that inScope() activates the current attempt span if an attempt is currently active.
     io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
     when(span.makeCurrent()).thenReturn(mockScope);
 
@@ -759,6 +760,8 @@ class OpenTelemetryTracingTracerTest {
 
   @Test
   void testInScope_withOperationSpanFallback() {
+    // Verifies that inScope() falls back to activating the operation span when no attempt span is
+    // active.
     io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
     when(operationSpan.makeCurrent()).thenReturn(mockScope);
 
@@ -770,6 +773,8 @@ class OpenTelemetryTracingTracerTest {
 
   @Test
   void testInjectTraceContext_withOperationSpanFallback() {
+    // Verifies that injectTraceContext() injects the operation span context into the carrier
+    // when between attempts so that context propagation doesn't drop trace state.
     io.opentelemetry.api.trace.SpanContext mockSpanContext =
         io.opentelemetry.api.trace.SpanContext.create(
             "00000000000000000000000000000003",
@@ -792,6 +797,8 @@ class OpenTelemetryTracingTracerTest {
 
   @Test
   void testAttemptStarted_whenPreviousAttemptActive_closesOldSpan() {
+    // Verifies that starting a new retry attempt cleanly closes any lingering previous attempt
+    // span.
     Span span1 = mock(Span.class);
     Span span2 = mock(Span.class);
 
@@ -811,6 +818,7 @@ class OpenTelemetryTracingTracerTest {
 
   @Test
   void testAttemptStarted_afterOperationCompleted_doesNotStartNewSpan() {
+    // Verifies that after operation completion, late callbacks cannot spawn new attempt spans.
     openTelemetryTracingTracer.operationSucceeded();
 
     // Attempting to start a new attempt after operation completion should be a no-op

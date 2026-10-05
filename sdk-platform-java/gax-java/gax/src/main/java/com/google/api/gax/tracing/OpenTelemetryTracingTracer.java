@@ -71,6 +71,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void injectTraceContext(Map<String, String> carrier) {
+    // Prefer the active attempt span (T4) so outgoing RPC wire context reflects the specific
+    // attempt;
+    // fall back to the overall operation span (T3) if no attempt is currently in-flight.
     Span currentAttempt = attemptSpan;
     Span spanToInject = currentAttempt != null ? currentAttempt : operationSpan;
     if (spanToInject != null) {
@@ -90,6 +93,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   @Override
   @SuppressWarnings("MustBeClosedChecker")
   public Scope inScope() {
+    // Attach the active attempt span to the current execution thread context;
+    // fall back to the overall operation span when between attempts.
     Span currentAttempt = attemptSpan;
     Span currentSpan = currentAttempt != null ? currentAttempt : operationSpan;
     if (currentSpan == null) {
@@ -180,6 +185,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     return "operation";
   }
 
+  /**
+   * Resolves the canonical attempt-level span name based on transport and context.
+   *
+   * @param apiTracerContext the tracer context containing transport and method metadata
+   * @return the attempt span name
+   */
   private static String resolveAttemptSpanName(ApiTracerContext apiTracerContext) {
     if (apiTracerContext.transport() == ApiTracerContext.Transport.GRPC) {
       // gRPC Uses the full method name as span name.
@@ -195,6 +206,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
   }
 
+  /** Copies attempt-level attributes from the tracer context into the local attribute cache. */
   private void buildAttributes() {
     this.attemptAttributes.putAll(this.apiTracerContext.getAttemptAttributes());
   }
