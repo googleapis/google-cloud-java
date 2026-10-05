@@ -142,8 +142,10 @@ class ITOtelT3MetricsExemplar {
                         .orElseThrow(
                             () -> new AssertionError("Duration metric not found in: " + metrics));
 
-                HistogramPointData point =
-                    durationMetric.getHistogramData().getPoints().iterator().next();
+                Collection<HistogramPointData> points =
+                    durationMetric.getHistogramData().getPoints();
+                assertThat(points).isNotEmpty();
+                HistogramPointData point = points.iterator().next();
                 List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
                 assertThat(exemplars).isNotEmpty();
 
@@ -183,8 +185,10 @@ class ITOtelT3MetricsExemplar {
                         .orElseThrow(
                             () -> new AssertionError("Duration metric not found in: " + metrics));
 
-                HistogramPointData point =
-                    durationMetric.getHistogramData().getPoints().iterator().next();
+                Collection<HistogramPointData> points =
+                    durationMetric.getHistogramData().getPoints();
+                assertThat(points).isNotEmpty();
+                HistogramPointData point = points.iterator().next();
                 List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
                 assertThat(exemplars).isNotEmpty();
 

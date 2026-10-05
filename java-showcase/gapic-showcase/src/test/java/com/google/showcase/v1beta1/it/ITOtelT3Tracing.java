@@ -59,6 +59,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -439,7 +440,7 @@ class ITOtelT3Tracing {
 
   private List<SpanData> waitAndCollectSpans(int minSpans) {
     Awaitility.await()
-        .atMost(java.time.Duration.ofSeconds(5))
+        .atMost(5, TimeUnit.SECONDS)
         .until(() -> spanExporter.getFinishedSpanItems().size() >= minSpans);
     return spanExporter.getFinishedSpanItems();
   }

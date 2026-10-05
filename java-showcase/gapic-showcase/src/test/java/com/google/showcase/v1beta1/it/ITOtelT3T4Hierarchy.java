@@ -148,11 +148,9 @@ class ITOtelT3T4Hierarchy {
             .setMaxAttempts(3)
             .build();
 
-    SequenceServiceClient client =
+    try (SequenceServiceClient client =
         createSequenceClient(
-            true, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
-
-    try {
+            true, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
       client.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
@@ -202,8 +200,6 @@ class ITOtelT3T4Hierarchy {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
           .isNotEmpty();
-    } finally {
-      client.close();
     }
   }
 
@@ -246,11 +242,9 @@ class ITOtelT3T4Hierarchy {
             .setMaxAttempts(2)
             .build();
 
-    SequenceServiceClient client =
+    try (SequenceServiceClient client =
         createSequenceClient(
-            true, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
-
-    try {
+            true, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
       assertThrows(
           ApiException.class,
           () ->
@@ -303,8 +297,6 @@ class ITOtelT3T4Hierarchy {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
           .isNotNull();
-    } finally {
-      client.close();
     }
   }
 
@@ -342,11 +334,9 @@ class ITOtelT3T4Hierarchy {
             .setMaxAttempts(3)
             .build();
 
-    SequenceServiceClient client =
+    try (SequenceServiceClient client =
         createSequenceClient(
-            false, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
-
-    try {
+            false, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
       client.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
@@ -385,8 +375,6 @@ class ITOtelT3T4Hierarchy {
                       AttributeKey.stringKey(
                           ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo("OK");
-    } finally {
-      client.close();
     }
   }
 
@@ -429,11 +417,9 @@ class ITOtelT3T4Hierarchy {
             .setMaxAttempts(2)
             .build();
 
-    SequenceServiceClient client =
+    try (SequenceServiceClient client =
         createSequenceClient(
-            false, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE));
-
-    try {
+            false, tracingFactory, retrySettings, ImmutableSet.of(StatusCode.Code.UNAVAILABLE))) {
       assertThrows(
           ApiException.class,
           () ->
@@ -480,8 +466,6 @@ class ITOtelT3T4Hierarchy {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
           .isNotNull();
-    } finally {
-      client.close();
     }
   }
 
