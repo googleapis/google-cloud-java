@@ -35,7 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 /**
  * A composite implementation of {@link ApiTracer} that delegates all tracing events to a list of
@@ -93,46 +92,51 @@ class CompositeTracer extends BaseApiTracer {
     };
   }
 
-  private void runInScope(Runnable runnable) {
-    @Nullable Scope scope = null;
+  private static final Scope NO_OP_SCOPE =
+      new Scope() {
+        @Override
+        public void close() {}
+      };
+
+  /**
+   * Enters the tracer's ambient scope safely, returning a no-op {@link Scope} if entering fails.
+   * This avoids allocating runnables, throwing exceptions, or returning null during lifecycle
+   * notifications.
+   */
+  private Scope enterScope() {
     try {
-      scope = inScope();
+      return inScope();
     } catch (RuntimeException e) {
       // Ignore to prevent disrupting the lifecycle notification
-    }
-    try (Scope s = scope) {
-      runnable.run();
+      return NO_OP_SCOPE;
     }
   }
 
   @Override
   public void operationSucceeded() {
-    runInScope(
-        () -> {
-          for (int i = children.size() - 1; i >= 0; i--) {
-            children.get(i).operationSucceeded();
-          }
-        });
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationSucceeded();
+      }
+    }
   }
 
   @Override
   public void operationCancelled() {
-    runInScope(
-        () -> {
-          for (int i = children.size() - 1; i >= 0; i--) {
-            children.get(i).operationCancelled();
-          }
-        });
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationCancelled();
+      }
+    }
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    runInScope(
-        () -> {
-          for (int i = children.size() - 1; i >= 0; i--) {
-            children.get(i).operationFailed(error);
-          }
-        });
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationFailed(error);
+      }
+    }
   }
 
   @Override
