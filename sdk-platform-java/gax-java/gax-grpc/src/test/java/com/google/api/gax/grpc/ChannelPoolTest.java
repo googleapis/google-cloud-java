@@ -1021,8 +1021,13 @@ class ChannelPoolTest {
    */
   private Runnable createPreemptiveRefreshMtlsPool(int size, ChannelFactory channelFactory)
       throws IOException {
+    return createPreemptiveRefreshMtlsPool(size, channelFactory, mockExecutor());
+  }
+
+  private Runnable createPreemptiveRefreshMtlsPool(
+      int size, ChannelFactory channelFactory, ScheduledExecutorService executor)
+      throws IOException {
     List<Runnable> refreshTasks = new ArrayList<>();
-    ScheduledExecutorService executor = mockExecutor();
     Mockito.doAnswer(
             invocation -> {
               refreshTasks.add(invocation.getArgument(0));
@@ -1125,29 +1130,93 @@ class ChannelPoolTest {
   }
 
   @Test
-  void preemptiveRefresh_partialFailureDuringRotation_leavesRotationPending() throws IOException {
+  void preemptiveRefresh_partialFailureOnCertChange_dropsOldChannelsAndCompletesSwitch()
+      throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
     ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
     ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
     ManagedChannel rotated1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel refilled = Mockito.mock(ManagedChannel.class);
     ChannelFactory channelFactory = mockChannelFactory();
     Mockito.when(channelFactory.createSingleChannel())
         .thenReturn(initial1, initial2)
         .thenReturn(rotated1)
-        .thenThrow(new IOException("Transient failure on second sub-channel"));
-    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(2, channelFactory);
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenReturn(refilled);
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(2, channelFactory, executor);
 
     pool.invalidateDiskFingerprintCache();
     writeCert("root_cert.pem");
     preemptiveRefresh.run();
 
-    // One channel still uses the old certificate, so the switch is not complete.
+    // The channel that failed to refresh still uses the old certificate, so it is dropped and
+    // every channel left in the pool uses the new certificate.
     Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2).shutdown();
+    assertThat(pool.entries.get()).hasSize(1);
+    assertThat(pool.getGeneration()).isEqualTo(1);
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isFalse();
+
+    // The pool is refilled to its size before the refresh.
+    ArgumentCaptor<Runnable> refillTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor).execute(refillTask.capture());
+    refillTask.getValue().run();
+    assertThat(pool.entries.get()).hasSize(2);
+    Mockito.verify(refilled, Mockito.never()).shutdown();
+  }
+
+  @Test
+  void preemptiveRefresh_allChannelsFailOnCertChange_leavesRotationPending() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2)
+        .thenThrow(new IOException("Transient failure"));
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(2, channelFactory, executor);
+    List<ChannelPool.Entry> entriesBefore = pool.entries.get();
+
+    pool.invalidateDiskFingerprintCache();
+    writeCert("root_cert.pem");
+    preemptiveRefresh.run();
+
+    // No channel could be recreated, so the pool is left unchanged and the rotation stays pending
+    // for the next periodic or reactive refresh.
+    assertThat(pool.entries.get()).containsExactlyElementsIn(entriesBefore).inOrder();
+    Mockito.verify(initial1, Mockito.never()).shutdown();
     Mockito.verify(initial2, Mockito.never()).shutdown();
     assertThat(pool.getGeneration()).isEqualTo(0);
-    // The new certificate is not recorded as active, so the rotation stays pending and the next
-    // UNAUTHENTICATED failure triggers a reactive refresh that completes the switch.
     pool.invalidateDiskFingerprintCache();
     assertThat(pool.shouldRefresh()).isTrue();
+    Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
+  }
+
+  @Test
+  void preemptiveRefresh_partialFailureWithoutCertChange_keepsOldChannel() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ManagedChannel initial1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel initial2 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel refreshed1 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(initial1, initial2)
+        .thenReturn(refreshed1)
+        .thenThrow(new IOException("Transient failure on second sub-channel"));
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(2, channelFactory, executor);
+    ChannelPool.Entry initialEntry2 = pool.entries.get().get(1);
+
+    pool.invalidateDiskFingerprintCache();
+    preemptiveRefresh.run();
+
+    // The certificate did not change, so the channel that failed to refresh keeps its slot.
+    Mockito.verify(initial1).shutdown();
+    Mockito.verify(initial2, Mockito.never()).shutdown();
+    assertThat(pool.entries.get()).hasSize(2);
+    assertThat(pool.entries.get().get(1)).isSameInstanceAs(initialEntry2);
+    assertThat(pool.getGeneration()).isEqualTo(0);
+    Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
   }
 
   @Test

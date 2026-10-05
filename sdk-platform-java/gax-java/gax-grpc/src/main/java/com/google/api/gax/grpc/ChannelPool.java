@@ -454,11 +454,14 @@ class ChannelPool extends ManagedChannel {
    * Periodically refreshes all channels when {@link
    * ChannelPoolSettings#isPreemptiveRefreshEnabled()} is enabled (to mitigate hourly GFE
    * disconnects). This applies to all channels even when {@code workloadCertPath == null}. If
-   * {@code workloadCertPath} is configured, also updates the tracked certificate fingerprint on
-   * success (or skips if the certificate file is currently unreadable or mid-write on disk).
+   * {@code workloadCertPath} is configured, the refresh is skipped while the certificate file is
+   * unreadable or mid-write on disk.
    *
-   * <p>The generation is only advanced if this refresh switched every channel to a certificate
-   * different from the active one, so that a periodic refresh without a rotation does not make
+   * <p>If the certificate on disk differs from the active one, this refresh is treated like a
+   * rotation refresh: channels that fail to be recreated are dropped (and the pool refilled), so
+   * the switch is completed and the generation advanced only once every channel left in the pool
+   * uses the new certificate. Otherwise a channel that fails to be recreated keeps its slot, and
+   * the generation is not advanced, so that a periodic refresh without a rotation does not make
    * in-flight {@code UNAUTHENTICATED} failures eligible for a rotation retry.
    */
   private void refreshSafely() {
@@ -478,13 +481,9 @@ class ChannelPool extends ManagedChannel {
                   + " channels will be recreated on the next refresh");
           return;
         }
-        boolean rotated = !rotationTracker.isAlreadyActive(currentDiskFingerprint);
-        if (refreshAll()) {
-          if (rotated) {
-            completeCertificateSwitch(currentDiskFingerprint);
-          } else {
-            rotationTracker.markRefreshed(currentDiskFingerprint);
-          }
+        boolean certChanged = !rotationTracker.isAlreadyActive(currentDiskFingerprint);
+        if (refreshAll(/* dropUnrefreshedChannels= */ certChanged) && certChanged) {
+          completeCertificateSwitch(currentDiskFingerprint);
         }
       }
     } catch (Exception e) {
