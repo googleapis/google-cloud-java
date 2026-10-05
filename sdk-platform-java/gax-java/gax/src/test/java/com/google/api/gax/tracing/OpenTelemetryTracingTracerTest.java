@@ -30,6 +30,7 @@
 package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
+import static io.opentelemetry.api.trace.StatusCode.ERROR;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -50,7 +51,6 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
-import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -724,7 +724,7 @@ class OpenTelemetryTracingTracerTest {
 
     verify(span).setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "operation failed");
     verify(span).end();
-    verify(operationSpan).setStatus(StatusCode.ERROR);
+    verify(operationSpan).setStatus(ERROR);
     verify(operationSpan).end();
   }
 
@@ -736,7 +736,7 @@ class OpenTelemetryTracingTracerTest {
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
     verify(span).end();
-    verify(operationSpan).setStatus(StatusCode.ERROR);
+    verify(operationSpan).setStatus(ERROR);
     verify(operationSpan).end();
 
     assertThat(attrsCaptor.getValue().asMap())
