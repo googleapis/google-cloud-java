@@ -88,6 +88,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   @Override
+  @SuppressWarnings("MustBeClosedChecker")
   public Scope inScope() {
     Span currentAttempt = attemptSpan;
     Span currentSpan = currentAttempt != null ? currentAttempt : operationSpan;
@@ -140,8 +141,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
     this.operationSpanName = operationSpanName;
-    this.attemptSpanName =
-        operationSpanName.equals(attemptSpanName) ? attemptSpanName + "/attempt" : attemptSpanName;
+    this.attemptSpanName = attemptSpanName;
     this.attemptAttributes = new HashMap<>();
     this.parentContext = Context.current();
     buildAttributes();
