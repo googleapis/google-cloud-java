@@ -57,13 +57,13 @@ import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.threeten.bp.Duration;
 
 /** Integration tests for Feature 1 (F1.1–F1.8): Client-level T3 tracing across HTTP and gRPC. */
 class ITOtelT3Tracing {
@@ -225,7 +225,7 @@ class ITOtelT3Tracing {
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
-    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(1000L));
+    builder.blockSettings().setSimpleTimeoutNoRetriesDuration(Duration.ofMillis(1000L));
     EchoStub stub = new ExtendedEchoStubSettings(builder).createStub();
 
     try (EchoClient client = EchoClient.create(stub)) {
@@ -393,7 +393,7 @@ class ITOtelT3Tracing {
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
-    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(1000L));
+    builder.blockSettings().setSimpleTimeoutNoRetriesDuration(Duration.ofMillis(1000L));
     EchoStub stub = new ExtendedEchoStubSettings(builder).createStub();
 
     try (EchoClient client = EchoClient.create(stub)) {
