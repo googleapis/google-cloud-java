@@ -140,7 +140,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.apiTracerContext = apiTracerContext;
     this.operationSpanName = operationSpanName;
     this.attemptSpanName =
-        attemptSpanName.equals(operationSpanName) ? attemptSpanName + "/attempt" : attemptSpanName;
+        operationSpanName.equals(attemptSpanName) ? attemptSpanName + "/attempt" : attemptSpanName;
     this.attemptAttributes = new HashMap<>();
     this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
