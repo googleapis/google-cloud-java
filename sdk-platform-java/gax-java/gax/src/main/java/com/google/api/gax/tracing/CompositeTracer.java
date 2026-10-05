@@ -129,9 +129,7 @@ class CompositeTracer extends BaseApiTracer {
     try {
       scope = inScope();
     } catch (RuntimeException e) {
-      if (error != null && error != e) {
-        error.addSuppressed(e);
-      }
+      // Ignore to prevent disrupting the lifecycle notification
     }
     try (Scope s = scope) {
       for (int i = children.size() - 1; i >= 0; i--) {
