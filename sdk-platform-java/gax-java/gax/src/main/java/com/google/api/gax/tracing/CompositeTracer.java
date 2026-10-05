@@ -31,7 +31,6 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
@@ -63,26 +62,27 @@ class CompositeTracer extends BaseApiTracer {
       return scope != null ? scope : NO_OP_SCOPE;
     }
 
-    final List<Scope> childScopes = new ArrayList<>(children.size());
+    Scope[] childScopes = new Scope[children.size()];
+    int scopeCount = 0;
 
     try {
       for (ApiTracer child : children) {
         Scope scope = child.inScope();
         if (scope != null) {
-          childScopes.add(scope);
+          childScopes[scopeCount++] = scope;
         }
       }
-      if (childScopes.isEmpty()) {
+      if (scopeCount == 0) {
         return NO_OP_SCOPE;
       }
-      if (childScopes.size() == 1) {
-        return childScopes.get(0);
+      if (scopeCount == 1) {
+        return childScopes[0];
       }
-      return new CompositeScope(childScopes);
+      return new CompositeScope(childScopes, scopeCount);
     } catch (Throwable t) {
-      for (int i = childScopes.size() - 1; i >= 0; i--) {
+      for (int i = scopeCount - 1; i >= 0; i--) {
         try {
-          childScopes.get(i).close();
+          childScopes[i].close();
         } catch (Throwable suppressed) {
           t.addSuppressed(suppressed);
         }
@@ -92,18 +92,20 @@ class CompositeTracer extends BaseApiTracer {
   }
 
   private static class CompositeScope implements Scope {
-    private final List<Scope> scopes;
+    private final Scope[] scopes;
+    private final int count;
 
-    CompositeScope(List<Scope> scopes) {
+    CompositeScope(Scope[] scopes, int count) {
       this.scopes = scopes;
+      this.count = count;
     }
 
     @Override
     public void close() {
       Throwable firstException = null;
-      for (int i = scopes.size() - 1; i >= 0; i--) {
+      for (int i = count - 1; i >= 0; i--) {
         try {
-          scopes.get(i).close();
+          scopes[i].close();
         } catch (Throwable t) {
           if (firstException == null) {
             firstException = t;
@@ -121,11 +123,11 @@ class CompositeTracer extends BaseApiTracer {
   private static RuntimeException throwException(Throwable t) {
     if (t instanceof RuntimeException) {
       return (RuntimeException) t;
-    } else if (t instanceof Error) {
-      throw (Error) t;
-    } else {
-      return new RuntimeException(t);
     }
+    if (t instanceof Error) {
+      throw (Error) t;
+    }
+    return new RuntimeException(t);
   }
 
   /**
@@ -136,7 +138,7 @@ class CompositeTracer extends BaseApiTracer {
   private Scope enterScope() {
     try {
       return inScope();
-    } catch (RuntimeException e) {
+    } catch (Throwable t) {
       // Ignore to prevent disrupting the lifecycle notification
       return NO_OP_SCOPE;
     }
