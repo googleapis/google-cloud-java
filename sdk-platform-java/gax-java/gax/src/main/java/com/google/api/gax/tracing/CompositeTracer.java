@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A composite implementation of {@link ApiTracer} that delegates all tracing events to a list of
@@ -57,7 +58,10 @@ class CompositeTracer extends BaseApiTracer {
 
     try {
       for (ApiTracer child : children) {
-        childScopes.add(child.inScope());
+        Scope scope = child.inScope();
+        if (scope != null) {
+          childScopes.add(scope);
+        }
       }
     } catch (RuntimeException e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
@@ -91,22 +95,48 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationSucceeded();
+    @Nullable Scope scope = null;
+    try {
+      scope = inScope();
+    } catch (RuntimeException e) {
+      // Ignore to prevent disrupting the lifecycle notification
+    }
+    try (Scope s = scope) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationSucceeded();
+      }
     }
   }
 
   @Override
   public void operationCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationCancelled();
+    @Nullable Scope scope = null;
+    try {
+      scope = inScope();
+    } catch (RuntimeException e) {
+      // Ignore to prevent disrupting the lifecycle notification
+    }
+    try (Scope s = scope) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationCancelled();
+      }
     }
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationFailed(error);
+    @Nullable Scope scope = null;
+    try {
+      scope = inScope();
+    } catch (RuntimeException e) {
+      if (error != null) {
+        error.addSuppressed(e);
+      }
+    }
+    try (Scope s = scope) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationFailed(error);
+      }
     }
   }
 
