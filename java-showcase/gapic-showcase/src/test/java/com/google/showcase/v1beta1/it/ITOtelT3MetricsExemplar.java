@@ -44,7 +44,6 @@ import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.ExemplarFilter;
@@ -102,7 +101,7 @@ class ITOtelT3MetricsExemplar {
         OpenTelemetrySdk.builder()
             .setTracerProvider(tracerProvider)
             .setMeterProvider(meterProvider)
-            .buildAndRegisterGlobal();
+            .build();
   }
 
   @AfterEach
@@ -110,7 +109,6 @@ class ITOtelT3MetricsExemplar {
     if (openTelemetrySdk != null) {
       openTelemetrySdk.close();
     }
-    GlobalOpenTelemetry.resetForTest();
   }
 
   // F3.1: HTTP M3 metric records T3 span as exemplar

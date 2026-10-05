@@ -48,7 +48,6 @@ import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
@@ -86,8 +85,7 @@ class ITOtelT3Tracing {
         SdkTracerProvider.builder()
             .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
             .build();
-    openTelemetrySdk =
-        OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+    openTelemetrySdk = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
   }
 
   @AfterEach
@@ -95,7 +93,6 @@ class ITOtelT3Tracing {
     if (openTelemetrySdk != null) {
       openTelemetrySdk.close();
     }
-    GlobalOpenTelemetry.resetForTest();
   }
 
   // F1.1: HTTP no traces emitted unless enabled.
@@ -228,14 +225,14 @@ class ITOtelT3Tracing {
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
-    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(50L));
+    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(1000L));
     EchoStub stub = new ExtendedEchoStubSettings(builder).createStub();
 
     try (EchoClient client = EchoClient.create(stub)) {
       BlockRequest request =
           BlockRequest.newBuilder()
               .setSuccess(BlockResponse.newBuilder().setContent("content").build())
-              .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(3).build())
+              .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(5).build())
               .build();
 
       assertThrows(Exception.class, () -> client.block(request));
@@ -396,14 +393,14 @@ class ITOtelT3Tracing {
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
-    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(50L));
+    builder.blockSettings().setSimpleTimeoutNoRetries(Duration.ofMillis(1000L));
     EchoStub stub = new ExtendedEchoStubSettings(builder).createStub();
 
     try (EchoClient client = EchoClient.create(stub)) {
       BlockRequest request =
           BlockRequest.newBuilder()
               .setSuccess(BlockResponse.newBuilder().setContent("content").build())
-              .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(3).build())
+              .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(5).build())
               .build();
 
       assertThrows(Exception.class, () -> client.block(request));

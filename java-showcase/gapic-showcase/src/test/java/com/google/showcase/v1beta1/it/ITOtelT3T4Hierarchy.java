@@ -51,7 +51,6 @@ import com.google.showcase.v1beta1.SequenceServiceSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.SequenceServiceStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -92,8 +91,7 @@ class ITOtelT3T4Hierarchy {
         SdkTracerProvider.builder()
             .addSpanProcessor(SimpleSpanProcessor.create(spanExporter))
             .build();
-    openTelemetrySdk =
-        OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+    openTelemetrySdk = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
 
     setupGrpcClient = TestClientInitializer.createGrpcSequenceClient();
     setupHttpJsonClient = TestClientInitializer.createHttpJsonSequenceClient();
@@ -110,7 +108,6 @@ class ITOtelT3T4Hierarchy {
     if (openTelemetrySdk != null) {
       openTelemetrySdk.close();
     }
-    GlobalOpenTelemetry.resetForTest();
   }
 
   // F2.1: HTTP T3/T4 retry succeeds (1 T3 span, 2 T4 child spans)
