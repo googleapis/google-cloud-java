@@ -799,6 +799,7 @@ class OpenTelemetryTracingTracerTest {
 
     // Start a second attempt before the first attempt was ended
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    verify(span1).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
     verify(span1).end();
     verify(span2, never()).end();
 
