@@ -129,7 +129,7 @@ class CompositeTracer extends BaseApiTracer {
     try {
       scope = inScope();
     } catch (RuntimeException e) {
-      if (error != null) {
+      if (error != null && error != e) {
         error.addSuppressed(e);
       }
     }
