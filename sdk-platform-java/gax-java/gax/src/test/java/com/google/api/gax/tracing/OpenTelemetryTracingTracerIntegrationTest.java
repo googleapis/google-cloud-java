@@ -270,6 +270,10 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testRetrySucceeds_operationAggregatesSuccessAttributes() {
+    // Verifies that when a transient failure is retried and succeeds:
+    // 1. Exactly one overall INTERNAL operation span (T3) is created.
+    // 2. Both attempt spans (T4) have the operation span as their parent.
+    // 3. The operation span aggregates the successful status (OK) from the final attempt.
     ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
 
     // Attempt 0 fails with transient error
@@ -317,6 +321,10 @@ class OpenTelemetryTracingTracerIntegrationTest {
 
   @Test
   void testRetriesExhausted_operationAggregatesFailureAttributes() {
+    // Verifies that when retries are exhausted:
+    // 1. Exactly one overall INTERNAL operation span (T3) is created.
+    // 2. Both attempt spans (T4) have the operation span as their parent.
+    // 3. The operation span aggregates the final ERROR status and error attributes.
     ApiTracer apiTracer = tracingFactory.newTracer(BaseApiTracer.getInstance(), TRACER_CONTEXT);
 
     // Attempt 0 fails with transient error
