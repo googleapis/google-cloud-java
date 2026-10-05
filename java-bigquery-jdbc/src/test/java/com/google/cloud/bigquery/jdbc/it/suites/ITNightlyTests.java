@@ -22,6 +22,7 @@ import com.google.cloud.bigquery.jdbc.it.ITJdbcTimestampPicosTest;
 import com.google.cloud.bigquery.jdbc.it.ITNightlyBigQueryTest;
 import com.google.cloud.bigquery.jdbc.it.ITOpenTelemetryTest;
 import com.google.cloud.bigquery.jdbc.it.ITPcntTest;
+import com.google.cloud.bigquery.jdbc.it.ITPqcValidationTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
@@ -32,6 +33,7 @@ import org.junit.platform.suite.api.Suite;
   ITJdbcTimestampPicosTest.class,
   ITNightlyBigQueryTest.class,
   ITOpenTelemetryTest.class,
-  ITPcntTest.class
+  ITPcntTest.class,
+  ITPqcValidationTest.class
 })
 public class ITNightlyTests {}
