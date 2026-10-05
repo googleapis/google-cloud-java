@@ -77,5 +77,39 @@ public interface SessionRequestOrBuilder
   /** <code>.google.bigtable.v2.VirtualRpcRequest virtual_rpc = 3;</code> */
   com.google.bigtable.v2.VirtualRpcRequestOrBuilder getVirtualRpcOrBuilder();
 
+  /**
+   * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+   *
+   * @return Whether the continueVirtualRpc field is set.
+   */
+  boolean hasContinueVirtualRpc();
+
+  /**
+   * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+   *
+   * @return The continueVirtualRpc.
+   */
+  com.google.bigtable.v2.ContinueVirtualRpcRequest getContinueVirtualRpc();
+
+  /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+  com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder getContinueVirtualRpcOrBuilder();
+
+  /**
+   * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+   *
+   * @return Whether the cancelVirtualRpc field is set.
+   */
+  boolean hasCancelVirtualRpc();
+
+  /**
+   * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+   *
+   * @return The cancelVirtualRpc.
+   */
+  com.google.bigtable.v2.CancelVirtualRpcRequest getCancelVirtualRpc();
+
+  /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+  com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder getCancelVirtualRpcOrBuilder();
+
   com.google.bigtable.v2.SessionRequest.PayloadCase getPayloadCase();
 }

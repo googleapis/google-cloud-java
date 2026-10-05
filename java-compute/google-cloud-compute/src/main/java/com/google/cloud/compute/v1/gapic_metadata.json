@@ -21,7 +21,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Addresses": {
       "clients": {
@@ -54,7 +55,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Advice": {
       "clients": {
@@ -72,7 +74,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Autoscalers": {
       "clients": {
@@ -105,7 +108,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "BackendBuckets": {
       "clients": {
@@ -156,7 +160,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "BackendServices": {
       "clients": {
@@ -216,7 +221,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "CrossSiteNetworks": {
       "clients": {
@@ -240,7 +246,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "DiskTypes": {
       "clients": {
@@ -258,7 +265,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Disks": {
       "clients": {
@@ -327,7 +335,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ExternalVpnGateways": {
       "clients": {
@@ -354,7 +363,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "FirewallPolicies": {
       "clients": {
@@ -417,7 +427,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Firewalls": {
       "clients": {
@@ -447,7 +458,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ForwardingRules": {
       "clients": {
@@ -480,7 +492,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "FutureReservations": {
       "clients": {
@@ -510,7 +523,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalAddresses": {
       "clients": {
@@ -540,7 +554,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalForwardingRules": {
       "clients": {
@@ -570,7 +585,24 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
+    },
+    "GlobalFrontendSettingsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GlobalFrontendSettingsServiceClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Patch": {
+              "methods": ["patch", "patch", "patchCallable"]
+            }
+          }
+        }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalNetworkEndpointGroups": {
       "clients": {
@@ -600,7 +632,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalOperations": {
       "clients": {
@@ -624,7 +657,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalOrganizationOperations": {
       "clients": {
@@ -642,7 +676,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalPublicDelegatedPrefixes": {
       "clients": {
@@ -666,7 +701,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "GlobalVmExtensionPolicies": {
       "clients": {
@@ -693,7 +729,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "HealthChecks": {
       "clients": {
@@ -726,7 +763,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Hosts": {
       "clients": {
@@ -744,7 +782,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ImageFamilyViews": {
       "clients": {
@@ -756,7 +795,24 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
+    },
+    "ImageViews": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ImageViewsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Images": {
       "clients": {
@@ -798,7 +854,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstanceGroupManagerResizeRequests": {
       "clients": {
@@ -822,7 +879,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstanceGroupManagers": {
       "clients": {
@@ -903,7 +961,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstanceGroups": {
       "clients": {
@@ -942,7 +1001,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstanceSettingsService": {
       "clients": {
@@ -957,7 +1017,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstanceTemplates": {
       "clients": {
@@ -990,7 +1051,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Instances": {
       "clients": {
@@ -1152,7 +1214,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstantSnapshotGroups": {
       "clients": {
@@ -1182,7 +1245,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InstantSnapshots": {
       "clients": {
@@ -1218,7 +1282,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InterconnectAttachmentGroups": {
       "clients": {
@@ -1254,7 +1319,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InterconnectAttachments": {
       "clients": {
@@ -1284,7 +1350,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InterconnectGroups": {
       "clients": {
@@ -1323,7 +1390,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InterconnectLocations": {
       "clients": {
@@ -1338,7 +1406,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "InterconnectRemoteLocations": {
       "clients": {
@@ -1353,7 +1422,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Interconnects": {
       "clients": {
@@ -1383,10 +1453,14 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "SetName": {
+              "methods": ["setNameAsync", "setNameAsync", "setNameOperationCallable", "setNameCallable"]
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "LicenseCodes": {
       "clients": {
@@ -1407,7 +1481,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Licenses": {
       "clients": {
@@ -1440,7 +1515,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "MachineImages": {
       "clients": {
@@ -1473,7 +1549,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "MachineTypes": {
       "clients": {
@@ -1491,7 +1568,24 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
+    },
+    "ManagedRulesets": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ManagedRulesetsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NetworkAttachments": {
       "clients": {
@@ -1527,7 +1621,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NetworkEdgeSecurityServices": {
       "clients": {
@@ -1551,7 +1646,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NetworkEndpointGroups": {
       "clients": {
@@ -1587,7 +1683,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NetworkFirewallPolicies": {
       "clients": {
@@ -1659,7 +1756,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NetworkProfiles": {
       "clients": {
@@ -1674,7 +1772,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Networks": {
       "clients": {
@@ -1722,7 +1821,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NodeGroups": {
       "clients": {
@@ -1776,7 +1876,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NodeTemplates": {
       "clients": {
@@ -1809,7 +1910,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "NodeTypes": {
       "clients": {
@@ -1827,7 +1929,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "OrganizationSecurityPolicies": {
       "clients": {
@@ -1884,7 +1987,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "PacketMirrorings": {
       "clients": {
@@ -1914,7 +2018,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "PreviewFeatures": {
       "clients": {
@@ -1932,7 +2037,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ProjectViews": {
       "clients": {
@@ -1944,7 +2050,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Projects": {
       "clients": {
@@ -1995,7 +2102,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "PublicAdvertisedPrefixes": {
       "clients": {
@@ -2025,7 +2133,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "PublicDelegatedPrefixes": {
       "clients": {
@@ -2058,7 +2167,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionAutoscalers": {
       "clients": {
@@ -2088,7 +2198,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionBackendBuckets": {
       "clients": {
@@ -2124,7 +2235,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionBackendServices": {
       "clients": {
@@ -2169,7 +2281,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionCommitments": {
       "clients": {
@@ -2193,7 +2306,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionCompositeHealthChecks": {
       "clients": {
@@ -2226,7 +2340,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionDiskTypes": {
       "clients": {
@@ -2241,7 +2356,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionDisks": {
       "clients": {
@@ -2304,7 +2420,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionHealthAggregationPolicies": {
       "clients": {
@@ -2334,7 +2451,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionHealthCheckServices": {
       "clients": {
@@ -2364,7 +2482,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionHealthChecks": {
       "clients": {
@@ -2394,7 +2513,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionHealthSources": {
       "clients": {
@@ -2427,7 +2547,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstanceGroupManagerResizeRequests": {
       "clients": {
@@ -2451,7 +2572,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstanceGroupManagers": {
       "clients": {
@@ -2529,7 +2651,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstanceGroups": {
       "clients": {
@@ -2553,7 +2676,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstanceTemplates": {
       "clients": {
@@ -2574,7 +2698,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstances": {
       "clients": {
@@ -2586,7 +2711,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstantSnapshotGroups": {
       "clients": {
@@ -2616,7 +2742,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionInstantSnapshots": {
       "clients": {
@@ -2649,7 +2776,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionNetworkEndpointGroups": {
       "clients": {
@@ -2679,7 +2807,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionNetworkFirewallPolicies": {
       "clients": {
@@ -2722,6 +2851,9 @@
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
             },
+            "PatchAssociation": {
+              "methods": ["patchAssociationAsync", "patchAssociationAsync", "patchAssociationOperationCallable", "patchAssociationCallable"]
+            },
             "PatchRule": {
               "methods": ["patchRuleAsync", "patchRuleAsync", "patchRuleOperationCallable", "patchRuleCallable"]
             },
@@ -2739,7 +2871,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionNotificationEndpoints": {
       "clients": {
@@ -2766,7 +2899,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionOperations": {
       "clients": {
@@ -2787,7 +2921,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionSecurityPolicies": {
       "clients": {
@@ -2826,7 +2961,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionSnapshotSettings": {
       "clients": {
@@ -2841,7 +2977,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionSnapshots": {
       "clients": {
@@ -2877,7 +3014,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionSslCertificates": {
       "clients": {
@@ -2898,7 +3036,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionSslPolicies": {
       "clients": {
@@ -2925,7 +3064,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionTargetHttpProxies": {
       "clients": {
@@ -2949,7 +3089,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionTargetHttpsProxies": {
       "clients": {
@@ -2979,7 +3120,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionTargetTcpProxies": {
       "clients": {
@@ -3000,7 +3142,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionUrlMaps": {
       "clients": {
@@ -3030,7 +3173,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RegionZones": {
       "clients": {
@@ -3042,7 +3186,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Regions": {
       "clients": {
@@ -3057,7 +3202,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ReliabilityRisks": {
       "clients": {
@@ -3072,7 +3218,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ReservationBlocks": {
       "clients": {
@@ -3099,7 +3246,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ReservationSlots": {
       "clients": {
@@ -3123,7 +3271,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ReservationSubBlocks": {
       "clients": {
@@ -3156,7 +3305,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Reservations": {
       "clients": {
@@ -3198,7 +3348,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ResourcePolicies": {
       "clients": {
@@ -3234,7 +3385,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "RolloutPlans": {
       "clients": {
@@ -3255,7 +3407,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Rollouts": {
       "clients": {
@@ -3285,7 +3438,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Routers": {
       "clients": {
@@ -3360,7 +3514,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Routes": {
       "clients": {
@@ -3384,7 +3539,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "SecurityPolicies": {
       "clients": {
@@ -3429,7 +3585,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ServiceAttachments": {
       "clients": {
@@ -3465,7 +3622,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "SnapshotSettingsService": {
       "clients": {
@@ -3480,7 +3638,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Snapshots": {
       "clients": {
@@ -3516,7 +3675,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "SslCertificates": {
       "clients": {
@@ -3540,7 +3700,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "SslPolicies": {
       "clients": {
@@ -3570,7 +3731,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "StoragePoolTypes": {
       "clients": {
@@ -3588,7 +3750,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "StoragePools": {
       "clients": {
@@ -3627,7 +3790,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Subnetworks": {
       "clients": {
@@ -3672,7 +3836,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetGrpcProxies": {
       "clients": {
@@ -3696,7 +3861,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetHttpProxies": {
       "clients": {
@@ -3726,7 +3892,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetHttpsProxies": {
       "clients": {
@@ -3768,7 +3935,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetInstances": {
       "clients": {
@@ -3798,7 +3966,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetPools": {
       "clients": {
@@ -3846,7 +4015,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetSslProxies": {
       "clients": {
@@ -3885,7 +4055,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetTcpProxies": {
       "clients": {
@@ -3918,7 +4089,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "TargetVpnGateways": {
       "clients": {
@@ -3945,7 +4117,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "UrlMaps": {
       "clients": {
@@ -3984,7 +4157,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "VpnGateways": {
       "clients": {
@@ -4017,7 +4191,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "VpnTunnels": {
       "clients": {
@@ -4044,7 +4219,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "WireGroups": {
       "clients": {
@@ -4068,7 +4244,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ZoneOperations": {
       "clients": {
@@ -4089,7 +4266,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "ZoneVmExtensionPolicies": {
       "clients": {
@@ -4113,7 +4291,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     },
     "Zones": {
       "clients": {
@@ -4128,7 +4307,8 @@
             }
           }
         }
-      }
+      },
+      "apiVersion": "2026-09-01"
     }
   }
 }

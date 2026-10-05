@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionHealthCheckServices API.
  *
+ * <p>This client uses RegionHealthCheckServices version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -360,7 +362,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, HealthCheckServicesScopedList> element :
@@ -404,7 +405,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, HealthCheckServicesScopedList>> future =
@@ -448,7 +448,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -912,7 +911,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (HealthCheckService element :
    *       regionHealthCheckServicesClient.list(request).iterateAll()) {
@@ -951,7 +949,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<HealthCheckService> future =
    *       regionHealthCheckServicesClient.listPagedCallable().futureCall(request);
@@ -990,7 +987,6 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     HealthCheckServicesList response =

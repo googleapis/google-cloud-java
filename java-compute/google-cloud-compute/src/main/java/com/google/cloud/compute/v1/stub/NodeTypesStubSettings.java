@@ -324,7 +324,8 @@ public class NodeTypesStubSettings extends StubSettings<NodeTypesStubSettings> {
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(NodeTypesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

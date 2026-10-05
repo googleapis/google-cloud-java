@@ -16,29 +16,27 @@
 
 package com.google.cloud.compute.v1.samples;
 
-// [START compute_v1_generated_FirewallPolicies_Insert_StringFirewallpolicy_sync]
-import com.google.cloud.compute.v1.FirewallPoliciesClient;
-import com.google.cloud.compute.v1.FirewallPolicy;
-import com.google.cloud.compute.v1.Operation;
+// [START compute_v1_generated_ManagedRulesets_Get_StringString_sync]
+import com.google.cloud.compute.v1.ManagedRuleset;
+import com.google.cloud.compute.v1.ManagedRulesetsClient;
 
-public class SyncInsertStringFirewallpolicy {
+public class SyncGetStringString {
 
   public static void main(String[] args) throws Exception {
-    syncInsertStringFirewallpolicy();
+    syncGetStringString();
   }
 
-  public static void syncInsertStringFirewallpolicy() throws Exception {
+  public static void syncGetStringString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
-      String parentId = "parentId1175162725";
-      FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-      Operation response =
-          firewallPoliciesClient.insertAsync(parentId, firewallPolicyResource).get();
+    try (ManagedRulesetsClient managedRulesetsClient = ManagedRulesetsClient.create()) {
+      String project = "project-309310695";
+      String managedRuleset = "managedRuleset1612348231";
+      ManagedRuleset response = managedRulesetsClient.get(project, managedRuleset);
     }
   }
 }
-// [END compute_v1_generated_FirewallPolicies_Insert_StringFirewallpolicy_sync]
+// [END compute_v1_generated_ManagedRulesets_Get_StringString_sync]

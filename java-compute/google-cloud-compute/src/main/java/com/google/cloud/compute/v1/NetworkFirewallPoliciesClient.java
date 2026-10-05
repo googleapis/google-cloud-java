@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The NetworkFirewallPolicies API.
  *
+ * <p>This client uses NetworkFirewallPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1055,7 +1057,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, FirewallPoliciesScopedList> element :
@@ -1099,7 +1100,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, FirewallPoliciesScopedList>> future =
@@ -1143,7 +1143,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -2096,7 +2095,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (FirewallPolicy element : networkFirewallPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2132,7 +2130,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<FirewallPolicy> future =
    *       networkFirewallPoliciesClient.listPagedCallable().futureCall(request);
@@ -2169,7 +2166,6 @@ public class NetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     FirewallPolicyList response = networkFirewallPoliciesClient.listCallable().call(request);

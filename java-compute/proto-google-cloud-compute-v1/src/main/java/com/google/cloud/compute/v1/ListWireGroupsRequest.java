@@ -626,51 +626,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  @java.lang.Override
-  public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  @java.lang.Override
-  public boolean getReturnPartialSuccess() {
-    return returnPartialSuccess_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -703,9 +658,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 336120696, filter_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeBool(517198390, returnPartialSuccess_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -732,10 +684,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(336120696, filter_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -771,10 +719,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
       if (!getPageToken().equals(other.getPageToken())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
-    if (hasReturnPartialSuccess()) {
-      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -806,10 +750,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    if (hasReturnPartialSuccess()) {
-      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
-    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -956,7 +896,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
       orderBy_ = "";
       pageToken_ = "";
       project_ = "";
-      returnPartialSuccess_ = false;
       return this;
     }
 
@@ -1016,10 +955,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.project_ = project_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
-        to_bitField0_ |= 0x00000010;
-      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1063,9 +998,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
         project_ = other.project_;
         bitField0_ |= 0x00000020;
         onChanged();
-      }
-      if (other.hasReturnPartialSuccess()) {
-        setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1129,12 +1061,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000002;
                 break;
               } // case -1606001726
-            case -157380176:
-              {
-                returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case -157380176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2222,98 +2148,6 @@ public final class ListWireGroupsRequest extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       project_ = value;
       bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private boolean returnPartialSuccess_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return Whether the returnPartialSuccess field is set.
-     */
-    @java.lang.Override
-    public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return The returnPartialSuccess.
-     */
-    @java.lang.Override
-    public boolean getReturnPartialSuccess() {
-      return returnPartialSuccess_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @param value The returnPartialSuccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReturnPartialSuccess(boolean value) {
-
-      returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      returnPartialSuccess_ = false;
       onChanged();
       return this;
     }
