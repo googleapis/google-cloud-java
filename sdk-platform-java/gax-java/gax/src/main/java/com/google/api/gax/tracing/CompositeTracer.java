@@ -84,7 +84,9 @@ class CompositeTracer extends BaseApiTracer {
         try {
           childScopes[i].close();
         } catch (Throwable suppressed) {
-          t.addSuppressed(suppressed);
+          if (t != suppressed) {
+            t.addSuppressed(suppressed);
+          }
         }
       }
       throw throwException(t);
@@ -109,7 +111,7 @@ class CompositeTracer extends BaseApiTracer {
         } catch (Throwable t) {
           if (firstException == null) {
             firstException = t;
-          } else {
+          } else if (firstException != t) {
             firstException.addSuppressed(t);
           }
         }
