@@ -112,6 +112,9 @@ class CompositeTracer extends BaseApiTracer {
    * notifications.
    */
   private Scope enterScope() {
+    if (children.isEmpty()) {
+      return NO_OP_SCOPE;
+    }
     try {
       return inScope();
     } catch (RuntimeException e) {
