@@ -163,43 +163,55 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptSucceeded();
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptSucceeded();
+      }
     }
   }
 
   @Override
   public void attemptCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptCancelled();
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptCancelled();
+      }
     }
   }
 
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailed(error, delay);
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailed(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedDuration(error, delay);
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedDuration(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedRetriesExhausted(error);
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedRetriesExhausted(error);
+      }
     }
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptPermanentFailure(error);
+    try (Scope s = enterScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptPermanentFailure(error);
+      }
     }
   }
 
