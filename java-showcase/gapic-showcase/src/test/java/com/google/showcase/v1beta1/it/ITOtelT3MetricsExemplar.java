@@ -215,8 +215,7 @@ class ITOtelT3MetricsExemplar {
           .setCredentialsProvider(NoCredentialsProvider.create())
           .setTransportChannelProvider(
               EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                  .setHttpTransport(
-                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .setHttpTransport(new NetHttpTransport.Builder().build())
                   .build())
           .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
           .build();

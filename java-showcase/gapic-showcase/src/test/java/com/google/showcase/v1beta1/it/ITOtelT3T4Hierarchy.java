@@ -495,8 +495,7 @@ class ITOtelT3T4Hierarchy {
       settingsBuilder
           .setTransportChannelProvider(
               SequenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
-                  .setHttpTransport(
-                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .setHttpTransport(new NetHttpTransport.Builder().build())
                   .build())
           .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT);
     } else {

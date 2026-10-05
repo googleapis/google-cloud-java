@@ -201,7 +201,7 @@ class ITOtelT3Tracing {
                   .getAttributes()
                   .get(
                       AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
-          .isAtLeast(400L);
+          .isEqualTo(400L);
       assertThat(
               t3Span
                   .getAttributes()
@@ -448,8 +448,7 @@ class ITOtelT3Tracing {
           .setCredentialsProvider(NoCredentialsProvider.create())
           .setTransportChannelProvider(
               EchoSettings.defaultHttpJsonTransportProviderBuilder()
-                  .setHttpTransport(
-                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .setHttpTransport(new NetHttpTransport.Builder().build())
                   .build())
           .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
           .build();
