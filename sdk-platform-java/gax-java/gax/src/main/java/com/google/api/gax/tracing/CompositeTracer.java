@@ -82,38 +82,55 @@ class CompositeTracer extends BaseApiTracer {
       if (childScopes.size() == 1) {
         return childScopes.get(0);
       }
-    } catch (RuntimeException | Error e) {
+      return new CompositeScope(childScopes);
+    } catch (Throwable t) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (RuntimeException | Error suppressed) {
-          e.addSuppressed(suppressed);
+        } catch (Throwable suppressed) {
+          t.addSuppressed(suppressed);
         }
       }
-      throw e;
+      throwException(t);
+      return NO_OP_SCOPE;
+    }
+  }
+
+  private static class CompositeScope implements Scope {
+    private final List<Scope> scopes;
+
+    CompositeScope(List<Scope> scopes) {
+      this.scopes = scopes;
     }
 
-    return () -> {
-      Throwable exception = null;
-      for (int i = childScopes.size() - 1; i >= 0; i--) {
+    @Override
+    public void close() {
+      Throwable firstException = null;
+      for (int i = scopes.size() - 1; i >= 0; i--) {
         try {
-          childScopes.get(i).close();
-        } catch (RuntimeException | Error e) {
-          if (exception == null) {
-            exception = e;
+          scopes.get(i).close();
+        } catch (Throwable t) {
+          if (firstException == null) {
+            firstException = t;
           } else {
-            exception.addSuppressed(e);
+            firstException.addSuppressed(t);
           }
         }
       }
-      if (exception != null) {
-        if (exception instanceof RuntimeException) {
-          throw (RuntimeException) exception;
-        } else {
-          throw (Error) exception;
-        }
+      if (firstException != null) {
+        throwException(firstException);
       }
-    };
+    }
+  }
+
+  private static void throwException(Throwable t) {
+    if (t instanceof RuntimeException) {
+      throw (RuntimeException) t;
+    } else if (t instanceof Error) {
+      throw (Error) t;
+    } else {
+      throw new RuntimeException(t);
+    }
   }
 
   /**
