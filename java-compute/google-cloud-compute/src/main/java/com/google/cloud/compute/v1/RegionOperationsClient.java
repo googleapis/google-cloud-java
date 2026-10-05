@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionOperations API.
  *
+ * <p>This client uses RegionOperations version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -480,7 +482,6 @@ public class RegionOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Operation element : regionOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -516,7 +517,6 @@ public class RegionOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Operation> future = regionOperationsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -551,7 +551,6 @@ public class RegionOperationsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     OperationList response = regionOperationsClient.listCallable().call(request);

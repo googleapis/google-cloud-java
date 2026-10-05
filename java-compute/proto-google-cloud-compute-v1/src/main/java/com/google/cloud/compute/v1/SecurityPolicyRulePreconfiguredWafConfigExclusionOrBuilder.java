@@ -30,6 +30,84 @@ public interface SecurityPolicyRulePreconfiguredWafConfigExclusionOrBuilder
    *
    *
    * <pre>
+   * A list of request body fields to be excluded from inspection during
+   * preconfigured WAF evaluation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams request_bodies_to_exclude = 60453445;
+   * </code>
+   */
+  java.util.List<
+          com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams>
+      getRequestBodiesToExcludeList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of request body fields to be excluded from inspection during
+   * preconfigured WAF evaluation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams request_bodies_to_exclude = 60453445;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams
+      getRequestBodiesToExclude(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of request body fields to be excluded from inspection during
+   * preconfigured WAF evaluation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams request_bodies_to_exclude = 60453445;
+   * </code>
+   */
+  int getRequestBodiesToExcludeCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of request body fields to be excluded from inspection during
+   * preconfigured WAF evaluation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams request_bodies_to_exclude = 60453445;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder>
+      getRequestBodiesToExcludeOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of request body fields to be excluded from inspection during
+   * preconfigured WAF evaluation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParams request_bodies_to_exclude = 60453445;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SecurityPolicyRulePreconfiguredWafConfigExclusionFieldParamsOrBuilder
+      getRequestBodiesToExcludeOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * A list of request cookie names whose value will be excluded from
    * inspection during preconfigured WAF evaluation.
    * </pre>

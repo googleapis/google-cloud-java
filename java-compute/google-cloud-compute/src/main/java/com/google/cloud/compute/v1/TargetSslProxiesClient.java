@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The TargetSslProxies API.
  *
+ * <p>This client uses TargetSslProxies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -740,7 +742,6 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (TargetSslProxy element : targetSslProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -775,7 +776,6 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<TargetSslProxy> future =
    *       targetSslProxiesClient.listPagedCallable().futureCall(request);
@@ -810,7 +810,6 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     TargetSslProxyList response = targetSslProxiesClient.listCallable().call(request);

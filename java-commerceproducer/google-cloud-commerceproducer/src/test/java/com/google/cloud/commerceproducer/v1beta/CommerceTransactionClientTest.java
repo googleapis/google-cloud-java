@@ -192,6 +192,7 @@ public class CommerceTransactionClientTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockCommerceTransaction.addResponse(expectedResponse);
 
@@ -231,6 +232,7 @@ public class CommerceTransactionClientTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockCommerceTransaction.addResponse(expectedResponse);
 

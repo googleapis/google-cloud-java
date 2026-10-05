@@ -236,7 +236,7 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
    * </code>
    *
    * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-   *     google/ads/datamanager/v1/ingestion_service.proto;l=281
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=363
    * @return The validateOnly.
    */
   @java.lang.Override
@@ -1317,7 +1317,7 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-     *     google/ads/datamanager/v1/ingestion_service.proto;l=281
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=363
      * @return The validateOnly.
      */
     @java.lang.Override
@@ -1337,7 +1337,7 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-     *     google/ads/datamanager/v1/ingestion_service.proto;l=281
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=363
      * @param value The validateOnly to set.
      * @return This builder for chaining.
      */
@@ -1361,7 +1361,7 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * </code>
      *
      * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
-     *     google/ads/datamanager/v1/ingestion_service.proto;l=281
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=363
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

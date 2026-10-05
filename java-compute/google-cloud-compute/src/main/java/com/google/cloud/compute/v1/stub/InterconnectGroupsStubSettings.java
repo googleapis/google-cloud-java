@@ -393,7 +393,8 @@ public class InterconnectGroupsStubSettings extends StubSettings<InterconnectGro
             "gapic", GaxProperties.getLibraryVersion(InterconnectGroupsStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

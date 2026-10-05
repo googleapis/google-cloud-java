@@ -53,6 +53,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.util.Timestamps;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubClientTelemetry;
@@ -546,12 +547,14 @@ public class Publisher implements PublisherInterface {
     }
   }
 
-  private Map<String, List<String>> createTelemetryHeader(int attemptNumber) {
+  private Map<String, List<String>> createTelemetryHeader(
+      long publishBatchStartTime, int attemptNumber) {
     PubsubClientTelemetry telemetry =
         PubsubClientTelemetry.newBuilder()
             .setPublishOperation(
                 PubsubClientTelemetry.PublishOperation.newBuilder()
                     .setHedgedAttemptCount(attemptNumber)
+                    .setPublishStartTime(Timestamps.fromMillis(publishBatchStartTime))
                     .build())
             .build();
     String encodedHeader = Base64.getEncoder().encodeToString(telemetry.toByteArray());
@@ -579,7 +582,9 @@ public class Publisher implements PublisherInterface {
           outstandingBatch.getMessageWrappers().get(0));
       context = context.withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
-    context = context.withExtraHeaders(createTelemetryHeader(attemptNumber));
+    context =
+        context.withExtraHeaders(
+            createTelemetryHeader(outstandingBatch.creationTime, attemptNumber));
     int numMessagesInBatch = outstandingBatch.size();
     List<PubsubMessage> pubsubMessagesList = new ArrayList<PubsubMessage>(numMessagesInBatch);
     List<PubsubMessageWrapper> messageWrappers = outstandingBatch.getMessageWrappers();

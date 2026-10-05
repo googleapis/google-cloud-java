@@ -220,6 +220,53 @@ public interface InvocationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserAuthConfig field is set.
+   */
+  boolean hasEndUserAuthConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserAuthConfig.
+   */
+  com.google.cloud.dataform.v1.InvocationConfig.EndUserAuthenticationConfig getEndUserAuthConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1.InvocationConfig.EndUserAuthenticationConfigOrBuilder
+      getEndUserAuthConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Specifies the priority for query execution in BigQuery.
    * More information can be found at
    * https://cloud.google.com/bigquery/docs/running-queries#queries.

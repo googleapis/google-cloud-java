@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -31,6 +32,7 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -61,6 +63,9 @@ public class BigQueryPreparedStatementSettersTest {
   public void setUp() throws Exception {
     connection = mock(BigQueryConnection.class);
     when(connection.getQueryDialect()).thenReturn("SQL");
+    when(connection.getConnectionId()).thenReturn("test-connection-id");
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
   }
 
@@ -243,11 +248,10 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testGetMetaData() throws Exception {
-    // Before execution/insertSchema initialization, getMetaData() returns null
+    // Until a dry run describes the query, there are no result columns to report.
     assertNull(preparedStatement.getMetaData());
 
-    // When insertSchema is present, getMetaData() returns ResultSetMetaData
-    preparedStatement.insertSchema =
+    preparedStatement.resultSchema =
         Schema.of(
             Field.of("col1", StandardSQLTypeName.STRING),
             Field.of("col2", StandardSQLTypeName.INT64));
@@ -259,6 +263,15 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
     assertEquals("col2", metaData.getColumnName(2));
     assertEquals(Types.BIGINT, metaData.getColumnType(2));
+  }
+
+  @Test
+  public void testGetMetaDataReturnsNullForInsert() throws Exception {
+    // An INSERT returns no ResultSet, so the columns it writes must not be reported as result
+    // metadata even though the Storage Write API path has captured them.
+    preparedStatement.insertSchema = Schema.of(Field.of("col1", StandardSQLTypeName.STRING));
+
+    assertNull(preparedStatement.getMetaData());
   }
 
   @Test
@@ -328,8 +341,40 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
+  public void testInferredParameterTypeKnownBeforeSetters() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?");
+
+    // 1. Inferred type is known immediately without calling setInt/setString
+    preparedStatement.parameterHandler.setInferredParameterType(1, StandardSQLTypeName.INT64);
+
+    ParameterMetaData pmd = preparedStatement.getParameterMetaData();
+    assertEquals(Types.BIGINT, pmd.getParameterType(1));
+    assertEquals("INT64", pmd.getParameterTypeName(1));
+
+    // 2. configureParameters fails before value is supplied
+    QueryJobConfiguration.Builder configBuilder = QueryJobConfiguration.newBuilder("SELECT ?");
+    BigQueryJdbcException ex =
+        assertThrows(
+            BigQueryJdbcException.class,
+            () -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+    assertTrue(ex.getMessage().contains("One or more parameters missing"));
+    // 3. Once setter is called, configureParameters succeeds and populates QueryJobConfiguration
+
+    preparedStatement.setLong(1, 42L);
+    assertDoesNotThrow(() -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+
+    QueryJobConfiguration config = configBuilder.build();
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals("42", config.getPositionalParameters().get(0).getValue());
+    assertEquals(StandardSQLTypeName.INT64, config.getPositionalParameters().get(0).getType());
+  }
+
+  @Test
   public void testSetObjectWithTimestampStringAndTypesTimestamp_picosEnabled() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -354,6 +399,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetTimestamp_picosEnabledPreservesNanoseconds() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -376,6 +424,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetTimestamp_picosDisabledTruncatesToMicroseconds() throws Exception {
     BigQueryConnection nonPicosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(nonPicosConnection)
+        .getSessionStateSnapshot();
     doReturn(false).when(nonPicosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(nonPicosConnection)
@@ -397,6 +448,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testBatchConfiguration_withEnableTimestampPicos() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)

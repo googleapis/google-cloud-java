@@ -428,6 +428,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -482,6 +483,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -538,6 +540,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -554,6 +557,7 @@ public class CatalogServiceClientHttpJsonTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -596,6 +600,7 @@ public class CatalogServiceClientHttpJsonTest {
               .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
               .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
               .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+              .setEnableAgentPrompts(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCompletionConfig(completionConfig, updateMask);

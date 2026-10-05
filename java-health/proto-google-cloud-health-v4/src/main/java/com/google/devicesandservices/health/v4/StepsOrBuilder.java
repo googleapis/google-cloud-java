@@ -74,6 +74,7 @@ public interface StepsOrBuilder
    *
    * <pre>
    * Required. Number of steps in the recorded interval.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,6 +88,7 @@ public interface StepsOrBuilder
    *
    * <pre>
    * Required. Number of steps in the recorded interval.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
