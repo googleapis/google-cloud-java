@@ -98,19 +98,21 @@ class CompositeTracer extends BaseApiTracer {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (RuntimeException | Error e) {
+        } catch (Throwable t) {
           if (exception == null) {
-            exception = e;
+            exception = t;
           } else {
-            exception.addSuppressed(e);
+            exception.addSuppressed(t);
           }
         }
       }
       if (exception != null) {
         if (exception instanceof RuntimeException) {
           throw (RuntimeException) exception;
-        } else {
+        } else if (exception instanceof Error) {
           throw (Error) exception;
+        } else {
+          throw new RuntimeException(exception);
         }
       }
     };
@@ -124,7 +126,7 @@ class CompositeTracer extends BaseApiTracer {
   private Scope enterScope() {
     try {
       return inScope();
-    } catch (RuntimeException | Error e) {
+    } catch (RuntimeException e) {
       // Ignore to prevent disrupting the lifecycle notification
       return NO_OP_SCOPE;
     }
