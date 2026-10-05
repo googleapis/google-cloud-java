@@ -93,8 +93,7 @@ class CompositeTracer extends BaseApiTracer {
     };
   }
 
-  @Override
-  public void operationSucceeded() {
+  private void runInScope(Runnable runnable) {
     @Nullable Scope scope = null;
     try {
       scope = inScope();
@@ -102,40 +101,38 @@ class CompositeTracer extends BaseApiTracer {
       // Ignore to prevent disrupting the lifecycle notification
     }
     try (Scope s = scope) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).operationSucceeded();
-      }
+      runnable.run();
     }
+  }
+
+  @Override
+  public void operationSucceeded() {
+    runInScope(
+        () -> {
+          for (int i = children.size() - 1; i >= 0; i--) {
+            children.get(i).operationSucceeded();
+          }
+        });
   }
 
   @Override
   public void operationCancelled() {
-    @Nullable Scope scope = null;
-    try {
-      scope = inScope();
-    } catch (RuntimeException e) {
-      // Ignore to prevent disrupting the lifecycle notification
-    }
-    try (Scope s = scope) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).operationCancelled();
-      }
-    }
+    runInScope(
+        () -> {
+          for (int i = children.size() - 1; i >= 0; i--) {
+            children.get(i).operationCancelled();
+          }
+        });
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    @Nullable Scope scope = null;
-    try {
-      scope = inScope();
-    } catch (RuntimeException e) {
-      // Ignore to prevent disrupting the lifecycle notification
-    }
-    try (Scope s = scope) {
-      for (int i = children.size() - 1; i >= 0; i--) {
-        children.get(i).operationFailed(error);
-      }
-    }
+    runInScope(
+        () -> {
+          for (int i = children.size() - 1; i >= 0; i--) {
+            children.get(i).operationFailed(error);
+          }
+        });
   }
 
   @Override
