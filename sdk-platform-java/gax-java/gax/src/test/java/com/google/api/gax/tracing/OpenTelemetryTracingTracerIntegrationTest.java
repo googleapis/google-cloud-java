@@ -284,11 +284,12 @@ class OpenTelemetryTracingTracerIntegrationTest {
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
 
-    SpanData operationSpan =
+    List<SpanData> internalSpans =
         finishedSpans.stream()
             .filter(s -> s.getKind() == SpanKind.INTERNAL)
-            .findFirst()
-            .orElseThrow(() -> new AssertionError("Operation span not found"));
+            .collect(Collectors.toList());
+    assertThat(internalSpans).hasSize(1);
+    SpanData operationSpan = internalSpans.get(0);
 
     List<SpanData> attemptSpans =
         finishedSpans.stream()
@@ -331,11 +332,12 @@ class OpenTelemetryTracingTracerIntegrationTest {
     List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
     assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
 
-    SpanData operationSpan =
+    List<SpanData> internalSpans =
         finishedSpans.stream()
             .filter(s -> s.getKind() == SpanKind.INTERNAL)
-            .findFirst()
-            .orElseThrow(() -> new AssertionError("Operation span not found"));
+            .collect(Collectors.toList());
+    assertThat(internalSpans).hasSize(1);
+    SpanData operationSpan = internalSpans.get(0);
 
     List<SpanData> attemptSpans =
         finishedSpans.stream()
