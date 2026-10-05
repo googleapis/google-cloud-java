@@ -140,7 +140,7 @@ class CompositeTracer extends BaseApiTracer {
   private Scope enterScope() {
     try {
       return inScope();
-    } catch (Throwable t) {
+    } catch (RuntimeException e) {
       // Ignore to prevent disrupting the lifecycle notification
       return NO_OP_SCOPE;
     }
