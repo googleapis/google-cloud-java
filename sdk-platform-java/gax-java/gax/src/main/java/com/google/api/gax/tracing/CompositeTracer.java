@@ -120,11 +120,11 @@ class CompositeTracer extends BaseApiTracer {
 
   private static RuntimeException throwException(Throwable t) {
     if (t instanceof RuntimeException) {
-      throw (RuntimeException) t;
+      return (RuntimeException) t;
     } else if (t instanceof Error) {
       throw (Error) t;
     } else {
-      throw new RuntimeException(t);
+      return new RuntimeException(t);
     }
   }
 
