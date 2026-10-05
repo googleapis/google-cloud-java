@@ -464,14 +464,22 @@ class ChannelPool extends ManagedChannel {
   private void refreshSafely() {
     try {
       synchronized (entryWriteLock) {
-        String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
-        if (workloadCertPath != null && currentDiskFingerprint.isEmpty()) {
+        if (workloadCertPath == null) {
+          refreshAll();
           return;
         }
-        boolean rotated =
-            !currentDiskFingerprint.isEmpty()
-                && !rotationTracker.isAlreadyActive(currentDiskFingerprint);
-        if (refreshAll() && !currentDiskFingerprint.isEmpty()) {
+        String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
+        if (currentDiskFingerprint.isEmpty()) {
+          // The configured certificate could not be read, which normally means it is being
+          // rewritten during a rotation. Skip this refresh rather than recreate channels from a
+          // partially written certificate; the next periodic or reactive refresh recreates them.
+          LOG.fine(
+              "Skipping pre-emptive channel refresh: the workload certificate could not be read;"
+                  + " channels will be recreated on the next refresh");
+          return;
+        }
+        boolean rotated = !rotationTracker.isAlreadyActive(currentDiskFingerprint);
+        if (refreshAll()) {
           if (rotated) {
             completeCertificateSwitch(currentDiskFingerprint);
           } else {
@@ -569,9 +577,8 @@ class ChannelPool extends ManagedChannel {
    *
    * @param dropUnrefreshedChannels if {@code false}, a channel that fails to be recreated keeps its
    *     slot in the pool. If {@code true} (used for certificate rotation), only newly created
-   *     channels are kept so no traffic is routed to a channel using the old certificate; a
-   *     statically sized pool is then refilled asynchronously, while a dynamically sized pool is
-   *     refilled by {@link #resize()}.
+   *     channels are kept so no traffic is routed to a channel using the old certificate, and the
+   *     pool is then refilled asynchronously to its size before the refresh.
    * @return if {@code dropUnrefreshedChannels} is {@code false}, whether every channel was
    *     recreated; otherwise, whether at least one channel was recreated (i.e. every channel left
    *     in the pool was newly created)
@@ -583,20 +590,27 @@ class ChannelPool extends ManagedChannel {
         return false;
       }
       LOG.fine("Refreshing all channels");
-      ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
-      boolean anyCreated = false;
-      boolean allCreated = !newEntries.isEmpty();
-      List<Entry> createdEntries = new ArrayList<>();
+      // All writes to entries happen under entryWriteLock, so this snapshot is the current pool.
+      ImmutableList<Entry> currentEntries = entries.get();
+      List<Entry> keptEntries = new ArrayList<>(currentEntries.size());
+      List<Entry> retiredEntries = new ArrayList<>(currentEntries.size());
+      List<Entry> createdEntries = new ArrayList<>(currentEntries.size());
+      boolean allCreated = !currentEntries.isEmpty();
 
       try {
-        for (int i = 0; i < newEntries.size(); i++) {
+        for (Entry oldEntry : currentEntries) {
           try {
             Entry newEntry = new Entry(channelFactory.createSingleChannel());
             createdEntries.add(newEntry);
-            newEntries.set(i, newEntry);
-            anyCreated = true;
+            keptEntries.add(newEntry);
+            retiredEntries.add(oldEntry);
           } catch (Exception e) {
             allCreated = false;
+            if (dropUnrefreshedChannels) {
+              retiredEntries.add(oldEntry);
+            } else {
+              keptEntries.add(oldEntry);
+            }
             LOG.log(
                 Level.WARNING,
                 dropUnrefreshedChannels
@@ -606,27 +620,25 @@ class ChannelPool extends ManagedChannel {
           }
         }
 
-        if (!anyCreated) {
+        if (createdEntries.isEmpty()) {
           return false;
         }
 
-        ImmutableList<Entry> finalEntries =
-            ImmutableList.copyOf(dropUnrefreshedChannels ? createdEntries : newEntries);
-        ImmutableList<Entry> replacedEntries = entries.getAndSet(finalEntries);
+        entries.set(ImmutableList.copyOf(keptEntries));
         createdEntries.clear(); // Ownership transferred to pool
 
         // Shutdown the channels that were cycled out.
-        for (Entry e : replacedEntries) {
-          if (!finalEntries.contains(e)) {
-            e.requestShutdown();
-          }
-        }
-        if (dropUnrefreshedChannels && !allCreated && settings.isStaticSize()) {
-          scheduleRefill();
+        retiredEntries.forEach(Entry::requestShutdown);
+
+        // Restore the pool to its pre-refresh size right away, rather than leave a dynamically
+        // sized
+        // pool to grow back over several resize() runs while traffic queues on fewer channels.
+        if (dropUnrefreshedChannels && !allCreated) {
+          scheduleRefill(currentEntries.size());
         }
         return dropUnrefreshedChannels || allCreated;
       } finally {
-        // If an Error aborted before getAndSet, shut down newly created channels so they don't leak
+        // If an Error aborted before the swap, shut down newly created channels so they don't leak
         for (Entry e : createdEntries) {
           e.requestShutdown();
         }
@@ -635,25 +647,23 @@ class ChannelPool extends ManagedChannel {
   }
 
   /**
-   * Schedules a one-shot task that restores a statically sized pool to its configured channel count
-   * after a certificate rotation refresh dropped channels that failed to refresh.
+   * Schedules a one-shot task that restores the pool to {@code targetSize} channels after a
+   * certificate rotation refresh dropped channels that failed to refresh.
    */
-  private void scheduleRefill() {
+  private void scheduleRefill(int targetSize) {
     try {
-      backgroundExecutorProvider.getExecutor().execute(this::refillSafely);
+      backgroundExecutorProvider.getExecutor().execute(() -> refillSafely(targetSize));
     } catch (RuntimeException e) {
       LOG.log(Level.WARNING, "Failed to schedule channel pool refill", e);
     }
   }
 
-  @VisibleForTesting
-  void refillSafely() {
+  private void refillSafely(int targetSize) {
     try {
       synchronized (entryWriteLock) {
         if (isShutdown) {
           return;
         }
-        int targetSize = settings.getInitialChannelCount();
         if (entries.get().size() < targetSize) {
           expand(targetSize);
         }
